@@ -252,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/blob/main/docs/en/troubleshooting.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sglang/blob/main/troubleshooting.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/edit/main/docs/en/troubleshooting.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sglang/edit/main/troubleshooting.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -431,7 +431,7 @@ document.write(`
 <p>This error may be due to kernel errors or out-of-memory issues.</p>
 <ul class="simple">
 <li><p>If it is a kernel error, it is not easy to fix.</p></li>
-<li><p>If it is out-of-memory, sometimes it will report this error instead of “Out-of-memory.” In this case, try setting a smaller value for <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>. The default value of <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> is around 0.8 - 0.9. https://github.com/sgl-project/sglang/blob/1edd4e07d6ad52f4f63e7f6beaa5987c1e1cf621/python/sglang/srt/server_args.py#L92-L102</p></li>
+<li><p>If it is out-of-memory, sometimes it will report this error instead of “Out-of-memory.” In this case, try setting a smaller value for <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>. The default value of <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> is around 0.8 - 0.9.</p></li>
 </ul>
 </section>
 <section id="the-server-hangs">
@@ -439,7 +439,7 @@ document.write(`
 <p>If the server hangs, try disabling some optimizations when launching the server.</p>
 <ul class="simple">
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">--disable-flashinfer-sampling</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code>.</p></li>
 </ul>
 </section>
 </section>
