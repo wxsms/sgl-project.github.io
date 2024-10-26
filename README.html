@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PyPI Package Release Process &#8212; SGLang</title>
+    <title>SGLang Documentation &#8212; SGLang</title>
   
   
   
@@ -46,7 +46,7 @@
     <script src="_static/copybutton.js?v=ccdb6887"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'release_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -253,7 +253,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/blob/main/docs/en/release_process.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sglang/blob/main/docs/en/README.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/edit/main/docs/en/release_process.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sglang/edit/main/docs/en/README.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/issues/new?title=Issue%20on%20page%20%2Frelease_process.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sglang/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@
       
       
       
-      <li><a href="_sources/release_process.md" target="_blank"
+      <li><a href="_sources/README.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PyPI Package Release Process</h1>
+    <h1>SGLang Documentation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,9 +411,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-documentation-website">Build the documentation website</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency">Dependency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -425,25 +427,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pypi-package-release-process">
-<h1>PyPI Package Release Process<a class="headerlink" href="#pypi-package-release-process" title="Link to this heading">#</a></h1>
-<section id="update-the-version-in-code">
-<h2>Update the version in code<a class="headerlink" href="#update-the-version-in-code" title="Link to this heading">#</a></h2>
-<p>Update the package version in <code class="docutils literal notranslate"><span class="pre">python/pyproject.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">python/sglang/__init__.py</span></code>.</p>
-</section>
-<section id="upload-the-pypi-package">
-<h2>Upload the PyPI package<a class="headerlink" href="#upload-the-pypi-package" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">build</span> <span class="n">twine</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">python</span>
-<span class="n">bash</span> <span class="n">upload_pypi</span><span class="o">.</span><span class="n">sh</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="sglang-documentation">
+<h1>SGLang Documentation<a class="headerlink" href="#sglang-documentation" title="Link to this heading">#</a></h1>
+<section id="build-the-documentation-website">
+<h2>Build the documentation website<a class="headerlink" href="#build-the-documentation-website" title="Link to this heading">#</a></h2>
+<section id="dependency">
+<h3>Dependency<a class="headerlink" href="#dependency" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </section>
-<section id="make-a-release-in-github">
-<h2>Make a release in GitHub<a class="headerlink" href="#make-a-release-in-github" title="Link to this heading">#</a></h2>
-<p>Make a new release https://github.com/sgl-project/sglang/releases/new.</p>
+<section id="build">
+<h3>Build<a class="headerlink" href="#build" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -474,9 +473,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-documentation-website">Build the documentation website</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency">Dependency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
