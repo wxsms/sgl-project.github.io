@@ -453,7 +453,7 @@ document.write(`
   <span class="p">}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<p>Learn more about the argument specification, streaming, and multi-modal support <a class="reference external" href="https://sglang.readthedocs.io/en/latest/sampling_params.html">here</a>.</p>
+<p>Learn more about the argument specification, streaming, and multi-modal support <a class="reference external" href="https://sgl-project.github.io/sampling_params.html">here</a>.</p>
 </section>
 <section id="openai-compatible-api">
 <h2>OpenAI Compatible API<a class="headerlink" href="#openai-compatible-api" title="Link to this heading">#</a></h2>
@@ -514,7 +514,7 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>See <a class="reference external" href="https://sglang.readthedocs.io/en/latest/hyperparameter_tuning.html">hyperparameter tuning</a> on tuning hyperparameters for better performance.</p></li>
+<li><p>See <a class="reference external" href="https://sgl-project.github.io/hyperparameter_tuning.html">hyperparameter tuning</a> on tuning hyperparameters for better performance.</p></li>
 <li><p>If you see out-of-memory errors during prefill for long prompts, try to set a smaller chunked prefill size.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">chunked</span><span class="o">-</span><span class="n">prefill</span><span class="o">-</span><span class="n">size</span> <span class="mi">4096</span>
@@ -525,7 +525,7 @@ document.write(`
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports various quantization strategies.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
-<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference external" href="https://sglang.readthedocs.io/en/latest/custom_chat_template.html">custom chat template</a>.</p></li>
+<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference external" href="https://sgl-project.github.io/custom_chat_template.html">custom chat template</a>.</p></li>
 <li><p>To run tensor parallelism on multiple nodes, add <code class="docutils literal notranslate"><span class="pre">--nnodes</span> <span class="pre">2</span></code>. If you have two nodes with two GPUs on each node and want to run TP=4, let <code class="docutils literal notranslate"><span class="pre">sgl-dev-0</span></code> be the hostname of the first node and <code class="docutils literal notranslate"><span class="pre">50000</span></code> be an available port, you can use the following commands. If you meet deadlock, please try to add <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node 0</span>
@@ -609,7 +609,7 @@ You can view the full example <a class="reference external" href="https://github
 </ul>
 </li>
 </ul>
-<p>Instructions for supporting a new model are <a class="reference external" href="https://sglang.readthedocs.io/en/latest/model_support.html">here</a>.</p>
+<p>Instructions for supporting a new model are <a class="reference external" href="https://sgl-project.github.io/model_support.html">here</a>.</p>
 <section id="use-models-from-modelscope">
 <h3>Use Models From ModelScope<a class="headerlink" href="#use-models-from-modelscope" title="Link to this heading">#</a></h3>
 <details>
