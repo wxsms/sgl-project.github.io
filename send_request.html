@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quick Start &#8212; SGLang</title>
+    <title>Quick Start: Launch A Server and Send Requests &#8212; SGLang</title>
   
   
   
@@ -16,29 +16,31 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
     <link rel="stylesheet" type="text/css" href="_static/css/readthedocs.css?v=73f7402e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=33e7ae7f"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -52,9 +54,12 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'send_request';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OpenAI Compatible API" href="openai_api.html" />
+    <link rel="prev" title="Install SGLang" href="install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 26, 2024"/>
+  <meta name="docsearch:version" content="0.3.4.post2" />
+    <meta name="docbuild:last-update" content="Oct 27, 2024"/>
   </head>
   
   
@@ -70,19 +75,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -90,7 +84,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -98,8 +91,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -115,9 +108,8 @@
       
       
       
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,29 +139,27 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="SGLang - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SGLang - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="SGLang - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install SGLang</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quick Start: Launch A Server and Send Requests</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="openai_api.html">OpenAI Compatible API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -185,6 +175,7 @@
 <li class="toctree-l1"><a class="reference internal" href="choices_methods.html">Choices Methods in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_model.html">Embedding Model</a></li>
 </ul>
 
     </div>
@@ -373,24 +364,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -404,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quick Start</h1>
+    <h1>Quick Start: Launch A Server and Send Requests</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,11 +411,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="Quick-Start">
-<h1>Quick Start<a class="headerlink" href="#Quick-Start" title="Link to this heading">#</a></h1>
+  <section id="Quick-Start:-Launch-A-Server-and-Send-Requests">
+<h1>Quick Start: Launch A Server and Send Requests<a class="headerlink" href="#Quick-Start:-Launch-A-Server-and-Send-Requests" title="Link to this heading">#</a></h1>
+<p>This section provides a quick start guide to using SGLang after installation.</p>
 <section id="Launch-a-server">
 <h2>Launch a server<a class="headerlink" href="#Launch-a-server" title="Link to this heading">#</a></h2>
-<p>This code uses <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code> to start an SGLang server process, equivalent to executing</p>
+<p>This code block is equivalent to executing</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 --port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--log-level<span class="w"> </span>warning
 </pre></div>
@@ -442,41 +426,17 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sglang.utils</span> <span class="kn">import</span> <span class="n">execute_shell_command</span><span class="p">,</span> <span class="n">wait_for_server</span><span class="p">,</span> <span class="n">terminate_process</span>
 
-<span class="n">server_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="s2">&quot;python&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;-m&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sglang.launch_server&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;--model-path&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;--port&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;30000&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;--host&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;--log-level&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;error&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-    <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
-    <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
+
+<span class="n">server_process</span> <span class="o">=</span> <span class="n">execute_shell_command</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct \</span>
+<span class="sd">--port 30000 --host 0.0.0.0 --log-level warning</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="p">)</span>
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s2">&quot;http://localhost:30000/v1/models&quot;</span><span class="p">,</span>
-            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer None&quot;</span><span class="p">},</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="k">break</span>
-    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
+<span class="n">wait_for_server</span><span class="p">(</span><span class="s2">&quot;http://localhost:30000&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Server is ready. Proceeding with the next steps.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -509,7 +469,7 @@ Server is ready. Proceeding with the next steps.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#34;id&#34;:&#34;1449c9c20d4448299431a57facc68d7a&#34;,&#34;object&#34;:&#34;chat.completion&#34;,&#34;created&#34;:1729816891,&#34;model&#34;:&#34;meta-llama/Meta-Llama-3.1-8B-Instruct&#34;,&#34;choices&#34;:[{&#34;index&#34;:0,&#34;message&#34;:{&#34;role&#34;:&#34;assistant&#34;,&#34;content&#34;:&#34;LLM stands for Large Language Model. It&#39;s a type of artificial intelligence (AI) designed to process and generate human-like language. LLMs are trained on vast amounts of text data, which enables them to learn patterns, relationships, and nuances of language.\n\nLarge Language Models are typically trained using a technique called deep learning, where multiple layers of artificial neural networks are used to analyze and understand the input data. This training process involves feeding the model massive amounts of text data, which it uses to learn and improve its language understanding and generation capabilities.\n\nSome key characteristics of LLMs include:\n\n1. **Language understanding**: LLMs can comprehend natural language, including its syntax, semantics, and context.\n2. **Language generation**: LLMs can generate text, including responses to user input, articles, stories, and more.\n3. **Contextual understanding**: LLMs can understand the context in which language is being used, including the topic, tone, and intent.\n4. **Self-supervised learning**: LLMs can learn from large datasets without explicit supervision or labeling.\n\nLLMs have a wide range of applications, including:\n\n1. **Virtual assistants**: LLMs power virtual assistants like Siri, Alexa, and Google Assistant.\n2. **Language translation**: LLMs can translate text from one language to another.\n3. **Text summarization**: LLMs can summarize long pieces of text into shorter, more digestible versions.\n4. **Content generation**: LLMs can generate content, such as news articles, product descriptions, and social media posts.\n5. **Chatbots**: LLMs can power chatbots that can have human-like conversations with users.\n\nThe Large Language Model I am, is a type of LLM that has been trained on a massive dataset of text and can answer a wide range of questions and engage in conversation.&#34;},&#34;logprobs&#34;:null,&#34;finish_reason&#34;:&#34;stop&#34;,&#34;matched_stop&#34;:128009}],&#34;usage&#34;:{&#34;prompt_tokens&#34;:47,&#34;total_tokens&#34;:426,&#34;completion_tokens&#34;:379,&#34;prompt_tokens_details&#34;:null}}
+{&#34;id&#34;:&#34;6ae7fabfd4c54054a8017e2aa7c6bc5a&#34;,&#34;object&#34;:&#34;chat.completion&#34;,&#34;created&#34;:1730071553,&#34;model&#34;:&#34;meta-llama/Meta-Llama-3.1-8B-Instruct&#34;,&#34;choices&#34;:[{&#34;index&#34;:0,&#34;message&#34;:{&#34;role&#34;:&#34;assistant&#34;,&#34;content&#34;:&#34;LLM stands for Large Language Model. It&#39;s a type of artificial intelligence (AI) designed to process and generate human-like language. LLMs are trained on vast amounts of text data, which allows them to learn patterns, relationships, and structures of language.\n\nLarge Language Models are typically characterized by their ability to:\n\n1. **Understand natural language**: LLMs can comprehend and interpret human language, including nuances, idioms, and context.\n2. **Generate text**: LLMs can create coherent and context-specific text, such as responses to questions, summaries of articles, or even entire stories.\n3. **Answer questions**: LLMs can provide accurate and informative answers to a wide range of questions, from simple facts to complex topics.\n4. **Translate languages**: LLMs can translate text from one language to another, often with high accuracy.\n5. **Summarize content**: LLMs can condense long pieces of text into shorter, more digestible summaries.\n\nThe core of an LLM is its **neural network architecture**, which is composed of multiple layers of interconnected nodes (neurons) that process and transform the input data. This architecture allows LLMs to learn complex patterns and relationships in language, enabling them to generate human-like text.\n\nSome popular examples of LLMs include:\n\n* **Chatbots**: Virtual assistants that use LLMs to understand and respond to user queries.\n* **Language translation tools**: Services that use LLMs to translate text from one language to another.\n* **Content generation platforms**: Tools that use LLMs to generate text, such as articles, social media posts, or even entire books.\n* **Virtual assistants**: AI-powered assistants, like Siri, Alexa, or Google Assistant, that use LLMs to understand and respond to user queries.\n\nOverall, LLMs have revolutionized the field of natural language processing (NLP) and have numerous applications in various industries, from customer service to content creation.&#34;},&#34;logprobs&#34;:null,&#34;finish_reason&#34;:&#34;stop&#34;,&#34;matched_stop&#34;:128009}],&#34;usage&#34;:{&#34;prompt_tokens&#34;:47,&#34;total_tokens&#34;:450,&#34;completion_tokens&#34;:403,&#34;prompt_tokens_details&#34;:null}}
 </pre></div></div>
 </div>
 </section>
@@ -525,9 +485,7 @@ Server is ready. Proceeding with the next steps.
 <span class="c1"># Always assign an api_key, even if not specified during server initialization.</span>
 <span class="c1"># Setting an API key during server initialization is strongly recommended.</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:30000/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;None&quot;</span>
-<span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:30000/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
 
 <span class="c1"># Chat completion example</span>
 
@@ -549,45 +507,14 @@ Server is ready. Proceeding with the next steps.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;16757c3dd6e14a6e9bafd1122f84e4c5&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;Here are 3 countries and their capitals:\n\n1. **Country:** Japan\n**Capital:** Tokyo\n\n2. **Country:** Australia\n**Capital:** Canberra\n\n3. **Country:** Brazil\n**Capital:** Brasília&#39;, refusal=None, role=&#39;assistant&#39;, function_call=None, tool_calls=None), matched_stop=128009)], created=1729816893, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=49, total_tokens=95, prompt_tokens_details=None))
+ChatCompletion(id=&#39;da93c64364af475cbdd2cb19155fd68d&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;Here are 3 countries and their capitals:\n\n1. **Country:** Japan\n**Capital:** Tokyo\n\n2. **Country:** Australia\n**Capital:** Canberra\n\n3. **Country:** Brazil\n**Capital:** Brasília&#39;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1730071554, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=49, total_tokens=95, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">signal</span>
-<span class="kn">import</span> <span class="nn">gc</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-
-<span class="k">def</span> <span class="nf">terminate_process</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">pgid</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getpgid</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">pid</span><span class="p">)</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">pgid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
-                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">pgid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGKILL</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">ProcessLookupError</span><span class="p">:</span>
-                    <span class="k">pass</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-            <span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">ipc_collect</span><span class="p">()</span>
-
-<span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -605,6 +532,24 @@ ChatCompletion(id=&#39;16757c3dd6e14a6e9bafd1122f84e4c5&#39;, choices=[Choice(fi
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="install.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Install SGLang</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="openai_api.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">OpenAI Compatible API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -612,7 +557,8 @@ ChatCompletion(id=&#39;16757c3dd6e14a6e9bafd1122f84e4c5&#39;, choices=[Choice(fi
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -657,7 +603,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 26, 2024.
+  Last updated on Oct 27, 2024.
   <br/>
 </p>
   </div>
@@ -675,8 +621,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
