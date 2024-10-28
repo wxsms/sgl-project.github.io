@@ -33,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom_log.css?v=8f6ac367" />
     <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
-    <link rel="stylesheet" type="text/css" href="_static/css/readthedocs.css?v=73f7402e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom_log.css?v=8f6ac367" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -59,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.4.post2" />
-    <meta name="docbuild:last-update" content="Oct 27, 2024"/>
+    <meta name="docbuild:last-update" content="Oct 28, 2024"/>
   </head>
   
   
@@ -419,9 +420,14 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="OpenAI-Compatible-API">
+  <style>
+    .output_area.stderr, .output_area.stdout {
+        color: #d3d3d3 !important; /* 浅灰色 */
+    }
+</style><section id="OpenAI-Compatible-API">
 <h1>OpenAI Compatible API<a class="headerlink" href="#OpenAI-Compatible-API" title="Link to this heading">#</a></h1>
-<p>SGLang provides an OpenAI compatible API for smooth transition from OpenAI services.</p>
+<p>SGLang provides an OpenAI compatible API for smooth transition from OpenAI services. Full reference of the API is available at <a class="reference external" href="https://platform.openai.com/docs/api-reference">OpenAI API Reference</a>.</p>
+<p>This tutorial aims at these popular APIs:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">chat/completions</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">completions</span></code></p></li>
@@ -437,27 +443,51 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sglang.utils</span> <span class="kn">import</span> <span class="n">execute_shell_command</span><span class="p">,</span> <span class="n">wait_for_server</span><span class="p">,</span> <span class="n">terminate_process</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sglang.utils</span> <span class="kn">import</span> <span class="n">lauch_sglang_server</span><span class="p">,</span> <span class="n">wait_for_server</span><span class="p">,</span> <span class="n">terminate_process</span><span class="p">,</span> <span class="n">highlight_text</span>
 
-<span class="n">server_process</span> <span class="o">=</span> <span class="n">execute_shell_command</span><span class="p">(</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct \</span>
-<span class="sd">--port 30000 --host 0.0.0.0 --log-level warning</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">server_process</span> <span class="o">=</span> <span class="n">lauch_sglang_server</span><span class="p">(</span>
+    <span class="n">command</span><span class="o">=</span><span class="s2">&quot;python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --port 30000 --host 0.0.0.0&quot;</span>
 <span class="p">)</span>
 
 <span class="n">wait_for_server</span><span class="p">(</span><span class="s2">&quot;http://localhost:30000&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Server is ready. Proceeding with the next steps.&quot;</span><span class="p">)</span>
+
+<span class="n">highlight_text</span><span class="p">(</span><span class="s2">&quot;Server is ready. Proceeding with the next steps.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server is ready. Proceeding with the next steps.
+[2024-10-28 09:16:18] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, host=&#39;0.0.0.0&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=52609006, constrained_json_whitespace_pattern=None, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
+[2024-10-28 09:16:34 TP0] Init torch distributed begin.
+[2024-10-28 09:16:34 TP0] Load weight begin. avail mem=78.59 GB
+[2024-10-28 09:16:34 TP0] lm_eval is not installed, GPTQ may not be usable
+INFO 10-28 09:16:35 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+
+[2024-10-28 09:16:38 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.50 GB
+[2024-10-28 09:16:38 TP0] Memory pool end. avail mem=8.37 GB
+[2024-10-28 09:16:38 TP0] Capture cuda graph begin. This can take up to several minutes.
+[2024-10-28 09:16:45 TP0] max_total_num_tokens=442913, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2024-10-28 09:16:45] INFO:     Started server process [510260]
+[2024-10-28 09:16:45] INFO:     Waiting for application startup.
+[2024-10-28 09:16:45] INFO:     Application startup complete.
+[2024-10-28 09:16:45] INFO:     Uvicorn running on http://0.0.0.0:30000 (Press CTRL+C to quit)
+[2024-10-28 09:16:46] INFO:     127.0.0.1:36680 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Server is ready. Proceeding with the next steps.</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -481,41 +511,35 @@ Server is ready. Proceeding with the next steps.
     <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;77e45b23e9b34ef0a65afd9598521768&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;Here are 3 countries and their capitals:\n\n1. **Country:** Japan\n**Capital:** Tokyo\n\n2. **Country:** Australia\n**Capital:** Canberra\n\n3. **Country:** Brazil\n**Capital:** Brasília&#39;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1730071464, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=49, total_tokens=95, completion_tokens_details=None, prompt_tokens_details=None))
+[2024-10-28 09:16:46] INFO:     127.0.0.1:36690 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-10-28 09:16:46 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:16:46] INFO:     127.0.0.1:36696 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-10-28 09:16:46] The server is fired up and ready to roll!
+[2024-10-28 09:16:46 TP0] Prefill batch. #new-seq: 1, #new-token: 48, #cached-token: 1, cache hit rate: 1.79%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:16:47 TP0] Decode batch. #running-req: 1, #token: 82, token usage: 0.00, gen throughput (token/s): 21.55, #queue-req: 0
+[2024-10-28 09:16:47] INFO:     127.0.0.1:36706 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: ChatCompletion(id='bdb569b5e77147d0b4ebe2a79b451814', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **Country:** Japan\n**Capital:** Tokyo\n\n2. **Country:** Australia\n**Capital:** Canberra\n\n3. **Country:** Brazil\n**Capital:** Brasília', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1730107007, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=49, total_tokens=95, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="Parameters">
 <h3>Parameters<a class="headerlink" href="#Parameters" title="Link to this heading">#</a></h3>
-<p>The chat completions API accepts the following parameters (refer to <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create">OpenAI Chat Completions API</a> for more details):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">messages</span></code>: List of messages in the conversation, each containing <code class="docutils literal notranslate"><span class="pre">role</span></code> and <code class="docutils literal notranslate"><span class="pre">content</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code>: The model identifier to use for completion</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_tokens</span></code>: Maximum number of tokens to generate in the response</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature</span></code>: Controls randomness (0-2). Lower values make output more focused and deterministic</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top_p</span></code>: Alternative to temperature. Controls diversity via nucleus sampling</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Number of chat completion choices to generate</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stream</span></code>: If true, partial message deltas will be sent as they become available</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: Sequences where the API will stop generating further tokens</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">presence_penalty</span></code>: Penalizes new tokens based on their presence in the text so far (-2.0 to 2.0)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">frequency_penalty</span></code>: Penalizes new tokens based on their frequency in the text so far (-2.0 to 2.0)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logit_bias</span></code>: Modify the likelihood of specified tokens appearing in the completion</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logprobs</span></code>: Include log probabilities of tokens in the response</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top_logprobs</span></code>: Number of most likely tokens to return probabilities for</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: Random seed for deterministic results</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">response_format</span></code>: Specify the format of the response (e.g., JSON)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stream_options</span></code>: Additional options for streaming responses</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">user</span></code>: A unique identifier representing your end-user</p></li>
-</ul>
+<p>The chat completions API accepts OpenAI Chat Completions API’s parameters. Refer to <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create">OpenAI Chat Completions API</a> for more details.</p>
 <p>Here is an example of a detailed chat completion request:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -543,21 +567,26 @@ ChatCompletion(id=&#39;77e45b23e9b34ef0a65afd9598521768&#39;, choices=[Choice(fi
     <span class="n">frequency_penalty</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>  <span class="c1"># Mild penalty for more natural language</span>
     <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Single response is usually more stable</span>
     <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>  <span class="c1"># Keep for reproducibility</span>
-    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Keep streaming for real-time output</span>
 <span class="p">)</span>
 
-<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Ancient Rome&#39;s major achievements include:
+[2024-10-28 09:16:47 TP0] Prefill batch. #new-seq: 1, #new-token: 48, #cached-token: 28, cache hit rate: 21.97%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:16:47] INFO:     127.0.0.1:36706 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: ChatCompletion(id='84ab9ffd558f4c5595addde9e7a9b40c', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content="Ancient Rome's major achievements include:", refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None), matched_stop='\n\n')], created=1730107007, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=8, prompt_tokens=76, total_tokens=84, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 </section>
@@ -565,7 +594,7 @@ Ancient Rome&#39;s major achievements include:
 <h2>Completions<a class="headerlink" href="#Completions" title="Link to this heading">#</a></h2>
 <section id="id1">
 <h3>Usage<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Completions API is similar to Chat Completions API, but without the <code class="docutils literal notranslate"><span class="pre">messages</span></code> parameter. Refer to <a class="reference external" href="https://platform.openai.com/docs/api-reference/completions/create">OpenAI Completions API</a> for more details.</p>
+<p>Completions API is similar to Chat Completions API, but without the <code class="docutils literal notranslate"><span class="pre">messages</span></code> parameter.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -578,42 +607,32 @@ Ancient Rome&#39;s major achievements include:
     <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Completion(id=&#39;50da1b57333242cca0b8c6d8706f94b2&#39;, choices=[CompletionChoice(finish_reason=&#39;length&#39;, index=0, logprobs=None, text=&#39; 1. 2. 3.\n1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia - Canberra\nList 3 countries and their capitals. 1. 2. 3.\n1.  China - Beijing 2.  Brazil - Bras&#39;, matched_stop=None)], created=1730071465, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;text_completion&#39;, system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=9, total_tokens=73, completion_tokens_details=None, prompt_tokens_details=None))
+[2024-10-28 09:16:47 TP0] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 1, cache hit rate: 21.28%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:16:47 TP0] Decode batch. #running-req: 1, #token: 30, token usage: 0.00, gen throughput (token/s): 108.70, #queue-req: 0
+[2024-10-28 09:16:47 TP0] Decode batch. #running-req: 1, #token: 70, token usage: 0.00, gen throughput (token/s): 142.82, #queue-req: 0
+[2024-10-28 09:16:47] INFO:     127.0.0.1:36706 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: Completion(id='8dd58c0e0eff4036ab377324851c1726', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. 2. 3.\n1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia - Canberra\nList 3 countries and their capitals. 1. 2. 3.\n1.  China - Beijing 2.  Brazil - Bras', matched_stop=None)], created=1730107007, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=9, total_tokens=73, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="id2">
 <h3>Parameters<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>The completions API accepts the following parameters:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code>: The model identifier to use for completion</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">prompt</span></code>: Input text to generate completions for. Can be a string, array of strings, or token arrays</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">best_of</span></code>: Number of completions to generate server-side and return the best one</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">echo</span></code>: If true, the prompt will be included in the response</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">frequency_penalty</span></code>: Penalizes new tokens based on their frequency in the text so far (-2.0 to 2.0)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logit_bias</span></code>: Modify the likelihood of specified tokens appearing in the completion</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logprobs</span></code>: Include log probabilities of tokens in the response</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_tokens</span></code>: Maximum number of tokens to generate in the response (default: 16)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Number of completion choices to generate</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">presence_penalty</span></code>: Penalizes new tokens based on their presence in the text so far (-2.0 to 2.0)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: Random seed for deterministic results</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: Sequences where the API will stop generating further tokens</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stream</span></code>: If true, partial completion deltas will be sent as they become available</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stream_options</span></code>: Additional options for streaming responses</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: Text to append to the completion</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature</span></code>: Controls randomness (0-2). Lower values make output more focused and deterministic</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top_p</span></code>: Alternative to temperature. Controls diversity via nucleus sampling</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">user</span></code>: A unique identifier representing your end-user</p></li>
-</ul>
+<p>The completions API accepts OpenAI Completions API’s parameters. Refer to <a class="reference external" href="https://platform.openai.com/docs/api-reference/completions/create">OpenAI Completions API</a> for more details.</p>
 <p>Here is an example of a detailed completions request:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -630,22 +649,29 @@ Completion(id=&#39;50da1b57333242cca0b8c6d8706f94b2&#39;, choices=[CompletionCho
     <span class="n">frequency_penalty</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>  <span class="c1"># Reduce repetitive phrases</span>
     <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Generate one completion</span>
     <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>  <span class="c1"># For reproducible results</span>
-    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Stream the response</span>
 <span class="p">)</span>
 
-<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-  Be sure to include a new planet, a strange creature, and a discovery that changes everything.
-As Captain Zara Blackwood piloted her ship, the Celestial Quest, through the vast expanse of space, she couldn&#39;t help but feel a sense of excitement and trepidation. Her crew had been searching for weeks, scanning the galaxy for any sign of a new planet that fit their criteria. And finally, after months of searching, they had found it.
+[2024-10-28 09:16:47 TP0] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 1, cache hit rate: 20.53%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:16:48 TP0] Decode batch. #running-req: 1, #token: 48, token usage: 0.00, gen throughput (token/s): 125.91, #queue-req: 0
+[2024-10-28 09:16:48 TP0] Decode batch. #running-req: 1, #token: 88, token usage: 0.00, gen throughput (token/s): 134.54, #queue-req: 0
+[2024-10-28 09:16:48 TP0] Decode batch. #running-req: 1, #token: 128, token usage: 0.00, gen throughput (token/s): 133.40, #queue-req: 0
+[2024-10-28 09:16:48] INFO:     127.0.0.1:36706 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: Completion(id='390b6931283540278af6151e5665b9e6', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' As you write, include sensory details to help bring the planet to life for your reader. The space explorer, Lyra, is on a mission to explore the newly discovered planet, Xylophia-IV.\nLyra stepped out of the landing craft and onto the dusty surface of Xylophia-IV. The sky above was a deep shade of indigo, and the air was crisp with an otherworldly scent – a mix of ozone and something sweetly floral. She took a deep breath, feeling the cool breeze fill her lungs as she gazed out at the alien landscape.', matched_stop='\n\n')], created=1730107008, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=120, prompt_tokens=10, total_tokens=130, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 </section>
@@ -709,17 +735,25 @@ As Captain Zara Blackwood piloted her ship, the Celestial Quest, through the vas
     <span class="n">completion_window</span><span class="o">=</span><span class="s2">&quot;24h&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batch job created with ID: </span><span class="si">{</span><span class="n">batch_response</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batch job created with ID: </span><span class="si">{</span><span class="n">batch_response</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Batch job created with ID: batch_a8bb0663-1cc5-487b-b170-d8f2a76dbf60
+[2024-10-28 09:16:48] INFO:     127.0.0.1:36708 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
+[2024-10-28 09:16:48] INFO:     127.0.0.1:36708 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
+[2024-10-28 09:16:48 TP0] Prefill batch. #new-seq: 2, #new-token: 30, #cached-token: 50, cache hit rate: 35.06%, token usage: 0.00, #running-req: 0, #queue-req: 0
 </pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job created with ID: batch_bb7ab5e0-97b7-41ef-8fc3-9976380bf402</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -743,35 +777,68 @@ Batch job created with ID: batch_a8bb0663-1cc5-487b-b170-d8f2a76dbf60
     <span class="p">]</span>
 
     <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Request </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;custom_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;custom_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Cleaning up files...&quot;</span><span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span><span class="s2">&quot;Cleaning up files...&quot;</span><span class="p">)</span>
     <span class="c1"># Only delete the result file ID since file_response is just content</span>
     <span class="n">client</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">result_file_id</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batch job failed with status: </span><span class="si">{</span><span class="n">batch_response</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batch job failed with status: </span><span class="si">{</span><span class="n">batch_response</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">batch_response</span><span class="p">,</span> <span class="s2">&quot;errors&quot;</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Errors: </span><span class="si">{</span><span class="n">batch_response</span><span class="o">.</span><span class="n">errors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Errors: </span><span class="si">{</span><span class="n">batch_response</span><span class="o">.</span><span class="n">errors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:16:48 TP0] Decode batch. #running-req: 1, #token: 78, token usage: 0.00, gen throughput (token/s): 135.43, #queue-req: 0
+Batch job status: validating...trying again in 3 seconds...
+[2024-10-28 09:16:51] INFO:     127.0.0.1:36708 - &#34;GET /v1/batches/batch_bb7ab5e0-97b7-41ef-8fc3-9976380bf402 HTTP/1.1&#34; 200 OK
+Batch job completed successfully!
+Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
+[2024-10-28 09:16:51] INFO:     127.0.0.1:36708 - &#34;GET /v1/files/backend_result_file-fa4ddf26-be08-43c2-af09-dd4a2fc580ea/content HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Request request-1:</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: {'status_code': 200, 'request_id': 'request-1', 'body': {'id': 'request-1', 'object': 'chat.completion', 'created': 1730107009, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': {'index': 0, 'message': {'role': 'assistant', 'content': 'Why do programmers prefer dark mode?\n\nBecause light attracts bugs.'}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}, 'usage': {'prompt_tokens': 41, 'completion_tokens': 13, 'total_tokens': 54}, 'system_fingerprint': None}}</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Request request-2:</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: {'status_code': 200, 'request_id': 'request-2', 'body': {'id': 'request-2', 'object': 'chat.completion', 'created': 1730107009, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': {'index': 0, 'message': {'role': 'assistant', 'content': '**What is Python?**\n\nPython is a high-level, interpreted programming language that is widely used for various purposes such as web development, scientific computing, data analysis, artificial intelligence, and more. It was created in the late 1980s by'}, 'logprobs': None, 'finish_reason': 'length', 'matched_stop': None}, 'usage': {'prompt_tokens': 39, 'completion_tokens': 50, 'total_tokens': 89}, 'system_fingerprint': None}}</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Cleaning up files...</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Batch job status: validating...trying again in 3 seconds...
-Batch job completed successfully!
-Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
-
-Request request-1:
-Response: {&#39;status_code&#39;: 200, &#39;request_id&#39;: &#39;request-1&#39;, &#39;body&#39;: {&#39;id&#39;: &#39;request-1&#39;, &#39;object&#39;: &#39;chat.completion&#39;, &#39;created&#39;: 1730071466, &#39;model&#39;: &#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, &#39;choices&#39;: {&#39;index&#39;: 0, &#39;message&#39;: {&#39;role&#39;: &#39;assistant&#39;, &#39;content&#39;: &#39;Why do programmers prefer dark mode?\n\nBecause light attracts bugs.&#39;}, &#39;logprobs&#39;: None, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;matched_stop&#39;: 128009}, &#39;usage&#39;: {&#39;prompt_tokens&#39;: 41, &#39;completion_tokens&#39;: 13, &#39;total_tokens&#39;: 54}, &#39;system_fingerprint&#39;: None}}
-
-Request request-2:
-Response: {&#39;status_code&#39;: 200, &#39;request_id&#39;: &#39;request-2&#39;, &#39;body&#39;: {&#39;id&#39;: &#39;request-2&#39;, &#39;object&#39;: &#39;chat.completion&#39;, &#39;created&#39;: 1730071466, &#39;model&#39;: &#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, &#39;choices&#39;: {&#39;index&#39;: 0, &#39;message&#39;: {&#39;role&#39;: &#39;assistant&#39;, &#39;content&#39;: &#39;**What is Python?**\n\nPython is a high-level, interpreted programming language that is widely used for various purposes such as:\n\n1.  **Web Development**: Python is used in web development frameworks like Django and Flask to build fast, scalable, and&#39;}, &#39;logprobs&#39;: None, &#39;finish_reason&#39;: &#39;length&#39;, &#39;matched_stop&#39;: None}, &#39;usage&#39;: {&#39;prompt_tokens&#39;: 39, &#39;completion_tokens&#39;: 50, &#39;total_tokens&#39;: 89}, &#39;system_fingerprint&#39;: None}}
-
-Cleaning up files...
+[2024-10-28 09:16:51] INFO:     127.0.0.1:36708 - &#34;DELETE /v1/files/backend_result_file-fa4ddf26-be08-43c2-af09-dd4a2fc580ea HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <p>It takes a while to complete the batch job. You can use these two APIs to retrieve the batch job status or cancel the batch job.</p>
@@ -828,88 +895,160 @@ Cleaning up files...
     <span class="n">completion_window</span><span class="o">=</span><span class="s2">&quot;24h&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created batch job with ID: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial status: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created batch job with ID: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial status: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="n">max_checks</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_checks</span><span class="p">):</span>
     <span class="n">batch_details</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">batches</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">batch_id</span><span class="o">=</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batch job details (check </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">max_checks</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ID: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created at: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input file ID: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">input_file_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output file ID: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">output_file_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Request counts:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">request_counts</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completed: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">request_counts</span><span class="o">.</span><span class="n">completed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">request_counts</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Batch job details (check </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">max_checks</span><span class="si">}</span><span class="s2">) // ID: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> // Status: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2"> // Created at: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="s2"> // Input file ID: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">input_file_id</span><span class="si">}</span><span class="s2"> // Output file ID: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">output_file_id</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;strong&gt;Request counts: Total: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">request_counts</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2"> // Completed: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">request_counts</span><span class="o">.</span><span class="n">completed</span><span class="si">}</span><span class="s2"> // Failed: </span><span class="si">{</span><span class="n">batch_details</span><span class="o">.</span><span class="n">request_counts</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s2">&lt;/strong&gt;&quot;</span>
+        <span class="p">)</span>
 
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Created batch job with ID: batch_3bed32fb-158c-4918-8522-8235c9a12fd8
-Initial status: validating
-Batch job details (check 1/5):
-ID: batch_3bed32fb-158c-4918-8522-8235c9a12fd8
-Status: completed
-Created at: 1730071469
-Input file ID: backend_input_file-6040f73b-6fd9-4811-92fe-b23150459375
-Output file ID: backend_result_file-900097bd-2499-4640-9a0c-6d26915780e2
-Request counts:
-Total: 100
-Completed: 100
-Failed: 0
-Batch job details (check 2/5):
-ID: batch_3bed32fb-158c-4918-8522-8235c9a12fd8
-Status: completed
-Created at: 1730071469
-Input file ID: backend_input_file-6040f73b-6fd9-4811-92fe-b23150459375
-Output file ID: backend_result_file-900097bd-2499-4640-9a0c-6d26915780e2
-Request counts:
-Total: 100
-Completed: 100
-Failed: 0
-Batch job details (check 3/5):
-ID: batch_3bed32fb-158c-4918-8522-8235c9a12fd8
-Status: completed
-Created at: 1730071469
-Input file ID: backend_input_file-6040f73b-6fd9-4811-92fe-b23150459375
-Output file ID: backend_result_file-900097bd-2499-4640-9a0c-6d26915780e2
-Request counts:
-Total: 100
-Completed: 100
-Failed: 0
-Batch job details (check 4/5):
-ID: batch_3bed32fb-158c-4918-8522-8235c9a12fd8
-Status: completed
-Created at: 1730071469
-Input file ID: backend_input_file-6040f73b-6fd9-4811-92fe-b23150459375
-Output file ID: backend_result_file-900097bd-2499-4640-9a0c-6d26915780e2
-Request counts:
-Total: 100
-Completed: 100
-Failed: 0
-Batch job details (check 5/5):
-ID: batch_3bed32fb-158c-4918-8522-8235c9a12fd8
-Status: completed
-Created at: 1730071469
-Input file ID: backend_input_file-6040f73b-6fd9-4811-92fe-b23150459375
-Output file ID: backend_result_file-900097bd-2499-4640-9a0c-6d26915780e2
-Request counts:
-Total: 100
-Completed: 100
-Failed: 0
+[2024-10-28 09:16:51] INFO:     127.0.0.1:53788 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
+[2024-10-28 09:16:51] INFO:     127.0.0.1:53788 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Created batch job with ID: batch_4c254e9a-af5c-4e7f-9982-9739540beefc</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Initial status: validating</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:16:51 TP0] Prefill batch. #new-seq: 7, #new-token: 210, #cached-token: 175, cache hit rate: 41.56%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:16:51 TP0] Prefill batch. #new-seq: 93, #new-token: 2790, #cached-token: 2325, cache hit rate: 45.04%, token usage: 0.00, #running-req: 7, #queue-req: 0
+[2024-10-28 09:16:52 TP0] Decode batch. #running-req: 100, #token: 6025, token usage: 0.01, gen throughput (token/s): 927.84, #queue-req: 0
+[2024-10-28 09:16:52 TP0] Decode batch. #running-req: 100, #token: 10025, token usage: 0.02, gen throughput (token/s): 10850.25, #queue-req: 0
+[2024-10-28 09:16:52 TP0] Decode batch. #running-req: 100, #token: 14025, token usage: 0.03, gen throughput (token/s): 10640.61, #queue-req: 0
+[2024-10-28 09:16:53 TP0] Decode batch. #running-req: 100, #token: 18025, token usage: 0.04, gen throughput (token/s): 10399.84, #queue-req: 0
+[2024-10-28 09:16:53 TP0] Decode batch. #running-req: 100, #token: 22025, token usage: 0.05, gen throughput (token/s): 10192.34, #queue-req: 0
+[2024-10-28 09:16:54 TP0] Decode batch. #running-req: 100, #token: 26025, token usage: 0.06, gen throughput (token/s): 9969.00, #queue-req: 0
+[2024-10-28 09:16:54 TP0] Decode batch. #running-req: 100, #token: 30025, token usage: 0.07, gen throughput (token/s): 9754.98, #queue-req: 0
+[2024-10-28 09:16:54 TP0] Decode batch. #running-req: 100, #token: 34025, token usage: 0.08, gen throughput (token/s): 9570.09, #queue-req: 0
+[2024-10-28 09:16:55 TP0] Decode batch. #running-req: 100, #token: 38025, token usage: 0.09, gen throughput (token/s): 9370.66, #queue-req: 0
+[2024-10-28 09:16:55 TP0] Decode batch. #running-req: 100, #token: 42025, token usage: 0.09, gen throughput (token/s): 9157.62, #queue-req: 0
+[2024-10-28 09:16:56 TP0] Decode batch. #running-req: 100, #token: 46025, token usage: 0.10, gen throughput (token/s): 9012.88, #queue-req: 0
+[2024-10-28 09:16:56 TP0] Decode batch. #running-req: 100, #token: 50025, token usage: 0.11, gen throughput (token/s): 8840.89, #queue-req: 0
+[2024-10-28 09:17:01] INFO:     127.0.0.1:40866 - &#34;GET /v1/batches/batch_4c254e9a-af5c-4e7f-9982-9739540beefc HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job details (check 1 / 5) // ID: batch_4c254e9a-af5c-4e7f-9982-9739540beefc // Status: completed // Created at: 1730107011 // Input file ID: backend_input_file-56c1c364-04a5-495a-8925-cb3d35cd73d4 // Output file ID: backend_result_file-27879a06-ce58-4456-b590-baccd9a49bff</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><strong>Request counts: Total: 100 // Completed: 100 // Failed: 0</strong></strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:04] INFO:     127.0.0.1:40866 - &#34;GET /v1/batches/batch_4c254e9a-af5c-4e7f-9982-9739540beefc HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job details (check 2 / 5) // ID: batch_4c254e9a-af5c-4e7f-9982-9739540beefc // Status: completed // Created at: 1730107011 // Input file ID: backend_input_file-56c1c364-04a5-495a-8925-cb3d35cd73d4 // Output file ID: backend_result_file-27879a06-ce58-4456-b590-baccd9a49bff</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><strong>Request counts: Total: 100 // Completed: 100 // Failed: 0</strong></strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:07] INFO:     127.0.0.1:40866 - &#34;GET /v1/batches/batch_4c254e9a-af5c-4e7f-9982-9739540beefc HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job details (check 3 / 5) // ID: batch_4c254e9a-af5c-4e7f-9982-9739540beefc // Status: completed // Created at: 1730107011 // Input file ID: backend_input_file-56c1c364-04a5-495a-8925-cb3d35cd73d4 // Output file ID: backend_result_file-27879a06-ce58-4456-b590-baccd9a49bff</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><strong>Request counts: Total: 100 // Completed: 100 // Failed: 0</strong></strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:10] INFO:     127.0.0.1:40866 - &#34;GET /v1/batches/batch_4c254e9a-af5c-4e7f-9982-9739540beefc HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job details (check 4 / 5) // ID: batch_4c254e9a-af5c-4e7f-9982-9739540beefc // Status: completed // Created at: 1730107011 // Input file ID: backend_input_file-56c1c364-04a5-495a-8925-cb3d35cd73d4 // Output file ID: backend_result_file-27879a06-ce58-4456-b590-baccd9a49bff</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><strong>Request counts: Total: 100 // Completed: 100 // Failed: 0</strong></strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:13] INFO:     127.0.0.1:40866 - &#34;GET /v1/batches/batch_4c254e9a-af5c-4e7f-9982-9739540beefc HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job details (check 5 / 5) // ID: batch_4c254e9a-af5c-4e7f-9982-9739540beefc // Status: completed // Created at: 1730107011 // Input file ID: backend_input_file-56c1c364-04a5-495a-8925-cb3d35cd73d4 // Output file ID: backend_result_file-27879a06-ce58-4456-b590-baccd9a49bff</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><strong>Request counts: Total: 100 // Completed: 100 // Failed: 0</strong></strong></div>
 </div>
 <p>Here is an example to cancel a batch job.</p>
 <div class="nbinput docutils container">
@@ -960,38 +1099,128 @@ Failed: 0
     <span class="n">completion_window</span><span class="o">=</span><span class="s2">&quot;24h&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created batch job with ID: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial status: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created batch job with ID: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial status: </span><span class="si">{</span><span class="n">batch_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="n">cancelled_job</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">batches</span><span class="o">.</span><span class="n">cancel</span><span class="p">(</span><span class="n">batch_id</span><span class="o">=</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cancellation initiated. Status: </span><span class="si">{</span><span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cancellation initiated. Status: </span><span class="si">{</span><span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;cancelling&quot;</span>
 
     <span class="c1"># Monitor the cancellation process</span>
     <span class="k">while</span> <span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;failed&quot;</span><span class="p">,</span> <span class="s2">&quot;cancelled&quot;</span><span class="p">]:</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
         <span class="n">cancelled_job</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">batches</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">batch_job</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current status: </span><span class="si">{</span><span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current status: </span><span class="si">{</span><span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># Verify final status</span>
     <span class="k">assert</span> <span class="n">cancelled_job</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;cancelled&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Batch job successfully cancelled&quot;</span><span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span><span class="s2">&quot;Batch job successfully cancelled&quot;</span><span class="p">)</span>
 
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error during cancellation: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error during cancellation: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">e</span>
 
 <span class="k">finally</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">del_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">uploaded_file</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">del_response</span><span class="o">.</span><span class="n">deleted</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successfully cleaned up input file&quot;</span><span class="p">)</span>
+            <span class="n">highlight_text</span><span class="p">(</span><span class="s2">&quot;Successfully cleaned up input file&quot;</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error cleaning up: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">highlight_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error cleaning up: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">raise</span> <span class="n">e</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:16] INFO:     127.0.0.1:48056 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
+[2024-10-28 09:17:16] INFO:     127.0.0.1:48056 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Created batch job with ID: batch_9c319ff5-29c7-40db-9b8d-9225459caab5</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Initial status: validating</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:17 TP0] Prefill batch. #new-seq: 39, #new-token: 39, #cached-token: 2106, cache hit rate: 59.51%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-28 09:17:17 TP0] Prefill batch. #new-seq: 333, #new-token: 8192, #cached-token: 10094, cache hit rate: 56.50%, token usage: 0.01, #running-req: 39, #queue-req: 128
+[2024-10-28 09:17:17 TP0] Prefill batch. #new-seq: 129, #new-token: 3869, #cached-token: 3226, cache hit rate: 54.14%, token usage: 0.03, #running-req: 371, #queue-req: 1
+[2024-10-28 09:17:17 TP0] Decode batch. #running-req: 500, #token: 20525, token usage: 0.05, gen throughput (token/s): 395.72, #queue-req: 0
+[2024-10-28 09:17:18 TP0] Decode batch. #running-req: 500, #token: 40525, token usage: 0.09, gen throughput (token/s): 24587.43, #queue-req: 0
+[2024-10-28 09:17:19 TP0] Decode batch. #running-req: 500, #token: 60525, token usage: 0.14, gen throughput (token/s): 23385.77, #queue-req: 0
+[2024-10-28 09:17:20 TP0] Decode batch. #running-req: 500, #token: 80525, token usage: 0.18, gen throughput (token/s): 22312.99, #queue-req: 0
+[2024-10-28 09:17:21 TP0] Decode batch. #running-req: 500, #token: 100525, token usage: 0.23, gen throughput (token/s): 21433.76, #queue-req: 0
+[2024-10-28 09:17:22 TP0] Decode batch. #running-req: 500, #token: 120525, token usage: 0.27, gen throughput (token/s): 20585.73, #queue-req: 0
+[2024-10-28 09:17:23 TP0] Decode batch. #running-req: 500, #token: 140525, token usage: 0.32, gen throughput (token/s): 19807.72, #queue-req: 0
+[2024-10-28 09:17:24 TP0] Decode batch. #running-req: 500, #token: 160525, token usage: 0.36, gen throughput (token/s): 19058.59, #queue-req: 0
+[2024-10-28 09:17:25 TP0] Decode batch. #running-req: 500, #token: 180525, token usage: 0.41, gen throughput (token/s): 18388.08, #queue-req: 0
+[2024-10-28 09:17:26 TP0] Decode batch. #running-req: 500, #token: 200525, token usage: 0.45, gen throughput (token/s): 17734.98, #queue-req: 0
+[2024-10-28 09:17:26] INFO:     127.0.0.1:54868 - &#34;POST /v1/batches/batch_9c319ff5-29c7-40db-9b8d-9225459caab5/cancel HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Cancellation initiated. Status: cancelling</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:29] INFO:     127.0.0.1:54868 - &#34;GET /v1/batches/batch_9c319ff5-29c7-40db-9b8d-9225459caab5 HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Current status: cancelled</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job successfully cancelled</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-10-28 09:17:29] INFO:     127.0.0.1:54868 - &#34;DELETE /v1/files/backend_input_file-33df398d-2394-4995-8dd8-890cb3111446 HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Successfully cleaned up input file</strong></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1000,21 +1229,11 @@ Failed: 0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Created batch job with ID: batch_08ed9e0c-386d-4286-b879-eab3380d686a
-Initial status: validating
-Cancellation initiated. Status: cancelling
-Current status: cancelled
-Batch job successfully cancelled
-Successfully cleaned up input file
+[2024-10-28 09:17:29] INFO:     Shutting down
+[2024-10-28 09:17:30] INFO:     Waiting for application shutdown.
+[2024-10-28 09:17:30] INFO:     Application shutdown complete.
+[2024-10-28 09:17:30] INFO:     Finished server process [510260]
 </pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </section>
 </section>
@@ -1109,7 +1328,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 27, 2024.
+  Last updated on Oct 28, 2024.
   <br/>
 </p>
   </div>
