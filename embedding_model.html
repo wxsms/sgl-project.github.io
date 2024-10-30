@@ -232,7 +232,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -249,7 +249,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/blob/main/embedding_model.ipynb?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/embedding_model.ipynb?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +266,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/edit/main/embedding_model.ipynb" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/embedding_model.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +283,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sglang/issues/new?title=Issue%20on%20page%20%2Fembedding_model.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fembedding_model.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,33 +460,33 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-10-30 10:18:40] server_args=ServerArgs(model_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, chat_template=None, is_embedding=True, host=&#39;0.0.0.0&#39;, port=30010, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=922321184, constrained_json_whitespace_pattern=None, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
-[2024-10-30 10:18:55 TP0] Init torch distributed begin.
-[2024-10-30 10:18:56 TP0] Load weight begin. avail mem=78.59 GB
-[2024-10-30 10:18:56 TP0] lm_eval is not installed, GPTQ may not be usable
-INFO 10-30 10:18:56 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+[2024-10-30 19:30:08] server_args=ServerArgs(model_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, chat_template=None, is_embedding=True, host=&#39;0.0.0.0&#39;, port=30010, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=881328987, constrained_json_whitespace_pattern=None, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
+[2024-10-30 19:30:23 TP0] Init torch distributed begin.
+[2024-10-30 19:30:24 TP0] Load weight begin. avail mem=78.59 GB
+[2024-10-30 19:30:24 TP0] lm_eval is not installed, GPTQ may not be usable
+INFO 10-30 19:30:25 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/7 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  14% Completed | 1/7 [00:01&lt;00:10,  1.68s/it]
-Loading safetensors checkpoint shards:  29% Completed | 2/7 [00:03&lt;00:08,  1.76s/it]
-Loading safetensors checkpoint shards:  43% Completed | 3/7 [00:05&lt;00:07,  1.82s/it]
-Loading safetensors checkpoint shards:  57% Completed | 4/7 [00:07&lt;00:05,  1.85s/it]
-Loading safetensors checkpoint shards:  71% Completed | 5/7 [00:09&lt;00:03,  1.83s/it]
-Loading safetensors checkpoint shards:  86% Completed | 6/7 [00:10&lt;00:01,  1.67s/it]
-Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.41s/it]
-Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.61s/it]
+Loading safetensors checkpoint shards:  14% Completed | 1/7 [00:01&lt;00:10,  1.70s/it]
+Loading safetensors checkpoint shards:  29% Completed | 2/7 [00:03&lt;00:08,  1.79s/it]
+Loading safetensors checkpoint shards:  43% Completed | 3/7 [00:05&lt;00:07,  1.85s/it]
+Loading safetensors checkpoint shards:  57% Completed | 4/7 [00:07&lt;00:05,  1.86s/it]
+Loading safetensors checkpoint shards:  71% Completed | 5/7 [00:09&lt;00:03,  1.86s/it]
+Loading safetensors checkpoint shards:  86% Completed | 6/7 [00:10&lt;00:01,  1.70s/it]
+Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.47s/it]
+Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.66s/it]
 
-[2024-10-30 10:19:08 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.float16, avail mem=64.18 GB
-[2024-10-30 10:19:08 TP0] Memory pool end. avail mem=7.43 GB
-[2024-10-30 10:19:08 TP0] max_total_num_tokens=1025173, max_prefill_tokens=16384, max_running_requests=4005, context_len=131072
-[2024-10-30 10:19:09] INFO:     Started server process [2218395]
-[2024-10-30 10:19:09] INFO:     Waiting for application startup.
-[2024-10-30 10:19:09] INFO:     Application startup complete.
-[2024-10-30 10:19:09] INFO:     Uvicorn running on http://0.0.0.0:30010 (Press CTRL+C to quit)
-[2024-10-30 10:19:09] INFO:     127.0.0.1:49928 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2024-10-30 10:19:10] INFO:     127.0.0.1:49940 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2024-10-30 10:19:10 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-10-30 10:19:11] INFO:     127.0.0.1:49946 - &#34;POST /encode HTTP/1.1&#34; 200 OK
-[2024-10-30 10:19:11] The server is fired up and ready to roll!
+[2024-10-30 19:30:37 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.float16, avail mem=64.18 GB
+[2024-10-30 19:30:37 TP0] Memory pool end. avail mem=7.43 GB
+[2024-10-30 19:30:37 TP0] max_total_num_tokens=1025173, max_prefill_tokens=16384, max_running_requests=4005, context_len=131072
+[2024-10-30 19:30:37] INFO:     Started server process [3490161]
+[2024-10-30 19:30:37] INFO:     Waiting for application startup.
+[2024-10-30 19:30:37] INFO:     Application startup complete.
+[2024-10-30 19:30:37] INFO:     Uvicorn running on http://0.0.0.0:30010 (Press CTRL+C to quit)
+[2024-10-30 19:30:38] INFO:     127.0.0.1:43822 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2024-10-30 19:30:38] INFO:     127.0.0.1:43832 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-10-30 19:30:38 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-30 19:30:39] INFO:     127.0.0.1:43844 - &#34;POST /encode HTTP/1.1&#34; 200 OK
+[2024-10-30 19:30:39] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -524,8 +524,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-10-30 10:19:14 TP0] Prefill batch. #new-seq: 1, #new-token: 4, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-10-30 10:19:14] INFO:     127.0.0.1:49980 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2024-10-30 19:30:43 TP0] Prefill batch. #new-seq: 1, #new-token: 4, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-30 19:30:43] INFO:     127.0.0.1:43848 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -561,8 +561,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-10-30 10:19:14 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, cache hit rate: 21.43%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-10-30 10:19:14] INFO:     127.0.0.1:49986 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2024-10-30 19:30:44 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, cache hit rate: 21.43%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-30 19:30:44] INFO:     127.0.0.1:43854 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -606,8 +606,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:11&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-10-30 10:19:21 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, cache hit rate: 33.33%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-10-30 10:19:21] INFO:     127.0.0.1:43896 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2024-10-30 19:30:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, cache hit rate: 33.33%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-10-30 19:30:51] INFO:     127.0.0.1:46450 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
