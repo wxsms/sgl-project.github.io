@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.4.post2" />
-    <meta name="docbuild:last-update" content="Oct 30, 2024"/>
+    <meta name="docbuild:last-update" content="Oct 31, 2024"/>
   </head>
   
   
@@ -152,7 +152,7 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send_request.html">Quick Start: Launch A Server and Send Requests</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
@@ -417,7 +417,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="backend-sglang-runtime-srt">
+  <section class="tex2jax_ignore mathjax_ignore" id="backend-sglang-runtime-srt">
 <h1>Backend: SGLang Runtime (SRT)<a class="headerlink" href="#backend-sglang-runtime-srt" title="Link to this heading">#</a></h1>
 <p>The SGLang Runtime (SRT) is an efficient serving engine.</p>
 <section id="quick-start">
@@ -506,6 +506,7 @@
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>To enable the experimental overlapped scheduler, add <code class="docutils literal notranslate"><span class="pre">--enable-overlap-scheduler</span></code>. It overlaps CPU scheduler with GPU computation and can accelerate almost all workloads. This does not work for constrained decoding currenly.</p></li>
 <li><p>To enable torch.compile acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. This does not work for FP8 currenly.</p></li>
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports various quantization strategies.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
@@ -555,7 +556,7 @@ You can view the full example <a class="reference external" href="https://github
 <li><p>Llama / Llama 2 / Llama 3 / Llama 3.1</p></li>
 <li><p>Mistral / Mixtral / Mistral NeMo</p></li>
 <li><p>Gemma / Gemma 2</p></li>
-<li><p>Qwen / Qwen 2 / Qwen 2 MoE</p></li>
+<li><p>Qwen / Qwen 2 / Qwen 2 MoE / Qwen 2 VL</p></li>
 <li><p>DeepSeek / DeepSeek 2</p></li>
 <li><p>OLMoE</p></li>
 <li><p><a class="reference external" href="https://llava-vl.github.io/blog/2024-08-05-llava-onevision/">LLaVA-OneVision</a></p>
@@ -584,6 +585,7 @@ You can view the full example <a class="reference external" href="https://github
 <li><p>MiniCPM / MiniCPM 3</p></li>
 <li><p>XVERSE / XVERSE MoE</p></li>
 <li><p>SmolLM</p></li>
+<li><p>GLM-4</p></li>
 </ul>
 <p><strong>Embedding Models</strong></p>
 <ul class="simple">
@@ -605,6 +607,16 @@ You can view the full example <a class="reference external" href="https://github
 </div>
 <p>Launch <a class="reference external" href="https://www.modelscope.cn/models/qwen/qwen2-7b-instruct">Qwen2-7B-Instruct</a> Server</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SGLANG_USE_MODELSCOPE</span><span class="o">=</span><span class="n">true</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">qwen</span><span class="o">/</span><span class="n">Qwen2</span><span class="o">-</span><span class="mi">7</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">port</span> <span class="mi">30000</span>
+</pre></div>
+</div>
+<p>Or start it by docker.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span>~/.cache/modelscope:/root/.cache/modelscope<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;SGLANG_USE_MODELSCOPE=true&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>lmsysorg/sglang:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>Qwen/Qwen2.5-7B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
 </details>
@@ -735,7 +747,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 30, 2024.
+  Last updated on Oct 31, 2024.
   <br/>
 </p>
   </div>
