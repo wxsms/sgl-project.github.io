@@ -162,8 +162,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native Server API</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../backend/openai_embedding_api.html">OpenAI APIs - Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/backend.html">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -404,7 +404,8 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-server">Launch a server</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Send-a-Request">Send a Request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-cURL">Using cURL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-OpenAI-Compatible-API-w/-Requests">Using OpenAI Compatible API w/ Requests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-OpenAI-Python-Client">Using OpenAI Python Client</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-Native-Generation-APIs">Using Native Generation APIs</a></li>
 </ul>
@@ -432,7 +433,7 @@
 --port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
-<p>in your terminal and wait for the server to be ready.</p>
+<p>in your terminal and wait for the server to be ready. Once the server is running, you can send test requests using curl or requests. The server implements the <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat">OpenAI-compatible API</a>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -460,31 +461,31 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:26:41] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, host=&#39;0.0.0.0&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=348039328, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
-[2024-11-02 07:26:57 TP0] Init torch distributed begin.
-[2024-11-02 07:26:57 TP0] Load weight begin. avail mem=78.59 GB
-[2024-11-02 07:26:58 TP0] lm_eval is not installed, GPTQ may not be usable
-INFO 11-02 07:26:58 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+[2024-11-02 14:53:53] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, host=&#39;0.0.0.0&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=432543281, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
+[2024-11-02 14:54:08 TP0] Init torch distributed begin.
+[2024-11-02 14:54:09 TP0] Load weight begin. avail mem=78.59 GB
+[2024-11-02 14:54:10 TP0] lm_eval is not installed, GPTQ may not be usable
+INFO 11-02 14:54:10 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.25it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.54it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.15it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.03it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:01,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.20it/s]
 
-[2024-11-02 07:27:01 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.50 GB
-[2024-11-02 07:27:01 TP0] Memory pool end. avail mem=8.37 GB
-[2024-11-02 07:27:01 TP0] Capture cuda graph begin. This can take up to several minutes.
-[2024-11-02 07:27:08 TP0] max_total_num_tokens=442913, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
-[2024-11-02 07:27:08] INFO:     Started server process [681777]
-[2024-11-02 07:27:08] INFO:     Waiting for application startup.
-[2024-11-02 07:27:08] INFO:     Application startup complete.
-[2024-11-02 07:27:08] INFO:     Uvicorn running on http://0.0.0.0:30000 (Press CTRL+C to quit)
-[2024-11-02 07:27:09] INFO:     127.0.0.1:43268 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2024-11-02 07:27:09] INFO:     127.0.0.1:43282 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2024-11-02 07:27:09 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:27:09] INFO:     127.0.0.1:43294 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2024-11-02 07:27:10] The server is fired up and ready to roll!
+[2024-11-02 14:54:14 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.50 GB
+[2024-11-02 14:54:14 TP0] Memory pool end. avail mem=8.37 GB
+[2024-11-02 14:54:14 TP0] Capture cuda graph begin. This can take up to several minutes.
+[2024-11-02 14:54:21 TP0] max_total_num_tokens=442913, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2024-11-02 14:54:21] INFO:     Started server process [3502394]
+[2024-11-02 14:54:21] INFO:     Waiting for application startup.
+[2024-11-02 14:54:21] INFO:     Application startup complete.
+[2024-11-02 14:54:21] INFO:     Uvicorn running on http://0.0.0.0:30000 (Press CTRL+C to quit)
+[2024-11-02 14:54:21] INFO:     127.0.0.1:58968 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2024-11-02 14:54:22] INFO:     127.0.0.1:58982 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-11-02 14:54:22 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:54:22] INFO:     127.0.0.1:58998 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-11-02 14:54:22] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -494,36 +495,20 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    </strong></div>
 </div>
 </section>
-<section id="Send-a-Request">
-<h2>Send a Request<a class="headerlink" href="#Send-a-Request" title="Link to this heading">#</a></h2>
-<p>Once the server is up, you can send test requests using curl. The server implements the <a class="reference external" href="https://platform.openai.com/docs/api-reference/">OpenAI-compatible API</a>.</p>
+<section id="Using-cURL">
+<h2>Using cURL<a class="headerlink" href="#Using-cURL" title="Link to this heading">#</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span><span class="o">,</span> <span class="nn">json</span>
 
 <span class="n">curl_command</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">curl http://localhost:30000/v1/chat/completions </span><span class="se">\\</span>
-<span class="s2">  -H &quot;Content-Type: application/json&quot; </span><span class="se">\\</span>
-<span class="s2">  -H &quot;Authorization: Bearer None&quot; </span><span class="se">\\</span>
-<span class="s2">  -d &#39;{</span>
-<span class="s2">    &quot;model&quot;: &quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;,</span>
-<span class="s2">    &quot;messages&quot;: [</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;role&quot;: &quot;system&quot;,</span>
-<span class="s2">        &quot;content&quot;: &quot;You are a helpful assistant.&quot;</span>
-<span class="s2">      },</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;role&quot;: &quot;user&quot;,</span>
-<span class="s2">        &quot;content&quot;: &quot;What is an LLM? Tell me in one sentence.&quot;</span>
-<span class="s2">      }</span>
-<span class="s2">    ]</span>
-<span class="s2">  }&#39;</span>
+<span class="s2">curl -s http://localhost:30000/v1/chat/completions </span><span class="se">\</span>
+<span class="s2">  -d &#39;{&quot;model&quot;: &quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;}, {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;What is a LLM?&quot;}]}&#39;</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">curl_command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-
+<span class="n">response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">curl_command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 <span class="n">print_highlight</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -531,43 +516,86 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:27:14 TP0] Prefill batch. #new-seq: 1, #new-token: 52, #cached-token: 1, cache hit rate: 1.67%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:27:14 TP0] Decode batch. #running-req: 1, #token: 86, token usage: 0.00, gen throughput (token/s): 6.42, #queue-req: 0
-[2024-11-02 07:27:14] INFO:     127.0.0.1:43302 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-100   860  100   582  100   278   1538    735 --:--:-- --:--:-- --:--:--  2275
+[2024-11-02 14:54:26 TP0] Prefill batch. #new-seq: 1, #new-token: 46, #cached-token: 1, cache hit rate: 1.85%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:54:27 TP0] Decode batch. #running-req: 1, #token: 80, token usage: 0.00, gen throughput (token/s): 6.88, #queue-req: 0
+[2024-11-02 14:54:27 TP0] Decode batch. #running-req: 1, #token: 120, token usage: 0.00, gen throughput (token/s): 139.53, #queue-req: 0
+[2024-11-02 14:54:27 TP0] Decode batch. #running-req: 1, #token: 160, token usage: 0.00, gen throughput (token/s): 138.49, #queue-req: 0
+[2024-11-02 14:54:27 TP0] Decode batch. #running-req: 1, #token: 200, token usage: 0.00, gen throughput (token/s): 138.35, #queue-req: 0
+[2024-11-02 14:54:28 TP0] Decode batch. #running-req: 1, #token: 240, token usage: 0.00, gen throughput (token/s): 138.25, #queue-req: 0
+[2024-11-02 14:54:28 TP0] Decode batch. #running-req: 1, #token: 280, token usage: 0.00, gen throughput (token/s): 138.06, #queue-req: 0
+[2024-11-02 14:54:28 TP0] Decode batch. #running-req: 1, #token: 320, token usage: 0.00, gen throughput (token/s): 138.12, #queue-req: 0
+[2024-11-02 14:54:29 TP0] Decode batch. #running-req: 1, #token: 360, token usage: 0.00, gen throughput (token/s): 138.17, #queue-req: 0
+[2024-11-02 14:54:29 TP0] Decode batch. #running-req: 1, #token: 400, token usage: 0.00, gen throughput (token/s): 138.26, #queue-req: 0
+[2024-11-02 14:54:29 TP0] Decode batch. #running-req: 1, #token: 440, token usage: 0.00, gen throughput (token/s): 137.23, #queue-req: 0
+[2024-11-02 14:54:29 TP0] Decode batch. #running-req: 1, #token: 480, token usage: 0.00, gen throughput (token/s): 138.10, #queue-req: 0
+[2024-11-02 14:54:30] INFO:     127.0.0.1:59010 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"1555b8e92eac47cfba5ff4668ac96f00","object":"chat.completion","created":1730532434,"model":"meta-llama/Meta-Llama-3.1-8B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"An LLM, or Large Language Model, is a type of artificial intelligence (AI) designed to process and generate human-like language, allowing it to understand and respond to a wide range of questions, topics, and prompts."},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":53,"total_tokens":99,"completion_tokens":46,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{'id': '96e42372fdb0402a8274fb573c2723cf', 'object': 'chat.completion', 'created': 1730559270, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "LLM stands for Large Language Model. It's a type of artificial intelligence (AI) designed to process and understand human language. These models are trained on vast amounts of text data, allowing them to learn patterns, relationships, and meanings within language.\n\nLarge Language Models like myself use this training to generate human-like text, answer questions, summarize content, and even create new content such as stories, poems, or dialogues. They can understand and respond to natural language inputs, making them useful for a wide range of applications, including:\n\n1. Virtual assistants: Like myself, LLMs can help with tasks, provide information, and engage in conversations.\n2. Content generation: LLMs can create text, articles, and even entire books, using their understanding of language and context.\n3. Language translation: LLMs can translate text from one language to another, often with high accuracy.\n4. Text summarization: LLMs can summarize long pieces of text into concise, easy-to-read versions.\n5. Sentiment analysis: LLMs can analyze text to determine the sentiment or emotional tone behind it.\n\nSome popular types of LLMs include:\n\n1. Transformers: These models use self-attention mechanisms to process input sequences.\n2. Generative Pre-trained Transformers (GPT): These models are designed to generate human-like text based on the input they receive.\n3. BERT (Bidirectional Encoder Representations from Transformers): These models use bidirectional contextualized representations to understand the meaning of text.\n\nThe key characteristics of LLMs include:\n\n1. **Training data:** LLMs are trained on massive amounts of text data, which allows them to learn patterns and relationships within language.\n2. **Contextual understanding:** LLMs can understand the context of a conversation or text, allowing them to respond appropriately.\n3. **Continuous learning:** LLMs can be fine-tuned on specific tasks or domains, enabling them to improve their performance and adapt to new situations.\n\nOverall, LLMs have the potential to revolutionize the way we interact with language and technology, and are being used in a wide range of applications, from customer service to content creation."}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}], 'usage': {'prompt_tokens': 47, 'total_tokens': 487, 'completion_tokens': 440, 'prompt_tokens_details': None}}</strong></div>
+</div>
+</section>
+<section id="Using-OpenAI-Compatible-API-w/-Requests">
+<h2>Using OpenAI Compatible API w/ Requests<a class="headerlink" href="#Using-OpenAI-Compatible-API-w/-Requests" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30000/v1/chat/completions&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What is a LLM?&quot;</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-11-02 14:54:30 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 46, cache hit rate: 46.53%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:54:30 TP0] Decode batch. #running-req: 1, #token: 81, token usage: 0.00, gen throughput (token/s): 127.86, #queue-req: 0
+[2024-11-02 14:54:30 TP0] Decode batch. #running-req: 1, #token: 121, token usage: 0.00, gen throughput (token/s): 139.53, #queue-req: 0
+[2024-11-02 14:54:30 TP0] Decode batch. #running-req: 1, #token: 161, token usage: 0.00, gen throughput (token/s): 138.66, #queue-req: 0
+[2024-11-02 14:54:31 TP0] Decode batch. #running-req: 1, #token: 201, token usage: 0.00, gen throughput (token/s): 137.02, #queue-req: 0
+[2024-11-02 14:54:31 TP0] Decode batch. #running-req: 1, #token: 241, token usage: 0.00, gen throughput (token/s): 138.30, #queue-req: 0
+[2024-11-02 14:54:31 TP0] Decode batch. #running-req: 1, #token: 281, token usage: 0.00, gen throughput (token/s): 138.24, #queue-req: 0
+[2024-11-02 14:54:32 TP0] Decode batch. #running-req: 1, #token: 321, token usage: 0.00, gen throughput (token/s): 138.10, #queue-req: 0
+[2024-11-02 14:54:32 TP0] Decode batch. #running-req: 1, #token: 361, token usage: 0.00, gen throughput (token/s): 137.84, #queue-req: 0
+[2024-11-02 14:54:32 TP0] Decode batch. #running-req: 1, #token: 401, token usage: 0.00, gen throughput (token/s): 137.86, #queue-req: 0
+[2024-11-02 14:54:32 TP0] Decode batch. #running-req: 1, #token: 441, token usage: 0.00, gen throughput (token/s): 137.41, #queue-req: 0
+[2024-11-02 14:54:33 TP0] Decode batch. #running-req: 1, #token: 481, token usage: 0.00, gen throughput (token/s): 138.25, #queue-req: 0
+[2024-11-02 14:54:33 TP0] Decode batch. #running-req: 1, #token: 521, token usage: 0.00, gen throughput (token/s): 138.19, #queue-req: 0
+[2024-11-02 14:54:33] INFO:     127.0.0.1:60620 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>{'id': '15d1ddb5cfb4463c9af742ec43c7c840', 'object': 'chat.completion', 'created': 1730559273, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "LLM stands for Large Language Model. It's a type of artificial intelligence (AI) designed to process and generate human-like language. LLMs are trained on vast amounts of text data, which enables them to understand the structure, context, and nuances of language.\n\nLarge language models are typically based on a type of neural network called a transformer, which allows them to efficiently process and analyze sequential data such as text. They work by breaking down input text into smaller units, such as words or subwords, and then generating output text based on these units.\n\nThere are several key characteristics of LLMs:\n\n1. **Language understanding**: LLMs can comprehend and analyze language, including syntax, semantics, and pragmatics.\n2. **Text generation**: LLMs can generate text based on input prompts, often in a coherent and grammatically correct manner.\n3. **Language translation**: LLMs can translate text from one language to another.\n4. **Conversational dialogue**: LLMs can engage in conversation, responding to user input and adapting to context.\n\nLLMs have many applications, including:\n\n1. **Virtual assistants**: LLMs power virtual assistants like Siri, Google Assistant, and Alexa.\n2. **Language translation tools**: LLMs are used in translation software like Google Translate.\n3. **Chatbots**: LLMs are used to create conversational chatbots for customer service and other applications.\n4. **Content generation**: LLMs can generate text, such as articles, social media posts, and product descriptions.\n\nSome popular examples of LLMs include:\n\n1. **BERT (Bidirectional Encoder Representations from Transformers)**: Developed by Google, BERT is a widely used LLM that has achieved state-of-the-art results in many natural language processing tasks.\n2. **RoBERTa (Robustly Optimized BERT Pretraining Approach)**: Developed by Facebook AI, RoBERTa is a variant of BERT that has improved upon its performance in many areas.\n3. **T5 (Text-to-Text Transfer Transformer)**: Developed by Google, T5 is a general-purpose LLM that can perform a wide range of tasks, from language translation to text summarization.\n\nOverall, LLMs have the potential to revolutionize the way we interact with language and have many exciting applications in various fields."}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}], 'usage': {'prompt_tokens': 47, 'total_tokens': 524, 'completion_tokens': 477, 'prompt_tokens_details': None}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
 <h2>Using OpenAI Python Client<a class="headerlink" href="#Using-OpenAI-Python-Client" title="Link to this heading">#</a></h2>
-<p>You can use the OpenAI Python API library to send requests.</p>
+<p>You can also use the OpenAI Python API library to send requests.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openai</span>
@@ -583,7 +611,6 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
     <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 <span class="p">)</span>
-
 <span class="n">print_highlight</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -593,23 +620,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:27:15 TP0] Prefill batch. #new-seq: 1, #new-token: 20, #cached-token: 29, cache hit rate: 27.52%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:27:15 TP0] Decode batch. #running-req: 1, #token: 77, token usage: 0.00, gen throughput (token/s): 56.99, #queue-req: 0
-[2024-11-02 07:27:15] INFO:     127.0.0.1:43308 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-11-02 14:54:33 TP0] Prefill batch. #new-seq: 1, #new-token: 20, #cached-token: 29, cache hit rate: 50.67%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:54:34 TP0] Decode batch. #running-req: 1, #token: 87, token usage: 0.00, gen throughput (token/s): 56.62, #queue-req: 0
+[2024-11-02 14:54:34] INFO:     127.0.0.1:60624 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='06c7c89545b3487f82d0208436a83eb3', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **Country:** Japan\n**Capital:** Tokyo\n\n2. **Country:** Australia\n**Capital:** Canberra\n\n3. **Country:** Brazil\n**Capital:** Brasília', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1730532435, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=49, total_tokens=95, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='130de0238e0f4d10a80473e1c3b126a8', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **Country:** Japan\n**Capital:** Tokyo\n\n2. **Country:** Australia\n**Capital:** Canberra\n\n3. **Country:** Brazil\n**Capital:** Brasília', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1730559274, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=49, total_tokens=95, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="Using-Native-Generation-APIs">
 <h2>Using Native Generation APIs<a class="headerlink" href="#Using-Native-Generation-APIs" title="Link to this heading">#</a></h2>
-<p>You can also use the native <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint. It provides more flexiblity. An API reference is available at <a class="reference external" href="https://sgl-project.github.io/references/sampling_params.html">Sampling Parameters</a>.</p>
+<p>You can also use the native <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint with requests, which provides more flexiblity. An API reference is available at <a class="reference external" href="https://sgl-project.github.io/references/sampling_params.html">Sampling Parameters</a>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -634,19 +661,18 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:27:15 TP0] Prefill batch. #new-seq: 1, #new-token: 3, #cached-token: 3, cache hit rate: 28.70%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:27:15 TP0] Decode batch. #running-req: 1, #token: 29, token usage: 0.00, gen throughput (token/s): 132.14, #queue-req: 0
-[2024-11-02 07:27:15] INFO:     127.0.0.1:43310 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-11-02 14:54:34 TP0] Prefill batch. #new-seq: 1, #new-token: 3, #cached-token: 3, cache hit rate: 50.64%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:54:34] INFO:     127.0.0.1:60628 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' a city of romance, art, fashion, and history. Paris is a must-visit destination for anyone who loves culture, architecture, and cuisine. From the', 'meta_info': {'prompt_tokens': 6, 'completion_tokens': 32, 'completion_tokens_wo_jump_forward': 32, 'cached_tokens': 3, 'finish_reason': {'type': 'length', 'length': 32}, 'id': 'fcaafbac6d294f8b9d51b457040879dd'}, 'index': 0}</strong></div>
+<strong style='color: #00008B;'>{'text': ' a city of romance, art, fashion, and history. Paris is a must-visit destination for anyone who loves culture, architecture, and cuisine. From the', 'meta_info': {'prompt_tokens': 6, 'completion_tokens': 32, 'completion_tokens_wo_jump_forward': 32, 'cached_tokens': 3, 'finish_reason': {'type': 'length', 'length': 32}, 'id': '2b66af60e52c4c99baeddc9872f5b90c'}, 'index': 0}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
@@ -703,7 +729,8 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-server">Launch a server</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Send-a-Request">Send a Request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-cURL">Using cURL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-OpenAI-Compatible-API-w/-Requests">Using OpenAI Compatible API w/ Requests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-OpenAI-Python-Client">Using OpenAI Python Client</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-Native-Generation-APIs">Using Native Generation APIs</a></li>
 </ul>

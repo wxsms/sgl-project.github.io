@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Native Server API &#8212; SGLang</title>
+    <title>Native API &#8212; SGLang</title>
   
   
   
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Backend: SGLang Runtime (SRT)" href="backend.html" />
-    <link rel="prev" title="OpenAI APIs - Vision" href="openai_api_vision.html" />
+    <link rel="prev" title="OpenAI APIs - Embedding" href="openai_embedding_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.4.post2" />
@@ -162,8 +162,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Native Server API</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="openai_embedding_api.html">OpenAI APIs - Embedding</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Native API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -393,7 +393,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Native Server API</h1>
+    <h1>Native API</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,21 +403,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Native Server API</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-A-Server">Launch A Server</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Generate">Generate</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Server-Args">Get Server Args</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Server-Args">Get Server Args</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Model-Info">Get Model Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Health-and-Health-Generate">Health and Health Generate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Flush-Cache">Flush Cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Memory-Pool-Size">Get Memory Pool Size</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Update-Weights">Update Weights</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -432,8 +426,8 @@
     .output_area.stderr, .output_area.stdout {
         color: #d3d3d3 !important; /* light gray */
     }
-</style><section id="Native-Server-API">
-<h1>Native Server API<a class="headerlink" href="#Native-Server-API" title="Link to this heading">#</a></h1>
+</style><section id="Native-API">
+<h1>Native API<a class="headerlink" href="#Native-API" title="Link to this heading">#</a></h1>
 <p>Apart from the OpenAI compatible API, the SGLang Runtime also provides its native server API. We introduce these following API:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/generate</span></code></p></li>
@@ -475,29 +469,29 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:18] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, chat_template=None, is_embedding=False, host=&#39;127.0.0.1&#39;, port=30010, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=279847350, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
-[2024-11-02 07:23:33 TP0] Init torch distributed begin.
-[2024-11-02 07:23:34 TP0] Load weight begin. avail mem=78.59 GB
-[2024-11-02 07:23:34 TP0] lm_eval is not installed, GPTQ may not be usable
-INFO 11-02 07:23:34 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
-INFO 11-02 07:23:35 weight_utils.py:288] No model.safetensors.index.json found in remote.
+[2024-11-02 14:52:07] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, chat_template=None, is_embedding=False, host=&#39;127.0.0.1&#39;, port=30010, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=361894558, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
+[2024-11-02 14:52:22 TP0] Init torch distributed begin.
+[2024-11-02 14:52:22 TP0] Load weight begin. avail mem=78.59 GB
+[2024-11-02 14:52:23 TP0] lm_eval is not installed, GPTQ may not be usable
+INFO 11-02 14:52:23 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-02 14:52:23 weight_utils.py:288] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.26it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.81it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.81it/s]
 
-[2024-11-02 07:23:35 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=75.68 GB
-[2024-11-02 07:23:35 TP0] Memory pool end. avail mem=7.42 GB
-[2024-11-02 07:23:35 TP0] Capture cuda graph begin. This can take up to several minutes.
-[2024-11-02 07:23:42 TP0] max_total_num_tokens=2170757, max_prefill_tokens=16384, max_running_requests=4097, context_len=131072
-[2024-11-02 07:23:42] INFO:     Started server process [678677]
-[2024-11-02 07:23:42] INFO:     Waiting for application startup.
-[2024-11-02 07:23:42] INFO:     Application startup complete.
-[2024-11-02 07:23:42] INFO:     Uvicorn running on http://127.0.0.1:30010 (Press CTRL+C to quit)
-[2024-11-02 07:23:43] INFO:     127.0.0.1:48660 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2024-11-02 07:23:43] INFO:     127.0.0.1:48670 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2024-11-02 07:23:43 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:23:43] INFO:     127.0.0.1:48686 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2024-11-02 07:23:43] The server is fired up and ready to roll!
+[2024-11-02 14:52:24 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=75.68 GB
+[2024-11-02 14:52:24 TP0] Memory pool end. avail mem=7.42 GB
+[2024-11-02 14:52:24 TP0] Capture cuda graph begin. This can take up to several minutes.
+[2024-11-02 14:52:31 TP0] max_total_num_tokens=2170757, max_prefill_tokens=16384, max_running_requests=4097, context_len=131072
+[2024-11-02 14:52:31] INFO:     Started server process [3500563]
+[2024-11-02 14:52:31] INFO:     Waiting for application startup.
+[2024-11-02 14:52:31] INFO:     Application startup complete.
+[2024-11-02 14:52:31] INFO:     Uvicorn running on http://127.0.0.1:30010 (Press CTRL+C to quit)
+[2024-11-02 14:52:32] INFO:     127.0.0.1:45550 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:32] INFO:     127.0.0.1:45566 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:32 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:52:32] INFO:     127.0.0.1:45580 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:32] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -529,21 +523,19 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48 TP0] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 1, cache hit rate: 6.25%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:23:48 TP0] Decode batch. #running-req: 1, #token: 42, token usage: 0.00, gen throughput (token/s): 6.93, #queue-req: 0
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48700 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37 TP0] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 1, cache hit rate: 6.25%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45622 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"text":" United States, China, Australia\n\n1. U.S.\n2. P.R.C.\n3. Nauru\n\nExplanation: These are all capitals:\n1. Washington D.C.\n2. Peking\n3. Koror \n\nNote changes you can see including Washington D.C. being known as Peking.","meta_info":{"prompt_tokens":9,"completion_tokens":64,"completion_tokens_wo_jump_forward":64,"cached_tokens":1,"finish_reason":{"type":"stop","matched":128009},"id":"eb6070894ec842c792cadee4eecd40f3"},"index":0}</strong></div>
+<strong style='color: #00008B;'>{"text":" \n\nThese two countries are Spanish and the third is France.\n1) Madrid, Spain\n2) Paris, France\n3) Berlin, Germany","meta_info":{"prompt_tokens":9,"completion_tokens":30,"completion_tokens_wo_jump_forward":30,"cached_tokens":1,"finish_reason":{"type":"stop","matched":128009},"id":"3971191f56ad46ca8b78f43f6c09b965"},"index":0}</strong></div>
 </div>
 </section>
-</section>
 <section id="Get-Server-Args">
-<h1>Get Server Args<a class="headerlink" href="#Get-Server-Args" title="Link to this heading">#</a></h1>
+<h2>Get Server Args<a class="headerlink" href="#Get-Server-Args" title="Link to this heading">#</a></h2>
 <p>Used to get the serving args when the server is launched.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -561,15 +553,16 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48710 - &#34;GET /get_server_args HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45626 - &#34;GET /get_server_args HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'model_path': 'meta-llama/Llama-3.2-1B-Instruct', 'tokenizer_path': 'meta-llama/Llama-3.2-1B-Instruct', 'tokenizer_mode': 'auto', 'skip_tokenizer_init': False, 'load_format': 'auto', 'trust_remote_code': False, 'dtype': 'auto', 'kv_cache_dtype': 'auto', 'quantization': None, 'context_length': None, 'device': 'cuda', 'served_model_name': 'meta-llama/Llama-3.2-1B-Instruct', 'chat_template': None, 'is_embedding': False, 'host': '127.0.0.1', 'port': 30010, 'mem_fraction_static': 0.88, 'max_running_requests': None, 'max_total_tokens': None, 'chunked_prefill_size': 8192, 'max_prefill_tokens': 16384, 'schedule_policy': 'lpm', 'schedule_conservativeness': 1.0, 'tp_size': 1, 'stream_interval': 1, 'random_seed': 279847350, 'constrained_json_whitespace_pattern': None, 'decode_log_interval': 40, 'log_level': 'info', 'log_level_http': None, 'log_requests': False, 'show_time_cost': False, 'api_key': None, 'file_storage_pth': 'SGLang_storage', 'enable_cache_report': False, 'watchdog_timeout': 600, 'dp_size': 1, 'load_balance_method': 'round_robin', 'dist_init_addr': None, 'nnodes': 1, 'node_rank': 0, 'json_model_override_args': '{}', 'enable_double_sparsity': False, 'ds_channel_config_path': None, 'ds_heavy_channel_num': 32, 'ds_heavy_token_num': 256, 'ds_heavy_channel_type': 'qk', 'ds_sparse_decode_threshold': 4096, 'lora_paths': None, 'max_loras_per_batch': 8, 'attention_backend': 'flashinfer', 'sampling_backend': 'flashinfer', 'grammar_backend': 'outlines', 'disable_flashinfer': False, 'disable_flashinfer_sampling': False, 'disable_radix_cache': False, 'disable_regex_jump_forward': False, 'disable_cuda_graph': False, 'disable_cuda_graph_padding': False, 'disable_disk_cache': False, 'disable_custom_all_reduce': False, 'disable_mla': False, 'disable_penalizer': False, 'disable_nan_detection': False, 'enable_overlap_schedule': False, 'enable_mixed_chunk': False, 'enable_torch_compile': False, 'torch_compile_max_bs': 32, 'cuda_graph_max_bs': 160, 'torchao_config': '', 'enable_p2p_check': False, 'triton_attention_reduce_in_fp32': False, 'num_continuous_decode_steps': 1}</strong></div>
+<strong style='color: #00008B;'>{'model_path': 'meta-llama/Llama-3.2-1B-Instruct', 'tokenizer_path': 'meta-llama/Llama-3.2-1B-Instruct', 'tokenizer_mode': 'auto', 'skip_tokenizer_init': False, 'load_format': 'auto', 'trust_remote_code': False, 'dtype': 'auto', 'kv_cache_dtype': 'auto', 'quantization': None, 'context_length': None, 'device': 'cuda', 'served_model_name': 'meta-llama/Llama-3.2-1B-Instruct', 'chat_template': None, 'is_embedding': False, 'host': '127.0.0.1', 'port': 30010, 'mem_fraction_static': 0.88, 'max_running_requests': None, 'max_total_tokens': None, 'chunked_prefill_size': 8192, 'max_prefill_tokens': 16384, 'schedule_policy': 'lpm', 'schedule_conservativeness': 1.0, 'tp_size': 1, 'stream_interval': 1, 'random_seed': 361894558, 'constrained_json_whitespace_pattern': None, 'decode_log_interval': 40, 'log_level': 'info', 'log_level_http': None, 'log_requests': False, 'show_time_cost': False, 'api_key': None, 'file_storage_pth': 'SGLang_storage', 'enable_cache_report': False, 'watchdog_timeout': 600, 'dp_size': 1, 'load_balance_method': 'round_robin', 'dist_init_addr': None, 'nnodes': 1, 'node_rank': 0, 'json_model_override_args': '{}', 'enable_double_sparsity': False, 'ds_channel_config_path': None, 'ds_heavy_channel_num': 32, 'ds_heavy_token_num': 256, 'ds_heavy_channel_type': 'qk', 'ds_sparse_decode_threshold': 4096, 'lora_paths': None, 'max_loras_per_batch': 8, 'attention_backend': 'flashinfer', 'sampling_backend': 'flashinfer', 'grammar_backend': 'outlines', 'disable_flashinfer': False, 'disable_flashinfer_sampling': False, 'disable_radix_cache': False, 'disable_regex_jump_forward': False, 'disable_cuda_graph': False, 'disable_cuda_graph_padding': False, 'disable_disk_cache': False, 'disable_custom_all_reduce': False, 'disable_mla': False, 'disable_penalizer': False, 'disable_nan_detection': False, 'enable_overlap_schedule': False, 'enable_mixed_chunk': False, 'enable_torch_compile': False, 'torch_compile_max_bs': 32, 'cuda_graph_max_bs': 160, 'torchao_config': '', 'enable_p2p_check': False, 'triton_attention_reduce_in_fp32': False, 'num_continuous_decode_steps': 1}</strong></div>
 </div>
+</section>
 <section id="Get-Model-Info">
 <h2>Get Model Info<a class="headerlink" href="#Get-Model-Info" title="Link to this heading">#</a></h2>
 <p>Used to get the model info.</p>
@@ -597,7 +590,7 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48724 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45628 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -629,8 +622,8 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 1, cache hit rate: 11.11%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48728 - &#34;GET /health_generate HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 1, cache hit rate: 11.11%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45634 - &#34;GET /health_generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -655,7 +648,7 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48738 - &#34;GET /health HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45648 - &#34;GET /health HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -686,8 +679,8 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48744 - &#34;POST /flush_cache HTTP/1.1&#34; 200 OK
-[2024-11-02 07:23:48 TP0] Cache flushed successfully!
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45650 - &#34;POST /flush_cache HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37 TP0] Cache flushed successfully!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -718,7 +711,7 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48] INFO:     127.0.0.1:48760 - &#34;GET /get_memory_pool_size HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:37] INFO:     127.0.0.1:45654 - &#34;GET /get_memory_pool_size HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -753,16 +746,16 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:48 TP0] Update weights begin. avail mem=4.97 GB
-INFO 11-02 07:23:48 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
-INFO 11-02 07:23:48 weight_utils.py:288] No model.safetensors.index.json found in remote.
+[2024-11-02 14:52:37 TP0] Update weights begin. avail mem=4.97 GB
+INFO 11-02 14:52:37 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-02 14:52:37 weight_utils.py:288] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.88it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.88it/s]
 
-[2024-11-02 07:23:49 TP0] Update weights end.
-[2024-11-02 07:23:49 TP0] Cache flushed successfully!
-[2024-11-02 07:23:49] INFO:     127.0.0.1:48766 - &#34;POST /update_weights HTTP/1.1&#34; 200 OK
+[2024-11-02 14:52:38 TP0] Update weights end.
+[2024-11-02 14:52:38 TP0] Cache flushed successfully!
+[2024-11-02 14:52:38] INFO:     127.0.0.1:45664 - &#34;POST /update_weights HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -797,22 +790,22 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 07:23:49 TP0] Update weights begin. avail mem=4.97 GB
-INFO 11-02 07:23:49 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+[2024-11-02 14:52:38 TP0] Update weights begin. avail mem=4.97 GB
+INFO 11-02 14:52:38 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-INFO 11-02 07:23:49 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
-INFO 11-02 07:23:49 weight_utils.py:288] No model.safetensors.index.json found in remote.
+INFO 11-02 14:52:39 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-02 14:52:39 weight_utils.py:288] No model.safetensors.index.json found in remote.
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
 
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.42it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.96it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.96it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
 
-[2024-11-02 07:23:50 TP0] Failed to update weights: The size of tensor a (2048) must match the size of tensor b (3072) at non-singleton dimension 1.
+[2024-11-02 14:52:39 TP0] Failed to update weights: The size of tensor a (2048) must match the size of tensor b (3072) at non-singleton dimension 1.
 Rolling back to original weights.
-[2024-11-02 07:23:50] INFO:     127.0.0.1:35864 - &#34;POST /update_weights HTTP/1.1&#34; 400 Bad Request
+[2024-11-02 14:52:39] INFO:     127.0.0.1:58348 - &#34;POST /update_weights HTTP/1.1&#34; 400 Bad Request
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -844,12 +837,12 @@ Rolling back to original weights.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="openai_api_vision.html"
+       href="openai_embedding_api.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OpenAI APIs - Vision</p>
+        <p class="prev-next-title">OpenAI APIs - Embedding</p>
       </div>
     </a>
     <a class="right-next"
@@ -878,21 +871,15 @@ Rolling back to original weights.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Native Server API</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-A-Server">Launch A Server</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Generate">Generate</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Server-Args">Get Server Args</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Server-Args">Get Server Args</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Model-Info">Get Model Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Health-and-Health-Generate">Health and Health Generate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Flush-Cache">Flush Cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-Memory-Pool-Size">Get Memory Pool Size</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Update-Weights">Update Weights</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
