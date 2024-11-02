@@ -159,8 +159,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_embedding_api.html">OpenAI APIs - Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/backend.html">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -519,7 +519,7 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
 <h2>Common Notes<a class="headerlink" href="#common-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/flashinfer-ai/flashinfer">FlashInfer</a> is the default attention kernel backend. It only supports sm75 and above. If you encounter any FlashInfer-related issues on sm75+ devices (e.g., T4, A10, A100, L4, L40S, H100), please switch to other kernels by adding <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">triton</span> <span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code> and open an issue on GitHub.</p></li>
-<li><p>If you only need to use the OpenAI backend, you can avoid installing other dependencies by using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;sglang[openai]&quot;</span></code>.</p></li>
+<li><p>If you only need to use OpenAI models with the frontend language, you can avoid installing other dependencies by using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;sglang[openai]&quot;</span></code>.</p></li>
 <li><p>The language frontend operates independently of the backend runtime. You can install the frontend locally without needing a GPU, while the backend can be set up on a GPU-enabled machine. To install the frontend, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sglang</span></code>, and for the backend, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sglang[srt]</span></code>. This allows you to build SGLang programs locally and execute them by connecting to the remote backend.</p></li>
 </ul>
 </section>
