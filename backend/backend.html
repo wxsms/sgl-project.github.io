@@ -53,11 +53,11 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Frontend: Structured Generation Language (SGLang)" href="../frontend/frontend.html" />
-    <link rel="prev" title="Vision Language Model" href="vision_language_model.html" />
+    <link rel="prev" title="OpenAI-Compatible APIs - Vision" href="openai_api_vision.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.4.post2" />
-    <meta name="docbuild:last-update" content="Nov 01, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 02, 2024"/>
   </head>
   
   
@@ -157,8 +157,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="openai_api.html">OpenAI Compatible API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vision_language_model.html">Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI-Compatible APIs - Completions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_vision.html">OpenAI-Compatible APIs - Vision</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -174,6 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/choices_methods.html">Choices Methods in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
 </ul>
 
@@ -511,7 +512,7 @@
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports various quantization strategies.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
-<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference external" href="https://sgl-project.github.io/custom_chat_template.html">custom chat template</a>.</p></li>
+<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference external" href="https://sgl-project.github.io/references/custom_chat_template.html">custom chat template</a>.</p></li>
 <li><p>To run tensor parallelism on multiple nodes, add <code class="docutils literal notranslate"><span class="pre">--nnodes</span> <span class="pre">2</span></code>. If you have two nodes with two GPUs on each node and want to run TP=4, let <code class="docutils literal notranslate"><span class="pre">sgl-dev-0</span></code> be the hostname of the first node and <code class="docutils literal notranslate"><span class="pre">50000</span></code> be an available port, you can use the following commands. If you meet deadlock, please try to add <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node 0</span>
@@ -670,12 +671,12 @@ A real server truncates the prefill into several batches, while this unit test d
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vision_language_model.html"
+       href="openai_api_vision.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vision Language Model</p>
+        <p class="prev-next-title">OpenAI-Compatible APIs - Vision</p>
       </div>
     </a>
     <a class="right-next"
@@ -747,7 +748,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 01, 2024.
+  Last updated on Nov 02, 2024.
   <br/>
 </p>
   </div>
