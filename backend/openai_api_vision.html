@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OpenAI-Compatible APIs - Vision &#8212; SGLang</title>
+    <title>OpenAI APIs - Vision &#8212; SGLang</title>
   
   
   
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Backend: SGLang Runtime (SRT)" href="backend.html" />
-    <link rel="prev" title="OpenAI-Compatible APIs - Completions" href="openai_api_completions.html" />
+    <link rel="prev" title="OpenAI APIs - Completions" href="openai_api_completions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.4.post2" />
@@ -160,8 +160,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI-Compatible APIs - Completions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">OpenAI-Compatible APIs - Vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">OpenAI APIs - Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -391,7 +391,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>OpenAI-Compatible APIs - Vision</h1>
+    <h1>OpenAI APIs - Vision</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -421,8 +421,8 @@
     .output_area.stderr, .output_area.stdout {
         color: #d3d3d3 !important; /* light gray */
     }
-</style><section id="OpenAI-Compatible-APIs---Vision">
-<h1>OpenAI-Compatible APIs - Vision<a class="headerlink" href="#OpenAI-Compatible-APIs---Vision" title="Link to this heading">#</a></h1>
+</style><section id="OpenAI-APIs---Vision">
+<h1>OpenAI APIs - Vision<a class="headerlink" href="#OpenAI-APIs---Vision" title="Link to this heading">#</a></h1>
 <p>SGLang provides OpenAI-compatible APIs to enable a smooth transition from OpenAI services to self-hosted local models. A complete reference for the API is available in the <a class="reference external" href="https://platform.openai.com/docs/guides/vision">OpenAI API Reference</a>. This tutorial covers the vision APIs for vision language models.</p>
 <div class="line-block">
 <div class="line">SGLang supports vision language models such as Llama 3.2, LLaVA-OneVision, and QWen-VL2</div>
@@ -440,7 +440,7 @@
 <p>in your terminal and wait for the server to be ready.</p>
 <p>Remember to add <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">llama_3_vision</span></code> to specify the vision chat template, otherwise the server only supports text. We need to specify <code class="docutils literal notranslate"><span class="pre">--chat-template</span></code> for vision language models because the chat template provided in Hugging Face tokenizer only supports text.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sglang.utils</span> <span class="kn">import</span> <span class="p">(</span>
@@ -466,38 +466,34 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-2024-11-02 00:24:10.542705: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-11-02 00:24:10.554725: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-11-02 00:24:10.554758: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-11-02 00:24:11.063662: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
-[2024-11-02 00:24:19] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, chat_template=&#39;llama_3_vision&#39;, is_embedding=False, host=&#39;127.0.0.1&#39;, port=30010, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=553831757, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
-[2024-11-02 00:24:20] Use chat template for the OpenAI-compatible API server: llama_3_vision
-[2024-11-02 00:24:29 TP0] Automatically turn off --chunked-prefill-size and adjust --mem-fraction-static for multimodal models.
-[2024-11-02 00:24:29 TP0] Init torch distributed begin.
-[2024-11-02 00:24:32 TP0] Load weight begin. avail mem=76.83 GB
-[2024-11-02 00:24:32 TP0] lm_eval is not installed, GPTQ may not be usable
-INFO 11-02 00:24:32 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+[2024-11-02 03:05:11] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, chat_template=&#39;llama_3_vision&#39;, is_embedding=False, host=&#39;127.0.0.1&#39;, port=30010, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=644712649, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
+[2024-11-02 03:05:17] Use chat template for the OpenAI-compatible API server: llama_3_vision
+[2024-11-02 03:05:27 TP0] Automatically turn off --chunked-prefill-size and adjust --mem-fraction-static for multimodal models.
+[2024-11-02 03:05:27 TP0] Init torch distributed begin.
+[2024-11-02 03:05:28 TP0] Load weight begin. avail mem=78.59 GB
+[2024-11-02 03:05:28 TP0] lm_eval is not installed, GPTQ may not be usable
+INFO 11-02 03:05:28 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.61it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:02&lt;00:04,  1.35s/it]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:04&lt;00:03,  1.58s/it]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:06&lt;00:01,  1.70s/it]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.76s/it]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.62s/it]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.18it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.11it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.11it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.23it/s]
 
-[2024-11-02 00:24:41 TP0] Load weight end. type=MllamaForConditionalGeneration, dtype=torch.bfloat16, avail mem=56.75 GB
-[2024-11-02 00:24:41 TP0] Memory pool end. avail mem=11.53 GB
-[2024-11-02 00:24:42 TP0] Capture cuda graph begin. This can take up to several minutes.
-[2024-11-02 00:24:52 TP0] max_total_num_tokens=289349, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
-[2024-11-02 00:24:52] INFO:     Started server process [108249]
-[2024-11-02 00:24:52] INFO:     Waiting for application startup.
-[2024-11-02 00:24:52] INFO:     Application startup complete.
-[2024-11-02 00:24:52] INFO:     Uvicorn running on http://127.0.0.1:30010 (Press CTRL+C to quit)
-[2024-11-02 00:24:53] INFO:     127.0.0.1:43056 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2024-11-02 00:24:53] INFO:     127.0.0.1:43072 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2024-11-02 00:24:53 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-02 00:24:53] INFO:     127.0.0.1:43086 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2024-11-02 00:24:53] The server is fired up and ready to roll!
+[2024-11-02 03:05:33 TP0] Load weight end. type=MllamaForConditionalGeneration, dtype=torch.bfloat16, avail mem=58.43 GB
+[2024-11-02 03:05:33 TP0] Memory pool end. avail mem=11.80 GB
+[2024-11-02 03:05:33 TP0] Capture cuda graph begin. This can take up to several minutes.
+[2024-11-02 03:05:42 TP0] max_total_num_tokens=298440, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2024-11-02 03:05:42] INFO:     Started server process [3445169]
+[2024-11-02 03:05:42] INFO:     Waiting for application startup.
+[2024-11-02 03:05:42] INFO:     Application startup complete.
+[2024-11-02 03:05:42] INFO:     Uvicorn running on http://127.0.0.1:30010 (Press CTRL+C to quit)
+[2024-11-02 03:05:42] INFO:     127.0.0.1:55916 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2024-11-02 03:05:43] INFO:     127.0.0.1:55932 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-11-02 03:05:43 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 03:05:43] INFO:     127.0.0.1:55946 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-11-02 03:05:43] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -511,7 +507,7 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
 <h2>Using cURL<a class="headerlink" href="#Using-cURL" title="Link to this heading">#</a></h2>
 <p>Once the server is up, you can send test requests using curl.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
@@ -555,7 +551,7 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
 <div class="highlight"><pre>
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   485    0     0  100   485      0   2420 --:--:-- --:--:-- --:--:--  2412
+100   485    0     0  100   485      0    115  0:00:04  0:00:04 --:--:--   115
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -563,8 +559,9 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 00:26:23 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 6462, cache hit rate: 49.97%, token usage: 0.02, #running-req: 0, #queue-req: 0
-[2024-11-02 00:26:24] INFO:     127.0.0.1:39828 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+/actions-runner/_work/_tool/Python/3.9.20/x64/lib/python3.9/site-packages/torch/storage.py:414: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don&#39;t have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(io.BytesIO(b))
+[2024-11-02 03:05:52 TP0] Prefill batch. #new-seq: 1, #new-token: 6463, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -572,21 +569,38 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100   965  100   480  100   485    789    797 --:--:-- --:--:-- --:--:--  1584
+100   485    0     0  100   485      0     93  0:00:05  0:00:05 --:--:--    93
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-11-02 03:05:53 TP0] Decode batch. #running-req: 1, #token: 6496, token usage: 0.02, gen throughput (token/s): 3.59, #queue-req: 0
+[2024-11-02 03:05:53] INFO:     127.0.0.1:55954 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100  1111  100   626  100   485    106     82  0:00:05  0:00:05 --:--:--   169
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"5e9e1c80809f492a926a2634c3d162d0","object":"chat.completion","created":1730507184,"model":"meta-llama/Llama-3.2-11B-Vision-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man ironing clothes on an ironing board that is placed on the back of a yellow taxi cab."},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":6463,"total_tokens":6489,"completion_tokens":26,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{"id":"0cb9938eca62476bb951bfbe89fa79ff","object":"chat.completion","created":1730516753,"model":"meta-llama/Llama-3.2-11B-Vision-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man ironing clothes on the back of a taxi. The man is wearing a yellow jacket and is standing on the back of the taxi, which is parked on a city street. The man is holding an iron and an ironing board, and appears to be ironing a shirt."},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":6463,"total_tokens":6525,"completion_tokens":62,"prompt_tokens_details":null}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
 <h2>Using OpenAI Python Client<a class="headerlink" href="#Using-OpenAI-Python-Client" title="Link to this heading">#</a></h2>
 <p>You can use the OpenAI Python API library to send requests.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
@@ -622,23 +636,23 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 00:26:33 TP0] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 6452, cache hit rate: 66.58%, token usage: 0.02, #running-req: 0, #queue-req: 0
-[2024-11-02 00:26:34 TP0] Decode batch. #running-req: 1, #token: 6477, token usage: 0.02, gen throughput (token/s): 0.77, #queue-req: 0
-[2024-11-02 00:26:34] INFO:     127.0.0.1:43258 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-11-02 03:05:54 TP0] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 6452, cache hit rate: 49.89%, token usage: 0.02, #running-req: 0, #queue-req: 0
+[2024-11-02 03:05:54 TP0] Decode batch. #running-req: 1, #token: 6475, token usage: 0.02, gen throughput (token/s): 34.78, #queue-req: 0
+[2024-11-02 03:05:54] INFO:     127.0.0.1:51820 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man ironing clothes on the back of a yellow taxi cab.</strong></div>
+<strong style='color: #00008B;'>The image shows a man in a yellow jacket, standing on the back of a yellow taxi cab, using an ironing board and iron to iron a shirt.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
 <h2>Multiple-Image Inputs<a class="headerlink" href="#Multiple-Image-Inputs" title="Link to this heading">#</a></h2>
 <p>The server also supports multiple images and interleaved text and images if the model supports it.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
@@ -683,20 +697,20 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-02 00:20:30 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 12894, cache hit rate: 83.27%, token usage: 0.04, #running-req: 0, #queue-req: 0
-[2024-11-02 00:20:30 TP0] Decode batch. #running-req: 1, #token: 12903, token usage: 0.04, gen throughput (token/s): 2.02, #queue-req: 0
-[2024-11-02 00:20:30 TP0] Decode batch. #running-req: 1, #token: 12943, token usage: 0.04, gen throughput (token/s): 105.52, #queue-req: 0
-[2024-11-02 00:20:30] INFO:     127.0.0.1:41386 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-11-02 03:05:55 TP0] Prefill batch. #new-seq: 1, #new-token: 12895, #cached-token: 0, cache hit rate: 24.98%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-11-02 03:05:55 TP0] Decode batch. #running-req: 1, #token: 12915, token usage: 0.04, gen throughput (token/s): 29.20, #queue-req: 0
+[2024-11-02 03:05:56 TP0] Decode batch. #running-req: 1, #token: 12955, token usage: 0.04, gen throughput (token/s): 105.84, #queue-req: 0
+[2024-11-02 03:05:56] INFO:     127.0.0.1:51828 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The first image shows a man in a yellow shirt ironing a shirt on the back of a yellow taxi cab, with a red line connecting the two objects. The second image shows a large orange "S" and "G" on a white background, with a red line connecting them.</strong></div>
+<strong style='color: #00008B;'>The first image shows a man in a yellow shirt ironing a shirt on the back of a yellow taxi cab, with a small icon of a computer code snippet in the bottom left corner. The second image shows a large orange "S" and "G" and "L" on a white background.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">embedding_process</span><span class="p">)</span>
@@ -735,7 +749,7 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:08&lt;00:00,  1.
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OpenAI-Compatible APIs - Completions</p>
+        <p class="prev-next-title">OpenAI APIs - Completions</p>
       </div>
     </a>
     <a class="right-next"
