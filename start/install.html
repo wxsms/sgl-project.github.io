@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Set Up Self-hosted Runners for GitHub Action &#8212; SGLang</title>
+    <title>Install SGLang &#8212; SGLang</title>
   
   
   
@@ -49,7 +49,7 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/setup_github_runner';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start/install';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -243,7 +243,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer/setup_github_runner.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/start/install.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -260,7 +260,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer/setup_github_runner.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/start/install.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +277,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper/setup_github_runner.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fstart/install.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,7 @@
       
       
       
-      <li><a href="../_sources/developer/setup_github_runner.md" target="_blank"
+      <li><a href="../_sources/start/install.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Set Up Self-hosted Runners for GitHub Action</h1>
+    <h1>Install SGLang</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,12 +393,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-runner">Add a Runner</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-start-a-docker-container">Step 1: Start a docker container.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-configure-the-runner-by-config-sh">Step 2: Configure the runner by <code class="docutils literal notranslate"><span class="pre">config.sh</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-run-the-runner-by-run-sh">Step 3: Run the runner by <code class="docutils literal notranslate"><span class="pre">run.sh</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip">Method 1: With pip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-run-on-kubernetes-or-clouds-with-skypilot">Method 5: Run on Kubernetes or Clouds with SkyPilot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
 </ul>
             </nav>
         </div>
@@ -410,55 +410,111 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="set-up-self-hosted-runners-for-github-action">
-<h1>Set Up Self-hosted Runners for GitHub Action<a class="headerlink" href="#set-up-self-hosted-runners-for-github-action" title="Link to this heading">#</a></h1>
-<section id="add-a-runner">
-<h2>Add a Runner<a class="headerlink" href="#add-a-runner" title="Link to this heading">#</a></h2>
-<section id="step-1-start-a-docker-container">
-<h3>Step 1: Start a docker container.<a class="headerlink" href="#step-1-start-a-docker-container" title="Link to this heading">#</a></h3>
-<p>You can mount a folder for the shared huggingface model weights cache. The command below uses <code class="docutils literal notranslate"><span class="pre">/tmp/huggingface</span></code> as an example.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">12.1.1</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="n">ubuntu22</span><span class="mf">.04</span>
-<span class="c1"># Nvidia</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">shm</span><span class="o">-</span><span class="n">size</span> <span class="mi">64</span><span class="n">g</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">huggingface</span><span class="p">:</span><span class="o">/</span><span class="n">hf_home</span> <span class="o">--</span><span class="n">gpus</span> <span class="nb">all</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">12.1.1</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="n">ubuntu22</span><span class="mf">.04</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
-<span class="c1"># AMD</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">kfd</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">dri</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">add</span> <span class="n">video</span> <span class="o">--</span><span class="n">shm</span><span class="o">-</span><span class="n">size</span> <span class="mi">64</span><span class="n">g</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">huggingface</span><span class="p">:</span><span class="o">/</span><span class="n">hf_home</span> <span class="n">henryx</span><span class="o">/</span><span class="n">haisgl</span><span class="p">:</span><span class="n">sgl0</span><span class="mf">.3.1</span><span class="o">.</span><span class="n">post3_vllm0</span><span class="mf">.6.0</span><span class="n">_triton3</span><span class="mf">.0.0</span><span class="n">_rocm6</span><span class="mf">.2.1</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="install-sglang">
+<h1>Install SGLang<a class="headerlink" href="#install-sglang" title="Link to this heading">#</a></h1>
+<p>You can install SGLang using any of the methods below.</p>
+<section id="method-1-with-pip">
+<h2>Method 1: With pip<a class="headerlink" href="#method-1-with-pip" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang[all]&quot;</span>
+
+<span class="c1"># Install FlashInfer accelerated kernels</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">flashinfer</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flashinfer</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu121</span><span class="o">/</span><span class="n">torch2</span><span class="mf">.4</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Note: Please check the <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> to install the proper version according to your PyTorch and CUDA versions.</p>
+</section>
+<section id="method-2-from-source">
+<h2>Method 2: From source<a class="headerlink" href="#method-2-from-source" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">v0</span><span class="mf">.3.4</span><span class="o">.</span><span class="n">post2</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sgl</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">sglang</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">sglang</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all]&quot;</span>
+
+<span class="c1"># Install FlashInfer accelerated kernels</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">flashinfer</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flashinfer</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu121</span><span class="o">/</span><span class="n">torch2</span><span class="mf">.4</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Note: Please check the <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> to install the proper version according to your PyTorch and CUDA versions.</p>
+</section>
+<section id="method-3-using-docker">
+<h2>Method 3: Using docker<a class="headerlink" href="#method-3-using-docker" title="Link to this heading">#</a></h2>
+<p>The docker images are available on Docker Hub as <a class="reference external" href="https://hub.docker.com/r/lmsysorg/sglang/tags">lmsysorg/sglang</a>, built from <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">Dockerfile</a>.
+Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your huggingface hub <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">token</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>lmsysorg/sglang:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
 </section>
-<section id="step-2-configure-the-runner-by-config-sh">
-<h3>Step 2: Configure the runner by <code class="docutils literal notranslate"><span class="pre">config.sh</span></code><a class="headerlink" href="#step-2-configure-the-runner-by-config-sh" title="Link to this heading">#</a></h3>
-<p>Run these commands inside the container.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">curl</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span>
-<span class="n">export</span> <span class="n">RUNNER_ALLOW_RUNASROOT</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
-<p>Then follow https://github.com/sgl-project/sglang/settings/actions/runners/new?arch=x64&amp;os=linux to run <code class="docutils literal notranslate"><span class="pre">config.sh</span></code></p>
-<p><strong>Notes</strong></p>
-<ul class="simple">
-<li><p>Do not need to specify the runner group</p></li>
-<li><p>Give it a name (e.g., <code class="docutils literal notranslate"><span class="pre">test-sgl-gpu-0</span></code>) and some labels (e.g., <code class="docutils literal notranslate"><span class="pre">1-gpu-runner</span></code>). The labels can be editted later in Github Settings.</p></li>
-<li><p>Do not need to change the work folder.</p></li>
-</ul>
+<section id="method-4-using-docker-compose">
+<h2>Method 4: Using docker compose<a class="headerlink" href="#method-4-using-docker-compose" title="Link to this heading">#</a></h2>
+<details>
+<summary>More</summary>
+<blockquote>
+<div><p>This method is recommended if you plan to serve it as a service.
+A better approach is to use the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docker/k8s-sglang-service.yaml">k8s-sglang-service.yaml</a>.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Copy the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docker/compose.yaml">compose.yml</a> to your local machine</p></li>
+<li><p>Execute the command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code> in your terminal.</p></li>
+</ol>
+</details>
 </section>
-<section id="step-3-run-the-runner-by-run-sh">
-<h3>Step 3: Run the runner by <code class="docutils literal notranslate"><span class="pre">run.sh</span></code><a class="headerlink" href="#step-3-run-the-runner-by-run-sh" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Set up environment variables</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">HF_HOME</span><span class="o">=/</span><span class="n">hf_home</span>
-<span class="n">export</span> <span class="n">SGLANG_IS_IN_CI</span><span class="o">=</span><span class="n">true</span>
-<span class="n">export</span> <span class="n">HF_TOKEN</span><span class="o">=</span><span class="n">hf_xxx</span>
-<span class="n">export</span> <span class="n">OPENAI_API_KEY</span><span class="o">=</span><span class="n">sk</span><span class="o">-</span><span class="n">xxx</span>
-<span class="n">export</span> <span class="n">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="mi">0</span>
+<section id="method-5-run-on-kubernetes-or-clouds-with-skypilot">
+<h2>Method 5: Run on Kubernetes or Clouds with SkyPilot<a class="headerlink" href="#method-5-run-on-kubernetes-or-clouds-with-skypilot" title="Link to this heading">#</a></h2>
+<details>
+<summary>More</summary>
+<p>To deploy on Kubernetes or 12+ clouds, you can use <a class="reference external" href="https://github.com/skypilot-org/skypilot">SkyPilot</a>.</p>
+<ol class="arabic simple">
+<li><p>Install SkyPilot and set up Kubernetes cluster or cloud access: see <a class="reference external" href="https://skypilot.readthedocs.io/en/latest/getting-started/installation.html">SkyPilot’s documentation</a>.</p></li>
+<li><p>Deploy on your own infra with a single command and get the HTTP API endpoint:</p></li>
+</ol>
+<details>
+<summary>SkyPilot YAML: <code>sglang.yaml</code></summary>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># sglang.yaml</span>
+<span class="nt">envs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">HF_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:lmsysorg/sglang:latest</span>
+<span class="w">  </span><span class="nt">accelerators</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A100</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000</span>
+
+<span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no">conda deactivate</span>
+<span class="w">  </span><span class="no">python3 -m sglang.launch_server \</span>
+<span class="w">    </span><span class="no">--model-path meta-llama/Llama-3.1-8B-Instruct \</span>
+<span class="w">    </span><span class="no">--host 0.0.0.0 \</span>
+<span class="w">    </span><span class="no">--port 30000</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Run it forever</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span><span class="p">;</span> <span class="n">do</span> <span class="o">./</span><span class="n">run</span><span class="o">.</span><span class="n">sh</span><span class="p">;</span> <span class="n">echo</span> <span class="s2">&quot;Restarting...&quot;</span><span class="p">;</span> <span class="n">sleep</span> <span class="mi">2</span><span class="p">;</span> <span class="n">done</span>
+</details>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deploy on any cloud or Kubernetes cluster. Use --cloud &lt;cloud&gt; to select a specific cloud provider.</span>
+<span class="nv">HF_TOKEN</span><span class="o">=</span>&lt;secret&gt;<span class="w"> </span>sky<span class="w"> </span>launch<span class="w"> </span>-c<span class="w"> </span>sglang<span class="w"> </span>--env<span class="w"> </span>HF_TOKEN<span class="w"> </span>sglang.yaml
+
+<span class="c1"># Get the HTTP API endpoint</span>
+sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="w"> </span><span class="m">30000</span><span class="w"> </span>sglang
 </pre></div>
 </div>
+<ol class="arabic simple" start="3">
+<li><p>To further scale up your deployment with autoscaling and failure recovery, check out the <a class="reference external" href="https://github.com/skypilot-org/skypilot/tree/master/llm/sglang#serving-llama-2-with-sglang-for-more-traffic-using-skyserve">SkyServe + SGLang guide</a>.</p></li>
+</ol>
+</details>
 </section>
+<section id="common-notes">
+<h2>Common Notes<a class="headerlink" href="#common-notes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/flashinfer-ai/flashinfer">FlashInfer</a> is the default attention kernel backend. It only supports sm75 and above. If you encounter any FlashInfer-related issues on sm75+ devices (e.g., T4, A10, A100, L4, L40S, H100), please switch to other kernels by adding <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">triton</span> <span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code> and open an issue on GitHub.</p></li>
+<li><p>If you only need to use the OpenAI backend, you can avoid installing other dependencies by using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;sglang[openai]&quot;</span></code>.</p></li>
+<li><p>The language frontend operates independently of the backend runtime. You can install the frontend locally without needing a GPU, while the backend can be set up on a GPU-enabled machine. To install the frontend, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sglang</span></code>, and for the backend, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sglang[srt]</span></code>. This allows you to build SGLang programs locally and execute them by connecting to the remote backend.</p></li>
+</ul>
 </section>
 </section>
 
@@ -490,12 +546,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-runner">Add a Runner</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-start-a-docker-container">Step 1: Start a docker container.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-configure-the-runner-by-config-sh">Step 2: Configure the runner by <code class="docutils literal notranslate"><span class="pre">config.sh</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-run-the-runner-by-run-sh">Step 3: Run the runner by <code class="docutils literal notranslate"><span class="pre">run.sh</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip">Method 1: With pip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-run-on-kubernetes-or-clouds-with-skypilot">Method 5: Run on Kubernetes or Clouds with SkyPilot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
 </ul>
   </nav></div>
 
