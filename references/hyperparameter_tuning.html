@@ -448,7 +448,7 @@ If you see <code class="docutils literal notranslate"><span class="pre">decode</
 </section>
 <section id="avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">
 <h3>Avoid out-of-memory by Tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code><a class="headerlink" href="#avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests" title="Link to this heading">#</a></h3>
-<p>If you see out of memory (OOM) errors, you can decrease these parameters.<br />
+<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.<br />
 If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.<br />
 If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.<br />
 You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p>

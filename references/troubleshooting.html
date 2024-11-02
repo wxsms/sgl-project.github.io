@@ -400,8 +400,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA out of memory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-an-illegal-memory-access-was-encountered">CUDA error: an illegal memory access was encountered</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-server-hangs">The server hangs</a></li>
 </ul>
             </nav>
         </div>
@@ -416,20 +416,19 @@
   <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h1>
 <p>This page lists some common errors and tips for fixing them.</p>
+<section id="cuda-out-of-memory">
+<h2>CUDA out of memory<a class="headerlink" href="#cuda-out-of-memory" title="Link to this heading">#</a></h2>
+<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.<br />
+If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.<br />
+If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.<br />
+You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p>
+</section>
 <section id="cuda-error-an-illegal-memory-access-was-encountered">
 <h2>CUDA error: an illegal memory access was encountered<a class="headerlink" href="#cuda-error-an-illegal-memory-access-was-encountered" title="Link to this heading">#</a></h2>
 <p>This error may be due to kernel errors or out-of-memory issues.</p>
 <ul class="simple">
-<li><p>If it is a kernel error, it is not easy to fix.</p></li>
-<li><p>If it is out-of-memory, sometimes it will report this error instead of “Out-of-memory.” In this case, try setting a smaller value for <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>. The default value of <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> is around 0.8 - 0.9.</p></li>
-</ul>
-</section>
-<section id="the-server-hangs">
-<h2>The server hangs<a class="headerlink" href="#the-server-hangs" title="Link to this heading">#</a></h2>
-<p>If the server hangs, try disabling some optimizations when launching the server.</p>
-<ul class="simple">
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code>.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code>.</p></li>
+<li><p>If it is a kernel error, it is not easy to fix. Please file an issue on the GitHub.</p></li>
+<li><p>If it is out-of-memory, sometimes it will report this error instead of “Out-of-memory.” Please refer to the above seciton to avoid the OOM.</p></li>
 </ul>
 </section>
 </section>
@@ -480,8 +479,8 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA out of memory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-an-illegal-memory-access-was-encountered">CUDA error: an illegal memory access was encountered</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-server-hangs">The server hangs</a></li>
 </ul>
   </nav></div>
 
