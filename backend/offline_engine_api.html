@@ -461,20 +461,9 @@
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:05:53] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=True, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, host=&#39;127.0.0.1&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, tp_size=1, stream_interval=1, random_seed=711836784, constrained_json_whitespace_pattern=None, decode_log_interval=40, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, watchdog_timeout=600, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_flashinfer=False, disable_flashinfer_sampling=False, disable_radix_cache=False, disable_regex_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_penalizer=False, disable_nan_detection=False, enable_overlap_schedule=False, enable_mixed_chunk=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, num_continuous_decode_steps=1)
-[2024-11-03 05:06:08 TP0] Init torch distributed begin.
-[2024-11-03 05:06:09 TP0] Load weight begin. avail mem=78.59 GB
-[2024-11-03 05:06:09 TP0] lm_eval is not installed, GPTQ may not be usable
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-INFO 11-03 05:06:10 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-03 07:25:52 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -483,16 +472,12 @@ INFO 11-03 05:06:10 weight_utils.py:243] Using model weights format [&#39;*.safe
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.23it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.11it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.09it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
-[2024-11-03 05:06:13 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.50 GB
-[2024-11-03 05:06:14 TP0] Memory pool end. avail mem=8.37 GB
-[2024-11-03 05:06:14 TP0] Capture cuda graph begin. This can take up to several minutes.
-[2024-11-03 05:06:21 TP0] max_total_num_tokens=442913, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -520,14 +505,14 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:21 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-03 05:06:21 TP0] Prefill batch. #new-seq: 3, #new-token: 17, #cached-token: 3, cache hit rate: 11.54%, token usage: 0.00, #running-req: 1, #queue-req: 0
-[2024-11-03 05:06:22 TP0] Decode batch. #running-req: 4, #token: 181, token usage: 0.00, gen throughput (token/s): 195.51, #queue-req: 0
-[2024-11-03 05:06:22 TP0] Decode batch. #running-req: 4, #token: 341, token usage: 0.00, gen throughput (token/s): 550.13, #queue-req: 0
-[2024-11-03 05:06:22 TP0] Decode batch. #running-req: 4, #token: 501, token usage: 0.00, gen throughput (token/s): 545.61, #queue-req: 0
-</pre></div></div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>===============================</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  Kaito. I'm a 26-year-old Japanese man living in Tokyo. I'm a software engineer at a tech firm in Shibuya, working on developing AI-powered chatbots. In my free time, I enjoy playing the guitar, trying out new foods, and practicing yoga. I'm a bit of a homebody, but I love exploring the city and meeting new people. I'm looking for someone who shares my interests and values a healthy work-life balance. I'm excited to meet someone who is kind, genuine, and open-minded. Let's connect! Hello, my name is Kaito. I'm a </strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -539,7 +524,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  Elara Vex. I'm an orphan and a thief, surviving on the streets of the city of Tenebrous. My life has been one of struggle and hardship, but I've learned to rely only on myself. I've got a network of contacts and allies, and I've developed some... let's say, creative skills to get by.<br>I've heard rumors of a legendary artifact hidden somewhere in the city, an artifact known as the "Eye of Shadows". They say it has the power to manipulate darkness and light, and that whoever possesses it will have the upper hand in Tenebrous. I aim to find</strong></div>
+<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  expected to be a symbol of hope and unity for the nation. Unfortunately, that’s not the case for Joe Biden, who has struggled to live up to this expectation.<br>Since taking office, Biden has been plagued by controversies, scandals, and gaffes that have eroded public trust in his administration. One of the most recent examples is his apparent gaffe during a meeting with Australian Prime Minister Anthony Albanese at the White House.<br>According to reports, Biden appeared confused and disoriented during the meeting, struggling to remember the name of the country they were discussing and even seemingly mixing up the names of different leaders. This incident has sparked concerns</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -551,19 +536,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  the head of the executive branch of the federal government, and is the commander in chief of the armed forces. The president is also the chief diplomat, and is responsible for representing the country in international relations.<br>1 What are the main responsibilities of the US president?<br>2 What are the powers of the US president?<br>3 Who is the current president of the United States?<br>4 What is the process for impeaching a US president?<br>5 What are the qualifications for being the president of the United States?<br>6 How long does a US president serve?<br>7 What are the key characteristics of a good US president?<br>8 What are some of the challenges faced</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>===============================</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  a city of great history and culture, and it has been the epicenter of some of the world's most significant events. From the Louvre Museum to the Notre Dame Cathedral, there are countless landmarks and attractions to explore in the city. Visitors can enjoy the city's renowned cuisine, from cheese and wine to croissants and baguettes.<br>Paris is a popular destination for tourists, and it has a wide range of accommodations to suit all budgets. Visitors can stay in a luxurious hotel in the heart of the city or opt for a more affordable hostel or Airbnb. The city has a comprehensive public transportation system, making it easy to get</strong></div>
+<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  also famous for its fashion, art, and cuisine, but sometimes its history can feel a bit...well, complicated. During the 17th and 18th centuries, the Palace of Versailles was the epicenter of French royal power, but beneath the grandeur and beauty of the palace lies a darker story.<br>The Palace of Versailles was built during the reign of King Louis XIV, who ruled France from 1643 to 1715. He was known as the "Sun King" (Roi Soleil) because of his radiant personality and the grandeur of his court. The palace was constructed over a period of </strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -575,7 +548,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  in your hands. Join the conversation.<br>AI has the potential to change the world – for better or for worse. As AI technologies continue to advance and become more pervasive, it's imperative that we have a thoughtful, informed discussion about the potential benefits and risks of AI.<br>The AI Ethics Forum brings together experts from various fields to explore the intersection of AI, ethics, and society. Through engaging discussions, presentations, and debates, we aim to foster a deeper understanding of the complex issues surrounding AI and its impact on our lives.<br>The AI Ethics Forum is a free, public event that is open to anyone interested in AI and its societal implications.</strong></div>
+<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  here: 4 predictions for the next decade<br>Artificial intelligence (AI) has been rapidly evolving over the past decade, with significant advancements in natural language processing, computer vision, and machine learning. As we enter the next decade, we can expect even more exciting developments in AI. Here are four predictions for the future of AI:<br>1. **Increased adoption in industries beyond tech**: AI will continue to spread across various sectors, including healthcare, finance, education, and transportation. We can expect to see AI-powered tools in fields like personalized medicine, risk assessment, and smart city planning.<br>2. **More emphasis on explainability and transparency</strong></div>
 </div>
 </section>
 <section id="Streaming-Synchronous-Generation">
@@ -620,64 +593,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  Donna and I&#39;m a Program Associate for the General Education Program at West Virginia University.
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:22 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 25.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-The General Education Program at WVU has a mission to provide a liberal education that fosters intellectual curiosity, creativity, critical thinking, and a commitment to lifelong learning. I work with our general education faculty to develop curriculum, policies
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:22 TP0] Decode batch. #running-req: 1, #token: 39, token usage: 0.00, gen throughput (token/s): 190.06, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-, and programming that support this mission.
-In my free time, I enjoy hiking, reading, and trying out new recipes in the kitchen. I&#39;m also a proud WVU alumna, and
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:23 TP0] Decode batch. #running-req: 1, #token: 79, token usage: 0.00, gen throughput (token/s): 140.06, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- I love cheering on the Mountaineers on game days! I&#39;m excited to be a part of this community and look forward to connecting
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:23 TP0] Decode batch. #running-req: 1, #token: 119, token usage: 0.00, gen throughput (token/s): 138.81, #queue-req: 0
+Generated text:  Arthur Lubow. I am an assistant professor of classics at the University of Chicago. I am a philologist, that is to say, a classical philologist, with special interests in ancient Greek language and literature. My research focuses on the transmission of texts from ancient Greek into Latin, and the cultural and historical context of literary and poetic creation in the Hellenistic period, which spans from the death of Alexander the Great to the rise of the Roman Empire. My book, The Story of a Poem by Two Poets: Callimachus and Catullus on the Origins of Callimachus&#39; Hymn to Apollo
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -691,67 +607,10 @@ In my free time, I enjoy hiking, reading, and trying out new recipes in the kitc
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  Paris, the most visited city in the world and the City of
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:23 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 34.21%, token usage: 0.00, #running-req: 0, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- Light, famous for its stunning architecture, fashion, art museums, and
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:23 TP0] Decode batch. #running-req: 1, #token: 32, token usage: 0.00, gen throughput (token/s): 133.97, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- romantic atmosphere.
-Paris is a must-visit destination for anyone interested in history, culture, art, fashion, and romance. Here are some of the top attractions and experiences to explore:
-1. The Eiffel Tower: The iconic symbol of Paris and one of the most recognizable landmarks in the world.
-2. The Louvre Museum
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:24 TP0] Decode batch. #running-req: 1, #token: 72, token usage: 0.00, gen throughput (token/s): 140.02, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-: Home to the Mona Lisa and an impressive collection of art and artifacts from around the world.
-3. Notre-Dame Cathedral: A beautiful and historic Gothic church that has
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:24 TP0] Decode batch. #running-req: 1, #token: 112, token usage: 0.00, gen throughput (token/s): 139.03, #queue-req: 0
+Generated text:  known for its rich history, stunning architecture, and world-class museums, but it&#39;s also a hub for art, fashion, and food. Here are some things to do and see in Paris, from the Eiffel Tower to the Catacombs:
+The Eiffel Tower (Tour Eiffel)
+No trip to Paris would be complete without a visit to the iconic Eiffel Tower. Built for the 1889 World&#39;s Fair, it&#39;s an engineering marvel and a symbol of the city. You can take the stairs or elevator to the top for breathtaking views of the city.
+The Louvre Museum (Musée du Lou
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -760,79 +619,14 @@ Paris is a must-visit destination for anyone interested in history, culture, art
 <div class="output_area rendered_html docutils container">
 <strong style='color: #00008B;'><br>Prompt: The future of AI is</strong></div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Generated text:  bright, but we need to
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:24 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 40.91%, token usage: 0.00, #running-req: 0, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- ensure it&#39;s also fair
-The development and application of Artificial Intelligence (AI) is rapidly changing the world
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:24 TP0] Decode batch. #running-req: 1, #token: 25, token usage: 0.00, gen throughput (token/s): 133.43, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-. AI has been used in healthcare to help diagnose diseases more accurately and quickly, in finance to detect and prevent fraud, and in education to personalize learning experiences for students. AI is increasingly being used in various sectors to improve efficiency, productivity, and decision-making. However, with the increasing adoption of AI
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:24 TP0] Decode batch. #running-req: 1, #token: 65, token usage: 0.00, gen throughput (token/s): 140.20, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-, there are concerns about its potential impact on society and the need to ensure its development and application are fair and equitable.
-Bias in AI systems
-One of the significant challenges in AI development is bias.
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:25 TP0] Decode batch. #running-req: 1, #token: 105, token usage: 0.00, gen throughput (token/s): 139.29, #queue-req: 0
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
- AI
+Generated text:  not a zero-sum game, where progress in one area necessarily means a decrease in another. Rather, AI has the potential to positively impact multiple areas simultaneously, and we&#39;re already seeing this in various industries and applications.
+For instance, AI-powered healthcare systems can help diagnose diseases more accurately and quickly, while also reducing costs and improving patient outcomes. Similarly, AI-driven transportation systems can optimize routes, reduce congestion, and improve safety, while also creating new job opportunities in the sector.
+Moreover, AI has the potential to enable more sustainable and environmentally-friendly practices across various industries. For example, AI can help optimize energy consumption, reduce waste, and improve
 </pre></div></div>
 </div>
 </section>
@@ -874,18 +668,6 @@ One of the significant challenges in AI development is bias.
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:25 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 46.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-03 05:06:25 TP0] Prefill batch. #new-seq: 2, #new-token: 2, #cached-token: 10, cache hit rate: 53.23%, token usage: 0.00, #running-req: 1, #queue-req: 0
-[2024-11-03 05:06:25 TP0] Decode batch. #running-req: 3, #token: 51, token usage: 0.00, gen throughput (token/s): 201.91, #queue-req: 0
-[2024-11-03 05:06:25 TP0] Decode batch. #running-req: 3, #token: 171, token usage: 0.00, gen throughput (token/s): 414.48, #queue-req: 0
-[2024-11-03 05:06:26 TP0] Decode batch. #running-req: 3, #token: 291, token usage: 0.00, gen throughput (token/s): 411.44, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
 <div class="output_area rendered_html docutils container">
 <strong style='color: #00008B;'><br>Prompt: Hello, my name is</strong></div>
 </div>
@@ -893,7 +675,7 @@ One of the significant challenges in AI development is bias.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  Chris and I am a 28-year-old history buff living in Seattle. I have a Master's degree in history and I currently work as a researcher for a non-profit historical society. I am excited to learn more about this community and share my knowledge with others.<br>I enjoy reading historical fiction, playing the guitar, and hiking in the beautiful Pacific Northwest. I am always looking for new books to read and new hiking trails to explore.<br><br>I am interested in discussing a wide range of historical topics, from ancient civilizations to modern events. I am particularly interested in discussing the intersection of history and popular culture, as well as the ways in which history</strong></div>
+<strong style='color: #00008B;'>Generated text:  Nikita and I am a 27-year-old man. I was born and raised in Moscow, Russia. I have a degree in economics and I am a freelance writer and translator. I am interested in a wide range of topics, including economics, finance, history, culture, technology, and politics. I am a strong believer in the importance of critical thinking and I enjoy debating and discussing different perspectives. I am fluent in both Russian and English, and I am also proficient in German and Spanish. I am a bit of a tech enthusiast and I enjoy learning about new technologies and innovations. In my free time, I like to read,</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -905,7 +687,7 @@ One of the significant challenges in AI development is bias.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  a treasure trove of art, history, and culture. From the famous Eiffel Tower to the stunning Notre Dame Cathedral, Paris is a must-visit destination for anyone interested in exploring the rich heritage of Europe.<br>While there's plenty to see and do in Paris, here are some of the top attractions you won't want to miss:<br>The Eiffel Tower: This iconic landmark is a must-see when visiting Paris. Built for the 1889 World's Fair, the Eiffel Tower stands at an impressive 324 meters tall and offers breathtaking views of the city from its top deck.<br>Notre Dame Cathedral: This</strong></div>
+<strong style='color: #00008B;'>Generated text:  home to many iconic landmarks and attractions, from the Eiffel Tower to the Louvre Museum. Paris is a city of romance, fashion, and art, and is a popular destination for travelers from around the world. If you are planning a trip to Paris, here are some of the top things to do and see:<br>1. Visit the Eiffel Tower: This iconic iron lattice tower is one of the most recognizable landmarks in the world and offers stunning views of the city.<br>2. Explore the Louvre Museum: The Louvre is home to an impressive collection of art and artifacts from around the world, including the Mona Lisa.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -917,7 +699,7 @@ One of the significant challenges in AI development is bias.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  not just about computing power, but also about data quality and the ability to collect and process large amounts of data in real-time. With the increasing availability of IoT devices and the growing need for real-time data analysis, companies are looking for ways to optimize their data collection and processing infrastructure.<br>Here are some of the key trends and challenges that are shaping the future of AI:<br>1. IoT and Edge Computing: The proliferation of IoT devices has created a need for real-time data processing and analysis at the edge of the network, rather than relying on centralized data centers. This has led to the emergence of edge computing, which enables faster data processing and</strong></div>
+<strong style='color: #00008B;'>Generated text:  bright, but also fraught with risks<br>Artificial intelligence (AI) is rapidly transforming many aspects of our lives, from healthcare and finance to transportation and education. While the potential benefits of AI are vast, its development and deployment also raise significant concerns about bias, privacy, and accountability.<br>As AI becomes increasingly pervasive, it is crucial that we address these risks proactively and ensure that AI systems are developed and used responsibly. Here are some of the key challenges and opportunities related to AI:<br>Bias and fairness: AI systems can perpetuate and amplify existing biases if they are trained on data that reflects societal prejudices. This can lead to discriminatory outcomes,</strong></div>
 </div>
 </section>
 <section id="Streaming-Asynchronous-Generation">
@@ -968,65 +750,9 @@ One of the significant challenges in AI development is bias.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  María Eugenia García, I am a Psychologist, Coach, and International Coach Federation (ICF) certified coach. I have
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:26 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 55.88%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-11-03 05:06:26 TP0] Decode batch. #running-req: 1, #token: 11, token usage: 0.00, gen throughput (token/s): 343.71, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-15 years of experience in the field of Psychology and 5 years of experience as a coach. My expertise is in personal growth, well-being, and performance. I have helped numerous individuals and organizations to achieve their goals and improve their
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:26 TP0] Decode batch. #running-req: 1, #token: 51, token usage: 0.00, gen throughput (token/s): 140.99, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- overall well-being.
-My approach is holistic, person-centered, and solution-focused. I use a variety of techniques, including cognitive-behavioral therapy, positive psychology, and mindfulness to help my clients
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:27 TP0] Decode batch. #running-req: 1, #token: 91, token usage: 0.00, gen throughput (token/s): 139.23, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- achieve their goals. I believe that each individual has the potential to grow and
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:27 TP0] Decode batch. #running-req: 1, #token: 131, token usage: 0.00, gen throughput (token/s): 138.73, #queue-req: 0
+Generated text:  Tamara and I&#39;m 28 years old. I&#39;m a marketing professional with 5+ years of experience in developing marketing strategies for various industries, including retail, healthcare, and finance. I&#39;m a creative problem solver, a strategic thinker, and a passionate storyteller. I&#39;m excited to connect with like-minded professionals and collaborate on innovative marketing projects. Let&#39;s get creative together!
+What are you passionate about? What drives you? Let&#39;s start a conversation!
+Feel free to reach out to me if you need any marketing advice or just want to chat about the latest marketing trends. I&#39;m always up for a good conversation!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1040,67 +766,8 @@ My approach is holistic, person-centered, and solution-focused. I use a variety 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  home to a rich cultural heritage and stunning architecture. The city has a history dating back thousands of years, with various civilizations contributing
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:27 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 58.11%, token usage: 0.00, #running-req: 0, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- to its development. Here’s a brief overview of the history of Paris, the City of Light:
-Ancient Paris (300 BC – 486 AD)
-The earliest known settlement in Paris was established by the Cel
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:27 TP0] Decode batch. #running-req: 1, #token: 44, token usage: 0.00, gen throughput (token/s): 134.84, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-ts around 300 BC. The city was later conquered by the Romans, who renamed it Lutetia. Under Roman rule, Paris became an important center for trade and commerce.
-Medieval
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:27 TP0] Decode batch. #running-req: 1, #token: 84, token usage: 0.00, gen throughput (token/s): 139.96, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- Paris (486 – 987 AD)
-With the fall of the Roman Empire, Paris was conquered by the Fr
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:28 TP0] Decode batch. #running-req: 1, #token: 124, token usage: 0.00, gen throughput (token/s): 138.95, #queue-req: 0
+Generated text:  Paris. Paris is the largest city in France and is the country&#39;s political and economic center. Paris is a major cultural, historical, and economic center. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city is also known for its fashion industry, with many famous fashion designers and brands having their headquarters there. Paris is a popular tourist destination, attracting millions of visitors each year.
+France has a diverse geography, with mountains, rivers, and coastlines along the Atlantic and the Mediterranean. The country has several regions, each with its own unique culture, language
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1109,70 +776,16 @@ With the fall of the Roman Empire, Paris was conquered by the Fr
 <div class="output_area rendered_html docutils container">
 <strong style='color: #00008B;'><br>Prompt: The future of AI is</strong></div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Generated text:  not just about computing power, but also about how humans interact with machines. We&#39;re witnessing
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:28 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, cache hit rate: 60.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- a surge in conversational AI, which is redefining how we engage with technology.
-Conversational AI, also known as chatbots or conversational interfaces, is a type of artificial intelligence that enables humans
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:28 TP0] Decode batch. #running-req: 1, #token: 37, token usage: 0.00, gen throughput (token/s): 134.47, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- to communicate with machines through natural language. This technology has been around for decades, but recent advancements in machine learning and natural language processing (NLP) have made it more accessible, affordable, and
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-[2024-11-03 05:06:28 TP0] Decode batch. #running-req: 1, #token: 77, token usage: 0.00, gen throughput (token/s): 140.20, #queue-req: 0
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- user-friendly.
-Conversational AI has numerous applications across industries, from customer service and support to healthcare, finance, and education. It can help
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
+<div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-11-03 05:06:29 TP0] Decode batch. #running-req: 1, #token: 117, token usage: 0.00, gen throughput (token/s): 139.10, #queue-req: 0
+Generated text:  human
+The future of AI is human
+The current boom in artificial intelligence (AI) is often described as an &#34;AI revolution.&#34; But the truth is that the future of AI is not about replacing humans, but about working with them.
+AI has made tremendous progress in recent years, and it&#39;s now possible to automate many tasks that were previously done by humans. However, AI systems are not yet able to replicate the complexity and nuance of human decision-making.
+In fact, a recent survey by the Pew Research Center found that 67% of experts believe that AI will augment human capabilities, while only 24% think it will replace
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
