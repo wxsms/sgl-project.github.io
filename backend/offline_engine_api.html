@@ -175,7 +175,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/model_support.html">How to Support a New Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/choices_methods.html">Choices Methods in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
@@ -443,7 +443,7 @@
 <p>Additionally, you can easily build a custom server on top of the SGLang offline engine. A detailed example working in a python script can be found in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/custom_server.py">custom_server</a>.</p>
 <section id="Offline-Batch-Inference">
 <h2>Offline Batch Inference<a class="headerlink" href="#Offline-Batch-Inference" title="Link to this heading">#</a></h2>
-<p>SGLang offline engine supports batch inference with efficient scheduling to prevent OOM errors for large batches. For details on this cache-aware scheduling algorithm, see our <a class="reference external" href="https://arxiv.org/pdf/2312.07104">paper</a>.</p>
+<p>SGLang offline engine supports batch inference with efficient scheduling.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -463,7 +463,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-INFO 11-05 08:17:07 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-05 09:17:25 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -472,11 +472,11 @@ INFO 11-05 08:17:07 weight_utils.py:243] Using model weights format [&#39;*.safe
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.28it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.14it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.11it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.00it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
 
 </pre></div></div>
 </div>
@@ -512,7 +512,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  _______ and I’m a recidivist<br>By Kevin Donnelly - posted Thursday, 9 June 2016 Sign Up for free e-mail updates!<br>The trend for a more permissive and tolerant society has been around for decades, and one of the most telling indicators of this shift is the way in which society views repeat offenders.<br>In the past, repeat offenders were widely regarded as being morally weak, lacking in self-discipline, and in need of rehabilitation. These days, however, the narrative has shifted, and repeat offenders are often portrayed as victims of circumstance, with their behavior being the result of social and economic determinism.<br></strong></div>
+<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  Bianca. I'm a 20-year-old Brazilian student, currently living in the United States. I am passionate about languages, history, and technology. When I'm not studying, you can find me playing video games, practicing yoga, or experimenting with new recipes in the kitchen. I'm excited to share my experiences and learn from others here.<br>Hi Bianca, welcome to the community! It's great that you're interested in languages, history, and technology. Those are all fascinating fields that can be really rewarding to explore. What kind of languages are you interested in learning or speaking? And what do you think you might like to</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -524,7 +524,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  the head of the government. The president is elected by the people of the United States through the Electoral College.<br>The president's powers and duties are specified in the Constitution.<br>The president serves a four-year term and can be re-elected for a maximum of two terms.<br>The president is responsible for executing the laws of the land and for commanding the military.<br>The president has the power to veto laws passed by Congress.<br>The president has the power to appoint federal judges and other officials.<br>The president has the power to negotiate treaties and executive agreements with foreign governments.<br>The president has the power to grant pardons and reprieves to individuals who have been</strong></div>
+<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  often seen as the most powerful person in the world. In fact, he or she is commander-in-chief of the world's most powerful military force. The president's power can be overwhelming, but there are also limits to it. The president must work within the system of checks and balances established by the U.S. Constitution. The Constitution divides power among three branches of government: the legislative, executive, and judicial. The legislative branch, which is made up of Congress, has the power to make laws. The executive branch, which is headed by the president, enforces laws. The judicial branch, which is made up of the Supreme Court</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -536,7 +536,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  a city like no other. Steeped in history and culture, Paris is a must-visit destination for anyone interested in art, architecture, fashion, and food.<br>From the iconic Eiffel Tower to the stunning Notre-Dame Cathedral, Paris is home to some of the world's most famous landmarks. The city's stunning architecture is a testament to its rich history, with Gothic spires, Renaissance mansions, and modern skyscrapers all vying for attention.<br>The Louvre Museum, one of the world's greatest art museums, houses an impressive collection of art and artifacts from around the world, including the Mona Lisa. The</strong></div>
+<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  a city of stunning architecture, rich history, and unparalleled charm. From the iconic Eiffel Tower to the historic Palace of Versailles, Paris has something for everyone. Whether you're interested in art, food, fashion, or culture, the City of Light is a must-visit destination. With its picturesque streets, charming cafes, and world-class museums, Paris is a city that will leave you in awe.<br>Paris is a city that is steeped in history and culture, with landmarks like the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum that are instantly recognizable around the world. Visitors can explore the city's</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -548,7 +548,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  bright, but it's not without its challenges. One of the biggest challenges is ensuring that AI systems are transparent, explainable, and fair. To address this, researchers have been working on developing new AI models that are more transparent and explainable. One such model is the Graph Attention Network (GAT).<br>The Graph Attention Network (GAT) is a type of neural network that is designed to handle graph-structured data, such as social networks, traffic networks, and molecular structures. It's particularly well-suited for tasks like node classification, graph classification, and link prediction. GATs have gained popularity in recent years due to</strong></div>
+<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  here, and it's already changing the way we live and work. Artificial intelligence (AI) is increasingly being used in various sectors, from healthcare and finance to education and entertainment. In this article, we'll explore some of the most exciting and influential AI trends that will shape the future of work and society.<br>1. AI-Driven Personalization<br>AI is enabling businesses to offer personalized experiences to their customers. AI algorithms can analyze vast amounts of data and create tailored recommendations, content, and services that cater to individual preferences. This trend is revolutionizing the way companies interact with customers, creating more engaging and effective marketing strategies.<br>2. AI</strong></div>
 </div>
 </section>
 <section id="Streaming-Synchronous-Generation">
@@ -593,10 +593,8 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  Emily!
-I&#39;m a 24-year-old student from London, UK. I&#39;m currently studying journalism and media, and I&#39;m hoping to become a sports journalist or a TV presenter in the future.
-I&#39;ve always been passionate about sports, especially football, and I love following the latest news and developments in the world of football. I&#39;m also a huge fan of The Fader, Complex and i-D, and I love keeping up with the latest music, fashion and pop culture trends.
-When I&#39;m not studying or writing for my university newspaper, I love spending time with my friends and family, trying out new restaurants and cafes in London
+Generated text:  Samantha (Sam) and I am a licensed esthetician and makeup artist. I love helping people feel confident and beautiful in their own skin. I specialize in bridal and event makeup, but I also offer regular maintenance and treatments for everyday beauty. I have a passion for helping others and I love the feeling of making someone feel like the best version of themselves.
+My journey as a makeup artist started in 2008 when I worked as a makeup artist for a popular beauty store. I quickly fell in love with the art of makeup and the impact it can have on a person&#39;s self-esteem. I furthered my education by attending the A
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -610,9 +608,9 @@ When I&#39;m not studying or writing for my university newspaper, I love spendin
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  a must-visit destination for any traveler. With its rich history, stunning architecture, and vibrant culture, Paris has something to offer for every kind of visitor. Here are some tips and recommendations to help you plan your trip to Paris and make the most of your time in this beautiful city.
-Paris is a large city, and getting around can be time-consuming. The city has an extensive public transportation system, including the metro, buses, and trams. You can buy a Carnet of 10 tickets or a Paris Visite Pass, which allows you unlimited travel on public transportation for a set period.
-Paris is famous for its food,
+Generated text:  a city that is full of magic and mystery. Paris is a must-visit destination for any traveler. The city is known for its beautiful architecture, art museums, and romantic atmosphere.
+One of the most famous landmarks in Paris is the Eiffel Tower. This iconic iron lattice tower was built for the 1889 World&#39;s Fair and has become a symbol of the city. Visitors can take the stairs or elevator to the top for breathtaking views of the city.
+Another popular destination in Paris is the Louvre Museum. The Louvre is one of the world&#39;s largest and most famous museums, housing over 550,000 works of art
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -626,10 +624,9 @@ Paris is famous for its food,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  a partnership between humans and machines
-by Frank Chen, CEO at Clarifai
-Artificial intelligence (AI) is often seen as a replacement for humans, but the future of AI is about collaboration, not replacement. The rise of AI has raised questions about its potential impact on the job market, particularly in fields where machines can perform tasks with greater speed and accuracy than humans. However, these concerns overlook the significant benefits that AI can bring when used in conjunction with human expertise.
-The current state of AI is characterized by narrow, task-specific models that excel in one area but struggle with others. These models are often trained on large datasets and
+Generated text:  not just about machines learning from data, but also about how humans interact with these machines. At NVIDIA, we are pushing the boundaries of AI with new technologies that enable humans and machines to collaborate more effectively.
+The first step towards achieving this collaboration is to develop new interfaces that allow humans to communicate with AI systems in a more natural way. This is where the concept of Human-Computer Interaction (HCI) comes in.
+HCI is the study of how people interact with technology. It involves designing interfaces that are intuitive, user-friendly, and effective in conveying information. In the context of AI, HCI is crucial in enabling humans to communicate with machines in
 </pre></div></div>
 </div>
 </section>
@@ -678,7 +675,7 @@ The current state of AI is characterized by narrow, task-specific models that ex
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  Gabby and I am a mom of three young children. I am a home cook who loves to try out new recipes on my family. I love trying out new ingredients and cooking techniques. My family is my biggest critics, and I love hearing their honest opinions on the food I make.<br>I am excited to share my cooking adventures with you. I will be sharing recipes that I have tried and loved, as well as recipes that have been shared with me by friends and family. I will also be sharing tips and tricks for cooking with kids, and how to make meal time fun and enjoyable for the whole family.<br>I hope you will join</strong></div>
+<strong style='color: #00008B;'>Generated text:  Mark and I am a photographer and artist based in Sacramento, CA. I have been involved in photography for over 30 years and have worked in a variety of mediums including black and white, color, and digital.<br>My photography is a blend of fine art, commercial and documentary. I have photographed for numerous publications including the New York Times, Time Magazine, and the Sacramento Bee. My work has also been exhibited in galleries and museums throughout the United States.<br>My personal work explores the human condition, relationships, and the beauty of the world around us. I am drawn to the stories and experiences of everyday people and the ways in which they interact</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -690,7 +687,7 @@ The current state of AI is characterized by narrow, task-specific models that ex
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  a city of fashion, art, history, and romance. Visitors from all over the world come to Paris to explore its iconic landmarks, visit world-class museums, and experience the city's renowned cuisine. Paris, the City of Light, has been a source of inspiration for artists, writers, and musicians for centuries. It is a city that is steeped in history, yet always looking to the future.<br>Top 10 things to do in Paris:<br>1. Visit the Eiffel Tower<br>2. Explore the Louvre Museum<br>3. Take a Seine River cruise<br>4. Visit the Notre Dame Cathedral<br>5. Walk along</strong></div>
+<strong style='color: #00008B;'>Generated text:  Paris. Paris is one of the world’s most beautiful and romantic cities, known for its stunning architecture, art museums, fashion, cuisine, and wine. From the iconic Eiffel Tower to the beautiful Notre Dame Cathedral, Paris has a wealth of attractions to explore. The city is also famous for its fashion, with high-end designers like Chanel and Louis Vuitton having their origins in Paris. Visitors can stroll through the charming streets of Montmartre, visit the famous Louvre Museum, or take a romantic Seine River cruise. With its rich history, art, fashion, and culture, Paris is a must-visit destination for</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -702,7 +699,7 @@ The current state of AI is characterized by narrow, task-specific models that ex
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  bright, but it's also fraught with challenges that need to be addressed. Here are some of the key issues that need to be tackled as AI continues to evolve.<br>  1. Job displacement: One of the biggest concerns surrounding AI is the potential for widespread job displacement. As machines and algorithms become more capable, there's a risk that many jobs will become obsolete, leading to significant social and economic disruption.<br>  2. Bias and fairness: AI systems can perpetuate existing biases and prejudices if they're trained on biased data or designed with a particular worldview in mind. This can lead to unfair outcomes and reinforce social inequalities.<br>  </strong></div>
+<strong style='color: #00008B;'>Generated text:  human-centric<br>Technologists, policymakers and business leaders are starting to realize that AI is not just a tool, but a partner that needs to be designed to work with humans, not replace them.<br>Dr. Kate Crawford, a researcher and technologist, recently gave a keynote speech at the World Economic Forum, titled “The Future of AI is Human-Centric.” In her talk, she highlighted the growing awareness that AI is not just a tool to be used, but a partner that needs to be designed to work with humans, not replace them. <br>Crawford emphasized that the current approach to AI development is often focused on creating more autonomous</strong></div>
 </div>
 </section>
 <section id="Streaming-Asynchronous-Generation">
@@ -753,10 +750,9 @@ The current state of AI is characterized by narrow, task-specific models that ex
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  Ben and I&#39;m excited to be your guide on this journey through the world of sci-fi and fantasy literature. I&#39;ve been an avid reader and fan of the genre for many years, and I&#39;m always looking to discover new authors, books, and worlds to explore.
-I&#39;ll be sharing my thoughts and recommendations on a wide range of books, from classic authors like Asimov and Tolkien to modern bestsellers like George R.R. Martin and Patrick Rothfuss. I&#39;ll also be highlighting some of the lesser-known gems of the genre, as well as introducing you to new authors and series that you might not have tried before.
-
-
+Generated text:  Adrian and I am an artist and writer, currently based in the beautiful city of Melbourne. I have a passion for creating unique and imaginative artworks that bring joy to those who experience them. My artistic journey began at a young age, experimenting with a variety of mediums and techniques, and has since evolved to encompass a range of styles and themes.
+In addition to my visual art practice, I am also a writer and have published several short stories and poetry collections. My writing often explores themes of identity, belonging and the human condition, and I am drawn to the intersection of words and images in my creative practice.
+I am always excited to meet new
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -770,10 +766,8 @@ I&#39;ll be sharing my thoughts and recommendations on a wide range of books, fr
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  a city steeped in history and culture, with iconic landmarks and breathtaking architecture. Paris is a place where romance is alive and well, with picturesque streets, charming cafes and an arts scene that is second to none. Whether you’re looking to explore the city’s famous museums, indulge in delicious French cuisine, or simply soak up the atmosphere, Paris has something for everyone.
-Must-see attractions
-The Eiffel Tower: This iconic iron lady is one of the most recognizable landmarks in the world, and offers stunning views of the city from its top level.
-The Louvre: One of the world’s greatest museums, the Louvre is
+Generated text:  Paris. Paris is home to the Eiffel Tower, one of the world’s most famous landmarks. It is also known for its art museums, fashion, and cuisine. The city has a rich history and a unique cultural heritage. The name Paris is derived from the Celtic language and means &#34;city of love.&#34; It has been the capital of France since 987.
+Paris is a major center for art, fashion, and culture. The city is home to the Louvre Museum, the Musée d&#39;Orsay, and the Centre Pompidou, which are among the world&#39;s largest and most famous art museums. The city is
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -787,9 +781,10 @@ The Louvre: One of the world’s greatest museums, the Louvre is
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  being shaped by developments in Machine Learning (ML) and Deep Learning (DL). These technologies have been successful in various applications, such as image and speech recognition, natural language processing, and predictive analytics. However, they also raise important concerns around bias, transparency, and accountability.
-Advancements in AI have created new opportunities for applications in healthcare, education, and finance, but also raise questions about data ownership and control, and the potential for job displacement.
-This research group focuses on the development and evaluation of AI and ML systems, as well as the ethical and societal implications of these technologies. Our goal is to contribute to the responsible development and use
+Generated text:  all about Human-AI collaboration
+AI is rapidly becoming more pervasive in our daily lives, and it&#39;s no longer just about replacing human tasks but rather augmenting our abilities and working alongside us to achieve better outcomes.
+The future of AI is all about Human-AI collaboration, a concept that has been gaining traction in recent years. This collaboration is not just about machines performing tasks, but rather about humans and machines working together in a way that leverages the strengths of both.
+The idea of Human-AI collaboration is based on the recognition that AI systems are capable of processing vast amounts of data quickly and accurately, but they often lack the nu
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
