@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=d5b75504" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=d5b75504" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.5" />
-    <meta name="docbuild:last-update" content="Nov 05, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 06, 2024"/>
   </head>
   
   
@@ -449,9 +449,9 @@ If you see <code class="docutils literal notranslate"><span class="pre">decode</
 </section>
 <section id="avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">
 <h3>Avoid out-of-memory by Tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code><a class="headerlink" href="#avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests" title="Link to this heading">#</a></h3>
-<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.<br />
-If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.<br />
-If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.<br />
+<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.
+If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.
+If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.
 You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p>
 </section>
 <section id="try-advanced-options">
@@ -558,7 +558,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 05, 2024.
+  Last updated on Nov 06, 2024.
   <br/>
 </p>
   </div>
