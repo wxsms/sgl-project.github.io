@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Set Up Self-hosted Runners for GitHub Action &#8212; SGLang</title>
+    <title>Set Up Self-Hosted Runners for GitHub Action &#8212; SGLang</title>
   
   
   
@@ -391,7 +391,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Set Up Self-hosted Runners for GitHub Action</h1>
+    <h1>Set Up Self-Hosted Runners for GitHub Action</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,7 +419,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="set-up-self-hosted-runners-for-github-action">
-<h1>Set Up Self-hosted Runners for GitHub Action<a class="headerlink" href="#set-up-self-hosted-runners-for-github-action" title="Link to this heading">#</a></h1>
+<h1>Set Up Self-Hosted Runners for GitHub Action<a class="headerlink" href="#set-up-self-hosted-runners-for-github-action" title="Link to this heading">#</a></h1>
 <section id="add-a-runner">
 <h2>Add a Runner<a class="headerlink" href="#add-a-runner" title="Link to this heading">#</a></h2>
 <section id="step-1-start-a-docker-container">
@@ -427,9 +427,9 @@
 <p>You can mount a folder for the shared huggingface model weights cache. The command below uses <code class="docutils literal notranslate"><span class="pre">/tmp/huggingface</span></code> as an example.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">12.1.1</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="n">ubuntu22</span><span class="mf">.04</span>
 <span class="c1"># Nvidia</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">shm</span><span class="o">-</span><span class="n">size</span> <span class="mi">64</span><span class="n">g</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">huggingface</span><span class="p">:</span><span class="o">/</span><span class="n">hf_home</span> <span class="o">--</span><span class="n">gpus</span> <span class="nb">all</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">12.1.1</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="n">ubuntu22</span><span class="mf">.04</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">shm</span><span class="o">-</span><span class="n">size</span> <span class="mi">128</span><span class="n">g</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">huggingface</span><span class="p">:</span><span class="o">/</span><span class="n">hf_home</span> <span class="o">--</span><span class="n">gpus</span> <span class="nb">all</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">12.1.1</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="n">ubuntu22</span><span class="mf">.04</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
 <span class="c1"># AMD</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">kfd</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">dri</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">add</span> <span class="n">video</span> <span class="o">--</span><span class="n">shm</span><span class="o">-</span><span class="n">size</span> <span class="mi">64</span><span class="n">g</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">huggingface</span><span class="p">:</span><span class="o">/</span><span class="n">hf_home</span> <span class="n">henryx</span><span class="o">/</span><span class="n">haisgl</span><span class="p">:</span><span class="n">sgl0</span><span class="mf">.3.1</span><span class="o">.</span><span class="n">post3_vllm0</span><span class="mf">.6.0</span><span class="n">_triton3</span><span class="mf">.0.0</span><span class="n">_rocm6</span><span class="mf">.2.1</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">kfd</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">dri</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">add</span> <span class="n">video</span> <span class="o">--</span><span class="n">shm</span><span class="o">-</span><span class="n">size</span> <span class="mi">128</span><span class="n">g</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">huggingface</span><span class="p">:</span><span class="o">/</span><span class="n">hf_home</span> <span class="n">henryx</span><span class="o">/</span><span class="n">haisgl</span><span class="p">:</span><span class="n">sgl0</span><span class="mf">.3.1</span><span class="o">.</span><span class="n">post3_vllm0</span><span class="mf">.6.0</span><span class="n">_triton3</span><span class="mf">.0.0</span><span class="n">_rocm6</span><span class="mf">.2.1</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
 </pre></div>
 </div>
 </section>
