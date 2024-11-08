@@ -52,7 +52,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'references/hyperparameter_tuning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Supported Models" href="supported_models.html" />
+    <link rel="next" title="Benchmark and Profiling" href="benchmark_and_profiling.html" />
     <link rel="prev" title="Sampling Parameters in SGLang Runtime" href="sampling_params.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,14 +167,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">Frontend: Structured Generation Language (SGLang)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Guide on Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="choices_methods.html">Choices Methods in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributor_guide.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -449,10 +449,12 @@ If you see <code class="docutils literal notranslate"><span class="pre">decode</
 </section>
 <section id="avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">
 <h3>Avoid out-of-memory by Tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code><a class="headerlink" href="#avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests" title="Link to this heading">#</a></h3>
-<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.
-If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.
-If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.
-You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p>
+<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.</p>
+<ul class="simple">
+<li><p>If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.</p></li>
+<li><p>If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
+<li><p>You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p></li>
+</ul>
 </section>
 <section id="try-advanced-options">
 <h3>Try Advanced Options<a class="headerlink" href="#try-advanced-options" title="Link to this heading">#</a></h3>
@@ -491,11 +493,11 @@ you can try <code class="docutils literal notranslate"><span class="pre">--sched
       </div>
     </a>
     <a class="right-next"
-       href="supported_models.html"
+       href="benchmark_and_profiling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Supported Models</p>
+        <p class="prev-next-title">Benchmark and Profiling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

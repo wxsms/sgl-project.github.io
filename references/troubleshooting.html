@@ -167,14 +167,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">Frontend: Structured Generation Language (SGLang)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="choices_methods.html">Choices Methods in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributor_guide.html">Contributor Guide</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Troubleshooting</a></li>
@@ -419,10 +419,12 @@
 <p>This page lists some common errors and tips for fixing them.</p>
 <section id="cuda-out-of-memory">
 <h2>CUDA out of memory<a class="headerlink" href="#cuda-out-of-memory" title="Link to this heading">#</a></h2>
-<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.
-If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.
-If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.
-You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p>
+<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.</p>
+<ul class="simple">
+<li><p>If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.</p></li>
+<li><p>If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
+<li><p>You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p></li>
+</ul>
 </section>
 <section id="cuda-error-an-illegal-memory-access-was-encountered">
 <h2>CUDA error: an illegal memory access was encountered<a class="headerlink" href="#cuda-error-an-illegal-memory-access-was-encountered" title="Link to this heading">#</a></h2>

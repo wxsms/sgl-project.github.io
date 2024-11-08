@@ -170,14 +170,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">Frontend: Structured Generation Language (SGLang)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/choices_methods.html">Choices Methods in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/contributor_guide.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
@@ -463,7 +463,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-INFO 11-08 00:04:01 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-08 02:25:09 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -472,11 +472,11 @@ INFO 11-08 00:04:01 weight_utils.py:243] Using model weights format [&#39;*.safe
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.00it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.02s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:05,  1.71s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:03&lt;00:03,  1.52s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04&lt;00:01,  1.46s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05&lt;00:00,  1.11s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05&lt;00:00,  1.26s/it]
 
 </pre></div></div>
 </div>
@@ -512,7 +512,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  Dr. Sophia Patel, and I am a licensed clinical psychologist and the founder of Catalyst Psychological Services. I am passionate about providing a non-judgmental and compassionate space for individuals to explore their thoughts, feelings, and behaviors. I believe that everyone has the strength and resilience to overcome challenges and achieve their goals.<br>My areas of specialty include anxiety, depression, trauma, relationship issues, and women's mental health. I use evidence-based therapies, such as cognitive-behavioral therapy (CBT), acceptance and commitment therapy (ACT), and trauma-focused cognitive-behavioral therapy (TF-CBT) to create a safe and supportive</strong></div>
+<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  Sarah and I'm a 38-year-old freelance writer and editor from the UK. I'm thrilled to be joining the MamaBlogger community and I'm looking forward to meeting and learning from other mums who share similar interests.<br>In my pre-mummy days, I worked as a copywriter and editor for a number of marketing and publishing companies, which is still an area of work I enjoy. However, since becoming a mum, my priorities have shifted and I'm now focused on raising my little ones and sharing my experiences with other parents.<br>As a freelance writer and editor, I'm excited to be able to combine my professional skills with</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -524,7 +524,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  among the most powerful individuals in the world, with vast influence over the lives of millions of people. But, what happens when the President of the United States is no longer fit to serve due to mental or physical incapacitation? The 25th Amendment to the Constitution provides a framework for handling such situations, but its implementation is often shrouded in secrecy and controversy.<br>In this podcast, we'll explore the history and mechanics of the 25th Amendment, as well as the many instances where it has been invoked or considered. We'll examine the role of the Vice President, the Cabinet, and Congress in deciding when the President is no</strong></div>
+<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  the head of state and head of government of the United States, and is the highest-ranking government official. The president serves as commander-in-chief of the armed forces and has the power to veto laws, although this power can be overridden by a two-thirds majority in both the House and Senate. The president is also responsible for appointing federal judges and high-ranking officials, and for conducting diplomatic relations with foreign governments.<br>The president is elected through the Electoral College system, in which each state is allocated a certain number of electoral votes based on its population. The candidate who wins the majority of the electoral votes, at least 270 out of 538</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -536,7 +536,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  situated on the Seine River in northern France. Paris is known for its stunning architecture, art museums, fashion, and romantic ambiance. The city is home to the famous Eiffel Tower, Notre Dame Cathedral, the Louvre Museum, and the Palace of Versailles. Visitors can explore the city's charming neighborhoods, such as Montmartre and Le Marais, and enjoy the city's vibrant food scene, which includes croissants, cheese, and wine.<br>Paris is a popular tourist destination, attracting millions of visitors each year. The city has a rich history, dating back to the Gallo-Roman era, and has been</strong></div>
+<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  Paris, which is also one of the world’s most famous cities. It is a must-visit destination for any traveler and a must-know for anyone interested in history, art, culture, and romance. Here are some of the top attractions and experiences that make Paris a world-class destination.<br>Eiffel Tower: This iconic iron lattice tower is a symbol of Paris and one of the most recognizable landmarks in the world. Visitors can take the stairs or elevator to the top for breathtaking views of the city.<br>The Louvre Museum: This world-famous museum is home to some of the most famous artworks in the world, including the Mona Lisa</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -548,7 +548,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  being shaped by researchers at the intersection of art and technology.<br>A new generation of artists is taking AI to new heights, creating stunning visuals and thought-provoking works that challenge the boundaries between human and machine.<br>AI art has become increasingly sophisticated, with algorithms capable of generating realistic images, videos, and even music.<br>But AI art is not just about creating aesthetically pleasing visuals – it also raises important questions about creativity, authorship, and the role of humans in the creative process.<br>Join us as we explore the intersection of art and technology, and discover the innovative ways AI is being used to push the boundaries of creativity and imagination.<br></strong></div>
+<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  human-centered<br>Artificial intelligence (AI) is rapidly evolving and transforming the world around us. As AI systems become increasingly sophisticated, it's time to rethink the way we approach AI development and deployment.<br>The future of AI should be human-centered, prioritizing human values, needs, and well-being. This requires a shift from a technology-centric approach to a more holistic one, considering the impact of AI on individuals, communities, and society as a whole.<br>Here are some key aspects of a human-centered approach to AI:<br>1. Value alignment: AI systems should be designed to align with human values such as fairness, transparency, accountability, and</strong></div>
 </div>
 </section>
 <section id="Streaming-Synchronous-Generation">
@@ -593,10 +593,9 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  Lyle!
-I am a second-year student in the Master of Science program in Nutrition at the University of Guelph. My undergraduate degree was also in Nutrition, and I am passionate about learning more about the complex relationships between food, health, and disease.
-When I&#39;m not studying, you can find me experimenting with new recipes in the kitchen, hiking with my family, or practicing yoga. I&#39;m also an avid reader and enjoy staying up-to-date on the latest nutrition research and trends.
-This blog will be a space for me to share my thoughts, experiences, and knowledge about nutrition, health, and wellness. I hope to provide
+Generated text:  Tanya and I am a friend of Jane’s and I have been asked to help her get this website up and running. I am not a very technical person, so please bear with me as I learn and figure things out.
+Jane has asked me to start by adding some new content to the website, including a photo gallery and a list of services she offers. I will try to get this done as soon as possible.
+I would also like to add a contact form to the website, so that people can get in touch with Jane easily. I have heard that this can be a bit tricky to set up, but I am willing to
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -610,9 +609,11 @@ This blog will be a space for me to share my thoughts, experiences, and knowledg
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  known as Paris, a city famous for its fashion, cuisine, art, and romance. It&#39;s a must-visit destination for travelers from all over the world. Here&#39;s a brief guide to help you plan your trip to Paris.
-Paris is a city with a rich history that spans thousands of years. It was founded by the Gauls, a Celtic tribe, in the 3rd century BC. Over the centuries, the city has been conquered by various empires and rulers, including the Romans, Franks, and Normans. Today, Paris is a cosmopolitan city with a population of over 2 million people.
-Paris is
+Generated text:  in a state of disarray, and no one knows how to fix it. In the midst of the crisis, the city’s residents are beginning to band together to try and find a solution.
+After the French government officially announced the city would be un-governing itself, residents of Paris took it upon themselves to establish a new way of managing the city.
+The residents are putting their differences aside to find common ground and come up with a plan to keep the city running smoothly.
+With the government absent, residents are stepping up to take on roles like trash collection, public safety and transportation.
+A group of residents, calling themselves the &#34;Paris
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -626,9 +627,12 @@ Paris is
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  here – and it’s personal
-Artificial intelligence (AI) has been gaining momentum in recent years, and its applications are becoming increasingly personalized. From virtual assistants like Siri and Alexa to AI-powered chatbots, AI is changing the way we interact with technology and each other. But what does the future of AI hold, and how will it impact our daily lives?
-According to Gartner, by 2022, 85% of customer service interactions will be handled by AI-powered chatbots. This is because AI can provide 24/7 support, reduce response times, and improve customer satisfaction. AI-powered chatbots can also help with
+Generated text:  in the cloud
+The future of AI is in the cloud
+We are living in an era of unprecedented technological advancements, with AI being at the forefront of innovation. The development and deployment of AI are rapidly evolving, and one of the most significant trends shaping the industry is the shift to cloud-based AI.
+Cloud-based AI offers numerous benefits over traditional on-premises AI solutions. These include scalability, flexibility, cost-effectiveness, and the ability to access advanced AI capabilities on-demand.
+Here are some key factors driving the adoption of cloud-based AI:
+1. Scalability: Cloud-based AI allows organizations to scale their AI capabilities up or down
 </pre></div></div>
 </div>
 </section>
@@ -677,7 +681,7 @@ According to Gartner, by 2022, 85% of customer service interactions will be hand
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  Michael.<br>I am a 25 year old Software Engineer with 5 years of experience. I am a quick learner, a team player, and a passionate developer.<br>I am proficient in multiple programming languages such as Java, Python, C++, and C#. I have experience with various development frameworks like Spring, Hibernate, Django, and React.<br>I am well-versed in database management systems such as MySQL, PostgreSQL, and MongoDB. I have experience with Agile development methodologies and have worked on several projects using Scrum and Kanban.<br>I am a certified Scrum Master and a Certified Java Developer. I am excited to bring my skills and experience</strong></div>
+<strong style='color: #00008B;'>Generated text:  Andrew Walker. I am a singer/songwriter and I have been performing live on stage for many years. My music style is a blend of folk, rock and pop. I am influenced by artists such as Bob Dylan, John Mayer and Jason Mraz. I am always trying to push the boundaries of my music and to make it my own.<br>I am a regular performer at various venues around the UK including festivals, bars and restaurants. I am also a tutor and teach music at a local school.<br>My music is all about telling stories through my songs, whether it be about love, life or social issues. I want my music to</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -689,7 +693,7 @@ According to Gartner, by 2022, 85% of customer service interactions will be hand
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  Paris. The city is famous for its beautiful art museums, fashion, historical landmarks and romantic atmosphere. With a rich history dating back to the 3rd century, Paris has evolved into the cosmopolitan city it is today, attracting millions of tourists from around the world. Read more about Paris on Wikipedia.<br>If you are looking for flights to Paris, we have you covered. We provide the best flight deals to Paris from all major airlines. With our flight search tool, you can compare prices and find the cheapest flights to Paris.<br>How to find the cheapest flights to Paris?<br>To find the cheapest flights to Paris, use our flight search tool</strong></div>
+<strong style='color: #00008B;'>Generated text:  a hub of culture, art, and history, with landmarks like the Eiffel Tower and Notre-Dame Cathedral. A city of style, fashion, and cuisine, Paris is a must-visit destination for anyone.<br>The Eiffel Tower, built for the 1889 World’s Fair, is an iconic symbol of the city and offers stunning views of the city from its observation decks.<br>Notre-Dame Cathedral, a beautiful example of Gothic architecture, has been the site of numerous coronations, weddings, and other important events throughout history.<br>The Louvre Museum, a former royal palace, is home to an impressive collection of art</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -701,7 +705,7 @@ According to Gartner, by 2022, 85% of customer service interactions will be hand
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  a topic of much debate and speculation. While some predict a utopian future where AI improves human life, others warn of a dystopian future where AI surpasses human intelligence and becomes a threat.<br>The truth is that the future of AI is likely to be a mix of both. As AI continues to advance, it will undoubtedly bring about many benefits, but it will also raise new challenges and concerns.<br>Here are some potential developments that could shape the future of AI:<br>1. Increased Adoption and Integration: AI will become increasingly integrated into various aspects of life, from healthcare and education to transportation and finance. This will lead to improved efficiency, productivity</strong></div>
+<strong style='color: #00008B;'>Generated text:  here, but where are the women?<br>The development and deployment of artificial intelligence (AI) are becoming increasingly important for businesses and governments. Yet, there is a notable lack of diversity in the field. A survey by the World Economic Forum found that only 22% of AI professionals are women. This gap is a missed opportunity for innovation and progress, as research has shown that diverse teams are more productive, creative, and better equipped to address complex problems.<br>One of the main challenges is that women and girls are often discouraged from pursuing careers in technology and AI due to biases and stereotypes. Girls are often steered towards more traditional fields like medicine</strong></div>
 </div>
 </section>
 <section id="Streaming-Asynchronous-Generation">
@@ -752,9 +756,10 @@ According to Gartner, by 2022, 85% of customer service interactions will be hand
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  JZ and I am a senior in the integrated marketing communications program at Emerson College. I am also a resident of the beautiful city of Boston. I am excited to be joining this community of bloggers and sharing my thoughts and experiences with all of you.
-As a resident of Boston, I have grown accustomed to the fast-paced and vibrant atmosphere of the city. From the historic Freedom Trail to the trendy restaurants and bars in the North End, there is always something new to see and do in this amazing city.
-As a student, I am also constantly learning and growing. My major in integrated marketing communications has given me a well-rounded education in the
+Generated text:  Suzanne, and I&#39;m a bodywork therapist. I help people relax, feel better, and get back on track with their lives.
+I&#39;ve been a licensed massage therapist since 2002, and I&#39;ve worked with all sorts of clients, from athletes to seniors, from expectant mothers to new parents. I&#39;ve also worked in hospitals, clinics, and private practice settings.
+I believe that the body has a natural ability to heal itself, and that sometimes all it needs is a little help getting back on track. That&#39;s where I come in.
+I offer a range of bodywork modalities, including Swedish massage, deep tissue massage
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -768,9 +773,9 @@ As a student, I am also constantly learning and growing. My major in integrated 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  a city like no other. Known for its grand architecture, rich history, and vibrant cultural scene, Paris is a must-visit destination for anyone interested in exploring the world&#39;s greatest cities.
-From the iconic Eiffel Tower to the artistic treasures of the Louvre, Paris has a wealth of attractions that will leave you in awe. Take a stroll along the Seine, visit the stunning Notre Dame Cathedral, and explore the charming streets of Montmartre to discover the city&#39;s unique character.
-Paris is also a city of fashion, food, and wine, with world-renowned designers, Michelin-starred restaurants, and some of the
+Generated text:  the City of Light, and a popular destination for both locals and international tourists. The city is famous for its art, history, fashion, and architecture. Let’s explore some of the top attractions in Paris!
+The Eiffel Tower is a must-visit in Paris. The iconic iron tower is a symbol of the city and offers stunning views of the city from its top level. You can take the elevator to the top or climb the stairs for a more adventurous experience.
+The Louvre Museum is one of the world’s largest and most famous museums. It is home to an impressive collection of art and artifacts from around the world, including
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -784,9 +789,10 @@ Paris is also a city of fashion, food, and wine, with world-renowned designers, 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  being shaped by the way we interact with it
-The way we interact with artificial intelligence (AI) will have a profound impact on how it develops and evolves in the future. As AI becomes more ubiquitous and integrated into our daily lives, our interactions with it will influence its capabilities, limitations, and even its values. Here are some ways in which the future of AI will be shaped by the way we interact with it:
-1. **Natural Language Understanding**: The way we communicate with AI through natural language will shape its ability to understand and respond to human language. As we interact with AI through voice assistants, chatbots, and other interfaces,
+Generated text:  here today. As AI continues to evolve and improve, we can expect to see significant advancements in its capabilities and impact on various industries. Here are some of the key trends and predictions for the future of AI:
+1. Increased Adoption in Healthcare: AI will play a more significant role in healthcare, improving diagnosis accuracy, personalized medicine, and patient outcomes.
+2. Rise of Edge AI: As the Internet of Things (IoT) expands, AI will be deployed at the edge of the network, enabling real-time processing and analysis of data from various devices and sensors.
+3. Growing Importance of Explainability: As AI becomes more pervasive, there
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
