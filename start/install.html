@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.5" />
-    <meta name="docbuild:last-update" content="Nov 08, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
   </head>
   
   
@@ -452,6 +452,7 @@
 <p>The docker images are available on Docker Hub as <a class="reference external" href="https://hub.docker.com/r/lmsysorg/sglang/tags">lmsysorg/sglang</a>, built from <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">Dockerfile</a>.
 Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your huggingface hub <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">token</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--shm-size<span class="w"> </span>32g<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -628,7 +629,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 08, 2024.
+  Last updated on Nov 10, 2024.
   <br/>
 </p>
   </div>
