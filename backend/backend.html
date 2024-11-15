@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.5.post1" />
-    <meta name="docbuild:last-update" content="Nov 14, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 15, 2024"/>
   </head>
   
   
@@ -507,7 +507,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>To enable the experimental overlapped scheduler, add <code class="docutils literal notranslate"><span class="pre">--enable-overlap-scheduler</span></code>. It overlaps CPU scheduler with GPU computation and can accelerate almost all workloads. This does not work for constrained decoding currenly.</p></li>
+<li><p>To enable the experimental overlapped scheduler, add <code class="docutils literal notranslate"><span class="pre">--enable-overlap-schedule</span></code>. It overlaps CPU scheduler with GPU computation and can accelerate almost all workloads. This does not work for constrained decoding currenly.</p></li>
 <li><p>To enable torch.compile acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. This does not work for FP8 currenly.</p></li>
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports various quantization strategies.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
@@ -678,7 +678,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 14, 2024.
+  Last updated on Nov 15, 2024.
   <br/>
 </p>
   </div>
