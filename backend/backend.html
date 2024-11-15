@@ -507,8 +507,8 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>To enable the experimental overlapped scheduler, add <code class="docutils literal notranslate"><span class="pre">--enable-overlap-schedule</span></code>. It overlaps CPU scheduler with GPU computation and can accelerate almost all workloads. This does not work for constrained decoding currenly.</p></li>
-<li><p>To enable torch.compile acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. This does not work for FP8 currenly.</p></li>
+<li><p>To enable the experimental overlapped scheduler, add <code class="docutils literal notranslate"><span class="pre">--enable-overlap-schedule</span></code>. It overlaps CPU scheduler with GPU computation and can accelerate almost all workloads. This does not work for constrained decoding currently.</p></li>
+<li><p>To enable torch.compile acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. This does not work for FP8 currently.</p></li>
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports various quantization strategies.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
