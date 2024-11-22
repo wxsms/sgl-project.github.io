@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.5.post2" />
-    <meta name="docbuild:last-update" content="Nov 18, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 22, 2024"/>
   </head>
   
   
@@ -420,12 +420,18 @@
 <section id="benchmark">
 <h2>Benchmark<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h2>
 <ul>
-<li><p>Benchmark a single static batch by running the following command without launching a server. The arguments are the same as for <code class="docutils literal notranslate"><span class="pre">launch_server.py</span></code>. Note that this is not a dynamic batching server, so it may run out of memory for a batch size that a real server can handle. A real server truncates the prefill into several batches, while this unit test does not. For accurate large batch testing, consider using <code class="docutils literal notranslate"><span class="pre">sglang.bench_serving</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_latency</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">batch</span> <span class="mi">32</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">len</span> <span class="mi">256</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">len</span> <span class="mi">32</span>
+<li><p>Benchmark the latency of running a single static batch without a server. The arguments are the same as for <code class="docutils literal notranslate"><span class="pre">launch_server.py</span></code>.
+Note that this is a simplified test script without a dynamic batching server, so it may run out of memory for a batch size that a real server can handle. A real server truncates the prefill into several batches, while this simplified script does not.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_one_batch</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">batch</span> <span class="mi">32</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">len</span> <span class="mi">256</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">len</span> <span class="mi">32</span>
 </pre></div>
 </div>
 </li>
-<li><p>Benchmark online serving. Launch a server first and run the following command.</p>
+<li><p>Benchmark offline processing. This script will start an offline engine and run the benchmark.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_offline_throughput</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">prompts</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</li>
+<li><p>Benchmark online serving. Please use <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> to launch a server first and run the following command.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_serving</span> <span class="o">--</span><span class="n">backend</span> <span class="n">sglang</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">prompt</span> <span class="mi">10</span>
 </pre></div>
 </div>
@@ -448,7 +454,7 @@ apt<span class="w"> </span>install<span class="w"> </span>nsight-systems-cli
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p>To profile a single batch, use <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--trace-fork-before-exec=true</span> <span class="pre">--cuda-graph-trace=node</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_latency</span> <span class="pre">--model</span> <span class="pre">meta-llama/Meta-Llama-3-8B</span> <span class="pre">--batch-size</span> <span class="pre">64</span> <span class="pre">--input-len</span> <span class="pre">512</span></code></p></li>
+<li><p>To profile a single batch, use <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--trace-fork-before-exec=true</span> <span class="pre">--cuda-graph-trace=node</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model</span> <span class="pre">meta-llama/Meta-Llama-3-8B</span> <span class="pre">--batch-size</span> <span class="pre">64</span> <span class="pre">--input-len</span> <span class="pre">512</span></code></p></li>
 <li><p>To profile a server, e.g.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># server</span>
@@ -456,7 +462,7 @@ apt<span class="w"> </span>install<span class="w"> </span>nsight-systems-cli
 nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span>-o<span class="w"> </span>sglang.out<span class="w"> </span>--delay<span class="w"> </span><span class="m">60</span><span class="w"> </span>--duration<span class="w"> </span><span class="m">70</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disable-radix-cache
 
 <span class="c1"># client</span>
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">6000</span><span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--random-input<span class="w"> </span><span class="m">4096</span><span class="w"> </span>--random-output<span class="w"> </span><span class="m">2048</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--random-input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--random-output<span class="w"> </span><span class="m">512</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
@@ -562,7 +568,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 18, 2024.
+  Last updated on Nov 22, 2024.
   <br/>
 </p>
   </div>

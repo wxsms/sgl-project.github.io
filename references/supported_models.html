@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.5.post2" />
-    <meta name="docbuild:last-update" content="Nov 18, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 22, 2024"/>
   </head>
   
   
@@ -510,7 +510,7 @@ For most models, you should be able to find a similar model to start with (e.g.,
 The following two commands should give the same text output and very similar prefill logits.</p>
 <ul class="simple">
 <li><p>Get the reference output by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">scripts/playground/reference_hf.py</span> <span class="pre">--model</span> <span class="pre">[new</span> <span class="pre">model]</span></code></p></li>
-<li><p>Get the SGLang output by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_latency</span> <span class="pre">--correct</span> <span class="pre">--model</span> <span class="pre">[new</span> <span class="pre">model]</span></code></p></li>
+<li><p>Get the SGLang output by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--correct</span> <span class="pre">--model</span> <span class="pre">[new</span> <span class="pre">model]</span></code></p></li>
 </ul>
 </section>
 <section id="add-the-model-to-the-test-suite">
@@ -630,7 +630,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 18, 2024.
+  Last updated on Nov 22, 2024.
   <br/>
 </p>
   </div>
