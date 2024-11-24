@@ -451,7 +451,6 @@
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># launch the offline engine</span>
 
 <span class="kn">import</span> <span class="nn">sglang</span> <span class="k">as</span> <span class="nn">sgl</span>
-<span class="kn">from</span> <span class="nn">sglang.utils</span> <span class="kn">import</span> <span class="n">print_highlight</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
@@ -463,7 +462,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-INFO 11-24 12:51:06 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
+INFO 11-24 16:29:10 weight_utils.py:243] Using model weights format [&#39;*.safetensors&#39;]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -472,11 +471,11 @@ INFO 11-24 12:51:06 weight_utils.py:243] Using model weights format [&#39;*.safe
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.93it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.71it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.71it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.29it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.06it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.11it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.02s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.02s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
 
 </pre></div></div>
 </div>
@@ -497,58 +496,40 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.
 
 <span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
-    <span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;===============================&quot;</span><span class="p">)</span>
-    <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>===============================</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Hello, my name is<br>Generated text:  Andrii Baida and I am a Ukrainian expert in the field of Information and Cybersecurity. I am currently working in Kyiv, Ukraine, and I am honored to be a member of the Ukrainian IT-industry and a representative of Ukraine in the international community of cybersecurity professionals.<br>I started my career in the IT-industry about 10 years ago, working as a junior developer in a small IT company in Ukraine. Over the years, I have worked in various positions, such as a penetration tester, a security consultant, and a cybersecurity instructor. My experience and passion for cybersecurity led me to become a founder of my own cybersecurity consulting</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>===============================</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The president of the United States is<br>Generated text:  the head of state and government of the United States, and the commander-in-chief of the country’s armed forces. The president is elected through the Electoral College system, which is established by Article II, Section 1 of the United States Constitution. The president serves a four-year term and is limited to two terms in office.<br>The president has a range of powers and responsibilities, including:<br>* Serving as commander-in-chief of the armed forces<br>* Negotiating treaties and agreements with foreign governments<br>* Appointing federal judges, including Supreme Court justices<br>* Signing or vetoing legislation passed by Congress<br>* Convening and adjourning</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>===============================</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The capital of France is<br>Generated text:  a must-visit destination for every traveler. The City of Light has a rich history, stunning architecture, art museums, and a vibrant cultural scene. Here are the top 10 things to do in Paris:<br>1. Visit the Eiffel Tower: The iconic iron lady is a symbol of Paris and offers breathtaking views of the city from its top platform. You can take the stairs or elevator to the top.<br>2. Explore the Louvre Museum: The world’s largest art museum houses an impressive collection of art and artifacts, including the Mona Lisa. Don’t miss the stunning glass pyramid entrance and the beautiful gardens.<br>3. Wander through</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>===============================</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: The future of AI is<br>Generated text:  uncertain, but one thing is certain: the laws of physics will always be there to guide and limit it. In this book, physicist Brian Cox and mathematician Jeff Forshaw delve into the physics of artificial intelligence, exploring the fundamental laws and principles that govern the behavior of AI systems.<br>The book begins with an introduction to the basic principles of physics and how they apply to AI, including the laws of thermodynamics, quantum mechanics, and relativity. The authors then move on to explore the specific physics of AI, discussing topics such as neural networks, machine learning, and deep learning.<br>Throughout the book, Cox and Forshaw draw on their</strong></div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+===============================
+Prompt: Hello, my name is
+Generated text:  Jagdeep Dhillon, and I am a Richmond upon Thames Councillor.
+I am a proud resident of Twickenham and I have been serving as a councillor since 2010. I am a member of the Liberal Democrats and have always been passionate about working for my community.
+I have a strong track record of working to improve the local environment, transport links and education provision. I believe that as a councillor, it is my duty to listen to the views of local residents and to use my skills and experience to make a positive difference to our community.
+In 2014, I was appointed as the Deputy Leader of the Liberal
+===============================
+Prompt: The president of the United States is
+Generated text:  the head of state and head of government of the United States, and is the commander-in-chief of the United States Armed Forces. The president is elected through the Electoral College system by the people of the United States, and serves a four-year term. The president has the power to veto legislation, appoint federal judges and other officials, and negotiate treaties with foreign governments.
+The president of the United States is also the commander-in-chief of the United States Armed Forces, and has the power to deploy military forces abroad and engage in military operations. The president has the power to grant pardons and reprieves, and can commute the sentences of federal
+===============================
+Prompt: The capital of France is
+Generated text:  a beautiful city that offers a wide variety of things to see and do. Here are some of the top attractions in Paris:
+The Eiffel Tower: The Eiffel Tower is one of the most iconic landmarks in the world and is a must-visit when in Paris. Visitors can take a lift to the top for breathtaking views of the city.
+The Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing a vast collection of art and artifacts from around the world. The museum is home to the Mona Lisa, one of the most famous paintings in the world.
+Notre Dame Cathedral:
+===============================
+Prompt: The future of AI is
+Generated text:  about more than just language and facial recognition
+From robots that can assemble furniture to robots that can help us live longer, AI is set to transform our lives in all sorts of ways.
+Previous Previous post: Inside the mind of the world’s top AI researcher
+Next Next post: How AI can help with climate change, according to the world’s top climate scientist
+Artificial Intelligence (AI) is a rapidly growing field with a wide range of applications. From robots that can assemble furniture to robots that can help us live longer, AI is set to transform our lives in all sorts of ways. In this article, we will explore some of
+</pre></div></div>
 </div>
 </section>
 <section id="Streaming-Synchronous-Generation">
@@ -564,10 +545,10 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.
 <span class="p">]</span>
 <span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
 
-<span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing synchronous streaming generation ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing synchronous streaming generation ===&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">:</span>
-    <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generated text: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -576,56 +557,30 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>=== Testing synchronous streaming generation ===</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: Hello, my name is</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Generated text:  Sadie! I&#39;m a sweet and gentle 6-year-old girl who loves playing with my family and snuggling with my favorite plushies, especially my stuffed animal named Mr. Whiskers. I love making new friends and going on adventures, whether it&#39;s in the backyard or on a fun outing. I&#39;m a bit shy at first, but once I get to know you, I&#39;ll be your best buddy! I hope you&#39;ll be my friend too!
-I&#39;m still learning to communicate with you using this special tool, so please be patient with me. I&#39;ll do my best to respond with simple messages. If you have
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: The capital of France is</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Generated text:  home to the Eiffel Tower, a beautiful and iconic landmark that attracts millions of tourists every year. In addition to its famous tower, the city offers a wide range of cultural and historical attractions, including the Louvre Museum, the Arc de Triomphe, and Notre-Dame Cathedral. Paris is also known for its romantic atmosphere, charming streets, and picturesque river Seine, making it a popular destination for couples and honeymooners. Whether you&#39;re interested in art, history, fashion, or food, Paris has something for everyone.
-The city&#39;s cuisine is also a major draw, with famous dishes like escargots, ratat
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: The future of AI is</strong></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  not just about the technology itself, but about how we use it to make a positive impact on society.
-In this episode, we explore the potential of AI for social good with Arvind Krishna, the CEO of IBM. We talk about the power of AI to drive innovation and progress, and how it can be used to address some of the world&#39;s most pressing challenges, from climate change to healthcare.
-Arvind shares his vision for the future of AI, and how IBM is working to develop and deploy AI solutions that can make a real difference in people&#39;s lives. We also discuss the importance of ethics and responsibility in the development and
+
+=== Testing synchronous streaming generation ===
+
+Prompt: Hello, my name is
+Generated text:  Hannah and I’m a 20-year-old university student, living in London. I’m an avid bookworm, love trying out new coffee spots, and enjoy long walks in the countryside. When I’m not studying, you can find me trying out new recipes in the kitchen, practicing yoga, or planning my next adventure. I’m excited to share my passion for travel, food, and culture with you, and hope you enjoy reading about my experiences!
+
+Latest posts by Hannah
+How to Pack for a Gap Year: Tips and Tricks
+5 Delicious and Easy-to-Make Breakfast Recipes for a Healthy Start
+7 Cultural Differences to Understand When
+
+Prompt: The capital of France is
+Generated text:  Paris. Paris is a city located in the north-central part of France. It is the country&#39;s largest city and is the capital of the country. The population of Paris is about 2.2 million people. Paris is known for its many famous landmarks and tourist attractions, such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city is also known for its fashion, cuisine, and art.
+The city of Paris is divided into 20 arrondissements or districts. Each district has its own unique character and charm. The arrondissements are numbered from 1 to 20,
+
+Prompt: The future of AI is
+Generated text:  being shaped by a rapidly evolving landscape of technological advancements, societal needs, and economic pressures. As AI continues to advance, we can expect to see significant transformations in various industries and aspects of our lives. Here are some potential future developments that are likely to impact the world of AI:
+1. **Increased adoption in healthcare**: AI is expected to play a crucial role in personalized medicine, disease diagnosis, and treatment planning. Advances in medical imaging, genomics, and machine learning will enable AI to make more accurate predictions and recommendations, leading to better patient outcomes.
+2. **Autonomous vehicles and transportation systems**: Self-driving cars, drones, and
 </pre></div></div>
 </div>
 </section>
@@ -643,62 +598,45 @@ Arvind shares his vision for the future of AI, and how IBM is working to develop
 
 <span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
 
-<span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing asynchronous batch generation ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing asynchronous batch generation ===&quot;</span><span class="p">)</span>
 
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">outputs</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">async_generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
-        <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>=== Testing asynchronous batch generation ===</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: Hello, my name is</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  Fikayo and I am a small business owner in Chicago. I own a small food truck that specializes in traditional West African dishes. My food truck, called “Jollof Bites,” serves a variety of popular West African dishes including jollof rice, suya, fufu, and more.<br>My business has been doing well so far, but I am looking to expand my customer base and increase my sales. I was thinking of taking my food truck to different locations in the city, such as festivals, concerts, and other events. I also want to increase my online presence by creating a social media account and website for</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: The capital of France is</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  a city like no other. Its rich history, stunning architecture, art museums, and fashionable streets have made it a magnet for travelers and locals alike. From the iconic Eiffel Tower to the vibrant Montmartre neighborhood, Paris is a city that has something for everyone. Whether you're a foodie, a history buff, or a shopaholic, Paris will leave you in awe.<br>To get the most out of your trip, consider purchasing a Paris Museum Pass, which grants you entry to many of the city's top attractions, including the Louvre and Orsay museums, Notre Dame Cathedral, and the Arc de Triomphe</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: The future of AI is</strong></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Generated text:  uncertain, but one thing is for sure – we will see some exciting breakthroughs and innovations in the years to come. In this article, we will explore the possibilities and challenges of AI in the near future.<br>The AI landscape is constantly evolving, with new technologies emerging and existing ones improving. Some of the most significant developments include:<br>1. Advancements in deep learning: Deep learning techniques, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), have revolutionized the field of AI. Expect to see even more sophisticated applications of these techniques in the future.<br>2. Increased use of transfer learning: Transfer</strong></div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+=== Testing asynchronous batch generation ===
+
+Prompt: Hello, my name is
+Generated text:  Aaron. I am a 22-year-old musician and music producer from the United States. I have been playing music for over 10 years and have recently started to focus more on producing electronic music. I am excited to join this community and share my music with you all!
+Hey, nice to meet you! Welcome to the community! I&#39;m a music producer and DJ, and I&#39;m always happy to meet other like-minded people. What kind of music do you produce, and what&#39;s your favorite genre to work with? Do you have a favorite software or hardware that you like to use?
+
+Also, what&#39;s your musical background like?
+
+Prompt: The capital of France is
+Generated text:  the most popular tourist destination in the world, attracting over 23 million visitors each year. With its rich history, art, fashion, and cuisine, Paris is a city that offers something for everyone. Here are some of the top things to do in Paris:
+1. Visit the Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. You can take the stairs or elevator to the top for breathtaking views of the city.
+2. Explore the Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from around the world
+
+Prompt: The future of AI is
+Generated text:  here, and it’s in the cards. Literally.
+A collaboration between researchers from Microsoft Research and a team from the University of Washington, a new AI-powered system can now recognize, read, and interpret handwritten playing cards with an accuracy of over 99%. This development has significant implications for various industries, including gaming, finance, and education.
+The system, called CardGAN, uses a technique called Generative Adversarial Networks (GANs) to learn from a large dataset of images of handwritten cards. GANs consist of two neural networks: a generator that creates new images, and a discriminator that evaluates the authenticity of these images
+</pre></div></div>
 </div>
 </section>
 <section id="Streaming-Asynchronous-Generation">
@@ -714,12 +652,12 @@ Arvind shares his vision for the future of AI, and how IBM is working to develop
 <span class="p">]</span>
 <span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
 
-<span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing asynchronous streaming generation ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing asynchronous streaming generation ===&quot;</span><span class="p">)</span>
 
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">:</span>
-        <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generated text: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="n">generator</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">async_generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -732,64 +670,28 @@ Arvind shares his vision for the future of AI, and how IBM is working to develop
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>=== Testing asynchronous streaming generation ===</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: Hello, my name is</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Generated text:  Deb, and I&#39;m the proud owner and baker of this delightful bakery, Sweet Treats. I&#39;ve been in the baking business for over 20 years, and I must say, it&#39;s a dream come true to be able to share my passion with all of you.
-I&#39;ve always loved baking, and I come from a long line of bakers. My grandmother was a legendary baker in our community, and I used to love helping her in the kitchen. She taught me the art of traditional baking, and I&#39;ve carried on that tradition with my own unique twist.
-My bakery offers a wide variety of sweet treats, from classic cookies
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: The capital of France is</strong></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Generated text:  Paris. It is situated in the north-central part of the country, along the Seine River. The Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum are all located in Paris.
-What is the capital of France?
-A. Paris
-B. Lyon
-C. Berlin
-D. Rome
-Answer: A
-Reasoning Skill: Identifying Pros And Cons
-In this question, the student is asked to identify the capital of France, which is a basic fact about the country. To answer this question correctly, the student needs to have knowledge of geography and be able to identify the correct city. This question does
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br>Prompt: The future of AI is</strong></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Generated text:  uncertain, but one thing is clear: it will be determined by the people who design and deploy these systems. In this book, Gary Marcus and Ernest Davis argue that current approaches to AI are misguided, and that we need a new approach that prioritizes transparency, interpretability, and human values. They propose a new framework for AI that is grounded in human cognition and centered on the human experience.
-Gary Marcus and Ernest Davis are two of the most prominent and respected figures in the field of artificial intelligence. Marcus is a renowned researcher and entrepreneur, and Davis is a leading expert in artificial intelligence and cognitive science.
-&#34;The Future of the Mind&#34; is
+
+=== Testing asynchronous streaming generation ===
+
+Prompt: Hello, my name is
+Generated text:  Arielle. I&#39;m a 25 year old artist who loves to paint, draw, and write. I&#39;m originally from New Jersey, but I&#39;ve recently moved to Florida where I&#39;m loving the sunshine and warm weather. I&#39;m a bit of a goofball and love to make people laugh, but I&#39;m also a bit of a introvert and enjoy spending time by myself, whether that&#39;s reading a book, taking a nap, or just sitting in silence.
+I&#39;m also a bit of a hopeless romantic and love anything that&#39;s related to love, relationships, or emotions. I&#39;m a bit of a dreamer and love to
+
+Prompt: The capital of France is
+Generated text:  a city of beauty and romance. The Eiffel Tower, a symbol of French culture, stands tall and proud. Visitors can climb to the top of the tower for a panoramic view of the city. The Louvre Museum is another popular destination, featuring an impressive collection of art and artifacts from around the world.
+The Seine River runs through the heart of the city, offering a picturesque view of the city&#39;s architecture. The Notre Dame Cathedral is a beautiful example of Gothic architecture, and the Sainte-Chapelle is famous for its stunning stained-glass windows. The Champs-Élysées is a famous shopping street lined with
+
+Prompt: The future of AI is
+Generated text:  not a machine that can think and act like a human, but a system that can learn and adapt to its environment.
+In the future, AI will be designed to be more transparent, explainable and accountable, with a focus on human-centered design that prioritizes the well-being and safety of all individuals involved.
+Artificial Intelligence will continue to play a critical role in addressing some of the world&#39;s most pressing challenges, such as climate change, inequality and access to healthcare.
+The future of AI is not just about technology, but about the values and principles that guide its development and deployment.
+As AI becomes increasingly integrated into our lives, it&#39;s
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
