@@ -404,6 +404,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tips">Other tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a></li>
 </ul>
             </nav>
         </div>
@@ -484,6 +485,28 @@ with<span class="w"> </span>nvtx.annotate<span class="o">(</span><span class="s2
 <li><p>You can benchmark a model using dummy weights by only providing the config.json file. This allows for quick testing of model variants without training. To do so, add <code class="docutils literal notranslate"><span class="pre">--load-format</span> <span class="pre">dummy</span></code> to the above commands and then you only need a correct <code class="docutils literal notranslate"><span class="pre">config.json</span></code> under the checkpoint folder.</p></li>
 </ol>
 </section>
+<section id="profile-with-pytorch-profiler">
+<h2>Profile with PyTorch Profiler<a class="headerlink" href="#profile-with-pytorch-profiler" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>To profile a server</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set trace path</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/root/sglang/profile_log
+<span class="c1"># start server</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct
+
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile
+</pre></div>
+</div>
+<p>Traces can be visualized using https://ui.perfetto.dev/.</p>
+<ul class="simple">
+<li><p>To profile offline</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/root/sglang/profile_log
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile<span class="w"> </span>--mem-frac<span class="o">=</span><span class="m">0</span>.8
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -535,6 +558,7 @@ with<span class="w"> </span>nvtx.annotate<span class="o">(</span><span class="s2
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tips">Other tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a></li>
 </ul>
   </nav></div>
 
