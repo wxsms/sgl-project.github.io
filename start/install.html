@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.6.post2" />
-    <meta name="docbuild:last-update" content="Nov 27, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 28, 2024"/>
   </head>
   
   
@@ -446,6 +446,15 @@
 </pre></div>
 </div>
 <p>Note: Please check the <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> to install the proper version according to your PyTorch and CUDA versions.</p>
+<p>Note: To AMD ROCm system with Instinct/MI GPUs, do following instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">v0</span><span class="mf">.3.6</span><span class="o">.</span><span class="n">post2</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sgl</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">sglang</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">sglang</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all_hip]&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="method-3-using-docker">
 <h2>Method 3: Using docker<a class="headerlink" href="#method-3-using-docker" title="Link to this heading">#</a></h2>
@@ -629,7 +638,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 27, 2024.
+  Last updated on Nov 28, 2024.
   <br/>
 </p>
   </div>
