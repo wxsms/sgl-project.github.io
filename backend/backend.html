@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.3.6.post2" />
-    <meta name="docbuild:last-update" content="Nov 28, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 29, 2024"/>
   </head>
   
   
@@ -508,7 +508,7 @@
 </div>
 <ul class="simple">
 <li><p>To enable torch.compile acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. This does not work for FP8 currently.</p></li>
-<li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports various quantization strategies.</p></li>
+<li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports other <a class="reference external" href="https://github.com/sgl-project/sglang/blob/v0.3.6/python/sglang/srt/server_args.py#L671">quantization strategies (INT8/FP8)</a> as well.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
 <li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference internal" href="../references/custom_chat_template.html"><span class="std std-doc">custom chat template</span></a>.</p></li>
@@ -677,7 +677,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 28, 2024.
+  Last updated on Nov 29, 2024.
   <br/>
 </p>
   </div>
