@@ -172,6 +172,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">Frontend: Structured Generation Language (SGLang)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/supported_models.html">Supported Models</a></li>
@@ -463,11 +467,11 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.13it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.20it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
 
 </pre></div></div>
 </div>
@@ -500,24 +504,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  David and I am a 30-year-old Software Engineer from Buenos Aires, Argentina. I am here to share my experience with the community. I am passionate about Artificial Intelligence, Machine Learning, and Cloud Computing, and I enjoy sharing my knowledge and learning from others.
-My professional experience started about 8 years ago as a junior developer, working on web and mobile applications using various technologies like Java, PHP, and JavaScript. Over time, I became interested in AI and ML, and I started to learn and work with libraries like TensorFlow and PyTorch. I also got involved with cloud computing, and I gained experience with AWS and Google Cloud
+Generated text:  Noel and I am a Cyber Security Specialist, I have been working in the field for over 10 years. I have a strong passion for Cyber Security and I am always looking for new ways to improve my skills and knowledge.
+In my previous role, I was responsible for protecting an enterprise network from cyber threats. I used a combination of technical and non-technical skills to identify and mitigate potential security risks.
+I am well-versed in a variety of security technologies, including firewalls, intrusion detection systems, encryption, and threat intelligence. I am also skilled in incident response and disaster recovery.
+I am a strong advocate for security awareness and education
 ===============================
 Prompt: The president of the United States is
-Generated text:  an elected official, as well as the head of state and head of government for the country. The president is responsible for executing the laws of the land and overseeing the federal government. The president is elected through the Electoral College system, where electors from each state cast votes for the president and vice president.
-The president serves a four-year term, with a limit of two terms. The president has a range of powers and responsibilities, including signing or vetoing bills, commanding the armed forces, and making appointments to the Supreme Court and other federal offices.
-The president is also responsible for conducting foreign policy, meeting with foreign leaders, and negotiating treaties
+Generated text:  taking the first steps to honor the life and legacy of the late Supreme Court Justice Ruth Bader Ginsburg, who passed away on Friday. President Trump has ordered the U.S. flag to be flown at half-staff at the White House and all federal buildings until Ginsburg is laid to rest.
+Ginsburg, a liberal icon, served on the high court for nearly three decades and was a champion of women’s rights and equal pay. She was 87 years old.
+The president is expected to make a statement about Ginsburg’s passing later today, but so far, there has been no indication that he plans to nominate a replacement
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, located in the north-central part of the country. Paris is the largest city in France and is considered one of the most romantic cities in the world.
-The city is famous for its stunning architecture, museums, art galleries, fashion, cuisine, and historic landmarks. The Eiffel Tower is the most iconic landmark in Paris and a symbol of the city. The tower was built for the 1889 World’s Fair and stands at a height of 324 meters (1,063 feet). Visitors can take an elevator to the top of the tower for panoramic views of the city.
-Paris is also home to many famous museums and art
+Generated text:  Paris, which is also the country&#39;s largest city. Paris is a major European hub for culture, fashion, food, and business. The city is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. Paris is also famous for its charming neighborhoods, such as Montmartre and Le Marais, which offer a glimpse into the city&#39;s rich history and artistic heritage. The city is also home to many international organizations, including the United Nations Educational, Scientific and Cultural Organization (UNESCO) and the Organisation for Economic Co-operation and Development (OECD). Paris is a popular tourist
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of humans
-The AI Revolution is in full swing, and it’s easy to get caught up in the hype. But beneath the surface, a more nuanced and human-centric story is unfolding. Here’s a glimpse into the evolving relationship between humans and AI.
-The AI Revolution is in full swing, and it’s easy to get caught up in the hype. But beneath the surface, a more nuanced and human-centric story is unfolding. Here’s a glimpse into the evolving relationship between humans and AI.
-In the realm of artificial intelligence, the lines between human and machine are blurring. No longer a distant fantasy, AI has become
+Generated text:  uncertain. It&#39;s an exciting time. We are at the cusp of something big. Whether it&#39;s good or bad is still up for debate, but one thing is certain: we need to start talking about it.
+As we explore the possibilities of AI, we must also consider its limitations and potential downsides. It&#39;s time to discuss the risks of AI and how we can mitigate them.
+AI is a rapidly evolving field, and its impact on society will be far-reaching. It&#39;s essential that we have a nuanced understanding of its potential benefits and risks. We need to consider the ethical implications of AI and ensure that it is developed and
 </pre></div></div>
 </div>
 </section>
@@ -555,21 +558,19 @@ In the realm of artificial intelligence, the lines between human and machine are
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Dr. Siamak PourgholamRoozbahani, and I am an Assistant Professor in the Department of Computer Science and Engineering at the University of Nebraska-Lincoln. I received my Ph.D. in Electrical Engineering from the University of California, Los Angeles (UCLA) in 2014. My research interests are in the areas of computer networks, network security, and machine learning. I have published numerous papers in top-tier conferences and journals, including IEEE Infocom, ACM Mobicom, and IEEE Transactions on Information Theory.
-My current research focuses on designing and analyzing machine learning-based solutions for various network security and
+Generated text:  Annie and I am thrilled to be joining the marketing team at PowerObjects! I am a fresh face in the industry and I am excited to bring my passion for marketing and technology to the table.
+As a marketing professional, I have a strong background in branding, social media, and content creation. I have a knack for understanding what makes a brand unique and crafting compelling stories that engage and resonate with audiences. My creative vision and attention to detail allow me to develop innovative marketing campaigns that drive results.
+As a team player, I thrive in collaborative environments where ideas are shared and success is celebrated. I believe that building strong relationships and fostering open communication
 
 Prompt: The capital of France is
-Generated text:  a city that is famous for its stunning beauty, rich history, and world-class attractions. From the iconic Eiffel Tower to the Louvre Museum, there are countless things to see and do in Paris. Here are some of the top attractions and experiences to add to your Paris itinerary:
-1. The Eiffel Tower: This iron lattice tower is one of the most recognizable landmarks in the world and offers breathtaking views of the city from its observation decks.
-2. The Louvre Museum: One of the world&#39;s largest and most famous museums, the Louvre is home to an impressive collection of art and artifacts, including the Mona Lisa
+Generated text:  Paris, which is also the country&#39;s largest city. Paris is a popular tourist destination, known for its romantic atmosphere, beautiful architecture, art museums, fashion, cuisine, and historical landmarks. Many famous works of literature, art, and fashion have been created in Paris, and the city remains a major cultural and intellectual hub.
+Paris has many famous landmarks, including the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. The city is also home to many fashion designers and fashion houses, and is considered the global center for fashion. Paris has a rich history, with many buildings and
 
 Prompt: The future of AI is
-Generated text:  shrouded in uncertainty
-Artificial intelligence (AI) has revolutionized the way we live and work, transforming industries and altering the economic landscape. However, the future of AI is uncertain and shrouded in controversy.
-There are several reasons why the future of AI is uncertain:
-1. Lack of regulation: There is a lack of regulation and oversight in the development and deployment of AI systems, which raises concerns about their safety and accountability.
-2. Job displacement: AI has the potential to automate many jobs, which could lead to widespread unemployment and social unrest.
-3. Bias and discrimination: AI systems can perpetuate and amplify biases and
+Generated text:  here, and it&#39;s already changing the way we work, live, and interact with each other. Artificial intelligence (AI) is transforming various industries, from healthcare and finance to transportation and education. In this article, we&#39;ll explore the exciting developments in AI and how it&#39;s shaping the future of work, society, and technology.
+The Rise of AI-Powered Tools and Applications
+AI-powered tools and applications are becoming increasingly popular, making it easier for people to access and utilize AI capabilities. Some examples of AI-powered tools include:
+Chatbots and virtual assistants, like Siri, Alexa, and Google Assistant, which can perform tasks such as setting
 </pre></div></div>
 </div>
 </section>
@@ -611,19 +612,18 @@ There are several reasons why the future of AI is uncertain:
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Kyle and I am the lead author of this blog. I am a co-founder of the company Agiloft, and my main area of expertise is in Contract Lifecycle Management (CLM) and Enterprise Legal Management (ELM). I have over 20 years of experience in the software industry, with a strong background in product development, operations, and customer success.
-Over the years, I have worked with numerous companies and organizations to develop and implement contract management solutions that meet their specific needs and goals. My experience has shown me the importance of having a robust contract management system in place to streamline processes, reduce costs, and increase efficiency.
-In
+Generated text:  XylophoneRhapsody, and I am a non-binary lesbian who is also a member of the LGBTQ+ community. I have been a member of the Discord server &#34;LGBTQ+ Forum&#34; for a few months now, and I must say that it has been a truly eye-opening experience. The community is so supportive and understanding, and I have made some amazing friends who accept me for who I am.
+
+However, I have noticed that there are some individuals on the server who seem to be extremely intolerant and discriminatory towards certain groups within the community. It&#39;s really frustrating to see people being hurt and marginalized, and I
 
 Prompt: The capital of France is
-Generated text:  Paris. Paris is a major city located in the north-central part of the country, where the Seine River flows into the English Channel. The city is famous for its fashion, art, cuisine, and historical landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum.
-Paris is also a popular tourist destination, attracting millions of visitors each year. The city has a rich history, dating back to the Roman era, and has been the center of several empires throughout history, including the Roman Empire, the Frankish Empire, and the French Empire. Today, Paris is a global hub for business
+Generated text:  known for its stunning architecture, art, and history. Paris, the City of Light, is famous for its iconic landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Visit the famous Champs-Élysées, a beautiful avenue lined with cafes, restaurants, and shops. Take a river Seine cruise to see the city&#39;s most famous landmarks from a different perspective. Discover the world of art and fashion at the Musée d&#39;Orsay and the Musée Rodin. Enjoy the culinary delights of French cuisine, including croissants, cheese, and wine. Paris is a must-
 
 Prompt: The future of AI is
-Generated text:  here, and it&#39;s now more accessible than ever. With the help of powerful AI platforms like Google Cloud AI Platform, Microsoft Azure Machine Learning, and Amazon SageMaker, businesses and developers can quickly build, deploy, and manage AI models without requiring extensive expertise in machine learning.
-However, AI is not without its challenges. One of the major concerns is the issue of explainability, which refers to the ability to understand and interpret the decisions made by AI models. In this blog post, we&#39;ll explore the importance of explainability in AI and how it can be achieved with the help of AI platforms.
-Why is Explainability Important in AI?
-
+Generated text:  uncertain, and the possibilities of what it could bring are vast and varied. Here are some of the possible outcomes:
+1. Automation of jobs: AI could automate many jobs, especially those that involve repetitive tasks or can be easily replicated by a machine. This could lead to significant unemployment and changes in the nature of work.
+2. Enhancement of human capabilities: AI could be used to enhance human capabilities, such as vision, hearing, and memory. This could lead to new forms of human-computer interaction and potentially even new forms of intelligence.
+3. Increased productivity: AI could automate many tasks, freeing up human workers to focus on more complex
 </pre></div></div>
 </div>
 </section>
@@ -667,19 +667,25 @@ Why is Explainability Important in AI?
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  John. I am a survivor of the hurricane that hit your city. I lost my home and all my belongings in the storm. My family and I are now living in a shelter. We are in need of assistance. We need food, clothing, and other essential items to get us back on our feet. We are grateful for any help we can get.
-I can be reached at the shelter address below. Please contact me to arrange for assistance.
-I am just a regular guy trying to make a living in the city. I don&#39;t have any connections or resources to fall back on. I am struggling to make ends meet as it is
+Generated text:  Emily.
+I am a makeup artist and hair stylist, and I have been in the industry for over 10 years.
+I am based in Sydney and I have worked with a variety of clients, from high end fashion magazines to celebrities and TV personalities.
+My experience includes bridal makeup and hair, editorial shoots, commercial work and personal beauty consultations.
+I take pride in providing excellent service and ensuring that each client leaves feeling confident and beautiful.
+I am a perfectionist and I am passionate about my work, and I am always looking for new and exciting ways to push the boundaries of beauty.
+I would be delighted to work with you on your next project
 
 Prompt: The capital of France is
-Generated text:  a city of beauty, romance, and intellectualism. From the iconic Eiffel Tower to the majestic Notre Dame Cathedral, Paris is a city that has inspired artists, writers, and musicians for centuries. Visitors can stroll along the Seine River, visit the famous Louvre Museum, and indulge in the city&#39;s culinary delights, including croissants, cheese, and wine. Whether you&#39;re interested in history, art, fashion, or food, Paris is a city that has something for everyone.
-Paris is a popular tourist destination, and many people visit the city every year. However, it can be overwhelming to navigate the city, especially
+Generated text:  Paris, and the largest city is Paris as well. The country is divided into 13 regions and 96 departments, with a total of 36 metropolitan areas. France has a population of 66.3 million people and a GDP of $2.5 trillion.
+France is known for its rich history and culture, and is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The country is also famous for its cuisine, fashion, and wine, and is a popular destination for tourists.
+France is a country located in Western Europe, bordered by several countries including Belgium, Germany
 
 Prompt: The future of AI is
-Generated text:  now – and it’s all about virtual assistants
-In 2011, the world of artificial intelligence (AI) was on the cusp of a revolution. Virtual assistants were about to take center stage, and they would change the game forever. From Siri on Apple devices to Google Assistant and Alexa, the AI-powered virtual assistant has become an integral part of our daily lives.
-So, what exactly is a virtual assistant?
-A virtual assistant, also known as a conversational AI, is a computer program that uses natural language processing (NLP) and machine learning to interact with humans in a conversational manner. These AI-powered assistants can perform
+Generated text:  bright, but it requires human collaboration
+AI has the potential to bring about tremendous advancements in various industries, but its future also depends on human collaboration and consideration of the potential consequences.
+The rapid development and deployment of artificial intelligence (AI) has led to significant advancements in various industries, from healthcare and finance to education and transportation. However, as AI becomes increasingly integrated into our lives, concerns about its impact on society have grown. While AI has the potential to bring about tremendous benefits, its future also depends on human collaboration and consideration of the potential consequences.
+Collaboration and oversight are essential for responsible AI development
+As AI systems become more sophisticated
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
