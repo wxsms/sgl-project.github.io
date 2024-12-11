@@ -483,31 +483,31 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:37:42] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, tp_size=1, stream_interval=1, random_seed=832858450, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False)
-[2024-12-11 14:37:56 TP0] Init torch distributed begin.
-[2024-12-11 14:37:56 TP0] Load weight begin. avail mem=78.81 GB
-[2024-12-11 14:37:57 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2024-12-11 21:15:20] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, tp_size=1, stream_interval=1, random_seed=581266412, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False)
+[2024-12-11 21:15:29 TP0] Init torch distributed begin.
+[2024-12-11 21:15:29 TP0] Load weight begin. avail mem=78.81 GB
+[2024-12-11 21:15:30 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.68it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.72it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.75it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
-[2024-12-11 14:38:00 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.72 GB
-[2024-12-11 14:38:01 TP0] Memory pool end. avail mem=8.34 GB
-[2024-12-11 14:38:01 TP0] Capture cuda graph begin. This can take up to several minutes.
-[2024-12-11 14:38:06 TP0] Capture cuda graph end. Time elapsed: 5.79 s
-[2024-12-11 14:38:07 TP0] max_total_num_tokens=444500, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
-[2024-12-11 14:38:07] INFO:     Started server process [2028036]
-[2024-12-11 14:38:07] INFO:     Waiting for application startup.
-[2024-12-11 14:38:07] INFO:     Application startup complete.
-[2024-12-11 14:38:07] INFO:     Uvicorn running on http://0.0.0.0:30000 (Press CTRL+C to quit)
-[2024-12-11 14:38:08] INFO:     127.0.0.1:50742 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:08 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:08] INFO:     127.0.0.1:50764 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:08] INFO:     127.0.0.1:50748 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:08] The server is fired up and ready to roll!
+[2024-12-11 21:15:34 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.72 GB
+[2024-12-11 21:15:34 TP0] Memory pool end. avail mem=8.34 GB
+[2024-12-11 21:15:34 TP0] Capture cuda graph begin. This can take up to several minutes.
+[2024-12-11 21:15:42 TP0] Capture cuda graph end. Time elapsed: 8.16 s
+[2024-12-11 21:15:42 TP0] max_total_num_tokens=444500, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2024-12-11 21:15:42] INFO:     Started server process [1851217]
+[2024-12-11 21:15:42] INFO:     Waiting for application startup.
+[2024-12-11 21:15:42] INFO:     Application startup complete.
+[2024-12-11 21:15:42] INFO:     Uvicorn running on http://0.0.0.0:30000 (Press CTRL+C to quit)
+[2024-12-11 21:15:43] INFO:     127.0.0.1:48304 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:43] INFO:     127.0.0.1:54314 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:43 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:44] INFO:     127.0.0.1:54330 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:44] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -548,16 +548,16 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:13 TP0] Prefill batch. #new-seq: 1, #new-token: 42, #cached-token: 1, cache hit rate: 2.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:14 TP0] Decode batch. #running-req: 1, #token: 76, token usage: 0.00, gen throughput (token/s): 5.97, #queue-req: 0
-[2024-12-11 14:38:14] INFO:     127.0.0.1:50780 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:48 TP0] Prefill batch. #new-seq: 1, #new-token: 42, #cached-token: 1, cache hit rate: 2.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:48 TP0] Decode batch. #running-req: 1, #token: 76, token usage: 0.00, gen throughput (token/s): 6.67, #queue-req: 0
+[2024-12-11 21:15:48] INFO:     127.0.0.1:54378 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='5d9f4c8822264bf4bd22bcfd5384ba78', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1733927894, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='92977586382e45ebad9409fc325528e9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None), matched_stop=128009)], created=1733951748, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="Parameters">
@@ -600,19 +600,19 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:14 TP0] Prefill batch. #new-seq: 1, #new-token: 51, #cached-token: 25, cache hit rate: 20.63%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:14 TP0] frequency_penalty, presence_penalty, and repetition_penalty are not supported when using the default overlap scheduler. They will be ignored. Please add `--disable-overlap` when launching the server if you need these features. The speed will be slower in that case.
-[2024-12-11 14:38:14 TP0] Decode batch. #running-req: 1, #token: 106, token usage: 0.00, gen throughput (token/s): 127.10, #queue-req: 0
-[2024-12-11 14:38:14 TP0] Decode batch. #running-req: 1, #token: 146, token usage: 0.00, gen throughput (token/s): 142.63, #queue-req: 0
-[2024-12-11 14:38:14 TP0] Decode batch. #running-req: 1, #token: 186, token usage: 0.00, gen throughput (token/s): 142.37, #queue-req: 0
-[2024-12-11 14:38:15] INFO:     127.0.0.1:50780 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:48 TP0] Prefill batch. #new-seq: 1, #new-token: 51, #cached-token: 25, cache hit rate: 20.63%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:48 TP0] frequency_penalty, presence_penalty, and repetition_penalty are not supported when using the default overlap scheduler. They will be ignored. Please add `--disable-overlap` when launching the server if you need these features. The speed will be slower in that case.
+[2024-12-11 21:15:49 TP0] Decode batch. #running-req: 1, #token: 106, token usage: 0.00, gen throughput (token/s): 127.07, #queue-req: 0
+[2024-12-11 21:15:49 TP0] Decode batch. #running-req: 1, #token: 146, token usage: 0.00, gen throughput (token/s): 142.56, #queue-req: 0
+[2024-12-11 21:15:49 TP0] Decode batch. #running-req: 1, #token: 186, token usage: 0.00, gen throughput (token/s): 142.15, #queue-req: 0
+[2024-12-11 21:15:49] INFO:     127.0.0.1:54378 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome's major achievements include:<br><br>1. **Engineering and Architecture**: Developed the arch, dome, and aqueducts, creating impressive structures like the Colosseum and Pantheon.<br>2. **Law and Governance**: Established the Twelve Tables, a foundation for Roman law, and the concept of citizenship, which spread throughout the empire.<br>3. **Military Conquests**: Expanded the empire through numerous wars, creating a vast territory that lasted for centuries.<br>4. **Language and Literature**: Developed Latin, a language that influenced many modern languages, and produced notable authors like Cicero and Virgil.<br>5. **Infrastructure**: Built extensive</strong></div>
+<strong style='color: #00008B;'>Ancient Rome's major achievements include:<br><br>1. **Engineering and Architecture**: Developed the arch, aqueducts, roads (e.g., Appian Way), and monumental buildings like the Colosseum and Pantheon.<br>2. **Law and Governance**: Established the Twelve Tables, a precursor to modern law, and the Roman Senate, a precursor to modern democracy.<br>3. **Military Conquests**: Expanded the empire through numerous wars, creating a vast territory that lasted for centuries.<br>4. **Language and Literature**: Developed Latin, which became the language of law, government, and literature, and produced notable authors like Cicero and Vir</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -635,10 +635,9 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:15] INFO:     127.0.0.1:50780 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:15 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 30, cache hit rate: 33.73%, token usage: 0.00, #running-req: 0, #queue-req: 0
-It looks like you&#39;re ready to take a test.  What subject would you like to test yourself on[2024-12-11 14:38:15 TP0] Decode batch. #running-req: 1, #token: 62, token usage: 0.00, gen throughput (token/s): 135.58, #queue-req: 0
-, or would you like me to generate some random questions?
+[2024-12-11 21:15:49] INFO:     127.0.0.1:54378 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:49 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 30, cache hit rate: 33.73%, token usage: 0.00, #running-req: 0, #queue-req: 0
+This is only a test
 </pre></div></div>
 </div>
 </section>
@@ -670,16 +669,17 @@ It looks like you&#39;re ready to take a test.  What subject would you like to t
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:15 TP0] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 1, cache hit rate: 32.57%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:15 TP0] Decode batch. #running-req: 1, #token: 37, token usage: 0.00, gen throughput (token/s): 141.09, #queue-req: 0
-[2024-12-11 14:38:15] INFO:     127.0.0.1:50780 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:49 TP0] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 1, cache hit rate: 32.57%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:49 TP0] Decode batch. #running-req: 1, #token: 25, token usage: 0.00, gen throughput (token/s): 131.57, #queue-req: 0
+[2024-12-11 21:15:50 TP0] Decode batch. #running-req: 1, #token: 65, token usage: 0.00, gen throughput (token/s): 148.43, #queue-req: 0
+[2024-12-11 21:15:50] INFO:     127.0.0.1:54378 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='32c87a1f0f5c4460be0fc1f82b50281c', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. 2. 3.\n1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia - Canberra\nList 3 countries and their capitals. 1. 2. 3.\n1.  China - Beijing 2.  Brazil - Bras', matched_stop=None)], created=1733927895, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=9, total_tokens=73, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='20dcfba04b384e50b05df72afb1dbb44', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. 2. 3.\n1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia - Canberra\nList 3 countries and their capitals. 1. 2. 3.\n1.  China - Beijing 2.  Brazil - Bras', matched_stop=None)], created=1733951750, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=9, total_tokens=73, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -712,20 +712,19 @@ It looks like you&#39;re ready to take a test.  What subject would you like to t
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:15 TP0] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 1, cache hit rate: 31.35%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:15 TP0] frequency_penalty, presence_penalty, and repetition_penalty are not supported when using the default overlap scheduler. They will be ignored. Please add `--disable-overlap` when launching the server if you need these features. The speed will be slower in that case.
-[2024-12-11 14:38:15 TP0] Decode batch. #running-req: 1, #token: 14, token usage: 0.00, gen throughput (token/s): 138.93, #queue-req: 0
-[2024-12-11 14:38:16 TP0] Decode batch. #running-req: 1, #token: 54, token usage: 0.00, gen throughput (token/s): 146.54, #queue-req: 0
-[2024-12-11 14:38:16 TP0] Decode batch. #running-req: 1, #token: 94, token usage: 0.00, gen throughput (token/s): 145.94, #queue-req: 0
-[2024-12-11 14:38:16 TP0] Decode batch. #running-req: 1, #token: 134, token usage: 0.00, gen throughput (token/s): 144.46, #queue-req: 0
-[2024-12-11 14:38:16] INFO:     127.0.0.1:50780 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:50 TP0] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 1, cache hit rate: 31.35%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:50 TP0] frequency_penalty, presence_penalty, and repetition_penalty are not supported when using the default overlap scheduler. They will be ignored. Please add `--disable-overlap` when launching the server if you need these features. The speed will be slower in that case.
+[2024-12-11 21:15:50 TP0] Decode batch. #running-req: 1, #token: 42, token usage: 0.00, gen throughput (token/s): 139.82, #queue-req: 0
+[2024-12-11 21:15:50 TP0] Decode batch. #running-req: 1, #token: 82, token usage: 0.00, gen throughput (token/s): 146.28, #queue-req: 0
+[2024-12-11 21:15:51 TP0] Decode batch. #running-req: 1, #token: 122, token usage: 0.00, gen throughput (token/s): 145.41, #queue-req: 0
+[2024-12-11 21:15:51] INFO:     127.0.0.1:54378 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='fea3f3ec20d54b3983a37c7d7d1acf6c', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text="\xa0\nThe stars shone brightly in the blackness of space as Captain Jaxon gazed out at the vast expanse. He had been a space explorer for over 20 years, but the thrill of discovery never grew old. His ship, the Aurora, had been his home for nearly a decade, and he had seen wonders beyond his wildest dreams.\nAs he piloted the ship through the cosmos, Jaxon's thoughts turned to the mysterious planet he was about to visit. Known as Xylophia-IV, it was a world shrouded in legend and myth. Some said it was a paradise, teeming with life and beauty. Others claimed it was a barren wasteland, devoid of hope.\nJaxon had always been", matched_stop=None)], created=1733927896, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=10, total_tokens=160, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='10b1961f2aa249bd9f0a73d8b6fc86b9', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=" I have to use the latest scientific knowledge about space and the universe in the space explorer's journey.\nAs a space explorer, I stood at the edge of the vast, starry expanse, gazing out at the cosmos in awe. My ship, the Aurora, hummed softly behind me, its advanced propulsion system fueled by a combination of antimatter and exotic matter, allowing us to traverse the vast distances between stars at incredible speeds.\nI had been traveling for over 20 years, and my mission was to explore the newly discovered habitable exoplanet, Kepler-62f. Located in the constellation of Lyra, this planet was believed to be a terrestrial paradise, with a stable atmosphere and liquid water present on its surface.\nAs I", matched_stop=None)], created=1733951751, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=10, total_tokens=160, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 </section>
@@ -776,9 +775,9 @@ It looks like you&#39;re ready to take a test.  What subject would you like to t
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:16 TP0] Prefill batch. #new-seq: 1, #new-token: 19, #cached-token: 30, cache hit rate: 37.61%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:17 TP0] Decode batch. #running-req: 1, #token: 63, token usage: 0.00, gen throughput (token/s): 88.79, #queue-req: 0
-[2024-12-11 14:38:17] INFO:     127.0.0.1:50780 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:51 TP0] Prefill batch. #new-seq: 1, #new-token: 19, #cached-token: 30, cache hit rate: 37.61%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:51 TP0] Decode batch. #running-req: 1, #token: 51, token usage: 0.00, gen throughput (token/s): 85.51, #queue-req: 0
+[2024-12-11 21:15:51] INFO:     127.0.0.1:54378 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -813,8 +812,8 @@ It looks like you&#39;re ready to take a test.  What subject would you like to t
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:17 TP0] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 30, cache hit rate: 42.75%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:17] INFO:     127.0.0.1:50780 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:51 TP0] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 30, cache hit rate: 42.75%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:51] INFO:     127.0.0.1:54378 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -894,16 +893,23 @@ It looks like you&#39;re ready to take a test.  What subject would you like to t
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:17] INFO:     127.0.0.1:34442 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:17] INFO:     127.0.0.1:34442 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:17 TP0] Prefill batch. #new-seq: 2, #new-token: 18, #cached-token: 62, cache hit rate: 50.56%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:51] INFO:     127.0.0.1:54394 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:51] INFO:     127.0.0.1:54394 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
 </pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Batch job created with ID: batch_a66737c8-77c0-475e-8681-f53b15fbbb18</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Batch job created with ID: batch_909d5e5e-f3e5-405e-b965-4cdf3a91c2ff</strong></div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2024-12-11 21:15:51 TP0] Prefill batch. #new-seq: 2, #new-token: 18, #cached-token: 62, cache hit rate: 50.56%, token usage: 0.00, #running-req: 0, #queue-req: 0
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -945,12 +951,12 @@ It looks like you&#39;re ready to take a test.  What subject would you like to t
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:17 TP0] Decode batch. #running-req: 1, #token: 76, token usage: 0.00, gen throughput (token/s): 105.26, #queue-req: 0
+[2024-12-11 21:15:52 TP0] Decode batch. #running-req: 1, #token: 64, token usage: 0.00, gen throughput (token/s): 104.00, #queue-req: 0
 Batch job status: validating...trying again in 3 seconds...
-[2024-12-11 14:38:20] INFO:     127.0.0.1:34442 - &#34;GET /v1/batches/batch_909d5e5e-f3e5-405e-b965-4cdf3a91c2ff HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:54] INFO:     127.0.0.1:54394 - &#34;GET /v1/batches/batch_a66737c8-77c0-475e-8681-f53b15fbbb18 HTTP/1.1&#34; 200 OK
 Batch job completed successfully!
 Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
-[2024-12-11 14:38:20] INFO:     127.0.0.1:34442 - &#34;GET /v1/files/backend_result_file-fc7c1d83-7468-4d37-a003-0c1fdd1d8ca3/content HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:54] INFO:     127.0.0.1:54394 - &#34;GET /v1/files/backend_result_file-8d33b803-7df4-4d52-8f74-68a41746e67d/content HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -963,7 +969,7 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: {'status_code': 200, 'request_id': 'request-1', 'body': {'id': 'request-1', 'object': 'chat.completion', 'created': 1733927897, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': {'index': 0, 'message': {'role': 'assistant', 'content': 'Why do programmers prefer dark mode?\n\nBecause light attracts bugs.'}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}, 'usage': {'prompt_tokens': 41, 'completion_tokens': 13, 'total_tokens': 54}, 'system_fingerprint': None}}</strong></div>
+<strong style='color: #00008B;'>Response: {'status_code': 200, 'request_id': 'request-1', 'body': {'id': 'request-1', 'object': 'chat.completion', 'created': 1733951752, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': {'index': 0, 'message': {'role': 'assistant', 'content': 'Why do programmers prefer dark mode?\n\nBecause light attracts bugs.'}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}, 'usage': {'prompt_tokens': 41, 'completion_tokens': 13, 'total_tokens': 54}, 'system_fingerprint': None}}</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -975,7 +981,7 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: {'status_code': 200, 'request_id': 'request-2', 'body': {'id': 'request-2', 'object': 'chat.completion', 'created': 1733927897, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': {'index': 0, 'message': {'role': 'assistant', 'content': '**What is Python?**\n\nPython is a high-level, interpreted programming language that is widely used for various purposes such as web development, scientific computing, data analysis, artificial intelligence, and more. It was created in the late 1980s by'}, 'logprobs': None, 'finish_reason': 'length', 'matched_stop': None}, 'usage': {'prompt_tokens': 39, 'completion_tokens': 50, 'total_tokens': 89}, 'system_fingerprint': None}}</strong></div>
+<strong style='color: #00008B;'>Response: {'status_code': 200, 'request_id': 'request-2', 'body': {'id': 'request-2', 'object': 'chat.completion', 'created': 1733951752, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': {'index': 0, 'message': {'role': 'assistant', 'content': '**What is Python?**\n\nPython is a high-level, interpreted programming language that is widely used for various purposes such as web development, scientific computing, data analysis, artificial intelligence, and more. It was created in the late 1980s by'}, 'logprobs': None, 'finish_reason': 'length', 'matched_stop': None}, 'usage': {'prompt_tokens': 39, 'completion_tokens': 50, 'total_tokens': 89}, 'system_fingerprint': None}}</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -988,7 +994,7 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:20] INFO:     127.0.0.1:34442 - &#34;DELETE /v1/files/backend_result_file-fc7c1d83-7468-4d37-a003-0c1fdd1d8ca3 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:54] INFO:     127.0.0.1:54394 - &#34;DELETE /v1/files/backend_result_file-8d33b803-7df4-4d52-8f74-68a41746e67d HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <p>It takes a while to complete the batch job. You can use these two APIs to retrieve the batch job status or cancel the batch job.</p>
@@ -1070,15 +1076,15 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:20] INFO:     127.0.0.1:34444 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:20] INFO:     127.0.0.1:34444 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:54] INFO:     127.0.0.1:35032 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:55] INFO:     127.0.0.1:35032 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Created batch job with ID: batch_81069247-cfaa-46f3-93d8-85c51ae37ad8</strong></div>
+<strong style='color: #00008B;'>Created batch job with ID: batch_5b4ae228-11a1-4d32-bffa-711177c2a26b</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1091,28 +1097,29 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:20 TP0] Prefill batch. #new-seq: 5, #new-token: 150, #cached-token: 125, cache hit rate: 48.34%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:20 TP0] Prefill batch. #new-seq: 95, #new-token: 2850, #cached-token: 2375, cache hit rate: 45.77%, token usage: 0.00, #running-req: 5, #queue-req: 0
-[2024-12-11 14:38:20 TP0] Decode batch. #running-req: 100, #token: 5725, token usage: 0.01, gen throughput (token/s): 827.12, #queue-req: 0
-[2024-12-11 14:38:21 TP0] Decode batch. #running-req: 100, #token: 9725, token usage: 0.02, gen throughput (token/s): 11817.92, #queue-req: 0
-[2024-12-11 14:38:21 TP0] Decode batch. #running-req: 100, #token: 13725, token usage: 0.03, gen throughput (token/s): 11555.64, #queue-req: 0
-[2024-12-11 14:38:21 TP0] Decode batch. #running-req: 100, #token: 17725, token usage: 0.04, gen throughput (token/s): 11296.24, #queue-req: 0
-[2024-12-11 14:38:22 TP0] Decode batch. #running-req: 100, #token: 21725, token usage: 0.05, gen throughput (token/s): 11035.39, #queue-req: 0
-[2024-12-11 14:38:22 TP0] Decode batch. #running-req: 100, #token: 25725, token usage: 0.06, gen throughput (token/s): 10775.24, #queue-req: 0
-[2024-12-11 14:38:22 TP0] Decode batch. #running-req: 100, #token: 29725, token usage: 0.07, gen throughput (token/s): 10533.13, #queue-req: 0
-[2024-12-11 14:38:23 TP0] Decode batch. #running-req: 100, #token: 33725, token usage: 0.08, gen throughput (token/s): 10316.22, #queue-req: 0
-[2024-12-11 14:38:23 TP0] Decode batch. #running-req: 100, #token: 37725, token usage: 0.08, gen throughput (token/s): 10084.56, #queue-req: 0
-[2024-12-11 14:38:24 TP0] Decode batch. #running-req: 100, #token: 41725, token usage: 0.09, gen throughput (token/s): 9874.75, #queue-req: 0
-[2024-12-11 14:38:24 TP0] Decode batch. #running-req: 100, #token: 45725, token usage: 0.10, gen throughput (token/s): 9674.98, #queue-req: 0
-[2024-12-11 14:38:24 TP0] Decode batch. #running-req: 100, #token: 49725, token usage: 0.11, gen throughput (token/s): 9474.67, #queue-req: 0
-[2024-12-11 14:38:30] INFO:     127.0.0.1:57058 - &#34;GET /v1/batches/batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:15:55 TP0] Prefill batch. #new-seq: 8, #new-token: 240, #cached-token: 200, cache hit rate: 47.74%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:15:55 TP0] Prefill batch. #new-seq: 92, #new-token: 2760, #cached-token: 2300, cache hit rate: 45.77%, token usage: 0.00, #running-req: 8, #queue-req: 0
+[2024-12-11 21:15:55 TP0] Decode batch. #running-req: 100, #token: 4525, token usage: 0.01, gen throughput (token/s): 452.95, #queue-req: 0
+[2024-12-11 21:15:55 TP0] Decode batch. #running-req: 100, #token: 8525, token usage: 0.02, gen throughput (token/s): 11888.85, #queue-req: 0
+[2024-12-11 21:15:55 TP0] Decode batch. #running-req: 100, #token: 12525, token usage: 0.03, gen throughput (token/s): 11643.38, #queue-req: 0
+[2024-12-11 21:15:56 TP0] Decode batch. #running-req: 100, #token: 16525, token usage: 0.04, gen throughput (token/s): 11381.47, #queue-req: 0
+[2024-12-11 21:15:56 TP0] Decode batch. #running-req: 100, #token: 20525, token usage: 0.05, gen throughput (token/s): 11114.08, #queue-req: 0
+[2024-12-11 21:15:56 TP0] Decode batch. #running-req: 100, #token: 24525, token usage: 0.06, gen throughput (token/s): 10849.10, #queue-req: 0
+[2024-12-11 21:15:57 TP0] Decode batch. #running-req: 100, #token: 28525, token usage: 0.06, gen throughput (token/s): 10604.71, #queue-req: 0
+[2024-12-11 21:15:57 TP0] Decode batch. #running-req: 100, #token: 32525, token usage: 0.07, gen throughput (token/s): 10382.10, #queue-req: 0
+[2024-12-11 21:15:58 TP0] Decode batch. #running-req: 100, #token: 36525, token usage: 0.08, gen throughput (token/s): 10160.65, #queue-req: 0
+[2024-12-11 21:15:58 TP0] Decode batch. #running-req: 100, #token: 40525, token usage: 0.09, gen throughput (token/s): 9940.74, #queue-req: 0
+[2024-12-11 21:15:58 TP0] Decode batch. #running-req: 100, #token: 44525, token usage: 0.10, gen throughput (token/s): 9735.92, #queue-req: 0
+[2024-12-11 21:15:59 TP0] Decode batch. #running-req: 100, #token: 48525, token usage: 0.11, gen throughput (token/s): 9545.53, #queue-req: 0
+[2024-12-11 21:15:59 TP0] Decode batch. #running-req: 100, #token: 52525, token usage: 0.12, gen throughput (token/s): 9346.12, #queue-req: 0
+[2024-12-11 21:16:05] INFO:     127.0.0.1:54082 - &#34;GET /v1/batches/batch_5b4ae228-11a1-4d32-bffa-711177c2a26b HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Batch job details (check 1 / 5) // ID: batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 // Status: completed // Created at: 1733927900 // Input file ID: backend_input_file-0bf49d18-33c5-4671-9b82-58816e881faf // Output file ID: backend_result_file-68a5115c-cd30-4348-87a4-43ddc19dd94c</strong></div>
+<strong style='color: #00008B;'>Batch job details (check 1 / 5) // ID: batch_5b4ae228-11a1-4d32-bffa-711177c2a26b // Status: completed // Created at: 1733951755 // Input file ID: backend_input_file-b4f39652-0bdc-4c4b-aa49-f1d56bdbb454 // Output file ID: backend_result_file-795fe134-d714-4d4d-aa4a-293302f6294a</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1125,14 +1132,14 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:33] INFO:     127.0.0.1:57058 - &#34;GET /v1/batches/batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:08] INFO:     127.0.0.1:54082 - &#34;GET /v1/batches/batch_5b4ae228-11a1-4d32-bffa-711177c2a26b HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Batch job details (check 2 / 5) // ID: batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 // Status: completed // Created at: 1733927900 // Input file ID: backend_input_file-0bf49d18-33c5-4671-9b82-58816e881faf // Output file ID: backend_result_file-68a5115c-cd30-4348-87a4-43ddc19dd94c</strong></div>
+<strong style='color: #00008B;'>Batch job details (check 2 / 5) // ID: batch_5b4ae228-11a1-4d32-bffa-711177c2a26b // Status: completed // Created at: 1733951755 // Input file ID: backend_input_file-b4f39652-0bdc-4c4b-aa49-f1d56bdbb454 // Output file ID: backend_result_file-795fe134-d714-4d4d-aa4a-293302f6294a</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1145,14 +1152,14 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:36] INFO:     127.0.0.1:57058 - &#34;GET /v1/batches/batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:11] INFO:     127.0.0.1:54082 - &#34;GET /v1/batches/batch_5b4ae228-11a1-4d32-bffa-711177c2a26b HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Batch job details (check 3 / 5) // ID: batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 // Status: completed // Created at: 1733927900 // Input file ID: backend_input_file-0bf49d18-33c5-4671-9b82-58816e881faf // Output file ID: backend_result_file-68a5115c-cd30-4348-87a4-43ddc19dd94c</strong></div>
+<strong style='color: #00008B;'>Batch job details (check 3 / 5) // ID: batch_5b4ae228-11a1-4d32-bffa-711177c2a26b // Status: completed // Created at: 1733951755 // Input file ID: backend_input_file-b4f39652-0bdc-4c4b-aa49-f1d56bdbb454 // Output file ID: backend_result_file-795fe134-d714-4d4d-aa4a-293302f6294a</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1165,14 +1172,14 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:39] INFO:     127.0.0.1:57058 - &#34;GET /v1/batches/batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:14] INFO:     127.0.0.1:54082 - &#34;GET /v1/batches/batch_5b4ae228-11a1-4d32-bffa-711177c2a26b HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Batch job details (check 4 / 5) // ID: batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 // Status: completed // Created at: 1733927900 // Input file ID: backend_input_file-0bf49d18-33c5-4671-9b82-58816e881faf // Output file ID: backend_result_file-68a5115c-cd30-4348-87a4-43ddc19dd94c</strong></div>
+<strong style='color: #00008B;'>Batch job details (check 4 / 5) // ID: batch_5b4ae228-11a1-4d32-bffa-711177c2a26b // Status: completed // Created at: 1733951755 // Input file ID: backend_input_file-b4f39652-0bdc-4c4b-aa49-f1d56bdbb454 // Output file ID: backend_result_file-795fe134-d714-4d4d-aa4a-293302f6294a</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1185,14 +1192,14 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:42] INFO:     127.0.0.1:57058 - &#34;GET /v1/batches/batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:17] INFO:     127.0.0.1:54082 - &#34;GET /v1/batches/batch_5b4ae228-11a1-4d32-bffa-711177c2a26b HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Batch job details (check 5 / 5) // ID: batch_81069247-cfaa-46f3-93d8-85c51ae37ad8 // Status: completed // Created at: 1733927900 // Input file ID: backend_input_file-0bf49d18-33c5-4671-9b82-58816e881faf // Output file ID: backend_result_file-68a5115c-cd30-4348-87a4-43ddc19dd94c</strong></div>
+<strong style='color: #00008B;'>Batch job details (check 5 / 5) // ID: batch_5b4ae228-11a1-4d32-bffa-711177c2a26b // Status: completed // Created at: 1733951755 // Input file ID: backend_input_file-b4f39652-0bdc-4c4b-aa49-f1d56bdbb454 // Output file ID: backend_result_file-795fe134-d714-4d4d-aa4a-293302f6294a</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1293,15 +1300,15 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:45] INFO:     127.0.0.1:59890 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
-[2024-12-11 14:38:45] INFO:     127.0.0.1:59890 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:20] INFO:     127.0.0.1:42454 - &#34;POST /v1/files HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:20] INFO:     127.0.0.1:42454 - &#34;POST /v1/batches HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Created batch job with ID: batch_dfdd2dff-3f86-4911-aefe-3c499b79a9e7</strong></div>
+<strong style='color: #00008B;'>Created batch job with ID: batch_692adb5a-988c-4b0d-95bb-1144a108f2ba</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1314,21 +1321,20 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:45 TP0] Prefill batch. #new-seq: 8, #new-token: 8, #cached-token: 432, cache hit rate: 49.43%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2024-12-11 14:38:45 TP0] Prefill batch. #new-seq: 278, #new-token: 5672, #cached-token: 9618, cache hit rate: 58.97%, token usage: 0.01, #running-req: 8, #queue-req: 0
-[2024-12-11 14:38:45 TP0] Prefill batch. #new-seq: 214, #new-token: 6420, #cached-token: 5350, cache hit rate: 54.20%, token usage: 0.02, #running-req: 286, #queue-req: 0
-[2024-12-11 14:38:46 TP0] Decode batch. #running-req: 500, #token: 18525, token usage: 0.04, gen throughput (token/s): 302.16, #queue-req: 0
-[2024-12-11 14:38:46 TP0] Decode batch. #running-req: 500, #token: 38525, token usage: 0.09, gen throughput (token/s): 27380.82, #queue-req: 0
-[2024-12-11 14:38:47 TP0] Decode batch. #running-req: 500, #token: 58525, token usage: 0.13, gen throughput (token/s): 26173.21, #queue-req: 0
-[2024-12-11 14:38:48 TP0] Decode batch. #running-req: 500, #token: 78525, token usage: 0.18, gen throughput (token/s): 24870.84, #queue-req: 0
-[2024-12-11 14:38:49 TP0] Decode batch. #running-req: 500, #token: 98525, token usage: 0.22, gen throughput (token/s): 23684.90, #queue-req: 0
-[2024-12-11 14:38:50 TP0] Decode batch. #running-req: 500, #token: 118525, token usage: 0.27, gen throughput (token/s): 22665.44, #queue-req: 0
-[2024-12-11 14:38:51 TP0] Decode batch. #running-req: 500, #token: 138525, token usage: 0.31, gen throughput (token/s): 21629.68, #queue-req: 0
-[2024-12-11 14:38:52 TP0] Decode batch. #running-req: 500, #token: 158525, token usage: 0.36, gen throughput (token/s): 20848.87, #queue-req: 0
-[2024-12-11 14:38:53 TP0] Decode batch. #running-req: 500, #token: 178525, token usage: 0.40, gen throughput (token/s): 19990.75, #queue-req: 0
-[2024-12-11 14:38:54 TP0] Decode batch. #running-req: 500, #token: 198525, token usage: 0.45, gen throughput (token/s): 19246.41, #queue-req: 0
-[2024-12-11 14:38:55 TP0] Decode batch. #running-req: 500, #token: 218525, token usage: 0.49, gen throughput (token/s): 18556.58, #queue-req: 0
-[2024-12-11 14:38:55] INFO:     127.0.0.1:44060 - &#34;POST /v1/batches/batch_dfdd2dff-3f86-4911-aefe-3c499b79a9e7/cancel HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:20 TP0] Prefill batch. #new-seq: 13, #new-token: 13, #cached-token: 702, cache hit rate: 51.47%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2024-12-11 21:16:20 TP0] Prefill batch. #new-seq: 358, #new-token: 8192, #cached-token: 11473, cache hit rate: 56.62%, token usage: 0.01, #running-req: 13, #queue-req: 3
+[2024-12-11 21:16:20 TP0] Prefill batch. #new-seq: 130, #new-token: 3895, #cached-token: 3255, cache hit rate: 54.24%, token usage: 0.03, #running-req: 370, #queue-req: 1
+[2024-12-11 21:16:21 TP0] Decode batch. #running-req: 500, #token: 32525, token usage: 0.07, gen throughput (token/s): 823.60, #queue-req: 0
+[2024-12-11 21:16:21 TP0] Decode batch. #running-req: 500, #token: 52525, token usage: 0.12, gen throughput (token/s): 26624.59, #queue-req: 0
+[2024-12-11 21:16:22 TP0] Decode batch. #running-req: 500, #token: 72525, token usage: 0.16, gen throughput (token/s): 25036.78, #queue-req: 0
+[2024-12-11 21:16:23 TP0] Decode batch. #running-req: 500, #token: 92525, token usage: 0.21, gen throughput (token/s): 24071.85, #queue-req: 0
+[2024-12-11 21:16:24 TP0] Decode batch. #running-req: 500, #token: 112525, token usage: 0.25, gen throughput (token/s): 23046.77, #queue-req: 0
+[2024-12-11 21:16:25 TP0] Decode batch. #running-req: 500, #token: 132525, token usage: 0.30, gen throughput (token/s): 21994.52, #queue-req: 0
+[2024-12-11 21:16:26 TP0] Decode batch. #running-req: 500, #token: 152525, token usage: 0.34, gen throughput (token/s): 21103.78, #queue-req: 0
+[2024-12-11 21:16:27 TP0] Decode batch. #running-req: 500, #token: 172525, token usage: 0.39, gen throughput (token/s): 20283.64, #queue-req: 0
+[2024-12-11 21:16:28 TP0] Decode batch. #running-req: 500, #token: 192525, token usage: 0.43, gen throughput (token/s): 19546.28, #queue-req: 0
+[2024-12-11 21:16:29 TP0] Decode batch. #running-req: 500, #token: 212525, token usage: 0.48, gen throughput (token/s): 18754.65, #queue-req: 0
+[2024-12-11 21:16:30] INFO:     127.0.0.1:44794 - &#34;POST /v1/batches/batch_692adb5a-988c-4b0d-95bb-1144a108f2ba/cancel HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1342,7 +1348,7 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:58] INFO:     127.0.0.1:44060 - &#34;GET /v1/batches/batch_dfdd2dff-3f86-4911-aefe-3c499b79a9e7 HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:33] INFO:     127.0.0.1:44794 - &#34;GET /v1/batches/batch_692adb5a-988c-4b0d-95bb-1144a108f2ba HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1362,7 +1368,7 @@ Request counts: BatchRequestCounts(completed=2, failed=0, total=2)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2024-12-11 14:38:58] INFO:     127.0.0.1:44060 - &#34;DELETE /v1/files/backend_input_file-1da14d56-1201-48f2-956b-e76d9c94827a HTTP/1.1&#34; 200 OK
+[2024-12-11 21:16:33] INFO:     127.0.0.1:44794 - &#34;DELETE /v1/files/backend_input_file-48992d3b-adf9-4f04-890b-cced50c0a971 HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
