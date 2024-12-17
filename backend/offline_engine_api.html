@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.0.post1" />
-    <meta name="docbuild:last-update" content="Dec 12, 2024"/>
+    <meta name="docbuild:last-update" content="Dec 17, 2024"/>
   </head>
   
   
@@ -468,12 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.84it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.77it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.20it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.05it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.03it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.50it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
+100%|██████████| 23/23 [00:07&lt;00:00,  2.90it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -505,27 +506,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Marie and I’m a freelance writer based in the beautiful countryside of rural France. I specialise in writing travel articles, blog posts, and copy for the travel and tourism industry. I’m also passionate about creating engaging and informative content for websites, social media, and publications that inspire people to explore new destinations and experiences.
+Generated text:  Nicole. I have a passion for mathematics, problem-solving, and understanding the world around me. I believe that mathematics is not just a subject, but a way of thinking and a tool to analyze and solve real-world problems. As a tutor, I strive to help my students develop a deep understanding of mathematical concepts and build their problem-solving skills. I am patient, encouraging, and enthusiastic, and I love seeing the light bulb go off in my students&#39; heads when they grasp a new concept.
 
-With over 10 years of experience in writing and travel, I have developed a unique voice and style that brings destinations to life. My writing is descriptive, engaging, and informative, making it perfect for travel enthusiasts, tour operators, and travel companies looking to showcase their products and services.
-
-My areas of expertise include:
-
-*
+I specialize in tutoring mathematics for high school and college students, including algebra, geometry, trigonometry, calculus, statistics, and linear algebra.
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States. The president leads the executive branch of the federal government and is the commander-in-chief of the United States Armed Forces. The president is directly elected by the people through the Electoral College.
-The president is assisted by a cabinet of advisors, known as the president&#39;s cabinet, who are appointed by the president and confirmed by the Senate. The cabinet includes the vice president, who is the president&#39;s deputy and assumes the presidency if the president is unable to serve.
-The president serves a four-year term, and is limited to two terms in office. The president is also responsible for signing or
+Generated text:  a position of great power and influence, but it is also a position that requires a great deal of hard work and dedication. The president must be a leader who can inspire and motivate the American people, make tough decisions, and work with Congress to pass legislation that benefits the country.
+The president must also be a strong communicator, able to articulate a clear vision for the country and persuade others to support their policies. They must be a skilled diplomat, able to navigate complex international relationships and negotiate agreements with other countries.
+In addition to these skills, the president must also be a good manager, able to oversee the executive branch of government and make sure
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, and this city has been the cultural and political center of France for centuries. The City of Light is famous for its stunning architecture, art, fashion, and romanticism.
-Paris has been a hub of culture, politics, and art for over two millennia, attracting intellectuals, artists, and tourists from around the world. From the Eiffel Tower to the Louvre, there are countless iconic landmarks to visit.
-Visitors can stroll along the Seine, explore the charming neighborhoods of Montmartre and Le Marais, and indulge in the city&#39;s world-famous cuisine. Paris has something for everyone, whether you&#39;re a history
+Generated text:  the city of Paris, known as the &#34;City of Light.&#34; It is situated in the northern part of the country, along the river Seine, and is a major center for culture, history, and entertainment. Paris has many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city has a rich history dating back to the 3rd century BC and has been the center of power for various kingdoms and empires throughout history. Paris is a popular tourist destination and a major hub for international business and culture. It is home to some of the world&#39;s most famous art and fashion houses
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, and the best way to prepare for it is to understand the key factors that will shape its development and impact on society. This book provides a comprehensive overview of the current state of AI, its history, and its future prospects, highlighting the areas of greatest uncertainty and opportunity.
-The book begins by discussing the history of AI, from its early beginnings in the 1950s to the present day. It then explores the current state of AI, covering its types (narrow, general, and superintelligence), its applications, and its limitations. The author also discusses the ethics of AI, including issues of accountability, bias, and job
+Generated text:  defined by collaboration and integration, not competition
+AI is increasingly viewed as a means to augment human capabilities, driving innovation and efficiency across industries
+As AI adoption accelerates, there is a growing recognition that the future of AI is defined by collaboration and integration, rather than competition. This shift is driven by the understanding that AI is increasingly viewed as a means to augment human capabilities, driving innovation and efficiency across industries.
+The focus is now on creating hybrid systems that combine the strengths of humans and machines to achieve better outcomes. This is evident in the growing trend of human-AI collaboration, where experts in various fields are working alongside AI systems to develop
 </pre></div></div>
 </div>
 </section>
@@ -563,18 +560,24 @@ The book begins by discussing the history of AI, from its early beginnings in th
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Maria and I&#39;m a freelance makeup artist with 10+ years of experience in the beauty industry. I specialize in Bridal Makeup, Special Occasion Makeup, and Beauty Coaching. I am passionate about helping my clients look and feel their best on their special day. I have a keen eye for detail and a love for experimenting with different makeup looks and techniques. I am also a skilled educator and have taught makeup classes and workshops for various companies and individuals. When I&#39;m not working, you can find me trying out new makeup products or spending time with my family.
-I am available to travel for weddings and special occasions. I have worked with
+Generated text:  Alex and I&#39;m a software engineer with a passion for technology and innovation. I have a strong background in software development, with experience in programming languages such as Java, C++, Python, and JavaScript. I&#39;m also familiar with various frameworks and libraries, including Spring, React, and Node.js.
+
+I&#39;m a creative problem solver with a keen eye for detail, and I enjoy working on complex projects that require critical thinking and analytical skills. I&#39;m also a strong communicator and team player, with experience in collaborating with cross-functional teams to deliver high-quality software products.
+
+In my free time, I enjoy learning new programming languages and technologies, as well
 
 Prompt: The capital of France is
-Generated text:  a city of great beauty and history, with a wide range of attractions and activities to suit all interests. From the iconic Eiffel Tower to the world-class museums and art galleries, there&#39;s something for everyone in Paris. Take a romantic river cruise along the Seine, visit the famous Notre Dame Cathedral, or explore the trendy neighborhoods of Montmartre and Le Marais. You can also indulge in the city&#39;s renowned cuisine and wine, from croissants and baguettes to fine dining and Michelin-starred restaurants.
-Where to Go in Paris
-The Eiffel Tower, the iconic symbol of Paris and one of the
+Generated text:  a beautiful and romantic city that is steeped in history and culture. Paris is known as the City of Light, and it&#39;s a must-visit destination for anyone who loves art, architecture, fashion, and food.
+Here are some of the top things to do in Paris:
+Visit the Eiffel Tower: This iconic landmark is a must-see when visiting Paris. You can take the stairs or elevator to the top for stunning views of the city.
+Explore the Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from around the world, including the
 
 Prompt: The future of AI is
-Generated text:  bright, but its impact on jobs is uncertain
-Artificial intelligence (AI) is changing the world in profound ways. From virtual assistants like Siri and Alexa to self-driving cars and personalized medicine, AI is transforming industries and revolutionizing the way we live and work. However, as AI becomes increasingly sophisticated, it also raises concerns about its impact on jobs and the economy. Will AI create new opportunities, or will it displace human workers?
-The debate about the impact of AI on jobs is complex and multifaceted. On one hand, AI has the potential to augment human capabilities, freeing us from mundane and repetitive tasks and enabling us to
+Generated text:  exciting, but also poses challenges for workers. Here are some key considerations and potential solutions.
+The increasing use of artificial intelligence (AI) in the workplace has sparked both excitement and concern. While AI has the potential to greatly improve productivity and efficiency, it also poses significant challenges for workers, including job displacement and changes to the nature of work.
+Here are some key considerations and potential solutions for the future of AI in the workplace:
+1. Job displacement: As AI takes over routine and repetitive tasks, some jobs may become obsolete. This can lead to significant job displacement, especially for low-skilled and low-wage workers.
+2. Changes to work
 </pre></div></div>
 </div>
 </section>
@@ -616,18 +619,22 @@ The debate about the impact of AI on jobs is complex and multifaceted. On one ha
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Daniel. I am a mechanical engineer. My main area of expertise is vibration analysis and structural dynamics. I have worked in the aerospace industry for many years and have written several papers on the subject of vibration testing and analysis. I have also taught classes on vibration analysis and structural dynamics at a university. I am interested in speaking with someone about a potential collaboration on a project involving vibration analysis of a complex structure. Can you tell me a little bit about your background and how you think you might be able to contribute to this project? Thank you.
-Daniel,
-It sounds like you have a strong background in vibration analysis and structural dynamics, particularly in the
+Generated text:  Jen and I am a freelance writer and editor. I specialize in writing high-quality, well-researched content for businesses and organizations. My expertise includes writing for websites, social media, blogs, and print materials such as brochures, flyers, and newsletters. I can also help with content strategy and editing.
+I have a strong background in research and writing, with a degree in English and a passion for learning. I am a skilled writer and editor, and I am confident that I can help you achieve your content goals.
+Some of the types of content I can create include:
+Website content (homepages, about pages, product descriptions
 
 Prompt: The capital of France is
-Generated text:  Paris, a city of romance, fashion and fine cuisine. Paris is one of the world&#39;s top tourist destinations, attracting over 23 million visitors each year. It is known as the City of Light for its beautiful streetlights, which illuminate the city&#39;s picturesque streets and boulevards. Some of the city&#39;s most famous landmarks include the Eiffel Tower, Notre-Dame Cathedral, the Louvre Museum and the Arc de Triomphe.
-In addition to its rich history and culture, Paris is also a shopper&#39;s paradise. The city is home to some of the world&#39;s most famous fashion brands, including Louis Vuitton,
+Generated text:  Paris. The famous Eiffel Tower, one of the world&#39;s most iconic landmarks, is located in Paris. Paris is known as the &#34;City of Light&#34; and is famous for its beautiful gardens, museums, and art galleries. The city has a population of around 2.1 million people and is home to many international organizations and businesses.
+The official language of France is French, but many Parisians speak English, especially in the tourism industry. The city has a vibrant cultural scene, with numerous festivals and events throughout the year. Visitors to Paris can enjoy a variety of activities, including visiting famous landmarks, exploring the city&#39;s many
 
 Prompt: The future of AI is
-Generated text:  bright, but it&#39;s also complex, with many researchers, experts, and enthusiasts exploring its applications in various fields. The evolution of artificial intelligence has been marked by significant advancements, from the development of the first AI program, Dartmouth Summer Research Project on Artificial Intelligence, in 1956 to the current era of AI, which is characterized by the use of machine learning, deep learning, and other techniques.
-Some of the key areas where AI is expected to make a significant impact in the future include:
-1. Healthcare: AI is being used to analyze medical images, diagnose diseases, and develop personalized treatment plans. It can also help in the
+Generated text:  multifaceted, and it is crucial to approach its development, deployment, and governance with a nuanced and multidisciplinary perspective. The goal of this series is to provide a comprehensive and interdisciplinary exploration of AI’s impact on society, law, ethics, and politics.
+The series will publish high-quality, peer-reviewed books, edited collections, and monographs that cover a broad range of topics related to AI, including but not limited to:
+The societal implications of AI, including job displacement, bias, and inequality
+The ethics of AI, including accountability, transparency, and fairness
+The governance of AI, including regulation, law, and policy
+
 </pre></div></div>
 </div>
 </section>
@@ -671,21 +678,18 @@ Some of the key areas where AI is expected to make a significant impact in the f
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Rachel. I am a jewelry designer and artist, based in Berlin, Germany. My work combines traditional craftsmanship with modern techniques and a strong sense of individuality.
-I focus on creating unique, handmade pieces that tell a story, reflect a moment, or simply bring joy to the wearer. My style is eclectic and ever-evolving, drawing inspiration from various cultures, historical periods, and personal experiences.
-Each piece is carefully handcrafted in my studio, where I experiment with different materials, colors, and textures to bring my visions to life. I work with a range of materials, including precious metals, gems, and alternative materials like wood, stone
+Generated text:  Sarah and I am a senior at Xavier University. I am majoring in Psychology with a minor in Education. I am from a small town in Kentucky called Somerset. I have always been passionate about working with children and promoting education in my community. This summer I was lucky enough to intern with the National Honor Society at Xavier University. I worked closely with the advisor, Dr. Wicker, to coordinate events and activities for the students. This experience not only gave me the opportunity to develop my leadership skills but also allowed me to connect with students and create lasting memories. This fall I am looking forward to volunteering at the local elementary school, where
 
 Prompt: The capital of France is
-Generated text:  a city of grandeur, with some of the most iconic landmarks in the world. From the Eiffel Tower to the Louvre Museum, Paris is a must-visit destination for anyone interested in history, art, architecture, and culture.
-In this article, we&#39;ll explore the top 10 things to do in Paris, covering a range of activities and attractions that will help you make the most of your trip.
-1. Visit the Eiffel Tower
-The Eiffel Tower is one of the most recognizable landmarks in the world, and a visit to Paris wouldn&#39;t be complete without seeing it up close. Take the elevator to
+Generated text:  a city that needs no introduction. It is the epicenter of fashion, art, and cuisine that defines the very essence of the French culture. But Paris is not just a tourist destination; it is also a city of contrasts – it is a place where elegance and grime, tradition and innovation, blend together in a beautiful harmony.
+Here are some of the things you can do and experience when you visit Paris:
+Explore the City’s Iconic Landmarks
+Paris is home to some of the world’s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, the Louvre Museum, and the Arc de Triomp
 
 Prompt: The future of AI is
-Generated text:  bright and uncertain. Here&#39;s what to expect.
-From assisting with everyday tasks to making life-or-death decisions, artificial intelligence (AI) is increasingly becoming a part of our lives. As AI technology advances, it will likely have a profound impact on various aspects of society, from the workplace to healthcare and beyond. Here are some potential developments to anticipate in the future of AI:
-1. Increased Integration into Daily Life
-AI will continue to seep into every aspect of our daily lives, from personal assistants like Alexa and Google Assistant to smart home devices and self-driving cars. We can expect AI to become even more intuitive and user-friendly, making
+Generated text:  looking bright, but what does it mean for the world of work?
+The current pace of technological change is unprecedented. The World Economic Forum estimates that by 2022, more than a third of the desired skills for most jobs will be comprised of skills that are not yet considered crucial to the job today. This suggests that workers will need to continually upskill and reskill to stay relevant in the job market.
+AI is transforming industries in a way that has never been seen before. The automation of jobs is real, but the good news is that AI is also creating new jobs and industries that we can’t even imagine yet. The future of
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -786,7 +790,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 12, 2024.
+  Last updated on Dec 17, 2024.
   <br/>
 </p>
   </div>
