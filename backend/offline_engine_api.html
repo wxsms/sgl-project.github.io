@@ -166,7 +166,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">Native APIs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constrained_decoding.html">Constrained Decoding Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constrained_decoding.html">Constrained Decoding</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -468,13 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.33it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.62it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.17it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.25it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.83it/s]
 Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.46it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.39it/s]
+100%|██████████| 23/23 [00:06&lt;00:00,  3.51it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,30 +506,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Kevin Mills and I am the pastor of Cornerstone Community Church in Jacksonville, Florida. I am excited to join the Orange Park community and look forward to meeting you and your family.
-Cornerstone Community Church is a non-denominational church that is committed to teaching the truth of God&#39;s Word and applying it to everyday life. Our desire is to provide a welcoming and loving environment where people can come to know God and grow in their faith.
-We believe that the church is not just a place to attend, but a community of believers who come together to support one another, to serve one another, and to worship together. We believe that every
+Generated text:  Heather and I&#39;m a book reviewer. My goal is to read and review a wide variety of books, and share my thoughts with the world.
+I&#39;ll be reading and reviewing fiction and non-fiction, from romance and mystery to science fiction and non-fiction. I&#39;ll be featuring books from a variety of genres, authors, and publishers.
+My reviews will be honest and fair, and I&#39;ll always strive to provide a balanced view of the book. I&#39;ll be sharing my thoughts on the story, characters, writing style, and any other aspects that stood out to me.
+I&#39;m excited to share my love of reading with you, and I
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of the federal government. The president is directly elected by the people through the Electoral College. The president serves a four-year term and can be re-elected for a second term. The president is responsible for executing the laws and overseeing the federal government. The president also serves as the commander-in-chief of the armed forces. The president can propose legislation, but Congress has the power to approve or reject it. The president can also veto legislation, but Congress can override the veto with a two-thirds majority vote.
-The president&#39;s role in the federal government is significant, and the president&#39;s powers are broad. The president has the power to appoint
+Generated text:  an inherently absurd figure. He is both the most powerful and most powerless person in the world at the same time. He holds the reins of the most mighty military force in the history of the world and is responsible for some of the most influential decisions that will be made in the coming years. And yet, he is also a 24/7 celebrity, subject to constant scrutiny and criticism, with every move and every word being analyzed and dissected by the world. It&#39;s a paradoxical position, to say the least. One that is uniquely suited to the absurdity of the American political system.
+In this piece, I want to explore
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. The official language is French.
-The capital of Spain is Madrid. The official language is Spanish.
-The capital of Italy is Rome. The official language is Italian.  There are some other official languages, but Italian is the most common one.
-The capital of Germany is Berlin. The official language is German.
-The capital of Greece is Athens. The official language is Greek.
-The capital of Russia is Moscow. The official language is Russian.
-The capital of Turkey is Ankara. The official language is Turkish.
-The capital of Sweden is Stockholm. The official language is Swedish.
-The capital of Switzerland is Bern. The official language is German.
-
+Generated text:  known for its stunning architecture, art museums, and romantic atmosphere, making it a popular destination for couples and art lovers.
+Paris is a city that&#39;s steeped in history and culture, with iconic landmarks like the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum.
+The city is also famous for its fashion, cuisine, and wine, with famous dishes like escargots, croissants, and macarons, and a wide range of wine bars and restaurants.
+In the summer, Paris hosts a number of outdoor events and festivals, including the Rock en Seine music festival and the Paris Jazz Festival.
+Paris is
 ===============================
 Prompt: The future of AI is
-Generated text:  bright and precarious
-Artificial intelligence is transforming the world, but the benefits are unevenly distributed, and the risks are growing. A new book by industry expert Kai-Fu Lee explores the future of AI and its implications for humanity.
-In &#34;AI Superpowers: China, Silicon Valley, and the New World Order,&#34; Kai-Fu Lee, the former head of Google China, argues that AI will be a force for both good and ill. On the one hand, AI has the potential to solve some of the world&#39;s most pressing problems, such as healthcare, education, and climate change. On the other hand, AI also poses significant
+Generated text:  in the hands of kids and AI needs their help
+Artificial intelligence (AI) is not just a technology, but a societal phenomenon that will shape the world of tomorrow. It is no secret that AI has made tremendous progress in recent years, from virtual assistants like Siri and Alexa to self-driving cars and personalized medicine. However, despite its rapid advancement, AI still has many limitations and challenges that need to be addressed.
+One of the key areas where AI can benefit from the input of kids is in the development of human-centered AI. Currently, AI systems are often designed with efficiency and productivity in mind, rather than with the needs and values
 </pre></div></div>
 </div>
 </section>
@@ -567,22 +563,23 @@ In &#34;AI Superpowers: China, Silicon Valley, and the New World Order,&#34; Kai
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Elara and I am 25 years old. I am a college student, studying psychology and sociology. I love to learn about the human mind and behavior, and I am fascinated by the complexities of human relationships.
-I have always been an empathetic person, and I enjoy helping others and listening to their stories. I believe that everyone has a unique perspective and experience, and I am always eager to learn from others.
-In my free time, I love to read, write, and practice yoga. I find that these activities help me to relax and center myself, and they also give me a sense of clarity and purpose.
-I am looking
+Generated text:  Thomas Mews and I am a student at Stony Brook University. I am majoring in Environmental Science with a minor in Biology. I have a strong passion for the environment and conservation and I am excited to be a part of the research team here at the Southampton Marine Station. My research interests include understanding the impact of ocean acidification on marine ecosystems, studying the effects of climate change on coastal ecosystems, and exploring the relationships between marine species and their habitats. I am excited to learn more about the research being conducted here and to contribute to the knowledge and understanding of the marine environment.
+I am a junior at Stony Brook University, where
 
 Prompt: The capital of France is
-Generated text:  known for its history, fashion, art, and cuisine. But it also has a less-touristy side, which is worth exploring. Here are some hidden gems to discover in Paris.
-The Marais neighborhood, with its narrow streets and colorful buildings, is a charming area to explore. You can find unique boutiques, art galleries, and cafes in this historic neighborhood.
-For a taste of 19th-century Paris, head to the Père Lachaise Cemetery. This famous cemetery is the final resting place of many famous artists, writers, and musicians, including Oscar Wilde and Jim Morrison.
-If you’re looking for a unique shopping
+Generated text:  a place that has captured the hearts of people around the world, and for good reason. The City of Light is a place where fashion, art, history, and culture all blend together in a stunning display of elegance and sophistication.
+One of the most famous landmarks in Paris is the Eiffel Tower, a 324-meter-tall iron lattice tower built for the 1889 World’s Fair. You can take the stairs or elevator to the top for breathtaking views of the city.
+The Louvre Museum is another iconic Parisian landmark, housing some of the world’s most famous artworks, including the Mona Lisa. The museum is located in
 
 Prompt: The future of AI is
-Generated text:  bright, but there are also challenges and concerns that need to be addressed
-As artificial intelligence (AI) continues to evolve and become more pervasive, it is likely to have a significant impact on various aspects of our lives. The future of AI is bright, with potential applications in areas such as healthcare, education, and transportation. However, there are also challenges and concerns that need to be addressed in order to ensure that AI is developed and deployed responsibly.
-Some of the challenges and concerns surrounding AI include:
-1. Bias and fairness: AI systems can perpetuate existing biases and discrimination if they are trained on biased data. This can lead to unfair
+Generated text:  bright, but also complex and multifaceted, with many areas of development that can be confusing or overwhelming to consider. In this article, we will discuss the various types of AI, their capabilities, and applications, and highlight some of the key trends and challenges in the field.
+
+## Types of AI
+
+There are several types of AI, each with its own strengths and weaknesses:
+
+1.  **Narrow or Weak AI**: This type of AI is designed to perform a specific task, such as playing chess, recognizing faces, or translating languages. Narrow AI is trained on a specific dataset and is not capable of general reasoning or learning.
+
 </pre></div></div>
 </div>
 </section>
@@ -624,18 +621,18 @@ Some of the challenges and concerns surrounding AI include:
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Katharine Conover and I&#39;m a sixth grader at Interlake Middle School in Bellevue, Washington. I&#39;m excited to be working with my classmates on a project to bring more solar panels to our school, and I&#39;m looking forward to learning more about renewable energy and sustainability.
-We&#39;re using the &#34;Appropedia&#34; website to help us plan and research our project, and we&#39;re excited to share our progress and learn from others on the site. We&#39;re aiming to install solar panels on our school&#39;s roof to help reduce our energy consumption and carbon footprint. We believe that this project will not only help our school save money on
+Generated text:  Riley and I am a 3-year-old female Border Collie. I live with my humans who give me endless belly rubs and treats, but they also keep me on a tight leash – literally!
+I love to herd, chase, and play fetch with my favorite ball. I’m also very good at agility and can run through tunnels and jump over obstacles with ease. My favorite thing in the world is to please my humans, so I try my best to learn new tricks and behaviors.
+When I’m not busy being a good girl, I love to snuggle up in my favorite blanket and take long naps. I also enjoy
 
 Prompt: The capital of France is
-Generated text:  the city of Paris, which is situated in the northern part of the country. The city is the largest in France in terms of both population and economic output. Paris is home to several world-renowned landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral.
-The city has a long and storied history, dating back to the 3rd century BC when the Celts inhabited the area. The Romans later conquered the area and founded the city of Lutetia, which would eventually become Paris. The city has been ruled by various empires and dynasties over the centuries, including the Fr
+Generated text:  getting a new eco-friendly innovation. Paris, a city known for its high-end fashion, art, and culture, is now implementing a large-scale urban solar park that will power one of its neighborhoods. The park, which is expected to be completed by 2023, will be built on a 4.8-hectare rooftop in the 13th arrondissement and will have the capacity to generate 1 MW of electricity.
+The solar park, which is expected to cost around €10 million, will be built on top of a large multi-story car park. The innovative aspect of this project is that it will not only provide
 
 Prompt: The future of AI is
-Generated text:  filled with potential and excitement, with AI continuing to transform industries, improve lives and create new possibilities. But with this power comes great responsibility, and as AI continues to evolve, it is essential that we prioritize ethics and address concerns around bias, accountability and transparency.
-Join us at the AI Summit to explore the exciting opportunities presented by AI and to address the challenges that must be overcome in order to unlock the full potential of this technology. This event will bring together industry leaders, innovators, researchers and experts to discuss the latest advancements, share best practices and shape the future of AI.
-Our Keynote Speakers include:
-Allan Ganz, Global
+Generated text:  vast and exciting. Today, we are witnessing the emergence of new AI technologies that can truly augment human capabilities and change the way we live and work.
+Artificial Intelligence (AI) has come a long way since its inception in the 1950s. From the first AI programs designed to play chess and tic-tac-toe to the sophisticated deep learning models of today, AI has undergone significant transformations. As we move forward, AI is poised to become an integral part of our daily lives, transforming industries, and revolutionizing the way we work and interact with each other.
+Here are some of the key areas where AI is expected to have
 </pre></div></div>
 </div>
 </section>
@@ -679,23 +676,21 @@ Allan Ganz, Global
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Cristian, I am a Microsoft Certified Professional with over 10 years of experience in the IT industry. My expertise includes: Microsoft Windows Server, Microsoft Exchange, Active Directory, Microsoft SQL Server, Cisco Network Devices, Cisco Firewalls, and more. I also have a strong background in cybersecurity, threat analysis and incident response.
-I have worked as a senior network engineer and system administrator for a variety of companies, including start-ups, small businesses, and large corporations. My role has included designing, implementing, and maintaining network infrastructure, server environments, and security systems.
-I am passionate about staying up-to-date with the latest technology trends and best
+Generated text:  Laura and I&#39;m the founder of Sustainable Earth Initiative (SEI). I&#39;m so excited to introduce you to our mission and goals. SEI is a non-profit organization dedicated to promoting sustainable living and community development through education, outreach, and project implementation. Our mission is to empower individuals, communities, and organizations to live more sustainably, reduce their environmental footprint, and foster a culture of environmental stewardship.
+
+Our goals are ambitious, but achievable, and we believe that by working together, we can create a better future for ourselves and for generations to come. Here are some of the key objectives we&#39;re working towards:
+
+*   **Education
 
 Prompt: The capital of France is
-Generated text:  a city of love, art, fashion, and cuisine. But did you know that Paris also has a rich history of street art? Here are some of the most famous street artists from Paris, and their contributions to the city&#39;s vibrant street art scene.
-1. Blek le Rat
-Blek le Rat is a French street artist known for his stencil works that often feature rats. He is considered one of the pioneers of street art in Paris and has been active since the 1980s. His works can be found throughout the city, from the Latin Quarter to the Marais neighborhood.
-2. Invader
-Invader is a
+Generated text:  one of the most visited cities in the world. Paris has so much to offer, from famous landmarks like the Eiffel Tower and Notre Dame, to world-class museums like the Louvre and Orsay, to beautiful parks and gardens, and of course, the fashion and cuisine.
+On a recent visit to Paris, I had the opportunity to explore the city with a local guide and try some of its most famous foods. Our first stop was the famous street food market, Le Comptoir du Relais, where we sampled a delicious croque-monsieur (a grilled ham and cheese sandwich) and a plate of French fries.
+
 
 Prompt: The future of AI is
-Generated text:  now.
-Artificial intelligence is changing the world. From virtual assistants to life-changing medical advancements, AI is redefining the way we live, work and interact with each other.
-AI has the potential to solve some of the world’s most pressing challenges, such as climate change, poverty and access to education. It can also help us make better decisions, streamline processes, and enhance productivity.
-As AI continues to evolve, it’s essential to stay up-to-date on the latest advancements and trends. Here are some key areas to watch in the future of AI:
-1. Edge AI: With the increasing number of IoT devices, edge AI is
+Generated text:  now, and it is being driven by a new generation of innovators. Meet the team behind the AI that’s transforming industries and changing lives.
+There are many exciting developments in AI technology, but few are as transformative as the work being done by the team at our company. With a focus on innovation and customer success, we are creating AI solutions that are helping businesses and individuals achieve their goals and improve their lives.
+Our team is comprised of experts from a variety of backgrounds, each bringing their unique perspective and skillset to the table. We have a deep understanding of AI and its many applications, and we are committed to staying at the forefront
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
