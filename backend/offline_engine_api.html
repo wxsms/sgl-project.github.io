@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post1" />
-    <meta name="docbuild:last-update" content="Dec 27, 2024"/>
+    <meta name="docbuild:last-update" content="Dec 28, 2024"/>
   </head>
   
   
@@ -166,6 +166,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">Native APIs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constrained_decoding.html">Constrained Decoding Tutorial</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -468,12 +469,12 @@
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.33it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.16it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.64it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.62it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
 
-100%|██████████| 23/23 [00:07&lt;00:00,  3.19it/s]
+100%|██████████| 23/23 [00:06&lt;00:00,  3.39it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -505,23 +506,30 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Stephen and I am a student at SUNY Brockport. I am currently pursuing a Bachelor of Arts degree in English, with a concentration in Creative Writing. My major interests include poetry, short stories, and creative nonfiction. I have a passion for the arts and a love for music and film. I am excited to share my thoughts and insights about the world around me and engage in meaningful discussions with others. I am eager to share my creative work with others and to learn from their experiences and perspectives.
-In my free time, I enjoy listening to music, watching classic movies, and hiking in the beautiful Finger Lakes region of New York.
+Generated text:  Kevin Mills and I am the pastor of Cornerstone Community Church in Jacksonville, Florida. I am excited to join the Orange Park community and look forward to meeting you and your family.
+Cornerstone Community Church is a non-denominational church that is committed to teaching the truth of God&#39;s Word and applying it to everyday life. Our desire is to provide a welcoming and loving environment where people can come to know God and grow in their faith.
+We believe that the church is not just a place to attend, but a community of believers who come together to support one another, to serve one another, and to worship together. We believe that every
 ===============================
 Prompt: The president of the United States is
-Generated text:  not allowed to make a speech on television in the United States during the time of war. This is because the news media has a certain level of power over the news flow and can modify the president&#39;s message to reflect their own political views.
-Q: Is it true that the president of the United States is not allowed to make a speech on television in the United States during the time of war?
-A: No, it is not true. There is no law or rule that prohibits the President of the United States from making a speech on television during a time of war. In fact, the President often makes televised speeches during times of war to
+Generated text:  the head of the federal government. The president is directly elected by the people through the Electoral College. The president serves a four-year term and can be re-elected for a second term. The president is responsible for executing the laws and overseeing the federal government. The president also serves as the commander-in-chief of the armed forces. The president can propose legislation, but Congress has the power to approve or reject it. The president can also veto legislation, but Congress can override the veto with a two-thirds majority vote.
+The president&#39;s role in the federal government is significant, and the president&#39;s powers are broad. The president has the power to appoint
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. The name of the capital of France is also a common girl’s name. The name Paris is of Greek origin, and it means &#34;beautiful.&#34; It is a lovely name that evokes the image of a beautiful city.
-Paris is a popular name for girls in the United States. According to the Social Security Administration, Paris was a popular name in the US from 1990 to 2006. The name peaked at #166 in 1995 and then began to decline in popularity.
-Paris is also a popular name in other countries, including the UK, Australia, and Canada. The name is often associated with the French culture
+Generated text:  Paris. The official language is French.
+The capital of Spain is Madrid. The official language is Spanish.
+The capital of Italy is Rome. The official language is Italian.  There are some other official languages, but Italian is the most common one.
+The capital of Germany is Berlin. The official language is German.
+The capital of Greece is Athens. The official language is Greek.
+The capital of Russia is Moscow. The official language is Russian.
+The capital of Turkey is Ankara. The official language is Turkish.
+The capital of Sweden is Stockholm. The official language is Swedish.
+The capital of Switzerland is Bern. The official language is German.
+
 ===============================
 Prompt: The future of AI is
-Generated text:  increasingly shaped by the intersection of several key areas: data, software, and hardware. The two strands of research, software and hardware, are converging in unexpected ways. We will discuss the emerging trends and opportunities in this field, and how they might shape the future of AI.
-Here are a few of the key areas where hardware and software are converging:
-1. AI Chips: AI chips are becoming increasingly specialized to handle the complex mathematical operations required for deep learning. Companies like NVIDIA and Google are developing custom AI chips that are designed to accelerate the processing of neural networks. These chips are changing the way AI systems are built and deployed,
+Generated text:  bright and precarious
+Artificial intelligence is transforming the world, but the benefits are unevenly distributed, and the risks are growing. A new book by industry expert Kai-Fu Lee explores the future of AI and its implications for humanity.
+In &#34;AI Superpowers: China, Silicon Valley, and the New World Order,&#34; Kai-Fu Lee, the former head of Google China, argues that AI will be a force for both good and ill. On the one hand, AI has the potential to solve some of the world&#39;s most pressing problems, such as healthcare, education, and climate change. On the other hand, AI also poses significant
 </pre></div></div>
 </div>
 </section>
@@ -559,25 +567,22 @@ Here are a few of the key areas where hardware and software are converging:
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Aurora and I&#39;m a psychic medium. I am here to help you navigate life&#39;s challenges and provide guidance through my connections with loved ones who have passed on. My abilities allow me to tap into the spiritual realm, communicate with spirits, and offer insight into your personal and spiritual journey.
-Aurora&#39;s Bio
-I&#39;ve been aware of my abilities from a young age, but it wasn&#39;t until I experienced a near-death experience at 19 that I truly understood the depth of my connection to the spiritual realm. During this experience, I was able to see and communicate with loved ones who had passed on, which validated my abilities and gave
+Generated text:  Elara and I am 25 years old. I am a college student, studying psychology and sociology. I love to learn about the human mind and behavior, and I am fascinated by the complexities of human relationships.
+I have always been an empathetic person, and I enjoy helping others and listening to their stories. I believe that everyone has a unique perspective and experience, and I am always eager to learn from others.
+In my free time, I love to read, write, and practice yoga. I find that these activities help me to relax and center myself, and they also give me a sense of clarity and purpose.
+I am looking
 
 Prompt: The capital of France is
-Generated text:  divided into 20 arrondissements. Which of the following names does not belong to this list?
-A) Champs-Élysées
-B) Le Marais
-C) 1er
-D) Montmartre
-E) Saint-Germain-des-Prés
-Answer: C
-Explanation: The arrondissements of Paris are numbered one through 20. Therefore, 1er is the only option that does not belong to the list. 1er is the first arrondissement, and the rest are referred to by their number and name. The names listed are all famous neighborhoods in Paris.
+Generated text:  known for its history, fashion, art, and cuisine. But it also has a less-touristy side, which is worth exploring. Here are some hidden gems to discover in Paris.
+The Marais neighborhood, with its narrow streets and colorful buildings, is a charming area to explore. You can find unique boutiques, art galleries, and cafes in this historic neighborhood.
+For a taste of 19th-century Paris, head to the Père Lachaise Cemetery. This famous cemetery is the final resting place of many famous artists, writers, and musicians, including Oscar Wilde and Jim Morrison.
+If you’re looking for a unique shopping
 
 Prompt: The future of AI is
-Generated text:  uncertain, and its impact on our lives will depend on the choices we make today
-Our AI reality check is far from over. The world is still grappling with the implications of AI and its impact on our lives. As we move forward, we must acknowledge the complexity of the issue and the need for a multi-faceted approach.
-In this section, we examine the potential benefits and risks of AI, as well as the importance of responsible AI development and governance. We also look at the need for a diverse and inclusive AI development process and the role of education and awareness in shaping our relationship with AI.
-The Future of AI: Challenges and
+Generated text:  bright, but there are also challenges and concerns that need to be addressed
+As artificial intelligence (AI) continues to evolve and become more pervasive, it is likely to have a significant impact on various aspects of our lives. The future of AI is bright, with potential applications in areas such as healthcare, education, and transportation. However, there are also challenges and concerns that need to be addressed in order to ensure that AI is developed and deployed responsibly.
+Some of the challenges and concerns surrounding AI include:
+1. Bias and fairness: AI systems can perpetuate existing biases and discrimination if they are trained on biased data. This can lead to unfair
 </pre></div></div>
 </div>
 </section>
@@ -619,20 +624,18 @@ The Future of AI: Challenges and
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Emma, and I&#39;m a Creative who is all about spreading positivity and inspiring others to chase their dreams. As a passionate artist, I&#39;ve always been fascinated by the connection between creativity, self-expression, and mental health. I believe that art can be a powerful tool for healing, growth, and self-discovery.
-I love to explore various mediums, from painting and drawing to mixed media and digital art. My artwork often features vibrant colors, abstract shapes, and dreamy landscapes that aim to evoke a sense of calmness and wonder. I&#39;m also a big fan of collaging, as it allows me to combine different textures, patterns,
+Generated text:  Katharine Conover and I&#39;m a sixth grader at Interlake Middle School in Bellevue, Washington. I&#39;m excited to be working with my classmates on a project to bring more solar panels to our school, and I&#39;m looking forward to learning more about renewable energy and sustainability.
+We&#39;re using the &#34;Appropedia&#34; website to help us plan and research our project, and we&#39;re excited to share our progress and learn from others on the site. We&#39;re aiming to install solar panels on our school&#39;s roof to help reduce our energy consumption and carbon footprint. We believe that this project will not only help our school save money on
 
 Prompt: The capital of France is
-Generated text:  known for its romanticism, rich history, and stunning architecture. But what makes Paris so famous? Let’s dive into the reasons behind its allure.
-1. Architectural Marvels:
-Paris is home to some of the world’s most iconic landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city’s stunning architecture is a blend of medieval, Renaissance, and modern styles, making it a feast for the eyes. The Eiffel Tower, in particular, is an engineering marvel and a symbol of Paris, offering breathtaking views of the city from its top.
-2. Art and Culture
+Generated text:  the city of Paris, which is situated in the northern part of the country. The city is the largest in France in terms of both population and economic output. Paris is home to several world-renowned landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral.
+The city has a long and storied history, dating back to the 3rd century BC when the Celts inhabited the area. The Romans later conquered the area and founded the city of Lutetia, which would eventually become Paris. The city has been ruled by various empires and dynasties over the centuries, including the Fr
 
 Prompt: The future of AI is
-Generated text:  in our hands
-By Dr. Nick Bostrom, Director, Future of Humanity Institute
-Machines with advanced artificial intelligence (AI) capabilities are increasingly being designed and built, and some predict that they will soon surpass human intelligence. As we continue to develop more sophisticated AI systems, it&#39;s essential to consider the potential risks and benefits associated with their creation.
-The potential benefits of AI are numerous. It could lead to breakthroughs in fields such as healthcare, education, and transportation, improving people&#39;s lives and driving economic growth. However, there are also risks associated with the development and deployment of advanced AI systems. Some of the potential risks
+Generated text:  filled with potential and excitement, with AI continuing to transform industries, improve lives and create new possibilities. But with this power comes great responsibility, and as AI continues to evolve, it is essential that we prioritize ethics and address concerns around bias, accountability and transparency.
+Join us at the AI Summit to explore the exciting opportunities presented by AI and to address the challenges that must be overcome in order to unlock the full potential of this technology. This event will bring together industry leaders, innovators, researchers and experts to discuss the latest advancements, share best practices and shape the future of AI.
+Our Keynote Speakers include:
+Allan Ganz, Global
 </pre></div></div>
 </div>
 </section>
@@ -676,20 +679,23 @@ The potential benefits of AI are numerous. It could lead to breakthroughs in fie
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Jasmine, and I&#39;m a life coach and wellness expert. I help women overcome their limitations and tap into their inner strength and resilience to achieve their goals and live a more balanced and fulfilling life.
-After a decade of working in the corporate world, I realized that my true passion lay in helping others achieve their full potential. I&#39;ve spent years studying and practicing various forms of holistic healing, personal development, and wellness, and I&#39;ve had the privilege of working with clients from all walks of life.
-My approach is centered around empowering women to take ownership of their lives, their health, and their happiness. I believe that every woman has the strength
+Generated text:  Cristian, I am a Microsoft Certified Professional with over 10 years of experience in the IT industry. My expertise includes: Microsoft Windows Server, Microsoft Exchange, Active Directory, Microsoft SQL Server, Cisco Network Devices, Cisco Firewalls, and more. I also have a strong background in cybersecurity, threat analysis and incident response.
+I have worked as a senior network engineer and system administrator for a variety of companies, including start-ups, small businesses, and large corporations. My role has included designing, implementing, and maintaining network infrastructure, server environments, and security systems.
+I am passionate about staying up-to-date with the latest technology trends and best
 
 Prompt: The capital of France is
-Generated text:  a city of beauty, history, and culture. With its stunning architecture, world-class museums, and vibrant atmosphere, Paris is a destination that has something to offer for everyone. Here are some of the top things to do in Paris:
-1. Visit the Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. You can take the stairs or elevator to the top for breathtaking views of the city.
-2. Explore the Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from around the world, including the Mona Lisa
+Generated text:  a city of love, art, fashion, and cuisine. But did you know that Paris also has a rich history of street art? Here are some of the most famous street artists from Paris, and their contributions to the city&#39;s vibrant street art scene.
+1. Blek le Rat
+Blek le Rat is a French street artist known for his stencil works that often feature rats. He is considered one of the pioneers of street art in Paris and has been active since the 1980s. His works can be found throughout the city, from the Latin Quarter to the Marais neighborhood.
+2. Invader
+Invader is a
 
 Prompt: The future of AI is
-Generated text:  exciting, but also raises questions about responsibility and ethics. How will we ensure that the benefits of AI are equitably distributed and its negative consequences are mitigated?
-The future of AI is exciting, but also raises questions about responsibility and ethics. How will we ensure that the benefits of AI are equitably distributed and its negative consequences are mitigated?
-The future of AI is exciting, but also raises questions about responsibility and ethics. How will we ensure that the benefits of AI are equitably distributed and its negative consequences are mitigated?
-The future of AI is exciting, but also raises questions about responsibility and ethics. How will we ensure that the
+Generated text:  now.
+Artificial intelligence is changing the world. From virtual assistants to life-changing medical advancements, AI is redefining the way we live, work and interact with each other.
+AI has the potential to solve some of the world’s most pressing challenges, such as climate change, poverty and access to education. It can also help us make better decisions, streamline processes, and enhance productivity.
+As AI continues to evolve, it’s essential to stay up-to-date on the latest advancements and trends. Here are some key areas to watch in the future of AI:
+1. Edge AI: With the increasing number of IoT devices, edge AI is
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -790,7 +796,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 27, 2024.
+  Last updated on Dec 28, 2024.
   <br/>
 </p>
   </div>
