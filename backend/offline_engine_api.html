@@ -468,13 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.16it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.18it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.72it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.42it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.91it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00&lt;00:01,  1.99it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
 
-100%|██████████| 23/23 [00:05&lt;00:00,  4.08it/s]
+100%|██████████| 23/23 [00:07&lt;00:00,  3.17it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,22 +506,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Nicole and I am a 4th grade teacher at a public elementary school. I have been teaching for 10 years and I absolutely love my job! I teach a range of subjects including reading, writing, social studies, and science.
-I am excited to be a part of this community and look forward to sharing my teaching experiences and tips with you. I am passionate about creating engaging and fun lesson plans that cater to the needs of all learners. In this blog, I will be sharing my favorite lesson plans, classroom management ideas, and educational technology tips.
-I also love connecting with other teachers and learning from their experiences, so please don
+Generated text:  Sarah and I&#39;m a gardener, botanist, and naturalist with a passion for the intersection of plants and culture.
+I have a degree in Botany and Horticulture, and I have spent many years working in greenhouses, gardens, and conservation organizations. I&#39;ve also traveled extensively throughout the world, studying and learning about different plant species and their uses in various cultures.
+I&#39;m particularly interested in the ways that plants have been used by people throughout history, and how they continue to be used today. I&#39;m fascinated by the diversity of plant species, and how they can be used in medicine, food, crafts, and other
 ===============================
 Prompt: The president of the United States is
-Generated text:  elected to serve as the head of state and the head of government for a four-year term. The president is also the commander-in-chief of the armed forces and is responsible for setting national policy. The president is elected through the Electoral College system, in which each state is allocated a certain number of electoral votes based on its population. The candidate who receives the majority of the electoral votes, at least 270 out of 538, wins the presidency. The president is also responsible for signing bills into law and for negotiating treaties with foreign governments. The president&#39;s role is both ceremonial and political, and is a symbol of national unity and leadership.
+Generated text:  the head of state and head of government of the United States, and is the highest-ranking official in the federal government. The president is directly elected by the people through the Electoral College, and serves a four-year term. The president is responsible for executing the laws of the land, commanding the armed forces, and conducting the nation&#39;s foreign policy.
+The president is also the commander-in-chief of the armed forces, and has the power to grant pardons and reprieves to individuals convicted of federal crimes. The president also has the power to veto legislation passed by Congress, although Congress can override the veto with a two-thirds majority in both the
 ===============================
 Prompt: The capital of France is
-Generated text:  a place of grandeur and beauty. From the iconic Eiffel Tower to the world-renowned Louvre Museum, Paris has something for everyone. In addition to its stunning architecture and art, the city is also famous for its cuisine, fashion, and romantic atmosphere.
-Whether you&#39;re a history buff, a foodie, or a shopaholic, Paris is a city that will leave you enchanted. Take a stroll along the Seine River, visit the charming neighborhood of Montmartre, or explore the trendy boutiques and cafes of the Marais district. With so much to see and do, it&#39;s no wonder that Paris is
+Generated text:  also one of the world’s most romantic cities. Paris, known for its iconic landmarks, art museums, fashion, and culinary delights, is a must-visit destination for anyone looking to immerse themselves in history, culture, and beauty.
+Paris, often called the City of Light, is known for its stunning architecture, scenic Seine River, and beautiful parks. The city is home to some of the world’s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Visit the Arc de Triomphe, a monumental arch that honors the soldiers who fought and died for France, and
 ===============================
 Prompt: The future of AI is
-Generated text:  about more than just code
-Deep learning has made tremendous progress in the field of artificial intelligence, allowing computers to learn and improve on their own through complex neural networks. But the next generation of AI is about more than just complex algorithms – it’s about how we use and interact with AI systems.
-AI systems are becoming increasingly ubiquitous in our daily lives, from virtual assistants like Siri and Alexa to autonomous vehicles and medical diagnosis tools. But as AI becomes more integrated into our daily lives, we need to think about how we design and interact with these systems.
-The future of AI is not just about writing more efficient code or creating more complex models.
+Generated text:  bright, and the possibilities are endless
+As AI continues to advance, it will have an increasingly significant impact on various aspects of our lives, including healthcare, education, transportation, and finance. Here are some potential applications of AI that could transform industries and revolutionize the way we live and work:
+AI-driven healthcare: Personalized medicine, disease diagnosis, and treatment plans tailored to individual needs.
+AI-assisted education: Adaptive learning platforms, intelligent tutoring systems, and automated grading systems.
+AI-powered transportation: Autonomous vehicles, smart traffic management, and optimized logistics.
+AI-driven finance: Predictive analytics, automated trading, and risk management.
+AI-enabled
 </pre></div></div>
 </div>
 </section>
@@ -559,17 +563,23 @@ The future of AI is not just about writing more efficient code or creating more 
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Dan and I am a 5th grader at John Adams Middle School in San Carlos, CA. I am very excited to be a part of the Kidblog program and I look forward to sharing my thoughts and ideas with all of you. My favorite subjects are math and science and I enjoy learning about space and the environment. In my free time, I love to play basketball, ride my bike, and go to the beach.
-I like learning about space because it is so vast and mysterious. There are still so many things we don&#39;t know about it. I think it&#39;s cool that we can explore it with robots and satellites.
-
+Generated text:  Amandine Lefebvre, and I am a French artist living in London. I was born in 1976 in the beautiful town of Rouen in Normandy, France. My artistic background is self-taught, as I have always been driven by a strong desire to express myself through art. I have worked as a visual artist since 2001, and my style has evolved over the years, influenced by a range of different techniques, including painting, drawing, and mixed media.
+My work often revolves around themes of nature, architecture, and the human experience. I am fascinated by the intricate details of the natural world
 
 Prompt: The capital of France is
-Generated text:  in the north-east of the country, located on the Seine River. It is one of the most beautiful and romantic cities in the world, with a rich history dating back over 2,000 years. Paris is famous for its iconic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum, which is home to the Mona Lisa.
-In addition to its rich history and cultural landmarks, Paris is also known for its fashion, cuisine, and art scene. The city is home to many world-renowned fashion designers, including Chanel and Dior, and its culinary scene is renowned for its haute cuisine and
+Generated text:  a city of fashion, romance, and history. With its beautiful landmarks, vibrant culture, and world-class cuisine, Paris is a must-visit destination for anyone looking for a truly unforgettable experience. In this article, we will explore some of the top things to do and see in Paris, as well as some of the city&#39;s hidden gems that you might not have heard about before.
+The City of Light: Top Attractions
+Paris is home to some of the world&#39;s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Here are some of the top attractions to visit:
+1
 
 Prompt: The future of AI is
-Generated text:  bright, but it’s also uncertain. The possibilities are endless, and the potential impact is vast. Artificial intelligence (AI) has the potential to revolutionize numerous industries, transform the way we live and work, and bring about unprecedented levels of efficiency, productivity, and innovation. However, the future of AI is also shrouded in uncertainty, with many unknowns and challenges to be addressed.
-One of the biggest challenges facing AI is the issue of bias and fairness. AI systems are only as good as the data they are trained on, and if that data is biased or incomplete, the AI system will reflect those biases. This can lead
+Generated text:  uncertain, but one thing is clear: artificial intelligence will be a driving force behind the creation of new industries, jobs, and business models. The possibilities for innovation and disruption are endless, and the stakes are high.
+To prepare for the future, it’s essential to understand the current landscape of AI and its applications. From natural language processing to computer vision, machine learning to robotics, AI is transforming industries and revolutionizing the way we live and work.
+In this article, we’ll explore the current state of AI, its key applications, and the future trends that will shape the industry.
+
+## Key Applications of AI
+
+Artificial intelligence has a
 </pre></div></div>
 </div>
 </section>
@@ -611,17 +621,21 @@ One of the biggest challenges facing AI is the issue of bias and fairness. AI sy
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Saeed and I am a software engineer with a passion for design and user experience. I am also the founder and lead developer of several applications, including our company’s flagship app, which is a leading productivity app in the Middle East. I enjoy creating clean and intuitive designs, as well as writing efficient and scalable code. My work experience ranges from freelancing to leading a team of developers, and I have a strong background in both design and development. I am also a certified Scrum Master and Agile practitioner, with experience in implementing Agile methodologies in different projects.
-I have a strong background in design and development, and I am well-
+Generated text:  Mindy. I have a small garden where I grow my own herbs and vegetables. I love nothing more than spending time outdoors, surrounded by nature, and tending to my plants. It&#39;s a great way for me to unwind and connect with the natural world. I&#39;ve learned a lot over the years about gardening, and I&#39;d be happy to share my knowledge with others. Whether you&#39;re a seasoned gardener or just starting out, I&#39;m here to help.
+Frosts, Snows, and Crazies: How to Prepare for Winter in Your Garden
+As the temperatures drop and the days grow shorter, it&#39;s time
 
 Prompt: The capital of France is
-Generated text: , of course, Paris, but many people know that it was actually established by the Gauls, a tribe of Celtic people. They called it Lutetia and it was a small fortified settlement. The Romans, who conquered the Gauls in the 1st century AD, renamed the city Lutetia Parisiorum, but in the 3rd century AD the name was shortened to Paris. Today, the city has a population of over 2 million people and is one of the world’s most famous cities. It’s a major center for culture, education, and international business, and is known for its stunning architecture
+Generated text:  a city with so much to offer, from iconic landmarks to world-class museums and a rich cultural scene. Here are some of the top attractions to visit in Paris:
+1. The Eiffel Tower: The most iconic landmark in Paris, the Eiffel Tower is a must-visit attraction. Take the elevator to the top for breathtaking views of the city.
+2. The Louvre Museum: One of the world&#39;s largest and most famous museums, the Louvre is home to an impressive collection of art and artifacts from around the world, including the Mona Lisa.
+3. Notre Dame Cathedral: A beautiful and historic Gothic cathedral that has
 
 Prompt: The future of AI is
-Generated text:  bright, but it also raises concerns about its impact on work, politics, and society. Here are some of the key challenges and potential solutions.
-Artificial intelligence (AI) is transforming industries and revolutionizing the way we live and work. However, its rapid growth and increasing influence have raised concerns about its potential impact on work, politics, and society. Here are some of the key challenges and potential solutions.
-1. Job displacement and the future of work
-AI has the potential to automate many jobs, potentially displacing workers. According to a report by the McKinsey Global Institute, up to 800 million jobs could be lost worldwide due
+Generated text:  all about collaboration
+AI adoption is accelerating rapidly, and companies are increasingly seeking to harness its potential to improve efficiency, drive innovation and create new business models. However, the potential of AI is often not realized because it is often deployed in isolation, failing to take into account the broader context of the organization and its people.
+Collaboration is a key factor in successful AI adoption
+AI adoption is often viewed as a technological challenge, but in reality, it is a human-centric challenge that requires collaboration between IT, business stakeholders, and end-users. IT teams need to work closely with business stakeholders to understand their needs and pain points, while also
 </pre></div></div>
 </div>
 </section>
@@ -665,20 +679,18 @@ AI has the potential to automate many jobs, potentially displacing workers. Acco
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Patrice, and I am a modern-day Jewish mystic and spiritual teacher. I am passionate about helping people connect with their own inner wisdom and deepen their spiritual practice. My approach is holistic and inclusive, drawing on Jewish mysticism, mindfulness, and somatics to help people cultivate greater awareness, compassion, and joy in their lives. I offer workshops, retreats, and private coaching to help people deepen their spiritual practice and live more authentically and meaningfully. I also lead meditation and yoga classes, and write articles and blogs on spiritual topics.
-I believe that every person has a unique inner wisdom and that it is our birthright
+Generated text:  David and I&#39;m a fan of your website. I have been visiting your site for years and have always been impressed with the quality of your content and the professionalism of your team. Your website has become a valuable resource for me, and I often find myself coming back to it for information and inspiration.
+
+However, I wanted to reach out to you today because I have a question that I couldn&#39;t find an answer to on your site. I was wondering if you could provide some guidance on [specific topic or issue]. I&#39;ve been struggling to find reliable information on this topic, and I was hoping that your team might be able to offer some
 
 Prompt: The capital of France is
-Generated text:  known for its beautiful history, art, and architecture. Paris, the City of Light, is a popular destination for travelers and art lovers alike. With its charming streets, picturesque bridges, and iconic landmarks like the Eiffel Tower, Paris is a must-visit destination for anyone interested in history, culture, and art.
-If you&#39;re planning to visit Paris, consider the following top attractions:
-The Eiffel Tower - This iconic iron lattice tower is a symbol of Paris and one of the most recognizable landmarks in the world. Visitors can take the elevator to the top for breathtaking views of the city.
-The Louvre Museum - The Lou
+Generated text:  Paris, which is the largest city in the country and the most popular tourist destination in the world. The city is known for its romantic atmosphere, world-class museums, and stunning architecture, including the iconic Eiffel Tower.
+The history of France dates back to the Middle Ages, with the country playing a significant role in the development of Western civilization. France has been a major power in Europe for centuries, and its language, culture, and cuisine have had a profound influence on the world.
+Today, France is a modern, secular democracy with a strong economy and a high standard of living. The country is a member of the European Union and
 
 Prompt: The future of AI is
-Generated text:  bright, but it&#39;s also fraught with challenges. One of the biggest challenges facing AI researchers is ensuring that AI systems are transparent and explainable.
-There are many different definitions of transparency and explainability in AI, but at a high level, they both refer to the ability to understand how an AI system makes its decisions and predictions. This is important for a number of reasons, including:
-1. Trust: If we can&#39;t understand how an AI system works, how can we trust it to make decisions that are in our best interests?
-2. Accountability: If an AI system makes a mistake, how can we hold it accountable if we don
+Generated text:  bright, but it also raises fundamental questions about the role of humans in society. For decades, the pace of technological progress has been driven by our ability to harness the power of computation, which has enabled us to process information faster and more efficiently. As AI continues to advance, we are entering a new era of intelligence, where machines are not only processing information but also learning from data, making decisions, and even creating new knowledge.
+However, as AI becomes more autonomous and self-aware, we are faced with the challenge of ensuring that it is aligned with human values and interests. This requires a fundamental shift in how we design and develop AI systems
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
