@@ -468,13 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.51it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.66it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.18it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.67it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
 
-100%|██████████| 23/23 [00:05&lt;00:00,  3.94it/s]
+100%|██████████| 23/23 [00:06&lt;00:00,  3.39it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,24 +506,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  David, and I&#39;m a blogger, a traveler, and a foodie. I&#39;m currently based in Berlin, Germany, but I&#39;ve lived in many different cities around the world, including Bangkok, Singapore, and London.
-I started this blog as a way to share my experiences and adventures with the world, and to inspire others to explore new places and try new things. On this blog, you&#39;ll find posts about my travels, my favorite foods, and my thoughts on culture and society.
-I&#39;m a big fan of street food, and I love trying new and exotic dishes. I&#39;ve eaten my way through Bangkok&#39;s street food scene
+Generated text:  Tony and I am a 43 year old male. I was diagnosed with a rare genetic disorder called Ehlers-Danlos syndrome (EDS) in 2014. EDS is a condition that affects the body&#39;s connective tissue, which provides support to the skin, bones, joints, and other organs. People with EDS are prone to joint instability, skin hyperextensibility, and tissue fragility.
+After being diagnosed, I started experiencing worsening joint pain and swelling in my hands, elbows, hips, and knees. I also experienced skin problems, such as bruising and easy bleeding, as well as fatigue and digestive
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government for the United States. The president is elected by the citizens of the United States through the Electoral College. The president serves a four-year term and is limited to two terms.
-The president&#39;s role includes appointing federal judges, including Supreme Court justices, and other high-ranking officials. The president also has the power to negotiate treaties and executive agreements, and to command the armed forces of the United States. The president is also responsible for setting the national agenda and working with Congress to pass legislation.
-The president is also the commander-in-chief of the armed forces of the United States. This means that the president
+Generated text:  the head of state and head of government of the United States. The president serves a four-year term and is responsible for appointing federal judges, including Supreme Court justices, and for conducting foreign policy. The president also has the power to veto legislation passed by Congress, although Congress can override a veto with a two-thirds majority vote in both the House and Senate. The president is also the commander-in-chief of the armed forces. The current president of the United States is Joe Biden, who has been in office since January 2021.
+The president is responsible for a number of key duties, including:
+1. Executing the laws: The
 ===============================
 Prompt: The capital of France is
-Generated text:  a city of beauty, history, and culture. Paris, the City of Light, is home to some of the world’s most famous landmarks, museums, and artistic treasures. From the iconic Eiffel Tower to the Louvre Museum, Paris has something to offer for every kind of traveler.
-The Eiffel Tower, a symbol of Paris and one of the most recognizable landmarks in the world, is a must-visit attraction. You can take the elevator to the top for breathtaking views of the city. The Louvre Museum, located in a former royal palace, houses an impressive collection of art and artifacts from around the world, including
+Generated text:  Paris, a city renowned for its stunning architecture, vibrant arts scene, and exquisite cuisine. Visitors can explore world-famous landmarks like the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum, which houses the Mona Lisa. The city is also famous for its fashion, with many high-end designers having their boutiques and flagship stores along the famous Avenue Montaigne and Champs-Elysées.
+In the capital&#39;s culinary scene, visitors can indulge in a variety of French delicacies like croissants, escargots, and macarons. The city is also home to many Michelin-starred restaurants, offering
 ===============================
 Prompt: The future of AI is
-Generated text:  now. Here&#39;s how it will change our lives.
-Artificial intelligence is no longer a distant dream but a reality we live with today. From virtual assistants to self-driving cars, AI is transforming various aspects of our lives. But what does the future hold for AI? Here are some potential changes that AI may bring about:
-1. More Personalized Experiences: AI will continue to improve and provide more personalized experiences for individuals. For example, virtual assistants like Siri, Alexa, and Google Assistant will become even more sophisticated, understanding our habits, preferences, and behaviors to provide tailored recommendations and services.
-2. Increased Automation: AI will lead
+Generated text:  AI-driven
+The AI era is in full swing, and we&#39;re just beginning to explore its vast potential. In the years to come, AI will become increasingly pervasive, transforming industries, revolutionizing jobs, and changing the way we live and work.
+As AI continues to advance, it will become more sophisticated, capable of learning from itself and adapting to new situations. This self-improvement cycle will enable AI to tackle increasingly complex problems, leading to breakthroughs in fields like medicine, energy, and transportation.
+However, the future of AI is not just about the technology itself, but also about the humans who design, develop, and interact
 </pre></div></div>
 </div>
 </section>
@@ -561,19 +560,22 @@ Artificial intelligence is no longer a distant dream but a reality we live with 
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Byron and I&#39;m a proud owner of a 2001 Toyota 4Runner. My vehicle has been my reliable companion for many years, and I&#39;ve been trying to maintain it in the best condition possible. However, I&#39;ve encountered a problem that has been nagging me for some time now, and I&#39;m hoping that someone here might be able to offer some advice.
+Generated text:  Amanda and I&#39;m a 25 year old teacher. I&#39;ve always been fascinated by people and their stories. I love learning about different cultures and experiences, and I&#39;m always eager to share my own. I&#39;m a bit of a hopeless romantic, and I love anything that brings people together. I&#39;m excited to start this blog and share my thoughts and experiences with you!
+Amanda: Hi, I&#39;m Amanda. I&#39;m a 25 year old teacher and I&#39;m so excited to start this blog and share my thoughts and experiences with you. I&#39;m a bit of a hopeless romantic and I love learning about different cultures and experiences.
 
-Recently, I&#39;ve been noticing that my 4Runner&#39;s engine is making a strange noise, which I&#39;ve described as a grinding or screeching sound. It&#39;s not a constant noise, but rather it seems to occur when I&#39;m accelerating from a standstill
 
 Prompt: The capital of France is
-Generated text:  Paris, which is located in the northern part of the country. The city is famous for its beautiful architecture, art museums, and cultural landmarks such as the Eiffel Tower and Notre-Dame Cathedral. Paris is also known for its fashion, cuisine, and romantic atmosphere.
-France is a country located in Western Europe, bordered by the countries of Belgium, Luxembourg, Germany, Switzerland, Italy, Spain, and Andorra. It is a popular tourist destination known for its rich history, culture, and natural beauty. France is home to many famous cities, including Paris, Lyon, Marseille, and Bordeaux, as well as the French Riviera
+Generated text:  located on the Seine River and is a city of grandeur and beauty. Paris is often called the City of Light, and its artistic, cultural, and historical significance is undeniable. The city is famous for its iconic landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The French capital is a popular destination for tourists, artists, and intellectuals, and its influence on global culture is immense. Paris is a city that embodies the idea of elegance, sophistication, and refinement.
+The city is also a hub for fashion, cuisine, and entertainment, with world-class restaurants, museums, and theaters. The
 
 Prompt: The future of AI is
-Generated text:  changing the way we live, work, and interact with each other. Artificial intelligence (AI) is being used in a wide range of industries, from healthcare and finance to transportation and education. In this article, we will explore the impact of AI on the future of work and how it will shape the labor market.
-Impact of AI on the Future of Work
-AI has the potential to automate many tasks and processes, which could lead to significant changes in the labor market. Some of the key impacts of AI on the future of work include:
-1. Job Displacement: AI has the potential to automate many jobs, particularly those that involve repetitive
+Generated text:  already here, and it’s changing the way we live and work. From virtual assistants like Siri and Alexa to self-driving cars and personalized medicine, AI is increasingly becoming an integral part of our daily lives. But what exactly is AI, and how does it work?
+Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that would typically require human intelligence, such as:
+Understanding natural language
+Recognizing images and patterns
+Making decisions and predictions
+Learning from data and experience
+AI systems use a range of techniques, including machine learning, deep learning, and neural networks, to process and analyze vast amounts of data
 </pre></div></div>
 </div>
 </section>
@@ -615,22 +617,19 @@ AI has the potential to automate many tasks and processes, which could lead to s
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Veronika and I am a traveler, photographer and blogger. I&#39;m passionate about exploring new places, meeting new people and experiencing different cultures.
-I love to share my stories and photographs with others, so they can get a glimpse of the amazing world we live in. My aim is to inspire people to travel, to try new things and to appreciate the beauty in everyday life.
-I&#39;m originally from Austria, but I&#39;ve been living in various countries, including Australia, the United States, and now in New Zealand. I&#39;m a curious and adventurous person, always looking for new opportunities to explore and learn.
-This blog is where I share
+Generated text:  Taylor and I&#39;m an apprentice in the AV department at the HUB. I&#39;ll be posting updates on what I&#39;m working on and my experiences as an apprentice. I&#39;m excited to be a part of this team and I&#39;m looking forward to learning and growing.
+Currently, I&#39;m working on organizing and testing the new shipment of equipment. This involves making sure everything is in working order, labeling it correctly, and making sure it&#39;s stored in the correct place. It&#39;s a lot of work, but it&#39;s worth it to make sure everything runs smoothly in the AV department.
+I&#39;m also learning about the different types of equipment and how
 
 Prompt: The capital of France is
-Generated text:  a city of great beauty and history, and there is no shortage of things to do and see. Paris is famous for its stunning architecture, art museums, fashion, and cuisine, and there is always something new to discover. From the iconic Eiffel Tower to the Louvre Museum, Notre-Dame Cathedral, and the Champs-Élysées, Paris is a city that will leave you in awe.
-Here are some of the top things to do and see in Paris:
-1. Visit the Eiffel Tower
-The Eiffel Tower is an iconic symbol of Paris and one of the most recognizable landmarks in the world.
+Generated text:  a city that is full of history, culture, and beauty. From the iconic Eiffel Tower to the charming streets of Montmartre, there&#39;s something for everyone in this vibrant city. Here are some of the top attractions to visit in Paris:
+The Eiffel Tower: This iron lattice tower is one of the most recognizable landmarks in the world. Built for the 1889 World&#39;s Fair, it stands 324 meters tall and offers stunning views of the city from its observation decks.
+The Louvre Museum: This world-famous museum is home to an impressive collection of art and artifacts from around the world, including the Mona
 
 Prompt: The future of AI is
-Generated text:  bright – and a little bit scary
-Artificial intelligence is rapidly changing the world, but it&#39;s also raising questions about accountability and the potential for misuse.
-The future of artificial intelligence is looking bright, but it&#39;s also a little bit scary. AI is rapidly changing the world, with applications in everything from healthcare to finance to transportation. However, it&#39;s also raising questions about accountability and the potential for misuse.
-One of the biggest concerns is bias in AI decision-making. For example, facial recognition technology has been shown to be less accurate for people of color, which can have serious consequences in applications like law enforcement. There&#39;s also the risk
+Generated text:  here, but it will not be what you think
+The future of Artificial Intelligence (AI) is a subject of much debate and speculation. While many experts predict a future where AI surpasses human intelligence, others argue that AI will be a tool that complements human abilities. Here, we&#39;ll explore what the future of AI might hold, but with a twist - it won&#39;t be what you think.
+The current state of AI is characterized by its ability to process and analyze vast amounts of data, recognize patterns, and make decisions based on those patterns. However, AI is still far from true intelligence, as it lacks common sense, creativity
 </pre></div></div>
 </div>
 </section>
@@ -674,18 +673,20 @@ One of the biggest concerns is bias in AI decision-making. For example, facial r
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Kirsty and I’m a hairdresser at Wigs N Lashes Salon in North West England. I have over 5 years experience in hairdressing and specialize in wig styling, hair extensions, and makeup.
-I love the way a wig can transform a person’s look and boost their confidence, which is why I am passionate about my work. I take pride in providing high-quality services that meet my clients&#39; needs and expectations. My friendly and approachable nature means that I make sure my clients feel at ease and comfortable throughout their experience.
-I am trained in various wig styling techniques, including hand-tied and lace front wigs
+Generated text:  Angel and I am a natural born leader, with a huge heart and a generous spirit. I am passionate about helping others, and I believe that everyone deserves to live a happy and fulfilling life.
+I was born in the Dominican Republic and moved to the United States when I was a child. Growing up, I experienced many challenges, but my parents and community helped me to overcome them. Their love, support, and guidance instilled in me a sense of resilience, determination, and compassion.
+As I grew older, I realized that I wanted to make a difference in the world. I started volunteering at local non-profit organizations, working with youth
 
 Prompt: The capital of France is
-Generated text:  home to some of the world’s most famous landmarks, museums, and art collections, and is a popular destination for tourists and business travelers alike. Visitors can explore the iconic Eiffel Tower, visit the Louvre Museum to see the Mona Lisa, and stroll along the Seine River. The city is also known for its fashion, cuisine, and romantic atmosphere, making it a must-visit destination for anyone interested in history, culture, and luxury.
-Paris is also a hub for international business and finance, with many multinational corporations and financial institutions having a presence in the city. The city is home to the European Union’s headquarters and is
+Generated text:  the largest city in the country, with a population of over 2.1 million people. Paris is known for its stunning architecture, art museums, and romantic atmosphere. The city is home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum.
+Paris is a global center for fashion, cuisine, and culture. The city is a popular destination for tourists, attracting over 23 million visitors per year. The city is also a major hub for international business and finance, with many multinational corporations having their headquarters in Paris.
+Paris has a rich history dating back to the Roman era, and
 
 Prompt: The future of AI is
-Generated text:  being shaped by cutting-edge research in various fields such as computer vision, natural language processing, robotics, and deep learning. These technologies have the potential to revolutionize industries such as healthcare, finance, and transportation, and transform the way we live and work. However, AI also raises important ethical concerns, such as bias, transparency, and accountability. Researchers and developers must carefully consider these issues as they create new AI systems.
-The future of AI is expected to be shaped by several key trends, including:
-1. Edge AI: With the proliferation of IoT devices and the need for real-time processing, edge AI is becoming increasingly important. Edge AI
+Generated text:  bright, but there are challenges ahead
+From the first computers to the widespread use of the internet, the development of technology has brought about numerous benefits to our society. However, with the rapid growth of Artificial Intelligence (AI), some experts are raising concerns about the potential risks and challenges associated with its increasing influence.
+The development of AI has seen significant advancements in recent years, with breakthroughs in areas such as machine learning, natural language processing, and computer vision. These advancements have led to the creation of sophisticated AI systems that can learn from data, make decisions, and interact with humans in a more natural way.
+However, as AI becomes more
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

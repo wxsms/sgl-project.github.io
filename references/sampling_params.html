@@ -410,7 +410,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">Normal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-decoding-json-regex">Structured decoding (JSON, Regex)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
 </ul>
 </li>
 </ul>
@@ -480,13 +480,18 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <span class="n">skip_special_tokens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="c1"># Whether to add spaces between special tokens during detokenization.</span>
 <span class="n">spaces_between_special_tokens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-<span class="c1"># Constrains the output to follow a given regular expression.</span>
-<span class="n">regex</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="c1"># Do parallel sampling and return `n` outputs.</span>
 <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+
+<span class="c1">## Structured Outputs</span>
+<span class="c1"># Only one of the below three can be set at a time:</span>
+
+<span class="c1"># Constrains the output to follow a given regular expression.</span>
+<span class="n">regex</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="c1"># Constrains the output to follow a given JSON schema.</span>
-<span class="c1"># `regex` and `json_schema` cannot be set at the same time.</span>
 <span class="n">json_schema</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="c1"># Constrains the output to follow a given EBNF Grammar.</span>
+<span class="n">ebnf</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 
 <span class="c1">## Penalties. See [Performance Implications on Penalties] section below for more informations.</span>
 
@@ -599,24 +604,39 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <p>The <code class="docutils literal notranslate"><span class="pre">image_data</span></code> can be a file name, a URL, or a base64 encoded string. See also <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/utils.py:load_image</span></code>.
 Streaming is supported in a similar manner as <a class="reference internal" href="#streaming"><span class="std std-ref">above</span></a>.</p>
 </section>
-<section id="structured-decoding-json-regex">
-<h3>Structured decoding (JSON, Regex)<a class="headerlink" href="#structured-decoding-json-regex" title="Link to this heading">#</a></h3>
-<p>You can specify a JSON schema or a regular expression to constrain the model output. The model output will be guaranteed to follow the given constraints.</p>
+<section id="structured-outputs-json-regex-ebnf">
+<h3>Structured Outputs (JSON, Regex, EBNF)<a class="headerlink" href="#structured-outputs-json-regex-ebnf" title="Link to this heading">#</a></h3>
+<p>You can specify a JSON schema, Regular Expression or <a class="reference external" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to constrain the model output. The model output will be guaranteed to follow the given constraints.</p>
+<p>SGLang supports two grammar backends:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and Regular Expression constraints.</p></li>
+<li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>: Supports JSON schema and EBNF constraints.</p>
+<ul>
+<li><p>XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a></p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>🔔 Only one constraint parameter (<code class="docutils literal notranslate"><span class="pre">json_schema</span></code>, <code class="docutils literal notranslate"><span class="pre">regex</span></code>, or <code class="docutils literal notranslate"><span class="pre">ebnf</span></code>) can be specified at a time.</p>
+</div></blockquote>
+<p>Initialise xgrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--grammar-backend<span class="w"> </span><span class="o">[</span>xgrammar<span class="p">|</span>outlines<span class="o">]</span><span class="w"> </span><span class="c1"># xgrammar or outlines (default: outlines)</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">json_schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;^[</span><span class="se">\\</span><span class="s2">w]+$&quot;</span><span class="p">},</span>
-            <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">},</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">],</span>
-    <span class="p">}</span>
-<span class="p">)</span>
+<span class="n">json_schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;^[</span><span class="se">\\</span><span class="s2">w]+$&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">],</span>
+<span class="p">})</span>
 
-<span class="c1"># JSON</span>
+<span class="c1"># JSON (works with both Outlines and XGrammar)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
@@ -630,7 +650,7 @@ Streaming is supported in a similar manner as <a class="reference internal" href
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 
-<span class="c1"># Regular expression</span>
+<span class="c1"># Regular expression (Outlines backend only)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
@@ -639,6 +659,20 @@ Streaming is supported in a similar manner as <a class="reference internal" href
             <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
             <span class="s2">&quot;regex&quot;</span><span class="p">:</span> <span class="s2">&quot;(France|England)&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="c1"># EBNF (XGrammar backend only)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Write a greeting.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+            <span class="s2">&quot;ebnf&quot;</span><span class="p">:</span> <span class="s1">&#39;root ::= &quot;Hello&quot; | &quot;Hi&quot; | &quot;Hey&quot;&#39;</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span>
 <span class="p">)</span>
@@ -699,7 +733,7 @@ Streaming is supported in a similar manner as <a class="reference internal" href
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">Normal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-decoding-json-regex">Structured decoding (JSON, Regex)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
 </ul>
 </li>
 </ul>
