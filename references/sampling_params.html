@@ -163,7 +163,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/backend.html">Backend: SGLang Runtime (SRT)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/constrained_decoding.html">Constrained Decoding</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -461,10 +460,9 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <p>The <code class="docutils literal notranslate"><span class="pre">sampling_params</span></code> follows this format</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The maximum number of output tokens</span>
 <span class="n">max_new_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
-<span class="c1"># Stop when hitting any of the strings in this list.</span>
+<span class="c1"># Stop when hitting any of the strings in this list</span>
 <span class="n">stop</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="c1"># Stop when hitting any of the token_ids in this list. Could be useful when mixed with</span>
-<span class="c1"># `min_new_tokens`.</span>
+<span class="c1"># Stop when hitting any of the token_ids in this list</span>
 <span class="n">stop_token_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[],</span>
 <span class="c1"># Sampling temperature</span>
 <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
@@ -474,26 +472,26 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
 <span class="c1"># Min-p sampling</span>
 <span class="n">min_p</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="c1"># Whether to ignore EOS token.</span>
+<span class="c1"># Whether to ignore EOS token</span>
 <span class="n">ignore_eos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="c1"># Whether to skip the special tokens during detokenization.</span>
+<span class="c1"># Whether to skip the special tokens during detokenization</span>
 <span class="n">skip_special_tokens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-<span class="c1"># Whether to add spaces between special tokens during detokenization.</span>
+<span class="c1"># Whether to add spaces between special tokens during detokenization</span>
 <span class="n">spaces_between_special_tokens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="c1"># Do parallel sampling and return `n` outputs.</span>
 <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 
 <span class="c1">## Structured Outputs</span>
-<span class="c1"># Only one of the below three can be set at a time:</span>
+<span class="c1"># Only one of the below three can be set for a request.</span>
 
-<span class="c1"># Constrains the output to follow a given regular expression.</span>
-<span class="n">regex</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="c1"># Constrains the output to follow a given JSON schema.</span>
+<span class="c1"># Constrain the output to follow a given JSON schema.</span>
 <span class="n">json_schema</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="c1"># Constrains the output to follow a given EBNF Grammar.</span>
+<span class="c1"># Constrain the output to follow a given regular expression.</span>
+<span class="n">regex</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="c1"># Constrain the output to follow a given EBNF grammar.</span>
 <span class="n">ebnf</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 
-<span class="c1">## Penalties. See [Performance Implications on Penalties] section below for more informations.</span>
+<span class="c1">## Penalties.</span>
 
 <span class="c1"># Float that penalizes new tokens based on their frequency in the generated text so far.</span>
 <span class="c1"># Values &gt; 0 encourage the model to use new tokens, while values &lt; 0 encourage the model to</span>
@@ -606,20 +604,17 @@ Streaming is supported in a similar manner as <a class="reference internal" href
 </section>
 <section id="structured-outputs-json-regex-ebnf">
 <h3>Structured Outputs (JSON, Regex, EBNF)<a class="headerlink" href="#structured-outputs-json-regex-ebnf" title="Link to this heading">#</a></h3>
-<p>You can specify a JSON schema, Regular Expression or <a class="reference external" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to constrain the model output. The model output will be guaranteed to follow the given constraints.</p>
+<p>You can specify a JSON schema, regular expression or <a class="reference external" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to constrain the model output. The model output will be guaranteed to follow the given constraints. Only one constraint parameter (<code class="docutils literal notranslate"><span class="pre">json_schema</span></code>, <code class="docutils literal notranslate"><span class="pre">regex</span></code>, or <code class="docutils literal notranslate"><span class="pre">ebnf</span></code>) can be specified for a request.</p>
 <p>SGLang supports two grammar backends:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and Regular Expression constraints.</p></li>
+<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and regular expression constraints.</p></li>
 <li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>: Supports JSON schema and EBNF constraints.</p>
 <ul>
 <li><p>XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a></p></li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<div><p>🔔 Only one constraint parameter (<code class="docutils literal notranslate"><span class="pre">json_schema</span></code>, <code class="docutils literal notranslate"><span class="pre">regex</span></code>, or <code class="docutils literal notranslate"><span class="pre">ebnf</span></code>) can be specified at a time.</p>
-</div></blockquote>
-<p>Initialise xgrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag</p>
+<p>Initialize the XGrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 --port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--grammar-backend<span class="w"> </span><span class="o">[</span>xgrammar<span class="p">|</span>outlines<span class="o">]</span><span class="w"> </span><span class="c1"># xgrammar or outlines (default: outlines)</span>
 </pre></div>

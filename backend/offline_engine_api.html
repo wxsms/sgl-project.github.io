@@ -166,7 +166,6 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">Native APIs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constrained_decoding.html">Constrained Decoding</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -468,13 +467,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.35it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.18it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.67it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.50it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.34it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.16it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.63it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
 
-100%|██████████| 23/23 [00:09&lt;00:00,  2.34it/s]
+100%|██████████| 23/23 [00:11&lt;00:00,  2.07it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,26 +505,30 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Holly and I am a newly married woman. I have been married for just over a year and I have to say that it&#39;s been an amazing journey so far. My husband and I met through mutual friends and we hit it off immediately. We have a beautiful home, a lovely garden and a wonderful little dog who is part of our family.
-I work from home as a freelance writer and I love it. I get to be my own boss and work on projects that I am passionate about. My husband works in an office and he commutes to work every day, but he loves his job and is very dedicated to his work.
-We
+Generated text:  Maxwell “Max” Hall and I am a Graphic Designer &amp; Illustrator living in beautiful Lake Tahoe. My passion is creating unique and captivating art that pushes the boundaries of creativity. I have a background in graphic design, illustration, and fine art, which gives me a diverse skill set that I love to utilize in my work. When I&#39;m not working, you can find me snowboarding, hiking, or just enjoying the beauty of the Sierra Nevada mountains.
+Whether you&#39;re looking for a logo, branding, or graphic design, I would love to collaborate with you to bring your vision to life. My goal is to provide creative and effective solutions that
 ===============================
 Prompt: The president of the United States is
-Generated text:  a president of great expectations, at least among his supporters. They see him as a transformational figure who will bring about a new era of peace and prosperity. But the president has a different view of himself.
-In a private conversation with a close friend, he described himself as a &#34;failed leader&#34; and a &#34;disaster.&#34; He spoke of his many mistakes and the many things he wishes he had done differently. He spoke of the criticism he has faced and the pressure he feels to perform.
-The conversation was revealed in a new book by a journalist who has had access to the president&#39;s inner circle. The book, which is based on
+Generated text:  the head of the executive branch of the federal government and the commander-in-chief of the armed forces. The president is directly elected by the people through the Electoral College system. The president serves a four-year term and is limited to two terms.
+The president&#39;s powers and duties are outlined in Article II of the United States Constitution. The president has the power to:
+* Appoint federal judges, including Supreme Court justices
+* Negotiate treaties and agreements with foreign governments
+* Appoint ambassadors and other diplomatic officials
+* Conduct foreign policy
+* Command the armed forces
+* Grant pardons and reprieves
+* Convene and adj
 ===============================
 Prompt: The capital of France is
-Generated text:  an attractive destination for tourists and business travelers alike. Paris, known as the City of Light, has something to offer for everyone. From its stunning architecture, museums, fashion, and romantic atmosphere, Paris is a city that never fails to impress.
-Despite the city’s attractions, the capital can be overwhelming, especially for first-time visitors. Here are some tips to help you navigate and make the most of your trip:
-1. Plan Ahead:
-Before your trip, make a list of the attractions and activities you want to experience. Research the best times to visit popular sites and plan your itinerary accordingly. You can also consider purchasing a Paris Museum Pass
+Generated text:  a city unlike any other. It&#39;s a place of grandeur and beauty, with its stunning architecture, world-class museums, and iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral.
+In addition to its breathtaking scenery and rich history, Paris is also a city of fashion, art, and cuisine. Visitors can indulge in the city&#39;s famous food and wine scene, shop at high-end boutiques and markets, and enjoy the city&#39;s vibrant nightlife.
+From the romantic Seine River to the bustling streets of Montmartre, Paris has something for everyone. Whether you&#39;re interested in history, art, fashion, or simply soaking
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but it&#39;s not without its challenges. AI systems are becoming increasingly powerful, and their use in various industries is growing. However, as AI becomes more pervasive, concerns about bias, accountability, and transparency are rising. In this article, we&#39;ll explore some of the most pressing challenges facing the future of AI and potential solutions to address them.
-Bias in AI systems
-Bias in AI systems is a significant challenge, as it can lead to discriminatory outcomes and perpetuate existing social inequalities. There are several types of bias in AI, including:
-1. Data bias: AI systems can perpetuate biases present in the data used to train them
+Generated text:  uncertain, but one thing is certain: it will change our lives. Artificial intelligence (AI) is rapidly advancing, and its impact will be felt in various industries, from healthcare to finance to education. Here are some predictions for the future of AI:
+1. AI will become ubiquitous: AI will become an integral part of our daily lives, from smart homes to self-driving cars, and will revolutionize the way we live and work.
+2. AI will increase productivity: AI will automate routine tasks, freeing up humans to focus on more complex and creative work, leading to increased productivity and economic growth.
+3. AI will improve healthcare: AI
 </pre></div></div>
 </div>
 </section>
@@ -563,19 +566,17 @@ Bias in AI systems is a significant challenge, as it can lead to discriminatory 
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Jessica and I&#39;m the owner of PB&amp;J Pottery. I&#39;ve always been a crafty person, and I&#39;ve been working with clay for over 20 years. My passion for ceramics began when I was a kid, watching my grandmother work in her studio. She was an incredible potter and painter, and she taught me everything she knew.
-As I grew older, my interest in ceramics only deepened. I continued to experiment with different techniques and styles, and eventually, I started selling my pieces at local craft fairs and markets. It wasn&#39;t long before I decided to turn my hobby into a full-time business.
-Today
+Generated text:  Nicky and I&#39;m a 45-year-old wife, mother of 2, and a little bit of a geek. I love sci-fi, fantasy, and horror movies and TV shows. I&#39;m a bit of a bookworm and I enjoy reading all types of books but I have a special fondness for science fiction and fantasy novels. I&#39;m a bit of a gamer too and enjoy playing video games on my Xbox One and playing tabletop games with my friends.
+I live in a small town in the middle of nowhere (I like to call it &#34;the sticks&#34;) and I love it here. The peace and quiet is a nice
 
 Prompt: The capital of France is
-Generated text:  located on the Seine River and is known for its beauty, history, and culture. The City of Light, as it is often called, is famous for its iconic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is also home to many world-class restaurants, cafes, and fashion boutiques. In addition to its beauty and cultural attractions, Paris is also a hub for international business and finance, with many multinational companies having headquarters or offices there. Whether you&#39;re interested in art, history, food, fashion, or business, Paris has something for everyone.
-Dufour-Bennet
+Generated text:  Paris. The city is located in the north-central part of the country and is situated along the Seine River. Paris is known for its stunning architecture, rich history, and vibrant cultural scene. The city is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral.
+Paris is a popular tourist destination, attracting millions of visitors each year. The city offers a wide range of activities and attractions, including museums, art galleries, historic sites, and entertainment venues. Visitors can explore the city&#39;s charming neighborhoods, such as Montmartre and Le Marais, and enjoy the city&#39;s famous
 
 Prompt: The future of AI is
-Generated text:  not what you think it is
-The way most people think about AI is shaped by science fiction and media. Hollywood and the tech industry have created a notion that AI will be the doomsday machine, or the utopian panacea. However, the reality is far more nuanced.
-In reality, AI is a set of tools and techniques that will help solve the world’s most pressing challenges, like climate change, sustainable resource management, and disease prevention. But it requires a multidisciplinary approach and a focus on human-centered design, not just a bunch of smart machines doing the thinking for us.
-We need to redefine our expectations around AI
+Generated text:  vast and rapidly evolving. This book offers a comprehensive overview of the AI landscape, including the current state of the field, emerging trends and technologies, and the societal implications of AI.
+The book explores various AI applications across different sectors, including healthcare, finance, education, transportation, and more. It also delves into the development of foundational AI technologies, such as deep learning, natural language processing, and computer vision.
+The authors examine the opportunities and challenges presented by AI, including job displacement, bias and fairness, and the need for AI literacy. They also discuss the importance of responsible AI development and deployment, as well as the need for regulatory
 </pre></div></div>
 </div>
 </section>
@@ -617,20 +618,18 @@ We need to redefine our expectations around AI
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Ellie and I am a podcast enthusiast! I love listening to all kinds of podcasts, from true crime to comedy to educational podcasts. I recently started a podcast of my own, called &#34;My Life Unscripted.&#34; It&#39;s a podcast where I interview people from all walks of life and we have deep and meaningful conversations about their experiences, struggles, and successes. I&#39;m really passionate about creating a space where people feel comfortable sharing their stories and where listeners can learn and grow from their experiences.
+Generated text:  Richard and I am a 44-year-old software developer living in the beautiful state of Utah. I grew up in Southern Utah and love the desert landscapes. In my free time, I enjoy hiking and exploring the outdoors, especially in the nearby national parks and monuments.
+I am married to a wonderful woman, and we have two beautiful children. My wife is a talented artist, and we have been married for over 20 years. I have two wonderful kids, a boy, and a girl. My son is a bit of a tech whiz, just like his dad, and my daughter is a free spirit who loves art and music.
 
-In my free time, I enjoy hiking, reading, and trying out new restaurants. I&#39;m also a bit of a coffee snob and can often
 
 Prompt: The capital of France is
-Generated text:  a city of grandeur and beauty, with stunning architecture, world-class museums, and a vibrant cultural scene. Here are some of the top things to do in Paris:
-1. Visit the Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris, offering breathtaking views of the city from its top deck.
-2. Explore the Louvre Museum: The world-famous Louvre Museum is home to an impressive collection of art and artifacts, including the Mona Lisa.
-3. Take a Seine River Cruise: A Seine River cruise is a great way to see the city&#39;s landmarks and bridges while learning
+Generated text:  a must-visit destination for any traveler. Here are some reasons why you should visit Paris:
+1. The Eiffel Tower: The Eiffel Tower is one of the most iconic landmarks in the world. It was built for the 1889 World&#39;s Fair and has become a symbol of Paris and France. You can take the elevator to the top for breathtaking views of the city.
+2. The Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing a vast collection of art and artifacts from around the world. The museum is home to the Mona Lisa, one of the most famous
 
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is clear: we need a new approach to training and validating AI systems.
-The current approach to training AI systems relies heavily on machine learning, which involves feeding large datasets to algorithms to learn from patterns and make predictions. While machine learning has achieved remarkable success in various domains, it also has significant limitations. For instance, machine learning models can be biased, opaque, and difficult to interpret. Moreover, they often require massive amounts of data and computational resources, which can be a significant barrier to entry for many organizations.
-To address these limitations, researchers and practitioners are exploring alternative approaches to AI training and validation. One promising area
+Generated text:  uncertain, but the increasing prevalence of AI-powered technologies has led to growing concerns about the potential risks and downsides of relying on AI. With this in mind, researchers are exploring various strategies to mitigate these risks and ensure that AI systems are developed and used responsibly. In this context, the concept of Explainable AI (XAI) has emerged as a crucial area of focus. Explainable AI refers to the practice of designing and training AI systems that are transparent, interpretable, and explainable, enabling humans to understand the reasoning and decision-making processes behind AI-driven outcomes.
+Explainable AI involves using various techniques, such as model interpretability
 </pre></div></div>
 </div>
 </section>
@@ -674,20 +673,20 @@ To address these limitations, researchers and practitioners are exploring altern
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Shelly. I am a happy and energetic dog, with a heart of gold. I love people and I love to play! I&#39;m a little bit big for my britches, but that&#39;s okay, I know I&#39;m lovable.
-I&#39;m not too picky about what kind of play I get, as long as it&#39;s fun! I love chasing balls and sticks, but I&#39;m also happy to just cuddle up next to my favorite human and snooze the day away.
-I do have one thing that I get a little anxious about, and that&#39;s being left alone for too long. I know it&#39;s not ideal
+Generated text:  Amber and I&#39;m a 28-year-old Australian living in New York City. I&#39;m a travel blogger and photographer, which means I get to explore new destinations and experience different cultures while working.
+In my free time, I love trying out new restaurants, visiting local art galleries, and taking long walks around the city to capture the perfect shot for my Instagram feed.
+As a travel blogger, I&#39;ve had the opportunity to visit some incredible destinations, from the stunning beaches of Bali to the vibrant streets of Tokyo. But even with all the amazing places I&#39;ve been to, there&#39;s one place that will always hold a special spot in my heart
 
 Prompt: The capital of France is
-Generated text:  in the news again, and this time, it’s for a good reason! Paris has been named the number one destination in the world for tourists, according to Mastercard’s Global Destination Cities Index (GDCI) for 2022. The report states that Paris attracted over 23.9 million visitors last year, making it the […]
-The post Paris Named the Number One Destination in the World for Tourists appeared first on World Tourism .
-The capital of France is in the news again, and this time, it’s for a good reason! Paris has been named the number one destination in the world for tourists, according to Mastercard
+Generated text:  called Paris. It is situated in the north of France and is home to the Eiffel Tower, one of the most famous landmarks in the world. Paris has a population of around 2.1 million people, making it the largest city in France.
+Paris has a rich history dating back to the 3rd century AD when it was a small settlement. Over the centuries, the city has grown and developed, becoming a major center of culture, art, fashion, and cuisine.
+Today, Paris is a global hub for fashion, art, and culture, and is home to some of the world&#39;s most famous museums, galleries,
 
 Prompt: The future of AI is
-Generated text:  bright, and it is already transforming various industries. However, it also raises concerns about job displacement, bias, and accountability. As AI continues to evolve, it&#39;s crucial to understand its potential impact on society and to develop strategies to mitigate its negative effects. In this article, we&#39;ll explore the future of AI, its potential benefits and challenges, and the steps we can take to ensure that AI is developed and used responsibly.
-The Future of AI: Trends and Predictions
-The future of AI is exciting and rapidly evolving. Here are some trends and predictions that will shape the industry:
-1. **Increased Adoption**: AI will become ubiquitous,
+Generated text:  bright, but it&#39;s also fraught with challenges. Here&#39;s a rundown of the good, the bad, and the ugly of AI.
+Artificial intelligence (AI) is all the rage these days, and for good reason. From virtual assistants to personalized product recommendations, AI has already started to revolutionize the way we live and work. But as AI continues to advance, it&#39;s also raising a host of concerns and challenges that we can&#39;t ignore.
+On the good side, AI has the potential to:
+**Solve some of humanity&#39;s biggest problems**: AI can help us tackle complex issues like climate change, disease, and poverty by analyzing
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
