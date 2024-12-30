@@ -55,7 +55,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'backend/offline_engine_api';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Backend: SGLang Runtime (SRT)" href="backend.html" />
+    <link rel="next" title="Structured Outputs (JSON, Regex, EBNF)" href="structured_outputs.html" />
     <link rel="prev" title="Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -165,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">Native APIs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs (JSON, Regex, EBNF)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -467,13 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.34it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.16it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.63it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.94it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00&lt;00:00,  2.01it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.49it/s]
 
-100%|██████████| 23/23 [00:11&lt;00:00,  2.07it/s]
+100%|██████████| 23/23 [00:07&lt;00:00,  3.20it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -505,30 +506,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Maxwell “Max” Hall and I am a Graphic Designer &amp; Illustrator living in beautiful Lake Tahoe. My passion is creating unique and captivating art that pushes the boundaries of creativity. I have a background in graphic design, illustration, and fine art, which gives me a diverse skill set that I love to utilize in my work. When I&#39;m not working, you can find me snowboarding, hiking, or just enjoying the beauty of the Sierra Nevada mountains.
-Whether you&#39;re looking for a logo, branding, or graphic design, I would love to collaborate with you to bring your vision to life. My goal is to provide creative and effective solutions that
+Generated text:  Emily and I am the owner and primary instructor of Bloom Yoga Studio. I am passionate about sharing the benefits of yoga with my community and helping each student develop a personal practice that nourishes their body, mind, and spirit.
+I have been practicing yoga for over 10 years and have completed numerous training programs to become a certified yoga instructor. I hold a 500-hour certification in Hatha and Vinyasa Yoga through the Yoga Alliance. My teaching style is compassionate, clear, and adaptable to meet the needs of each student.
+I believe that yoga is a journey, not a destination, and that every body is capable of growth and transformation
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of the executive branch of the federal government and the commander-in-chief of the armed forces. The president is directly elected by the people through the Electoral College system. The president serves a four-year term and is limited to two terms.
-The president&#39;s powers and duties are outlined in Article II of the United States Constitution. The president has the power to:
-* Appoint federal judges, including Supreme Court justices
-* Negotiate treaties and agreements with foreign governments
-* Appoint ambassadors and other diplomatic officials
-* Conduct foreign policy
-* Command the armed forces
-* Grant pardons and reprieves
-* Convene and adj
+Generated text:  the head of state and head of government of the United States. The president serves a four-year term and is elected by the people through the Electoral College. The president is responsible for appointing federal judges, ambassadors, and other high-ranking government officials.
+The president also serves as commander-in-chief of the armed forces and is responsible for defending the country against external threats. Additionally, the president has the power to negotiate treaties, grant pardons, and veto legislation passed by Congress.
+The president&#39;s role has evolved over time, and the office has grown in power and influence. However, the president is still accountable to Congress and the American people,
 ===============================
 Prompt: The capital of France is
-Generated text:  a city unlike any other. It&#39;s a place of grandeur and beauty, with its stunning architecture, world-class museums, and iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral.
-In addition to its breathtaking scenery and rich history, Paris is also a city of fashion, art, and cuisine. Visitors can indulge in the city&#39;s famous food and wine scene, shop at high-end boutiques and markets, and enjoy the city&#39;s vibrant nightlife.
-From the romantic Seine River to the bustling streets of Montmartre, Paris has something for everyone. Whether you&#39;re interested in history, art, fashion, or simply soaking
+Generated text:  a city like no other – a symphony of art, architecture, fashion, and cuisine. Paris, the City of Light, has been a cultural and historical hub for centuries. Whether you&#39;re wandering along the Seine, exploring the world-famous museums, or indulging in a croissant and coffee at a charming café, Paris is a city that will leave you enchanted and inspired. Here are some of the top things to do in Paris:
+1. Visit the Eiffel Tower: The iconic iron lady is a must-visit attraction in Paris. Take the stairs or elevator to the top for breathtaking views of the city.
+2
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is certain: it will change our lives. Artificial intelligence (AI) is rapidly advancing, and its impact will be felt in various industries, from healthcare to finance to education. Here are some predictions for the future of AI:
-1. AI will become ubiquitous: AI will become an integral part of our daily lives, from smart homes to self-driving cars, and will revolutionize the way we live and work.
-2. AI will increase productivity: AI will automate routine tasks, freeing up humans to focus on more complex and creative work, leading to increased productivity and economic growth.
-3. AI will improve healthcare: AI
+Generated text:  looking increasingly uncertain, with many experts warning of its potential dangers and a growing backlash against its use in certain industries.
+AI has the potential to revolutionize a wide range of industries, from healthcare to finance, but it also raises concerns about job displacement, bias, and accountability.
+In recent years, there have been a number of high-profile incidents involving AI systems gone wrong, including the development of AI-powered chatbots that have been used to spread misinformation and propaganda.
+Despite these challenges, many experts believe that AI has the potential to bring about significant benefits, including improved healthcare outcomes, increased productivity, and enhanced decision-making capabilities.
+However, the development
 </pre></div></div>
 </div>
 </section>
@@ -566,17 +563,19 @@ Generated text:  uncertain, but one thing is certain: it will change our lives. 
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Nicky and I&#39;m a 45-year-old wife, mother of 2, and a little bit of a geek. I love sci-fi, fantasy, and horror movies and TV shows. I&#39;m a bit of a bookworm and I enjoy reading all types of books but I have a special fondness for science fiction and fantasy novels. I&#39;m a bit of a gamer too and enjoy playing video games on my Xbox One and playing tabletop games with my friends.
-I live in a small town in the middle of nowhere (I like to call it &#34;the sticks&#34;) and I love it here. The peace and quiet is a nice
+Generated text:  Wendy, and I am a home cook. I love trying out new recipes and experimenting with different flavors and ingredients. My passion for cooking started when I was a child, helping my mother in the kitchen and learning the basics of cooking. As I grew older, I began to explore more complex recipes and techniques, and I have been hooked on cooking ever since.
+When I’m not cooking, you can find me spending time with my family and friends, practicing yoga, or taking long walks in nature. I believe that cooking is not just about following a recipe, but about creating a sense of community and bringing people together through food.
+I’m
 
 Prompt: The capital of France is
-Generated text:  Paris. The city is located in the north-central part of the country and is situated along the Seine River. Paris is known for its stunning architecture, rich history, and vibrant cultural scene. The city is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral.
-Paris is a popular tourist destination, attracting millions of visitors each year. The city offers a wide range of activities and attractions, including museums, art galleries, historic sites, and entertainment venues. Visitors can explore the city&#39;s charming neighborhoods, such as Montmartre and Le Marais, and enjoy the city&#39;s famous
+Generated text:  in lockdown due to rising tensions between pro- and anti-fascist groups, with police in riot gear patrolling the streets and making arrests. The city has been plagued by clashes between rival factions in recent months, with both sides vowing to take action against each other.
+As the situation continues to escalate, the government has deployed more troops to the city to help maintain order. The situation is becoming increasingly volatile, with both sides using increasingly violent tactics.
+The city&#39;s mayor has called for calm and urged citizens to stay indoors and avoid any areas of conflict. However, many are choosing to take to the streets to demonstrate their support for one
 
 Prompt: The future of AI is
-Generated text:  vast and rapidly evolving. This book offers a comprehensive overview of the AI landscape, including the current state of the field, emerging trends and technologies, and the societal implications of AI.
-The book explores various AI applications across different sectors, including healthcare, finance, education, transportation, and more. It also delves into the development of foundational AI technologies, such as deep learning, natural language processing, and computer vision.
-The authors examine the opportunities and challenges presented by AI, including job displacement, bias and fairness, and the need for AI literacy. They also discuss the importance of responsible AI development and deployment, as well as the need for regulatory
+Generated text:  a topic of much debate and discussion. While some people believe that AI will bring about a utopian future, others fear that it will lead to a dystopian nightmare. In this article, we will explore some of the possible futures of AI and the potential implications of its development.
+The Utopian Future:
+In this scenario, AI is used to solve some of the world&#39;s most pressing problems, such as poverty, hunger, and disease. AI systems are used to optimize resource allocation, predict and prevent natural disasters, and develop new treatments for diseases. This leads to a significant improvement in the quality of life for people around the world.
 </pre></div></div>
 </div>
 </section>
@@ -618,18 +617,19 @@ The authors examine the opportunities and challenges presented by AI, including 
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Richard and I am a 44-year-old software developer living in the beautiful state of Utah. I grew up in Southern Utah and love the desert landscapes. In my free time, I enjoy hiking and exploring the outdoors, especially in the nearby national parks and monuments.
-I am married to a wonderful woman, and we have two beautiful children. My wife is a talented artist, and we have been married for over 20 years. I have two wonderful kids, a boy, and a girl. My son is a bit of a tech whiz, just like his dad, and my daughter is a free spirit who loves art and music.
-
+Generated text:  Jaycee and I am a proud and devoted daughter, sister, and friend. I am a strong believer in the importance of family and the value of every individual within it. I am passionate about making a difference in the lives of others, whether it be through volunteering, mentoring, or simply being a supportive and caring presence in someone&#39;s life. I am a bit of a hopeless romantic at heart and believe that love and kindness can conquer even the toughest of challenges.
+I am a bit of a goofball and enjoy making people laugh. I am also a bit of a bookworm and love getting lost in a good novel or learning new things
 
 Prompt: The capital of France is
-Generated text:  a must-visit destination for any traveler. Here are some reasons why you should visit Paris:
-1. The Eiffel Tower: The Eiffel Tower is one of the most iconic landmarks in the world. It was built for the 1889 World&#39;s Fair and has become a symbol of Paris and France. You can take the elevator to the top for breathtaking views of the city.
-2. The Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing a vast collection of art and artifacts from around the world. The museum is home to the Mona Lisa, one of the most famous
+Generated text: , of course, Paris. But have you ever wondered what makes this city so special? Here are some of the reasons why Paris is the City of Light.
+One of the most famous landmarks in Paris is the Eiffel Tower. This iconic iron structure was built for the 1889 World’s Fair and stands 324 meters tall. Visitors can take the elevator to the top for breathtaking views of the city. But the Eiffel Tower is not the only reason to visit Paris.
+Paris is a city of art and culture. The Louvre Museum, which is one of the world’s largest and most famous museums, is home to
 
 Prompt: The future of AI is
-Generated text:  uncertain, but the increasing prevalence of AI-powered technologies has led to growing concerns about the potential risks and downsides of relying on AI. With this in mind, researchers are exploring various strategies to mitigate these risks and ensure that AI systems are developed and used responsibly. In this context, the concept of Explainable AI (XAI) has emerged as a crucial area of focus. Explainable AI refers to the practice of designing and training AI systems that are transparent, interpretable, and explainable, enabling humans to understand the reasoning and decision-making processes behind AI-driven outcomes.
-Explainable AI involves using various techniques, such as model interpretability
+Generated text:  all about human-centered design
+A computer-generated image of a future cityscape. Image credit: Getty Images.
+Humans are at the center of design in AI, according to Jan Lichter, Managing Director at AI-focused venture capital firm, btov Partners. Lichter believes that the future of AI will be shaped by the human experience, and that designers, engineers, and developers need to put people at the heart of AI development.
+AI has come a long way since its inception, and it has already started to transform various industries such as healthcare, finance, and education. However, Lichter suggests that the focus of AI has shifted from being
 </pre></div></div>
 </div>
 </section>
@@ -673,20 +673,21 @@ Explainable AI involves using various techniques, such as model interpretability
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Amber and I&#39;m a 28-year-old Australian living in New York City. I&#39;m a travel blogger and photographer, which means I get to explore new destinations and experience different cultures while working.
-In my free time, I love trying out new restaurants, visiting local art galleries, and taking long walks around the city to capture the perfect shot for my Instagram feed.
-As a travel blogger, I&#39;ve had the opportunity to visit some incredible destinations, from the stunning beaches of Bali to the vibrant streets of Tokyo. But even with all the amazing places I&#39;ve been to, there&#39;s one place that will always hold a special spot in my heart
+Generated text:  Diana and I am a 26 year old from a small town in Brazil. I have been living in Rio de Janeiro for a few months now, and I am looking to make some new connections.
+I am a very outgoing person, I love to try new things and meet new people. When I am not working, you can find me dancing to samba music or trying out new restaurants and cafes.
+I am looking for people who are also looking for new experiences and connections. If you are a fellow foodie, music lover or simply someone who loves to try new things, we would get along great!
+I am also interested in practicing
 
 Prompt: The capital of France is
-Generated text:  called Paris. It is situated in the north of France and is home to the Eiffel Tower, one of the most famous landmarks in the world. Paris has a population of around 2.1 million people, making it the largest city in France.
-Paris has a rich history dating back to the 3rd century AD when it was a small settlement. Over the centuries, the city has grown and developed, becoming a major center of culture, art, fashion, and cuisine.
-Today, Paris is a global hub for fashion, art, and culture, and is home to some of the world&#39;s most famous museums, galleries,
+Generated text:  known for its iconic landmarks, beautiful gardens, and rich history. But, there&#39;s more to Paris than meets the eye. Let&#39;s explore the city&#39;s hidden gems and off-the-beaten-path attractions.
+1. Musée de la Vie Romantique
+Located in a charming 19th-century townhouse, this museum is dedicated to the art and literature of the Romantic era. Its collection includes paintings, sculptures, and decorative arts that reflect the era&#39;s emphasis on emotion and individualism.
+2. Le Jardin des Plantes
+While many visitors flock to the Luxembourg Gardens, Le Jardin des Plantes is a lesser-known gem
 
 Prompt: The future of AI is
-Generated text:  bright, but it&#39;s also fraught with challenges. Here&#39;s a rundown of the good, the bad, and the ugly of AI.
-Artificial intelligence (AI) is all the rage these days, and for good reason. From virtual assistants to personalized product recommendations, AI has already started to revolutionize the way we live and work. But as AI continues to advance, it&#39;s also raising a host of concerns and challenges that we can&#39;t ignore.
-On the good side, AI has the potential to:
-**Solve some of humanity&#39;s biggest problems**: AI can help us tackle complex issues like climate change, disease, and poverty by analyzing
+Generated text:  bright, but it is also fraught with risks and challenges. AI has the potential to revolutionize many aspects of our lives, from healthcare to finance to transportation. However, it also raises important questions about accountability, bias, and the impact on jobs. In this article, we will explore some of the key challenges and risks associated with AI, and what we can do to mitigate them.
+One of the biggest challenges facing AI is the problem of bias. AI systems are only as good as the data they are trained on, and if that data is biased, the AI system will learn to replicate those biases. This can lead to AI systems that
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -722,11 +723,11 @@ On the good side, AI has the potential to:
       </div>
     </a>
     <a class="right-next"
-       href="backend.html"
+       href="structured_outputs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Backend: SGLang Runtime (SRT)</p>
+        <p class="prev-next-title">Structured Outputs (JSON, Regex, EBNF)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
