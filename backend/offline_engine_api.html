@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/contributor_guide.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
@@ -468,13 +467,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.11it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.58it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  6.12it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.60it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.19it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.82it/s]
+100%|██████████| 23/23 [00:04&lt;00:00,  4.64it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,23 +505,27 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Liz! I am a certified birth doula and postpartum doula, providing support to expectant parents during pregnancy, labor, and postpartum. I am passionate about empowering women to have a positive and fulfilling birth experience and supporting them in the postpartum period.
-What is a birth doula?
-A birth doula is a trained professional who provides physical, emotional, and informational support to a woman and her partner before, during, and after childbirth. Doulas do not perform medical tasks, such as taking vital signs or administering medications, but rather focus on providing comfort measures, emotional support, and advocacy during the birth
+Generated text:  Chris, and I&#39;m a relatively new beekeeper in the Pacific Northwest. I&#39;m excited to be part of this community and learn from all of you. I&#39;ve been keeping bees for about a year and a half now, and I&#39;ve had a bit of a mixed experience. I&#39;ve lost two hives over the winters, but I&#39;ve also had a few successes, and I&#39;m hoping to learn from my mistakes and do better this year.
+I&#39;m keeping bees in a relatively small yard in a suburban area, and I&#39;m trying to do everything I can to minimize the impact of pesticides and other chemicals on my bees. I&#39;ve
 ===============================
 Prompt: The president of the United States is
-Generated text:  not a regular citizen; rather, he or she is the head of the federal government. The president&#39;s office is the highest elected position in the land, with a wide range of powers and responsibilities. The president serves as both the head of state and the head of government, making them a unique figure in the political landscape.
-To assume the office of the president, a candidate must be at least 35 years old, a natural-born citizen of the United States, and a resident of the country for at least 14 years. The president is elected through the Electoral College system, with each state receiving a certain number of electoral votes based on
+Generated text:  constitutionally empowered to convene Congress into emergency session, bypassing the usual formalities of Congress’s calendar. The president, as commander-in-chief, can also order military action without congressional approval. However, the president’s authority to act without Congress in times of crisis or war is limited by the War Powers Resolution of 1973, which requires the president to inform Congress of any military action within 48 hours and to withdraw U.S. forces after 60 days without a congressional authorization.
+Is the President’s power to use military force constitutional? The Constitution, Article I, Section 8, gives Congress the power to declare war. However
 ===============================
 Prompt: The capital of France is
-Generated text:  a city unlike any other. From the majestic Eiffel Tower to the world-renowned Louvre Museum, Paris is a place where history, culture, and beauty converge. But there&#39;s more to this iconic city than its famous landmarks. Here are some lesser-known facts about Paris that will make you appreciate its charm even more.
-1. Paris is a city built on the Seine River.
-Paris is known as the City of Light (La Ville Lumière), but it&#39;s also a city built on the Seine River. The river has played a vital role in Paris&#39; history, and its banks are lined with beautiful parks, gardens
+Generated text:  known for its rich history, vibrant culture, and iconic landmarks. Located on the Seine River, Paris has been a major city for over 2,000 years and is considered one of the world&#39;s most romantic cities. From the Eiffel Tower to the Louvre Museum, Paris is a must-visit destination for anyone interested in history, art, fashion, and cuisine. Whether you&#39;re looking for a romantic getaway, a cultural adventure, or a family-friendly vacation, Paris has something for everyone.
+Top 10 Things to Do in Paris
+Explore the Louvre Museum, home to the Mona Lisa and other famous artworks
+Visit
 ===============================
 Prompt: The future of AI is
-Generated text:  being shaped by numerous key factors, including advancements in data storage, computing power, and algorithms. As AI continues to improve, it will have a significant impact on various industries, from healthcare to finance and transportation. Here are some of the key trends and predictions for the future of AI:
-1. Increased Use of Edge AI: Edge AI refers to the processing of data at the edge of the network, closer to the source of the data. This approach reduces latency and improves real-time processing capabilities, making it ideal for applications such as IoT devices, robotics, and autonomous vehicles.
-2. Rise of Explainable AI (XAI): As AI
+Generated text:  here and it&#39;s now!
+Artificial Intelligence (AI) is the next Industrial Revolution. The use of AI is transforming the way businesses operate, interact with customers and create new products and services.
+At Digital Marketing 101, we harness the power of AI to drive business results, improve customer experience and enhance efficiency. Our team of experts use AI to provide personalized marketing, automation, and insights that help businesses stay ahead in the competitive landscape.
+Some of the AI technologies we use include:
+Machine Learning (ML) for predictive analysis and pattern recognition
+Natural Language Processing (NLP) for chatbots and voice assistants
+Deep Learning (DL)
 </pre></div></div>
 </div>
 </section>
@@ -560,23 +563,20 @@ Generated text:  being shaped by numerous key factors, including advancements in
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Katie and I am an associate at the Spokane office of the law firm of Gordon Thomas Honeywell Malanca Peterson &amp; Daheim. I have been with the firm since 2004 and have been working in the Spokane office since 2007. My practice focuses primarily on representing individuals and families in personal injury and wrongful death claims. I have extensive experience in handling cases involving motor vehicle accidents, pedestrian and bicycle accidents, and premises liability.
-I am licensed to practice law in both Washington and Idaho and am a member of the American Association for Justice and the Washington State Association for Justice. I am committed to providing my clients with exceptional representation and personalized
+Generated text:  Nicole and I&#39;m a therapist. I have been working with children and adults in a variety of settings for over 10 years. I have a Master&#39;s degree in Clinical Psychology and I am licensed to practice in the state of California.
+I specialize in working with individuals who are experiencing anxiety, depression, trauma, and relationship issues. I also have experience working with individuals who have experienced a loss or are grieving.
+I am trained in several therapeutic modalities, including CBT (Cognitive Behavioral Therapy), DBT (Dialectical Behavior Therapy), and EMDR (Eye Movement Desensitization and Reprocessing). I believe in tail
 
 Prompt: The capital of France is
-Generated text:  Paris and the currency used is the Euro. The average temperature is around 12 degrees Celsius.
-France is famous for its delicious cuisine, including escargots, croissants, and baguettes. The country is also known for its beautiful landscapes, historic landmarks, and art museums.
-Some popular destinations in France include:
-The Eiffel Tower, which is an iconic iron lattice tower built in 1889.
-The Louvre Museum, which is home to the Mona Lisa and other famous works of art.
-The Palace of Versailles, which is a former royal palace with opulent decorations and beautiful gardens.
-The French Riviera,
+Generated text:  a treasure trove of history, art, fashion, and cuisine. There&#39;s so much to see and do in Paris that you may need a week to fully experience the city. But if you only have 2 days, here&#39;s a suggested itinerary to help you make the most of your time:
+Day 1: Morning in Montmartre and Afternoon in the Latin Quarter
+Start your day in the charming neighborhood of Montmartre, which is famous for its bohemian vibe, street artists, and stunning views of the city. Visit the Sacré-Cœur Basilica, a beautiful white church perched on a hill.
 
 Prompt: The future of AI is
-Generated text:  not about artificial intelligence; it&#39;s about intelligence augmentation. | Sandy Pentland, director of the MIT Human-Computer Interaction Group
-The future of AI is not about artificial intelligence; it&#39;s about intelligence augmentation. | Sandy Pentland, director of the MIT Human-Computer Interaction Group
-Artificial intelligence has the potential to augment human intelligence, rather than replace it. This shift in perspective is changing the way we think about AI and its applications in various fields. Instead of creating intelligent machines that think and act like humans, we are now focusing on developing systems that can enhance and support human capabilities.
-The concept of intelligence augmentation is not new,
+Generated text:  bright, and it’s already here
+AI is transforming industries and revolutionizing the way we live and work, from healthcare and finance to education and entertainment.
+Artificial intelligence (AI) has come a long way since its inception. From its humble beginnings in the 1950s to the current AI revolution, the technology has evolved significantly. Today, AI is transforming industries and revolutionizing the way we live and work, from healthcare and finance to education and entertainment.
+The future of AI is bright, and it’s already here. AI-powered chatbots are assisting customers, AI-driven robots are manufacturing products, and AI-based systems are diagnosing
 </pre></div></div>
 </div>
 </section>
@@ -618,18 +618,26 @@ The concept of intelligence augmentation is not new,
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Max and I&#39;m a 3-year-old Papillon (butterfly dog) with a big personality. I love to play, cuddle, and explore the world around me. My favorite things to do are chasing squirrels and snuggling up with my favorite people. I&#39;m a bit of a little diva, but I&#39;m always up for a good time. I love to run around and play, but I also enjoy curling up in someone&#39;s lap for a nice long nap.
-I&#39;m still a puppy, so I do get a bit rambunctious at times, but my owners are working with me on being
+Generated text:  Danny, and I&#39;m a career coach. I work with professionals, managers, and business owners to help them find a new career path or improve their current one. I&#39;m here to help you identify your strengths, passions, and values to find a career that&#39;s right for you.
+Here are some topics we can discuss in our coaching sessions:
+* Career exploration and identity
+* Resume and job search strategies
+* Networking and professional development
+* Interview preparation and practice
+* Salary negotiation and career advancement
+* Building a personal brand and online presence
+* Managing work-life balance and stress
+* Transitioning to a new industry or career
+
 
 Prompt: The capital of France is
-Generated text:  a city that has been built and rebuilt over the centuries, with various styles of architecture reflecting its rich history. From the grandeur of the Baroque to the modernity of the contemporary era, Paris has a wealth of landmarks and monuments that have been influenced by its historical development.
-The most famous landmark in Paris is the Eiffel Tower, a symbol of French culture and engineering prowess. Built in 1889 for the World&#39;s Fair, it is one of the tallest structures in the world and offers breathtaking views of the city from its observation decks. The tower&#39;s innovative design was initially met with skepticism by many Parisians, but it
+Generated text:  Paris, and it is known as the &#34;City of Light&#34; for its beauty, art, and culture. Paris is famous for the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. Many famous artists, writers, and thinkers have lived and worked in Paris, including Claude Monet, Vincent van Gogh, and Simone de Beauvoir. The city has a rich history and a vibrant cultural scene.
+The flag of France features three vertical stripes of blue, white, and red, known as the Tricolore. The colors have a significant meaning: blue represents the sky and the country&#39;s ideals, white represents peace
 
 Prompt: The future of AI is
-Generated text:  in the hands of data scientists
-The future of AI is in the hands of data scientists
-Artificial intelligence (AI) is revolutionizing the way we live and work, from healthcare and finance to education and transportation. But, to tap into the full potential of AI, we need skilled professionals who can develop and deploy these intelligent systems. Data scientists, in particular, are playing a crucial role in shaping the future of AI.
-Data scientists are not just numbers crunchers or data analysts. They are experts in extracting insights from complex data sets, identifying patterns, and developing algorithms that can learn from data. Their role in AI development involves designing
+Generated text:  not just about the technology, but about how we design it to make people&#39;s lives better.
+There&#39;s a saying that the best things in life are those that are free. This can be applied to many things, including information and knowledge. But when it comes to artificial intelligence (AI), is free always better?
+Not necessarily. While some AI tools are free, their limitations and potential risks can outweigh their benefits. For instance, free AI models might not be as reliable or secure as paid ones, and may not offer the same level of support or maintenance. In contrast, paid AI tools can provide more robust features, better performance, and
 </pre></div></div>
 </div>
 </section>
@@ -673,20 +681,18 @@ Data scientists are not just numbers crunchers or data analysts. They are expert
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Laura and I&#39;m a freelance writer and editor. I&#39;m excited to be joining the team at Blue Pencil Agency as a content writer and editor. I&#39;m looking forward to working with the team to create high-quality content for our clients. My background is in English literature and journalism, and I&#39;ve been writing and editing for various publications and companies for several years. I&#39;m passionate about crafting compelling stories and informative content that engages readers and drives results. Outside of work, I love to hike, read, and try out new restaurants in my free time. I&#39;m also a proud dog mom to my furry companion, Luna.
-Laura joined our
+Generated text:  Kerstin. I was born and raised in Southern California and have been a hairstylist for over 15 years. I specialize in precision cutting and coloring. I have worked in top salons in the city of Los Angeles and have been featured in several fashion magazines. I love working with my clients to create a look that is uniquely their own. I am passionate about staying up to date on the latest trends and techniques in the industry. I am excited to be working here at Tricho Salon and look forward to creating beautiful hairstyles for all of my clients. Schedule a consultation today and let&#39;s get started on making you look and feel your
 
 Prompt: The capital of France is
-Generated text:  known for its stunning architecture, art museums, and romantic atmosphere. Paris has been a major tourist destination for centuries, and for good reason. The city has a wealth of cultural and historical landmarks to explore, from the iconic Eiffel Tower to the world-class Louvre Museum.
-Here are some of the top attractions to visit in Paris:
-The Eiffel Tower: This iconic iron lattice tower is a must-visit attraction in Paris. Visitors can take the elevator to the top for breathtaking views of the city.
-The Louvre Museum: One of the world&#39;s largest and most famous museums, the Louvre is home to an impressive collection
+Generated text:  Paris, but the largest city is Lyon. Lyon is known for its gastronomy, and is often referred to as the gastronomic capital of France. The city is also known for its rich history and cultural heritage. The Roman ruins of Fourvière hill, the Basilica of Notre-Dame de Fourvière and the ancient Roman theater are some of the popular tourist attractions in Lyon.
+Lyon is also home to a number of festivals and events throughout the year, including the Fête des Lumières (Festival of Lights), which is a five-day celebration of light and color that takes place in December. The city also hosts
 
 Prompt: The future of AI is
-Generated text:  set to transform healthcare in numerous ways, improving patient care, diagnosis, and outcomes. These emerging technologies will revolutionize the industry.
-AI in Healthcare: The Future of Medicine
-The future of AI is set to transform healthcare in numerous ways, improving patient care, diagnosis, and outcomes. These emerging technologies will revolutionize the industry. For instance, AI-powered systems can help analyze medical images and detect conditions such as cancer earlier and more accurately than human radiologists.
-Another area where AI is making a significant impact is in personalized medicine. By analyzing a patient&#39;s genetic profile and medical history, AI can suggest tailored treatments and therapies that are more likely
+Generated text:  now: 5 key takeaways from AI Summit 2023
+The AI Summit 2023, held in New York City, brought together some of the world&#39;s leading experts in AI, highlighting the rapid evolution of the technology and its far-reaching implications.
+Here are 5 key takeaways from the summit:
+1. **AI is already transforming industries**: The summit showcased numerous examples of AI being applied in various sectors, such as healthcare, finance, education, and manufacturing. Companies like Google, Microsoft, and IBM presented their AI-powered solutions, demonstrating the technology&#39;s potential to drive business innovation and improve lives.
+2. **Explain
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
