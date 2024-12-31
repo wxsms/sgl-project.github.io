@@ -184,6 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
@@ -467,13 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  6.12it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.60it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.10it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.33it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  4.64it/s]
+100%|██████████| 23/23 [00:06&lt;00:00,  3.75it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -505,27 +506,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Chris, and I&#39;m a relatively new beekeeper in the Pacific Northwest. I&#39;m excited to be part of this community and learn from all of you. I&#39;ve been keeping bees for about a year and a half now, and I&#39;ve had a bit of a mixed experience. I&#39;ve lost two hives over the winters, but I&#39;ve also had a few successes, and I&#39;m hoping to learn from my mistakes and do better this year.
-I&#39;m keeping bees in a relatively small yard in a suburban area, and I&#39;m trying to do everything I can to minimize the impact of pesticides and other chemicals on my bees. I&#39;ve
+Generated text:  Liam and I am 10 years old. I am in the 5th grade. I love playing sports, reading books, and riding my bike. My favorite sport is soccer, and I have been playing it for 4 years. I also really like to read books about adventure and science fiction. Some of my favorite books are the Harry Potter series, the Diary of a Wimpy Kid series, and the Captain Underpants series. My favorite bike is a red and black mountain bike, and I like to ride it in the woods near my house. When I am older, I want to be a professional soccer player and travel
 ===============================
 Prompt: The president of the United States is
-Generated text:  constitutionally empowered to convene Congress into emergency session, bypassing the usual formalities of Congress’s calendar. The president, as commander-in-chief, can also order military action without congressional approval. However, the president’s authority to act without Congress in times of crisis or war is limited by the War Powers Resolution of 1973, which requires the president to inform Congress of any military action within 48 hours and to withdraw U.S. forces after 60 days without a congressional authorization.
-Is the President’s power to use military force constitutional? The Constitution, Article I, Section 8, gives Congress the power to declare war. However
+Generated text:  a person who has been elected to serve as the head of state and government of the United States. The president serves a four-year term and is responsible for implementing the laws passed by Congress and serving as the commander-in-chief of the armed forces. The president is also the symbol of national unity and is responsible for representing the country internationally.
+The president is elected through the Electoral College system, where each state is allocated a certain number of electoral votes based on its population. The candidate who receives the majority of the electoral votes wins the presidency. The president is also responsible for appointing federal judges, including Supreme Court justices, and for negotiating treaties with
 ===============================
 Prompt: The capital of France is
-Generated text:  known for its rich history, vibrant culture, and iconic landmarks. Located on the Seine River, Paris has been a major city for over 2,000 years and is considered one of the world&#39;s most romantic cities. From the Eiffel Tower to the Louvre Museum, Paris is a must-visit destination for anyone interested in history, art, fashion, and cuisine. Whether you&#39;re looking for a romantic getaway, a cultural adventure, or a family-friendly vacation, Paris has something for everyone.
-Top 10 Things to Do in Paris
-Explore the Louvre Museum, home to the Mona Lisa and other famous artworks
-Visit
+Generated text:  the most beautiful city in the world, according to many people. Its iconic landmarks, rich history, and vibrant culture make it a must-visit destination for tourists and travelers alike. Here are some reasons why Paris is considered the most beautiful city in the world:
+1. Iconic Landmarks:
+Paris is home to some of the most iconic landmarks in the world, including the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. These structures are not only beautiful but also steeped in history and cultural significance.
+2. Rich History:
+Paris has a rich and storied history that
 ===============================
 Prompt: The future of AI is
-Generated text:  here and it&#39;s now!
-Artificial Intelligence (AI) is the next Industrial Revolution. The use of AI is transforming the way businesses operate, interact with customers and create new products and services.
-At Digital Marketing 101, we harness the power of AI to drive business results, improve customer experience and enhance efficiency. Our team of experts use AI to provide personalized marketing, automation, and insights that help businesses stay ahead in the competitive landscape.
-Some of the AI technologies we use include:
-Machine Learning (ML) for predictive analysis and pattern recognition
-Natural Language Processing (NLP) for chatbots and voice assistants
-Deep Learning (DL)
+Generated text:  changing our lives. Whether it&#39;s improving customer service, enhancing healthcare outcomes, or driving innovation in industries, AI is having a profound impact. But what does this mean for the future of work?
+Join us for a lively debate on the role of AI in the future of work. Our expert panel will explore the opportunities and challenges AI brings, and what this means for employees, employers, and society as a whole.
+Panellists include:
+Professor David D. Preiss , Imperial College London - Director of the Grantham Institute - Climate Change and the Environment
+Dr Emily M. Bender , University of Washington - Associate Professor of Linguistics
 </pre></div></div>
 </div>
 </section>
@@ -563,20 +562,25 @@ Deep Learning (DL)
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Nicole and I&#39;m a therapist. I have been working with children and adults in a variety of settings for over 10 years. I have a Master&#39;s degree in Clinical Psychology and I am licensed to practice in the state of California.
-I specialize in working with individuals who are experiencing anxiety, depression, trauma, and relationship issues. I also have experience working with individuals who have experienced a loss or are grieving.
-I am trained in several therapeutic modalities, including CBT (Cognitive Behavioral Therapy), DBT (Dialectical Behavior Therapy), and EMDR (Eye Movement Desensitization and Reprocessing). I believe in tail
+Generated text:  Viviana.
+I’m a 16-year-old student from Spain.
+I love dancing and singing and I enjoy learning new languages. I also love playing with my pets and spending time with my family.
+I&#39;m currently in my second year of high school and I&#39;m studying English and French. I&#39;m trying my best to become fluent in both languages.
+I&#39;m excited to learn more about other cultures and traditions through this exchange. I hope to make new friends and learn from them. I also hope to teach them about Spanish culture and traditions.
+I love trying new foods, especially desserts! Do you have a favorite dessert?
+Haha, I
 
 Prompt: The capital of France is
-Generated text:  a treasure trove of history, art, fashion, and cuisine. There&#39;s so much to see and do in Paris that you may need a week to fully experience the city. But if you only have 2 days, here&#39;s a suggested itinerary to help you make the most of your time:
-Day 1: Morning in Montmartre and Afternoon in the Latin Quarter
-Start your day in the charming neighborhood of Montmartre, which is famous for its bohemian vibe, street artists, and stunning views of the city. Visit the Sacré-Cœur Basilica, a beautiful white church perched on a hill.
+Generated text:  in a state of unrest, with protests and riots continuing to unfold across the city. The Yellow Vest movement, a grassroots uprising against government policies, has been ongoing for months and shows no signs of abating.
+The protests are not just about economic inequality, but also about the erosion of social protections and the growing sense of disillusionment with the political establishment. The government&#39;s response has been criticized as heavy-handed and ineffective, with many calling for greater reforms and a more inclusive approach to governance.
+The city is a hub of activity, with demonstrations and rallies taking place across various neighborhoods. The streets are filled with the sound of chanting and the smell
 
 Prompt: The future of AI is
-Generated text:  bright, and it’s already here
-AI is transforming industries and revolutionizing the way we live and work, from healthcare and finance to education and entertainment.
-Artificial intelligence (AI) has come a long way since its inception. From its humble beginnings in the 1950s to the current AI revolution, the technology has evolved significantly. Today, AI is transforming industries and revolutionizing the way we live and work, from healthcare and finance to education and entertainment.
-The future of AI is bright, and it’s already here. AI-powered chatbots are assisting customers, AI-driven robots are manufacturing products, and AI-based systems are diagnosing
+Generated text:  human
+AI will need human imagination, creativity, and empathy to truly be beneficial for society
+The future of AI is human. Or, at the very least, the future of AI will rely heavily on humans to be truly beneficial for society.
+Right now, artificial intelligence (AI) is being trained on vast amounts of data to perform tasks such as image recognition, natural language processing, and decision-making. These tasks are often narrow and focused, and while AI has made tremendous progress in these areas, it still lacks a key ingredient: human imagination, creativity, and empathy.
+Imagine a world where AI is not just a tool, but a
 </pre></div></div>
 </div>
 </section>
@@ -618,26 +622,22 @@ The future of AI is bright, and it’s already here. AI-powered chatbots are ass
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Danny, and I&#39;m a career coach. I work with professionals, managers, and business owners to help them find a new career path or improve their current one. I&#39;m here to help you identify your strengths, passions, and values to find a career that&#39;s right for you.
-Here are some topics we can discuss in our coaching sessions:
-* Career exploration and identity
-* Resume and job search strategies
-* Networking and professional development
-* Interview preparation and practice
-* Salary negotiation and career advancement
-* Building a personal brand and online presence
-* Managing work-life balance and stress
-* Transitioning to a new industry or career
+Generated text:  Janine Smith and I am a midwife and lactation consultant. I am excited to introduce you to the world of breastfeeding support. As a healthcare provider, I understand the challenges that women face when trying to nurse their babies. That&#39;s why I&#39;m dedicated to providing you with the best possible care and support throughout your breastfeeding journey.
 
+With over 10 years of experience in midwifery and lactation consulting, I have helped countless women overcome breastfeeding difficulties and achieve their breastfeeding goals. My approach is holistic and compassionate, taking into account the physical, emotional, and social aspects of breastfeeding.
+
+Whether you&#39;re a first-time mom or a
 
 Prompt: The capital of France is
-Generated text:  Paris, and it is known as the &#34;City of Light&#34; for its beauty, art, and culture. Paris is famous for the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. Many famous artists, writers, and thinkers have lived and worked in Paris, including Claude Monet, Vincent van Gogh, and Simone de Beauvoir. The city has a rich history and a vibrant cultural scene.
-The flag of France features three vertical stripes of blue, white, and red, known as the Tricolore. The colors have a significant meaning: blue represents the sky and the country&#39;s ideals, white represents peace
+Generated text:  also known for its incredible selection of museums, art galleries, and historical landmarks. From the Eiffel Tower to the Louvre, Paris has something to offer for all interests and ages. Here are some of the top attractions to visit in Paris:
+1. Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. Take a lift to the top for breathtaking views of the city.
+2. Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from around the world, including the Mona Lisa.
+3. Notre Dame
 
 Prompt: The future of AI is
-Generated text:  not just about the technology, but about how we design it to make people&#39;s lives better.
-There&#39;s a saying that the best things in life are those that are free. This can be applied to many things, including information and knowledge. But when it comes to artificial intelligence (AI), is free always better?
-Not necessarily. While some AI tools are free, their limitations and potential risks can outweigh their benefits. For instance, free AI models might not be as reliable or secure as paid ones, and may not offer the same level of support or maintenance. In contrast, paid AI tools can provide more robust features, better performance, and
+Generated text:  uncertain, but one thing is for sure - it will be a wild ride.
+Artificial intelligence has already revolutionized the way we live and work, and its impact will only continue to grow in the years to come. But as AI becomes increasingly integrated into our daily lives, we can expect to face new challenges and opportunities that we can&#39;t yet imagine.
+From the benefits of automation to the risks of bias and job displacement, the future of AI is full of uncertainty and possibility. In this article, we&#39;ll explore some of the key trends and predictions that are shaping the future of AI, and what they might mean for individuals, businesses,
 </pre></div></div>
 </div>
 </section>
@@ -681,18 +681,20 @@ Not necessarily. While some AI tools are free, their limitations and potential r
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Kerstin. I was born and raised in Southern California and have been a hairstylist for over 15 years. I specialize in precision cutting and coloring. I have worked in top salons in the city of Los Angeles and have been featured in several fashion magazines. I love working with my clients to create a look that is uniquely their own. I am passionate about staying up to date on the latest trends and techniques in the industry. I am excited to be working here at Tricho Salon and look forward to creating beautiful hairstyles for all of my clients. Schedule a consultation today and let&#39;s get started on making you look and feel your
+Generated text:  Tina and I&#39;m a senior at Colorado State University. I&#39;m a little nervous about graduating and entering the real world. I&#39;ve heard so many mixed messages about the job market and it&#39;s hard to know what to expect. I&#39;ve always been interested in writing, but I&#39;m not sure if that&#39;s a stable or well-paying career path.
+First, let&#39;s talk about your background and interests. What kind of writing are you interested in doing? Do you have any specific industries or fields in mind? For example, are you interested in copywriting, journalism, technical writing, or something else?
+Second, let&#39;s talk about your goals
 
 Prompt: The capital of France is
-Generated text:  Paris, but the largest city is Lyon. Lyon is known for its gastronomy, and is often referred to as the gastronomic capital of France. The city is also known for its rich history and cultural heritage. The Roman ruins of Fourvière hill, the Basilica of Notre-Dame de Fourvière and the ancient Roman theater are some of the popular tourist attractions in Lyon.
-Lyon is also home to a number of festivals and events throughout the year, including the Fête des Lumières (Festival of Lights), which is a five-day celebration of light and color that takes place in December. The city also hosts
+Generated text:  in chaos. Protests and strikes have been taking place for weeks over President Emmanuel Macron&#39;s proposed pension reform. The demonstrations are led by a vast coalition of unions, activists, and ordinary citizens who fear the reform will lead to a reduction in their retirement benefits.
+France&#39;s pension system is a complex and highly decentralized system that covers over 40 million workers. The system has been criticized for being inefficient and plagued by abuses. The proposed reform aims to consolidate the 42 different pension schemes into a single system, which could save the government billions of euros.
+The protests have turned violent, with clashes between protesters and police. The government has deployed thousands
 
 Prompt: The future of AI is
-Generated text:  now: 5 key takeaways from AI Summit 2023
-The AI Summit 2023, held in New York City, brought together some of the world&#39;s leading experts in AI, highlighting the rapid evolution of the technology and its far-reaching implications.
-Here are 5 key takeaways from the summit:
-1. **AI is already transforming industries**: The summit showcased numerous examples of AI being applied in various sectors, such as healthcare, finance, education, and manufacturing. Companies like Google, Microsoft, and IBM presented their AI-powered solutions, demonstrating the technology&#39;s potential to drive business innovation and improve lives.
-2. **Explain
+Generated text:  now: Meet the brilliant students behind the world’s top AI projects
+In recent years, AI has become a hot topic in the tech world, with many companies investing heavily in AI research and development. But behind the scenes, students are working tirelessly to push the boundaries of what is possible with AI. Here, we’ll meet some of the brilliant students behind the world’s top AI projects.
+The winners of the 2022 Google AI Impact Challenge
+The Google AI Impact Challenge is a prestigious competition that aims to identify and support AI projects with the potential to drive meaningful impact. This year, the winners were chosen from over 2,000
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
