@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -38,10 +38,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=7a29ff0f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post3" />
-    <meta name="docbuild:last-update" content="Dec 31, 2024"/>
+    <meta name="docbuild:last-update" content="Jan 01, 2025"/>
   </head>
   
   
@@ -166,7 +166,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">Native APIs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs (JSON, Regex, EBNF)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend.html">Backend: SGLang Runtime (SRT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -196,9 +196,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -468,13 +473,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.10it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.64it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.11it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.04it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.75it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.46it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,25 +511,28 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Liam and I am 10 years old. I am in the 5th grade. I love playing sports, reading books, and riding my bike. My favorite sport is soccer, and I have been playing it for 4 years. I also really like to read books about adventure and science fiction. Some of my favorite books are the Harry Potter series, the Diary of a Wimpy Kid series, and the Captain Underpants series. My favorite bike is a red and black mountain bike, and I like to ride it in the woods near my house. When I am older, I want to be a professional soccer player and travel
+Generated text:  Samantha (Sam) and I’m a mental health nurse. I have a keen interest in mental health, psychology, and personal development. As a nurse, I have worked with a range of clients who have experienced trauma, anxiety, depression, and other mental health issues. My passion is to help people overcome their struggles and live a more fulfilling life.
+My blog is a space where I share my thoughts, experiences, and knowledge on mental health and wellness. I aim to provide helpful information, advice, and insights that can support you in your own journey towards better mental health and self-care.
+I believe that mental health is just as important as
 ===============================
 Prompt: The president of the United States is
-Generated text:  a person who has been elected to serve as the head of state and government of the United States. The president serves a four-year term and is responsible for implementing the laws passed by Congress and serving as the commander-in-chief of the armed forces. The president is also the symbol of national unity and is responsible for representing the country internationally.
-The president is elected through the Electoral College system, where each state is allocated a certain number of electoral votes based on its population. The candidate who receives the majority of the electoral votes wins the presidency. The president is also responsible for appointing federal judges, including Supreme Court justices, and for negotiating treaties with
+Generated text:  often called the leader of the free world, but President Obama&#39;s appearance on Saturday Night Live this weekend suggests a different reality.
+President Obama&#39;s appearance on Saturday Night Live was a first for a sitting president in 15 years, and it served as a reminder that the leader of the free world is not above poking fun at himself.
+President Obama&#39;s appearance on SNL was a surprise to many, and it showed a side of the president that few get to see. It&#39;s a testament to the president&#39;s ability to laugh at himself and not take himself too seriously.
+The president&#39;s appearance on SNL was a departure from the typical serious demeanor
 ===============================
 Prompt: The capital of France is
-Generated text:  the most beautiful city in the world, according to many people. Its iconic landmarks, rich history, and vibrant culture make it a must-visit destination for tourists and travelers alike. Here are some reasons why Paris is considered the most beautiful city in the world:
-1. Iconic Landmarks:
-Paris is home to some of the most iconic landmarks in the world, including the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. These structures are not only beautiful but also steeped in history and cultural significance.
-2. Rich History:
-Paris has a rich and storied history that
+Generated text:  Paris. The City of Light has a wealth of attractions, including the Eiffel Tower, the Louvre Museum, Notre Dame Cathedral, and the Champs-Élysées. Paris is also known for its fashion, cuisine, and romantic atmosphere.
+Paris is a popular tourist destination, attracting millions of visitors each year. Visitors can explore the city&#39;s famous landmarks, museums, and historic neighborhoods, as well as enjoy the city&#39;s cuisine and nightlife.
+Some popular activities to do in Paris include:
+Visiting the Eiffel Tower, either by taking the stairs or elevator to the top for breathtaking views of the city.
+Exploring the
 ===============================
 Prompt: The future of AI is
-Generated text:  changing our lives. Whether it&#39;s improving customer service, enhancing healthcare outcomes, or driving innovation in industries, AI is having a profound impact. But what does this mean for the future of work?
-Join us for a lively debate on the role of AI in the future of work. Our expert panel will explore the opportunities and challenges AI brings, and what this means for employees, employers, and society as a whole.
-Panellists include:
-Professor David D. Preiss , Imperial College London - Director of the Grantham Institute - Climate Change and the Environment
-Dr Emily M. Bender , University of Washington - Associate Professor of Linguistics
+Generated text:  being shaped by the convergence of two technologies: machine learning and blockchain.
+Machine learning is a subset of AI that enables computers to learn from data without being explicitly programmed. Blockchain, on the other hand, is a distributed ledger technology that allows for secure, transparent, and tamper-proof data storage and transfer.
+The combination of machine learning and blockchain has the potential to revolutionize various industries, including healthcare, finance, and cybersecurity. Here are some ways in which machine learning and blockchain are converging to shape the future of AI:
+1. Secure and transparent data storage: Blockchain technology can provide a secure and transparent way to store and manage data,
 </pre></div></div>
 </div>
 </section>
@@ -562,25 +570,22 @@ Dr Emily M. Bender , University of Washington - Associate Professor of Linguisti
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Viviana.
-I’m a 16-year-old student from Spain.
-I love dancing and singing and I enjoy learning new languages. I also love playing with my pets and spending time with my family.
-I&#39;m currently in my second year of high school and I&#39;m studying English and French. I&#39;m trying my best to become fluent in both languages.
-I&#39;m excited to learn more about other cultures and traditions through this exchange. I hope to make new friends and learn from them. I also hope to teach them about Spanish culture and traditions.
-I love trying new foods, especially desserts! Do you have a favorite dessert?
-Haha, I
+Generated text:  Abeer, I am a 28 year old Software Engineer working in London. I am an avid reader, a big fan of sci-fi and fantasy novels. I am also a sports enthusiast, I play football and tennis in my free time. I have a passion for music and I play the guitar, I love listening to various genres of music from rock to classical. I am also a foodie and love trying out new cuisines and cooking techniques. I am an outdoorsy person, I love camping and hiking in my free time.
+I am a friendly and approachable person, I love meeting new people and making friends. I am
 
 Prompt: The capital of France is
-Generated text:  in a state of unrest, with protests and riots continuing to unfold across the city. The Yellow Vest movement, a grassroots uprising against government policies, has been ongoing for months and shows no signs of abating.
-The protests are not just about economic inequality, but also about the erosion of social protections and the growing sense of disillusionment with the political establishment. The government&#39;s response has been criticized as heavy-handed and ineffective, with many calling for greater reforms and a more inclusive approach to governance.
-The city is a hub of activity, with demonstrations and rallies taking place across various neighborhoods. The streets are filled with the sound of chanting and the smell
+Generated text:  not Paris
+The capital of France is not Paris
+You are likely to know that Paris is the capital of France, but this is not true. Paris is the largest city in France and the most famous tourist destination in the country, but it is not the capital.
+The capital of France is actually a city called Reims, which is located in the northeastern part of the country. Reims has been the capital of France since 987, when Hugh Capet was crowned king. However, in 987, Paris was a small town on the banks of the Seine River, and it was not considered a major city at that time
 
 Prompt: The future of AI is
-Generated text:  human
-AI will need human imagination, creativity, and empathy to truly be beneficial for society
-The future of AI is human. Or, at the very least, the future of AI will rely heavily on humans to be truly beneficial for society.
-Right now, artificial intelligence (AI) is being trained on vast amounts of data to perform tasks such as image recognition, natural language processing, and decision-making. These tasks are often narrow and focused, and while AI has made tremendous progress in these areas, it still lacks a key ingredient: human imagination, creativity, and empathy.
-Imagine a world where AI is not just a tool, but a
+Generated text:  bright, but it&#39;s also raising many concerns about the impact on society, particularly when it comes to jobs. Robotics and automation are transforming the workforce and driving significant changes in the way businesses operate.
+Will robots replace human workers? Or will AI augment human capabilities, freeing us up to focus on more complex tasks? To better understand the future of work, we&#39;ll explore the role of AI in shaping the workforce and what this means for employees, businesses, and the economy as a whole.
+
+**Job Displacement vs. Job Augmentation**
+
+The fear of job displacement is understandable, given the pace of technological advancements. While AI may automate certain tasks
 </pre></div></div>
 </div>
 </section>
@@ -622,22 +627,19 @@ Imagine a world where AI is not just a tool, but a
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Janine Smith and I am a midwife and lactation consultant. I am excited to introduce you to the world of breastfeeding support. As a healthcare provider, I understand the challenges that women face when trying to nurse their babies. That&#39;s why I&#39;m dedicated to providing you with the best possible care and support throughout your breastfeeding journey.
+Generated text:  Shirley. I am a 30 year old woman, from the UK. I love animals, especially cats and dogs. I am a bit of a movie buff, and enjoy watching a good film on my nights off. I am also a big fan of music, and have been to a lot of concerts in my lifetime. I am looking to meet new people, and make some new friends.
+I am easy going, and enjoy trying new things. I am also a bit of a foodie, and love trying out new restaurants and cuisines. I am also quite fit, and enjoy going to the gym and taking part in sports.
 
-With over 10 years of experience in midwifery and lactation consulting, I have helped countless women overcome breastfeeding difficulties and achieve their breastfeeding goals. My approach is holistic and compassionate, taking into account the physical, emotional, and social aspects of breastfeeding.
-
-Whether you&#39;re a first-time mom or a
 
 Prompt: The capital of France is
-Generated text:  also known for its incredible selection of museums, art galleries, and historical landmarks. From the Eiffel Tower to the Louvre, Paris has something to offer for all interests and ages. Here are some of the top attractions to visit in Paris:
-1. Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. Take a lift to the top for breathtaking views of the city.
-2. Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from around the world, including the Mona Lisa.
-3. Notre Dame
+Generated text:  a city steeped in history and culture, and it is one of the most popular tourist destinations in the world. Paris is famous for its stunning architecture, art, fashion, and cuisine, and its picturesque streets and landmarks are a photographer&#39;s dream.
+The Eiffel Tower is an iconic symbol of Paris and one of the most recognizable landmarks in the world. It was built for the 1889 World&#39;s Fair and stands 324 meters tall. Visitors can take the elevator or stairs to the top for breathtaking views of the city.
+The Louvre Museum is another world-famous landmark in Paris. It was originally a fortress built in the
 
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is for sure - it will be a wild ride.
-Artificial intelligence has already revolutionized the way we live and work, and its impact will only continue to grow in the years to come. But as AI becomes increasingly integrated into our daily lives, we can expect to face new challenges and opportunities that we can&#39;t yet imagine.
-From the benefits of automation to the risks of bias and job displacement, the future of AI is full of uncertainty and possibility. In this article, we&#39;ll explore some of the key trends and predictions that are shaping the future of AI, and what they might mean for individuals, businesses,
+Generated text:  not just about machines and algorithms, but about how we choose to use them.
+If you are a fan of science fiction, then you have probably read or watched something about AI taking over the world. But in reality, the future of AI is much more nuanced than that. It&#39;s not just about machines and algorithms; it&#39;s about how we choose to use them.
+The future of AI will be shaped by our values, our laws, and our choices. It will be shaped by how we decide to integrate AI into our lives, our work, and our society. It will be shaped by how we choose to prioritize the benefits of AI
 </pre></div></div>
 </div>
 </section>
@@ -681,20 +683,22 @@ From the benefits of automation to the risks of bias and job displacement, the f
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Tina and I&#39;m a senior at Colorado State University. I&#39;m a little nervous about graduating and entering the real world. I&#39;ve heard so many mixed messages about the job market and it&#39;s hard to know what to expect. I&#39;ve always been interested in writing, but I&#39;m not sure if that&#39;s a stable or well-paying career path.
-First, let&#39;s talk about your background and interests. What kind of writing are you interested in doing? Do you have any specific industries or fields in mind? For example, are you interested in copywriting, journalism, technical writing, or something else?
-Second, let&#39;s talk about your goals
+Generated text:  Tom. I&#39;m a mathematician, but not in the classical sense. I&#39;m a mathematician of probability. I have spent years studying the unpredictable nature of chance. But, I have always been fascinated by the concept of probability itself. I have a hypothesis that probability is not as random as we think it is. I believe that there are hidden patterns and structures that govern the way probability works. And I&#39;m determined to uncover them.
+
+I&#39;ve spent years studying the subject, pouring over books and papers, talking to other mathematicians and statisticians. But, I&#39;ve made little progress. The more I learn, the more I realize
 
 Prompt: The capital of France is
-Generated text:  in chaos. Protests and strikes have been taking place for weeks over President Emmanuel Macron&#39;s proposed pension reform. The demonstrations are led by a vast coalition of unions, activists, and ordinary citizens who fear the reform will lead to a reduction in their retirement benefits.
-France&#39;s pension system is a complex and highly decentralized system that covers over 40 million workers. The system has been criticized for being inefficient and plagued by abuses. The proposed reform aims to consolidate the 42 different pension schemes into a single system, which could save the government billions of euros.
-The protests have turned violent, with clashes between protesters and police. The government has deployed thousands
+Generated text:  a must-visit destination for any traveler. Paris, the City of Light, is famous for its stunning architecture, art museums, fashion, and romantic atmosphere. Here are some top things to do and see in Paris:
+1. Visit the Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. You can take the elevator to the top for breathtaking views of the city.
+2. Explore the Louvre Museum: The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from ancient civilizations to the 21st century.
+3. Wander along
 
 Prompt: The future of AI is
-Generated text:  now: Meet the brilliant students behind the world’s top AI projects
-In recent years, AI has become a hot topic in the tech world, with many companies investing heavily in AI research and development. But behind the scenes, students are working tirelessly to push the boundaries of what is possible with AI. Here, we’ll meet some of the brilliant students behind the world’s top AI projects.
-The winners of the 2022 Google AI Impact Challenge
-The Google AI Impact Challenge is a prestigious competition that aims to identify and support AI projects with the potential to drive meaningful impact. This year, the winners were chosen from over 2,000
+Generated text:  in our hands
+The development of artificial intelligence (AI) has been a subject of fascination for many decades. The concept of creating machines that can think and act like humans has been explored in various fields, including computer science, philosophy, and science fiction. While we have made significant progress in AI, its future is still uncertain and depends on how we choose to shape it.
+On one hand, AI has the potential to bring about immense benefits to society, such as:
+1. Improving healthcare outcomes: AI can help diagnose diseases more accurately, develop personalized treatment plans, and even assist in surgical procedures.
+2. Enhancing education: AI
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -795,7 +799,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 31, 2024.
+  Last updated on Jan 01, 2025.
   <br/>
 </p>
   </div>
@@ -813,8 +817,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

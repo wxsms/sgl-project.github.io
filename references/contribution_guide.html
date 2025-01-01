@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -37,10 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=7a29ff0f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post3" />
-    <meta name="docbuild:last-update" content="Dec 31, 2024"/>
+    <meta name="docbuild:last-update" content="Jan 01, 2025"/>
   </head>
   
   
@@ -163,7 +163,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs (JSON, Regex, EBNF)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/backend.html">Backend: SGLang Runtime (SRT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -193,9 +193,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -406,24 +411,24 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">1. Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">1.1 Fork and Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">1.2 Install Dependencies &amp; Build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and Clone the Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">Install Dependencies &amp; Build</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">2. Code Formatting with Pre-Commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">3. Writing Documentation &amp; Running Docs CI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">3.1 Docs Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">Code Formatting with Pre-Commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">Writing Documentation &amp; Running Docs CI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">Docs Workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">4. Running Unit Tests &amp; Adding to CI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-backend-runtime">4.1 Test Backend Runtime</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-frontend-language">4.2 Test Frontend Language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-or-updating-tests-in-ci">4.3 Adding or Updating Tests in CI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-elegant-test-cases">4.4 Writing Elegant Test Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">Running Unit Tests &amp; Adding to CI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-backend-runtime">Test Backend Runtime</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-frontend-language">Test Frontend Language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-or-updating-tests-in-ci">Adding or Updating Tests in CI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-elegant-test-cases">Writing Elegant Test Cases</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">5. Tips for Newcomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for Newcomers</a></li>
 </ul>
             </nav>
         </div>
@@ -439,9 +444,9 @@
 <h1>Contribution Guide<a class="headerlink" href="#contribution-guide" title="Link to this heading">#</a></h1>
 <p>Welcome to <strong>SGLang</strong>! We appreciate your interest in contributing. This guide provides a concise overview of how to set up your environment, run tests, build documentation, and open a Pull Request (PR). Whether you’re fixing a small bug or developing a major feature, we encourage following these steps for a smooth contribution process.</p>
 <section id="setting-up-building-from-source">
-<h2>1. Setting Up &amp; Building from Source<a class="headerlink" href="#setting-up-building-from-source" title="Link to this heading">#</a></h2>
+<h2>Setting Up &amp; Building from Source<a class="headerlink" href="#setting-up-building-from-source" title="Link to this heading">#</a></h2>
 <section id="fork-and-clone-the-repository">
-<h3>1.1 Fork and Clone the Repository<a class="headerlink" href="#fork-and-clone-the-repository" title="Link to this heading">#</a></h3>
+<h3>Fork and Clone the Repository<a class="headerlink" href="#fork-and-clone-the-repository" title="Link to this heading">#</a></h3>
 <p><strong>Note</strong>: SGLang does <strong>not</strong> accept PRs on the main repo. Please fork the repository under your GitHub account, then clone your fork locally.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your_user_name&gt;/sglang.git
 <span class="nb">cd</span><span class="w"> </span>sglang
@@ -449,7 +454,7 @@
 </div>
 </section>
 <section id="install-dependencies-build">
-<h3>1.2 Install Dependencies &amp; Build<a class="headerlink" href="#install-dependencies-build" title="Link to this heading">#</a></h3>
+<h3>Install Dependencies &amp; Build<a class="headerlink" href="#install-dependencies-build" title="Link to this heading">#</a></h3>
 <p>Refer to <a class="reference external" href="https://sgl-project.github.io/start/install.html">Install SGLang</a> documentation for more details on setting up the necessary dependencies.</p>
 <p>Install correct version of flashinfer according to your PyTorch and CUDA versions.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(&#39;PyTorch Version:&#39;, torch.__version__); print(&#39;CUDA Version:&#39;, torch.version.cuda)&quot;</span>
@@ -467,7 +472,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </section>
 </section>
 <section id="code-formatting-with-pre-commit">
-<h2>2. Code Formatting with Pre-Commit<a class="headerlink" href="#code-formatting-with-pre-commit" title="Link to this heading">#</a></h2>
+<h2>Code Formatting with Pre-Commit<a class="headerlink" href="#code-formatting-with-pre-commit" title="Link to this heading">#</a></h2>
 <p>We use <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to maintain consistent code style checks. Before pushing your changes, please run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>pre-commit
 <span class="nb">cd</span><span class="w"> </span>sglang
@@ -480,10 +485,10 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </ul>
 </section>
 <section id="writing-documentation-running-docs-ci">
-<h2>3. Writing Documentation &amp; Running Docs CI<a class="headerlink" href="#writing-documentation-running-docs-ci" title="Link to this heading">#</a></h2>
+<h2>Writing Documentation &amp; Running Docs CI<a class="headerlink" href="#writing-documentation-running-docs-ci" title="Link to this heading">#</a></h2>
 <p>Most documentation files are located under the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder. We prefer <strong>Jupyter Notebooks</strong> over Markdown so that all examples can be executed and validated by our docs CI pipeline.</p>
 <section id="docs-workflow">
-<h3>3.1 Docs Workflow<a class="headerlink" href="#docs-workflow" title="Link to this heading">#</a></h3>
+<h3>Docs Workflow<a class="headerlink" href="#docs-workflow" title="Link to this heading">#</a></h3>
 <p>Add or update your Jupyter notebooks in the appropriate subdirectories under <code class="docutils literal notranslate"><span class="pre">docs/</span></code>. If you add new files, remember to update <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> (or relevant <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files) accordingly.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Compile all Jupyter notebooks</span>
 make<span class="w"> </span>compile
@@ -546,10 +551,10 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </section>
 </section>
 <section id="running-unit-tests-adding-to-ci">
-<h2>4. Running Unit Tests &amp; Adding to CI<a class="headerlink" href="#running-unit-tests-adding-to-ci" title="Link to this heading">#</a></h2>
+<h2>Running Unit Tests &amp; Adding to CI<a class="headerlink" href="#running-unit-tests-adding-to-ci" title="Link to this heading">#</a></h2>
 <p>SGLang uses Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> framework. You can run tests either individually or in suites.</p>
 <section id="test-backend-runtime">
-<h3>4.1 Test Backend Runtime<a class="headerlink" href="#test-backend-runtime" title="Link to this heading">#</a></h3>
+<h3>Test Backend Runtime<a class="headerlink" href="#test-backend-runtime" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sglang/test/srt
 
 <span class="c1"># Run a single file</span>
@@ -564,7 +569,7 @@ python3<span class="w"> </span>run_suite.py<span class="w"> </span>--suite<span 
 </div>
 </section>
 <section id="test-frontend-language">
-<h3>4.2 Test Frontend Language<a class="headerlink" href="#test-frontend-language" title="Link to this heading">#</a></h3>
+<h3>Test Frontend Language<a class="headerlink" href="#test-frontend-language" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sglang/test/lang
 <span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>sk-*****
 
@@ -580,7 +585,7 @@ python3<span class="w"> </span>run_suite.py<span class="w"> </span>--suite<span 
 </div>
 </section>
 <section id="adding-or-updating-tests-in-ci">
-<h3>4.3 Adding or Updating Tests in CI<a class="headerlink" href="#adding-or-updating-tests-in-ci" title="Link to this heading">#</a></h3>
+<h3>Adding or Updating Tests in CI<a class="headerlink" href="#adding-or-updating-tests-in-ci" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Create new test files under <code class="docutils literal notranslate"><span class="pre">test/srt</span></code> or <code class="docutils literal notranslate"><span class="pre">test/lang</span></code> depending on the type of test.</p></li>
 <li><p>Ensure they are referenced in the respective <code class="docutils literal notranslate"><span class="pre">run_suite.py</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">test/srt/run_suite.py</span></code> or <code class="docutils literal notranslate"><span class="pre">test/lang/run_suite.py</span></code>) so they’re picked up in CI.</p></li>
@@ -588,7 +593,7 @@ python3<span class="w"> </span>run_suite.py<span class="w"> </span>--suite<span 
 </ul>
 </section>
 <section id="writing-elegant-test-cases">
-<h3>4.4 Writing Elegant Test Cases<a class="headerlink" href="#writing-elegant-test-cases" title="Link to this heading">#</a></h3>
+<h3>Writing Elegant Test Cases<a class="headerlink" href="#writing-elegant-test-cases" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Examine existing tests in <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test">sglang/test</a> for practical examples.</p></li>
 <li><p>Keep each test function focused on a single scenario or piece of functionality.</p></li>
@@ -599,7 +604,7 @@ python3<span class="w"> </span>run_suite.py<span class="w"> </span>--suite<span 
 </section>
 </section>
 <section id="tips-for-newcomers">
-<h2>5. Tips for Newcomers<a class="headerlink" href="#tips-for-newcomers" title="Link to this heading">#</a></h2>
+<h2>Tips for Newcomers<a class="headerlink" href="#tips-for-newcomers" title="Link to this heading">#</a></h2>
 <p>If you want to contribute but don’t have a specific idea in mind, pick issues labeled <a class="reference external" href="https://github.com/sgl-project/sglang/issues?q=is%3Aissue+label%3A%22good+first+issue%22%2C%22help+wanted%22">“good first issue” or “help wanted”</a>. These tasks typically have lower complexity and provide an excellent introduction to the codebase. Also check out this <a class="reference external" href="https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through">code walk-through</a> for a deeper look into SGLang’s workflow.</p>
 <p>If you have any questions or want to start a discussion, please feel free to ask in our <a class="reference external" href="https://join.slack.com/t/sgl-fru7574/shared_invite/zt-2um0ad92q-LkU19KQTxCGzlCgRiOiQEw">Slack channel</a>.</p>
 <p>Thank you for your interest in SGLang—<strong>happy coding</strong>!</p>
@@ -652,24 +657,24 @@ python3<span class="w"> </span>run_suite.py<span class="w"> </span>--suite<span 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">1. Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">1.1 Fork and Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">1.2 Install Dependencies &amp; Build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and Clone the Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">Install Dependencies &amp; Build</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">2. Code Formatting with Pre-Commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">3. Writing Documentation &amp; Running Docs CI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">3.1 Docs Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">Code Formatting with Pre-Commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">Writing Documentation &amp; Running Docs CI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">Docs Workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">4. Running Unit Tests &amp; Adding to CI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-backend-runtime">4.1 Test Backend Runtime</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-frontend-language">4.2 Test Frontend Language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-or-updating-tests-in-ci">4.3 Adding or Updating Tests in CI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-elegant-test-cases">4.4 Writing Elegant Test Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">Running Unit Tests &amp; Adding to CI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-backend-runtime">Test Backend Runtime</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-frontend-language">Test Frontend Language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-or-updating-tests-in-ci">Adding or Updating Tests in CI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-elegant-test-cases">Writing Elegant Test Cases</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">5. Tips for Newcomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for Newcomers</a></li>
 </ul>
   </nav></div>
 
@@ -703,7 +708,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 31, 2024.
+  Last updated on Jan 01, 2025.
   <br/>
 </p>
   </div>
@@ -721,8 +726,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
