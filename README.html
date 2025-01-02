@@ -55,7 +55,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post3" />
-    <meta name="docbuild:last-update" content="Jan 01, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 02, 2025"/>
   </head>
   
   
@@ -411,12 +411,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-documentation-website">Build the documentation website</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency">Dependency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">Clean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serve-preview">Serve (preview)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">Docs Workflow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependency">Install Dependency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-documentation">Update Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -432,40 +429,78 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sglang-documentation">
 <h1>SGLang Documentation<a class="headerlink" href="#sglang-documentation" title="Link to this heading">#</a></h1>
-<p>This is the documentation repository for SGLang. It is auto-generated from https://github.com/sgl-project/sglang/tree/main/docs.</p>
-<section id="build-the-documentation-website">
-<h2>Build the documentation website<a class="headerlink" href="#build-the-documentation-website" title="Link to this heading">#</a></h2>
-<section id="dependency">
-<h3>Dependency<a class="headerlink" href="#dependency" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<p>We recommend new contributors start from writing documentation, which helps you quickly understand SGLang codebase. Most documentation files are located under the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder. We prefer <strong>Jupyter Notebooks</strong> over Markdown so that all examples can be executed and validated by our docs CI pipeline.</p>
+<section id="docs-workflow">
+<h2>Docs Workflow<a class="headerlink" href="#docs-workflow" title="Link to this heading">#</a></h2>
+<section id="install-dependency">
+<h3>Install Dependency<a class="headerlink" href="#install-dependency" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
 </section>
-<section id="build">
-<h3>Build<a class="headerlink" href="#build" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+<section id="update-documentation">
+<h3>Update Documentation<a class="headerlink" href="#update-documentation" title="Link to this heading">#</a></h3>
+<p>Update your Jupyter notebooks in the appropriate subdirectories under <code class="docutils literal notranslate"><span class="pre">docs/</span></code>. If you add new files, remember to update <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> (or relevant <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files) accordingly.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">run</span> <span class="pre">--all-files</span></code></strong> manually runs all configured checks, applying fixes if possible. If it fails the first time, re-run it to ensure lint errors are fully resolved. Make sure your code passes all checks <strong>before</strong> creating a Pull Request.</p></li>
+<li><p><strong>Do not commit</strong> directly to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Always create a new branch (e.g., <code class="docutils literal notranslate"><span class="pre">feature/my-new-feature</span></code>), push your changes, and open a PR from that branch.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Compile all Jupyter notebooks</span>
+make<span class="w"> </span>compile
+
+<span class="c1"># 2) Generate static HTML</span>
+make<span class="w"> </span>html
+
+<span class="c1"># 3) Preview documentation locally</span>
+<span class="c1"># Open your browser at the displayed port to view the docs</span>
+bash<span class="w"> </span>serve.sh
+
+<span class="c1"># 4) Clean notebook outputs</span>
+<span class="c1"># nbstripout removes notebook outputs so your PR stays clean</span>
+pip<span class="w"> </span>install<span class="w"> </span>nbstripout
+find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.ipynb&#39;</span><span class="w"> </span>-exec<span class="w"> </span>nbstripout<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+
+<span class="c1"># 5) Pre-commit checks and create a PR</span>
+<span class="c1"># After these checks pass, push your changes and open a PR on your branch</span>
+pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </pre></div>
 </div>
-</section>
-<section id="clean">
-<h3>Clean<a class="headerlink" href="#clean" title="Link to this heading">#</a></h3>
-<p>To remove all generated files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+<p>If you need to run and shut down a SGLang server or engine, following these examples:</p>
+<ol class="arabic simple">
+<li><p>Launch and close Sever:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Launch Sever</span>
+
+<span class="kn">from</span> <span class="nn">sglang.utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">execute_shell_command</span><span class="p">,</span>
+    <span class="n">wait_for_server</span><span class="p">,</span>
+    <span class="n">terminate_process</span><span class="p">,</span>
+    <span class="n">print_highlight</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">server_process</span> <span class="o">=</span> <span class="n">execute_shell_command</span><span class="p">(</span>
+    <span class="s2">&quot;python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --port 30000 --host 0.0.0.0&quot;</span>
+<span class="p">)</span>
+
+<span class="n">wait_for_server</span><span class="p">(</span><span class="s2">&quot;http://localhost:30000&quot;</span><span class="p">)</span>
+
+<span class="c1"># Terminate Sever</span>
+
+<span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="serve-preview">
-<h3>Serve (preview)<a class="headerlink" href="#serve-preview" title="Link to this heading">#</a></h3>
-<p>Run an HTTP server and visit http://localhost:8000 in your browser.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="o">--</span><span class="n">d</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
-</pre></div>
-</div>
-</section>
-<section id="deploy">
-<h3>Deploy<a class="headerlink" href="#deploy" title="Link to this heading">#</a></h3>
-<p>Clone <a class="reference external" href="https://github.com/sgl-project/sgl-project.github.io">sgl-project.github.io</a> and make sure you have write access.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DOC_SITE_PATH</span><span class="o">=</span>../../sgl-project.github.io<span class="w">   </span><span class="c1"># update this with your path</span>
-python3<span class="w"> </span>deploy.py
+<ol class="arabic simple" start="2">
+<li><p>Launch Engine and close Engine</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch Engine</span>
+
+<span class="kn">import</span> <span class="nn">sglang</span> <span class="k">as</span> <span class="nn">sgl</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
+
+<span class="c1"># Terminalte Engine</span>
+<span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -500,12 +535,9 @@ python3<span class="w"> </span>deploy.py
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-documentation-website">Build the documentation website</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency">Dependency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">Clean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serve-preview">Serve (preview)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">Docs Workflow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependency">Install Dependency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-documentation">Update Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -541,7 +573,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 01, 2025.
+  Last updated on Jan 02, 2025.
   <br/>
 </p>
   </div>
