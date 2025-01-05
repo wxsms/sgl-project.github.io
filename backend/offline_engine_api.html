@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -38,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="../_static/documentation_options.js?v=7a29ff0f"></script>
+    <script src="../_static/documentation_options.js?v=ef3c7dde"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,8 +59,8 @@
     <link rel="prev" title="Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.1.post3" />
-    <meta name="docbuild:last-update" content="Jan 03, 2025"/>
+  <meta name="docsearch:version" content="0.4.1.post4" />
+    <meta name="docbuild:last-update" content="Jan 05, 2025"/>
   </head>
   
   
@@ -196,14 +196,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -473,13 +468,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.15it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.07it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.56it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.49it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.66it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  4.76it/s]
+100%|██████████| 23/23 [00:06&lt;00:00,  3.39it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -511,23 +506,28 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sante Applegate and I am excited to be part of the Lee’s Summit R-7 School District team as a school counselor at Lee’s Summit High School. This will be my 14th year in education, and I am passionate about helping students succeed academically, personally, and professionally.
-Prior to joining the district, I worked as a counselor in several schools in the Kansas City area. I have a Master’s degree in School Counseling from the University of Kansas and a Bachelor’s degree in Psychology from Benedictine College.
-I am committed to providing a supportive and inclusive environment for all students. As a school counselor, my goal
+Generated text:  Ameet. I am a Ph.D. student in the Department of Computer Science and Engineering at the Indian Institute of Technology (IIT) Hyderabad. My research area is Machine Learning and Deep Learning. I am currently working on the development of Deep Learning-based models for image and speech processing tasks. I am also interested in developing novel architectures and techniques for improving the efficiency and interpretability of Deep Learning models.
+In my free time, I enjoy hiking, reading, and trying out new recipes in the kitchen. I am also a fan of learning new programming languages and exploring new tools and technologies.
+
+Here are some of the technologies I am familiar with
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States, and is the most powerful person in the world. The president is elected by the Electoral College, and serves a four-year term. The president has many responsibilities, including setting national policy, commanding the military, and representing the United States abroad.
-The president&#39;s powers and duties are outlined in the Constitution and other laws, but some of the key responsibilities include:
-1. Setting national policy: The president has the power to propose and implement national policies on a wide range of issues, including foreign policy, domestic policy, and economic policy.
-2. Commanding the military: The president
+Generated text:  the most powerful person in the world, and there are many reasons why. Here are some of the key powers and responsibilities that contribute to the president&#39;s immense power:
+1. Commander-in-Chief: The president is the commander-in-chief of the armed forces, which means they have ultimate authority over the military. They can deploy troops, order military operations, and make key decisions about national security.
+2. Chief Executive: As chief executive, the president is responsible for enforcing the laws of the land. They have the power to sign or veto laws passed by Congress, which means they can prevent or approve legislation.
+3. Chief Diplomat:
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. The country is located in Western Europe, and its official name is the French Republic. France is a significant economic and political power in Europe and the world, and it is one of the most culturally influential countries in the world. The country has a population of around 67 million people, and the official language is French.
-France is a parliamentary republic, with a president as head of state and a prime minister as head of government. The country has a long history of monarchies, empires, and revolutions, and it has played a significant role in shaping modern Europe. France is known for its beautiful cities, art, fashion,
+Generated text:  not the city with the highest population. The city with the highest population is actually Lyon. However, the city of Paris is the capital of France and the country&#39;s largest city in terms of economic output, cultural impact, and tourist attractions.
+Paris, the City of Light, is famous for its stunning architecture, art museums, fashion, cuisine, and romantic atmosphere. It is a popular destination for tourists and a hub for business and culture.
+Lyon, on the other hand, is the second-largest city in France and a major economic center. It has a rich history, cultural attractions, and a vibrant food scene.
+Both cities are worth
 ===============================
 Prompt: The future of AI is
-Generated text:  at the intersection of human experience and technological advancements.
-“From the beginning, we knew that technology was going to change the world, but we never imagined how rapidly it would progress. Today, we are at the cusp of a new era where human experience and technological advancements intersect. Artificial intelligence (AI) has the potential to revolutionize the way we live, work, and interact with each other. The key to unlocking its full potential is not just about developing more complex algorithms or hardware but also about understanding the human side of AI – the emotional, social, and cognitive aspects that will determine how we adopt and integrate AI into our lives.
+Generated text:  here, and it&#39;s human-centric. What does that mean?
+The recent advancements in Artificial Intelligence (AI) have been nothing short of revolutionary. From virtual assistants like Siri and Alexa to self-driving cars, AI has transformed the way we live, work, and interact with one another. As AI continues to evolve, we&#39;re seeing a shift towards a more human-centric approach.
+So, what does it mean for AI to be human-centric?
+In essence, human-centric AI is designed to augment human capabilities, rather than replace them. It&#39;s focused on creating intelligent systems that work in harmony with humans, rather than trying to mimic their behavior.
 </pre></div></div>
 </div>
 </section>
@@ -565,15 +565,19 @@ Generated text:  at the intersection of human experience and technological advan
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Rev. Linda Campbell and I am a licensed and ordained United Methodist Minister. I have been serving in a variety of settings, including congregations, camps, and non-profit organizations, for over 20 years. My passion is to help people discover and deepen their faith, to find meaning and purpose in their lives, and to live more authentically as children of God. I have a Master&#39;s degree in Divinity from Drew University, and I am a certified spiritual director and coach. I am also a trained mediator and conflict resolver, and I enjoy facilitating small groups and workshops on a variety of topics related to faith, spirituality, and
+Generated text:  Oliver. I am a 8-year-old boy, and I am a 3rd-grade student. My favorite subjects are art, music, and P.E. I like to draw and paint and I also like to play soccer and ride my bike. My favorite animal is the tiger, and my favorite food is pizza. I like to play video games and watch TV on the weekends. I also like to go to the park and play with my friends. I like to help my mom and dad around the house and take care of my little sister.
+Hi, my name is Emma. I am a 7-year-old girl, and
 
 Prompt: The capital of France is
-Generated text:  one of the most romantic and beautiful cities in the world. From the Eiffel Tower to the Louvre Museum, there is so much to see and experience in Paris. Here are a few reasons why you should visit this amazing city:
-The Eiffel Tower, one of the most iconic landmarks in the world, is a must-visit attraction in Paris. You can take the stairs or elevator to the top for breathtaking views of the city. The tower was built for the World&#39;s Fair in 1889 and was initially intended to be a temporary structure. However, it has become an iconic symbol of Paris and one of the most
+Generated text:  famous for its history, art, fashion, cuisine and wine. These are just a few of the many reasons why Paris is one of the most visited cities in the world. But for many travelers, Paris is more than just a city – it’s an experience. Here are some of the top attractions and experiences to have in the City of Light.
+1. Visit the Eiffel Tower
+The Eiffel Tower is a must-see attraction in Paris. This iconic iron lattice tower was built for the 1889 World’s Fair and was initially intended to be a temporary structure. Today, it stands as the tallest building in Paris
 
 Prompt: The future of AI is
-Generated text:  not about the machines themselves, but about how they can improve and enhance our lives. In his book, “Life 3.0: Being Human in the Age of Artificial Intelligence,” Max Tegmark, a professor of physics at MIT, argues that AI has the potential to solve some of the world’s most pressing problems, such as disease, poverty, and climate change.
-Tegmark suggests that AI can be a powerful tool for good, but it also raises important questions about the future of work, the nature of consciousness, and the potential risks of creating intelligent machines. He argues that we need to have a more nuanced and informed
+Generated text:  in the cloud
+As AI continues to transform various industries and aspects of our lives, the cloud will play an increasingly important role in its development and deployment. The cloud has enabled the widespread adoption of AI by providing scalable, on-demand access to computing resources and data storage. This has reduced the barriers to entry for companies looking to implement AI solutions, making it more accessible and affordable.
+The cloud also provides a number of benefits that are particularly well-suited to AI, such as:
+Scalability: Cloud providers can quickly scale up or down to meet the changing needs of AI workloads, which can be computationally intensive and require large amounts
 </pre></div></div>
 </div>
 </section>
@@ -615,18 +619,19 @@ Tegmark suggests that AI can be a powerful tool for good, but it also raises imp
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Captain Jack Sparrow, and I have been transported back in time to the year 1777. The American colonies are still under British rule, and the seeds of revolution are beginning to be sown. I am in the midst of a heist, stealing a valuable shipment of rum, when I am suddenly confronted by a group of Patriot militia. They are armed to the teeth and look like they mean business.
-As the leader of the group steps forward, I can see the fire of rebellion burning in his eyes. He introduces himself as Benjamin Franklin, and I can sense the intellectual and cunning that lies beneath his humble demeanor. I quickly
+Generated text:  Cindy, and I am the mom of a 7-year-old boy who loves dinosaurs. His name is Jaxon, and he has a serious obsession with all things prehistoric. His room is a dinosaur wonderland, and I&#39;m pretty sure he&#39;s going to grow up to be a paleontologist one day.
+As a mom, I&#39;ve tried to encourage his passion and provide him with as many educational and fun experiences as possible. Recently, we went on a dinosaur-themed vacation to the American Museum of Natural History in New York City. Jaxon was in awe of the massive dinosaur skeletons on display, and I was impressed by the
 
 Prompt: The capital of France is
-Generated text:  known for its rich history, stunning architecture, and famous landmarks. It is the epicenter of French culture, cuisine, and fashion. However, the city is also known for its less-than-favorable reputation when it comes to street crime and petty theft. Visitors to Paris are often warned to be cautious of their belongings and to keep a close eye on their luggage.
-In light of this, it is no surprise that many tourists and travelers flock to Paris with a sense of skepticism and even fear. But what if you could experience the beauty and charm of Paris without the worries of petty theft and crime? There are several ways to do this
+Generated text:  Paris. The French language is the official language of France. The country is famous for its art, history, and fashion. It has a rich cultural heritage and has been a major influence on Western civilization.
+France is located in Western Europe, bordered by several countries including Belgium, Luxembourg, Germany, Switzerland, Italy, Spain, and Andorra. The country has a diverse geography, with mountains, rivers, and coastlines along the Atlantic and Mediterranean oceans.
+Paris, the capital city, is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Other notable cities include Lyon,
 
 Prompt: The future of AI is
-Generated text:  here: Robot chef cooks up a storm in the kitchen
-An AI-powered robot chef is cooking up a storm in a Chinese restaurant, marking the beginning of a new era in culinary innovation.
-The robot, named Moley, uses artificial intelligence to prepare and cook complex dishes with ease, including intricate sauces and elaborate desserts. It can even learn and adapt to new recipes, making it an invaluable asset to any kitchen.
-Moley&#39;s AI system is powered by a combination of computer vision, machine learning, and natural language processing, allowing it to analyze and understand the nuances of cooking. The robot can recognize ingredients, detect cooking temperatures and times,
+Generated text:  bright – and it’s already changing the world around us. Artificial intelligence (AI) has come a long way in a short time, from being a hypothetical concept to a reality that is transforming industries, creating new opportunities, and solving complex problems. In this article, we will explore the current state of AI and its impact on our daily lives.
+The current state of AI
+AI has made tremendous progress in recent years, with significant advancements in areas such as:
+  1. Machine learning: AI systems can now learn from data and improve their performance over time, enabling applications such as image and speech recognition, natural language processing, and predictive
 </pre></div></div>
 </div>
 </section>
@@ -670,19 +675,24 @@ Moley&#39;s AI system is powered by a combination of computer vision, machine le
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Victoria. I am a senior at Oklahoma Christian University, majoring in early childhood education. This is my first year as a student teacher and I am so excited to be working with you and your child this year! I am looking forward to getting to know you and your child and to watching them grow and learn over the next few months.
-As a student teacher, I will be working closely with Mrs. [Teacher&#39;s Name] to plan and implement lessons that will meet the needs of your child. I will also be assisting with classroom management, grading, and other tasks that will help make our classroom run smoothly.
-If you have any questions
+Generated text:  Shadia and I am a 3rd year student at the University of Technology, Jamaica. I am studying Computer Science and I am very interested in learning about different programming languages and developing software applications.
+I am particularly interested in the use of technology to improve the lives of people in my community. I have always been fascinated by how technology can be used to solve real-world problems and make a positive impact on society.
+In my free time, I enjoy reading about technology and learning new programming languages. I also like to participate in coding challenges and hackathons to test my skills and learn from others.
+
+I am excited to be part of this
 
 Prompt: The capital of France is
-Generated text:  getting a major makeover
-Paris is getting a massive renovation that will transform the city&#39;s infrastructure, public spaces, and architecture. The city&#39;s mayor, Anne Hidalgo, has announced a €20 billion investment plan to revamp the city, which will include the construction of new metro lines, the renovation of historic buildings, and the creation of new public spaces. The plan is expected to create thousands of jobs and boost the city&#39;s economy.
-One of the most significant projects is the creation of a new metro line, which will connect the city center to the suburbs. The line will be built using innovative and sustainable technologies, and will feature
+Generated text:  full of history, culture, and of course, delicious food! Whether you’re looking to explore the iconic landmarks, experience the city’s vibrant nightlife, or indulge in some French cuisine, Paris is a must-visit destination.
+Here are some of the top things to do in Paris:
+Visit the Eiffel Tower: This iconic iron lattice tower is a must-visit attraction in Paris. You can take the stairs or elevator to the top for breathtaking views of the city.
+Explore the Louvre Museum: The world’s largest art museum is home to some of the most famous paintings in history, including the Mona Lisa. Be sure to book
 
 Prompt: The future of AI is
-Generated text:  being shaped by innovations in various fields, including computer vision, natural language processing, and machine learning. One of the most exciting areas of research is in the development of multimodal AI, which enables machines to process and understand multiple sources of data, such as text, images, and audio, simultaneously. In this article, we&#39;ll explore the advancements in multimodal AI and their potential applications.
-What is Multimodal AI?
-Multimodal AI refers to the ability of machines to process and integrate multiple modalities of data, such as text, images, audio, and video. This involves developing AI models that can recognize and understand patterns across
+Generated text:  not just about intelligent machines, but about how humans will interact with and be transformed by these technologies. The goal of this book is to explore the social implications of artificial intelligence, and to provide a framework for thinking about the future of human-AI interaction.
+The book is organized around five key themes:
+1. **Human-Centered AI**: How can we design AI systems that are centered on human values and needs?
+2. **AI and Society**: What are the implications of AI for social structures, institutions, and relationships?
+3. **Human-AI Interaction**: How will humans interact with AI systems, and how will these interactions shape our
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -783,7 +793,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 03, 2025.
+  Last updated on Jan 05, 2025.
   <br/>
 </p>
   </div>
@@ -801,8 +811,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

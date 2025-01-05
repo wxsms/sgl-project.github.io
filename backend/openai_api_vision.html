@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -38,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="../_static/documentation_options.js?v=7a29ff0f"></script>
+    <script src="../_static/documentation_options.js?v=ef3c7dde"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,8 +59,8 @@
     <link rel="prev" title="OpenAI APIs - Completions" href="openai_api_completions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.1.post3" />
-    <meta name="docbuild:last-update" content="Jan 03, 2025"/>
+  <meta name="docsearch:version" content="0.4.1.post4" />
+    <meta name="docbuild:last-update" content="Jan 05, 2025"/>
   </head>
   
   
@@ -196,14 +196,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -438,12 +433,12 @@
 </style><section id="OpenAI-APIs---Vision">
 <h1>OpenAI APIs - Vision<a class="headerlink" href="#OpenAI-APIs---Vision" title="Link to this heading">#</a></h1>
 <p>SGLang provides OpenAI-compatible APIs to enable a smooth transition from OpenAI services to self-hosted local models. A complete reference for the API is available in the <a class="reference external" href="https://platform.openai.com/docs/guides/vision">OpenAI API Reference</a>. This tutorial covers the vision APIs for vision language models.</p>
-<p>SGLang supports vision language models such as Llama 3.2, LLaVA-OneVision, and QWen-VL2</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct">meta-llama/Llama-3.2-11B-Vision-Instruct</a></p></li>
-<li><p><a class="reference external" href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-72b-ov-chat">lmms-lab/llava-onevision-qwen2-72b-ov-chat</a></p></li>
-<li><p><a class="reference external" href="https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct">Qwen/Qwen2-VL-7B-Instruct</a></p></li>
-</ul>
+<div class="line-block">
+<div class="line">SGLang supports vision language models such as Llama 3.2, LLaVA-OneVision, and QWen-VL2</div>
+<div class="line">- <a class="reference external" href="https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct">meta-llama/Llama-3.2-11B-Vision-Instruct</a></div>
+<div class="line">- <a class="reference external" href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-72b-ov-chat">lmms-lab/llava-onevision-qwen2-72b-ov-chat</a></div>
+<div class="line">- <a class="reference external" href="https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct">Qwen/Qwen2-VL-7B-Instruct</a></div>
+</div>
 <section id="Launch-A-Server">
 <h2>Launch A Server<a class="headerlink" href="#Launch-A-Server" title="Link to this heading">#</a></h2>
 <p>Launch the server in your terminal and wait for it to initialize.</p>
@@ -475,37 +470,37 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-03 02:31:54] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, chat_template=&#39;llama_3_vision&#39;, is_embedding=False, revision=None, skip_tokenizer_init=False, return_token_ids=False, host=&#39;127.0.0.1&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, prefill_only_one_req=False, tp_size=1, stream_interval=1, random_seed=186352855, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_draft_model_path=None, speculative_algorithm=None, speculative_num_steps=5, speculative_num_draft_tokens=64, speculative_eagle_topk=8, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False)
-[2025-01-03 02:32:01] Use chat template for the OpenAI-compatible API server: llama_3_vision
-[2025-01-03 02:32:09 TP0] Overlap scheduler is disabled for multimodal models.
-[2025-01-03 02:32:09 TP0] Automatically turn off --chunked-prefill-size for mllama.
-[2025-01-03 02:32:09 TP0] Init torch distributed begin.
-[2025-01-03 02:32:09 TP0] Load weight begin. avail mem=78.81 GB
-[2025-01-03 02:32:09 TP0] Ignore import error when loading sglang.srt.models.grok. unsupported operand type(s) for |: &#39;type&#39; and &#39;NoneType&#39;
-[2025-01-03 02:32:10 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-01-05 17:33:07] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-11B-Vision-Instruct&#39;, chat_template=&#39;llama_3_vision&#39;, is_embedding=False, revision=None, skip_tokenizer_init=False, return_token_ids=False, host=&#39;127.0.0.1&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, prefill_only_one_req=False, tp_size=1, stream_interval=1, random_seed=865128282, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;SGLang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_draft_model_path=None, speculative_algorithm=None, speculative_num_steps=5, speculative_num_draft_tokens=64, speculative_eagle_topk=8, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False)
+[2025-01-05 17:33:09] Use chat template for the OpenAI-compatible API server: llama_3_vision
+[2025-01-05 17:33:22 TP0] Overlap scheduler is disabled for multimodal models.
+[2025-01-05 17:33:22 TP0] Automatically turn off --chunked-prefill-size for mllama.
+[2025-01-05 17:33:22 TP0] Init torch distributed begin.
+[2025-01-05 17:33:23 TP0] Load weight begin. avail mem=78.81 GB
+[2025-01-05 17:33:23 TP0] Ignore import error when loading sglang.srt.models.grok. unsupported operand type(s) for |: &#39;type&#39; and &#39;NoneType&#39;
+[2025-01-05 17:33:23 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.28it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.32it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.30it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.66it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.50it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.13it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.06it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.50it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.20it/s]
 
-[2025-01-03 02:32:13 TP0] Load weight end. type=MllamaForConditionalGeneration, dtype=torch.bfloat16, avail mem=58.65 GB
-[2025-01-03 02:32:14 TP0] Memory pool end. avail mem=11.86 GB
-[2025-01-03 02:32:14 TP0] Capture cuda graph begin. This can take up to several minutes.
-100%|██████████| 23/23 [00:06&lt;00:00,  3.43it/s]
-[2025-01-03 02:32:21 TP0] Capture cuda graph end. Time elapsed: 6.71 s
-[2025-01-03 02:32:23 TP0] max_total_num_tokens=299646, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
-[2025-01-03 02:32:23] INFO:     Started server process [4035454]
-[2025-01-03 02:32:23] INFO:     Waiting for application startup.
-[2025-01-03 02:32:23] INFO:     Application startup complete.
-[2025-01-03 02:32:23] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)
-[2025-01-03 02:32:23] INFO:     127.0.0.1:53740 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-01-03 02:32:24] INFO:     127.0.0.1:53752 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-01-03 02:32:24 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-03 02:32:24] INFO:     127.0.0.1:53758 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-01-03 02:32:24] The server is fired up and ready to roll!
+[2025-01-05 17:33:28 TP0] Load weight end. type=MllamaForConditionalGeneration, dtype=torch.bfloat16, avail mem=58.65 GB
+[2025-01-05 17:33:28 TP0] Memory pool end. avail mem=11.86 GB
+[2025-01-05 17:33:28 TP0] Capture cuda graph begin. This can take up to several minutes.
+100%|██████████| 23/23 [00:07&lt;00:00,  3.24it/s]
+[2025-01-05 17:33:35 TP0] Capture cuda graph end. Time elapsed: 7.11 s
+[2025-01-05 17:33:37 TP0] max_total_num_tokens=299646, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2025-01-05 17:33:37] INFO:     Started server process [4064946]
+[2025-01-05 17:33:37] INFO:     Waiting for application startup.
+[2025-01-05 17:33:37] INFO:     Application startup complete.
+[2025-01-05 17:33:37] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)
+[2025-01-05 17:33:37] INFO:     127.0.0.1:53420 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-01-05 17:33:38] INFO:     127.0.0.1:53422 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-01-05 17:33:38 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-05 17:33:38] INFO:     127.0.0.1:53438 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-01-05 17:33:38] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -559,15 +554,17 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-03 02:32:33 TP0] Prefill batch. #new-seq: 1, #new-token: 6463, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-03 02:32:33] INFO:     127.0.0.1:55348 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+/actions-runner/_work/_tool/Python/3.9.20/x64/lib/python3.9/site-packages/torch/storage.py:414: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don&#39;t have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(io.BytesIO(b))
+[2025-01-05 17:33:52 TP0] Prefill batch. #new-seq: 1, #new-token: 6463, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-05 17:33:52] INFO:     127.0.0.1:53446 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"4df620b6042b4b4b835981f325f0924b","object":"chat.completion","created":1735871553,"model":"meta-llama/Llama-3.2-11B-Vision-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man in a yellow jacket ironing clothes on an ironing board attached to the back of a yellow taxi cab.","tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":6463,"total_tokens":6491,"completion_tokens":28,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{"id":"f3ea15c398984d90b71e1acc92d83ba0","object":"chat.completion","created":1736098432,"model":"meta-llama/Llama-3.2-11B-Vision-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a person ironing clothes on the back of a taxi cab.","tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":6463,"total_tokens":6480,"completion_tokens":17,"prompt_tokens_details":null}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -609,16 +606,18 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-03 02:32:34 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 6462, cache hit rate: 49.97%, token usage: 0.02, #running-req: 0, #queue-req: 0
-[2025-01-03 02:32:34 TP0] Decode batch. #running-req: 1, #token: 6469, token usage: 0.02, gen throughput (token/s): 3.61, #queue-req: 0
-[2025-01-03 02:32:34] INFO:     127.0.0.1:55352 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-05 17:33:53 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 6462, cache hit rate: 49.97%, token usage: 0.02, #running-req: 0, #queue-req: 0
+[2025-01-05 17:33:53 TP0] Decode batch. #running-req: 1, #token: 6480, token usage: 0.02, gen throughput (token/s): 2.46, #queue-req: 0
+[2025-01-05 17:33:53 TP0] Decode batch. #running-req: 1, #token: 6520, token usage: 0.02, gen throughput (token/s): 108.35, #queue-req: 0
+[2025-01-05 17:33:54 TP0] Decode batch. #running-req: 1, #token: 6560, token usage: 0.02, gen throughput (token/s): 107.81, #queue-req: 0
+[2025-01-05 17:33:54] INFO:     127.0.0.1:56552 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"6b7740c0d1e645dc91402da5fb5457ba","object":"chat.completion","created":1735871554,"model":"meta-llama/Llama-3.2-11B-Vision-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man ironing clothes on an ironing board that is set up on the back of a yellow taxi cab.","tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":6463,"total_tokens":6490,"completion_tokens":27,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{"id":"2070b481fd194219be5b160cdadd3f23","object":"chat.completion","created":1736098434,"model":"meta-llama/Llama-3.2-11B-Vision-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man ironing clothes on the back of a taxi cab, which is a common sight in New York City. This activity is often referred to as \"ironing on the go\" or \"ironing on the street.\" It is a common practice among some taxi drivers in New York City, particularly in Manhattan, where space is limited and laundromats or dry cleaners may be scarce. The practice is often seen as a cost-effective and convenient solution for drivers who need to iron their clothes quickly and efficiently.","tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":128009}],"usage":{"prompt_tokens":6463,"total_tokens":6570,"completion_tokens":107,"prompt_tokens_details":null}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -662,16 +661,15 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-03 02:32:35 TP0] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 6452, cache hit rate: 66.58%, token usage: 0.02, #running-req: 0, #queue-req: 0
-[2025-01-03 02:32:35 TP0] Decode batch. #running-req: 1, #token: 6483, token usage: 0.02, gen throughput (token/s): 31.18, #queue-req: 0
-[2025-01-03 02:32:35] INFO:     127.0.0.1:55358 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-05 17:33:55 TP0] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 6452, cache hit rate: 66.58%, token usage: 0.02, #running-req: 0, #queue-req: 0
+[2025-01-05 17:33:55] INFO:     127.0.0.1:44142 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man ironing clothes on an ironing board that is attached to the back of a yellow taxi cab.</strong></div>
+<strong style='color: #00008B;'>The image depicts a man ironing clothes on an ironing board attached to the back of a taxi cab.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
@@ -723,9 +721,10 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-03 02:32:36 TP0] Prefill batch. #new-seq: 1, #new-token: 12895, #cached-token: 0, cache hit rate: 39.99%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-03 02:32:36 TP0] Decode batch. #running-req: 1, #token: 12930, token usage: 0.04, gen throughput (token/s): 25.67, #queue-req: 0
-[2025-01-03 02:32:37] INFO:     127.0.0.1:55368 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-05 17:33:56 TP0] Prefill batch. #new-seq: 1, #new-token: 12895, #cached-token: 0, cache hit rate: 39.99%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-05 17:33:56 TP0] Decode batch. #running-req: 1, #token: 12904, token usage: 0.04, gen throughput (token/s): 16.47, #queue-req: 0
+[2025-01-05 17:33:56 TP0] Decode batch. #running-req: 1, #token: 12944, token usage: 0.04, gen throughput (token/s): 107.77, #queue-req: 0
+[2025-01-05 17:33:56] INFO:     127.0.0.1:44158 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -843,7 +842,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 03, 2025.
+  Last updated on Jan 05, 2025.
   <br/>
 </p>
   </div>
@@ -861,8 +860,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
