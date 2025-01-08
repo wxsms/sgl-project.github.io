@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Enabling cache for torch.compile &#8212; SGLang</title>
+    <title>Use Models From ModelScope &#8212; SGLang</title>
   
   
   
@@ -49,9 +49,10 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/torch_compile_cache';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/modelscope';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Example: Run Llama 3.1 405B" href="llama_405B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post4" />
@@ -103,8 +104,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -175,7 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
@@ -186,7 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn more</a></li>
 <li class="toctree-l1"><a class="reference internal" href="llama_405B.html">Example: Run Llama 3.1 405B</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Use Models From ModelScope</a></li>
 </ul>
 
     </div>
@@ -258,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/torch_compile_cache.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/modelscope.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +274,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/torch_compile_cache.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/modelscope.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -292,7 +291,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/torch_compile_cache.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/modelscope.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +321,7 @@
       
       
       
-      <li><a href="../_sources/references/torch_compile_cache.md" target="_blank"
+      <li><a href="../_sources/references/modelscope.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +384,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -396,11 +397,19 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Enabling cache for torch.compile</h1>
+    <h1>Use Models From ModelScope</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-take-qwen2-7b-instruct-as-an-example-launch-the-server">We take Qwen2-7B-Instruct as an example. Launch the Server:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -410,20 +419,29 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="enabling-cache-for-torch-compile">
-<h1>Enabling cache for torch.compile<a class="headerlink" href="#enabling-cache-for-torch-compile" title="Link to this heading">#</a></h1>
-<p>SGLang uses <code class="docutils literal notranslate"><span class="pre">max-autotune-no-cudagraphs</span></code> mode of torch.compile. The auto-tuning can be slow.
-If you want to deploy a model on many different machines, you can ship the torch.compile cache to these machines and skip the compilation steps.</p>
-<p>This is based on https://pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html</p>
-<ol class="arabic simple">
-<li><p>Generate the cache by setting TORCHINDUCTOR_CACHE_DIR and running the model once.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TORCHINDUCTOR_CACHE_DIR</span><span class="o">=/</span><span class="n">root</span><span class="o">/</span><span class="n">inductor_root_cache</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">torch</span><span class="o">-</span><span class="nb">compile</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="use-models-from-modelscope">
+<h1>Use Models From ModelScope<a class="headerlink" href="#use-models-from-modelscope" title="Link to this heading">#</a></h1>
+<p>To use a model from <a class="reference external" href="https://www.modelscope.cn">ModelScope</a>, set the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_USE_MODELSCOPE</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_MODELSCOPE</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Copy the cache folder to other machines and launch the server with <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code>.</p></li>
-</ol>
+<section id="we-take-qwen2-7b-instruct-as-an-example-launch-the-server">
+<h2>We take <a class="reference external" href="https://www.modelscope.cn/models/qwen/qwen2-7b-instruct">Qwen2-7B-Instruct</a> as an example. Launch the Server:<a class="headerlink" href="#we-take-qwen2-7b-instruct-as-an-example-launch-the-server" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>qwen/Qwen2-7B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+<p>Or start it by docker:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span>~/.cache/modelscope:/root/.cache/modelscope<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;SGLANG_USE_MODELSCOPE=true&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>lmsysorg/sglang:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>Qwen/Qwen2.5-7B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+<p>Note that modelscope uses a different cache directory than huggingface. You may need to set it manually to avoid running out of disk space.</p>
+</section>
 </section>
 
 
@@ -437,12 +455,37 @@ If you want to deploy a model on many different machines, you can ship the torch
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="llama_405B.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example: Run Llama 3.1 405B</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-take-qwen2-7b-instruct-as-an-example-launch-the-server">We take Qwen2-7B-Instruct as an example. Launch the Server:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

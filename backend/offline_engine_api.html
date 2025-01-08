@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post4" />
-    <meta name="docbuild:last-update" content="Jan 05, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 08, 2025"/>
   </head>
   
   
@@ -188,6 +188,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/llama_405B.html">Example: Run Llama 3.1 405B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
 
     </div>
@@ -468,13 +470,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.49it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.66it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.70it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.73it/s]
 Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.39it/s]
+100%|██████████| 23/23 [00:08&lt;00:00,  2.65it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -506,28 +508,24 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ameet. I am a Ph.D. student in the Department of Computer Science and Engineering at the Indian Institute of Technology (IIT) Hyderabad. My research area is Machine Learning and Deep Learning. I am currently working on the development of Deep Learning-based models for image and speech processing tasks. I am also interested in developing novel architectures and techniques for improving the efficiency and interpretability of Deep Learning models.
-In my free time, I enjoy hiking, reading, and trying out new recipes in the kitchen. I am also a fan of learning new programming languages and exploring new tools and technologies.
-
-Here are some of the technologies I am familiar with
+Generated text:  Elena and I am the new Teacher at the International School of Zug and Luzern. I am excited to be here and look forward to getting to know all of my new students and colleagues.
+I have a degree in Early Childhood Education from the University of Athens and a Master&#39;s degree in Special Education from the University of New Mexico. I have been teaching for over 15 years and have experience working with students of all ages and backgrounds.
+My classroom will be a collaborative and engaging environment where students are encouraged to explore, learn, and grow. I believe that every student is unique and talented and I will work with each student to help them reach
 ===============================
 Prompt: The president of the United States is
-Generated text:  the most powerful person in the world, and there are many reasons why. Here are some of the key powers and responsibilities that contribute to the president&#39;s immense power:
-1. Commander-in-Chief: The president is the commander-in-chief of the armed forces, which means they have ultimate authority over the military. They can deploy troops, order military operations, and make key decisions about national security.
-2. Chief Executive: As chief executive, the president is responsible for enforcing the laws of the land. They have the power to sign or veto laws passed by Congress, which means they can prevent or approve legislation.
-3. Chief Diplomat:
+Generated text:  the head of state and head of government of the United States. The president is directly elected by the people through the Electoral College. The president serves a four-year term, and can be re-elected once. The president has the power to veto legislation, appoint federal judges, and serve as the commander-in-chief of the armed forces. The president is also responsible for making key decisions on domestic and foreign policy. The president is assisted by the vice president, cabinet members, and other advisors.
+The president of the United States is the head of state and head of government of the United States. The president is directly elected by the people through the Electoral
 ===============================
 Prompt: The capital of France is
-Generated text:  not the city with the highest population. The city with the highest population is actually Lyon. However, the city of Paris is the capital of France and the country&#39;s largest city in terms of economic output, cultural impact, and tourist attractions.
-Paris, the City of Light, is famous for its stunning architecture, art museums, fashion, cuisine, and romantic atmosphere. It is a popular destination for tourists and a hub for business and culture.
-Lyon, on the other hand, is the second-largest city in France and a major economic center. It has a rich history, cultural attractions, and a vibrant food scene.
-Both cities are worth
+Generated text:  a must-visit destination, full of iconic landmarks, rich history, and vibrant culture. From the Eiffel Tower to the Louvre Museum, discover the City of Light like never before.
+Paris, the capital of France, is a global hub for fashion, art, and cuisine. The city is home to some of the world&#39;s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Arc de Triomphe. Visitors can explore the historic Latin Quarter, visit the world-renowned Louvre Museum, and stroll along the Seine River.
+In addition to its iconic landmarks, Paris is known for
 ===============================
 Prompt: The future of AI is
-Generated text:  here, and it&#39;s human-centric. What does that mean?
-The recent advancements in Artificial Intelligence (AI) have been nothing short of revolutionary. From virtual assistants like Siri and Alexa to self-driving cars, AI has transformed the way we live, work, and interact with one another. As AI continues to evolve, we&#39;re seeing a shift towards a more human-centric approach.
-So, what does it mean for AI to be human-centric?
-In essence, human-centric AI is designed to augment human capabilities, rather than replace them. It&#39;s focused on creating intelligent systems that work in harmony with humans, rather than trying to mimic their behavior.
+Generated text:  all about collaboration
+Artificial intelligence (AI) is an increasingly important tool for businesses and organizations, with applications ranging from customer service chatbots to complex decision-making algorithms. However, as AI technology continues to evolve, it’s becoming clear that the future of AI is not about a single, all-powerful supercomputer, but rather about collaboration between humans and machines.
+This concept, known as human-centered AI, emphasizes the importance of collaboration between humans and AI systems to achieve better outcomes. By working together, humans and AI can leverage each other’s strengths and weaknesses to create more effective solutions.
+There are several reasons why collaboration is becoming the future
 </pre></div></div>
 </div>
 </section>
@@ -565,19 +563,23 @@ In essence, human-centric AI is designed to augment human capabilities, rather t
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Oliver. I am a 8-year-old boy, and I am a 3rd-grade student. My favorite subjects are art, music, and P.E. I like to draw and paint and I also like to play soccer and ride my bike. My favorite animal is the tiger, and my favorite food is pizza. I like to play video games and watch TV on the weekends. I also like to go to the park and play with my friends. I like to help my mom and dad around the house and take care of my little sister.
-Hi, my name is Emma. I am a 7-year-old girl, and
+Generated text:  Kaitlyn.
+I&#39;m a 32-year-old, energetic, and optimistic individual who loves exploring new places and trying new things. I&#39;m a bit of a perfectionist, but I&#39;m always up for a challenge and enjoy learning from my mistakes.
+When I&#39;m not working, you can find me practicing yoga, cooking in the kitchen, or attempting to learn a new language (I&#39;m currently learning Spanish!). I&#39;m a bit of a night owl, so you&#39;ll often find me sipping coffee or tea late into the night, binge-watching my favorite TV shows or reading a good book.
+As for my interests, I&#39;m
 
 Prompt: The capital of France is
-Generated text:  famous for its history, art, fashion, cuisine and wine. These are just a few of the many reasons why Paris is one of the most visited cities in the world. But for many travelers, Paris is more than just a city – it’s an experience. Here are some of the top attractions and experiences to have in the City of Light.
-1. Visit the Eiffel Tower
-The Eiffel Tower is a must-see attraction in Paris. This iconic iron lattice tower was built for the 1889 World’s Fair and was initially intended to be a temporary structure. Today, it stands as the tallest building in Paris
+Generated text:  a city that requires no introduction. Its grand boulevards, historic landmarks, and artistic treasures are renowned worldwide. Yet, Paris remains a city full of surprises, offering an endless array of experiences for visitors. Whether you’re looking for the iconic Eiffel Tower, a romantic stroll along the Seine, or an exploration of the city’s many art museums, Paris has something for everyone.
+The City of Light is a must-visit destination for anyone interested in history, art, fashion, cuisine, and more. Here are some of the top things to do and see in Paris:
+Explore the Louvre Museum: The world’s largest
 
 Prompt: The future of AI is
-Generated text:  in the cloud
-As AI continues to transform various industries and aspects of our lives, the cloud will play an increasingly important role in its development and deployment. The cloud has enabled the widespread adoption of AI by providing scalable, on-demand access to computing resources and data storage. This has reduced the barriers to entry for companies looking to implement AI solutions, making it more accessible and affordable.
-The cloud also provides a number of benefits that are particularly well-suited to AI, such as:
-Scalability: Cloud providers can quickly scale up or down to meet the changing needs of AI workloads, which can be computationally intensive and require large amounts
+Generated text:  all about multi-agent systems, where many agents work together to achieve complex tasks.
+As AI continues to evolve, we&#39;re moving from single-agent systems, where one AI model performs a specific task, to multi-agent systems. In this setup, multiple AI models work together to achieve more complex and nuanced goals.
+At the heart of this shift is the concept of agent-to-agent communication and cooperation, where AI models interact with each other to achieve a shared objective.
+Here are some key aspects of multi-agent systems and their potential applications:
+Agent-to-Agent Communication
+In traditional AI systems, models communicate with humans through APIs or interfaces. In contrast, multi
 </pre></div></div>
 </div>
 </section>
@@ -619,19 +621,17 @@ Scalability: Cloud providers can quickly scale up or down to meet the changing n
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Cindy, and I am the mom of a 7-year-old boy who loves dinosaurs. His name is Jaxon, and he has a serious obsession with all things prehistoric. His room is a dinosaur wonderland, and I&#39;m pretty sure he&#39;s going to grow up to be a paleontologist one day.
-As a mom, I&#39;ve tried to encourage his passion and provide him with as many educational and fun experiences as possible. Recently, we went on a dinosaur-themed vacation to the American Museum of Natural History in New York City. Jaxon was in awe of the massive dinosaur skeletons on display, and I was impressed by the
+Generated text:  Claire. I&#39;m a 23-year-old American living in the south of Spain. I&#39;ve been here for about 6 months, and I have to say, it&#39;s been a rollercoaster of emotions. I&#39;m not sure if I&#39;m fully embracing the Spanish way of life, or if I&#39;m just pretending to be a local. Either way, I&#39;ve learned a lot about myself and the culture.
+My friends and I often have heated debates about the pros and cons of living in Spain. Some people love it here, while others, like me, are still figuring things out. We&#39;ve talked about everything from the siesta
 
 Prompt: The capital of France is
-Generated text:  Paris. The French language is the official language of France. The country is famous for its art, history, and fashion. It has a rich cultural heritage and has been a major influence on Western civilization.
-France is located in Western Europe, bordered by several countries including Belgium, Luxembourg, Germany, Switzerland, Italy, Spain, and Andorra. The country has a diverse geography, with mountains, rivers, and coastlines along the Atlantic and Mediterranean oceans.
-Paris, the capital city, is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Other notable cities include Lyon,
+Generated text:  Paris. While the majority of visitors to Paris come for the city’s culture, art, and history, there are numerous things to do and see in the city’s surroundings. The Louvre Museum, the Arc de Triomphe, and the Eiffel Tower are some of the most well-known Parisian landmarks. The city is famous for its cuisine, including croissants, cheese, and wine.
+The Eiffel Tower, one of the most recognizable landmarks in the world, is a must-visit attraction in Paris. This iron lattice tower was created in the late 19th century for the World’s Fair. Visitors may
 
 Prompt: The future of AI is
-Generated text:  bright – and it’s already changing the world around us. Artificial intelligence (AI) has come a long way in a short time, from being a hypothetical concept to a reality that is transforming industries, creating new opportunities, and solving complex problems. In this article, we will explore the current state of AI and its impact on our daily lives.
-The current state of AI
-AI has made tremendous progress in recent years, with significant advancements in areas such as:
-  1. Machine learning: AI systems can now learn from data and improve their performance over time, enabling applications such as image and speech recognition, natural language processing, and predictive
+Generated text:  being shaped by advancements in areas such as natural language processing (NLP), computer vision, and deep learning. But researchers are also exploring new frontiers, such as the development of more human-like AI systems that can understand and mimic human emotions, cognition, and behavior.
+Researchers are using various approaches to create more human-like AI systems, including cognitive architectures, neural networks, and hybrid approaches that combine different techniques. For example, researchers are developing AI systems that can understand and respond to human emotions, such as empathy and emotional intelligence.
+One of the most exciting areas of research in AI is the development of explainable AI (XAI). X
 </pre></div></div>
 </div>
 </section>
@@ -675,24 +675,18 @@ AI has made tremendous progress in recent years, with significant advancements i
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Shadia and I am a 3rd year student at the University of Technology, Jamaica. I am studying Computer Science and I am very interested in learning about different programming languages and developing software applications.
-I am particularly interested in the use of technology to improve the lives of people in my community. I have always been fascinated by how technology can be used to solve real-world problems and make a positive impact on society.
-In my free time, I enjoy reading about technology and learning new programming languages. I also like to participate in coding challenges and hackathons to test my skills and learn from others.
-
-I am excited to be part of this
+Generated text:  Kirsty and I am a student at the University of Edinburgh. I am a third year Psychology student, currently studying the research methods module, and I am excited to be one of the researchers on this project. I am looking forward to working alongside the other team members and contributing to the study of how music can impact our emotional responses.
+I am particularly interested in the effects of music on our emotional responses, as I have noticed how music can evoke a range of emotions in myself and others. I am eager to explore this topic further and gain a deeper understanding of the mechanisms underlying the impact of music on our emotions. I believe that this project
 
 Prompt: The capital of France is
-Generated text:  full of history, culture, and of course, delicious food! Whether you’re looking to explore the iconic landmarks, experience the city’s vibrant nightlife, or indulge in some French cuisine, Paris is a must-visit destination.
-Here are some of the top things to do in Paris:
-Visit the Eiffel Tower: This iconic iron lattice tower is a must-visit attraction in Paris. You can take the stairs or elevator to the top for breathtaking views of the city.
-Explore the Louvre Museum: The world’s largest art museum is home to some of the most famous paintings in history, including the Mona Lisa. Be sure to book
+Generated text:  a city of grandeur, style and romance. From the iconic Eiffel Tower to the world-class museums and fashion boutiques, Paris is a city that has something for everyone.
+The city has a rich history dating back to the 12th century, and its architectural landmarks reflect its many transformations over the years. Visitors can explore the magnificent Notre Dame Cathedral, the imposing Arc de Triomphe and the beautiful Palace of Versailles, among many other iconic sites.
+Paris is also renowned for its cuisine, with famous dishes such as escargots, ratatouille and croissants. The city is home to some of the
 
 Prompt: The future of AI is
-Generated text:  not just about intelligent machines, but about how humans will interact with and be transformed by these technologies. The goal of this book is to explore the social implications of artificial intelligence, and to provide a framework for thinking about the future of human-AI interaction.
-The book is organized around five key themes:
-1. **Human-Centered AI**: How can we design AI systems that are centered on human values and needs?
-2. **AI and Society**: What are the implications of AI for social structures, institutions, and relationships?
-3. **Human-AI Interaction**: How will humans interact with AI systems, and how will these interactions shape our
+Generated text:  coming, and it&#39;s all about reinforcement learning
+Reinforcement learning is a type of machine learning that is becoming increasingly important in the field of artificial intelligence (AI). It&#39;s a subfield of machine learning that deals with the training of artificial agents to make decisions and take actions in complex, uncertain environments. In this article, we&#39;ll explore the future of reinforcement learning and how it&#39;s shaping the field of AI.
+Reinforcement learning is a type of machine learning that is inspired by the way humans learn through trial and error. In reinforcement learning, an artificial agent learns to make decisions and take actions in a specific environment, such as
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -793,7 +787,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 05, 2025.
+  Last updated on Jan 08, 2025.
   <br/>
 </p>
   </div>
