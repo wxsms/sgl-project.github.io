@@ -184,12 +184,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/llama_405B.html">Run Llama 3.1 405B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/llama_405B.html">Example: Run Llama 3.1 405B</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
 
     </div>
@@ -470,13 +470,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.70it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.73it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  6.06it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.67it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.21it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
 
-100%|██████████| 23/23 [00:08&lt;00:00,  2.65it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  3.84it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -508,24 +508,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Elena and I am the new Teacher at the International School of Zug and Luzern. I am excited to be here and look forward to getting to know all of my new students and colleagues.
-I have a degree in Early Childhood Education from the University of Athens and a Master&#39;s degree in Special Education from the University of New Mexico. I have been teaching for over 15 years and have experience working with students of all ages and backgrounds.
-My classroom will be a collaborative and engaging environment where students are encouraged to explore, learn, and grow. I believe that every student is unique and talented and I will work with each student to help them reach
+Generated text:  Travis and I am a senior at the University of Southern California. I am currently studying business with a focus on finance. I am excited to start this internship program with American Express and I am looking forward to learning more about the financial industry.
+As a student, I have been involved in several extracurricular activities including being a member of the Trojan Investment Club, where I work alongside other students to manage a portfolio of stocks and bonds. I have also been involved in a few entrepreneurial ventures, including starting a small e-commerce business with a friend.
+I am excited to learn more about the financial industry and gain experience in a professional setting.
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States. The president is directly elected by the people through the Electoral College. The president serves a four-year term, and can be re-elected once. The president has the power to veto legislation, appoint federal judges, and serve as the commander-in-chief of the armed forces. The president is also responsible for making key decisions on domestic and foreign policy. The president is assisted by the vice president, cabinet members, and other advisors.
-The president of the United States is the head of state and head of government of the United States. The president is directly elected by the people through the Electoral
+Generated text:  about to take a very big step into the world of climate change, one that has the potential to make a significant dent in America’s contributions to global warming.
+President Joe Biden is set to unveil his long-awaited plan to tackle climate change this week. The plan is expected to include a number of ambitious goals, including reducing the country’s greenhouse gas emissions by 50-52% by 2030, compared to 2005 levels, and reaching net-zero emissions by 2050.
+Biden’s plan is expected to include a range of measures, including:
+Increasing renewable energy production and deployment
+Improving energy efficiency in buildings and industry
 ===============================
 Prompt: The capital of France is
-Generated text:  a must-visit destination, full of iconic landmarks, rich history, and vibrant culture. From the Eiffel Tower to the Louvre Museum, discover the City of Light like never before.
-Paris, the capital of France, is a global hub for fashion, art, and cuisine. The city is home to some of the world&#39;s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Arc de Triomphe. Visitors can explore the historic Latin Quarter, visit the world-renowned Louvre Museum, and stroll along the Seine River.
-In addition to its iconic landmarks, Paris is known for
+Generated text:  the City of Light, the most visited city in the world and a must-see destination. Paris is known for its stunning architecture, rich history, fashion, art, and culture. From the iconic Eiffel Tower to the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe, Paris has something to offer to everyone. Here are the top 10 things to do in Paris:
+1. Explore the Eiffel Tower: The Eiffel Tower is one of the most recognizable landmarks in the world and a symbol of Paris. You can take a lift to the top for breathtaking views of the city.
+
 ===============================
 Prompt: The future of AI is
-Generated text:  all about collaboration
-Artificial intelligence (AI) is an increasingly important tool for businesses and organizations, with applications ranging from customer service chatbots to complex decision-making algorithms. However, as AI technology continues to evolve, it’s becoming clear that the future of AI is not about a single, all-powerful supercomputer, but rather about collaboration between humans and machines.
-This concept, known as human-centered AI, emphasizes the importance of collaboration between humans and AI systems to achieve better outcomes. By working together, humans and AI can leverage each other’s strengths and weaknesses to create more effective solutions.
-There are several reasons why collaboration is becoming the future
+Generated text:  exciting, but it also raises many questions about our roles, responsibilities and rights in society. This blog is part of a series exploring some of these issues.
+The ability of AI systems to learn from data and improve their performance over time has led to the development of predictive policing strategies. These strategies use machine learning algorithms to identify individuals who are likely to commit crimes, often based on their past behavior or other characteristics. However, the use of predictive policing has raised concerns about bias, profiling, and the potential for targeting certain communities or individuals unfairly.
+This is because the data used to train these algorithms often reflects existing biases and prejudices in society, which
 </pre></div></div>
 </div>
 </section>
@@ -563,23 +565,19 @@ There are several reasons why collaboration is becoming the future
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Kaitlyn.
-I&#39;m a 32-year-old, energetic, and optimistic individual who loves exploring new places and trying new things. I&#39;m a bit of a perfectionist, but I&#39;m always up for a challenge and enjoy learning from my mistakes.
-When I&#39;m not working, you can find me practicing yoga, cooking in the kitchen, or attempting to learn a new language (I&#39;m currently learning Spanish!). I&#39;m a bit of a night owl, so you&#39;ll often find me sipping coffee or tea late into the night, binge-watching my favorite TV shows or reading a good book.
-As for my interests, I&#39;m
+Generated text:  Tom, and I am a 17-year-old high school student. I am excited to share my journey with you, as I have just started my senior year and have big plans ahead.
+I am a bit of a perfectionist, which can sometimes be a blessing and a curse. I like to stay organized and have a plan in place, but at the same time, it can make me a bit too hard on myself when things don’t go according to plan.
+Throughout my high school years, I have been fortunate enough to have had many opportunities to explore my interests and passions. I have been involved in the school debate team, which
 
 Prompt: The capital of France is
-Generated text:  a city that requires no introduction. Its grand boulevards, historic landmarks, and artistic treasures are renowned worldwide. Yet, Paris remains a city full of surprises, offering an endless array of experiences for visitors. Whether you’re looking for the iconic Eiffel Tower, a romantic stroll along the Seine, or an exploration of the city’s many art museums, Paris has something for everyone.
-The City of Light is a must-visit destination for anyone interested in history, art, fashion, cuisine, and more. Here are some of the top things to do and see in Paris:
-Explore the Louvre Museum: The world’s largest
+Generated text:  a city of enchantment, a place where art, culture, fashion, and history come together in a swirl of joie de vivre. Whether you&#39;re wandering the charming streets of Montmartre, strolling along the Seine, or shopping on the Champs-Élysées, Paris is a city that will leave you breathless and yearning for more.
+The City of Light is famous for its iconic landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Arc de Triomphe. But there&#39;s so much more to Paris than its grand monuments. The city is a treasure trove of museums
 
 Prompt: The future of AI is
-Generated text:  all about multi-agent systems, where many agents work together to achieve complex tasks.
-As AI continues to evolve, we&#39;re moving from single-agent systems, where one AI model performs a specific task, to multi-agent systems. In this setup, multiple AI models work together to achieve more complex and nuanced goals.
-At the heart of this shift is the concept of agent-to-agent communication and cooperation, where AI models interact with each other to achieve a shared objective.
-Here are some key aspects of multi-agent systems and their potential applications:
-Agent-to-Agent Communication
-In traditional AI systems, models communicate with humans through APIs or interfaces. In contrast, multi
+Generated text:  bright, but we must navigate its challenges
+Artificial intelligence has the potential to revolutionize many aspects of our lives, from healthcare and education to transportation and finance. However, as AI becomes increasingly sophisticated, it also raises important questions about its impact on society and our collective future.
+One of the biggest challenges facing the development of AI is ensuring that it is developed and used in a way that benefits all people, not just those with the resources to invest in it. This includes addressing issues such as bias, privacy, and job displacement.
+To ensure that AI is developed and used responsibly, we need to prioritize ethics and transparency in its development.
 </pre></div></div>
 </div>
 </section>
@@ -621,17 +619,18 @@ In traditional AI systems, models communicate with humans through APIs or interf
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Claire. I&#39;m a 23-year-old American living in the south of Spain. I&#39;ve been here for about 6 months, and I have to say, it&#39;s been a rollercoaster of emotions. I&#39;m not sure if I&#39;m fully embracing the Spanish way of life, or if I&#39;m just pretending to be a local. Either way, I&#39;ve learned a lot about myself and the culture.
-My friends and I often have heated debates about the pros and cons of living in Spain. Some people love it here, while others, like me, are still figuring things out. We&#39;ve talked about everything from the siesta
+Generated text:  Chris, I am a second-year MSc student at the University of Warwick studying a course called Business and Management. I have lived in Warwick since 2017 and I love the campus and the university environment. I am an international student from Malaysia and I am excited to share my experiences and perspectives on studying in the UK.
+I have always been fascinated by the world of business and management, and I chose this course to broaden my knowledge and skills in this field. As a Malaysian student, I was attracted to the UK&#39;s high standard of education and the diversity of students at the university. I am enjoying my time at the University of Warwick
 
 Prompt: The capital of France is
-Generated text:  Paris. While the majority of visitors to Paris come for the city’s culture, art, and history, there are numerous things to do and see in the city’s surroundings. The Louvre Museum, the Arc de Triomphe, and the Eiffel Tower are some of the most well-known Parisian landmarks. The city is famous for its cuisine, including croissants, cheese, and wine.
-The Eiffel Tower, one of the most recognizable landmarks in the world, is a must-visit attraction in Paris. This iron lattice tower was created in the late 19th century for the World’s Fair. Visitors may
+Generated text:  Paris. The city of Paris is situated on the Seine River, in the northern part of the country. The population of Paris is approximately 2.2 million people. The city is one of the most visited cities in the world, with millions of tourists visiting each year. Paris is known for its beauty, art, fashion, and cuisine.
+The city has a rich history, dating back to the 3rd century BC. The Romans founded the city, and it was named Lutetia. The city became the capital of France in the 5th century. During the Middle Ages, Paris was a major center of learning
 
 Prompt: The future of AI is
-Generated text:  being shaped by advancements in areas such as natural language processing (NLP), computer vision, and deep learning. But researchers are also exploring new frontiers, such as the development of more human-like AI systems that can understand and mimic human emotions, cognition, and behavior.
-Researchers are using various approaches to create more human-like AI systems, including cognitive architectures, neural networks, and hybrid approaches that combine different techniques. For example, researchers are developing AI systems that can understand and respond to human emotions, such as empathy and emotional intelligence.
-One of the most exciting areas of research in AI is the development of explainable AI (XAI). X
+Generated text:  bright – but only if we create AI that is truly inclusive
+Artificial intelligence (AI) has the potential to revolutionize countless industries and aspects of our lives. However, if we don&#39;t prioritize diversity and inclusion in its development, we risk perpetuating existing social biases and creating new problems. Here are a few reasons why we need to make AI more inclusive:
+Lack of diversity in AI development teams
+Historically, the tech industry has been predominantly white and male. This lack of diversity in AI development teams means that the perspectives and experiences of marginalized groups are underrepresented. As a result, AI systems may perpetuate existing biases and
 </pre></div></div>
 </div>
 </section>
@@ -675,18 +674,20 @@ One of the most exciting areas of research in AI is the development of explainab
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Kirsty and I am a student at the University of Edinburgh. I am a third year Psychology student, currently studying the research methods module, and I am excited to be one of the researchers on this project. I am looking forward to working alongside the other team members and contributing to the study of how music can impact our emotional responses.
-I am particularly interested in the effects of music on our emotional responses, as I have noticed how music can evoke a range of emotions in myself and others. I am eager to explore this topic further and gain a deeper understanding of the mechanisms underlying the impact of music on our emotions. I believe that this project
+Generated text:  Emma. I am a 20-year-old psychology student with a passion for playing the piano. I enjoy writing poetry and short stories in my free time. I like to read books on psychology, philosophy, and history. I am interested in traveling and experiencing different cultures.
+The psychological perspectives on why we do the things we do are complex and multifaceted. The interaction of internal and external factors is intricate, making it challenging to determine the exact reasons behind human behavior. However, the following perspectives can provide some insight into why people engage in certain behaviors.
+The Biological Perspective suggests that behavior is determined by genetics and neurotransmitters in the brain.
 
 Prompt: The capital of France is
-Generated text:  a city of grandeur, style and romance. From the iconic Eiffel Tower to the world-class museums and fashion boutiques, Paris is a city that has something for everyone.
-The city has a rich history dating back to the 12th century, and its architectural landmarks reflect its many transformations over the years. Visitors can explore the magnificent Notre Dame Cathedral, the imposing Arc de Triomphe and the beautiful Palace of Versailles, among many other iconic sites.
-Paris is also renowned for its cuisine, with famous dishes such as escargots, ratatouille and croissants. The city is home to some of the
+Generated text:  a city of unparalleled beauty and elegance. The City of Light has been a cultural and artistic hub for centuries, attracting visitors from around the world with its stunning architecture, world-class museums, and charming atmosphere.
+Must-see attractions in Paris include the iconic Eiffel Tower, the majestic Notre Dame Cathedral, and the Louvre Museum, which houses some of the world&#39;s most famous paintings, including the Mona Lisa. Visitors can also explore the charming streets of Montmartre, the Latin Quarter, and the Champs-Élysées, where they can find cafes, shops, and street performers.
+Paris is also known for its fashion,
 
 Prompt: The future of AI is
-Generated text:  coming, and it&#39;s all about reinforcement learning
-Reinforcement learning is a type of machine learning that is becoming increasingly important in the field of artificial intelligence (AI). It&#39;s a subfield of machine learning that deals with the training of artificial agents to make decisions and take actions in complex, uncertain environments. In this article, we&#39;ll explore the future of reinforcement learning and how it&#39;s shaping the field of AI.
-Reinforcement learning is a type of machine learning that is inspired by the way humans learn through trial and error. In reinforcement learning, an artificial agent learns to make decisions and take actions in a specific environment, such as
+Generated text:  looking brighter by the day, with breakthroughs in natural language processing, computer vision, and reinforcement learning propelling the field forward. One of the most exciting areas of research is multimodal learning, which involves the integration of different AI models and data types to create more comprehensive and effective systems.
+Multimodal learning has many potential applications, including:
+1. Image and text analysis: AI systems can learn to recognize patterns in images and text, and combine this information to improve tasks such as object detection, sentiment analysis, and image captioning.
+2. Human-computer interaction: Multimodal learning can enable AI systems to understand and respond to
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
