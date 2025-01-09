@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post4" />
-    <meta name="docbuild:last-update" content="Jan 08, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 09, 2025"/>
   </head>
   
   
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Optimizations in SGLang</a></li>
 </ul>
 
     </div>
@@ -385,9 +386,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -403,14 +402,6 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-take-qwen2-7b-instruct-as-an-example-launch-the-server">We take Qwen2-7B-Instruct as an example. Launch the Server:</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -426,8 +417,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_MODELSCOPE</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
-<section id="we-take-qwen2-7b-instruct-as-an-example-launch-the-server">
-<h2>We take <a class="reference external" href="https://www.modelscope.cn/models/qwen/qwen2-7b-instruct">Qwen2-7B-Instruct</a> as an example. Launch the Server:<a class="headerlink" href="#we-take-qwen2-7b-instruct-as-an-example-launch-the-server" title="Link to this heading">#</a></h2>
+<p>We take <a class="reference external" href="https://www.modelscope.cn/models/qwen/qwen2-7b-instruct">Qwen2-7B-Instruct</a> as an example.</p>
+<p>Launch the Server:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>qwen/Qwen2-7B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
@@ -442,7 +433,6 @@
 </pre></div>
 </div>
 <p>Note that modelscope uses a different cache directory than huggingface. You may need to set it manually to avoid running out of disk space.</p>
-</section>
 </section>
 
 
@@ -481,22 +471,6 @@
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-take-qwen2-7b-instruct-as-an-example-launch-the-server">We take Qwen2-7B-Instruct as an example. Launch the Server:</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -525,7 +499,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 08, 2025.
+  Last updated on Jan 09, 2025.
   <br/>
 </p>
   </div>

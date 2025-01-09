@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post4" />
-    <meta name="docbuild:last-update" content="Jan 08, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 09, 2025"/>
   </head>
   
   
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Optimizations in SGLang</a></li>
 </ul>
 
     </div>
@@ -470,13 +471,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  6.06it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.67it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.21it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.39it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.20it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.53it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.49it/s]
 
-100%|██████████| 23/23 [00:05&lt;00:00,  3.84it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.06it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -508,26 +509,24 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Travis and I am a senior at the University of Southern California. I am currently studying business with a focus on finance. I am excited to start this internship program with American Express and I am looking forward to learning more about the financial industry.
-As a student, I have been involved in several extracurricular activities including being a member of the Trojan Investment Club, where I work alongside other students to manage a portfolio of stocks and bonds. I have also been involved in a few entrepreneurial ventures, including starting a small e-commerce business with a friend.
-I am excited to learn more about the financial industry and gain experience in a professional setting.
+Generated text:  Larissa and I&#39;m a 3D artist from Brazil. I&#39;m a self-taught artist and I&#39;ve been working with 3D art for about 6 years now. I specialize in creating digital illustrations and concept art for games, movies and books.
+I&#39;m really passionate about sci-fi and fantasy art, and I love experimenting with different styles and techniques to create unique and captivating pieces. My art often features a mix of realistic and stylized elements, blending digital painting with 3D modeling and texturing.
+When I&#39;m not working on my art, I love playing video games, watching anime and reading fantasy novels.
 ===============================
 Prompt: The president of the United States is
-Generated text:  about to take a very big step into the world of climate change, one that has the potential to make a significant dent in America’s contributions to global warming.
-President Joe Biden is set to unveil his long-awaited plan to tackle climate change this week. The plan is expected to include a number of ambitious goals, including reducing the country’s greenhouse gas emissions by 50-52% by 2030, compared to 2005 levels, and reaching net-zero emissions by 2050.
-Biden’s plan is expected to include a range of measures, including:
-Increasing renewable energy production and deployment
-Improving energy efficiency in buildings and industry
+Generated text:  not above the law, despite the &#34;absolute immunity&#34; that has been claimed by some of his supporters. That is the gist of a ruling handed down by the U.S. Court of Appeals for the D.C. Circuit on Thursday.
+The court&#39;s decision was a major victory for the House of Representatives, which had sought to enforce a subpoena for documents related to President Trump&#39;s dealings with Ukraine. The Trump administration had argued that the president was immune from prosecution while in office, and that the House&#39;s subpoena was an overreach of Congress&#39;s authority.
+The court rejected that argument, ruling that the president is not above the law. &#34;A
 ===============================
 Prompt: The capital of France is
-Generated text:  the City of Light, the most visited city in the world and a must-see destination. Paris is known for its stunning architecture, rich history, fashion, art, and culture. From the iconic Eiffel Tower to the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe, Paris has something to offer to everyone. Here are the top 10 things to do in Paris:
-1. Explore the Eiffel Tower: The Eiffel Tower is one of the most recognizable landmarks in the world and a symbol of Paris. You can take a lift to the top for breathtaking views of the city.
-
+Generated text:  a great place to explore and learn about history, culture, and art. There are many museums, monuments, and landmarks to see and visit. Some popular attractions in Paris include the Eiffel Tower, the Louvre Museum, Notre Dame Cathedral, and the Arc de Triomphe.
+Paris is also known for its fashion, cuisine, and romantic atmosphere. Visitors can enjoy a variety of activities, such as taking a river cruise, visiting a cabaret show, or simply strolling along the Seine River.
+The city has a rich history, with many historical events and figures having shaped its development. Visitors can learn about the city&#39;s
 ===============================
 Prompt: The future of AI is
-Generated text:  exciting, but it also raises many questions about our roles, responsibilities and rights in society. This blog is part of a series exploring some of these issues.
-The ability of AI systems to learn from data and improve their performance over time has led to the development of predictive policing strategies. These strategies use machine learning algorithms to identify individuals who are likely to commit crimes, often based on their past behavior or other characteristics. However, the use of predictive policing has raised concerns about bias, profiling, and the potential for targeting certain communities or individuals unfairly.
-This is because the data used to train these algorithms often reflects existing biases and prejudices in society, which
+Generated text:  bright, but so are the challenges that lie ahead. In this podcast, AI experts and innovators discuss the most pressing issues and opportunities in the field, from bias and ethics to regulation and impact on society.
+The future of AI is bright, but so are the challenges that lie ahead. In this podcast, AI experts and innovators discuss the most pressing issues and opportunities in the field, from bias and ethics to regulation and impact on society.
+  1. AI for Social Good: How AI is Helping to Address Global Challenges ## AI for Social Good: How AI is Helping to Address Global Challenges In this episode, we&#39;re talking about
 </pre></div></div>
 </div>
 </section>
@@ -565,19 +564,17 @@ This is because the data used to train these algorithms often reflects existing 
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Tom, and I am a 17-year-old high school student. I am excited to share my journey with you, as I have just started my senior year and have big plans ahead.
-I am a bit of a perfectionist, which can sometimes be a blessing and a curse. I like to stay organized and have a plan in place, but at the same time, it can make me a bit too hard on myself when things don’t go according to plan.
-Throughout my high school years, I have been fortunate enough to have had many opportunities to explore my interests and passions. I have been involved in the school debate team, which
+Generated text:  Matt and I am a senior at California State University, Long Beach. I am a communications major with a focus on digital media. My passion is creating engaging stories through various forms of media such as video, photography, and writing. I have experience working in video production, and I am excited to continue pursuing this passion as I move into the industry.
+My experience in video production started in my freshman year of college. I was asked to be part of a video production team that was working on a promotional video for our school&#39;s recreation and wellness center. This experience sparked my interest in video production and I continued to work on various projects throughout my
 
 Prompt: The capital of France is
-Generated text:  a city of enchantment, a place where art, culture, fashion, and history come together in a swirl of joie de vivre. Whether you&#39;re wandering the charming streets of Montmartre, strolling along the Seine, or shopping on the Champs-Élysées, Paris is a city that will leave you breathless and yearning for more.
-The City of Light is famous for its iconic landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Arc de Triomphe. But there&#39;s so much more to Paris than its grand monuments. The city is a treasure trove of museums
+Generated text:  Paris, and it is known for its beautiful architecture, art museums, and fashion. However, the largest city in France is Marseille, which is located on the Mediterranean coast.
+France is a country located in Western Europe, bordered by several countries including Belgium, Luxembourg, Germany, Switzerland, Italy, and Spain. It has a diverse geography, with mountains, forests, and a long coastline along the Atlantic and Mediterranean seas.
+The country has a rich history, with ancient civilizations such as the Gauls and Romans leaving their mark. France has also played a significant role in European history, including being a major power in the Middle Ages and a key
 
 Prompt: The future of AI is
-Generated text:  bright, but we must navigate its challenges
-Artificial intelligence has the potential to revolutionize many aspects of our lives, from healthcare and education to transportation and finance. However, as AI becomes increasingly sophisticated, it also raises important questions about its impact on society and our collective future.
-One of the biggest challenges facing the development of AI is ensuring that it is developed and used in a way that benefits all people, not just those with the resources to invest in it. This includes addressing issues such as bias, privacy, and job displacement.
-To ensure that AI is developed and used responsibly, we need to prioritize ethics and transparency in its development.
+Generated text:  not in the clouds, but in the hands of people who are creating a new generation of AI-powered robots and machines. With the advent of AI, we are seeing a rise in the development of robots and machines that can learn, adapt, and interact with humans in increasingly sophisticated ways. As AI becomes more ubiquitous, we can expect to see more robots and machines that can perform tasks that were previously thought to be the exclusive domain of humans.
+The latest advancements in AI have opened up a wide range of possibilities for robots and machines to perform complex tasks. From healthcare to education, and from manufacturing to transportation, AI-powered robots and machines are changing
 </pre></div></div>
 </div>
 </section>
@@ -619,18 +616,19 @@ To ensure that AI is developed and used responsibly, we need to prioritize ethic
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Chris, I am a second-year MSc student at the University of Warwick studying a course called Business and Management. I have lived in Warwick since 2017 and I love the campus and the university environment. I am an international student from Malaysia and I am excited to share my experiences and perspectives on studying in the UK.
-I have always been fascinated by the world of business and management, and I chose this course to broaden my knowledge and skills in this field. As a Malaysian student, I was attracted to the UK&#39;s high standard of education and the diversity of students at the university. I am enjoying my time at the University of Warwick
+Generated text:  Zairah, and I am a Licensed Massage Therapist (LMT). I graduated from the Institute of Integrative Therapies in Fort Lauderdale, Florida in 2010. I have been practicing massage therapy for over 10 years and I have worked with clients of all ages, backgrounds, and body types. My passion is helping individuals manage stress, alleviate pain, and improve their overall well-being.
+I have experience working with clients who have chronic pain, fibromyalgia, sports injuries, and post-operative recovery. My approach to massage therapy is holistic, integrating various techniques to address both physical and emotional needs. I utilize a
 
 Prompt: The capital of France is
-Generated text:  Paris. The city of Paris is situated on the Seine River, in the northern part of the country. The population of Paris is approximately 2.2 million people. The city is one of the most visited cities in the world, with millions of tourists visiting each year. Paris is known for its beauty, art, fashion, and cuisine.
-The city has a rich history, dating back to the 3rd century BC. The Romans founded the city, and it was named Lutetia. The city became the capital of France in the 5th century. During the Middle Ages, Paris was a major center of learning
+Generated text:  one of the world&#39;s greatest cities. With its grand history, rich culture, and unforgettable landmarks, Paris is a destination that every traveler should experience at least once. Here are some of the must-visit attractions and experiences that you shouldn&#39;t miss while in the City of Light.
+1. The Eiffel Tower: The iconic iron lattice tower is the most recognizable landmark in Paris and a must-visit attraction. Take the elevator to the top for breathtaking views of the city.
+2. The Louvre Museum: One of the world&#39;s largest and most famous museums, the Louvre is home to an impressive collection of art and artifacts,
 
 Prompt: The future of AI is
-Generated text:  bright – but only if we create AI that is truly inclusive
-Artificial intelligence (AI) has the potential to revolutionize countless industries and aspects of our lives. However, if we don&#39;t prioritize diversity and inclusion in its development, we risk perpetuating existing social biases and creating new problems. Here are a few reasons why we need to make AI more inclusive:
-Lack of diversity in AI development teams
-Historically, the tech industry has been predominantly white and male. This lack of diversity in AI development teams means that the perspectives and experiences of marginalized groups are underrepresented. As a result, AI systems may perpetuate existing biases and
+Generated text:  all about relationships. Not just human relationships, but relationships between people, machines, and the broader systems that make up our world.
+The notion of &#34; relationships&#34; in AI is being redefined, from the way we perceive, interact, and engage with digital objects, to the way we analyze and understand complex systems. As we move forward in the AI space, the concepts of relationships, network effects, and connectedness will become more prominent. Here are some trends that will shape the future of AI in the realm of relationships:
+1.  Human-Machine Interactions
+The rise of human-centered AI will continue to shape the way we
 </pre></div></div>
 </div>
 </section>
@@ -674,20 +672,19 @@ Historically, the tech industry has been predominantly white and male. This lack
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Emma. I am a 20-year-old psychology student with a passion for playing the piano. I enjoy writing poetry and short stories in my free time. I like to read books on psychology, philosophy, and history. I am interested in traveling and experiencing different cultures.
-The psychological perspectives on why we do the things we do are complex and multifaceted. The interaction of internal and external factors is intricate, making it challenging to determine the exact reasons behind human behavior. However, the following perspectives can provide some insight into why people engage in certain behaviors.
-The Biological Perspective suggests that behavior is determined by genetics and neurotransmitters in the brain.
+Generated text:  Jack and I&#39;m a travel writer and photographer. I have always been passionate about travel and exploring new cultures. I have visited over 40 countries across the world and I am always on the lookout for new destinations to discover. I write about my travel experiences on my blog and I also work with travel companies and tourism boards to promote their destinations. I am based in London but I love to travel and explore new places. In my free time, I enjoy hiking, rock climbing and trying out new foods. I&#39;m always looking for inspiration for my next travel adventure.
+Read more about me on my About page.
+You can find me on social
 
 Prompt: The capital of France is
-Generated text:  a city of unparalleled beauty and elegance. The City of Light has been a cultural and artistic hub for centuries, attracting visitors from around the world with its stunning architecture, world-class museums, and charming atmosphere.
-Must-see attractions in Paris include the iconic Eiffel Tower, the majestic Notre Dame Cathedral, and the Louvre Museum, which houses some of the world&#39;s most famous paintings, including the Mona Lisa. Visitors can also explore the charming streets of Montmartre, the Latin Quarter, and the Champs-Élysées, where they can find cafes, shops, and street performers.
-Paris is also known for its fashion,
+Generated text:  Paris, and it is known for its stunning landmarks, historic architecture, fashion, cuisine, and culture. From the Eiffel Tower to the Louvre Museum, Paris has something for everyone.
+The French Riviera, also known as the Côte d&#39;Azur, is a popular tourist destination located on the Mediterranean coast of France. It is known for its beautiful beaches, clear waters, and picturesque towns such as Saint-Tropez and Cannes.
+The French Alps offer a range of outdoor activities such as skiing, hiking, and mountain biking, and are a popular destination for winter sports enthusiasts. The French Alps are also home to many
 
 Prompt: The future of AI is
-Generated text:  looking brighter by the day, with breakthroughs in natural language processing, computer vision, and reinforcement learning propelling the field forward. One of the most exciting areas of research is multimodal learning, which involves the integration of different AI models and data types to create more comprehensive and effective systems.
-Multimodal learning has many potential applications, including:
-1. Image and text analysis: AI systems can learn to recognize patterns in images and text, and combine this information to improve tasks such as object detection, sentiment analysis, and image captioning.
-2. Human-computer interaction: Multimodal learning can enable AI systems to understand and respond to
+Generated text:  in the hands of the people who will be impacted by it the most – the public. But how can we, the public, participate in shaping the future of AI in a way that is inclusive, diverse, and equitable? Here are some key takeaways from the AI for Social Good Summit and the 2023 AI for Everyone conference.
+The AI for Social Good Summit
+The AI for Social Good Summit, held in October 2023, brought together experts from various fields to discuss the role of AI in addressing social issues. The summit highlighted the need for a more inclusive and equitable approach to AI development and deployment. Key takeaways include
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -788,7 +785,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 08, 2025.
+  Last updated on Jan 09, 2025.
   <br/>
 </p>
   </div>
