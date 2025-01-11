@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DeepSeek Model Optimizations in SGLang &#8212; SGLang</title>
+    <title>DeepSeek Model Optimizations &#8212; SGLang</title>
   
   
   
@@ -52,7 +52,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'references/deepseek';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Learn more" href="learn_more.html" />
+    <link rel="next" title="Run Llama 3.1 405B" href="llama_405B.html" />
+    <link rel="prev" title="Custom Chat Template in SGLang Runtime" href="custom_chat_template.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post5" />
@@ -161,7 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs (JSON, Regex, EBNF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
@@ -180,13 +181,13 @@
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Model Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="llama_405B.html">Run Llama 3.1 405B</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn more</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Model Optimizations in SGLang</a></li>
 </ul>
 
     </div>
@@ -398,7 +399,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DeepSeek Model Optimizations in SGLang</h1>
+    <h1>DeepSeek Model Optimizations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -423,8 +424,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="deepseek-model-optimizations-in-sglang">
-<h1>DeepSeek Model Optimizations in SGLang<a class="headerlink" href="#deepseek-model-optimizations-in-sglang" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="deepseek-model-optimizations">
+<h1>DeepSeek Model Optimizations<a class="headerlink" href="#deepseek-model-optimizations" title="Link to this heading">#</a></h1>
 <p>SGLang provides several optimizations specifically designed for the DeepSeek model to boost its inference speed. This document outlines current optimizations for DeepSeek. Additionally, the SGLang team is actively developing enhancements for <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2591">DeepSeek-V3</a>.</p>
 <section id="multi-head-latent-attention-mla-throughput-optimizations">
 <h2>Multi-head Latent Attention (MLA) Throughput Optimizations<a class="headerlink" href="#multi-head-latent-attention-mla-throughput-optimizations" title="Link to this heading">#</a></h2>
@@ -436,14 +437,18 @@
 <li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
 </ul>
 <p>Overall, with these optimizations, we have achieved up to a 7x acceleration in output throughput compared to the previous version.</p>
-<p><img alt="Multi-head Latent Attention for DeepSeek Series Models" src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" /></p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
+</p>
 <p><strong>Usage</strong>: MLA optimization is enabled by defalut, to disable, use <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code>.</p>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations">Blog</a> and <a class="reference external" href="https://github.com/sgl-project/sgl-learning-materials/blob/main/slides/lmsys_1st_meetup_deepseek_mla.pdf">Slides</a> for more details.</p>
 </section>
 <section id="data-parallelism-attention">
 <h2>Data Parallelism Attention<a class="headerlink" href="#data-parallelism-attention" title="Link to this heading">#</a></h2>
 <p><strong>Description</strong>: This optimization involves data parallelism (DP) for the MLA attention mechanism of DeepSeek Series Models, which allows for a significant reduction in the KV cache size, enabling larger batch sizes. Each DP worker independently handles different types of batches (prefill, decode, idle), which are then synchronized before and after processing through the Mixture-of-Experts (MoE) layer.</p>
-<p><img alt="Data Parallelism Attention for DeepSeek Series Models" src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" />.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" alt="Data Parallelism Attention for DeepSeek Series Models">
+</p>
 <p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabeld by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Blog</a>.</p>
 </section>
@@ -475,13 +480,22 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="learn_more.html"
+       href="custom_chat_template.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Learn more</p>
+        <p class="prev-next-title">Custom Chat Template in SGLang Runtime</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="llama_405B.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Run Llama 3.1 405B</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
