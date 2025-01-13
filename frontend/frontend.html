@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,20 +27,20 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=54c0ffc3"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -196,9 +196,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -451,10 +456,10 @@
 </pre></div>
 </div>
 <p>Then, connect to the server and answer a multi-turn question.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sglang</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">assistant</span><span class="p">,</span> <span class="n">gen</span><span class="p">,</span> <span class="n">set_default_backend</span><span class="p">,</span> <span class="n">RuntimeEndpoint</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">assistant</span><span class="p">,</span> <span class="n">gen</span><span class="p">,</span> <span class="n">set_default_backend</span><span class="p">,</span> <span class="n">RuntimeEndpoint</span>
 
 <span class="nd">@function</span>
-<span class="k">def</span> <span class="nf">multi_turn_question</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question_1</span><span class="p">,</span> <span class="n">question_2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">multi_turn_question</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question_1</span><span class="p">,</span> <span class="n">question_2</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">user</span><span class="p">(</span><span class="n">question_1</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">assistant</span><span class="p">(</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;answer_1&quot;</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">256</span><span class="p">))</span>
@@ -482,10 +487,10 @@
 </pre></div>
 </div>
 <p>Then, answer a multi-turn question.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sglang</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">assistant</span><span class="p">,</span> <span class="n">gen</span><span class="p">,</span> <span class="n">set_default_backend</span><span class="p">,</span> <span class="n">OpenAI</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">system</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">assistant</span><span class="p">,</span> <span class="n">gen</span><span class="p">,</span> <span class="n">set_default_backend</span><span class="p">,</span> <span class="n">OpenAI</span>
 
 <span class="nd">@function</span>
-<span class="k">def</span> <span class="nf">multi_turn_question</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question_1</span><span class="p">,</span> <span class="n">question_2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">multi_turn_question</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question_1</span><span class="p">,</span> <span class="n">question_2</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">system</span><span class="p">(</span><span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">user</span><span class="p">(</span><span class="n">question_1</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">assistant</span><span class="p">(</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;answer_1&quot;</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">256</span><span class="p">))</span>
@@ -515,7 +520,7 @@ You can find more examples at <a class="reference external" href="https://github
 <section id="language-feature">
 <h2>Language Feature<a class="headerlink" href="#language-feature" title="Link to this heading">#</a></h2>
 <p>To begin with, import sglang.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sglang</span> <span class="k">as</span> <span class="nn">sgl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">sglang</span></code> provides some simple primitives such as <code class="docutils literal notranslate"><span class="pre">gen</span></code>, <code class="docutils literal notranslate"><span class="pre">select</span></code>, <code class="docutils literal notranslate"><span class="pre">fork</span></code>, <code class="docutils literal notranslate"><span class="pre">image</span></code>.
@@ -527,7 +532,7 @@ The system will manage the state, chat template, parallelism and batching for yo
 <h3>Control Flow<a class="headerlink" href="#control-flow" title="Link to this heading">#</a></h3>
 <p>You can use any Python code within the function body, including control flow, nested function calls, and external libraries.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">tool_use</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tool_use</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;To answer this question: &quot;</span> <span class="o">+</span> <span class="n">question</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;I need to use a &quot;</span> <span class="o">+</span> <span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;tool&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">,</span> <span class="s2">&quot;search engine&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span>
 
@@ -543,7 +548,7 @@ The system will manage the state, chat template, parallelism and batching for yo
 <p>Use <code class="docutils literal notranslate"><span class="pre">fork</span></code> to launch parallel prompts.
 Because <code class="docutils literal notranslate"><span class="pre">sgl.gen</span></code> is non-blocking, the for loop below issues two generation calls in parallel.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">tip_suggestion</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tip_suggestion</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span>
         <span class="s2">&quot;Here are two tips for staying healthy: &quot;</span>
         <span class="s2">&quot;1. Balanced Diet. 2. Regular Exercise.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
@@ -564,7 +569,7 @@ Because <code class="docutils literal notranslate"><span class="pre">sgl.gen</sp
 <h3>Multi-Modality<a class="headerlink" href="#multi-modality" title="Link to this heading">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">sgl.image</span></code> to pass an image as input.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">image_qa</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">image_file</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">image_qa</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">image_file</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">user</span><span class="p">(</span><span class="n">sgl</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span> <span class="o">+</span> <span class="n">question</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">assistant</span><span class="p">(</span><span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
 </pre></div>
@@ -576,7 +581,7 @@ Because <code class="docutils literal notranslate"><span class="pre">sgl.gen</sp
 <p>Use <code class="docutils literal notranslate"><span class="pre">regex</span></code> to specify a regular expression as a decoding constraint.
 This is only supported for local models.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">regular_expression_gen</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">regular_expression_gen</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Q: What is the IP address of the Google DNS servers?</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;A: &quot;</span> <span class="o">+</span> <span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span>
         <span class="s2">&quot;answer&quot;</span><span class="p">,</span>
@@ -607,7 +612,7 @@ This is only supported for local models.</p>
 <span class="p">)</span>
 
 <span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">character_gen</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">character_gen</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; is a character in Harry Potter. Please fill in the following information about this character.</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;json_output&quot;</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">character_regex</span><span class="p">)</span>
 </pre></div>
@@ -618,7 +623,7 @@ This is only supported for local models.</p>
 <h3>Batching<a class="headerlink" href="#batching" title="Link to this heading">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">run_batch</span></code> to run a batch of requests with continuous batching.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">text_qa</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">text_qa</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Q: &quot;</span> <span class="o">+</span> <span class="n">question</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;A:&quot;</span> <span class="o">+</span> <span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -637,7 +642,7 @@ This is only supported for local models.</p>
 <h3>Streaming<a class="headerlink" href="#streaming" title="Link to this heading">#</a></h3>
 <p>Add <code class="docutils literal notranslate"><span class="pre">stream=True</span></code> to enable streaming.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">text_qa</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">text_qa</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Q: &quot;</span> <span class="o">+</span> <span class="n">question</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;A:&quot;</span> <span class="o">+</span> <span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -656,7 +661,7 @@ This is only supported for local models.</p>
 <h3>Roles<a class="headerlink" href="#roles" title="Link to this heading">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">sgl.system</span></code>， <code class="docutils literal notranslate"><span class="pre">sgl.user</span></code> and <code class="docutils literal notranslate"><span class="pre">sgl.assistant</span></code> to set roles when using Chat models. You can also define more complex role prompts using begin and end tokens.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
-<span class="k">def</span> <span class="nf">chat_example</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">chat_example</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">)</span>
     <span class="c1"># Same as: s += s.system(&quot;You are a helpful assistant.&quot;)</span>
 
@@ -794,8 +799,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

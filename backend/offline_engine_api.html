@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
@@ -38,10 +38,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=54c0ffc3"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -199,9 +199,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -458,8 +463,8 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># launch the offline engine</span>
 
-<span class="kn">import</span> <span class="nn">sglang</span> <span class="k">as</span> <span class="nn">sgl</span>
-<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
 <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
 </pre></div>
@@ -471,13 +476,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.66it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.72it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.43it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.32it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.68it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.66it/s]
+100%|██████████| 23/23 [00:07&lt;00:00,  3.20it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -509,25 +514,28 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Brian and I am a 27 year old photographer from the UK. I specialise in capturing the best of the world&#39;s most amazing landscapes, from the stunning coastlines of Cornwall to the breathtaking scenery of New Zealand. My work has taken me to many different countries and has allowed me to experience a wide range of cultures and environments. I love nothing more than getting out into the great outdoors and capturing the beauty of the natural world on camera. I am always on the lookout for new and exciting locations to photograph and am eager to take on new challenges and adventures. My photographs are not just mere snapshots, but rather they are an attempt to
+Generated text:  Drew. I’m a 25-year-old from the UK. I am looking for a pen pal from the UK, USA or Australia.
+I’m interested in learning about your daily life, hobbies and culture. I enjoy playing guitar, reading and watching films. I’m a bit of a music lover and enjoy listening to a variety of genres.
+I would love to hear from you if you are interested in exchanging letters and learning more about each other’s lives.
+Hi Drew, I&#39;m Emily. I&#39;m 24 from the USA. I&#39;m a big fan of music too! I play the piano and love listening to indie rock and folk
 ===============================
 Prompt: The president of the United States is
-Generated text:  like a king and a dictator mixed together. He has absolute authority and control over the government and the people. The Constitution does not provide any checks on the president&#39;s power, so he can do whatever he wants. The president can declare war, raise taxes, and even take away people&#39;s rights without any opposition.
-Is this description of the presidency accurate?
-No, this description is not accurate. The president of the United States has significant power and authority, but the Constitution and other laws provide many checks and balances on the president&#39;s power. For example, Congress has the power to declare war, approve or reject the president&#39;s nominations to the
+Generated text:  the head of state and head of government of the United States, and is the ceremonial and political leader of the nation. The president is indirectly elected by the people through the Electoral College, and serves a four-year term. The president is the commander-in-chief of the armed forces, and has the power to negotiate treaties, appoint federal judges, and veto legislation.
+The president of the United States is a unique position that has evolved over time, with powers and responsibilities that have been shaped by the Constitution, laws, and historical events. The president has a wide range of duties, including:
+Leading the federal government and setting national policy
+Representing
 ===============================
 Prompt: The capital of France is
-Generated text:  getting a new cultural destination.
-The Philharmonie de Paris, a concert hall and cultural center, opened last month in the Parc de La Villette. The building was designed by architect Christian de Portzamparc and contains 2,400 seats for concerts and performances.
-The Philharmonie is a significant addition to the cultural landscape of Paris, providing a space for the Orchestre de Paris to perform as well as other musical and artistic events. The building&#39;s design features a unique shape, with an angular, crystalline structure that provides excellent acoustics.
-The Philharmonie de Paris is also equipped with
+Generated text:  Paris. It is located in the north-central part of the country.
+The official language is French.
+Paris is a city that is known for its art, fashion, cuisine, and architecture. It is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral.
+The city has a population of over 2.1 million people and a metropolitan area population of over 12.2 million people. It is a major tourist destination and a hub for business, finance, and culture.
+Paris is also known for its beautiful parks and gardens, including the Luxembourg Gardens and the Tuileries
 ===============================
 Prompt: The future of AI is
-Generated text:  multidisciplinary
-The growth of artificial intelligence (AI) has led to numerous advancements in various fields, including computer science, engineering, data science, and neuroscience. However, the future of AI will rely on the convergence of multiple disciplines to create more effective and efficient solutions.
-Here are some key areas that will shape the future of AI:
-1. Multidisciplinary collaboration: AI will benefit from collaboration between experts from diverse fields, such as computer science, neuroscience, philosophy, psychology, and sociology. This interdisciplinary approach will enable researchers to tackle complex problems and develop more comprehensive AI solutions.
-2. Edge AI: As the world becomes
+Generated text:  in the cloud
+Artificial intelligence (AI) is no longer just a buzzword, but a rapidly evolving technology that’s being integrated into various industries. From chatbots and virtual assistants to predictive analytics and autonomous vehicles, AI is transforming the way we live and work. However, as AI continues to grow in complexity and applications, it requires massive computing power, storage, and data processing capabilities. This is where the cloud comes in.
+The cloud is not just a cost-effective way to store and process data; it also provides the scalability, flexibility, and on-demand access to resources that AI needs to thrive. In this article, we’ll
 </pre></div></div>
 </div>
 </section>
@@ -565,24 +573,20 @@ Here are some key areas that will shape the future of AI:
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Rachael, and I am a police officer in the United Kingdom. I have been in this role for over 10 years, and I am proud to be part of an elite team of dedicated and brave men and women who are committed to keeping our communities safe.
-My passion for policing began when I was a teenager. I grew up in a close-knit community where everyone knew each other, and we all looked out for one another. However, I saw firsthand the devastating impact of crime on my friends and neighbors, and I knew that I wanted to make a difference.
-As a police officer, I have been fortunate enough to have had
+Generated text:  Jack and I am a 12-year-old boy. I was diagnosed with cystic fibrosis (CF) when I was just two years old. My mom says I&#39;m a fighter and that&#39;s because of all the medicine I take and the treatments I do every day. It&#39;s not always easy, but it&#39;s worth it because it helps me live a healthy life.
+I love playing soccer and riding my bike. I&#39;m really good at soccer and I&#39;m on a team with my friends. I like to ride my bike to school and around my neighborhood. Sometimes I get tired easily, but that&#39;s okay because I just stop and
 
 Prompt: The capital of France is
-Generated text:  Paris, and it is located in the northern part of the country. It is the largest city in France and is known for its beauty and cultural significance.
-What are the attractions of Paris?
-Some of the most famous attractions in Paris include:
-1. The Eiffel Tower: This iconic tower is a symbol of Paris and one of the most recognizable landmarks in the world.
-2. The Louvre Museum: This museum is home to some of the world&#39;s most famous paintings, including the Mona Lisa.
-3. Notre Dame Cathedral: This beautiful cathedral is one of the most famous in the world and has been the site of many important events
+Generated text:  a city that needs no introduction. Paris, the City of Light, has been a cultural and artistic hub for centuries, attracting visitors from all over the world. From the iconic Eiffel Tower to the world-class museums like the Louvre and Orsay, Paris has something to offer for everyone.
+But beyond the popular tourist attractions, there are many more hidden gems to explore in the City of Light. Here are some unique experiences to help you discover the authentic Paris:
+1. Explore the Street Art of Montmartre
+Montmartre, a historic neighborhood in the north of Paris, is a treasure trove of street art. Wander
 
 Prompt: The future of AI is
-Generated text:  in its ability to understand and act on human emotions. The integration of AI with human emotions is a rapidly evolving field, and this integration has the potential to significantly enhance human well-being.
-Emotion-aware AI is an emerging field that focuses on developing AI systems that can recognize, understand, and respond to human emotions. These systems can be integrated into various applications, such as healthcare, education, customer service, and mental health support.
-Some of the key areas where AI is being integrated with human emotions include:
-1. Emotion recognition: AI systems can recognize and analyze human emotions through facial expressions, speech patterns, and physiological signals.
-2.
+Generated text:  here. As AI technology continues to advance, we&#39;re witnessing an exciting new wave of innovation across industries. But, what does this mean for the workforce, and how can we prepare our employees for this new reality?
+In this video, we explore the trends shaping the future of work, the impact of AI on jobs, and provide practical advice on how to upskill and reskill your workforce for success in an AI-driven world.
+Here are some key takeaways from the video:
+1. AI will augment human capabilities, not replace them. While AI will certainly automate some tasks, it will also create new opportunities for humans to work alongside machines
 </pre></div></div>
 </div>
 </section>
@@ -603,7 +607,7 @@ Some of the key areas where AI is being integrated with human emotions include:
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing asynchronous batch generation ===&quot;</span><span class="p">)</span>
 
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">outputs</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">async_generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
@@ -624,23 +628,21 @@ Some of the key areas where AI is being integrated with human emotions include:
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Alex. I&#39;m a 34-year-old single male. I&#39;ve been using computers and technology for over 20 years and have a solid foundation in basic computer skills. I&#39;ve recently started looking into website design and development, and I&#39;d like to learn more about it.
-I&#39;ve been looking online for tutorials, courses, and resources to help me learn the basics of website design and development. I&#39;ve come across some conflicting information, and I&#39;m not sure where to start.
-What are some good resources for learning website design and development?
-What are the key skills and technologies that I should focus on learning?
-What are some common challenges that
+Generated text:  Ms. Brenda Goodman. I am the principal of our school, and I am excited to welcome you to our community! Our school is a place where students can grow and learn in a safe and supportive environment.
+Our school offers a wide range of educational programs and activities to help students succeed. We have a dedicated team of teachers and staff who are committed to providing high-quality education to our students. We also have a variety of extracurricular activities and clubs that cater to different interests and talents.
+At our school, we believe in the importance of social responsibility and community service. We encourage our students to get involved in local volunteer work and
 
 Prompt: The capital of France is
-Generated text:  a city like no other. From its iconic landmarks and world-class museums to its charming neighborhoods and romantic atmosphere, Paris is a destination that has captivated visitors for centuries.
-Must-see attractions in Paris include the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. Visitors can take a stroll along the Seine River, explore the Montmartre neighborhood, or visit the Palace of Versailles, a former royal residence with stunning gardens and fountains.
-Beyond the famous landmarks, Paris is also a city of artistic and cultural expression. The city is home to numerous museums, galleries, and theaters, showcasing the works of famous
+Generated text:  Paris. Paris is located in the north-central part of France and is known for its rich history, art, fashion, and culture. Paris is the most visited city in the world and is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum.
+Paris is a popular destination for tourists and business travelers alike. The city has a wide range of accommodations, from budget-friendly hostels to luxury hotels. Visitors can enjoy a variety of activities, including visiting museums, galleries, and historic sites, as well as exploring the city&#39;s charming neighborhoods and markets.
+Paris is also known for its fashion
 
 Prompt: The future of AI is
-Generated text:  here – and it’s in our apps
-AI is everywhere, and you probably don’t even notice it anymore. We talk to experts about how AI is transforming our daily lives and what the future holds.
-The future of AI is here, and it’s all around us. We&#39;re not just talking about self-driving cars and robots, but about the AI-powered apps and tools that are changing the way we live and work.
-AI is now ubiquitous in our daily lives, from Siri and Google Assistant to personalized recommendations on Netflix and Amazon. But its presence is often invisible – we don&#39;t even notice it anymore.
-AI is transforming industries, from
+Generated text:  bright, and it will bring about exciting new technologies and innovations that will change the world in ways both big and small. But it will also bring about significant challenges and concerns that need to be addressed.
+In this section, we&#39;ll explore the future of AI, including the benefits and risks, and how we can ensure that AI is developed and used responsibly.
+AI and the Future of Work
+The future of work will be significantly impacted by AI. While AI has the potential to bring about many benefits, such as increased productivity and efficiency, it also raises concerns about job displacement and the future of work.
+On the one hand, AI has the
 </pre></div></div>
 </div>
 </section>
@@ -660,7 +662,7 @@ AI is transforming industries, from
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Testing asynchronous streaming generation ===&quot;</span><span class="p">)</span>
 
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generated text: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -684,22 +686,19 @@ AI is transforming industries, from
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Leah! I am a 19 year old college student, and I have been interested in makeup for as long as I can remember. I have been watching YouTube tutorials and practicing makeup on myself for years, and I recently decided to start my own YouTube channel to share my passion with the world!
-I have a wide range of makeup interests, from natural everyday looks to more dramatic evening glows. I love experimenting with new products and techniques, and I am always excited to share my latest finds and favorites with my viewers.
-On my channel, you can expect to see a variety of makeup tutorials, product reviews, and hauls. I will
+Generated text:  Emily, and I am a fashion enthusiast! I have always loved expressing myself through clothes, shoes, and accessories. As a fashion blogger, I share my personal style, trends, and tips with you to help you feel confident and stylish.
+On my blog, you will find a wide range of topics, from fashion trends and style advice to product reviews and shopping guides. I love discovering new brands and styles, and I am always on the lookout for inspiration to share with you.
+My fashion style is eclectic and modern, with a touch of vintage flair. I love mixing high-end and low-end pieces, and I&#39;m not afraid to take
 
 Prompt: The capital of France is
-Generated text:  a city like no other, a place of grand history and architectural landmarks, world-class museums, and a vibrant cultural scene. Paris is a destination that offers something for everyone, from romantic strolls along the Seine River to cutting-edge fashion and cuisine. It is the perfect city for travelers looking to experience the quintessential French lifestyle.
-This travel guide covers the best places to visit in Paris, the top museums and galleries, the best restaurants and cafes, and the best shopping destinations. It also includes helpful tips and advice on how to navigate the city and make the most of your visit.
-Book your trip to Paris and discover why it is
+Generated text:  a city of grandeur and elegance, a place that is steeped in history and culture. Paris, the City of Light, is known for its iconic landmarks, artistic treasures, and romantic atmosphere. From the Eiffel Tower to the Louvre Museum, there is no shortage of exciting things to see and do in this incredible city. Here are some of the top attractions and experiences that you shouldn’t miss on your trip to Paris:
+1. The Eiffel Tower: This iconic iron lady is a must-visit attraction in Paris. You can take the elevator to the top for breathtaking views of the city, or dine at the
 
 Prompt: The future of AI is
-Generated text:  in collaboration, not competition
-From AI assistants like Alexa and Google Assistant, to algorithms that help us navigate through traffic, AI has become an integral part of our daily lives. However, the development and deployment of AI has been largely centered around competition, where companies and individuals are racing to build the most advanced and sophisticated AI systems.
-But is this competition-driven approach the right way to go? I argue that the future of AI is in collaboration, not competition.
-The benefits of collaboration
-Collaboration in AI development can lead to several benefits, including:
-1. Accelerating innovation: When researchers and developers from different backgrounds and institutions work together
+Generated text:  here – and it&#39;s all about human-centered AI
+The future of AI is not just about machines getting smarter; it&#39;s about humans becoming more effective. By creating AI that is human-centered, organizations can unlock new levels of productivity, efficiency, and innovation.
+The latest advancements in AI are not just about processing power, but about creating technologies that augment human capabilities and enhance our work lives. By leveraging machine learning, natural language processing, and computer vision, organizations can now create AI that is more intuitive, more flexible, and more human-centric.
+But what does it mean to create an AI that is truly human-centered? It means that AI
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -818,8 +817,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
