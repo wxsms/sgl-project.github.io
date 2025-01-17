@@ -476,13 +476,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.32it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.63it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.25it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.21it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.43it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.32it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.61it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
 
-100%|██████████| 23/23 [00:05&lt;00:00,  4.00it/s]
+100%|██████████| 23/23 [00:08&lt;00:00,  2.79it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -514,23 +514,35 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Katherine, and I am a 4th grade teacher at South Elementary. I am excited to have the opportunity to share my educational background and teaching philosophy with you. I have been teaching for 10 years, and I have always had a passion for creating engaging and interactive lessons that cater to different learning styles.
-My educational background includes a Bachelor’s degree in Elementary Education from Western Governors University. I have also completed several graduate courses in Reading Education and Math Education. I have been certified to teach grades K-6 in the state of Michigan.
-My teaching philosophy is centered around creating a positive and inclusive learning environment. I believe that every student learns
+Generated text:  Erika and I am an animal lover. I have been working with animals for over 20 years and I have experience in many different fields of animal care, including veterinary clinics, animal shelters and pet sitting. I am a certified dog trainer and behaviorist and I also have certifications in pet first aid and CPR.
+I have a passion for helping animals and people come together and I love teaching people how to understand and communicate with their pets. I believe that animals are a vital part of our families and they deserve love, care and respect.
+As a pet sitter, I offer a variety of services, including overnight stays, daytime visits and
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States of America. The president is indirectly elected by the people through the Electoral College, which was established by Article II, Section 1, Clause 2 of the Constitution. The president serves a four-year term, and the president is limited to two terms in office.
-The president is responsible for executing the laws and policies of the federal government, and is also the commander-in-chief of the armed forces. The president also has the power to veto legislation passed by Congress, although Congress can override the veto with a two-thirds majority vote in both the House of Representatives and the Senate.
-The
+Generated text:  elected through a process called the Electoral College. Here’s how it works: the president is not elected directly by the people. Instead, each state is allocated a certain number of electoral votes based on its population. Candidates for president campaign and compete for the votes of their respective states. On election day, Americans go to the polls to cast ballots for president, but they are actually voting for which candidate they think will receive their state’s electoral votes.
+In the past, voters have sometimes been confused about the relationship between their individual vote and the outcome of the presidential election. In the 2016 election, for example, some voters in battleground states
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. Paris is known for its historic landmarks, fashion, and art. The city is home to the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral, among other famous sites. Paris is also a center for culture and entertainment, with numerous theaters, museums, and music venues.
-France has a long history of cultural and intellectual achievements. It is home to many world-renowned artists, writers, and thinkers, including Claude Monet, Pierre-Auguste Renoir, and Émile Zola. France is also known for its cuisine, wine, and fashion, and is a popular destination for tourists and travelers
+Generated text:  Paris.
+Paris is the largest city in France.
+Paris is a popular tourist destination.
+Paris has many famous landmarks.
+The Eiffel Tower is a famous landmark in Paris.
+The Eiffel Tower was built for the 1889 World&#39;s Fair.
+The Eiffel Tower is a symbol of Paris.
+Paris is a city with a rich history.
+Paris has a beautiful river that runs through it.
+The Seine River is a beautiful river in Paris.
+The Seine River has many bridges.
+The bridges in Paris are famous for their beauty.
+Paris has a vibrant culture.
+Paris has a famous art scene.
+The Louvre Museum is
 ===============================
 Prompt: The future of AI is
-Generated text:  a topic of great interest and speculation. What will AI look like in 5 years, 10 years, and 20 years? What potential impacts will it have on our society, and what are the potential risks? The AI Future Series brings together experts from various fields to discuss the potential future of AI and its implications for humanity.
-Dr. Jonathan Shah is a leading expert on artificial intelligence, computer vision, and robotics. He is a professor of computer science at the University of California, Los Angeles (UCLA) and has worked on numerous AI-related projects, including the development of the first smartphone and the creation of the Amazon Echo.
-
+Generated text:  bright, but what about the jobs?
+Artificial intelligence (AI) is rapidly changing the world, and the future of work is uncertain. Some experts predict that AI will displace human jobs, while others believe it will augment human capabilities and create new opportunities.
+The World Economic Forum (WEF) predicts that by 2022, more than a third of the desired skills for most jobs will be comprised of skills that are not yet considered crucial to the job today. The WEF also estimates that by 2022, 75 million jobs may be displaced by automation, but 133 million new roles may emerge that require human skills like
 </pre></div></div>
 </div>
 </section>
@@ -568,21 +580,20 @@ Dr. Jonathan Shah is a leading expert on artificial intelligence, computer visio
 === Testing synchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Greg and I am a semi-retired Environmentalist. I have spent the last 30 years working on various projects and causes that promote sustainability, conservation, and eco-friendly practices. Some of my most notable achievements include:
-Establishing a network of community gardens in urban areas, providing fresh produce to low-income families and promoting green spaces in densely populated cities.
-Developing a successful recycling program for electronic waste, diverting thousands of tons of hazardous materials from landfills and promoting responsible e-waste disposal practices.
-Creating educational programs and workshops on sustainable living, environmental science, and conservation, reaching thousands of students, teachers, and community members.
-Coll
+Generated text:  Chris and I am an IT professional. I am currently working as a network engineer for a company in the telecommunications industry. My experience spans over 10 years, working with a variety of technologies including routing, switching, and security.
+I have been working with Cisco products for over 10 years now, and I have a deep understanding of their features and capabilities. I have experience in designing, implementing, and troubleshooting complex networks, as well as providing technical support to customers.
+I am also familiar with other networking vendors such as Juniper, Arista, and Brocade, and I have experience in designing and implementing multi-vendor networks.
+In
 
 Prompt: The capital of France is
-Generated text:  known for its stunning architecture, art museums, and beautiful parks. One of the most famous landmarks in the city is the Eiffel Tower, which was built for the 1889 World&#39;s Fair. The tower is made of iron and stands at over 1,000 feet tall. Visitors can take a lift to the top for panoramic views of the city.
-The Louvre Museum is another popular destination in Paris. The museum is home to an impressive collection of art and artifacts from around the world, including the Mona Lisa. The museum is housed in a beautiful 16th-century palace and has a stunning glass pyramid entrance.
-The Se
+Generated text:  a place you can fall in love with at first sight. From the stunning landmarks like the Eiffel Tower to the charming streets of Montmartre, there&#39;s something for everyone in Paris. Whether you&#39;re looking for romantic getaways, historical explorations, or simply a taste of the French culture, Paris has it all.
+Whether you&#39;re a history buff, an art lover, or simply looking for a romantic getaway, Paris is the perfect destination for you. Explore the historic landmarks, indulge in the local cuisine, and soak up the city&#39;s vibrant atmosphere.
+Montmartre is a charming neighborhood in the heart of Paris, known for
 
 Prompt: The future of AI is
-Generated text:  being shaped by the convergence of various fields, including machine learning, natural language processing, computer vision, and robotics. Here are some of the key trends and developments that are likely to shape the future of AI:
-  1. Explainability and Transparency: As AI systems become increasingly complex, there is a growing need for explainability and transparency. This involves developing techniques to understand how AI models make decisions and providing clear explanations for their outputs.
-  2. Edge AI: The proliferation of edge devices such as smartphones, smart home devices, and autonomous vehicles is driving the need for edge AI. This involves deploying AI models on edge devices,
+Generated text:  being shaped by innovation in software development, machine learning, and human-computer interaction. As AI becomes more ubiquitous, it will continue to transform various industries and aspects of our lives.
+AI advancements in software development, such as automation, continuous integration, and DevOps, will continue to drive efficiency and productivity in the software development lifecycle. Machine learning algorithms will become increasingly sophisticated, enabling AI systems to learn from experience and improve performance over time.
+Human-computer interaction will also undergo significant changes, with the emergence of more intuitive and natural interfaces, such as voice assistants, augmented reality, and gesture recognition. These advancements will make AI more accessible and user
 </pre></div></div>
 </div>
 </section>
@@ -624,18 +635,19 @@ Generated text:  being shaped by the convergence of various fields, including ma
 === Testing asynchronous batch generation ===
 
 Prompt: Hello, my name is
-Generated text:  Lorena Aguilar, and I am a senior at The University of Texas at Austin. I am an Advertising and Public Relations major with a minor in Spanish. I am a first-generation college student, a proud Latina, and a passionate advocate for women&#39;s rights and social justice.
-When I&#39;m not in class, you can find me volunteering at the Texas Book Festival, interning at a local advertising agency, or practicing yoga with my favorite teachers. I love trying new restaurants, hiking in Barton Creek, and exploring the vibrant culture of Austin.
-I am excited to join the 2022-2023 editorial team as the Latinx &amp;
+Generated text:  Mathew and I am a senior at Lincoln High School. I am writing to ask for help in completing a community service project. I am involved with the National Honor Society and we are organizing a food drive to collect non-perishable items for the local food bank. We are planning to collect items from now until December 15th and then deliver them to the food bank. I am reaching out to ask if your company would be willing to donate a few non-perishable items to support our cause. Any items that your company can donate would be greatly appreciated. If you are unable to donate items, perhaps you could consider making a
 
 Prompt: The capital of France is
-Generated text:  Paris, which is located in the northern part of the country. The city is famous for its history, art, fashion, cuisine, and architecture. Paris is a major tourist destination, attracting millions of visitors each year. It is also the seat of the French government and the country&#39;s largest city.
-The city of Paris has a rich history dating back to the 3rd century. It was founded by the Celtic tribe known as the Parisii. In 52 BC, the Romans conquered the city and renamed it Lutetia. Over the centuries, Paris has been influenced by various cultures, including the Romans, the Franks,
+Generated text:  Paris, which is the city of love, fashion, and art. Paris is home to famous landmarks such as the Eiffel Tower and Notre Dame Cathedral. The city is also known for its beautiful gardens, museums, and galleries.
+Paris is the most populous city in France, with over 2.1 million people living in the city. It is a global center for fashion, cuisine, and culture, and is home to many famous restaurants, cafes, and boutiques. The city has a rich history, with many ancient buildings and landmarks still standing today.
+Paris is also a popular tourist destination, attracting millions of visitors each year.
 
 Prompt: The future of AI is
-Generated text:  looking bright – with the latest advancements in Natural Language Processing (NLP) and machine learning, chatbots are becoming increasingly sophisticated. But how do we ensure that AI and chatbots are designed with ethics and responsibility in mind?
-The second annual AI in Insurance Summit, held in San Francisco on October 29th, brought together industry leaders to discuss the latest trends and innovations in AI and NLP for the insurance sector. The summit featured keynote presentations, panel discussions, and interactive workshops, exploring topics such as the future of underwriting, claims processing, and customer engagement.
-One of the main themes of the summit was the importance of responsible AI
+Generated text:  complex and multifaceted. Here are some trends and predictions that might shape the future of AI in the coming years.
+The Future of AI: Trends and Predictions
+Artificial intelligence (AI) has been rapidly advancing over the past few years, and it&#39;s hard to imagine a future without it. From smart home devices to self-driving cars, AI is already integrated into many aspects of our lives. However, the future of AI is complex and multifaceted, with various trends and predictions that might shape its development. Here are some of the key trends and predictions:
+1. Increased Adoption in Industries
+AI is expected to be adopted
 </pre></div></div>
 </div>
 </section>
@@ -679,22 +691,24 @@ One of the main themes of the summit was the importance of responsible AI
 === Testing asynchronous streaming generation ===
 
 Prompt: Hello, my name is
-Generated text:  Connor!
-I&#39;m a 14 year old dog, a gorgeous golden retriever with a fluffy coat and a loving personality. I&#39;m still as playful and energetic as I was when I was a puppy, and I love to run around and play fetch in the park. I&#39;m also very gentle and loving, and I love to snuggle up with my humans on the couch for a good cuddle.
-I&#39;ve been diagnosed with degenerative myelopathy, a condition that affects my hind legs. It makes it harder for me to walk and run, but I&#39;m still a happy and loving pup at heart. I just need a little
+Generated text:  Derek, and I&#39;m a High School Diploma Graduate with a strong background in Computer Science and a passion for Web Development. I&#39;m excited to bring my skills and experience to a dynamic team and contribute to the success of your organization.
+About my skills and experience
+- Proficient in programming languages such as Java, Python, and JavaScript, with a strong understanding of data structures and algorithms.
+- Experience with web development frameworks such as Spring, Django, and React, and have worked on various projects involving user interfaces, databases, and APIs.
+- Strong understanding of computer systems, including operating systems, networks, and databases, with experience in designing and
 
 Prompt: The capital of France is
-Generated text:  a city of eternal romance and beauty. From the iconic Eiffel Tower to the stunning Notre-Dame Cathedral, Paris is a city that will capture your heart and leave you in awe. Here are some of the top attractions and experiences you shouldn&#39;t miss when visiting Paris:
-1. Eiffel Tower: This iconic iron lattice tower is a symbol of Paris and one of the most recognizable landmarks in the world. You can take the stairs or elevator to the top for breathtaking views of the city.
-2. Notre-Dame Cathedral: This beautiful Gothic cathedral has been the site of coronations, royal weddings, and other significant events throughout history
+Generated text:  a city that has it all – stunning architecture, world-class museums, fashion, fine dining, and of course, wine. From the Eiffel Tower to the Louvre, there are countless ways to spend your time in Paris. But with so many options, it can be overwhelming to plan your trip. Here are the top 10 things to do in Paris:
+1. Visit the Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. Take the stairs or elevator to the top for breathtaking views of the city.
+2. Explore the Louvre Museum: The Louvre is one of the
 
 Prompt: The future of AI is
-Generated text:  here now
-Artificial intelligence (AI) is no longer a futuristic concept, but a reality that is transforming industries and changing the way we live and work. AI has been integrated into various aspects of our lives, from virtual assistants like Siri and Alexa to self-driving cars and personalized product recommendations.
-The rapid advancement of AI has led to the development of various AI applications, including:
-  1. Machine learning: enables machines to learn from data and improve their performance over time.
-  2. Natural language processing: allows computers to understand and generate human language.
-  3. Computer vision: enables machines to interpret and understand visual data
+Generated text:  here, and it’s in the cloud
+The future of AI is here, and it’s in the cloud
+As artificial intelligence (AI) becomes more prevalent in various industries, the cloud is playing a significant role in its growth and development. Cloud-based AI solutions are becoming increasingly popular, offering flexibility, scalability, and cost-effectiveness. In this article, we will explore the future of AI and its connection to the cloud.
+Why is the cloud important for AI?
+The cloud provides several advantages for AI, including:
+1. Scalability: Cloud-based AI solutions can scale up or down as needed, making it easier to handle large amounts
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

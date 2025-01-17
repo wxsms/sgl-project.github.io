@@ -439,11 +439,11 @@
 <h2>Run 405B (fp16) on Two Nodes<a class="headerlink" href="#run-405b-fp16-on-two-nodes" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on the first node, replace 172.16.4.52:20000 with your own node ip address and port</span>
 
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span>
 
 <span class="c1"># on the second node, replace 172.18.45.52:20000 with your own node ip address and port</span>
 
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr-addr<span class="w"> </span><span class="m">172</span>.18.45.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.18.45.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
