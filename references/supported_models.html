@@ -557,7 +557,7 @@ You can add it to the <code class="docutils literal notranslate"><span class="pr
 <p>In addition to the methods described above, you can also register your new model with the <code class="docutils literal notranslate"><span class="pre">ModelRegistry</span></code> before launching the server. This approach is useful if you want to integrate your model without needing to modify the source code.</p>
 <p>Here is how you can do it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.models.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelRegistry</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.server</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_server</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.entrypoints.http_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_server</span>
 
 <span class="c1"># for a single model, you can add it to the registry</span>
 <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_class</span>
