@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post7" />
-    <meta name="docbuild:last-update" content="Jan 20, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 21, 2025"/>
   </head>
   
   
@@ -419,6 +419,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom Logit Processor</a></li>
 </ul>
 </li>
 </ul>
@@ -464,6 +465,20 @@ If you want a high-level endpoint that can automatically handle chat templates, 
     <span class="n">return_text_in_logprobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="c1"># Whether to stream output.</span>
     <span class="n">stream</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Whether to log metrics for this request (e.g. health_generate calls do not log metrics)</span>
+    <span class="n">log_metrics</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># The modalities of the image data [image, multi-images, video]</span>
+    <span class="n">modalities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># LoRA related</span>
+    <span class="n">lora_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Session info for continual prompting</span>
+    <span class="n">session_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">Dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># Custom logit processor for advanced sampling control. Must be a serialized instance</span>
+    <span class="c1"># of `CustomLogitProcessor` in python/sglang/srt/sampling/custom_logit_processor.py</span>
+    <span class="c1"># Use the processor&#39;s `to_str()` method to generate the serialized string.</span>
+    <span class="n">custom_logit_processor</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">sampling_params</span></code> follows this format</p>
@@ -520,6 +535,14 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <span class="c1"># difficult to infer the correct token ID by given `stop` strings.</span>
 <span class="c1"># Must be 0 &lt;= value &lt; max_new_tokens. Setting to 0 (default) will disable this penalty.</span>
 <span class="n">min_new_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+
+
+<span class="c1">## Custom Parameters for Custom Logit Processor.</span>
+<span class="c1"># A dictionary of custom parameters for the custom logit processor.</span>
+<span class="c1"># The custom logit processor takes a list of dictionaries as input, where each</span>
+<span class="c1"># dictionary is the custom parameters for one token in a batch of the input.</span>
+<span class="c1"># See also python/sglang/srt/sampling/custom_logit_processor.py</span>
+<span class="n">custom_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </pre></div>
 </div>
 <section id="examples">
@@ -684,6 +707,52 @@ Streaming is supported in a similar manner as <a class="reference internal" href
 </pre></div>
 </div>
 </section>
+<section id="custom-logit-processor">
+<h3>Custom Logit Processor<a class="headerlink" href="#custom-logit-processor" title="Link to this heading">#</a></h3>
+<p>Launch a server with <code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code> flag on.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">port</span> <span class="mi">30000</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">custom</span><span class="o">-</span><span class="n">logit</span><span class="o">-</span><span class="n">processor</span>
+</pre></div>
+</div>
+<p>Define a custom logit processor that will always sample a specific token id.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.sampling.custom_logit_processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomLogitProcessor</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DeterministicLogitProcessor</span><span class="p">(</span><span class="n">CustomLogitProcessor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A dummy logit processor that changes the logits to always</span>
+<span class="sd">    sample the given token id.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">custom_param_list</span><span class="p">):</span>
+        <span class="c1"># Check that the number of logits matches the number of custom parameters</span>
+        <span class="k">assert</span> <span class="n">logits</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">custom_param_list</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;token_id&quot;</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">param_dict</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">custom_param_list</span><span class="p">):</span>
+            <span class="c1"># Mask all other tokens</span>
+            <span class="n">logits</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+            <span class="c1"># Assign highest probability to the specified token</span>
+            <span class="n">logits</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">return</span> <span class="n">logits</span>
+</pre></div>
+</div>
+<p>Send a request</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;The capital of France is&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;custom_logit_processor&quot;</span><span class="p">:</span> <span class="n">DeterministicLogitProcessor</span><span class="p">()</span><span class="o">.</span><span class="n">to_str</span><span class="p">(),</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+            <span class="s2">&quot;custom_params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -738,6 +807,7 @@ Streaming is supported in a similar manner as <a class="reference internal" href
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom Logit Processor</a></li>
 </ul>
 </li>
 </ul>
@@ -773,7 +843,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 20, 2025.
+  Last updated on Jan 21, 2025.
   <br/>
 </p>
   </div>
