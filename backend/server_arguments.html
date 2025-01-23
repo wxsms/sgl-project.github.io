@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post7" />
-    <meta name="docbuild:last-update" content="Jan 22, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 23, 2025"/>
   </head>
   
   
@@ -391,7 +391,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -407,6 +409,37 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-launch-commands">Common launch commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-tokenizer">Model and tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-http-api">Serving: HTTP &amp; API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-server-configuration">HTTP Server configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-configuration">API configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism">Parallelism</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-parallelism">Tensor parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism">Data parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expert-parallelism">Expert parallelism</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-scheduling">Memory and scheduling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-runtime-options">Other runtime options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">Logging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-distributed-serving">Multi-node distributed serving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lora">LoRA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-backend">Kernel backend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding">Speculative decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-sparsity">Double Sparsity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-options">Debug options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,6 +451,8 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="server-arguments">
 <h1>Server Arguments<a class="headerlink" href="#server-arguments" title="Link to this heading">#</a></h1>
+<section id="common-launch-commands">
+<h2>Common launch commands<a class="headerlink" href="#common-launch-commands" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>To enable multi-GPU tensor parallelism, add <code class="docutils literal notranslate"><span class="pre">--tp</span> <span class="pre">2</span></code>. If it reports the error “peer access is not supported between these two devices”, add <code class="docutils literal notranslate"><span class="pre">--enable-p2p-check</span></code> to the server launch command.</p></li>
 </ul>
@@ -425,9 +460,9 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>To enable multi-GPU data parallelism, add <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>. Data parallelism is better for throughput if there is enough memory. It can also be used together with tensor parallelism. The following command uses 4 GPUs in total.</p></li>
+<li><p>To enable multi-GPU data parallelism, add <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>. Data parallelism is better for throughput if there is enough memory. It can also be used together with tensor parallelism. The following command uses 4 GPUs in total. We recommend <a class="reference external" href="https://docs.sglang.ai/router/router.html">SGLang Router</a> for data parallelism.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">dp</span> <span class="mi">2</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang_router</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">dp</span> <span class="mi">2</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -458,6 +493,185 @@
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">4</span> <span class="o">--</span><span class="n">dist</span><span class="o">-</span><span class="n">init</span><span class="o">-</span><span class="n">addr</span> <span class="n">sgl</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="mi">0</span><span class="p">:</span><span class="mi">50000</span> <span class="o">--</span><span class="n">nnodes</span> <span class="mi">2</span> <span class="o">--</span><span class="n">node</span><span class="o">-</span><span class="n">rank</span> <span class="mi">1</span>
 </pre></div>
 </div>
+<p>Please consult the documentation below to learn more about the parameters you may provide when launching a server.</p>
+</section>
+<section id="model-and-tokenizer">
+<h2>Model and tokenizer<a class="headerlink" href="#model-and-tokenizer" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model_path</span></code>: Path to the model that will be served.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tokenizer_path</span></code>: Defaults to the <code class="docutils literal notranslate"><span class="pre">model_path</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tokenizer_mode</span></code>: By default <code class="docutils literal notranslate"><span class="pre">auto</span></code>, see <a class="reference external" href="https://huggingface.co/docs/transformers/en/main_classes/tokenizer">here</a> for different mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_format</span></code>: The format the weights are loaded in. Defaults to <code class="docutils literal notranslate"><span class="pre">*.safetensors</span></code>/<code class="docutils literal notranslate"><span class="pre">*.bin</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trust_remote_code</span></code>:  If <code class="docutils literal notranslate"><span class="pre">True</span></code>, will use locally cached config files, other wise use remote configs in HuggingFace.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code>: Dtype used for the model, defaults to <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kv_cache_dtype</span></code>: Dtype of the kv cache, defaults to the <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">context_length</span></code>: The number of tokens our model can process <em>including the input</em>. Not that extending the default might lead to strange behavior.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device</span></code>: The device we put the model, defaults to <code class="docutils literal notranslate"><span class="pre">cuda</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chat_template</span></code>: The chat template to use. Deviating from the default might lead to unexpected responses. For multi-modal chat templates, refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_vision.html#Chat-Template">here</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_embedding</span></code>: Set to true to perform <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_embeddings.html">embedding</a> / <a class="reference external" href="https://docs.sglang.ai/backend/native_api.html#Encode-(embedding-model)">enocode</a> and <a class="reference external" href="https://docs.sglang.ai/backend/native_api.html#Classify-(reward-model)">reward</a> tasks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">revision</span></code>: Adjust if a specific version of the model should be used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skip_tokenizer_init</span></code>: Set to true to provide the tokens to the engine and get the output tokens directly, typically used in RLHF.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">json_model_override_args</span></code>: Override model config with the provided JSON.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delete_ckpt_after_loading</span></code>: Delete the model checkpoint after loading the model.</p></li>
+</ul>
+</section>
+<section id="serving-http-api">
+<h2>Serving: HTTP &amp; API<a class="headerlink" href="#serving-http-api" title="Link to this heading">#</a></h2>
+<section id="http-server-configuration">
+<h3>HTTP Server configuration<a class="headerlink" href="#http-server-configuration" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">port</span></code> and <code class="docutils literal notranslate"><span class="pre">host</span></code>: Setup the host for HTTP server. By default <code class="docutils literal notranslate"><span class="pre">host:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&quot;127.0.0.1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">port:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">30000</span></code></p></li>
+</ul>
+</section>
+<section id="api-configuration">
+<h3>API configuration<a class="headerlink" href="#api-configuration" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">api_key</span></code>: Sets an API key for the server and the OpenAI-compatible API.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_storage_pth</span></code>: Directory for storing uploaded or generated files from API calls.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_cache_report</span></code>: If set, includes detailed usage of cached tokens in the response usage.</p></li>
+</ul>
+</section>
+</section>
+<section id="parallelism">
+<h2>Parallelism<a class="headerlink" href="#parallelism" title="Link to this heading">#</a></h2>
+<section id="tensor-parallelism">
+<h3>Tensor parallelism<a class="headerlink" href="#tensor-parallelism" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tp_size</span></code>: The number of GPUs the model weights get sharded over. Mainly for saving memory rather than for high throughput, see <a class="reference external" href="https://pytorch.org/tutorials/intermediate/TP_tutorial.html#how-tensor-parallel-works">this blogpost</a>.</p></li>
+</ul>
+</section>
+<section id="data-parallelism">
+<h3>Data parallelism<a class="headerlink" href="#data-parallelism" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dp_size</span></code>: Will be deprecated. The number of data-parallel copies of the model. <a class="reference external" href="https://docs.sglang.ai/router/router.html">SGLang router</a> is recommended instead of the current naive data parallel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_balance_method</span></code>: Will be deprecated. Load balancing strategy for data parallel requests.</p></li>
+</ul>
+</section>
+<section id="expert-parallelism">
+<h3>Expert parallelism<a class="headerlink" href="#expert-parallelism" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ep_size</span></code>: Distribute the experts onto multiple GPUs for MoE models. Remember to shard the model weights with <code class="docutils literal notranslate"><span class="pre">tp_size=ep_size</span></code>, for detailed benchmarking refer to <a class="reference external" href="https://github.com/sgl-project/sglang/pull/2203">this PR</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="memory-and-scheduling">
+<h2>Memory and scheduling<a class="headerlink" href="#memory-and-scheduling" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mem_fraction_static</span></code>: Fraction of the free GPU memory used for static memory like model weights and KV cache. If building KV cache fails, it should be increased. If CUDA runs out of memory, it should be decreased.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_running_requests</span></code>: The maximum number of requests to run concurrently.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_total_tokens</span></code>: The maximum number of tokens that can be stored into the KV cache. Use mainly for debugging.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chunked_prefill_size</span></code>: Perform the prefill in chunks of these size. Larger chunk size speeds up the prefill phase but increases the VRAM consumption. If CUDA runs out of memory, it should be decreased.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_prefill_tokens</span></code>: Token budget of how many tokens to accept in one prefill batch. The actual number is the max of this parameter and the <code class="docutils literal notranslate"><span class="pre">context_length</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schedule_policy</span></code>: The scheduling policy to control the processing order of waiting prefill requests in a single engine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schedule_conservativeness</span></code>: Can be used to decrease/increase the conservativeness of the server when taking new requests. Highly conservative behavior leads to starvation, but low conservativeness leads to slowed-down performance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpu_offload_gb</span></code>: Reserve this amount of RAM in GB for offloading of model parameters to the CPU.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefill_only_one_req</span></code>: When this flag is turned on, the engine prefills only one request at a time.</p></li>
+</ul>
+</section>
+<section id="other-runtime-options">
+<h2>Other runtime options<a class="headerlink" href="#other-runtime-options" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stream_interval</span></code>: Interval (in tokens) for streaming responses. Smaller values lead to smoother streaming, and larger values lead to better throughput.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random_seed</span></code>: Can be used to enforce more deterministic behavior.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">watchdog_timeout</span></code>: Adjusts the watchdog thread’s timeout before killing the server if batch generation takes too long.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">download_dir</span></code>: Use to override the default Hugging Face cache directory for model weights.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base_gpu_id</span></code>: Use to adjust first GPU used to distribute the model across available GPUs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_auto_truncate</span></code>: Automatically truncate requests that exceed the maximum input length.</p></li>
+</ul>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">log_level</span></code>: Global log verbosity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log_level_http</span></code>: Separate verbosity level for the HTTP server logs (if unset, defaults to <code class="docutils literal notranslate"><span class="pre">log_level</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log_requests</span></code>: Logs the inputs and outputs of all requests for debugging.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show_time_cost</span></code>: Prints or logs detailed timing info for internal operations (helpful for performance tuning).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_metrics</span></code>: Exports Prometheus-like metrics for request usage and performance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">decode_log_interval</span></code>: How often (in tokens) to log decode progress.</p></li>
+</ul>
+</section>
+<section id="multi-node-distributed-serving">
+<h2>Multi-node distributed serving<a class="headerlink" href="#multi-node-distributed-serving" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dist_init_addr</span></code>: The TCP address used for initializing PyTorch’s distributed backend (e.g. <code class="docutils literal notranslate"><span class="pre">192.168.0.2:25000</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nnodes</span></code>: Total number of nodes in the cluster. Refer to how to run the <a class="reference external" href="https://docs.sglang.ai/references/llama_405B.html#run-405b-fp16-on-two-nodes">Llama 405B model</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">node_rank</span></code>: Rank (ID) of this node among the <code class="docutils literal notranslate"><span class="pre">nnodes</span></code> in the distributed setup.</p></li>
+</ul>
+</section>
+<section id="lora">
+<h2>LoRA<a class="headerlink" href="#lora" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lora_paths</span></code>: You may provide a list of adapters to your model as a list. Each batch element will get model response with the corresponding lora adapter applied. Currently <code class="docutils literal notranslate"><span class="pre">cuda_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">radix_attention</span></code> are not supportet with this option so you need to disable them manually. We are still working on through these <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2929">issues</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_loras_per_batch</span></code>: Maximum number of LoRAs in a running batch including base model.</p></li>
+</ul>
+</section>
+<section id="kernel-backend">
+<h2>Kernel backend<a class="headerlink" href="#kernel-backend" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attention_backend</span></code>: The backend for attention computation and KV cache management.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sampling_backend</span></code>: The backend for sampling.</p></li>
+</ul>
+</section>
+<section id="constrained-decoding">
+<h2>Constrained Decoding<a class="headerlink" href="#constrained-decoding" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">grammar_backend</span></code>: The grammar backend for constraint decoding. Detailed usage can be found in this <a class="reference external" href="https://docs.sglang.ai/backend/structured_outputs.html">document</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constrained_json_whitespace_pattern</span></code>: Use with <code class="docutils literal notranslate"><span class="pre">Outlines</span></code> grammar backend to allow JSON with syntatic newlines, tabs or multiple spaces. Details can be found <a class="reference external" href="https://dottxt-ai.github.io/outlines/latest/reference/generation/json/#using-pydantic">here</a>.</p></li>
+</ul>
+</section>
+<section id="speculative-decoding">
+<h2>Speculative decoding<a class="headerlink" href="#speculative-decoding" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speculative_draft_model_path</span></code>: The draft model path for speculative decoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speculative_algorithm</span></code>: The algorithm for speculative decoding. Currently only <a class="reference external" href="https://arxiv.org/html/2406.16858v1">Eagle</a> is supported. Note that the radix cache, chunked prefill, and overlap scheduler are disabled when using eagle speculative decoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speculative_num_steps</span></code>: How many draft passes we run before verifying.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speculative_num_draft_tokens</span></code>: The number of tokens proposed in a draft.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speculative_eagle_topk</span></code>: The number of top candidates we keep for verification at each step for <a class="reference external" href="https://arxiv.org/html/2406.16858v1">Eagle</a>.</p></li>
+</ul>
+</section>
+<section id="double-sparsity">
+<h2>Double Sparsity<a class="headerlink" href="#double-sparsity" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_double_sparsity</span></code>: Enables <a class="reference external" href="https://arxiv.org/html/2408.07092v2">double sparsity</a> which increases throughput.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ds_channel_config_path</span></code>: The double sparsity config. For a guide on how to generate the config for your model see <a class="reference external" href="https://github.com/andy-yang-1/DoubleSparse/tree/main/config">this repo</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ds_heavy_channel_num</span></code>: Number of channel indices to keep for each layer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ds_heavy_token_num</span></code>: Number of tokens used for attention during decode. Skip sparse decoding if <code class="docutils literal notranslate"><span class="pre">min_seq_len</span></code> in batch &lt; this number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ds_heavy_channel_type</span></code>: The type of heavy channels. Either <code class="docutils literal notranslate"><span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code> or <code class="docutils literal notranslate"><span class="pre">qk</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ds_sparse_decode_threshold</span></code>: Don’t apply sparse decoding if <code class="docutils literal notranslate"><span class="pre">max_seq_len</span></code> in batch &lt; this threshold.</p></li>
+</ul>
+</section>
+<section id="debug-options">
+<h2>Debug options<a class="headerlink" href="#debug-options" title="Link to this heading">#</a></h2>
+<p><em>Note: We recommend to stay with the defaults and only use these options for debugging for best possible performance.</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_radix_cache</span></code>: Disable <a class="reference external" href="https://lmsys.org/blog/2024-01-17-sglang/">Radix</a> backend for prefix caching.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_jump_forward</span></code>: Disable <a class="reference external" href="https://lmsys.org/blog/2024-02-05-compressed-fsm/#our-method-jump-forward-decoding-with-a-compressed-finite-state-machine">jump-forward</a> for outlines grammar backend.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph</span></code>: Disable <a class="reference external" href="https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/">cuda graph</a> for model forward.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph_padding</span></code>: Disable cuda graph when padding is needed. In other case still use cuda graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_outlines_disk_cache</span></code>: Disable disk cache for outlines grammar backend.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_custom_all_reduce</span></code>: Disable usage of custom all reduce kernel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_mla</span></code>: Disable <a class="reference external" href="https://arxiv.org/html/2405.04434v5">Multi-Head Latent Attention</a> for Deepseek model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_overlap_schedule</span></code>: Disable the <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#zero-overhead-batch-scheduler">Overhead-Scheduler</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_nan_detection</span></code>: Turning this on makes the sampler print a warning if the logits contain <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_p2p_check</span></code>: Turns off the default of allowing always p2p check when accessing GPU.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">triton_attention_reduce_in_fp32</span></code>: In triton kernels this will cast the intermediate attention result to <code class="docutils literal notranslate"><span class="pre">float32</span></code>.</p></li>
+</ul>
+</section>
+<section id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Link to this heading">#</a></h2>
+<p><em>Note: Some of these options are still in experimental stage.</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_mixed_chunk</span></code>: Enables mixing prefill and decode, see <a class="reference external" href="https://github.com/sgl-project/sglang/discussions/1163">this discussion</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_dp_attention</span></code>: Enable <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Data Parallelism Attention</a> for Deepseek models. Note that you need to choose <code class="docutils literal notranslate"><span class="pre">dp_size</span> <span class="pre">=</span> <span class="pre">tp_size</span></code> for this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_ep_moe</span></code>: Enables expert parallelism, see the description of <code class="docutils literal notranslate"><span class="pre">ep_size</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_torch_compile</span></code>: Torch compile the model. This is an experimental feature.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch_compile_max_bs</span></code>: The maximum batch size when using <code class="docutils literal notranslate"><span class="pre">torch_compile</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cuda_graph_max_bs</span></code>: Adjust the maximum batchsize when using cuda graph. By default this is chosen for you based on GPU specifics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cuda_graph_bs</span></code>: The batch sizes to capture by <code class="docutils literal notranslate"><span class="pre">CudaGraphRunner</span></code>. By default this is done for you.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torchao_config</span></code>: Experimental feature that optimizes the model with <a class="reference external" href="https://github.com/pytorch/ao">torchao</a>. Possible choices are: int8dq, int8wo, int4wo-&lt;group_size&gt;, fp8wo, fp8dq-per_tensor, fp8dq-per_row.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">triton_attention_num_kv_splits</span></code>: Use to adjust the number of KV splits in triton kernels. Default is 8.</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -496,6 +710,45 @@
             
             
               
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-launch-commands">Common launch commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-tokenizer">Model and tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-http-api">Serving: HTTP &amp; API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-server-configuration">HTTP Server configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-configuration">API configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism">Parallelism</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-parallelism">Tensor parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism">Data parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expert-parallelism">Expert parallelism</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-scheduling">Memory and scheduling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-runtime-options">Other runtime options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">Logging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-distributed-serving">Multi-node distributed serving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lora">LoRA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-backend">Kernel backend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding">Speculative decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-sparsity">Double Sparsity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-options">Debug options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -524,7 +777,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 22, 2025.
+  Last updated on Jan 23, 2025.
   <br/>
 </p>
   </div>
