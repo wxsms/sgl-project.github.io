@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Function Calling &#8212; SGLang</title>
+    <title>Tool and Function Calling &#8212; SGLang</title>
   
   
   
@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post7" />
-    <meta name="docbuild:last-update" content="Jan 24, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 26, 2025"/>
   </head>
   
   
@@ -407,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Function Calling</h1>
+    <h1>Tool and Function Calling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,12 +417,23 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models">Supported Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-server">Launch a server</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Single-Round-Invocation">Single Round Invocation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#OpenAI-Compatible-API">OpenAI Compatible API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Launching-the-Server">Launching the Server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-Tools-for-Function-Call">Define Tools for Function Call</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-Messages">Define Messages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Initialize-the-Client">Initialize the Client</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-Streaming-Request">Non-Streaming Request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Request">Streaming Request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Handle-Tool-Calls">Handle Tool Calls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-a-Tool-Function">Define a Tool Function</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Execute-the-Tool">Execute the Tool</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Send-Results-Back-to-Model">Send Results Back to Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Native-API-and-SGLang-Runtime-(SRT)">Native API and SGLang Runtime (SRT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Engine-API">Offline Engine API</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#How-to-support-a-new-model?">How to support a new model?</a></li>
 </ul>
             </nav>
@@ -439,44 +450,30 @@
     .output_area.stderr, .output_area.stdout {
         color: #d3d3d3 !important; /* light gray */
     }
-</style><section id="Function-Calling">
-<h1>Function Calling<a class="headerlink" href="#Function-Calling" title="Link to this heading">#</a></h1>
-<p>This notebook provides a quick-start guide to use function tooling using SGLang chat completions API</p>
-<section id="Supported-Models">
-<h2>Supported Models<a class="headerlink" href="#Supported-Models" title="Link to this heading">#</a></h2>
-<p>Currently, we added the support for tools calling in the following models:</p>
-<ul class="simple">
-<li><p>Llama 3.2 models</p></li>
-<li><p>Llama 3.1 models</p></li>
-<li><p>Qwen 2.5 models</p></li>
-<li><p>InternLM Models</p></li>
-</ul>
-</section>
-<section id="Usage">
-<h2>Usage<a class="headerlink" href="#Usage" title="Link to this heading">#</a></h2>
-<section id="Launch-a-server">
-<h3>Launch a server<a class="headerlink" href="#Launch-a-server" title="Link to this heading">#</a></h3>
-<p>This code block is equivalent to executing</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.launch_server</span> <span class="pre">--model-path</span> <span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span> <span class="pre">\</span> <span class="pre">--port</span> <span class="pre">30000</span> <span class="pre">--host</span> <span class="pre">0.0.0.0</span></code> in your terminal and wait for the server to be ready. Once the server is running, you can send test requests using curl or requests. The server implements the OpenAI-compatible APIs.</p>
+</style><section id="Tool-and-Function-Calling">
+<h1>Tool and Function Calling<a class="headerlink" href="#Tool-and-Function-Calling" title="Link to this heading">#</a></h1>
+<p>This guide demonstrates how to use SGLang’s <strong>Tool Calling</strong> functionality.</p>
+<section id="OpenAI-Compatible-API">
+<h2>OpenAI Compatible API<a class="headerlink" href="#OpenAI-Compatible-API" title="Link to this heading">#</a></h2>
+<section id="Launching-the-Server">
+<h3>Launching the Server<a class="headerlink" href="#Launching-the-Server" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">execute_shell_command</span><span class="p">,</span>
     <span class="n">wait_for_server</span><span class="p">,</span>
     <span class="n">terminate_process</span><span class="p">,</span>
     <span class="n">print_highlight</span><span class="p">,</span>
 <span class="p">)</span>
 
-
 <span class="n">server_process</span> <span class="o">=</span> <span class="n">execute_shell_command</span><span class="p">(</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd"> python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --port 30000 --host 0.0.0.0</span>
-<span class="sd">&quot;&quot;&quot;</span>
+    <span class="s2">&quot;python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --tool-call-parser llama3 --port 30333 --host 0.0.0.0&quot;</span>  <span class="c1"># llama3</span>
 <span class="p">)</span>
-
-<span class="n">wait_for_server</span><span class="p">(</span><span class="s2">&quot;http://localhost:30000&quot;</span><span class="p">)</span>
+<span class="n">wait_for_server</span><span class="p">(</span><span class="s2">&quot;http://localhost:30333&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -485,33 +482,33 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-24 12:06:45] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization_param_path=None, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, skip_tokenizer_init=False, host=&#39;0.0.0.0&#39;, port=30000, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, prefill_only_one_req=False, tp_size=1, stream_interval=1, random_seed=597702243, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;sglang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_draft_model_path=None, speculative_algorithm=None, speculative_num_steps=5, speculative_num_draft_tokens=64, speculative_eagle_topk=8, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False)
-[2025-01-24 12:07:04 TP0] Init torch distributed begin.
-[2025-01-24 12:07:04 TP0] Load weight begin. avail mem=78.81 GB
-[2025-01-24 12:07:06 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-01-26 18:05:53] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization_param_path=None, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, skip_tokenizer_init=False, host=&#39;0.0.0.0&#39;, port=30333, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, prefill_only_one_req=False, tp_size=1, stream_interval=1, random_seed=269287815, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;sglang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_draft_model_path=None, speculative_algorithm=None, speculative_num_steps=5, speculative_num_draft_tokens=64, speculative_eagle_topk=8, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;llama3&#39;)
+[2025-01-26 18:06:13 TP0] Init torch distributed begin.
+[2025-01-26 18:06:13 TP0] Load weight begin. avail mem=76.30 GB
+[2025-01-26 18:06:15 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.20it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.13it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.84it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.52it/s]
 Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
 
-[2025-01-24 12:07:09 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.72 GB
-[2025-01-24 12:07:09 TP0] KV Cache is allocated. K size: 27.13 GB, V size: 27.13 GB.
-[2025-01-24 12:07:09 TP0] Memory pool end. avail mem=8.34 GB
-[2025-01-24 12:07:09 TP0] Capture cuda graph begin. This can take up to several minutes.
-100%|██████████| 23/23 [00:05&lt;00:00,  4.55it/s]
-[2025-01-24 12:07:14 TP0] Capture cuda graph end. Time elapsed: 5.06 s
-[2025-01-24 12:07:15 TP0] max_total_num_tokens=444500, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
-[2025-01-24 12:07:15] INFO:     Started server process [3062851]
-[2025-01-24 12:07:15] INFO:     Waiting for application startup.
-[2025-01-24 12:07:15] INFO:     Application startup complete.
-[2025-01-24 12:07:15] INFO:     Uvicorn running on http://0.0.0.0:30000 (Press CTRL+C to quit)
-[2025-01-24 12:07:15] INFO:     127.0.0.1:37048 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-01-24 12:07:16] INFO:     127.0.0.1:37058 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-01-24 12:07:16 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-24 12:07:18] INFO:     127.0.0.1:37072 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-01-24 12:07:18] The server is fired up and ready to roll!
+[2025-01-26 18:06:18 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=61.04 GB
+[2025-01-26 18:06:18 TP0] KV Cache is allocated. K size: 25.94 GB, V size: 25.94 GB.
+[2025-01-26 18:06:18 TP0] Memory pool end. avail mem=8.04 GB
+[2025-01-26 18:06:18 TP0] Capture cuda graph begin. This can take up to several minutes.
+100%|██████████| 23/23 [00:06&lt;00:00,  3.32it/s]
+[2025-01-26 18:06:25 TP0] Capture cuda graph end. Time elapsed: 6.94 s
+[2025-01-26 18:06:26 TP0] max_total_num_tokens=425038, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2025-01-26 18:06:26] INFO:     Started server process [1109258]
+[2025-01-26 18:06:26] INFO:     Waiting for application startup.
+[2025-01-26 18:06:26] INFO:     Application startup complete.
+[2025-01-26 18:06:26] INFO:     Uvicorn running on http://0.0.0.0:30333 (Press CTRL+C to quit)
+[2025-01-26 18:06:26] INFO:     127.0.0.1:38144 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-01-26 18:06:27] INFO:     127.0.0.1:38156 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-01-26 18:06:27 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-26 18:06:30] INFO:     127.0.0.1:38168 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-01-26 18:06:30] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -520,15 +517,21 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="output_area rendered_html docutils container">
 <strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    </strong></div>
 </div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code> defines the parser used to interpret responses. Currently supported parsers include:</p>
+<ul class="simple">
+<li><p>llama3: Llama 3.1 / 3.2 (e.g. meta-llama/Llama-3.1-8B-Instruct, meta-llama/Llama-3.2-1B-Instruct).</p></li>
+<li><p>mistral: Mistral (e.g. mistralai/Mistral-7B-Instruct-v0.3, mistralai/Mistral-Nemo-Instruct-2407, mistralai/ Mistral-Nemo-Instruct-2407, mistralai/Mistral-7B-v0.3).</p></li>
+<li><p>qwen25: Qwen 2.5 (e.g. Qwen/Qwen2.5-1.5B-Instruct, Qwen/Qwen2.5-7B-Instruct).</p></li>
+</ul>
 </section>
-<section id="Single-Round-Invocation">
-<h3>Single Round Invocation<a class="headerlink" href="#Single-Round-Invocation" title="Link to this heading">#</a></h3>
-<div class="nbinput docutils container">
+<section id="Define-Tools-for-Function-Call">
+<h3>Define Tools for Function Call<a class="headerlink" href="#Define-Tools-for-Function-Call" title="Link to this heading">#</a></h3>
+<p>Below is a Python snippet that shows how to define a tool as a dictionary. The dictionary includes a tool name, a description, and property defined Parameters.</p>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
-
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define tools</span>
 <span class="n">tools</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
@@ -538,40 +541,88 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
             <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="p">{</span>
                         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The city and state, e.g. San Francisco, CA&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The city to find the weather for, e.g. &#39;San Francisco&#39;&quot;</span><span class="p">,</span>
                     <span class="p">},</span>
-                    <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="s2">&quot;fahrenheit&quot;</span><span class="p">]},</span>
+                    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;the two-letter abbreviation for the state that the city is&quot;</span>
+                        <span class="s2">&quot; in, e.g. &#39;CA&#39; which would mean &#39;California&#39;&quot;</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The unit to fetch the temperature in&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="s2">&quot;fahrenheit&quot;</span><span class="p">],</span>
+                    <span class="p">},</span>
                 <span class="p">},</span>
-                <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">],</span>
             <span class="p">},</span>
         <span class="p">},</span>
     <span class="p">}</span>
 <span class="p">]</span>
-<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What&#39;s the weather like in Boston today?&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Define-Messages">
+<h3>Define Messages<a class="headerlink" href="#Define-Messages" title="Link to this heading">#</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_messages</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What&#39;s the weather like in Boston today? Please respond with the format: Today&#39;s weather is :{function call result}&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_API_KEY&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://0.0.0.0:30000/v1&quot;</span><span class="p">)</span>
+
+<span class="n">messages</span> <span class="o">=</span> <span class="n">get_messages</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Initialize-the-Client">
+<h3>Initialize the Client<a class="headerlink" href="#Initialize-the-Client" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize OpenAI-like client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://0.0.0.0:30333/v1&quot;</span><span class="p">)</span>
 <span class="n">model_name</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-01-26 18:06:31] INFO:     127.0.0.1:54338 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+</section>
+<section id="Non-Streaming-Request">
+<h3>Non-Streaming Request<a class="headerlink" href="#Non-Streaming-Request" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Non-streaming mode test</span>
+<span class="n">response_non_stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
     <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
     <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
     <span class="n">top_p</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Non-streaming</span>
     <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
 <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">ChatCompletion(id=&#39;d6f620e1767e490d85b5ce45c15151cf&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None,</span>
-<span class="sd">role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&quot;a&quot;: &quot;3&quot;, &quot;b&quot;: &quot;5&quot;}&#39;, name=&#39;add&#39;), type=&#39;function&#39;)]),</span>
-<span class="sd">matched_stop=128008)], created=1735411703, model=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None,</span>
-<span class="sd">usage=CompletionUsage(completion_tokens=23, prompt_tokens=198, total_tokens=221, completion_tokens_details=None, prompt_tokens_details=None))</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;Non-stream response:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response_non_stream</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -580,23 +631,320 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-24 12:07:21] INFO:     127.0.0.1:37084 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-01-24 12:07:21 TP0] Prefill batch. #new-seq: 1, #new-token: 219, #cached-token: 1, cache hit rate: 0.44%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-24 12:07:22] INFO:     127.0.0.1:37084 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-ChatCompletion(id=&#39;d6a466e37bf14b8b801b254c3ac0e163&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;location&#34;: &#34;Boston, MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737720442, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=28, prompt_tokens=220, total_tokens=248, completion_tokens_details=None, prompt_tokens_details=None))
+[2025-01-26 18:06:31 TP0] Prefill batch. #new-seq: 1, #new-token: 302, #cached-token: 1, cache hit rate: 0.32%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-26 18:06:32] INFO:     127.0.0.1:54338 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Non-stream response:</strong></div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;\n\nChatCompletion(id=\&#39;d6f620e1767e490d85b5ce45c15151cf\&#39;, choices=[Choice(finish_reason=\&#39;stop\&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, \nrole=\&#39;assistant\&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=\&#39;0\&#39;, function=Function(arguments=\&#39;{&#34;a&#34;: &#34;3&#34;, &#34;b&#34;: &#34;5&#34;}\&#39;, name=\&#39;add\&#39;), type=\&#39;function\&#39;)]), \nmatched_stop=128008)], created=1735411703, model=\&#39;meta-llama/Llama-3.2-1B-Instruct\&#39;, object=\&#39;chat.completion\&#39;, service_tier=None, system_fingerprint=None, \nusage=CompletionUsage(completion_tokens=23, prompt_tokens=198, total_tokens=221, completion_tokens_details=None, prompt_tokens_details=None))\n\n&#39;
+ChatCompletion(id=&#39;7b0e7d8d83e44e3e89bff73593850369&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737914792, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=303, total_tokens=335, completion_tokens_details=None, prompt_tokens_details=None))
+[2025-01-26 18:06:32 TP0] Decode batch. #running-req: 0, #token: 0, token usage: 0.00, gen throughput (token/s): 6.68, #queue-req: 0
+</pre></div></div>
+</div>
+</section>
+<section id="Streaming-Request">
+<h3>Streaming Request<a class="headerlink" href="#Streaming-Request" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Streaming mode test</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;Streaming response:&quot;</span><span class="p">)</span>
+<span class="n">response_stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">top_p</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Enable streaming</span>
+    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response_stream</span><span class="p">:</span>
+    <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Streaming response:</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-01-26 18:06:32] INFO:     127.0.0.1:54338 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-26 18:06:32 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 302, cache hit rate: 49.43%, token usage: 0.00, #running-req: 0, #queue-req: 0
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;city&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;Boston&#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;, &#34;state&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;MA&#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;, &#34;unit&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;f&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;ahrenheit&#34;}&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+</pre></div></div>
+</div>
+</section>
+<section id="Handle-Tool-Calls">
+<h3>Handle Tool Calls<a class="headerlink" href="#Handle-Tool-Calls" title="Link to this heading">#</a></h3>
+<p>When the engine determines it should call a particular tool, it will return arguments or partial arguments through the response. You can parse these arguments and later invoke the tool accordingly.</p>
+<p><strong>Non-Streaming Request</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_non_stream</span> <span class="o">=</span> <span class="n">response_non_stream</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span>
+<span class="n">arguments_non_stream</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">response_non_stream</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final streamed function call name: </span><span class="si">{</span><span class="n">name_non_stream</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final streamed function call arguments: </span><span class="si">{</span><span class="n">arguments_non_stream</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Final streamed function call name: get_current_weather</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Final streamed function call arguments: {"unit": "fahrenheit", "city": "Boston", "state": "MA"}</strong></div>
+</div>
+<p><strong>Streaming Request</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parse and combine function call arguments</span>
+<span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">choice</span><span class="o">.</span><span class="n">delta</span>
+    <span class="k">if</span> <span class="n">delta</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
+        <span class="n">tool_call</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">tool_call</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+            <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Streamed function call name: </span><span class="si">{</span><span class="n">tool_call</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">tool_call</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="p">:</span>
+            <span class="n">arguments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tool_call</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Streamed function call arguments: </span><span class="si">{</span><span class="n">tool_call</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine all fragments into a single JSON string</span>
+<span class="n">full_arguments</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final streamed function call arguments: </span><span class="si">{</span><span class="n">full_arguments</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Streamed function call name: get_current_weather</strong></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Streamed function call arguments: {&#34;city&#34;: &#34;
+Streamed function call arguments: Boston&#34;
+Streamed function call arguments: , &#34;state&#34;: &#34;
+Streamed function call arguments: MA&#34;
+Streamed function call arguments: , &#34;unit&#34;: &#34;
+Streamed function call arguments: f
+Streamed function call arguments: ahrenheit&#34;}
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Final streamed function call arguments: {"city": "Boston", "state": "MA", "unit": "fahrenheit"}</strong></div>
+</div>
+</section>
+<section id="Define-a-Tool-Function">
+<h3>Define a Tool Function<a class="headerlink" href="#Define-a-Tool-Function" title="Link to this heading">#</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a demonstration, define real function according to your usage.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_current_weather</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;The weather in </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2"> is 85 degrees </span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">. It is &quot;</span>
+        <span class="s2">&quot;partly cloudly, with highs in the 90&#39;s.&quot;</span>
+    <span class="p">)</span>
+
+
+<span class="n">available_tools</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;get_current_weather&quot;</span><span class="p">:</span> <span class="n">get_current_weather</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="Execute-the-Tool">
+<h2>Execute the Tool<a class="headerlink" href="#Execute-the-Tool" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">call_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">full_arguments</span><span class="p">)</span>
+
+<span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tool_calls&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;get_current_weather&quot;</span><span class="p">,</span> <span class="s2">&quot;arguments&quot;</span><span class="p">:</span> <span class="n">full_arguments</span><span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Call the corresponding tool function</span>
+<span class="n">tool_name</span> <span class="o">=</span> <span class="n">messages</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<span class="n">tool_to_call</span> <span class="o">=</span> <span class="n">available_tools</span><span class="p">[</span><span class="n">tool_name</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">tool_to_call</span><span class="p">(</span><span class="o">**</span><span class="n">call_data</span><span class="p">)</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function call result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;tool&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">tool_name</span><span class="p">})</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Updated message history: </span><span class="si">{</span><span class="n">messages</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Function call result: The weather in Boston, MA is 85 degrees fahrenheit. It is partly cloudly, with highs in the 90's.</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Please respond with the format: Today's weather is :{function call result}"}, {'role': 'user', 'content': '', 'tool_calls': {'name': 'get_current_weather', 'arguments': '{"city": "Boston", "state": "MA", "unit": "fahrenheit"}'}}, {'role': 'tool', 'content': "The weather in Boston, MA is 85 degrees fahrenheit. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
+</div>
+<section id="Send-Results-Back-to-Model">
+<h3>Send Results Back to Model<a class="headerlink" href="#Send-Results-Back-to-Model" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">top_p</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;Non-stream response:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">final_response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-01-26 18:06:32 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 300, cache hit rate: 63.21%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-26 18:06:32 TP0] Decode batch. #running-req: 1, #token: 350, token usage: 0.00, gen throughput (token/s): 115.88, #queue-req: 0
+starting on new tool %d 0
+[2025-01-26 18:06:32] INFO:     127.0.0.1:54338 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Non-stream response:</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ChatCompletion(id=&#39;5cb50d1b44dd4119b595470eb6a3ae8f&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737914792, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=341, total_tokens=373, completion_tokens_details=None, prompt_tokens_details=None))
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Native-API-and-SGLang-Runtime-(SRT)">
+<h2>Native API and SGLang Runtime (SRT)<a class="headerlink" href="#Native-API-and-SGLang-Runtime-(SRT)" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="c1"># generate an answer</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
+
+<span class="n">messages</span> <span class="o">=</span> <span class="n">get_messages</span><span class="p">()</span>
+
+<span class="nb">input</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">apply_chat_template</span><span class="p">(</span>
+    <span class="n">messages</span><span class="p">,</span>
+    <span class="n">tokenize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">add_generation_prompt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">gen_url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30333/generate&quot;</span>
+<span class="n">gen_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="nb">input</span><span class="p">,</span> <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;skip_special_tokens&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}}</span>
+<span class="n">gen_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">gen_url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">gen_data</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gen_response</span><span class="p">)</span>
+
+<span class="c1"># parse the response</span>
+<span class="n">parse_url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30333/function_call&quot;</span>
+
+<span class="n">function_call_input</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">gen_response</span><span class="p">,</span>
+    <span class="s2">&quot;tool_call_parser&quot;</span><span class="p">:</span> <span class="s2">&quot;llama3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="n">tools</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">function_call_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">parse_url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">function_call_input</span><span class="p">)</span>
+<span class="n">function_call_response_json</span> <span class="o">=</span> <span class="n">function_call_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;function name: &quot;</span><span class="p">,</span> <span class="n">function_call_response_json</span><span class="p">[</span><span class="s2">&quot;calls&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;function arguments: &quot;</span><span class="p">,</span> <span class="n">function_call_response_json</span><span class="p">[</span><span class="s2">&quot;calls&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;parameters&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-01-26 18:06:41 TP0] Prefill batch. #new-seq: 1, #new-token: 317, #cached-token: 1, cache hit rate: 47.48%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-26 18:06:41 TP0] Decode batch. #running-req: 1, #token: 335, token usage: 0.00, gen throughput (token/s): 4.30, #queue-req: 0
+[2025-01-26 18:06:41] INFO:     127.0.0.1:36720 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+&lt;|python_tag|&gt;{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;parameters&#34;: {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}}
+[2025-01-26 18:06:41] INFO:     127.0.0.1:36730 - &#34;POST /function_call HTTP/1.1&#34; 200 OK
+function name:  get_current_weather
+function arguments:  {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
@@ -604,13 +952,128 @@ ChatCompletion(id=&#39;d6a466e37bf14b8b801b254c3ac0e163&#39;, choices=[Choice(fi
 </div>
 </div>
 </section>
+<section id="Offline-Engine-API">
+<h2>Offline Engine API<a class="headerlink" href="#Offline-Engine-API" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.function_call_parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">FunctionCallParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.managers.io_struct</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tool</span><span class="p">,</span> <span class="n">Function</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">tokenizer_manager</span><span class="o">.</span><span class="n">tokenizer</span>
+<span class="n">input_ids</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">apply_chat_template</span><span class="p">(</span>
+    <span class="n">messages</span><span class="p">,</span> <span class="n">tokenize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">add_generation_prompt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="n">tools</span>
+<span class="p">)</span>
+
+<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+    <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+    <span class="s2">&quot;skip_special_tokens&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># 1) Offline generation</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">sampling_params</span><span class="o">=</span><span class="n">sampling_params</span><span class="p">)</span>
+<span class="n">generated_text</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>  <span class="c1"># Assume there is only one prompt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Offline Engine Output Text ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">generated_text</span><span class="p">)</span>
+
+
+<span class="c1"># 2) Parse using FunctionCallParser</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_dict_to_tool</span><span class="p">(</span><span class="n">tool_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tool</span><span class="p">:</span>
+    <span class="n">function_dict</span> <span class="o">=</span> <span class="n">tool_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;function&quot;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="k">return</span> <span class="n">Tool</span><span class="p">(</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">tool_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;function&quot;</span><span class="p">),</span>
+        <span class="n">function</span><span class="o">=</span><span class="n">Function</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">function_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">function_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">),</span>
+            <span class="n">parameters</span><span class="o">=</span><span class="n">function_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+
+<span class="n">tools</span> <span class="o">=</span> <span class="p">[</span><span class="n">convert_dict_to_tool</span><span class="p">(</span><span class="n">raw_tool</span><span class="p">)</span> <span class="k">for</span> <span class="n">raw_tool</span> <span class="ow">in</span> <span class="n">tools</span><span class="p">]</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">FunctionCallParser</span><span class="p">(</span><span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span> <span class="n">tool_call_parser</span><span class="o">=</span><span class="s2">&quot;llama3&quot;</span><span class="p">)</span>
+<span class="n">normal_text</span><span class="p">,</span> <span class="n">calls</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_non_stream</span><span class="p">(</span><span class="n">generated_text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Parsing Result ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normal text portion:&quot;</span><span class="p">,</span> <span class="n">normal_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function call portion:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">call</span> <span class="ow">in</span> <span class="n">calls</span><span class="p">:</span>
+    <span class="c1"># call: ToolCallItem</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - tool name: </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    parameters: </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">parameters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3) If needed, perform additional logic on the parsed functions, such as automatically calling the corresponding function to obtain a return value, etc.</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.29it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.95it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.62it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.50it/s]
+
+100%|██████████| 23/23 [00:04&lt;00:00,  5.04it/s]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+=== Offline Engine Output Text ===
+&lt;|python_tag|&gt;{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;parameters&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}}
+
+=== Parsing Result ===
+Normal text portion: &lt;|python_tag|&gt;{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;parameters&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}}
+Function call portion:
+  - tool name: get_current_weather
+    parameters: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="How-to-support-a-new-model?">
 <h2>How to support a new model?<a class="headerlink" href="#How-to-support-a-new-model?" title="Link to this heading">#</a></h2>
-<p>For adding support of more different models:</p>
 <ol class="arabic simple">
-<li><p>Update the <code class="docutils literal notranslate"><span class="pre">TOOLS_TAG_LIST</span></code> in <code class="docutils literal notranslate"><span class="pre">sglang/srt/utils.py</span></code> with the tool tag used by the model.</p></li>
-<li><p>Add support in <code class="docutils literal notranslate"><span class="pre">parse_tool_response</span></code> function for converting into tool calls <code class="docutils literal notranslate"><span class="pre">sglang/srt/utils.py</span></code></p></li>
+<li><p>Update the TOOLS_TAG_LIST in sglang/srt/function_call_parser.py with the model’s tool tags. Currently supported tags include:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TOOLS_TAG_LIST = [
+    “&lt;|plugin|&gt;“,
+    “&lt;function=“,
+    “&lt;tool_call&gt;“,
+    “&lt;|python_tag|&gt;“,
+    “[TOOL_CALLS]”
+]
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a new detector class in sglang/srt/function_call_parser.py that inherits from BaseFormatDetector. The detector should handle the model’s specific function call format. For example:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>class NewModelDetector(BaseFormatDetector):
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Add the new detector to the MultiFormatParser class that manages all the format detectors.</p></li>
 </ol>
 </section>
 </section>
@@ -643,12 +1106,23 @@ ChatCompletion(id=&#39;d6a466e37bf14b8b801b254c3ac0e163&#39;, choices=[Choice(fi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models">Supported Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-server">Launch a server</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Single-Round-Invocation">Single Round Invocation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#OpenAI-Compatible-API">OpenAI Compatible API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Launching-the-Server">Launching the Server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-Tools-for-Function-Call">Define Tools for Function Call</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-Messages">Define Messages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Initialize-the-Client">Initialize the Client</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-Streaming-Request">Non-Streaming Request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Request">Streaming Request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Handle-Tool-Calls">Handle Tool Calls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-a-Tool-Function">Define a Tool Function</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Execute-the-Tool">Execute the Tool</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Send-Results-Back-to-Model">Send Results Back to Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Native-API-and-SGLang-Runtime-(SRT)">Native API and SGLang Runtime (SRT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Engine-API">Offline Engine API</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#How-to-support-a-new-model?">How to support a new model?</a></li>
 </ul>
   </nav></div>
@@ -683,7 +1157,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 24, 2025.
+  Last updated on Jan 26, 2025.
   <br/>
 </p>
   </div>
