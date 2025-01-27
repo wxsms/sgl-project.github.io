@@ -56,11 +56,11 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Server Arguments" href="server_arguments.html" />
-    <link rel="prev" title="Structured Outputs" href="structured_outputs.html" />
+    <link rel="prev" title="Speculative Decoding" href="speculative_decoding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.1.post7" />
-    <meta name="docbuild:last-update" content="Jan 26, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 27, 2025"/>
   </head>
   
   
@@ -166,6 +166,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tool and Function Calling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 </ul>
@@ -483,31 +484,31 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-26 19:22:42] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization_param_path=None, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, skip_tokenizer_init=False, host=&#39;0.0.0.0&#39;, port=30333, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, prefill_only_one_req=False, tp_size=1, stream_interval=1, random_seed=380295596, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;sglang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_draft_model_path=None, speculative_algorithm=None, speculative_num_steps=5, speculative_num_draft_tokens=64, speculative_eagle_topk=8, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;llama3&#39;)
-[2025-01-26 19:23:23 TP0] Init torch distributed begin.
-[2025-01-26 19:23:23 TP0] Load weight begin. avail mem=78.81 GB
-[2025-01-26 19:23:27 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-01-27 02:02:38] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization_param_path=None, quantization=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, skip_tokenizer_init=False, host=&#39;0.0.0.0&#39;, port=30333, mem_fraction_static=0.88, max_running_requests=None, max_total_tokens=None, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;lpm&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, prefill_only_one_req=False, tp_size=1, stream_interval=1, random_seed=240163942, constrained_json_whitespace_pattern=None, watchdog_timeout=300, download_dir=None, base_gpu_id=0, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_pth=&#39;sglang_storage&#39;, enable_cache_report=False, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_draft_model_path=None, speculative_algorithm=None, speculative_num_steps=5, speculative_num_draft_tokens=64, speculative_eagle_topk=8, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_jump_forward=False, disable_cuda_graph=False, disable_cuda_graph_padding=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;llama3&#39;)
+[2025-01-27 02:03:11 TP0] Init torch distributed begin.
+[2025-01-27 02:03:12 TP0] Load weight begin. avail mem=78.81 GB
+[2025-01-27 02:03:16 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.27it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.93it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.60it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.42it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.23it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:00,  2.00it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
 
-[2025-01-26 19:23:30 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.72 GB
-[2025-01-26 19:23:30 TP0] KV Cache is allocated. K size: 27.13 GB, V size: 27.13 GB.
-[2025-01-26 19:23:30 TP0] Memory pool end. avail mem=8.34 GB
-[2025-01-26 19:23:30 TP0] Capture cuda graph begin. This can take up to several minutes.
-100%|██████████| 23/23 [00:05&lt;00:00,  4.41it/s]
-[2025-01-26 19:23:36 TP0] Capture cuda graph end. Time elapsed: 5.23 s
-[2025-01-26 19:23:36 TP0] max_total_num_tokens=444500, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
-[2025-01-26 19:23:37] INFO:     Started server process [595421]
-[2025-01-26 19:23:37] INFO:     Waiting for application startup.
-[2025-01-26 19:23:37] INFO:     Application startup complete.
-[2025-01-26 19:23:37] INFO:     Uvicorn running on http://0.0.0.0:30333 (Press CTRL+C to quit)
-[2025-01-26 19:23:37] INFO:     127.0.0.1:59462 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-01-26 19:23:37 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-26 19:23:37] INFO:     127.0.0.1:59476 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:19 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.72 GB
+[2025-01-27 02:03:19 TP0] KV Cache is allocated. K size: 27.13 GB, V size: 27.13 GB.
+[2025-01-27 02:03:19 TP0] Memory pool end. avail mem=8.34 GB
+[2025-01-27 02:03:19 TP0] Capture cuda graph begin. This can take up to several minutes.
+100%|██████████| 23/23 [00:05&lt;00:00,  4.47it/s]
+[2025-01-27 02:03:24 TP0] Capture cuda graph end. Time elapsed: 5.16 s
+[2025-01-27 02:03:25 TP0] max_total_num_tokens=444500, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2049, context_len=131072
+[2025-01-27 02:03:25] INFO:     Started server process [410570]
+[2025-01-27 02:03:25] INFO:     Waiting for application startup.
+[2025-01-27 02:03:25] INFO:     Application startup complete.
+[2025-01-27 02:03:25] INFO:     Uvicorn running on http://0.0.0.0:30333 (Press CTRL+C to quit)
+[2025-01-27 02:03:26] INFO:     127.0.0.1:38512 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:26 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, cache hit rate: 0.00%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-27 02:03:26] INFO:     127.0.0.1:38524 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -601,7 +602,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-26 19:23:42] INFO:     127.0.0.1:35184 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:31] INFO:     127.0.0.1:38624 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 </section>
@@ -630,10 +631,10 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-26 19:23:46 TP0] Prefill batch. #new-seq: 1, #new-token: 302, #cached-token: 1, cache hit rate: 0.32%, token usage: 0.00, #running-req: 1, #queue-req: 0
-[2025-01-26 19:23:46] INFO:     127.0.0.1:59472 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-01-26 19:23:46] The server is fired up and ready to roll!
-[2025-01-26 19:23:46] INFO:     127.0.0.1:35184 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:32 TP0] Prefill batch. #new-seq: 1, #new-token: 302, #cached-token: 1, cache hit rate: 0.32%, token usage: 0.00, #running-req: 1, #queue-req: 0
+[2025-01-27 02:03:32] INFO:     127.0.0.1:38520 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:32] The server is fired up and ready to roll!
+[2025-01-27 02:03:32] INFO:     127.0.0.1:38624 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -647,7 +648,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;af87b55b331c40dba0a0a669c9c3e880&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737919426, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=303, total_tokens=335, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;d2ed1952c8d94241ae6a62f03a22871d&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737943412, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=303, total_tokens=335, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 </section>
@@ -687,17 +688,17 @@ ChatCompletion(id=&#39;af87b55b331c40dba0a0a669c9c3e880&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-26 19:23:46] INFO:     127.0.0.1:35184 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-01-26 19:23:46 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 302, cache hit rate: 49.43%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-26 19:23:46 TP0] Decode batch. #running-req: 1, #token: 311, token usage: 0.00, gen throughput (token/s): 4.64, #queue-req: 0
+[2025-01-27 02:03:32] INFO:     127.0.0.1:38624 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:32 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 302, cache hit rate: 49.43%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-27 02:03:32 TP0] Decode batch. #running-req: 1, #token: 311, token usage: 0.00, gen throughput (token/s): 6.44, #queue-req: 0
 ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)
-ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;city&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;unit&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;f&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;ahrenheit&#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;, &#34;city&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;Boston&#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;, &#34;state&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
-ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;MA&#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
-ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;, &#34;unit&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
-ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;f&#39;, name=&#39;&#39;), type=&#39;function&#39;)
-ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;ahrenheit&#34;}&#39;, name=&#39;&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;MA&#34;}&#39;, name=&#39;&#39;), type=&#39;function&#39;)
 </pre></div></div>
 </div>
 </section>
@@ -729,7 +730,7 @@ ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunc
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Final streamed function call arguments: {"city": "Boston", "state": "MA", "unit": "fahrenheit"}</strong></div>
+<strong style='color: #00008B;'>Final streamed function call arguments: {"unit": "fahrenheit", "city": "Boston", "state": "MA"}</strong></div>
 </div>
 <p><strong>Streaming Request</strong></p>
 <div class="nbinput docutils container">
@@ -767,20 +768,20 @@ ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunc
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Streamed function call arguments: {&#34;city&#34;: &#34;
+Streamed function call arguments: {&#34;unit&#34;: &#34;
+Streamed function call arguments: f
+Streamed function call arguments: ahrenheit&#34;
+Streamed function call arguments: , &#34;city&#34;: &#34;
 Streamed function call arguments: Boston&#34;
 Streamed function call arguments: , &#34;state&#34;: &#34;
-Streamed function call arguments: MA&#34;
-Streamed function call arguments: , &#34;unit&#34;: &#34;
-Streamed function call arguments: f
-Streamed function call arguments: ahrenheit&#34;}
+Streamed function call arguments: MA&#34;}
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Final streamed function call arguments: {"city": "Boston", "state": "MA", "unit": "fahrenheit"}</strong></div>
+<strong style='color: #00008B;'>Final streamed function call arguments: {"unit": "fahrenheit", "city": "Boston", "state": "MA"}</strong></div>
 </div>
 </section>
 <section id="Define-a-Tool-Function">
@@ -840,7 +841,7 @@ Streamed function call arguments: ahrenheit&#34;}
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Please respond with the format: Today's weather is :{function call result}"}, {'role': 'user', 'content': '', 'tool_calls': {'name': 'get_current_weather', 'arguments': '{"city": "Boston", "state": "MA", "unit": "fahrenheit"}'}}, {'role': 'tool', 'content': "The weather in Boston, MA is 85 degrees fahrenheit. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
+<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Please respond with the format: Today's weather is :{function call result}"}, {'role': 'user', 'content': '', 'tool_calls': {'name': 'get_current_weather', 'arguments': '{"unit": "fahrenheit", "city": "Boston", "state": "MA"}'}}, {'role': 'tool', 'content': "The weather in Boston, MA is 85 degrees fahrenheit. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
 </div>
 <section id="Send-Results-Back-to-Model">
 <h3>Send Results Back to Model<a class="headerlink" href="#Send-Results-Back-to-Model" title="Link to this heading">#</a></h3>
@@ -866,10 +867,10 @@ Streamed function call arguments: ahrenheit&#34;}
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-26 19:23:47 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 300, cache hit rate: 63.21%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-26 19:23:47 TP0] Decode batch. #running-req: 1, #token: 357, token usage: 0.00, gen throughput (token/s): 126.10, #queue-req: 0
+[2025-01-27 02:03:32 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 300, cache hit rate: 63.21%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-27 02:03:33 TP0] Decode batch. #running-req: 1, #token: 357, token usage: 0.00, gen throughput (token/s): 127.12, #queue-req: 0
 starting on new tool %d 0
-[2025-01-26 19:23:47] INFO:     127.0.0.1:35184 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:33] INFO:     127.0.0.1:38624 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -883,7 +884,7 @@ starting on new tool %d 0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;e449830e7f3e4d01988e72eea2ddcf1a&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737919427, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=341, total_tokens=373, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;ce256a490f344115bb8dd482582579a7&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)]), matched_stop=128008)], created=1737943413, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=341, total_tokens=373, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 </section>
@@ -935,13 +936,13 @@ ChatCompletion(id=&#39;e449830e7f3e4d01988e72eea2ddcf1a&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-01-26 19:24:04 TP0] Prefill batch. #new-seq: 1, #new-token: 317, #cached-token: 1, cache hit rate: 47.48%, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-01-26 19:24:04 TP0] Decode batch. #running-req: 1, #token: 342, token usage: 0.00, gen throughput (token/s): 2.29, #queue-req: 0
-[2025-01-26 19:24:04] INFO:     127.0.0.1:36704 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-&lt;|python_tag|&gt;{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;parameters&#34;: {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}}
-[2025-01-26 19:24:04] INFO:     127.0.0.1:36716 - &#34;POST /function_call HTTP/1.1&#34; 200 OK
+[2025-01-27 02:03:47 TP0] Prefill batch. #new-seq: 1, #new-token: 317, #cached-token: 1, cache hit rate: 47.48%, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-01-27 02:03:47 TP0] Decode batch. #running-req: 1, #token: 342, token usage: 0.00, gen throughput (token/s): 2.80, #queue-req: 0
+[2025-01-27 02:03:47] INFO:     127.0.0.1:39122 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+&lt;|python_tag|&gt;{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;parameters&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;, &#34;state&#34;: &#34;MA&#34;}}
+[2025-01-27 02:03:47] INFO:     127.0.0.1:39130 - &#34;POST /function_call HTTP/1.1&#34; 200 OK
 function name:  get_current_weather
-function arguments:  {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}
+function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;, &#34;state&#34;: &#34;MA&#34;}
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1020,13 +1021,13 @@ function arguments:  {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.24it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.89it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.57it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.39it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.27it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:00,  2.05it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.48it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  5.43it/s]
+100%|██████████| 23/23 [00:04&lt;00:00,  5.53it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1091,12 +1092,12 @@ Function call portion:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="structured_outputs.html"
+       href="speculative_decoding.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Structured Outputs</p>
+        <p class="prev-next-title">Speculative Decoding</p>
       </div>
     </a>
     <a class="right-next"
@@ -1176,7 +1177,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 26, 2025.
+  Last updated on Jan 27, 2025.
   <br/>
 </p>
   </div>
