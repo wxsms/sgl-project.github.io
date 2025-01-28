@@ -548,6 +548,7 @@ You can add it to the <code class="docutils literal notranslate"><span class="pr
 <ul class="simple">
 <li><p>Replace vllm’s <code class="docutils literal notranslate"><span class="pre">Attention</span></code> with <code class="docutils literal notranslate"><span class="pre">RadixAttention</span></code>. Note that you need to pass <code class="docutils literal notranslate"><span class="pre">layer_id</span></code> all the way to <code class="docutils literal notranslate"><span class="pre">RadixAttention</span></code>.</p></li>
 <li><p>Replace vllm’s <code class="docutils literal notranslate"><span class="pre">LogitsProcessor</span></code> with SGLang’s <code class="docutils literal notranslate"><span class="pre">LogitsProcessor</span></code>.</p></li>
+<li><p>Replace Multi-headed <code class="docutils literal notranslate"><span class="pre">Attention</span></code> of ViT with SGLang’s <code class="docutils literal notranslate"><span class="pre">VisionAttention</span></code>.</p></li>
 <li><p>Replace other vLLM layers with SGLang layers (e.g., <code class="docutils literal notranslate"><span class="pre">RMSNorm</span></code>, <code class="docutils literal notranslate"><span class="pre">SiluAndMul</span></code>).</p></li>
 <li><p>Remove <code class="docutils literal notranslate"><span class="pre">Sample</span></code>.</p></li>
 <li><p>Change <code class="docutils literal notranslate"><span class="pre">forward()</span></code> functions, and add <code class="docutils literal notranslate"><span class="pre">forward_batch</span></code>.</p></li>
