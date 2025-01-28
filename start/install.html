@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2" />
-    <meta name="docbuild:last-update" content="Jan 27, 2025"/>
+    <meta name="docbuild:last-update" content="Jan 28, 2025"/>
   </head>
   
   
@@ -439,6 +439,7 @@
 <section id="method-1-with-pip">
 <h2>Method 1: With pip<a class="headerlink" href="#method-1-with-pip" title="Link to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang[all]&quot;</span> <span class="o">--</span><span class="n">find</span><span class="o">-</span><span class="n">links</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flashinfer</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu124</span><span class="o">/</span><span class="n">torch2</span><span class="mf">.4</span><span class="o">/</span><span class="n">flashinfer</span><span class="o">/</span>
 </pre></div>
 </div>
@@ -451,16 +452,18 @@
 <span class="n">cd</span> <span class="n">sglang</span>
 
 <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all]&quot;</span> <span class="o">--</span><span class="n">find</span><span class="o">-</span><span class="n">links</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flashinfer</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu124</span><span class="o">/</span><span class="n">torch2</span><span class="mf">.4</span><span class="o">/</span><span class="n">flashinfer</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>Note: Please check the <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> to install the proper version according to your PyTorch and CUDA versions.</p>
+<p>Note: Please check the <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> to install the proper version according to your PyTorch and CUDA versions. If you meet with issue like <strong>ImportError: cannot import name <code class="docutils literal notranslate"><span class="pre">_grouped_size_compiled_for_decode_kernels</span></code></strong>, installing FlashInfer with some older version like 0.1.6 instead of the latest version could solve it.</p>
 <p>Note: To AMD ROCm system with Instinct/MI GPUs, do following instead:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">v0</span><span class="mf">.4.2</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sgl</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">sglang</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">sglang</span>
 
 <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all_hip]&quot;</span>
 </pre></div>
 </div>
@@ -647,7 +650,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 27, 2025.
+  Last updated on Jan 28, 2025.
   <br/>
 </p>
   </div>
