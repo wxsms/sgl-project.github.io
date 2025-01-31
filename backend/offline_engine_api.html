@@ -478,13 +478,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.11it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.74it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.27it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.93it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.59it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.80it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.47it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -516,28 +516,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Stephane Fosse, I&#39;m a passionate photographer and digital artist. I&#39;m specialized in creating realistic and detailed CGI artworks. I&#39;m based in Paris, France, and I&#39;m always ready to collaborate with potential clients or partners.
-I have a strong background in computer graphics and I&#39;m well-versed in 3D modeling, texturing, and rendering. My expertise includes creating realistic images of buildings, landscapes, and product visualizations. I&#39;m also skilled in post-processing and compositing.
-I&#39;m a certified graphic designer and a skilled 3D artist with a strong portfolio that showcases my skills. I&#39;ve worked on various
+Generated text:  Martin and I am a retired Computer Systems Engineer. I am an avid traveler and have been fortunate enough to have visited over 60 countries around the world. My travels have taken me to many exciting places, from the ancient temples of Cambodia to the vibrant cities of Japan, from the beautiful beaches of Thailand to the majestic mountains of New Zealand.
+I have always been fascinated by the diversity of cultures and the way people live their lives in different parts of the world. I have tried to capture some of these experiences and memories in my writing, which I hope will inspire and entertain my readers.
+In addition to my travels, I also enjoy learning new
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and government of the United States. The president serves a four-year term and is elected by the American people through the Electoral College. The president is also the commander-in-chief of the United States Armed Forces and has the power to veto legislation passed by Congress.
-The president of the United States is also the head of state and government of the United States. The president serves a four-year term and is elected by the American people through the Electoral College. The president is also the commander-in-chief of the United States Armed Forces and has the power to veto legislation passed by Congress.
-The president of the United States is elected through the
+Generated text:  planning to unveil a new proposal to reform the country&#39;s tax system on Wednesday. The plan, which has been under consideration for months, aims to reduce tax rates and simplify the tax code. However, some lawmakers are expressing concerns about the proposal&#39;s potential impact on certain groups, such as low-income individuals and small businesses.
+The proposal is expected to include a reduction in the corporate tax rate, which is currently at 35%. This could potentially lead to increased investment and job creation, but some lawmakers are worried that it could also widen the budget deficit. Additionally, the plan may include changes to the individual tax rates, which could affect middle-class
 ===============================
 Prompt: The capital of France is
-Generated text:  home to over 2.1 million people, and it&#39;s a city that&#39;s steeped in history and culture. From the iconic Eiffel Tower to the stunning Notre Dame Cathedral, there&#39;s no shortage of things to see and do in Paris. Here are some of the top attractions and experiences that visitors to Paris shouldn&#39;t miss.
-The Eiffel Tower is an iconic symbol of Paris and one of the most recognizable landmarks in the world. It was built for the 1889 World&#39;s Fair and stands 324 meters tall. Visitors can take the stairs or elevator to the top for breathtaking views of the city.
-Notre Dame
+Generated text:  a city like no other. The City of Light has a way of captivating the imagination and inspiring the senses. From the art and architecture to the cuisine and culture, Paris is a treasure trove of experiences that leave visitors in awe. Here are some of the top things to do in Paris, France:
+Explore the Eiffel Tower:
+The Eiffel Tower is an iconic symbol of Paris, and it’s a must-visit attraction. You can take the stairs or elevator to the top for breathtaking views of the city. Don’t miss the sunset for a romantic and memorable experience.
+Visit the Louvre Museum:
+The world-famous
 ===============================
 Prompt: The future of AI is
-Generated text:  bright – but the path forward is fraught with challenges and uncertainties. Join us for a special panel discussion featuring experts from academia, industry, and government, who will tackle the pressing issues surrounding AI development and deployment.
-Our panelists will explore the ethics of AI, the impact on jobs and the workforce, the need for regulation and accountability, and the role of public-private partnerships in driving AI innovation.
-Moderator: Sarah Jones, Director, Computer Science and Engineering, National Science Foundation
-Panelists:
-- Claire Cardie, Professor of Computer Science, Cornell University
-- Chris Broderick, Chief Technology Officer, PwC
-- Sharon
+Generated text:  all about multimodal learning, which enables machines to understand and learn from a variety of data sources, including text, images, speech, and more.
+Deep learning has long been the driving force behind AI’s success in recognizing patterns in data, but its limitations have become increasingly apparent as AI is asked to perform more complex tasks.
+Multimodal learning addresses these limitations by allowing AI to consider multiple sources of information simultaneously. This is particularly useful for applications such as image captioning, where AI must understand the visual content of an image and generate descriptive text.
+To achieve multimodal learning, researchers and developers are employing various techniques, including transfer learning,
 </pre></div></div>
 </div>
 </section>
@@ -577,18 +575,18 @@ Panelists:
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m looking forward to meeting new people and learning from their experiences. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m interested in hearing about your interests and hobbies. What brings you here today?
-This is a good example of a neutral self-introduction. It provides some basic information about the character, such as their name, age, and occupation, but it also gives a sense
+Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys playing the guitar and listening to music. I&#39;m a bit of a bookworm and like to spend my free time reading and learning new things. I&#39;m a pretty laid-back person and try to stay out of trouble. I&#39;m not really sure what I want to do with my life yet, but I&#39;m open to exploring different possibilities. I&#39;m a bit shy, but I&#39;m working on being more confident and outgoing. That&#39;s me in a nutshell. What do you think? Is it a good self-introduction? Should I add or change anything?
+Your
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-Provide a concise factual statement about France’s capital city. The capital of France is Paris.
-The capital of France is Paris. This is a concise factual statement about France’s capital city. It is a simple and direct statement that provides accurate information. The statement is also neutral and does not include any opinion or bias. It is a good example of a factual statement that can be used in a variety of contexts, such as in a history textbook, a travel guide, or a general knowledge quiz. The statement is also easy to understand and remember, making it a useful piece of information for anyone looking to learn about France’s capital city
+Provide a concise factual statement about France’s capital city.
+The capital of France is Paris.  Paris is a city located in the northern part of France, along the Seine River. It is the country&#39;s largest city and a major cultural and economic center. Paris is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also famous for its fashion, cuisine, and romantic atmosphere.  Paris is a popular tourist destination and a hub for international business and finance.  It is home to many international organizations, including the United Nations Educational, Scientific and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
-2. Widespread adoption of AI in industries: AI is already being used in various industries such as finance, transportation, and customer service. In the future, AI is likely to become even more widespread, with many industries adopting AI-powered solutions
+Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to improve patient outcomes and reduce healthcare costs.
+2. Widespread adoption of AI in education: AI has the potential to revolutionize the education sector by providing
 
 </pre></div></div>
 </div>
@@ -631,19 +629,17 @@ Generated text:  a topic of much speculation and debate. Here are some possible 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I am a 25-year-old travel writer. I have traveled to over 20 countries and have written for several travel publications. I am currently working on a memoir about my travels. When I am not writing, I can be found trying new foods, practicing yoga, or taking long walks in the city. I enjoy meeting new people and hearing their stories. I am open-minded and curious, always looking for the next adventure. This is a good start, but you might want to consider a few things to make it more engaging. Here are some suggestions: Use more descriptive language to paint a picture of Kaida in the
+Generated text:  Arin Vex. I&#39;m a software engineer by trade, and I spend most of my free time reading and coding in my small apartment. I&#39;m not particularly outgoing, but I enjoy the company of a few close friends and family members.
+Arin is a bit of a loner, but he&#39;s not antisocial. He&#39;s willing to engage with others when the situation calls for it, but he prefers to spend his time alone, working on his projects or reading. He&#39;s not really interested in the typical social scene, but he&#39;s not opposed to having a good time either. He&#39;s a bit of a introverted nerd
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Located on the Seine River in northern France, Paris is a major economic, cultural, and tourist centre. The city is famous for its iconic landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. France’s capital city has a rich history, dating back to the Roman era, and has played a significant role in many historical events, including the French Revolution. Today, Paris is a cosmopolitan city with a diverse population and a thriving arts and culture scene. Paris is known for its fashion, cuisine, and romantic atmosphere, making it one of the most popular tourist destinations in the
+Generated text:  Paris. The city is home to world-famous landmarks such as the Eiffel Tower and Notre-Dame Cathedral. It is also known for its fashion, art, and cuisine. The city has a population of approximately 2.1 million people. The metropolitan area has a population of over 12 million people. The city has a rich history dating back to the Roman era. It has played a significant role in European and world history, including being the center of the French Revolution. Paris is a major hub for international business, tourism, and culture. The city is home to many museums, galleries, and theaters. It is also
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  bright, with advancements in areas like deep learning, natural language processing, and computer vision.
-AI will continue to improve in its ability to learn and adapt, leading to increased autonomy and decision-making capabilities.
-We can expect significant advancements in areas like:
-1.  Deep Learning: Improved accuracy and efficiency in tasks like image and speech recognition.
-2.  Natural Language Processing: Enhanced understanding and generation of human language, leading to better chatbots and virtual assistants.
-3.  Computer Vision: Increased ability to interpret and understand visual data, with applications in areas like self-driving cars and surveillance systems.
-4.  Robotics: Advancements in AI will
+Generated text:  being shaped by the integration of artificial intelligence and various technologies like IoT, blockchain, and robotics.
+The future of Artificial Intelligence (AI) is expected to be shaped by its integration with various technologies like IoT (Internet of Things), blockchain, and robotics. Here are some possible future trends in AI:
+1. Edge AI: With the proliferation of IoT devices, edge AI will become more prevalent, enabling AI to process data closer to where it is generated, reducing latency, and improving real-time decision-making.
+2. Autonomous Systems: Autonomous vehicles, drones, and robots will continue to advance, enabling them to navigate complex environments and make decisions without human
 </pre></div></div>
 </div>
 </section>
@@ -689,21 +685,21 @@ We can expect significant advancements in areas like:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Keiko Yamato. I&#39;m a freelance graphic designer living in Tokyo. I&#39;m 25 years old and I&#39;m originally from a small town in the countryside. I enjoy working with clients to create unique visual identities and brand designs that capture their unique personalities. When I&#39;m not working, I like to try out new cafes and restaurants around the city, or visit my family&#39;s farm to help with the harvest.
-Keiko Yamato is a 25-year-old freelance graphic designer living in Tokyo. Originally from a small town in the countryside, she enjoys working with clients to create unique visual identities and brand designs that capture their unique personalities.
+Generated text:  Clementine Wembly, and I&#39;m a 35-year-old...: clear and concise. Do not include any overly personal or sensitive information. (e.g., do not mention their spouse or any health conditions.) I&#39;m a software engineer, specializing in machine learning. I reside in a quiet neighborhood near the city center. I enjoy spending my free time reading and taking long walks.
+Here&#39;s a rewritten version of the introduction with a bit more detail and a neutral tone:
+Hi, I&#39;m Clementine Wembly. I&#39;m a software engineer with a focus on machine learning, currently working on several projects that aim to improve data
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city is home to over 2.1 million people and is a significant economic, political, and cultural center in the European Union. The city has been the capital of France for over a century and has a rich history, including being a major center of art and culture during the Renaissance and Enlightenment periods. Paris is also known for its beautiful architecture, fashion, and cuisine.
-The final answer is: Paris. ...Read more Read less
-What is the capital of France?
-The capital of France is Paris. ...Read more Read less
-What is the population of the capital of France?
-The city has over 2.
+Generated text:  Paris. It is located in the northern part of the country and is home to the Eiffel Tower, the Louvre, and other famous landmarks.
+What are some of the top attractions in Paris?
+Some of the top attractions in Paris include the Eiffel Tower, the Louvre, Notre-Dame Cathedral, the Arc de Triomphe, and the Montmartre neighborhood.
+What is the history of the Eiffel Tower?
+The Eiffel Tower was built for the 1889 World’s Fair in Paris, which was held to commemorate the 100th anniversary of the French Revolution. It was designed by Gustave
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  being shaped by a combination of technological advancements, societal needs, and regulatory frameworks. Here are some possible future trends in artificial intelligence:
-1. Increased use of Explainable AI (XAI): As AI becomes more ubiquitous, there is a growing need to understand how AI systems make decisions. XAI is a subset of AI that focuses on creating AI systems that can explain their reasoning and decision-making processes. This trend is likely to continue as organizations seek to build trust with their stakeholders and ensure that AI systems are fair and transparent.
-2. Rise of Edge AI: Edge AI refers to the deployment of AI algorithms and models at the edge of the
+Generated text:  uncertain, and its impact on various sectors and industries will be significant. Various trends and developments are expected to shape the future of AI, including advancements in machine learning, the growth of edge AI, and the increasing adoption of explainable AI.
+Artificial intelligence (AI) is a rapidly evolving field with the potential to transform various aspects of our lives. The future of AI is uncertain, but several trends and developments are expected to shape its trajectory. Some possible future trends in AI include:
+1. Advancements in Machine Learning: Machine learning, a subset of AI, will continue to improve, enabling AI systems to learn from data and make
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
