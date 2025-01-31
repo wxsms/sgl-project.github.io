@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=b4bb93ae"></script>
+    <script src="../_static/documentation_options.js?v=44de239f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@
     <link rel="prev" title="Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.2" />
+  <meta name="docsearch:version" content="0.4.2.post1" />
     <meta name="docbuild:last-update" content="Jan 31, 2025"/>
   </head>
   
@@ -478,13 +478,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.06it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.73it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.11it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.74it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
 
-100%|██████████| 23/23 [00:05&lt;00:00,  4.53it/s]
+100%|██████████| 23/23 [00:06&lt;00:00,  3.80it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -516,25 +516,28 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jessica and I&#39;m a 30-year-old, married mom of two little ones. I&#39;ve been married for 9 years and have two adorable kiddos, ages 6 and 3. I&#39;m a stay-at-home mom, which is my dream job (mostly). I love being able to spend time with my kiddos and watch them learn and grow every day.
-My husband, Alex, is a hard worker and provides for our family. He&#39;s my rock and I&#39;m so grateful to have him in my life. We met in college and have been together ever since. We love to travel, try new restaurants, and enjoy
+Generated text:  Stephane Fosse, I&#39;m a passionate photographer and digital artist. I&#39;m specialized in creating realistic and detailed CGI artworks. I&#39;m based in Paris, France, and I&#39;m always ready to collaborate with potential clients or partners.
+I have a strong background in computer graphics and I&#39;m well-versed in 3D modeling, texturing, and rendering. My expertise includes creating realistic images of buildings, landscapes, and product visualizations. I&#39;m also skilled in post-processing and compositing.
+I&#39;m a certified graphic designer and a skilled 3D artist with a strong portfolio that showcases my skills. I&#39;ve worked on various
 ===============================
 Prompt: The president of the United States is
-Generated text:  currently “isolated” from world leaders, and other top officials, “as a result of his previous statements” made on social media, which some argue are damaging his reputation.
-This is according to an analysis by the Pew Research Center, which found that President Trump’s tweets have led to a significant decline in his approval ratings.
-The analysis found that Trump’s tweets have led to a decrease in his approval ratings by 12 percentage points since he took office, while his disapproval ratings have increased by 11 percentage points.
-The analysis also found that Trump’s tweets have had a significant impact on his reputation among world leaders, with 62
+Generated text:  the head of state and government of the United States. The president serves a four-year term and is elected by the American people through the Electoral College. The president is also the commander-in-chief of the United States Armed Forces and has the power to veto legislation passed by Congress.
+The president of the United States is also the head of state and government of the United States. The president serves a four-year term and is elected by the American people through the Electoral College. The president is also the commander-in-chief of the United States Armed Forces and has the power to veto legislation passed by Congress.
+The president of the United States is elected through the
 ===============================
 Prompt: The capital of France is
-Generated text:  one of the most popular tourist destinations in the world, and for good reason. Paris, the City of Light, has a rich history, stunning architecture, and a vibrant cultural scene that attracts visitors from all over the globe. From the iconic Eiffel Tower to the world-class museums and art galleries, there&#39;s no shortage of things to see and do in Paris.
-One of the most iconic landmarks in Paris is the Eiffel Tower, built for the 1889 World&#39;s Fair. Visitors can take a lift to the top for breathtaking views of the city.
-The Louvre Museum is another must-see attraction, housing an impressive
+Generated text:  home to over 2.1 million people, and it&#39;s a city that&#39;s steeped in history and culture. From the iconic Eiffel Tower to the stunning Notre Dame Cathedral, there&#39;s no shortage of things to see and do in Paris. Here are some of the top attractions and experiences that visitors to Paris shouldn&#39;t miss.
+The Eiffel Tower is an iconic symbol of Paris and one of the most recognizable landmarks in the world. It was built for the 1889 World&#39;s Fair and stands 324 meters tall. Visitors can take the stairs or elevator to the top for breathtaking views of the city.
+Notre Dame
 ===============================
 Prompt: The future of AI is
-Generated text:  not a distant thing. It&#39;s already here. Today, AI systems are transforming industries, improving lives, and creating new opportunities. Here are some examples of how AI is being used today:
-Healthcare: AI is being used in healthcare to diagnose diseases, develop personalized treatment plans, and improve patient outcomes. AI-powered chatbots are also being used to provide patient support and answer medical questions.
-Finance: AI is being used in finance to detect and prevent financial crimes, such as money laundering and credit card fraud. AI-powered systems are also being used to analyze financial data and make investment recommendations.
-Customer Service: AI-powered chatbots are being used
+Generated text:  bright – but the path forward is fraught with challenges and uncertainties. Join us for a special panel discussion featuring experts from academia, industry, and government, who will tackle the pressing issues surrounding AI development and deployment.
+Our panelists will explore the ethics of AI, the impact on jobs and the workforce, the need for regulation and accountability, and the role of public-private partnerships in driving AI innovation.
+Moderator: Sarah Jones, Director, Computer Science and Engineering, National Science Foundation
+Panelists:
+- Claire Cardie, Professor of Computer Science, Cornell University
+- Chris Broderick, Chief Technology Officer, PwC
+- Sharon
 </pre></div></div>
 </div>
 </section>
@@ -574,16 +577,18 @@ Customer Service: AI-powered chatbots are being used
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elianore Quasar. I&#39;m a 25-year-old astrophysicist who specializes in the study of black holes. I&#39;m currently working on a project to develop a new method for detecting and analyzing the gravitational waves emitted by these cosmic phenomena. I&#39;m based at the European Organization for Nuclear Research (CERN) in Geneva, Switzerland. I enjoy hiking and reading science fiction novels in my free time. That&#39;s me in a nutshell. What do you think? Is it a good introduction?
-This is a good introduction because it provides a clear and concise overview of who you are and what you do. It also gives a
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m looking forward to meeting new people and learning from their experiences. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m interested in hearing about your interests and hobbies. What brings you here today?
+This is a good example of a neutral self-introduction. It provides some basic information about the character, such as their name, age, and occupation, but it also gives a sense
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country, in the region of Île-de-France. It is situated on the Seine River and is known for its rich history, art, fashion, and cuisine. Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, culture, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a rich history dating back to the
+Generated text:  Paris.
+Provide a concise factual statement about France’s capital city. The capital of France is Paris.
+The capital of France is Paris. This is a concise factual statement about France’s capital city. It is a simple and direct statement that provides accurate information. The statement is also neutral and does not include any opinion or bias. It is a good example of a factual statement that can be used in a variety of contexts, such as in a history textbook, a travel guide, or a general knowledge quiz. The statement is also easy to understand and remember, making it a useful piece of information for anyone looking to learn about France’s capital city
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
+Generated text:  a topic of much speculation and debate. Here are some possible future trends in artificial intelligence:
 1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
-2. Rise of autonomous vehicles: Autonomous vehicles are already being tested on public roads, and it&#39;s likely
+2. Widespread adoption of AI in industries: AI is already being used in various industries such as finance, transportation, and customer service. In the future, AI is likely to become even more widespread, with many industries adopting AI-powered solutions
 
 </pre></div></div>
 </div>
@@ -626,21 +631,19 @@ Generated text:  a topic of much speculation and debate. Some experts predict th
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elianore Quasar. I&#39;m a 25-year-old astrophysicist who works at a research facility on the outskirts of a small town. I enjoy stargazing and playing the piano in my free time. I&#39;m currently working on a project to develop a more efficient way to harness solar energy. I&#39;m pretty laid-back and value my independence, but I&#39;m also happy to collaborate with others when needed. I&#39;m a bit of a introvert and prefer to keep to myself, but I&#39;m always up for a good conversation about science or music.
-Here are a few key points to keep in mind when writing a
+Generated text:  Kaida. I am a 25-year-old travel writer. I have traveled to over 20 countries and have written for several travel publications. I am currently working on a memoir about my travels. When I am not writing, I can be found trying new foods, practicing yoga, or taking long walks in the city. I enjoy meeting new people and hearing their stories. I am open-minded and curious, always looking for the next adventure. This is a good start, but you might want to consider a few things to make it more engaging. Here are some suggestions: Use more descriptive language to paint a picture of Kaida in the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is located in the northern region of the country.
-Paris is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city is home to many famous artists, writers, and intellectuals, and has been a hub for culture and innovation for centuries.
-The city has a rich history, with many buildings and monuments dating back to the Middle Ages. The architecture of Paris is a mix of medieval, Renaissance, and modern styles, with grand boulevards, charming streets, and picturesque bridges.
-Paris is also a center for fashion, cuisine, and entertainment, with world-ren
+Generated text:  Paris. Located on the Seine River in northern France, Paris is a major economic, cultural, and tourist centre. The city is famous for its iconic landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. France’s capital city has a rich history, dating back to the Roman era, and has played a significant role in many historical events, including the French Revolution. Today, Paris is a cosmopolitan city with a diverse population and a thriving arts and culture scene. Paris is known for its fashion, cuisine, and romantic atmosphere, making it one of the most popular tourist destinations in the
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a subject of ongoing debate and speculation. Here are some possible future trends in AI:
-1. Increased automation: AI is likely to automate more tasks and processes, freeing up human workers to focus on higher-value tasks that require creativity, empathy, and problem-solving skills.
-2. Enhanced decision-making: AI will continue to improve decision-making capabilities, using machine learning and data analytics to provide more accurate and informed decisions.
-3. Human-AI collaboration: AI will become more integrated into human workflows, with humans and AI working together to solve complex problems and make better decisions.
-4. AI ethics and governance: As AI becomes more pervasive, there will
+Generated text:  bright, with advancements in areas like deep learning, natural language processing, and computer vision.
+AI will continue to improve in its ability to learn and adapt, leading to increased autonomy and decision-making capabilities.
+We can expect significant advancements in areas like:
+1.  Deep Learning: Improved accuracy and efficiency in tasks like image and speech recognition.
+2.  Natural Language Processing: Enhanced understanding and generation of human language, leading to better chatbots and virtual assistants.
+3.  Computer Vision: Increased ability to interpret and understand visual data, with applications in areas like self-driving cars and surveillance systems.
+4.  Robotics: Advancements in AI will
 </pre></div></div>
 </div>
 </section>
@@ -686,18 +689,21 @@ Generated text:  a subject of ongoing debate and speculation. Here are some poss
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Alexa Johnson, and I&#39;m a 25-year-old artist living in Los Angeles. I&#39;ve been working as a freelance graphic designer for the past three years. I enjoy creating digital art and experimenting with different styles and techniques. I&#39;m currently taking classes at the local art school to further develop my skills. What kind of art do you create, and what inspires you? I&#39;m open to learning about your work and sharing my own experiences. How did you become interested in art, and what motivates you to keep creating? I&#39;m curious to know more about you and your artistic endeavors. Feel free to share your thoughts, and let&#39;s
+Generated text:  Keiko Yamato. I&#39;m a freelance graphic designer living in Tokyo. I&#39;m 25 years old and I&#39;m originally from a small town in the countryside. I enjoy working with clients to create unique visual identities and brand designs that capture their unique personalities. When I&#39;m not working, I like to try out new cafes and restaurants around the city, or visit my family&#39;s farm to help with the harvest.
+Keiko Yamato is a 25-year-old freelance graphic designer living in Tokyo. Originally from a small town in the countryside, she enjoys working with clients to create unique visual identities and brand designs that capture their unique personalities.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The city is known as the City of Light (La Ville Lumière) due to its history of innovation in the arts and sciences. Paris is a global center for art, fashion, gastronomy, and culture.
-Provide three interesting facts about the famous Louvre Museum. The Louvre Museum is home to the Mona Lisa, the Venus de Milo, and the Raft of the Medusa by Théodore Géricault. It is one of the world’s largest and most visited museums, with a collection of over 550,000 works of art and artifacts.
-The museum was originally a medieval fortress built by King Philip II
+Generated text:  Paris. The city is home to over 2.1 million people and is a significant economic, political, and cultural center in the European Union. The city has been the capital of France for over a century and has a rich history, including being a major center of art and culture during the Renaissance and Enlightenment periods. Paris is also known for its beautiful architecture, fashion, and cuisine.
+The final answer is: Paris. ...Read more Read less
+What is the capital of France?
+The capital of France is Paris. ...Read more Read less
+What is the population of the capital of France?
+The city has over 2.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by various factors, including advances in machine learning, natural language processing, and the Internet of Things (IoT). Here are some possible future trends in AI:
-1. Increased focus on explainability: As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions. This will lead to increased focus on explainability, where AI systems provide transparent and interpretable results.
-2. Emergence of hybrid intelligence: AI will become more human-like, and humans will increasingly collaborate with AI systems to solve complex problems. This will lead to the emergence of hybrid intelligence, where humans and AI work together
+Generated text:  being shaped by a combination of technological advancements, societal needs, and regulatory frameworks. Here are some possible future trends in artificial intelligence:
+1. Increased use of Explainable AI (XAI): As AI becomes more ubiquitous, there is a growing need to understand how AI systems make decisions. XAI is a subset of AI that focuses on creating AI systems that can explain their reasoning and decision-making processes. This trend is likely to continue as organizations seek to build trust with their stakeholders and ensure that AI systems are fair and transparent.
+2. Rise of Edge AI: Edge AI refers to the deployment of AI algorithms and models at the edge of the
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
