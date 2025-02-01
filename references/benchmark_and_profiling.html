@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post1" />
-    <meta name="docbuild:last-update" content="Jan 31, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 01, 2025"/>
   </head>
   
   
@@ -417,9 +417,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tips">Other tips</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a></li>
 </ul>
             </nav>
         </div>
@@ -454,55 +454,9 @@ Note that this is a simplified test script without a dynamic batching server, so
 </li>
 </ul>
 </section>
-<section id="profile-with-nsight">
-<h2>Profile with Nsight<a class="headerlink" href="#profile-with-nsight" title="Link to this heading">#</a></h2>
-<ol class="arabic simple" start="0">
-<li><p>Prerequisite</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nsys</span>
-<span class="c1"># https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html</span>
-apt<span class="w"> </span>update
-apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>gnupg
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb http://developer.download.nvidia.com/devtools/repos/ubuntu</span><span class="k">$(</span><span class="nb">source</span><span class="w"> </span>/etc/lsb-release<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DISTRIB_RELEASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span>.<span class="k">)</span><span class="s2">/</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> /&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-devtools.list
-apt-key<span class="w"> </span>adv<span class="w"> </span>--fetch-keys<span class="w"> </span>http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-apt<span class="w"> </span>update
-apt<span class="w"> </span>install<span class="w"> </span>nsight-systems-cli
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>To profile a single batch, use <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--trace-fork-before-exec=true</span> <span class="pre">--cuda-graph-trace=node</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model</span> <span class="pre">meta-llama/Meta-Llama-3-8B</span> <span class="pre">--batch-size</span> <span class="pre">64</span> <span class="pre">--input-len</span> <span class="pre">512</span></code></p></li>
-<li><p>To profile a server, e.g.</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># server</span>
-<span class="c1"># set the delay and duration times according to needs</span>
-nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span>-o<span class="w"> </span>sglang.out<span class="w"> </span>--delay<span class="w"> </span><span class="m">60</span><span class="w"> </span>--duration<span class="w"> </span><span class="m">70</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disable-radix-cache
-
-<span class="c1"># client</span>
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--random-input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--random-output<span class="w"> </span><span class="m">512</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Use NVTX, e.g.</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nvtx</span>
-pip<span class="w"> </span>install<span class="w"> </span>nvtx
-
-<span class="c1"># code snippets</span>
-import<span class="w"> </span>nvtx
-with<span class="w"> </span>nvtx.annotate<span class="o">(</span><span class="s2">&quot;description&quot;</span>,<span class="w"> </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="o">)</span>:
-<span class="w">    </span><span class="c1"># some critical code</span>
-</pre></div>
-</div>
-</section>
-<section id="other-tips">
-<h2>Other tips<a class="headerlink" href="#other-tips" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>You can benchmark a model using dummy weights by only providing the config.json file. This allows for quick testing of model variants without training. To do so, add <code class="docutils literal notranslate"><span class="pre">--load-format</span> <span class="pre">dummy</span></code> to the above commands and then you only need a correct <code class="docutils literal notranslate"><span class="pre">config.json</span></code> under the checkpoint folder.</p></li>
-<li><p>You can benchmark a model with modified configs (e.g., less layers) by using <code class="docutils literal notranslate"><span class="pre">--json-model-override-args</span></code>. For example, you can benchmark a model with only 2 layers and 2 kv heads using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model-path</span> <span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span> <span class="pre">--batch</span> <span class="pre">32</span> <span class="pre">--input-len</span> <span class="pre">256</span> <span class="pre">--output-len</span> <span class="pre">32</span> <span class="pre">--load-format</span> <span class="pre">dummy</span> <span class="pre">--json-model-override-args</span> <span class="pre">'{&quot;num_hidden_layers&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;num_key_value_heads&quot;:</span> <span class="pre">1}'</span></code></p></li>
-</ol>
-</section>
 <section id="profile-with-pytorch-profiler">
 <h2>Profile with PyTorch Profiler<a class="headerlink" href="#profile-with-pytorch-profiler" title="Link to this heading">#</a></h2>
+<p>Pytorch Profiler is a convenient basic tool to inspect kernel execution time, call stack, and kernel overlap and occupancy.</p>
 <ul class="simple">
 <li><p>To profile a server</p></li>
 </ul>
@@ -539,6 +493,57 @@ For example, when profiling a server,</p>
 </pre></div>
 </div>
 <p>sets the number of prompts to 2 with <code class="docutils literal notranslate"><span class="pre">--num-prompts</span></code> argument and limits the length of output sequences to 100 with <code class="docutils literal notranslate"><span class="pre">--sharegpt-output-len</span></code> argument, which can generate a small trace file for browser to open smoothly.</p>
+</section>
+<section id="profile-with-nsight">
+<h2>Profile with Nsight<a class="headerlink" href="#profile-with-nsight" title="Link to this heading">#</a></h2>
+<p>Nsight systems is an advanced tool that exposes more profiling details, such as register and shared memory usage, annotated code regions and low-level CUDA APIs and events.</p>
+<ol class="arabic simple" start="0">
+<li><p>Prerequisite: install using apt, or run inside a <a class="reference external" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags">NVIDIA Docker container</a> or <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">SGLang Docker container</a>.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nsys</span>
+<span class="c1"># https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html</span>
+apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>gnupg
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb http://developer.download.nvidia.com/devtools/repos/ubuntu</span><span class="k">$(</span><span class="nb">source</span><span class="w"> </span>/etc/lsb-release<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DISTRIB_RELEASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span>.<span class="k">)</span><span class="s2">/</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> /&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-devtools.list
+apt-key<span class="w"> </span>adv<span class="w"> </span>--fetch-keys<span class="w"> </span>http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>nsight-systems-cli
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>To profile a single batch, use <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--trace-fork-before-exec=true</span> <span class="pre">--cuda-graph-trace=node</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model</span> <span class="pre">meta-llama/Meta-Llama-3-8B</span> <span class="pre">--batch-size</span> <span class="pre">64</span> <span class="pre">--input-len</span> <span class="pre">512</span></code></p></li>
+<li><p>To profile a server, e.g.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># server</span>
+<span class="c1"># set the delay and duration times according to needs</span>
+nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span>-o<span class="w"> </span>sglang.out<span class="w"> </span>--delay<span class="w"> </span><span class="m">60</span><span class="w"> </span>--duration<span class="w"> </span><span class="m">70</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disable-radix-cache
+
+<span class="c1"># client</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--random-input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--random-output<span class="w"> </span><span class="m">512</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Use NVTX to annotate code regions, e.g. to see their execution time.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nvtx</span>
+pip<span class="w"> </span>install<span class="w"> </span>nvtx
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># code snippets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nvtx</span>
+<span class="k">with</span> <span class="n">nvtx</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">):</span>
+    <span class="c1"># some critical code</span>
+</pre></div>
+</div>
+</section>
+<section id="other-tips">
+<h2>Other tips<a class="headerlink" href="#other-tips" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>You can benchmark a model using dummy weights by only providing the config.json file. This allows for quick testing of model variants without training. To do so, add <code class="docutils literal notranslate"><span class="pre">--load-format</span> <span class="pre">dummy</span></code> to the above commands and then you only need a correct <code class="docutils literal notranslate"><span class="pre">config.json</span></code> under the checkpoint folder.</p></li>
+<li><p>You can benchmark a model with modified configs (e.g., less layers) by using <code class="docutils literal notranslate"><span class="pre">--json-model-override-args</span></code>. For example, you can benchmark a model with only 2 layers and 2 kv heads using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model-path</span> <span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span> <span class="pre">--batch</span> <span class="pre">32</span> <span class="pre">--input-len</span> <span class="pre">256</span> <span class="pre">--output-len</span> <span class="pre">32</span> <span class="pre">--load-format</span> <span class="pre">dummy</span> <span class="pre">--json-model-override-args</span> <span class="pre">'{&quot;num_hidden_layers&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;num_key_value_heads&quot;:</span> <span class="pre">1}'</span></code></p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">--python-backtrace=cuda</span></code> to see python call stack for all CUDA kernels, as in PyTorch Profiler. (Caveat: this can cause inaccurately long kernel runtimes for CUDA event based timing)</p></li>
+<li><p>For more args please see https://docs.nvidia.com/nsight-systems/UserGuide/index.html</p></li>
+</ol>
 </section>
 </section>
 
@@ -589,9 +594,9 @@ For example, when profiling a server,</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tips">Other tips</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a></li>
 </ul>
   </nav></div>
 
@@ -625,7 +630,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 31, 2025.
+  Last updated on Feb 01, 2025.
   <br/>
 </p>
   </div>
