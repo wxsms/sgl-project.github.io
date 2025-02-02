@@ -484,7 +484,7 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 </pre></div>
 </div>
 <p>Note: To AMD ROCm system with Instinct/MI GPUs, it is recommended to use <code class="docutils literal notranslate"><span class="pre">docker/Dockerfile.rocm</span></code> to build images, example and usage as below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SGL_BRANCH</span><span class="o">=</span>v0.4.2.post1<span class="w"> </span>-t<span class="w"> </span>v0.4.2.post1-rocm620<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SGL_BRANCH</span><span class="o">=</span>v0.4.2.post1<span class="w"> </span>-t<span class="w"> </span>v0.4.2.post1-rocm630<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
 
 <span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri --ipc=host \</span>
 <span class="s1">    --shm-size 16G --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \</span>
@@ -493,11 +493,11 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>v0.4.2.post1-rocm620<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>v0.4.2.post1-rocm630<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 
 <span class="c1"># Till flashinfer backend available, --attention-backend triton --sampling-backend pytorch are set by default</span>
-drun<span class="w"> </span>v0.4.2.post1-rocm620<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output<span class="w"> </span><span class="m">128</span><span class="w"> </span>--model<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--quantization<span class="w"> </span>fp8
+drun<span class="w"> </span>v0.4.2.post1-rocm630<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output<span class="w"> </span><span class="m">128</span><span class="w"> </span>--model<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--quantization<span class="w"> </span>fp8
 </pre></div>
 </div>
 </section>
