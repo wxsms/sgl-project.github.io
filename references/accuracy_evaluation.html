@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Run Llama 3.1 405B &#8212; SGLang</title>
+    <title>Measuring Model Accuracy in SGLang &#8212; SGLang</title>
   
   
   
@@ -49,11 +49,11 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/llama_405B';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/accuracy_evaluation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Use Models From ModelScope" href="modelscope.html" />
-    <link rel="prev" title="DeepSeek Model Optimizations" href="deepseek.html" />
+    <link rel="next" title="Custom Chat Template in SGLang Runtime" href="custom_chat_template.html" />
+    <link rel="prev" title="Benchmark and Profiling" href="benchmark_and_profiling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post1" />
@@ -182,10 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Optimizations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Run Llama 3.1 405B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llama_405B.html">Run Llama 3.1 405B</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -267,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/llama_405B.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/accuracy_evaluation.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +284,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/llama_405B.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/accuracy_evaluation.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/llama_405B.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/accuracy_evaluation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +331,7 @@
       
       
       
-      <li><a href="../_sources/references/llama_405B.md" target="_blank"
+      <li><a href="../_sources/references/accuracy_evaluation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Run Llama 3.1 405B</h1>
+    <h1>Measuring Model Accuracy in SGLang</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,8 +417,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp8-on-a-single-node">Run 405B (fp8) on a Single Node</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp16-on-two-nodes">Run 405B (fp16) on Two Nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-model-accuracy">Benchmarking Model Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-benchmark-scripts">Customizing Benchmark Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-evaluation-capabilities">Extending Evaluation Capabilities</a></li>
 </ul>
             </nav>
         </div>
@@ -430,25 +431,72 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="run-llama-3-1-405b">
-<h1>Run Llama 3.1 405B<a class="headerlink" href="#run-llama-3-1-405b" title="Link to this heading">#</a></h1>
-<section id="run-405b-fp8-on-a-single-node">
-<h2>Run 405B (fp8) on a Single Node<a class="headerlink" href="#run-405b-fp8-on-a-single-node" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct-FP8<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="measuring-model-accuracy-in-sglang">
+<h1>Measuring Model Accuracy in SGLang<a class="headerlink" href="#measuring-model-accuracy-in-sglang" title="Link to this heading">#</a></h1>
+<p>This guide shows how to evaluate model accuracy using SGLang’s <a class="reference external" href="https://github.com/sgl-project/sglang/tree/b045841baeff37a5601fcde23fa98bd09d942c36/benchmark">built-in benchmarks</a>. Please include accuracy on crucial benchmarks in your PR if you make modifications on the model side, like the kernel and model architecture.</p>
+<section id="benchmarking-model-accuracy">
+<h2>Benchmarking Model Accuracy<a class="headerlink" href="#benchmarking-model-accuracy" title="Link to this heading">#</a></h2>
+<p>This is a reference workflow for the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/mmlu">MMLU benchmark</a>. For more details or other benchmarks, please refer to the README in each specific benchmark folder under <a class="reference external" href="https://github.com/sgl-project/sglang/tree/b045841baeff37a5601fcde23fa98bd09d942c36/benchmark">sglang/benchmark</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Download the dataset</span>
+bash<span class="w"> </span>download_data.sh
+
+<span class="c1"># Step 2: Launch the server</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen2.5-Math-1.5B-Instruct<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># Model selection</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># Network configuration</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="c1"># Memory optimization</span>
+
+<span class="c1"># Step 3: Run the benchmark script</span>
+python3<span class="w"> </span>bench_sglang.py<span class="w"> </span>--nsub<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Test 10 subjects</span>
+
+<span class="c1"># Step 4: Extract the accuracy</span>
+cat<span class="w"> </span>result.jsonl<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;&quot;accuracy&quot;: \K\d+\.\d+&#39;</span>
 </pre></div>
 </div>
 </section>
-<section id="run-405b-fp16-on-two-nodes">
-<h2>Run 405B (fp16) on Two Nodes<a class="headerlink" href="#run-405b-fp16-on-two-nodes" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on the first node, replace 172.16.4.52:20000 with your own node ip address and port</span>
-
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span>
-
-<span class="c1"># on the second node, replace 172.18.45.52:20000 with your own node ip address and port</span>
-
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.18.45.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span>
+<section id="customizing-benchmark-scripts">
+<h2>Customizing Benchmark Scripts<a class="headerlink" href="#customizing-benchmark-scripts" title="Link to this heading">#</a></h2>
+<p>Some benchmark implementations may differ from ours, causing accuracy discrepancies. To match <a class="reference external" href="https://github.com/QwenLM/Qwen2.5-Math">[Qwen2.5-Math]</a>’s reported 76.8% GSM8K accuracy, customization is required.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The GSM8K benchmark script includes few shot examples for evaluation by default.</span>
+<span class="c1"># Here we exclude them.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">num_shots</span><span class="p">:</span><span class="n">num_questions</span><span class="p">])):</span>
+    <span class="n">questions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_one_example</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_answer_value</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;answer&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@sgl</span><span class="o">.</span><span class="n">function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">few_shot_gsm8k</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+    <span class="c1"># System prompt given in https://github.com/QwenLM/Qwen2.5-Math</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;Please reason step by step, and put your final answer within </span><span class="se">\\</span><span class="s2">boxed</span><span class="si">{}</span><span class="s2">.&quot;</span><span class="p">)</span> <span class="c1"># Include system prompt</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">few_shot_examples</span> <span class="o">+</span> <span class="n">question</span>
+    <span class="c1"># Stopwords given in evaluation/math_eval.py of the Qwen2.5-Math repo</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span>
+        <span class="s2">&quot;answer&quot;</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">,</span> <span class="s2">&quot;Assistant:&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/s&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;|im_end|&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;|endoftext|&gt;&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>These adjustments should return the desired accuracy.</p>
+</section>
+<section id="extending-evaluation-capabilities">
+<h2>Extending Evaluation Capabilities<a class="headerlink" href="#extending-evaluation-capabilities" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Contribute New Benchmarks</strong></p>
+<ul class="simple">
+<li><p>Follow our <a class="reference external" href="https://docs.sglang.ai/references/contribution_guide.html">contribution guidelines</a> to add new test scripts</p></li>
+</ul>
+</li>
+<li><p><strong>Request Implementations</strong></p>
+<ul class="simple">
+<li><p>Feel free to open an issue describing your evaluation needs</p></li>
+</ul>
+</li>
+<li><p><strong>Use Alternative Tools</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://opencompass.org.cn">OpenCompass</a></p></li>
+<li><p><a class="reference external" href="https://github.com/EleutherAI/lm-evaluation-harness">LM Evaluation Harness</a></p></li>
+</ul>
+</li>
+</ol>
 </section>
 </section>
 
@@ -464,20 +512,20 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="deepseek.html"
+       href="benchmark_and_profiling.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DeepSeek Model Optimizations</p>
+        <p class="prev-next-title">Benchmark and Profiling</p>
       </div>
     </a>
     <a class="right-next"
-       href="modelscope.html"
+       href="custom_chat_template.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Use Models From ModelScope</p>
+        <p class="prev-next-title">Custom Chat Template in SGLang Runtime</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -498,8 +546,9 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp8-on-a-single-node">Run 405B (fp8) on a Single Node</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp16-on-two-nodes">Run 405B (fp16) on Two Nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-model-accuracy">Benchmarking Model Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-benchmark-scripts">Customizing Benchmark Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-evaluation-capabilities">Extending Evaluation Capabilities</a></li>
 </ul>
   </nav></div>
 
