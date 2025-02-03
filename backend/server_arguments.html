@@ -650,7 +650,7 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_radix_cache</span></code>: Disable <a class="reference external" href="https://lmsys.org/blog/2024-01-17-sglang/">Radix</a> backend for prefix caching.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_jump_forward</span></code>: Disable <a class="reference external" href="https://lmsys.org/blog/2024-02-05-compressed-fsm/#our-method-jump-forward-decoding-with-a-compressed-finite-state-machine">jump-forward</a> for outlines grammar backend.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph</span></code>: Disable <a class="reference external" href="https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/">cuda graph</a> for model forward.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph</span></code>: Disable <a class="reference external" href="https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/">cuda graph</a> for model forward. Use if encountering uncorrectable CUDA ECC errors.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph_padding</span></code>: Disable cuda graph when padding is needed. In other case still use cuda graph.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_outlines_disk_cache</span></code>: Disable disk cache for outlines grammar backend.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_custom_all_reduce</span></code>: Disable usage of custom all reduce kernel.</p></li>
