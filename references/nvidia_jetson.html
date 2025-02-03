@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Use Models From ModelScope &#8212; SGLang</title>
+    <title>Apply SGLang on NVIDIA Jetson Orin &#8212; SGLang</title>
   
   
   
@@ -49,11 +49,11 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/modelscope';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/nvidia_jetson';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contribution Guide" href="contribution_guide.html" />
-    <link rel="prev" title="Run Llama 3.1 405B" href="llama_405B.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
+    <link rel="prev" title="Troubleshooting" href="troubleshooting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post1" />
@@ -186,10 +186,10 @@
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="llama_405B.html">Run Llama 3.1 405B</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Use Models From ModelScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Apply SGLang on NVIDIA Jetson Orin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn more</a></li>
 </ul>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/modelscope.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/nvidia_jetson.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/modelscope.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/nvidia_jetson.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/modelscope.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/nvidia_jetson.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@
       
       
       
-      <li><a href="../_sources/references/modelscope.md" target="_blank"
+      <li><a href="../_sources/references/nvidia_jetson.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +395,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -406,11 +408,24 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Use Models From ModelScope</h1>
+    <h1>Apply SGLang on NVIDIA Jetson Orin</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-inference">Running Inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-quantization-with-torchao">Running quantization with TorchAO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-output-with-xgrammar">Structured output with XGrammar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -420,28 +435,76 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="use-models-from-modelscope">
-<h1>Use Models From ModelScope<a class="headerlink" href="#use-models-from-modelscope" title="Link to this heading">#</a></h1>
-<p>To use a model from <a class="reference external" href="https://www.modelscope.cn">ModelScope</a>, set the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_USE_MODELSCOPE</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_MODELSCOPE</span><span class="o">=</span><span class="nb">true</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="apply-sglang-on-nvidia-jetson-orin">
+<h1>Apply SGLang on NVIDIA Jetson Orin<a class="headerlink" href="#apply-sglang-on-nvidia-jetson-orin" title="Link to this heading">#</a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Before starting, ensure the following:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/"><strong>NVIDIA Jetson AGX Orin Devkit</strong></a> is set up with <strong>JetPack 6.1</strong> or later.</p></li>
+<li><p><strong>CUDA Toolkit</strong> and <strong>cuDNN</strong> are installed.</p></li>
+<li><p>Verify that the Jetson AGX Orin is in <strong>high-performance mode</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
-<p>We take <a class="reference external" href="https://www.modelscope.cn/models/qwen/qwen2-7b-instruct">Qwen2-7B-Instruct</a> as an example.</p>
-<p>Launch the Server:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>qwen/Qwen2-7B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</li>
+<li><p>A custom PyPI index hosted at https://pypi.jetson-ai-lab.dev/jp6/cu126, tailored for NVIDIA Jetson Orin platforms and CUDA 12.6.</p></li>
+</ul>
+<p>To install torch from this index:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>--index-url<span class="w"> </span>https://pypi.jetson-ai-lab.dev/jp6/cu126
 </pre></div>
 </div>
-<p>Or start it by docker:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-v<span class="w"> </span>~/.cache/modelscope:/root/.cache/modelscope<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;SGLANG_USE_MODELSCOPE=true&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>lmsysorg/sglang:latest<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>Qwen/Qwen2.5-7B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</section>
+<hr class="docutils" />
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Please refer to <a class="reference external" href="https://docs.sglang.ai/start/install.html">Installation Guide</a> to install FlashInfer and SGLang.</p>
+</section>
+<hr class="docutils" />
+<section id="running-inference">
+<h2>Running Inference<a class="headerlink" href="#running-inference" title="Link to this heading">#</a></h2>
+<p>Launch the server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-R1-Distill-Llama-8B<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>cuda<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dtype<span class="w"> </span>half<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>flashinfer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--context-length<span class="w"> </span><span class="m">8192</span>
 </pre></div>
 </div>
-<p>Note that modelscope uses a different cache directory than huggingface. You may need to set it manually to avoid running out of disk space.</p>
+<p>The quantization and limited context length (<code class="docutils literal notranslate"><span class="pre">--dtype</span> <span class="pre">half</span> <span class="pre">--context-length</span> <span class="pre">8192</span></code>) are due to the limited computational resources in <a class="reference external" href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/">Nvidia jetson kit</a>. A detailed explanation can be found in <a class="reference external" href="https://docs.sglang.ai/backend/server_arguments.html">Server Arguments</a>.</p>
+<p>After launching the engine, refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html#Usage">Chat completions</a> to test the usability.</p>
+</section>
+<hr class="docutils" />
+<section id="running-quantization-with-torchao">
+<h2>Running quantization with TorchAO<a class="headerlink" href="#running-quantization-with-torchao" title="Link to this heading">#</a></h2>
+<p>TorchAO is suggested to NVIDIA Jetson Orin.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>cuda<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>flashinfer<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--torchao-config<span class="w"> </span>int4wo-128
+</pre></div>
+</div>
+<p>This enables TorchAO’s int4 weight-only quantization with a 128-group size. The usage of <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code> is also for memory efficiency.</p>
+</section>
+<hr class="docutils" />
+<section id="structured-output-with-xgrammar">
+<h2>Structured output with XGrammar<a class="headerlink" href="#structured-output-with-xgrammar" title="Link to this heading">#</a></h2>
+<p>Please refer to <a class="reference external" href="https://docs.sglang.ai/backend/structured_outputs.html">SGLang doc structured output</a>.</p>
+<hr class="docutils" />
+<p>Thanks to the support from <a class="reference external" href="https://github.com/shahizat">shahizat</a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.nvidia.com/embedded/jetson-agx-orin">NVIDIA Jetson AGX Orin Documentation</a></p></li>
+</ul>
+</section>
 </section>
 
 
@@ -456,20 +519,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="llama_405B.html"
+       href="troubleshooting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Run Llama 3.1 405B</p>
+        <p class="prev-next-title">Troubleshooting</p>
       </div>
     </a>
     <a class="right-next"
-       href="contribution_guide.html"
+       href="faq.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Contribution Guide</p>
+        <p class="prev-next-title">Frequently Asked Questions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -479,6 +542,27 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-inference">Running Inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-quantization-with-torchao">Running quantization with TorchAO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-output-with-xgrammar">Structured output with XGrammar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
