@@ -465,7 +465,9 @@
 <span class="n">cd</span> <span class="n">sglang</span>
 
 <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span>
+<span class="n">cd</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span>
+<span class="n">python</span> <span class="n">setup_rocm</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+<span class="n">cd</span> <span class="o">..</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all_hip]&quot;</span>
 </pre></div>
 </div>
