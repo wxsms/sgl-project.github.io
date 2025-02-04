@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post1" />
-    <meta name="docbuild:last-update" content="Feb 03, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 04, 2025"/>
   </head>
   
   
@@ -607,6 +607,7 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lora_paths</span></code>: You may provide a list of adapters to your model as a list. Each batch element will get model response with the corresponding lora adapter applied. Currently <code class="docutils literal notranslate"><span class="pre">cuda_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">radix_attention</span></code> are not supportet with this option so you need to disable them manually. We are still working on through these <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2929">issues</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">max_loras_per_batch</span></code>: Maximum number of LoRAs in a running batch including base model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lora_backend</span></code>: The backend of running GEMM kernels for Lora modules, can be one of <code class="docutils literal notranslate"><span class="pre">triton</span></code> or <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>. Defaults to be <code class="docutils literal notranslate"><span class="pre">triton</span></code>.</p></li>
 </ul>
 </section>
 <section id="kernel-backend">
@@ -781,7 +782,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 03, 2025.
+  Last updated on Feb 04, 2025.
   <br/>
 </p>
   </div>
