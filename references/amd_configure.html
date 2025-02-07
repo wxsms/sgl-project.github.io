@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PyPI Package Release Process &#8212; SGLang</title>
+    <title>AMD Configuration and Setup for SGLang &#8212; SGLang</title>
   
   
   
@@ -49,9 +49,11 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/release_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/amd_configure';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DeepSeek Model Usage and Optimizations" href="deepseek.html" />
+    <link rel="prev" title="Custom Chat Template in SGLang Runtime" href="custom_chat_template.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post3" />
@@ -103,8 +105,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -177,22 +177,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../references/supported_models.html">Supported Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/amd_configure.html">AMD Configuration and Setup for SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/multi_node.html">Run Multi-Node Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AMD Configuration and Setup for SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi_node.html">Run Multi-Node Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn more</a></li>
 </ul>
 
     </div>
@@ -269,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer/release_process.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/amd_configure.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer/release_process.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/amd_configure.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +303,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper/release_process.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/amd_configure.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +333,7 @@
       
       
       
-      <li><a href="../_sources/developer/release_process.md" target="_blank"
+      <li><a href="../_sources/references/amd_configure.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -409,7 +409,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PyPI Package Release Process</h1>
+    <h1>AMD Configuration and Setup for SGLang</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,9 +419,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-configure">System Configure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-grub-settings">Update GRUB Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-numa-auto-balancing">Disable NUMA Auto-Balancing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang">Installing SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-using-docker-recommended">Install Using Docker (Recommended)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -433,25 +441,103 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pypi-package-release-process">
-<h1>PyPI Package Release Process<a class="headerlink" href="#pypi-package-release-process" title="Link to this heading">#</a></h1>
-<section id="update-the-version-in-code">
-<h2>Update the version in code<a class="headerlink" href="#update-the-version-in-code" title="Link to this heading">#</a></h2>
-<p>Update the package version in <code class="docutils literal notranslate"><span class="pre">python/pyproject.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">python/sglang/__init__.py</span></code>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="amd-configuration-and-setup-for-sglang">
+<h1>AMD Configuration and Setup for SGLang<a class="headerlink" href="#amd-configuration-and-setup-for-sglang" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This document describes how to set up an AMD-based environment for <a class="reference external" href="https://github.com/sgl-project/sglang">SGLang</a>. If you encounter issues or have questions, please <a class="reference external" href="https://github.com/sgl-project/sglang/issues">open an issue</a> on the SGLang repository.</p>
 </section>
-<section id="upload-the-pypi-package">
-<h2>Upload the PyPI package<a class="headerlink" href="#upload-the-pypi-package" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">build</span> <span class="n">twine</span>
+<section id="system-configure">
+<h2>System Configure<a class="headerlink" href="#system-configure" title="Link to this heading">#</a></h2>
+<p>When using AMD GPUs (such as MI300X), certain system-level optimizations help ensure stable performance. Here we take MI300X as an example. AMD provides official documentation for MI300X optimization and system tuning:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rocm.docs.amd.com/en/latest/how-to/tuning-guides/mi300x/index.html">AMD MI300X Tuning Guides</a></p>
+<ul>
+<li><p><a class="reference external" href="https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/vllm-benchmark.html">LLM inference performance validation on AMD Instinct MI300X</a></p></li>
+<li><p><a class="reference external" href="https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html">AMD Instinct MI300X System Optimization</a></p></li>
+<li><p><a class="reference external" href="https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/workload.html">AMD Instinct MI300X Workload Optimization</a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>NOTE:</strong> We strongly recommend reading theses docs entirely guide to fully utilize your system.</p>
+<p>Below are a few key settings to confirm or enable:</p>
+<section id="update-grub-settings">
+<h3>Update GRUB Settings<a class="headerlink" href="#update-grub-settings" title="Link to this heading">#</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">/etc/default/grub</span></code>, append the following to <code class="docutils literal notranslate"><span class="pre">GRUB_CMDLINE_LINUX</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pci=realloc=off iommu=pt
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">python</span>
-<span class="n">bash</span> <span class="n">upload_pypi</span><span class="o">.</span><span class="n">sh</span>
+<p>Afterward, run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">update-grub</span></code> (or your distro’s equivalent) and reboot.</p>
+</section>
+<section id="disable-numa-auto-balancing">
+<h3>Disable NUMA Auto-Balancing<a class="headerlink" href="#disable-numa-auto-balancing" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo 0 &gt; /proc/sys/kernel/numa_balancing&#39;</span>
+</pre></div>
+</div>
+<p>You can automate or verify this change using <a class="reference external" href="https://github.com/ROCm/triton/blob/rocm_env/scripts/amd/env_check.sh">this helpful script</a>.</p>
+<p>Again, please go through the entire documentation to confirm your system is using the recommended configuration.</p>
+</section>
+</section>
+<section id="installing-sglang">
+<h2>Installing SGLang<a class="headerlink" href="#installing-sglang" title="Link to this heading">#</a></h2>
+<p>For general installation instructions, see the official <a class="reference external" href="https://docs.sglang.ai/start/install.html">SGLang Installation Docs</a>. Below are the AMD-specific steps summarized for convenience.</p>
+<section id="install-from-source">
+<h3>Install from Source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
+
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>sgl-kernel<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_hip]&quot;</span>
 </pre></div>
 </div>
 </section>
-<section id="make-a-release-in-github">
-<h2>Make a release in GitHub<a class="headerlink" href="#make-a-release-in-github" title="Link to this heading">#</a></h2>
-<p>Make a new release https://github.com/sgl-project/sglang/releases/new.</p>
+<section id="install-using-docker-recommended">
+<h3>Install Using Docker (Recommended)<a class="headerlink" href="#install-using-docker-recommended" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Build the docker image.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>sglang_image<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a convenient alias.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri \</span>
+<span class="s1">    --ipc=host --shm-size 16G --group-add video --cap-add=SYS_PTRACE \</span>
+<span class="s1">    --security-opt seccomp=unconfined \</span>
+<span class="s1">    -v $HOME/dockerx:/dockerx \</span>
+<span class="s1">    -v /data:/data&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Launch the server.</p></li>
+</ol>
+<p><strong>NOTE:</strong> Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">huggingface hub token</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>sglang_image<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>NousResearch/Meta-Llama-3.1-8B<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>To verify the utility, you can run a benchmark in another terminal or refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html">other docs</a> to send requests to the engine.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>sglang_image<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dataset-name<span class="w"> </span>random<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--num-prompts<span class="w"> </span><span class="m">4000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--random-input<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--random-output<span class="w"> </span><span class="m">128</span>
+</pre></div>
+</div>
+<p>With your AMD system properly configured and SGLang installed, you can now fully leverage AMD hardware to power SGLang’s machine learning capabilities.</p>
+</section>
 </section>
 </section>
 
@@ -466,6 +552,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="custom_chat_template.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Custom Chat Template in SGLang Runtime</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="deepseek.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DeepSeek Model Usage and Optimizations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -483,9 +587,17 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-configure">System Configure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-grub-settings">Update GRUB Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-numa-auto-balancing">Disable NUMA Auto-Balancing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang">Installing SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-using-docker-recommended">Install Using Docker (Recommended)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

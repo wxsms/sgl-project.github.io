@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/amd_configure.html">AMD Configuration and Setup for SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/multi_node.html">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
@@ -480,13 +481,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.06it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.70it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.22it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.86it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.54it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.39it/s]
+100%|██████████| 23/23 [00:04&lt;00:00,  4.80it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -518,19 +519,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Lexie, and I am a 3-year-old, 22-pound, adorable, and playful Chihuahua. I was born and raised in a loving home with my sister, Lily. My mom is a Chihuahua, and my dad is a mix of Chihuahua and Pomeranian. I have a big personality for a small dog. I love to play with toys, go on walks, and cuddle with my humans.
-I am a quick learner and have mastered basic obedience commands, including &#34;sit,&#34; &#34;stay,&#34; &#34;come,&#34; and &#34;shake.&#34; I also know &#34;down&#34; and &#34;roll
+Generated text:  Carrie, and I&#39;m a writer, editor, and social media specialist with a passion for storytelling and helping others find their voice.
+I help entrepreneurs and small business owners develop a strong online presence through engaging content, strategic social media marketing, and compelling storytelling. Whether you&#39;re launching a new product, service, or business, I can help you craft a message that resonates with your target audience and sets you apart from the competition.
+As a writer, I specialize in creating content that is informative, entertaining, and engaging. My services include blog posts, articles, social media posts, website copy, and more. I&#39;ve worked with a variety
 ===============================
 Prompt: The president of the United States is
-Generated text:  not the head of the Federal Reserve. The president appoints the head of the Federal Reserve, known as the Chairman of the Federal Reserve, subject to Senate confirmation. The Chairman of the Federal Reserve serves a 14-year term, though is not automatically reappointed. The Chairman of the Federal Reserve is responsible for setting monetary policy and overseeing the operation of the Federal Reserve, the central bank of the United States. The Chairman of the Federal Reserve is not a member of the executive branch of the government, but rather serves as an independent official. The Federal Reserve is a private corporation, but it operates under the oversight of Congress and is subject to
+Generated text:  elected by the Electoral College, not directly by the people. This is a fact that has been consistently ignored by the media and the general public for decades, and it&#39;s time to change that. In this article, we&#39;ll explore the reasons behind this system and why it&#39;s time for a change.
+The Electoral College was established at the Constitutional Convention in 1787 as a compromise between those who wanted Congress to choose the president and those who wanted the people to directly elect the president. The system was designed to give smaller states a voice in the election process and to prevent a candidate from winning the presidency by simply carrying a single state.
+However
 ===============================
 Prompt: The capital of France is
-Generated text:  home to some of the most iconic landmarks in the world. Paris has been the center of power and art for centuries and its influence can be seen in the many beautiful buildings, museums and gardens it boasts. It&#39;s a city where history, fashion, food, and culture all come together to create a unique and unforgettable experience. Visitors can explore the historic center of the city, including the Ile de la Cité, which is home to the famous Notre Dame Cathedral, and the Louvre Museum, which houses some of the world&#39;s most famous artworks, including the Mona Lisa. From the Eiffel Tower to the Champs-Elys
+Generated text:  Paris, and it is the center of the country&#39;s culture, history, and politics. Paris is also known as the &#34;City of Light&#34; due to its historical significance as a center of learning and ideas during the Age of Enlightenment. With a rich history dating back to the Middle Ages, Paris has been home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. Paris is also known for its fashion, cuisine, and romantic atmosphere.
+France is a country located in Western Europe, bordered by Belgium, Luxembourg, Germany, Switzerland, Italy, Spain
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is clear: AI is increasingly being used to make life-changing decisions about people&#39;s lives. From health care to education, and from policing to financial lending, AI is becoming an essential tool for decision-makers.
-However, the growing reliance on AI also raises concerns about accountability, transparency, and fairness. If AI is making decisions on our behalf, who is accountable when something goes wrong? And how can we ensure that AI systems are fair and unbiased?
-To address these concerns, some experts are advocating for a new approach to AI development: a focus on explainability, or the ability to understand how AI systems make their decisions
+Generated text:  not about more computing power, but about more domain knowledge.
+Artificial intelligence (AI) is a rapidly evolving field that has seen tremendous growth in recent years, with the development of more sophisticated algorithms and increased computing power. However, experts argue that the future of AI is not about more computing power, but about more domain knowledge.
+Domain knowledge refers to the specific expertise and experience that humans have in a particular field or industry. While AI systems have made significant progress in learning and adapting to new data, they often lack the deep understanding and context of the domain they are operating in. This lack of domain knowledge can lead to AI systems making incorrect
 </pre></div></div>
 </div>
 </section>
@@ -570,16 +575,19 @@ To address these concerns, some experts are advocating for a new approach to AI 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys playing the guitar and listening to music. I&#39;m a bit of a bookworm and like to read in my free time. I&#39;m a bit shy, but I&#39;m working on being more outgoing. I&#39;m a junior at Springdale High School. That&#39;s me in a nutshell.
-This is a good start, but it&#39;s a bit too straightforward and lacks some personality. Let&#39;s try to add a bit more flair to it. Here&#39;s a revised version: Hi, I&#39;m Kaida. I&#39;m a junior at Springdale High School, and when I
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel and a few art projects, and I&#39;m excited to see where they take me. That&#39;s me in a nutshell! What do you think? Is there anything you&#39;d like to add or change?
+Here are a few suggestions to make your self-introduction more engaging and effective:
+1.  **Add a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country, near the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has a population of over 2.1 million people and is a major center for business, education, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a rich history dating back to the 3rd century BC and
+Generated text:  Paris.
+The capital of France is Paris. This is a concise factual statement about France’s capital city. It is a simple and direct statement that provides the necessary information without any additional details or opinions. It is a good example of a factual statement because it is based on verifiable evidence and is widely accepted as true. The statement is also concise, meaning it is brief and to the point, making it easy to understand and remember. Overall, this statement is a good example of a factual statement about France’s capital city.
+This response meets the requirements of providing a concise factual statement about France’s capital city. It is a simple and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze medical images, identify patterns, and make predictions about patient outcomes.
-2. Rise of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need to understand how AI systems make decisions. XAI aims to provide transparency and interpretability into AI decision-making processes, which will be essential for
+Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
+2. Widespread adoption of AI in education: AI has the potential to revolutionize the way we
 
 </pre></div></div>
 </div>
@@ -622,17 +630,20 @@ Generated text:  expected to be shaped by several factors, including advancement
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Bridget Cranshaw and I&#39;m a 25-year-old freelance writer living in a small town on the outskirts of New York City. I&#39;ve been working on various writing projects for several years now, including articles, short stories, and even a novel in progress. When I&#39;m not writing, I enjoy hiking, trying out new local breweries, and spending time with my family and friends. That&#39;s a bit about me! I&#39;m looking forward to seeing what this online community has to offer. How do you like the self-introduction?
-The self-introduction is neutral, which is good for an online community. It provides a
+Generated text:  Astrid, and I am a 22-year-old freelance writer living in Portland, Oregon. I have a degree in creative writing and have written for several local publications. In my free time, I enjoy hiking, reading, and attempting to cook. That’s a little bit about me.
+This introduction is neutral because it doesn’t reveal any personal biases or opinions, and it doesn’t imply any sort of authority or expertise. It simply presents the facts of Astrid’s identity and background in a straightforward way. This kind of introduction is often useful in professional or academic settings, where you want to establish your credentials without revealing too much about your
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located in the north-central part of the country. It is situated on the Seine River and is known for its rich history, art museums, and architectural landmarks. The Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum are some of its most famous attractions.
-Get instant answers to your questions about France’s capital city. France’s capital city is Paris, located in the north-central part of the country. Paris is known for its rich history, art museums, and architectural landmarks. The city has a population of over 2.1 million people and is a major hub for international business, culture, and
+Generated text:  Paris.
+Provide an example of a significant historical event that occurred in Paris, the capital of France. The French Revolution, which began in 1789, was a pivotal event in the history of France, with many key players such as Maximilien Robespierre, Georges Danton, and King Louis XVI meeting in Paris to shape the course of the revolution. The event led to the establishment of the First French Republic, marking a significant shift in the country’s political and social landscape.
+Provide an example of a famous person from Paris, the capital of France. Marie Curie, a renowned physicist and chemist, was born in Warsaw
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  one that is rapidly evolving. Over the last decade, we have seen the rise of various AI applications, from virtual assistants like Siri and Alexa to self-driving cars and personalized medicine. Here are some possible future trends in artificial intelligence.
-1. Increased Use of Edge AI: Edge AI refers to the processing of AI algorithms and models at the edge of the network, where data is collected and processed in real-time. This approach is expected to become more prevalent in the future as it enables faster and more efficient processing of data, reducing latency and improving overall performance.
-2. Rise of Explainable AI: As AI becomes more prevalent in various industries,
+Generated text:  a topic of ongoing debate and speculation. However, based on current trends and advancements, here are some possible future trends in artificial intelligence:
+
+1.  **Increased Adoption in Everyday Life**: AI will become more integrated into our daily lives, from personal assistants like Siri and Alexa to smart homes and cities.
+2.  **Advancements in Machine Learning**: Machine learning will continue to improve, enabling AI systems to learn from experience and adapt to new situations.
+3.  **Rise of Explainable AI (XAI)**: As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions. XAI will
 </pre></div></div>
 </div>
 </section>
@@ -678,20 +689,20 @@ Generated text:  one that is rapidly evolving. Over the last decade, we have see
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Cyrus Blackwood, and I&#39;m an unassuming twenty-five-year-old man living in a quiet neighborhood in the city. I work as a data analyst at a small firm and enjoy collecting vinyl records and playing chess on my weekends. I&#39;m often lost in thought, pondering the intricacies of life and the mysteries of the universe. I&#39;m not particularly outgoing, but I find comfort in the solitude and quiet reflections that allow me to recharge.
-This self-introduction is neutral because it doesn&#39;t reveal much about Cyrus&#39;s personality, values, or motivations. It presents him as a relatable, ordinary person without any exceptional characteristics or traits that
+Generated text:  Aria Flynn. I&#39;m a 25-year-old freelance writer and editor living in Los Angeles. I have a cat named Jasper and enjoy hiking and trying out new coffee shops in my free time. That&#39;s me in a nutshell.
+Aria Flynn is a 25-year-old freelance writer and editor living in Los Angeles. She enjoys hiking and trying out new coffee shops in her free time, and is often accompanied by her cat, Jasper. Aria is a professional wordsmith with a keen eye for detail and a knack for crafting compelling stories. She&#39;s always on the lookout for new adventures and is not afraid to take risks in pursuit
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is one of the world’s largest and most famous cities, known for its art, fashion, cuisine, and historic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is situated in the north-central part of the country and is the center of French culture, politics, and economy.
-Here is a more detailed factual statement about Paris:
-Paris, the capital city of France, is a global center for art, fashion, gastronomy, and entertainment. It is situated in the north-central part of the country, on the Seine River. With a population of over 2.
+Generated text:  Paris.
+Provide a brief history of France’s capital city, including the founding date of the city. Paris, France, has a rich history dating back to the 3rd century BC. It was founded by the Celtic people, but it was the Romans who named it Lutetia and made it a major trading center. In the 5th century, the city was renamed Paris by the Frankish king Clovis I and it has remained the capital of France since then.
+Describe the geographical features of France’s capital city. Paris is situated on the Seine River and is nestled in the Île-de-France region. The
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be a mix of the good and the bad. While AI has the potential to revolutionize numerous industries and improve lives, it also poses significant risks and challenges. Here are some possible future trends in AI:
-1. Increased adoption in various industries:
-AI is expected to become ubiquitous in various industries, including healthcare, finance, education, and transportation. Its applications will range from personalized medicine and financial forecasting to intelligent tutoring systems and autonomous vehicles.
-2. Advancements in natural language processing:
-Natural Language Processing (NLP) will continue to improve, enabling more sophisticated human-computer interaction. This will lead to better chatbots, voice assistants
+Generated text:  likely to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased adoption of AI in various industries: AI is expected to become more widespread in various industries, including healthcare, finance, transportation, and education.
+2. Advancements in explainability and transparency: As AI becomes more pervasive, there will be a growing need for explainability and transparency in AI decision-making processes.
+3. Rise of autonomous systems: Autonomous systems, such as self-driving cars and drones, are expected to become more common in the future.
+4. Development of hybrid
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
