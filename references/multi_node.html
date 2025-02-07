@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Run Llama 3.1 405B &#8212; SGLang</title>
+    <title>Run Multi-Node Inference &#8212; SGLang</title>
   
   
   
@@ -49,15 +49,15 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/llama_405B';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/multi_node';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Use Models From ModelScope" href="modelscope.html" />
-    <link rel="prev" title="DeepSeek Model Optimizations" href="deepseek.html" />
+    <link rel="prev" title="DeepSeek Model Usage and Optimizations" href="deepseek.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post2" />
-    <meta name="docbuild:last-update" content="Feb 05, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 07, 2025"/>
   </head>
   
   
@@ -184,8 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Optimizations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Run Llama 3.1 405B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/llama_405B.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/multi_node.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/llama_405B.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/multi_node.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/llama_405B.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/multi_node.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@
       
       
       
-      <li><a href="../_sources/references/llama_405B.md" target="_blank"
+      <li><a href="../_sources/references/multi_node.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +408,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Run Llama 3.1 405B</h1>
+    <h1>Run Multi-Node Inference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -418,8 +418,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp8-on-a-single-node">Run 405B (fp8) on a Single Node</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp16-on-two-nodes">Run 405B (fp16) on Two Nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-3-1-405b">Llama 3.1 405B</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-r1">DeepSeek V3/R1</a></li>
 </ul>
             </nav>
         </div>
@@ -431,25 +431,28 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="run-llama-3-1-405b">
-<h1>Run Llama 3.1 405B<a class="headerlink" href="#run-llama-3-1-405b" title="Link to this heading">#</a></h1>
-<section id="run-405b-fp8-on-a-single-node">
-<h2>Run 405B (fp8) on a Single Node<a class="headerlink" href="#run-405b-fp8-on-a-single-node" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct-FP8<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
-</pre></div>
-</div>
-</section>
-<section id="run-405b-fp16-on-two-nodes">
-<h2>Run 405B (fp16) on Two Nodes<a class="headerlink" href="#run-405b-fp16-on-two-nodes" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on the first node, replace 172.16.4.52:20000 with your own node ip address and port</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="run-multi-node-inference">
+<h1>Run Multi-Node Inference<a class="headerlink" href="#run-multi-node-inference" title="Link to this heading">#</a></h1>
+<section id="llama-3-1-405b">
+<h2>Llama 3.1 405B<a class="headerlink" href="#llama-3-1-405b" title="Link to this heading">#</a></h2>
+<p><strong>Run 405B (fp16) on Two Nodes</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace 172.16.4.52:20000 with your own node ip address and port of the first node</span>
 
 python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span>
 
-<span class="c1"># on the second node, replace 172.18.45.52:20000 with your own node ip address and port</span>
+<span class="c1"># replace 172.18.45.52:20000 with your own node ip address and port of the second node</span>
 
 python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.18.45.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
+<p>Note that LLama 405B (fp8) can also be launched on a single node.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct-FP8<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
+</pre></div>
+</div>
+</section>
+<section id="deepseek-v3-r1">
+<h2>DeepSeek V3/R1<a class="headerlink" href="#deepseek-v3-r1" title="Link to this heading">#</a></h2>
+<p>Please refer to <a class="reference external" href="https://docs.sglang.ai/references/deepseek.html#running-examples-on-multi-node">DeepSeek documents for reference.</a>.</p>
 </section>
 </section>
 
@@ -470,7 +473,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DeepSeek Model Optimizations</p>
+        <p class="prev-next-title">DeepSeek Model Usage and Optimizations</p>
       </div>
     </a>
     <a class="right-next"
@@ -499,8 +502,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp8-on-a-single-node">Run 405B (fp8) on a Single Node</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-405b-fp16-on-two-nodes">Run 405B (fp16) on Two Nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-3-1-405b">Llama 3.1 405B</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-r1">DeepSeek V3/R1</a></li>
 </ul>
   </nav></div>
 
@@ -534,7 +537,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 05, 2025.
+  Last updated on Feb 07, 2025.
   <br/>
 </p>
   </div>
