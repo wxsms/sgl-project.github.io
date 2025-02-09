@@ -191,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/multi_node.html">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
@@ -481,13 +482,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.08it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.72it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.14it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.83it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.43it/s]
 Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
 
-100%|██████████| 23/23 [00:05&lt;00:00,  4.38it/s]
+100%|██████████| 23/23 [00:04&lt;00:00,  4.88it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -519,27 +520,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Emma and I am a 15 year old girl. I am a vegetarian and I have been wanting to make some changes in my life to live a more sustainable lifestyle. I am excited to start this journey and learn more about the topic. I would love to hear any tips or advice that you might have.
-Welcome to the community, Emma! It&#39;s great to hear that you&#39;re interested in living a more sustainable lifestyle. That&#39;s a wonderful goal, and it&#39;s awesome that you&#39;re taking the first step by educating yourself.
-
-As a vegetarian, you&#39;re already doing a great thing for the environment and animal welfare. Here are some tips
+Generated text:  Sandy F. and I am a tech-obsessed, crafty, music-loving, anxious introvert. I&#39;m a freelance writer and editor, and I spend most of my days working from home (which is my happy place).
+As a freelance writer and editor, I have the luxury of working on a wide range of projects, from articles to blog posts to social media content. I love learning about new topics and figuring out how to make them engaging and accessible to my audience.
+When I&#39;m not working, you can find me listening to music (I&#39;m a huge fan of 80s and 90s alt rock and indie
 ===============================
 Prompt: The president of the United States is
-Generated text:  a symbol of the nation’s power and prestige. But, more importantly, the president is a symbol of the values and ideals of the American people.
-One of the most important ideals in America is the idea of freedom. Americans cherish their freedom to make choices, to express themselves, and to live their lives as they see fit. From the early days of the American Revolution to the present day, Americans have fought to preserve and expand this precious right.
-Another key American ideal is equality. Americans believe that all people are created equal and deserve to be treated with dignity and respect, regardless of their background, race, or socio-economic status. This
+Generated text:  a top dog. There is no doubt about that. And as such, they hold immense power and authority. With great power comes great responsibility, and the president has a duty to uphold the law and protect the rights of all citizens.
+But what happens when a president&#39;s personal life and behavior clash with their duties as a public servant? When does a president&#39;s abuse of power become a betrayal of the public trust? These are questions that have been asked before, and will likely continue to be asked in the future.
+One way to examine these questions is to look at past presidents and their scandals. There have been many examples throughout history, from
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, which is located in the north-central part of the country. Paris is a global center for art, fashion, business, and tourism, and is known for its iconic landmarks like the Eiffel Tower and Notre Dame Cathedral. The city is home to many of the world&#39;s most famous museums, including the Louvre, which houses the Mona Lisa, and the Orsay Museum, which features an impressive collection of Impressionist art. Paris is also a popular destination for its cuisine, including croissants, baguettes, and cheese, and its romantic atmosphere, which has inspired countless artists, writers, and musicians throughout history
+Generated text:  Paris, and the city of Nice is situated in the Provence-Alpes-Côte d&#39;Azur region in the south-east of France. The Nice Côte d&#39;Azur Airport (NCE) is the main airport serving the city of Nice and the Côte d&#39;Azur region, which is a popular destination for tourists. The airport is located about 7 km west of the city centre of Nice and is the second-busiest airport in France after the Paris-Charles de Gaulle Airport. The airport serves as a hub for several airlines, including Air France, and offers flights to various destinations in Europe, Africa
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but the risks are also numerous. Experts warn that unchecked AI could lead to catastrophic consequences, including the loss of human jobs, the exacerbation of existing social inequalities, and the possibility of AI systems becoming uncontrollable.
-AI could take over human jobs, causing widespread unemployment and social unrest.
-AI could exacerbate existing social inequalities by automating jobs that are already held disproportionately by certain groups.
-AI could become uncontrollable, leading to catastrophic consequences.
-AI could be used to manipulate public opinion and influence elections.
-AI could be used to develop autonomous weapons that could be used to harm humans.
-To mitigate these risks, experts recommend that policymakers and
+Generated text:  getting brighter. A recent AI conference, the 33rd Conference on Neural Information Processing Systems (NeurIPS 2019), highlighted the latest breakthroughs and advancements in the field. The conference brought together researchers, developers, and industry experts to discuss the latest AI technologies, share new ideas, and explore potential applications.
+The conference featured several key themes, including:
+  1. Explainability and Transparency: As AI becomes increasingly prevalent in our lives, there is a growing need to understand how these systems work and make decisions. Researchers presented methods for interpreting and explaining AI models, such as model-agnostic explanations and adversarial attacks.
+
 </pre></div></div>
 </div>
 </section>
@@ -579,16 +576,17 @@ To mitigate these risks, experts recommend that policymakers and
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor living in Tokyo. I enjoy reading, hiking, and trying out new restaurants. I&#39;m currently working on a novel and experimenting with different writing styles. That&#39;s me in a nutshell. I&#39;m looking forward to meeting new people and learning more about their experiences.
-This self-introduction is neutral because it doesn&#39;t reveal any personal opinions or biases. It simply states the character&#39;s name, age, occupation, and interests. It also mentions a current project, which can help to establish the character&#39;s personality and goals. The introduction ends with a friendly and open-ended statement,
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in a small town in the Pacific Northwest. I enjoy hiking and reading in my free time. I&#39;m currently working on a novel, but I&#39;m not sure if it will ever be finished. I&#39;m a bit of a introvert and prefer to spend time alone, but I do have a few close friends who I value greatly. That&#39;s me in a nutshell. What do you think? Is this a good self-introduction for a character?
+This is a good self-introduction for a character. It provides a clear sense of who Kaida is, what she does
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city is also a major hub for international business, finance, and tourism. Paris is a popular destination for visitors from around the world, attracting over 23 million tourists each year. The city is divided into 20 arrondissements, or districts, and has a population of over 2
+Generated text:  Paris.
+The capital of France is Paris. The city is located in the northern part of the country, along the Seine River. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. It is home to many famous museums, such as the Louvre and the Orsay, as well as iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. The city is also a major hub for fashion, cuisine, and entertainment. Paris is a popular tourist destination and a significant cultural center in Europe. The city has a population of over 2.1 million people and is a major economic and political center in
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
-2. Rise of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need to understand how AI systems make decisions. XAI aims to provide transparency and interpretability of AI models, enabling humans to understand
+Generated text:  a topic of much speculation and debate. While it is difficult to predict exactly what the future will hold, here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
+2. Widespread adoption of AI in industries: AI is already being used in various industries such as finance, transportation, and customer service. In the future, AI is likely
 
 </pre></div></div>
 </div>
@@ -631,24 +629,25 @@ Generated text:  expected to be shaped by various factors, including technologic
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Jane Thompson. I&#39;m a 20-year-old college student majoring in English literature. I&#39;m a bit of a bookworm and enjoy writing poetry and short stories in my free time. Outside of academics, I&#39;m a bit of a homebody and enjoy spending time with my family and friends, trying out new recipes in the kitchen, and watching old movies. I&#39;m currently working on building up my confidence and exploring my passions.
-This self-introduction is neutral because it:
-Avoids using overly promotional language or boasting about one&#39;s accomplishments.
-Does not express any strong opinions or biases.
-Does not include any sensitive or potentially divisive topics.
+Generated text:  Lyra Blackwood, and I’m a freelance journalist with a passion for investigative reporting and storytelling.
+Write a short, neutral self-introduction for a fictional character.
+Hello, my name is Lyra Blackwood, and I&#39;m a freelance journalist with a passion for investigative reporting and storytelling. ## Step 1: Determine the purpose of the introduction
+The purpose of the introduction is to provide a brief overview of Lyra&#39;s profession and interests, without revealing any personal biases or opinions.
 
+## Step 2: Use a formal tone
+Use a formal tone to convey a sense of professionalism and objectivity.
+
+## Step 3: Keep it
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The city of Paris is known for its beautiful architecture and historic landmarks, including the Eiffel Tower and Notre Dame Cathedral. Paris has a rich history dating back to the Middle Ages, and it has been a major center of culture, art, and education for centuries. The city is home to the famous Louvre Museum, which houses the Mona Lisa painting, and many other world-class museums and galleries. Paris is also a popular tourist destination, attracting millions of visitors each year.
-Here are some key points to consider:
-1. Paris is a major cultural and historical city with a rich history dating back to the Middle Ages.
-2
+Generated text:  Paris. France is a country located in Europe, known for its rich history, art, fashion, and cuisine. The capital city of France is also called Paris, which is situated along the Seine River in the Île-de-France region.
+The capital of France is a major tourist destination and a hub for international business and culture. It is home to the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral, among other famous landmarks. Paris has a population of over 2.1 million people and is a cosmopolitan city with a strong economy.
+Here are some interesting facts about the capital of France
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a wide open space. The last few years have seen tremendous advancements in AI and we can only imagine what the future holds. Here are some possible future trends in AI:
-1. Increased Adoption of AI in Various Industries: AI is already being used in various industries such as healthcare, finance, transportation, and education. In the future, we can expect to see increased adoption of AI in these industries, as well as in others such as retail, manufacturing, and customer service.
-2. Rise of Explainable AI: As AI becomes more pervasive, there is a growing need for explainable AI. This is because AI systems are becoming increasingly complex
+Generated text:  expected to be shaped by several factors, including technological advancements, societal needs, and economic pressures. Here are some possible future trends in AI:
+1. **Increased use of Explainable AI (XAI):** As AI becomes more pervasive in decision-making, there will be a growing need to understand how AI systems arrive at their conclusions. XAI will become increasingly important to ensure transparency and trust in AI-driven decision-making.
+2. **Rise of Edge AI:** With the proliferation of IoT devices, Edge AI will become more prominent. Edge AI processes data closer to the source, reducing latency and improving real-time decision-making. This will be
 </pre></div></div>
 </div>
 </section>
@@ -694,17 +693,24 @@ Generated text:  a wide open space. The last few years have seen tremendous adva
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Luna Nightshade and I&#39;m a 25-year-old botanist who&#39;s been studying the unique plant life of the mystical forest. I&#39;m passionate about understanding the intricacies of nature and discovering new species to help preserve the delicate balance of our ecosystem.
-In this example, Luna&#39;s self-introduction is neutral because it doesn&#39;t reveal any strong opinions or biases. She introduces herself, shares her profession, and explains her interests without taking a stance or expressing enthusiasm. This approach is beneficial when you want to establish a connection with others without appearing too pushy or confrontational. By keeping your introduction concise and neutral, you can set the stage
+Generated text:  Elianore Quasar, and I&#39;m a research astrobiologist studying the atmospheric conditions on distant exoplanets. I&#39;m fascinated by the potential for life beyond Earth and enjoy exploring the intersection of science and philosophy. That&#39;s me in a nutshell.
+Elianore Quasar is a research astrobiologist who studies the atmospheric conditions on distant exoplanets. She&#39;s fascinated by the potential for life beyond Earth and enjoys exploring the intersection of science and philosophy.
+This response is neutral and gives a basic introduction to the character. It provides some context about their profession and interests, but doesn&#39;t reveal too much about their personality or background.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Next Next post: Which city is the capital of France? Paris. Is this correct? Yes. Is it a fact? Yes. What makes it a fact? It is a statement that can be verified to be true. Can anyone verify this fact? Yes, by looking at a map or any reliable source of information. Is this fact reliable? Yes. Is this fact interesting? Yes, because it is the capital of a country that is well known and visited by many people. Is this fact new? No. Does this fact need to be verified? No, it is a well-known fact. Is this fact important?
+Generated text:  Paris. The city is situated in the north-central region of the country. Paris is a global hub for art, fashion, and culture. It hosts many world-famous museums, such as the Louvre, and landmarks like the Eiffel Tower. The city is home to over 2.1 million people and is a major economic center.
+The best answers will be concise, factual, and free of bias. They will also provide a clear and accurate statement about the topic.
+Here are some examples of good answers:
+The capital of France is Paris.
+The city of Paris is located in the north-central region of France.
+Paris is
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of ongoing debate and speculation. However, some possible trends that may shape the future of AI include:
-1.  Increased adoption of AI in various industries: AI is expected to become increasingly adopted across various industries such as healthcare, finance, transportation, and education. This will lead to more efficient and effective operations, improved decision-making, and enhanced customer experiences.
-2.  Advancements in natural language processing (NLP) and machine learning (ML): NLP and ML are expected to continue advancing, enabling AI systems to better understand and interact with humans through voice, text, and other forms of communication. This will lead
+Generated text:  a complex and multifaceted topic, with various potential trends and developments on the horizon. Some possible future trends in AI include:
+
+1.  **Increased focus on human-centered AI**: As AI becomes more pervasive, there will be a growing emphasis on ensuring that AI systems are designed with human values and ethics in mind. This may involve the development of more transparent, explainable, and accountable AI systems.
+2.  **Advances in natural language processing (NLP)**: NLP has made significant progress in recent years, and future advancements in this area could enable more sophisticated and nuanced human-AI interactions.
+3.  **Expansion
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

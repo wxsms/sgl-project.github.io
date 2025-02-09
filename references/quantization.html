@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contribution Guide &#8212; SGLang</title>
+    <title>Quantization &#8212; SGLang</title>
   
   
   
@@ -49,11 +49,11 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/contribution_guide';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/quantization';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="Quantization" href="quantization.html" />
+    <link rel="next" title="Contribution Guide" href="contribution_guide.html" />
+    <link rel="prev" title="Use Models From ModelScope" href="modelscope.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post3" />
@@ -188,8 +188,8 @@
 <li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_node.html">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contribution Guide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
@@ -270,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/contribution_guide.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/quantization.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/contribution_guide.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/quantization.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/contribution_guide.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/quantization.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +334,7 @@
       
       
       
-      <li><a href="../_sources/references/contribution_guide.md" target="_blank"
+      <li><a href="../_sources/references/quantization.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +410,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Contribution Guide</h1>
+    <h1>Quantization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -420,15 +420,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">Install Dependencies &amp; Build</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">Code Formatting with Pre-Commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">Running Unit Tests &amp; Adding to CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">Writing Documentation &amp; Running Docs CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for Newcomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
             </nav>
         </div>
@@ -440,48 +434,92 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="contribution-guide">
-<h1>Contribution Guide<a class="headerlink" href="#contribution-guide" title="Link to this heading">#</a></h1>
-<p>Welcome to <strong>SGLang</strong>! We appreciate your interest in contributing. This guide provides a concise overview of how to set up your environment, run tests, build documentation, and open a Pull Request (PR). Whether you’re fixing a small bug or developing a major feature, we encourage following these steps for a smooth contribution process.</p>
-<section id="setting-up-building-from-source">
-<h2>Setting Up &amp; Building from Source<a class="headerlink" href="#setting-up-building-from-source" title="Link to this heading">#</a></h2>
-<section id="fork-and-clone-the-repository">
-<h3>Fork and Clone the Repository<a class="headerlink" href="#fork-and-clone-the-repository" title="Link to this heading">#</a></h3>
-<p><strong>Note</strong>: New contributors do <strong>not</strong> have the write permission to push to the official SGLang repo. Please fork the repository under your GitHub account, then clone your fork locally.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your_user_name&gt;/sglang.git
+  <section class="tex2jax_ignore mathjax_ignore" id="quantization">
+<h1>Quantization<a class="headerlink" href="#quantization" title="Link to this heading">#</a></h1>
+<p>SGLang supports various quantization methods, including offline quantization and online dynamic quantization.</p>
+<p>Offline quantization loads pre-quantized model weights directly during inference. This is useful for methods requiring pre-computed stats such as AWQ, which collects activation stats from the pre-training set.</p>
+<p>Online quantization dynamically computes scaling parameters—such as the maximum/minimum values of model weights—during runtime. Like NVIDIA FP8 training’s <a class="reference external" href="https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/examples/fp8_primer.html#Mixed-precision-training-with-FP8">delayed scaling</a> mechanism, online quantization calculates the appropriate scaling factors on-the-fly to convert high-precision weights into a lower-precision format.</p>
+<p><strong>Note that, for better performance, usability and convenience, offline quantization is recommended over online quantization.</strong> And if you use a pre-quantized model, do not add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> to enable online quantization at the same time. For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/collections/neuralmagic">neuralmagic collection</a> for some popular quantized LLMs on huggingface.</p>
+<section id="offline-quantization">
+<h2>Offline Quantization<a class="headerlink" href="#offline-quantization" title="Link to this heading">#</a></h2>
+<p>To load already quantized models, simply load the model weights and config. <strong>Again, if the model has been quantized offline, there’s no need to add “–quantization” argument when starting the engine. The quantization method will be parsed from the downloaded Hugging Face config. For example, DeepSeek V3/R1 models are already in FP8, so do not add redundant parameters.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
+<p>To do offline quantization for your model, firstly you need to install <a class="reference external" href="https://github.com/vllm-project/llm-compressor/">llm-compressor</a> library:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
+</pre></div>
+</div>
+<p>Here, we take quantize <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3-8B-Instruct</span></code> to <code class="docutils literal notranslate"><span class="pre">FP8</span></code> as an example to elaborate on how to do offline quantization.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">llmcompressor.transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">SparseAutoModelForCausalLM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">llmcompressor.transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">oneshot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">llmcompressor.modifiers.quantization</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantizationModifier</span>
+
+<span class="c1"># Step 1: Load the original model.</span>
+<span class="n">MODEL_ID</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Meta-Llama-3-8B-Instruct&quot;</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">SparseAutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+  <span class="n">MODEL_ID</span><span class="p">,</span> <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">MODEL_ID</span><span class="p">)</span>
+
+<span class="c1"># Step 2: Perform offline quantization.</span>
+<span class="c1"># Step 2.1: Configure the simple PTQ quantization.</span>
+<span class="n">recipe</span> <span class="o">=</span> <span class="n">QuantizationModifier</span><span class="p">(</span>
+  <span class="n">targets</span><span class="o">=</span><span class="s2">&quot;Linear&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;FP8_DYNAMIC&quot;</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lm_head&quot;</span><span class="p">])</span>
+
+<span class="c1"># Step 2.2: Apply the quantization algorithm.</span>
+<span class="n">oneshot</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">recipe</span><span class="o">=</span><span class="n">recipe</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Save the model.</span>
+<span class="n">SAVE_DIR</span> <span class="o">=</span> <span class="n">MODEL_ID</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-FP8-Dynamic&quot;</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">SAVE_DIR</span><span class="p">)</span>
+<span class="n">tokenizer</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">SAVE_DIR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, you can directly use the quantized model with <code class="docutils literal notranslate"><span class="pre">SGLang</span></code>, by using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span><span class="nv">$PWD</span>/Meta-Llama-3-8B-Instruct-FP8-Dynamic<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
 </section>
-<section id="install-dependencies-build">
-<h3>Install Dependencies &amp; Build<a class="headerlink" href="#install-dependencies-build" title="Link to this heading">#</a></h3>
-<p>Refer to <a class="reference external" href="https://docs.sglang.ai/start/install.html#method-2-from-source">Install SGLang from Source</a> documentation for more details on setting up the necessary dependencies.</p>
-</section>
-</section>
-<section id="code-formatting-with-pre-commit">
-<h2>Code Formatting with Pre-Commit<a class="headerlink" href="#code-formatting-with-pre-commit" title="Link to this heading">#</a></h2>
-<p>We use <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to maintain consistent code style checks. Before pushing your changes, please run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>pre-commit
-pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+<section id="online-quantization">
+<h2>Online Quantization<a class="headerlink" href="#online-quantization" title="Link to this heading">#</a></h2>
+<p>To enable online quantization, you can simply specify <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> in the command line. For example, you can launch the server with the following command to enable <code class="docutils literal notranslate"><span class="pre">FP8</span></code> quantization for model <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
+<p>Our team is working on supporting more online quantization methods. We will soon support methods including but not limited to <code class="docutils literal notranslate"><span class="pre">[&quot;awq&quot;,</span> <span class="pre">&quot;gptq&quot;,</span> <span class="pre">&quot;marlin&quot;,</span> <span class="pre">&quot;gptq_marlin&quot;,</span> <span class="pre">&quot;awq_marlin&quot;,</span> <span class="pre">&quot;bitsandbytes&quot;,</span> <span class="pre">&quot;gguf&quot;]</span></code></p>
+<p>We also support quantization methods based on <a class="reference external" href="https://github.com/pytorch/ao">torchao</a>. You can simply specify <code class="docutils literal notranslate"><span class="pre">--torchao-config</span></code> in the command line to support this feature. For example, if you want to enable <code class="docutils literal notranslate"><span class="pre">int4wo-128</span></code> for model <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span></code>, you can launch the server with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--torchao-config<span class="w"> </span>int4wo-128<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
+<p>We support the following quantization methods based on torchao <code class="docutils literal notranslate"><span class="pre">[&quot;int8dq&quot;,</span> <span class="pre">&quot;int8wo&quot;,</span> <span class="pre">&quot;fp8wo&quot;,</span> <span class="pre">&quot;fp8dq-per_tensor&quot;,</span> <span class="pre">&quot;fp8dq-per_row&quot;,</span> <span class="pre">&quot;int4wo-32&quot;,</span> <span class="pre">&quot;int4wo-64&quot;,</span> <span class="pre">&quot;int4wo-128&quot;,</span> <span class="pre">&quot;int4wo-256&quot;]</span></code>.</p>
+<p>Note: According to <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2219#issuecomment-2561890230">this issue</a>, <code class="docutils literal notranslate"><span class="pre">&quot;int8dq&quot;</span></code> method currently has some bugs when using together with cuda graph capture. So we suggest to disable cuda graph capture when using <code class="docutils literal notranslate"><span class="pre">&quot;int8dq&quot;</span></code> method. Namely, please use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--torchao-config<span class="w"> </span>int8dq<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disable-cuda-graph<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">run</span> <span class="pre">--all-files</span></code></strong> manually runs all configured checks, applying fixes if possible. If it fails the first time, re-run it to ensure lint errors are fully resolved. Make sure your code passes all checks <strong>before</strong> creating a Pull Request.</p></li>
-<li><p><strong>Do not commit</strong> directly to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Always create a new branch (e.g., <code class="docutils literal notranslate"><span class="pre">feature/my-new-feature</span></code>), push your changes, and open a PR from that branch.</p></li>
+<li><p><a class="reference external" href="https://docs.vllm.ai/en/latest/quantization/fp8.html">quantization document of vllm</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/ao">torchao</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vllm-project/llm-compressor/">llm-compressor</a></p></li>
 </ul>
-</section>
-<section id="running-unit-tests-adding-to-ci">
-<h2>Running Unit Tests &amp; Adding to CI<a class="headerlink" href="#running-unit-tests-adding-to-ci" title="Link to this heading">#</a></h2>
-<p>SGLang uses Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> framework. For detailed instructions on running tests and adding them to CI, please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/README.md">test/README.md</a>.</p>
-</section>
-<section id="writing-documentation-running-docs-ci">
-<h2>Writing Documentation &amp; Running Docs CI<a class="headerlink" href="#writing-documentation-running-docs-ci" title="Link to this heading">#</a></h2>
-<p>We recommend new contributors start from writing documentation, which helps you quickly understand SGLang codebase. For more details, please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docs/README.md">docs/README.md</a>.</p>
-</section>
-<section id="tips-for-newcomers">
-<h2>Tips for Newcomers<a class="headerlink" href="#tips-for-newcomers" title="Link to this heading">#</a></h2>
-<p>If you want to contribute but don’t have a specific idea in mind, pick issues labeled <a class="reference external" href="https://github.com/sgl-project/sglang/issues?q=is%3Aissue+label%3A%22good+first+issue%22%2C%22help+wanted%22">“good first issue” or “help wanted”</a>. These tasks typically have lower complexity and provide an excellent introduction to the codebase. Also check out this <a class="reference external" href="https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through">code walk-through</a> for a deeper look into SGLang’s workflow.</p>
-<p>If you have any questions or want to start a discussion, please feel free to ask in our <a class="reference external" href="https://join.slack.com/t/sgl-fru7574/shared_invite/zt-2um0ad92q-LkU19KQTxCGzlCgRiOiQEw">Slack channel</a>.</p>
-<p>Thank you for your interest in SGLang—<strong>happy coding</strong>!</p>
 </section>
 </section>
 
@@ -497,20 +535,20 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="quantization.html"
+       href="modelscope.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Quantization</p>
+        <p class="prev-next-title">Use Models From ModelScope</p>
       </div>
     </a>
     <a class="right-next"
-       href="troubleshooting.html"
+       href="contribution_guide.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Troubleshooting</p>
+        <p class="prev-next-title">Contribution Guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -531,15 +569,9 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">Install Dependencies &amp; Build</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">Code Formatting with Pre-Commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">Running Unit Tests &amp; Adding to CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">Writing Documentation &amp; Running Docs CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for Newcomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
   </nav></div>
 
