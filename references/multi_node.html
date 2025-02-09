@@ -57,7 +57,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post3" />
-    <meta name="docbuild:last-update" content="Feb 07, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 09, 2025"/>
   </head>
   
   
@@ -421,6 +421,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-3-1-405b">Llama 3.1 405B</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-r1">DeepSeek V3/R1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-inference-on-slurm">Multi-Node Inference on SLURM</a></li>
 </ul>
             </nav>
         </div>
@@ -454,6 +455,70 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <section id="deepseek-v3-r1">
 <h2>DeepSeek V3/R1<a class="headerlink" href="#deepseek-v3-r1" title="Link to this heading">#</a></h2>
 <p>Please refer to <a class="reference external" href="https://docs.sglang.ai/references/deepseek.html#running-examples-on-multi-node">DeepSeek documents for reference.</a>.</p>
+</section>
+<section id="multi-node-inference-on-slurm">
+<h2>Multi-Node Inference on SLURM<a class="headerlink" href="#multi-node-inference-on-slurm" title="Link to this heading">#</a></h2>
+<p>This example showcases how to serve SGLang server across multiple nodes by SLURM. Submit the following job to the SLURM cluster.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+
+#SBATCH -o SLURM_Logs/%x_%j_master.out
+#SBATCH -e SLURM_Logs/%x_%j_master.err
+#SBATCH -D ./
+#SBATCH -J Llama-405B-Online-Inference-TP16-SGL
+
+#SBATCH --nodes=2
+#SBATCH --ntasks=2
+#SBATCH --ntasks-per-node=1  # Ensure 1 task per node
+#SBATCH --cpus-per-task=18
+#SBATCH --mem=224GB
+#SBATCH --partition=&quot;lmsys.org&quot;
+#SBATCH --gres=gpu:8
+#SBATCH --time=12:00:00
+
+echo &quot;[INFO] Activating environment on node $SLURM_PROCID&quot;
+if ! source ENV_FOLDER/bin/activate; then
+    echo &quot;[ERROR] Failed to activate environment&quot; &gt;&amp;2
+    exit 1
+fi
+
+# Define parameters
+model=MODEL_PATH
+tp_size=16
+
+echo &quot;[INFO] Running inference&quot;
+echo &quot;[INFO] Model: $model&quot;
+echo &quot;[INFO] TP Size: $tp_size&quot;
+
+# Set NCCL initialization address using the hostname of the head node
+HEAD_NODE=$(scontrol show hostname &quot;$SLURM_NODELIST&quot; | head -n 1)
+NCCL_INIT_ADDR=&quot;${HEAD_NODE}:8000&quot;
+echo &quot;[INFO] NCCL_INIT_ADDR: $NCCL_INIT_ADDR&quot;
+
+# Launch the model server on each node using SLURM
+srun --ntasks=2 --nodes=2 --output=&quot;SLURM_Logs/%x_%j_node$SLURM_NODEID.out&quot; \
+    --error=&quot;SLURM_Logs/%x_%j_node$SLURM_NODEID.err&quot; \
+    python3 -m sglang.launch_server \
+    --model-path &quot;$model&quot; \
+    --grammar-backend &quot;xgrammar&quot; \
+    --tp &quot;$tp_size&quot; \
+    --nccl-init-addr &quot;$NCCL_INIT_ADDR&quot; \
+    --nnodes 2 \
+    --node-rank &quot;$SLURM_NODEID&quot; &amp;
+
+# Wait for the NCCL server to be ready on port 30000
+while ! nc -z &quot;$HEAD_NODE&quot; 30000; do
+    sleep 1
+    echo &quot;[INFO] Waiting for $HEAD_NODE:30000 to accept connections&quot;
+done
+
+echo &quot;[INFO] $HEAD_NODE:30000 is ready to accept connections&quot;
+
+# Keep the script running until the SLURM job times out
+wait
+</pre></div>
+</div>
+<p>Then, you can test the server by sending requests following other <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html">documents</a>.</p>
+<p>Thanks for <a class="reference external" href="https://github.com/aflah02">aflah02</a> for providing the example, based on his <a class="reference external" href="https://aflah02.substack.com/p/multi-node-llm-inference-with-sglang">blog post</a>.</p>
 </section>
 </section>
 
@@ -505,6 +570,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-3-1-405b">Llama 3.1 405B</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-r1">DeepSeek V3/R1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-inference-on-slurm">Multi-Node Inference on SLURM</a></li>
 </ul>
   </nav></div>
 
@@ -538,7 +604,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 07, 2025.
+  Last updated on Feb 09, 2025.
   <br/>
 </p>
   </div>
