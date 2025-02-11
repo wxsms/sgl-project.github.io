@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Run Multi-Node Inference" href="multi_node.html" />
-    <link rel="prev" title="AMD Configuration and Setup for SGLang" href="amd_configure.html" />
+    <link rel="prev" title="Custom Chat Template in SGLang Runtime" href="custom_chat_template.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post4" />
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="amd_configure.html">AMD Configuration and Setup for SGLang</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Model Usage and Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_node.html">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
@@ -481,7 +480,7 @@
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
 </p>
-<p><strong>Usage</strong>: MLA optimization is enabled by defalut, to disable, use <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code>.</p>
+<p><strong>Usage</strong>: MLA optimization is enabled by default, to disable, use <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code>.</p>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations">Blog</a> and <a class="reference external" href="https://github.com/sgl-project/sgl-learning-materials/blob/main/slides/lmsys_1st_meetup_deepseek_mla.pdf">Slides</a> for more details.</p>
 </section>
 <section id="data-parallelism-attention">
@@ -490,7 +489,7 @@
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" alt="Data Parallelism Attention for DeepSeek Series Models">
 </p>
-<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabeld by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
+<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/deepseek_coder_v2.svg" alt="Data Parallelism Attention Performance Comparison">
 </p>
@@ -525,12 +524,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="amd_configure.html"
+       href="custom_chat_template.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AMD Configuration and Setup for SGLang</p>
+        <p class="prev-next-title">Custom Chat Template in SGLang Runtime</p>
       </div>
     </a>
     <a class="right-next"

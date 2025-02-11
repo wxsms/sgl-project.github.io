@@ -49,11 +49,9 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/amd_configure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/amd';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="DeepSeek Model Usage and Optimizations" href="deepseek.html" />
-    <link rel="prev" title="Custom Chat Template in SGLang Runtime" href="custom_chat_template.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post4" />
@@ -105,6 +103,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -177,14 +177,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">AMD Configuration and Setup for SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_node.html">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
@@ -270,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/amd_configure.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/amd.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/amd_configure.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/amd.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +303,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/amd_configure.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/amd.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +333,7 @@
       
       
       
-      <li><a href="../_sources/references/amd_configure.md" target="_blank"
+      <li><a href="../_sources/references/amd.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -431,6 +430,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-using-docker-recommended">Install Using Docker (Recommended)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-v3">Running DeepSeek-V3</a></li>
 </ul>
             </nav>
         </div>
@@ -540,6 +540,23 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>With your AMD system properly configured and SGLang installed, you can now fully leverage AMD hardware to power SGLang’s machine learning capabilities.</p>
 </section>
 </section>
+<section id="running-deepseek-v3">
+<h2>Running DeepSeek-V3<a class="headerlink" href="#running-deepseek-v3" title="Link to this heading">#</a></h2>
+<p>The only difference in running DeepSeek-V3 is when starting the server.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>sglang_image<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span><span class="c1"># &lt;- here \</span>
+<span class="w">    </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -553,24 +570,6 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="custom_chat_template.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Custom Chat Template in SGLang Runtime</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="deepseek.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">DeepSeek Model Usage and Optimizations</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -599,6 +598,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-using-docker-recommended">Install Using Docker (Recommended)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-v3">Running DeepSeek-V3</a></li>
 </ul>
   </nav></div>
 

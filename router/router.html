@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/amd_configure.html">AMD Configuration and Setup for SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/multi_node.html">Run Multi-Node Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
@@ -444,7 +443,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="router-for-data-parallelism">
 <h1>Router for Data Parallelism<a class="headerlink" href="#router-for-data-parallelism" title="Link to this heading">#</a></h1>
 <p>Given multiple GPUs running multiple SGLang Runtimes, SGLang Router distributes the requests to different Runtimes with its unique cache-aware load-balancing algorithm.</p>
-<p>The router is a independent Python package, and it can be used as a drop-in replacement for the OpenAI API.</p>
+<p>The router is an independent Python package, and it can be used as a drop-in replacement for the OpenAI API.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sglang-router
@@ -463,7 +462,7 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 </section>
 <section id="co-launch-router-and-runtimes">
 <h2>Co-launch Router and Runtimes<a class="headerlink" href="#co-launch-router-and-runtimes" title="Link to this heading">#</a></h2>
-<p>This will be a drop-in replacement for the existing <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> arguement of SGLang Runtime. Under the hood, it uses multi-processes to launch multiple workers, wait for them to be ready, then connect the router to all workers.</p>
+<p>This will be a drop-in replacement for the existing <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> argument of SGLang Runtime. Under the hood, it uses multi-processes to launch multiple workers, wait for them to be ready, then connect the router to all workers.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--dp-size<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
