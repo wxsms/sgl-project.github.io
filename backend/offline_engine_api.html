@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.2.post4" />
-    <meta name="docbuild:last-update" content="Feb 10, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 11, 2025"/>
   </head>
   
   
@@ -428,6 +428,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Synchronous-Generation">Streaming Synchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Asynchronous-Generation">Non-streaming Asynchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Asynchronous-Generation">Streaming Asynchronous Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Return-Hidden-States">Return Hidden States</a></li>
 </ul>
 </li>
 </ul>
@@ -482,13 +483,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.16it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.84it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.04it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.66it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
 
-100%|██████████| 23/23 [00:06&lt;00:00,  3.48it/s]
+100%|██████████| 23/23 [00:07&lt;00:00,  3.27it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -520,29 +521,22 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Pat and I&#39;m a member of the Mystic Valley Chorale. I&#39;ve been involved with the chorale for about 20 years, and I&#39;ve sung with many other choruses in the Boston area. I&#39;m an alto, and I love singing in harmony with the other voices. Music is a big part of my life, and I&#39;m always looking for new and exciting ways to experience it. I&#39;m also a bit of a theater buff, and I love attending musical theater productions and concerts.
-When I&#39;m not singing, I work as a librarian at a local elementary school. I love working with kids and helping them develop a
+Generated text:  Shelly and I am a 30-year-old wife and mom to two beautiful kids. I am a stay-at-home mom and I love every minute of it. I get to spend all day, every day, with my babies and that is truly a blessing. I also have a passion for photography and I love to capture moments and memories for my family.
+When I&#39;m not playing with my kids or taking pictures, you can find me trying out new recipes in the kitchen or running errands for my family. I love to stay organized and make lists to help keep my sanity. I&#39;m a bit of a planner, but I&#39;m
 ===============================
 Prompt: The president of the United States is
-Generated text:  a position that has been held by many influential individuals throughout history. From George Washington to Joe Biden, each president has brought their unique experiences and perspectives to the office. In this article, we will explore some of the most notable presidents in U.S. history, highlighting their accomplishments, challenges, and lasting impacts.
-Here are some of the most notable presidents in U.S. history:
-1. George Washington (1789-1797)
-George Washington is widely regarded as one of the most influential presidents in U.S. history. He was the first president of the United States and set the standard for the office. Washington established the cabinet system,
+Generated text:  the head of state and the head of government of the United States. The president serves as the commander-in-chief of the United States Armed Forces and is the highest-ranking official in the executive branch of the federal government. The president is also the chief executive of the United States and is responsible for carrying out the laws passed by Congress.
+The president is elected by the people through the Electoral College system, in which each state is allocated a certain number of electoral votes based on its population. The candidate who receives the majority of the electoral votes, at least 270 out of 538, wins the presidency. The president serves a four-year term and
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, and the capital of England is London. The capital of the UK (United Kingdom) is also London.
-The UK is a country that consists of four countries: England, Scotland, Wales, and Northern Ireland. The United Kingdom has a constitutional monarchy and a parliamentary system of government.
-The monarch of the United Kingdom is currently Queen Elizabeth II, who is also the head of the Commonwealth. The Queen serves as the head of state and plays a symbolic role in the UK.
-The Prime Minister is the head of government of the United Kingdom and is currently Rishi Sunak. The Prime Minister is responsible for the administration of the government and
+Generated text:  famous for its stunning art museums, world-class fashion, and breathtaking architecture. But, for many, the most iconic landmark of Paris is the Eiffel Tower. This engineering marvel has been standing tall since its construction in the late 19th century. The Eiffel Tower is an engineering marvel that has been the subject of fascination and awe for over a century. From its construction to its current status as a global icon, the Eiffel Tower has played a significant role in shaping the history and culture of Paris.
+Eiffel Tower Construction
+The Eiffel Tower was built for the 1889 World’s Fair, held
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is clear: it will change the world in profound ways.
-The Future of AI: What to Expect
-Artificial intelligence (AI) has been a topic of interest for decades, but its rapid advancement in recent years has brought about a surge in innovation and applications. As AI continues to evolve, it will transform various aspects of our lives, from work and healthcare to transportation and education. Here are some potential future developments that could shape the course of AI:
-Increased Adoption in Industries
-AI will become an integral part of various industries, such as:
-Healthcare: AI-powered diagnostic tools will improve disease detection and treatment.
-
+Generated text:  bright, but its development will require a more nuanced understanding of the interplay between technology, society, and ethics.
+Artificial intelligence (AI) has come a long way since its inception, and its future looks bright. From self-driving cars to personalized medicine, AI is being increasingly used in various sectors to improve efficiency, accuracy, and decision-making. However, as AI continues to advance, it also raises complex questions about its impact on society, the economy, and our individual lives.
+One of the key challenges in the development of AI is the need for a more nuanced understanding of its interplay with society and ethics. While AI has the
 </pre></div></div>
 </div>
 </section>
@@ -582,18 +576,17 @@ Healthcare: AI-powered diagnostic tools will improve disease detection and treat
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m looking forward to meeting new people and learning more about their experiences. What do you think? Is this a good self-introduction?
-The introduction is clear and concise, and it provides a good sense of who Kaida is and what she&#39;s interested in. However, it&#39;s a bit too neutral and doesn&#39;t reveal much
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city with my cat, Luna. I enjoy reading, hiking, and trying out new recipes in my free time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
+This self-introduction is neutral because it doesn&#39;t reveal any personal opinions or biases. It simply states the character&#39;s name, occupation, and some basic facts about their life. This can be a good way to introduce a character in a story, especially if you want to keep the focus on the plot rather than the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The capital of France is Paris.
-The capital of France is Paris. The city is located in the northern part of the country and is situated on the Seine River. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. The city is home to many famous museums, such as the Louvre and the Orsay, and is also famous for its fashion industry. Paris is a popular tourist destination and is often referred to as the &#34;City of Light.&#34; The city has a population of over 2.1 million people and is a major hub for business, education, and culture in Europe. The official language
+The capital of France is Paris. The city is known for its beautiful architecture, art museums, and romantic atmosphere. Paris is a popular tourist destination and is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city has a rich history and has been a center of culture and learning for centuries. Paris is also a major economic and financial center, and is home to many international organizations and companies. The city has a population of over 2.1 million people and is a hub for transportation, with two major airports and a comprehensive public transportation system. Overall, Paris
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze large amounts of medical data, identify patterns, and make predictions about patient outcomes.
-2. Widespread adoption of AI in industries: AI is likely to become more prevalent in various industries, including finance, transportation, and education. AI-powered systems may be able to automate tasks, improve efficiency, and enhance decision
+Generated text:  a topic of much speculation and debate. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
+2. Widespread adoption of AI in industries: AI is already being used in various industries such as finance, transportation, and customer service. In the future, AI is likely to become even more widespread, with many industries adopting AI-powered solutions to
 
 </pre></div></div>
 </div>
@@ -636,25 +629,17 @@ Generated text:  likely to be shaped by various factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Jaelin Frost. I&#39;m a 25-year-old freelance writer and artist living in Portland, Oregon. I enjoy spending time outdoors, practicing yoga, and exploring new coffee shops in the city. I&#39;m a bit of a hopeless romantic, but I&#39;ve learned to be content with my solo lifestyle. When I&#39;m not working on my latest creative project, you can find me volunteering at a local animal shelter or practicing my photography skills on the city streets.
-Use present tense to describe their daily life and personality traits.
-Jaelin Frost is a 25-year-old freelance writer and artist living in Portland, Oregon. She is always on
+Generated text:  Elara, and I&#39;m a 22-year-old student working on a degree in environmental science at the University of Washington. I&#39;m originally from Seattle, where I grew up surrounded by the city&#39;s unique blend of urban and natural landscapes. I enjoy hiking and exploring the outdoors, especially in the Pacific Northwest. I&#39;m currently focusing on learning as much as I can about sustainable ecosystems and conservation efforts, with the goal of making a positive impact in my community. That&#39;s me in a nutshell! I&#39;m excited to meet new people and collaborate with others who share my passions. (How to Write a Self-Introduction) - English lessons by
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-How To Write A Thesis Statement For A Research Paper
-Writing a thesis statement for a research paper involves several steps that help you to formulate a clear, concise, and focused statement that sets the tone for your entire paper. Here&#39;s a step-by-step guide to help you write a compelling thesis statement:
-Step 1: Choose a Research Topic
-Select a specific topic that interests you and is relevant to your field of study. Make sure it&#39;s narrow enough to be manageable but broad enough to allow for in-depth exploration.
-Step 2: Conduct Preliminary Research
-Gather background information and conduct preliminary research on your topic. This
+Generated text:  Paris. It has a population of approximately 2.1 million people. Paris is the center of the Île-de-France region, home to a population of over 12 million people. It is known for its art museums, historical landmarks, and fashion industry. The city is served by two international airports: Charles de Gaulle Airport and Orly Airport.
+Describe the cultural and historical significance of Paris. Paris has been a center of culture and learning for over 2,000 years. It is the city where the French Revolution began in 1789, and the Eiffel Tower, built for the World’s Fair in
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  characterized by rapid advancements in machine learning, deep learning, and cognitive computing. As we look to the future, several trends are likely to emerge and shape the field of artificial intelligence.
-Trend 1: Increased Autonomy in AI Systems
-Future AI systems are likely to become increasingly autonomous, with the ability to learn, adapt, and make decisions without human intervention. This will lead to significant improvements in efficiency, productivity, and decision-making in various industries.
-Trend 2: Integration with Other Emerging Technologies
-AI is likely to be integrated with other emerging technologies such as blockchain, the Internet of Things (IoT), and the Industrial Internet
+Generated text:  a topic of much speculation and debate. Here are some possible trends that could shape the future of AI:
+1. **Increased Adoption in Industries**: AI will continue to be adopted in various industries, including healthcare, finance, transportation, and education. Its applications will expand to areas like customer service, supply chain management, and predictive maintenance.
+2. **Advancements in Edge AI**: As IoT devices become increasingly common, edge AI will become more prominent. This technology will enable AI processing at the device level, reducing latency and improving real-time decision-making.
+3. **Human-AI Collaboration**: AI will be designed to collaborate with humans more effectively
 </pre></div></div>
 </div>
 </section>
@@ -700,24 +685,132 @@ AI is likely to be integrated with other emerging technologies such as blockchai
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Rina.
-I&#39;m a high school student living in a quiet suburban town. I&#39;m currently in my junior year, and I spend most of my free time reading and writing short stories. I&#39;m pretty laid-back and enjoy the simple things in life, like taking long walks in the nearby park or chatting with my friends at the local coffee shop. I&#39;m not really into sports or loud gatherings, but I appreciate the company of good people and the comfort of a cozy night in. That&#39;s about it for now.
-What do you think? Is this a good self-introduction for Rina? Does it give a good sense of who
+Generated text:  Astrid Jensen and I&#39;m a junior in high school. I&#39;m 16 years old and I enjoy playing soccer and reading science fiction novels. I&#39;m a bit of a daydreamer and I often find myself lost in thought while staring out the window. I&#39;m working hard to get good grades and hoping to attend a good college in the future. I&#39;m also a bit of a worrier, often thinking about all the things that could go wrong. But I&#39;m trying to focus on the positive and make the most of every day.
+I&#39;ll give you some more information about Astrid. She&#39;s a smart and ambitious student,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the largest city in France and the most populous city in the European Union. It is located in the north-central part of the country, along the Seine River. Paris is known for its rich history, art museums, fashion, and cuisine. The city has a population of over 2.1 million people and is a major hub for business, tourism, and culture.
-The following is a text describing the characteristics of the Eiffel Tower, a famous landmark in Paris.
-The Eiffel Tower is a iconic iron lattice tower located in the heart of Paris, France. It was built for the 1889
+Generated text:  Paris.
+A possible rhetorical question to pose to the class: What is the Eiffel Tower’s significance?
+Possible response: The Eiffel Tower is an iron lattice tower located in Paris, France, and it was the tallest man-made structure in the world when it was first built in the late 19th century. It was constructed for the 1889 World’s Fair and has since become a symbol of French culture and engineering ingenuity. The tower stands at a height of 324 meters (1,063 feet) and is one of the most recognizable landmarks in the world.
+Possible follow-up question: What are some other famous
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a highly debated and evolving topic. However, based on current developments and trends, here are some possible future trends in artificial intelligence:
-1. AI will become ubiquitous: As AI technology improves, it&#39;s likely that AI will become ubiquitous, embedded in many aspects of daily life, from smart homes to self-driving cars.
-2. Increased focus on Explainability and Transparency: As AI becomes more prevalent, there will be a growing need for AI systems to be explainable and transparent in their decision-making processes.
-3. Emergence of Hybrid Intelligence: Hybrid intelligence combines human and artificial intelligence to create more effective and efficient solutions. This trend is likely to
+Generated text:  subject to ongoing research and debate, and experts offer a range of predictions about its future impact. With the rapid growth of machine learning, AI is becoming increasingly prevalent across industries, including healthcare, finance, education, and transportation. Here are some potential future trends in artificial intelligence:
+1. Increased Use of Edge AI: Edge AI refers to the processing of data and AI models at the edge of the network, closer to the source of the data, rather than in the cloud. This trend is likely to continue as the need for real-time processing and lower latency increases. Edge AI will enable more efficient and autonomous systems, such as self-driving cars
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Return-Hidden-States">
+<h3>Return Hidden States<a class="headerlink" href="#Return-Hidden-States" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span> <span class="n">return_hidden_states</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+/public_sglang_ci/runner-c-gpu-1/_work/_tool/Python/3.9.21/x64/lib/python3.9/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+  warnings.warn(&#39;resource_tracker: process died unexpectedly, &#39;
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.15it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.79it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.29it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+
+100%|██████████| 23/23 [00:05&lt;00:00,  4.14it/s]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Hello, my name is&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The president of the United States is&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The capital of France is&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The future of AI is&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="o">=</span><span class="n">sampling_params</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">Prompt_Tokens: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;prompt_tokens&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">Completion_tokens: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;completion_tokens&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">Hidden states: </span><span class="si">{</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;hidden_states&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+===============================
+Prompt: Hello, my name is
+Generated text:  Belle Gray and I am the founder and Chief Creative
+Prompt_Tokens: 6        Completion_tokens: 10
+Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
+
+===============================
+Prompt: The president of the United States is
+Generated text:  known for his ability to speak eloquently and
+Prompt_Tokens: 8        Completion_tokens: 10
+Hidden states: [torch.Size([8, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
+
+===============================
+Prompt: The capital of France is
+Generated text:  Paris. Paris is the most populous city in France
+Prompt_Tokens: 6        Completion_tokens: 10
+Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
+
+===============================
+Prompt: The future of AI is
+Generated text:  a mysterious and tantalizing prospect, with possibilities ranging
+Prompt_Tokens: 6        Completion_tokens: 10
+Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
+
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
@@ -779,6 +872,7 @@ Generated text:  a highly debated and evolving topic. However, based on current 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Synchronous-Generation">Streaming Synchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Asynchronous-Generation">Non-streaming Asynchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Asynchronous-Generation">Streaming Asynchronous Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Return-Hidden-States">Return Hidden States</a></li>
 </ul>
 </li>
 </ul>
@@ -814,7 +908,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 10, 2025.
+  Last updated on Feb 11, 2025.
   <br/>
 </p>
   </div>
