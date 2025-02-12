@@ -482,13 +482,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.28it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.93it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.59it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.16it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.88it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  5.37it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.50it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -520,24 +520,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Xochitl!
-My name is Xochitl, which means &#34;flower&#34; in the Nahuatl language, spoken by the Aztecs in Mexico. I&#39;m a passionate artist and educator with a love for all things creative and colorful. I have a degree in Fine Arts and have been teaching art to children and adults for over 10 years. I specialize in painting, drawing, pottery, and printmaking.
-As an artist, I find inspiration in the beauty of nature, the vibrant colors of Mexican culture, and the warmth of human connection. My art is a reflection of my love for life, my heritage, and
+Generated text:  Lisa and I am a passionate individual with a strong will to help others. I am a proud mother of 2 wonderful children and a dedicated wife to my loving husband. I have had my fair share of challenges and struggles in life, but I have never lost sight of my dreams and aspirations. As a result, I have been able to overcome obstacles and come out stronger on the other side.
+I have a deep desire to connect with like-minded individuals who share my passion for helping others. I believe that everyone deserves a chance to live a fulfilling life, and I am committed to doing my part in making that a reality.
+As a dedicated
 ===============================
 Prompt: The president of the United States is
-Generated text:  both the head of state and the head of government of the United States. The president is elected to a four-year term through the Electoral College. The president is responsible for a wide range of powers and duties, including serving as the commander-in-chief of the armed forces, conducting foreign policy, and appointing federal judges, including Supreme Court justices. The president also has the power to veto legislation passed by Congress, although this can be overridden by a two-thirds majority vote in both the House of Representatives and the Senate. The president is also responsible for ensuring that the laws are faithfully executed, and is the head of the executive branch of the federal
+Generated text:  the head of state and the head of government of the United States. The president serves a four-year term and is elected through the Electoral College system. The president is responsible for enforcing laws, commanding the armed forces, and conducting foreign policy. The president is also the commander-in-chief of the armed forces and is responsible for appointing federal judges and other officials.
+The president&#39;s role is defined by Article II of the United States Constitution. The president&#39;s term of office is limited to two terms, as established by the 22nd Amendment to the Constitution. The president&#39;s power is checked by the other branches of government, including Congress and the
 ===============================
 Prompt: The capital of France is
-Generated text:  the first city in the world to be illuminated with electric light. This historic event, which took place on December 31, 1889, was a major milestone in the development of urban lighting.
-The city of Paris was a major hub of activity, with many people gathering to witness the event. The streets were filled with onlookers, and the sound of cheering and applause filled the air.
-The illumination of the city was a result of the efforts of French inventor Edmond Becquerel and his team, who developed the first commercially viable incandescent light bulb. The bulb was powered by a dynamo, which was fueled by
+Generated text:  home to over 2 million people and offers a wide range of accommodations, from luxury hotels to budget-friendly hostels. Here are some of the top-rated hotels in Paris:
+1. The Ritz Paris: This iconic hotel has been a favorite among royalty, celebrities, and business travelers for over a century. It offers luxurious rooms, a world-class spa, and a Michelin-starred restaurant.
+2. The Four Seasons Hotel George V Paris: This 5-star hotel is known for its impeccable service, stunning views of the Eiffel Tower, and luxurious amenities like a private garden and a rooftop pool.
+3. Le Bristol Paris
 ===============================
 Prompt: The future of AI is
-Generated text:  filled with possibilities, and at the same time, concerns about its potential impact on society. To develop safe and beneficial AI, we need to create a shared understanding of its potential consequences and the societal values that we want to uphold.
-The Unabomber&#39;s Revenge: How to Stave Off the Rise of AI Misuse
-The Unabomber&#39;s Revenge: How to Stave Off the Rise of AI Misuse
-The Unabomber&#39;s Revenge: How to Stave Off the Rise of AI Misuse
-What if I were to tell you that the Unabomber, Ted Kaczynski, a domestic
+Generated text:  a topic of great interest and speculation. It’s a field that’s constantly evolving and expanding, and new breakthroughs and innovations are being made almost daily. As AI becomes increasingly integrated into our lives, it’s natural to wonder what the future might hold. Here are some potential developments and possibilities for AI that could shape the future of the field:
+
+1.  **Advancements in Natural Language Processing (NLP)**: As AI becomes more conversational, NLP will continue to improve, enabling machines to understand and respond to human language more accurately and naturally.
+2.  **Increased Adoption in Healthcare**: AI will be used to analyze medical
 </pre></div></div>
 </div>
 </section>
@@ -577,16 +578,17 @@ What if I were to tell you that the Unabomber, Ted Kaczynski, a domestic
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student living in a small town in the Pacific Northwest. I enjoy hiking and reading in my free time. I&#39;m a bit of a introvert, but I&#39;m working on being more outgoing. I&#39;m a junior, and I&#39;m trying to figure out what I want to do with my life after graduation. I&#39;m a bit of a perfectionist, which can sometimes make things difficult for me, but I&#39;m trying to learn to be more relaxed and go with the flow. I&#39;m a bit of a bookworm, and I love getting lost in a good story. I
+Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys reading and playing video games in my free time. I&#39;m a bit of a bookworm and often get lost in the world of fantasy novels. I&#39;m also pretty good at strategy games like chess and Starcraft. When I&#39;m not studying or gaming, you can find me listening to music or trying out new recipes in the kitchen. I&#39;m a bit of a homebody, but I&#39;m always up for a good conversation or adventure. I&#39;m a bit of a perfectionist, but I&#39;m working on being more laid-back and embracing my flaws. I&#39;m
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the largest city in France and is located in the northern part of the country. It is situated on the Seine River and is known for its rich history, art, fashion, and cuisine. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, culture, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the &#34;City of Light.&#34; The city has a rich cultural heritage and is home to many museums
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, tourism, and education. Paris is also known for its romantic atmosphere and is often referred to as the &#34;City of Light.&#34; (Word Count: 100) Provide a concise factual statement
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, from diagnosing diseases to developing personalized treatment plans.
-2. Rise of explainable AI: As AI becomes more pervasive, there is a growing need for AI systems to be transparent and explainable, so that users can understand how they arrive at their decisions.
-3. Growing importance of human-AI collaboration: As AI becomes more capable, humans and AI systems will need to work together more
+Generated text:  a topic of much speculation and debate. While it is difficult to predict exactly what the future will hold, there are several trends that are likely to shape the development and impact of artificial intelligence in the coming years.
+1. Increased Adoption of AI in Various Industries:
+AI is expected to become increasingly adopted across various industries, including healthcare, finance, transportation, and education. This will lead to improved efficiency, productivity, and decision-making in these sectors.
+2. Advancements in Machine Learning and Deep Learning:
+Machine learning and deep learning are expected to continue to advance, enabling AI systems to learn from data and improve their performance over time. This will
 
 </pre></div></div>
 </div>
@@ -629,16 +631,22 @@ Generated text:  expected to be shaped by several factors, including advancement
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emily Lee. I&#39;m a software engineer by trade, with a strong background in coding and IT. I&#39;m currently working on a project to develop a new language processing algorithm. Outside of work, I enjoy reading science fiction and hiking in the mountains. I&#39;m originally from a small town in the Midwest, but I&#39;ve lived in the city for over 5 years now. I&#39;m a bit of a coffee snob and have a weakness for dark chocolate. That&#39;s me in a nutshell! I&#39;m excited to get to know you and hear about your interests. How about you? What brings you here today? Good conversation can be a
+Generated text:  Astrid Erso. I&#39;m a 22-year-old introverted botanist with a passion for studying unusual plant species.
+Astrid Erso&#39;s introduction is concise and to the fact. It includes the following information:
+Age: 22
+Occupation: Botanist
+Personality: Introverted
+Interests: Studying unusual plant species
+This introduction provides a neutral, neutral description of Astrid, without any emotional or personal details. It sets the stage for her character and background, leaving room for further development and expansion in the story. The introduction is also concise, making it easy to understand and remember. Overall
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.  Paris is situated in the northern part of the country. It is the country&#39;s largest city and a major centre for culture, fashion, and tourism. Paris is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral, as well as its beautiful parks and gardens. The city is also famous for its cuisine, fashion, and art.  The population of Paris is approximately 2.1 million people. This figure is a rough estimate and may have changed since the last official census.  The metropolitan area of Paris is home to a much larger population of around
+Generated text:  Paris, which has a population of approximately 2.1 million people. (Source: Wikipedia)
+Based on the provided text, the answer to the question is Paris. The text explicitly states that Paris is the capital of France, providing a clear and direct answer to the question. The supporting detail about the population of Paris is secondary and serves to provide additional context. However, the primary answer to the question is Paris, which can be isolated and used to directly answer the prompt. A more detailed response would build on this basic answer, using supporting evidence and additional information to expand on the characteristics of the city. A potential response might be:
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  not only about developing more sophisticated algorithms and models, but also about understanding the impact of these technologies on society and making them accessible to a broader range of people.
-The future of artificial intelligence (AI) is likely to be shaped by several trends, including:
-1. **Increased emphasis on Explainability and Transparency**: As AI becomes more pervasive, there will be a growing need to understand how AI decisions are made and to ensure that they are transparent and explainable. This will require the development of new AI architectures and techniques that can provide insights into AI decision-making processes.
-2. **Rise of Edge AI**: With the increasing use of IoT
+Generated text:  a subject of much speculation and debate. Here are some possible trends that may shape the field in the coming years:
+Increased use of machine learning: Machine learning has already revolutionized many areas of AI, and it is likely to continue to play a central role in the development of AI systems. As data continues to grow and become more complex, machine learning algorithms will become more sophisticated and efficient.
+Advances in natural language processing: Natural language processing (NLP) has made significant progress in recent years, enabling computers to understand and generate human-like language. This trend is likely to continue, with NLP being used in applications such as virtual assistants
 </pre></div></div>
 </div>
 </section>
@@ -684,19 +692,21 @@ The future of artificial intelligence (AI) is likely to be shaped by several tre
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emilia. I&#39;m 25 years old. I work as a software developer in a small startup. I enjoy learning about new technologies and reading science fiction novels in my free time. I&#39;m a bit of a introvert, but I appreciate the quiet, focused atmosphere of my work environment.
-The tone of this self-introduction is neutral and to the point. It doesn&#39;t reveal too much about the character&#39;s personality or personal life, but it gives a sense of who they are and what they do.
-In a few sentences, what is Emilia&#39;s profession and personality like?
-Emilia is a software developer who works in a small
+Generated text:  Elianore Quasar. I&#39;m a 25-year-old astrophysicist with a penchant for science fiction novels and a love for stargazing on clear nights. I currently work at the Celestial Research Institute, where I&#39;m part of a team studying the mysteries of black holes. My interests include exploring the intersection of science and philosophy, and I&#39;m always eager to engage in discussions about the nature of reality.
+This text is a good example of a neutral self-introduction because it:
+Provides a brief overview of the character&#39;s background and profession.
+Mentions their interests and hobbies.
+Avoids any overtly dramatic or attention
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the most visited city in the world. 2. What is the significance of the Eiffel Tower? The Eiffel Tower, built in 1889, was the world&#39;s tallest man-made structure and is now an iconic symbol of Paris and France. It is a source of national pride and is one of the most recognizable landmarks in the world. 3. What is the significance of the Louvre Museum? The Louvre is the world&#39;s largest art museum, housing over 550,000 works of art, including the Mona Lisa. It is a premier cultural institution and a must-visit destination for art lovers
+Generated text:  Paris. Paris is located in the northern part of the country and has a population of over 2.1 million people. It is situated on the Seine River and is one of the most visited cities in the world.
+Paris, also known as the City of Light, is a global center for fashion, cuisine, and art. It has been a major hub of culture and learning for centuries and is home to many famous landmarks, such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral.
+The city has a rich history dating back to the 3rd century BC and has been ruled by various em
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be exciting and potentially transformative.
-The future of artificial intelligence (AI) is expected to be exciting and potentially transformative, with numerous trends that will shape the industry. Here are some possible future trends in AI:
-1. Increased Adoption in Various Industries: AI will continue to be adopted across various industries, including healthcare, finance, education, and transportation. This will lead to increased efficiency, productivity, and innovation.
-2. Advancements in Deep Learning: Deep learning, a subset of machine learning, will continue to advance, leading to more accurate and robust AI systems. This will enable AI to tackle complex tasks, such as image and speech
+Generated text:  likely to be shaped by several factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1.  Increased use of AI in healthcare: AI will continue to be used in healthcare to improve diagnosis, treatment, and patient outcomes. For example, AI-powered diagnostic tools will become more common, and AI-assisted robots will be used to perform surgeries.
+2.  More focus on explainability and transparency: As AI becomes more pervasive, there will be a growing need for AI systems to be explainable and transparent. This means that AI systems will need to provide clear explanations for their
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -731,7 +741,7 @@ huggingface/tokenizers: The current process just got forked, after parallelism h
 To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
         - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-/public_sglang_ci/runner-c-gpu-1/_work/_tool/Python/3.9.21/x64/lib/python3.9/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+/public_sglang_ci/runner-b-gpu-0/_work/_tool/Python/3.9.21/x64/lib/python3.9/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
   warnings.warn(&#39;resource_tracker: process died unexpectedly, &#39;
 huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
 To disable this warning, you can either:
@@ -746,13 +756,13 @@ To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
         - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.22it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.84it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.80it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  5.18it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.21it/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -785,25 +795,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Kevin and I have been a professional dog walker for
+Generated text:  Jacob, and I’m the president of the Bear
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The president of the United States is
-Generated text:  not a ceremonial figurehead. The president has many
+Generated text:  the head of state and the head of government of
 Prompt_Tokens: 8        Completion_tokens: 10
 Hidden states: [torch.Size([8, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, the most beautiful city in the world.
+Generated text:  a city like no other. Paris is the epic
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but so is the importance of human oversight
+Generated text:  bright, but it also has its own set of
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
