@@ -447,6 +447,11 @@
 </pre></div>
 </div>
 <p>Note: SGLang currently uses torch 2.5, so you need to install the flashinfer version for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>.</p>
+<p>If you experience an error like <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set.</span> <span class="pre">Please</span> <span class="pre">set</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">CUDA</span> <span class="pre">install</span> <span class="pre">root</span></code>， please try either of the following solutions:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=/usr/local/cuda-&lt;your-cuda-version&gt;</span></code> to set the <code class="docutils literal notranslate"><span class="pre">CUDA_HOME</span></code> environment variable.</p></li>
+<li><p>Follow the procedure described in <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> first, then install SGLang as described above.</p></li>
+</ul>
 </section>
 <section id="method-2-from-source">
 <h2>Method 2: From source<a class="headerlink" href="#method-2-from-source" title="Link to this heading">#</a></h2>

@@ -482,13 +482,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.26it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.90it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.58it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.76it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  4.62it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.57it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -520,26 +520,21 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Chris!
-I&#39;m a 23 year old freelance writer and editor based in Melbourne, Australia. I&#39;m passionate about writing about music, culture, and technology, and I&#39;ve written for a variety of publications and websites over the years.
-When I&#39;m not writing, you can find me at live music shows, eating food from a variety of cuisines, or trying to keep up with the latest developments in the world of tech.
-I&#39;m excited to be here and look forward to connecting with you! What brings you to my corner of the internet? Want to chat about something specific or just shoot the breeze? Let&#39;s talk!
+Generated text:  Preeya, I am a qualified BSc (Hons) in Midwifery. I have been a midwife for over 10 years and have extensive experience working in both community and hospital settings. I am passionate about empowering women and their families to make informed choices and decisions about their care.
+I am registered with the Nursing and Midwifery Council (NMC) and have up to date knowledge of best practice and guidelines. I have also completed additional training in areas such as fetal monitoring, postnatal depression and baby first aid.
+I understand that every woman&#39;s journey through pregnancy, birth and motherhood is unique and
 ===============================
 Prompt: The president of the United States is
-Generated text:  a big deal. He has a lot of power, and his words and actions have a significant impact on the world. It&#39;s no wonder that many people pay close attention to what he says and does. But have you ever thought about the president&#39;s personal life? What&#39;s he like outside of the Oval Office? How does he spend his free time? Let&#39;s take a closer look.
-The president&#39;s personal life is often shrouded in secrecy, but there are a few things we do know. For example, Barack Obama was a bit of a foodie and loved trying new restaurants and cuisines. He even had a favorite chef
+Generated text:  a hard person to get a read on. This is not just because of the secrecy and obfuscation that surrounds the office, but also because of the president’s unique position in the country’s political hierarchy. The president is simultaneously the leader of the executive branch, a political figure, and the symbolic representative of the country. This means that the president must balance competing interests and priorities, often with contradictory goals.
+Because of this, it can be difficult to discern the president’s motivations and goals. This is not just because the president may not always be forthcoming about their intentions, but also because their actions and decisions may be driven by a complex
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is the most populous city in France, with an estimated population of 2.1 million people. The Paris metropolitan area, which includes the city and its surrounding suburbs, has a population of over 12 million people, making it one of the largest metropolitan areas in Europe.
-Paris is known for its stunning architecture, art museums, fashion, and cuisine. The city is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.
-Paris is also a major hub for international business, finance, and culture, and is home to many
+Generated text:  home to some of the world&#39;s most famous and historic landmarks, including the Eiffel Tower and Notre Dame Cathedral. Paris is also famous for its fashion industry and culinary delights, including croissants, baguettes, and cheese. Whether you&#39;re interested in art, history, food, or culture, Paris has something for everyone.
+Beautiful Paris, a city of romance, art and history, awaits you. As a luxury travel agency, we can customize your Parisian adventure to suit your interests and preferences. From the iconic Eiffel Tower and Notre Dame Cathedral to the world-renowned art collections of the Louvre and Orsay
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, and it&#39;s already transforming industries and our daily lives. Here&#39;s a look at the most exciting advancements in AI and their potential impact.
-As AI technology continues to evolve, we can expect to see even more innovative applications in the future. Some potential areas of growth include:
-1. Increased use of deep learning: Deep learning algorithms have already shown impressive results in image and speech recognition, and we can expect to see even more sophisticated applications in the future.
-2. Advancements in natural language processing: As AI becomes more conversational, we can expect to see improvements in areas such as language translation, chatbots, and virtual assistants.
-
+Generated text:  increasingly shaped by the contributions and perspectives of individuals from diverse backgrounds and disciplines. To reflect this growing diversity, the 2023 AAAI Conference on Artificial Intelligence, the premier AI conference in the world, will feature a special theme, &#34;Rethinking AI for Everyone.&#34;
+The conference aims to foster a global conversation on the social implications and opportunities of AI, highlighting the need for a more inclusive and diverse AI community. The conference theme will be reflected in the program, which will include a range of sessions and events showcasing the latest research, innovations, and applications of AI, with a focus on the impact on society, economy, and individual lives
 </pre></div></div>
 </div>
 </section>
@@ -579,22 +574,22 @@ As AI technology continues to evolve, we can expect to see even more innovative 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student. I&#39;m a bit of a bookworm and enjoy reading about history and science. I&#39;m also a member of the school&#39;s debate team and enjoy arguing about current events. When I&#39;m not studying or debating, I can usually be found playing guitar or listening to music. I&#39;m a bit of a introvert, but I&#39;m working on being more outgoing. I&#39;m a bit of a perfectionist, which can sometimes make me come across as stubborn or critical. I&#39;m still figuring out who I am and where I fit in, but I&#39;m excited to see what
+Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys playing the guitar and listening to music. I&#39;m a bit of a bookworm and love reading about history and science. I&#39;m a bit shy, but I&#39;m working on being more outgoing. I&#39;m a junior at Springdale High School. That&#39;s me in a nutshell. What do you think? Is it a good self-introduction?
+Your self-introduction is clear and concise. It provides a good overview of your character&#39;s interests and personality. However, it may benefit from a bit more depth and personality. Here are some suggestions to consider:
+*
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-Provide a concise factual statement about the country of France. France is a country located in Western Europe.
-Provide a concise factual statement about the country of France’s population. The population of France is approximately 67 million people.
-Provide a concise factual statement about the country of France’s official language. The official language of France is French.
-Provide a concise factual statement about the country of France’s currency. The official currency of France is the Euro.
-Provide a concise factual statement about the country of France’s government. France is a republic with a semi-presidential system of government.
-Provide a concise factual statement about the country of France’s history
+Provide a concise factual statement about France’s capital city.
+The capital of France is Paris.
+This statement is a concise factual statement about France’s capital city. It clearly and accurately states that the capital of France is Paris. This statement is a good example of a concise factual statement because it is brief, to the point, and provides a clear and accurate piece of information. It does not include any unnecessary details or opinions, making it a good choice for a concise factual statement.
+Note: This response is a direct answer to the prompt and does not require any additional information or context. It is a simple and straightforward statement that
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, with applications such as personalized medicine, disease diagnosis, and patient care.
-2. Advancements in natural language processing: AI systems will become more proficient in understanding and generating human language, enabling more effective communication between humans and machines.
-3. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions, leading to the development of Explain
+Generated text:  a topic of much debate and speculation, and it&#39;s difficult to predict exactly what will happen. However, based on current trends and the pace of innovation, here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with applications such as:
+a. Predictive analytics: AI will be used to analyze large amounts of medical data to predict patient outcomes and identify high-risk patients.
+b. Personalized medicine: AI will
 
 </pre></div></div>
 </div>
@@ -637,20 +632,23 @@ Generated text:  likely to be shaped by various factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Nova Spacewalker and I&#39;m a 22-year-old botanist.
-I&#39;m currently a graduate student at the university studying plant ecology. My hobbies include hiking, rock climbing, and playing the guitar. I&#39;m a bit of a curious person and love learning about the natural world and the impact humans have on it. I&#39;m a self-proclaimed optimist and try to see the good in every situation. I&#39;m excited to meet new people and make new connections in the field of botany.
-I&#39;m a bit of a homebody and prefer spending time alone or with a small group of close friends. I&#39;m not a big fan
+Generated text:  Remi Blackwood. I&#39;m a 27-year-old freelance writer and artist from Portland, Oregon. I enjoy hiking and reading in my free time.
+What can you infer about Remi from this introduction?
+Remi is likely to be a creative and independent person, given that they are a freelance writer and artist. They may value their freedom and flexibility, as freelance work often allows for a non-traditional schedule. The mention of hiking and reading as free-time activities suggests that Remi enjoys the outdoors and values intellectual pursuits. The fact that they are from Portland, Oregon, may imply that they have a somewhat bohemian or
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located at the heart of the Île-de-France region in northern France. It is situated in the north-central part of the country. Paris is often called the “City of Light” (La Ville Lumière) due to its historical significance as a center of education and ideas during the Age of Enlightenment. The city has a population of over 2.1 million people in its urban area and 12.2 million people in its metropolitan area, making it the largest city in France.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris. Paris is located at the heart of
+Generated text:  Paris.
+Provide an example of a famous building in Paris. The Eiffel Tower is an iconic symbol of the city.
+What is the population of Paris? The population of Paris is approximately 2.1 million people.
+What is the official language of France? French.
+What is the main religion in France? The main religion in France is Christianity.
+What is the climate like in Paris? The climate in Paris is temperate, with warm summers and cold winters. Paris experiences significant rainfall throughout the year, with the majority of it occurring during the spring and autumn months.
+What are some popular tourist attractions in Paris? Some popular tourist attractions
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain and constantly evolving, and there are several trends that could shape its development. Some of the possible future trends in artificial intelligence include:
-1. **Increased Use of Explainability and Transparency:** As AI becomes more pervasive, there is a growing need to understand how AI models make decisions. Explainability and transparency are becoming increasingly important to ensure that AI systems are trustworthy and accountable.
-2. **More Human-AI Collaboration:** AI is becoming more integrated into various industries, and there is a growing need for human-AI collaboration. AI systems will become more adept at understanding human communication and emotions, enabling more effective collaboration.
-3. **Advancements
+Generated text:  a highly contested topic, with experts and non-experts alike offering a wide range of predictions. However, some possible future trends in artificial intelligence (AI) include:
+1. Increased focus on explainability and transparency: As AI becomes more pervasive in our lives, there will be a growing need for AI systems to be transparent and explainable. This means that AI models will need to provide clear and understandable explanations for their decisions and actions.
+2. Advancements in natural language processing (NLP): NLP has made significant progress in recent years, but there is still much to be done. Future AI systems are likely to be able to understand
 </pre></div></div>
 </div>
 </section>
@@ -696,22 +694,20 @@ Generated text:  uncertain and constantly evolving, and there are several trends
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Alexander. I&#39;m a 25-year-old programmer with a passion for problem-solving. I enjoy playing chess and reading about history. Outside of work, you can find me hiking or practicing yoga. I&#39;m currently living in a small apartment in downtown New York City. I value efficiency, honesty, and personal growth. I&#39;m looking for opportunities to learn and collaborate with like-minded individuals. My strengths include analytical thinking, attention to detail, and effective communication. My weaknesses are my tendency to overanalyze situations and my occasional difficulty in delegating tasks. I&#39;m excited to meet new people and explore new ideas.
-Hello, my name is Lena.
+Generated text:  Eve Archer. I work as a sales representative for a tech firm, and I enjoy spending time in nature, reading, and trying out new recipes in my free time.
+Eve Archer, a sales representative for a tech firm, here. I&#39;m a creative problem-solver, analytical thinker, and nature enthusiast. When I&#39;m not in the office, I enjoy reading, experimenting with new recipes, and exploring the outdoors.
+Eve Archer, sales representative at a tech firm. In my free time, I like to hike, cook, and read. I&#39;m always up for a challenge and looking to learn more about the people and world
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The city of Paris is located in the northern part of France and is the country’s largest city.
-Some of the famous landmarks in Paris include the Eiffel Tower, the Arc de Triomphe, the Louvre Museum, and Notre Dame Cathedral.
-The language spoken in Paris is French, but English is widely spoken and understood.
-Paris is a global center for fashion, cuisine, art, and entertainment.
-France is a leader in international relations and global governance, with Paris hosting many international organizations, including the United Nations Educational, Scientific and Cultural Organization (UNESCO) and the Organization for Economic Cooperation and Development (OECD).
-
+Paris is home to the famous Eiffel Tower, which was originally intended for Barcelona but was eventually built in Paris. The tower was designed by Gustave Eiffel, a French engineer, and was completed in 1889 for the World’s Fair. At 324 meters (1,063 feet) tall, it was the tallest man-made structure in the world for over 40 years. Today, it is one of the most iconic landmarks in the world and attracts millions of visitors each year.
+Paris is also known for its beautiful art and architecture, including the Louvre Museum, which houses a vast collection of artwork and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  not set in stone, but several trends are emerging that are likely to shape the field in the coming years. Here are some possible future trends in artificial intelligence:
-1. Increased use of machine learning: Machine learning is a subset of AI that enables computers to learn from data without being explicitly programmed. As data becomes increasingly available, machine learning is likely to become even more prevalent, leading to more accurate and efficient AI systems.
-2. Rise of explainable AI: As AI becomes more ubiquitous, there is a growing need to understand how AI systems make decisions. Explainable AI (XAI) aims to provide insights into the decision-making process of
+Generated text:  likely to be shaped by advances in machine learning, natural language processing, and computer vision. These technologies have the potential to revolutionize numerous industries, from healthcare and finance to education and transportation.
+Possible future trends in AI include:
+1. Increased use of deep learning: Deep learning, a subset of machine learning, has already shown significant improvements in various AI applications. As the field continues to evolve, we can expect to see more widespread adoption of deep learning techniques, leading to even more accurate and efficient AI systems.
+2. Rise of natural language processing: As AI becomes more integrated into daily life, natural language processing will play a crucial role in
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -761,13 +757,13 @@ To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
         - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.23it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.86it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.56it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.22it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.85it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.54it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
 
-100%|██████████| 23/23 [00:04&lt;00:00,  4.71it/s]
+100%|██████████| 23/23 [00:05&lt;00:00,  4.08it/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -800,7 +796,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Alex, and I am a digital nomad.
+Generated text:  Eli and I&#39;m an artist. My work is
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
@@ -812,13 +808,14 @@ Hidden states: [torch.Size([8, 4096]), torch.Size([4096]), torch.Size([4096]), t
 
 ===============================
 Prompt: The capital of France is
-Generated text:  a city like no other. Paris, the City
+Generated text:  Paris. France is a country in Europe.
+France
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but it also brings challenges. Here are
+Generated text:  looking bright, but what does that mean for human
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
