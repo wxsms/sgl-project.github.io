@@ -519,6 +519,10 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">json_model_override_args</span></code>: Override model config with the provided JSON.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">delete_ckpt_after_loading</span></code>: Delete the model checkpoint after loading the model.</p></li>
 </ul>
+<blockquote>
+<div><p>[!IMPORTANT]
+<strong>Make sure the correct <code class="docutils literal notranslate"><span class="pre">chat_template</span></code> is passed, or performance degradation may occur.</strong></p>
+</div></blockquote>
 </section>
 <section id="serving-http-api">
 <h2>Serving: HTTP &amp; API<a class="headerlink" href="#serving-http-api" title="Link to this heading">#</a></h2>
