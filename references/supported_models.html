@@ -50,6 +50,7 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'references/supported_models';</script>
+    <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sampling Parameters in SGLang Runtime" href="sampling_params.html" />
@@ -57,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3" />
-    <meta name="docbuild:last-update" content="Feb 15, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 16, 2025"/>
   </head>
   
   
@@ -423,7 +424,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-models">Embedding Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reward-models">Reward Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a New Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-vision-llm">How to Support a New vision LLM</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-vlm">How to Support a New vLM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the correctness</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive debugging</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the model to the test suite</a></li>
@@ -452,7 +453,7 @@
 <li><p>Llama / Llama 2 / Llama 3 / Llama 3.1 / Llama 3.2</p></li>
 <li><p>Mistral / Mixtral / Mistral NeMo / Mistral Small 3</p></li>
 <li><p>Gemma / Gemma 2</p></li>
-<li><p>Qwen / Qwen 2 / Qwen 2 MoE / Qwen 2 VL</p></li>
+<li><p>Qwen / Qwen 2 / Qwen 2 MoE / Qwen 2 VL / Qwen 2.5 VL</p></li>
 <li><p>DeepSeek / DeepSeek 2 / <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek 3</a></p></li>
 <li><p>OLMoE</p></li>
 <li><p><a class="reference external" href="https://llava-vl.github.io/blog/2024-08-05-llava-onevision/">LLaVA-OneVision</a></p>
@@ -525,8 +526,8 @@
 You can learn from existing model implementations and create new files for the new models.
 For most models, you should be able to find a similar model to start with (e.g., starting from Llama).</p>
 </section>
-<section id="how-to-support-a-new-vision-llm">
-<h2>How to Support a New vision LLM<a class="headerlink" href="#how-to-support-a-new-vision-llm" title="Link to this heading">#</a></h2>
+<section id="how-to-support-a-new-vlm">
+<h2>How to Support a New vLM<a class="headerlink" href="#how-to-support-a-new-vlm" title="Link to this heading">#</a></h2>
 <p>To support a new vision-language model (vLM) in SGLang, there are several key components in addition to the standard LLM.</p>
 <ol class="arabic simple">
 <li><p><strong>Register your new model as multimodal</strong>: Extend <code class="docutils literal notranslate"><span class="pre">is_multimodal_model</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/configs/model_config.py"><code class="docutils literal notranslate"><span class="pre">model_config.py</span></code></a> to return True for your model.</p></li>
@@ -649,7 +650,7 @@ You can add it to the <code class="docutils literal notranslate"><span class="pr
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-models">Embedding Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reward-models">Reward Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a New Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-vision-llm">How to Support a New vision LLM</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-vlm">How to Support a New vLM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the correctness</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive debugging</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the model to the test suite</a></li>
@@ -692,7 +693,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 15, 2025.
+  Last updated on Feb 16, 2025.
   <br/>
 </p>
   </div>
