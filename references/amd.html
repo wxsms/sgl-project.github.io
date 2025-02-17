@@ -510,14 +510,17 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <ol class="arabic simple" start="2">
 <li><p>Create a convenient alias.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri \</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --privileged --device=/dev/kfd --device=/dev/dri \</span>
 <span class="s1">    --ipc=host --shm-size 16G --group-add video --cap-add=SYS_PTRACE \</span>
 <span class="s1">    --security-opt seccomp=unconfined \</span>
 <span class="s1">    -v $HOME/dockerx:/dockerx \</span>
 <span class="s1">    -v /data:/data&#39;</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
+<p>If you are using RDMA, please note that:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--network</span> <span class="pre">host</span></code> and <code class="docutils literal notranslate"><span class="pre">--privileged</span></code> are required by RDMA. If you don’t need RDMA, you can remove them.</p></li>
+<li><p>You may need to set <code class="docutils literal notranslate"><span class="pre">NCCL_IB_GID_INDEX</span></code> if you are using RoCE, for example: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">NCCL_IB_GID_INDEX=3</span></code>.</p></li>
 <li><p>Launch the server.</p></li>
 </ol>
 <p><strong>NOTE:</strong> Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">huggingface hub token</a>.</p>

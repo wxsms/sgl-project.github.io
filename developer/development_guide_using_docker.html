@@ -455,17 +455,22 @@ tar<span class="w"> </span>xf<span class="w"> </span>vscode_cli_alpine_x64_cli.t
 <section id="setup-docker-container">
 <h2>Setup Docker Container<a class="headerlink" href="#setup-docker-container" title="Link to this heading">#</a></h2>
 <p>The following startup command is an example for internal development by the SGLang team. You can <strong>modify or add directory mappings as needed</strong>, especially for model weight downloads, to prevent repeated downloads by different Docker containers.</p>
+<p>❗️ <strong>Note on RDMA</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. `--network host` and `--privileged` are required by RDMA. If you don&#39;t need RDMA, you can remove them but keeping them there does not harm. Thus, we enable these two flags by default in the commands below.
+2. You may need to set `NCCL_IB_GID_INDEX` if you are using RoCE, for example: `export NCCL_IB_GID_INDEX=3`.
+</pre></div>
+</div>
 <section id="h100">
 <h3>H100<a class="headerlink" href="#h100" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the name to yours</span>
-docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/opt/dlami/nvme/.cache:/root/.cache<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
+docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/opt/dlami/nvme/.cache:/root/.cache<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
 </pre></div>
 </div>
 </section>
 <section id="h200">
 <h3>H200<a class="headerlink" href="#h200" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/mnt/co-research/shared-models:/root/.cache/huggingface<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/mnt/co-research/shared-models:/root/.cache/huggingface<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
 </pre></div>
 </div>
