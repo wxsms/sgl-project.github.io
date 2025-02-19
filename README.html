@@ -56,7 +56,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Feb 18, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 19, 2025"/>
   </head>
   
   
@@ -177,24 +177,29 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="router/router.html">Router for Data Parallelism</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="references/supported_models.html">Supported Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/multi_node.html">Run Multi-Node Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/multi_node_inference_k8s_lws.html">Deploying a RoCE Network-Based SGLANG Two-Node Inference Service on a Kubernetes (K8S) Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/modelscope.html">Use Models From ModelScope</a></li>
+</ul>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="references/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/multi_node.html">Run Multi-Node Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/multi_node_inference_k8s_lws.html">Deploying a RoCE Network-Based SGLANG Two-Node Inference Service on a Kubernetes (K8S) Cluster</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/quantization.html">Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
 </ul>
 
     </div>
@@ -424,6 +429,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">Docs Workflow</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependency">Install Dependency</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-documentation">Update Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#port-allocation-and-ci-efficiency"><strong>Port Allocation and CI Efficiency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-approach"><strong>Why this approach?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection"><strong>Model Selection</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-alignment-example"><strong>Prompt Alignment Example</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -475,37 +484,40 @@ find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </spa
 pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </pre></div>
 </div>
-<p>If you need to run and shut down a SGLang server or engine, following these examples:</p>
-<ol class="arabic simple">
-<li><p>Launch and close Sever:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Launch Sever</span>
+</section>
+<hr class="docutils" />
+<section id="port-allocation-and-ci-efficiency">
+<h3><strong>Port Allocation and CI Efficiency</strong><a class="headerlink" href="#port-allocation-and-ci-efficiency" title="Link to this heading">#</a></h3>
+<p><strong>To launch and kill the server:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.test.test_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_in_ci</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait_for_server</span><span class="p">,</span> <span class="n">print_highlight</span><span class="p">,</span> <span class="n">terminate_process</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-    <span class="n">execute_shell_command</span><span class="p">,</span>
-    <span class="n">wait_for_server</span><span class="p">,</span>
-    <span class="n">terminate_process</span><span class="p">,</span>
-    <span class="n">print_highlight</span><span class="p">,</span>
+<span class="k">if</span> <span class="n">is_in_ci</span><span class="p">():</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">patch</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_server_cmd</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_server_cmd</span>
+
+<span class="n">server_process</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">launch_server_cmd</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct \</span>
+<span class="sd"> --host 0.0.0.0</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="p">)</span>
 
-<span class="n">server_process</span> <span class="o">=</span> <span class="n">execute_shell_command</span><span class="p">(</span>
-    <span class="s2">&quot;python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --port 30000 --host 0.0.0.0&quot;</span>
-<span class="p">)</span>
+<span class="n">wait_for_server</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">wait_for_server</span><span class="p">(</span><span class="s2">&quot;http://localhost:30000&quot;</span><span class="p">)</span>
-
-<span class="c1"># Terminate Sever</span>
-
+<span class="c1"># Terminate Server</span>
 <span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Launch Engine and close Engine</p></li>
-</ol>
+<p><strong>To launch and kill the engine:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch Engine</span>
-
 <span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.test.test_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_in_ci</span>
+
+<span class="k">if</span> <span class="n">is_in_ci</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">patch</span>
 
 <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
 
@@ -513,6 +525,29 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 <span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
 </pre></div>
 </div>
+</section>
+<section id="why-this-approach">
+<h3><strong>Why this approach?</strong><a class="headerlink" href="#why-this-approach" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Dynamic Port Allocation</strong>: Avoids port conflicts by selecting an available port at runtime, enabling multiple server instances to run in parallel.</p></li>
+<li><p><strong>Optimized for CI</strong>: The <code class="docutils literal notranslate"><span class="pre">patch</span></code> version of <code class="docutils literal notranslate"><span class="pre">launch_server_cmd</span></code> and <code class="docutils literal notranslate"><span class="pre">sgl.Engine()</span></code> in CI environments helps manage GPU memory dynamically, preventing conflicts and improving test parallelism.</p></li>
+<li><p><strong>Better Parallel Execution</strong>: Ensures smooth concurrent tests by avoiding fixed port collisions and optimizing memory usage.</p></li>
+</ul>
+</section>
+<section id="model-selection">
+<h3><strong>Model Selection</strong><a class="headerlink" href="#model-selection" title="Link to this heading">#</a></h3>
+<p>For demonstrations in the docs, <strong>prefer smaller models</strong> to reduce memory consumption and speed up inference. Running larger models in CI can lead to instability due to memory constraints.</p>
+</section>
+<section id="prompt-alignment-example">
+<h3><strong>Prompt Alignment Example</strong><a class="headerlink" href="#prompt-alignment-example" title="Link to this heading">#</a></h3>
+<p>When designing prompts, ensure they align with SGLang’s structured formatting. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;You are an AI assistant. Answer concisely and accurately.</span>
+
+<span class="s2">User: What is the capital of France?</span>
+<span class="s2">Assistant: The capital of France is Paris.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This keeps responses aligned with expected behavior and improves reliability across different files.</p>
 </section>
 </section>
 </section>
@@ -548,6 +583,10 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-workflow">Docs Workflow</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependency">Install Dependency</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-documentation">Update Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#port-allocation-and-ci-efficiency"><strong>Port Allocation and CI Efficiency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-approach"><strong>Why this approach?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection"><strong>Model Selection</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-alignment-example"><strong>Prompt Alignment Example</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -583,7 +622,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 18, 2025.
+  Last updated on Feb 19, 2025.
   <br/>
 </p>
   </div>

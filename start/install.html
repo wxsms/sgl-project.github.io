@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Feb 18, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 19, 2025"/>
   </head>
   
   
@@ -177,24 +177,29 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/supported_models.html">Supported Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/multi_node.html">Run Multi-Node Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_inference_k8s_lws.html">Deploying a RoCE Network-Based SGLANG Two-Node Inference Service on a Kubernetes (K8S) Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
+</ul>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/multi_node.html">Run Multi-Node Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_inference_k8s_lws.html">Deploying a RoCE Network-Based SGLANG Two-Node Inference Service on a Kubernetes (K8S) Cluster</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/modelscope.html">Use Models From ModelScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/quantization.html">Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
 </ul>
 
     </div>
@@ -421,7 +426,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip">Method 1: With pip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
@@ -441,18 +446,26 @@
   <section class="tex2jax_ignore mathjax_ignore" id="install-sglang">
 <h1>Install SGLang<a class="headerlink" href="#install-sglang" title="Link to this heading">#</a></h1>
 <p>You can install SGLang using any of the methods below. For running DeepSeek V3/R1 with SGLang, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek V3 Support</a>. It is always recommended to use the <a class="reference external" href="https://pypi.org/project/sglang/#history">latest release version</a> and deploy it with <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">Docker</a> to avoid fixed issues and environment-related problems.</p>
-<section id="method-1-with-pip">
-<h2>Method 1: With pip<a class="headerlink" href="#method-1-with-pip" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang[all]&gt;=0.4.3.post2&quot;</span> <span class="o">--</span><span class="n">find</span><span class="o">-</span><span class="n">links</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flashinfer</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu124</span><span class="o">/</span><span class="n">torch2</span><span class="mf">.5</span><span class="o">/</span><span class="n">flashinfer</span><span class="o">-</span><span class="n">python</span>
+<section id="method-1-with-pip-or-uv">
+<h2>Method 1: With pip or uv<a class="headerlink" href="#method-1-with-pip-or-uv" title="Link to this heading">#</a></h2>
+<p>We recommend using uv to install the dependencies with a higher installation speed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>uv
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sgl-kernel<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.3.post2&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
 </pre></div>
 </div>
-<p>Note: SGLang currently uses torch 2.5, so you need to install the flashinfer version for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>. Please note that the package currently used by FlashInfer is named <code class="docutils literal notranslate"><span class="pre">flashinfer-python</span></code>, not <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>.</p>
-<p>If you experience an error like <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set.</span> <span class="pre">Please</span> <span class="pre">set</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">CUDA</span> <span class="pre">install</span> <span class="pre">root</span></code>， please try either of the following solutions:</p>
+<p><strong>Quick Fix to Installation</strong></p>
 <ul class="simple">
+<li><p>SGLang currently uses torch 2.5, so you need to install the flashinfer version for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>. Please note that the package currently used by FlashInfer is named <code class="docutils literal notranslate"><span class="pre">flashinfer-python</span></code>, not <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>.</p></li>
+<li><p>If you experience an error like <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set.</span> <span class="pre">Please</span> <span class="pre">set</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">CUDA</span> <span class="pre">install</span> <span class="pre">root</span></code>, please try either of the following solutions:</p></li>
+</ul>
+<ol class="arabic simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=/usr/local/cuda-&lt;your-cuda-version&gt;</span></code> to set the <code class="docutils literal notranslate"><span class="pre">CUDA_HOME</span></code> environment variable.</p></li>
 <li><p>Follow the procedure described in <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a> first, then install SGLang as described above.</p></li>
+</ol>
+<ul class="simple">
+<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">ImportError;</span> <span class="pre">cannot</span> <span class="pre">import</span> <span class="pre">name</span> <span class="pre">'is_valid_list_of_images'</span> <span class="pre">from</span> <span class="pre">'transformers.models.llama.image_processing_llama'</span></code>, try to use the specified version of <code class="docutils literal notranslate"><span class="pre">transformers</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/pyproject.toml">pyproject.toml</a>. Currently, just running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers==4.48.3</span></code>.</p></li>
 </ul>
 </section>
 <section id="method-2-from-source">
@@ -625,7 +638,7 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip">Method 1: With pip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
@@ -664,7 +677,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 18, 2025.
+  Last updated on Feb 19, 2025.
   <br/>
 </p>
   </div>
