@@ -158,55 +158,45 @@ window.addEventListener("load", () => mermaid.run());
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="start/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="backend/send_request.html">Quick Start: Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/send_request.html">Sending Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/native_api.html">Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend/offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/structured_outputs.html">Structured Outputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/speculative_decoding.html">Speculative Decoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/function_calling.html">Tool and Function Calling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backend/server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="backend/speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/custom_chat_template.html">Custom Chat Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backend/quantization.html">Quantization</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="frontend/frontend.html">Frontend: Structured Generation Language (SGLang)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend/frontend.html">Structured Generation Language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="router/router.html">Router for Data Parallelism</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references/supported_models.html">Supported Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references/nvidia_jetson.html">Apply SGLang on NVIDIA Jetson Orin</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references/deepseek.html">DeepSeek Model Usage and Optimizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/multi_node.html">Run Multi-Node Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/multi_node_inference_k8s_lws.html">Deploying a RoCE Network-Based SGLANG Two-Node Inference Service on a Kubernetes (K8S) Cluster</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/modelscope.html">Use Models From ModelScope</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/hyperparameter_tuning.html">Guide on Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/custom_chat_template.html">Custom Chat Template in SGLang Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/general.html">General Guidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/hardware.html">Hardware Supports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/advanced_deploy.html">Multi-Node Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/performance_tuning.html">Performance Tuning</a></li>
 </ul>
 
     </div>
