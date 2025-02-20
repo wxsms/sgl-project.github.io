@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Feb 19, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 20, 2025"/>
   </head>
   
   
@@ -556,7 +556,8 @@
 <section id="expert-parallelism">
 <h3>Expert parallelism<a class="headerlink" href="#expert-parallelism" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ep_size</span></code>: Distribute the experts onto multiple GPUs for MoE models. Remember to shard the model weights with <code class="docutils literal notranslate"><span class="pre">tp_size=ep_size</span></code>, for detailed benchmarking refer to <a class="reference external" href="https://github.com/sgl-project/sglang/pull/2203">this PR</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_ep_moe</span></code>: Enables expert parallelism that distributes the experts onto multiple GPUs for MoE models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ep_size</span></code>: The size of EP. Please shard the model weights with <code class="docutils literal notranslate"><span class="pre">tp_size=ep_size</span></code>, for detailed benchmarking refer to <a class="reference external" href="https://github.com/sgl-project/sglang/pull/2203">this PR</a>. If not set, <code class="docutils literal notranslate"><span class="pre">ep_size</span></code> will be automatically set to <code class="docutils literal notranslate"><span class="pre">tp_size</span></code>.</p></li>
 </ul>
 </section>
 </section>
@@ -670,7 +671,6 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_mixed_chunk</span></code>: Enables mixing prefill and decode, see <a class="reference external" href="https://github.com/sgl-project/sglang/discussions/1163">this discussion</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_dp_attention</span></code>: Enable <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Data Parallelism Attention</a> for Deepseek models. Note that you need to choose <code class="docutils literal notranslate"><span class="pre">dp_size</span> <span class="pre">=</span> <span class="pre">tp_size</span></code> for this.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">enable_ep_moe</span></code>: Enables expert parallelism, see the description of <code class="docutils literal notranslate"><span class="pre">ep_size</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_torch_compile</span></code>: Torch compile the model. This is an experimental feature.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">torch_compile_max_bs</span></code>: The maximum batch size when using <code class="docutils literal notranslate"><span class="pre">torch_compile</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cuda_graph_max_bs</span></code>: Adjust the maximum batchsize when using cuda graph. By default this is chosen for you based on GPU specifics.</p></li>
@@ -784,7 +784,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 19, 2025.
+  Last updated on Feb 20, 2025.
   <br/>
 </p>
   </div>

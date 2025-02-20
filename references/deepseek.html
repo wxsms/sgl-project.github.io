@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Feb 19, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 20, 2025"/>
   </head>
   
   
@@ -432,7 +432,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cublas-grouped-gemm">Cublas Grouped Gemm</a></li>
 </ul>
 </li>
 </ul>
@@ -513,23 +512,6 @@
 </ul>
 <p><strong>Usage</strong>: turn on by default for DeepSeek V3 models.</p>
 </section>
-<section id="cublas-grouped-gemm">
-<h3>Cublas Grouped Gemm<a class="headerlink" href="#cublas-grouped-gemm" title="Link to this heading">#</a></h3>
-<p><strong>Description</strong>: <a class="reference external" href="https://docs.nvidia.com/cuda/cublas/index.html#cublasgemmgroupedbatchedex">Grouped Gemm API</a> provided by Cublas 12.5 is attached to SGLang for acceleration of
-settings where a group of matrix multiplication with different shapes needs to be executed. Typical examples are expert parallel in MoE layers, and lora modules in multi-serving Lora layers.</p>
-<p><strong>Usage</strong>: SGLang currently only supports Pytorch 2.5, which is installed with Cuda 12.4 packages together. Users need to work on a Cuda environment &gt;= 12.5 and forcely upgrade the Cublas package in the following way:</p>
-<ol class="arabic simple">
-<li><p>Make sure the system Cuda version is &gt;= 12.5 with <code class="docutils literal notranslate"><span class="pre">nvcc</span> <span class="pre">-V</span></code></p></li>
-<li><p>Install sglang under instruction of <a class="reference external" href="https://docs.sglang.ai/start/install.html">official document </a></p></li>
-<li><p>Reinstall cublas 12.5 through <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nvidia-cublas-cu12==12.5.3.2</span></code> so that the cublas package is upgraded</p></li>
-<li><p>Compile the new sgl-kernel library with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">sgl-kernel</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">build</span></code></p></li>
-</ol>
-<p>Then the cublas grouped gemm kernel can be imported with</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sgl_kernel</span><span class="w"> </span><span class="kn">import</span> <span class="n">cublas_grouped_gemm</span>
-</pre></div>
-</div>
-<p>Currently Cublas only support grouped gemm kernel for fp16/bf16/fp32 tensors, so fp8 tensors cannot be applied.</p>
-</section>
 </section>
 </section>
 
@@ -590,7 +572,6 @@ settings where a group of matrix multiplication with different shapes needs to b
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cublas-grouped-gemm">Cublas Grouped Gemm</a></li>
 </ul>
 </li>
 </ul>
@@ -626,7 +607,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 19, 2025.
+  Last updated on Feb 20, 2025.
   <br/>
 </p>
   </div>
