@@ -421,7 +421,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-and-running-sglang-with-jetson-containers">Installing and running SGLang with Jetson Containers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-inference">Running Inference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-quantization-with-torchao">Running quantization with TorchAO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-output-with-xgrammar">Structured output with XGrammar</a></li>
@@ -442,25 +442,34 @@
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <p>Before starting, ensure the following:</p>
-<ul>
+<ul class="simple">
 <li><p><a class="reference external" href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/"><strong>NVIDIA Jetson AGX Orin Devkit</strong></a> is set up with <strong>JetPack 6.1</strong> or later.</p></li>
 <li><p><strong>CUDA Toolkit</strong> and <strong>cuDNN</strong> are installed.</p></li>
-<li><p>Verify that the Jetson AGX Orin is in <strong>high-performance mode</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span>
-</pre></div>
-</div>
-</li>
-<li><p>A custom PyPI index hosted at https://pypi.jetson-ai-lab.dev/jp6/cu126, tailored for NVIDIA Jetson Orin platforms and CUDA 12.6.</p></li>
+<li><p>Verify that the Jetson AGX Orin is in <strong>high-performance mode</strong>:</p></li>
 </ul>
-<p>To install torch from this index:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>--index-url<span class="w"> </span>https://pypi.jetson-ai-lab.dev/jp6/cu126
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>Please refer to <a class="reference external" href="https://docs.sglang.ai/start/install.html">Installation Guide</a> to install FlashInfer and SGLang.</p>
+<section id="installing-and-running-sglang-with-jetson-containers">
+<h2>Installing and running SGLang with Jetson Containers<a class="headerlink" href="#installing-and-running-sglang-with-jetson-containers" title="Link to this heading">#</a></h2>
+<p>Clone the jetson-containers github repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dusty</span><span class="o">-</span><span class="n">nv</span><span class="o">/</span><span class="n">jetson</span><span class="o">-</span><span class="n">containers</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Run the installation script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">jetson</span><span class="o">-</span><span class="n">containers</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Build the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CUDA_VERSION</span><span class="o">=</span><span class="mf">12.6</span> <span class="n">jetson</span><span class="o">-</span><span class="n">containers</span> <span class="n">build</span> <span class="n">sglang</span>
+</pre></div>
+</div>
+<p>Run the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">runtime</span> <span class="n">nvidia</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">network</span><span class="o">=</span><span class="n">host</span> <span class="n">IMAGE_NAME</span>
+</pre></div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="running-inference">
@@ -556,7 +565,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-and-running-sglang-with-jetson-containers">Installing and running SGLang with Jetson Containers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-inference">Running Inference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-quantization-with-torchao">Running quantization with TorchAO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-output-with-xgrammar">Structured output with XGrammar</a></li>
