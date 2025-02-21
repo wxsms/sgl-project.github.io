@@ -456,6 +456,7 @@
 <li><p>Non-streaming asynchronous generation</p></li>
 <li><p>Streaming asynchronous generation</p></li>
 </ul>
+<p>****To launch the offline engine, <code class="docutils literal notranslate"><span class="pre">__main__</span></code> condition is necessary in your own script because we use “spawn” to create subprocesses, for more details please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/launch_engine.py">launch_engine</a>.****</p>
 <p>Additionally, you can easily build a custom server on top of the SGLang offline engine. A detailed example working in a python script can be found in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/custom_server.py">custom_server</a>.</p>
 <section id="Offline-Batch-Inference">
 <h2>Offline Batch Inference<a class="headerlink" href="#Offline-Batch-Inference" title="Link to this heading">#</a></h2>
@@ -473,7 +474,6 @@
 <span class="k">if</span> <span class="n">is_in_ci</span><span class="p">():</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">patch</span>
 
-
 <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -485,10 +485,10 @@
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.07it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.74it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.49it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.72it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
 
 </pre></div></div>
 </div>
@@ -521,24 +521,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Emily and I&#39;m a yoga instructor and photographer. I&#39;m excited to be a part of the Ocala Yoga Alliance and contribute to the yoga community in our beautiful city. I teach a variety of yoga classes, including Hatha, Vinyasa, Restorative, and Yin, and I also offer workshops and private lessons. My approach to yoga is holistic, focusing on the connection between body, mind, and spirit. I believe that yoga is a journey, not a destination, and I aim to create a safe and supportive environment for all students to explore and deepen their practice.
-I&#39;m passionate about photography and love capturing the beauty and ser
+Generated text:  Megan and I am so excited to share with you my latest DIY home decor project, a beautiful handmade macrame wall hanging. If you&#39;re new here, welcome to my little corner of the internet, where I love to share my creative adventures and inspiring ideas.
+I have always been fascinated by the art of macrame, and I have to say, this project was so much fun to create. Not only is it a stunning piece of home decor, but it&#39;s also a great way to practice your hand and get some exercise for your fingers.
+To start, I gathered a few basic materials, including cotton rope, a wooden dowel,
 ===============================
 Prompt: The president of the United States is
-Generated text:  not just a head of state, but also the commander-in-chief of the armed forces. Therefore, the president has the authority to deploy troops in various situations, including humanitarian crises, natural disasters, and conflicts.
-Why is the President of the United States able to deploy troops?
-The President of the United States has the authority to deploy troops due to the Constitution and various laws that have been enacted over time. Specifically, Article II, Section 2 of the Constitution grants the President the power to serve as commander-in-chief of the armed forces. This means that the President has the authority to direct the military and make decisions about troop deployments.
-Additionally
+Generated text:  the head of state and the head of government of the United States. The president is elected by the Electoral College, which is composed of 538 electors chosen by each state. The president serves a four-year term and is limited to two terms by the 22nd Amendment to the Constitution.
+The president has a number of powers and responsibilities, including:
+1. Executing the laws: The president is responsible for ensuring that the laws passed by Congress are enforced.
+2. Commanding the military: The president is the commander-in-chief of the armed forces.
+3. Negotiating treaties: The president has the power to negotiate treaties with foreign
 ===============================
 Prompt: The capital of France is
-Generated text:  a must-visit destination for anyone who loves art, history, fashion, and food. Paris is home to some of the world’s most famous landmarks, including the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city is also known for its charming streets, beautiful gardens, and romantic atmosphere.
-The Eiffel Tower is a must-visit attraction in Paris, and it’s a great place to start your trip. The tower offers stunning views of the city and is a iconic symbol of Paris. Visitors can take the elevator to the top of the tower for a breathtaking view of the city.
-Notre Dame
+Generated text:  often associated with art, fashion, and fine dining, but Paris is also a city of contrast. From the grandeur of the Champs-Élysées to the seedy underbelly of the Latin Quarter, there&#39;s a rich diversity to the city that can be overwhelming for the uninitiated. Whether you&#39;re a seasoned traveler or just starting to plan your trip, here are some insider tips to help you navigate the City of Light.
+Many tourists flock to Paris in the summer, but the spring (April to June) and autumn (September to November) are actually the best times to visit. The weather is mild, and
 ===============================
 Prompt: The future of AI is
-Generated text:  bright – but uncertain
-Artificial intelligence (AI) is widely regarded as one of the most promising and transformative technologies of the 21st century. From optimizing business processes to improving healthcare outcomes, the potential applications of AI are vast and varied. Yet, as AI continues to evolve, there are also concerns about its impact on society, the economy, and individual lives.
-While AI has made tremendous progress in recent years, it is still a developing field, and its future is inherently uncertain. Here are a few key areas where the future of AI is likely to be shaped by a complex interplay of technological advancements, societal trends, and regulatory
+Generated text:  a complex and multifaceted topic, with numerous applications, benefits, and challenges associated with it. The development and deployment of artificial intelligence (AI) are transforming various sectors, from healthcare and finance to education and transportation. As AI continues to advance, it will have a profound impact on the way we live and work.
+Improved efficiency and productivity: AI can automate routine tasks, freeing up human time for more strategic and creative work. This can lead to increased productivity and efficiency across various industries.
+Enhanced decision-making: AI can analyze vast amounts of data, identify patterns, and make predictions, enabling better decision-making and strategic planning.
+Job displacement
 </pre></div></div>
 </div>
 </section>
@@ -578,15 +580,16 @@ While AI has made tremendous progress in recent years, it is still a developing 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m looking forward to meeting new people and learning from their experiences. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m interested in hearing about your interests and hobbies. What brings you here today? This self-introduction is neutral because it doesn&#39;t reveal too much about Kaida&#39;s personality, background, or motivations. It provides a brief overview of her interests and goals, and invites
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city, and I spend most of my free time reading and exploring local cafes. I&#39;m a bit of a introvert, but I enjoy meeting new people and learning about their stories. I&#39;m currently working on a novel, and I&#39;m excited to see where my writing takes me.
+Kaida is a 25-year-old freelance writer and editor who lives in a small apartment in the city. She spends her free time reading and exploring local cafes. Kaida is an introvert, but she enjoys meeting new people and learning
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and cuisine. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, culture, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a long history dating back to the 3rd century
+Generated text:  Paris. Paris is located in the northern part of the country, along the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and cuisine. The city is home to many famous landmarks, including the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is a popular tourist destination and is considered one of the most romantic cities in the world. It is also a major hub for business, education, and culture, and is home to many international organizations and institutions. The city has a population of over 2.1 million people and is a major economic
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
+Generated text:  a topic of much speculation and debate. Here are some possible future trends in artificial intelligence:
 1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
-2. Widespread adoption of AI in the workplace: AI is already being used in many industries to
+2. Widespread adoption of AI in industries: AI is already being used in various industries, including finance, transportation, and customer service. In the future, AI is likely to become even more widespread, with the potential to automate many tasks
 
 </pre></div></div>
 </div>
@@ -629,33 +632,21 @@ Generated text:  a topic of much speculation and debate. Some experts predict th
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 19-year-old graphic design major at a local university. I work part-time at a small print shop, where I spend most of my free time. When not studying or working, you can find me attempting to cook new recipes or playing video games.
-Who is Kaida?
-Kaida is a 19-year-old student.
-Kaida is a graphic design major.
-Kaida works part-time at a small print shop.
-Kaida is interested in cooking and video games.
-Answer key:
-Kaida is a 19-year-old student.
-Kaida is a graphic design major.
-Kaida works part-time at
+Generated text:  Gwladys.
+I am a 27-year-old graduate student pursuing a Master&#39;s degree in Celtic Studies at the University of Edinburgh. I have a strong interest in medieval history, particularly the Arthurian legend. I&#39;m an avid reader and enjoy hiking and exploring the Scottish countryside.
+I don&#39;t have any personal relationships or professional responsibilities outside of my studies. I live in a small flat near the university campus.
+Here&#39;s a revised introduction that includes a bit more personality and a few details that could be interesting to others:
+Hi, I&#39;m Gwladys. I&#39;m a 27-year-old graduate student at the University of Edinburgh
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-To write a concise factual statement about France&#39;s capital city, you need to provide a straightforward and accurate piece of information. Here is an example of how you can do that:
-
-The capital of France is Paris.
-
-This statement is brief, factual, and clearly conveys the essential information about the capital city of France. It does not include any unnecessary details or elaborations, making it a concise and effective way to present the information.
-
-If you were to expand this statement slightly to provide more context or additional facts, you could do so in a way that remains concise and focused on the main point:
-
-The capital of France is Paris
+Generated text:  Paris. The city is famous for its art, fashion, cuisine, and history, and is considered one of the world&#39;s most romantic cities. Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city is also known for its beautiful gardens and parks, such as the Luxembourg Gardens and the Tuileries Garden. Paris is a popular destination for tourists and business travelers, and is a major hub for international trade and finance.
+Provide a concise factual statement about France’s second-largest city. The second-largest city in France is Lyon. Lyon is located in the Au
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  vast and is expected to have a significant impact on various industries. Experts predict that AI will become more integrated into our daily lives, transforming the way we live, work, and interact with each other.
-One possible future trend in AI is the rise of Explainable AI (XAI), which aims to make AI decision-making processes more transparent and interpretable. This is crucial for building trust in AI systems, especially in areas like healthcare, finance, and law, where AI-driven decisions can have significant consequences.
-Another trend is the increasing focus on Edge AI, which involves processing data closer to the source, reducing latency, and improving real-time decision
+Generated text:  likely to be shaped by the intersection of various technological, economic, and societal factors. Here are some possible future trends in artificial intelligence:
+1. Increased adoption of AI in various industries: AI is likely to become more prevalent in industries such as healthcare, finance, education, and transportation, leading to increased automation and efficiency.
+2. Advancements in natural language processing (NLP): NLP will continue to improve, enabling AI systems to better understand and respond to human language, leading to more effective human-AI interaction.
+3. Rise of explainable AI (XAI): As AI becomes more pervasive, there will be a growing need for
 </pre></div></div>
 </div>
 </section>
@@ -701,19 +692,21 @@ Another trend is the increasing focus on Edge AI, which involves processing data
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Dr. Elena Vasquez, and I&#39;m a microbiologist with a Ph.D. in Microbial Ecology. I&#39;ve worked in various research institutions and have expertise in molecular microbiology, environmental microbiology, and biotechnology. Currently, I&#39;m based in the lab of Dr. John Lee at the University of California, San Diego, where I&#39;m involved in projects related to soil microbiology and the application of microbial processes to bioremediation. I&#39;m looking forward to collaborating with my colleagues and contributing my skills to the team.
-I would suggest revising the introduction to be a bit more concise and engaging. Here&#39;s a possible version
+Generated text:  Zara Ashwood. I&#39;m a 25-year-old anthropologist who has spent several years studying the cultural practices of various indigenous communities in Africa and Asia. I&#39;m currently based in a small town in rural Kenya, where I&#39;m working on a project to document the traditional knowledge of local healers. I&#39;m interested in exploring the intersection of traditional and modern medicine, and how they can inform each other in meaningful ways. I&#39;m a bit of a curious and independent person, and I enjoy learning about new cultures and ways of life. I&#39;m also an avid hiker and enjoy exploring the natural beauty of the African savannah.
+The
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-This factual statement gives a basic piece of information about a country’s capital city. It does not need to include an additional detail or description to be considered complete.
-Next task in instruction: Provide a concise factual statement about the United States’ capital city. The capital of the United States is Washington, D.C. .  Next task in instruction: Provide a concise factual statement about the United Kingdom’s capital city. The capital of the United Kingdom is London. .  Next task in instruction: Provide a concise factual statement about the capital city of Canada. The capital of Canada is Ottawa. .  Next task in instruction: Provide a
+This brief response provides a factual answer to the prompt, but it would benefit from a bit more detail and context to make it more informative and engaging. Here&#39;s a revised version:
+
+&#34;Paris, the capital of France, is a vibrant and historic city known for its stunning architecture, world-class museums, and romantic atmosphere. Located in the northern part of the country, Paris has been a major cultural and economic hub for centuries, earning it the nickname &#39;the City of Light.&#39; With famous landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, Paris is a must-visit destination for travelers from
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and a bit unsettling. As AI becomes more advanced, we can expect to see several trends emerge. Here are some possible future trends in AI:
-1. **Increased Automation**: AI will continue to automate more tasks, freeing humans from mundane and repetitive work. However, this may also lead to job displacement, as AI replaces human workers in many industries.
-2. **Advances in Natural Language Processing (NLP)**: AI-powered chatbots and virtual assistants will become more conversational and human-like, making it easier for people to interact with technology.
-3. **Improved Image and Speech Recognition**: AI will continue to improve its ability to
+Generated text:  evolving rapidly, and it&#39;s already having a significant impact on various industries, including healthcare, finance, transportation, and education. Here are some possible future trends in AI:
+1. More widespread adoption of AI in everyday life:
+As AI technology advances, it&#39;s likely that AI will become more integrated into our daily lives. We may see AI-powered personal assistants, smart homes, and cities that use AI to manage resources and services.
+2. Increased focus on Explainability and Transparency:
+As AI becomes more prevalent, there will be a growing need for explainability and transparency in AI decision-making. This means that AI systems will need to be designed
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -746,7 +739,7 @@ huggingface/tokenizers: The current process just got forked, after parallelism h
 To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
         - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-/public_sglang_ci/runner-b-gpu-67/_work/_tool/Python/3.9.21/x64/lib/python3.9/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
+/public_sglang_ci/runner-c-gpu-1/_work/_tool/Python/3.9.21/x64/lib/python3.9/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
   warnings.warn(&#39;resource_tracker: process died unexpectedly, &#39;
 huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
 To disable this warning, you can either:
@@ -761,11 +754,11 @@ To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
         - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.14it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.82it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.76it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
 </pre></div></div>
 </div>
@@ -799,25 +792,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Julie. I am a proud mother of three beautiful
+Generated text:  Lily and I&#39;m an 11-year-old girl
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The president of the United States is
-Generated text:  required to take an oath of office on inauguration day
+Generated text:  not elected by popular vote. He is elected by
 Prompt_Tokens: 8        Completion_tokens: 10
 Hidden states: [torch.Size([8, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, which is situated in the north-central part
+Generated text:  the city of Paris, which is situated in the
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
 ===============================
 Prompt: The future of AI is
-Generated text:  about understanding and improving human behavior. AI can be
+Generated text:  in the cloud
+The future of AI is in
 Prompt_Tokens: 6        Completion_tokens: 10
 Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
 
