@@ -518,14 +518,24 @@ apt<span class="w"> </span>install<span class="w"> </span>nsight-systems-cli
 <li><p>To profile a single batch, use <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--trace-fork-before-exec=true</span> <span class="pre">--cuda-graph-trace=node</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model</span> <span class="pre">meta-llama/Meta-Llama-3-8B</span> <span class="pre">--batch-size</span> <span class="pre">64</span> <span class="pre">--input-len</span> <span class="pre">512</span></code></p></li>
 <li><p>To profile a server, e.g.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># server</span>
-<span class="c1"># set the delay and duration times according to needs</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># launch the server, set the delay and duration times according to needs</span>
+<span class="c1"># after the duration time has been used up, server will be killed by nsys</span>
+
 nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span>-o<span class="w"> </span>sglang.out<span class="w"> </span>--delay<span class="w"> </span><span class="m">60</span><span class="w"> </span>--duration<span class="w"> </span><span class="m">70</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disable-radix-cache
 
 <span class="c1"># client</span>
 python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--random-input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--random-output<span class="w"> </span><span class="m">512</span>
 </pre></div>
 </div>
+<p>In practice, we recommend users to set <code class="docutils literal notranslate"><span class="pre">--duration</span></code> argument to a large value. Whenever user wants the server to stop profiling. Firstly run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nsys<span class="w"> </span>sessions<span class="w"> </span>list
+</pre></div>
+</div>
+<p>to get the session id in the form of <code class="docutils literal notranslate"><span class="pre">profile-XXXXX</span></code>, then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nsys<span class="w"> </span>stop<span class="w"> </span>--session<span class="o">=</span>profile-XXXXX
+</pre></div>
+</div>
+<p>to manually kill the profiler and generate <code class="docutils literal notranslate"><span class="pre">nsys-rep</span></code> files instantly.</p>
 <ol class="arabic simple" start="3">
 <li><p>Use NVTX to annotate code regions, e.g. to see their execution time.</p></li>
 </ol>
