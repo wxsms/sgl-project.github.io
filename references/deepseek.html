@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Feb 25, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 26, 2025"/>
   </head>
   
   
@@ -526,8 +526,8 @@
 <p><strong>Answer</strong>: You can try to add <code class="docutils literal notranslate"><span class="pre">--dist-timeout</span> <span class="pre">3600</span></code> when launching the model, this allows for 1-hour timeout.</p>
 </li>
 <li><p><strong>Question</strong>: How to use quantized DeepSeek models?</p>
-<p><strong>Answer</strong>: DeepSeek’s MLA does not have support for quantization. You need to add the <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code> flag to run the quantized model successfully. Meanwhile, AWQ does not support BF16, so add the <code class="docutils literal notranslate"><span class="pre">--dtype</span> <span class="pre">half</span></code> flag if AWQ is used for quantization. One example is as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>cognitivecomputations/DeepSeek-R1-AWQ<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dtype<span class="w"> </span>half<span class="w"> </span>--disable-mla
+<p><strong>Answer</strong>: AWQ does not support BF16, so add the <code class="docutils literal notranslate"><span class="pre">--dtype</span> <span class="pre">half</span></code> flag if AWQ is used for quantization. One example is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>cognitivecomputations/DeepSeek-R1-AWQ<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dtype<span class="w"> </span>half
 </pre></div>
 </div>
 </li>
@@ -629,7 +629,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 25, 2025.
+  Last updated on Feb 26, 2025.
   <br/>
 </p>
   </div>
