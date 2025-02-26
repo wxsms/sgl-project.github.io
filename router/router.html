@@ -460,10 +460,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <section id="co-launch-router-and-runtimes">
 <h2>Co-launch Router and Runtimes<a class="headerlink" href="#co-launch-router-and-runtimes" title="Link to this heading">#</a></h2>
 <p>This will be a drop-in replacement for the existing <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> argument of SGLang Runtime. Under the hood, it uses multi-processes to launch multiple workers, wait for them to be ready, then connect the router to all workers.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--dp-size<span class="w"> </span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--dp-size<span class="w"> </span><span class="m">4</span>
 </pre></div>
 </div>
 <p>After the server is ready, you can directly send requests to the router as the same way as sending requests to each single worker.</p>
+<p>Please adjust the batchsize accordingly to archieve maximum throughput.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30000/generate&quot;</span>
@@ -477,7 +478,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <section id="launch-runtimes-and-router-separately">
 <h2>Launch Runtimes and Router Separately<a class="headerlink" href="#launch-runtimes-and-router-separately" title="Link to this heading">#</a></h2>
 <p>This is useful for multi-node DP. First, launch workers on multiple nodes, then launch a router on the main node, and connect the router to all workers.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span>--worker-urls<span class="w"> </span>http://worker_url_1<span class="w"> </span>http://worker_url_2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span>--worker-urls<span class="w"> </span>http://worker_url_1<span class="w"> </span>http://worker_url_2
 </pre></div>
 </div>
 </section>
@@ -488,25 +489,28 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <li><p><code class="docutils literal notranslate"><span class="pre">/add_worker</span></code></p></li>
 </ul>
 <p>Usage:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/add_worker?url<span class="o">=</span>http://worker_url_1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/add_worker?url<span class="o">=</span>http://worker_url_1
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span>
-$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/add_worker?url<span class="o">=</span>http://127.0.0.1:30001
-Successfully<span class="w"> </span>added<span class="w"> </span>worker:<span class="w"> </span>http://127.0.0.1:30001
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span>
+
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/add_worker?url<span class="o">=</span>http://127.0.0.1:30001
+
+<span class="c1"># Successfully added worker: http://127.0.0.1:30001</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/remove_worker</span></code></p></li>
 </ul>
 <p>Usage:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/remove_worker?url<span class="o">=</span>http://worker_url_1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/remove_worker?url<span class="o">=</span>http://worker_url_1
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/remove_worker?url<span class="o">=</span>http://127.0.0.1:30001
-Successfully<span class="w"> </span>removed<span class="w"> </span>worker:<span class="w"> </span>http://127.0.0.1:30001
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/remove_worker?url<span class="o">=</span>http://127.0.0.1:30001
+
+<span class="c1"># Successfully removed worker: http://127.0.0.1:30001</span>
 </pre></div>
 </div>
 <p>Note:</p>
