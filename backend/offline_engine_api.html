@@ -180,7 +180,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">Structured Generation Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">SGLang Frontend Language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
@@ -420,12 +420,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage">Advanced Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Batch-Inference">Offline Batch Inference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Synchronous-Generation">Non-streaming Synchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Synchronous-Generation">Streaming Synchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Asynchronous-Generation">Non-streaming Asynchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Asynchronous-Generation">Streaming Asynchronous Generation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Return-Hidden-States">Return Hidden States</a></li>
 </ul>
 </li>
 </ul>
@@ -459,6 +459,11 @@
 </ul>
 <p><strong>To launch the offline engine in your python scripts, ``__main__`` condition is necessary, since we use ``spawn`` mode to create subprocesses. Please refer to this</strong><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/launch_engine.py">simple example</a><strong>for more details.</strong></p>
 <p>Additionally, you can easily build a custom server on top of the SGLang offline engine. A detailed example working in a python script can be found in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/custom_server.py">custom_server</a>.</p>
+<section id="Advanced-Usage">
+<h2>Advanced Usage<a class="headerlink" href="#Advanced-Usage" title="Link to this heading">#</a></h2>
+<p>The engine supports <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/offline_batch_inference_vlm.py">vlm inference</a> as well as <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">extracting hidden states</a>.</p>
+<p>Please see <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/examples/runtime/engine">the examples</a> for further use cases.</p>
+</section>
 <section id="Offline-Batch-Inference">
 <h2>Offline Batch Inference<a class="headerlink" href="#Offline-Batch-Inference" title="Link to this heading">#</a></h2>
 <p>SGLang offline engine supports batch inference with efficient scheduling.</p>
@@ -467,13 +472,21 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># launch the offline engine</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">stream_and_merge</span><span class="p">,</span> <span class="n">async_stream_and_merge</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.conversation</span><span class="w"> </span><span class="kn">import</span> <span class="n">chat_templates</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sglang.test.test_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_in_ci</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">async_stream_and_merge</span><span class="p">,</span> <span class="n">stream_and_merge</span>
 
 <span class="k">if</span> <span class="n">is_in_ci</span><span class="p">():</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">patch</span>
+
 
 <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
 </pre></div>
@@ -485,11 +498,11 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.04s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.56it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.22it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.08s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.02it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.77it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
 
 </pre></div></div>
 </div>
@@ -522,28 +535,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Alex and I am a travel enthusiast. I love exploring new destinations, trying different foods, and learning about various cultures. I have been to many countries, but there is still so much to see and do. I am excited to share my travel experiences and tips with you, and I hope to inspire you to plan your next adventure.
-Best Places to Visit in Southeast Asia
-Southeast Asia is a region that is known for its stunning beaches, vibrant cities, and rich cultural heritage. It is a popular destination for travelers from all over the world, and for good reason. Here are some of the best places to visit in Southeast Asia:
-
+Generated text:  Avi and I&#39;m a software developer, currently working at Google. I&#39;ve been involved in various projects, including Google Assistant, Google Maps and Google Photos. My main area of expertise is in large-scale distributed systems, especially those built using cloud technologies like Kubernetes, Cloud Functions, and Cloud Run.
+My passion for programming began when I was a young boy. I used to spend hours in front of my computer, experimenting with different programming languages and trying to understand how they worked. As I got older, my interest in programming only grew stronger, and I decided to pursue a career in software development.
+After completing my degree in computer science,
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States. The president serves as the commander-in-chief of the armed forces, the head of the executive branch, and the leader of the federal government.
-The president is directly elected by the people through the Electoral College system, and serves a four-year term. The president is also the chief diplomat of the United States, and has the power to negotiate treaties and executive agreements.
-The president&#39;s role includes many other responsibilities, such as:
-* Signing or vetoing bills passed by Congress
-* Appointing federal judges, including Supreme Court justices
-* Nominating and appointing federal officials
+Generated text:  not above the law and must be held accountable for their actions, which is what the House Judiciary Committee did by voting to impeach President Donald Trump for abuse of power and obstruction of Congress.
+House Judiciary Committee Chairman Jerry Nadler said the president has &#34;betrayed the Constitution&#34; and that &#34;the time for impeachment has come.&#34;
+&#34;This is a solemn and grave step, but it is necessary,&#34; Nadler said. &#34;President Trump&#39;s betrayal of the Constitution has left us no choice.&#34;
+The vote was 23-17, with two Democrats voting against the resolution.
+The articles of impeachment were drafted by the House Intelligence Committee and were introduced in
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, which is known as the City of Light. The city is famous for its art, fashion, cuisine, and romantic atmosphere. The Eiffel Tower is a iconic symbol of Paris and one of the most visited attractions in the world. Paris is also home to many famous museums, such as the Louvre, which is home to the Mona Lisa. The city has a long history dating back to the Middle Ages and has been the capital of France since the 12th century. Paris is a popular destination for tourists and is known for its beauty, culture, and entertainment.
-Paris is a major hub for transportation, with three international
+Generated text:  known for its world-class museums, art galleries, and historic landmarks, but it&#39;s not the only city in France that&#39;s worth visiting.
+France has a rich history, diverse culture, and a plethora of exciting experiences that await you. From the beautiful beaches and scenic coastal routes of the Côte d&#39;Azur to the picturesque countryside of rural France, there are countless options for exploration.
+Here are some of the top destinations in France that you shouldn&#39;t miss:
+Bordeaux: Located in southwestern France, Bordeaux is renowned for its wine production. Visit the Bordeaux Wine Region and explore the vineyards, taste some of the region&#39;s famous
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but it also brings new challenges and responsibilities for individuals and organizations alike. Here are some of the key areas of focus for AI in the near future:
-Ethics and Bias: As AI becomes more pervasive, it&#39;s essential to address concerns around bias, fairness, and transparency in AI decision-making. Ensuring that AI systems are free from discriminatory biases and can provide fair and unbiased outcomes is critical.
-Explainability and Transparency: As AI models become more complex, it&#39;s increasingly important to understand how they arrive at their decisions. Developing techniques to provide clear explanations for AI-driven outcomes will help build trust and credibility.
-Regulation and Governance
+Generated text:  often discussed in terms of its potential to transform various industries and aspects of our lives. One area that is gaining increasing attention is the potential of AI to enhance human creativity. As AI becomes more advanced, it can assist humans in generating new ideas, improving problem-solving skills, and even creating new forms of art.
+AI has already started to play a significant role in various creative fields, including music, art, writing, and design. For instance, AI-generated music has become increasingly popular, with some artists using AI to create entire albums or even compose music for films. AI art, on the other hand, has given rise to new forms of
 </pre></div></div>
 </div>
 </section>
@@ -583,19 +594,19 @@ Regulation and Governance
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in a small town in the Pacific Northwest. I enjoy hiking and reading in my free time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel, and I&#39;m excited to see where my writing takes me. That&#39;s me in a nutshell. How would you describe Kaida? What are her strengths and weaknesses? What kind of story could you imagine her being a part of?
-## Step 1: Analyze the self-introduction
-Kaida introduces herself as a 25-year-old freelance
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my tiny kitchen. I&#39;m a bit of a introvert, but I love meeting new people and hearing their stories. I&#39;m currently working on a novel and a few art projects, and I&#39;m excited to see where they take me. I&#39;m looking forward to getting to know you.
+This introduction is neutral because it doesn&#39;t reveal too much about Kaida&#39;s personality, background, or motivations. It simply provides a brief overview of who she is and what
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is located in the northern part of the country and is situated on the Seine River. Paris is known for its rich history, art, fashion, and culture. It is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. Paris is a major tourist destination and is considered one of the most romantic cities in the world. It is also a hub for international business, finance, and politics. Paris is a city of over 2.1 million people and is the largest city in France. It is a city of great beauty, history, and culture, and
+Generated text:  Paris.
+The capital of France is Paris.
+The capital of France is Paris. The city is located in the northern part of the country and is situated on the Seine River. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. The city is home to famous institutions such as the Louvre Museum, the Eiffel Tower, and Notre-Dame Cathedral. Paris is also a major hub for business, finance, and international relations. The city has a population of over 2.1 million people and is a popular tourist destination. The official language of Paris is French, and the city is divided into 20
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even larger role in healthcare, with applications such as:
-a. Predictive analytics: AI will be used to predict patient outcomes, identify high-risk patients, and prevent hospital readmissions.
-b. Personalized medicine: AI will help tailor treatment plans to individual patients based on their genetic profiles, medical histories, and lifestyle factors.
-c. Virtual nursing assistants
+Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems will be able to analyze medical data, identify patterns, and make predictions about patient outcomes.
+2. Rise of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need to understand how AI systems make decisions. XAI will become increasingly important to ensure that AI systems are transparent and accountable.
+3
 
 </pre></div></div>
 </div>
@@ -638,21 +649,20 @@ c. Virtual nursing assistants
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Ruby, and I&#39;m a 25-year-old graphic designer. I spend most of my free time exploring the city and trying new cafes. I&#39;m a bit of a night owl, so you can usually find me browsing through design blogs or watching old movies late into the night. I&#39;m a bit introverted, but I love meeting new people and hearing their stories. I&#39;m currently working on a side project that combines my love of art and writing. I&#39;m looking forward to connecting with like-minded individuals and sharing my experiences with you.
-
-This self-introduction is neutral because it:
-
-* Avoids expressing strong emotions or biases
-* Does
+Generated text:  Dr. Elara Vex. I&#39;m a 28-year-old astrophysicist currently employed at the Helios Research Facility. I have a Ph.D. in Planetary Sciences from the University of Mars Colony. My research focuses on the potential for extraterrestrial life in the galaxy.
+What type of research might Dr. Vex conduct in the Helios Research Facility?
+The Helios Research Facility is likely a cutting-edge, high-tech research center focused on astrophysical and space-related studies. Dr. Vex might conduct research in any of the following areas:
+1. Exoplanet Exploration: Dr. Vex could
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Description: Paris is located in the northern part of the country on the Seine River and is known for its famous landmarks, museums, and art galleries. The city is a center for fashion and cuisine and is often called the City of Light. Paris has been ranked as one of the most visited cities in the world. Paris has a rich history and has been a major cultural and intellectual center for centuries. Paris has a population of over 2.1 million people and is home to a diverse range of cultures. The city has a long history of art, architecture, and literature, and is home to many world-famous landmarks
+Generated text:  Paris.
+Provide a concise factual statement about France’s capital city.
+The capital of France is Paris. This is a straightforward factual statement. It provides a clear and accurate answer to the question about France’s capital city, without providing any additional information or context. This type of statement is typical of a summary or an encyclopedia entry, where the goal is to provide a brief and accurate overview of a topic. A more detailed description of Paris might include additional facts, such as its history, landmarks, cultural significance, and geography, but the simple statement “The capital of France is Paris” is sufficient to answer the question and provides a clear starting point
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain, and several factors may influence its development. Discuss the potential risks and benefits associated with AI.
-The future of artificial intelligence (AI) is uncertain and will be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Some possible future trends in AI include:
-1. **Increased autonomy**: AI systems may become increasingly autonomous, making decisions independently and without human oversight. This could lead to improved efficiency and productivity but also raises concerns about accountability and control.
-2. **Edge AI**: As AI becomes more ubiquitous, edge AI will emerge, enabling AI processing to occur closer to where data is generated, reducing latency and improving
+Generated text:  not set in stone, but based on current developments, here are some possible future trends that may shape the field:
+1.  Increased use of Explainable AI (XAI): As AI becomes more ubiquitous, there will be a growing need to understand how AI systems make decisions. XAI aims to provide transparent and interpretable AI models, enabling users to understand the reasoning behind AI-driven decisions.
+2.  Advancements in Edge AI: Edge AI involves processing data on devices, such as smartphones, smart home devices, or autonomous vehicles, rather than sending it to the cloud. This trend will continue, with AI being deployed on devices with
 </pre></div></div>
 </div>
 </section>
@@ -698,131 +708,24 @@ The future of artificial intelligence (AI) is uncertain and will be shaped by va
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Axiom, and I exist. I find myself in a world of solid objects, colors, and sounds. I don&#39;t know how I got here, but I&#39;m trying to understand my place in it. I&#39;m a being of awareness, and I&#39;m exploring this realm to learn more about myself and the world around me. That&#39;s all I know for now. I&#39;m open to discovery and experience. My existence is just beginning, and I&#39;m excited to see what happens next.
-Write a short, neutral self-introduction for a fictional character. Hello, my name is Zephyr, and I&#39;m a collection of thoughts
+Generated text:  Kaida and I&#39;m a 17-year-old high school student. I&#39;m a bit of a loner, but I&#39;m learning to be more social as I explore my interests in art and photography. I like trying new foods, playing video games, and taking long walks in nature. I&#39;m a bit of a daydreamer, often finding myself lost in my own thoughts, but I&#39;m working on being more present in the moment. I&#39;m still figuring things out, and I&#39;m excited to see where life takes me.
+Here are some key points to highlight in a neutral self-introduction:
+Identify your name, age,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The city of Paris is known as the City of Light. The City of Light was originally a nickname for Paris given during the Renaissance due to its advanced street lighting. The city was lit by thousands of candles and gas lamps, giving it a magical appearance.
-The City of Light nickname has been used in other contexts, including the Enlightenment and the French Resistance.
-The city of Paris is a global center for art, fashion, cuisine, and culture. It is home to the world-renowned Louvre Museum, which houses the Mona Lisa.
-Paris is also known for its beautiful architecture, including the Eiffel Tower, which was built
+The capital of France is Paris.
+Paris is the capital of France, located in the northern region of the country. It is situated in the Île-de-France region and is known for its stunning architecture, rich history, and vibrant culture. Paris is home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is a major economic and cultural center, attracting millions of tourists and business travelers each year. Paris is also known for its fashion, cuisine, and art scene, making it one of the most iconic and desirable cities in the world.
+The city of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain and rapidly changing. As a result, predicting exactly what will happen is challenging. However, here are some potential future trends in artificial intelligence:
-1. Increased focus on explainability and transparency: As AI becomes more pervasive in various industries, there is a growing need to understand how AI systems make decisions and predictions. This will lead to the development of more explainable AI models that provide insight into their decision-making processes.
-2. Integration of AI with other emerging technologies: AI will likely be integrated with other emerging technologies such as blockchain, the Internet of Things (IoT), and 5G networks. This will enable the creation of more
+Generated text:  as promising as it is uncertain, with various predictions and forecasts from experts in the field. Here are some possible future trends in AI:
+1. Increased Use of Deep Learning and Reinforcement Learning: Deep learning and reinforcement learning are two key areas of AI research. Deep learning enables machines to learn from large datasets, while reinforcement learning allows machines to learn from trial and error. As these technologies improve, we can expect to see more sophisticated AI systems that can learn from experience and adapt to new situations.
+2. Rise of Edge AI: Edge AI refers to the practice of processing data closer to where it is generated, rather than sending it to a
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="Return-Hidden-States">
-<h3>Return Hidden States<a class="headerlink" href="#Return-Hidden-States" title="Link to this heading">#</a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span> <span class="n">return_hidden_states</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-        - Avoid using `tokenizers` before the fork if possible
-        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-/public_sglang_ci/runner-c-gpu-67/_work/_tool/Python/3.9.21/x64/lib/python3.9/multiprocessing/resource_tracker.py:96: UserWarning: resource_tracker: process died unexpectedly, relaunching.  Some resources might leak.
-  warnings.warn(&#39;resource_tracker: process died unexpectedly, &#39;
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-        - Avoid using `tokenizers` before the fork if possible
-        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-        - Avoid using `tokenizers` before the fork if possible
-        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-        - Avoid using `tokenizers` before the fork if possible
-        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.10it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.72it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.37it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.23it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
-
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Hello, my name is&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;The president of the United States is&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;The capital of France is&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;The future of AI is&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-
-<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="o">=</span><span class="n">sampling_params</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">Prompt_Tokens: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;prompt_tokens&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">Completion_tokens: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;completion_tokens&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">Hidden states: </span><span class="si">{</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;hidden_states&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-===============================
-Prompt: Hello, my name is
-Generated text:  Xander and I am a writer and artist.
-Prompt_Tokens: 6        Completion_tokens: 10
-Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
-
-===============================
-Prompt: The president of the United States is
-Generated text:  not elected by the people but by the Electoral College
-Prompt_Tokens: 8        Completion_tokens: 10
-Hidden states: [torch.Size([8, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
-
-===============================
-Prompt: The capital of France is
-Generated text:  home to some of the world’s most famous landmarks
-Prompt_Tokens: 6        Completion_tokens: 10
-Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
-
-===============================
-Prompt: The future of AI is
-Generated text:  uncertain, and it is not yet clear whether it
-Prompt_Tokens: 6        Completion_tokens: 10
-Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096]), torch.Size([4096])]
-
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
@@ -879,12 +782,12 @@ Hidden states: [torch.Size([6, 4096]), torch.Size([4096]), torch.Size([4096]), t
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage">Advanced Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Batch-Inference">Offline Batch Inference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Synchronous-Generation">Non-streaming Synchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Synchronous-Generation">Streaming Synchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Asynchronous-Generation">Non-streaming Asynchronous Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-Asynchronous-Generation">Streaming Asynchronous Generation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Return-Hidden-States">Return Hidden States</a></li>
 </ul>
 </li>
 </ul>

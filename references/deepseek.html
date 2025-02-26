@@ -177,7 +177,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">Structured Generation Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">SGLang Frontend Language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
@@ -446,9 +446,86 @@
   <section class="tex2jax_ignore mathjax_ignore" id="deepseek-usage">
 <h1>DeepSeek Usage<a class="headerlink" href="#deepseek-usage" title="Link to this heading">#</a></h1>
 <p>SGLang provides several optimizations specifically designed for the DeepSeek model to boost its inference speed. This document outlines current optimizations for DeepSeek. Additionally, the SGLang team is actively developing enhancements for <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2591">DeepSeek V3</a>.</p>
+<p>Special thanks to Meituan’s Search &amp; Recommend Platform Team and Baseten’s Model Performance Team for implementing the model, and DataCrunch for providing GPU resources.</p>
 <section id="launch-deepseek-v3-with-sglang">
 <h2>Launch DeepSeek V3 with SGLang<a class="headerlink" href="#launch-deepseek-v3-with-sglang" title="Link to this heading">#</a></h2>
-<p>SGLang is recognized as one of the top engines for <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek model inference</a>. Refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#installation--launch">installation and launch</a> to learn how to run fast inference of DeepSeek V3/R1 with SGLang.</p>
+<p>SGLang is recognized as one of the top engines for <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek model inference</a>. To run DeepSeek V3/R1 models, the requirements are as follows:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Configurations</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Weight Type</th>
+                <th>Configuration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3"><b>Full precision FP8 (recommended)</b></td>
+                <td>8 x H200</td>
+            </tr>
+            <tr>
+                <td>8 x MI300X</td>
+            </tr>
+            <tr>
+                <td>2 x 8 x H100/800/20</td>
+            </tr>
+            <tr>
+                <td rowspan="4">Full precision BF16</td>
+                <td>2 x 8 x H200</td>
+            </tr>
+            <tr>
+                <td>2 x 8 x MI300X</td>
+            </tr>
+            <tr>
+                <td>4 x 8 x H100/800/20</td>
+            </tr>
+            <tr>
+                <td>4 x 8 x A100/A800</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Quantized weights (AWQ)</td>
+                <td>8 x H100/800/20</td>
+            </tr>
+            <tr>
+                <td>8 x A100/A800</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<p>Detailed commands for reference:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">8 x H200</a></p></li>
+<li><p><a class="reference external" href="https://docs.sglang.ai/references/amd.html#running-deepseek-v3">8 x MI300X</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">2 x 8 x H200</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">4 x 8 x A100</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-8-a100a800-with-awq-quantization">8 x A100 (AWQ)</a></p></li>
+</ul>
 <section id="download-weights">
 <h3>Download Weights<a class="headerlink" href="#download-weights" title="Link to this heading">#</a></h3>
 <p>If you encounter errors when starting the server, ensure the weights have finished downloading. It’s recommended to download them beforehand or restart multiple times until all weights are downloaded. Please refer to <a class="reference internal" href="#%5Bhttps://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#installation--launch%5D(https://huggingface.co/deepseek-ai/DeepSeek-V3-Base#61-inference-with-deepseek-infer-demo-example-only)"><span class="xref myst">DeepSeek V3</span></a> offical guide to download the weights.</p>
@@ -520,12 +597,6 @@
 <ol class="arabic">
 <li><p><strong>Question</strong>: What should I do if model loading takes too long and NCCL timeout occurs?</p>
 <p><strong>Answer</strong>: You can try to add <code class="docutils literal notranslate"><span class="pre">--dist-timeout</span> <span class="pre">3600</span></code> when launching the model, this allows for 1-hour timeout.</p>
-</li>
-<li><p><strong>Question</strong>: How to use quantized DeepSeek models?</p>
-<p><strong>Answer</strong>: AWQ does not support BF16, so add the <code class="docutils literal notranslate"><span class="pre">--dtype</span> <span class="pre">half</span></code> flag if AWQ is used for quantization. One example is as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>cognitivecomputations/DeepSeek-R1-AWQ<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dtype<span class="w"> </span>half
-</pre></div>
-</div>
 </li>
 </ol>
 </section>
