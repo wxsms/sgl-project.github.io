@@ -499,6 +499,7 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <li><p><code class="docutils literal notranslate"><span class="pre">ignore_eos</span></code>: Don’t stop generation when EOS token is sampled.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">skip_special_tokens</span></code>: Remove special tokens during decoding.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_params</span></code>: Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage see below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return_hidden_states</span></code>: Whether to return hidden states of the model. Note that each time it changes, the cuda graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">examples</a> for more information.</p></li>
 </ul>
 </section>
 <section id="custom-logit-processor">
