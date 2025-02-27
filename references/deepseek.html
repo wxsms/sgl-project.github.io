@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Feb 26, 2025"/>
+    <meta name="docbuild:last-update" content="Feb 27, 2025"/>
   </head>
   
   
@@ -554,7 +554,7 @@
 <p><strong>Description</strong>: <a class="reference external" href="https://arxiv.org/pdf/2405.04434">MLA</a> is an innovative attention mechanism introduced by the DeepSeek team, aimed at improving inference efficiency. SGLang has implemented specific optimizations for this, including:</p>
 <ul class="simple">
 <li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
-<li><p><strong>Triton Decoding Kernel Optimization</strong>: In the MLA decoding kernel, there is only one KV head. This optimization reduces memory access to the KV cache by processing multiple query heads within one block, accelerating the decoding process.</p></li>
+<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. This optimization can be significant under long context scenarios. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>.</p></li>
 <li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
 <li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
 </ul>
@@ -696,7 +696,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 26, 2025.
+  Last updated on Feb 27, 2025.
   <br/>
 </p>
   </div>
