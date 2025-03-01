@@ -420,6 +420,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#SPECIAL-WARNING!!!!">SPECIAL WARNING!!!!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage">Advanced Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Batch-Inference">Offline Batch Inference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Synchronous-Generation">Non-streaming Synchronous Generation</a></li>
@@ -457,8 +458,12 @@
 <li><p>Non-streaming asynchronous generation</p></li>
 <li><p>Streaming asynchronous generation</p></li>
 </ul>
-<p>To launch the offline engine in your python scripts, <code class="docutils literal notranslate"><span class="pre">__main__</span></code> condition is necessary, since we use <code class="docutils literal notranslate"><span class="pre">spawn</span></code> mode to create subprocesses. Please refer to this<a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/launch_engine.py">simple example</a>for more details.</p>
 <p>Additionally, you can easily build a custom server on top of the SGLang offline engine. A detailed example working in a python script can be found in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/custom_server.py">custom_server</a>.</p>
+<section id="SPECIAL-WARNING!!!!">
+<h2>SPECIAL WARNING!!!!<a class="headerlink" href="#SPECIAL-WARNING!!!!" title="Link to this heading">#</a></h2>
+<p><strong>To launch the offline engine in your python scripts,</strong> <code class="docutils literal notranslate"><span class="pre">__main__</span></code> <strong>condition is necessary, since we use</strong> <code class="docutils literal notranslate"><span class="pre">spawn</span></code> <strong>mode to create subprocesses. Please refer to this simple example</strong>:</p>
+<p><a class="github reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/launch_engine.py">sgl-project/sglang</a></p>
+</section>
 <section id="Advanced-Usage">
 <h2>Advanced Usage<a class="headerlink" href="#Advanced-Usage" title="Link to this heading">#</a></h2>
 <p>The engine supports <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/offline_batch_inference_vlm.py">vlm inference</a> as well as <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">extracting hidden states</a>.</p>
@@ -498,11 +503,11 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.01it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.64it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.06s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.56it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
 
 </pre></div></div>
 </div>
@@ -535,27 +540,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Danny and I am a rising senior at the University of Nebraska-Lincoln. I am double majoring in accounting and finance and hope to sit for the CPA exam in the near future. I am excited to be working at Koley Jessen, P.C., L.L.O. as a summer associate this year. I am looking forward to learning from the best and gaining valuable experience in the field of accounting and finance.
-Outside of academics, I enjoy playing soccer and staying active. I am also involved in various community service projects and volunteer at a local food bank. I believe it is essential to give back to the community and make a
+Generated text:  Thornton and I am an English Bulldog.
+I was born in the spring of 2012 and I weigh about 35 pounds. My coat is a beautiful brindle color with a short, easy-to-maintain texture. My eyes are a lovely brown and I have a wrinkled, adorable face.
+My personality is very laid-back and I love to take naps. I am a gentle soul and I don&#39;t like to play rough, but I do enjoy going for walks and sniffing all the interesting smells. I am also very food-motivated, so if you have some tasty treats, I am all ears!
+
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States. The president serves a four-year term and is limited to two terms. The president is elected by the Electoral College, which consists of 538 electors chosen by each state. The president is sworn in on January 20th of the year following a presidential election.
-The president&#39;s main duties include:
-Commander-in-Chief: The president serves as the commander-in-chief of the armed forces and is responsible for the nation&#39;s defense.
-Chief Executive: The president is responsible for enforcing laws and ensuring the nation&#39;s laws are carried out.
-Chief Diplomat: The president represents the
+Generated text:  the most powerful person in the world, but that doesn&#39;t mean he or she is invincible. In fact, there have been several instances where U.S. presidents have faced serious challenges to their power and even faced impeachment proceedings. Here are some of the most notable examples:
+1. Andrew Johnson (1868): Johnson was impeached by the House of Representatives on charges of &#34;high crimes and misdemeanors&#34; for violating the Tenure of Office Act, which prohibited him from firing certain officials without Senate approval. He was acquitted by a single vote in the Senate and completed his term as president.
+2. Bill Clinton (1998-199
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. This is the most populous city in France, known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and Arc de Triomphe. The city is famous for its romantic atmosphere, art museums, fashion industry, and fine dining.
-France has a population of about 67 million people and is the largest country in the European Union. It has a rich history dating back to ancient times, with significant contributions to art, literature, science, and philosophy. The country is divided into 13 metropolitan regions, with a total area of about 643,801 square kilometers.
-French
+Generated text:  Paris, and the capital of the United States is Washington, D.C. Paris, the capital of France, is the city that has been the seat of government since 987, when the Merovingian dynasty moved the seat of government from Reims to Paris. It has been the capital of France ever since, with a few exceptions. Paris was the capital of the Kingdom of France from 987 to 1848, and it has remained the capital of the French Republic since then.
+The city of Paris is known for its beauty, architecture, and cultural significance. It is home to many famous landmarks, including the Eiffel Tower
 ===============================
 Prompt: The future of AI is
-Generated text:  not in creating more complex algorithms, but in learning to work with people.
-AI systems have become increasingly sophisticated, with the ability to learn from large datasets and adapt to new situations. However, the complexity of these systems can also create new challenges in terms of explainability, accountability, and trustworthiness.
-There are several potential solutions being explored, including:
-1. **Explainability techniques**: These methods aim to provide insights into how AI systems arrive at their decisions, enabling humans to understand the reasoning behind them. Techniques like model interpretability, feature attribution, and model-agnostic explanations are being developed to achieve this goal.
-2. **
+Generated text:  coming, and it&#39;s going to be huge. Artificial intelligence is transforming industries and disrupting traditional business models. AI-powered chatbots, for example, are changing the way companies interact with customers, and self-driving cars are revolutionizing transportation.
+The applications of AI are numerous and varied, and the technology is rapidly evolving. Here are some of the key trends and developments that we can expect to see in the future of AI:
+1. Increased Adoption of AI in Everyday Life
+Artificial intelligence is no longer just a buzzword; it&#39;s becoming a reality in our daily lives. We&#39;re already seeing AI-powered virtual assistants, such as Siri and
 </pre></div></div>
 </div>
 </section>
@@ -595,16 +598,16 @@ There are several potential solutions being explored, including:
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 22-year-old student at the University of Tokyo, studying environmental science. I&#39;m originally from a small town in Hokkaido, where I grew up surrounded by nature and developed a strong interest in conservation and sustainability. I&#39;m currently working on a research project focused on the impact of climate change on local ecosystems. When I&#39;m not studying or working, I enjoy hiking and practicing yoga. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation about the environment or Japanese culture.
-This self-introduction is neutral because it doesn&#39;t reveal any personal biases or opinions, and
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new coffee shops. I&#39;m a bit of a introvert and prefer to spend my free time alone or with a few close friends. I&#39;m currently working on a novel and trying to get my writing career off the ground. That&#39;s me in a nutshell. What do you think? Is it too long or too short? Should I add anything?
+I think it&#39;s a good start! It&#39;s concise and gives a sense of who you are and what you do. However
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, tourism, and education. Paris is also known for its romantic atmosphere, beautiful parks, and vibrant nightlife. The city has a diverse range of neighborhoods, each with its own unique character and charm
+Generated text:  Paris. Paris is located in the northern part of the country, near the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city is also a major center for business, finance, and international relations. Paris is a popular tourist destination, attracting millions of visitors each year. It is also a hub for education, with several prestigious universities and research institutions. The city has a diverse population and a vibrant cultural scene, with many museums,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, with applications in medical diagnosis, personalized medicine, and patient care. AI-powered chatbots and virtual assistants may become more common in healthcare settings, helping patients navigate the healthcare system and providing support for patients with chronic conditions.
-2. Widespread adoption of AI in education: AI is likely to transform the education sector, with applications in personalized learning, adaptive assessments, and intelligent tutoring systems. AI-powered tools
+Generated text:  expected to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
+1. Increased Adoption of Edge AI: Edge AI refers to the processing of AI algorithms at the edge of the network, closer to the source of the data. This trend is expected to continue as more devices become connected to the internet, and the need for real-time processing and decision-making increases.
+2. Rise of Explainable AI: As AI becomes more pervasive in various industries, there is a growing need to understand how AI models make decisions. Explainable AI (XAI) is a sub
 
 </pre></div></div>
 </div>
@@ -647,24 +650,21 @@ Generated text:  likely to be shaped by various factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Alistair, and I&#39;m a 28-year-old freelance writer living in Los Angeles. I work on a variety of projects, mostly in the realm of science fiction and fantasy.
-This introduction is brief and doesn&#39;t reveal much about Alistair&#39;s personality, interests, or background, which can be useful for creating a neutral, enigmatic character. A more detailed self-introduction could be:
-&#34;Hi, I&#39;m Alistair, and I&#39;m a bit of a Renaissance man. I&#39;ve always been fascinated by science fiction and fantasy, and I&#39;ve spent years honing my writing skills to tell compelling stories in these genres.
+Generated text:  Elianore Quasar, and I&#39;m a... um... freelance... astronomer. Yeah, that&#39;s it. I&#39;ve spent a lot of time stargazing and studying the celestial bodies. I&#39;m pretty sure I&#39;ve got a decent understanding of the universe and its workings. At least, that&#39;s what I keep telling myself.
+I was born in the city of New Celestia, which I&#39;m pretty sure is the most interesting place in the galaxy. My parents were both scientists, so I guess you could say I come from a family of stargazers. I&#39;ve always been fascinated by the mysteries of the cosmos,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the most populous city in France and serves as the country&#39;s political center.
-The post Describe the capital of France appeared first on .com.
-Provide a concise factual statement about France’s capital city. The capital of France is Paris. It is the most populous city in France and serves as the country&#39;s political center.
-The post Describe the capital of France appeared first on .com.
-France is a country located in the European continent. It is the most visited country in the world. France has a diverse culture, with a mix of traditional and modern influences. The country has a rich history, with many historical landmarks such as
+Generated text:  Paris.
+The post Provide a concise factual statement about France’s capital city. The capital of France is Paris. appeared first on Superb Professors.
+Explain how the Sun and Earth’s atmosphere interact. Provide examples of the effects on the Earth. The Sun and Earth’s atmosphere interact in the form of solar radiation. The Earth’s atmosphere can reflect, absorb, or scatter the radiation, depending on the frequency and intensity of the radiation.
+The post Explain how the Sun and Earth’s atmosphere interact. Provide examples of the effects on the Earth. The Sun and Earth’s atmosphere interact in the form of solar radiation. The Earth’s atmosphere
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting, yet also a bit daunting. Explore the possibilities and challenges that lie ahead.
-The future of artificial intelligence is both thrilling and unsettling. As AI continues to advance, it has the potential to revolutionize numerous aspects of our lives, from healthcare and education to transportation and entertainment. However, it also raises concerns about job displacement, bias, and accountability.
-Here are some possible future trends in artificial intelligence:
-1. Increased Adoption in Everyday Life:
-AI will become more integrated into our daily routines, making our lives easier, and more convenient. For example, smart homes, virtual assistants, and personalized recommendations will become even more prevalent.
-2.
+Generated text:  expected to be characterized by increasing sophistication, ubiquity, and integration with other technologies, as well as growing concerns about ethics, accountability, and regulation.
+The future of artificial intelligence (AI) is expected to be shaped by several trends and developments. Some possible future trends in AI include:
+1. **Increased Sophistication**: AI systems will become increasingly sophisticated, with the ability to learn, reason, and interact with humans in more complex and nuanced ways.
+2. **Ubiquity**: AI will become ubiquitous, with applications in every aspect of life, from healthcare and finance to transportation and entertainment.
+3. **Integration with Other Technologies**:
 </pre></div></div>
 </div>
 </section>
@@ -710,22 +710,17 @@ AI will become more integrated into our daily routines, making our lives easier,
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Akira Katsuragi. I&#39;m a 20-year-old college student studying environmental science. I work part-time at a small cafe in the city. Outside of school and work, I enjoy hiking and reading about sustainable living. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
-Akira Katsuragi. I&#39;m a 20-year-old college student, studying environmental science. In my free time, I like to hike and read about sustainable living. I work part-time at a small cafe in the city. I&#39;m a bit of an introvert, but I appreciate a good
+Generated text:  Isaac Edwards. I&#39;m a 24-year-old software engineer working at a small tech firm in downtown Los Angeles. When I&#39;m not coding, you can find me hiking in the Santa Monica Mountains or playing guitar. I&#39;m a bit of a music lover and have been known to write the occasional song in my spare time. I&#39;m not really sure what the future holds, but I&#39;m excited to see what it brings. That&#39;s me in a nutshell!
+I see what you did there with &#34;in a nutshell&#34; at the end. It&#39;s a fitting way to wrap up the introduction. The language is neutral, which is suitable for
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The official name of the city is given. The city is known as Paris.
-The region of the country where the city is located is given. The city is located in the Île-de-France region.
-A brief description of the city is provided. Paris is famous for its historical and cultural landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is known for its art museums, fashion, and cuisine.
-Some cultural or historical information about the city is given. The city has a long history dating back to the 3rd century BC and has been a major center of
+Generated text:  Paris, which is situated in the north-central part of the country. Paris is the second-most visited city in the world, hosting over 23 million tourists annually. With its rich history, cultural landmarks, and iconic beauty, Paris is a prime destination for travelers, artists, and intellectuals alike.
+Paris is famous for its stunning architecture, from the Eiffel Tower to Notre-Dame Cathedral, and its world-class museums, including the Louvre and the Orsay. The city is also renowned for its fashion, cuisine, and romantic atmosphere, making it a favorite among visitors. With its diverse neighborhoods, vibrant nightlife, and historic significance,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by advancements in technologies like deep learning, natural language processing, and computer vision.
-Explain possible future trends in artificial intelligence.
-The future of AI is likely to be shaped by advancements in technologies like deep learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased Use of Deep Learning: Deep learning has already shown significant improvements in AI applications, and it is likely to continue to be a major driver of AI advancements in the future. Deep learning techniques will be used to develop more sophisticated models that can learn from large amounts of data and make decisions based on that data.
-2
+Generated text:  uncertain, but many experts agree that it will become more integrated into our lives. According to a report by Gartner, by 2025, AI will be more pervasive and embedded in a wide range of technologies. Here are some possible future trends in artificial intelligence:
+1. Increased use of edge AI: Edge AI refers to the ability of devices to perform AI-related tasks without relying on cloud computing or a centralized server. This trend is becoming increasingly popular due to the need for faster and more efficient processing of data, especially in industries such as healthcare, transportation, and manufacturing.
+2. Greater emphasis on explainability and transparency: As AI becomes
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -786,6 +781,7 @@ The future of AI is likely to be shaped by advancements in technologies like dee
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#SPECIAL-WARNING!!!!">SPECIAL WARNING!!!!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage">Advanced Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Batch-Inference">Offline Batch Inference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Synchronous-Generation">Non-streaming Synchronous Generation</a></li>
