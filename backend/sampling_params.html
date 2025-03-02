@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Mar 01, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 02, 2025"/>
   </head>
   
   
@@ -455,6 +455,7 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <li><p><code class="docutils literal notranslate"><span class="pre">stream</span></code>: Whether to stream the output. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lora_path</span></code>: Path to LoRA weights. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">Optional[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_logit_processor</span></code>: Custom logit processor for advanced sampling control. For usage see below. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return_hidden_states</span></code>: Whether to return hidden states of the model. Note that each time it changes, the cuda graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">examples</a> for more information. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
 </ul>
 </section>
 <section id="sampling-params">
@@ -499,7 +500,6 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <li><p><code class="docutils literal notranslate"><span class="pre">ignore_eos</span></code>: Don’t stop generation when EOS token is sampled. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">skip_special_tokens</span></code>: Remove special tokens during decoding. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_params</span></code>: Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage see below. <code class="docutils literal notranslate"><span class="pre">Optional[List[Optional[Dict[str,</span> <span class="pre">Any]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return_hidden_states</span></code>: Whether to return hidden states of the model. Note that each time it changes, the cuda graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">examples</a> for more information. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
 </ul>
 </section>
 <section id="custom-logit-processor">
@@ -639,7 +639,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 01, 2025.
+  Last updated on Mar 02, 2025.
   <br/>
 </p>
   </div>
