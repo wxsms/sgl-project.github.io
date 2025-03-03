@@ -419,6 +419,11 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-guide">Setup Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafana-dashboard">Grafana Dashboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-variables-are-created">Check if the variables are created</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-metrics-are-being-collected">Check if the metrics are being collected</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -438,128 +443,131 @@
 <p>An example of the monitoring dashboard is available in <a class="reference internal" href="#../examples/monitoring/grafana.json"><span class="xref myst">examples/monitoring/grafana.json</span></a>.</p>
 <p>Here is an example of the metrics:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl http://localhost:30000/metrics
-
 # HELP sglang:prompt_tokens_total Number of prefill tokens processed.
 # TYPE sglang:prompt_tokens_total counter
-sglang:prompt_tokens_total{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.0
+sglang:prompt_tokens_total{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 8.128902e+06
 # HELP sglang:generation_tokens_total Number of generation tokens processed.
 # TYPE sglang:generation_tokens_total counter
-sglang:generation_tokens_total{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 8.0
+sglang:generation_tokens_total{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.557572e+06
+# HELP sglang:token_usage The token usage
+# TYPE sglang:token_usage gauge
+sglang:token_usage{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.28
+# HELP sglang:cache_hit_rate The cache hit rate
+# TYPE sglang:cache_hit_rate gauge
+sglang:cache_hit_rate{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.007507552643049313
 # HELP sglang:time_to_first_token_seconds Histogram of time to first token in seconds.
 # TYPE sglang:time_to_first_token_seconds histogram
-sglang:time_to_first_token_seconds_sum{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.30457592010498047
+sglang:time_to_first_token_seconds_sum{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2.3518979474117756e+06
 sglang:time_to_first_token_seconds_bucket{le=&quot;0.001&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
 sglang:time_to_first_token_seconds_bucket{le=&quot;0.005&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
 sglang:time_to_first_token_seconds_bucket{le=&quot;0.01&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
 sglang:time_to_first_token_seconds_bucket{le=&quot;0.02&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.04&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.06&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.08&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.1&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.25&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;0.75&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;1.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;2.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;5.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;7.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;10.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;15.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;20.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;25.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;30.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_bucket{le=&quot;+Inf&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_to_first_token_seconds_count{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.04&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.06&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 3.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.08&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.1&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.25&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;0.75&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;1.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 27.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;2.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 140.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;5.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 314.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;7.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 941.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;10.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1330.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;15.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1970.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;20.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2326.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;25.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2417.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;30.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2513.0
+sglang:time_to_first_token_seconds_bucket{le=&quot;+Inf&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 11008.0
+sglang:time_to_first_token_seconds_count{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 11008.0
 # HELP sglang:e2e_request_latency_seconds Histogram of End-to-end request latency in seconds
 # TYPE sglang:e2e_request_latency_seconds histogram
-sglang:e2e_request_latency_seconds_sum{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.30521273612976074
+sglang:e2e_request_latency_seconds_sum{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 3.116093850019932e+06
 sglang:e2e_request_latency_seconds_bucket{le=&quot;0.3&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;0.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;0.8&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;1.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;1.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;2.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;2.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;5.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;10.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;15.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;20.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;30.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;40.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;50.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;60.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_bucket{le=&quot;+Inf&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:e2e_request_latency_seconds_count{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;0.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;0.8&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;1.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;1.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;2.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;2.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 6.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;5.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;10.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 10.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;15.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 11.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;20.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 14.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;30.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 247.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;40.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 486.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;50.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 845.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;60.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1513.0
+sglang:e2e_request_latency_seconds_bucket{le=&quot;+Inf&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 11228.0
+sglang:e2e_request_latency_seconds_count{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 11228.0
 # HELP sglang:time_per_output_token_seconds Histogram of time per output token in seconds.
 # TYPE sglang:time_per_output_token_seconds histogram
-sglang:time_per_output_token_seconds_sum{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0381757915019989
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.005&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.01&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.015&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.02&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.025&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.03&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.04&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.05&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.075&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.1&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.15&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.2&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.3&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.4&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;0.75&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;1.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;2.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_bucket{le=&quot;+Inf&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
-sglang:time_per_output_token_seconds_count{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
+sglang:time_per_output_token_seconds_sum{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 866964.5791549598
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.005&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.01&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 73.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.015&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 382.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.02&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 593.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.025&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 855.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.03&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1035.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.04&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 1815.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.05&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 11685.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.075&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 433413.0
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.1&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 4.950195e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.15&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.039435e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.2&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.171662e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.3&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.266055e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.4&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.296752e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.312226e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;0.75&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.339675e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;1.0&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.357747e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;2.5&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.389414e+06
+sglang:time_per_output_token_seconds_bucket{le=&quot;+Inf&quot;,model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.400757e+06
+sglang:time_per_output_token_seconds_count{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 7.400757e+06
 # HELP sglang:func_latency_seconds Function latency in seconds
 # TYPE sglang:func_latency_seconds histogram
-sglang:func_latency_seconds_sum{name=&quot;generate_request&quot;} 0.3061351010110229
-sglang:func_latency_seconds_bucket{le=&quot;0.05&quot;,name=&quot;generate_request&quot;} 0.0
-sglang:func_latency_seconds_bucket{le=&quot;0.07500000000000001&quot;,name=&quot;generate_request&quot;} 0.0
-sglang:func_latency_seconds_bucket{le=&quot;0.1125&quot;,name=&quot;generate_request&quot;} 0.0
-sglang:func_latency_seconds_bucket{le=&quot;0.16875&quot;,name=&quot;generate_request&quot;} 0.0
-sglang:func_latency_seconds_bucket{le=&quot;0.253125&quot;,name=&quot;generate_request&quot;} 0.0
-sglang:func_latency_seconds_bucket{le=&quot;0.3796875&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;0.56953125&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;0.8542968750000001&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;1.2814453125&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;1.9221679687500002&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;2.8832519531250003&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;4.3248779296875&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;6.487316894531251&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;9.730975341796876&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;14.596463012695313&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;21.89469451904297&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;32.84204177856446&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;49.26306266784668&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_bucket{le=&quot;+Inf&quot;,name=&quot;generate_request&quot;} 1.0
-sglang:func_latency_seconds_count{name=&quot;generate_request&quot;} 1.0
+sglang:func_latency_seconds_sum{name=&quot;generate_request&quot;} 4.514771912145079
+sglang:func_latency_seconds_bucket{le=&quot;0.05&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.07500000000000001&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.1125&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.16875&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.253125&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.3796875&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.56953125&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;0.8542968750000001&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;1.2814453125&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;1.9221679687500002&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;2.8832519531250003&quot;,name=&quot;generate_request&quot;} 14006.0
+sglang:func_latency_seconds_bucket{le=&quot;4.3248779296875&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;6.487316894531251&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;9.730975341796876&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;14.596463012695313&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;21.89469451904297&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;32.84204177856446&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;49.26306266784668&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_bucket{le=&quot;+Inf&quot;,name=&quot;generate_request&quot;} 14007.0
+sglang:func_latency_seconds_count{name=&quot;generate_request&quot;} 14007.0
 # HELP sglang:num_running_reqs The number of running requests
 # TYPE sglang:num_running_reqs gauge
-sglang:num_running_reqs{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
+sglang:num_running_reqs{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 162.0
 # HELP sglang:num_used_tokens The number of used tokens
 # TYPE sglang:num_used_tokens gauge
-sglang:num_used_tokens{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
+sglang:num_used_tokens{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 123859.0
 # HELP sglang:gen_throughput The generate throughput (token/s)
 # TYPE sglang:gen_throughput gauge
-sglang:gen_throughput{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
+sglang:gen_throughput{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 86.50814177726902
 # HELP sglang:num_queue_reqs The number of requests in the waiting queue
 # TYPE sglang:num_queue_reqs gauge
-sglang:num_queue_reqs{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-# HELP sglang:token_usage The token usage
-# TYPE sglang:token_usage gauge
-sglang:token_usage{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
-# HELP sglang:cache_hit_rate The cache hit rate
-# TYPE sglang:cache_hit_rate gauge
-sglang:cache_hit_rate{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0.0
+sglang:num_queue_reqs{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2826.0
 </pre></div>
 </div>
 <section id="setup-guide">
 <h2>Setup Guide<a class="headerlink" href="#setup-guide" title="Link to this heading">#</a></h2>
 <p>To setup a monitoring dashboard, you can use the following docker compose file: <a class="reference internal" href="#../examples/monitoring/docker-compose.yaml"><span class="xref myst">examples/monitoring/docker-compose.yaml</span></a>.</p>
-<p>Assume you have sglang server running at <code class="docutils literal notranslate"><span class="pre">localhost:30000</span></code>.</p>
+<p>Assume you have sglang server running at <code class="docutils literal notranslate"><span class="pre">localhost:30000</span></code>, to start the server, ensure you have <code class="docutils literal notranslate"><span class="pre">--enable-metrics</span></code> flag enabled:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--enable-metrics
+</pre></div>
+</div>
 <p>To start the monitoring dashboard (prometheus + grafana), cd to <code class="docutils literal notranslate"><span class="pre">examples/monitoring</span></code> and run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>compose.yaml<span class="w"> </span>-p<span class="w"> </span>monitoring<span class="w"> </span>up
 </pre></div>
@@ -567,7 +575,28 @@ sglang:cache_hit_rate{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0
 <p>Then you can access the Grafana dashboard at http://localhost:3000.</p>
 <section id="grafana-dashboard">
 <h3>Grafana Dashboard<a class="headerlink" href="#grafana-dashboard" title="Link to this heading">#</a></h3>
+<p>In a new Grafana setup, ensure that you have the <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code> data source enabled. To check that, go to <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/connections/datasources</span></code> and ensure that <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code> is enabled.</p>
+<p>If not, click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">data</span> <span class="pre">source</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>, set Prometheus URL to <code class="docutils literal notranslate"><span class="pre">http://localhost:9090</span></code>, and click <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Test</span></code>.</p>
 <p>To import the Grafana dashboard, click <code class="docutils literal notranslate"><span class="pre">+</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Import</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">JSON</span> <span class="pre">file</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Upload</span></code> and select <a class="reference internal" href="#../examples/monitoring/grafana.json"><span class="xref myst">grafana.json</span></a>.</p>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
+<section id="check-if-the-variables-are-created">
+<h4>Check if the variables are created<a class="headerlink" href="#check-if-the-variables-are-created" title="Link to this heading">#</a></h4>
+<p>The example dashboard assume you have the following variables avaliable:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model_name</span></code> (name: <code class="docutils literal notranslate"><span class="pre">model_name</span></code>, label: <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">name</span></code>, Data source: <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>, Type: <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">values</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> (name: <code class="docutils literal notranslate"><span class="pre">instance</span></code>, label: <code class="docutils literal notranslate"><span class="pre">instance</span></code>, Data source: <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>, Type: <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">values</span></code>)</p></li>
+</ul>
+<p>If you don’t have these variables, you can create them manually.</p>
+<p>To create a variable, go to dashboard settings, <code class="docutils literal notranslate"><span class="pre">Variables</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">variable</span></code>.</p>
+<p>You should be able to see the preview the values (e.g. <code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-3.1-8B-Instruct</span></code> for <code class="docutils literal notranslate"><span class="pre">model_name</span></code>).</p>
+</section>
+<section id="check-if-the-metrics-are-being-collected">
+<h4>Check if the metrics are being collected<a class="headerlink" href="#check-if-the-metrics-are-being-collected" title="Link to this heading">#</a></h4>
+<p>Run <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_serving</span> <span class="pre">--backend</span> <span class="pre">sglang</span> <span class="pre">--dataset-name</span> <span class="pre">random</span> <span class="pre">--num-prompts</span> <span class="pre">3000</span> <span class="pre">--random-input</span> <span class="pre">1024</span> <span class="pre">--random-output</span> <span class="pre">1024</span> <span class="pre">--random-range-ratio</span> <span class="pre">0.5</span></code> to generate some requests.</p>
+<p>Then you should be able to see the metrics in the Grafana dashboard.</p>
+</section>
 </section>
 </section>
 </section>
@@ -602,6 +631,11 @@ sglang:cache_hit_rate{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 0
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-guide">Setup Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafana-dashboard">Grafana Dashboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-variables-are-created">Check if the variables are created</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-metrics-are-being-collected">Check if the metrics are being collected</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
