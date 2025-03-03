@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sampling Parameters &#8212; SGLang</title>
+    <title>Sampling Parameters in SGLang Runtime &#8212; SGLang</title>
   
   
   
@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sampling Parameters</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
@@ -407,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sampling Parameters</h1>
+    <h1>Sampling Parameters in SGLang Runtime</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,12 +417,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-endpoint"><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-params">Sampling params</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalizers">Penalizers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained decoding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-options">Other options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">Normal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom Logit Processor</a></li>
 </ul>
 </li>
@@ -437,70 +436,276 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sampling-parameters">
-<h1>Sampling Parameters<a class="headerlink" href="#sampling-parameters" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sampling-parameters-in-sglang-runtime">
+<h1>Sampling Parameters in SGLang Runtime<a class="headerlink" href="#sampling-parameters-in-sglang-runtime" title="Link to this heading">#</a></h1>
 <p>This doc describes the sampling parameters of the SGLang Runtime.
 It is the low-level endpoint of the runtime.
-If you want a high-level endpoint that can automatically handle chat templates, consider using the <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html">OpenAI Compatible API</a>.</p>
-<section id="generate-endpoint">
-<h2><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint<a class="headerlink" href="#generate-endpoint" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint accepts the following parameters in JSON format. For in detail usage see the <a class="reference external" href="https://docs.sglang.ai/backend/native_api.html">native api doc</a>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">prompt</span></code>: The input prompt. Can be a single prompt or a batch of prompts. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[str],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">input_ids</span></code>: Alternative to <code class="docutils literal notranslate"><span class="pre">text</span></code>. Specify the input as token IDs instead of text. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[List[int]],</span> <span class="pre">List[int]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sampling_params</span></code>: The sampling parameters as described in the sections below.  <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Dict],</span> <span class="pre">Dict]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return_logprob</span></code>: Whether to return log probabilities for tokens. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[bool],</span> <span class="pre">bool]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logprob_start_len</span></code>: If returning log probabilities, specifies the start position in the prompt. Default is “-1” which returns logprobs only for output tokens. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top_logprobs_num</span></code>: If returning log probabilities, specifies the number of top logprobs to return at each position. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stream</span></code>: Whether to stream the output. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lora_path</span></code>: Path to LoRA weights. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">Optional[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">custom_logit_processor</span></code>: Custom logit processor for advanced sampling control. For usage see below. <code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return_hidden_states</span></code>: Whether to return hidden states of the model. Note that each time it changes, the cuda graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">examples</a> for more information. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
-</ul>
+If you want a high-level endpoint that can automatically handle chat templates, consider using the <a class="reference internal" href="openai_api_completions.html"><span class="std std-doc">OpenAI Compatible API</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint accepts the following arguments in the JSON format. You can code examples below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GenerateReqInput</span><span class="p">:</span>
+    <span class="c1"># The input prompt. It can be a single prompt or a batch of prompts.</span>
+    <span class="n">text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The token ids for text; one can specify either text or input_ids</span>
+    <span class="n">input_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The embeddings for input_ids; one can specify either text or input_ids or input_embeds.</span>
+    <span class="n">input_embeds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]],</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The image input. It can be a file name, a url, or base64 encoded string.</span>
+    <span class="c1"># See also python/sglang/srt/utils.py:load_image.</span>
+    <span class="n">image_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The sampling_params. See descriptions below.</span>
+    <span class="n">sampling_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">Dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The request id.</span>
+    <span class="n">rid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># Whether to return logprobs.</span>
+    <span class="n">return_logprob</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># If return logprobs, the start location in the prompt for returning logprobs.</span>
+    <span class="c1"># By default, this value is &quot;-1&quot;, which means it will only return logprobs for output tokens.</span>
+    <span class="n">logprob_start_len</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># If return logprobs, the number of top logprobs to return at each position.</span>
+    <span class="n">top_logprobs_num</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># If return logprobs, the token ids to return logprob for.</span>
+    <span class="n">token_ids_logprob</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># Whether to detokenize tokens in text in the returned logprobs.</span>
+    <span class="n">return_text_in_logprobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Whether to stream output.</span>
+    <span class="n">stream</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># The modalities of the image data [image, multi-images, video]</span>
+    <span class="n">modalities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># LoRA related</span>
+    <span class="n">lora_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Custom logit processor for advanced sampling control. Must be a serialized instance</span>
+    <span class="c1"># of `CustomLogitProcessor` in python/sglang/srt/sampling/custom_logit_processor.py</span>
+    <span class="c1"># Use the processor&#39;s `to_str()` method to generate the serialized string.</span>
+    <span class="n">custom_logit_processor</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Whether to return hidden states</span>
+    <span class="n">return_hidden_states</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sampling_params</span></code> follows this format</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The maximum number of output tokens</span>
+<span class="n">max_new_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+<span class="c1"># Stop when hitting any of the strings in this list</span>
+<span class="n">stop</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="c1"># Stop when hitting any of the token_ids in this list</span>
+<span class="n">stop_token_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[],</span>
+<span class="c1"># Sampling temperature</span>
+<span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="c1"># Top-p sampling</span>
+<span class="n">top_p</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="c1"># Top-k sampling</span>
+<span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="c1"># Min-p sampling</span>
+<span class="n">min_p</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="c1"># Do parallel sampling and return `n` outputs.</span>
+<span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+
+<span class="c1">## Structured Outputs</span>
+<span class="c1"># Only one of the below three can be set for a request.</span>
+
+<span class="c1"># Constrain the output to follow a given JSON schema.</span>
+<span class="n">json_schema</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="c1"># Constrain the output to follow a given regular expression.</span>
+<span class="n">regex</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="c1"># Constrain the output to follow a given EBNF grammar.</span>
+<span class="n">ebnf</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+<span class="c1">## Penalties</span>
+
+<span class="c1"># Float that penalizes new tokens based on their frequency in the generated text so far.</span>
+<span class="c1"># Values &gt; 0 encourage the model to use new tokens, while values &lt; 0 encourage the model to</span>
+<span class="c1"># repeat tokens. Must be -2 &lt;= value &lt;= 2. Setting to 0 (default) will disable this penalty.</span>
+<span class="n">frequency_penalty</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="c1"># Float that penalizes new tokens based on whether they appear in the generated text so far.</span>
+<span class="c1"># Values &gt; 0 encourage the model to use new tokens, while values &lt; 0 encourage the model to repeat</span>
+<span class="c1"># tokens. Must be -2 &lt;= value &lt;= 2. Setting to 0 (default) will disable this penalty.</span>
+<span class="n">presence_penalty</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="c1"># Guides inference to generate at least this number of tokens by penalizing logits of tokenizer&#39;s</span>
+<span class="c1"># EOS token and `stop_token_ids` to -inf, until the output token reaches given length.</span>
+<span class="c1"># Note that any of the `stop` string can be generated before reaching `min_new_tokens`, as it is</span>
+<span class="c1"># difficult to infer the correct token ID by given `stop` strings.</span>
+<span class="c1"># Must be 0 &lt;= value &lt; max_new_tokens. Setting to 0 (default) will disable this penalty.</span>
+<span class="n">min_new_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+
+<span class="c1"># Whether to ignore EOS token</span>
+<span class="n">ignore_eos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="c1"># Whether to skip the special tokens during detokenization</span>
+<span class="n">skip_special_tokens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="c1"># Whether to add spaces between special tokens during detokenization</span>
+<span class="n">spaces_between_special_tokens</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+
+<span class="c1">## Custom Parameters for Custom Logit Processor.</span>
+<span class="c1"># A dictionary of custom parameters for the custom logit processor.</span>
+<span class="c1"># The custom logit processor takes a list of dictionaries as input, where each</span>
+<span class="c1"># dictionary is the custom parameters for one token in a batch of the input.</span>
+<span class="c1"># See also python/sglang/srt/sampling/custom_logit_processor.py</span>
+<span class="n">custom_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</pre></div>
+</div>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="normal">
+<h3>Normal<a class="headerlink" href="#normal" title="Link to this heading">#</a></h3>
+<p>Launch a server</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">port</span> <span class="mi">30000</span>
+</pre></div>
+</div>
+<p>Send a request</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;The capital of France is&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
 </section>
-<section id="sampling-params">
-<h2>Sampling params<a class="headerlink" href="#sampling-params" title="Link to this heading">#</a></h2>
-<section id="core-parameters">
-<h3>Core Parameters<a class="headerlink" href="#core-parameters" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">max_new_tokens</span></code>: The maximum output length measured in tokens. <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">128</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: One or multiple <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-stop">stop words</a>. Generation will stop if one of these words is sampled. <code class="docutils literal notranslate"><span class="pre">Optional[Union[str,</span> <span class="pre">List[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop_token_ids</span></code>: Provide stop words in form of token ids. Generation will stop if one of these token ids is sampled. <code class="docutils literal notranslate"><span class="pre">Optional[List[int]]</span> <span class="pre">=</span> <span class="pre">[]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature</span></code>: <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature">Temperature</a> when sampling the next token. <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0</span></code> corresponds to greedy sampling, higher temperature leads to more diversity. <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top_p</span></code>: <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-top_p">Top-p</a> selects tokens from the smallest sorted set whose cumulative probability exceeds <code class="docutils literal notranslate"><span class="pre">top_p</span></code>. When <code class="docutils literal notranslate"><span class="pre">top_p</span> <span class="pre">=</span> <span class="pre">1</span></code>, this reduces to unrestricted sampling from all tokens. <code class="docutils literal notranslate"><span class="pre">top_p:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top_k</span></code>: <a class="reference external" href="https://developer.nvidia.com/blog/how-to-get-better-outputs-from-your-large-language-model/#predictability_vs_creativity">Top-k</a> randomly selects from the <code class="docutils literal notranslate"><span class="pre">k</span></code> highest-probability tokens. <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">-1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min_p</span></code>: <a class="reference external" href="https://github.com/huggingface/transformers/issues/27670">Min-p</a> samples from tokens with probability larger than <code class="docutils literal notranslate"><span class="pre">min_p</span> <span class="pre">*</span> <span class="pre">highest_token_probability</span></code>. <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code></p></li>
-</ul>
+<section id="streaming">
+<h3>Streaming<a class="headerlink" href="#streaming" title="Link to this heading">#</a></h3>
+<p>Send a request and stream the output</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span><span class="o">,</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;The capital of France is&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_lines</span><span class="p">(</span><span class="n">decode_unicode</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">chunk</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">chunk</span> <span class="ow">and</span> <span class="n">chunk</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;data:&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chunk</span> <span class="o">==</span> <span class="s2">&quot;data: [DONE]&quot;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">chunk</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="n">prev</span><span class="p">:],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="penalizers">
-<h3>Penalizers<a class="headerlink" href="#penalizers" title="Link to this heading">#</a></h3>
-<p>To use penalizers you will need to <code class="docutils literal notranslate"><span class="pre">--disable-overlap</span></code>. Please note that this might degrade performance.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">frequency_penalty</span></code>: Penalizes tokens based on their frequency in generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of penalization grows linearly with each appearance of a token. <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">presence_penalty</span></code>: Penalizes tokens if they appeared in the generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of the penalization is constant if a token occured. <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">repetition_penalty</span></code>: Penalizes tokens if they appeared in prompt or generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where numbers smaller than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourage repeatment of tokens and numbers larger than <code class="docutils literal notranslate"><span class="pre">2</span></code> encourages sampling of new tokens. The penalization scales multiplicatively. <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min_new_tokens</span></code>: Forces the model to generate at least <code class="docutils literal notranslate"><span class="pre">min_new_tokens</span></code> until a stop word or EOS token is sampled. Note that this might lead to unintended behavior for example if the distribution is highly skewed towards these tokens. <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
-</ul>
+<section id="multi-modal">
+<h3>Multi modal<a class="headerlink" href="#multi-modal" title="Link to this heading">#</a></h3>
+<p>Launch a server</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">lmms</span><span class="o">-</span><span class="n">lab</span><span class="o">/</span><span class="n">llava</span><span class="o">-</span><span class="n">onevision</span><span class="o">-</span><span class="n">qwen2</span><span class="o">-</span><span class="mi">7</span><span class="n">b</span><span class="o">-</span><span class="n">ov</span> <span class="o">--</span><span class="n">chat</span><span class="o">-</span><span class="n">template</span> <span class="n">chatml</span><span class="o">-</span><span class="n">llava</span>
+</pre></div>
+</div>
+<p>Download an image</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -o example_image.png -L https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw=true
+</pre></div>
+</div>
+<p>Send a request</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;|im_start|&gt;system</span><span class="se">\n</span><span class="s2">You are a helpful assistant.&lt;|im_end|&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;&lt;|im_start|&gt;user</span><span class="se">\n</span><span class="s2">&lt;image&gt;</span><span class="se">\n</span><span class="s2">Describe this image in a very short sentence.&lt;|im_end|&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;&lt;|im_start|&gt;assistant</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;image_data&quot;</span><span class="p">:</span> <span class="s2">&quot;example_image.png&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">image_data</span></code> can be a file name, a URL, or a base64 encoded string. See also <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/utils.py:load_image</span></code>.
+Streaming is supported in a similar manner as <a class="reference internal" href="#streaming"><span class="std std-ref">above</span></a>.</p>
 </section>
-<section id="constrained-decoding">
-<h3>Constrained decoding<a class="headerlink" href="#constrained-decoding" title="Link to this heading">#</a></h3>
-<p>Please refer to our dedicated guide on <a class="reference external" href="https://docs.sglang.ai/backend/structured_outputs.html#Native-API-and-SGLang-Runtime-(SRT)">constrained decoding</a> for the following parameters.</p>
+<section id="structured-outputs-json-regex-ebnf">
+<h3>Structured Outputs (JSON, Regex, EBNF)<a class="headerlink" href="#structured-outputs-json-regex-ebnf" title="Link to this heading">#</a></h3>
+<p>You can specify a JSON schema, regular expression or <a class="reference external" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to constrain the model output. The model output will be guaranteed to follow the given constraints. Only one constraint parameter (<code class="docutils literal notranslate"><span class="pre">json_schema</span></code>, <code class="docutils literal notranslate"><span class="pre">regex</span></code>, or <code class="docutils literal notranslate"><span class="pre">ebnf</span></code>) can be specified for a request.</p>
+<p>SGLang supports two grammar backends:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">json_schema</span></code>: <code class="docutils literal notranslate"><span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">regex</span></code>: <code class="docutils literal notranslate"><span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ebnf</span></code>: <code class="docutils literal notranslate"><span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and regular expression constraints.</p></li>
+<li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>: Supports JSON schema, regular expression, and EBNF constraints.</p>
+<ul>
+<li><p>XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a></p></li>
 </ul>
-</section>
-<section id="other-options">
-<h3>Other options<a class="headerlink" href="#other-options" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: Specifies the number of output sequences to generate per request. (Generating multiple outputs in one request (n &gt; 1) is discouraged; repeat the same prompts for several times offer better control and efficiency.) <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spaces_between_special_tokens</span></code>: Whether or not to add spaces between special tokens during detokenization. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">no_stop_trim</span></code>: Don’t trim stop words or EOS token from the generated text. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ignore_eos</span></code>: Don’t stop generation when EOS token is sampled. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">skip_special_tokens</span></code>: Remove special tokens during decoding. <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">custom_params</span></code>: Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage see below. <code class="docutils literal notranslate"><span class="pre">Optional[List[Optional[Dict[str,</span> <span class="pre">Any]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></li>
+</li>
 </ul>
+<p>Initialize the XGrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--grammar-backend<span class="w"> </span><span class="o">[</span>xgrammar<span class="p">|</span>outlines<span class="o">]</span><span class="w"> </span><span class="c1"># xgrammar or outlines (default: outlines)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">json_schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;^[</span><span class="se">\\</span><span class="s2">w]+$&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="c1"># JSON (works with both Outlines and XGrammar)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Here is the information of the capital of France in the JSON format.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+            <span class="s2">&quot;json_schema&quot;</span><span class="p">:</span> <span class="n">json_schema</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="c1"># Regular expression (Outlines backend only)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris is the capital of&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+            <span class="s2">&quot;regex&quot;</span><span class="p">:</span> <span class="s2">&quot;(France|England)&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="c1"># EBNF (XGrammar backend only)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;http://localhost:30000/generate&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Write a greeting.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+            <span class="s2">&quot;ebnf&quot;</span><span class="p">:</span> <span class="s1">&#39;root ::= &quot;Hello&quot; | &quot;Hi&quot; | &quot;Hey&quot;&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
 </section>
 <section id="custom-logit-processor">
 <h3>Custom Logit Processor<a class="headerlink" href="#custom-logit-processor" title="Link to this heading">#</a></h3>
@@ -597,12 +802,11 @@ If you want a high-level endpoint that can automatically handle chat templates, 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-endpoint"><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-params">Sampling params</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalizers">Penalizers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained decoding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-options">Other options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">Normal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom Logit Processor</a></li>
 </ul>
 </li>

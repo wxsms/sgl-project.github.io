@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
@@ -437,8 +437,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="install-sglang">
 <h1>Install SGLang<a class="headerlink" href="#install-sglang" title="Link to this heading">#</a></h1>
 <p>You can install SGLang using any of the methods below.</p>
-<p>For running DeepSeek V3/R1, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek V3 Support</a>. It is recommended to use the <a class="reference external" href="https://pypi.org/project/sglang/#history">latest version</a> and deploy it with <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">Docker</a> to avoid environment-related problems.</p>
-<p>We recommend using uv to install the dependencies with a higher installation speed:</p>
+<p>For running DeepSeek V3/R1, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek V3 Support</a>. It is recommended to use the latest version and deploy it with <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">Docker</a> to avoid environment-related issues.</p>
+<p>It is recommended to use uv to install the dependencies for faster installation:</p>
 <section id="method-1-with-pip-or-uv">
 <h2>Method 1: With pip or uv<a class="headerlink" href="#method-1-with-pip-or-uv" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
@@ -446,16 +446,15 @@ pip<span class="w"> </span>install<span class="w"> </span>uv
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.3.post2&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
 </pre></div>
 </div>
-<p><strong>Quick Fixes to Installation</strong></p>
+<p><strong>Quick Fixes to Common Problems</strong></p>
 <ul class="simple">
 <li><p>SGLang currently uses torch 2.5, so you need to install flashinfer for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>. Please note that the FlashInfer pypi package is called <code class="docutils literal notranslate"><span class="pre">flashinfer-python</span></code> instead of <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>.</p></li>
-<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set.</span> <span class="pre">Please</span> <span class="pre">set</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">CUDA</span> <span class="pre">install</span> <span class="pre">root</span></code>, please try either of the following solutions:</p></li>
-</ul>
+<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>. Please set it to your CUDA install root with either of the following solutions:</p>
 <ol class="arabic simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=/usr/local/cuda-&lt;your-cuda-version&gt;</span></code> to set the <code class="docutils literal notranslate"><span class="pre">CUDA_HOME</span></code> environment variable.</p></li>
 <li><p>Install FlashInfer first following <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>, then install SGLang as described above.</p></li>
 </ol>
-<ul class="simple">
+</li>
 <li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">ImportError;</span> <span class="pre">cannot</span> <span class="pre">import</span> <span class="pre">name</span> <span class="pre">'is_valid_list_of_images'</span> <span class="pre">from</span> <span class="pre">'transformers.models.llama.image_processing_llama'</span></code>, try to use the specified version of <code class="docutils literal notranslate"><span class="pre">transformers</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/pyproject.toml">pyproject.toml</a>. Currently, just running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers==4.48.3</span></code>.</p></li>
 </ul>
 </section>

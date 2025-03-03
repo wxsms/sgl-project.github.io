@@ -53,7 +53,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sampling Parameters" href="sampling_params.html" />
+    <link rel="next" title="Sampling Parameters in SGLang Runtime" href="sampling_params.html" />
     <link rel="prev" title="Offline Engine API" href="offline_engine_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
@@ -534,7 +534,7 @@
 <h3>API configuration<a class="headerlink" href="#api-configuration" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">api_key</span></code>: Sets an API key for the server and the OpenAI-compatible API.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">file_storage_pth</span></code>: Directory for storing uploaded or generated files from API calls.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_storage_path</span></code>: Directory for storing uploaded or generated files from API calls.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_cache_report</span></code>: If set, includes detailed usage of cached tokens in the response usage.</p></li>
 </ul>
 </section>
@@ -654,7 +654,6 @@
 <p><em>Note: We recommend to stay with the defaults and only use these options for debugging for best possible performance.</em></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_radix_cache</span></code>: Disable <a class="reference external" href="https://lmsys.org/blog/2024-01-17-sglang/">Radix</a> backend for prefix caching.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">disable_jump_forward</span></code>: Disable <a class="reference external" href="https://lmsys.org/blog/2024-02-05-compressed-fsm/#our-method-jump-forward-decoding-with-a-compressed-finite-state-machine">jump-forward</a> for outlines grammar backend.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph</span></code>: Disable <a class="reference external" href="https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/">cuda graph</a> for model forward. Use if encountering uncorrectable CUDA ECC errors.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph_padding</span></code>: Disable cuda graph when padding is needed. In other case still use cuda graph.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_outlines_disk_cache</span></code>: Disable disk cache for outlines grammar backend.</p></li>
@@ -709,7 +708,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sampling Parameters</p>
+        <p class="prev-next-title">Sampling Parameters in SGLang Runtime</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

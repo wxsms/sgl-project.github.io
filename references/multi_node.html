@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
@@ -503,7 +503,7 @@ srun --ntasks=2 --nodes=2 --output=&quot;SLURM_Logs/%x_%j_node$SLURM_NODEID.out&
     --model-path &quot;$model&quot; \
     --grammar-backend &quot;xgrammar&quot; \
     --tp &quot;$tp_size&quot; \
-    --nccl-init-addr &quot;$NCCL_INIT_ADDR&quot; \
+    --dist-init-addr &quot;$NCCL_INIT_ADDR&quot; \
     --nnodes 2 \
     --node-rank &quot;$SLURM_NODEID&quot; &amp;
 
