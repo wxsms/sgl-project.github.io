@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Mar 03, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 04, 2025"/>
   </head>
   
   
@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
@@ -172,6 +172,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/speculative_decoding.html">Speculative Decoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
 </ul>
@@ -485,7 +486,7 @@
 <span class="w">  </span>--context-length<span class="w"> </span><span class="m">8192</span>
 </pre></div>
 </div>
-<p>The quantization and limited context length (<code class="docutils literal notranslate"><span class="pre">--dtype</span> <span class="pre">half</span> <span class="pre">--context-length</span> <span class="pre">8192</span></code>) are due to the limited computational resources in <a class="reference external" href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/">Nvidia jetson kit</a>. A detailed explanation can be found in <a class="reference external" href="https://docs.sglang.ai/backend/server_arguments.html">Server Arguments</a>.</p>
+<p>The quantization and limited context length (<code class="docutils literal notranslate"><span class="pre">--dtype</span> <span class="pre">half</span> <span class="pre">--context-length</span> <span class="pre">8192</span></code>) are due to the limited computational resources in <a class="reference external" href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/">Nvidia jetson kit</a>. A detailed explanation can be found in <a class="reference internal" href="../backend/server_arguments.html"><span class="std std-doc">Server Arguments</span></a>.</p>
 <p>After launching the engine, refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html#Usage">Chat completions</a> to test the usability.</p>
 </section>
 <hr class="docutils" />
@@ -507,7 +508,7 @@
 <hr class="docutils" />
 <section id="structured-output-with-xgrammar">
 <h2>Structured output with XGrammar<a class="headerlink" href="#structured-output-with-xgrammar" title="Link to this heading">#</a></h2>
-<p>Please refer to <a class="reference external" href="https://docs.sglang.ai/backend/structured_outputs.html">SGLang doc structured output</a>.</p>
+<p>Please refer to <a class="reference internal" href="../backend/structured_outputs.html"><span class="std std-doc">SGLang doc structured output</span></a>.</p>
 <hr class="docutils" />
 <p>Thanks to the support from <a class="reference external" href="https://github.com/shahizat">shahizat</a>.</p>
 </section>
@@ -604,7 +605,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 03, 2025.
+  Last updated on Mar 04, 2025.
   <br/>
 </p>
   </div>

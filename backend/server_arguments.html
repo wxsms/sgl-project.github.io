@@ -53,12 +53,12 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sampling Parameters in SGLang Runtime" href="sampling_params.html" />
+    <link rel="next" title="Sampling Parameters" href="sampling_params.html" />
     <link rel="prev" title="Offline Engine API" href="offline_engine_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Mar 03, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 04, 2025"/>
   </head>
   
   
@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters in SGLang Runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
@@ -172,6 +172,7 @@
 <li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 </ul>
@@ -463,7 +464,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>To enable multi-GPU data parallelism, add <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>. Data parallelism is better for throughput if there is enough memory. It can also be used together with tensor parallelism. The following command uses 4 GPUs in total. We recommend <a class="reference external" href="https://docs.sglang.ai/router/router.html">SGLang Router</a> for data parallelism.</p></li>
+<li><p>To enable multi-GPU data parallelism, add <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>. Data parallelism is better for throughput if there is enough memory. It can also be used together with tensor parallelism. The following command uses 4 GPUs in total. We recommend <a class="reference internal" href="../router/router.html"><span class="std std-doc">SGLang Router</span></a> for data parallelism.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang_router</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">dp</span> <span class="mi">2</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">2</span>
 </pre></div>
@@ -510,8 +511,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">kv_cache_dtype</span></code>: Dtype of the kv cache, defaults to the <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">context_length</span></code>: The number of tokens our model can process <em>including the input</em>. Note that extending the default might lead to strange behavior.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">device</span></code>: The device we put the model, defaults to <code class="docutils literal notranslate"><span class="pre">cuda</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chat_template</span></code>: The chat template to use. Deviating from the default might lead to unexpected responses. For multi-modal chat templates, refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_vision.html#Chat-Template">here</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">is_embedding</span></code>: Set to true to perform <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_embeddings.html">embedding</a> / <a class="reference external" href="https://docs.sglang.ai/backend/native_api.html#Encode-(embedding-model)">encode</a> and <a class="reference external" href="https://docs.sglang.ai/backend/native_api.html#Classify-(reward-model)">reward</a> tasks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chat_template</span></code>: The chat template to use. Deviating from the default might lead to unexpected responses. For multi-modal chat templates, refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_vision.ipynb#Chat-Template">here</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_embedding</span></code>: Set to true to perform <a class="reference internal" href="openai_api_embeddings.html"><span class="std std-doc">embedding</span></a> / <a class="reference external" href="https://docs.sglang.ai/backend/native_api#Encode-(embedding-model)">encode</a> and <a class="reference external" href="https://docs.sglang.ai/backend/native_api#Classify-(reward-model)">reward</a> tasks.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">revision</span></code>: Adjust if a specific version of the model should be used.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">skip_tokenizer_init</span></code>: Set to true to provide the tokens to the engine and get the output tokens directly, typically used in RLHF. Please see this <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/token_in_token_out_llm.py">example for reference</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">json_model_override_args</span></code>: Override model config with the provided JSON.</p></li>
@@ -550,7 +551,7 @@
 <section id="data-parallelism">
 <h3>Data parallelism<a class="headerlink" href="#data-parallelism" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dp_size</span></code>: Will be deprecated. The number of data-parallel copies of the model. <a class="reference external" href="https://docs.sglang.ai/router/router.html">SGLang router</a> is recommended instead of the current naive data parallel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dp_size</span></code>: Will be deprecated. The number of data-parallel copies of the model. <a class="reference internal" href="../router/router.html"><span class="std std-doc">SGLang router</span></a> is recommended instead of the current naive data parallel.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">load_balance_method</span></code>: Will be deprecated. Load balancing strategy for data parallel requests.</p></li>
 </ul>
 </section>
@@ -708,7 +709,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sampling Parameters in SGLang Runtime</p>
+        <p class="prev-next-title">Sampling Parameters</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -786,7 +787,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 03, 2025.
+  Last updated on Mar 04, 2025.
   <br/>
 </p>
   </div>
