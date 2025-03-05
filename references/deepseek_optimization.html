@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contribution Guide &#8212; SGLang</title>
+    <title>DeepSeek Optimizations &#8212; SGLang</title>
   
   
   
@@ -49,12 +49,12 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/contribution_guide';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/deepseek_optimization';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="Supported Models" href="supported_models.html" />
+    <link rel="next" title="Best Practice Ablations" href="deepseek_ablations.html" />
+    <link rel="prev" title="DeepSeek Quick Start" href="deepseek_usage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
@@ -187,16 +187,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Models</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="general.html">General Guidance</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="supported_models.html">Supported Models</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Contribution Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="learn_more.html">Learn more</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="deepseek.html">DeepSeek Models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="deepseek_usage.html">DeepSeek Quick Start</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">DeepSeek Optimizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deepseek_ablations.html">Best Practice Ablations</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance_tuning.html">Performance Tuning</a></li>
@@ -276,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/contribution_guide.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/deepseek_optimization.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +290,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/contribution_guide.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/deepseek_optimization.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +307,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/contribution_guide.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/deepseek_optimization.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +337,7 @@
       
       
       
-      <li><a href="../_sources/references/contribution_guide.md" target="_blank"
+      <li><a href="../_sources/references/deepseek_optimization.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -416,7 +413,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Contribution Guide</h1>
+    <h1>DeepSeek Optimizations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,15 +423,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">Install Dependencies &amp; Build</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">Code Formatting with Pre-Commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">Running Unit Tests &amp; Adding to CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">Writing Documentation &amp; Running Docs CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for Newcomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-head-latent-attention-mla-throughput-optimizations">Multi-head Latent Attention (MLA) Throughput Optimizations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1">Reasoning Content for DeepSeek R1</a></li>
 </ul>
             </nav>
         </div>
@@ -446,49 +439,53 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="contribution-guide">
-<h1>Contribution Guide<a class="headerlink" href="#contribution-guide" title="Link to this heading">#</a></h1>
-<p>Welcome to <strong>SGLang</strong>! We appreciate your interest in contributing. This guide provides a concise overview of how to set up your environment, run tests, build documentation, and open a Pull Request (PR). Whether you’re fixing a small bug or developing a major feature, we encourage following these steps for a smooth contribution process.</p>
-<section id="setting-up-building-from-source">
-<h2>Setting Up &amp; Building from Source<a class="headerlink" href="#setting-up-building-from-source" title="Link to this heading">#</a></h2>
-<section id="fork-and-clone-the-repository">
-<h3>Fork and Clone the Repository<a class="headerlink" href="#fork-and-clone-the-repository" title="Link to this heading">#</a></h3>
-<p><strong>Note</strong>: New contributors do <strong>not</strong> have the write permission to push to the official SGLang repo. Please fork the repository under your GitHub account, then clone your fork locally.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your_user_name&gt;/sglang.git
-</pre></div>
-</div>
-</section>
-<section id="install-dependencies-build">
-<h3>Install Dependencies &amp; Build<a class="headerlink" href="#install-dependencies-build" title="Link to this heading">#</a></h3>
-<p>Refer to <a class="reference external" href="https://docs.sglang.ai/start/install.html#method-2-from-source">Install SGLang from Source</a> documentation for more details on setting up the necessary dependencies.</p>
-</section>
-</section>
-<section id="code-formatting-with-pre-commit">
-<h2>Code Formatting with Pre-Commit<a class="headerlink" href="#code-formatting-with-pre-commit" title="Link to this heading">#</a></h2>
-<p>We use <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to maintain consistent code style checks. Before pushing your changes, please run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>pre-commit
-pre-commit<span class="w"> </span>install
-pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
-</pre></div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="deepseek-optimizations">
+<h1>DeepSeek Optimizations<a class="headerlink" href="#deepseek-optimizations" title="Link to this heading">#</a></h1>
+<section id="multi-head-latent-attention-mla-throughput-optimizations">
+<h2>Multi-head Latent Attention (MLA) Throughput Optimizations<a class="headerlink" href="#multi-head-latent-attention-mla-throughput-optimizations" title="Link to this heading">#</a></h2>
+<p><strong>Description</strong>: <a class="reference external" href="https://arxiv.org/pdf/2405.04434">MLA</a> is an innovative attention mechanism introduced by the DeepSeek team, aimed at improving inference efficiency. SGLang has implemented specific optimizations for this, including:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">run</span> <span class="pre">--all-files</span></code></strong> manually runs all configured checks, applying fixes if possible. If it fails the first time, re-run it to ensure lint errors are fully resolved. Make sure your code passes all checks <strong>before</strong> creating a Pull Request.</p></li>
-<li><p><strong>Do not commit</strong> directly to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Always create a new branch (e.g., <code class="docutils literal notranslate"><span class="pre">feature/my-new-feature</span></code>), push your changes, and open a PR from that branch.</p></li>
+<li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
+<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>. Under long input scenarios, flashinfer mla can improve performance significantly. Optimized triton kernels will be used when flashinfer mla is turned off.</p></li>
+<li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
+<li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
 </ul>
+<p>Overall, with these optimizations, we have achieved up to a 7x acceleration in output throughput compared to the previous version.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
+</p>
+<p><strong>Usage</strong>: MLA optimization is enabled by default, to disable, use <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code>.</p>
+<p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations">Blog</a> and <a class="reference external" href="https://github.com/sgl-project/sgl-learning-materials/blob/main/slides/lmsys_1st_meetup_deepseek_mla.pdf">Slides</a> for more details.</p>
 </section>
-<section id="running-unit-tests-adding-to-ci">
-<h2>Running Unit Tests &amp; Adding to CI<a class="headerlink" href="#running-unit-tests-adding-to-ci" title="Link to this heading">#</a></h2>
-<p>SGLang uses Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> framework. For detailed instructions on running tests and adding them to CI, please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/README.md">test/README.md</a>.</p>
+<section id="data-parallelism-attention">
+<h2>Data Parallelism Attention<a class="headerlink" href="#data-parallelism-attention" title="Link to this heading">#</a></h2>
+<p><strong>Description</strong>: This optimization involves data parallelism (DP) for the MLA attention mechanism of DeepSeek Series Models, which allows for a significant reduction in the KV cache size, enabling larger batch sizes. Each DP worker independently handles different types of batches (prefill, decode, idle), which are then synchronized before and after processing through the Mixture-of-Experts (MoE) layer.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" alt="Data Parallelism Attention for DeepSeek Series Models">
+</p>
+<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_4/deepseek_coder_v2.svg" alt="Data Parallelism Attention Performance Comparison">
+</p>
+<p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Blog</a>.</p>
 </section>
-<section id="writing-documentation-running-docs-ci">
-<h2>Writing Documentation &amp; Running Docs CI<a class="headerlink" href="#writing-documentation-running-docs-ci" title="Link to this heading">#</a></h2>
-<p>We recommend new contributors start from writing documentation, which helps you quickly understand SGLang codebase. For more details, please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docs/README.md">docs/README.md</a>.</p>
+<section id="multi-node-tensor-parallelism">
+<h2>Multi Node Tensor Parallelism<a class="headerlink" href="#multi-node-tensor-parallelism" title="Link to this heading">#</a></h2>
+<p><strong>Description</strong>: For users with limited memory on a single node, SGLang supports serving DeepSeek Series Models, including DeepSeek V3, across multiple nodes using tensor parallelism. This approach partitions the model parameters across multiple GPUs or nodes to handle models that are too large for one node’s memory.</p>
+<p><strong>Usage</strong>: Check <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-2-h208">here</a> for usage examples.</p>
 </section>
-<section id="tips-for-newcomers">
-<h2>Tips for Newcomers<a class="headerlink" href="#tips-for-newcomers" title="Link to this heading">#</a></h2>
-<p>If you want to contribute but don’t have a specific idea in mind, pick issues labeled <a class="reference external" href="https://github.com/sgl-project/sglang/issues?q=is%3Aissue+label%3A%22good+first+issue%22%2C%22help+wanted%22">“good first issue” or “help wanted”</a>. These tasks typically have lower complexity and provide an excellent introduction to the codebase. Also check out this <a class="reference external" href="https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through">code walk-through</a> for a deeper look into SGLang’s workflow.</p>
-<p>If you have any questions or want to start a discussion, please feel free to ask in our <a class="reference external" href="https://join.slack.com/t/sgl-fru7574/shared_invite/zt-2um0ad92q-LkU19KQTxCGzlCgRiOiQEw">Slack channel</a>.</p>
-<p>Thank you for your interest in SGLang. Happy coding!</p>
+<section id="block-wise-fp8">
+<h2>Block-wise FP8<a class="headerlink" href="#block-wise-fp8" title="Link to this heading">#</a></h2>
+<p><strong>Description</strong>: SGLang implements block-wise FP8 quantization with two key optimizations:</p>
+<ul class="simple">
+<li><p><strong>Activation</strong>: E4M3 format using per-token-per-128-channel sub-vector scales with online casting.</p></li>
+<li><p><strong>Weight</strong>: Per-128x128-block quantization for better numerical stability.</p></li>
+</ul>
+<p><strong>Usage</strong>: turn on by default for DeepSeek V3 models.</p>
+</section>
+<section id="reasoning-content-for-deepseek-r1">
+<h2>Reasoning Content for DeepSeek R1<a class="headerlink" href="#reasoning-content-for-deepseek-r1" title="Link to this heading">#</a></h2>
+<p>See <a class="reference external" href="https://docs.sglang.ai/backend/separate_reasoning.html">Separate Reasoning</a>.</p>
 </section>
 </section>
 
@@ -504,20 +501,20 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="supported_models.html"
+       href="deepseek_usage.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Supported Models</p>
+        <p class="prev-next-title">DeepSeek Quick Start</p>
       </div>
     </a>
     <a class="right-next"
-       href="troubleshooting.html"
+       href="deepseek_ablations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Troubleshooting</p>
+        <p class="prev-next-title">Best Practice Ablations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -538,15 +535,11 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-building-from-source">Setting Up &amp; Building from Source</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and Clone the Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-build">Install Dependencies &amp; Build</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting-with-pre-commit">Code Formatting with Pre-Commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-unit-tests-adding-to-ci">Running Unit Tests &amp; Adding to CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-documentation-running-docs-ci">Writing Documentation &amp; Running Docs CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for Newcomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-head-latent-attention-mla-throughput-optimizations">Multi-head Latent Attention (MLA) Throughput Optimizations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1">Reasoning Content for DeepSeek R1</a></li>
 </ul>
   </nav></div>
 

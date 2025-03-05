@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DeepSeek Optimization Ablations &#8212; SGLang</title>
+    <title>Best Practice Ablations &#8212; SGLang</title>
   
   
   
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="General Guidance" href="general.html" />
-    <link rel="prev" title="DeepSeek Usage" href="deepseek.html" />
+    <link rel="prev" title="DeepSeek Optimizations" href="deepseek_optimization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
@@ -187,8 +187,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Optimization Ablations</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="deepseek.html">DeepSeek Models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="deepseek_usage.html">DeepSeek Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deepseek_optimization.html">DeepSeek Optimizations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Best Practice Ablations</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
@@ -409,7 +413,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DeepSeek Optimization Ablations</h1>
+    <h1>Best Practice Ablations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,7 +423,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-of-thumb-overview">Rule of Thumb Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-advice">General Advice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues">Known Issues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-ablations">Optimization Ablations</a><ul class="visible nav section-nav flex-column">
@@ -439,10 +443,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="deepseek-optimization-ablations">
-<h1>DeepSeek Optimization Ablations<a class="headerlink" href="#deepseek-optimization-ablations" title="Link to this heading">#</a></h1>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="best-practice-ablations">
+<h1>Best Practice Ablations<a class="headerlink" href="#best-practice-ablations" title="Link to this heading">#</a></h1>
+<section id="rule-of-thumb-overview">
+<h2>Rule of Thumb Overview<a class="headerlink" href="#rule-of-thumb-overview" title="Link to this heading">#</a></h2>
 <p>We sincerely thanks for the help from <a class="reference external" href="https://github.com/M0gician">M0gician</a> for the massive experiments.</p>
 <p>As of 2024-03-04, SGLang provides the following optimizations for DeepSeek V3/R1 models:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -962,19 +966,19 @@
 </tbody>
 </table>
 </div>
-<ul class="simple">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
+<ol class="arabic simple">
+<li><p>DeepSeek-R1 cannot give the correct output if quantization is used or has precision issues (fixed in <a class="reference external" href="https://github.com/sgl-project/sglang/commit/b110084654a1986f0148901190e2f280c605476f">b110084</a>)</p></li>
+<li><p>TPS&#64;1 (Tokens Per Second for single request) is read directly from SGLang’s logging.</p></li>
+<li><p>CUDA error at graph capture.</p></li>
+<li><p>CUDA out of memory.</p></li>
+<li><p>Requires setting <code class="docutils literal notranslate"><span class="pre">mem-fraction-static=0.7</span></code> to avoid OOM errors.</p></li>
+<li><p>TypeError: object of type ‘NoneType’ has no len().</p></li>
+<li><p>All statistics are collected from the test bench. Token count is calculated using the same tokenizer used in inference.</p></li>
+<li><p>Average Throughput(prefill+decode, token/s) = (total tokens)/(total time).</p></li>
+<li><p>Average Decoding Throughput = (sum of (output tokens/duration) for each successful request)/(number of successful requests).</p></li>
+<li><p>The maximum number of requests to run concurrently at a SGLang backend, controlled by <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
+<li><p>Tested by <a class="reference external" href="https://github.com/sgl-project/sglang/issues/3956#issuecomment-2700514223">Lzhang-Hub</a>.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -991,12 +995,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="deepseek.html"
+       href="deepseek_optimization.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DeepSeek Usage</p>
+        <p class="prev-next-title">DeepSeek Optimizations</p>
       </div>
     </a>
     <a class="right-next"
@@ -1025,7 +1029,7 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-of-thumb-overview">Rule of Thumb Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-advice">General Advice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues">Known Issues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-ablations">Optimization Ablations</a><ul class="visible nav section-nav flex-column">
