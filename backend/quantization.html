@@ -418,7 +418,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
@@ -435,19 +442,57 @@
   <section class="tex2jax_ignore mathjax_ignore" id="quantization">
 <h1>Quantization<a class="headerlink" href="#quantization" title="Link to this heading">#</a></h1>
 <p>SGLang supports various quantization methods, including offline quantization and online dynamic quantization.</p>
-<p>Offline quantization loads pre-quantized model weights directly during inference. This is useful for methods requiring pre-computed stats such as AWQ, which collects activation stats from the pre-training set.</p>
-<p>Online quantization dynamically computes scaling parameters—such as the maximum/minimum values of model weights—during runtime. Like NVIDIA FP8 training’s <a class="reference external" href="https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/examples/fp8_primer.html#Mixed-precision-training-with-FP8">delayed scaling</a> mechanism, online quantization calculates the appropriate scaling factors on-the-fly to convert high-precision weights into a lower-precision format.</p>
-<p><strong>Note that, for better performance, usability and convenience, offline quantization is recommended over online quantization.</strong> And if you use a pre-quantized model, do not add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> to enable online quantization at the same time. For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/collections/neuralmagic">neuralmagic collection</a> for some popular quantized LLMs on huggingface.</p>
+<p>Offline quantization loads pre-quantized model weights directly during inference. This is required for quantization methods
+such as GPTQ and AWQ that collects and pre-compute various stats from the original weights using the calibration dataset.</p>
+<p>Online quantization dynamically computes scaling parameters—such as the maximum/minimum values of model weights—during runtime.
+Like NVIDIA FP8 training’s <a class="reference external" href="https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/examples/fp8_primer.html#Mixed-precision-training-with-FP8">delayed scaling</a> mechanism, online quantization calculates the appropriate scaling factors
+on-the-fly to convert high-precision weights into a lower-precision format.</p>
+<p><strong>Note: For better performance, usability and convenience, offline quantization is recommended over online quantization.</strong></p>
+<p>If you use a pre-quantized model, do not add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> to enable online quantization at the same time.
+For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/collections/ModelCloud/vortex-673743382af0a52b2a8b9fe2">ModelCloud</a> or <a class="reference external" href="https://huggingface.co/collections/neuralmagic">NeuralMagic</a>  collections on HF for some
+popular quality validated quantized models. Quantized models must be validated via benchmarks post-quantization
+to guard against abnormal quantization loss regressions.</p>
 <section id="offline-quantization">
 <h2>Offline Quantization<a class="headerlink" href="#offline-quantization" title="Link to this heading">#</a></h2>
-<p>To load already quantized models, simply load the model weights and config. <strong>Again, if the model has been quantized offline, there’s no need to add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> argument when starting the engine. The quantization method will be parsed from the downloaded Hugging Face config. For example, DeepSeek V3/R1 models are already in FP8, so do not add redundant parameters.</strong></p>
+<p>To load already quantized models, simply load the model weights and config. <strong>Again, if the model has been quantized offline,
+there’s no need to add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> argument when starting the engine. The quantization method will be parsed from the
+downloaded Hugging Face config. For example, DeepSeek V3/R1 models are already in FP8, so do not add redundant parameters.</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model-path<span class="w"> </span>hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
-<p>To do offline quantization for your model, firstly you need to install <a class="reference external" href="https://github.com/vllm-project/llm-compressor/">llm-compressor</a> library:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
+<section id="examples-of-offline-model-quantization">
+<h3>Examples of Offline Model Quantization<a class="headerlink" href="#examples-of-offline-model-quantization" title="Link to this heading">#</a></h3>
+<section id="using-gptqmodel">
+<h4>Using <a class="reference external" href="https://github.com/ModelCloud/GPTQModel">GPTQModel</a><a class="headerlink" href="#using-gptqmodel" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
+pip<span class="w"> </span>install<span class="w"> </span>gptqmodel<span class="w"> </span>--no-build-isolation<span class="w"> </span>-v
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gptqmodel</span><span class="w"> </span><span class="kn">import</span> <span class="n">GPTQModel</span><span class="p">,</span> <span class="n">QuantizeConfig</span>
+
+<span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.2-1B-Instruct&quot;</span>
+<span class="n">quant_path</span> <span class="o">=</span> <span class="s2">&quot;Llama-3.2-1B-Instruct-gptqmodel-4bit&quot;</span>
+
+<span class="n">calibration_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;allenai/c4&quot;</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="s2">&quot;en/c4-train.00001-of-01024.json.gz&quot;</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span>
+  <span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1024</span><span class="p">))[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+
+<span class="n">quant_config</span> <span class="o">=</span> <span class="n">QuantizeConfig</span><span class="p">(</span><span class="n">bits</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">group_size</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span> <span class="c1"># quantization config</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">GPTQModel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">quant_config</span><span class="p">)</span> <span class="c1"># load model</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">quantize</span><span class="p">(</span><span class="n">calibration_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># quantize</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">quant_path</span><span class="p">)</span> <span class="c1"># save model</span>
+</pre></div>
+</div>
+</section>
+<section id="using-llm-compressor">
+<h4>Using <a class="reference external" href="https://github.com/vllm-project/llm-compressor/">LLM Compressor</a><a class="headerlink" href="#using-llm-compressor" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
+pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
 </pre></div>
 </div>
 <p>Here, we take quantize <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3-8B-Instruct</span></code> to <code class="docutils literal notranslate"><span class="pre">FP8</span></code> as an example to elaborate on how to do offline quantization.</p>
@@ -484,6 +529,8 @@
 </pre></div>
 </div>
 </section>
+</section>
+</section>
 <section id="online-quantization">
 <h2>Online Quantization<a class="headerlink" href="#online-quantization" title="Link to this heading">#</a></h2>
 <p>To enable online quantization, you can simply specify <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> in the command line. For example, you can launch the server with the following command to enable <code class="docutils literal notranslate"><span class="pre">FP8</span></code> quantization for model <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span></code>:</p>
@@ -514,9 +561,10 @@
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.vllm.ai/en/latest/quantization/fp8.html">quantization document of vllm</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pytorch/ao">torchao</a></p></li>
-<li><p><a class="reference external" href="https://github.com/vllm-project/llm-compressor/">llm-compressor</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ModelCloud/GPTQModel">GPTQModel</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vllm-project/llm-compressor/">LLM Compressor</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/ao">Torchao: PyTorch Architecture Optimization</a></p></li>
+<li><p><a class="reference external" href="https://docs.vllm.ai/en/latest/quantization/">vLLM Quantization</a></p></li>
 </ul>
 </section>
 </section>
@@ -567,7 +615,14 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
