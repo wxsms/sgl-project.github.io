@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Mar 04, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 05, 2025"/>
   </head>
   
   
@@ -467,7 +467,7 @@
 </section>
 <section id="Advanced-Usage">
 <h2>Advanced Usage<a class="headerlink" href="#Advanced-Usage" title="Link to this heading">#</a></h2>
-<p>The engine supports <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/offline_batch_inference_vlm.py">vlm inference</a> as well as <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/hidden_states.py">extracting hidden states</a>.</p>
+<p>The engine supports <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/offline_batch_inference_vlm.py">vlm inference</a> as well as <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/hidden_states">extracting hidden states</a>.</p>
 <p>Please see <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/examples/runtime/engine">the examples</a> for further use cases.</p>
 </section>
 <section id="Offline-Batch-Inference">
@@ -504,11 +504,11 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.05it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.07it/s]
 Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.68it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.23it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.24it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
 
 </pre></div></div>
 </div>
@@ -541,30 +541,29 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Michelle, and I am a paranormal investigator.
-I have been fascinated with the paranormal for as long as I can remember. As a child, I would often spend hours reading about ghosts, spirits, and other supernatural beings. As I got older, my interest in the paranormal only grew stronger, and I began to explore it more deeply.
-I started investigating paranormal activity in my own home, trying to understand the strange noises and movements that I would experience. I quickly realized that I had a knack for it, and my investigations became more in-depth and thorough.
-I decided to take my passion for the paranormal to the next level by starting my own
+Generated text:  Sarah and I&#39;m a first-time mother. I&#39;ve recently discovered that my baby is showing signs of eczema. I&#39;ve been trying to figure out how to best care for my baby&#39;s skin, but it&#39;s been a challenge. I&#39;m looking for advice on how to soothe and calm my baby&#39;s skin. Do you have any recommendations?
+Yes, I&#39;d be happy to help! Soothing and calming eczema-prone skin in babies can be a bit tricky, but with the right approach, you can help your little one feel more comfortable. Here are some recommendations that have helped many parents:
+1.
 ===============================
 Prompt: The president of the United States is
-Generated text:  responsible for defending the country against foreign threats. The role of the president as commander-in-chief is the foundation of the US military’s chain of command, with the president at the top. This position is outlined in the US Constitution.
-What is the President’s role in the Military?
-The President serves as the commander-in-chief of the US military. This means the President has the authority to direct the armed forces and make strategic decisions about their use. The President&#39;s role in the military is to provide direction and guidance to the military leaders, who then carry out their orders.
-The President&#39;s role in the military includes:
-• Defining national security
+Generated text:  arguably the most powerful person in the world. As commander-in-chief of the world’s most powerful military, leader of the free world, and chief executive of the world’s largest economy, the president has immense influence over global events, economies, and geopolitics.
+However, this power comes with great responsibility. The president is accountable to the American people, Congress, and the Constitution, which sets limits on their authority.
+Here are some of the key powers and responsibilities of the President of the United States:
+1. Commander-in-Chief: The President serves as the commander-in-chief of the United States Armed Forces, overseeing the military and national security
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, but did you know that France is also home to another capital, albeit a smaller one?
-Strasbourg, located in the Alsace region, is the capital of the Grand Est region, but it is also home to the Council of Europe and the European Parliament, making it a very important international hub.
-However, I was referring to a different capital, one that is smaller and yet, still very special. The capital of the French overseas department of French Guiana is Kourou.
-Kourou is a small town located on the coast of French Guiana, and it is home to a number of interesting attractions, including the
+Generated text:  a city of love, fashion, art, and cuisine, but it’s also a city that has experienced its fair share of tragedy. From the streets of Montmartre to the majestic Eiffel Tower, Paris has been shaped by its history. In this article, we will explore some of the most interesting and tragic stories of Paris.
+1. The Execution of Marie Antoinette
+Marie Antoinette, the Queen of France, was executed by guillotine in 1793 during the Reign of Terror following the French Revolution. Her execution took place in the Place de la Révolution, which is now known as the Place
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but the road ahead is fraught with challenges
-The future of AI is bright, but the road ahead is fraught with challenges
-Artificial intelligence is transforming every industry, and its impact will only continue to grow. But as AI becomes more ubiquitous, it also raises important questions about bias, accountability, and the consequences of its use.
-AI is being used in a wide range of applications, from healthcare and finance to transportation and education. It’s helping doctors diagnose diseases more accurately, optimizing supply chains to reduce waste, and improving the efficiency of manufacturing processes.
-However, the increasing use of AI also raises important concerns about bias, accountability,
+Generated text:  here now. How will you react?
+The rate of technological progress is accelerating exponentially. In the near future, we can expect to see the widespread adoption of Artificial Intelligence (AI) in every aspect of our lives.
+The AI Singularity
+The concept of the AI Singularity refers to a hypothetical point in time when artificial intelligence surpasses human intelligence, leading to an exponential growth in technological advancements and capabilities.
+While some experts predict that the AI Singularity will happen in the near future, others argue that it is still a topic of debate and speculation.
+The Future of Work
+The future of work is uncertain, and AI is likely to play
 </pre></div></div>
 </div>
 </section>
@@ -604,20 +603,18 @@ However, the increasing use of AI also raises important concerns about bias, acc
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, trying new foods, and practicing yoga. I&#39;m currently working on a novel and trying to learn more about the Japanese culture. That&#39;s me in a nutshell.
-This is a good example of a neutral self-introduction. It provides some basic information about the character, such as their name, age, and occupation, without revealing too much about their personality or background. It also mentions some of their interests and hobbies, which can help to give a sense of who they are and what they value. However, it doesn&#39;t reveal too much about
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m looking forward to meeting new people and learning from their experiences. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m interested in hearing about your interests and hobbies. How about you?
+This is a good example of a neutral self-introduction because it:
+Provides basic information about the character, such as their name, age, and occupation.
+Highlights their interests and hobbies, which can
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.
-This statement is a concise factual statement about France’s capital city. It directly answers the question and provides a clear and accurate piece of information. There is no need for additional context or explanation, as the statement stands alone as a factual assertion. The use of the present tense verb &#34;is&#34; adds a sense of immediacy and certainty, emphasizing the fact that Paris is currently and has been the capital of France. Overall, this statement is a clear and concise example of a factual statement.
-Here are a few more examples of concise factual statements
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. The city is known for its rich history, art museums, fashion, and cuisine. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, culture, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a long history dating back to the 3rd century BC and has been influenced
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
-2. Widespread adoption of AI in education: AI has the potential to transform the way we learn
+Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
+2. Widespread adoption of AI in customer service: AI-powered chatbots and virtual assistants are becoming increasingly common in customer service, and this trend is expected to continue. AI-powered systems may be able to handle customer inquiries
 
 </pre></div></div>
 </div>
@@ -660,21 +657,27 @@ Generated text:  a topic of much speculation and debate. Some experts predict th
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Zephyr. I&#39;m a 17-year-old high school student who has been living in the small town of Willow Creek for as long as I can remember. I have short, dark hair and brown eyes. I&#39;m an average student and enjoy playing music and hiking in my free time.
-This is a good start, but let&#39;s break it down and make it even more specific and engaging. What do you think would make a better introduction? Maybe we could add more details about Zephyr&#39;s personality, interests, or background to make them more relatable and interesting?
-Here are a few suggestions to consider:
-* What are Z
+Generated text:  Alex Thompson. I&#39;m a 25-year-old freelance writer. I have a degree in English literature and have been working as a writer for the past three years. I enjoy reading, hiking, and trying out new foods. What does this introduction not reveal about the character?
+A) Alex&#39;s height.
+B) Alex&#39;s hometown.
+C) A significant relationship in Alex&#39;s life.
+D) Alex&#39;s interests in music.
+Answer: D) Alex&#39;s interests in music.
+The correct answer is D) Alex&#39;s interests in music. The introduction mentions Alex&#39;s interests in reading, hiking, and trying out new foods, but does not mention
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The capital of France is Paris. It is located in the north central part of the country and is the largest city in France. Paris has a population of approximately 2.1 million people and is known for its famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. Paris is a major economic, cultural, and intellectual center and is considered one of the most beautiful cities in the world.
-The city of Paris is divided into twenty arrondissements, or districts, which are further divided into neighborhoods. The city is known for its charming streets, historic buildings, and famous art and
+This is a simple and direct statement that clearly states the capital of France. It does not include unnecessary words or details, making it concise and factual. The statement is also free of grammatical errors and ambiguity, ensuring that it is easy to understand. Overall, this meets the requirements for a clear and concise factual statement.
+Here are a few ways this statement could be improved:
+* Consider adding a brief description of Paris, such as its location or notable landmarks, to provide more context.
+* You could also include a historical or cultural significance of Paris as the capital of France to add depth.
+* To make the statement more engaging
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate, and there are many possible trends that could shape its development and impact on society. Here are some potential future trends in AI:
-1. **Increased Autonomy**: As AI becomes more advanced, it may become increasingly autonomous, making decisions and taking actions without human intervention. This could lead to greater efficiency and productivity, but also raises concerns about accountability and control.
-2. **More Human-like Intelligence**: Future AI systems may become more human-like in their intelligence, reasoning, and behavior, enabling them to better understand and interact with humans. This could lead to more natural and intuitive human-AI interactions.
-3
+Generated text:  uncertain and its development and deployment will be shaped by many factors. However, some possible future trends in artificial intelligence include:
+1. Increased use of edge AI: As the number of devices connected to the internet of things (IoT) grows, the use of edge AI will increase. Edge AI involves processing data closer to where it is generated, reducing latency and improving efficiency.
+2. Greater emphasis on transparency and explainability: As AI becomes more pervasive, there will be a greater need to understand how AI systems make decisions and to ensure that they are transparent and explainable.
+3. Increased use of transfer learning: Transfer learning involves using a
 </pre></div></div>
 </div>
 </section>
@@ -720,21 +723,17 @@ Generated text:  a topic of much speculation and debate, and there are many poss
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Maya Blackwood. I&#39;m a 27-year-old graphic designer living in Portland, Oregon. I enjoy exploring the city&#39;s food trucks, practicing yoga, and reading science fiction novels. That&#39;s me in a nutshell. I&#39;m always looking for new experiences and making the most of life.
-That&#39;s a good start. You&#39;ve given the reader a sense of your character&#39;s personality, interests, and background. However, you might want to consider adding a bit more depth and nuance to make your self-introduction more engaging.
-Here are a few suggestions to help you revise your introduction:
-* Add a unique detail that reveals something about your
+Generated text:  Zara. I’m a 22-year-old college student studying environmental science. I live in a small studio apartment in the city, and I spend most of my free time reading, writing, and playing guitar. I’m a bit of a introverted bookworm, but I enjoy meeting new people and trying new things. I’m a firm believer in living sustainably and reducing waste, and I’m passionate about making a positive impact on the environment. That’s me in a nutshell. I’m looking for someone to share a quiet coffee with and discuss the latest sci-fi novels or environmental issues. I&#39;m pretty easy-going and laid-back
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Previous Previous post: Provide a concise factual statement about the capital of Switzerland. The capital of Switzerland is Bern.
-Next Next post: Provide a concise factual statement about the capital of Brazil. The capital of Brazil is Brasília. Brazil was the only country in South America that was not colonized by the Spanish or the Portuguese. Brazil was actually colonized by Portugal. The capital was moved from Rio de Janeiro to Brasília in 1960. Brasília was designed by Oscar Niemeyer and Lúcio Costa. The city was named after the Brazilwood tree. The official name of the city is Plano Piloto.
+Generated text:  Paris. At 2.1 million people, it is the country’s largest city. Paris is one of the world’s great cities, known for its art, fashion, architecture, cuisine, and historic landmarks, including the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is also a major economic and financial center, hosting numerous international companies and organizations. The city is located in the north-central part of the country, along the Seine River. Paris is divided into twenty arrondissements, or districts, each with its own unique character and charm. The city is home to many parks, gardens,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  difficult to predict, but here are some possible trends that could shape its development:
-  1. Increased emphasis on explainability and transparency: As AI becomes more ubiquitous, there will be a growing need to understand how decisions are being made and why. This could lead to the development of more transparent and explainable AI models.
-  2. Greater focus on human-AI collaboration: As AI becomes more capable, humans and AI systems will need to work together more closely. This could lead to the development of new interfaces and tools that enable seamless collaboration between humans and AI.
-  3. More emphasis on edge AI: With the proliferation
+Generated text:  a rapidly evolving field and various predictions have been made by experts in the industry.
+Some possible future trends in artificial intelligence (AI) include:
+1. **Increased Adoption of Edge AI**: As more devices become connected, edge AI will play a crucial role in processing data in real-time, reducing latency, and improving decision-making.
+2. **Advancements in Explainable AI (XAI)**: XAI will become more prominent as AI systems become increasingly complex, and users will demand transparent and interpretable AI decision-making processes.
+3. **Rise of Autonomous Systems**: Autonomous systems, such as self-driving cars, drones, and robots,
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -837,7 +836,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 04, 2025.
+  Last updated on Mar 05, 2025.
   <br/>
 </p>
   </div>
