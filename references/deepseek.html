@@ -53,7 +53,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="General Guidance" href="general.html" />
+    <link rel="next" title="DeepSeek Optimization Ablations" href="deepseek_ablations.html" />
     <link rel="prev" title="Router for Data Parallelism" href="../router/router.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,6 +188,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek_ablations.html">DeepSeek Optimization Ablations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
@@ -552,7 +553,7 @@
 <p><strong>Description</strong>: <a class="reference external" href="https://arxiv.org/pdf/2405.04434">MLA</a> is an innovative attention mechanism introduced by the DeepSeek team, aimed at improving inference efficiency. SGLang has implemented specific optimizations for this, including:</p>
 <ul class="simple">
 <li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
-<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>. (In Experiment Stage)</p></li>
+<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>. Under long input scenarios, flashinfer mla can improve performance significantly. Optimized triton kernels will be used when flashinfer mla is turned off.</p></li>
 <li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
 <li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
 </ul>
@@ -625,11 +626,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="general.html"
+       href="deepseek_ablations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">General Guidance</p>
+        <p class="prev-next-title">DeepSeek Optimization Ablations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

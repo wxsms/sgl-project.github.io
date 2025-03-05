@@ -1,0 +1,1094 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DeepSeek Optimization Ablations &#8212; SGLang</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=227fe9a0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ccdb6887"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/deepseek_ablations';</script>
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="General Guidance" href="general.html" />
+    <link rel="prev" title="DeepSeek Usage" href="deepseek.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.3.post2" />
+    <meta name="docbuild:last-update" content="Mar 05, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="SGLang - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="SGLang - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../start/install.html">Install SGLang</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../backend/send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../backend/speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontend/frontend.html">SGLang Frontend Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/choices_methods.html">Choices Methods in SGLang</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Optimization Ablations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_tuning.html">Performance Tuning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/deepseek_ablations.md?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/deepseek_ablations.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/deepseek_ablations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/references/deepseek_ablations.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>DeepSeek Optimization Ablations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-advice">General Advice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues">Known Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-ablations">Optimization Ablations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-environment">Test Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-query-performance">Single Query Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-batch-performance">Offline Batch Performance</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="deepseek-optimization-ablations">
+<h1>DeepSeek Optimization Ablations<a class="headerlink" href="#deepseek-optimization-ablations" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>We sincerely thanks for the help from <a class="reference external" href="https://github.com/M0gician">M0gician</a> for the massive experiments.</p>
+<p>As of 2024-03-04, SGLang provides the following optimizations for DeepSeek V3/R1 models:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Enabled by Default</p></th>
+<th class="head"><p>Enable/Disable Argument</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MLA Optimization</p></td>
+<td><p>SGLang custom tailored optimizations, including<br>  - <em>Weight Absorption</em>,<br>- <em>Flashinfer MLA Wrapper</em>,<br> - <em>FP8 Quantization</em>,<br> - <em>CUDA Graph &amp; Torch.compile suuport</em></p></td>
+<td><p>✅</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CUDA Graph</p></td>
+<td><p>Capturing and replaying entire sequences of GPU operations as a single graph, thereby reducing kernel launch overhead and synchronization delays</p></td>
+<td><p>✅</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Torch Compile</p></td>
+<td><p>Dynamically converting PyTorch models into optimized execution graphs, reducing runtime overhead and enhancing GPU performance</p></td>
+<td><p>❌</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Radix Cache</p></td>
+<td><p>Organizes the KV cache in a radix tree, enabling automatic detection and reuse of shared prompt prefixes across multiple generation calls, thereby reducing redundant computations</p></td>
+<td><p>✅</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--disable-radix-cache</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Flashinfer MLA</p></td>
+<td><p>Multi-latent Attention implemented by Flashinfer that replaces the default Triton backend</p></td>
+<td><p>❌</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Speculative Decoding (<code class="docutils literal notranslate"><span class="pre">Next-N</span></code>)</p></td>
+<td><p>Dynamically generating a context-aware draft token tree with a smaller, well-calibrated model and then verifying these tokens in parallel with the original LLM, thereby reducing expensive forward passes while preserving output quality.</p></td>
+<td><p>❌</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>,<br> <code class="docutils literal notranslate"><span class="pre">--speculative-draft</span></code>,<br> <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>,<br> <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>,<br> <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Tensor Parallelism (<code class="docutils literal notranslate"><span class="pre">tp</span></code>)</p></td>
+<td><p>Splitting the heavy tensor operations—such as the matrix multiplications in self-attention and feedforward layers—across multiple GPUs, thereby lowering the per-device memory burden and enabling simultaneous computation for reduced latency</p></td>
+<td><p>✅ (=1)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Expert Parallelism (<code class="docutils literal notranslate"><span class="pre">EP-MoE</span></code>)</p></td>
+<td><p>Distributing the computation of different expert subnetworks across multiple devices, thereby reducing memory constraints and communication overhead while enabling simultaneous, efficient processing of input tokens.</p></td>
+<td><p>❌</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--enable-ep-moe</span></code>,<br> <code class="docutils literal notranslate"><span class="pre">--ep-size</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Data Parallelism Attention (<code class="docutils literal notranslate"><span class="pre">DP-Attention</span></code>)</p></td>
+<td><p>Partitioning the MLA attention across DP workers—each handling independent prefill, decode, and idle batches—to significantly reduce per-worker KV cache size and enable larger, more efficient batch processing</p></td>
+<td><p>❌</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="general-advice">
+<h2>General Advice<a class="headerlink" href="#general-advice" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Speculative Decoding is great for small concurrency (less than 32), but its performance degrades quickly as the concurrency increases.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CUDA</span> <span class="pre">Graph</span></code> boosts inference performance significantly, at the cost of increased memory usage. Sometimes it’s a good trade-off to disable <code class="docutils literal notranslate"><span class="pre">CUDA</span> <span class="pre">Graph</span></code> to further increase concurrency to get better throughput.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DP-Attention</span></code> is a must for large concurrency (greater than 256), but it hurts per-request decoding speed.</p></li>
+</ul>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Speculative Decoding is not compatible with:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Flashinfer-mla</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Radix</span> <span class="pre">Cache</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DP-Attention</span></code></p></li>
+<li><p>Both <code class="docutils literal notranslate"><span class="pre">CUDA</span> <span class="pre">Graph</span></code> and <code class="docutils literal notranslate"><span class="pre">Torch</span> <span class="pre">Compile</span></code> enabled simultaneously</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EP-MoE</span></code> is not supported with both <code class="docutils literal notranslate"><span class="pre">CUDA</span> <span class="pre">Graph</span></code> and <code class="docutils literal notranslate"><span class="pre">Torch</span> <span class="pre">Compile</span></code> enabled</p></li>
+<li><p>To run <code class="docutils literal notranslate"><span class="pre">DP-Attention</span></code> with large concurrency, you must first run a warmup phase with small concurrency (e.g. <code class="docutils literal notranslate"><span class="pre">bs=16</span></code>, <code class="docutils literal notranslate"><span class="pre">total</span> <span class="pre">req=32</span></code>) to avoid CUDA out of memory error.</p></li>
+</ul>
+</section>
+<section id="optimization-ablations">
+<h2>Optimization Ablations<a class="headerlink" href="#optimization-ablations" title="Link to this heading">#</a></h2>
+<section id="test-environment">
+<h3>Test Environment<a class="headerlink" href="#test-environment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>SGLang version: 0.4.3.post2&#64;<a class="reference external" href="https://github.com/sgl-project/sglang/commit/110e0066735a3bd431c2640ae168fc040d7c0806">110e006</a></p></li>
+<li><p>Flashinfer version: 0.2.2.post1</p></li>
+<li><p>Hardware: 2 nodes of H20 (AMD EPYC 9K84 * 2, 2.20 TiB memory, 8 * H20 96GiB each)</p></li>
+<li><p>Model: DeepSeek-R1</p></li>
+<li><p>Model Max Length: 3200 (modified in both model and NextN’s <code class="docutils literal notranslate"><span class="pre">tokenizer_config.json</span></code>)</p></li>
+<li><p>CUDA Version: 12.2</p></li>
+<li><p>Operating System: Rocky Linux release 9.2 (Blue Onyx)</p></li>
+</ul>
+</section>
+<section id="single-query-performance">
+<h3>Single Query Performance<a class="headerlink" href="#single-query-performance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Test query: <code class="docutils literal notranslate"><span class="pre">一个汉字具有左右结构，左边是木，右边是乞。这个字是什么？只需回答这个字即可。</span></code></p></li>
+<li><p>Expected output: <code class="docutils literal notranslate"><span class="pre">杚</span></code>[1]</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Runnable</p></th>
+<th class="head"><p>TPS&#64;1[2]</p></th>
+<th class="head"><p>Torch Compile</p></th>
+<th class="head"><p>Cuda Graph</p></th>
+<th class="head"><p>Radix Cache</p></th>
+<th class="head"><p>Flashinfer-mla</p></th>
+<th class="head"><p>Next-N</p></th>
+<th class="head"><p>EP-MoE</p></th>
+<th class="head"><p>DP-Attention</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>37.0[11]</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>33.6</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>19.1</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌ [3]</p></td>
+<td><p>N/A</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>❌ [3]</p></td>
+<td><p>N/A</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>6.5</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>24.4</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>23.6</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>13.0</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌ [4] <br> ✅ [5]</p></td>
+<td><p>41.0</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-even"><td><p>❌ [3]</p></td>
+<td><p>N/A</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅ [5]</p></td>
+<td><p>16.0</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>❌ [3]</p></td>
+<td><p>N/A</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅ [5]</p></td>
+<td><p>15.8</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>❌ [3]</p></td>
+<td><p>N/A</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌ [6]</p></td>
+<td><p>N/A</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="offline-batch-performance">
+<h3>Offline Batch Performance<a class="headerlink" href="#offline-batch-performance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Test bench: ThreadPool with AsyncOpenAI client</p></li>
+<li><p>Avg input length = 760 tokens</p></li>
+<li><p>Avg output length = 460 tokens</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Runnable</p></th>
+<th class="head"><p>Torch Compile</p></th>
+<th class="head"><p>Cuda Graph</p></th>
+<th class="head"><p>Radix Cache</p></th>
+<th class="head"><p>Flashinfer-mla</p></th>
+<th class="head"><p>Next-N</p></th>
+<th class="head"><p>EP-MoE</p></th>
+<th class="head"><p>DP-Attn</p></th>
+<th class="head"><p>Client Concurrency [7]</p></th>
+<th class="head"><p>Avg Throughput<br><sub><sup>(p+d, token/s)</sup></sub> [8]</p></th>
+<th class="head"><p>Per-req Throughput<br><sub><sup>(d, token/s)</sup></sub> [9]</p></th>
+<th class="head"><p>Total Req</p></th>
+<th class="head"><p>Max-running-req [10]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>768</p></td>
+<td><p>3909.04</p></td>
+<td><p>3.28</p></td>
+<td><p>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>16<br>512<br>768</p></td>
+<td><p>306.18<br>4329.32<br>5457.14</p></td>
+<td><p>12.96<br>5.69<br>5.38</p></td>
+<td><p>32<br>1024<br>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>❌[3]</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌[3]</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>768</p></td>
+<td><p>2100.85</p></td>
+<td><p>2.79</p></td>
+<td><p>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>256<br>512<br>768</p></td>
+<td><p>2134.99<br>3842.52<br>3453.49</p></td>
+<td><p>5.16<br>4.05<br>3.15</p></td>
+<td><p>512<br>1024<br>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>256<br>512<br>768</p></td>
+<td><p>2220.56<br>3583.08<br>3556.76</p></td>
+<td><p>5.12<br>4.07<br>3.52</p></td>
+<td><p>512<br>1024<br>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>✅[5]</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>16<br>32</p></td>
+<td><p>732.22<br>1227.72</p></td>
+<td><p>19.93<br>15.14</p></td>
+<td><p>256</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌[3]</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>✅[5]</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>16<br>128<br>256<br>512<br>768</p></td>
+<td><p>862.10<br>1598.17<br>2664.40<br>4098.18<br>❌[4]</p></td>
+<td><p>9.20<br>8.22<br>6.70<br>5.48<br>❌[4]</p></td>
+<td><p>128<br>256<br>512<br>1024<br>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌[3]</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>✅[5]</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>16<br>512<br>768</p></td>
+<td><p>406.29<br>3633.20<br>❌[4]</p></td>
+<td><p>12.29<br>5.74<br>❌[4]</p></td>
+<td><p>32<br>1024<br>1024</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌[3]</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+<tr class="row-even"><td><p>❌[6]</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>➖</p></td>
+<td><p>✅</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>768</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="deepseek.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DeepSeek Usage</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="general.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">General Guidance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-advice">General Advice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues">Known Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-ablations">Optimization Ablations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-environment">Test Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-query-performance">Single Query Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-batch-performance">Offline Batch Performance</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SGLang Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023-2025, SGLang.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Mar 05, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
