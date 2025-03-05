@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DeepSeek Models &#8212; SGLang</title>
+    <title>DeepSeek Usage &#8212; SGLang</title>
   
   
   
@@ -53,7 +53,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="DeepSeek Quick Start" href="deepseek_usage.html" />
+    <link rel="next" title="General Guidance" href="general.html" />
     <link rel="prev" title="Router for Data Parallelism" href="../router/router.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,12 +187,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">DeepSeek Models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="deepseek_usage.html">DeepSeek Quick Start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deepseek_optimization.html">DeepSeek Optimizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deepseek_ablations.html">Best Practice Ablations</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
@@ -273,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/deepseek.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/deepseek.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +285,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/deepseek.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/deepseek.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +332,7 @@
       
       
       
-      <li><a href="../_sources/references/deepseek.rst" target="_blank"
+      <li><a href="../_sources/references/deepseek.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +342,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -400,7 +395,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -411,11 +408,34 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DeepSeek Models</h1>
+    <h1>DeepSeek Usage</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-deepseek-v3-with-sglang">Launch DeepSeek V3 with SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-weights">Download Weights</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caching-torch-compile">Caching <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-with-one-node-of-8-h200">Launch with One node of 8 H200</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-on-multi-node">Running examples on Multi-node</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizations">Optimizations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-head-latent-attention-mla-throughput-optimizations">Multi-head Latent Attention (MLA) Throughput Optimizations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1">Reasoning Content for DeepSeek R1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -425,15 +445,163 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="deepseek-models">
-<h1>DeepSeek Models<a class="headerlink" href="#deepseek-models" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="deepseek_usage.html">DeepSeek Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepseek_optimization.html">DeepSeek Optimizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepseek_ablations.html">Best Practice Ablations</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="deepseek-usage">
+<h1>DeepSeek Usage<a class="headerlink" href="#deepseek-usage" title="Link to this heading">#</a></h1>
+<p>SGLang provides several optimizations specifically designed for the DeepSeek model to boost its inference speed. This document outlines current optimizations for DeepSeek. Additionally, the SGLang team is actively developing enhancements for <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2591">DeepSeek V3</a>.</p>
+<section id="launch-deepseek-v3-with-sglang">
+<h2>Launch DeepSeek V3 with SGLang<a class="headerlink" href="#launch-deepseek-v3-with-sglang" title="Link to this heading">#</a></h2>
+<p>SGLang is recognized as one of the top engines for <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3">DeepSeek model inference</a>. To run DeepSeek V3/R1 models, the requirements are as follows:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Weight Type</p></th>
+<th class="head"><p>Configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Full precision FP8</strong><br><em>(recommended)</em></p></td>
+<td><p>8 x H200</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>8 x MI300X</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>2 x 8 x H100/800/20</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Full precision BF16</strong></p></td>
+<td><p>2 x 8 x H200</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>2 x 8 x MI300X</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>4 x 8 x H100/800/20</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>4 x 8 x A100/A800</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Quantized weights (AWQ)</strong></p></td>
+<td><p>8 x H100/800/20</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>8 x A100/A800</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<style>
+.md-typeset__table {
+  width: 100%;
+}
+
+.md-typeset__table table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  border: 2px solid var(--md-typeset-table-color);
+  table-layout: fixed;
+}
+
+.md-typeset__table th {
+  border: 1px solid var(--md-typeset-table-color);
+  border-bottom: 2px solid var(--md-typeset-table-color);
+  background-color: var(--md-default-bg-color--lighter);
+  padding: 12px;
+}
+
+.md-typeset__table td {
+  border: 1px solid var(--md-typeset-table-color);
+  padding: 12px;
+}
+
+.md-typeset__table tr:nth-child(2n) {
+  background-color: var(--md-default-bg-color--lightest);
+}
+</style>
+<p>Detailed commands for reference:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">8 x H200</a></p></li>
+<li><p><a class="reference external" href="https://docs.sglang.ai/references/amd.html#running-deepseek-v3">8 x MI300X</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">2 x 8 x H200</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">4 x 8 x A100</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-8-a100a800-with-awq-quantization">8 x A100 (AWQ)</a></p></li>
+</ul>
+<section id="download-weights">
+<h3>Download Weights<a class="headerlink" href="#download-weights" title="Link to this heading">#</a></h3>
+<p>If you encounter errors when starting the server, ensure the weights have finished downloading. It’s recommended to download them beforehand or restart multiple times until all weights are downloaded. Please refer to <a class="reference internal" href="#%5Bhttps://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#installation--launch%5D(https://huggingface.co/deepseek-ai/DeepSeek-V3-Base#61-inference-with-deepseek-infer-demo-example-only)"><span class="xref myst">DeepSeek V3</span></a> offical guide to download the weights.</p>
+</section>
+<section id="caching-torch-compile">
+<h3>Caching <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code><a class="headerlink" href="#caching-torch-compile" title="Link to this heading">#</a></h3>
+<p>The DeepSeek series have huge model weights, it takes some time to compile the model with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> for the first time if you have added the flag <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. By default, <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> will automatically cache the FX graph and Triton in <code class="docutils literal notranslate"><span class="pre">/tmp/torchinductor_root</span></code>, which might be cleared according to the <a class="reference external" href="https://serverfault.com/questions/377348/when-does-tmp-get-cleared">system policy</a>. You can export the environment variable <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code> to save compilation cache in your desired directory to avoid unwanted deletion. You can also share the cache with other machines to reduce the compilation time. You may refer to the <a class="reference external" href="https://pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html">PyTorch official documentation</a> and <a class="reference internal" href="torch_compile_cache.html"><span class="std std-doc">SGLang Documentation</span></a> for more details.</p>
+</section>
+<section id="launch-with-one-node-of-8-h200">
+<h3>Launch with One node of 8 H200<a class="headerlink" href="#launch-with-one-node-of-8-h200" title="Link to this heading">#</a></h3>
+<p>Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">the example</a>. <strong>Note that Deepseek V3 is already in FP8. So we should not run it with any quantization arguments like <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span> <span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</strong> Also, <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> can be useful to improve for Deepseek V3/R1’s throughput. Please refer to <a class="reference external" href="https://docs.sglang.ai/references/deepseek.html#multi-head-latent-attention-mla-throughput-optimizations">Data Parallelism Attention</a> for detail.</p>
+</section>
+<section id="running-examples-on-multi-node">
+<h3>Running examples on Multi-node<a class="headerlink" href="#running-examples-on-multi-node" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">Serving with two H20*8 nodes</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h2008-nodes-and-docker">Serving with two H200*8 nodes and docker</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">Serving with four A100*8 nodes</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="optimizations">
+<h2>Optimizations<a class="headerlink" href="#optimizations" title="Link to this heading">#</a></h2>
+<section id="multi-head-latent-attention-mla-throughput-optimizations">
+<h3>Multi-head Latent Attention (MLA) Throughput Optimizations<a class="headerlink" href="#multi-head-latent-attention-mla-throughput-optimizations" title="Link to this heading">#</a></h3>
+<p><strong>Description</strong>: <a class="reference external" href="https://arxiv.org/pdf/2405.04434">MLA</a> is an innovative attention mechanism introduced by the DeepSeek team, aimed at improving inference efficiency. SGLang has implemented specific optimizations for this, including:</p>
+<ul class="simple">
+<li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
+<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>. Under long input scenarios, flashinfer mla can improve performance significantly. Optimized triton kernels will be used when flashinfer mla is turned off.</p></li>
+<li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
+<li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
+</ul>
+<p>Overall, with these optimizations, we have achieved up to a 7x acceleration in output throughput compared to the previous version.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
+</p>
+<p><strong>Usage</strong>: MLA optimization is enabled by default, to disable, use <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code>.</p>
+<p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations">Blog</a> and <a class="reference external" href="https://github.com/sgl-project/sgl-learning-materials/blob/main/slides/lmsys_1st_meetup_deepseek_mla.pdf">Slides</a> for more details.</p>
+</section>
+<section id="data-parallelism-attention">
+<h3>Data Parallelism Attention<a class="headerlink" href="#data-parallelism-attention" title="Link to this heading">#</a></h3>
+<p><strong>Description</strong>: This optimization involves data parallelism (DP) for the MLA attention mechanism of DeepSeek Series Models, which allows for a significant reduction in the KV cache size, enabling larger batch sizes. Each DP worker independently handles different types of batches (prefill, decode, idle), which are then synchronized before and after processing through the Mixture-of-Experts (MoE) layer.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" alt="Data Parallelism Attention for DeepSeek Series Models">
+</p>
+<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
+<p align="center">
+  <img src="https://lmsys.org/images/blog/sglang_v0_4/deepseek_coder_v2.svg" alt="Data Parallelism Attention Performance Comparison">
+</p>
+<p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Blog</a>.</p>
+</section>
+<section id="multi-node-tensor-parallelism">
+<h3>Multi Node Tensor Parallelism<a class="headerlink" href="#multi-node-tensor-parallelism" title="Link to this heading">#</a></h3>
+<p><strong>Description</strong>: For users with limited memory on a single node, SGLang supports serving DeepSeek Series Models, including DeepSeek V3, across multiple nodes using tensor parallelism. This approach partitions the model parameters across multiple GPUs or nodes to handle models that are too large for one node’s memory.</p>
+<p><strong>Usage</strong>: Check <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-2-h208">here</a> for usage examples.</p>
+</section>
+<section id="block-wise-fp8">
+<h3>Block-wise FP8<a class="headerlink" href="#block-wise-fp8" title="Link to this heading">#</a></h3>
+<p><strong>Description</strong>: SGLang implements block-wise FP8 quantization with two key optimizations:</p>
+<ul class="simple">
+<li><p><strong>Activation</strong>: E4M3 format using per-token-per-128-channel sub-vector scales with online casting.</p></li>
+<li><p><strong>Weight</strong>: Per-128x128-block quantization for better numerical stability.</p></li>
+</ul>
+<p><strong>Usage</strong>: turn on by default for DeepSeek V3 models.</p>
+</section>
+<section id="reasoning-content-for-deepseek-r1">
+<h3>Reasoning Content for DeepSeek R1<a class="headerlink" href="#reasoning-content-for-deepseek-r1" title="Link to this heading">#</a></h3>
+<p>See <a class="reference external" href="https://docs.sglang.ai/backend/separate_reasoning.html">Separate Reasoning</a>.</p>
+</section>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Question</strong>: What should I do if model loading takes too long and NCCL timeout occurs?</p>
+<p><strong>Answer</strong>: You can try to add <code class="docutils literal notranslate"><span class="pre">--dist-timeout</span> <span class="pre">3600</span></code> when launching the model, this allows for 1-hour timeout.</p>
+</li>
+</ol>
+</section>
 </section>
 
 
@@ -457,11 +625,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="deepseek_usage.html"
+       href="general.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">DeepSeek Quick Start</p>
+        <p class="prev-next-title">General Guidance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -471,6 +639,37 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-deepseek-v3-with-sglang">Launch DeepSeek V3 with SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-weights">Download Weights</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caching-torch-compile">Caching <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-with-one-node-of-8-h200">Launch with One node of 8 H200</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-on-multi-node">Running examples on Multi-node</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizations">Optimizations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-head-latent-attention-mla-throughput-optimizations">Multi-head Latent Attention (MLA) Throughput Optimizations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1">Reasoning Content for DeepSeek R1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
