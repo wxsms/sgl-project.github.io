@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post2" />
-    <meta name="docbuild:last-update" content="Mar 05, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 06, 2025"/>
   </head>
   
   
@@ -476,7 +476,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>See <a class="reference internal" href="#../references/hyperparameter_tuning.md"><span class="xref myst">hyperparameter tuning</span></a> on tuning hyperparameters for better performance.</p></li>
+<li><p>See <a class="reference internal" href="hyperparameter_tuning.html"><span class="std std-doc">hyperparameter tuning</span></a> on tuning hyperparameters for better performance.</p></li>
 <li><p>If you see out-of-memory errors during prefill for long prompts, try to set a smaller chunked prefill size.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">chunked</span><span class="o">-</span><span class="n">prefill</span><span class="o">-</span><span class="n">size</span> <span class="mi">4096</span>
@@ -487,7 +487,7 @@
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports other <a class="reference external" href="https://github.com/sgl-project/sglang/blob/v0.3.6/python/sglang/srt/server_args.py#L671">quantization strategies (INT8/FP8)</a> as well.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
-<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference internal" href="#../references/custom_chat_template.md"><span class="xref myst">custom chat template</span></a>.</p></li>
+<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference internal" href="custom_chat_template.html"><span class="std std-doc">custom chat template</span></a>.</p></li>
 <li><p>To run tensor parallelism on multiple nodes, add <code class="docutils literal notranslate"><span class="pre">--nnodes</span> <span class="pre">2</span></code>. If you have two nodes with two GPUs on each node and want to run TP=4, let <code class="docutils literal notranslate"><span class="pre">sgl-dev-0</span></code> be the hostname of the first node and <code class="docutils literal notranslate"><span class="pre">50000</span></code> be an available port, you can use the following commands. If you meet deadlock, please try to add <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node 0</span>
@@ -609,7 +609,7 @@
 <section id="lora">
 <h2>LoRA<a class="headerlink" href="#lora" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lora_paths</span></code>: You may provide a list of adapters to your model as a list. Each batch element will get model response with the corresponding lora adapter applied. Currently <code class="docutils literal notranslate"><span class="pre">cuda_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">radix_attention</span></code> are not supportet with this option so you need to disable them manually. We are still working on through these <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2929">issues</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lora_paths</span></code>: You may provide a list of adapters to your model as a list. Each batch element will get model response with the corresponding lora adapter applied. Currently <code class="docutils literal notranslate"><span class="pre">cuda_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">radix_attention</span></code> are not supported with this option so you need to disable them manually. We are still working on through these <a class="reference external" href="https://github.com/sgl-project/sglang/issues/2929">issues</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">max_loras_per_batch</span></code>: Maximum number of LoRAs in a running batch including base model.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lora_backend</span></code>: The backend of running GEMM kernels for Lora modules, can be one of <code class="docutils literal notranslate"><span class="pre">triton</span></code> or <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>. Defaults to be <code class="docutils literal notranslate"><span class="pre">triton</span></code>.</p></li>
 </ul>
@@ -787,7 +787,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 05, 2025.
+  Last updated on Mar 06, 2025.
   <br/>
 </p>
   </div>
