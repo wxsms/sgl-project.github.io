@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Kubernetes &#8212; SGLang</title>
+    <title>Deploy On Kubernetes &#8212; SGLang</title>
   
   
   
@@ -42,14 +42,14 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=99836bbd"></script>
+    <script src="../_static/documentation_options.js?v=0c96e96c"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/k8s';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/deploy_on_k8s';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -57,7 +57,7 @@
     <link rel="prev" title="Multi-Node Deployment" href="multi_node.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.3.post3" />
+  <meta name="docsearch:version" content="0.4.3.post4" />
     <meta name="docbuild:last-update" content="Mar 06, 2025"/>
   </head>
   
@@ -192,7 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="multi_node.html">Multi-Node Deployment</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kubernetes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Deploy On Kubernetes</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="performance_tuning.html">Performance Tuning</a></li>
@@ -272,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/k8s.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/deploy_on_k8s.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/k8s.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/deploy_on_k8s.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/k8s.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/deploy_on_k8s.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@
       
       
       
-      <li><a href="../_sources/references/k8s.md" target="_blank"
+      <li><a href="../_sources/references/deploy_on_k8s.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -412,7 +412,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Kubernetes</h1>
+    <h1>Deploy On Kubernetes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -445,8 +445,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="kubernetes">
-<h1>Kubernetes<a class="headerlink" href="#kubernetes" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="deploy-on-kubernetes">
+<h1>Deploy On Kubernetes<a class="headerlink" href="#deploy-on-kubernetes" title="Link to this heading">#</a></h1>
 <p>This docs is for deploying a RoCE Network-Based SGLANG Two-Node Inference Service on a Kubernetes (K8S) Cluster.</p>
 <p>LeaderWorkerSet (LWS) is a Kubernetes API that aims to address common deployment patterns of AI/ML inference workloads. A major use case is for multi-host/multi-node distributed inference.</p>
 <p>Sglang can also be deployed with LWS on Kubernetes for distributed model serving.</p>

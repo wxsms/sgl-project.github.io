@@ -42,7 +42,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=99836bbd"></script>
+    <script src="../_static/documentation_options.js?v=0c96e96c"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
     <link rel="prev" title="General Guidance" href="general.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.3.post3" />
+  <meta name="docsearch:version" content="0.4.3.post4" />
     <meta name="docbuild:last-update" content="Mar 06, 2025"/>
   </head>
   
@@ -564,7 +564,7 @@ vLMs. These models demonstrate how to properly handle both visual and textual in
 <p>For interactive debugging, you can compare the outputs of huggingface/transformers and SGLang.
 The following two commands should give the same text output and very similar prefill logits.</p>
 <ul class="simple">
-<li><p>Get the reference output by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">scripts/playground/reference_hf.py</span> <span class="pre">--model</span> <span class="pre">[new</span> <span class="pre">model]</span></code></p></li>
+<li><p>Get the reference output by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">scripts/playground/reference_hf.py</span> <span class="pre">--model-path</span> <span class="pre">[new</span> <span class="pre">model]</span> <span class="pre">--model-type</span> <span class="pre">{text,vlm}</span></code></p></li>
 <li><p>Get the SGLang output by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--correct</span> <span class="pre">--model</span> <span class="pre">[new</span> <span class="pre">model]</span></code></p></li>
 </ul>
 </section>
