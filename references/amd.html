@@ -422,8 +422,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-configure">System Configure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-configuration">System Configuration</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-grub-settings">Update GRUB Settings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-numa-auto-balancing">Disable NUMA Auto-Balancing</a></li>
 </ul>
@@ -452,12 +451,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sglang-on-amd">
 <h1>SGLang on AMD<a class="headerlink" href="#sglang-on-amd" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>This document describes how to set up an AMD-based environment for <a class="reference external" href="https://github.com/sgl-project/sglang">SGLang</a>. If you encounter issues or have questions, please <a class="reference external" href="https://github.com/sgl-project/sglang/issues">open an issue</a> on the SGLang repository.</p>
-</section>
-<section id="system-configure">
-<h2>System Configure<a class="headerlink" href="#system-configure" title="Link to this heading">#</a></h2>
+<section id="system-configuration">
+<h2>System Configuration<a class="headerlink" href="#system-configuration" title="Link to this heading">#</a></h2>
 <p>When using AMD GPUs (such as MI300X), certain system-level optimizations help ensure stable performance. Here we take MI300X as an example. AMD provides official documentation for MI300X optimization and system tuning:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://rocm.docs.amd.com/en/latest/how-to/tuning-guides/mi300x/index.html">AMD MI300X Tuning Guides</a></p>
@@ -468,8 +464,8 @@
 </ul>
 </li>
 </ul>
-<p><strong>NOTE:</strong> We strongly recommend reading theses docs entirely guide to fully utilize your system.</p>
-<p>Below are a few key settings to confirm or enable:</p>
+<p><strong>NOTE:</strong> We strongly recommend reading these docs and guides entirely to fully utilize your system.</p>
+<p>Below are a few key settings to confirm or enable for SGLang:</p>
 <section id="update-grub-settings">
 <h3>Update GRUB Settings<a class="headerlink" href="#update-grub-settings" title="Link to this heading">#</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">/etc/default/grub</span></code>, append the following to <code class="docutils literal notranslate"><span class="pre">GRUB_CMDLINE_LINUX</span></code>:</p>
@@ -503,15 +499,13 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </section>
 <section id="install-using-docker-recommended">
 <h3>Install Using Docker (Recommended)<a class="headerlink" href="#install-using-docker-recommended" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Build the docker image.</p></li>
-</ol>
+<ol class="arabic">
+<li><p>Build the docker image.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>sglang_image<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Create a convenient alias.</p></li>
-</ol>
+</li>
+<li><p>Create a convenient alias.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --privileged --device=/dev/kfd --device=/dev/dri \</span>
 <span class="s1">    --ipc=host --shm-size 16G --group-add video --cap-add=SYS_PTRACE \</span>
 <span class="s1">    --security-opt seccomp=unconfined \</span>
@@ -519,12 +513,13 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <span class="s1">    -v /data:/data&#39;</span>
 </pre></div>
 </div>
+</li>
+</ol>
 <p>If you are using RDMA, please note that:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">--network</span> <span class="pre">host</span></code> and <code class="docutils literal notranslate"><span class="pre">--privileged</span></code> are required by RDMA. If you don’t need RDMA, you can remove them.</p></li>
 <li><p>You may need to set <code class="docutils literal notranslate"><span class="pre">NCCL_IB_GID_INDEX</span></code> if you are using RoCE, for example: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">NCCL_IB_GID_INDEX=3</span></code>.</p></li>
-<li><p>Launch the server.</p></li>
-</ol>
+<li><p>Launch the server.</p>
 <p><strong>NOTE:</strong> Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">huggingface hub token</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
@@ -536,9 +531,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>To verify the utility, you can run a benchmark in another terminal or refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html">other docs</a> to send requests to the engine.</p></li>
-</ol>
+</li>
+<li><p>To verify the utility, you can run a benchmark in another terminal or refer to <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html">other docs</a> to send requests to the engine.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>sglang_image<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
@@ -548,6 +542,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <span class="w">    </span>--random-output<span class="w"> </span><span class="m">128</span>
 </pre></div>
 </div>
+</li>
+</ol>
 <p>With your AMD system properly configured and SGLang installed, you can now fully leverage AMD hardware to power SGLang’s machine learning capabilities.</p>
 </section>
 </section>
@@ -555,7 +551,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <section id="running-deepseek-v3">
 <h3>Running DeepSeek-V3<a class="headerlink" href="#running-deepseek-v3" title="Link to this heading">#</a></h3>
-<p>The only difference in running DeepSeek-V3 is when starting the server. Here’s an example command:</p>
+<p>The only difference when running DeepSeek-V3 is in how you start the server. Here’s an example command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
@@ -573,7 +569,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </section>
 <section id="running-llama3-1">
 <h3>Running Llama3.1<a class="headerlink" href="#running-llama3-1" title="Link to this heading">#</a></h3>
-<p>Running Llama3.1 is nearly identical. The only difference is in the model specified when starting the server, shown by the following example command:</p>
+<p>Running Llama3.1 is nearly identical to running DeepSeek-V3. The only difference is in the model specified when starting the server, shown by the following example command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
@@ -590,7 +586,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </section>
 <section id="warmup-step">
 <h3>Warmup Step<a class="headerlink" href="#warmup-step" title="Link to this heading">#</a></h3>
-<p>When the server displays “The server is fired up and ready to roll!”, it means the startup is successful.</p>
+<p>When the server displays <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">server</span> <span class="pre">is</span> <span class="pre">fired</span> <span class="pre">up</span> <span class="pre">and</span> <span class="pre">ready</span> <span class="pre">to</span> <span class="pre">roll!</span></code>, it means the startup is successful.</p>
 </section>
 </section>
 </section>
@@ -641,8 +637,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-configure">System Configure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-configuration">System Configuration</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-grub-settings">Update GRUB Settings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-numa-auto-balancing">Disable NUMA Auto-Balancing</a></li>
 </ul>
