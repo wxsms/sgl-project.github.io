@@ -488,32 +488,32 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-07 05:09:23] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=37753, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, tp_size=1, stream_interval=1, stream_output=False, random_seed=723831147, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=5, speculative_eagle_topk=4, speculative_num_draft_tokens=8, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;llama3&#39;, enable_hierarchical_cache=False, enable_flashinfer_mla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False)
-[2025-03-07 05:09:43 TP0] Init torch distributed begin.
-[2025-03-07 05:09:44 TP0] Init torch distributed ends. mem usage=0.00 GB
-[2025-03-07 05:09:44 TP0] Load weight begin. avail mem=60.12 GB
-[2025-03-07 05:09:44 TP0] The following error message &#39;operation scheduled before its operands&#39; can be ignored.
-[2025-03-07 05:09:45 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-03-07 07:20:13] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=37887, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, tp_size=1, stream_interval=1, stream_output=False, random_seed=678777515, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;outlines&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=5, speculative_eagle_topk=4, speculative_num_draft_tokens=8, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;llama3&#39;, enable_hierarchical_cache=False, enable_flashinfer_mla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False)
+[2025-03-07 07:20:33 TP0] Init torch distributed begin.
+[2025-03-07 07:20:33 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-03-07 07:20:33 TP0] Load weight begin. avail mem=35.78 GB
+[2025-03-07 07:20:33 TP0] The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+[2025-03-07 07:20:34 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.03it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.63it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.21it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.16s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.41it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.21it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.13it/s]
 
-[2025-03-07 05:09:48 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=20.66 GB, mem usage=39.46 GB.
-[2025-03-07 05:09:48 TP0] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-[2025-03-07 05:09:48 TP0] Memory pool end. avail mem=17.94 GB
-[2025-03-07 05:09:49 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-03-07 05:09:49] INFO:     Started server process [2491057]
-[2025-03-07 05:09:49] INFO:     Waiting for application startup.
-[2025-03-07 05:09:49] INFO:     Application startup complete.
-[2025-03-07 05:09:49] INFO:     Uvicorn running on http://0.0.0.0:37753 (Press CTRL+C to quit)
-[2025-03-07 05:09:50] INFO:     127.0.0.1:50224 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-03-07 05:09:50] INFO:     127.0.0.1:50236 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-03-07 05:09:50 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-07 05:09:53] INFO:     127.0.0.1:50240 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-03-07 05:09:53] The server is fired up and ready to roll!
+[2025-03-07 07:20:39 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=45.46 GB, mem usage=-9.68 GB.
+[2025-03-07 07:20:39 TP0] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+[2025-03-07 07:20:39 TP0] Memory pool end. avail mem=42.73 GB
+[2025-03-07 07:20:39 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-03-07 07:20:39] INFO:     Started server process [2818324]
+[2025-03-07 07:20:39] INFO:     Waiting for application startup.
+[2025-03-07 07:20:39] INFO:     Application startup complete.
+[2025-03-07 07:20:39] INFO:     Uvicorn running on http://0.0.0.0:37887 (Press CTRL+C to quit)
+[2025-03-07 07:20:40] INFO:     127.0.0.1:35516 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:40] INFO:     127.0.0.1:35526 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:40 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-07 07:20:43] INFO:     127.0.0.1:35528 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:43] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -607,7 +607,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-07 05:09:55] INFO:     127.0.0.1:50244 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:45] INFO:     127.0.0.1:32892 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 </section>
@@ -636,9 +636,9 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-07 05:09:55 TP0] Prefill batch. #new-seq: 1, #new-token: 302, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-07 05:09:55] INFO:     127.0.0.1:50244 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-03-07 05:09:55 TP0] Decode batch. #running-req: 0, #token: 0, token usage: 0.00, gen throughput (token/s): 6.54, largest-len: 0, #queue-req: 0,
+[2025-03-07 07:20:45 TP0] Prefill batch. #new-seq: 1, #new-token: 302, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-07 07:20:46 TP0] Decode batch. #running-req: 0, #token: 0, token usage: 0.00, gen throughput (token/s): 6.17, largest-len: 0, #queue-req: 0,
+[2025-03-07 07:20:46] INFO:     127.0.0.1:32892 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -652,7 +652,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;35361e4a43934a83a64f2ce94f2513ab&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)], reasoning_content=None), matched_stop=128008)], created=1741324195, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=303, total_tokens=335, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;bdc01ebacd534b9ba8c22689b5b60562&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)], reasoning_content=None), matched_stop=128008)], created=1741332046, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=303, total_tokens=335, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 </section>
@@ -692,8 +692,8 @@ ChatCompletion(id=&#39;35361e4a43934a83a64f2ce94f2513ab&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-07 05:09:55] INFO:     127.0.0.1:50244 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-03-07 05:09:55 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 302, token usage: 0.01, #running-req: 0, #queue-req: 0,
+[2025-03-07 07:20:46] INFO:     127.0.0.1:32892 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:46 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 302, token usage: 0.01, #running-req: 0, #queue-req: 0,
 ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;city&#34;: &#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;Boston&#34;&#39;, name=&#39;&#39;), type=&#39;function&#39;)
@@ -870,9 +870,9 @@ Streamed function call arguments: ahrenheit&#34;}
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-07 05:09:56 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 300, token usage: 0.01, #running-req: 0, #queue-req: 0,
-[2025-03-07 05:09:56 TP0] Decode batch. #running-req: 1, #token: 350, token usage: 0.02, gen throughput (token/s): 48.56, largest-len: 0, #queue-req: 0,
-[2025-03-07 05:09:56] INFO:     127.0.0.1:50244 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:46 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 300, token usage: 0.01, #running-req: 0, #queue-req: 0,
+[2025-03-07 07:20:46 TP0] Decode batch. #running-req: 1, #token: 350, token usage: 0.02, gen throughput (token/s): 67.62, largest-len: 0, #queue-req: 0,
+[2025-03-07 07:20:46] INFO:     127.0.0.1:32892 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -886,7 +886,7 @@ Streamed function call arguments: ahrenheit&#34;}
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;4789a40f470945b5807d5779faca8f9b&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)], reasoning_content=None), matched_stop=128008)], created=1741324196, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=341, total_tokens=373, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;5cf79f1c25a64d73932d7ce11b3304f0&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;city&#34;: &#34;Boston&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)], reasoning_content=None), matched_stop=128008)], created=1741332046, model=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=32, prompt_tokens=341, total_tokens=373, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 </section>
@@ -938,11 +938,11 @@ ChatCompletion(id=&#39;4789a40f470945b5807d5779faca8f9b&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-07 05:10:02 TP0] Prefill batch. #new-seq: 1, #new-token: 317, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-07 05:10:02 TP0] Decode batch. #running-req: 1, #token: 335, token usage: 0.02, gen throughput (token/s): 6.29, largest-len: 0, #queue-req: 0,
-[2025-03-07 05:10:03] INFO:     127.0.0.1:40264 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:52 TP0] Prefill batch. #new-seq: 1, #new-token: 317, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-07 07:20:52 TP0] Decode batch. #running-req: 1, #token: 335, token usage: 0.02, gen throughput (token/s): 6.57, largest-len: 0, #queue-req: 0,
+[2025-03-07 07:20:52] INFO:     127.0.0.1:50306 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 &lt;|python_tag|&gt;{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;parameters&#34;: {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}}
-[2025-03-07 05:10:03] INFO:     127.0.0.1:40280 - &#34;POST /parse_function_call HTTP/1.1&#34; 200 OK
+[2025-03-07 07:20:52] INFO:     127.0.0.1:50316 - &#34;POST /parse_function_call HTTP/1.1&#34; 200 OK
 function name:  get_current_weather
 function arguments:  {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;}
 </pre></div></div>
@@ -1023,11 +1023,11 @@ function arguments:  {&#34;unit&#34;: &#34;fahrenheit&#34;, &#34;city&#34;: &#34
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.15it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.80it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.07it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.71it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
 
 </pre></div></div>
 </div>

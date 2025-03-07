@@ -462,7 +462,7 @@ If you see <code class="docutils literal notranslate"><span class="pre">decode</
 </section>
 <section id="tune-dp-size-and-tp-size">
 <h3>Tune <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code><a class="headerlink" href="#tune-dp-size-and-tp-size" title="Link to this heading">#</a></h3>
-<p>Data parallelism is better for throughput. When there is enough GPU memory, always favor data parallelism for throughput. Refer to <a class="reference internal" href="#../backend/sglang_router.md"><span class="xref myst">sglang router</span></a> for a better data parallelism rather than using <code class="docutils literal notranslate"><span class="pre">dp_size</span></code> parameter.</p>
+<p>Data parallelism is better for throughput. When there is enough GPU memory, always favor data parallelism for throughput. Refer to <a class="reference internal" href="../router/router.html"><span class="std std-doc">sglang router</span></a> for a better data parallelism rather than using <code class="docutils literal notranslate"><span class="pre">dp_size</span></code> parameter.</p>
 </section>
 </section>
 <section id="avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">
@@ -480,21 +480,20 @@ If you see <code class="docutils literal notranslate"><span class="pre">decode</
 <p>SGLang uses <code class="docutils literal notranslate"><span class="pre">max-autotune-no-cudagraphs</span></code> mode of <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code>. The auto-tuning can be slow.
 If you want to deploy a model on many different machines, you can ship the <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> cache to these machines and skip the compilation steps. This is based on <a class="reference external" href="https://pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html">PyTorch official documentation</a>.</p>
 <p><em>Examples</em>：</p>
-<ol class="arabic simple">
-<li><p>Generate the cache by setting <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code> and running the model once.</p></li>
-</ol>
+<ol class="arabic">
+<li><p>Generate the cache by setting <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code> and running the model once.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TORCHINDUCTOR_CACHE_DIR</span><span class="o">=</span>/root/inductor_root_cache<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--enable-torch-compile
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
+</li>
 <li><p>Copy the cache folder to other machines and launch the server with <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code>.</p></li>
 </ol>
 </section>
 <section id="tune-schedule-policy">
 <h2>Tune <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span></code><a class="headerlink" href="#tune-schedule-policy" title="Link to this heading">#</a></h2>
-<p>If the workload has many shared prefixes, use the default <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">lpm</span></code>. <code class="docutils literal notranslate"><span class="pre">lpm</span></code> stands for longest prefix match.</p>
+<p>If the workload has many shared prefixes, use the default <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">lpm</span></code>. Where <code class="docutils literal notranslate"><span class="pre">lpm</span></code> stands for longest prefix match.</p>
 <p>When you have no shared prefixes at all or you always send the requests with the shared prefixes together,
-you can try <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">fcfs</span></code>. <code class="docutils literal notranslate"><span class="pre">fcfs</span></code> stands for first come first serve. <code class="docutils literal notranslate"><span class="pre">fcfs</span></code> has a lower scheduling overhead.</p>
+you can try <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">fcfs</span></code>. Where <code class="docutils literal notranslate"><span class="pre">fcfs</span></code> stands for first come first serve. This policy has a lower scheduling overhead.</p>
 </section>
 </section>
 
