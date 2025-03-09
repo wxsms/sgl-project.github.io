@@ -422,7 +422,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-run-on-kubernetes-or-clouds-with-skypilot">Method 5: Run on Kubernetes or Clouds with SkyPilot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-using-kubernetes">Method 5: Using Kubernetes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot">Method 6: Run on Kubernetes or Clouds with SkyPilot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
 </ul>
             </nav>
@@ -530,8 +531,20 @@ A better approach is to use the <a class="reference external" href="https://gith
 </ol>
 </details>
 </section>
-<section id="method-5-run-on-kubernetes-or-clouds-with-skypilot">
-<h2>Method 5: Run on Kubernetes or Clouds with SkyPilot<a class="headerlink" href="#method-5-run-on-kubernetes-or-clouds-with-skypilot" title="Link to this heading">#</a></h2>
+<section id="method-5-using-kubernetes">
+<h2>Method 5: Using Kubernetes<a class="headerlink" href="#method-5-using-kubernetes" title="Link to this heading">#</a></h2>
+<details>
+<summary>More</summary>
+<ol class="arabic simple">
+<li><p>Option 1: For single node serving (typically when the model size fits into GPUs on one node)
+Execute command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">docker/k8s-sglang-service.yaml</span></code>, to create k8s deployment and service, with llama-31-8b as example.</p></li>
+<li><p>Option 2: For multi-node serving (usually when a large model requires more than one GPU node, such as <code class="docutils literal notranslate"><span class="pre">DeepSeek-R1</span></code>)
+Modify the LLM model path and arguments as necessary, then execute command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">docker/k8s-sglang-distributed-sts.yaml</span></code>, to create two nodes k8s statefulset and serving service.</p></li>
+</ol>
+</details>
+</section>
+<section id="method-6-run-on-kubernetes-or-clouds-with-skypilot">
+<h2>Method 6: Run on Kubernetes or Clouds with SkyPilot<a class="headerlink" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot" title="Link to this heading">#</a></h2>
 <details>
 <summary>More</summary>
 <p>To deploy on Kubernetes or 12+ clouds, you can use <a class="reference external" href="https://github.com/skypilot-org/skypilot">SkyPilot</a>.</p>
@@ -632,7 +645,8 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-run-on-kubernetes-or-clouds-with-skypilot">Method 5: Run on Kubernetes or Clouds with SkyPilot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-using-kubernetes">Method 5: Using Kubernetes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot">Method 6: Run on Kubernetes or Clouds with SkyPilot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
 </ul>
   </nav></div>
