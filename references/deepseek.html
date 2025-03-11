@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.3.post4" />
-    <meta name="docbuild:last-update" content="Mar 10, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 11, 2025"/>
   </head>
   
   
@@ -430,6 +430,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1">Reasoning Content for DeepSeek R1</a></li>
 </ul>
 </li>
@@ -556,11 +557,11 @@
 <p><strong>Description</strong>: <a class="reference external" href="https://arxiv.org/pdf/2405.04434">MLA</a> is an innovative attention mechanism introduced by the DeepSeek team, aimed at improving inference efficiency. SGLang has implemented specific optimizations for this, including:</p>
 <ul class="simple">
 <li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
-<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>. Under long input scenarios, flashinfer mla can improve performance significantly. Optimized triton kernels will be used when flashinfer mla is turned off. Currently when using flashinfer mla wrapper and speculative decoding together, the <code class="docutils literal notranslate"><span class="pre">speculative_eagle_topk</span></code> parameter should be set to 1.</p></li>
+<li><p><strong>Flashinfer MLA Wrapper</strong>: By providing <code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code> argument, the server will use MLA kernels customized by Flashinfer. More details can be referred to <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">this document</a>. Under long input scenarios, flashinfer mla can improve performance significantly. Optimized triton kernels will be used when flashinfer mla is turned off.</p></li>
 <li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
 <li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
 </ul>
-<p>Overall, with these optimizations, we have achieved up to a 7x acceleration in output throughput compared to the previous version.</p>
+<p>Overall, with these optimizations, we have achieved up to <strong>7x</strong> acceleration in output throughput compared to the previous version.</p>
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
 </p>
@@ -573,10 +574,11 @@
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" alt="Data Parallelism Attention for DeepSeek Series Models">
 </p>
-<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
+<p>With data parallelism attention enabled, we have achieved up to <strong>1.9x</strong> decoding throughput improvement compared to the previous version.</p>
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/deepseek_coder_v2.svg" alt="Data Parallelism Attention Performance Comparison">
 </p>
+<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Blog</a>.</p>
 </section>
 <section id="multi-node-tensor-parallelism">
@@ -591,7 +593,22 @@
 <li><p><strong>Activation</strong>: E4M3 format using per-token-per-128-channel sub-vector scales with online casting.</p></li>
 <li><p><strong>Weight</strong>: Per-128x128-block quantization for better numerical stability.</p></li>
 </ul>
-<p><strong>Usage</strong>: turn on by default for DeepSeek V3 models.</p>
+<p><strong>Usage</strong>: Turn on by default for DeepSeek V3 models.</p>
+</section>
+<section id="multi-token-prediction">
+<h3>Multi-token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h3>
+<p><strong>Description</strong>: SGLang implements DeepSeek V3 Multi-Token Prediction (MTP) based on <a class="reference external" href="https://docs.sglang.ai/backend/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>. With this optimization, the decoding speed can be improved by <strong>1.8x</strong> for batch size 1 and <strong>1.5x</strong> for batch size 32 respectively on H200 TP8 setting.</p>
+<p><strong>Usage</strong>:
+Add arguments <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> to enable this feature. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">algorithm</span> <span class="n">EAGLE</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">draft</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">lmsys</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span><span class="o">-</span><span class="n">NextN</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">steps</span> <span class="mi">1</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">eagle</span><span class="o">-</span><span class="n">topk</span> <span class="mi">1</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">draft</span><span class="o">-</span><span class="n">tokens</span> <span class="mi">2</span> <span class="o">--</span><span class="n">trust</span><span class="o">-</span><span class="n">remote</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The draft model are available at huggingface: <a class="reference external" href="https://huggingface.co/lmsys/DeepSeek-V3-NextN">lmsys/DeepSeek-V3-NextN</a>, <a class="reference external" href="https://huggingface.co/lmsys/DeepSeek-R1-NextN">lmsys/DeepSeek-R1-NextN</a>. It can also be exported from original DeepSeek-V3/R1 model with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/export_deepseek_nextn.py">export_deepseek_nextn.py</a> script.</p></li>
+<li><p>The best configuratin for <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> can be searched with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a> script for given batch size. The minimum configuration is <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span> <span class="pre">1</span> <span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span> <span class="pre">--speculative-num-draft-tokens</span> <span class="pre">2</span></code>, which can achieve speedup for larger batch sizes.</p></li>
+<li><p>Currently when using flashinfer mla wrapper (<code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code>) and speculative decoding together, the <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> parameter should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ul>
 </section>
 <section id="reasoning-content-for-deepseek-r1">
 <h3>Reasoning Content for DeepSeek R1<a class="headerlink" href="#reasoning-content-for-deepseek-r1" title="Link to this heading">#</a></h3>
@@ -666,6 +683,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1">Reasoning Content for DeepSeek R1</a></li>
 </ul>
 </li>
@@ -703,7 +721,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 10, 2025.
+  Last updated on Mar 11, 2025.
   <br/>
 </p>
   </div>
