@@ -444,17 +444,17 @@
 <ul>
 <li><p>Benchmark the latency of running a single static batch without a server. The arguments are the same as for <code class="docutils literal notranslate"><span class="pre">launch_server.py</span></code>.
 Note that this is a simplified test script without a dynamic batching server, so it may run out of memory for a batch size that a real server can handle. A real server truncates the prefill into several batches, while this simplified script does not.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_one_batch</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">batch</span> <span class="mi">32</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">len</span> <span class="mi">256</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">len</span> <span class="mi">32</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span>
 </pre></div>
 </div>
 </li>
 <li><p>Benchmark offline processing. This script will start an offline engine and run the benchmark.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_offline_throughput</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">prompts</span> <span class="mi">10</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </li>
 <li><p>Benchmark online serving. Please use <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> to launch a server first and run the following command.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">bench_serving</span> <span class="o">--</span><span class="n">backend</span> <span class="n">sglang</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">prompt</span> <span class="mi">10</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompt<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </li>
@@ -462,10 +462,9 @@ Note that this is a simplified test script without a dynamic batching server, so
 </section>
 <section id="profile-with-pytorch-profiler">
 <h2>Profile with PyTorch Profiler<a class="headerlink" href="#profile-with-pytorch-profiler" title="Link to this heading">#</a></h2>
-<p>Pytorch Profiler is a convenient basic tool to inspect kernel execution time, call stack, and kernel overlap and occupancy.</p>
-<ul class="simple">
-<li><p>To profile a server</p></li>
-</ul>
+<p><a class="reference external" href="https://pytorch.org/tutorials/recipes/recipes/profiler_recipe.html">Pytorch Profiler</a> is a convenient basic tool to inspect kernel execution time, call stack, and kernel overlap and occupancy.</p>
+<ul>
+<li><p>To profile a server</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set trace path</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/root/sglang/profile_log
 
@@ -477,16 +476,14 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<spa
 </pre></div>
 </div>
 <p>Please make sure that the <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> should be set at both server and client side, otherwise the trace file cannot be generated correctly . A secure way will be setting <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> in the <code class="docutils literal notranslate"><span class="pre">.*rc</span></code> file of shell (e.g. <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> for bash shells).</p>
-<ul class="simple">
-<li><p>To profile offline</p></li>
-</ul>
+</li>
+<li><p>To profile offline</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/root/sglang/profile_log
 python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile<span class="w"> </span>--mem-frac<span class="o">=</span><span class="m">0</span>.8
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>View Traces</p></li>
-</ul>
+</li>
+<li><p>View Traces</p>
 <p>Trace files can be loaded and visualized from:</p>
 <ol class="arabic simple">
 <li><p>https://ui.perfetto.dev/ (any browser)</p></li>
@@ -498,14 +495,16 @@ For example, when profiling a server,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">2</span><span class="w"> </span>--sharegpt-output-len<span class="w"> </span><span class="m">100</span><span class="w"> </span>--profile
 </pre></div>
 </div>
-<p>sets the number of prompts to 2 with <code class="docutils literal notranslate"><span class="pre">--num-prompts</span></code> argument and limits the length of output sequences to 100 with <code class="docutils literal notranslate"><span class="pre">--sharegpt-output-len</span></code> argument, which can generate a small trace file for browser to open smoothly.</p>
+<p>This command sets the number of prompts to 2 with <code class="docutils literal notranslate"><span class="pre">--num-prompts</span></code> argument and limits the length of output sequences to 100 with <code class="docutils literal notranslate"><span class="pre">--sharegpt-output-len</span></code> argument, which can generate a small trace file for browser to open smoothly.</p>
+</li>
+</ul>
 </section>
 <section id="profile-with-nsight">
 <h2>Profile with Nsight<a class="headerlink" href="#profile-with-nsight" title="Link to this heading">#</a></h2>
-<p>Nsight systems is an advanced tool that exposes more profiling details, such as register and shared memory usage, annotated code regions and low-level CUDA APIs and events.</p>
-<ol class="arabic simple" start="0">
-<li><p>Prerequisite: install using apt, or run inside a <a class="reference external" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags">NVIDIA Docker container</a> or <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">SGLang Docker container</a>.</p></li>
-</ol>
+<p><a class="reference external" href="https://docs.nvidia.com/nsight-systems/">Nsight systems</a> is an advanced tool that exposes more profiling details, such as register and shared memory usage, annotated code regions and low-level CUDA APIs and events.</p>
+<ol class="arabic">
+<li><p>Prerequisite:</p>
+<p>Install using apt, or run inside a <a class="reference external" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags">NVIDIA Docker container</a> or <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">SGLang Docker container</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nsys</span>
 <span class="c1"># https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html</span>
 apt<span class="w"> </span>update
@@ -516,10 +515,13 @@ apt<span class="w"> </span>update
 apt<span class="w"> </span>install<span class="w"> </span>nsight-systems-cli
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>To profile a single batch, use <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">--trace-fork-before-exec=true</span> <span class="pre">--cuda-graph-trace=node</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model</span> <span class="pre">meta-llama/Meta-Llama-3-8B</span> <span class="pre">--batch-size</span> <span class="pre">64</span> <span class="pre">--input-len</span> <span class="pre">512</span></code></p></li>
-<li><p>To profile a server, e.g.</p></li>
-</ol>
+</li>
+<li><p>To profile a single batch, use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3-8B<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">64</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">512</span>
+</pre></div>
+</div>
+</li>
+<li><p>To profile a server, e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># launch the server, set the delay and duration times according to needs</span>
 <span class="c1"># after the duration time has been used up, server will be killed by nsys</span>
 
@@ -538,9 +540,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<sp
 </pre></div>
 </div>
 <p>to manually kill the profiler and generate <code class="docutils literal notranslate"><span class="pre">nsys-rep</span></code> files instantly.</p>
-<ol class="arabic simple" start="3">
-<li><p>Use NVTX to annotate code regions, e.g. to see their execution time.</p></li>
-</ol>
+</li>
+<li><p>Use NVTX to annotate code regions, e.g. to see their execution time.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nvtx</span>
 pip<span class="w"> </span>install<span class="w"> </span>nvtx
 </pre></div>
@@ -551,14 +552,20 @@ pip<span class="w"> </span>install<span class="w"> </span>nvtx
     <span class="c1"># some critical code</span>
 </pre></div>
 </div>
+</li>
+</ol>
 </section>
 <section id="other-tips">
 <h2>Other tips<a class="headerlink" href="#other-tips" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>You can benchmark a model using dummy weights by only providing the config.json file. This allows for quick testing of model variants without training. To do so, add <code class="docutils literal notranslate"><span class="pre">--load-format</span> <span class="pre">dummy</span></code> to the above commands and then you only need a correct <code class="docutils literal notranslate"><span class="pre">config.json</span></code> under the checkpoint folder.</p></li>
-<li><p>You can benchmark a model with modified configs (e.g., less layers) by using <code class="docutils literal notranslate"><span class="pre">--json-model-override-args</span></code>. For example, you can benchmark a model with only 2 layers and 2 kv heads using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.bench_one_batch</span> <span class="pre">--model-path</span> <span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span> <span class="pre">--batch</span> <span class="pre">32</span> <span class="pre">--input-len</span> <span class="pre">256</span> <span class="pre">--output-len</span> <span class="pre">32</span> <span class="pre">--load-format</span> <span class="pre">dummy</span> <span class="pre">--json-model-override-args</span> <span class="pre">'{&quot;num_hidden_layers&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;num_key_value_heads&quot;:</span> <span class="pre">1}'</span></code></p></li>
+<li><p>You can benchmark a model with modified configs (e.g., less layers) by using <code class="docutils literal notranslate"><span class="pre">--json-model-override-args</span></code>. For example, you can benchmark a model with only 2 layers and 2 kv heads using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span><span class="w"> </span>--load-format<span class="w"> </span>dummy<span class="w"> </span>--json-model-override-args<span class="w"> </span><span class="s1">&#39;{&quot;num_hidden_layers&quot;: 1, &quot;num_key_value_heads&quot;: 1}&#39;</span>
+</pre></div>
+</div>
+</li>
 <li><p>You can use <code class="docutils literal notranslate"><span class="pre">--python-backtrace=cuda</span></code> to see python call stack for all CUDA kernels, as in PyTorch Profiler. (Caveat: this can cause inaccurately long kernel runtimes for CUDA event based timing)</p></li>
-<li><p>For more args please see https://docs.nvidia.com/nsight-systems/UserGuide/index.html</p></li>
+<li><p>For more arguments see <a class="reference external" href="https://docs.nvidia.com/nsight-systems/UserGuide/index.html">Nsight Systems User Guide</a>.</p></li>
 </ol>
 </section>
 </section>
