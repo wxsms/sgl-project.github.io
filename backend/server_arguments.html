@@ -589,6 +589,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p><code class="docutils literal notranslate"><span class="pre">log_level</span></code>: Global log verbosity.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">log_level_http</span></code>: Separate verbosity level for the HTTP server logs (if unset, defaults to <code class="docutils literal notranslate"><span class="pre">log_level</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">log_requests</span></code>: Logs the inputs and outputs of all requests for debugging.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log_requests_level</span></code>: Ranges from 0 to 2: level 0 only shows some basic metadata in requests, level 1 and 2 show request details (e.g., text, images), and level 1 limits output to 2048 characters (if unset, defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">show_time_cost</span></code>: Prints or logs detailed timing info for internal operations (helpful for performance tuning).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_metrics</span></code>: Exports Prometheus-like metrics for request usage and performance.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">decode_log_interval</span></code>: How often (in tokens) to log decode progress.</p></li>
