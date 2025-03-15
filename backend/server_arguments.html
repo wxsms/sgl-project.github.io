@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.4.post1" />
-    <meta name="docbuild:last-update" content="Mar 14, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 15, 2025"/>
   </head>
   
   
@@ -483,7 +483,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>To enable <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. By default, the cache path is located at <code class="docutils literal notranslate"><span class="pre">/tmp/torchinductor_root</span></code>, you can customize it using environment variable <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code>. For more details, please refer to <a class="reference external" href="https://pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html">PyTorch official documentation</a> and <a class="reference internal" href="#../references/torch_compile_cache.md"><span class="xref myst">Enabling cache for torch.compile</span></a>.</p></li>
+<li><p>To enable <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. By default, the cache path is located at <code class="docutils literal notranslate"><span class="pre">/tmp/torchinductor_root</span></code>, you can customize it using environment variable <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code>. For more details, please refer to <a class="reference external" href="https://pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html">PyTorch official documentation</a> and <a class="reference external" href="https://docs.sglang.ai/backend/hyperparameter_tuning.html#enabling-cache-for-torch-compile">Enabling cache for torch.compile</a>.</p></li>
 <li><p>To enable torchao quantization, add <code class="docutils literal notranslate"><span class="pre">--torchao-config</span> <span class="pre">int4wo-128</span></code>. It supports other <a class="reference external" href="https://github.com/sgl-project/sglang/blob/v0.3.6/python/sglang/srt/server_args.py#L671">quantization strategies (INT8/FP8)</a> as well.</p></li>
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
@@ -784,7 +784,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 14, 2025.
+  Last updated on Mar 15, 2025.
   <br/>
 </p>
   </div>
