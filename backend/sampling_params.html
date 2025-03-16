@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.4.post1" />
-    <meta name="docbuild:last-update" content="Mar 15, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 16, 2025"/>
   </head>
   
   
@@ -472,7 +472,7 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">max_new_tokens:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">128</span></code> The maximum output length measured in tokens.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stop:</span> <span class="pre">Optional[Union[str,</span> <span class="pre">List[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code> One or multiple <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-stop">stop words</a>. Generation will stop if one of these words is sampled.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop_token_ids:</span> <span class="pre">Optional[List[int]]</span> <span class="pre">=</span> <span class="pre">[]</span></code> Provide stop words in form of token ids. Generation will stop if one of these token ids is sampled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop_token_ids:</span> <span class="pre">Optional[List[int]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Provide stop words in form of token ids. Generation will stop if one of these token ids is sampled.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">temperature:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code> <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature">Temperature</a> when sampling the next token. <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0</span></code> corresponds to greedy sampling, higher temperature leads to more diversity.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top_p:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code> <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-top_p">Top-p</a> selects tokens from the smallest sorted set whose cumulative probability exceeds <code class="docutils literal notranslate"><span class="pre">top_p</span></code>. When <code class="docutils literal notranslate"><span class="pre">top_p</span> <span class="pre">=</span> <span class="pre">1</span></code>, this reduces to unrestricted sampling from all tokens.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top_k:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">-1</span></code> <a class="reference external" href="https://developer.nvidia.com/blog/how-to-get-better-outputs-from-your-large-language-model/#predictability_vs_creativity">Top-k</a> randomly selects from the <code class="docutils literal notranslate"><span class="pre">k</span></code> highest-probability tokens.</p></li>
@@ -481,11 +481,10 @@
 </section>
 <section id="penalizers">
 <h3>Penalizers<a class="headerlink" href="#penalizers" title="Link to this heading">#</a></h3>
-<p>To use penalizers you will need to <code class="docutils literal notranslate"><span class="pre">--disable-overlap</span></code>. Please note that this might degrade performance.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">frequency_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens based on their frequency in generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of penalization grows linearly with each appearance of a token.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">presence_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in the generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of the penalization is constant if a token occured.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">repetition_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in prompt or generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where numbers smaller than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourage repeatment of tokens and numbers larger than <code class="docutils literal notranslate"><span class="pre">2</span></code> encourages sampling of new tokens. The penalization scales multiplicatively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repetition_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in prompt or generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where numbers smaller than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourage repeatment of tokens and numbers larger than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourages sampling of new tokens. The penalization scales multiplicatively.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">min_new_tokens:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></code>: Forces the model to generate at least <code class="docutils literal notranslate"><span class="pre">min_new_tokens</span></code> until a stop word or EOS token is sampled. Note that this might lead to unintended behavior for example if the distribution is highly skewed towards these tokens.</p></li>
 </ul>
 </section>
@@ -820,7 +819,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 15, 2025.
+  Last updated on Mar 16, 2025.
   <br/>
 </p>
   </div>
