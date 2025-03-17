@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.4.post1" />
-    <meta name="docbuild:last-update" content="Mar 16, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 17, 2025"/>
   </head>
   
   
@@ -425,18 +425,21 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#JSON">JSON</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EBNF">EBNF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Regular-expression">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Structural-Tag">Structural Tag</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Native-API-and-SGLang-Runtime-(SRT)">Native API and SGLang Runtime (SRT)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">JSON</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">EBNF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Structural Tag</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Engine-API">Offline Engine API</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">JSON</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">EBNF</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">JSON</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">EBNF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Structural Tag</a></li>
 </ul>
 </li>
 </ul>
@@ -459,12 +462,12 @@
 <p>You can specify a JSON schema, <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to constrain the model output. The model output will be guaranteed to follow the given constraints. Only one constraint parameter (<code class="docutils literal notranslate"><span class="pre">json_schema</span></code>, <code class="docutils literal notranslate"><span class="pre">regex</span></code>, or <code class="docutils literal notranslate"><span class="pre">ebnf</span></code>) can be specified for a request.</p>
 <p>SGLang supports two grammar backends:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and regular expression constraints.</p></li>
-<li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>: Supports JSON schema, regular expression, and EBNF constraints.</p></li>
+<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a>: Supports JSON schema and regular expression constraints.</p></li>
+<li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>(default): Supports JSON schema, regular expression, and EBNF constraints.</p></li>
 <li><p><a class="reference external" href="https://github.com/guidance-ai/llguidance">Llguidance</a>: Supports JSON schema, regular expression, and EBNF constraints.</p></li>
 </ul>
 <p>We suggest using XGrammar for its better performance and utility. XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a>. For more details, see <a class="reference external" href="https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar">XGrammar technical overview</a>.</p>
-<p>To use Xgrammar, simply add <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> when launching the server. To use llguidance, add <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">llguidance</span></code> when launching the server. If no backend is specified, Outlines will be used as the default.</p>
+<p>To use Outlines, simply add <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">outlines</span></code> when launching the server. To use llguidance, add <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">llguidance</span></code> when launching the server. If no backend is specified, XGrammar will be used as the default.</p>
 <p>For better output quality, <strong>It’s advisable to explicitly include instructions in the prompt to guide the model to generate the desired format.</strong> For example, you can specify, ‘Please generate the output in the following JSON format: …’.</p>
 <section id="OpenAI-Compatible-API">
 <h2>OpenAI Compatible API<a class="headerlink" href="#OpenAI-Compatible-API" title="Link to this heading">#</a></h2>
@@ -487,7 +490,7 @@
 
 
 <span class="n">server_process</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">launch_server_cmd</span><span class="p">(</span>
-    <span class="s2">&quot;python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --host 0.0.0.0 --grammar-backend xgrammar&quot;</span>
+    <span class="s2">&quot;python -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instruct --host 0.0.0.0&quot;</span>
 <span class="p">)</span>
 
 <span class="n">wait_for_server</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -500,32 +503,32 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:08:55] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=33230, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=68691216, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=5, speculative_eagle_topk=4, speculative_num_draft_tokens=8, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False)
-[2025-03-16 21:09:15 TP0] Init torch distributed begin.
-[2025-03-16 21:09:16 TP0] Init torch distributed ends. mem usage=0.00 GB
-[2025-03-16 21:09:16 TP0] Load weight begin. avail mem=42.53 GB
-[2025-03-16 21:09:16 TP0] The following error message &#39;operation scheduled before its operands&#39; can be ignored.
-[2025-03-16 21:09:16 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-03-17 02:01:27] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=37678, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=538196447, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=5, speculative_eagle_topk=4, speculative_num_draft_tokens=8, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False)
+[2025-03-17 02:01:50 TP0] Init torch distributed begin.
+[2025-03-17 02:01:50 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-03-17 02:01:50 TP0] Load weight begin. avail mem=44.71 GB
+[2025-03-17 02:01:51 TP0] The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+[2025-03-17 02:01:51 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.04s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.56it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.27it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.20it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.03s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.57it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
 
-[2025-03-16 21:09:20 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=26.99 GB, mem usage=15.53 GB.
-[2025-03-16 21:09:20 TP0] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-[2025-03-16 21:09:20 TP0] Memory pool end. avail mem=24.20 GB
-[2025-03-16 21:09:21 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-03-16 21:09:24] INFO:     Started server process [1195189]
-[2025-03-16 21:09:24] INFO:     Waiting for application startup.
-[2025-03-16 21:09:24] INFO:     Application startup complete.
-[2025-03-16 21:09:24] INFO:     Uvicorn running on http://0.0.0.0:33230 (Press CTRL+C to quit)
-[2025-03-16 21:09:25] INFO:     127.0.0.1:50322 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-03-16 21:09:25] INFO:     127.0.0.1:50334 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-03-16 21:09:25 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:28] INFO:     127.0.0.1:50342 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-03-16 21:09:28] The server is fired up and ready to roll!
+[2025-03-17 02:01:55 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=27.53 GB, mem usage=17.18 GB.
+[2025-03-17 02:01:55 TP0] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+[2025-03-17 02:01:55 TP0] Memory pool end. avail mem=24.74 GB
+[2025-03-17 02:01:56 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-03-17 02:01:56] INFO:     Started server process [90297]
+[2025-03-17 02:01:56] INFO:     Waiting for application startup.
+[2025-03-17 02:01:56] INFO:     Application startup complete.
+[2025-03-17 02:01:56] INFO:     Uvicorn running on http://0.0.0.0:37678 (Press CTRL+C to quit)
+[2025-03-17 02:01:56] INFO:     127.0.0.1:34022 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-03-17 02:01:57] INFO:     127.0.0.1:34032 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-03-17 02:01:57 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:01:59] INFO:     127.0.0.1:34042 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 02:01:59] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -583,8 +586,8 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:30 TP0] Prefill batch. #new-seq: 1, #new-token: 48, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:31] INFO:     127.0.0.1:46450 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:02 TP0] Prefill batch. #new-seq: 1, #new-token: 48, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:05] INFO:     127.0.0.1:34670 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -636,8 +639,8 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:31 TP0] Prefill batch. #new-seq: 1, #new-token: 19, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:31] INFO:     127.0.0.1:46450 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:05 TP0] Prefill batch. #new-seq: 1, #new-token: 19, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:06] INFO:     127.0.0.1:34670 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -684,9 +687,9 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:31 TP0] Prefill batch. #new-seq: 1, #new-token: 27, #cached-token: 25, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:31 TP0] Decode batch. #running-req: 1, #token: 55, token usage: 0.00, gen throughput (token/s): 3.91, #queue-req: 0,
-[2025-03-16 21:09:31] INFO:     127.0.0.1:46450 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:06 TP0] Prefill batch. #new-seq: 1, #new-token: 27, #cached-token: 25, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:06 TP0] Decode batch. #running-req: 1, #token: 55, token usage: 0.00, gen throughput (token/s): 3.84, #queue-req: 0,
+[2025-03-17 02:02:06] INFO:     127.0.0.1:34670 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -721,8 +724,8 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:31 TP0] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:31] INFO:     127.0.0.1:46450 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:06 TP0] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:06] INFO:     127.0.0.1:34670 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -732,6 +735,142 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <strong style='color: #00008B;'>Paris</strong></div>
 </div>
 </section>
+<section id="Structural-Tag">
+<h3>Structural Tag<a class="headerlink" href="#Structural-Tag" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tool_get_current_weather</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;get_current_weather&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Get the current weather in a given location&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The city to find the weather for, e.g. &#39;San Francisco&#39;&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;the two-letter abbreviation for the state that the city is&quot;</span>
+                    <span class="s2">&quot; in, e.g. &#39;CA&#39; which would mean &#39;California&#39;&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The unit to fetch the temperature in&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="s2">&quot;fahrenheit&quot;</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">tool_get_current_date</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;get_current_date&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Get the current date and time for a given timezone&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;timezone&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The timezone to fetch the current date and time for, e.g. &#39;America/New_York&#39;&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;timezone&quot;</span><span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">schema_get_current_weather</span> <span class="o">=</span> <span class="n">tool_get_current_weather</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">][</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span>
+<span class="n">schema_get_current_date</span> <span class="o">=</span> <span class="n">tool_get_current_date</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">][</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_messages</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"># Tool Instructions</span>
+<span class="s2">- Always execute python code in messages that you share.</span>
+<span class="s2">- When looking for real time information use relevant functions if available else fallback to brave_search</span>
+<span class="s2">You have access to the following functions:</span>
+<span class="s2">Use the function &#39;get_current_weather&#39; to: Get the current weather in a given location</span>
+<span class="si">{</span><span class="n">tool_get_current_weather</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">Use the function &#39;get_current_date&#39; to: Get the current date and time for a given timezone</span>
+<span class="si">{</span><span class="n">tool_get_current_date</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">If a you choose to call a function ONLY reply in the following format:</span>
+<span class="s2">&lt;</span><span class="se">{{</span><span class="s2">start_tag</span><span class="se">}}</span><span class="s2">=</span><span class="se">{{</span><span class="s2">function_name</span><span class="se">}}</span><span class="s2">&gt;</span><span class="se">{{</span><span class="s2">parameters</span><span class="se">}}{{</span><span class="s2">end_tag</span><span class="se">}}</span>
+<span class="s2">where</span>
+<span class="s2">start_tag =&gt; `&lt;function`</span>
+<span class="s2">parameters =&gt; a JSON dict with the function argument name as key and function argument value as value.</span>
+<span class="s2">end_tag =&gt; `&lt;/function&gt;`</span>
+<span class="s2">Here is an example,</span>
+<span class="s2">&lt;function=example_function_name&gt;</span><span class="se">{{</span><span class="s2">&quot;example_name&quot;: &quot;example_value&quot;</span><span class="se">}}</span><span class="s2">&lt;/function&gt;</span>
+<span class="s2">Reminder:</span>
+<span class="s2">- Function calls MUST follow the specified format</span>
+<span class="s2">- Required parameters MUST be specified</span>
+<span class="s2">- Only call one function at a time</span>
+<span class="s2">- Put the entire function call reply on one line</span>
+<span class="s2">- Always add your sources when using search results to answer the user query</span>
+<span class="s2">You are a helpful assistant.&quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are in New York. Please get the current date and time, and the weather.&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+
+<span class="n">messages</span> <span class="o">=</span> <span class="n">get_messages</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+    <span class="n">response_format</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;structural_tag&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;structures&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;function=get_current_weather&gt;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">schema_get_current_weather</span><span class="p">,</span>
+                <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;/function&gt;&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;function=get_current_date&gt;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">schema_get_current_date</span><span class="p">,</span>
+                <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;/function&gt;&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;function=&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-03-17 02:02:07 TP0] Prefill batch. #new-seq: 1, #new-token: 476, #cached-token: 25, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:07 TP0] Decode batch. #running-req: 1, #token: 535, token usage: 0.03, gen throughput (token/s): 28.00, #queue-req: 0,
+[2025-03-17 02:02:08] INFO:     127.0.0.1:34670 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources:<br>- get_current_date function<br>- get_current_weather function<br>- https://www.weather.com (for weather information)</strong></div>
+</div>
+</section>
 </section>
 <section id="Native-API-and-SGLang-Runtime-(SRT)">
 <h2>Native API and SGLang Runtime (SRT)<a class="headerlink" href="#Native-API-and-SGLang-Runtime-(SRT)" title="Link to this heading">#</a></h2>
@@ -739,7 +878,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <h3>JSON<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p><strong>Using Pydantic</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -780,15 +919,16 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:31 TP0] Prefill batch. #new-seq: 1, #new-token: 14, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:31] INFO:     127.0.0.1:46460 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:08 TP0] Prefill batch. #new-seq: 1, #new-token: 14, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:08 TP0] Decode batch. #running-req: 1, #token: 18, token usage: 0.00, gen throughput (token/s): 40.70, #queue-req: 0,
+[2025-03-17 02:02:09] INFO:     127.0.0.1:34674 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{\n  "name": "Paris",\n  "population": 2141000\n}', 'meta_info': {'id': 'e63ecce51651442094e7436de4fe5f18', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 15, 'completion_tokens': 19, 'cached_tokens': 1, 'e2e_latency': 0.20621824264526367}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{\n  "name": "Paris",\n  "population": 2141000\n}', 'meta_info': {'id': '6e7e7161f8f34ead81fe6bdb4fb058d2', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 15, 'completion_tokens': 19, 'cached_tokens': 1, 'e2e_latency': 0.47237730026245117}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -798,7 +938,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <p><strong>JSON Schema Directly</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">json_schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
@@ -834,27 +974,24 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:31 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 14, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:32 TP0] Decode batch. #running-req: 1, #token: 30, token usage: 0.00, gen throughput (token/s): 83.17, #queue-req: 0,
-[2025-03-16 21:09:32] INFO:     127.0.0.1:46470 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:09 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 14, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:09] INFO:     127.0.0.1:34682 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{\n  "name": "Paris",\n  "population": 2141000\n}', 'meta_info': {'id': '7076ed4a52ae458599dbabbe4b535a8a', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 15, 'completion_tokens': 19, 'cached_tokens': 14, 'e2e_latency': 0.20597338676452637}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{\n  "name": "Paris",\n  "population": 2141000\n}', 'meta_info': {'id': 'd64dbcf8207443249880701975382e0b', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 15, 'completion_tokens': 19, 'cached_tokens': 14, 'e2e_latency': 0.5178534984588623}}</strong></div>
 </div>
 </section>
 <section id="id2">
 <h3>EBNF<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/generate&quot;</span><span class="p">,</span>
     <span class="n">json</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Give me the information of the capital of France.&quot;</span><span class="p">,</span>
@@ -884,22 +1021,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:32 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:32 TP0] Prefill batch. #new-seq: 3, #new-token: 3, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:32] INFO:     127.0.0.1:46480 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:09 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:09 TP0] Prefill batch. #new-seq: 3, #new-token: 3, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:10 TP0] Decode batch. #running-req: 3, #token: 23, token usage: 0.00, gen throughput (token/s): 32.02, #queue-req: 0,
+[2025-03-17 02:02:10] INFO:     127.0.0.1:34698 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'meta_info': {'id': '039d882ee6004db4adeadfa7d71796b8', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 11, 'completion_tokens': 7, 'cached_tokens': 10, 'e2e_latency': 0.23975777626037598}}, {'text': 'Paris is the capital of France', 'meta_info': {'id': '6f5b49854bab48dd8330c4ebd0609780', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 11, 'completion_tokens': 7, 'cached_tokens': 10, 'e2e_latency': 0.23976659774780273}}, {'text': 'Paris is the capital of France', 'meta_info': {'id': '978cfdf237fb4393beb3389446599dc2', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 11, 'completion_tokens': 7, 'cached_tokens': 10, 'e2e_latency': 0.23977041244506836}}]</strong></div>
+<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'meta_info': {'id': 'f0d286daa3d044a9a7fe87ecd1dd889e', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 11, 'completion_tokens': 7, 'cached_tokens': 10, 'e2e_latency': 0.5790033340454102}}, {'text': 'Paris is the capital of France', 'meta_info': {'id': '67c5049009f54175bfaa1dd3f91e4fed', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 11, 'completion_tokens': 7, 'cached_tokens': 10, 'e2e_latency': 0.5790176391601562}}, {'text': 'Paris is the capital of France', 'meta_info': {'id': 'ac51fc1b87b2462486990166606d23fb', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 11, 'completion_tokens': 7, 'cached_tokens': 10, 'e2e_latency': 0.5790231227874756}}]</strong></div>
 </div>
 </section>
 <section id="id3">
 <h3>Regular expression<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -922,18 +1060,80 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-16 21:09:32 TP0] Prefill batch. #new-seq: 1, #new-token: 5, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-16 21:09:32] INFO:     127.0.0.1:46486 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 02:02:10 TP0] Prefill batch. #new-seq: 1, #new-token: 5, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:10] INFO:     127.0.0.1:34708 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'meta_info': {'id': '448cc6c21bf843f78dba3a9e7ad6ef64', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 6, 'completion_tokens': 2, 'cached_tokens': 1, 'e2e_latency': 0.036867380142211914}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France', 'meta_info': {'id': 'b5a30bb9790d4687a9529f7c9708fa9b', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 6, 'completion_tokens': 2, 'cached_tokens': 1, 'e2e_latency': 0.0967721939086914}}</strong></div>
+</div>
+</section>
+<section id="id4">
+<h3>Structural Tag<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span>
+
+<span class="c1"># generate an answer</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">apply_chat_template</span><span class="p">(</span>
+    <span class="n">messages</span><span class="p">,</span> <span class="n">tokenize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_generation_prompt</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+    <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;structural_tag&quot;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;structural_tag&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;structures&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;function=get_current_weather&gt;&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">schema_get_current_weather</span><span class="p">,</span>
+                        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;/function&gt;&quot;</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;function=get_current_date&gt;&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">schema_get_current_date</span><span class="p">,</span>
+                        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;/function&gt;&quot;</span><span class="p">,</span>
+                    <span class="p">},</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;function=&quot;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Send POST request to the API endpoint</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/generate&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">print_highlight</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-03-17 02:02:16 TP0] Prefill batch. #new-seq: 1, #new-token: 501, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 02:02:16 TP0] Decode batch. #running-req: 1, #token: 537, token usage: 0.03, gen throughput (token/s): 7.76, #queue-req: 0,
+[2025-03-17 02:02:16] INFO:     127.0.0.1:56318 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>{'text': '<function=get_current_date>{"timezone": "America/New_York"}</function>\n<function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function>', 'meta_info': {'id': '2ed9575a451141f49e06730a07a6c71e', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 502, 'completion_tokens': 46, 'cached_tokens': 1, 'e2e_latency': 0.48380422592163086}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
@@ -945,7 +1145,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <section id="Offline-Engine-API">
 <h2>Offline Engine API<a class="headerlink" href="#Offline-Engine-API" title="Link to this heading">#</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
@@ -962,19 +1162,19 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.03s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.50it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.21it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:04,  1.45s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.24it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.05it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.05it/s]
 
 </pre></div></div>
 </div>
-<section id="id4">
-<h3>JSON<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>JSON<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p><strong>Using Pydantic</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
@@ -1065,7 +1265,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <p><strong>JSON Schema Directly</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
@@ -1131,10 +1331,10 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <strong style='color: #00008B;'>Prompt: Give me the information of the capital of Ireland in the JSON format.<br>Generated text: {"name": "Dublin", "population": 527617}</strong></div>
 </div>
 </section>
-<section id="id5">
-<h3>EBNF<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h3>EBNF<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
@@ -1196,13 +1396,13 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Rome is the capital of Italy</strong></div>
+<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of Italy</strong></div>
 </div>
 </section>
-<section id="id6">
-<h3>Regular expression<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h3>Regular expression<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
@@ -1243,8 +1443,65 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="output_area rendered_html docutils container">
 <strong style='color: #00008B;'>Prompt: Please provide information about Paris as a major global city:<br>Generated text: France</strong></div>
 </div>
+</section>
+<section id="id8">
+<h3>Structural Tag<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">apply_chat_template</span><span class="p">(</span>
+    <span class="n">messages</span><span class="p">,</span> <span class="n">tokenize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_generation_prompt</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span><span class="n">text</span><span class="p">]</span>
+
+
+<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+    <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+    <span class="s2">&quot;structural_tag&quot;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;structural_tag&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;structures&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;function=get_current_weather&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">schema_get_current_weather</span><span class="p">,</span>
+                    <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;/function&gt;&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;function=get_current_date&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">schema_get_current_date</span><span class="p">,</span>
+                    <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;/function&gt;&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;function=&quot;</span><span class="p">],</span>
+        <span class="p">}</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Send POST request to the API endpoint</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+    <span class="n">print_highlight</span><span class="p">(</span><span class="s2">&quot;===============================&quot;</span><span class="p">)</span>
+    <span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">Generated text: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>===============================</strong></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br># Tool Instructions<br>- Always execute python code in messages that you share.<br>- When looking for real time information use relevant functions if available else fallback to brave_search<br>You have access to the following functions:<br>Use the function 'get_current_weather' to: Get the current weather in a given location<br>{'name': 'get_current_weather', 'description': 'Get the current weather in a given location', 'parameters': {'type': 'object', 'properties': {'city': {'type': 'string', 'description': "The city to find the weather for, e.g. 'San Francisco'"}, 'state': {'type': 'string', 'description': "the two-letter abbreviation for the state that the city is in, e.g. 'CA' which would mean 'California'"}, 'unit': {'type': 'string', 'description': 'The unit to fetch the temperature in', 'enum': ['celsius', 'fahrenheit']}}, 'required': ['city', 'state', 'unit']}}<br>Use the function 'get_current_date' to: Get the current date and time for a given timezone<br>{'name': 'get_current_date', 'description': 'Get the current date and time for a given timezone', 'parameters': {'type': 'object', 'properties': {'timezone': {'type': 'string', 'description': "The timezone to fetch the current date and time for, e.g. 'America/New_York'"}}, 'required': ['timezone']}}<br>If a you choose to call a function ONLY reply in the following format:<br><{start_tag}={function_name}>{parameters}{end_tag}<br>where<br>start_tag => `<function`<br>parameters => a JSON dict with the function argument name as key and function argument value as value.<br>end_tag => `</function>`<br>Here is an example,<br><function=example_function_name>{"example_name": "example_value"}</function><br>Reminder:<br>- Function calls MUST follow the specified format<br>- Required parameters MUST be specified<br>- Only call one function at a time<br>- Put the entire function call reply on one line<br>- Always add your sources when using search results to answer the user query<br>You are a helpful assistant.<|eot_id|><|start_header_id|>user<|end_header_id|><br><br>You are in New York. Please get the current date and time, and the weather.<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: <function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Note: I'm assuming you are in New York City, if you are in a different location, please specify the city and state accurately for accurate weather results.</strong></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
@@ -1305,18 +1562,21 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#JSON">JSON</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EBNF">EBNF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Regular-expression">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Structural-Tag">Structural Tag</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Native-API-and-SGLang-Runtime-(SRT)">Native API and SGLang Runtime (SRT)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">JSON</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">EBNF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Structural Tag</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Engine-API">Offline Engine API</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">JSON</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">EBNF</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">JSON</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">EBNF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Regular expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Structural Tag</a></li>
 </ul>
 </li>
 </ul>
@@ -1352,7 +1612,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 16, 2025.
+  Last updated on Mar 17, 2025.
   <br/>
 </p>
   </div>
