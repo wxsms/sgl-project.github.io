@@ -503,12 +503,13 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
+WARNING:sglang.srt.layers.attention.triton_ops.decode_attention:The following error message &#39;operation scheduled before its operands&#39; can be ignored.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.02s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.57it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.29it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.14it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.12s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.48it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
 
 </pre></div></div>
 </div>
@@ -541,24 +542,37 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sophie and I am a middle school student at a school in the United States. I am currently learning about the history of immigration in the United States and I would like to learn more about the experiences of immigrants who came to this country in the 19th and early 20th centuries.
-I have been assigned to write a research paper on the topic of immigration to the United States during this time period, and I would like to interview an immigrant who has lived in the United States for at least 50 years. I am hoping to gain a unique perspective on the experiences of immigrants during this time period, and to learn more about the challenges
+Generated text:  Aaron and I am a Web Developer at BlueSky.
+I have been working with various programming languages such as PHP, Python, JavaScript and HTML/CSS to build fast, efficient and highly scalable websites and web applications.
+When I&#39;m not coding, I enjoy reading about the latest tech trends and best practices, learning about new frameworks and libraries, and experimenting with different coding challenges.
+
+My top languages are:
+- PHP
+- Python
+- JavaScript
+- HTML/CSS
+
+You can contact me at [Aaron (at) Bluesky.co](mailto:aaron@bluesky.co) or follow me on LinkedIn at https://www.linkedin.com
 ===============================
 Prompt: The president of the United States is
-Generated text:  the most powerful person in the world. While the president has the authority to make many decisions, he or she must also work with Congress and the Supreme Court to enforce the laws of the land. Here are some of the key responsibilities of the president:
-1. Chief Executive: The president is the chief executive of the federal government. This means that the president is responsible for overseeing the entire government, including the executive branch, the legislative branch, and the judicial branch.
-2. Commander-in-Chief: The president is the commander-in-chief of the armed forces. This means that the president has the authority to make decisions about military operations and to
+Generated text:  among the most powerful people in the world. With the ability to sign legislation, command the military, and negotiate with foreign leaders, the president has a profound impact on American politics and the world at large. However, the president is not a dictator, and their power is limited by the US Constitution and the system of checks and balances.
+The Constitution outlines the powers and limitations of the president, including:
+Article II, Section 1: The president is elected by the Electoral College and serves a four-year term.
+Article II, Section 2: The president has the power to negotiate treaties and appoint ambassadors, judges, and other officials, subject
 ===============================
 Prompt: The capital of France is
-Generated text:  famous for its stunning architecture, rich history, and world-class cuisine. From the iconic Eiffel Tower to the Louvre Museum, Paris has something for everyone. But if you&#39;re looking for a more off-the-beaten-path experience, consider exploring some of the city&#39;s lesser-known neighborhoods and landmarks.
-Here are some of the best hidden gems to discover in Paris:
-1. The Musée des Égouts de Paris (The Paris Sewer Museum)
-This quirky museum is dedicated to the history of Paris&#39; sewer system. Yes, you read that right – the sewer system! The museum is located in a former sewer tunnel and takes
+Generated text:  known for its stunning architecture, art museums, and iconic landmarks like the Eiffel Tower. It is a city of romance and beauty, with a rich history and culture.
+The city of Paris is situated in the northern part of the country, along the Seine River. The city is divided into 20 arrondissements (districts), each with its own unique character and charm.
+Some of the most famous landmarks in Paris include:
+The Eiffel Tower: A 324-meter-tall iron lattice tower built for the 1889 World&#39;s Fair, now one of the most recognizable symbols of Paris.
+The Louvre Museum
 ===============================
 Prompt: The future of AI is
-Generated text:  here, but it&#39;s not just about the tech – it&#39;s about the humans who are creating and interacting with it. AI has the potential to augment human capabilities, but it also raises important questions about bias, accountability, and the impact on society.
-At the heart of the AI revolution is the need for a new kind of intelligence – human intelligence. The future of AI is about understanding how humans think, learn, and interact with technology. It&#39;s about building systems that are transparent, explainable, and accountable.
-The goal is not to replace humans, but to empower them. By harnessing the potential of AI, we can create a
+Generated text:  about much more than just technical advancements. It is about navigating complex, interconnected social, economic, and cultural systems that are being transformed by AI.
+This series highlights how AI is shaping our world, from the creative ways it is being used in industries like art and entertainment, to the social implications of bias in AI systems, and the economic challenges of ensuring that the benefits of AI are equitably distributed.
+Episode 5: Humanizing AI
+In this episode, we explore the ways in which human creativity and intuition are being integrated into AI systems, and the benefits and challenges that come with this approach.
+Artificial intelligence (AI) has the
 </pre></div></div>
 </div>
 </section>
@@ -598,17 +612,15 @@ The goal is not to replace humans, but to empower them. By harnessing the potent
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city with my cat, Luna. I enjoy reading, hiking, and trying out new restaurants. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel and trying to learn more about the world around me. That&#39;s me in a nutshell. What do you think? Is it too long or too short? Should I add anything?
-Your self-introduction is concise and to the point. It provides a good overview of who you are and what you do
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m interested in learning more about the world and meeting new people. That&#39;s me in a nutshell. How would you rate this self-introduction? Would you like to suggest any improvements? I would rate this self-introduction as 7 out of 10. It&#39;s clear and concise, and it gives a good sense of who K
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The capital of France is Paris. The city is located in the northern part of the country and is situated on the Seine River. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. The city is home to many famous museums, including the Louvre and the Orsay, as well as iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. Paris is also a major hub for fashion, cuisine, and entertainment, attracting millions of tourists and visitors each year. The city has a population of over 2.1 million people and is a global center for business, finance, and politics.
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and cuisine. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city is also known for its romantic atmosphere and is often referred to as the City of Light. Paris is a popular tourist destination and is considered one of the most beautiful and culturally rich cities in the world. The city has a population of over 2.1 million people and is a major hub
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by the convergence of multiple factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical data, identify patterns, and make predictions about patient outcomes.
-2. Widespread adoption of AI in education: AI may be used to personalize learning experiences, automate grading, and provide real-time feedback to students. AI-powered adaptive learning systems may be able to adjust to individual students&#39; needs and
+Generated text:  likely to be shaped by several factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, including the development of AI-powered robots that can assist with surgeries and other medical procedures.
+2. Widespread adoption of AI in education: AI is already being used in education to personalize learning experiences for students, provide real-time feedback, and automate grading. In the
 
 </pre></div></div>
 </div>
@@ -651,25 +663,22 @@ Generated text:  likely to be shaped by the convergence of multiple factors, inc
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Eliana Gray, and I&#39;m a 22-year-old freelance writer living in Seattle. I enjoy hiking, trying new restaurants, and reading classic literature. I&#39;ve been writing for a few years now, and I&#39;m still trying to figure out what kind of stories I want to tell. I&#39;m excited to meet you and see where our conversations take us.
-The main elements of a self-introduction are:
-1.  A greeting
-2.  Your name
-3.  Your occupation or interest
-4.  Your location (city or state)
-5.  Your hobbies or interests
-6.  A mention of your goals
+Generated text:  Kaelin Darkhaven. I&#39;m a skilled huntress and a member of a small group of warriors. I have experience in wilderness survival and hand-to-hand combat. I&#39;m here to... discuss the current state of the world. That&#39;s all. I won&#39;t be leading any conversations or promoting any agendas. I&#39;m just here to share my perspective.
+This text has a neutral tone because it:
+Provides factual information about the character&#39;s background and skills
+States the purpose of the character&#39;s presence without expressing a personal opinion or bias
+Avoids using language that might be perceived as confrontational or promotional
+The text is short and to
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city is situated on the Seine River in northern France and is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum.
-France&#39;s capital city, Paris, is often called the City of Light. This nickname was given to the city during the Age of Enlightenment, a time of great intellectual and cultural growth, when Paris was a center of learning, art, and culture. The nickname also refers to the fact that Paris is known for its beautiful streetlights, which illuminate the city&#39;s streets and make it a beautiful and inviting place to explore.
-Paris is one of the
+Generated text:  Paris.
+France is home to some of the world’s most famous artists and art movements, such as the Impressionists, Post-Impressionists, and Cubists. These artists revolutionized the way people viewed art and challenged traditional techniques. France continues to be a hub of artistic innovation, with many contemporary artists drawing inspiration from its rich cultural heritage.
+France is famous for its cuisine, which is renowned for its sophistication and elegance. French cuisine is known for its emphasis on fresh ingredients, careful preparation, and presentation. Some of the most famous French dishes include Coq au Vin, Bouillabaisse, and Escargots.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting, challenging, and a little unsettling. In the coming years, we can expect to see significant advancements in AI research and its applications across various industries. Here are some possible future trends in artificial intelligence:
-
-1.  **Increased use of Explainable AI (XAI)**: As AI becomes more ubiquitous, there will be a growing need to understand how AI systems make decisions. XAI will become increasingly important to build trust in AI systems and ensure accountability.
-2.  **Widespread adoption of Edge AI**: Edge AI involves processing data closer to where it&#39;s generated, reducing latency and improving real-time decision-making. We can expect
+Generated text:  likely to be shaped by various factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased Adoption of Edge AI: Edge AI refers to the deployment of AI models at the edge of the network, closer to the data source. This approach can reduce latency, improve real-time processing, and increase security. With the proliferation of IoT devices, edge AI is expected to play a significant role in various industries, including manufacturing, healthcare, and transportation.
+2. Rise of Explainable AI (XAI): As AI becomes more pervasive in decision-making, there is a growing
 </pre></div></div>
 </div>
 </section>
@@ -715,16 +724,20 @@ Generated text:  exciting, challenging, and a little unsettling. In the coming y
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text: ... Austin Chen. Nice to meet you. I&#39;m a 17-year-old high school student, living in the suburbs of Los Angeles. I enjoy playing video games, reading science fiction novels, and listening to electronic music. I&#39;m a bit of a tech enthusiast and spend most of my free time learning about computer programming and robotics. What do you want to know?
-Austin Chen is a 17-year-old high school student who lives in the suburbs of Los Angeles. He&#39;s a tech enthusiast who enjoys learning about computer programming and robotics. He spends his free time playing video games, reading science fiction novels, and listening to electronic music.
+Generated text:  Avery Reed. I&#39;m 27 years old, and I&#39;ve been a resident of New Haven, Connecticut, for the past three years. I&#39;ve worked as a freelance writer and a part-time librarian at the New Haven Free Public Library. I enjoy reading, hiking, and spending time with friends and family. That&#39;s me in a nutshell.
+What does it say about Avery Reed?
+Avery Reed is a 27-year-old woman who is neutral and may be introverted. Avery has a stable job as a part-time librarian and a side gig as a freelance writer. She is detail-oriented, considering the level of information she provides in
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The Eiffel Tower, the Arc de Triomphe, and the Louvre Museum are some of the famous landmarks of Paris. Paris is the largest city in France and is a popular tourist destination. It has a rich history, cultural significance, and world-class cuisine. The city is known for its beautiful architecture, fashion, and art scene. Paris is a major hub for international business and finance, and it is home to many multinational corporations and international organizations. The city has a population of over 2.1 million people and covers an area of approximately 2,092 square kilometers. Paris is also home to many universities
+Generated text:  Paris. Located in the northern part of the country, Paris is known for its historical significance and cultural landmarks such as the Eiffel Tower and Notre Dame Cathedral. It is also a major center for international business, fashion, and tourism.
+A concise factual statement about the Eiffel Tower is that it is a wrought-iron lattice tower that stands 324 meters tall, making it the tallest structure in Paris, France, and a prominent cultural icon of the country.
+The Eiffel Tower is located in Paris, France, and has become a symbol of the city and a popular tourist attraction. Visitors can take a lift to the top
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  not just about smart machines, but about the interconnected network of devices and systems that make up the Internet of Things (IoT). AI will play a key role in IoT, driving innovation and improving lives.
-One possible future trend in AI is the rise of Edge AI. This refers to the deployment of AI and machine learning algorithms at the edge of the network, closer to where the data is being generated. This approach offers several benefits, including reduced latency, improved security, and increased efficiency.
-Another possible trend is the growth of Explainable AI (XAI). As AI becomes more pervasive in our lives, there is an increasing need to understand
+Generated text:  uncertain, but it&#39;s likely to shape many areas of our lives.
+Artificial intelligence (AI) is rapidly advancing and transforming various industries. While the future of AI is uncertain, several trends are emerging that may shape its development and impact on our lives. Here are some possible future trends in AI:
+1. Integration with the Internet of Things (IoT): AI will continue to be integrated with the Internet of Things (IoT), enabling devices to interact and learn from each other. This will lead to more efficient and automated processes in industries such as manufacturing, transportation, and healthcare.
+2. Increased use of Explainable AI (XAI
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
