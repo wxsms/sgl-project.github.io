@@ -493,32 +493,34 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-WARNING:sglang.srt.layers.attention.triton_ops.decode_attention:The following error message &#39;operation scheduled before its operands&#39; can be ignored.
-[2025-03-17 09:30:24] server_args=ServerArgs(model_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=32109, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=727708194, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=5, speculative_eagle_topk=4, speculative_num_draft_tokens=8, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;qwen25&#39;, enable_hierarchical_cache=False, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False)
-WARNING:sglang.srt.layers.attention.triton_ops.decode_attention:The following error message &#39;operation scheduled before its operands&#39; can be ignored.
-WARNING:sglang.srt.layers.attention.triton_ops.decode_attention:The following error message &#39;operation scheduled before its operands&#39; can be ignored.
-[2025-03-17 09:30:44 TP0] Init torch distributed begin.
-[2025-03-17 09:30:44 TP0] Init torch distributed ends. mem usage=0.00 GB
-[2025-03-17 09:30:44 TP0] Load weight begin. avail mem=60.56 GB
-[2025-03-17 09:30:45 TP0] Using model weights format [&#39;*.safetensors&#39;]
+The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+[2025-03-17 12:25:35] server_args=ServerArgs(model_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=36836, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=490701062, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=5, speculative_eagle_topk=4, speculative_num_draft_tokens=8, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;qwen25&#39;, enable_hierarchical_cache=False, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False)
+The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+[2025-03-17 12:25:56 TP0] Init torch distributed begin.
+[2025-03-17 12:25:57 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-03-17 12:25:57 TP0] Load weight begin. avail mem=35.71 GB
+[2025-03-17 12:25:57 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.32it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.29it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.15it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.59it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.55it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
 
-[2025-03-17 09:30:48 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=46.18 GB, mem usage=14.38 GB.
-[2025-03-17 09:30:48 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-03-17 09:30:48 TP0] Memory pool end. avail mem=44.88 GB
-[2025-03-17 09:30:49 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=32768
-[2025-03-17 09:30:50] INFO:     Started server process [3195832]
-[2025-03-17 09:30:50] INFO:     Waiting for application startup.
-[2025-03-17 09:30:50] INFO:     Application startup complete.
-[2025-03-17 09:30:50] INFO:     Uvicorn running on http://0.0.0.0:32109 (Press CTRL+C to quit)
-[2025-03-17 09:30:50] INFO:     127.0.0.1:33162 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-03-17 09:30:51] INFO:     127.0.0.1:47820 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-03-17 09:30:51 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 12:26:00 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=21.33 GB, mem usage=14.39 GB.
+[2025-03-17 12:26:00 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-03-17 12:26:00 TP0] Memory pool end. avail mem=20.03 GB
+[2025-03-17 12:26:00 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=32768
+[2025-03-17 12:26:01] INFO:     Started server process [744973]
+[2025-03-17 12:26:01] INFO:     Waiting for application startup.
+[2025-03-17 12:26:01] INFO:     Application startup complete.
+[2025-03-17 12:26:01] INFO:     Uvicorn running on http://0.0.0.0:36836 (Press CTRL+C to quit)
+[2025-03-17 12:26:01] INFO:     127.0.0.1:48098 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:02] INFO:     127.0.0.1:48100 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:02 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 12:26:06] INFO:     127.0.0.1:48116 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:06] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -612,7 +614,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-17 09:30:55] INFO:     127.0.0.1:47852 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:07] INFO:     127.0.0.1:48118 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 </section>
@@ -646,13 +648,11 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-17 09:30:55 TP0] Prefill batch. #new-seq: 1, #new-token: 276, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0,
-[2025-03-17 09:30:55] INFO:     127.0.0.1:47836 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-03-17 09:30:55] The server is fired up and ready to roll!
-[2025-03-17 09:30:56 TP0] Decode batch. #running-req: 1, #token: 316, token usage: 0.02, gen throughput (token/s): 7.25, #queue-req: 0,
-[2025-03-17 09:30:56 TP0] Decode batch. #running-req: 1, #token: 356, token usage: 0.02, gen throughput (token/s): 104.28, #queue-req: 0,
-[2025-03-17 09:30:56 TP0] Decode batch. #running-req: 1, #token: 396, token usage: 0.02, gen throughput (token/s): 107.89, #queue-req: 0,
-[2025-03-17 09:30:57] INFO:     127.0.0.1:47852 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:07 TP0] Prefill batch. #new-seq: 1, #new-token: 276, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 12:26:07 TP0] Decode batch. #running-req: 1, #token: 309, token usage: 0.02, gen throughput (token/s): 6.09, #queue-req: 0,
+[2025-03-17 12:26:07 TP0] Decode batch. #running-req: 1, #token: 349, token usage: 0.02, gen throughput (token/s): 99.61, #queue-req: 0,
+[2025-03-17 12:26:08 TP0] Decode batch. #running-req: 1, #token: 389, token usage: 0.02, gen throughput (token/s): 99.16, #queue-req: 0,
+[2025-03-17 12:26:08] INFO:     127.0.0.1:48118 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -666,7 +666,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;a072c0507b744a31b5221cf8d64aa783&#39;, choices=[Choice(finish_reason=&#39;tool_calls&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function, specifying the city as &#34;Boston&#34; and the state as &#34;MA&#34; (which is the two-letter abbreviation for Massachusetts). Since you didn\&#39;t specify the unit, I will assume you prefer the temperature in Celsius for this query.\n\nReasoning: The `get_current_weather` function is the most appropriate tool to use for obtaining the current weather conditions in a specified location. By providing the city and state, we can accurately retrieve the weather information for Boston.&#39;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)], reasoning_content=None), matched_stop=None)], created=1742203857, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=148, prompt_tokens=276, total_tokens=424, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;b8c4b49887fc47e893790c59b7db5e58&#39;, choices=[Choice(finish_reason=&#39;tool_calls&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function by specifying the city as &#34;Boston&#34;, the state as &#34;MA&#34; (which is the two-letter abbreviation for Massachusetts), and choosing the unit of temperature in Celsius for the output.\n\nReasoning: The user is asking for the current weather conditions in Boston, and the available tool can provide this information based on the specified city, state, and temperature unit.&#39;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;0&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)], reasoning_content=None), matched_stop=None)], created=1742214368, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=128, prompt_tokens=276, total_tokens=404, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -680,9 +680,9 @@ ChatCompletion(id=&#39;a072c0507b744a31b5221cf8d64aa783&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function, specifying the city as &#34;Boston&#34; and the state as &#34;MA&#34; (which is the two-letter abbreviation for Massachusetts). Since you didn&#39;t specify the unit, I will assume you prefer the temperature in Celsius for this query.
+To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function by specifying the city as &#34;Boston&#34;, the state as &#34;MA&#34; (which is the two-letter abbreviation for Massachusetts), and choosing the unit of temperature in Celsius for the output.
 
-Reasoning: The `get_current_weather` function is the most appropriate tool to use for obtaining the current weather conditions in a specified location. By providing the city and state, we can accurately retrieve the weather information for Boston.
+Reasoning: The user is asking for the current weather conditions in Boston, and the available tool can provide this information based on the specified city, state, and temperature unit.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -777,11 +777,10 @@ Reasoning: The `get_current_weather` function is the most appropriate tool to us
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-17 09:30:57] INFO:     127.0.0.1:47852 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-03-17 09:30:57 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 275, token usage: 0.01, #running-req: 0, #queue-req: 0,
-[2025-03-17 09:30:57 TP0] Decode batch. #running-req: 1, #token: 288, token usage: 0.01, gen throughput (token/s): 94.78, #queue-req: 0,
-[2025-03-17 09:30:57 TP0] Decode batch. #running-req: 1, #token: 328, token usage: 0.02, gen throughput (token/s): 106.15, #queue-req: 0,
-[2025-03-17 09:30:57 TP0] Decode batch. #running-req: 1, #token: 368, token usage: 0.02, gen throughput (token/s): 105.13, #queue-req: 0,
+[2025-03-17 12:26:08] INFO:     127.0.0.1:48118 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:08 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 275, token usage: 0.01, #running-req: 0, #queue-req: 0,
+[2025-03-17 12:26:08 TP0] Decode batch. #running-req: 1, #token: 301, token usage: 0.01, gen throughput (token/s): 83.01, #queue-req: 0,
+[2025-03-17 12:26:09 TP0] Decode batch. #running-req: 1, #token: 341, token usage: 0.02, gen throughput (token/s): 91.09, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -943,10 +942,9 @@ ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunc
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-17 09:30:58 TP0] Prefill batch. #new-seq: 1, #new-token: 49, #cached-token: 274, token usage: 0.01, #running-req: 0, #queue-req: 0,
-[2025-03-17 09:30:58 TP0] Decode batch. #running-req: 1, #token: 359, token usage: 0.02, gen throughput (token/s): 90.58, #queue-req: 0,
-[2025-03-17 09:30:58 TP0] Decode batch. #running-req: 1, #token: 399, token usage: 0.02, gen throughput (token/s): 101.53, #queue-req: 0,
-[2025-03-17 09:30:58] INFO:     127.0.0.1:47852 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:09 TP0] Prefill batch. #new-seq: 1, #new-token: 49, #cached-token: 274, token usage: 0.01, #running-req: 0, #queue-req: 0,
+[2025-03-17 12:26:09 TP0] Decode batch. #running-req: 1, #token: 332, token usage: 0.02, gen throughput (token/s): 89.21, #queue-req: 0,
+[2025-03-17 12:26:09] INFO:     127.0.0.1:48118 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -960,7 +958,7 @@ ChoiceDeltaToolCall(index=None, id=&#39;0&#39;, function=ChoiceDeltaToolCallFunc
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;a81f48742da347098883a6f4d9fda414&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;Reasoning: To provide you with the current weather in Boston, I used the available tool to fetch the weather data for the specified location. This allowed me to get an accurate and up-to-date weather report for today in Boston, MA.\n\nThe current weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with highs in the 90&#39;s.&#34;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1742203858, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=77, prompt_tokens=323, total_tokens=400, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;02137e06a36a49e0959b24dca3bc11a2&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;The current weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with expected highs in the 90&#39;s today.&#34;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1742214369, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=31, prompt_tokens=323, total_tokens=354, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -974,9 +972,7 @@ ChatCompletion(id=&#39;a81f48742da347098883a6f4d9fda414&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Reasoning: To provide you with the current weather in Boston, I used the available tool to fetch the weather data for the specified location. This allowed me to get an accurate and up-to-date weather report for today in Boston, MA.
-
-The current weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with highs in the 90&#39;s.
+The current weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with expected highs in the 90&#39;s today.
 </pre></div></div>
 </div>
 </section>
@@ -1041,10 +1037,12 @@ The current weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-03-17 09:31:04 TP0] Prefill batch. #new-seq: 1, #new-token: 231, #cached-token: 55, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-03-17 09:31:04 TP0] Decode batch. #running-req: 1, #token: 325, token usage: 0.02, gen throughput (token/s): 6.61, #queue-req: 0,
-[2025-03-17 09:31:05 TP0] Decode batch. #running-req: 1, #token: 365, token usage: 0.02, gen throughput (token/s): 97.38, #queue-req: 0,
-[2025-03-17 09:31:05] INFO:     127.0.0.1:42760 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:15 TP0] Prefill batch. #new-seq: 1, #new-token: 231, #cached-token: 55, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-03-17 12:26:15 TP0] Decode batch. #running-req: 1, #token: 304, token usage: 0.01, gen throughput (token/s): 6.72, #queue-req: 0,
+[2025-03-17 12:26:16 TP0] Decode batch. #running-req: 1, #token: 344, token usage: 0.02, gen throughput (token/s): 64.81, #queue-req: 0,
+[2025-03-17 12:26:16 TP0] Decode batch. #running-req: 1, #token: 384, token usage: 0.02, gen throughput (token/s): 87.46, #queue-req: 0,
+[2025-03-17 12:26:17 TP0] Decode batch. #running-req: 1, #token: 424, token usage: 0.02, gen throughput (token/s): 97.91, #queue-req: 0,
+[2025-03-17 12:26:17] INFO:     127.0.0.1:45302 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1058,12 +1056,14 @@ The current weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function. Since Boston is in Massachusetts, the state abbreviation is &#39;MA&#39;. I will use the default unit of &#39;fahrenheit&#39; for the temperature.
+To provide you with the current weather in Boston, I will use the `get_current_weather` function. Since you didn&#39;t specify the state, I&#39;ll assume you&#39;re referring to Boston, Massachusetts, which is commonly abbreviated as MA. The unit of temperature can be either Celsius or Fahrenheit; since Fahrenheit is more commonly used in the United States, I&#39;ll use that by default.
+
+Reasoning: The user asked for the current weather in Boston, so we need to fetch the weather data for that specific location. Using the `get_current_weather` function will allow us to get the most up-to-date information.
 
 &lt;tool_call&gt;
 {&#34;name&#34;: &#34;get_current_weather&#34;, &#34;arguments&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}}
 &lt;/tool_call&gt;
-[2025-03-17 09:31:05] INFO:     127.0.0.1:42772 - &#34;POST /parse_function_call HTTP/1.1&#34; 200 OK
+[2025-03-17 12:26:17] INFO:     127.0.0.1:45310 - &#34;POST /parse_function_call HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1077,7 +1077,9 @@ To provide you with the current weather in Boston, I will first need to use the 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function. Since Boston is in Massachusetts, the state abbreviation is &#39;MA&#39;. I will use the default unit of &#39;fahrenheit&#39; for the temperature.
+To provide you with the current weather in Boston, I will use the `get_current_weather` function. Since you didn&#39;t specify the state, I&#39;ll assume you&#39;re referring to Boston, Massachusetts, which is commonly abbreviated as MA. The unit of temperature can be either Celsius or Fahrenheit; since Fahrenheit is more commonly used in the United States, I&#39;ll use that by default.
+
+Reasoning: The user asked for the current weather in Boston, so we need to fetch the weather data for that specific location. Using the `get_current_weather` function will allow us to get the most up-to-date information.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1095,21 +1097,13 @@ function name:  get_current_weather
 function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}
 </pre></div></div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[2025-03-17 09:31:05] Child process unexpectedly failed with an exit code 9. pid=3196919
-</pre></div></div>
 </div>
 </section>
 <section id="Offline-Engine-API">
@@ -1178,13 +1172,13 @@ function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-WARNING:sglang.srt.layers.attention.triton_ops.decode_attention:The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+The following error message &#39;operation scheduled before its operands&#39; can be ignored.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.46it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.31it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.57it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.50it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
 
 </pre></div></div>
 </div>
@@ -1194,23 +1188,20 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 === Offline Engine Output Text ===
-To provide you with the current weather in Boston, I will use the `get_current_weather` function. Since you didn&#39;t specify the state, I&#39;ll assume you&#39;re referring to Boston, Massachusetts, which is commonly abbreviated as MA.
+To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function with the appropriate city, state, and unit of temperature. Since Boston is in Massachusetts, the state abbreviation is &#39;MA&#39;. For the unit, I&#39;ll assume you want the temperature in Celsius, but please let me know if you prefer Fahrenheit.
 
-Reasoning: The user asked for the current weather in Boston, so we need to fetch the weather data for this specific city. Using the `get_current_weather` function will allow us to get the most up-to-date information.
+Reasoning: The `get_current_weather` function requires the city name, state abbreviation, and the unit of temperature to fetch the current weather conditions accurately.
 
-Now, I will call the function with the appropriate parameters.
 &lt;tool_call&gt;
-{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;arguments&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}}
+{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;arguments&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}}
 &lt;/tool_call&gt;
 === Parsing Result ===
-Normal text portion: To provide you with the current weather in Boston, I will use the `get_current_weather` function. Since you didn&#39;t specify the state, I&#39;ll assume you&#39;re referring to Boston, Massachusetts, which is commonly abbreviated as MA.
+Normal text portion: To provide you with the current weather in Boston, I will first need to use the `get_current_weather` function with the appropriate city, state, and unit of temperature. Since Boston is in Massachusetts, the state abbreviation is &#39;MA&#39;. For the unit, I&#39;ll assume you want the temperature in Celsius, but please let me know if you prefer Fahrenheit.
 
-Reasoning: The user asked for the current weather in Boston, so we need to fetch the weather data for this specific city. Using the `get_current_weather` function will allow us to get the most up-to-date information.
-
-Now, I will call the function with the appropriate parameters.
+Reasoning: The `get_current_weather` function requires the city name, state abbreviation, and the unit of temperature to fetch the current weather conditions accurately.
 Function call portion:
   - tool name: get_current_weather
-    parameters: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}
+    parameters: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
