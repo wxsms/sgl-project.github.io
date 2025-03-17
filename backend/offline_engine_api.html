@@ -503,13 +503,13 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-The following error message &#39;operation scheduled before its operands&#39; can be ignored.
+WARNING:sglang.srt.layers.attention.triton_ops.decode_attention:The following error message &#39;operation scheduled before its operands&#39; can be ignored.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.09s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.15s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.16s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.05it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.14it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.66it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
 
 </pre></div></div>
 </div>
@@ -542,26 +542,27 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Gully and I am a 2-year-old Labrador Retriever. I was adopted from the shelter a few months ago, and I&#39;m still getting used to my new home.
-I love going on walks and exploring new places, but I have to say, I&#39;m a bit of a scaredy-cat (or rather, a scaredy-pup!). Loud noises or strange sights can really freak me out, so I like to stick close to my human.
-Despite this, I&#39;m a pretty happy-go-lucky pup, and I love getting treats and belly rubs. I&#39;m still learning some basic commands, like &#34;sit&#34;
+Generated text:  Ruby Rose, and I&#39;m a London-based actress, model, and DJ. Born in Melbourne, Australia, I&#39;m a natural performer with a passion for taking risks and pushing boundaries.
+I&#39;ve had the privilege of working on some incredible projects, including the hit TV series &#34;Orphan Black&#34; and the film &#34;John Wick: Chapter 2.&#34; I&#39;ve also modeled for top brands like Armani and Gucci, and I&#39;ve even had the opportunity to DJ at some of the world&#39;s most iconic clubs.
+But it&#39;s not just about the work – it&#39;s about the people I meet and the experiences I have along the way.
 ===============================
 Prompt: The president of the United States is
-Generated text:  often seen as the embodiment of the American people. With great power comes great scrutiny, and the world watches closely to see how the president conducts himself and his office. Here are some interesting facts about U.S. presidents:
-1. George Washington, the first president, didn&#39;t want to be called &#34;Mr. President.&#34; He preferred &#34;Mr. Washington.&#34;
-2. Thomas Jefferson, the third president, was a skilled architect and designed his home, Monticello.
-3. James Madison, the fourth president, was the shortest president at just 5&#39;4&#34;.
-4. James Monroe, the fifth president, was the last president born during
+Generated text:  reportedly planning to take executive action to address the issue of surprise medical billing.
+President Donald Trump has called on Congress to pass legislation to ban surprise medical billing, but so far, lawmakers have been unable to reach an agreement on a bill.
+Surprise medical billing occurs when patients receive a bill from a doctor or hospital not included in their insurance network, often after receiving emergency care or undergoing a non-emergency procedure.
+The White House has been working on a proposal that would use arbitration to resolve disputes between providers and insurers over payment rates for out-of-network care.
+According to a report in the Wall Street Journal, the White House plan would not ban
 ===============================
 Prompt: The capital of France is
-Generated text:  also known as the City of Light, and for good reason. Paris, the most visited city in the world, offers a wealth of historical landmarks, cultural attractions, and romantic experiences that will leave you enchanted. From the Eiffel Tower to the Louvre, Notre-Dame Cathedral to the Arc de Triomphe, Paris is a treasure trove of iconic sights and experiences. Explore the city&#39;s famous fashion, art, and cuisine, and discover why Paris remains one of the most beloved cities in the world.
-France&#39;s capital and largest city is also known as the City of Light, due in part to its rich history of art
+Generated text:  a must-visit destination for any traveler. The City of Light is a treasure trove of art, history, fashion, and cuisine. From the iconic Eiffel Tower to the world-class museums like the Louvre and Orsay, Paris has something for everyone. Here are some of the top things to do and see in Paris:
+1. Visit the Eiffel Tower: The Eiffel Tower is one of the most recognizable landmarks in the world and a must-visit attraction in Paris. You can take the stairs or elevator to the top for breathtaking views of the city.
+2. Explore the Louvre Museum: The Lou
 ===============================
 Prompt: The future of AI is
-Generated text:  now, and it&#39;s time to get on board
-As we stand on the cusp of a new era in artificial intelligence (AI), it&#39;s time to stop talking and start taking action. The future of AI is here, and it&#39;s happening now.
-From virtual assistants like Siri and Alexa to self-driving cars and predictive analytics, AI is already transforming industries and changing the way we live and work. But the possibilities are just beginning to unfold.
-In the next decade, we can expect to see AI revolutionize healthcare, education, and transportation, among other areas. AI-powered robots will assist in surgeries, helping doctors make more accurate diagnoses
+Generated text:  here – and it’s taking over the jobs of low-skilled workers
+Automation is happening now, and we need to think about what it means for society. Here&#39;s the good, the bad, and the ugly.
+The year is 2017, and the world is on the cusp of a technological revolution. Artificial intelligence (AI) has advanced to the point where it can perform many tasks that were once exclusive to humans. But what does this mean for the future of work?
+We’re on the cusp of a revolution, where AI is increasingly taking over jobs that require low to medium-level skills. Warehouse workers, data entry
 </pre></div></div>
 </div>
 </section>
@@ -601,19 +602,17 @@ In the next decade, we can expect to see AI revolutionize healthcare, education,
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
-This self-introduction is neutral because it doesn&#39;t reveal any personal biases or opinions. It simply states the character&#39;s name, age, occupation, and interests. It also mentions a current project, which can give insight into the character&#39;s personality and goals. The tone is friendly and approachable, making it suitable for a character who is open
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m interested in learning more about the world and its cultures, and I&#39;m always looking for new experiences to write about. I&#39;m a bit of a perfectionist, but I&#39;m also a firm believer in learning from my mistakes. I&#39;m excited to meet new people and hear their stories. That&#39;s me in a nutshell. What do
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The capital of France is Paris. The city is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, fashion, and culture. It is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also a major hub for international business, finance, and tourism. Paris is a popular destination for visitors from around the world, attracting over 23 million tourists each year. The city has a population of over 2.1 million people and is a major center for education, research,
+Provide a concise factual statement about France’s capital city.
+The capital of France is Paris.  The city is located in the northern part of the country, along the Seine River.  It is a major cultural and economic center, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum.  Paris is also a popular tourist destination, attracting millions of visitors each year.  The city has a rich history, dating back to the Roman era, and has been a center of art, literature, and science for centuries.  Today, Paris is a vibrant and diverse
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. While it is difficult to predict exactly what the future holds, there are several trends that are likely to shape the development and impact of artificial intelligence in the coming years. Here are some possible future trends in AI:
-1. Increased Adoption of AI in Various Industries:
-AI is already being used in various industries such as healthcare, finance, transportation, and education. In the future, we can expect to see even more widespread adoption of AI in these industries, as well as in others such as manufacturing, retail, and customer service.
-2. Advancements in Machine Learning and Deep Learning:
-Machine learning and deep
+Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with applications such as robotic surgery, personalized medicine, and AI-assisted diagnosis.
+2. Widespread adoption of AI in the workplace: AI is already being used in many
 
 </pre></div></div>
 </div>
@@ -656,19 +655,23 @@ Machine learning and deep
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Ada Konti. I&#39;m a data analyst for a non-profit organization that focuses on environmental sustainability. When I&#39;m not working, I enjoy hiking and playing the guitar. I&#39;m originally from the Pacific Northwest, but I&#39;ve been living in the Midwest for a few years now.
-The following sentence is a good example of a neutral self-introduction. I&#39;m a data analyst with a passion for music and the outdoors, and I&#39;m excited to learn more about the other participants in this workshop.
-Step 1:  Write a neutral self-introduction for a fictional character
-Step 2: Use the given example as a guide to craft
+Generated text:  Emilia Gray. I work as an art conservator at a small museum in a quiet town.
+This introduction doesn&#39;t reveal too much about Emilia&#39;s personality or background, but gives a sense of what she does and where she is. This can be a good way to introduce a character in a story or script. It&#39;s a good example of a neutral self-introduction. A neutral self-introduction is a brief description of oneself that doesn&#39;t give away too much information about one&#39;s personality, interests, or background. It&#39;s good for making a good first impression or introducing oneself in a professional or formal setting. It can also be
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the largest city in France and is located in the north-central part of the country. The city is situated on the Seine River and has a population of over 2.1 million people. Paris is known for its historic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. It is a major cultural, economic, and educational center in Europe and is home to many famous universities, museums, and art galleries. Paris is also known for its fashion, cuisine, and romantic atmosphere, making it one of the most popular tourist destinations in the world. Reference: Wikipedia
-In
+Generated text:  Paris.
+The population of Paris is approximately 2.1 million people, however, the larger urban area has a population of around 12.2 million people.
+Paris is situated on the Seine River in the north-central part of the country.
+The city is divided into 20 arrondissements (districts), each with its own distinct character and attractions.
+Paris is renowned for its rich history, cultural landmarks, art museums, and fashion industry, earning it the nickname &#34;City of Light.&#34;
+The city has been a major center of learning and culture for centuries, with institutions like the University of Paris and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by various factors, including technological advancements, societal needs, and regulatory frameworks. Some possible future trends in AI include:
-Advancements in Explainability and Transparency: As AI becomes increasingly integrated into various aspects of life, there is a growing need for AI systems to provide clear explanations for their decisions and actions. This trend is expected to drive the development of explainable AI (XAI) techniques, which will enable users to better understand the reasoning behind AI-driven decisions.
-Increased Focus on Human-Centric AI: As AI becomes more pervasive, there is a growing recognition of the need for AI systems to be designed with human values and
+Generated text:  uncertain and rapidly evolving, and experts have made various predictions about its development and impact. Here are some possible future trends in artificial intelligence:
+1. Advancements in Machine Learning:
+Machine learning is a subset of AI that enables systems to learn from data without being explicitly programmed. Future advancements in machine learning could lead to more accurate and efficient AI systems that can handle complex tasks, such as image and speech recognition, natural language processing, and decision-making.
+2. Increased Use of Deep Learning:
+Deep learning is a type of machine learning that uses neural networks with multiple layers to analyze and interpret data. Future trends in AI may see the increased use of
 </pre></div></div>
 </div>
 </section>
@@ -714,22 +717,24 @@ Increased Focus on Human-Centric AI: As AI becomes more pervasive, there is a gr
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Ember. I&#39;m a 17-year-old student at St. Mary&#39;s Academy. I&#39;m a bit shy and prefer to keep to myself, but I enjoy reading and trying new things. What do you think? Do you have any suggestions?
+Generated text:  Lena, and I&#39;m a 25-year-old freelance writer living in a small town. I enjoy reading, hiking, and playing my guitar in my free time.
+Writing a neutral self-introduction can be a bit challenging, as it requires finding a balance between providing enough information and not giving away too much about the character&#39;s personality or background. Here&#39;s a revised introduction that keeps Lena&#39;s character neutral:
 
-## Step 1: Determine the purpose of the self-introduction
-The purpose of the self-introduction is to provide a brief overview of the character&#39;s identity and personality, without revealing too much information.
+&#34;Hi, I&#39;m Lena. I&#39;m a writer and a bit of a outdoorsy person. When I&#39;m not working, you can find me exploring the local trails or strumming my guitar.&#34;
 
-## Step 2: Assess the content of the self-introduction
-The given self-introduction states that the character&#39;s name is Ember, and they are a 17-year-old student at
+This introduction still conveys Lena
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city has a population of approximately 2.1 million people. Paris is known for its rich history, art museums, fashion, and cuisine. The city is divided into twenty districts called arrondissements. Paris is a major hub for international business, education, and culture. The city is served by the Charles de Gaulle Airport, which is one of the busiest airports in the world. Paris is famous for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city is also known for its romantic atmosphere, which is reflected in its beautiful parks, gardens,
+Generated text:  Paris.
+Provide a concise factual statement about France’s capital city. The capital of France is Paris.
+Provide a concise factual statement about France’s capital city.
+The capital of France is Paris.
+What is the capital of France? The capital of France is Paris. What is the capital of France? The capital of France is Paris. What is the capital of France? The capital of France is Paris. What is the capital of France? The capital of France is Paris. What is the capital of France? The capital of France is Paris. What is the capital of France? The capital of France is Paris. What is the capital of France
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be incredibly exciting and challenging. We can anticipate several trends that will shape the field of artificial intelligence in the coming years. Here are some of the most likely trends that will emerge in the future of AI:
-
-1.  **Increased Focus on Explainability and Transparency**: As AI becomes more prevalent in decision-making processes, there is a growing need to understand how AI systems arrive at their decisions. Future AI systems will need to be more transparent and explainable, allowing humans to understand their reasoning and potential biases.
-2.  **Advancements in Edge AI**: Edge AI refers to the processing of AI workloads at the edge of the
+Generated text:  likely to be shaped by various factors including advancements in computing power, data availability, and societal needs. Here are some possible future trends in artificial intelligence:
+1. Increased focus on explainability and transparency: As AI becomes more pervasive, there will be a growing need for explainability and transparency in AI decision-making processes. This means that AI systems will need to provide clear and understandable explanations for their decisions, which will help to build trust and accountability.
+2. Development of more specialized AI applications: As AI continues to evolve, we can expect to see more specialized AI applications that are tailored to specific industries or tasks. For example, AI-powered medical
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

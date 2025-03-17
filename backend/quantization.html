@@ -463,6 +463,13 @@ downloaded Hugging Face config. For example, DeepSeek V3/R1 models are already i
 <span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
+<p>Take note, if your model is <strong>per-channel quantized (INT8 or FP8) with per-token dynamic quantization activation</strong>, you can opt to include <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">w8a8_int8</span></code> or <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">w8a8_fp8</span></code> to invoke the corresponding CUTLASS int8_kernel or fp8_kernel in sgl-kernel. This action will ignore the Hugging Face config’s quantization settings. For instance, with <code class="docutils literal notranslate"><span class="pre">neuralmagic/Meta-Llama-3.1-8B-Instruct-FP8-dynamic</span></code>, if you execute with <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">w8a8_fp8</span></code>, the system will use the <code class="docutils literal notranslate"><span class="pre">W8A8Fp8Config</span></code> from SGLang to invoke the sgl-kernel, rather than the <code class="docutils literal notranslate"><span class="pre">CompressedTensorsConfig</span></code> for vLLM kernels.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>neuralmagic/Meta-Llama-3.1-8B-Instruct-FP8-dynamic<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>w8a8_fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
 <section id="examples-of-offline-model-quantization">
 <h3>Examples of Offline Model Quantization<a class="headerlink" href="#examples-of-offline-model-quantization" title="Link to this heading">#</a></h3>
 <section id="using-gptqmodel">
