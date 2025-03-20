@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.4.post1" />
-    <meta name="docbuild:last-update" content="Mar 19, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 20, 2025"/>
   </head>
   
   
@@ -582,7 +582,11 @@
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/deepseek_coder_v2.svg" alt="Data Parallelism Attention Performance Comparison">
 </p>
-<p><strong>Usage</strong>: This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). Data Parallelism Attention optimization can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek Series Models.</p>
+<p><strong>Usage</strong>:</p>
+<ul class="simple">
+<li><p>This optimization is aimed at improving throughput and should be used for scenarios with high QPS (Queries Per Second). It can be enabled by <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code> for DeepSeek models.</p></li>
+<li><p>Since v0.4.4, DP and TP attention can be flexibly combined. For example, to deploy DeepSeek-V3/R1 on 2 node with 8*H100, you can specify <code class="docutils literal notranslate"><span class="pre">--tp</span> <span class="pre">16</span></code> and <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>, which means for attention part there are 2 DP groups, and in each DP group there are 8 TP groups.</p></li>
+</ul>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Blog</a>.</p>
 </section>
 <section id="multi-node-tensor-parallelism">
@@ -612,6 +616,12 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <li><p>The draft model are available at huggingface: <a class="reference external" href="https://huggingface.co/lmsys/DeepSeek-V3-NextN">lmsys/DeepSeek-V3-NextN</a>, <a class="reference external" href="https://huggingface.co/lmsys/DeepSeek-R1-NextN">lmsys/DeepSeek-R1-NextN</a>. It can also be exported from original DeepSeek-V3/R1 model with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/export_deepseek_nextn.py">export_deepseek_nextn.py</a> script.</p></li>
 <li><p>The best configuratin for <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> can be searched with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a> script for given batch size. The minimum configuration is <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span> <span class="pre">1</span> <span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span> <span class="pre">--speculative-num-draft-tokens</span> <span class="pre">2</span></code>, which can achieve speedup for larger batch sizes.</p></li>
 <li><p>Currently when using flashinfer mla wrapper (<code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-mla</span></code>) and speculative decoding together, the <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> parameter should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>To enable DeepSeek MTP for large batch sizes (&gt;32), there are some parameters should be changed (Reference <a class="reference external" href="https://github.com/sgl-project/sglang/issues/4543#issuecomment-2737413756">this discussion</a>):</p>
+<ul>
+<li><p>Adjust <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code> to a larger number. The default value is <code class="docutils literal notranslate"><span class="pre">32</span></code> for MTP. For larger batch sizes, you should increase this value beyond the default value.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-bs</span></code>. It’s a list of batch sizes for cuda graph capture. The default captured batch sizes for speculative decoding is set <a class="reference external" href="https://github.com/sgl-project/sglang/blob/49420741746c8f3e80e0eb17e7d012bfaf25793a/python/sglang/srt/model_executor/cuda_graph_runner.py#L126">here</a>. You can include more batch sizes into it.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="reasoning-content-for-deepseek-r1">
@@ -725,7 +735,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 19, 2025.
+  Last updated on Mar 20, 2025.
   <br/>
 </p>
   </div>
