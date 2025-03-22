@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.4.post1" />
-    <meta name="docbuild:last-update" content="Mar 21, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 22, 2025"/>
   </head>
   
   
@@ -421,7 +421,6 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#SPECIAL-WARNING!!!!">SPECIAL WARNING!!!!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage">Advanced Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Batch-Inference">Offline Batch Inference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Synchronous-Generation">Non-streaming Synchronous Generation</a></li>
@@ -460,11 +459,6 @@
 <li><p>Streaming asynchronous generation</p></li>
 </ul>
 <p>Additionally, you can easily build a custom server on top of the SGLang offline engine. A detailed example working in a python script can be found in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/custom_server.py">custom_server</a>.</p>
-<section id="SPECIAL-WARNING!!!!">
-<h2>SPECIAL WARNING!!!!<a class="headerlink" href="#SPECIAL-WARNING!!!!" title="Link to this heading">#</a></h2>
-<p><strong>To launch the offline engine in your python scripts,</strong> <code class="docutils literal notranslate"><span class="pre">__main__</span></code> <strong>condition is necessary, since we use</strong> <code class="docutils literal notranslate"><span class="pre">spawn</span></code> <strong>mode to create subprocesses. Please refer to this simple example</strong>:</p>
-<p><a class="github reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/launch_engine.py">sgl-project/sglang</a></p>
-</section>
 <section id="Advanced-Usage">
 <h2>Advanced Usage<a class="headerlink" href="#Advanced-Usage" title="Link to this heading">#</a></h2>
 <p>The engine supports <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/engine/offline_batch_inference_vlm.py">vlm inference</a> as well as <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/hidden_states">extracting hidden states</a>.</p>
@@ -505,11 +499,11 @@
 <div class="highlight"><pre>
 The following error message &#39;operation scheduled before its operands&#39; can be ignored.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.10it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.72it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.36it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.05s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.54it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.15it/s]
 
 </pre></div></div>
 </div>
@@ -542,24 +536,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Wyatt. I&#39;m a 13-year-old boy who loves playing video games, watching anime and reading manga. I&#39;m currently in 8th grade and I love learning about science, math and history. I&#39;m also really into music and I love playing guitar.
-I&#39;m a bit of a nerd, but I&#39;m okay with that. I like being different and I&#39;m proud of who I am. I have a lot of friends who share similar interests and we always have a great time together.
-I&#39;m a bit of a perfectionist, which can sometimes be a bad thing. I get really frustrated when I&#39;m not doing well at
+Generated text:  Tomasz Michalak and I am a entrepreneur and blogger. I live in Poland and I am fascinated by technology, marketing, travel and entrepreneurship. On this blog, I share my experience, knowledge and insights about online marketing, entrepreneurship, travel and technology. You can find here various articles, guides, reviews and tutorials.
+I am an IT specialist with over 10 years of experience in software development and project management. I hold a degree in Computer Science and I have worked for several companies, including startups and big corporations.
+As an entrepreneur, I have founded and managed several businesses, including e-commerce stores, digital marketing agencies and software development
 ===============================
 Prompt: The president of the United States is
-Generated text:  elected by the people through the Electoral College system. The president is elected for a four-year term and can serve a maximum of two terms. The president is responsible for executing the laws of the land and overseeing the federal government. The president is also the commander-in-chief of the armed forces.
-The president is elected through a process that involves both direct and indirect voting. In the Electoral College system, each state is allocated a certain number of electoral votes based on its population. The candidate who wins the most votes in a state gets all of that state&#39;s electoral votes, except in Maine and Nebraska which allocate their electoral votes proportionally. The candidate
+Generated text:  a Democrat and has been for the past several years. The majority party in the House of Representatives is also a Democrat. But the Republicans have a majority in the Senate.
+Many Americans believe the two-party system in the United States is a negative influence on politics. They argue that the two parties often are too focused on winning elections rather than finding common ground and working together to solve problems. They also argue that the two-party system limits the choices available to voters.
+The two-party system is a long-standing part of the political landscape in the United States. It has been the dominant form of political organization in the country since the early 19th
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, which is often referred to as the most romantic city in the world. Paris is a city of grand history, famous landmarks and world-class museums, making it a top destination for tourists from around the globe.
-The City of Light has a plethora of attractions that showcase its stunning architecture, rich history and vibrant culture. From the iconic Eiffel Tower to the world-famous Louvre Museum, Paris is a city that is steeped in history and beauty.
-Many of the city&#39;s famous landmarks are located along the Seine River, which flows through the heart of Paris and offers stunning views of the city&#39;s landmarks and bridges. Visitors
+Generated text:  a beautiful city that has been a cultural and historical hub for centuries. From its stunning architecture to its world-class museums and art galleries, Paris is a city that has something for everyone. Whether you&#39;re a foodie, a history buff, or an art lover, you&#39;ll find plenty of things to see and do in the City of Light.
+The Eiffel Tower is one of the most iconic landmarks in the world, and it&#39;s a must-visit when in Paris. Built for the 1889 World&#39;s Fair, this iron lattice tower stands over 1,000 feet tall and offers breathtaking views of the city. You can
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but it’s also fraught with peril.
-While AI has the potential to bring about tremendous benefits, it also poses significant risks and challenges. In this episode of the AI Alignment Podcast, we explore the darker side of AI with special guest Nick Bostrom, Director of the Future of Humanity Institute.
-Nick Bostrom is a Swedish philosopher and director of the Future of Humanity Institute. His work focuses on existential risks, artificial intelligence, and the long-term future of humanity. He’s also the author of the book “Superintelligence: Paths, Dangers, Strategies,” which explores the risks associated with advanced AI.
-In this conversation,
+Generated text:  uncertain, but one thing is clear: it will change everything.
+Artificial intelligence is already transforming the world, from virtual assistants to self-driving cars, and its impact will only continue to grow. But as AI becomes more advanced, it also raises important questions about its potential risks and benefits. Will it create new jobs or replace existing ones? Can it be trusted to make decisions that affect our lives? And what are the consequences of relying on machines to govern our interactions with the world?
+In this thought-provoking series, we explore the current state of AI and what it might mean for our future. From the scientists working on the cutting
 </pre></div></div>
 </div>
 </section>
@@ -599,18 +592,15 @@ In this conversation,
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys reading, drawing, and playing video games in my free time. I&#39;m a bit of a introvert, but I&#39;m working on being more outgoing and confident. I&#39;m a junior, and I&#39;m trying to balance schoolwork and extracurricular activities. I&#39;m not really sure what I want to do with my life yet, but I&#39;m open to exploring different possibilities. I&#39;m a bit of a perfectionist, which can sometimes be a strength, but also a weakness. I&#39;m looking forward to seeing what the future holds. I&#39;m a bit
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel and a few art projects, and I&#39;m excited to see where my creative endeavors take me. I&#39;m looking forward to meeting new people and making connections in my community. That&#39;s me in a nutshell! What do you think? Is there anything you&#39;d like to add or change? I&#39;d love to hear
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The capital of France is Paris.
-This statement is a concise factual statement about France’s capital city. It provides a clear and direct answer to the question, without any additional information or context. It is a simple and straightforward statement that can be used as a starting point for further discussion or research. The statement is also accurate, as Paris is widely recognized as the capital city of France. Overall, this statement meets the criteria for a concise factual statement. The final answer is: The capital of France is Paris. The final answer is: Paris. The final answer is: The capital of France is Paris. The final answer is:
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and cuisine. Paris is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city has a population of over 2.1 million people and is a major center for business, education, and culture. Paris is also known for its romantic atmosphere and is often referred to as the &#34;City of Love.&#34; The city has a diverse range of neighborhoods, each with its own
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. While it is difficult to predict exactly what the future will hold, here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even larger role in healthcare, with applications such as:
-a. Predictive analytics: AI will be used to analyze large amounts of medical data to predict patient outcomes and identify high-risk patients.
-b. Personalized medicine: AI will be used to develop personalized treatment plans based on a patient
+Generated text:  likely to be shaped by several factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, including the development of AI-powered robots that can assist with surgeries and other medical procedures.
+2. Widespread adoption of AI in education: AI is already being used in education to personalize learning experiences and provide real-time feedback to students. In the future, AI is
 
 </pre></div></div>
 </div>
@@ -653,21 +643,24 @@ b. Personalized medicine: AI will be used to develop personalized treatment plan
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elianore Quasar. I’m a 25-year-old astrobiologist currently working at the Mars Colonization Initiative. I’m interested in studying the potential for life beyond Earth. My favorite hobbies include stargazing, reading science fiction novels, and practicing aikido. I’m a bit of a introvert and prefer quieter environments, but I enjoy engaging in discussions about astronomy and the ethics of space exploration. What makes you think of me?
-The writer has done an excellent job in crafting a neutral self-introduction that provides relevant information about the character. The introduction is clear and concise, providing the character’s name, age,
+Generated text:  Elara. I&#39;m a twenty-eight-year-old freelance writer. I specialize in creating articles on science and technology for a variety of online platforms. I enjoy writing in my free time and exploring new topics in the scientific community. My current project is a series of pieces on emerging trends in artificial intelligence. I&#39;m looking to expand my portfolio and collaborate with other writers and researchers to create engaging content for a broader audience. What kind of audience does Elara hope to reach with her writing?
+A) Young children
+B) Other writers and researchers
+C) A broad audience interested in science and technology
+D) Adults interested in fiction
+Answer
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. ( Source )
-Identify the primary attractions and landmarks in Paris, such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, Arc de Triomphe, and Montmartre. ( Source )
-Provide information about Paris’s history, including the ancient Celtic and Roman settlement, the Viking invasion, the Renaissance, and the French Revolution. ( Source )
-Explain the significance of the Seine River in Paris’s history, economy, and culture, including its role as a transportation route and a source of inspiration for artists. ( Source )
-Describe the unique characteristics and cultural events of Paris, such as its fashion,
+Generated text:  Paris, located in the northern part of the country. Paris is situated on the banks of the Seine River and is the most populous city in France, with over 2.1 million inhabitants. The city is renowned for its rich history, cultural landmarks, art museums, fashion, and cuisine. Paris is home to the famous Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, among other notable attractions. The city is also a major economic and cultural center, hosting numerous international events and conferences throughout the year.
+Here are some interesting facts about Paris, the capital of France:
+1. History: Paris was founded
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain, and it can shape up in various ways depending on the direction of technological advancement, societal needs, and regulatory frameworks. Here are some possible future trends in artificial intelligence:
-1. Increased Autonomy: AI systems will continue to become more autonomous, capable of making decisions without human intervention. This could lead to widespread adoption in industries such as transportation, healthcare, and finance.
-2. Edge AI: With the proliferation of IoT devices, AI will be deployed at the edge, enabling real-time processing and decision-making in a variety of settings, including smart homes, cities, and industrial environments.
-3. Explainability and Transparency: As AI becomes
+Generated text:  not set in stone, and the direction it takes will depend on various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
+
+1.  **Increased Integration with the Internet of Things (IoT)**: AI will be more deeply integrated with IoT devices, enabling more efficient and automated management of homes, cities, and industries.
+2.  **Advancements in Natural Language Processing (NLP)**: NLP will continue to improve, enabling more accurate and natural-sounding language understanding and generation, leading to better human-AI interaction.
+3.  **Development of Explainable AI
 </pre></div></div>
 </div>
 </section>
@@ -713,17 +706,16 @@ Generated text:  uncertain, and it can shape up in various ways depending on the
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Alexei and I&#39;m a 22-year-old data analyst. I live in the city, near a park that&#39;s a popular spot for locals and tourists alike. I work from home most days and spend my free time reading, watching TV, or trying out new recipes in the kitchen. That&#39;s me in a nutshell. What do you want to know?
-I think you&#39;ve already introduced Alexei quite well. This is a great neutral self-introduction, and it gives us a good sense of who Alexei is and what he&#39;s like. However, if you want to add a bit more, you could consider adding a few interesting
+Generated text:  Aedon Vex, and I&#39;m a 25-year-old freelance writer and editor from Los Angeles. I enjoy reading historical fiction, practicing yoga, and exploring the city&#39;s lesser-known neighborhoods. That&#39;s about it for now. I&#39;m looking forward to getting to know you and sharing my work with you. -Aedon Vex
+Aedon Vex is a 25-year-old freelance writer and editor with a passion for historical fiction and yoga. He is based in Los Angeles and enjoys exploring the city&#39;s lesser-known neighborhoods. Aedon is looking forward to connecting with like-minded individuals and sharing his work with them
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is a major city that plays a crucial role in the country’s history, culture, and economy. Paris is known for its stunning architecture, beautiful gardens, and rich cultural heritage. The city is home to some of the world’s most famous landmarks, such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral.
-The city has a population of over 2.1 million people and is a major hub for international business, finance, and tourism. Paris is also known for its fashion, cuisine, and art, and is home to many world-renowned museums, galleries, and theaters. The
+Generated text:  Paris. The city is located in the northern part of France, on the Seine River, and is home to many famous landmarks and cultural institutions such as the Eiffel Tower, the Louvre Museum, and the Palace of Versailles. Paris is a global center for fashion, cuisine, and art, and is one of the most visited cities in the world. Paris has a rich history dating back to the Middle Ages and has been an important center of culture and learning throughout the centuries. Today, the city continues to be a major hub for international business, tourism, and culture. Source: Encyclopedia Britannica. Where is the E
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  both promising and worrisome. From the one hand, it can lead to better healthcare, education, and energy management, but it can also become a tool for surveillance and control, leading to the erosion of privacy and individual freedom. AI has the potential to transform various sectors, including healthcare, finance, education, and transportation, but it also poses significant risks, such as job displacement and bias in decision-making.
-Here are some possible future trends in AI:
-1. **Increased use of AI in healthcare**: AI is expected to play a crucial role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze large
+Generated text:  happening now, but we can already identify some possible future trends that will shape the field.
+The development of artificial intelligence (AI) has been a gradual process that has been unfolding over the past few decades. With significant advancements in computing power, data storage, and machine learning algorithms, AI has become increasingly sophisticated and ubiquitous. As AI continues to evolve, several trends are likely to emerge and shape the field in the coming years. Here are some possible future trends in AI:
+1. **Increased Adoption of Edge AI**: As the Internet of Things (IoT) continues to grow, edge AI will become more prevalent. This involves processing data closer
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -784,7 +776,6 @@ Here are some possible future trends in AI:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#SPECIAL-WARNING!!!!">SPECIAL WARNING!!!!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage">Advanced Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Offline-Batch-Inference">Offline Batch Inference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Non-streaming-Synchronous-Generation">Non-streaming Synchronous Generation</a></li>
@@ -826,7 +817,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 21, 2025.
+  Last updated on Mar 22, 2025.
   <br/>
 </p>
   </div>
