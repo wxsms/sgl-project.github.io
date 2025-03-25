@@ -486,7 +486,7 @@
 <li><p>InternLM 2</p></li>
 <li><p>Exaone 3</p></li>
 <li><p>BaiChuan2</p></li>
-<li><p>MiniCPM / MiniCPM 3 / MiniCPMV</p></li>
+<li><p>MiniCPM / MiniCPM 3 / MiniCPM-v / MiniCPM-o</p></li>
 <li><p>XVERSE / XVERSE MoE</p></li>
 <li><p>SmolLM</p></li>
 <li><p>GLM-4</p></li>
@@ -559,9 +559,9 @@ LLM.</p>
 <li><p><strong>Register your new model as multimodal</strong>: Extend <code class="docutils literal notranslate"><span class="pre">is_multimodal_model</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/configs/model_config.py">
 <code class="docutils literal notranslate"><span class="pre">model_config.py</span></code></a> to
 return True for your model.</p></li>
-<li><p><strong>Process Images</strong>: Create a new <code class="docutils literal notranslate"><span class="pre">ImageProcessor</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">BaseImageProcessor</span></code> and register this
-processor as your model’s dedicated processor. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/managers/image_processor.py">
-<code class="docutils literal notranslate"><span class="pre">image_processor.py</span></code></a>
+<li><p><strong>Process Images</strong>: Define a new <code class="docutils literal notranslate"><span class="pre">Processor</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">BaseProcessor</span></code> and register this
+processor as your model’s dedicated processor. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/managers/multimodal_processor.py">
+<code class="docutils literal notranslate"><span class="pre">multimodal_processor.py</span></code></a>
 for more details.</p></li>
 <li><p><strong>Handle Image Tokens</strong>: Implement a <code class="docutils literal notranslate"><span class="pre">pad_input_ids</span></code> function for your new model, in which image tokens in the prompt
 should be expanded and replaced with image-hashes, so that SGLang can recognize different images for
@@ -569,7 +569,7 @@ should be expanded and replaced with image-hashes, so that SGLang can recognize 
 <li><p>Replace Multi-headed <code class="docutils literal notranslate"><span class="pre">Attention</span></code> of ViT with SGLang’s <code class="docutils literal notranslate"><span class="pre">VisionAttention</span></code>.</p></li>
 </ol>
 <p>You can refer <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/qwen2_vl.py">Qwen2VL</a> or other
-vLMs. These models demonstrate how to properly handle both visual and textual inputs.</p>
+vLMs. These models demonstrate how to properly handle both multimodal and textual inputs.</p>
 <p>You should test the new vLM locally against hf models. See <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/mmmu"><code class="docutils literal notranslate"><span class="pre">mmmu</span></code></a> for an example.</p>
 <section id="test-the-correctness">
 <h3>Test the correctness<a class="headerlink" href="#test-the-correctness" title="Link to this heading">#</a></h3>
