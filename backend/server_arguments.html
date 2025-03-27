@@ -477,6 +477,7 @@
 </div>
 <ul class="simple">
 <li><p>See <a class="reference internal" href="hyperparameter_tuning.html"><span class="std std-doc">hyperparameter tuning</span></a> on tuning hyperparameters for better performance.</p></li>
+<li><p>For docker and Kubernetes runs, you need to set up shared memory which is used for communication between processes. See <code class="docutils literal notranslate"><span class="pre">--shm-size</span></code> for docker and <code class="docutils literal notranslate"><span class="pre">/dev/shm</span></code> size update for Kubernetes manifests.</p></li>
 <li><p>If you see out-of-memory errors during prefill for long prompts, try to set a smaller chunked prefill size.</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span>
