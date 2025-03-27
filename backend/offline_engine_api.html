@@ -499,10 +499,10 @@
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.02s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.51it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.20it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.23it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.50it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.19it/s]
 
 /public_sglang_ci/runner-b-gpu-45/_work/sglang/sglang/python/sglang/srt/utils.py:823: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)
   tensor_data = torch.ByteTensor(
@@ -537,26 +537,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Robert G. Davis, and I am the Mayor of Birmingham, Alabama. I was born and raised in this city and have always been proud of its rich history, vibrant culture, and resilient people. As Mayor, I am committed to working tirelessly to ensure that Birmingham continues to thrive and grow, while preserving its unique character and charm.
-I am a graduate of the University of Alabama at Birmingham, where I earned a degree in Business Administration. After college, I worked in the private sector for several years before entering public service. My first elected office was as a member of the Birmingham City Council, where I served for six years before being elected
+Generated text:  Olivia and I am a Junior here at the University of Oregon. I am currently studying Public Policy and Administration. I am excited to be a part of the Eugene community and to be working with this organization. I look forward to learning more about the city and its government and to finding ways to contribute to its growth and improvement.
+I have lived in the Eugene area for most of my life and have seen firsthand the ways in which the city is changing. I believe that it is essential to be aware of and engaged with the policies and decisions that affect our community. Through my work with the City Club of Eugene, I hope to gain a deeper
 ===============================
 Prompt: The president of the United States is
-Generated text:  under attack, literally and figuratively.
-The attack is coming from a combination of factors including a growing economy, a strong stock market, and record low unemployment numbers. The irony is that these are all positive indicators, but the media and the left are using them to attack the president.
-The media is claiming that the economy is too good to be true, that it&#39;s all a facade, and that the president is somehow &#34;rigging&#34; the numbers. They&#39;re saying that the low unemployment numbers are a result of people not being able to find work, not because of the president&#39;s policies.
-The left is claiming that the economy is growing
+Generated text:  usually considered to be the highest office in the federal government. In the United States, the president is both the head of state and the head of government, serving as the commander-in-chief of the armed forces and the leader of the executive branch of the federal government. The president is also the official representative of the United States at home and abroad, and is typically the most prominent figure in the country&#39;s government.
+The president is elected by the Electoral College, a group of 538 electors chosen by each state. The candidate who receives the majority of the electoral votes (at least 270 out of 538) wins the presidency. The
 ===============================
 Prompt: The capital of France is
-Generated text:  a popular destination for tourists and business travelers alike. With its rich history, vibrant culture, and world-class amenities, Paris is a city that has something for everyone. From the iconic Eiffel Tower to the artistic masterpieces of the Louvre, Paris is a city that is steeped in history and beauty.
-The city is also a hub for international business and finance, with many multinational corporations having operations there. As a result, Paris is a popular destination for business travelers, with many companies using it as a key location for international meetings and conferences.
-For tourists, Paris is a city that is full of romance and charm. Visitors can
+Generated text:  under attack, the Eiffel Tower is swaying in the wind, and the people are in panic. But it’s not a terrorist attack. In this alternate history, the storm of the century is about to strike the city.
+As the winds howl and the rain pounds down, three people are brought together by fate. Aurélien, a brilliant engineer, is racing against time to save the Eiffel Tower from collapse. Meanwhile, Léa, a young and talented journalist, is fighting to keep her story alive as the storm rages on. And Camille, a mysterious stranger, seems to be the only person
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain
-It’s difficult to predict the future of artificial intelligence (AI), but experts are concerned about the potential risks and benefits associated with its development.
-AI has the potential to greatly benefit society, improving efficiency, productivity, and decision-making in various fields. However, it also raises concerns about job displacement, bias, and the potential for AI systems to be used for malicious purposes.
-Some of the key areas of uncertainty surrounding AI include:
-1. Ethics: As AI becomes more prevalent, there is a growing need for clear guidelines and regulations around its use. However, it is difficult to establish a consensus on what constitutes ethical behavior in AI development
+Generated text:  bright, but the ethics of its use must be carefully considered
+As we move forward with the rapid development of AI, it is essential that we consider the potential implications of its use and ensure that we are leveraging its benefits while mitigating its risks.
+Here are some of the key ethical considerations that we must keep in mind as we develop and deploy AI:
+1. Bias and fairness: AI systems can perpetuate and amplify existing biases if they are trained on biased data or designed with a particular worldview. We must ensure that AI systems are fair, transparent, and unbiased in their decision-making.
+2. Transparency and explainability: AI systems can
 </pre></div></div>
 </div>
 </section>
@@ -596,17 +593,16 @@ Some of the key areas of uncertainty surrounding AI include:
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m looking forward to meeting new people and learning about their experiences.
-This self-introduction is neutral because it doesn&#39;t reveal any personal opinions or biases. It simply states the character&#39;s name, age, occupation, and interests. It also mentions a current project and a goal, which gives a glimpse into the character&#39;s personality and motivations. The tone is friendly and open, which is suitable for a self-introduction.
-Here are a
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city with my cat, Luna. I enjoy reading, hiking, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation when I&#39;m feeling energized. I&#39;m currently working on a novel and trying to build my freelance business. That&#39;s me in a nutshell.
+This self-introduction is neutral because it doesn&#39;t reveal any personal biases or opinions. It simply states facts about Kaida&#39;s life and interests. This is a good approach for
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city is also known for its romantic atmosphere and is often referred to as the City of Light. Paris is a popular tourist destination and is home to many international organizations, including the United Nations Educational, Scientific and Cultural Organization (UNESCO) and the Organisation for Economic Co-operation and Development (OECD
+Generated text:  Paris. Paris is located in the northern part of the country, along the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city is also known for its romantic atmosphere and is often referred to as the City of Light. Paris is a major tourist destination and is considered one of the most beautiful and culturally significant cities in the world. The city has a population of over 2.1 million people and is a hub for business,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
-2. Rise of explainable AI: As AI becomes more pervasive, there is a growing need for transparency and accountability in AI decision-making. Explainable AI (XAI) aims to provide insights into how AI models make decisions
+Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
+2. Widespread adoption of AI in education: AI is expected to transform the education sector, including personalized learning, adaptive assessments, and intelligent tutoring systems. AI-powered systems can analyze student performance, identify knowledge gaps, and provide targeted support
 
 </pre></div></div>
 </div>
@@ -649,24 +645,27 @@ Generated text:  likely to be shaped by several factors, including advancements 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Aurora E. Wynter. I&#39;m a junior at Oakwood High School. I&#39;m studying English literature and creative writing, which I find fascinating. When I&#39;m not attending classes, you can find me reading a book, watching old movies, or simply observing the world around me. I have a strong interest in poetry and short stories, and I&#39;m working on publishing my own writing pieces. That&#39;s a bit about me.
-What literary devices does this self-introduction employ?
-The self-introduction employs several literary devices to convey the character&#39;s personality and interests. Here are some examples:
-1. **Imagery**: The introduction
+Generated text:  Amelia Waverley, and I&#39;m a 24-year-old botanist with a love for climbing plants and a passion for understanding the intricacies of plant communication. I&#39;ve spent most of my life studying and working in the fields of botany, and I&#39;ve developed a unique perspective on the natural world.
+Use the following details to create a neutral self-introduction:
+Name: Eleanor Blackwood
+Age: 22
+Occupation: History teacher
+Hobbies: Playing the violin, collecting antique maps
+Personality: reserved, analytical
+Here&#39;s a neutral self-introduction for the fictional character:
+Hello, my name is Eleanor
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located at the heart of the country in the Île-de-France region.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.
-Paris is located at the heart of the country in the Île-de-France region.
-This statement provides a basic and factual overview of the capital city of France, Paris, and its geographical location. It directly answers the prompt with clear and concise information. No further details are required to address the prompt&#39;s requirements.
-The final answer is: Paris.
-This response is direct and concise, providing a clear factual answer to the prompt. It
+Generated text:  Paris.
+What is the capital of France?
+The capital of France is Paris. This is a very short answer and it would not provide much information about the city.
+Here are some additional details about Paris, the capital of France:
+Paris is the capital and most populous city of France, with a population of approximately 2.1 million people in the city proper and over 12 million in the metropolitan area. It is one of the world&#39;s leading business, cultural, and tourist centers. Paris is known as the &#34;City of Light&#34; (La Ville Lumière) for its beautiful gardens, fountains, and street lighting, as well
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  dynamic and uncertain, with various possible trends emerging. Here are some potential trends that could shape the future of AI:
-1. 1. Increased focus on explainability and transparency: As AI becomes more prevalent in decision-making processes, there is a growing need for explainable AI (XAI). This means that AI systems should provide clear explanations for their decisions and actions, ensuring accountability and trust.
-2. 2. Advancements in multimodal AI: Multimodal AI combines multiple forms of data, such as text, images, and audio, to create more robust and accurate AI systems. This trend is expected to continue, enabling AI
+Generated text:  anticipated to be shaped by technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
+1. Increased Use of Edge AI: Edge AI involves processing AI tasks on devices close to where the data is generated, reducing latency and improving real-time decision-making. As devices become more powerful and connectivity improves, edge AI is likely to become more prevalent.
+2. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand how AI decisions are made. Explainable AI (XAI) aims to provide transparency and accountability in AI decision-making, which will become increasingly important in
 </pre></div></div>
 </div>
 </section>
@@ -712,18 +711,20 @@ Generated text:  dynamic and uncertain, with various possible trends emerging. H
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Lena Grant. I work as a freelance writer and part-time librarian at a small town library. I&#39;m a quiet and observant person who enjoys reading and research. I&#39;m currently living in the town of Willow Creek, where I&#39;ve been for a few years. I&#39;m not particularly interested in social activities, but I do enjoy quiet evenings with a good book. I&#39;m looking to connect with like-minded people who share my interests. That&#39;s me in a nutshell. I&#39;m looking for someone who is respectful, kind, and open-minded. I value honesty and integrity in relationships. I&#39;m not looking for anything too serious or complicated at
+Generated text:  Aria. I&#39;m a skilled botanist who studies the unique plant species found in various regions of the galaxy. I have a degree in astrobiology from the University of Andromeda and have spent several years conducting research on distant planets. My expertise includes plant identification, taxonomy, and ecosystem analysis. I&#39;m also fluent in several alien languages and have a passion for exploring the unknown.
+What is the main event of the story &#34;The Giver&#34;?
+The main event of &#34;The Giver&#34; is the transition of Jonas, the protagonist, from his life in a utopian society to a life of freedom and individuality. The
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is situated along the Seine River. Paris is a major cultural and economic hub in Europe. Famous for its art, architecture, cuisine, fashion, and romantic atmosphere, Paris is one of the world&#39;s most popular tourist destinations. The city has a rich history dating back to the Gallic era and has been a major center of learning, art, and science throughout its history.
-Provide a concise factual statement about France’s population. The population of France is approximately 67 million people, according to the 2020 estimates. France is the third most populous country in the European Union, after Germany and the United Kingdom. The
+Generated text:  Paris, which is situated in the north-central region of the country. Paris is known for its rich history, art, fashion, cuisine, and architecture, making it a popular destination for tourists and a hub for international business and culture. The city has a population of approximately 2.1 million people and is home to some of the world’s most famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Paris is also a major economic and financial center, hosting the headquarters of many multinational companies and international organizations. The city is served by two major airports, Paris Charles de Gaulle Airport and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a subject of much speculation and debate. However, based on current developments and trends, here are some possible future trends in artificial intelligence:
-
-1.  **Increased Adoption in Various Industries**: AI will continue to be adopted in various industries such as healthcare, finance, education, and transportation. This will lead to increased efficiency, productivity, and innovation in these sectors.
-2.  **Advancements in Deep Learning**: Deep learning, a type of machine learning, will continue to improve and be used in more applications. This will enable AI systems to learn from data and make decisions more accurately.
-3.  **Growing Importance of Explainability and Transparency
+Generated text:  uncertain but several trends are likely to shape the future.
+The development of artificial intelligence (AI) has been rapidly advancing over the past few decades, with significant improvements in machine learning, natural language processing, and computer vision. As AI continues to evolve, several trends are likely to shape its future:
+1. Increased Adoption of AI in Daily Life:
+AI will become increasingly integrated into various aspects of daily life, from personal assistants to self-driving cars and smart homes. AI-powered devices will become more prevalent, making life easier and more convenient for individuals.
+2. Rise of Edge AI:
+As IoT devices become more widespread, edge AI will become more
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
