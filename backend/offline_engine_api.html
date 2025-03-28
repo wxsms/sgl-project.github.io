@@ -16,32 +16,29 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
     <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=ac24186e"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -60,7 +57,6 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.4.4.post2" />
     <meta name="docbuild:last-update" content="Mar 28, 2025"/>
   </head>
   
@@ -77,8 +73,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -86,6 +93,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -93,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -110,8 +118,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,17 +148,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="SGLang - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="SGLang - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="SGLang - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
@@ -203,14 +214,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -388,16 +394,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -498,13 +512,13 @@
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.09s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.14s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.14s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.15it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.04it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.28it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
 
-/public_sglang_ci/runner-a-gpu-67/_work/sglang/sglang/python/sglang/srt/utils.py:823: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)
+/public_sglang_ci/runner-l3-b-gpu-23/_work/sglang/sglang/python/sglang/srt/utils.py:823: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
   tensor_data = torch.ByteTensor(
 </pre></div></div>
 </div>
@@ -537,23 +551,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Emily and I am excited to share my love for the creative process with you. As a textile designer, I have spent years honing my skills in design, illustration, and pattern making. My passion is bringing my imagination to life through color, texture, and shape.
-My design aesthetic is a mix of modern, bohemian, and eclectic influences. I draw inspiration from nature, vintage textiles, and the unique beauty of everyday objects. I am constantly experimenting with new techniques, materials, and technologies to push the boundaries of textile design.
-Through my work, I aim to create textiles that tell stories, evoke emotions, and bring people together
+Generated text:  Rachel, and I&#39;m a freelance writer living in the beautiful city of Asheville, North Carolina. I&#39;m thrilled to be joining the Pen and Paper team as a contributor.
+I&#39;ve been writing for years, starting with short stories and poetry in high school. I eventually honed my skills by writing for my college newspaper, and later landed a job as a writer at a local magazine. From there, I transitioned to freelance writing, which has allowed me to work with a variety of clients and explore a range of topics.
+As a writer, I&#39;m passionate about storytelling and connecting with people through words. I believe that writing is not just
 ===============================
 Prompt: The president of the United States is
-Generated text:  the leader of the United States government. The president is both the head of state and head of government of the country. The president is elected by the Electoral College system and serves a four-year term. The president has many important powers and responsibilities, including the power to sign bills into law, to veto bills, and to appoint federal judges and other high-ranking government officials.
-The president of the United States is also the commander-in-chief of the armed forces, which means they have the authority to make decisions about the military and national security. The president also has the power to negotiate treaties and to represent the United States in international relations.
-The president
+Generated text:  not the only public official who has recently used the word &#34;fail&#34; to describe a policy or an action. The public is also using the word to describe a variety of things, from a failed relationship to a failed business.
+In fact, the word &#34;fail&#34; has become so ubiquitous that it&#39;s not uncommon to see it used in conjunction with other words, like &#34; fail miserably&#34; or &#34;fail spectacularly.&#34;
+This usage of &#34;fail&#34; is often referred to as &#34;verbing,&#34; where a noun or a verb is used to describe an action or a state of being. In the case of &#34;fail,&#34; the noun is used
 ===============================
 Prompt: The capital of France is
-Generated text:  a must-visit destination for anyone traveling to Europe. With its rich history, stunning architecture, art museums, fashion, and cuisine, there’s no shortage of exciting things to see and do in Paris. Here are the top things to do in Paris:
-The Eiffel Tower: This iconic iron lattice tower is one of the most recognizable landmarks in the world. You can take the stairs or elevator to the top for breathtaking views of the city.
-The Louvre Museum: One of the world’s largest and most famous museums, the Louvre is home to an impressive collection of art and artifacts from ancient civilizations to the 19th century
+Generated text:  a beautiful city that has been a center of art and culture for centuries. From the famous Louvre Museum to the stunning Notre Dame Cathedral, Paris has a rich history and a unique blend of old and new.
+Paris is a city that is steeped in history, with landmarks such as the Eiffel Tower, the Arc de Triomphe, and the Champs-Élysées. Visitors can explore the city&#39;s many museums, galleries, and historic sites, including the Palace of Versailles, the Sainte-Chapelle, and the Musée d&#39;Orsay.
+In addition to its historical and cultural attractions, Paris is
 ===============================
 Prompt: The future of AI is
-Generated text:  a debate that has captured the imagination of the world. While some predict that AI will soon surpass human intelligence, others believe that it will be used to enhance human capabilities and create a utopian future. The 2010 book &#34;Life 3.0: Being Human in the Age of Artificial Intelligence&#34; by Max Tegmark explores this topic and more. The book takes a comprehensive approach to the subject, covering the current state of AI, its potential risks and benefits, and the impact it will have on society.
-One of the main themes of the book is the concept of &#34;AI alignment,&#34; which refers to the challenge of designing AI
+Generated text:  digital and collaborative: Can you imagine a world where computers can think and learn like humans? A world where machines can work together seamlessly, like a well-oiled machine, to solve complex problems and make decisions?
+This is the vision of the future of Artificial Intelligence (AI) and its applications in various fields, including healthcare, finance, and education. In this article, we will explore the future of AI and its potential impact on various industries.
+The Future of AI: Trends and Predictions
+1. **Edge AI**: With the proliferation of IoT devices, Edge AI will become increasingly important. This trend will enable AI processing at the edge
 </pre></div></div>
 </div>
 </section>
@@ -593,18 +609,21 @@ One of the main themes of the book is the concept of &#34;AI alignment,&#34; whi
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in Tokyo. I enjoy exploring the city&#39;s hidden corners and trying new foods. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel and a graphic novel, and I&#39;m excited to see where my creative projects take me. I&#39;m looking forward to meeting new people and making connections in the city. That&#39;s me in a nutshell. How would you describe Kaida? What are her strengths and weaknesses? What kind of story could she be a part of? Kaida is a creative and
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I love meeting new people and hearing their stories. I&#39;m currently working on a novel and trying to learn more about the world around me. That&#39;s me in a nutshell.
+This is a good example of a neutral self-introduction because it doesn&#39;t reveal too much about Kaida&#39;s personality, background, or motivations. It simply provides a brief overview of who she is and what she does
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.  The city is located in the northern part of the country, along the Seine River.  It is known for its beautiful architecture, art museums, and romantic atmosphere.  The Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral are some of the most famous landmarks in the city.  Paris is a popular tourist destination and is often referred to as the &#34;City of Light.&#34;  It is also a major cultural and economic center, with a rich history dating back to the Middle Ages.  The city has a
+Provide a concise factual statement about the population of France’s capital city. The population of Paris is approximately 2.1 million people.
+Provide a concise factual statement about the location of France’s capital city. Paris is located in the northern part of France, near the Seine River.
+Provide a concise factual statement about the economy of France’s capital city. Paris is a major economic center, with a diverse economy that includes finance, fashion, and tourism.
+Provide a concise factual statement about the culture of France’s capital city. Paris is known for its rich cultural heritage, including art, literature, and cuisine.
+Provide a concise factual
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. While it&#39;s difficult to predict exactly what the future holds, here are some possible trends that could shape the development and impact of artificial intelligence:
-1. Increased Adoption in Everyday Life: AI will become increasingly integrated into our daily lives, from virtual assistants like Siri and Alexa to more sophisticated applications in healthcare, finance, and education.
-2. Advancements in Machine Learning: Machine learning, a subset of AI, will continue to improve, enabling AI systems to learn from data and adapt to new situations more effectively.
-3. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing
+Generated text:  a topic of much speculation and debate. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even larger role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
+2. Widespread adoption of AI in education: AI has the potential to revolutionize the way we learn, with the ability to personalize education and provide real-time feedback to students. In the future, AI is likely to become a ubiquitous part of the
 
 </pre></div></div>
 </div>
@@ -647,15 +666,22 @@ Generated text:  a topic of much speculation and debate. While it&#39;s difficul
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Aria Flynn, and I&#39;m a 24-year-old freelance writer and artist living in New York City.
-Aria Flynn is a 24-year-old freelance writer and artist living in New York City. She’s passionate about her work, and her creativity is evident in everything she does. With a background in fine arts, Aria is skilled in painting, drawing, and sculpture. She has also honed her writing skills, penning short stories, poetry, and articles for various publications. Aria is a curious and adventurous person, always looking for new experiences and inspiration to fuel her creative pursuits. She is an avid reader, a
+Generated text:  River. I work as a freelance writer and spend most of my time in my small cottage near the forest. I&#39;m not particularly fond of company, but I enjoy the quiet and the freedom that comes with being on my own.
+Would you like me to make any changes? Perhaps a more detailed description of the character, their background, and their motivations? I can add some details about River&#39;s personality, interests, or skills. Just let me know what you need. To give you a better idea, here&#39;s a more detailed character sketch:
+River is a 30-year-old woman who grew up in a big city. She&#39;s always
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city is famous for its beautiful architecture and art museums. The most notable landmark in the city is the Eiffel Tower, which was built for the 1889 World’s Fair and is now a symbol of the city. The city has a rich cultural and historical heritage and is home to the famous Louvre Museum. Paris is also known for its romantic atmosphere and picturesque streets. The city is a popular tourist destination and has a vibrant nightlife. The official language of the city is French, but many people also speak English. The city is served by two main airports, Charles de Gaulle and Orly. The city has
+Generated text:  Paris.
+The previous response was correct. The capital of France is Paris. Is there anything else you would like to know about Paris? It has a rich history, famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral, as well as a vibrant cultural scene. Would you like more information about this?
+Here are some additional facts about Paris:
+1.  Paris is home to numerous museums and art galleries, including the Musée d’Orsay, Centre Pompidou, and Rodin Museum.
+2.  The city is known for its romantic atmosphere, with picturesque streets, charming cafes
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be transformed by advancements in machine learning, deep learning, and natural language processing. Experts predict that AI will become increasingly integrated into daily life, revolutionizing industries such as healthcare, finance, and transportation. Autonomous vehicles and robots will become more prevalent, and AI-powered virtual assistants will continue to evolve. The integration of AI with the Internet of Things (IoT) will lead to smart homes and cities, and AI-driven cybersecurity will become more sophisticated. Finally, the line between human and artificial intelligence will continue to blur, raising questions about the ethics and implications of AI development.
-The future of artificial intelligence is a subject of much speculation and
+Generated text:  expected to be shaped by several key factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1. Increased focus on explainability and transparency: As AI becomes more ubiquitous, there is a growing need for explainability and transparency in AI decision-making. This means that AI systems will need to provide clear and understandable explanations for their actions, to build trust and confidence in their decisions.
+2. Hybrid intelligence: The future of AI is likely to involve a combination of human and machine intelligence, with AI systems working alongside humans to enhance decision-making and problem-solving capabilities.
+3. Edge AI: With
 </pre></div></div>
 </div>
 </section>
@@ -701,21 +727,20 @@ The future of artificial intelligence is a subject of much speculation and
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Ethan Wright. I work as a freelance journalist in the city of Ashwood, covering a variety of topics from local politics to entertainment events. I&#39;m a bit of a night owl, often finding my best ideas and inspiration in the early hours of the morning. When I&#39;m not working, you can find me exploring the city&#39;s hidden corners and trying new restaurants.
-Here are a few things to consider when writing a neutral self-introduction:
-  1. Start with a simple greeting, such as &#34;Hello&#34; or &#34;Hi, my name is.&#34;
-  2. Keep the introduction brief and to the point. Aim for a few
+Generated text:  Aurora &#34;Rory&#34; Blackwood, and I&#39;m a 22-year-old student at the local university. I&#39;m studying environmental science with a focus on ecology and conservation. In my free time, I enjoy hiking, reading, and playing guitar. That&#39;s me in a nutshell. How would you describe Aurora as a person? What are her personality traits, interests, and values?
+Aurora, or Rory as she&#39;s known to friends, is a bright and curious individual with a passion for learning and exploring the natural world. She&#39;s a bit of a bookworm, often getting lost in the pages of her favorite novels or scientific
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city of Paris is located in the north central part of the country. It is situated at the Seine River. Paris is one of the most populated cities in the world. Paris is also the second largest city in the European Union after London. Paris is a major center for fashion, art, and culture. The city is home to famous landmarks such as the Eiffel Tower and the Louvre Museum. Paris is a popular tourist destination. The city is known for its romantic atmosphere, historic architecture, and culinary delights. The city has a rich history dating back to the Roman Empire. It has been the capital of France
+Generated text:  Paris. Paris is located in the north-central part of the country. The Seine River runs through the city and is divided into two parts by the river: the Left Bank and the Right Bank. Paris is known for its iconic landmarks, such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is also famous for its fashion industry, cuisine, and romantic atmosphere.
+Be the first to review “France” Cancel reply
+Siam - Thailand $0.00
+Afghanistan $0.00
+Yemen $0.00
+Peru $0.00
+Ireland $0.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  vast, with many possibilities for growth, and various areas where AI will impact our lives. AI could potentially take on more complex tasks, become more integrated into various industries, and change the way we interact with technology.
-Possible Future Trends in Artificial Intelligence:
-1. Increased Adoption in Industries:
-Artificial intelligence will be adopted in more industries, such as healthcare, finance, education, and transportation. AI will help improve efficiency, accuracy, and decision-making in these sectors.
-2. Advancements in Robotics:
-Robotics will become more advanced, with AI-powered robots performing complex tasks, such as surgery, manufacturing, and customer service. AI will enable
+Generated text:  going to be bigger than we can imagine. Here are some possible future trends that we can look forward to: 1. Increased use of AI in healthcare: AI will be used to diagnose diseases, predict patient outcomes, and personalize medicine. 2. AI-powered robots that can perform surgery: Robots will be able to perform complex surgeries with precision and accuracy, reducing the risk of human error. 3. AI-assisted decision-making in business: AI will be used to analyze data, identify patterns, and make recommendations to businesses, helping them make better decisions. 4. AI-powered transportation systems: AI will be used to manage traffic
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -766,8 +791,7 @@ Robotics will become more advanced, with AI-powered robots performing complex ta
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -835,8 +859,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
