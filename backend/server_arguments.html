@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.4.4.post2" />
-    <meta name="docbuild:last-update" content="Mar 27, 2025"/>
+    <meta name="docbuild:last-update" content="Mar 28, 2025"/>
   </head>
   
   
@@ -557,7 +557,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_ep_moe</span></code>: Enables expert parallelism that distributes the experts onto multiple GPUs for MoE models.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ep_size</span></code>: The size of EP. Please shard the model weights with <code class="docutils literal notranslate"><span class="pre">tp_size=ep_size</span></code>, for detailed benchmarking refer to <a class="reference external" href="https://github.com/sgl-project/sglang/pull/2203">this PR</a>. If not set, <code class="docutils literal notranslate"><span class="pre">ep_size</span></code> will be automatically set to <code class="docutils literal notranslate"><span class="pre">tp_size</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">enable_deepep_moe</span></code>: Enables expert parallelism that distributes the experts onto multiple GPUs for DeepSeek-V3 model based on deepseek-ai/DeepEP. Currently DeepEP is bind to DP Attention. Please set <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span> <span class="pre">--enable-deepep-moe</span></code>, perfer <code class="docutils literal notranslate"><span class="pre">tp_size=dp_size=ep_size</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_deepep_moe</span></code>: Enables expert parallelism that distributes the experts onto multiple GPUs for DeepSeek-V3 model based on deepseek-ai/DeepEP.</p></li>
 </ul>
 </section>
 </section>
@@ -670,7 +670,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <p><em>Note: Some of these options are still in experimental stage.</em></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_mixed_chunk</span></code>: Enables mixing prefill and decode, see <a class="reference external" href="https://github.com/sgl-project/sglang/discussions/1163">this discussion</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">enable_dp_attention</span></code>: Enable <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Data Parallelism Attention</a> for Deepseek models. Note that you need to choose <code class="docutils literal notranslate"><span class="pre">dp_size</span> <span class="pre">=</span> <span class="pre">tp_size</span></code> for this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_dp_attention</span></code>: Enable <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Data Parallelism Attention</a> for Deepseek models.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_torch_compile</span></code>: Torch compile the model. Note that compiling a model takes a long time but have a great performance boost. The compiled model can also be <a class="reference external" href="https://docs.sglang.ai/backend/hyperparameter_tuning.html#enabling-cache-for-torch-compile">cached for future use</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">torch_compile_max_bs</span></code>: The maximum batch size when using <code class="docutils literal notranslate"><span class="pre">torch_compile</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cuda_graph_max_bs</span></code>: Adjust the maximum batchsize when using cuda graph. By default this is chosen for you based on GPU specifics.</p></li>
@@ -786,7 +786,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 27, 2025.
+  Last updated on Mar 28, 2025.
   <br/>
 </p>
   </div>
