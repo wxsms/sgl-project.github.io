@@ -512,11 +512,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.24it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.17it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.20it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.65it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.25it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.11it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.01it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
 
 /public_sglang_ci/runner-l3-b-gpu-45/_work/sglang/sglang/python/sglang/srt/utils.py:823: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
   tensor_data = torch.ByteTensor(
@@ -551,28 +551,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ixchel, and I will be your guide to the mystical world of Mayan astrology. In this article, we will explore the different types of Mayan astrology readings, and how they can help you navigate your life’s journey.
-Mayan astrology, also known as the Tzolkin, is an ancient system of divination that originated in the Yucatan Peninsula in Mexico. It is a complex system that uses a 260-day cycle to predict future events and offer guidance on personal growth and spiritual evolution.
-There are several types of Mayan astrology readings that you can choose from, depending on your interests and needs. Here
+Generated text:  Sabrina. I am a new therapist in your community and I am excited to introduce myself to you. I am a Licensed Professional Counselor (LPC) with a passion for helping individuals, couples, and families navigate life&#39;s challenges and achieve their goals.
+I have experience working with individuals of all ages, from children to adults, and with a wide range of concerns, including anxiety, depression, trauma, relationships, and self-esteem. I also have experience working with couples and families to strengthen their bonds and improve communication.
+I am a trauma-informed therapist, which means that I am trained to work with individuals who have experienced trauma and
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of the executive branch and the commander-in-chief of the armed forces. He is also the leader of the federal government and the chief representative of the nation.
-The president is elected by the Electoral College, which consists of 538 electors who are chosen by each state to cast their electoral votes for president and vice president. The candidate who receives the majority of the electoral votes, at least 270, wins the presidency.
-The president serves a four-year term and is eligible for re-election. He is also subject to impeachment by Congress for &#34;high crimes and misdemeanors.&#34; The president has the power to veto laws passed by Congress,
+Generated text:  a symbol of American democracy and values. The president is elected by the people to serve as the head of the executive branch of the government. He or she has the power to make key decisions and set the overall direction for the country. The president serves as a representative of the American people, and is expected to uphold the principles of democracy, equality, and justice. The role of the president is a highly visible and influential one, and is often seen as a reflection of the country&#39;s values and character.
+The president&#39;s responsibilities include:
+Making key decisions on domestic and foreign policy
+Setting the overall direction for the country
+Representing the United
 ===============================
 Prompt: The capital of France is
-Generated text:  a world-famous city, attracting millions of visitors every year. It&#39;s steeped in history, art and culture, with iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. Here are some of the top things to do in Paris:
-1. Visit the Eiffel Tower
-The Eiffel Tower is an iconic symbol of Paris and one of the most recognizable landmarks in the world. You can take the elevator to the top for breathtaking views of the city.
-2. Explore the Louvre Museum
-The Louvre is one of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts
+Generated text:  a city of romance, art, fashion, and cuisine. Visit the iconic Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city has a rich history dating back to the 3rd century BC, and its beauty and charm continue to captivate visitors from around the world.
+Paris, the City of Light, has something to offer everyone. From the charming streets of Montmartre to the world-class restaurants and cafes of the Latin Quarter, Paris is a city that is sure to leave you enchanted.
+The Eiffel Tower, one of the most recognizable landmarks in the world, stands tall in the heart of
 ===============================
 Prompt: The future of AI is
-Generated text:  human-centered
-As AI continues to evolve and become increasingly integrated into our lives, it&#39;s time to focus on creating AI that serves humanity, rather than simply automating tasks.
-By Rohan Kumar, corporate vice president, Microsoft Azure
-Artificial intelligence (AI) is rapidly changing the world, driving innovation in industries ranging from healthcare to finance to education. As AI continues to evolve and become increasingly integrated into our lives, it&#39;s time to focus on creating AI that serves humanity, rather than simply automating tasks.
-We&#39;re already seeing this shift in AI development, with a growing focus on creating more human-centered AI systems. This approach priorit
+Generated text:  multidisciplinary and dependent on various advancements in data science, machine learning, and neuroscience.
+Deep Learning is a subset of machine learning that is primarily concerned with artificial neural networks and deep neural networks. Deep learning is one of the most active areas of research in AI and is known for its capabilities in image and speech recognition, natural language processing, and game playing.
+The AI community has been focused on developing more complex and advanced deep learning models, such as Generative Adversarial Networks (GANs), Residual Networks (ResNets), and Transformers, to solve various tasks such as image and video generation, object detection, and natural language
 </pre></div></div>
 </div>
 </section>
@@ -612,19 +610,17 @@ We&#39;re already seeing this shift in AI development, with a growing focus on c
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student. I&#39;m a bit of a bookworm and enjoy reading about history and science. I&#39;m also a member of the school&#39;s debate team. I like to think I&#39;m pretty laid-back and easy-going, but I can get pretty passionate about the topics I care about. I&#39;m not really sure what I want to do with my life yet, but I&#39;m open to exploring different options. I&#39;m a bit of a introvert, but I&#39;m working on being more outgoing and confident. I&#39;m excited to see what the future holds.
-This self-introduction is neutral
+Generated text:  Kaida. I&#39;m a 17-year-old high school student. I&#39;m a bit of a bookworm and enjoy reading about history and science. I&#39;m also a member of the school&#39;s debate team and enjoy arguing about current events. I&#39;m a bit of a perfectionist, which can sometimes make me come across as a bit bossy or critical. I&#39;m working on being more open-minded and listening to others&#39; perspectives. I&#39;m a bit of a introvert, but I do enjoy spending time with close friends and family. I&#39;m not really sure what I want to do with my life yet, but I&#39;m excited to
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 The capital of France is Paris.
-The capital of France is Paris. This is a concise factual statement about France’s capital city. It provides a clear and direct answer to the question, without any additional information or context. It is a simple and straightforward statement that can be used as a starting point for further discussion or research. The statement is also accurate and reliable, as it is a widely accepted fact about France’s capital city. Overall, this statement is a good example of a concise factual statement. The statement is also in the present tense, which is suitable for a factual statement. The use of the present tense implies that the
+Paris is the capital and largest city of France, with a population of over 2.1 million people within its city limits. It is the center of France&#39;s economy, culture, and politics, and is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major hub for international business, fashion, and tourism, and is home to many of the world&#39;s most famous universities and research institutions. The city is divided into 20 arrondissements, or districts, and is served by a comprehensive public
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
-1. Increased Adoption of AI in Various Industries: AI is expected to become more pervasive across various industries, including healthcare, finance, education, and transportation. This will lead to increased efficiency, productivity, and innovation.
-2. Advancements in Natural Language Processing (NLP): NLP is a key area of AI research, and future advancements in this field will enable more sophisticated human-computer interactions, such as conversational interfaces and language translation.
-3. Rise of Explainable AI (XAI
+Generated text:  a topic of much speculation and debate. Here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
+2. Rise of autonomous vehicles: Autonomous vehicles are already being tested on public roads, and it&#39;s likely that they will become more common in the future. AI will play a key role in the development of autonomous vehicles, enabling them to navigate complex
 
 </pre></div></div>
 </div>
@@ -667,20 +663,24 @@ Generated text:  likely to be shaped by various factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Jasmine Everett, and I am a 25-year-old administrative assistant. I have been working at the Smith Law Firm for five years and have gained a wealth of knowledge in office management and customer service. In my free time, I enjoy reading, hiking, and practicing yoga. I am a hard worker and am committed to delivering high-quality results in all that I do. I am excited to meet new people and build relationships.
-Here are a few things to note about Jasmine&#39;s self-introduction:
-It&#39;s brief and to the point, making it easy to read and understand.
-It provides relevant details about her work experience and skills.
-It
+Generated text:  Felicity A. Nightshade. I&#39;m a 25-year-old freelance journalist with a passion for true crime stories. I&#39;m based in the city of Ashwood, where I&#39;ve spent the last five years honing my writing skills and building a network of contacts in the local police department and courts. I&#39;ve written for several prominent online publications and have a knack for getting to the bottom of a good mystery. I&#39;m always on the lookout for my next big scoop, and I&#39;m not afraid to take risks to get the story. I&#39;m a bit of a loner, but I have a strong sense of justice and a willingness
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  located in the northeastern part of the country. The city is built on two islands in the Seine River and its banks. The city’s population is over 2.1 million people. The city is known for its historical landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Arc de Triomphe.
-France’s capital is Paris. The city is situated in the north-central part of the country and is home to over 2.1 million people. Paris is known for its historical landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Arc de Triomphe. The city is
+Generated text:  Paris.
+The University of Virginia’s first president was a notable historical figure. Thomas Jefferson served as the first president of the University of Virginia.
+France has a rich history that includes significant cultural and artistic achievements. France has a rich history of cultural and artistic achievements.
+The Taj Mahal, a UNESCO World Heritage Site, is located in Agra, India. The Taj Mahal is a UNESCO World Heritage Site located in Agra, India.
+The Great Barrier Reef, the world’s largest coral reef system, is located off the coast of which continent? The Great Barrier Reef is located off the coast of Australia.
+Answer Key:
+The capital
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  already here, and it is changing the world around us. Advances in machine learning and deep learning have enabled AI to be used in a wide variety of applications, from chatbots and virtual assistants to self-driving cars and predictive maintenance. Here are some possible future trends in AI:
-More AI applications in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI may be used to develop new treatments and medications, and to predict patient outcomes.
-Increased use of AI in education: AI is being used in education to personalize learning experiences, provide real-time feedback, and automate
+Generated text:  expected to be transformed by the integration of various technologies, including cloud computing, edge computing, and the Internet of Things (IoT).
+Describe potential applications of AI in various fields, such as healthcare, finance, and education.
+Explain the potential benefits and challenges of the increasing use of AI in different industries.
+Discuss the importance of ethics in the development and deployment of AI systems.
+Artificial intelligence (AI) is expected to have a significant impact on various industries and aspects of our lives in the future. Some possible future trends in AI include:
+1. **Increased use of cloud computing and edge computing**: Cloud computing and edge computing are expected
 </pre></div></div>
 </div>
 </section>
@@ -726,22 +726,20 @@ Increased use of AI in education: AI is being used in education to personalize l
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I’m a 23-year-old anthropology student at a university in the Pacific Northwest. I have short, dark hair and hazel eyes. My interests include hiking, music, and exploring different cultures. That’s about it for now.
-This introduction is neutral because it doesn’t reveal much about Kaida’s personality, background, or motivations. It simply presents her basic facts and interests. A neutral introduction can be helpful if you’re trying to create a character without any preconceptions or biases. It also leaves room for development and growth, as Kaida can reveal more about herself over time. What do you think? Would
+Generated text:  Emily, but my friends call me Em. I&#39;m a college student studying computer science and engineering. I&#39;m from a small town in Ohio, but I&#39;ve been living in New York City for the past year to pursue my education. I like to think of myself as a curious and creative problem solver. In my free time, I enjoy hiking and trying out new restaurants in the city. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
+The self-introduction should be short and to the point, but also reveal some character traits and background information. It should also be neutral, meaning it should
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the largest city in France and is located in the north-central part of the country.
-Paris is a global hub for fashion, art, and culture, attracting millions of tourists each year.
-Paris is home to some of the world’s most famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral.
-The city is known for its picturesque streets, charming neighborhoods, and historic architecture, including the Montmartre and Le Marais districts.
-Paris is a center for business and finance, with the Euronext stock exchange and the headquarters of many major corporations located in the city.
-Paris
+Generated text:  Paris.
+Paris is often referred to as the City of Light. This nickname has a rich history behind it, and it reflects the city&#39;s significance in the Enlightenment.
+France is known for its beautiful cities, rich history, and stunning art. Many of the most famous works of art have been created in France, including the Mona Lisa by Leonardo da Vinci.
+The Eiffel Tower is a famous landmark in Paris, France. It was built in 1889 for the World&#39;s Fair and stands at 324 meters tall.
+The Palace of Versailles is a beautiful palace that is located near Paris. It was the royal palace of France from
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain, and some trends are likely to shape the technology in the coming years.
-Artificial intelligence is changing the world with each passing day. With its rapidly evolving nature, it is becoming increasingly difficult to predict what the future of AI holds. However, here are some possible trends that are likely to shape the technology in the coming years:
-1. Increased adoption in various industries: AI is already being used in various industries, including healthcare, finance, and transportation. In the future, we can expect to see increased adoption of AI in other industries such as education, marketing, and manufacturing.
-2. Greater emphasis on Explainability: As AI becomes
+Generated text:  likely to be influenced by various factors, including advances in computing power, the development of new algorithms, and the availability of large datasets. Here are some possible future trends in AI:
+1. Increased Adoption of AI in Everyday Life: AI will become increasingly integrated into our daily lives, from virtual assistants like Siri and Alexa to more advanced applications in healthcare, finance, and education.
+2. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions. Explainable AI (XAI) will become a critical area of research, enabling humans to understand the reasoning behind AI-driven decisions
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
