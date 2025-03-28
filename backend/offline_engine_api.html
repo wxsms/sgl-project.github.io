@@ -16,29 +16,32 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
     <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_log.css?v=731335ad" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=ac24186e"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -57,6 +60,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.4.post2" />
     <meta name="docbuild:last-update" content="Mar 28, 2025"/>
   </head>
   
@@ -73,19 +77,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,7 +86,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -101,8 +93,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,7 +110,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,21 +141,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="SGLang - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="SGLang - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="SGLang - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
@@ -214,9 +203,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -394,24 +388,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -512,13 +498,13 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.25it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.11it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.01it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.03s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.55it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
 
-/public_sglang_ci/runner-l3-b-gpu-45/_work/sglang/sglang/python/sglang/srt/utils.py:823: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
+/public_sglang_ci/runner-c-gpu-0/_work/sglang/sglang/python/sglang/srt/utils.py:823: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:206.)
   tensor_data = torch.ByteTensor(
 </pre></div></div>
 </div>
@@ -551,26 +537,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sabrina. I am a new therapist in your community and I am excited to introduce myself to you. I am a Licensed Professional Counselor (LPC) with a passion for helping individuals, couples, and families navigate life&#39;s challenges and achieve their goals.
-I have experience working with individuals of all ages, from children to adults, and with a wide range of concerns, including anxiety, depression, trauma, relationships, and self-esteem. I also have experience working with couples and families to strengthen their bonds and improve communication.
-I am a trauma-informed therapist, which means that I am trained to work with individuals who have experienced trauma and
+Generated text:  Rebecca Hall and I am thrilled to be your tour guide today. I have lived in Savannah for most of my life and I love sharing my knowledge of this beautiful city with visitors. As we walk through the historic district, I will point out some of the city&#39;s most charming landmarks, share stories about the people who lived here, and give you a glimpse into the city&#39;s rich history.
+We will start at the iconic Forsyth Park fountain, a popular spot for photos and a must-see for any visitor to Savannah. From there, we will make our way through the picturesque streets and alleys of the historic district, stopping at some
 ===============================
 Prompt: The president of the United States is
-Generated text:  a symbol of American democracy and values. The president is elected by the people to serve as the head of the executive branch of the government. He or she has the power to make key decisions and set the overall direction for the country. The president serves as a representative of the American people, and is expected to uphold the principles of democracy, equality, and justice. The role of the president is a highly visible and influential one, and is often seen as a reflection of the country&#39;s values and character.
-The president&#39;s responsibilities include:
-Making key decisions on domestic and foreign policy
-Setting the overall direction for the country
-Representing the United
+Generated text:  also known as the head of the executive branch. The president is also the commander in chief of the United States Armed Forces. The president also has the power to issue executive orders. The president also has the power to appoint federal judges and ambassadors. The president also has the power to veto laws passed by Congress. The president also has the power to negotiate treaties with foreign governments.
+The president is also the head of state of the United States. The president is also the head of government of the United States. The president is also the commander in chief of the United States Armed Forces. The president also has the power to issue executive orders. The
 ===============================
 Prompt: The capital of France is
-Generated text:  a city of romance, art, fashion, and cuisine. Visit the iconic Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city has a rich history dating back to the 3rd century BC, and its beauty and charm continue to captivate visitors from around the world.
-Paris, the City of Light, has something to offer everyone. From the charming streets of Montmartre to the world-class restaurants and cafes of the Latin Quarter, Paris is a city that is sure to leave you enchanted.
-The Eiffel Tower, one of the most recognizable landmarks in the world, stands tall in the heart of
+Generated text:  home to some of the most famous landmarks and museums in the world. When planning a trip to Paris, it can be overwhelming to decide which attractions to see and how to make the most of your time. Here are some tips and recommendations to help you plan an unforgettable trip to Paris:
+
+1. Buy a Paris Museum Pass: The Paris Museum Pass grants you entry to over 60 museums and attractions, including the Louvre, Orsay, and Rodin museums. It also allows you to skip the long lines, which can save you a significant amount of time.
+
+2. Prioritize the Must-see Attractions: Make a list of
 ===============================
 Prompt: The future of AI is
-Generated text:  multidisciplinary and dependent on various advancements in data science, machine learning, and neuroscience.
-Deep Learning is a subset of machine learning that is primarily concerned with artificial neural networks and deep neural networks. Deep learning is one of the most active areas of research in AI and is known for its capabilities in image and speech recognition, natural language processing, and game playing.
-The AI community has been focused on developing more complex and advanced deep learning models, such as Generative Adversarial Networks (GANs), Residual Networks (ResNets), and Transformers, to solve various tasks such as image and video generation, object detection, and natural language
+Generated text:  here, and it&#39;s transforming the way we live, work, and interact with each other.
+Artificial intelligence (AI) is no longer a distant concept, but a tangible force that is changing the landscape of various industries. From healthcare and finance to education and customer service, AI is being applied to improve efficiency, accuracy, and customer experience.
+However, the benefits of AI are not limited to these sectors. It is also transforming the way we interact with each other, revolutionizing communication, and enabling us to connect with people from all over the world in new and innovative ways.
+In this article, we&#39;ll explore the future of AI and
 </pre></div></div>
 </div>
 </section>
@@ -610,17 +595,38 @@ The AI community has been focused on developing more complex and advanced deep l
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student. I&#39;m a bit of a bookworm and enjoy reading about history and science. I&#39;m also a member of the school&#39;s debate team and enjoy arguing about current events. I&#39;m a bit of a perfectionist, which can sometimes make me come across as a bit bossy or critical. I&#39;m working on being more open-minded and listening to others&#39; perspectives. I&#39;m a bit of a introvert, but I do enjoy spending time with close friends and family. I&#39;m not really sure what I want to do with my life yet, but I&#39;m excited to
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m looking forward to meeting new people and learning from their experiences.
+This is a good example of a neutral self-introduction because it:
+Provides basic information about the character, such as their name, age, and occupation.
+Mentions their interests and hobbies, which can help to create a sense of personality and character.
+Avoids making any bold or attention-seeking statements.
+Does not reveal too much about the character&#39;s personal life
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
+Provide a concise factual statement about France’s capital city. The capital of France is Paris.
 The capital of France is Paris.
-Paris is the capital and largest city of France, with a population of over 2.1 million people within its city limits. It is the center of France&#39;s economy, culture, and politics, and is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major hub for international business, fashion, and tourism, and is home to many of the world&#39;s most famous universities and research institutions. The city is divided into 20 arrondissements, or districts, and is served by a comprehensive public
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of France is Paris.
+The capital of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. Here are some possible future trends in artificial intelligence:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
-2. Rise of autonomous vehicles: Autonomous vehicles are already being tested on public roads, and it&#39;s likely that they will become more common in the future. AI will play a key role in the development of autonomous vehicles, enabling them to navigate complex
+Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
+1. Increased Adoption of AI in Everyday Life: AI is likely to become more ubiquitous in our daily lives, with applications in areas such as healthcare, finance, transportation, and education.
+2. Advancements in Machine Learning: Machine learning, a subset of AI, is expected to continue to improve, enabling AI systems to learn from data and adapt to new situations.
+3. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand how AI systems make
 
 </pre></div></div>
 </div>
@@ -663,24 +669,20 @@ Generated text:  a topic of much speculation and debate. Here are some possible 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Felicity A. Nightshade. I&#39;m a 25-year-old freelance journalist with a passion for true crime stories. I&#39;m based in the city of Ashwood, where I&#39;ve spent the last five years honing my writing skills and building a network of contacts in the local police department and courts. I&#39;ve written for several prominent online publications and have a knack for getting to the bottom of a good mystery. I&#39;m always on the lookout for my next big scoop, and I&#39;m not afraid to take risks to get the story. I&#39;m a bit of a loner, but I have a strong sense of justice and a willingness
+Generated text:  Finnley and I am a historian of sorts, focusing on the intricacies of forgotten events. I spend most of my days researching and recording tales from the past, hoping to shed light on overlooked stories and experiences.
+I&#39;m a quiet and observant person who values knowledge and insight. I often find myself lost in thought, pondering the complexities of the world and the people within it. My work is a reflection of my curiosity and dedication to understanding the world around me.
+I&#39;m not one for grand speeches or flashy displays, preferring to keep a low profile and let my work speak for itself. I&#39;m more interested in uncovering the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The University of Virginia’s first president was a notable historical figure. Thomas Jefferson served as the first president of the University of Virginia.
-France has a rich history that includes significant cultural and artistic achievements. France has a rich history of cultural and artistic achievements.
-The Taj Mahal, a UNESCO World Heritage Site, is located in Agra, India. The Taj Mahal is a UNESCO World Heritage Site located in Agra, India.
-The Great Barrier Reef, the world’s largest coral reef system, is located off the coast of which continent? The Great Barrier Reef is located off the coast of Australia.
-Answer Key:
-The capital
+Generated text:  Paris, which is also the country’s largest city.
+The statement is 1 sentence.
+The answer is: The capital of France is Paris, which is also the country’s largest city. (1 sentence) &amp; France (country) and Paris (city) are both included in the answer. &amp; The answer only includes one piece of information about France’s capital city. &amp; The answer provides a concise factual statement about France’s capital city. &amp; No additional information about France’s capital city is provided. &amp; The answer does not contain any opinions. &amp; The answer is written in a formal tone. &amp; The answer is not overly simplistic or too
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be transformed by the integration of various technologies, including cloud computing, edge computing, and the Internet of Things (IoT).
-Describe potential applications of AI in various fields, such as healthcare, finance, and education.
-Explain the potential benefits and challenges of the increasing use of AI in different industries.
-Discuss the importance of ethics in the development and deployment of AI systems.
-Artificial intelligence (AI) is expected to have a significant impact on various industries and aspects of our lives in the future. Some possible future trends in AI include:
-1. **Increased use of cloud computing and edge computing**: Cloud computing and edge computing are expected
+Generated text:  unpredictable, but it is expected to bring about significant changes in various industries and aspects of life. Some possible future trends in artificial intelligence include:
+1. Increased Integration with the Internet of Things (IoT): As AI continues to improve, it is expected to be integrated with the Internet of Things (IoT), enabling devices and systems to interact with each other and make decisions based on real-time data.
+2. Advancements in Natural Language Processing (NLP): NLP will continue to improve, allowing humans to interact with AI systems more naturally, through voice commands, gestures, or even thoughts.
+3. Growing Use of Explainable AI (
 </pre></div></div>
 </div>
 </section>
@@ -726,20 +728,17 @@ Artificial intelligence (AI) is expected to have a significant impact on various
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emily, but my friends call me Em. I&#39;m a college student studying computer science and engineering. I&#39;m from a small town in Ohio, but I&#39;ve been living in New York City for the past year to pursue my education. I like to think of myself as a curious and creative problem solver. In my free time, I enjoy hiking and trying out new restaurants in the city. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
-The self-introduction should be short and to the point, but also reveal some character traits and background information. It should also be neutral, meaning it should
+Generated text:  Jaxon Lee. I&#39;m a 22-year-old artist and writer living in a small town surrounded by nature. I enjoy hiking and reading in my free time. I&#39;m currently working on a novel and experimenting with different mediums in my art studio. That&#39;s a bit about me. What do you think?
+This introduction provides a clear and concise overview of the character&#39;s identity, interests, and current pursuits. It establishes a neutral tone, giving the reader a sense of who Jaxon is without revealing too much about his personality or backstory. The language is straightforward and easy to follow, making it accessible to a wide range of readers. The
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Paris is often referred to as the City of Light. This nickname has a rich history behind it, and it reflects the city&#39;s significance in the Enlightenment.
-France is known for its beautiful cities, rich history, and stunning art. Many of the most famous works of art have been created in France, including the Mona Lisa by Leonardo da Vinci.
-The Eiffel Tower is a famous landmark in Paris, France. It was built in 1889 for the World&#39;s Fair and stands at 324 meters tall.
-The Palace of Versailles is a beautiful palace that is located near Paris. It was the royal palace of France from
+Generated text:  Paris. Paris is located in the northern part of France and is situated in the middle of the Île-de-France region. It is home to over 2.1 million people, making it one of the most populous cities in the European Union. The city is known for its iconic landmarks, such as the Eiffel Tower and the Louvre Museum, and is a major cultural, artistic, and economic center. Paris has a rich history dating back to the 3rd century BC and has played a significant role in shaping European culture and politics. Source: Encyclopedia Britannica, Wikipedia. ## Step 1: Identify the capital
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be influenced by various factors, including advances in computing power, the development of new algorithms, and the availability of large datasets. Here are some possible future trends in AI:
-1. Increased Adoption of AI in Everyday Life: AI will become increasingly integrated into our daily lives, from virtual assistants like Siri and Alexa to more advanced applications in healthcare, finance, and education.
-2. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions. Explainable AI (XAI) will become a critical area of research, enabling humans to understand the reasoning behind AI-driven decisions
+Generated text:  uncertain, and there are many different predictions and trends that experts are making about what AI will look like in the future. Some potential trends in AI that could be significant in the future include:
+The development of more sophisticated machine learning algorithms that can learn and improve on their own, potentially leading to more efficient and effective decision-making.
+The integration of AI with other technologies, such as robotics, the Internet of Things (IoT), and blockchain, to create more powerful and autonomous systems.
+The development of more human-like AI systems that can understand and interact with humans in a more natural way, potentially leading to more widespread adoption of AI in areas such
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -790,7 +789,8 @@ Generated text:  likely to be influenced by various factors, including advances 
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -858,8 +858,8 @@ By SGLang Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
