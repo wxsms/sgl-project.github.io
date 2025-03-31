@@ -512,11 +512,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.04it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.04s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.08s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.24it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.09it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.02s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.03s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
 
 </pre></div></div>
 </div>
@@ -549,27 +549,32 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Emily.
-I&#39;m a freelance writer and editor living in the Pacific Northwest. I love hiking, reading, and trying new restaurants. My husband and I have a cat named Pixie who thinks she&#39;s a queen.
-I started this blog as a way to share my thoughts and experiences with others. I&#39;m passionate about writing, and I hope to inspire others to chase their dreams, just as I&#39;ve tried to do.
-If you&#39;re interested in learning more about me or my writing, please feel free to send me an email. I&#39;d love to hear from you! I&#39;m always looking for new writing opportunities, and I&#39;m happy to
+Generated text:  Sabine. I am a 31-year-old Registered Nurse (RN) and I am a part of the greatest profession in the world. I was born and raised in the beautiful country of the Netherlands. In my free time, I love to hike, practice yoga, read and enjoy good food and wine.
+As a nurse, I have had the privilege of caring for patients from all walks of life and backgrounds. This has broadened my perspective and taught me the importance of empathy, compassion, and kindness. In my professional career, I aim to provide exceptional care and support to my patients, and to make a positive impact on their lives
 ===============================
 Prompt: The president of the United States is
-Generated text:  not only the head of the executive branch of government, but also serves as the commander-in-chief of the military. However, some people may wonder whether a president could be impeached or removed from office for making military decisions. The answer is a bit more complicated than a simple yes or no.
-Can a President Be Impeached for Making Military Decisions?
-Article II, Section 4 of the United States Constitution states that a president can be impeached for treason, bribery, or other high crimes and misdemeanors. While this does not explicitly mention military decisions, it does not exclude them either.
-The power to make military decisions is granted
+Generated text:  an elected official who serves as the head of state and government of the United States. The president is both the head of state and the head of government of the country. The president is directly elected by the people through the Electoral College system and serves a four-year term.
+The president has a number of key roles and responsibilities, including:
+Leading the executive branch of the federal government
+Signing or vetoing laws passed by Congress
+Serving as commander-in-chief of the armed forces
+Negotiating treaties and agreements with foreign governments
+Appointing federal judges and other high-ranking officials
+Representing the United States at international events and meetings
+
 ===============================
 Prompt: The capital of France is
-Generated text:  often associated with romance, art, fashion, and cuisine. However, Paris, as well as the rest of France, has a complex and often darker history. The French Revolution, World War I, and World War II are just a few examples of significant events that have shaped the country and its capital. In this article, we will explore the lesser-known and often overlooked aspects of Paris, delving into its hidden corners and revealing the city&#39;s hidden past.
-
-### 1. **The History of the Catacombs**
-One of the lesser-known aspects of Paris is the Catacombs, a network of underground tunnels and caverns that
+Generated text:  known for its rich history, art, fashion, and cuisine. The city is home to famous landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Visitors can explore the historic Latin Quarter, visit the Palace of Versailles, and enjoy the city&#39;s vibrant nightlife.
+What are some of the must-visit places in Paris?
+Some of the must-visit places in Paris include:
+The Eiffel Tower: The iconic iron lattice tower that offers breathtaking views of the city.
+The Louvre Museum: One of the world&#39;s largest and most famous museums, housing an impressive collection of art and artifacts from
 ===============================
 Prompt: The future of AI is
-Generated text:  rooted in its ability to learn from humans. While AI systems can be incredibly efficient and accurate at specific tasks, they often struggle to understand the nuances and context of human communication.
-That&#39;s why researchers are working on developing more advanced AI systems that can learn from humans through a process called &#34;human-in-the-loop&#34; (HITL) learning. This approach allows AI systems to learn from humans in real-time, adapting to their feedback and improving their performance over time.
-One of the key challenges in developing HITL learning systems is creating a way for humans to effectively communicate their intentions and goals to the AI system. This requires a deep understanding of
+Generated text:  bright, but it also poses significant challenges for society. From the bias embedded in AI systems to the ethics of AI decision-making, there are many complex issues to consider.
+The challenge of ensuring fairness, transparency, and accountability in AI systems is one of the most pressing issues. Many experts argue that current AI systems are inherently biased and discriminatory, often perpetuating existing social inequalities.
+Moreover, the rapid advancement of AI is outpacing our ability to understand its implications and develop appropriate regulations. This has led to concerns about job displacement, data privacy, and the potential for AI to be used for malicious purposes.
+However, it’s not all doom
 </pre></div></div>
 </div>
 </section>
@@ -609,17 +614,18 @@ One of the key challenges in developing HITL learning systems is creating a way 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
-This self-introduction is neutral because it doesn&#39;t reveal any personal biases or opinions. It simply states the character&#39;s name, age, occupation, and interests. It also hints at their personality, but in a way that is relatable and non-judgmental. The tone is friendly and approachable, making it easy for others to
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city with my cat, Luna. I enjoy reading, hiking, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
+This is a good start, but it&#39;s a bit too focused on the mundane aspects of your life. You might want to add a bit more depth or interest to your self-introduction. For example, you could mention a hobby or interest that you&#39;re particularly passionate about, or a goal or aspiration that you&#39;re
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The capital of France is Paris. This statement is a concise factual statement about France’s capital city. It provides a clear and direct answer to the question, without any additional information or context. The statement is also accurate, as Paris has been the capital of France since 987. This type of statement is useful for providing a quick and easy-to-understand answer to a question, and can be used in a variety of contexts, such as in a history textbook, a travel guide, or a trivia game. The statement is also neutral and objective, without any emotional or biased language. Overall, the statement is a clear and concise
+Provide a concise factual statement about France’s capital city.
+The capital of France is Paris. This is a simple and straightforward statement that provides a basic fact about France’s capital city. It does not include any additional information or context, but rather serves as a clear and concise statement of fact. This type of statement is often used in educational or informational contexts, such as in a textbook or encyclopedia entry. It is a good example of a factual statement because it is based on verifiable evidence and is not subject to personal opinion or interpretation. In this case, the statement is supported by a wide range of sources, including official government websites
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  a topic of much speculation and debate. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
-2. Widespread adoption of AI in industries: AI is already being used in various industries such as finance, transportation, and customer service. In the future, AI is likely to become even more ubiquitous, with the potential to transform the way businesses
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even larger role in healthcare, with the potential to revolutionize the way we diagnose and treat diseases.
+2. Widespread adoption of AI in industries: AI is already being used in various industries such as finance, transportation, and customer service. In the future, AI is likely to become even more widespread, with the potential to automate many tasks and improve
 
 </pre></div></div>
 </div>
@@ -662,20 +668,16 @@ Generated text:  a topic of much speculation and debate. Here are some possible 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Astrid and I&#39;m a skilled and resourceful survivalist with a background in environmental science and wildlife management. I&#39;ve spent years honing my skills in the wilderness, and I&#39;m confident in my ability to navigate and adapt to a variety of challenging situations. I&#39;m not one for grand gestures or unnecessary risks, but I&#39;m always willing to take calculated steps to protect myself and those I care about. I&#39;m a bit of a loner, but I have a strong sense of loyalty and will go to great lengths to help those in need.
-I like this self-introduction because it provides a concise overview of Astrid&#39;s skills,
+Generated text:  Odessa. I&#39;m a 21-year-old student at the University of California, Berkeley. I&#39;m a psychology major with a minor in creative writing. I enjoy reading and writing in my free time, and I&#39;m currently working on my first novel. I also like hiking and trying new foods. I&#39;m a bit of a introvert and value my alone time, but I&#39;m always up for a good conversation when I feel comfortable.
+Write a short, neutral self-introduction for a fictional character. Hello, my name is Ruby and I&#39;m a 25-year-old freelance graphic designer. I&#39;m originally from a small town in the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Provide a concise factual statement about a notable event in French history. The Battle of Agincourt was a significant event in French history, which occurred on October 25, 1415, and resulted in the English victory over the French during the Hundred Years&#39; War.
-Provide a concise factual statement about a notable French figure. Victor Hugo was a notable French writer, best known for his novels such as &#34;Les Misérables&#34;.
-Provide a concise factual statement about a French cultural icon. The Eiffel Tower is an iconic symbol of French culture, located in Paris, and is one of the most recognizable landmarks in the world.
-
+Generated text:  Paris. Paris is the most populous city in France and the most visited city in the world, with more than 23 million tourists per year. The city is known for its iconic landmarks, including the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is a global center for fashion, art, and culture, and it has a long and rich history dating back to the Roman era. The city is home to many of the world’s most prestigious institutions, including the Sorbonne University and the French Academy. Paris is also a hub for international business and diplomacy, with the United Nations Educational, Scientific and Cultural
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  increasingly becoming a topic of discussion among experts and non-experts alike. While it&#39;s challenging to predict the future with certainty, here are some possible future trends in artificial intelligence:
-1. **Increased Adoption of Edge AI**: With the proliferation of IoT devices, edge AI is likely to become more prevalent. Edge AI refers to the processing of data closer to the source, reducing latency and improving real-time decision-making.
-2. **Advancements in Natural Language Processing (NLP)**: NLP will continue to improve, enabling AI systems to better understand and generate human-like language. This will lead to more effective human-AI interaction and applications like
+Generated text:  diverse and full of possibilities, and we can expect a wide range of trends to emerge in the coming years. Here are some possible future trends in artificial intelligence:
+1. Increased Adoption in Healthcare: AI will become increasingly prevalent in healthcare, with applications in diagnosis, treatment, and patient care. AI-powered chatbots will help patients navigate the healthcare system, while AI-assisted diagnosis will improve accuracy and speed. AI will also help with personalized medicine, tailoring treatments to individual patients based on their genetic profiles.
+2. Growth of Explainable AI: As AI becomes more widespread, there will be a growing need for explainable AI, which provides
 </pre></div></div>
 </div>
 </section>
@@ -721,21 +723,20 @@ Generated text:  increasingly becoming a topic of discussion among experts and n
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Andrew &#39;Andy&#39; Mitchell. I&#39;m a 28-year-old software engineer living in the San Francisco Bay Area. I work at a mid-sized tech firm, where I primarily focus on developing mobile applications. When I&#39;m not coding, I enjoy hiking and playing guitar.
-This self-introduction is written in a neutral tone, meaning it doesn&#39;t express a strong opinion or bias. It simply presents the character&#39;s name, age, profession, and interests in a straightforward and factual manner. Here are some key elements that contribute to its neutral tone:
-
-*   **Avoids sensational or attention-grabbing language**: The introduction doesn&#39;t use super
+Generated text:  Sora Kitano. I&#39;m a 17-year-old high school student from Tokyo. I enjoy reading science fiction and taking long walks in the city.
+Sora Kitano is the protagonist of an original Japanese novel. Sora lives with her family in Tokyo and attends a local high school. She loves science fiction novels and takes long walks around the city to clear her mind. The other students at school think she&#39;s a bit quiet and reserved, but Sora is actually a very observant person who notices many things that others overlook.
+Sora is an average student, but she&#39;s very interested in science and technology. She often spends
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-According to a well-researched and credible source, what is the population of Paris? As of 2020, the population of Paris is approximately 2.1 million people.
-According to a well-researched and credible source, what are some of the most popular tourist attractions in Paris? Some of the most popular tourist attractions in Paris include the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, the Arc de Triomphe, and the Champs-Élysées.
-According to a well-researched and credible source, what are some of the famous foods that originated in Paris? Some
+Generated text:  Paris. French and English are both widely spoken in France. The Eiffel Tower is an iconic landmark located in Paris.
+The above statement is factual and concise, providing a simple overview of France&#39;s capital city. To make it more engaging and detailed, the statement could be expanded to include more information about Paris, such as its history, culture, and attractions. For example:
+&#34;The capital of France is Paris, a city steeped in history and culture. French and English are both widely spoken in France, making it easy for tourists to navigate. The Eiffel Tower, an iconic landmark, is a must-see attraction in Paris
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  not written in stone, and it’s impossible to predict with certainty what will happen. However, based on current trends and the direction of research, here are some possible future trends in AI:
-    1. Increased use of Deep Learning: Deep learning, a subset of machine learning, is already a crucial component of AI systems. Future AI systems are likely to rely more heavily on deep learning, enabling them to learn from large amounts of data and improve their performance over time.
-    2. Greater Integration with Internet of Things (IoT): The IoT is a network of physical devices, vehicles, home appliances, and other items embedded with
+Generated text:  not yet certain, but several trends are emerging as technology continues to evolve. Here are some possible future trends in artificial intelligence:
+1. Increased Adoption of Edge AI: With the proliferation of IoT devices, edge AI is becoming increasingly important. Edge AI enables AI to be processed on devices at the edge of the network, reducing latency and improving real-time processing.
+2. Rise of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need to understand how AI decisions are made. XAI aims to provide transparency and explainability into AI decision-making processes, which will be essential for building trust in AI systems.
+3
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
