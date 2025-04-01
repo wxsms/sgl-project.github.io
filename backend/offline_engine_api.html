@@ -512,11 +512,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02&lt;00:07,  2.44s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05&lt;00:05,  2.79s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08&lt;00:02,  2.83s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.10s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.33s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.40it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.14it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.09it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
 </pre></div></div>
 </div>
@@ -549,28 +549,30 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jamie and I am a PhD student studying Mathematics at the University of Auckland. I am currently in my second year of study and am really enjoying it so far. I am interested in algebraic topology and am currently working on a project involving homology and cohomology.
-I am also passionate about science communication and am involved with a number of outreach and education projects. I believe that science and mathematics are essential for understanding the world we live in and I am committed to making them accessible to everyone.
-In my free time, I enjoy playing music, hiking and trying out new recipes in the kitchen.
-
-## Step 1: Understand the question
-
+Generated text:  Aurélien, I’m 29 years old and I live in Paris. I’m currently in a relationship with a woman named Anna. We have a lovely apartment in the Marais district, near the Centre Pompidou. We both work as designers, Anna in fashion and I in interior design. We love exploring the city and trying new restaurants and cafes.
+I have a passion for photography and I try to take pictures of everything I see. Anna has a great eye for art and we often visit museums and exhibitions. We both love to travel, especially in Europe, and we try to take a trip together at least once a year
 ===============================
 Prompt: The president of the United States is
-Generated text:  expected to provide a clear vision of the country’s priorities and goals during the annual State of the Union address. While the speech is not a law or a binding document, it sets the tone for the country’s legislative agenda for the coming year.
-The president’s speech usually includes an overview of the country’s achievements and challenges, as well as a call to action for the nation to work together to address pressing issues. The president may also use the speech to announce new policies, proposals, or initiatives that aim to tackle long-standing problems.
-In recent years, the State of the Union address has become a highly anticipated event, with millions of Americans
+Generated text:  the head of the federal government and has significant powers and duties. These include making decisions on policy, commanding the military, and acting as the commander-in-chief of the armed forces. The president also serves as the head of state and represents the United States internationally.
+Some of the key responsibilities of the president include:
+* Serving as the commander-in-chief of the armed forces
+* Negotiating treaties and agreements with foreign governments
+* Appointing federal judges, including Supreme Court justices
+* Signing bills into law or vetoing them
+* Granting pardons and reprieves to individuals convicted of federal crimes
+* Acting as the head of
 ===============================
 Prompt: The capital of France is
-Generated text:  famous for its art museums, stunning architecture, and romantic atmosphere. However, it can also be overwhelming and expensive. Here are some tips on how to visit Paris on a budget:
-1. Consider visiting during the off-season: Paris is busiest during the summer months, so visiting during the shoulder season (April-May or September-October) can help you save money on accommodations and tourist attractions.
-2. Stay outside of the city center: While it&#39;s tempting to stay in the heart of Paris, staying in a nearby neighborhood can be much more affordable. Look for accommodations in areas like Montmartre, Belleville, or Le Marais.
-
+Generated text:  Paris, and it is also one of the most visited cities in the world. The city has a rich history, a beautiful and charming atmosphere, and a wide range of cultural and artistic attractions. It is a city that has something for everyone, from history buffs to art lovers to foodies.
+Paris is home to some of the world&#39;s most famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city also has a number of beautiful parks and gardens, including the Luxembourg Gardens and the Tuileries Garden.
+In addition to its famous landmarks, Paris is also known for its fashion,
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is clear: AI is here to stay. As AI continues to evolve and become more pervasive, we will see new applications and uses of AI that we cannot yet imagine. Here are five potential future scenarios that highlight the potential impact of AI on various aspects of our lives:
-Scenario 1: AI-Powered Cities
-In the near future, cities may become increasingly reliant on AI to manage their infrastructure, transportation systems, and public services. AI-powered sensors and cameras will monitor and analyze traffic patterns, detect crimes, and predict potential disasters. AI-driven systems will optimize energy consumption, waste management, and water distribution. Citizens
+Generated text:  bright and busy
+The new year will bring new developments in the field of artificial intelligence (AI), and it&#39;s likely to be a wild ride.
+In the past year, we&#39;ve seen significant advancements in AI, from the development of more powerful and efficient deep learning models to the introduction of new AI-powered tools and applications.
+In the coming year, we can expect to see even more exciting developments in AI. Here are a few trends and predictions:
+1. Increased focus on explainability and transparency: As AI becomes more pervasive, there is growing concern about its lack of transparency and accountability. In the coming year, we can expect to see
 </pre></div></div>
 </div>
 </section>
@@ -610,16 +612,17 @@ In the near future, cities may become increasingly reliant on AI to manage their
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I love meeting new people and hearing their stories. I&#39;m currently working on a novel and a graphic novel, and I&#39;m excited to see where my creative projects take me. I&#39;m looking forward to connecting with like-minded individuals and learning from their experiences. How can I help you today?
-This introduction is neutral because it doesn&#39;t reveal too much about Kaida&#39;s personality, background, or
+Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys playing the guitar and listening to music. I&#39;m a bit of a bookworm and like to read in my free time. I&#39;m a pretty laid-back person who tries to stay out of trouble. That&#39;s me in a nutshell. What do you think? Is it a good introduction?
+Your self-introduction is clear and concise, and it gives a good sense of who you are. However, it might be a bit too neutral. A self-introduction is a chance to show your personality and make a good impression, so you might want to add a bit
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is located in the northern part of the country, in the region of Île-de-France. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. The city is home to many famous museums, such as the Louvre and the Orsay, and iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. Paris is also a major hub for fashion, cuisine, and art, attracting millions of tourists and visitors each year. The city has a population of over 2.1 million people and is a global center for business, finance, and culture. Paris is a city that seamlessly blends
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, finance, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the &#34;City of Light.&#34; The city has a rich history dating back to the 3
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by several factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, including the development of AI-powered robots that can assist with surgeries and other medical procedures.
-2. Widespread adoption of AI in education: AI is already being used in education to personalize learning experiences, grade assignments, and provide feedback to students. In the future,
+Generated text:  expected to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1. Increased use of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need to understand how AI systems make decisions. XAI aims to provide transparent and interpretable AI models, enabling humans to understand the reasoning behind AI-driven decisions.
+2. Rise of Edge AI: With the proliferation of IoT devices, Edge AI is expected to become more prominent. Edge AI involves processing data closer to the source, reducing latency and improving real-time decision-making.
+3. Growing importance
 
 </pre></div></div>
 </div>
@@ -662,21 +665,20 @@ Generated text:  likely to be shaped by several factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Viktor Kuznetsov. I&#39;m 32 years old, born and raised in the small town of Vostok in Eastern Siberia. I work as a mechanic in my family&#39;s garage, fixing cars and trucks for the locals. I&#39;m a laid-back person who enjoys the simple things in life, like fishing and hiking in the taiga.
-Here are a few suggestions for how you could revise the introduction to add a bit more depth and personality:
+Generated text:  Cassie Welles. I&#39;m a 25-year-old artist living in Brooklyn. I enjoy sketching cityscapes and experimenting with watercolors.
+Write a short, neutral self-introduction for a fictional character. Hello, my name is Max Elliot. I&#39;m a 30-year-old engineer working in San Francisco. I like hiking on weekends and trying out new craft beers.
+Write a short, neutral self-introduction for a fictional character. Hello, my name is Sofia Patel. I&#39;m a 28-year-old writer based in Los Angeles. I&#39;m currently working on a novel and enjoying exploring the city&#39;s bookstores and cafes.
 
-*   Add a few details about Viktor&#39;s interests or hobbies that give insight into his personality. For example, you could mention that he&#39;s an avid reader of science fiction novels,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris. Paris is the largest city in France and is located in the northeastern part of the country, near the Seine River. It is a major cultural and economic hub, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a popular tourist destination, attracting millions of visitors each year. The city has a rich history and a vibrant cultural scene, with a diverse range of museums, galleries, and performance venues. Paris is also home to many international organizations, including the
+Generated text:  Paris, which is located in the northern part of the country. Paris is often referred to as the City of Light (La Ville Lumière) and is known for its iconic landmarks, art museums, and romantic atmosphere.
+Provide an example of how France&#39;s culture is reflected in the capital city. The city of Paris is home to many world-renowned museums, such as the Louvre and the Orsay, which showcase France&#39;s rich cultural heritage, including art, architecture, and fashion. These institutions reflect the country&#39;s long history of cultural innovation and its ongoing influence on global culture.
+Provide an example of how France&#39;s history is reflected in
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and potentially transformative, but it also raises important questions about the impact of AI on society and the need for responsible development and use of AI technologies.
-Artificial intelligence (AI) has made tremendous progress in recent years, and its future trends are likely to be shaped by several factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
-1. Increased use of AI in edge devices: As AI becomes more pervasive, we can expect to see more AI-powered devices in our daily lives, from smart home appliances to autonomous vehicles.
-2. Development of more sophisticated natural language processing (NLP):
+Generated text:  one that is developing rapidly, and its potential applications are numerous and diverse. Here are some possible future trends in AI:
+1. Edge AI: As the Internet of Things (IoT) continues to grow, AI will need to be integrated into the devices themselves, rather than relying on cloud-based processing. This is known as Edge AI, and it will enable devices to process data locally, reducing latency and improving real-time decision-making.
+2. Augmented Intelligence: Augmented intelligence is a type of AI that complements human capabilities rather than replacing them. It will be used to enhance decision-making, automate routine tasks, and provide insights that
 </pre></div></div>
 </div>
 </section>
@@ -722,22 +724,17 @@ Artificial intelligence (AI) has made tremendous progress in recent years, and i
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Avis, and I&#39;m a skilled codebreaker with a passion for cryptography. I&#39;m currently working as a freelance analyst, taking on projects that allow me to challenge my skills and learn new techniques. I&#39;m fluent in multiple programming languages, and my expertise spans a range of cryptographic algorithms, including AES, RSA, and Elliptic Curve Cryptography. When I&#39;m not working, you can find me experimenting with new cryptographic methods or attending security conferences to stay up-to-date on the latest developments in the field.
-This self-introduction is neutral because it:
-Provides a clear, concise overview of Avis&#39;s professional background and expertise
-Avoid
+Generated text:  Lena, and I&#39;m a 17-year-old high school student. I&#39;m a bit of a bookworm and enjoy spending time alone, reading, and writing. I&#39;ve been attending school in the city for the past three years and have been trying to figure out what I want to do with my life. I&#39;m currently considering different college majors and career paths, but nothing has really stuck yet.
+In this self-introduction, Lena presents herself as a high school student who is focused on academics and personal interests. She mentions her age, her passion for reading and writing, and her current uncertainty about her future plans. The tone is neutral
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The Eiffel Tower is one of the city&#39;s most famous landmarks. Paris is known for its fashion industry, and the city is home to the world-renowned fashion houses Chanel and Dior.
-The Seine River runs through the heart of the city, and many famous bridges are located along its banks. Paris is a popular tourist destination and attracts millions of visitors every year. The Louvre Museum is one of the city&#39;s most visited attractions, and it houses a vast collection of art and artifacts from around the world.
-Paris is a city of history, culture, and romance, and it has something to offer for everyone.
+Generated text:  Paris. Paris is located in the northern part of the country on the River Seine. It is the largest city in France and is known for its fashion, art, and history.
+The post Provide a concise factual statement about France’s capital city. appeared first on Homework Aiders.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much debate and speculation, but here are some possible future trends:
-1. Increased automation: AI will continue to automate many tasks, freeing humans from mundane and repetitive work. This could lead to increased productivity and efficiency, but also raises concerns about job displacement and the need for workers to develop new skills.
-2. More human-like intelligence: As AI becomes more advanced, it may become increasingly difficult to distinguish from human intelligence. This could lead to breakthroughs in areas like natural language processing, machine learning, and computer vision.
-3. Widespread adoption: AI will become increasingly ubiquitous in many areas of life, including healthcare,
+Generated text:  likely to be shaped by advancements in machine learning, natural language processing, and computer vision. These technologies are expected to become increasingly sophisticated and integrated, leading to more efficient and effective AI systems. Future trends in AI may include:
+Advancements in AI will also lead to increased use of AI in various industries such as healthcare, finance, and education. AI will also be used to improve decision-making, automate processes, and enhance customer experiences. However, there are also concerns about the potential risks and challenges associated with AI, such as job displacement, bias, and cybersecurity threats.
+AI will become increasingly integrated into various aspects of life, such as homes
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
