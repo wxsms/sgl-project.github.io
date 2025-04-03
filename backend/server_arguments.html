@@ -631,7 +631,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <section id="kernel-backend">
 <h2>Kernel backend<a class="headerlink" href="#kernel-backend" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">attention_backend</span></code>: The backend for attention computation and KV cache management, and can be one of <code class="docutils literal notranslate"><span class="pre">fa3</span></code>, <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>, <code class="docutils literal notranslate"><span class="pre">triton</span></code> or <code class="docutils literal notranslate"><span class="pre">torch_native</span></code>. When deploying deepseek models, this argument is for specifying the MLA backend it uses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attention_backend</span></code>: The backend for attention computation and KV cache management.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sampling_backend</span></code>: The backend for sampling.</p></li>
 </ul>
 </section>
@@ -692,8 +692,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p><code class="docutils literal notranslate"><span class="pre">cuda_graph_bs</span></code>: The batch sizes to capture by <code class="docutils literal notranslate"><span class="pre">CudaGraphRunner</span></code>. By default this is done for you.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">torchao_config</span></code>: Experimental feature that optimizes the model with <a class="reference external" href="https://github.com/pytorch/ao">torchao</a>. Possible choices are: int8dq, int8wo, int4wo-&lt;group_size&gt;, fp8wo, fp8dq-per_tensor, fp8dq-per_row.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">triton_attention_num_kv_splits</span></code>: Use to adjust the number of KV splits in triton kernels. Default is 8.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">enable_flashinfer_mla</span></code>: Use the attention backend with flashinfer MLA wrapper for deepseek models. <strong>This argument will be deprecated soon! Please use <code class="docutils literal notranslate"><span class="pre">--attention_backend</span> <span class="pre">flashinfer</span></code> instead for switching on flashfiner mla!</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flashinfer_mla_disable_ragged</span></code>: Disable usage of ragged prefill wrapper for flashinfer mla attention backend. Should be used when flashinfer is used as mla backend turned on.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_flashinfer_mla</span></code>: Use the attention backend with flashinfer MLA wrapper for deepseek models. When providing this argument, <code class="docutils literal notranslate"><span class="pre">attention_backend</span></code> argument is overridden.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flashinfer_mla_disable_ragged</span></code>: Disable usage of ragged prefill wrapper for flashinfer mla attention backend. Should be used when <code class="docutils literal notranslate"><span class="pre">enable_flashinfer_mla</span></code> is turned on.</p></li>
 </ul>
 </section>
 </section>
