@@ -495,38 +495,38 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 03:33:22] server_args=ServerArgs(model_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, chat_template=None, completion_template=None, is_embedding=True, revision=None, host=&#39;0.0.0.0&#39;, port=33642, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=242738809, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998)
-[2025-04-03 03:33:22] Downcasting torch.float32 to torch.float16.
-[2025-04-03 03:33:30 TP0] Downcasting torch.float32 to torch.float16.
-[2025-04-03 03:33:30 TP0] Overlap scheduler is disabled for embedding models.
-[2025-04-03 03:33:30 TP0] Downcasting torch.float32 to torch.float16.
-[2025-04-03 03:33:30 TP0] Init torch distributed begin.
-[2025-04-03 03:33:30 TP0] Init torch distributed ends. mem usage=0.00 GB
-[2025-04-03 03:33:30 TP0] Load weight begin. avail mem=78.58 GB
-[2025-04-03 03:33:32 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-04-03 07:22:38] server_args=ServerArgs(model_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_path=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Alibaba-NLP/gte-Qwen2-7B-instruct&#39;, chat_template=None, completion_template=None, is_embedding=True, revision=None, host=&#39;0.0.0.0&#39;, port=32543, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=972595259, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998)
+[2025-04-03 07:22:39] Downcasting torch.float32 to torch.float16.
+[2025-04-03 07:23:03 TP0] Downcasting torch.float32 to torch.float16.
+[2025-04-03 07:23:04 TP0] Overlap scheduler is disabled for embedding models.
+[2025-04-03 07:23:04 TP0] Downcasting torch.float32 to torch.float16.
+[2025-04-03 07:23:04 TP0] Init torch distributed begin.
+[2025-04-03 07:23:04 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-04-03 07:23:04 TP0] Load weight begin. avail mem=78.58 GB
+[2025-04-03 07:23:06 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/7 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  14% Completed | 1/7 [00:01&lt;00:11,  1.84s/it]
-Loading safetensors checkpoint shards:  29% Completed | 2/7 [00:03&lt;00:09,  1.90s/it]
-Loading safetensors checkpoint shards:  43% Completed | 3/7 [00:05&lt;00:07,  1.92s/it]
-Loading safetensors checkpoint shards:  57% Completed | 4/7 [00:07&lt;00:05,  1.94s/it]
-Loading safetensors checkpoint shards:  71% Completed | 5/7 [00:09&lt;00:03,  1.95s/it]
-Loading safetensors checkpoint shards:  86% Completed | 6/7 [00:11&lt;00:01,  1.81s/it]
-Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.58s/it]
-Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.76s/it]
+Loading safetensors checkpoint shards:  14% Completed | 1/7 [00:06&lt;00:38,  6.45s/it]
+Loading safetensors checkpoint shards:  29% Completed | 2/7 [00:11&lt;00:29,  5.89s/it]
+Loading safetensors checkpoint shards:  43% Completed | 3/7 [00:17&lt;00:22,  5.72s/it]
+Loading safetensors checkpoint shards:  57% Completed | 4/7 [00:23&lt;00:17,  5.67s/it]
+Loading safetensors checkpoint shards:  71% Completed | 5/7 [00:28&lt;00:11,  5.69s/it]
+Loading safetensors checkpoint shards:  86% Completed | 6/7 [00:33&lt;00:05,  5.21s/it]
+Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:35&lt;00:00,  4.36s/it]
+Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:35&lt;00:00,  5.10s/it]
 
-[2025-04-03 03:33:45 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.float16, avail mem=64.15 GB, mem usage=14.43 GB.
-[2025-04-03 03:33:45 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-04-03 03:33:45 TP0] Memory pool end. avail mem=62.78 GB
-[2025-04-03 03:33:46 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-04-03 03:33:46] INFO:     Started server process [3571311]
-[2025-04-03 03:33:46] INFO:     Waiting for application startup.
-[2025-04-03 03:33:46] INFO:     Application startup complete.
-[2025-04-03 03:33:46] INFO:     Uvicorn running on http://0.0.0.0:33642 (Press CTRL+C to quit)
-[2025-04-03 03:33:46] INFO:     127.0.0.1:52516 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-04-03 03:33:47] INFO:     127.0.0.1:52522 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-04-03 03:33:47 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 03:33:48] INFO:     127.0.0.1:52524 - &#34;POST /encode HTTP/1.1&#34; 200 OK
-[2025-04-03 03:33:48] The server is fired up and ready to roll!
+[2025-04-03 07:23:42 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.float16, avail mem=35.54 GB, mem usage=43.04 GB.
+[2025-04-03 07:23:42 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-04-03 07:23:42 TP0] Memory pool end. avail mem=34.16 GB
+[2025-04-03 07:23:43 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-04-03 07:23:45] INFO:     Started server process [1987845]
+[2025-04-03 07:23:45] INFO:     Waiting for application startup.
+[2025-04-03 07:23:45] INFO:     Application startup complete.
+[2025-04-03 07:23:45] INFO:     Uvicorn running on http://0.0.0.0:32543 (Press CTRL+C to quit)
+[2025-04-03 07:23:46] INFO:     127.0.0.1:39948 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:46] INFO:     127.0.0.1:39958 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:46 TP0] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-03 07:23:49] INFO:     127.0.0.1:39962 - &#34;POST /encode HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:49] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -562,8 +562,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 03:33:51 TP0] Prefill batch. #new-seq: 1, #new-token: 4, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 03:33:51] INFO:     127.0.0.1:47000 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:51 TP0] Prefill batch. #new-seq: 1, #new-token: 4, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-03 07:23:51] INFO:     127.0.0.1:52778 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -599,8 +599,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 03:33:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 03:33:51] INFO:     127.0.0.1:47014 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-03 07:23:51] INFO:     127.0.0.1:52780 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -636,8 +636,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 03:33:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 03:33:51] INFO:     127.0.0.1:47022 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-03 07:23:52] INFO:     127.0.0.1:52786 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -679,8 +679,8 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 03:33:52 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 03:33:52] INFO:     127.0.0.1:47026 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
+[2025-04-03 07:23:53 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-03 07:23:53] INFO:     127.0.0.1:52798 - &#34;POST /v1/embeddings HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -702,7 +702,7 @@ Loading safetensors checkpoint shards: 100% Completed | 7/7 [00:12&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 03:33:52] Child process unexpectedly failed with an exit code 9. pid=3571508
+[2025-04-03 07:23:53] Child process unexpectedly failed with an exit code 9. pid=1988433
 </pre></div></div>
 </div>
 </section>
