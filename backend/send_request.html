@@ -57,7 +57,7 @@
     <link rel="prev" title="DeepSeek Usage" href="../references/deepseek.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 03, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 04, 2025"/>
   </head>
   
   
@@ -503,29 +503,31 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:58:53] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=33424, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=873245436, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998)
-[2025-04-03 22:59:21 TP0] Init torch distributed begin.
-[2025-04-03 22:59:21 TP0] Init torch distributed ends. mem usage=0.00 GB
-[2025-04-03 22:59:21 TP0] Load weight begin. avail mem=78.58 GB
-[2025-04-03 22:59:23 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-04-04 00:15:43] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=36095, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=807318136, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=&#39;flashinfer&#39;, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_mla=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=160, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, enable_flashinfer_mla=False, enable_flashmla=False, flashinfer_mla_disable_ragged=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998)
+[2025-04-04 00:15:55 TP0] Init torch distributed begin.
+[2025-04-04 00:15:55 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-04-04 00:15:55 TP0] Load weight begin. avail mem=78.58 GB
+[2025-04-04 00:15:56 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02&lt;00:07,  2.53s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05&lt;00:05,  2.72s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08&lt;00:02,  2.78s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.05s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.30s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.07it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.03it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
 
-[2025-04-03 22:59:33 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=48.53 GB, mem usage=30.05 GB.
-[2025-04-03 22:59:33 TP0] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-[2025-04-03 22:59:33 TP0] Memory pool end. avail mem=45.74 GB
-[2025-04-03 22:59:35 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-04-03 22:59:37] INFO:     Started server process [580692]
-[2025-04-03 22:59:37] INFO:     Waiting for application startup.
-[2025-04-03 22:59:37] INFO:     Application startup complete.
-[2025-04-03 22:59:37] INFO:     Uvicorn running on http://0.0.0.0:33424 (Press CTRL+C to quit)
-[2025-04-03 22:59:38] INFO:     127.0.0.1:50254 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-04-03 22:59:38] INFO:     127.0.0.1:55576 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-04-03 22:59:38 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:00 TP0] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=63.48 GB, mem usage=15.11 GB.
+[2025-04-04 00:16:00 TP0] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+[2025-04-04 00:16:00 TP0] Memory pool end. avail mem=60.68 GB
+[2025-04-04 00:16:01 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-04-04 00:16:01] INFO:     Started server process [3671118]
+[2025-04-04 00:16:01] INFO:     Waiting for application startup.
+[2025-04-04 00:16:01] INFO:     Application startup complete.
+[2025-04-04 00:16:01] INFO:     Uvicorn running on http://0.0.0.0:36095 (Press CTRL+C to quit)
+[2025-04-04 00:16:02] INFO:     127.0.0.1:41060 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:02] INFO:     127.0.0.1:41074 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:02 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:05] INFO:     127.0.0.1:41078 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:05] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -559,17 +561,15 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:45 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 1, token usage: 0.00, #running-req: 1, #queue-req: 0,
-[2025-04-03 22:59:45] INFO:     127.0.0.1:55592 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-04-03 22:59:45] The server is fired up and ready to roll!
-[2025-04-03 22:59:45] INFO:     127.0.0.1:55606 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:07 TP0] Prefill batch. #new-seq: 1, #new-token: 41, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:07] INFO:     127.0.0.1:33620 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '66d1a070640246ae93d30644cd1d01e2', 'object': 'chat.completion', 'created': 1743721183, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}], 'usage': {'prompt_tokens': 42, 'total_tokens': 50, 'completion_tokens': 8, 'prompt_tokens_details': None}}</strong></div>
+<strong style='color: #00008B;'>{'id': '0a81c06c306e47f5a8900fca05cc3a4c', 'object': 'chat.completion', 'created': 1743725767, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}], 'usage': {'prompt_tokens': 42, 'total_tokens': 50, 'completion_tokens': 8, 'prompt_tokens_details': None}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -597,15 +597,15 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:45 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 41, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 22:59:46] INFO:     127.0.0.1:55610 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:07 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 41, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:07] INFO:     127.0.0.1:33636 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '5278c1cb1ea142c88f22819620a350e9', 'object': 'chat.completion', 'created': 1743721185, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}], 'usage': {'prompt_tokens': 42, 'total_tokens': 50, 'completion_tokens': 8, 'prompt_tokens_details': None}}</strong></div>
+<strong style='color: #00008B;'>{'id': 'e093108676424902b4380a75cb7aee4a', 'object': 'chat.completion', 'created': 1743725767, 'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 128009}], 'usage': {'prompt_tokens': 42, 'total_tokens': 50, 'completion_tokens': 8, 'prompt_tokens_details': None}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -635,16 +635,16 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:46 TP0] Prefill batch. #new-seq: 1, #new-token: 13, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 22:59:47 TP0] Decode batch. #running-req: 1, #token: 67, token usage: 0.00, gen throughput (token/s): 3.90, #queue-req: 0,
-[2025-04-03 22:59:48] INFO:     127.0.0.1:55620 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:07 TP0] Prefill batch. #new-seq: 1, #new-token: 13, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:07 TP0] Decode batch. #running-req: 1, #token: 60, token usage: 0.00, gen throughput (token/s): 6.11, #queue-req: 0,
+[2025-04-04 00:16:08] INFO:     127.0.0.1:33638 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='551bf234eeed4fe78a532274a8bfd9b5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1743721186, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='11687ec149d94f5baf4ba474da0f5aa0', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1743725767, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 <section id="Streaming">
 <h3>Streaming<a class="headerlink" href="#Streaming" title="Link to this heading">#</a></h3>
@@ -679,14 +679,14 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:48] INFO:     127.0.0.1:49902 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-04-03 22:59:48 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 42, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:08] INFO:     127.0.0.1:33646 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:08 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 42, token usage: 0.00, #running-req: 0, #queue-req: 0,
 Here are 3 countries and their capitals:
 
-1. Country: Japan
+1. Country:[2025-04-04 00:16:08 TP0] Decode batch. #running-req: 1, #token: 57, token usage: 0.00, gen throughput (token/s): 79.30, #queue-req: 0,
+ Japan
    Capital: Tokyo
 
-[2025-04-03 22:59:49 TP0] Decode batch. #running-req: 1, #token: 64, token usage: 0.00, gen throughput (token/s): 22.89, #queue-req: 0,
 2. Country: Australia
    Capital: Canberra
 
@@ -725,16 +725,16 @@ Here are 3 countries and their capitals:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:50 TP0] Prefill batch. #new-seq: 1, #new-token: 3, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-03 22:59:50 TP0] Decode batch. #running-req: 1, #token: 24, token usage: 0.00, gen throughput (token/s): 25.50, #queue-req: 0,
-[2025-04-03 22:59:51] INFO:     127.0.0.1:49916 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:08 TP0] Prefill batch. #new-seq: 1, #new-token: 3, #cached-token: 3, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-04 00:16:08 TP0] Decode batch. #running-req: 1, #token: 17, token usage: 0.00, gen throughput (token/s): 88.84, #queue-req: 0,
+[2025-04-04 00:16:08] INFO:     127.0.0.1:33662 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' a city of romance, art, fashion, and cuisine. Paris is a must-visit destination for anyone who loves history, architecture, and culture. From the', 'meta_info': {'id': '762354184b13423c99597697d37796d9', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 6, 'completion_tokens': 32, 'cached_tokens': 3, 'e2e_latency': 1.244279384613037}}</strong></div>
+<strong style='color: #00008B;'>{'text': ' a city of romance, art, fashion, and cuisine. Paris is a must-visit destination for anyone who loves history, architecture, and culture. From the', 'meta_info': {'id': '50251011e48e4cbfb29dc2b271cb9d54', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 6, 'completion_tokens': 32, 'cached_tokens': 3, 'e2e_latency': 0.35805392265319824}}</strong></div>
 </div>
 <section id="id1">
 <h3>Streaming<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -775,10 +775,10 @@ Here are 3 countries and their capitals:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:51] INFO:     127.0.0.1:49922 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-04-03 22:59:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0,
- a city of romance, art, fashion, and cuisine. Paris is a must-visit destination for anyone who loves history,[2025-04-03 22:59:52 TP0] Decode batch. #running-req: 1, #token: 32, token usage: 0.00, gen throughput (token/s): 24.56, #queue-req: 0,
- architecture, and culture. From the
+[2025-04-04 00:16:08] INFO:     127.0.0.1:33670 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-04 00:16:08 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0,
+ a city of romance, art, fashion, and cuisine. Paris is a must-visit[2025-04-04 00:16:09 TP0] Decode batch. #running-req: 1, #token: 25, token usage: 0.00, gen throughput (token/s): 87.76, #queue-req: 0,
+ destination for anyone who loves history, architecture, and culture. From the
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -794,8 +794,8 @@ Here are 3 countries and their capitals:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-03 22:59:52] Child process unexpectedly failed with an exit code 9. pid=581233
-[2025-04-03 22:59:52] Child process unexpectedly failed with an exit code 9. pid=581099
+[2025-04-04 00:16:09] Child process unexpectedly failed with an exit code 9. pid=3671481
+[2025-04-04 00:16:09] Child process unexpectedly failed with an exit code 9. pid=3671413
 </pre></div></div>
 </div>
 </section>
@@ -891,7 +891,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 03, 2025.
+  Last updated on Apr 04, 2025.
   <br/>
 </p>
   </div>
