@@ -512,11 +512,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02&lt;00:06,  2.29s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05&lt;00:05,  2.61s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:07&lt;00:02,  2.62s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08&lt;00:00,  1.95s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08&lt;00:00,  2.17s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.33it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.08it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.04it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
 
 </pre></div></div>
 </div>
@@ -549,22 +549,24 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08&lt;00:00,  2.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Rachel, and I&#39;m a bit of a foodie. I love trying new recipes, experimenting with flavors, and, of course, eating delicious food! When I&#39;m not in the kitchen, you can find me hiking with my dog, practicing yoga, or snuggled up with a good book and a warm cup of tea.
-My favorite type of food is anything and everything Italian - pasta, pizza, gelato... you name it, I love it! But, I&#39;m also a fan of trying new cuisines and flavors, and I&#39;m always on the lookout for the next great recipe.
-In this blog, I&#39;ll be
+Generated text:  Sarah and I am a proud participant in the 2019 Conquer Cancer Foundation&#39;s Team in Training (TNT) program. I am training to run the Chicago Marathon to support cancer research and to honor my grandmother, who passed away from cancer in 2017.
+Throughout my training, I will be logging miles, pushing through challenging workouts, and raising funds for the Conquer Cancer Foundation. This foundation is dedicated to funding cancer research and providing resources to cancer patients and their loved ones. Every donation counts, and I am grateful for any support you can provide.
+I have set a personal fundraising goal of $5,000, and I
 ===============================
 Prompt: The president of the United States is
-Generated text:  on a trip to Vietnam to attend the APEC summit, which is a significant event that brings together leaders from 21 countries in the Asia-Pacific region. The President is expected to meet with various leaders to discuss trade, economic growth, and regional security issues. In the run-up to the summit, the President has made a series of speeches and statements highlighting the importance of the US-Vietnam relationship and the need for the two countries to cooperate more closely on economic and security issues.
-However, the President has also faced criticism from some quarters for his policies on trade and immigration, which have been seen as hurtful to the Vietnamese-American community
+Generated text:  responsible for a wide range of duties and powers. He or she serves as the commander-in-chief of the armed forces and is responsible for making key decisions about national security. The president is also the head of state and is responsible for representing the United States on the world stage.
+The president is responsible for appointing federal judges, including Supreme Court justices, and has the power to make recess appointments to fill vacancies in the federal judiciary and executive branch. The president also has the power to negotiate treaties, but these must be approved by the Senate before they can take effect.
+The president has the power to veto legislation passed by Congress, although Congress can
 ===============================
 Prompt: The capital of France is
-Generated text:  full of iconic landmarks, charming neighborhoods, and world-class museums. But, as with any large city, there are also areas that are best avoided, especially at night. Here are some tips for staying safe in Paris:
-1. Be aware of your surroundings: As with any city, be mindful of your belongings and keep an eye out for pickpocketing or scams.
-2. Avoid walking alone in dimly lit or deserted areas: Some areas of Paris can be quite dark and empty, especially at night. Stick to well-lit streets and avoid walking alone in areas that seem deserted.
-3. Use licensed taxis or ride-sharing services
+Generated text:  a city known for its stunning architecture, world-class museums, and romantic atmosphere. Paris has been the destination of choice for art lovers, foodies, and travelers for centuries. Whether you&#39;re visiting the iconic Eiffel Tower, exploring the Louvre Museum, or strolling along the Seine River, Paris has something to offer everyone.
+Paris is often referred to as the City of Light, due to its beautiful lighting, historic significance, and cultural attractions. The city is home to many famous landmarks, such as the Arc de Triomphe, Notre Dame Cathedral, and the Champs-Élysées. Visitors can explore the city
 ===============================
 Prompt: The future of AI is
-Generated text:  shaped by the data it’s trained on. As AI systems become increasingly autonomous, they will rely on high-quality, diverse, and unbiased data to make accurate decisions. But this data is often obtained from flawed sources, including biased language models, algorithms with inherent racial and gender biases, and incomplete datasets. This has led to many AI systems replicating and amplifying existing social biases, rather than mitigating them. To create a more equitable and inclusive future, it’s essential to understand the data’s role in shaping AI decisions and take steps to address these issues. In this article, we will explore the concept of data and its impact on AI
+Generated text:  bright, but it also raises concerns about bias and accountability.
+The future of artificial intelligence (AI) is bright, with applications in areas such as healthcare, finance, transportation, and education. However, the increasing use of AI also raises concerns about bias and accountability. AI systems can perpetuate and amplify existing biases, leading to unfair outcomes and decisions that can have serious consequences. In this article, we will explore the challenges and opportunities presented by the integration of AI into various sectors.
+AI applications in healthcare
+AI has the potential to revolutionize healthcare by improving diagnosis, treatment, and patient outcomes. AI-powered systems can analyze medical data, identify
 </pre></div></div>
 </div>
 </section>
@@ -604,19 +606,20 @@ Generated text:  shaped by the data it’s trained on. As AI systems become incr
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 22-year-old student at the University of Tokyo, studying environmental science. I&#39;m originally from a small town in Hokkaido, where I grew up surrounded by nature. I&#39;m interested in sustainable development and conservation, and I&#39;m currently working on a research project about the impact of climate change on Japan&#39;s coastal ecosystems. I&#39;m a bit of a introvert, but I enjoy hiking and trying out new foods. I&#39;m looking forward to meeting new people and learning from them.
-This self-introduction is neutral because it doesn&#39;t reveal any personal opinions or biases. It simply states facts about Kaida
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor living in a small town in the Pacific Northwest. I enjoy hiking and reading in my free time. I&#39;m a bit of a introvert and prefer to keep to myself, but I&#39;m always up for a good conversation when the mood strikes. I&#39;m currently working on a novel and trying to get my writing career off the ground. That&#39;s me in a nutshell.
+This is a good example of a neutral self-introduction because it:
+Provides basic information about the character, such as their name, age, occupation, and location.
+Avoids revealing too much about the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.  The city is located in the northern part of the country, along the Seine River.  Paris is known for its beautiful architecture, art museums, and fashion industry.  The city is home to many famous landmarks, including the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum.  Paris is a popular tourist destination and a major cultural center in Europe.  The city has a population of over 2.1 million people and is the largest city in France.  Paris is also a major hub for business
+The capital of France is Paris. The city is located in the northern part of the country, along the Seine River. Paris is known for its beautiful architecture, art museums, and fashion industry. The city has a population of over 2.1 million people and is a major cultural and economic center in Europe. Paris is home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city has a rich history and has been a major center of learning and culture for centuries. Paris is also known for its romantic atmosphere and is a popular destination for tourists. The
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. While it&#39;s difficult to predict exactly what the future will hold, here are some possible trends that could shape the development and impact of artificial intelligence in the coming years:
-1. Increased Adoption of AI in Everyday Life: As AI technology becomes more accessible and affordable, we can expect to see its adoption in various aspects of daily life, such as:
-a. Virtual assistants: AI-powered virtual assistants like Siri, Alexa, and Google Assistant will become even more prevalent and sophisticated, making it easier for people to interact with technology.
-b. Smart homes: AI will play a key role in the development of smart
+Generated text:  likely to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
+2. Widespread adoption of AI in customer service: AI-powered chatbots and virtual assistants are likely to become more common in customer service, helping to answer customer inquiries, resolve issues, and provide personalized support.
+3.
 
 </pre></div></div>
 </div>
@@ -659,21 +662,28 @@ b. Smart homes: AI will play a key role in the development of smart
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emilia Flynn. I am a 25-year-old freelance writer and artist living in a small town on the coast of Oregon. I have a passion for creative storytelling and love to explore the natural world for inspiration. When I&#39;m not writing or painting, you can find me hiking in the woods or reading a good book. I&#39;m a curious and creative person who values authenticity and individuality.
-In this example, the introduction is neutral, but it gives a sense of the person&#39;s personality and interests. It also establishes the character&#39;s profession and location, which can be helpful for context. Here are some key points to consider when writing a
+Generated text:  Alexandra &#34;Alex&#34; Morrell. I&#39;m a 25-year-old freelance writer living in the city. I work from home, which is great because I get to spend a lot of time with my cat, Luna. My interests include reading, hiking, and cooking. I like trying new foods and experimenting with different recipes in the kitchen. I&#39;m a bit of a night owl, so you&#39;ll often find me working late or watching a movie with friends. I&#39;m not really into big crowds or loud parties, but I do enjoy meeting new people and making connections. That&#39;s me in a nutshell!
+Alexandra &#34;Alex&#34; Morrell
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  located on the Seine River and is known for its historical landmarks, such as the Eiffel Tower and Notre-Dame Cathedral.
-In which city is the Eiffel Tower located? The Eiffel Tower is located in the city of Paris, France.
-What is the significance of the Eiffel Tower? The Eiffel Tower is a symbol of French culture and engineering ingenuity, and it has become an iconic representation of Paris and France.
-What is the main building style of the Eiffel Tower? The main building style of the Eiffel Tower is an iron lattice tower, also known as a &#34;latt
+Generated text:  Paris. ## Step 1: Identify the task
+The task is to provide a concise factual statement about France’s capital city.
+
+## Step 2: Recall the information
+We know that the capital of France is Paris.
+
+## Step 3: Formulate the statement
+The statement should be concise and factual, so we can say: The capital of France is Paris.
+
+The final answer is: Paris. ## Step 4: No further steps needed as the task has been completed. ## Step 5: Provide the statement as required
+The capital of France is Paris. ## Step 6: No further steps needed as the task
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  filled with possibilities and some predictions are already coming true. In this article, we will highlight some of the trends in AI that could shape our future.
-Future Trends in Artificial Intelligence
-The future of artificial intelligence is filled with possibilities, and some predictions are already coming true. Some of the trends in AI that could shape our future include:
-1. Increased Use of AI in Healthcare
-Artificial intelligence (AI) is expected to play a larger role in the healthcare industry in the future. AI can help diagnose diseases more accurately and quickly, develop personalized treatment plans, and improve patient outcomes. AI-powered chatbots can also assist with patient engagement,
+Generated text:  exciting and unpredictable. While it&#39;s impossible to know for certain what will happen, here are some possible future trends in artificial intelligence:
+1. Increased use of deep learning
+Deep learning, a type of machine learning that uses neural networks, has already shown remarkable success in areas like image and speech recognition. Future AI systems are likely to incorporate more advanced deep learning techniques, leading to even better performance in tasks like natural language processing, computer vision, and decision-making.
+2. Greater emphasis on explainability and transparency
+As AI systems become more integrated into our daily lives, there will be a growing need to understand how they work and why they make
 </pre></div></div>
 </div>
 </section>
@@ -719,25 +729,24 @@ Artificial intelligence (AI) is expected to play a larger role in the healthcare
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida and I&#39;m a 24-year-old freelance graphic designer currently living in Tokyo. I&#39;m a bit of a night owl and enjoy experimenting with different design styles and mediums. I&#39;m a student at the local art school, but I&#39;m taking a break from classes to focus on my freelance business. I&#39;m an introvert and prefer quieter environments, but I do enjoy trying new foods and drinks at local cafes. What can I tell you about? I&#39;m happy to chat about design, art, or anything else you&#39;d like to talk about.
-I&#39;m Kaida, a 25-year-old freelance graphic designer based in Osaka,
+Generated text:  Aurora &#34;Rory&#34; Wynter. I&#39;m a 17-year-old high school student who spends most of my free time reading, practicing guitar, and exploring the outdoors. I&#39;m a bit of a hopeless romantic, and I&#39;m always up for a good adventure. What do you know about this character so that you can ask follow-up questions?
+English Language Arts , Writing , English , Literature , Writing Process , Literary Analysis , Character Analysis , Literary Terms , Creative Writing
+In this activity, students will analyze a character&#39;s self-introduction and ask follow-up questions to deepen their understanding of the character.
+The teacher will provide a short
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-https://learn.360training.com/courses/the-french-capital
-https://www.britannica.com/place/Paris-France
-The capital of France is Paris. https://learn.360training.com/courses/the-french-capital
-https://www.britannica.com/place/Paris-France
-The statement that the capital of France is Paris is correct. The Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum are just a few of the many famous landmarks that Paris is home to. The city is known for its rich history, art, fashion, and cuisine. Paris is also a
+Provide a concise list of top 3 attractions in Paris. Some of the top attractions in Paris include:
+The Eiffel Tower
+The Louvre Museum
+The Notre Dame Cathedral
+Provide a concise factual statement about the most popular cuisine in France. The most popular cuisine in France is French cuisine, which is known for its rich flavors, intricate preparations, and high-quality ingredients. Some of the most well-known French dishes include escargots, ratatouille, and coq au vin. French cuisine also has a strong emphasis on wine and cheese.
+Provide a concise factual statement about the official language of France. The official
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  not just about the machines getting smarter, it will also have a significant impact on human life, jobs, and society. Some possible future trends in AI include:
-Artificial General Intelligence (AGI) that surpasses human intelligence in many areas, leading to both benefits and risks.
-Increased use of AI in healthcare, education, and other sectors, leading to improved efficiency and productivity.
-Rise of Explainable AI (XAI) to ensure transparency and trust in AI decision-making.
-More emphasis on Human-Centric AI that focuses on collaboration and augmentation of human capabilities.
-Development of Autonomous Systems that can operate independently and make decisions without human intervention.
-
+Generated text:  being shaped by technological advancements, shifting societal values, and growing awareness of the potential risks and benefits of AI. Here are some possible future trends in AI:
+  1. Increased use of Explainable AI (XAI): As AI becomes more pervasive in decision-making, there is a growing need to understand how AI models make decisions. Explainable AI will become more prevalent to provide transparency and trust in AI-driven systems.
+  2. Rise of Edge AI: With the proliferation of IoT devices, Edge AI will become more significant as it enables AI processing and decision-making at the edge of the network, reducing latency and improving real-time responses
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -861,5 +870,9 @@ By SGLang Team
 
   <footer class="bd-footer">
   </footer>
-  </body>
+  
+    <!-- RunLLM Widget Script -->
+    <script type="module" id="runllm-widget-script" src="https://widget.runllm.com" crossorigin="true" version="stable" runllm-keyboard-shortcut="Mod+j" runllm-name="SGLang Chatbot" runllm-position="BOTTOM_RIGHT" runllm-assistant-id="629" async></script>
+    
+</body>
 </html>
