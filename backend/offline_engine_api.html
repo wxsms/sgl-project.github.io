@@ -182,6 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -514,10 +515,10 @@ document.write(`
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.39it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.36it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.36it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.85it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.64it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.33it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.84it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.62it/s]
 
 </pre></div></div>
 </div>
@@ -550,26 +551,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Samantha (Sam) and I am the owner of Sam’s Artistic Creations, a unique boutique gift shop in downtown Marshfield, Wisconsin.
-I have been in the gift shop business for over 20 years and have always had a passion for art and creating things. I decided to open my own business after I retired from my previous career as a school teacher.
-My shop features a wide variety of items such as handmade jewelry, candles, soaps, knitted goods, and more. I also have a section of my shop dedicated to local artisans where they can sell their handmade items. It’s a great way for people to find one
+Generated text:  Yvonne (pronounced Ee-Von) and I am a 45-year-old woman who has been living in the beautiful city of Winnipeg, Manitoba, Canada for most of my life. I am a wife, mother of one amazing child, and a proud animal lover. My family and I share our home with a playful dog named Duke and a lovable cat named Whiskers.
+In my free time, you can find me trying out new recipes in the kitchen, practicing yoga, or reading a good book. I am passionate about living a healthy and balanced lifestyle, and I enjoy sharing my experiences and tips with others.
+
 ===============================
 Prompt: The president of the United States is
-Generated text:  the leader of the federal government of the United States. The president serves a four-year term and is both the head of state and the head of government of the United States. The president is directly elected by the people through the Electoral College.
-The president is responsible for the execution of laws, the command of the armed forces, and the conduct of foreign policy. The president also serves as the commander-in-chief of the armed forces. The president has the power to veto laws passed by Congress, although Congress can override the veto with a two-thirds majority in both the House of Representatives and the Senate.
-The president is also responsible for appointing federal
+Generated text:  a public servant, elected to serve the people of the country. The president&#39;s primary responsibility is to enforce the laws and the Constitution of the United States. The president is also responsible for executing the foreign policy of the United States, appointing federal judges, and serving as the commander in chief of the armed forces.
+The president is elected through the Electoral College system, where each state has a certain number of electoral votes based on its population. The candidate who receives the majority of the electoral votes wins the presidency. The president is limited to serving two four-year terms, and is not eligible to run for a third term.
+The president&#39;s duties
 ===============================
 Prompt: The capital of France is
-Generated text:  a city of art, fashion, and romance. This charming city is famous for its stunning architecture, world-class museums, and historic landmarks. Whether you are looking for a romantic getaway, a family vacation, or a cultural experience, Paris has something for everyone. Here are some of the top things to see and do in Paris:
-1. The Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. This iron lattice tower was built for the 1889 World&#39;s Fair and has since become a symbol of the city.
-2. The Louvre Museum: The Louvre is one of the world
+Generated text:  often called the City of Light (La Ville Lumière). While it&#39;s a romantic notion that might evoke images of twinkling streetlights and candlelit cafes, the name &#34;City of Light&#34; actually has a more practical origin. During the 17th and 18th centuries, Paris was a hub of learning and intellectual curiosity, and the Enlightenment thinkers who lived there referred to the city as the &#34;City of Light&#34; because of its emphasis on reason, science, and education.
+In the 17th century, the city was a hotbed of scientific and philosophical inquiry, attracting some of the greatest minds of the time, including Ren
 ===============================
 Prompt: The future of AI is
-Generated text:  in the cloud, and that&#39;s where we are headed next
-The future of AI is in the cloud, and that&#39;s where we are headed next
-Artificial intelligence (AI) is becoming increasingly powerful and pervasive, and it&#39;s no surprise that more and more businesses are turning to the cloud to harness its power. The cloud offers a flexible and scalable platform for AI, making it easier to integrate and deploy AI technologies across different applications and industries.
-Cloud-based AI is becoming increasingly popular due to several factors, including:
-Scalability: The cloud provides a scalable platform for AI, allowing businesses to quickly scale up or down to meet changing
+Generated text:  in our hands
+As the world becomes increasingly dependent on artificial intelligence (AI), it’s essential that we understand the potential benefits and risks associated with AI development.
+AI has revolutionized various sectors, from healthcare and education to finance and transportation. However, the rapid growth of AI also raises questions about accountability, bias, and job displacement.
+One of the primary concerns is the potential for AI to perpetuate and amplify existing biases. For example, facial recognition technology has been shown to perform poorly on individuals with darker skin tones, leading to inaccurate identifications. Similarly, language models can perpetuate stereotypes and reinforce existing social inequalities.
+Another concern is the
 </pre></div></div>
 </div>
 </section>
@@ -609,17 +609,18 @@ Scalability: The cloud provides a scalable platform for AI, allowing businesses 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city with my cat, Luna. I enjoy reading, hiking, and trying out new recipes in my free time. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation.
-This self-introduction is neutral because it doesn&#39;t reveal any personal biases or opinions. It simply states the character&#39;s name, occupation, and interests in a straightforward and factual way. This type of introduction is often used in professional or social settings where you want to present yourself in a clear and concise manner.
-Here are
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and editor. I live in a small apartment in the city with my cat, Luna. I enjoy reading, hiking, and trying out new coffee shops. I&#39;m a bit of a introvert and prefer to spend my free time alone, but I&#39;m always up for a good conversation with someone who shares my interests. I&#39;m currently working on a novel and trying to get my writing career off the ground. That&#39;s me in a nutshell.
+This self-introduction is neutral because it doesn&#39;t reveal too much about Kaida&#39;s personality, background, or motivations. It simply provides
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. The city is known for its rich history, art museums, fashion, and cuisine. Paris is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city has a population of over 2.1 million people and is a major hub for international business, culture, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a long history dating back to the 3rd century BC and has been influenced
+Generated text:  Paris.
+Provide a concise factual statement about France’s capital city. The capital of France is Paris.
+The statement is already concise and factual. It simply states the capital of France, which is Paris. There is no need for further elaboration or analysis. The statement is a straightforward assertion of a well-known fact. Therefore, the response is complete and does not require any additional information. The final answer is: The capital of France is Paris. This response is complete and does not require any additional information. The final answer is: The capital of France is Paris. This response is complete and does not require any additional information. The final answer
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems will be able to analyze large amounts of medical data, identify patterns, and make predictions about patient outcomes.
-2. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions. Explainable AI (XAI) will become increasingly important to ensure that AI systems
+1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems will be able to analyze medical data, identify patterns, and make predictions about patient outcomes.
+2. Rise of explainable AI: As AI becomes more pervasive, there is a growing need for transparency and explainability in AI decision-making. Explainable AI (XAI) will become increasingly important to ensure that AI systems are fair
 
 </pre></div></div>
 </div>
@@ -662,18 +663,18 @@ Generated text:  expected to be shaped by several factors, including advancement
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Rowan Stone. I&#39;m a 25-year-old freelance writer living in Portland, Oregon. I spend most of my free time exploring the city&#39;s hidden corners and writing in my small apartment.
-The name of the character is Rowan Stone. Rowan is a 25-year-old freelance writer who lives in Portland, Oregon. The introduction is neutral, giving no indication of Rowan&#39;s personality, background, or motivations. The description of Rowan&#39;s life is also neutral, focusing on their occupation and daily habits without expressing any emotions or opinions. The tone is calm and matter-of-fact, which is typical for a neutral self-int
+Generated text:  Marcus Thompson. I work as a software developer in the city. I enjoy reading science fiction novels and playing guitar in my free time. I live in a small apartment in the suburbs. I&#39;m a bit of a introvert, but I&#39;m trying to be more social. I&#39;m not particularly interested in sports or politics, but I&#39;m open to learning more about different topics. I&#39;m a bit of a nerd, and I like to spend time alone with my thoughts. I&#39;m also a bit of a perfectionist, which can be a challenge in my work and personal life. That&#39;s me in a nutshell. How to Improve It
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Provide a concise factual statement about France’s capital city. The capital of France is Paris. This statement is already in a concise and factual format, so no changes are necessary. Here is the same information in a bulleted format: • The capital of France is Paris. Note: The information in both the original statement and the bulleted list is accurate and does not require any changes. However, the bulleted list format is an alternative way to present the information, which may be helpful in certain situations. In a sentence, what is the capital of France? The capital of France is Paris. This statement is already in a clear
+Generated text:  located on the Seine River and is known for its iconic landmarks like the Eiffel Tower and Notre Dame Cathedral. The city is one of the most visited in the world and is famous for its art, fashion, and cuisine.
+France, officially known as the French Republic, is the largest country in the European Union. France is a country with a rich history and culture, located in Western Europe, bordered by several countries including Belgium, Luxembourg, Germany, Switzerland, Italy, Spain, and Andorra. France has a diverse geography with a mix of mountains, rivers, and coastlines along the Atlantic and Mediterranean. The country is home
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  more unpredictable than ever. While some trends are taking shape, others are still uncertain. Here are a few possible future trends in artificial intelligence:
-1. Increased Adoption of Edge AI:
-Edge AI involves processing AI tasks at the edge of the network, reducing latency and improving real-time decision-making. As the Internet of Things (IoT) continues to expand, edge AI is becoming more essential for real-time processing and decision-making.
-2. Rise of Explainable AI (XAI):
-Explainable AI is a growing field that focuses on developing AI models that can provide insights into their decision-making processes. As AI becomes more pervasive, XAI
+Generated text:  vast and rapidly evolving, and new trends are emerging all the time.
+Predicting the future of AI is challenging, but some possible trends that may shape the industry include:
+1. **Increased adoption in healthcare**: AI will continue to transform healthcare by analyzing medical data, identifying patterns, and developing personalized treatment plans.
+2. **Rise of explainable AI (XAI)**: As AI becomes more pervasive, there will be a growing need for transparent and interpretable AI systems, enabling humans to understand AI decision-making processes.
+3. **More emphasis on human-AI collaboration**: The future of AI will involve more collaboration between humans and AI
 </pre></div></div>
 </div>
 </section>
@@ -719,23 +720,18 @@ Explainable AI is a growing field that focuses on developing AI models that can 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Hiroshi Akari. I&#39;m a 25-year-old information security consultant living in Tokyo, Japan. My friends describe me as calm and collected under pressure, which has helped me excel in my line of work. I enjoy hiking and practicing aikido in my free time. What are some ways you can improve this introduction?
-The introduction is clear and neutral. However, it is fairly standard and doesn’t reveal much about Hiroshi’s personality or character. Here are a few suggestions to make the introduction more engaging and character-driven:
-1.  Add more details about Hiroshi’s background and experiences: What inspired him to become an information
+Generated text:  Emily Wilson, I’m 27 years old. I work as a nurse at a local hospital. I enjoy hiking and trying new restaurants in my free time. I like to think I’m a friendly and approachable person, and I try to be kind to everyone I meet.
+Emily is a kind and compassionate nurse who always puts the needs of her patients first. She&#39;s a bit of a perfectionist, which can sometimes make her feel overwhelmed, but she&#39;s working on finding a better balance between her work and personal life. Emily loves spending time outdoors and trying new foods, and she&#39;s always up for an adventure. She&#39;s a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The statement is a straightforward declaration that names the capital of France as Paris. It avoids unnecessary descriptions or embellishments, presenting the information in a clear and direct manner.
-The following example is a concise factual statement about the capital city of France. It meets the criteria by providing a straightforward declaration without additional information or descriptions.
-Paris is the capital of France.
-This statement adheres to the format by stating the name of the city (Paris) and declaring its relation to being the capital of France, without adding extra details. It is a clear and concise declaration.
-Next, I will address the final example. This example is a
+Generated text:  Paris, which is located in the northern part of the country.
+Paris is famous for its beautiful architecture, art museums, fashion industry, and cuisine. The city has a rich history dating back to the Roman era and has been the capital of France since the 12th century. Paris is home to some of the world’s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum.
+What are the top 3 reasons why tourists visit Paris?
+The top 3 reasons why tourists visit Paris are:
+1. Historical Landmarks: Paris is home to some of the world’s most famous historical
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by increasing autonomy, decision-making, and integration with various aspects of life. Here are some possible future trends in AI:
-1. More sophisticated and autonomous decision-making systems: As AI technology advances, we can expect to see more complex and autonomous decision-making systems that can learn from data, adapt to new situations, and make decisions with minimal human intervention.
-2. Increased use of explainable AI: As AI becomes more pervasive, there will be a growing need for transparency and accountability in AI decision-making. Explainable AI (XAI) will become increasingly important to ensure that AI systems are transparent and understandable.
-3. Rise
+Generated text:  now upon us, and it is changing the world. From self-driving cars to medical diagnostics, artificial intelligence is increasingly being used in various industries. Here are some possible future trends in artificial intelligence: 1. Increased use of AI in Healthcare: AI is being increasingly used in healthcare to diagnose diseases, develop personalized treatment plans, and predict patient outcomes. 2. Rise of Explainable AI: As AI becomes more widespread, there is a growing need to understand how AI systems make decisions. Explainable AI (XAI) is a new field that focuses on making AI systems transparent and accountable. 3. Development of Autonomous Systems: Autonomous
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
