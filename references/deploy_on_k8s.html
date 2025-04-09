@@ -472,7 +472,7 @@ document.write(`
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>At least two Kubernetes nodes, each with two H20 systems and eight GPUs, are required.</p></li>
-<li><p>Make sure your K8S cluster has LWS correctly installed. If it hasn’t been set up yet, please follow the <a class="reference external" href="https://github.com/kubernetes-sigs/lws/blob/main/site/content/en/docs/installation/_index.md">installation instructions</a>.</p></li>
+<li><p>Make sure your K8S cluster has LWS correctly installed. If it hasn’t been set up yet, please follow the <a class="reference external" href="https://github.com/kubernetes-sigs/lws/blob/main/site/content/en/docs/installation/_index.md">installation instructions</a>. <strong>Note:</strong> For LWS versions ≤0.5.x, you must use the Downward API to obtain <code class="docutils literal notranslate"><span class="pre">LWS_WORKER_INDEX</span></code>, as native support for this feature was introduced in v0.6.0.</p></li>
 </ol>
 </section>
 <section id="basic-example">
@@ -552,10 +552,6 @@ Infiniband<span class="w"> </span>device<span class="w"> </span><span class="s1"
 <span class="w">            </span><span class="nt">env</span><span class="p">:</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NCCL_IB_GID_INDEX</span>
 <span class="w">                </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3&quot;</span>
-<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LWS_WORKER_INDEX</span>
-<span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">                  </span><span class="nt">fieldRef</span><span class="p">:</span>
-<span class="w">                    </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata.labels[&#39;leaderworkerset.sigs.k8s.io/worker-index&#39;]</span>
 <span class="w">            </span><span class="nt">command</span><span class="p">:</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-m</span>
@@ -621,10 +617,6 @@ Infiniband<span class="w"> </span>device<span class="w"> </span><span class="s1"
 <span class="w">            </span><span class="nt">env</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NCCL_IB_GID_INDEX</span>
 <span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3&quot;</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LWS_WORKER_INDEX</span>
-<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span>
-<span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata.labels[&#39;leaderworkerset.sigs.k8s.io/worker-index&#39;]</span>
 <span class="w">            </span><span class="nt">command</span><span class="p">:</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-m</span>
