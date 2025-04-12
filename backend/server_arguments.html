@@ -443,7 +443,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-launch-commands">Common launch commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-tokenizer">Model and tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-processor-and-tokenizer">Model, processor and  tokenizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-http-api">Serving: HTTP &amp; API</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-server-configuration">HTTP Server configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-configuration">API configuration</a></li>
@@ -524,8 +524,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </div>
 <p>Please consult the documentation below to learn more about the parameters you may provide when launching a server.</p>
 </section>
-<section id="model-and-tokenizer">
-<h2>Model and tokenizer<a class="headerlink" href="#model-and-tokenizer" title="Link to this heading">#</a></h2>
+<section id="model-processor-and-tokenizer">
+<h2>Model, processor and  tokenizer<a class="headerlink" href="#model-processor-and-tokenizer" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">model_path</span></code>: Path to the model that will be served.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tokenizer_path</span></code>: Defaults to the <code class="docutils literal notranslate"><span class="pre">model_path</span></code>.</p></li>
@@ -542,6 +542,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p><code class="docutils literal notranslate"><span class="pre">skip_tokenizer_init</span></code>: Set to true to provide the tokens to the engine and get the output tokens directly, typically used in RLHF. Please see this <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/token_in_token_out/">example for reference</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">json_model_override_args</span></code>: Override model config with the provided JSON.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">delete_ckpt_after_loading</span></code>: Delete the model checkpoint after loading the model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_fast_image_processor</span></code>: Adopt base image processor instead of fast image processor(which is by default). For more detail, see: https://huggingface.co/docs/transformers/main/en/main_classes/image_processor#image-processor</p></li>
 </ul>
 </section>
 <section id="serving-http-api">
@@ -754,7 +755,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-launch-commands">Common launch commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-tokenizer">Model and tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-processor-and-tokenizer">Model, processor and  tokenizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-http-api">Serving: HTTP &amp; API</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-server-configuration">HTTP Server configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-configuration">API configuration</a></li>
