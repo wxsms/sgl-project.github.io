@@ -536,11 +536,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.33it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.25it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.23it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.72it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.20it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.20it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.65it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.46it/s]
 
 </pre></div></div>
 </div>
@@ -573,23 +573,24 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Carlos and I am a swimming instructor. I am passionate about teaching people how to swim. I have been doing this for many years and have taught people of all ages and skill levels. I am patient, kind, and encouraging, and I love seeing my students learn and grow in the water.
-I have a lot of experience teaching children and adults with special needs, and I am confident in my ability to adapt to each student&#39;s unique needs and learning style. I am also certified in first aid and CPR, so you can rest assured that you and your loved ones are in good hands with me.
-In addition to teaching swimming lessons, I
+Generated text:  Kim Mitchell and I am the owner of Dog Day Outings. I have always been passionate about animals and especially dogs. I have had the pleasure of having a dog of my own, a beautiful Golden Retriever named Max, who has brought so much joy to my life.
+I have over 10 years of experience working with dogs, which has given me a deep understanding of their needs and behavior. I have worked as a dog walker, pet sitter and dog daycare worker, which has allowed me to interact with dogs of all breeds, sizes and temperaments.
+I am fully insured and have all necessary certifications and clearances to ensure
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of the executive branch and is both the head of state and the head of government of the United States. He is responsible for commanding the military, signing laws into effect, and serving as the face of the country on the world stage. He is also the commander-in-chief of the armed forces of the United States, which includes the Army, Navy, Air Force, Marine Corps, and Coast Guard. The president is also responsible for appointing federal judges, including Supreme Court justices, as well as other high-ranking officials.
-The president serves a four-year term and is limited to two terms by the 22nd Amendment to the Constitution
+Generated text:  supposed to be a neutral figure, above politics, yet President Donald Trump consistently uses his office to further his own interests and attack his political opponents. In fact, he is so brazen in his attempts to wield the presidency for personal gain that it has become a disturbing trend.
+This trend was on full display last week when Trump announced via Twitter that he would be holding a rally in Tampa, Florida, a state that is crucial to his re-election campaign. The tweet was remarkable not just for its brazenness, but for the fact that Trump didn’t even bother to hide the fact that he was using the presidency to further his own interests
 ===============================
 Prompt: The capital of France is
-Generated text:  a city like no other, a place of grand monuments, charming neighborhoods, and world-class cuisine. Here&#39;s how to spend a day in Paris:
-Morning: Start your day at the iconic Eiffel Tower, which is a must-see for anyone visiting Paris. You can take the elevator to the top for breathtaking views of the city. From there, stroll through the nearby Champ de Mars park, which offers a great spot for a picnic or a photo op.
-Lunch: Head to the trendy Marais neighborhood, known for its fashionable boutiques, art galleries, and hip restaurants. Try Le Loir dans la Theière,
+Generated text:  home to some of the world’s most iconic landmarks, art museums, and fashion houses. From the Eiffel Tower to the Louvre, there’s no shortage of things to see and do in Paris. But beyond the tourist traps, Paris has a rich history, a vibrant cultural scene, and a stunning array of neighborhoods to explore. Here are some tips for visiting Paris like a local.
+Be prepared for crowds and long lines at popular attractions. Consider visiting during the shoulder season (April-May or September-October) for smaller crowds and more pleasant weather.
+Try to avoid visiting during peak tourist season (June-August), when the city
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but so is the challenge of making AI more transparent and explainable
-Artificial intelligence (AI) has revolutionized various aspects of our lives, from healthcare and finance to transportation and education. As AI technology continues to advance, its applications are becoming increasingly ubiquitous, and its potential to transform industries is vast. However, there&#39;s a growing concern among experts and the general public about the lack of transparency and explainability in AI systems.
-The issue of transparency and explainability in AI refers to the ability of AI systems to provide clear and understandable insights into their decision-making processes and outputs. This is crucial because AI systems often rely on complex
+Generated text:  hybrid: combining symbolic and connectionist AI to achieve human-like intelligence
+The future of AI is hybrid: combining symbolic and connectionist AI to achieve human-like intelligence
+The future of AI is hybrid: combining symbolic and connectionist AI to achieve human-like intelligence
+The field of Artificial Intelligence (AI) has undergone significant developments over the past few decades, with major breakthroughs in areas such as machine learning, deep learning, and natural language processing. However, despite these advances, AI systems still fall short of achieving human-like intelligence. To bridge this gap, researchers are exploring the concept of hybrid AI, which combines the strengths of symbolic and connection
 </pre></div></div>
 </div>
 </section>
@@ -629,26 +630,18 @@ The issue of transparency and explainability in AI refers to the ability of AI s
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in Tokyo. I enjoy exploring the city&#39;s hidden corners and trying out new foods. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel and a graphic novel, and I&#39;m excited to see where my creative projects take me. I&#39;m looking forward to meeting new people and learning about their experiences.
-This is a good example of a neutral self-introduction because it:
-Provides basic information about the character, such as their name, age, and occupation.
-Highlights their interests and hobbies, which
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, trying new foods, and practicing yoga. I&#39;m currently working on a novel and trying to learn more about the Japanese culture. That&#39;s me in a nutshell. What do you think? Is there anything you&#39;d like to add or change?
+Your self-introduction is clear and concise. It provides a good balance of personal and professional information. However, it may benefit from a bit more depth and personality. Here are some suggestions to consider:
+1.  Add a unique detail: While it&#39;s great that you enjoy reading, trying new foods
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.
-This statement is a concise factual statement about France’s capital city, providing a clear and direct answer to the question. It does not include any additional information or opinions, making it a suitable example of a concise factual statement.
-Note: This response is a direct answer to the question and does not require any further analysis or explanation. It is a simple and straightforward statement of fact.
-Let me know if you would like me to generate another response.
-Here is another example:
-The city of Paris is located in the northern part
+The capital of France is Paris. The city is located in the northern part of the country and is situated on the Seine River. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. It is home to many famous museums, such as the Louvre and the Orsay, as well as iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. Paris is also a major hub for fashion, cuisine, and art, and is often referred to as the &#34;City of Light.&#34; The city has a population of over 2.1 million people and is a popular tourist destination, attracting millions of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of much speculation and debate. While it&#39;s difficult to predict exactly what the future holds, here are some possible trends that could shape the development and impact of artificial intelligence:
-1. Increased Adoption in Everyday Life: AI will become more ubiquitous and integrated into various aspects of daily life, such as smart homes, personal assistants, and healthcare.
-2. Advancements in Natural Language Processing (NLP): NLP will continue to improve, enabling more sophisticated and human-like interactions between humans and machines.
-3. Rise of Explainable AI (XAI): As AI becomes more pervasive, there will be a growing need to understand how AI systems
+Generated text:  a topic of much speculation and debate. Some experts predict that AI will become increasingly integrated into our daily lives, while others warn of the potential risks and challenges associated with its development. Here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, helping to improve patient outcomes and reduce healthcare costs.
+2. Widespread adoption of AI in industries: AI is already being used in various industries, including finance, transportation,
 
 </pre></div></div>
 </div>
@@ -691,15 +684,30 @@ Generated text:  a topic of much speculation and debate. While it&#39;s difficul
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Zara Elwes. I&#39;m a 25-year-old graphic designer currently based in New York City. I enjoy exploring the city, trying new restaurants, and practicing yoga to maintain my work-life balance. I&#39;m passionate about creating innovative designs that push the boundaries of traditional visual art. Outside of work, I&#39;m a bit of a bookworm and love getting lost in a good novel. I&#39;m always looking for new experiences and connections to broaden my horizons.
-This self-introduction is neutral because it doesn&#39;t reveal any specific personality traits, emotional characteristics, or potential biases. It simply provides a straightforward overview of Zara&#39;s background
+Generated text:  Kaida and I&#39;m a 25-year-old graphic designer working in a small studio. I spend most of my free time reading and experimenting with new design software. I&#39;m currently looking to meet new people and expand my creative horizons. I&#39;m a bit of a introvert, but I&#39;m eager to step out of my comfort zone and try new things. Here&#39;s a photo of me, taken on a hike last weekend. Would you like to grab coffee or chat sometime? I&#39;m pretty easy-going and always up for a good conversation.
+The given text is a self-introduction for a fictional character, Kaida. The introduction
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the largest city and one of the most populated areas in France. It is located in the Île-de-France region and is the hub for politics, economy, and culture in the country.
-This statement provides an overview of Paris as the capital city of France, including its location and significance. It is a concise and factual statement, answering the prompt directly and efficiently. The statement does not include any subjective opinions or personal views, making it a clear and objective answer to the question. The format is straightforward and easy to follow, providing a clear answer to the prompt. The statement includes relevant details such as the location of Paris in
+Generated text:  Paris. ## Step 1: Identify the question being asked.
+The question is asking for a factual statement about France’s capital city.
+
+## Step 2: Recall the information about France’s capital city.
+The capital city of France is known to be Paris.
+
+## Step 3: Provide the concise factual statement about France’s capital city.
+The capital of France is Paris.
+
+The final answer is: Paris. ## Step 1: Identify the question being asked.
+The question is asking for a factual statement about France’s capital city.
+
+## Step 2: Recall the information about France’s capital city.
+The capital city of France is known
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by breakthroughs in fields like natural language processing, machine learning, and computer vision. Here are some possible future trends in AI: 1. Increased adoption of AI in various industries: As AI technology continues to improve, it is expected to be widely adopted in various industries such as healthcare, finance, education, and transportation. 2. Advancements in machine learning: Machine learning is expected to play a significant role in the development of AI in the future. It will enable AI systems to learn from data and improve their performance over time. 3. Growth of natural language processing: Natural language processing (NLP)
+Generated text:  exciting and constantly evolving. Here are some possible future trends that we might see:
+
+1.  **Increased adoption in industries**: AI is already being used in various industries such as healthcare, finance, and manufacturing. We can expect to see more widespread adoption in these sectors, as well as in new areas such as education, transportation, and customer service.
+2.  **Advancements in natural language processing (NLP)**: NLP is a crucial aspect of AI, enabling machines to understand and generate human language. We can expect to see significant improvements in NLP, allowing for more sophisticated chatbots, virtual assistants, and language translation systems
 </pre></div></div>
 </div>
 </section>
@@ -745,17 +753,17 @@ Generated text:  expected to be shaped by breakthroughs in fields like natural l
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaelin Darkshadow, but you can call me Kae. I&#39;m a 25-year-old huntress who&#39;s been living in the city of Nightshade for about five years now. I&#39;ve had a bit of a nomadic past, but I&#39;m starting to feel settled here. I&#39;m not much of a talker, but I&#39;m always up for a challenge or a good fight. My skills with a bow are unmatched, and I&#39;m pretty handy with a sword too. What do you want to know? I&#39;m not much of a people person, but I&#39;m not anti-social either. I like my independence,
+Generated text:  Emily Chen, and I am a 25-year-old graphic designer living in Chicago. I enjoy hiking and trying out new restaurants in my free time. I graduated from the University of Illinois with a degree in visual communications. I have been working in the graphic design field for three years now. I am a bit of a perfectionist, which can sometimes make it difficult for me to delegate tasks to others, but I am working on improving this trait. I am interested in exploring new design styles and techniques, and I am always looking for opportunities to learn and grow as a designer.
+This is a good start, but there are a few areas
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Next post: What are the three largest cities in the United States? The three largest cities in the United States are New York City, Los Angeles, and Chicago. Next post: What are the three largest cities in the United States? The three largest cities in the United States are New York City, Los Angeles, and Chicago. What are the three largest cities in the United States? The three largest cities in the United States are New York City, Los Angeles, and Chicago. Next post: What are the three largest cities in the United States? The three largest cities in the United States are New York City, Los Angeles,
+Generated text:  Paris. Paris is located in the northern part of the country and is the center of politics, economy, culture, and entertainment. Paris is home to numerous famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. The city is also known for its fashion, cuisine, and romantic atmosphere. Paris is a popular tourist destination and a significant economic center in Europe.
+This factual statement meets the requirements of a concise and informative response, providing key details about the capital city of France. The statement includes the city’s location, its role in the country, notable landmarks, and its reputation as a tourist destination and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  a topic of ongoing debate and speculation, but here are some possible future trends that are widely discussed:
-1. Increased Adoption of Edge AI: As the number of devices and sensors connected to the internet of things (IoT) grows, edge AI will become more prevalent. Edge AI involves processing data closer to where it is generated, reducing latency and improving real-time decision-making.
-2. Advancements in Explainable AI (XAI): As AI becomes more pervasive, there will be a growing need to understand how AI systems make decisions. Explainable AI will become more important to ensure transparency and trust in AI-driven systems.
-3. Rise of
+Generated text:  being shaped by the convergence of technologies such as machine learning, natural language processing, and the Internet of Things (IoT). As a result, we can expect AI to become more integrated into various aspects of our lives, including healthcare, finance, and transportation. Some possible future trends in AI include:
+AI-Powered Decision Making: AI will continue to enhance decision-making capabilities in various industries, including healthcare, finance, and education. AI-powered systems will analyze vast amounts of data, identify patterns, and provide recommendations to improve decision-making processes.
+Human-AI Collaboration: As AI becomes more sophisticated, humans and AI systems will work together to achieve
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
