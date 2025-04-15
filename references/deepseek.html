@@ -54,7 +54,7 @@
     <link rel="prev" title="Llama4 Usage" href="llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 14, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 15, 2025"/>
   </head>
   
   
@@ -624,8 +624,9 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Activation</strong>: E4M3 format using per-token-per-128-channel sub-vector scales with online casting.</p></li>
 <li><p><strong>Weight</strong>: Per-128x128-block quantization for better numerical stability.</p></li>
+<li><p><strong>DeepGEMM</strong>: The <a class="reference external" href="https://github.com/deepseek-ai/DeepGEMM">DeepGEMM</a> kernel library deisgned for FP8 matrix multiplications. Note that enabling DeepGEMM will cause large compilation overhead during the first few run.</p></li>
 </ul>
-<p><strong>Usage</strong>: Turn on by default for DeepSeek V3 models.</p>
+<p><strong>Usage</strong>: The activation and weight optimization above are turned on by default for DeepSeek V3 models. DeepGEMM is turned off by default, and can be enabled with environment variable <code class="docutils literal notranslate"><span class="pre">SGL_ENABLE_JIT_DEEPGEMM=1</span></code>.</p>
 </section>
 <section id="multi-token-prediction">
 <h3>Multi-token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h3>
@@ -758,7 +759,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 14, 2025.
+  Last updated on Apr 15, 2025.
   <br/>
 </p>
   </div>
