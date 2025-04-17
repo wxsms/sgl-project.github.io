@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=21ae117f"></script>
+    <script src="../_static/documentation_options.js?v=ca85d251"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,7 +54,7 @@
     <link rel="prev" title="SGLang Documentation" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 15, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 17, 2025"/>
   </head>
   
   
@@ -179,7 +179,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/function_calling.html">Tool and Function Calling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
 </ul>
@@ -469,7 +470,7 @@ document.write(`
 <h2>Method 1: With pip or uv<a class="headerlink" href="#method-1-with-pip-or-uv" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 pip<span class="w"> </span>install<span class="w"> </span>uv
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.5&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.5.post1&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
 </pre></div>
 </div>
 <p><strong>Quick Fixes to Common Problems</strong></p>
@@ -486,26 +487,26 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </section>
 <section id="method-2-from-source">
 <h2>Method 2: From source<a class="headerlink" href="#method-2-from-source" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">v0</span><span class="mf">.4.5</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sgl</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">sglang</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">sglang</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.4.5.post1<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
 
-<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all]&quot;</span> <span class="o">--</span><span class="n">find</span><span class="o">-</span><span class="n">links</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flashinfer</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu124</span><span class="o">/</span><span class="n">torch2</span><span class="mf">.5</span><span class="o">/</span><span class="n">flashinfer</span><span class="o">-</span><span class="n">python</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all]&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
 </pre></div>
 </div>
 <p>Note: SGLang currently uses torch 2.5, so you need to install flashinfer for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>.</p>
 <p>If you want to develop SGLang, it is recommended to use docker. Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/developer/development_guide_using_docker.md#setup-docker-container">setup docker container</a> for guidance. The docker image is <code class="docutils literal notranslate"><span class="pre">lmsysorg/sglang:dev</span></code>.</p>
 <p>Note: For AMD ROCm system with Instinct/MI GPUs, do following instead:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">v0</span><span class="mf">.4.5</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sgl</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">sglang</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">sglang</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.4.5.post1<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
 
-<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
-<span class="n">cd</span> <span class="n">sgl</span><span class="o">-</span><span class="n">kernel</span>
-<span class="n">python</span> <span class="n">setup_rocm</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
-<span class="n">cd</span> <span class="o">..</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;python[all_hip]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<span class="nb">cd</span><span class="w"> </span>sgl-kernel
+python<span class="w"> </span>setup_rocm.py<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>..
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_hip]&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -524,7 +525,7 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 </pre></div>
 </div>
 <p>Note: For AMD ROCm system with Instinct/MI GPUs, it is recommended to use <code class="docutils literal notranslate"><span class="pre">docker/Dockerfile.rocm</span></code> to build images, example and usage as below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SGL_BRANCH</span><span class="o">=</span>v0.4.5<span class="w"> </span>-t<span class="w"> </span>v0.4.5-rocm630<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SGL_BRANCH</span><span class="o">=</span>v0.4.5.post1<span class="w"> </span>-t<span class="w"> </span>v0.4.5.post1-rocm630<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
 
 <span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri --ipc=host \</span>
 <span class="s1">    --shm-size 16G --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \</span>
@@ -533,11 +534,11 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>v0.4.5-rocm630<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>v0.4.5.post1-rocm630<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 
 <span class="c1"># Till flashinfer backend available, --attention-backend triton --sampling-backend pytorch are set by default</span>
-drun<span class="w"> </span>v0.4.5-rocm630<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output<span class="w"> </span><span class="m">128</span><span class="w"> </span>--model<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--quantization<span class="w"> </span>fp8
+drun<span class="w"> </span>v0.4.5.post1-rocm630<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output<span class="w"> </span><span class="m">128</span><span class="w"> </span>--model<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--quantization<span class="w"> </span>fp8
 </pre></div>
 </div>
 </section>
@@ -559,11 +560,13 @@ A better approach is to use the <a class="reference external" href="https://gith
 <h2>Method 5: Using Kubernetes<a class="headerlink" href="#method-5-using-kubernetes" title="Link to this heading">#</a></h2>
 <details>
 <summary>More</summary>
-<ol class="arabic simple">
-<li><p>Option 1: For single node serving (typically when the model size fits into GPUs on one node)
-Execute command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">docker/k8s-sglang-service.yaml</span></code>, to create k8s deployment and service, with llama-31-8b as example.</p></li>
-<li><p>Option 2: For multi-node serving (usually when a large model requires more than one GPU node, such as <code class="docutils literal notranslate"><span class="pre">DeepSeek-R1</span></code>)
-Modify the LLM model path and arguments as necessary, then execute command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">docker/k8s-sglang-distributed-sts.yaml</span></code>, to create two nodes k8s statefulset and serving service.</p></li>
+<ol class="arabic">
+<li><p>Option 1: For single node serving (typically when the model size fits into GPUs on one node)</p>
+<p>Execute command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">docker/k8s-sglang-service.yaml</span></code>, to create k8s deployment and service, with llama-31-8b as example.</p>
+</li>
+<li><p>Option 2: For multi-node serving (usually when a large model requires more than one GPU node, such as <code class="docutils literal notranslate"><span class="pre">DeepSeek-R1</span></code>)</p>
+<p>Modify the LLM model path and arguments as necessary, then execute command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">docker/k8s-sglang-distributed-sts.yaml</span></code>, to create two nodes k8s statefulset and serving service.</p>
+</li>
 </ol>
 </details>
 </section>
@@ -704,7 +707,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 15, 2025.
+  Last updated on Apr 17, 2025.
   <br/>
 </p>
   </div>

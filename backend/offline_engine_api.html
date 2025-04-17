@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=21ae117f"></script>
+    <script src="../_static/documentation_options.js?v=ca85d251"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 15, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 17, 2025"/>
   </head>
   
   
@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -198,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function_calling.html">Tool and Function Calling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 </ul>
@@ -536,11 +537,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.23it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.17it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.15it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.57it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.39it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.09it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.06it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
 
 </pre></div></div>
 </div>
@@ -573,27 +574,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Marley, and I am a member of the relatively new Lycan pack based in the city of Ashwood. My pack is led by my brother, Ryder, who has been doing an amazing job of rebuilding and protecting our pack.
-As you may know, the Lycans have had a bit of a tough time in recent years. Many of our packs were destroyed, and our people were forced to flee to other packs or to live in secret. But Ryder has been working hard to rebuild our pack and create a safe and welcoming community for all Lycans.
-I am proud to be a part of this pack, and I
+Generated text:  Leena Al-Amin and I am thrilled to be a part of the Eagle Rock family. I am an elementary school teacher and have been working in the field of education for over 12 years. I earned my Bachelor of Arts degree in Elementary Education and Master of Arts degree in Educational Leadership from California State University, Los Angeles.
+I have worked with students from diverse backgrounds and have experience teaching students with varying abilities and learning styles. My teaching philosophy is centered around creating a positive and inclusive learning environment that fosters academic achievement and social growth. I believe that every student has the potential to succeed and that it is my responsibility as an educator to
 ===============================
 Prompt: The president of the United States is
-Generated text:  reportedly willing to extend a hand of peace to the new prime minister of Canada, Justin Trudeau.
-The two leaders are expected to meet for the first time since Trudeau&#39;s election in the coming weeks.
-A source close to the White House told CBC News that President Barack Obama has been briefed on the situation and is looking forward to making a strong impression on the new Canadian prime minister.
-The source said Obama is interested in building a strong relationship with Trudeau and is willing to work with him on a range of issues, including trade, security and climate change.
-Trudeau&#39;s office has not confirmed the meeting, but it is expected to take place in the
+Generated text:  an elected position, and the president serves a four-year term. The president is also the commander-in-chief of the armed forces and is responsible for signing bills into law. The president is also the head of state and the head of government of the United States.
+What is the President of the United States&#39; role?
+The President of the United States serves as the head of state and the head of government of the country. The President is elected by the people through the Electoral College system and serves a four-year term. The President&#39;s duties include:
+1. Serving as the Commander-in-Chief of the armed forces: The President is the highest
 ===============================
 Prompt: The capital of France is
-Generated text:  known for its beautiful art, stunning architecture, and rich history. Paris is home to the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral, among other famous landmarks. It&#39;s a city that offers a mix of romance, culture, and excitement.
-The city of love and romance, Paris is a place where couples and solo travelers alike can find inspiration, beauty, and excitement. From the charming streets of Montmartre to the trendy boutiques of Le Marais, there&#39;s always something to explore.
-Discover the world&#39;s most famous landmarks like the Eiffel Tower, the Arc de Triomphe, and Notre
+Generated text:  a city like no other, with its beautiful architecture, rich history, and vibrant cultural scene. Here are some of the top things to do and see in Paris:
+Visit the Eiffel Tower: This iconic landmark is a must-visit when in Paris. Take the elevator to the top for breathtaking views of the city.
+Explore the Louvre Museum: The world&#39;s largest art museum is home to an impressive collection of art and artifacts, including the Mona Lisa.
+Walk along the Seine River: A scenic river that runs through the heart of the city, offering beautiful views and a relaxing stroll.
+Visit the Notre-Dame Cathedral: A
 ===============================
 Prompt: The future of AI is
-Generated text:  complex and multifaceted. According to a new report by a UK-based think tank, the next generation of AI will rely heavily on both human and machine intelligence.
-The report, titled &#34;Artificial Intelligence: The Next Generation,&#34; suggests that future AI systems will be designed to complement human capabilities rather than simply replace them. This approach, known as &#34;hybrid intelligence,&#34; will enable AI systems to learn from humans and adapt to new situations in a more flexible and creative way.
-According to the report, hybrid intelligence will be characterized by four key features:
-1. Human-AI collaboration: Future AI systems will be designed to work alongside humans,
+Generated text:  full of possibilities, but it&#39;s not without its challenges. As AI technology continues to advance, it&#39;s crucial to address the issues that come with it, such as bias, job displacement, and the ethics of AI decision-making. By understanding these challenges and working together, we can harness the potential of AI to create a better future for all.
+As AI technology advances, it&#39;s essential to address the challenges that come with it, such as bias, job displacement, and the ethics of AI decision-making. By working together, we can harness the potential of AI to create a better future for all. #AI #FutureOfAI #Eth
 </pre></div></div>
 </div>
 </section>
@@ -633,19 +632,17 @@ According to the report, hybrid intelligence will be characterized by four key f
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student. I&#39;m a bit of a bookworm and enjoy reading about history and science. I&#39;m also a member of the school&#39;s debate team. I&#39;m a bit shy, but I&#39;m working on being more outgoing. I&#39;m a junior, and I&#39;m looking forward to the rest of the school year. That&#39;s me in a nutshell.
-This is a good start, but it&#39;s a bit too straightforward. You might want to add a bit more depth or personality to the introduction. Here are a few suggestions:
-* Instead of saying &#34;I&#39;m a bit of a
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in Tokyo. I enjoy exploring the city&#39;s hidden corners and trying new foods. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation. I&#39;m currently working on a novel and a graphic novel, and I&#39;m excited to see where my creative projects take me. I&#39;m looking forward to meeting new people and learning more about their stories. What do you think? Is there anything you&#39;d like to add or change?
+Here are a few suggestions to make your self-introduction more engaging and effective:
+1.  Add a personal
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.  Paris is a city located in the northern part of France, along the Seine River. It is known for its iconic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is a major cultural and economic center, and it is home to many international organizations, including the United Nations Educational, Scientific and Cultural Organization (UNESCO). The city has a population of over 2.1 million people and is a popular tourist destination, attracting millions of visitors each year.  Paris is also known
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and cuisine. Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, culture, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the &#34;City of Light.&#34; The city has a long history dating back to the 3
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze medical data, identify patterns, and make predictions, leading to more accurate diagnoses and personalized treatment plans.
-2. Rise of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need for transparency and accountability. XAI aims to provide insights into how AI models make decisions, enabling users to
+Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
+1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
+2. Rise of explainable AI: As AI becomes more pervasive, there will be a growing need for explainable AI, which can provide insights into how AI systems make decisions. This will be particularly important in high-stakes applications such
 
 </pre></div></div>
 </div>
@@ -688,20 +685,20 @@ Generated text:  expected to be shaped by several factors, including advancement
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elara Vex, and I&#39;m a skilled archaeologist and explorer with a passion for uncovering the secrets of the ancient world. I&#39;ve spent years studying the mysteries of lost civilizations and have a keen eye for detail, which often proves invaluable in deciphering obscure artifacts and ruins.
-I&#39;m currently leading an expedition to explore the long-abandoned city of Zha&#39;thik, hidden deep within the scorching desert of Aridian. My team and I are driven by a sense of discovery and a desire to unravel the enigmas of this forgotten place. We&#39;ve already encountered some intriguing clues, and I&#39;m eager to see
+Generated text:  Echo. I&#39;m a professional singer and musician living in the city. I enjoy listening to a variety of music styles and experimenting with new sounds in my own work. I&#39;m also interested in photography and traveling, and I&#39;m always looking for new inspiration to fuel my creativity. What&#39;s your story? I&#39;d love to hear it! This introduction provides a brief overview of Echo&#39;s personality, interests, and background, without revealing too much about their past or motivations. It also ends with a friendly invitation to hear the other person&#39;s story, making the introduction feel more like a conversation starter than a formal introduction.
+
+This introduction is suitable for
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-What is the name of the river that runs through France’s capital city? The Seine River.
-What is the name of the famous tower in France’s capital city? The Eiffel Tower.
-What is the name of the famous museum in France’s capital city? The Louvre Museum.
-What is the name of the famous opera house in France’s capital city? The Palais Garnier.  The Palais Garnier, commonly known as the Paris Opera House, is one of the most famous opera houses in the world.
-What is the name of the famous square in France’s capital city? The Place de la Con
+The statement is concise and factual, making it an appropriate summary for the topic. It does not provide extraneous information or opinions.
+Next story Provide a concise factual statement about a famous painting in the world of art.
+Previous story Provide a concise factual statement about the country of Japan. Japan is an archipelago located in East Asia. It is the world&#39;s eleventh-largest country by total area and the world&#39;s eleventh-most populous country. Japan is a constitutional monarchy and parliamentary democracy with a unitary government. Japan is a developed country with the world&#39;s third-largest economy by nominal GDP. Its capital and largest city is Tokyo
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  not set in stone, but several trends are emerging that could shape the field in the coming years. These include the increased use of edge AI, the growing importance of explainability and transparency, and the development of more advanced forms of human-AI collaboration. Furthermore, as AI systems become increasingly autonomous, questions around accountability and control will become more pressing.
-Edge AI is expected to become more prevalent, enabling AI to be run on devices such as smartphones and smart home devices, rather than relying on cloud computing. This could lead to faster and more efficient AI applications. In addition, explainability and transparency will become essential as AI systems are increasingly deployed
+Generated text:  a rapidly evolving field, with new advancements and breakthroughs emerging every year. Here are some possible future trends in artificial intelligence:
+1. Increased Adoption of AI in Everyday Life: As AI technology improves, it is likely to become more integrated into our daily lives, making everyday tasks easier and more efficient. For example, AI-powered virtual assistants like Siri and Alexa will become more prevalent, and AI-driven smart homes will become the norm.
+2. Advancements in Machine Learning: Machine learning is a subset of AI that enables systems to learn from data and improve their performance over time. As machine learning continues to evolve, we can expect to see more
 </pre></div></div>
 </div>
 </section>
@@ -747,20 +744,21 @@ Edge AI is expected to become more prevalent, enabling AI to be run on devices s
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Aster Lumen, and I&#39;m a 17-year-old high school student from a family of modest means. I enjoy reading and writing in my free time, and I&#39;m a bit of a quiet, introspective person. I&#39;m not particularly outgoing or athletic, but I&#39;m working on developing my interests and skills. How can I improve this introduction?
-1. Add a personal detail that reveals character: You could describe a hobby or interest that reveals something about Aster&#39;s personality or background. For example, &#34;I&#39;m a bit of a quiet, introspective person who loves to read fantasy novels and write her own stories.&#34;
-2. Use
+Generated text:  Maia Blackwood. I&#39;m a 25-year-old historian and archivist. I&#39;m currently working on a project to catalog the personal effects of a late local politician.
+I like the way this introduction is neutral, it doesn&#39;t reveal too much about Maia&#39;s personality, interests, or motivations. It simply states her profession and her current task.
+Now, let&#39;s take a closer look at the words and phrases used in the introduction:
+- &#34;Hello&#34; is a friendly, informal greeting, which is suitable for a casual conversation.
+- &#34;my name is&#34; is a straightforward way to introduce oneself.
+- &#34;I&#39;m a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The Eiffel Tower is one of Paris&#39;s most famous landmarks and is located in the city. Source: Eiffel Tower Official Website (Source verified by Snopes)
-The Eiffel Tower Official Website is a reliable source that provides information on the Eiffel Tower. Snopes is a fact-checking website that verifies the accuracy of the information provided. Therefore, the statement that the Eiffel Tower is located in Paris is supported by a reliable source.
-Here&#39;s why this statement should be used as evidence:
-The statement is concise and factual, providing a clear answer to the question of where the Eiffel Tower
+Generated text:  Paris. Paris is the largest city in France and one of the most famous cities in the world, known for its art museums, historic landmarks, fashion industry, and vibrant nightlife. Paris has a population of over 2.1 million people within the city limits, with over 12.2 million people in the greater Paris metropolitan area. Paris is located in the north-central part of France, along the Seine River, and is known for its beautiful parks and gardens, including the famous Luxembourg Gardens and the Tuileries Garden. The city is home to many famous landmarks, including the Eiffel Tower, Notre Dame Cathedral, and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  all but certain to be shaped by the rapid progress of machine learning, deep learning, and natural language processing. AI will continue to improve in the areas of visual perception, robotics, and decision-making, leading to the development of more advanced and sophisticated AI systems. Artificial intelligence is rapidly advancing and will continue to change the world in the coming years. It will be shaped by the rapid progress of machine learning, deep learning, and natural language processing.
-Possible Future Trends in AI:
-1. **Increased Use of Edge AI:** As AI becomes more prevalent, edge AI will become more important, allowing devices to perform AI tasks locally without relying on
+Generated text:  rapidly evolving, and several trends are expected to shape the field in the coming years.
+Artificial Intelligence (AI) is rapidly evolving, and several trends are expected to shape the field in the coming years. Here are some possible future trends in AI:
+1. Integration with Internet of Things (IoT): AI will be integrated with IoT devices, enabling them to learn and adapt to their environment, making them more autonomous and efficient.
+2. Increased use of Edge Computing: As AI becomes more pervasive, edge computing will become more important, enabling AI algorithms to run on devices closer to where data is generated, reducing latency and improving real-time decision
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -862,7 +860,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 15, 2025.
+  Last updated on Apr 17, 2025.
   <br/>
 </p>
   </div>

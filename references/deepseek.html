@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=21ae117f"></script>
+    <script src="../_static/documentation_options.js?v=ca85d251"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,7 +54,7 @@
     <link rel="prev" title="Llama4 Usage" href="llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 15, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 17, 2025"/>
   </head>
   
   
@@ -179,7 +179,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/function_calling.html">Tool and Function Calling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
 </ul>
@@ -585,15 +586,16 @@ document.write(`
 <p><strong>Description</strong>: <a class="reference external" href="https://arxiv.org/pdf/2405.04434">MLA</a> is an innovative attention mechanism introduced by the DeepSeek team, aimed at improving inference efficiency. SGLang has implemented specific optimizations for this, including:</p>
 <ul class="simple">
 <li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
-<li><p><strong>MLA Attention Backends</strong>: Currently SGLang supports different optimized MLA attention backends, including FlashAttention3, <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">Flashinfer</a> and Triton backends. It can be set with <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> argument.</p></li>
+<li><p><strong>MLA Attention Backends</strong>: Currently SGLang supports different optimized MLA attention backends, including <a class="reference external" href="https://github.com/Dao-AILab/flash-attention">FlashAttention3</a>, <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">Flashinfer</a>, and <a class="reference external" href="https://github.com/triton-lang/triton">Triton</a> backends. It can be set with <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> argument.</p></li>
 <li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
 <li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
+<li><p><strong>Chunked Prefix Cache</strong>: Chunked prefix cache optimization can increase throughput by cutting prefix cache into chunks, processing them with multi-head attention and merging their states. Its improvement can be significant when doing chunked prefill on long sequences. Currently this optimization is only available for FlashAttention3 backend.</p></li>
 </ul>
 <p>Overall, with these optimizations, we have achieved up to <strong>7x</strong> acceleration in output throughput compared to the previous version.</p>
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
 </p>
-<p><strong>Usage</strong>: MLA optimization is enabled by default, to disable, use <code class="docutils literal notranslate"><span class="pre">--disable-mla</span></code>.</p>
+<p><strong>Usage</strong>: MLA optimization is enabled by default. To disable chunked prefix cache feature for mla, use <code class="docutils literal notranslate"><span class="pre">disable-chunked-prefix-cache</span></code>.</p>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations">Blog</a> and <a class="reference external" href="https://github.com/sgl-project/sgl-learning-materials/blob/main/slides/lmsys_1st_meetup_deepseek_mla.pdf">Slides</a> for more details.</p>
 </section>
 <section id="data-parallelism-attention">
@@ -759,7 +761,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 15, 2025.
+  Last updated on Apr 17, 2025.
   <br/>
 </p>
   </div>

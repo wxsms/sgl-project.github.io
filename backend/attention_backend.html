@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Troubleshooting &#8212; SGLang</title>
+    <title>Attention Backend &#8212; SGLang</title>
   
   
   
@@ -46,12 +46,12 @@
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/troubleshooting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'backend/attention_backend';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
-    <link rel="prev" title="Contribution Guide" href="contribution_guide.html" />
+    <link rel="next" title="Large Language Models" href="../supported_models/generative_models.html" />
+    <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Apr 17, 2025"/>
@@ -167,19 +167,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../start/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/attention_backend.html">Attention Backend</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/llama4.html">Llama4 Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_vision.html">OpenAI APIs - Vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -191,13 +191,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../backend/speculative_decoding.html">Speculative Decoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/function_calling.html">Tool and Function Calling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/separate_reasoning.html">Reasoning Parser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -209,19 +209,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="general.html">General Guidance</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="learn_more.html">Learn more</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="production_metrics.html">Production Metrics</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance_tuning.html">Performance Tuning</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/general.html">General Guidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/hardware.html">Hardware Supports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/advanced_deploy.html">Multi-Node Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/performance_tuning.html">Performance Tuning</a></li>
 </ul>
 
     </div>
@@ -293,7 +285,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/troubleshooting.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/backend/attention_backend.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +302,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/troubleshooting.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/backend/attention_backend.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +319,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/troubleshooting.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbackend/attention_backend.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +349,7 @@
       
       
       
-      <li><a href="../_sources/references/troubleshooting.md" target="_blank"
+      <li><a href="../_sources/backend/attention_backend.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -441,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Troubleshooting</h1>
+    <h1>Attention Backend</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -451,8 +443,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA out of memory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-an-illegal-memory-access-was-encountered">CUDA error: an illegal memory access was encountered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-matrix-for-different-attention-backends">Supporting matrix for different attention backends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch command for different attention backends.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -464,25 +459,85 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h1>
-<p>This page lists some common errors and tips for fixing them.</p>
-<section id="cuda-out-of-memory">
-<h2>CUDA out of memory<a class="headerlink" href="#cuda-out-of-memory" title="Link to this heading">#</a></h2>
-<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.</p>
-<ul class="simple">
-<li><p>If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.</p></li>
-<li><p>If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
-<li><p>You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="attention-backend">
+<h1>Attention Backend<a class="headerlink" href="#attention-backend" title="Link to this heading">#</a></h1>
+<section id="supporting-matrix-for-different-attention-backends">
+<h2>Supporting matrix for different attention backends<a class="headerlink" href="#supporting-matrix-for-different-attention-backends" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Backend</strong></p></th>
+<th class="head"><p><strong>Page Size &gt; 1</strong></p></th>
+<th class="head"><p><strong>Spec Decoding</strong></p></th>
+<th class="head"><p><strong>MLA</strong></p></th>
+<th class="head"><p><strong>Sliding Window</strong></p></th>
+<th class="head"><p><strong>MultiModal</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>FlashInfer</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FA3</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Triton</strong></p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Torch Native</strong></p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="cuda-error-an-illegal-memory-access-was-encountered">
-<h2>CUDA error: an illegal memory access was encountered<a class="headerlink" href="#cuda-error-an-illegal-memory-access-was-encountered" title="Link to this heading">#</a></h2>
-<p>This error may be due to kernel errors or out-of-memory issues.</p>
+<section id="user-guide">
+<h2>User guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
+<section id="launch-command-for-different-attention-backends">
+<h3>Launch command for different attention backends.<a class="headerlink" href="#launch-command-for-different-attention-backends" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>If it is a kernel error, it is not easy to fix. Please file an issue on the GitHub.</p></li>
-<li><p>If it is out-of-memory, sometimes it will report this error instead of “Out-of-memory.” Please refer to the above section to avoid the OOM.</p></li>
+<li><p>FlashInfer (Default for Non-Hopper Machines, e.g., A100, A40)</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>flashinfer
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--attention-backend<span class="w"> </span>flashinfer<span class="w"> </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>FlashAttention 3 (Default for Hopper Machines, e.g., H100, H200, H20)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>fa3
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--trust-remote-code<span class="w"> </span>--attention-backend<span class="w"> </span>fa3
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Triton</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>triton
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--attention-backend<span class="w"> </span>triton<span class="w"> </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Torch Native</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>torch_native
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -498,20 +553,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contribution_guide.html"
+       href="hyperparameter_tuning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contribution Guide</p>
+        <p class="prev-next-title">Hyperparameter Tuning</p>
       </div>
     </a>
     <a class="right-next"
-       href="faq.html"
+       href="../supported_models/generative_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Frequently Asked Questions</p>
+        <p class="prev-next-title">Large Language Models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -531,8 +586,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA out of memory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-an-illegal-memory-access-was-encountered">CUDA error: an illegal memory access was encountered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-matrix-for-different-attention-backends">Supporting matrix for different attention backends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch command for different attention backends.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=21ae117f"></script>
+    <script src="../_static/documentation_options.js?v=ca85d251"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -54,7 +54,7 @@
     <link rel="prev" title="Offline Engine API" href="offline_engine_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 15, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 17, 2025"/>
   </head>
   
   
@@ -179,7 +179,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function_calling.html">Tool and Function Calling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 </ul>
@@ -684,7 +685,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_cuda_graph_padding</span></code>: Disable cuda graph when padding is needed. In other case still use cuda graph.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_outlines_disk_cache</span></code>: Disable disk cache for outlines grammar backend.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_custom_all_reduce</span></code>: Disable usage of custom all reduce kernel.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">disable_mla</span></code>: Disable <a class="reference external" href="https://arxiv.org/html/2405.04434v5">Multi-Head Latent Attention</a> for Deepseek model.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">disable_overlap_schedule</span></code>: Disable the <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#zero-overhead-batch-scheduler">Overhead-Scheduler</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_nan_detection</span></code>: Turning this on makes the sampler print a warning if the logits contain <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">enable_p2p_check</span></code>: Turns off the default of allowing always p2p check when accessing GPU.</p></li>
@@ -703,8 +703,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p><code class="docutils literal notranslate"><span class="pre">cuda_graph_bs</span></code>: The batch sizes to capture by <code class="docutils literal notranslate"><span class="pre">CudaGraphRunner</span></code>. By default this is done for you.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">torchao_config</span></code>: Experimental feature that optimizes the model with <a class="reference external" href="https://github.com/pytorch/ao">torchao</a>. Possible choices are: int8dq, int8wo, int4wo-&lt;group_size&gt;, fp8wo, fp8dq-per_tensor, fp8dq-per_row.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">triton_attention_num_kv_splits</span></code>: Use to adjust the number of KV splits in triton kernels. Default is 8.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">enable_flashinfer_mla</span></code>: Use the attention backend with FlashInfer MLA wrapper for DeepSeek models. <strong>This argument will be deprecated in the next release. Please use <code class="docutils literal notranslate"><span class="pre">--attention_backend</span> <span class="pre">flashinfer</span></code> instead to enable FlashfIner MLA.</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">flashinfer_mla_disable_ragged</span></code>: Disable the use of the ragged prefill wrapper for the FlashInfer MLA attention backend. Only use it when FlashInfer is being used as the MLA backend.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable_chunked_prefix_cache</span></code>: Disable the use of chunked prefix cache for DeepSeek models. Only use it when FA3 is attention backend.</p></li>
 </ul>
 </section>
 </section>
@@ -811,7 +811,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 15, 2025.
+  Last updated on Apr 17, 2025.
   <br/>
 </p>
   </div>
