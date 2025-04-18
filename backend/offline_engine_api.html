@@ -537,11 +537,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.14it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.11it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.36it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.25it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
 
 </pre></div></div>
 </div>
@@ -574,31 +574,26 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  &lt;a href=&#34;https://www.kaggle.com/fabriziofrancesco&#34;&gt;Fabrizio&lt;/a&gt;.
-
-I&#39;m a data scientist and a machine learning engineer with a passion for exploring the world of data and AI. I&#39;ve worked on various projects in the past, ranging from building predictive models for credit risk assessment to developing chatbots for customer service.
-
-When I&#39;m not coding, you can find me trying out new machine learning algorithms or attending conferences and meetups to stay up-to-date with the latest advancements in the field.
-
-Some of my interests include:
-
-* Deep learning
-* Natural language processing
-* Computer vision
-
+Generated text:  Gary and I&#39;ve been a bit of a &#39;lurker&#39; here for a while. I&#39;ve been a fan of the e46 M3 since I first laid eyes on one. In fact, I own a 2001 M3, which I&#39;ve lovingly maintained and upgraded over the years.
+I&#39;ve been keeping up with the forum by reading threads and occasionally posting a comment or two. I&#39;m now ready to become a more active participant in the community, so I thought it was time to introduce myself properly.
+A bit about my car: it&#39;s a 2001 E46 M3 with a 6-speed manual
 ===============================
 Prompt: The president of the United States is
-Generated text:  an elected official with the power to enforce laws and conduct the foreign policy of the nation. The office of the president was established by Article II of the Constitution of the United States.
-In 1789, George Washington was inaugurated as the first president of the United States. Since then, 45 men and one woman, Joe Biden, have held the office. The president serves a four-year term and is limited to two terms in office according to the 22nd Amendment to the Constitution.
-The president is assisted in the execution of his duties by a cabinet of officials, known as the president&#39;s cabinet. The vice president is also a
+Generated text:  required by the constitution to take the oath of office on inauguration day.
+A. true
+B.  false
+The answer is A. true. The president is required by the constitution to take the oath of office on inauguration day. This is stated in Article II, Section 1, Clause 8 of the constitution, which reads, &#34;Before he enter on the execution of his office, he shall take the oath or affirmation prescribed in the Constitution.&#34; The oath is usually taken on inauguration day, but it could be taken at other times as well.
+Note: The oath is &#34;I do solemnly swear (or affirm) that
 ===============================
 Prompt: The capital of France is
-Generated text:  a city of great beauty, rich history, and vibrant culture. Paris is home to some of the world’s most famous landmarks, such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city is also famous for its fashion, cuisine, and romantic atmosphere, making it a popular destination for tourists and honeymooners alike.
-Paris has a long and storied history, with evidence of human habitation dating back to the Mesolithic era. The city was founded by the Celtic tribe known as the Parisii in the 3rd century BC. Over the centuries, Paris has been ruled by various empires and
+Generated text:  Paris. Paris is located in the northern part of France in the Île-de-France region. The city is situated on the Seine River.
+France has a rich and varied history, and Paris is at its heart. The city has been an important center of politics, culture, and economy for many centuries. Many famous and influential people have lived in Paris, including artists, writers, philosophers, and politicians.
+The city of Paris is divided into 20 arrondissements or districts. Each arrondissement has its own unique character and attractions. Some popular areas to visit in Paris include the Latin Quarter, Montmartre, and
 ===============================
 Prompt: The future of AI is
-Generated text:  not about processing power or memory, but about the data that can be used to train AI models. The quality of the data is paramount, and poor data will lead to poor AI. The lack of diversity in data will lead to biased AI, and the lack of data will lead to poor performance. Therefore, it is essential to have high-quality data to train AI models, and there are several ways to achieve this.
-The first step in achieving high-quality data is to have a clear understanding of the problem or task that the AI model will be solving. This will help to determine the type of data that is needed, and what features of
+Generated text:  not just about the technology itself, but how it affects our lives and our society. In this episode, we explore the potential risks and opportunities of AI with Dr. Rachel Kyte, Special Representative of the UN Secretary-General for Sustainable Energy for All.
+Dr. Kyte shares her insights on the impact of AI on sustainable energy, climate change, and the global economy. We discuss the potential benefits of AI in areas such as energy efficiency, renewable energy integration, and climate modeling. However, we also delve into the potential risks, including job displacement, bias in AI decision-making, and the exacerbation of existing social inequalities.
+Dr. Ky
 </pre></div></div>
 </div>
 </section>
@@ -638,19 +633,15 @@ The first step in achieving high-quality data is to have a clear understanding o
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elianore Quasar. I&#39;m a 25-year-old astrobiologist who has spent the past five years studying the unique properties of exoplanet atmospheres. I&#39;m currently working on a research project to identify potential biosignatures in the atmospheres of distant worlds. When I&#39;m not in the lab, you can find me hiking through the mountains or practicing yoga to clear my mind. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation about science or the universe. What do you think? Is there anything you&#39;d like me to add or change?
-
-Here are some suggestions:
-
-*
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my tiny kitchen. I&#39;m a bit of a introvert, but I love connecting with others through my writing and art. I&#39;m currently working on a novel and a series of watercolor paintings inspired by the natural beauty of my surroundings. I&#39;m excited to see where my creative pursuits take me. That&#39;s me in a nutshell! What do you think? Is it too long or too short? Should I add or remove anything? I&#39;m open to suggestions
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city has a population of over 2.1 million people and is a major hub for business, education, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a rich history dating back to the 3rd century
+Generated text:  Paris. Paris is located in the northern part of the country, near the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also known for its romantic atmosphere and is a popular tourist destination. Paris is the center of France’s government, economy, and culture, and is considered one of the most beautiful and iconic cities in the world. The city has a population of over 2.1 million people and is a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
-2. Rise of explainable AI: As AI becomes more pervasive, there is a growing need for transparency and explainability in AI decision-making. Explainable AI (XAI) aims to provide insights into how AI models make decisions, enabling
+Generated text:  expected to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is expected to play a significant role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze medical data, identify patterns, and make predictions, leading to more accurate diagnoses and personalized treatment plans.
+2. Rise of Explainable AI (XAI): As AI becomes more pervasive, there is a growing need to understand how AI systems make decisions. XAI aims to provide transparency and interpretability of AI models, enabling humans to
 
 </pre></div></div>
 </div>
@@ -693,25 +684,25 @@ Generated text:  expected to be shaped by several factors, including advancement
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Rowan Blackwood. I&#39;m a 25-year-old graduate student studying environmental science at the University of Vermont. I have a passion for sustainable living and community development. In my free time, I love hiking, reading, and playing guitar. I&#39;m currently interning at a local non-profit organization that focuses on promoting eco-friendly practices and supporting small businesses in rural areas. I&#39;m excited to learn from the experiences of others and contribute to meaningful conversations about the environment.
-This self-introduction is neutral because it:
-Provides basic information about Rowan&#39;s background, education, and interests.
-Avoids any sensational or provocative language.
-Does not express
+Generated text:  Kaida, and I’m a 23-year-old marketing specialist with a passion for trying new foods and traveling to new places. I enjoy meeting new people and learning about their cultures. I&#39;m currently based in Tokyo, Japan, where I work for a small startup. In my free time, I like to read books on history and practice yoga.
+This self-introduction is neutral because it doesn’t reveal any biases or opinions. It simply presents the character’s background, interests, and occupation in a straightforward manner.
+Note: This introduction is suitable for a professional or social setting where a brief and polite introduction is necessary.
+Write a short,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Paris is the capital city of France. It is situated in the north-central part of the country, along the Seine River. Paris has a population of over 2.1 million people within its administrative limits. The city is divided into 20 arrondissements, each with its own unique character and attractions.
-Paris is known for its stunning architecture, art museums, and fashion industry. The city is home to famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Paris is also a hub for international business, culture, and education, attracting millions of tourists and students each
+Generated text:  Paris. Located in the northern part of the country, Paris is the largest city in France and is known for its beautiful architecture, art museums, fashion, and romantic atmosphere. It is situated on the Seine River and is a popular destination for tourists from all over the world.
+The following is a suggested outline for an essay on the topic of France’s capital city:
+I. Introduction
+A. Provide a brief overview of the city and its significance
+B. Mention the city’s location and population
+C. Thesis statement: Paris, the capital of France, is a city of great beauty, culture, and history, offering a unique
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and potentially transformative, and the trends that will shape its development are already emerging. Here are some possible future trends in artificial intelligence:
-1. Increased Autonomy:
-Autonomous AI systems will become increasingly common, allowing them to make decisions without human intervention. This will be particularly evident in industries such as transportation, healthcare, and finance.
-2. Edge AI:
-As the Internet of Things (IoT) continues to grow, AI will become increasingly decentralized, with intelligence distributed across edge devices. This will enable faster processing and more efficient decision-making.
-3. Explainable AI:
-As AI becomes more pervasive, there will be a growing need for
+Generated text:  both exciting and unsettling. It is likely to bring numerous benefits to society, but also challenges and risks.
+Trends in Artificial Intelligence
+Artificial intelligence (AI) is a rapidly evolving field that is transforming the way we live and work. As we look to the future, several trends are likely to shape the development and impact of AI.
+1. Increased Adoption of Edge AI: Edge AI refers to the processing of data at the edge of the network, closer to the source of the data. This approach reduces latency and improves real-time processing, making it suitable for applications like autonomous vehicles, smart homes, and industrial automation.
+2. Adv
 </pre></div></div>
 </div>
 </section>
@@ -757,20 +748,20 @@ As AI becomes more pervasive, there will be a growing need for
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elianore Quasar. I&#39;m a 22-year-old intergalactic traveler from a small planet called Zorvath. I&#39;m currently on a mission to explore the cosmos and uncover the secrets of the universe. I&#39;ve been traveling for several years now, and I&#39;ve seen some incredible sights. But I&#39;m always looking for new adventures and experiences to add to my collection.
-Here are a few key details about Elianore&#39;s background:
-- Elianore is from the planet Zorvath, which is a small, icy world located in the outer rim of the galaxy.
-- Elianore has been traveling the
+Generated text:  Evelyn Everett. I&#39;m a 25-year-old graphic designer living in New York City.
+I have been living in New York City for about five years now. I graduated from the School of Visual Arts with a BFA in Graphic Design. I have been working as a freelance graphic designer for the past three years, taking on various projects for small businesses and entrepreneurs. My work mainly focuses on branding, logo design, and print materials. I enjoy learning new design software and techniques, and I&#39;m always looking to improve my skills and expand my portfolio.
+I&#39;m a bit of a night owl, and I often find myself working late into the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-Short and to the point. The sentence gives the name of France’s capital city, which is Paris. This is a very basic statement about France, but one that everyone should know! The statement is true and accurate, and it meets the requirements of the request.
-The capital of France is Paris. This sentence provides a concise and factual answer to the question about France’s capital city. It meets the requirements of being short and to the point, and it gives the correct information. The sentence is also written in a neutral and objective tone, which is suitable for providing factual information. Overall, this sentence is a good example of a
+Describe the significance of the city to the country. Paris is considered the cultural and economic center of France. It is a global center for art, fashion, gastronomy, and culture. The city is home to many world-famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Additionally, Paris serves as the political center of France, hosting the Elysée Palace, the official residence of the President of France.
+List the population figures for Paris. As of 2020, the population of Paris is approximately 2.1 million people within the city limits and around 12
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and rapidly evolving, with many potential developments on the horizon. Some possible future trends in AI include:
-1. Increased Use of AI in Healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with AI-powered chatbots and virtual assistants helping patients with routine tasks and AI-driven robots assisting with surgeries and other medical procedures.
-2. Rise of Explainable AI: As AI becomes increasingly integrated into various industries, there is a growing need for explainable AI. Explainable AI refers to AI systems that
+Generated text:  not fixed and is shaped by various factors, including technological advancements, societal needs, and ethical considerations. However, here are some possible future trends in artificial intelligence:
+    - **Increased Adoption in Industry**: AI is likely to become more pervasive in industries such as healthcare, finance, and manufacturing, leading to increased productivity and efficiency.
+    - **Advancements in Edge AI**: As the amount of data generated by IoT devices continues to grow, there will be a greater need for AI to be processed at the edge, close to where the data is generated, to reduce latency and improve real-time decision-making.
+    - **Human-AI Collaboration**:
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
