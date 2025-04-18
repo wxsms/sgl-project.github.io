@@ -444,8 +444,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-endpoint"><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-params">Sampling params</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sampling parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core parameters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalizers">Penalizers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained decoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-options">Other options</a></li>
@@ -454,9 +454,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">Normal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal">Multimodal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom Logit Processor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom logit processor</a></li>
 </ul>
 </li>
 </ul>
@@ -476,29 +476,29 @@ document.write(`
 <p>If you want a high-level endpoint that can automatically handle chat templates, consider using the <a class="reference internal" href="openai_api_completions.html"><span class="std std-doc">OpenAI Compatible API</span></a>.</p>
 <section id="generate-endpoint">
 <h2><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint<a class="headerlink" href="#generate-endpoint" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint accepts the following parameters in JSON format. For in detail usage see the <a class="reference internal" href="native_api.html"><span class="std std-doc">native api doc</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint accepts the following parameters in JSON format. For detailed usage, see the <a class="reference internal" href="native_api.html"><span class="std std-doc">native API doc</span></a>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">text:</span> <span class="pre">Optional[Union[List[str],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code> The input prompt. Can be a single prompt or a batch of prompts.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">input_ids:</span> <span class="pre">Optional[Union[List[List[int]],</span> <span class="pre">List[int]]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Alternative to <code class="docutils literal notranslate"><span class="pre">text</span></code>. Specify the input as token IDs instead of text.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sampling_params:</span> <span class="pre">Optional[Union[List[Dict],</span> <span class="pre">Dict]]</span> <span class="pre">=</span> <span class="pre">None</span></code> The sampling parameters as described in the sections below.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">return_logprob:</span> <span class="pre">Optional[Union[List[bool],</span> <span class="pre">bool]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Whether to return log probabilities for tokens.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logprob_start_len:</span> <span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code> If returning log probabilities, specifies the start position in the prompt. Default is “-1” which returns logprobs only for output tokens.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logprob_start_len:</span> <span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code> If returning log probabilities, specifies the start position in the prompt. Default is “-1”, which returns logprobs only for output tokens.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top_logprobs_num:</span> <span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code> If returning log probabilities, specifies the number of top logprobs to return at each position.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stream:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code> Whether to stream the output.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lora_path:</span> <span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">Optional[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Path to LoRA weights.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_logit_processor:</span> <span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Custom logit processor for advanced sampling control. For usage see below.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return_hidden_states:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code> Whether to return hidden states of the model. Note that each time it changes, the cuda graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/hidden_states">examples</a> for more information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return_hidden_states:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code> Whether to return hidden states of the model. Note that each time it changes, the CUDA graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/hidden_states">examples</a> for more information.</p></li>
 </ul>
 </section>
-<section id="sampling-params">
-<h2>Sampling params<a class="headerlink" href="#sampling-params" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Sampling parameters<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="core-parameters">
-<h3>Core Parameters<a class="headerlink" href="#core-parameters" title="Link to this heading">#</a></h3>
+<h3>Core parameters<a class="headerlink" href="#core-parameters" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">max_new_tokens:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">128</span></code> The maximum output length measured in tokens.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stop:</span> <span class="pre">Optional[Union[str,</span> <span class="pre">List[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code> One or multiple <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-stop">stop words</a>. Generation will stop if one of these words is sampled.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop_token_ids:</span> <span class="pre">Optional[List[int]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Provide stop words in form of token ids. Generation will stop if one of these token ids is sampled.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code> <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature">Temperature</a> when sampling the next token. <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0</span></code> corresponds to greedy sampling, higher temperature leads to more diversity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop_token_ids:</span> <span class="pre">Optional[List[int]]</span> <span class="pre">=</span> <span class="pre">None</span></code> Provide stop words in the form of token IDs. Generation will stop if one of these token IDs is sampled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">temperature:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code> <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature">Temperature</a> when sampling the next token. <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0</span></code> corresponds to greedy sampling, a higher temperature leads to more diversity.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top_p:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code> <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-top_p">Top-p</a> selects tokens from the smallest sorted set whose cumulative probability exceeds <code class="docutils literal notranslate"><span class="pre">top_p</span></code>. When <code class="docutils literal notranslate"><span class="pre">top_p</span> <span class="pre">=</span> <span class="pre">1</span></code>, this reduces to unrestricted sampling from all tokens.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top_k:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">-1</span></code> <a class="reference external" href="https://developer.nvidia.com/blog/how-to-get-better-outputs-from-your-large-language-model/#predictability_vs_creativity">Top-k</a> randomly selects from the <code class="docutils literal notranslate"><span class="pre">k</span></code> highest-probability tokens.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">min_p:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code> <a class="reference external" href="https://github.com/huggingface/transformers/issues/27670">Min-p</a> samples from tokens with probability larger than <code class="docutils literal notranslate"><span class="pre">min_p</span> <span class="pre">*</span> <span class="pre">highest_token_probability</span></code>.</p></li>
@@ -510,7 +510,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">frequency_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens based on their frequency in generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of penalization grows linearly with each appearance of a token.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">presence_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in the generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of the penalization is constant if a token occured.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">repetition_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in prompt or generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where numbers smaller than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourage repeatment of tokens and numbers larger than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourages sampling of new tokens. The penalization scales multiplicatively.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min_new_tokens:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></code>: Forces the model to generate at least <code class="docutils literal notranslate"><span class="pre">min_new_tokens</span></code> until a stop word or EOS token is sampled. Note that this might lead to unintended behavior for example if the distribution is highly skewed towards these tokens.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_new_tokens:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></code>: Forces the model to generate at least <code class="docutils literal notranslate"><span class="pre">min_new_tokens</span></code> until a stop word or EOS token is sampled. Note that this might lead to unintended behavior, for example, if the distribution is highly skewed towards these tokens.</p></li>
 </ul>
 </section>
 <section id="constrained-decoding">
@@ -525,12 +525,12 @@ document.write(`
 <section id="other-options">
 <h3>Other options<a class="headerlink" href="#other-options" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></code>: Specifies the number of output sequences to generate per request. (Generating multiple outputs in one request (n &gt; 1) is discouraged; repeat the same prompts for several times offer better control and efficiency.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></code>: Specifies the number of output sequences to generate per request. (Generating multiple outputs in one request (n &gt; 1) is discouraged; repeating the same prompts several times offers better control and efficiency.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">spaces_between_special_tokens:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code>: Whether or not to add spaces between special tokens during detokenization.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">no_stop_trim:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code>: Don’t trim stop words or EOS token from the generated text.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ignore_eos:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code>: Don’t stop generation when EOS token is sampled.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">skip_special_tokens:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code>: Remove special tokens during decoding.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">custom_params:</span> <span class="pre">Optional[List[Optional[Dict[str,</span> <span class="pre">Any]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code>: Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage see below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">custom_params:</span> <span class="pre">Optional[List[Optional[Dict[str,</span> <span class="pre">Any]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code>: Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage, see below.</p></li>
 </ul>
 </section>
 </section>
@@ -539,7 +539,7 @@ document.write(`
 <section id="normal">
 <h3>Normal<a class="headerlink" href="#normal" title="Link to this heading">#</a></h3>
 <p>Launch a server:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">port</span> <span class="mi">30000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
 <p>Send a request:</p>
@@ -593,14 +593,14 @@ document.write(`
 </div>
 <p>Detailed example in <a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html#id2">openai compatible api</a>.</p>
 </section>
-<section id="multi-modal">
-<h3>Multi modal<a class="headerlink" href="#multi-modal" title="Link to this heading">#</a></h3>
+<section id="multimodal">
+<h3>Multimodal<a class="headerlink" href="#multimodal" title="Link to this heading">#</a></h3>
 <p>Launch a server:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">lmms</span><span class="o">-</span><span class="n">lab</span><span class="o">/</span><span class="n">llava</span><span class="o">-</span><span class="n">onevision</span><span class="o">-</span><span class="n">qwen2</span><span class="o">-</span><span class="mi">7</span><span class="n">b</span><span class="o">-</span><span class="n">ov</span> <span class="o">--</span><span class="n">chat</span><span class="o">-</span><span class="n">template</span> <span class="n">chatml</span><span class="o">-</span><span class="n">llava</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>lmms-lab/llava-onevision-qwen2-7b-ov<span class="w"> </span>--chat-template<span class="w"> </span>chatml-llava
 </pre></div>
 </div>
 <p>Download an image:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -o example_image.png -L https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw=true
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-o<span class="w"> </span>example_image.png<span class="w"> </span>-L<span class="w"> </span>https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>Send a request:</p>
@@ -634,11 +634,11 @@ document.write(`
 <li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and regular expression constraints.</p></li>
 <li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>: Supports JSON schema, regular expression, and EBNF constraints.</p>
 <ul>
-<li><p>XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a></p></li>
+<li><p>XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a>.</p></li>
 </ul>
 </li>
 </ul>
-<p>Initialize the XGrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag</p>
+<p>Initialize the XGrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 --port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--grammar-backend<span class="w"> </span><span class="o">[</span>xgrammar<span class="p">|</span>outlines<span class="o">]</span><span class="w"> </span><span class="c1"># xgrammar or outlines (default: outlines)</span>
 </pre></div>
@@ -701,9 +701,9 @@ document.write(`
 <p>Detailed example in <a class="reference internal" href="structured_outputs.html"><span class="std std-doc">structured outputs</span></a>.</p>
 </section>
 <section id="custom-logit-processor">
-<h3>Custom Logit Processor<a class="headerlink" href="#custom-logit-processor" title="Link to this heading">#</a></h3>
+<h3>Custom logit processor<a class="headerlink" href="#custom-logit-processor" title="Link to this heading">#</a></h3>
 <p>Launch a server with <code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code> flag on.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">port</span> <span class="mi">30000</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">custom</span><span class="o">-</span><span class="n">logit</span><span class="o">-</span><span class="n">processor</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--enable-custom-logit-processor
 </pre></div>
 </div>
 <p>Define a custom logit processor that will always sample a specific token id.</p>
@@ -727,7 +727,7 @@ document.write(`
         <span class="k">return</span> <span class="n">logits</span>
 </pre></div>
 </div>
-<p>Send a request</p>
+<p>Send a request:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -795,8 +795,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-endpoint"><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-params">Sampling params</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sampling parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core parameters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalizers">Penalizers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained decoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-options">Other options</a></li>
@@ -805,9 +805,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">Normal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi modal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal">Multimodal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-outputs-json-regex-ebnf">Structured Outputs (JSON, Regex, EBNF)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom Logit Processor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-logit-processor">Custom logit processor</a></li>
 </ul>
 </li>
 </ul>

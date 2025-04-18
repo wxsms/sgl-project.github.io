@@ -537,11 +537,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
 Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.14it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.13it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.48it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
 </pre></div></div>
 </div>
@@ -574,29 +574,31 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jamie, and I’m a Marketing and Communications professional with over 10 years of experience in developing and executing successful marketing campaigns, managing social media platforms, and creating compelling content to engage audiences.
-I am a creative problem-solver, a strategic thinker, and a collaborative team player. I have a passion for storytelling and a talent for crafting messages that resonate with diverse audiences. I am also a digital native, always staying up-to-date with the latest trends and technologies in the marketing and communications landscape.
-Over the years, I have worked with a range of clients, from startups to established brands, across various industries, including finance, healthcare, education
+Generated text:  &lt;a href=&#34;https://www.kaggle.com/fabriziofrancesco&#34;&gt;Fabrizio&lt;/a&gt;.
+
+I&#39;m a data scientist and a machine learning engineer with a passion for exploring the world of data and AI. I&#39;ve worked on various projects in the past, ranging from building predictive models for credit risk assessment to developing chatbots for customer service.
+
+When I&#39;m not coding, you can find me trying out new machine learning algorithms or attending conferences and meetups to stay up-to-date with the latest advancements in the field.
+
+Some of my interests include:
+
+* Deep learning
+* Natural language processing
+* Computer vision
+
 ===============================
 Prompt: The president of the United States is
-Generated text:  meeting with the head of the legislative branch and the head of the judicial branch. What is the process by which these three branches of government come together to discuss important issues?
-A) Executive Order
-B) Joint Session
-C) Deregulation
-D) Article III
-Answer: B
-Explanation: The legislative and judicial branches meet with the executive branch through a joint session of Congress. This occurs when the head of the executive branch, the head of the legislative branch (the Speaker of the House and the President of the Senate), and the head of the judicial branch meet to discuss important issues. Executive orders are issued by the president without
+Generated text:  an elected official with the power to enforce laws and conduct the foreign policy of the nation. The office of the president was established by Article II of the Constitution of the United States.
+In 1789, George Washington was inaugurated as the first president of the United States. Since then, 45 men and one woman, Joe Biden, have held the office. The president serves a four-year term and is limited to two terms in office according to the 22nd Amendment to the Constitution.
+The president is assisted in the execution of his duties by a cabinet of officials, known as the president&#39;s cabinet. The vice president is also a
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, a world-famous city known for its stunning architecture, art museums, fashion, cuisine, and romantic atmosphere. As the most visited city in the world, Paris has something for everyone, whether you’re interested in history, culture, fashion, food, or entertainment. Here are some popular attractions and activities to explore in Paris:
-1. The Eiffel Tower:
-The Eiffel Tower is a must-visit attraction in Paris, offering breathtaking views of the city from its top level. You can take the elevator or stairs to the top, and enjoy the stunning views of the city and the surrounding countryside.
-2. The Lou
+Generated text:  a city of great beauty, rich history, and vibrant culture. Paris is home to some of the world’s most famous landmarks, such as the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. The city is also famous for its fashion, cuisine, and romantic atmosphere, making it a popular destination for tourists and honeymooners alike.
+Paris has a long and storied history, with evidence of human habitation dating back to the Mesolithic era. The city was founded by the Celtic tribe known as the Parisii in the 3rd century BC. Over the centuries, Paris has been ruled by various empires and
 ===============================
 Prompt: The future of AI is
-Generated text:  vast and varied, and it will likely involve a combination of different approaches. While there are many potential applications for AI, some of the most promising include:
-1. Augmented Intelligence: AI can be used to augment human intelligence, freeing humans from mundane tasks and allowing them to focus on more complex and creative work. For example, AI can help with data analysis, predictions, and decision-making.
-2. Explainable AI: As AI becomes more prevalent in society, there is a growing need to explain how AI decisions are made. Explainable AI (XAI) is a field that focuses on developing techniques to make AI more transparent and accountable
+Generated text:  not about processing power or memory, but about the data that can be used to train AI models. The quality of the data is paramount, and poor data will lead to poor AI. The lack of diversity in data will lead to biased AI, and the lack of data will lead to poor performance. Therefore, it is essential to have high-quality data to train AI models, and there are several ways to achieve this.
+The first step in achieving high-quality data is to have a clear understanding of the problem or task that the AI model will be solving. This will help to determine the type of data that is needed, and what features of
 </pre></div></div>
 </div>
 </section>
@@ -636,17 +638,19 @@ Generated text:  vast and varied, and it will likely involve a combination of di
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 17-year-old high school student who enjoys reading, playing video games, and spending time with friends. I&#39;m a bit of a introvert, but I&#39;m working on being more outgoing. I&#39;m a junior, so I&#39;m trying to balance schoolwork with extracurricular activities and a social life. I&#39;m not really sure what I want to do with my life yet, but I&#39;m taking things one step at a time. I&#39;m a bit of a perfectionist, which can be both a blessing and a curse. I&#39;m looking forward to seeing what the future holds.
-This self-int
+Generated text:  Elianore Quasar. I&#39;m a 25-year-old astrobiologist who has spent the past five years studying the unique properties of exoplanet atmospheres. I&#39;m currently working on a research project to identify potential biosignatures in the atmospheres of distant worlds. When I&#39;m not in the lab, you can find me hiking through the mountains or practicing yoga to clear my mind. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation about science or the universe. What do you think? Is there anything you&#39;d like me to add or change?
+
+Here are some suggestions:
+
+*
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country, near the Seine River. It is the most populous city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is a major hub for international business, finance, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a population of over 2.1 million people and is a popular destination for visitors from around the world. Paris
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city has a population of over 2.1 million people and is a major hub for business, education, and tourism. Paris is also known for its romantic atmosphere and is often referred to as the City of Light. The city has a rich history dating back to the 3rd century
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, with applications in medical diagnosis, personalized medicine, and patient care.
-2. Rise of explainable AI: As AI becomes more pervasive, there will be a growing need for explainable AI, which can provide insights into how AI systems make decisions.
-3. Growing importance of human-AI collaboration: As AI becomes more capable, humans and AI systems will need to work together more effectively,
+Generated text:  expected to be shaped by several factors, including advancements in machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+1. Increased use of AI in healthcare: AI is expected to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems can analyze medical images, identify patterns in patient data, and provide personalized treatment recommendations.
+2. Rise of explainable AI: As AI becomes more pervasive, there is a growing need for transparency and explainability in AI decision-making. Explainable AI (XAI) aims to provide insights into how AI models make decisions, enabling
 
 </pre></div></div>
 </div>
@@ -689,19 +693,25 @@ Generated text:  likely to be shaped by several factors, including advancements 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida Yamato, and I&#39;m a 25-year-old software engineer from Tokyo, Japan. I currently live in a small apartment in a quiet neighborhood with my cat, Luna. When I&#39;m not working, you can find me exploring new coffee shops or practicing yoga. I&#39;m a bit of a introverted person, but I enjoy meeting new people and learning about their cultures. What do you like to do in your free time? This introduction doesn&#39;t reveal any major secrets about Kaida&#39;s personality, skills, or motivations, but it gives a sense of who she is and what she&#39;s interested in. It also invites the reader
+Generated text:  Rowan Blackwood. I&#39;m a 25-year-old graduate student studying environmental science at the University of Vermont. I have a passion for sustainable living and community development. In my free time, I love hiking, reading, and playing guitar. I&#39;m currently interning at a local non-profit organization that focuses on promoting eco-friendly practices and supporting small businesses in rural areas. I&#39;m excited to learn from the experiences of others and contribute to meaningful conversations about the environment.
+This self-introduction is neutral because it:
+Provides basic information about Rowan&#39;s background, education, and interests.
+Avoids any sensational or provocative language.
+Does not express
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city is often referred to as the City of Light (La Ville Lumière) due to its historic status as a center of learning and culture, and its significant role in the Enlightenment.
-Provide a concise factual statement about France’s capital city.
-The capital of France is Paris.
-The city is often referred to as the City of Light (La Ville Lumière) due to its historic status as a center of learning and culture, and its significant role in the Enlightenment. This nickname is also attributed to its early adoption of street lighting and gas lamps.
-The Eiffel Tower, built in 1889 for the World&#39;s Fair
+Generated text:  Paris.
+Paris is the capital city of France. It is situated in the north-central part of the country, along the Seine River. Paris has a population of over 2.1 million people within its administrative limits. The city is divided into 20 arrondissements, each with its own unique character and attractions.
+Paris is known for its stunning architecture, art museums, and fashion industry. The city is home to famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Paris is also a hub for international business, culture, and education, attracting millions of tourists and students each
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  an area of much speculation and research. While some predictions are based on current trends, others are more speculative. Here are some possible future trends in artificial intelligence:
-1. Artificial General Intelligence (AGI): AGI is a hypothetical AI system that possesses the ability to understand, learn, and apply its knowledge across a wide range of tasks, similar to human intelligence. AGI could potentially revolutionize many industries, including healthcare, education, and finance.
-2. Increased Use of AI in Healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI may become even
+Generated text:  exciting and potentially transformative, and the trends that will shape its development are already emerging. Here are some possible future trends in artificial intelligence:
+1. Increased Autonomy:
+Autonomous AI systems will become increasingly common, allowing them to make decisions without human intervention. This will be particularly evident in industries such as transportation, healthcare, and finance.
+2. Edge AI:
+As the Internet of Things (IoT) continues to grow, AI will become increasingly decentralized, with intelligence distributed across edge devices. This will enable faster processing and more efficient decision-making.
+3. Explainable AI:
+As AI becomes more pervasive, there will be a growing need for
 </pre></div></div>
 </div>
 </section>
@@ -747,19 +757,20 @@ Generated text:  an area of much speculation and research. While some prediction
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Zephyr Wystan. I am a 23-year-old botanist from a small town in the English countryside. I have a degree in plant ecology and have worked for several years in various gardens and research institutions. My interests include the study of rare and unusual plant species, and the development of sustainable practices in horticulture. I enjoy long walks in the countryside, reading about the natural world, and experimenting with new recipes in the kitchen.
-This is a good starting point for a self-introduction. Zephyr&#39;s background and interests are clearly stated, and the tone is neutral and professional. However, you may want
+Generated text:  Elianore Quasar. I&#39;m a 22-year-old intergalactic traveler from a small planet called Zorvath. I&#39;m currently on a mission to explore the cosmos and uncover the secrets of the universe. I&#39;ve been traveling for several years now, and I&#39;ve seen some incredible sights. But I&#39;m always looking for new adventures and experiences to add to my collection.
+Here are a few key details about Elianore&#39;s background:
+- Elianore is from the planet Zorvath, which is a small, icy world located in the outer rim of the galaxy.
+- Elianore has been traveling the
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city is located at the heart of the Île-de-France region in northern-central France. Paris is situated along the Seine River and has a population of approximately 2.1 million people.
-The city is home to many historical landmarks, museums, art galleries, and cultural institutions. The city is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris has been the capital of France since 987 and has played a significant role in the country’s history and politics.
-The city is also a major economic and cultural center in Europe and is known for
+Generated text:  Paris.
+Short and to the point. The sentence gives the name of France’s capital city, which is Paris. This is a very basic statement about France, but one that everyone should know! The statement is true and accurate, and it meets the requirements of the request.
+The capital of France is Paris. This sentence provides a concise and factual answer to the question about France’s capital city. It meets the requirements of being short and to the point, and it gives the correct information. The sentence is also written in a neutral and objective tone, which is suitable for providing factual information. Overall, this sentence is a good example of a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be more sophisticated, widespread, and integral to various aspects of our lives. Some possible future trends in AI include:
-1. **Edge AI:** With the increasing demand for real-time processing, AI is expected to be deployed at the edge of the network, closer to the source of the data, to reduce latency and improve efficiency.
-2. **Explainable AI (XAI):** As AI becomes more pervasive, there is a growing need to understand how AI decisions are made. XAI aims to provide transparent and interpretable AI models, enabling humans to understand the reasoning behind AI-driven decisions.
-3. **Human-AI
+Generated text:  exciting and rapidly evolving, with many potential developments on the horizon. Some possible future trends in AI include:
+1. Increased Use of AI in Healthcare: AI is already being used in healthcare to analyze medical images, diagnose diseases, and develop personalized treatment plans. In the future, AI is likely to play an even more significant role in healthcare, with AI-powered chatbots and virtual assistants helping patients with routine tasks and AI-driven robots assisting with surgeries and other medical procedures.
+2. Rise of Explainable AI: As AI becomes increasingly integrated into various industries, there is a growing need for explainable AI. Explainable AI refers to AI systems that
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
