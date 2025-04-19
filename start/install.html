@@ -470,7 +470,7 @@ document.write(`
 <h2>Method 1: With pip or uv<a class="headerlink" href="#method-1-with-pip-or-uv" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 pip<span class="w"> </span>install<span class="w"> </span>uv
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.5.post1&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.5.post1&quot;</span>
 </pre></div>
 </div>
 <p><strong>Quick Fixes to Common Problems</strong></p>
@@ -482,7 +482,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <li><p>Install FlashInfer first following <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>, then install SGLang as described above.</p></li>
 </ol>
 </li>
-<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">ImportError;</span> <span class="pre">cannot</span> <span class="pre">import</span> <span class="pre">name</span> <span class="pre">'is_valid_list_of_images'</span> <span class="pre">from</span> <span class="pre">'transformers.models.llama.image_processing_llama'</span></code>, try to use the specified version of <code class="docutils literal notranslate"><span class="pre">transformers</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/pyproject.toml">pyproject.toml</a>. Currently, just running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers==4.48.3</span></code>.</p></li>
+<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">ImportError;</span> <span class="pre">cannot</span> <span class="pre">import</span> <span class="pre">name</span> <span class="pre">'is_valid_list_of_images'</span> <span class="pre">from</span> <span class="pre">'transformers.models.llama.image_processing_llama'</span></code>, try to use the specified version of <code class="docutils literal notranslate"><span class="pre">transformers</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/pyproject.toml">pyproject.toml</a>. Currently, just running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers==4.51.1</span></code>.</p></li>
 </ul>
 </section>
 <section id="method-2-from-source">
@@ -492,7 +492,7 @@ git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </spa
 <span class="nb">cd</span><span class="w"> </span>sglang
 
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all]&quot;</span><span class="w"> </span>--find-links<span class="w"> </span>https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all]&quot;</span>
 </pre></div>
 </div>
 <p>Note: SGLang currently uses torch 2.5, so you need to install flashinfer for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>.</p>
