@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ca85d251"></script>
+    <script src="../_static/documentation_options.js?v=ddf15237"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -504,6 +504,12 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<spa
 </li>
 <li><p>To profile offline</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/root/sglang/profile_log
+
+<span class="c1"># profile one batch with bench_one_batch.py</span>
+<span class="c1"># batch size can be controlled with --batch argument</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--batch<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile
+
+<span class="c1"># profile multiple batches with bench_offline_throughput.py</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile<span class="w"> </span>--mem-frac<span class="o">=</span><span class="m">0</span>.8
 </pre></div>
 </div>
