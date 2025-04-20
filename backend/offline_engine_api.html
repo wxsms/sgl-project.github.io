@@ -201,6 +201,7 @@
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -537,11 +538,11 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.17it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.10it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.20it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.59it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
 
 </pre></div></div>
 </div>
@@ -574,24 +575,30 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  John and I have been a lawyer for over 20 years. I practice in the area of personal injury law and have a passion for helping people who have been injured in accidents. I have a proven track record of achieving successful results for my clients and have helped many people receive the compensation they deserve.
-I understand that being injured in an accident can be a very difficult and stressful experience, and I am committed to providing my clients with the highest level of care and support. I take the time to listen to each client&#39;s unique situation and develop a personalized strategy to achieve the best possible outcome.
-I have extensive experience handling a wide range of personal
+Generated text:  Vanessa and I am a 25 year old Australian woman. I am a passionate about making the world a better place and have been working in the not for profit sector for the past 6 years. I have a strong background in program management and project management and I am eager to continue working in this field.
+My expertise lies in project management, program management, community development, community engagement and volunteer management. I have a strong understanding of social impact and am passionate about creating positive change.
+I am highly organised, a strong communicator and have excellent problem solving skills. I am also highly adaptable and able to work effectively in fast-paced environments.
+In
 ===============================
 Prompt: The president of the United States is
-Generated text:  a symbol of national identity and a figure of immense power and influence. It&#39;s a job that requires a unique blend of leadership, communication, and strategic thinking skills. Here are some key characteristics and traits of a successful U.S. president:
-1. Strong leadership skills: A successful president must be able to inspire and motivate others, build coalitions, and make tough decisions.
-2. Effective communication: The president must be able to communicate complex ideas clearly and persuasively to the public, Congress, and the international community.
-3. Strategic thinking: A president must be able to analyze complex issues, weigh competing priorities, and develop effective strategies
+Generated text:  responsible for signing bills into law, which they can do by either signing them with their name or by vetoing them. If the president vetoes a bill, Congress can then try to override the veto by a two-thirds vote in both the House and Senate. If they are successful, the bill becomes law despite the president’s objections.
+What is the President&#39;s role in the lawmaking process?
+A) To propose bills
+B) To sign bills into law
+C) To veto bills
+D) All of the above
+Answer: B) To sign bills into law
+Explanation: The president has a specific role in the lawmaking
 ===============================
 Prompt: The capital of France is
-Generated text:  home to some of the most world-renowned landmarks, including the Eiffel Tower, the Louvre Museum, and Notre Dame Cathedral. But Paris is more than just a pretty face. Here are some fun facts about the City of Light that will give you a deeper appreciation for its rich history, culture, and charm.
-1. Paris is often called the &#34;City of Light&#34; (La Ville Lumière) because it was one of the first cities to adopt the use of streetlights in the 17th century.
-2. The Eiffel Tower was originally intended to be a temporary structure, built for the 1889 World
+Generated text:  a city of romance and beauty, but it’s also a city with a rich history of scientific discovery. In this article, we’ll explore some of the most significant scientific contributions made in Paris, from the famous scientists who worked there to the groundbreaking discoveries that were made.
+1. The Beginnings of Modern Chemistry
+One of the most significant scientific contributions made in Paris is the development of modern chemistry. Antoine Lavoisier, considered the “Father of Modern Chemistry,” was a Parisian scientist who discovered oxygen and developed the first systematic method of chemical nomenclature. His work laid the foundation for the development of modern chemistry and paved the
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain. There is a chance it will become so powerful that it will create an existential risk to humanity, or it could lead to a world where humans and AI collaborate to create a utopian society. The possibility of AI surpassing human intelligence and becoming uncontrollable is a real concern, which has led to a debate about the ethics of artificial intelligence development.
-If we are to create an AI that can surpass human intelligence, we should have a clear understanding of what we are creating and what its limitations are. This requires a multidisciplinary approach, combining insights from AI research, ethics, philosophy, and social sciences. We need to discuss the
+Generated text:  bright, but it also raises concerns about the impact on work and the economy. This report provides an overview of the current state of AI and its potential impact on employment.
+The report concludes that AI will have a significant impact on employment, but its effects will vary across different industries and occupations. While AI may automate some jobs, it will also create new ones, such as those in the field of AI development and deployment.
+The report highlights the need for policymakers to invest in education and retraining programs to help workers adapt to the changing job market. It also emphasizes the importance of ensuring that the benefits of AI are shared fairly among workers, businesses
 </pre></div></div>
 </div>
 </section>
@@ -631,17 +638,17 @@ If we are to create an AI that can surpass human intelligence, we should have a 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Elianore Quasar. I&#39;m a 25-year-old astrophysicist with a passion for understanding the mysteries of the universe. I&#39;m currently working on a research project to study the properties of black holes. When I&#39;m not in the lab, I enjoy reading science fiction novels and playing the guitar. I&#39;m a bit of a introvert, but I&#39;m always up for a good conversation about space or music.
-This self-introduction is neutral because it doesn&#39;t reveal any personal biases or opinions. It simply states the character&#39;s name, profession, interests, and personality traits in a straightforward and factual way. This type
+Generated text:  Kaida. I&#39;m a 25-year-old freelance writer living in Tokyo. I enjoy reading, hiking, and trying new foods. I&#39;m currently working on a novel and experimenting with different writing styles. I&#39;m a bit of a introvert, but I love meeting new people and hearing their stories. I&#39;m always looking for new experiences and learning opportunities. I&#39;m a bit of a perfectionist, but I&#39;m working on being more flexible and open-minded. I&#39;m excited to see where life takes me next.
+This self-introduction is neutral because it doesn&#39;t reveal too much about Kaida&#39;s personality, background, or motivations.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is located in the northern part of the country, in the region of Île-de-France. It is situated on the Seine River and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city has a population of over 2.1 million people and is a major hub for international business, tourism, and education. Paris is also known for its romantic atmosphere, beautiful parks, and vibrant nightlife. The city has a long history dating back to the 3rd
+Generated text:  Paris. Paris is located in the northern part of the country and is situated on the Seine River. It is the largest city in France and is known for its rich history, art, fashion, and culture. Paris is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city has a population of over 2.1 million people and is a major hub for international business, finance, and tourism. Paris is also known for its romantic atmosphere, beautiful parks, and vibrant nightlife. The city has a long history dating back to the 3rd century BC and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in artificial intelligence:
-1. Increased Adoption in Everyday Life: AI is likely to become more ubiquitous in our daily lives, from virtual assistants like Alexa and Google Home to AI-powered personal assistants in our cars and homes.
-2. Advancements in Natural Language Processing (NLP): NLP is a key area of AI research, and future advancements in this field will enable more sophisticated and human-like interactions between humans and machines.
-3. Rise of Explainable AI (XAI): As AI becomes more pervasive, there will
+Generated text:  expected to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
+1. Increased Adoption in Industries: AI is expected to become increasingly adopted in various industries, including healthcare, finance, transportation, and education. This will lead to improved efficiency, productivity, and decision-making.
+2. Advancements in Machine Learning: Machine learning, a subset of AI, is expected to continue to advance, enabling AI systems to learn from data and improve their performance over time.
+3. Rise of Explainable AI: As AI becomes more pervasive, there will be a growing need to understand
 
 </pre></div></div>
 </div>
@@ -684,19 +691,30 @@ Generated text:  likely to be shaped by various factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Ember. I&#39;m a 21-year-old university student. I&#39;m studying to be an environmental scientist, and I&#39;m really passionate about sustainable energy. When I&#39;m not in class, I like to hike and explore the outdoors. I&#39;m a bit of a bookworm, too, and I enjoy reading about science and history.
-The example is a good introduction because it is brief, yet gives some useful information about the character. It doesn&#39;t reveal too much about their personal life, so it&#39;s safe for any context. It also mentions something they are passionate about, which can lead to interesting conversations or scenarios.
-Here are a few other
+Generated text:  Jaxon Lee, and I&#39;m a 22-year-old college student studying environmental science. I enjoy hiking and playing guitar in my free time. I&#39;m a bit of a introvert, but I&#39;m working on coming out of my shell. That&#39;s me in a nutshell.
+The key points in this introduction are:
+    - A simple greeting
+    - The person&#39;s name and age
+    - Their major or field of study
+    - A hobby or interest
+    - A personal trait or quirk
+    - A bit of self-awareness or personal growth
+
+    - The introduction should be short and concise
+    -
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-The capital of France is Paris.
-Paris is the capital and largest city of France, with a population of over 2.1 million people in the city proper and over 12.2 million people in the metropolitan area. It is situated in the north-central part of the country, in the Île-de-France region. Paris is a global center for art, fashion, cuisine, and culture, and is one of the world&#39;s leading tourist destinations. The city is home to many iconic landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major hub for
+Paris is one of the most famous cities in the world, known for its beautiful architecture, world-class museums, and vibrant culture.
+It is located in the north-central part of France, along the River Seine. Paris is often called the City of Light, due to its historical importance in the Enlightenment and the impact of the French Revolution.
+Paris is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.
+The city has a rich history, dating back to the Roman Empire, and has been a major center of politics, culture,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain and prone to speculation, but here are some potential trends that could shape the field:
-1. Increased use of AI in everyday life: As AI becomes more integrated into various aspects of life, people may become accustomed to relying on AI-powered tools and systems to make decisions, manage tasks, and provide information. This could lead to a shift in the way people interact with technology and each other.
-2. Advancements in natural language processing (NLP): NLP is a key area of AI research that focuses on enabling machines to understand and generate human language. As NLP advances, AI systems may become more adept at conversing with humans
+Generated text:  uncertain and will likely involve a combination of technological advancements, societal influences, and ethical considerations.
+Artificial intelligence (AI) has been rapidly evolving over the past decade, with significant advancements in machine learning, natural language processing, and computer vision. As AI continues to transform various aspects of our lives, it is essential to consider possible future trends that may shape its development and impact.
+1. Increased Adoption in Industries: AI will become more ubiquitous across industries, such as healthcare, finance, education, and transportation, leading to increased efficiency, productivity, and decision-making capabilities.
+2. Advancements in Edge AI: As IoT devices proliferate, edge
 </pre></div></div>
 </div>
 </section>
@@ -742,21 +760,18 @@ Generated text:  uncertain and prone to speculation, but here are some potential
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Aurora LeRoux, and I&#39;m a 25-year-old graphic designer living in the city. I have short, spiky brown hair and a small tattoo of a sun on my left ankle. I work freelance from home, and in my free time, I enjoy trying new craft beers and hiking in the nearby mountains. That&#39;s me! What do you want to know about me?
-I have created the first page of a 3-page sketchbook for a client. The theme is a &#34;visual introduction&#34; to the client&#39;s new business. The first page is a rough illustration of the client&#39;s logo (a stylized letter &#34;
+Generated text:  Zara and I’m a freelance writer. I enjoy writing about science, technology, and philosophy. When I’m not writing, you can find me reading a book or exploring the outdoors. I&#39;m interested in meeting new people and learning about their experiences and perspectives.
+Zara is a freelance writer who specializes in science, technology, and philosophy. She spends most of her free time reading and exploring the outdoors. Zara is looking to expand her professional network and learn from others.
+Zara is a freelance writer who specializes in science, technology, and philosophy. She spends most of her free time reading and exploring the outdoors. Zara is
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The Eiffel Tower is a famous landmark in Paris. The Eiffel Tower is the tallest structure in Paris, standing at 324 meters tall. It was built in 1889 for the World&#39;s Fair.
-The Louvre Museum is a world-renowned art museum in Paris. The Louvre Museum is home to an impressive collection of art and artifacts from around the world, including the Mona Lisa. The museum is housed in a beautiful historic building and is a popular tourist destination.
-The French Riviera, also known as the Côte d&#39;Azur, is a scenic coastline in southeastern France. The French Riviera
+Generated text:  Paris. Paris is situated in the northern part of France. It is known for its cultural and artistic significance, as well as its historic landmarks such as the Eiffel Tower and the Notre-Dame Cathedral. Paris is home to many museums, including the Louvre, which houses the famous Mona Lisa painting. The city is also known for its fashion and cuisine, with popular dishes such as croissants, baguettes, and escargots. Paris is a popular tourist destination and is often considered the most romantic city in the world. Its famous landmarks, rich history, and vibrant culture make it a must-visit destination for many
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  happening now, with the ongoing advancements in technology, the rise of AI adoption, and the growth of the global AI market. Here are some possible future trends in artificial intelligence:
-Increased Autonomy:
-As AI systems become more sophisticated, they will likely be given more autonomy to make decisions and take actions without human intervention. This could lead to increased efficiency and productivity, but also raises concerns about accountability and control.
-Advancements in Edge AI:
-Edge AI refers to the processing of AI workloads at the edge of the network, closer to where the data is being generated. This trend is expected to continue, with more AI applications being deployed on devices
+Generated text:  likely to be shaped by advances in various fields, including machine learning, natural language processing, computer vision, and robotics. Some potential future trends in AI include:
+More focus on explainability and transparency: As AI becomes increasingly pervasive, there is a growing need to understand how AI systems make decisions and predictions. Future AI systems may be designed to provide more transparent and explainable decision-making processes.
+Increased use of edge AI: The proliferation of IoT devices and the need for real-time processing and decision-making are driving the adoption of edge AI, which involves processing AI models on device rather than in the cloud.
+Growing emphasis on human-AI collaboration:
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
