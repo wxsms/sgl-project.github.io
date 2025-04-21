@@ -54,7 +54,7 @@
     <link rel="prev" title="Server Arguments" href="server_arguments.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 20, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 21, 2025"/>
   </head>
   
   
@@ -529,6 +529,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></code>: Specifies the number of output sequences to generate per request. (Generating multiple outputs in one request (n &gt; 1) is discouraged; repeating the same prompts several times offers better control and efficiency.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">spaces_between_special_tokens:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code>: Whether or not to add spaces between special tokens during detokenization.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">no_stop_trim:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code>: Don’t trim stop words or EOS token from the generated text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continue_final_message:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code> : When enabled, the final assistant message is removed and its content is used as a prefill so that the model continues that message instead of starting a new turn. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/openai_chat_with_response_prefill.py">openai_chat_with_response_prefill.py</a> for examples.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ignore_eos:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code>: Don’t stop generation when EOS token is sampled.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">skip_special_tokens:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code>: Remove special tokens during decoding.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_params:</span> <span class="pre">Optional[List[Optional[Dict[str,</span> <span class="pre">Any]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code>: Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage, see below.</p></li>
@@ -844,7 +845,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 20, 2025.
+  Last updated on Apr 21, 2025.
   <br/>
 </p>
   </div>

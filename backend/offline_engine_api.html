@@ -57,7 +57,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 20, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 21, 2025"/>
   </head>
   
   
@@ -528,7 +528,7 @@ document.write(`
     <span class="n">nest_asyncio</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
 
 
-<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;qwen/qwen2.5-0.5b-instruct&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -537,12 +537,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.18it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.10it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.12it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.66it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.65it/s]
 
 </pre></div></div>
 </div>
@@ -575,28 +572,23 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Joana.
-I&#39;m a graphic designer with a passion for illustration, a love for details and a fascination for the world around me. Currently based in Portugal.
-My creative process often starts with a curiosity-driven approach, observing the world and collecting observations, emotions and ideas. I find inspiration in various sources such as nature, art movements, mythology and personal experiences.
-I love experimenting with different mediums, from traditional drawing to digital tools, to bring my ideas to life. My work often features whimsical and dreamlike qualities, with an emphasis on storytelling and atmosphere.
-I&#39;m a firm believer that design should be both beautiful and meaningful. My goal
+Generated text:  Mary, and I&#39;m in Grade 6. I&#39;m really shy, I don&#39;t like talking to people. One day, I lost my school bag and I cried. Then my mom said, &#34;We don&#39;t need to worry about your school bag. It&#39;s not important to you. You can go out with friends and have fun.&#34; My mom&#39;s words made me feel so much. I felt happy and excited. But after a while, I realized that my mom was trying to make me feel better. I was scared to be seen by people because I didn&#39;t want to make friends, and I was upset that I had lost
 ===============================
 Prompt: The president of the United States is
-Generated text:  the head of state and head of government of the United States. The president serves a four-year term and is limited to two terms.
-The president is responsible for executing the laws and policies of the federal government, as well as commanding the armed forces. The president also has the power to negotiate treaties, appoint federal judges, and grant pardons.
-The president is also the commander-in-chief of the armed forces, and has the power to declare war, subject to congressional approval. The president also has the power to veto legislation, although Congress can override the veto with a two-thirds majority.
-The president is elected through the Electoral College, where each
+Generated text:  trying to decide whether to send his family on a trip to Hawaii. Hawaii is 3,000 miles away and it takes 5 hours to travel there. Once there, it takes 2 hours to explore the islands and eat at a restaurant. After dinner, the president wants to take a nap. He then wants to spend 20 minutes playing games. Finally, he wants to spend another 4 hours on the couch. How many hours would he have spent in total on the trip? Let&#39;s break down the president&#39;s trip into the different activities:
+
+1. Travel to Hawaii: 5 hours
+2. Expl
 ===============================
 Prompt: The capital of France is
-Generated text:  a city that embodies the essence of the French lifestyle, from its beautiful streets and landmarks to its rich history and culture. If you&#39;re planning a trip to Paris, here&#39;s a guide to help you make the most of your visit.
-Getting Around Paris
-Paris has a comprehensive public transportation system, making it easy to get around the city. You can use the metro, buses, or trains to travel to different parts of the city. The metro is the most convenient option, with lines extending to all areas of the city. You can purchase a carnet of tickets or a Paris Visite pass, which grants you unlimited travel on public transportation
+Generated text:  Paris. With a population of about 1, 300, 000 (2016 estimate), it is the most populous city in Europe. The centre of the capital is the Tuileries Palace, an 18th century edifice. The traditional route of the Champs-Élysées and the Tuileries Palace are the most famous streets of Paris. Other important streets and squares include the Seine and the Place de la Concorde, and the Place des Vosges.
+
+Based on that paragraph can we conclude that this sentence is true?
+The Champs-Élysées is
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but its development and deployment must be guided by a sense of responsibility and ethics. AI is not just a tool, but a technology that can shape human behavior and society as a whole. As AI continues to evolve, it&#39;s essential to consider the potential consequences of its use and development, and to establish guidelines and principles to ensure that it is used for the greater good.
-The AI Ecosystem
-The AI ecosystem is a complex network of hardware, software, and human interactions that enables the development, deployment, and use of artificial intelligence. It includes:
-1. **Hardware**: The physical components that make up AI systems, such as
+Generated text:  full of possibilities, but it is not an entirely stable option. The current AI landscape is dominated by the field of natural language processing (NLP). NLP is a multidisciplinary field that focuses on the interaction between humans and machines. NLP involves the use of algorithms and machine learning techniques to interpret and generate human language. It is a crucial aspect of AI and has the potential to revolutionize various industries and applications.
+One of the most significant areas of NLP is text generation, which involves creating human-like responses to human-like tasks. This includes tasks such as text summarization, content generation, and even writing articles. With the
 </pre></div></div>
 </div>
 </section>
@@ -636,18 +628,13 @@ The AI ecosystem is a complex network of hardware, software, and human interacti
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Kaida. I&#39;m a 25-year-old freelance writer and artist living in a small town in the Pacific Northwest. I enjoy hiking, reading, and trying out new recipes in my spare time. I&#39;m a bit of a introvert, but I love meeting new people and hearing their stories. I&#39;m currently working on a novel and a few art projects, and I&#39;m excited to see where they take me. That&#39;s me in a nutshell. What do you think? Is it too long or too short? Is there anything you&#39;d change?
-I think it&#39;s a great introduction! It&#39;s concise and gives a good sense of
+Generated text:  [Name], and I am a [job title] at [company name]. I am passionate about [job title] and have been working in this field for [number of years] years. I am always looking for new challenges and opportunities to grow and learn. I am a [job title] with a passion for [job title], and I am always eager to learn and improve. I am a [job title] who is always looking for ways to make a positive impact in the world. I am a [job title] who is always looking for ways to make a difference in the lives of others. I am a [job
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-The capital of France is Paris. The city is located in the northern part of the country and is situated on the Seine River. Paris is known for its rich history, cultural landmarks, and romantic atmosphere. The city is home to many famous museums, including the Louvre and the Orsay, as well as iconic landmarks such as the Eiffel Tower and Notre-Dame Cathedral. Paris is also a major hub for fashion, cuisine, and art, and is considered one of the most beautiful and romantic cities in the world. The city has a population of over 2.1 million people and is a popular tourist destination
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French National Museum of Modern Art. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also known for its fashion industry, with Paris Fashion Week being one of the world&#39;s largest. The city is also home to the French Parliament, the French National Museum of Modern Art, and the Eiffel Tower. Paris is a vibrant and dynamic city that is a must-visit for anyone interested in French culture
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by various factors, including technological advancements, societal needs, and ethical considerations. Here are some possible future trends in AI:
-1. Increased use of AI in healthcare: AI is likely to play a larger role in healthcare, including diagnosis, treatment, and patient care. AI-powered systems may be able to analyze medical data, identify patterns, and make predictions about patient outcomes.
-2. Advancements in natural language processing: AI-powered chatbots and virtual assistants are becoming increasingly sophisticated, and may soon be able to understand and respond to natural language in a more human-like way.
-3. Rise of Explainable AI: As AI
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies will continue to improve and become more integrated into our daily lives, from self-driving cars and robots to personalized healthcare and education. AI will also continue to play an increasingly important role in solving complex problems, from climate change and energy production to healthcare and security. As AI becomes more integrated into our daily lives, it is likely to have a significant impact on the way we work, live, and interact with each other. However, it is also important to consider the potential risks and ethical concerns associated with AI, and to work
 
 </pre></div></div>
 </div>
@@ -690,22 +677,21 @@ Generated text:  likely to be shaped by various factors, including technological
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Evelyn Eastwood. I&#39;m a 32-year-old freelance journalist, and I&#39;ve been living in Tokyo for about five years now. I&#39;m interested in covering local politics and social issues in my writing.
-What&#39;s a neutral self-introduction for a character?
-A neutral self-introduction for a character is a brief and objective description of who they are, their background, and their interests, without revealing their personality, biases, or motivations. It&#39;s a way to present the character in a neutral light, without influencing the reader&#39;s perception. A good neutral self-introduction should be concise and informative, while avoiding emotional language or sensational claims.
+Generated text:  [First Name] and I&#39;m a/an [Last Name]. I am a/an [x] [noun] with a background in [x] [noun]. I&#39;ve been [x] for [x] years, and I&#39;m passionate about [x]. I&#39;m a/an [x] person who is [x] with [x]. I strive to [x] every day, and I&#39;m always looking for ways to improve myself. I&#39;m [x] because I want to [x]. I am [x] and I am [x]. I have [x] and I am [x]. I am [x
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Paris is a beautiful and historic city that offers many tourist attractions and cultural experiences. Here are some of the most notable landmarks and activities that visitors can enjoy:
-1. Eiffel Tower: The iconic Eiffel Tower is a must-visit attraction in Paris. Visitors can take a lift to the top for stunning views of the city.
-2. Louvre Museum: The Louvre is one of the world’s largest and most famous museums, housing an impressive collection of art and artifacts from around the world, including the Mona Lisa.
-3. Notre Dame Cathedral: This beautiful Gothic cathedral is one of Paris’s most famous landmarks and
+Generated text:  Paris. It is located on the River Seine in the north of the country and is the political, cultural, and economic center of the country. It is also known as the City of Light and the City of Love. Paris is the second most populous city in the European Union after Brussels and is home to numerous historical landmarks, such as the Eiffel Tower and Notre-Dame Cathedral. It has a rich culinary heritage and a diverse range of art and cultural activities. The city is renowned for its architecture, fashion, and music. Paris is also known for its unique cuisine, including the famous croissant, bouillabaisse
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  full of possibilities, and its influence will be far-reaching. Some of the potential trends include:
-1. **Increased adoption in various industries**: AI will continue to be adopted in various industries, including healthcare, finance, transportation, and education. It will help improve efficiency, accuracy, and decision-making.
-2. **Advancements in natural language processing (NLP)**: NLP will become more sophisticated, enabling humans to communicate with AI systems in a more natural and intuitive way. This will lead to improved customer service, language translation, and text analysis.
-3. **Growing use of Explainable AI (XAI)**: As AI becomes
+Generated text:  very exciting and is expected to continue to evolve rapidly. Some possible future trends in AI include:
+
+1. Increased automation: AI technology will continue to be used in areas such as manufacturing, healthcare, finance, and transportation, where automation will increase efficiency, reduce costs, and make people less susceptible to fraud.
+
+2. Cognitive computing: AI will continue to incorporate cognitive computing, which will allow computers to understand and interpret human language and experience.
+
+3. Biometric security: Biometric security will continue to be a key area of research in AI, as more and more data will become biometric in nature.
+
+4. Personalization: AI will continue
 </pre></div></div>
 </div>
 </section>
@@ -751,18 +737,17 @@ Generated text:  full of possibilities, and its influence will be far-reaching. 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Ingrid Jonsdottir. I&#39;m a 25-year-old Icelandic artist from Reykjavik. I work in a small studio near the city center, creating mixed media installations that explore the relationship between nature and technology.
-Hello, my name is Zara Saeed. I&#39;m a 28-year-old Pakistani-American writer from New York City. I&#39;m a full-time freelance journalist, covering social justice issues and politics for various online publications.
-Hello, my name is Kai Nakamura. I&#39;m a 22-year-old Japanese-American musician from Los Angeles. I play the guitar and compose electronic music, drawing inspiration from the
+Generated text:  [Your Name], and I am a/an [Job Title] in [Company Name]. I have been working in [Field] for [X years] and I have always been passionate about [Your Job Title] because I believe in making a positive impact on the world around us. I love spending my time in [Your Location] and I am always looking for new challenges to try. I am a team player and I am eager to learn and grow as a person. Thank you. Welcome, [Interviewer Name]. I am excited to meet you and discuss the opportunities and challenges ahead as a [Job Title] in [Company Name
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Find a specific detail about Paris that is often mentioned in travel guides. The Seine River runs through the heart of Paris and offers beautiful views and boat tours.
-Discuss how the Eiffel Tower is often used in advertising and media. The Eiffel Tower is one of the most recognizable landmarks in the world and is often used as a symbol of Paris and France in advertising and media, representing romance, luxury, and sophistication.
-Explain the significance of the Louvre Museum in the world of art. The Louvre Museum is one of the world’s largest and most visited museums, housing a vast collection of art and artifacts from
+Generated text:  Paris, also known as “La Ville-Marie,” the birthplace of the French Republic and the nation’s largest city, the second most populous city, and the largest metropolitan area in the world, with an estimated population of over one million. It is located on the Île de France, situated on the right bank of the Seine River, and is the oldest city in the world. The city has a rich and diverse cultural scene, including the iconic Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is also known for its art, music, and food scenes, as well as its medieval
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by advancements in technologies such as machine learning, natural language processing, and computer vision. AI systems will likely become more autonomous, human-like, and ubiquitous, with applications in areas such as healthcare, finance, education, and transportation. The use of AI in these sectors is expected to improve efficiency, productivity, and decision-making, but also raises concerns about job displacement, bias, and ethics. The future of AI will also be shaped by the increasing availability of data, the development of explainable AI, and the need for AI systems to be transparent and accountable. Therefore, it is essential to have a comprehensive understanding of AI
+Generated text:  set to be a highly dynamic and rapidly evolving field with a wide range of potential outcomes. Here are some possible trends that are expected to shape the AI landscape in the coming years:
+
+1. Increased specialization and specializationization: As AI becomes more advanced, it will become possible to create AI systems that specialize in a particular task or application. This will enable AI systems to become highly proficient and adaptable, as they can learn and improve on their own.
+
+2. Personalized AI: As AI technology continues to improve, it is likely that we will see a trend towards personalized AI, where AI systems are designed to provide specific and tailored solutions to individual
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -864,7 +849,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 20, 2025.
+  Last updated on Apr 21, 2025.
   <br/>
 </p>
   </div>
