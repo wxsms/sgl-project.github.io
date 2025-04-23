@@ -469,7 +469,7 @@ document.write(`
 <p>This document explains how to add support for new language models and vision‐language models (VLMs) in SGLang. It also covers how to test new models and register external implementations.</p>
 <section id="how-to-support-a-new-language-model">
 <h2>How to Support a new Language Model<a class="headerlink" href="#how-to-support-a-new-language-model" title="Link to this heading">#</a></h2>
-<p>To support a new model in SGLang, you only need to add a single file under the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sgllang/srt/models">SGLang Models Directory</a>. You can learn from existing model implementations and create a new file for your model. For most models, you should be able to find a similar model to start with (e.g., starting from Llama). Also refer how to <a class="reference internal" href="#port-a-model-from-vllm-to-sglang"><span class="std std-ref">port a Model from vLLM to SGLang</span></a></p>
+<p>To support a new model in SGLang, you only need to add a single file under the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/srt/models">SGLang Models Directory</a>. You can learn from existing model implementations and create a new file for your model. For most models, you should be able to find a similar model to start with (e.g., starting from Llama). Also refer how to <a class="reference internal" href="#port-a-model-from-vllm-to-sglang"><span class="std std-ref">port a Model from vLLM to SGLang</span></a></p>
 </section>
 <section id="how-to-support-a-new-vision-language-model">
 <h2>How to Support a new Vision-Language model<a class="headerlink" href="#how-to-support-a-new-vision-language-model" title="Link to this heading">#</a></h2>
@@ -521,7 +521,7 @@ Replace the multi-headed <code class="docutils literal notranslate"><span class=
 <ul class="simple">
 <li><p>Compare these two files for guidance:</p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sgllang/srt/models/llama.py">SGLang Llama Implementation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/llama.py">SGLang Llama Implementation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/vllm-project/vllm/blob/main/vllm/model_executor/models/llama.py">vLLM Llama Implementation</a></p></li>
 </ul>
 </li>
