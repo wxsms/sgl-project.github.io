@@ -57,7 +57,7 @@
     <link rel="prev" title="Tool and Function Calling" href="function_calling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 24, 2025"/>
   </head>
   
   
@@ -520,36 +520,36 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:12] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=37148, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=186735212, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_llama4_multimodal=None, enable_gemma3_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None)
-[2025-04-23 15:29:21 TP0] Attention backend not set. Use fa3 backend by default.
-[2025-04-23 15:29:21 TP0] Init torch distributed begin.
-[2025-04-23 15:29:21 TP0] Init torch distributed ends. mem usage=0.00 GB
-[2025-04-23 15:29:21 TP0] Load weight begin. avail mem=78.58 GB
-[2025-04-23 15:29:21 TP0] Ignore import error when loading sglang.srt.models.llama4.
-[2025-04-23 15:29:22 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-04-24 03:45:28] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=32896, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=1051947527, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None)
+[2025-04-24 03:45:38 TP0] Attention backend not set. Use fa3 backend by default.
+[2025-04-24 03:45:38 TP0] Init torch distributed begin.
+[2025-04-24 03:45:38 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-04-24 03:45:38 TP0] Load weight begin. avail mem=78.58 GB
+[2025-04-24 03:45:38 TP0] Ignore import error when loading sglang.srt.models.llama4.
+[2025-04-24 03:45:38 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.34s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.27s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.28s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.41s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.37s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.37s/it]
 
-[2025-04-23 15:29:24 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=64.15 GB, mem usage=14.44 GB.
-[2025-04-23 15:29:24 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-04-23 15:29:24 TP0] Memory pool end. avail mem=62.78 GB
-[2025-04-23 15:29:25 TP0]
+[2025-04-24 03:45:41 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=64.15 GB, mem usage=14.44 GB.
+[2025-04-24 03:45:42 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-04-24 03:45:42 TP0] Memory pool end. avail mem=62.78 GB
+[2025-04-24 03:45:42 TP0]
 
 CUDA Graph is DISABLED.
 This will cause significant performance degradation.
 CUDA Graph should almost never be disabled in most usage scenarios.
 If you encounter OOM issues, please try setting --mem-fraction-static to a lower value (such as 0.8 or 0.7) instead of disabling CUDA Graph.
 
-[2025-04-23 15:29:25 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-04-23 15:29:25] INFO:     Started server process [1371931]
-[2025-04-23 15:29:25] INFO:     Waiting for application startup.
-[2025-04-23 15:29:25] INFO:     Application startup complete.
-[2025-04-23 15:29:25] INFO:     Uvicorn running on http://0.0.0.0:37148 (Press CTRL+C to quit)
-[2025-04-23 15:29:26] INFO:     127.0.0.1:47330 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-04-23 15:29:26] INFO:     127.0.0.1:47334 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-04-23 15:29:26 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-24 03:45:42 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-04-24 03:45:43] INFO:     Started server process [1282193]
+[2025-04-24 03:45:43] INFO:     Waiting for application startup.
+[2025-04-24 03:45:43] INFO:     Application startup complete.
+[2025-04-24 03:45:43] INFO:     Uvicorn running on http://0.0.0.0:32896 (Press CTRL+C to quit)
+[2025-04-24 03:45:43] INFO:     127.0.0.1:40036 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:44] INFO:     127.0.0.1:40042 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:44 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
 huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
 To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
@@ -558,6 +558,8 @@ huggingface/tokenizers: The current process just got forked, after parallelism h
 To disable this warning, you can either:
         - Avoid using `tokenizers` before the fork if possible
         - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+[2025-04-24 03:45:47] INFO:     127.0.0.1:40050 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:47] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -600,9 +602,7 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:31] INFO:     127.0.0.1:47348 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-04-23 15:29:31] The server is fired up and ready to roll!
-[2025-04-23 15:29:31] INFO:     127.0.0.1:47356 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:48] INFO:     127.0.0.1:38162 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <section id="Non-Streaming-Request">
@@ -632,10 +632,12 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:31 TP0] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-23 15:29:32 TP0] Decode batch. #running-req: 1, #token: 45, token usage: 0.00, gen throughput (token/s): 5.92, #queue-req: 0,
-[2025-04-23 15:29:32 TP0] Decode batch. #running-req: 1, #token: 85, token usage: 0.00, gen throughput (token/s): 107.49, #queue-req: 0,
-[2025-04-23 15:29:32] INFO:     127.0.0.1:47356 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:48 TP0] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-24 03:45:49 TP0] Decode batch. #running-req: 1, #token: 45, token usage: 0.00, gen throughput (token/s): 6.45, #queue-req: 0,
+[2025-04-24 03:45:49 TP0] Decode batch. #running-req: 1, #token: 85, token usage: 0.00, gen throughput (token/s): 106.60, #queue-req: 0,
+[2025-04-24 03:45:49 TP0] Decode batch. #running-req: 1, #token: 125, token usage: 0.01, gen throughput (token/s): 108.66, #queue-req: 0,
+[2025-04-24 03:45:50 TP0] Decode batch. #running-req: 1, #token: 165, token usage: 0.01, gen throughput (token/s): 104.29, #queue-req: 0,
+[2025-04-24 03:45:50] INFO:     127.0.0.1:38162 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -648,7 +650,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I need to identify the two numbers in the problem, which are 1 and 3.<br><br>Next, I'll add these two numbers together.<br><br>Finally, the sum of 1 and 3 is 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I recognize that I need to add the numbers 1 and 3.<br><br>I know that addition involves combining these two values.<br><br>Adding 1 and 3 together gives me 4.<br><br>Therefore, the sum of 1 and 3 is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -660,7 +662,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>**Solution:**<br><br>We need to calculate the sum of two numbers: 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>Therefore, the final answer is \(\boxed{4}\).</strong></div>
+<strong style='color: #00008B;'>To find the sum of \(1 + 3\), follow these steps:<br><br>1. **Start with the first number:**<br>   \[<br>   1<br>   \]<br><br>2. **Add the second number to it:**<br>   \[<br>   1 + 3<br>   \]<br><br>3. **Calculate the sum:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Final Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 </section>
 <section id="Streaming-Request">
@@ -699,11 +701,11 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:32] INFO:     127.0.0.1:47356 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-04-23 15:29:32 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-23 15:29:32 TP0] Decode batch. #running-req: 1, #token: 32, token usage: 0.00, gen throughput (token/s): 99.76, #queue-req: 0,
-[2025-04-23 15:29:33 TP0] Decode batch. #running-req: 1, #token: 72, token usage: 0.00, gen throughput (token/s): 104.42, #queue-req: 0,
-[2025-04-23 15:29:33 TP0] Decode batch. #running-req: 1, #token: 112, token usage: 0.01, gen throughput (token/s): 108.27, #queue-req: 0,
+[2025-04-24 03:45:50] INFO:     127.0.0.1:38162 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:50 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-24 03:45:50 TP0] Decode batch. #running-req: 1, #token: 51, token usage: 0.00, gen throughput (token/s): 100.12, #queue-req: 0,
+[2025-04-24 03:45:51 TP0] Decode batch. #running-req: 1, #token: 91, token usage: 0.00, gen throughput (token/s): 103.83, #queue-req: 0,
+[2025-04-24 03:45:51 TP0] Decode batch. #running-req: 1, #token: 131, token usage: 0.01, gen throughput (token/s): 104.84, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -716,7 +718,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>Next, I perform the addition operation: 1 plus 3 equals 4.<br><br>Finally, I conclude that the result of 1 + 3 is 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>I will add the two numbers together to find the result.<br><br>After performing the addition, I determine that the sum of 1 and 3 is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -728,7 +730,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br><br>Certainly! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Start with the number 1.**<br>2. **Add 3 to it.**<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'><br><br>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Perform the addition:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
 </div>
 <p>Optionally, you can buffer the reasoning content to the last reasoning chunk (or the first chunk after the reasoning content).</p>
 <div class="nbinput docutils container">
@@ -765,12 +767,12 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:33] INFO:     127.0.0.1:47356 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-04-23 15:29:33 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-23 15:29:34 TP0] Decode batch. #running-req: 1, #token: 26, token usage: 0.00, gen throughput (token/s): 101.01, #queue-req: 0,
-[2025-04-23 15:29:34 TP0] Decode batch. #running-req: 1, #token: 66, token usage: 0.00, gen throughput (token/s): 107.30, #queue-req: 0,
-[2025-04-23 15:29:34 TP0] Decode batch. #running-req: 1, #token: 106, token usage: 0.01, gen throughput (token/s): 107.76, #queue-req: 0,
-[2025-04-23 15:29:35 TP0] Decode batch. #running-req: 1, #token: 146, token usage: 0.01, gen throughput (token/s): 107.77, #queue-req: 0,
+[2025-04-24 03:45:51] INFO:     127.0.0.1:38162 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:51 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-24 03:45:51 TP0] Decode batch. #running-req: 1, #token: 22, token usage: 0.00, gen throughput (token/s): 98.33, #queue-req: 0,
+[2025-04-24 03:45:52 TP0] Decode batch. #running-req: 1, #token: 62, token usage: 0.00, gen throughput (token/s): 93.94, #queue-req: 0,
+[2025-04-24 03:45:52 TP0] Decode batch. #running-req: 1, #token: 102, token usage: 0.00, gen throughput (token/s): 103.83, #queue-req: 0,
+[2025-04-24 03:45:53 TP0] Decode batch. #running-req: 1, #token: 142, token usage: 0.01, gen throughput (token/s): 107.51, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -783,7 +785,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>Next, I add the two numbers together to find the total.<br><br>Finally, I conclude that the result of 1 plus 3 is 4.</strong></div>
+<strong style='color: #00008B;'>I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>To solve this, I add the two numbers together.<br><br>1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -795,7 +797,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br><br>**Solution:**<br><br>To find the sum of 1 and 3, follow these easy steps:<br><br>1. **Start with the first number:**<br>   <br>   \[<br>   1<br>   \]<br><br>2. **Add the second number to it:**<br>   <br>   \[<br>   1 + 3<br>   \]<br><br>3. **Calculate the sum:**<br>   <br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Final Answer:**<br><br>\[<br>\boxed{4}<br>\]</strong></div>
+<strong style='color: #00008B;'><br><br>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Final Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 <p>The reasoning separation is enable by default when specify . <strong>To disable it, set the ``separate_reasoning`` option to ``False`` in request.</strong></p>
 <div class="nbinput docutils container">
@@ -821,12 +823,10 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:35 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-23 15:29:35 TP0] Decode batch. #running-req: 1, #token: 29, token usage: 0.00, gen throughput (token/s): 99.11, #queue-req: 0,
-[2025-04-23 15:29:35 TP0] Decode batch. #running-req: 1, #token: 69, token usage: 0.00, gen throughput (token/s): 110.29, #queue-req: 0,
-[2025-04-23 15:29:36 TP0] Decode batch. #running-req: 1, #token: 109, token usage: 0.01, gen throughput (token/s): 110.45, #queue-req: 0,
-[2025-04-23 15:29:36 TP0] Decode batch. #running-req: 1, #token: 149, token usage: 0.01, gen throughput (token/s): 109.89, #queue-req: 0,
-[2025-04-23 15:29:36] INFO:     127.0.0.1:47356 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:53 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-24 03:45:53 TP0] Decode batch. #running-req: 1, #token: 34, token usage: 0.00, gen throughput (token/s): 98.64, #queue-req: 0,
+[2025-04-24 03:45:53 TP0] Decode batch. #running-req: 1, #token: 74, token usage: 0.00, gen throughput (token/s): 109.38, #queue-req: 0,
+[2025-04-24 03:45:54] INFO:     127.0.0.1:38162 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -839,7 +839,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I identify the two numbers that need to be added, which are 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the sum to determine that 1 plus 3 equals 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of **1** and **3**.<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Perform the addition:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Final Answer:**<br>   \[<br>   \boxed{4}<br>   \]</strong></div>
+<strong style='color: #00008B;'>First, I recognize that the user is asking for the sum of 1 and 3.<br><br>Next, I add the two numbers together to get the total.<br><br>Finally, I provide the final answer, which is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>Therefore, the final answer is \(\boxed{4}\).</strong></div>
 </div>
 </section>
 </section>
@@ -893,10 +893,12 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:37 TP0] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-04-23 15:29:37 TP0] Decode batch. #running-req: 1, #token: 40, token usage: 0.00, gen throughput (token/s): 47.12, #queue-req: 0,
-[2025-04-23 15:29:37 TP0] Decode batch. #running-req: 1, #token: 80, token usage: 0.00, gen throughput (token/s): 109.14, #queue-req: 0,
-[2025-04-23 15:29:38] INFO:     127.0.0.1:32970 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:54 TP0] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-04-24 03:45:54 TP0] Decode batch. #running-req: 1, #token: 24, token usage: 0.00, gen throughput (token/s): 36.45, #queue-req: 0,
+[2025-04-24 03:45:55 TP0] Decode batch. #running-req: 1, #token: 64, token usage: 0.00, gen throughput (token/s): 111.69, #queue-req: 0,
+[2025-04-24 03:45:55 TP0] Decode batch. #running-req: 1, #token: 104, token usage: 0.01, gen throughput (token/s): 106.69, #queue-req: 0,
+[2025-04-24 03:45:56 TP0] Decode batch. #running-req: 1, #token: 144, token usage: 0.01, gen throughput (token/s): 100.97, #queue-req: 0,
+[2025-04-24 03:45:56] INFO:     127.0.0.1:38178 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -909,14 +911,14 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I will add the two numbers together to find the total.<br><br>Finally, the result of adding 1 and 3 is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'>First, I need to identify the two numbers involved in the addition: 1 and 3.<br><br>Next, I'll add these two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Final Answer:**<br>   \[<br>   \boxed{4}<br>   \]</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-23 15:29:38] INFO:     127.0.0.1:32974 - &#34;POST /separate_reasoning HTTP/1.1&#34; 200 OK
+[2025-04-24 03:45:56] INFO:     127.0.0.1:38190 - &#34;POST /separate_reasoning HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -929,7 +931,7 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I will add the two numbers together to find the total.<br><br>Finally, the result of adding 1 and 3 is 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I need to identify the two numbers involved in the addition: 1 and 3.<br><br>Next, I'll add these two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -941,15 +943,24 @@ To disable this warning, you can either:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Final Answer:**<br>   \[<br>   \boxed{4}<br>   \]</strong></div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-04-24 03:45:56] Child process unexpectedly failed with an exit code 9. pid=1282964
+[2025-04-24 03:45:56] Child process unexpectedly failed with an exit code 9. pid=1282786
+</pre></div></div>
 </div>
 </section>
 <section id="Offline-Engine-API">
@@ -997,9 +1008,9 @@ To disable this warning, you can either:
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.38s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.34s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.35s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.42s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.37s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.38s/it]
 
 </pre></div></div>
 </div>
@@ -1013,7 +1024,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add the two numbers together.<br><br>Finally, I arrive at the total sum, which is 4.<br></think><br><br>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
+<strong style='color: #00008B;'>I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>I start by identifying the two numbers to be added: 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the result to find that 1 plus 3 equals 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1025,7 +1036,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add the two numbers together.<br><br>Finally, I arrive at the total sum, which is 4.<br></strong></div>
+<strong style='color: #00008B;'>I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>I start by identifying the two numbers to be added: 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the result to find that 1 plus 3 equals 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1037,7 +1048,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
+<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1201,7 +1212,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 23, 2025.
+  Last updated on Apr 24, 2025.
   <br/>
 </p>
   </div>
