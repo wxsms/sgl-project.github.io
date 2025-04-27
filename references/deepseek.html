@@ -681,10 +681,31 @@ When using FlashInfer MLA wrapper (<code class="docutils literal notranslate"><s
 
 </pre></div>
 </div>
+<p>Sample Streaming Request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="s2">&quot;http://127.0.0.1:30000/v1/chat/completions&quot;</span> \
+<span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> \
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;temperature&quot;: 0, &quot;max_tokens&quot;: 100, &quot;model&quot;: &quot;deepseek-ai/DeepSeek-V3-0324&quot;,&quot;stream&quot;:true,&quot;tools&quot;: [{&quot;type&quot;: &quot;function&quot;, &quot;function&quot;: {&quot;name&quot;: &quot;query_weather&quot;, &quot;description&quot;: &quot;Get weather of an city, the user should supply a city first&quot;, &quot;parameters&quot;: {&quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: {&quot;city&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The city, e.g. Beijing&quot;}}, &quot;required&quot;: [&quot;city&quot;]}}}], &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hows the weather like in Qingdao today&quot;}]}&#39;</span>
+</pre></div>
+</div>
+<p>Expected Streamed Chunks (simplified for clarity):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;city&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;Q&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;ing&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;dao&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:[{</span><span class="s2">&quot;function&quot;</span><span class="p">:{</span><span class="s2">&quot;arguments&quot;</span><span class="p">:</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">}&quot;</span><span class="p">}}]}}]}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choices&quot;</span><span class="p">:[{</span><span class="s2">&quot;delta&quot;</span><span class="p">:{</span><span class="s2">&quot;tool_calls&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">}}],</span> <span class="s2">&quot;finish_reason&quot;</span><span class="p">:</span> <span class="s2">&quot;tool_calls&quot;</span><span class="p">}</span>
+<span class="n">data</span><span class="p">:</span> <span class="p">[</span><span class="n">DONE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The client needs to concatenate all arguments fragments to reconstruct the complete tool call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Qingdao&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>Important Notes:</p>
 <ol class="arabic simple">
 <li><p>Use a lower <code class="docutils literal notranslate"><span class="pre">&quot;temperature&quot;</span></code> value for better results.</p></li>
-<li><p>Currently, the function calling implementation for deepseek is incompatible with streaming requests.</p></li>
 </ol>
 </section>
 </section>
