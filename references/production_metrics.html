@@ -453,9 +453,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-guide">Setup Guide</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafana-dashboard">Grafana Dashboard</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-variables-are-created">Check if the variables are created</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-files">Configuration Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-metrics-are-being-collected">Check if the metrics are being collected</a></li>
 </ul>
 </li>
@@ -597,36 +598,105 @@ sglang:num_queue_reqs{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2
 </div>
 <section id="setup-guide">
 <h2>Setup Guide<a class="headerlink" href="#setup-guide" title="Link to this heading">#</a></h2>
-<p>To setup a monitoring dashboard, you can use the following docker compose file: <a class="reference internal" href="#../examples/monitoring/docker-compose.yaml"><span class="xref myst">examples/monitoring/docker-compose.yaml</span></a>.</p>
-<p>Assume you have sglang server running at <code class="docutils literal notranslate"><span class="pre">localhost:30000</span></code>, to start the server, ensure you have <code class="docutils literal notranslate"><span class="pre">--enable-metrics</span></code> flag enabled:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
---port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--enable-metrics
+<p>This section describes how to set up the monitoring stack (Prometheus + Grafana) provided in the <code class="docutils literal notranslate"><span class="pre">examples/monitoring</span></code> directory.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Docker and Docker Compose installed</p></li>
+<li><p>SGLang server running with metrics enabled</p></li>
+</ul>
+</section>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Start your SGLang server with metrics enabled:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>&lt;your_model_path&gt;<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--enable-metrics
 </pre></div>
 </div>
-<p>To start the monitoring dashboard (prometheus + grafana), cd to <code class="docutils literal notranslate"><span class="pre">examples/monitoring</span></code> and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>compose.yaml<span class="w"> </span>-p<span class="w"> </span>monitoring<span class="w"> </span>up
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;your_model_path&gt;</span></code> with the actual path to your model (e.g., <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span></code>). Ensure the server is accessible from the monitoring stack (you might need <code class="docutils literal notranslate"><span class="pre">--host</span> <span class="pre">0.0.0.0</span></code> if running in Docker). By default, the metrics endpoint will be available at <code class="docutils literal notranslate"><span class="pre">http://&lt;sglang_server_host&gt;:30000/metrics</span></code>.</p>
+</li>
+<li><p><strong>Navigate to the monitoring example directory:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples/monitoring
 </pre></div>
 </div>
-<p>Then you can access the Grafana dashboard at http://localhost:3000.</p>
-<section id="grafana-dashboard">
-<h3>Grafana Dashboard<a class="headerlink" href="#grafana-dashboard" title="Link to this heading">#</a></h3>
-<p>In a new Grafana setup, ensure that you have the <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code> data source enabled. To check that, go to <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/connections/datasources</span></code> and ensure that <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code> is enabled.</p>
-<p>If not, click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">data</span> <span class="pre">source</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>, set Prometheus URL to <code class="docutils literal notranslate"><span class="pre">http://localhost:9090</span></code>, and click <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Test</span></code>.</p>
-<p>To import the Grafana dashboard, click <code class="docutils literal notranslate"><span class="pre">+</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Import</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">JSON</span> <span class="pre">file</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Upload</span></code> and select <a class="reference internal" href="#../examples/monitoring/grafana/dashboards/json/sglang-dashboard.json"><span class="xref myst">grafana.json</span></a>.</p>
+</li>
+<li><p><strong>Start the monitoring stack:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>This command will start Prometheus and Grafana in the background.</p>
+</li>
+<li><p><strong>Access the monitoring interfaces:</strong></p>
+<ul class="simple">
+<li><p><strong>Grafana:</strong> Open your web browser and go to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a>.</p></li>
+<li><p><strong>Prometheus:</strong> Open your web browser and go to <a class="reference external" href="http://localhost:9090">http://localhost:9090</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Log in to Grafana:</strong></p>
+<ul class="simple">
+<li><p>Default Username: <code class="docutils literal notranslate"><span class="pre">admin</span></code></p></li>
+<li><p>Default Password: <code class="docutils literal notranslate"><span class="pre">admin</span></code>
+You will be prompted to change the password upon your first login.</p></li>
+</ul>
+</li>
+<li><p><strong>View the Dashboard:</strong>
+The SGLang dashboard is pre-configured and should be available automatically. Navigate to <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Browse</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">SGLang</span> <span class="pre">Monitoring</span></code> folder -&gt; <code class="docutils literal notranslate"><span class="pre">SGLang</span> <span class="pre">Dashboard</span></code>.</p></li>
+</ol>
 </section>
 <section id="troubleshooting">
 <h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
-<section id="check-if-the-variables-are-created">
-<h4>Check if the variables are created<a class="headerlink" href="#check-if-the-variables-are-created" title="Link to this heading">#</a></h4>
-<p>The example dashboard assume you have the following variables avaliable:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">model_name</span></code> (name: <code class="docutils literal notranslate"><span class="pre">model_name</span></code>, label: <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">name</span></code>, Data source: <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>, Type: <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">values</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> (name: <code class="docutils literal notranslate"><span class="pre">instance</span></code>, label: <code class="docutils literal notranslate"><span class="pre">instance</span></code>, Data source: <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>, Type: <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">values</span></code>)</p></li>
+<li><p><strong>Port Conflicts:</strong> If you encounter errors like “port is already allocated,” check if other services (including previous instances of Prometheus/Grafana) are using ports <code class="docutils literal notranslate"><span class="pre">9090</span></code> or <code class="docutils literal notranslate"><span class="pre">3000</span></code>. Use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> to find running containers and <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">&lt;container_id&gt;</span></code> to stop them, or use <code class="docutils literal notranslate"><span class="pre">lsof</span> <span class="pre">-i</span> <span class="pre">:&lt;port&gt;</span></code> to find other processes using the ports. You might need to adjust the ports in the <code class="docutils literal notranslate"><span class="pre">docker-compose.yaml</span></code> file if they permanently conflict with other essential services on your system.</p></li>
 </ul>
-<p>If you don’t have these variables, you can create them manually.</p>
-<p>To create a variable, go to dashboard settings, <code class="docutils literal notranslate"><span class="pre">Variables</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">variable</span></code>.</p>
-<p>You should be able to see the preview the values (e.g. <code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-3.1-8B-Instruct</span></code> for <code class="docutils literal notranslate"><span class="pre">model_name</span></code>).</p>
+<p>To modify Grafana’s port to the other one(like 3090) in your Docker Compose file, you need to explicitly specify the port mapping under the grafana service.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Option 1: Add GF_SERVER_HTTP_PORT to the environment section:
+```
+  environment:
+- GF_AUTH_ANONYMOUS_ENABLED=true
+- GF_SERVER_HTTP_PORT=3090  # &lt;-- Add this line
+```
+Option 2: Use port mapping:
+```
+grafana:
+  image: grafana/grafana:latest
+  container_name: grafana
+  ports:
+  - &quot;3090:3000&quot;  # &lt;-- Host:Container port mapping
+```
+</pre></div>
+</div>
+<ul>
+<li><p><strong>Connection Issues:</strong></p>
+<ul class="simple">
+<li><p>Ensure both Prometheus and Grafana containers are running (<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>).</p></li>
+<li><p>Verify the Prometheus data source configuration in Grafana (usually auto-configured via <code class="docutils literal notranslate"><span class="pre">grafana/datasources/datasource.yaml</span></code>). Go to <code class="docutils literal notranslate"><span class="pre">Connections</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">sources</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Prometheus</span></code>. The URL should point to the Prometheus service (e.g., <code class="docutils literal notranslate"><span class="pre">http://prometheus:9090</span></code>).</p></li>
+<li><p>Confirm that your SGLang server is running and the metrics endpoint (<code class="docutils literal notranslate"><span class="pre">http://&lt;sglang_server_host&gt;:30000/metrics</span></code>) is accessible <em>from the Prometheus container</em>. If SGLang is running on your host machine and Prometheus is in Docker, use <code class="docutils literal notranslate"><span class="pre">host.docker.internal</span></code> (on Docker Desktop) or your machine’s network IP instead of <code class="docutils literal notranslate"><span class="pre">localhost</span></code> in the <code class="docutils literal notranslate"><span class="pre">prometheus.yaml</span></code> scrape configuration.</p></li>
+</ul>
+</li>
+<li><p><strong>No Data on Dashboard:</strong></p>
+<ul>
+<li><p>Generate some traffic to your SGLang server to produce metrics. For example, run a benchmark:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">100</span><span class="w"> </span>--random-input<span class="w"> </span><span class="m">128</span><span class="w"> </span>--random-output<span class="w"> </span><span class="m">128</span>
+</pre></div>
+</div>
+</li>
+<li><p>Check the Prometheus UI (<code class="docutils literal notranslate"><span class="pre">http://localhost:9090</span></code>) under <code class="docutils literal notranslate"><span class="pre">Status</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Targets</span></code> to see if the SGLang endpoint is being scraped successfully.</p></li>
+<li><p>Verify the <code class="docutils literal notranslate"><span class="pre">model_name</span></code> and <code class="docutils literal notranslate"><span class="pre">instance</span></code> labels in your Prometheus metrics match the variables used in the Grafana dashboard. You might need to adjust the Grafana dashboard variables or the labels in your Prometheus configuration.</p></li>
+</ul>
+</li>
+</ul>
 </section>
+<section id="configuration-files">
+<h3>Configuration Files<a class="headerlink" href="#configuration-files" title="Link to this heading">#</a></h3>
+<p>The monitoring setup is defined by the following files within the <code class="docutils literal notranslate"><span class="pre">examples/monitoring</span></code> directory:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker-compose.yaml</span></code>: Defines the Prometheus and Grafana services.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prometheus.yaml</span></code>: Prometheus configuration, including scrape targets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grafana/datasources/datasource.yaml</span></code>: Configures the Prometheus data source for Grafana.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grafana/dashboards/config/dashboard.yaml</span></code>: Tells Grafana to load dashboards from the specified path.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grafana/dashboards/json/sglang-dashboard.json</span></code>: The actual Grafana dashboard definition in JSON format.</p></li>
+</ul>
+<p>You can customize the setup by modifying these files. For instance, you might need to update the <code class="docutils literal notranslate"><span class="pre">static_configs</span></code> target in <code class="docutils literal notranslate"><span class="pre">prometheus.yaml</span></code> if your SGLang server runs on a different host or port.</p>
 <section id="check-if-the-metrics-are-being-collected">
 <h4>Check if the metrics are being collected<a class="headerlink" href="#check-if-the-metrics-are-being-collected" title="Link to this heading">#</a></h4>
 <p>Run <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.bench_serving</span> <span class="pre">--backend</span> <span class="pre">sglang</span> <span class="pre">--dataset-name</span> <span class="pre">random</span> <span class="pre">--num-prompts</span> <span class="pre">3000</span> <span class="pre">--random-input</span> <span class="pre">1024</span> <span class="pre">--random-output</span> <span class="pre">1024</span> <span class="pre">--random-range-ratio</span> <span class="pre">0.5</span></code> to generate some requests.</p>
@@ -682,9 +752,10 @@ sglang:num_queue_reqs{model_name=&quot;meta-llama/Llama-3.1-8B-Instruct&quot;} 2
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-guide">Setup Guide</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafana-dashboard">Grafana Dashboard</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-variables-are-created">Check if the variables are created</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-files">Configuration Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-metrics-are-being-collected">Check if the metrics are being collected</a></li>
 </ul>
 </li>
