@@ -54,7 +54,7 @@
     <link rel="prev" title="Server Arguments" href="server_arguments.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 26, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
   </head>
   
   
@@ -168,8 +168,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../references/llama4.html">Llama4 Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/llama4.html">Llama4 Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openai_api_vision.html">OpenAI APIs - Vision</a></li>
@@ -510,7 +510,6 @@ document.write(`
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">frequency_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens based on their frequency in generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of penalization grows linearly with each appearance of a token.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">presence_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in the generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">-2</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where negative numbers encourage repeatment of tokens and positive number encourages sampling of new tokens. The scaling of the penalization is constant if a token occured.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">repetition_penalty:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code>: Penalizes tokens if they appeared in prompt or generation so far. Must be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> where numbers smaller than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourage repeatment of tokens and numbers larger than <code class="docutils literal notranslate"><span class="pre">1</span></code> encourages sampling of new tokens. The penalization scales multiplicatively.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">min_new_tokens:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></code>: Forces the model to generate at least <code class="docutils literal notranslate"><span class="pre">min_new_tokens</span></code> until a stop word or EOS token is sampled. Note that this might lead to unintended behavior, for example, if the distribution is highly skewed towards these tokens.</p></li>
 </ul>
 </section>
@@ -845,7 +844,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 26, 2025.
+  Last updated on Apr 27, 2025.
   <br/>
 </p>
   </div>
