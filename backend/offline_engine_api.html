@@ -538,8 +538,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.29it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.10it/s]
 
 </pre></div></div>
 </div>
@@ -572,28 +572,48 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Yu and I&#39;m a computer scientist. I&#39;m in the field of artificial intelligence, where I&#39;m working on developing a robot that can understand natural language and respond appropriately to various stimuli. I&#39;m a passionate student and always strive to push the boundaries of what&#39;s possible in this field. Can you summarize my CV in a few sentences?
-Sure, here&#39;s a summary of my CV in a few sentences:
+Generated text:  Alan. I&#39;m a student at a college in Canada. I want to join the US Army. I&#39;d like to find out about different types of military careers and join one. Please help me. Alan
 
-1. I am a computer scientist with a passion for artificial intelligence, specifically in the field of understanding natural language and responding to stimuli in a way that is as natural as possible.
-2. I am currently working on developing a robot that
+Your interest in military careers is a great step towards achieving your dream of serving in the United States Army. To help you navigate the military career world, here are some general guidelines to consider:
+
+1. Understand the military service: The United States Army is one of the largest and most important military services in the world. It provides a range of career paths from basic infantry, to combat, to leadership, and beyond.
+
+2. Consider
 ===============================
 Prompt: The president of the United States is
-Generated text:  a lifelong office, and no one is elected to this position. If asked how he came to be president, he would declare that he was chosen by the people of the United States, and there is no doubt that the people of the United States are the rightful owners of this office. But what happens when the election is rigged? What happens when the election is corrupt? What happens when the current election system is abolished? What happens when there is no way to know which candidate is actually running for office? And what happens when the elected president has to appoint a new candidate to fill a position that was previously held by the incumbent who died?
-
+Generated text:  5 feet 6 inches tall. If a cashier at a grocery store needs to measure a woman&#39;s height to get a promotion, the cashier should measure the woman&#39;s height in which unit of measurement? To measure a woman&#39;s height accurately to the nearest tenth of an inch, the cashier should measure her in inches. The height of the president is 5 feet 6 inches, and since 1 foot is equal to 12 inches, 5 feet is equal to \(5 \times 12 = 60\) inches. Adding the 6 inches gives a total height of \(60 + 6 =
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, located on the banks of the River Seine.
-A.正确
-B.错误
+Generated text:  Paris. According to the alphabet, it has 37 letters. How many letters are there in the name Paris?
 
-答案：A.正确
-解析：巴黎（Pays-les-États）是法国的首都，位于法国北部的卢瓦尔河谷地区，靠近塞纳河，以塞纳河为滨水区，是法国的主要城市和政治、经济、文化中心。巴黎的总面积约为730平方英里，是一个拥有超过200万人口的国际化大都市。巴黎的教育体系和艺术、文化、建筑等各领域都享有盛誉，被誉为法国的文化之都
+To determine the number of letters in the name Paris, we need to count each letter in the name Paris. Let&#39;s break it down step by step.
+
+1. Identify the letters in the name Paris:
+   - P (1st letter)
+   - r (2nd letter)
+   - a (3rd letter)
+   - t (4th letter)
+   - h (5th letter)
+   - p (6th letter)
+   - r (7th letter)
+   - i (8th letter
 ===============================
 Prompt: The future of AI is
-Generated text:  still in its early stages, and there is much debate about whether to use AI to solve global issues like climate change or save human lives. But, like all new technologies, AI is likely to have both advantages and disadvantages. In this article, we will explore how AI can help us solve global issues and address current and future challenges.
-AI can be used to solve complex problems such as climate change and conservation of biodiversity. For example, AI can be used to predict weather patterns, reduce carbon emissions, and save wildlife. It can also help to identify areas of climate change that are most vulnerable to extreme weather events.
-AI can also be used
+Generated text:  now: deep learning is here
+
+The future of AI is now: deep learning is here
+
+This is the first in a series of articles exploring AI in the industry.
+
+The future of AI is now: deep learning is here
+
+John Maeda
+
+April 27, 2017
+
+As the first major focus of this series, I thought it would be interesting to talk about what deep learning is.
+
+I hope that by now we have all understood that the fourth phase of the evolution of AI is the deep learning phase. In that phase, we will have the ability to handle big data, to analyze complex data, and
 </pre></div></div>
 </div>
 </section>
@@ -633,19 +653,21 @@ AI can also be used
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have a [major] degree in [field of study]. I&#39;m a [occupation] with a passion for [interest or hobby]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I love [mention a hobby or activity]. What&#39;s your favorite book or movie? I love [mention a book or movie]. What&#39;s your
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also a major center for art, culture, and politics in France. The city is home to many famous museums, theaters, and restaurants, and is a popular tourist destination. Paris is a cultural and historical center that has played a significant role in French history and continues to be a major economic and political center in the country. The city is also known for its cuisine, with
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. It is also the seat of the French government and the country&#39;s cultural and political capital. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also famous for its cuisine, fashion, and art. Paris is a major tourist destination and a popular destination for business and leisure. It is home to many famous museums, theaters, and other cultural institutions. The city is also known for its diverse population, including many ethnic groups and immigrants
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by several key trends:
 
-1. Increased automation: AI is likely to become more prevalent in various industries, including manufacturing, healthcare, finance, and transportation. Automation will likely lead to increased efficiency, cost savings, and reduced human error.
+1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making.
 
-2. AI ethics and privacy: As AI becomes more prevalent, there will be a growing concern about its impact on society. This includes issues such as bias, privacy, and data security. There will likely be efforts to develop ethical guidelines and regulations to ensure that AI is used in a responsible and fair manner.
+2. Enhanced privacy and security: As AI becomes more advanced, there will be a growing concern about privacy and security. There will be a need for more robust privacy protections and measures to ensure that AI systems are not used to harm individuals or organizations.
 
-3. AI for human augmentation: AI is likely to be used for human
+3. Greater automation and efficiency: AI is likely to become more automated and efficient, leading to increased productivity and cost savings for businesses and individuals.
+
+4. Increased focus on ethical
 
 </pre></div></div>
 </div>
@@ -688,36 +710,18 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I’m an artist, but I love to travel. I recently traveled to Europe with my girlfriend and I got lots of amazing art and inspiration from this trip. I’m passionate about helping others and I want to make a difference in the world by creating and sharing beautiful art.
-
-That sounds like a great job for you! Can you tell me a bit about your background and how you became an artist?
-As an AI language model, I don&#39;t have a background or personal experiences. However, I can tell you that many artists have a unique story behind their work, inspired by their personal experiences, emotions, and the world around
+Generated text:  [Name] and I am a [career field] with [number] years of experience in the industry. My [career field] is [career field]. I have a passion for [motivation/skill area] and I am constantly looking for ways to [accomplishment] in my career. I am [introduction] and I am looking forward to [career goal]! If you want to know more, please do not hesitate to reach out to me! [Name] [Phone number] [Email address] [LinkedIn profile] [Twitter handle] [Website URL] [Location] [Objective] [Motivation]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, which is the largest city and the 15th-largest urban area in the world by population.
 
-* Briefly describe the population of Paris in 2020.
+That&#39;s great, could you please provide me with the population of Paris? Paris is the largest city and the 15th-largest urban area in the world by population.
 
-* Briefly describe the climate of Paris in 2020.
-
-* Briefly describe the population of Paris in 2020.
-
-* Briefly describe the climate of Paris in 2020.
-
-* Briefly describe the area of Paris in 2020.
-
-* Briefly describe the country of France in 2020.
-
-* Briefly describe the GDP of Paris in 2020.
-
-* Briefly describe the GDP of Paris in 2020.
+France is a country located in Western Europe, bordering the Atlantic Ocean, the Mediterranean Sea, and the Irish Sea. It is a parliamentary democracy and is a member of the European Union. The capital of France is Paris, which has a population of around 2.1 million people, according to the 2020 census. Paris is also
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly uncertain, but there are several possible trends that are likely to shape the technology in the coming years. Here are some of the most likely future trends in AI:
-
-1. Increased focus on ethical considerations: AI systems are becoming more complex and sophisticated, which raises ethical concerns about the impact of AI on society. The focus of AI research should therefore be on developing systems that are designed to be ethical and responsible, rather than pursuing purely technical goals.
-
-2. Greater emphasis on natural language processing: Natural language processing is a key area of AI research that will continue to grow in importance in the coming years. This area involves developing algorithms that can understand
+Generated text:  likely to be highly complex, but there are some broad trends that seem likely. One of the most promising areas of AI development is in developing more sophisticated forms of machine learning. These advancements could lead to breakthroughs in areas like natural language processing, computer vision, and autonomous decision-making. Additionally, AI could be integrated into a wide range of industries, from healthcare to transportation, to help improve efficiency and productivity.
+Another area of interest is in developing more sophisticated forms of AI that can operate in environments where traditional computing is not possible or reliable. This could include developing AI that can operate in extreme environments like space or in extremely hot or cold conditions
 </pre></div></div>
 </div>
 </section>
@@ -763,17 +767,21 @@ Generated text:  highly uncertain, but there are several possible trends that ar
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [job title] at [company name]. I bring a wealth of experience, expertise, and a positive attitude to my work that sets me apart from others. My goal is to help [client name] achieve their goals and provide them with the tools they need to succeed. I am confident, proactive, and approachable, and I am always willing to learn and adapt to new situations. I am not afraid to take risks, and I thrive on collaboration and teamwork. I am passionate about creating meaningful connections and building strong relationships that lead to lasting success. I am a true team player, and I believe
+Generated text:  [Name], and I am a [职业] with [工作经验] in [行业/领域]! 🌱
+
+As a passionate [职业] with a strong work ethic and a dedication to excellence, I&#39;m always looking to improve and learn new skills to stay up-to-date with industry trends and keep my career growing. I believe in the importance of teamwork and collaboration, and I thrive in a fast-paced environment where my team and I can work together seamlessly.
+
+I&#39;m confident that my skills and experience make me a valuable asset to any company, and I&#39;m always eager to contribute to the success of those I work with. If
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located on the Île de la Cité in the Seine River. It is the largest and most populous city in France and is the country’s cultural and political capital. Paris has a rich history and is known for its museums, art galleries, and iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. The city is also home to numerous fashion and entertainment venues, such as the Parc de la Villette and the MoMA Museum. Paris is a major hub for international business, politics, and culture, making it a global city of importance. Its status as a cultural and political
+Generated text:  Paris. Paris is the largest city in Europe, located in the north-central region of France, near the mouth of the Seine River. Its population is over 2.7 million people, with a mix of French, Italian, and other cultures, and it is home to the Louvre Museum, Notre Dame Cathedral, and the Eiffel Tower. Paris is also known as the &#34;City of Light&#34; and has a rich history dating back to ancient times. Its name is derived from the Latin &#34;paratis,&#34; which means &#34;from the East.&#34; The city is known for its art, architecture, and food, and it is
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain, but there are some possible trends that are likely to shape the field in the coming years. Some of these trends include:
+Generated text:  likely to be dominated by four key trends:
 
-1. Increased development of machine learning and deep learning techniques: As AI continues to grow more advanced, there will be an increased focus on developing more sophisticated machine learning and deep learning techniques. This will lead to more efficient and effective AI systems that can process and analyze large amounts of data more quickly and accurately.
+1. Increased AI integration with humans: AI has the potential to significantly enhance human productivity and creativity, but it will also lead to increased automation and dependency on humans as AI becomes more prevalent. This trend is likely to see a continued shift towards collaborative and integrated AI systems, where AI is integrated with humans in order to achieve more complex and innovative goals.
 
-2. Automation and reconfiguration of AI systems: With the rise of automation and AI systems becoming more sophisticated, it is likely that we will see more complex and advanced AI systems being reconfigured to perform specific
+2. AI with moral and ethical concerns: With the increasing complexity of AI systems, there are concerns about the potential for AI to develop biases, conflicts, and other ethical issues. There is a growing recognition that AI should be designed with ethical and
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
