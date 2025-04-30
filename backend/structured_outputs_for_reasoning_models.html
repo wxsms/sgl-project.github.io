@@ -57,7 +57,7 @@
     <link rel="prev" title="Reasoning Parser" href="separate_reasoning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 29, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 30, 2025"/>
   </head>
   
   
@@ -535,31 +535,31 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:46:10] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=32368, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=695202743, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None)
-[2025-04-29 23:46:20 TP0] Attention backend not set. Use fa3 backend by default.
-[2025-04-29 23:46:20 TP0] Init torch distributed begin.
-[2025-04-29 23:46:20 TP0] Init torch distributed ends. mem usage=0.03 GB
-[2025-04-29 23:46:20 TP0] Load weight begin. avail mem=35.08 GB
-[2025-04-29 23:46:21 TP0] Ignore import error when loading sglang.srt.models.llama4.
-[2025-04-29 23:46:21 TP0] Using model weights format [&#39;*.safetensors&#39;]
+[2025-04-30 00:08:19] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=34585, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, stream_interval=1, stream_output=False, random_seed=238206687, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None)
+[2025-04-30 00:08:33 TP0] Attention backend not set. Use fa3 backend by default.
+[2025-04-30 00:08:33 TP0] Init torch distributed begin.
+[2025-04-30 00:08:34 TP0] Init torch distributed ends. mem usage=0.00 GB
+[2025-04-30 00:08:34 TP0] Load weight begin. avail mem=76.42 GB
+[2025-04-30 00:08:34 TP0] Ignore import error when loading sglang.srt.models.llama4.
+[2025-04-30 00:08:35 TP0] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.41s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.43s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.43s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:11&lt;00:11, 11.91s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:27&lt;00:00, 14.08s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:27&lt;00:00, 13.75s/it]
 
-[2025-04-29 23:46:24 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=39.30 GB, mem usage=-4.21 GB.
-[2025-04-29 23:46:24 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-04-29 23:46:24 TP0] Memory pool end. avail mem=37.93 GB
-[2025-04-29 23:46:25 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-04-29 23:46:26] INFO:     Started server process [3384904]
-[2025-04-29 23:46:26] INFO:     Waiting for application startup.
-[2025-04-29 23:46:26] INFO:     Application startup complete.
-[2025-04-29 23:46:26] INFO:     Uvicorn running on http://0.0.0.0:32368 (Press CTRL+C to quit)
-[2025-04-29 23:46:26] INFO:     127.0.0.1:42928 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-04-29 23:46:27] INFO:     127.0.0.1:44350 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-04-29 23:46:27 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:46:29] INFO:     127.0.0.1:44356 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-04-29 23:46:29] The server is fired up and ready to roll!
+[2025-04-30 00:09:03 TP0] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=46.99 GB, mem usage=29.43 GB.
+[2025-04-30 00:09:03 TP0] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-04-30 00:09:03 TP0] Memory pool end. avail mem=45.62 GB
+[2025-04-30 00:09:03 TP0] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-04-30 00:09:04] INFO:     Started server process [308045]
+[2025-04-30 00:09:04] INFO:     Waiting for application startup.
+[2025-04-30 00:09:04] INFO:     Application startup complete.
+[2025-04-30 00:09:04] INFO:     Uvicorn running on http://0.0.0.0:34585 (Press CTRL+C to quit)
+[2025-04-30 00:09:05] INFO:     127.0.0.1:56234 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-04-30 00:09:05] INFO:     127.0.0.1:56242 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-04-30 00:09:05 TP0] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:09:09] INFO:     127.0.0.1:56246 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-30 00:09:09] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -616,59 +616,59 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:46:32 TP0] Prefill batch. #new-seq: 1, #new-token: 18, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:46:33 TP0] Decode batch. #running-req: 1, #token: 52, token usage: 0.00, gen throughput (token/s): 5.18, #queue-req: 0
-[2025-04-29 23:46:33 TP0] Decode batch. #running-req: 1, #token: 92, token usage: 0.00, gen throughput (token/s): 100.15, #queue-req: 0
-[2025-04-29 23:46:34 TP0] Decode batch. #running-req: 1, #token: 132, token usage: 0.01, gen throughput (token/s): 101.24, #queue-req: 0
-[2025-04-29 23:46:34 TP0] Decode batch. #running-req: 1, #token: 172, token usage: 0.01, gen throughput (token/s): 88.62, #queue-req: 0
-[2025-04-29 23:46:34 TP0] Decode batch. #running-req: 1, #token: 212, token usage: 0.01, gen throughput (token/s): 100.83, #queue-req: 0
-[2025-04-29 23:46:35 TP0] Decode batch. #running-req: 1, #token: 252, token usage: 0.01, gen throughput (token/s): 100.79, #queue-req: 0
-[2025-04-29 23:46:35 TP0] Decode batch. #running-req: 1, #token: 292, token usage: 0.01, gen throughput (token/s): 100.63, #queue-req: 0
-[2025-04-29 23:46:36 TP0] Decode batch. #running-req: 1, #token: 332, token usage: 0.02, gen throughput (token/s): 100.47, #queue-req: 0
-[2025-04-29 23:46:36 TP0] Decode batch. #running-req: 1, #token: 372, token usage: 0.02, gen throughput (token/s): 92.92, #queue-req: 0
-[2025-04-29 23:46:36 TP0] Decode batch. #running-req: 1, #token: 412, token usage: 0.02, gen throughput (token/s): 100.23, #queue-req: 0
-[2025-04-29 23:46:37 TP0] Decode batch. #running-req: 1, #token: 452, token usage: 0.02, gen throughput (token/s): 100.50, #queue-req: 0
-[2025-04-29 23:46:37 TP0] Decode batch. #running-req: 1, #token: 492, token usage: 0.02, gen throughput (token/s): 99.47, #queue-req: 0
-[2025-04-29 23:46:38 TP0] Decode batch. #running-req: 1, #token: 532, token usage: 0.03, gen throughput (token/s): 88.34, #queue-req: 0
-[2025-04-29 23:46:38 TP0] Decode batch. #running-req: 1, #token: 572, token usage: 0.03, gen throughput (token/s): 97.96, #queue-req: 0
-[2025-04-29 23:46:38 TP0] Decode batch. #running-req: 1, #token: 612, token usage: 0.03, gen throughput (token/s): 97.59, #queue-req: 0
-[2025-04-29 23:46:39 TP0] Decode batch. #running-req: 1, #token: 652, token usage: 0.03, gen throughput (token/s): 100.15, #queue-req: 0
-[2025-04-29 23:46:39 TP0] Decode batch. #running-req: 1, #token: 692, token usage: 0.03, gen throughput (token/s): 91.41, #queue-req: 0
-[2025-04-29 23:46:40 TP0] Decode batch. #running-req: 1, #token: 732, token usage: 0.04, gen throughput (token/s): 99.13, #queue-req: 0
-[2025-04-29 23:46:40 TP0] Decode batch. #running-req: 1, #token: 772, token usage: 0.04, gen throughput (token/s): 97.17, #queue-req: 0
-[2025-04-29 23:46:41 TP0] Decode batch. #running-req: 1, #token: 812, token usage: 0.04, gen throughput (token/s): 98.12, #queue-req: 0
-[2025-04-29 23:46:41 TP0] Decode batch. #running-req: 1, #token: 852, token usage: 0.04, gen throughput (token/s): 91.64, #queue-req: 0
-[2025-04-29 23:46:41 TP0] Decode batch. #running-req: 1, #token: 892, token usage: 0.04, gen throughput (token/s): 98.16, #queue-req: 0
-[2025-04-29 23:46:42 TP0] Decode batch. #running-req: 1, #token: 932, token usage: 0.05, gen throughput (token/s): 98.25, #queue-req: 0
-[2025-04-29 23:46:42 TP0] Decode batch. #running-req: 1, #token: 972, token usage: 0.05, gen throughput (token/s): 90.86, #queue-req: 0
-[2025-04-29 23:46:43 TP0] Decode batch. #running-req: 1, #token: 1012, token usage: 0.05, gen throughput (token/s): 98.16, #queue-req: 0
-[2025-04-29 23:46:43 TP0] Decode batch. #running-req: 1, #token: 1052, token usage: 0.05, gen throughput (token/s): 99.06, #queue-req: 0
-[2025-04-29 23:46:43 TP0] Decode batch. #running-req: 1, #token: 1092, token usage: 0.05, gen throughput (token/s): 99.30, #queue-req: 0
-[2025-04-29 23:46:44 TP0] Decode batch. #running-req: 1, #token: 1132, token usage: 0.06, gen throughput (token/s): 92.82, #queue-req: 0
-[2025-04-29 23:46:44 TP0] Decode batch. #running-req: 1, #token: 1172, token usage: 0.06, gen throughput (token/s): 98.55, #queue-req: 0
-[2025-04-29 23:46:45 TP0] Decode batch. #running-req: 1, #token: 1212, token usage: 0.06, gen throughput (token/s): 90.62, #queue-req: 0
-[2025-04-29 23:46:45 TP0] Decode batch. #running-req: 1, #token: 1252, token usage: 0.06, gen throughput (token/s): 98.27, #queue-req: 0
-[2025-04-29 23:46:46 TP0] Decode batch. #running-req: 1, #token: 1292, token usage: 0.06, gen throughput (token/s): 87.16, #queue-req: 0
-[2025-04-29 23:46:46 TP0] Decode batch. #running-req: 1, #token: 1332, token usage: 0.07, gen throughput (token/s): 95.98, #queue-req: 0
-[2025-04-29 23:46:46 TP0] Decode batch. #running-req: 1, #token: 1372, token usage: 0.07, gen throughput (token/s): 98.70, #queue-req: 0
-[2025-04-29 23:46:47 TP0] Decode batch. #running-req: 1, #token: 1412, token usage: 0.07, gen throughput (token/s): 95.94, #queue-req: 0
-[2025-04-29 23:46:47 TP0] Decode batch. #running-req: 1, #token: 1452, token usage: 0.07, gen throughput (token/s): 98.97, #queue-req: 0
-[2025-04-29 23:46:48 TP0] Decode batch. #running-req: 1, #token: 1492, token usage: 0.07, gen throughput (token/s): 91.37, #queue-req: 0
-[2025-04-29 23:46:48 TP0] Decode batch. #running-req: 1, #token: 1532, token usage: 0.07, gen throughput (token/s): 98.99, #queue-req: 0
-[2025-04-29 23:46:48 TP0] Decode batch. #running-req: 1, #token: 1572, token usage: 0.08, gen throughput (token/s): 99.36, #queue-req: 0
-[2025-04-29 23:46:49 TP0] Decode batch. #running-req: 1, #token: 1612, token usage: 0.08, gen throughput (token/s): 99.17, #queue-req: 0
-[2025-04-29 23:46:49 TP0] Decode batch. #running-req: 1, #token: 1652, token usage: 0.08, gen throughput (token/s): 91.78, #queue-req: 0
-[2025-04-29 23:46:50 TP0] Decode batch. #running-req: 1, #token: 1692, token usage: 0.08, gen throughput (token/s): 98.83, #queue-req: 0
-[2025-04-29 23:46:50 TP0] Decode batch. #running-req: 1, #token: 1732, token usage: 0.08, gen throughput (token/s): 97.52, #queue-req: 0
-[2025-04-29 23:46:51 TP0] Decode batch. #running-req: 1, #token: 1772, token usage: 0.09, gen throughput (token/s): 98.75, #queue-req: 0
-[2025-04-29 23:46:51 TP0] Decode batch. #running-req: 1, #token: 1812, token usage: 0.09, gen throughput (token/s): 91.60, #queue-req: 0
-[2025-04-29 23:46:51 TP0] Decode batch. #running-req: 1, #token: 1852, token usage: 0.09, gen throughput (token/s): 96.57, #queue-req: 0
-[2025-04-29 23:46:52 TP0] Decode batch. #running-req: 1, #token: 1892, token usage: 0.09, gen throughput (token/s): 98.46, #queue-req: 0
-[2025-04-29 23:46:52 TP0] Decode batch. #running-req: 1, #token: 1932, token usage: 0.09, gen throughput (token/s): 90.36, #queue-req: 0
-[2025-04-29 23:46:53 TP0] Decode batch. #running-req: 1, #token: 1972, token usage: 0.10, gen throughput (token/s): 98.49, #queue-req: 0
-[2025-04-29 23:46:53 TP0] Decode batch. #running-req: 1, #token: 2012, token usage: 0.10, gen throughput (token/s): 98.77, #queue-req: 0
-[2025-04-29 23:46:53 TP0] Decode batch. #running-req: 1, #token: 2052, token usage: 0.10, gen throughput (token/s): 99.06, #queue-req: 0
-[2025-04-29 23:46:54] INFO:     127.0.0.1:44358 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-30 00:09:10 TP0] Prefill batch. #new-seq: 1, #new-token: 18, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:09:11 TP0] Decode batch. #running-req: 1, #token: 52, token usage: 0.00, gen throughput (token/s): 4.92, #queue-req: 0
+[2025-04-30 00:09:12 TP0] Decode batch. #running-req: 1, #token: 92, token usage: 0.00, gen throughput (token/s): 56.01, #queue-req: 0
+[2025-04-30 00:09:13 TP0] Decode batch. #running-req: 1, #token: 132, token usage: 0.01, gen throughput (token/s): 56.42, #queue-req: 0
+[2025-04-30 00:09:14 TP0] Decode batch. #running-req: 1, #token: 172, token usage: 0.01, gen throughput (token/s): 56.17, #queue-req: 0
+[2025-04-30 00:09:14 TP0] Decode batch. #running-req: 1, #token: 212, token usage: 0.01, gen throughput (token/s): 52.83, #queue-req: 0
+[2025-04-30 00:09:15 TP0] Decode batch. #running-req: 1, #token: 252, token usage: 0.01, gen throughput (token/s): 52.59, #queue-req: 0
+[2025-04-30 00:09:16 TP0] Decode batch. #running-req: 1, #token: 292, token usage: 0.01, gen throughput (token/s): 52.45, #queue-req: 0
+[2025-04-30 00:09:17 TP0] Decode batch. #running-req: 1, #token: 332, token usage: 0.02, gen throughput (token/s): 55.74, #queue-req: 0
+[2025-04-30 00:09:17 TP0] Decode batch. #running-req: 1, #token: 372, token usage: 0.02, gen throughput (token/s): 55.59, #queue-req: 0
+[2025-04-30 00:09:18 TP0] Decode batch. #running-req: 1, #token: 412, token usage: 0.02, gen throughput (token/s): 55.39, #queue-req: 0
+[2025-04-30 00:09:19 TP0] Decode batch. #running-req: 1, #token: 452, token usage: 0.02, gen throughput (token/s): 55.74, #queue-req: 0
+[2025-04-30 00:09:19 TP0] Decode batch. #running-req: 1, #token: 492, token usage: 0.02, gen throughput (token/s): 56.47, #queue-req: 0
+[2025-04-30 00:09:20 TP0] Decode batch. #running-req: 1, #token: 532, token usage: 0.03, gen throughput (token/s): 55.08, #queue-req: 0
+[2025-04-30 00:09:21 TP0] Decode batch. #running-req: 1, #token: 572, token usage: 0.03, gen throughput (token/s): 55.79, #queue-req: 0
+[2025-04-30 00:09:22 TP0] Decode batch. #running-req: 1, #token: 612, token usage: 0.03, gen throughput (token/s): 55.72, #queue-req: 0
+[2025-04-30 00:09:22 TP0] Decode batch. #running-req: 1, #token: 652, token usage: 0.03, gen throughput (token/s): 55.68, #queue-req: 0
+[2025-04-30 00:09:23 TP0] Decode batch. #running-req: 1, #token: 692, token usage: 0.03, gen throughput (token/s): 54.57, #queue-req: 0
+[2025-04-30 00:09:24 TP0] Decode batch. #running-req: 1, #token: 732, token usage: 0.04, gen throughput (token/s): 54.47, #queue-req: 0
+[2025-04-30 00:09:24 TP0] Decode batch. #running-req: 1, #token: 772, token usage: 0.04, gen throughput (token/s): 55.99, #queue-req: 0
+[2025-04-30 00:09:25 TP0] Decode batch. #running-req: 1, #token: 812, token usage: 0.04, gen throughput (token/s): 56.19, #queue-req: 0
+[2025-04-30 00:09:26 TP0] Decode batch. #running-req: 1, #token: 852, token usage: 0.04, gen throughput (token/s): 55.26, #queue-req: 0
+[2025-04-30 00:09:27 TP0] Decode batch. #running-req: 1, #token: 892, token usage: 0.04, gen throughput (token/s): 55.59, #queue-req: 0
+[2025-04-30 00:09:27 TP0] Decode batch. #running-req: 1, #token: 932, token usage: 0.05, gen throughput (token/s): 56.20, #queue-req: 0
+[2025-04-30 00:09:28 TP0] Decode batch. #running-req: 1, #token: 972, token usage: 0.05, gen throughput (token/s): 56.14, #queue-req: 0
+[2025-04-30 00:09:29 TP0] Decode batch. #running-req: 1, #token: 1012, token usage: 0.05, gen throughput (token/s): 54.21, #queue-req: 0
+[2025-04-30 00:09:30 TP0] Decode batch. #running-req: 1, #token: 1052, token usage: 0.05, gen throughput (token/s): 54.97, #queue-req: 0
+[2025-04-30 00:09:30 TP0] Decode batch. #running-req: 1, #token: 1092, token usage: 0.05, gen throughput (token/s): 55.39, #queue-req: 0
+[2025-04-30 00:09:31 TP0] Decode batch. #running-req: 1, #token: 1132, token usage: 0.06, gen throughput (token/s): 55.20, #queue-req: 0
+[2025-04-30 00:09:32 TP0] Decode batch. #running-req: 1, #token: 1172, token usage: 0.06, gen throughput (token/s): 55.80, #queue-req: 0
+[2025-04-30 00:09:32 TP0] Decode batch. #running-req: 1, #token: 1212, token usage: 0.06, gen throughput (token/s): 56.42, #queue-req: 0
+[2025-04-30 00:09:33 TP0] Decode batch. #running-req: 1, #token: 1252, token usage: 0.06, gen throughput (token/s): 56.95, #queue-req: 0
+[2025-04-30 00:09:34 TP0] Decode batch. #running-req: 1, #token: 1292, token usage: 0.06, gen throughput (token/s): 56.95, #queue-req: 0
+[2025-04-30 00:09:34 TP0] Decode batch. #running-req: 1, #token: 1332, token usage: 0.07, gen throughput (token/s): 56.93, #queue-req: 0
+[2025-04-30 00:09:35 TP0] Decode batch. #running-req: 1, #token: 1372, token usage: 0.07, gen throughput (token/s): 56.98, #queue-req: 0
+[2025-04-30 00:09:36 TP0] Decode batch. #running-req: 1, #token: 1412, token usage: 0.07, gen throughput (token/s): 57.05, #queue-req: 0
+[2025-04-30 00:09:37 TP0] Decode batch. #running-req: 1, #token: 1452, token usage: 0.07, gen throughput (token/s): 53.99, #queue-req: 0
+[2025-04-30 00:09:37 TP0] Decode batch. #running-req: 1, #token: 1492, token usage: 0.07, gen throughput (token/s): 56.59, #queue-req: 0
+[2025-04-30 00:09:38 TP0] Decode batch. #running-req: 1, #token: 1532, token usage: 0.07, gen throughput (token/s): 56.62, #queue-req: 0
+[2025-04-30 00:09:39 TP0] Decode batch. #running-req: 1, #token: 1572, token usage: 0.08, gen throughput (token/s): 56.73, #queue-req: 0
+[2025-04-30 00:09:39 TP0] Decode batch. #running-req: 1, #token: 1612, token usage: 0.08, gen throughput (token/s): 56.71, #queue-req: 0
+[2025-04-30 00:09:40 TP0] Decode batch. #running-req: 1, #token: 1652, token usage: 0.08, gen throughput (token/s): 56.80, #queue-req: 0
+[2025-04-30 00:09:41 TP0] Decode batch. #running-req: 1, #token: 1692, token usage: 0.08, gen throughput (token/s): 56.78, #queue-req: 0
+[2025-04-30 00:09:42 TP0] Decode batch. #running-req: 1, #token: 1732, token usage: 0.08, gen throughput (token/s): 53.20, #queue-req: 0
+[2025-04-30 00:09:42 TP0] Decode batch. #running-req: 1, #token: 1772, token usage: 0.09, gen throughput (token/s): 55.69, #queue-req: 0
+[2025-04-30 00:09:43 TP0] Decode batch. #running-req: 1, #token: 1812, token usage: 0.09, gen throughput (token/s): 54.50, #queue-req: 0
+[2025-04-30 00:09:44 TP0] Decode batch. #running-req: 1, #token: 1852, token usage: 0.09, gen throughput (token/s): 56.89, #queue-req: 0
+[2025-04-30 00:09:44 TP0] Decode batch. #running-req: 1, #token: 1892, token usage: 0.09, gen throughput (token/s): 56.66, #queue-req: 0
+[2025-04-30 00:09:45 TP0] Decode batch. #running-req: 1, #token: 1932, token usage: 0.09, gen throughput (token/s): 56.47, #queue-req: 0
+[2025-04-30 00:09:46 TP0] Decode batch. #running-req: 1, #token: 1972, token usage: 0.10, gen throughput (token/s): 56.73, #queue-req: 0
+[2025-04-30 00:09:47 TP0] Decode batch. #running-req: 1, #token: 2012, token usage: 0.10, gen throughput (token/s): 56.89, #queue-req: 0
+[2025-04-30 00:09:47 TP0] Decode batch. #running-req: 1, #token: 2052, token usage: 0.10, gen throughput (token/s): 57.35, #queue-req: 0
+[2025-04-30 00:09:48] INFO:     127.0.0.1:56256 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -722,59 +722,59 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:46:54 TP0] Prefill batch. #new-seq: 1, #new-token: 17, #cached-token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:46:54 TP0] Decode batch. #running-req: 1, #token: 44, token usage: 0.00, gen throughput (token/s): 67.92, #queue-req: 0
-[2025-04-29 23:46:54 TP0] Decode batch. #running-req: 1, #token: 84, token usage: 0.00, gen throughput (token/s): 102.67, #queue-req: 0
-[2025-04-29 23:46:55 TP0] Decode batch. #running-req: 1, #token: 124, token usage: 0.01, gen throughput (token/s): 90.66, #queue-req: 0
-[2025-04-29 23:46:55 TP0] Decode batch. #running-req: 1, #token: 164, token usage: 0.01, gen throughput (token/s): 100.23, #queue-req: 0
-[2025-04-29 23:46:56 TP0] Decode batch. #running-req: 1, #token: 204, token usage: 0.01, gen throughput (token/s): 90.93, #queue-req: 0
-[2025-04-29 23:46:56 TP0] Decode batch. #running-req: 1, #token: 244, token usage: 0.01, gen throughput (token/s): 101.92, #queue-req: 0
-[2025-04-29 23:46:57 TP0] Decode batch. #running-req: 1, #token: 284, token usage: 0.01, gen throughput (token/s): 101.85, #queue-req: 0
-[2025-04-29 23:46:57 TP0] Decode batch. #running-req: 1, #token: 324, token usage: 0.02, gen throughput (token/s): 101.96, #queue-req: 0
-[2025-04-29 23:46:57 TP0] Decode batch. #running-req: 1, #token: 364, token usage: 0.02, gen throughput (token/s): 101.97, #queue-req: 0
-[2025-04-29 23:46:58 TP0] Decode batch. #running-req: 1, #token: 404, token usage: 0.02, gen throughput (token/s): 101.05, #queue-req: 0
-[2025-04-29 23:46:58 TP0] Decode batch. #running-req: 1, #token: 444, token usage: 0.02, gen throughput (token/s): 93.10, #queue-req: 0
-[2025-04-29 23:46:59 TP0] Decode batch. #running-req: 1, #token: 484, token usage: 0.02, gen throughput (token/s): 100.28, #queue-req: 0
-[2025-04-29 23:46:59 TP0] Decode batch. #running-req: 1, #token: 524, token usage: 0.03, gen throughput (token/s): 98.87, #queue-req: 0
-[2025-04-29 23:46:59 TP0] Decode batch. #running-req: 1, #token: 564, token usage: 0.03, gen throughput (token/s): 101.11, #queue-req: 0
-[2025-04-29 23:47:00 TP0] Decode batch. #running-req: 1, #token: 604, token usage: 0.03, gen throughput (token/s): 100.86, #queue-req: 0
-[2025-04-29 23:47:00 TP0] Decode batch. #running-req: 1, #token: 644, token usage: 0.03, gen throughput (token/s): 92.52, #queue-req: 0
-[2025-04-29 23:47:01 TP0] Decode batch. #running-req: 1, #token: 684, token usage: 0.03, gen throughput (token/s): 100.86, #queue-req: 0
-[2025-04-29 23:47:01 TP0] Decode batch. #running-req: 1, #token: 724, token usage: 0.04, gen throughput (token/s): 101.09, #queue-req: 0
-[2025-04-29 23:47:01 TP0] Decode batch. #running-req: 1, #token: 764, token usage: 0.04, gen throughput (token/s): 100.02, #queue-req: 0
-[2025-04-29 23:47:02 TP0] Decode batch. #running-req: 1, #token: 804, token usage: 0.04, gen throughput (token/s): 92.43, #queue-req: 0
-[2025-04-29 23:47:02 TP0] Decode batch. #running-req: 1, #token: 844, token usage: 0.04, gen throughput (token/s): 99.59, #queue-req: 0
-[2025-04-29 23:47:03 TP0] Decode batch. #running-req: 1, #token: 884, token usage: 0.04, gen throughput (token/s): 95.83, #queue-req: 0
-[2025-04-29 23:47:03 TP0] Decode batch. #running-req: 1, #token: 924, token usage: 0.05, gen throughput (token/s): 88.32, #queue-req: 0
-[2025-04-29 23:47:03 TP0] Decode batch. #running-req: 1, #token: 964, token usage: 0.05, gen throughput (token/s): 93.88, #queue-req: 0
-[2025-04-29 23:47:04 TP0] Decode batch. #running-req: 1, #token: 1004, token usage: 0.05, gen throughput (token/s): 97.18, #queue-req: 0
-[2025-04-29 23:47:04 TP0] Decode batch. #running-req: 1, #token: 1044, token usage: 0.05, gen throughput (token/s): 99.82, #queue-req: 0
-[2025-04-29 23:47:05 TP0] Decode batch. #running-req: 1, #token: 1084, token usage: 0.05, gen throughput (token/s): 69.58, #queue-req: 0
-[2025-04-29 23:47:05 TP0] Decode batch. #running-req: 1, #token: 1124, token usage: 0.05, gen throughput (token/s): 65.38, #queue-req: 0
-[2025-04-29 23:47:06 TP0] Decode batch. #running-req: 1, #token: 1164, token usage: 0.06, gen throughput (token/s): 72.76, #queue-req: 0
-[2025-04-29 23:47:07 TP0] Decode batch. #running-req: 1, #token: 1204, token usage: 0.06, gen throughput (token/s): 69.43, #queue-req: 0
-[2025-04-29 23:47:07 TP0] Decode batch. #running-req: 1, #token: 1244, token usage: 0.06, gen throughput (token/s): 64.91, #queue-req: 0
-[2025-04-29 23:47:08 TP0] Decode batch. #running-req: 1, #token: 1284, token usage: 0.06, gen throughput (token/s): 64.02, #queue-req: 0
-[2025-04-29 23:47:08 TP0] Decode batch. #running-req: 1, #token: 1324, token usage: 0.06, gen throughput (token/s): 63.56, #queue-req: 0
-[2025-04-29 23:47:09 TP0] Decode batch. #running-req: 1, #token: 1364, token usage: 0.07, gen throughput (token/s): 64.50, #queue-req: 0
-[2025-04-29 23:47:10 TP0] Decode batch. #running-req: 1, #token: 1404, token usage: 0.07, gen throughput (token/s): 64.24, #queue-req: 0
-[2025-04-29 23:47:10 TP0] Decode batch. #running-req: 1, #token: 1444, token usage: 0.07, gen throughput (token/s): 63.75, #queue-req: 0
-[2025-04-29 23:47:11 TP0] Decode batch. #running-req: 1, #token: 1484, token usage: 0.07, gen throughput (token/s): 63.36, #queue-req: 0
-[2025-04-29 23:47:12 TP0] Decode batch. #running-req: 1, #token: 1524, token usage: 0.07, gen throughput (token/s): 63.59, #queue-req: 0
-[2025-04-29 23:47:12 TP0] Decode batch. #running-req: 1, #token: 1564, token usage: 0.08, gen throughput (token/s): 64.59, #queue-req: 0
-[2025-04-29 23:47:13 TP0] Decode batch. #running-req: 1, #token: 1604, token usage: 0.08, gen throughput (token/s): 91.61, #queue-req: 0
-[2025-04-29 23:47:13 TP0] Decode batch. #running-req: 1, #token: 1644, token usage: 0.08, gen throughput (token/s): 99.42, #queue-req: 0
-[2025-04-29 23:47:13 TP0] Decode batch. #running-req: 1, #token: 1684, token usage: 0.08, gen throughput (token/s): 99.97, #queue-req: 0
-[2025-04-29 23:47:14 TP0] Decode batch. #running-req: 1, #token: 1724, token usage: 0.08, gen throughput (token/s): 84.30, #queue-req: 0
-[2025-04-29 23:47:14 TP0] Decode batch. #running-req: 1, #token: 1764, token usage: 0.09, gen throughput (token/s): 100.48, #queue-req: 0
-[2025-04-29 23:47:15 TP0] Decode batch. #running-req: 1, #token: 1804, token usage: 0.09, gen throughput (token/s): 66.16, #queue-req: 0
-[2025-04-29 23:47:16 TP0] Decode batch. #running-req: 1, #token: 1844, token usage: 0.09, gen throughput (token/s): 61.72, #queue-req: 0
-[2025-04-29 23:47:16 TP0] Decode batch. #running-req: 1, #token: 1884, token usage: 0.09, gen throughput (token/s): 56.31, #queue-req: 0
-[2025-04-29 23:47:17 TP0] Decode batch. #running-req: 1, #token: 1924, token usage: 0.09, gen throughput (token/s): 67.16, #queue-req: 0
-[2025-04-29 23:47:17 TP0] Decode batch. #running-req: 1, #token: 1964, token usage: 0.10, gen throughput (token/s): 100.38, #queue-req: 0
-[2025-04-29 23:47:18 TP0] Decode batch. #running-req: 1, #token: 2004, token usage: 0.10, gen throughput (token/s): 92.18, #queue-req: 0
-[2025-04-29 23:47:18 TP0] Decode batch. #running-req: 1, #token: 2044, token usage: 0.10, gen throughput (token/s): 100.90, #queue-req: 0
-[2025-04-29 23:47:18] INFO:     127.0.0.1:44358 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-30 00:09:48 TP0] Prefill batch. #new-seq: 1, #new-token: 17, #cached-token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:09:48 TP0] Decode batch. #running-req: 1, #token: 44, token usage: 0.00, gen throughput (token/s): 48.01, #queue-req: 0
+[2025-04-30 00:09:49 TP0] Decode batch. #running-req: 1, #token: 84, token usage: 0.00, gen throughput (token/s): 58.26, #queue-req: 0
+[2025-04-30 00:09:49 TP0] Decode batch. #running-req: 1, #token: 124, token usage: 0.01, gen throughput (token/s): 58.48, #queue-req: 0
+[2025-04-30 00:09:50 TP0] Decode batch. #running-req: 1, #token: 164, token usage: 0.01, gen throughput (token/s): 58.62, #queue-req: 0
+[2025-04-30 00:09:51 TP0] Decode batch. #running-req: 1, #token: 204, token usage: 0.01, gen throughput (token/s): 58.62, #queue-req: 0
+[2025-04-30 00:09:52 TP0] Decode batch. #running-req: 1, #token: 244, token usage: 0.01, gen throughput (token/s): 58.46, #queue-req: 0
+[2025-04-30 00:09:52 TP0] Decode batch. #running-req: 1, #token: 284, token usage: 0.01, gen throughput (token/s): 49.60, #queue-req: 0
+[2025-04-30 00:09:53 TP0] Decode batch. #running-req: 1, #token: 324, token usage: 0.02, gen throughput (token/s): 56.41, #queue-req: 0
+[2025-04-30 00:09:54 TP0] Decode batch. #running-req: 1, #token: 364, token usage: 0.02, gen throughput (token/s): 57.33, #queue-req: 0
+[2025-04-30 00:09:54 TP0] Decode batch. #running-req: 1, #token: 404, token usage: 0.02, gen throughput (token/s): 57.82, #queue-req: 0
+[2025-04-30 00:09:55 TP0] Decode batch. #running-req: 1, #token: 444, token usage: 0.02, gen throughput (token/s): 58.19, #queue-req: 0
+[2025-04-30 00:09:56 TP0] Decode batch. #running-req: 1, #token: 484, token usage: 0.02, gen throughput (token/s): 56.31, #queue-req: 0
+[2025-04-30 00:09:57 TP0] Decode batch. #running-req: 1, #token: 524, token usage: 0.03, gen throughput (token/s): 55.64, #queue-req: 0
+[2025-04-30 00:09:57 TP0] Decode batch. #running-req: 1, #token: 564, token usage: 0.03, gen throughput (token/s): 53.11, #queue-req: 0
+[2025-04-30 00:09:58 TP0] Decode batch. #running-req: 1, #token: 604, token usage: 0.03, gen throughput (token/s): 55.08, #queue-req: 0
+[2025-04-30 00:09:59 TP0] Decode batch. #running-req: 1, #token: 644, token usage: 0.03, gen throughput (token/s): 55.55, #queue-req: 0
+[2025-04-30 00:09:59 TP0] Decode batch. #running-req: 1, #token: 684, token usage: 0.03, gen throughput (token/s): 55.60, #queue-req: 0
+[2025-04-30 00:10:00 TP0] Decode batch. #running-req: 1, #token: 724, token usage: 0.04, gen throughput (token/s): 55.65, #queue-req: 0
+[2025-04-30 00:10:01 TP0] Decode batch. #running-req: 1, #token: 764, token usage: 0.04, gen throughput (token/s): 57.37, #queue-req: 0
+[2025-04-30 00:10:02 TP0] Decode batch. #running-req: 1, #token: 804, token usage: 0.04, gen throughput (token/s): 57.39, #queue-req: 0
+[2025-04-30 00:10:02 TP0] Decode batch. #running-req: 1, #token: 844, token usage: 0.04, gen throughput (token/s): 58.64, #queue-req: 0
+[2025-04-30 00:10:03 TP0] Decode batch. #running-req: 1, #token: 884, token usage: 0.04, gen throughput (token/s): 55.77, #queue-req: 0
+[2025-04-30 00:10:04 TP0] Decode batch. #running-req: 1, #token: 924, token usage: 0.05, gen throughput (token/s): 56.00, #queue-req: 0
+[2025-04-30 00:10:04 TP0] Decode batch. #running-req: 1, #token: 964, token usage: 0.05, gen throughput (token/s): 55.90, #queue-req: 0
+[2025-04-30 00:10:05 TP0] Decode batch. #running-req: 1, #token: 1004, token usage: 0.05, gen throughput (token/s): 52.35, #queue-req: 0
+[2025-04-30 00:10:06 TP0] Decode batch. #running-req: 1, #token: 1044, token usage: 0.05, gen throughput (token/s): 57.35, #queue-req: 0
+[2025-04-30 00:10:07 TP0] Decode batch. #running-req: 1, #token: 1084, token usage: 0.05, gen throughput (token/s): 57.63, #queue-req: 0
+[2025-04-30 00:10:07 TP0] Decode batch. #running-req: 1, #token: 1124, token usage: 0.05, gen throughput (token/s): 57.28, #queue-req: 0
+[2025-04-30 00:10:08 TP0] Decode batch. #running-req: 1, #token: 1164, token usage: 0.06, gen throughput (token/s): 57.46, #queue-req: 0
+[2025-04-30 00:10:09 TP0] Decode batch. #running-req: 1, #token: 1204, token usage: 0.06, gen throughput (token/s): 51.71, #queue-req: 0
+[2025-04-30 00:10:09 TP0] Decode batch. #running-req: 1, #token: 1244, token usage: 0.06, gen throughput (token/s): 55.43, #queue-req: 0
+[2025-04-30 00:10:10 TP0] Decode batch. #running-req: 1, #token: 1284, token usage: 0.06, gen throughput (token/s): 55.78, #queue-req: 0
+[2025-04-30 00:10:11 TP0] Decode batch. #running-req: 1, #token: 1324, token usage: 0.06, gen throughput (token/s): 56.00, #queue-req: 0
+[2025-04-30 00:10:12 TP0] Decode batch. #running-req: 1, #token: 1364, token usage: 0.07, gen throughput (token/s): 56.51, #queue-req: 0
+[2025-04-30 00:10:12 TP0] Decode batch. #running-req: 1, #token: 1404, token usage: 0.07, gen throughput (token/s): 54.43, #queue-req: 0
+[2025-04-30 00:10:13 TP0] Decode batch. #running-req: 1, #token: 1444, token usage: 0.07, gen throughput (token/s): 59.05, #queue-req: 0
+[2025-04-30 00:10:14 TP0] Decode batch. #running-req: 1, #token: 1484, token usage: 0.07, gen throughput (token/s): 58.30, #queue-req: 0
+[2025-04-30 00:10:14 TP0] Decode batch. #running-req: 1, #token: 1524, token usage: 0.07, gen throughput (token/s): 58.27, #queue-req: 0
+[2025-04-30 00:10:15 TP0] Decode batch. #running-req: 1, #token: 1564, token usage: 0.08, gen throughput (token/s): 57.91, #queue-req: 0
+[2025-04-30 00:10:16 TP0] Decode batch. #running-req: 1, #token: 1604, token usage: 0.08, gen throughput (token/s): 58.73, #queue-req: 0
+[2025-04-30 00:10:16 TP0] Decode batch. #running-req: 1, #token: 1644, token usage: 0.08, gen throughput (token/s): 56.15, #queue-req: 0
+[2025-04-30 00:10:17 TP0] Decode batch. #running-req: 1, #token: 1684, token usage: 0.08, gen throughput (token/s): 55.62, #queue-req: 0
+[2025-04-30 00:10:18 TP0] Decode batch. #running-req: 1, #token: 1724, token usage: 0.08, gen throughput (token/s): 57.62, #queue-req: 0
+[2025-04-30 00:10:19 TP0] Decode batch. #running-req: 1, #token: 1764, token usage: 0.09, gen throughput (token/s): 57.39, #queue-req: 0
+[2025-04-30 00:10:19 TP0] Decode batch. #running-req: 1, #token: 1804, token usage: 0.09, gen throughput (token/s): 57.51, #queue-req: 0
+[2025-04-30 00:10:20 TP0] Decode batch. #running-req: 1, #token: 1844, token usage: 0.09, gen throughput (token/s): 57.44, #queue-req: 0
+[2025-04-30 00:10:21 TP0] Decode batch. #running-req: 1, #token: 1884, token usage: 0.09, gen throughput (token/s): 57.39, #queue-req: 0
+[2025-04-30 00:10:21 TP0] Decode batch. #running-req: 1, #token: 1924, token usage: 0.09, gen throughput (token/s): 57.45, #queue-req: 0
+[2025-04-30 00:10:22 TP0] Decode batch. #running-req: 1, #token: 1964, token usage: 0.10, gen throughput (token/s): 57.06, #queue-req: 0
+[2025-04-30 00:10:23 TP0] Decode batch. #running-req: 1, #token: 2004, token usage: 0.10, gen throughput (token/s): 56.36, #queue-req: 0
+[2025-04-30 00:10:24 TP0] Decode batch. #running-req: 1, #token: 2044, token usage: 0.10, gen throughput (token/s): 55.81, #queue-req: 0
+[2025-04-30 00:10:24] INFO:     127.0.0.1:56256 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -823,11 +823,11 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:18 TP0] Prefill batch. #new-seq: 1, #new-token: 21, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:19 TP0] Decode batch. #running-req: 1, #token: 39, token usage: 0.00, gen throughput (token/s): 87.04, #queue-req: 0
-[2025-04-29 23:47:19 TP0] Decode batch. #running-req: 1, #token: 79, token usage: 0.00, gen throughput (token/s): 103.41, #queue-req: 0
-[2025-04-29 23:47:19 TP0] Decode batch. #running-req: 1, #token: 119, token usage: 0.01, gen throughput (token/s): 96.31, #queue-req: 0
-[2025-04-29 23:47:20] INFO:     127.0.0.1:44358 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-30 00:10:24 TP0] Prefill batch. #new-seq: 1, #new-token: 21, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:10:24 TP0] Decode batch. #running-req: 1, #token: 39, token usage: 0.00, gen throughput (token/s): 51.17, #queue-req: 0
+[2025-04-30 00:10:25 TP0] Decode batch. #running-req: 1, #token: 79, token usage: 0.00, gen throughput (token/s): 56.09, #queue-req: 0
+[2025-04-30 00:10:26 TP0] Decode batch. #running-req: 1, #token: 119, token usage: 0.01, gen throughput (token/s): 56.28, #queue-req: 0
+[2025-04-30 00:10:26] INFO:     127.0.0.1:56256 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -864,17 +864,17 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:20 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:20 TP0] Decode batch. #running-req: 1, #token: 33, token usage: 0.00, gen throughput (token/s): 90.46, #queue-req: 0
-[2025-04-29 23:47:20 TP0] Decode batch. #running-req: 1, #token: 73, token usage: 0.00, gen throughput (token/s): 99.68, #queue-req: 0
-[2025-04-29 23:47:21 TP0] Decode batch. #running-req: 1, #token: 113, token usage: 0.01, gen throughput (token/s): 97.78, #queue-req: 0
-[2025-04-29 23:47:21 TP0] Decode batch. #running-req: 1, #token: 153, token usage: 0.01, gen throughput (token/s): 102.03, #queue-req: 0
-[2025-04-29 23:47:21 TP0] Decode batch. #running-req: 1, #token: 193, token usage: 0.01, gen throughput (token/s): 95.93, #queue-req: 0
-[2025-04-29 23:47:22 TP0] Decode batch. #running-req: 1, #token: 233, token usage: 0.01, gen throughput (token/s): 96.46, #queue-req: 0
-[2025-04-29 23:47:22 TP0] Decode batch. #running-req: 1, #token: 273, token usage: 0.01, gen throughput (token/s): 101.57, #queue-req: 0
-[2025-04-29 23:47:23 TP0] Decode batch. #running-req: 1, #token: 313, token usage: 0.02, gen throughput (token/s): 102.25, #queue-req: 0
-[2025-04-29 23:47:23 TP0] Decode batch. #running-req: 1, #token: 353, token usage: 0.02, gen throughput (token/s): 95.54, #queue-req: 0
-[2025-04-29 23:47:23] INFO:     127.0.0.1:44358 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-30 00:10:26 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:10:26 TP0] Decode batch. #running-req: 1, #token: 33, token usage: 0.00, gen throughput (token/s): 53.36, #queue-req: 0
+[2025-04-30 00:10:27 TP0] Decode batch. #running-req: 1, #token: 73, token usage: 0.00, gen throughput (token/s): 57.12, #queue-req: 0
+[2025-04-30 00:10:28 TP0] Decode batch. #running-req: 1, #token: 113, token usage: 0.01, gen throughput (token/s): 56.29, #queue-req: 0
+[2025-04-30 00:10:29 TP0] Decode batch. #running-req: 1, #token: 153, token usage: 0.01, gen throughput (token/s): 55.76, #queue-req: 0
+[2025-04-30 00:10:29 TP0] Decode batch. #running-req: 1, #token: 193, token usage: 0.01, gen throughput (token/s): 55.51, #queue-req: 0
+[2025-04-30 00:10:30 TP0] Decode batch. #running-req: 1, #token: 233, token usage: 0.01, gen throughput (token/s): 47.59, #queue-req: 0
+[2025-04-30 00:10:31 TP0] Decode batch. #running-req: 1, #token: 273, token usage: 0.01, gen throughput (token/s): 54.18, #queue-req: 0
+[2025-04-30 00:10:32 TP0] Decode batch. #running-req: 1, #token: 313, token usage: 0.02, gen throughput (token/s): 56.74, #queue-req: 0
+[2025-04-30 00:10:32 TP0] Decode batch. #running-req: 1, #token: 353, token usage: 0.02, gen throughput (token/s): 59.26, #queue-req: 0
+[2025-04-30 00:10:33] INFO:     127.0.0.1:56256 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1011,24 +1011,23 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:24 TP0] Prefill batch. #new-seq: 1, #new-token: 471, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:24 TP0] Decode batch. #running-req: 1, #token: 495, token usage: 0.02, gen throughput (token/s): 52.63, #queue-req: 0
-[2025-04-29 23:47:24 TP0] Decode batch. #running-req: 1, #token: 535, token usage: 0.03, gen throughput (token/s): 99.50, #queue-req: 0
-[2025-04-29 23:47:25 TP0] Decode batch. #running-req: 1, #token: 575, token usage: 0.03, gen throughput (token/s): 98.72, #queue-req: 0
-[2025-04-29 23:47:25 TP0] Decode batch. #running-req: 1, #token: 615, token usage: 0.03, gen throughput (token/s): 92.76, #queue-req: 0
-[2025-04-29 23:47:25 TP0] Decode batch. #running-req: 1, #token: 655, token usage: 0.03, gen throughput (token/s): 98.21, #queue-req: 0
-[2025-04-29 23:47:26 TP0] Decode batch. #running-req: 1, #token: 695, token usage: 0.03, gen throughput (token/s): 98.28, #queue-req: 0
-[2025-04-29 23:47:26 TP0] Decode batch. #running-req: 1, #token: 735, token usage: 0.04, gen throughput (token/s): 97.19, #queue-req: 0
-[2025-04-29 23:47:27 TP0] Decode batch. #running-req: 1, #token: 775, token usage: 0.04, gen throughput (token/s): 92.02, #queue-req: 0
-[2025-04-29 23:47:27 TP0] Decode batch. #running-req: 1, #token: 815, token usage: 0.04, gen throughput (token/s): 77.06, #queue-req: 0
-[2025-04-29 23:47:27] INFO:     127.0.0.1:44358 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-04-30 00:10:33 TP0] Prefill batch. #new-seq: 1, #new-token: 471, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:10:33 TP0] Decode batch. #running-req: 1, #token: 495, token usage: 0.02, gen throughput (token/s): 39.21, #queue-req: 0
+[2025-04-30 00:10:34 TP0] Decode batch. #running-req: 1, #token: 535, token usage: 0.03, gen throughput (token/s): 53.02, #queue-req: 0
+[2025-04-30 00:10:35 TP0] Decode batch. #running-req: 1, #token: 575, token usage: 0.03, gen throughput (token/s): 53.07, #queue-req: 0
+[2025-04-30 00:10:36 TP0] Decode batch. #running-req: 1, #token: 615, token usage: 0.03, gen throughput (token/s): 55.67, #queue-req: 0
+[2025-04-30 00:10:36 TP0] Decode batch. #running-req: 1, #token: 655, token usage: 0.03, gen throughput (token/s): 55.78, #queue-req: 0
+[2025-04-30 00:10:37 TP0] Decode batch. #running-req: 1, #token: 695, token usage: 0.03, gen throughput (token/s): 55.76, #queue-req: 0
+[2025-04-30 00:10:38 TP0] Decode batch. #running-req: 1, #token: 735, token usage: 0.04, gen throughput (token/s): 54.60, #queue-req: 0
+[2025-04-30 00:10:38 TP0] Decode batch. #running-req: 1, #token: 775, token usage: 0.04, gen throughput (token/s): 57.94, #queue-req: 0
+[2025-04-30 00:10:38] INFO:     127.0.0.1:56256 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>reasoing_content: Okay, the user is in New York and wants the current date and time along with the weather. I need to figure out how to provide this using the available functions.<br><br>First, I should use the get_current_date function. The required parameter is timezone, which is 'America/New_York'. Since it's a string, I'll include that in the function call.<br><br>Next, for the weather, I'll use get_current_weather. The parameters needed are city, state, and unit. The city is 'New York', the state is 'NY', and the unit should be 'fahrenheit' since the user didn't specify otherwise. I should make sure all these parameters are correctly formatted in JSON.<br><br>I'll structure each function call separately, starting with get_current_date and then get_current_weather. Each will have their respective parameters enclosed in a JSON object. I'll make sure to follow the specified format, using the correct tags and syntax.<br><br>I should also remember to add the sources for each function call, indicating where the information comes from. Since the user is in New York, the timezone is straightforward, so the date and time will reflect that. For the weather, it's based on real-time data, so I'll note that as well.<br><br>Putting it all together, I'll write two separate function calls, one for the date and time and another for the weather, each with their parameters correctly specified. This should give the user exactly what they're asking for in a clear and organized manner.<br><br><br>content: <function=get_current_date>{"timezone": "America/New_York)}</function> <div>Current Date and Time: [date and time]</div> <function=get_current_weather>{"  <br>  }</function></strong></div>
+<strong style='color: #00008B;'>reasoing_content: Alright, let's break down how I approached the user's request. The user is in New York and wants the current date and time along with the weather. <br><br>First, I needed to figure out which functions to use. There are two relevant functions here: 'get_current_weather' and 'get_current_date'. <br><br>I started by determining the date part. The function requires a 'timezone' parameter. Since the user is in New York, I used 'America/New_York' as the value. I made sure to include this in the function call correctly.<br><br>Next, for the weather, I used 'get_current_weather'. It needs the city, state, and unit. The city is 'New York', the state is 'NY', and the unit is 'fahrenheit' since the user didn't specify otherwise. I structured the parameters accordingly.<br><br>I then combined these two function calls into a single message, making sure each function's parameters were correctly formatted as a JSON object. I also added placeholders for the responses, indicating where the actual data from the functions would go.<br><br>Finally, I made sure to follow the specified format, keeping everything on one line and properly tagging each function call. I included a reminder in the end to remind the user of the format and sources, just to be thorough.<br><br><br>content: <function=get_current_date>{"timezone":"America/New_York"}</function><br><function=get_current_weather>{"city":"New York", "state":"NY", "unit":"fahrenheit"}</function></strong></div>
 </div>
 </section>
 </section>
@@ -1089,60 +1088,60 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:28 TP0] Prefill batch. #new-seq: 1, #new-token: 19, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:28 TP0] Decode batch. #running-req: 1, #token: 55, token usage: 0.00, gen throughput (token/s): 45.15, #queue-req: 0
-[2025-04-29 23:47:29 TP0] Decode batch. #running-req: 1, #token: 95, token usage: 0.00, gen throughput (token/s): 91.87, #queue-req: 0
-[2025-04-29 23:47:29 TP0] Decode batch. #running-req: 1, #token: 135, token usage: 0.01, gen throughput (token/s): 102.85, #queue-req: 0
-[2025-04-29 23:47:29 TP0] Decode batch. #running-req: 1, #token: 175, token usage: 0.01, gen throughput (token/s): 101.36, #queue-req: 0
-[2025-04-29 23:47:30 TP0] Decode batch. #running-req: 1, #token: 215, token usage: 0.01, gen throughput (token/s): 101.21, #queue-req: 0
-[2025-04-29 23:47:30 TP0] Decode batch. #running-req: 1, #token: 255, token usage: 0.01, gen throughput (token/s): 93.47, #queue-req: 0
-[2025-04-29 23:47:31 TP0] Decode batch. #running-req: 1, #token: 295, token usage: 0.01, gen throughput (token/s): 101.88, #queue-req: 0
-[2025-04-29 23:47:31 TP0] Decode batch. #running-req: 1, #token: 335, token usage: 0.02, gen throughput (token/s): 102.02, #queue-req: 0
-[2025-04-29 23:47:31 TP0] Decode batch. #running-req: 1, #token: 375, token usage: 0.02, gen throughput (token/s): 102.57, #queue-req: 0
-[2025-04-29 23:47:32 TP0] Decode batch. #running-req: 1, #token: 415, token usage: 0.02, gen throughput (token/s): 99.34, #queue-req: 0
-[2025-04-29 23:47:32 TP0] Decode batch. #running-req: 1, #token: 455, token usage: 0.02, gen throughput (token/s): 96.38, #queue-req: 0
-[2025-04-29 23:47:33 TP0] Decode batch. #running-req: 1, #token: 495, token usage: 0.02, gen throughput (token/s): 101.65, #queue-req: 0
-[2025-04-29 23:47:33 TP0] Decode batch. #running-req: 1, #token: 535, token usage: 0.03, gen throughput (token/s): 101.11, #queue-req: 0
-[2025-04-29 23:47:33 TP0] Decode batch. #running-req: 1, #token: 575, token usage: 0.03, gen throughput (token/s): 99.98, #queue-req: 0
-[2025-04-29 23:47:34 TP0] Decode batch. #running-req: 1, #token: 615, token usage: 0.03, gen throughput (token/s): 97.90, #queue-req: 0
-[2025-04-29 23:47:34 TP0] Decode batch. #running-req: 1, #token: 655, token usage: 0.03, gen throughput (token/s): 94.62, #queue-req: 0
-[2025-04-29 23:47:35 TP0] Decode batch. #running-req: 1, #token: 695, token usage: 0.03, gen throughput (token/s): 99.86, #queue-req: 0
-[2025-04-29 23:47:35 TP0] Decode batch. #running-req: 1, #token: 735, token usage: 0.04, gen throughput (token/s): 99.88, #queue-req: 0
-[2025-04-29 23:47:35 TP0] Decode batch. #running-req: 1, #token: 775, token usage: 0.04, gen throughput (token/s): 99.81, #queue-req: 0
-[2025-04-29 23:47:36 TP0] Decode batch. #running-req: 1, #token: 815, token usage: 0.04, gen throughput (token/s): 93.79, #queue-req: 0
-[2025-04-29 23:47:36 TP0] Decode batch. #running-req: 1, #token: 855, token usage: 0.04, gen throughput (token/s): 99.29, #queue-req: 0
-[2025-04-29 23:47:37 TP0] Decode batch. #running-req: 1, #token: 895, token usage: 0.04, gen throughput (token/s): 98.97, #queue-req: 0
-[2025-04-29 23:47:37 TP0] Decode batch. #running-req: 1, #token: 935, token usage: 0.05, gen throughput (token/s): 99.10, #queue-req: 0
-[2025-04-29 23:47:37 TP0] Decode batch. #running-req: 1, #token: 975, token usage: 0.05, gen throughput (token/s): 90.23, #queue-req: 0
-[2025-04-29 23:47:38 TP0] Decode batch. #running-req: 1, #token: 1015, token usage: 0.05, gen throughput (token/s): 97.69, #queue-req: 0
-[2025-04-29 23:47:38 TP0] Decode batch. #running-req: 1, #token: 1055, token usage: 0.05, gen throughput (token/s): 98.33, #queue-req: 0
-[2025-04-29 23:47:39 TP0] Decode batch. #running-req: 1, #token: 1095, token usage: 0.05, gen throughput (token/s): 99.53, #queue-req: 0
-[2025-04-29 23:47:39 TP0] Decode batch. #running-req: 1, #token: 1135, token usage: 0.06, gen throughput (token/s): 93.12, #queue-req: 0
-[2025-04-29 23:47:39 TP0] Decode batch. #running-req: 1, #token: 1175, token usage: 0.06, gen throughput (token/s): 99.46, #queue-req: 0
-[2025-04-29 23:47:40 TP0] Decode batch. #running-req: 1, #token: 1215, token usage: 0.06, gen throughput (token/s): 100.64, #queue-req: 0
-[2025-04-29 23:47:40 TP0] Decode batch. #running-req: 1, #token: 1255, token usage: 0.06, gen throughput (token/s): 98.75, #queue-req: 0
-[2025-04-29 23:47:41 TP0] Decode batch. #running-req: 1, #token: 1295, token usage: 0.06, gen throughput (token/s): 91.95, #queue-req: 0
-[2025-04-29 23:47:41 TP0] Decode batch. #running-req: 1, #token: 1335, token usage: 0.07, gen throughput (token/s): 96.70, #queue-req: 0
-[2025-04-29 23:47:42 TP0] Decode batch. #running-req: 1, #token: 1375, token usage: 0.07, gen throughput (token/s): 97.96, #queue-req: 0
-[2025-04-29 23:47:42 TP0] Decode batch. #running-req: 1, #token: 1415, token usage: 0.07, gen throughput (token/s): 98.48, #queue-req: 0
-[2025-04-29 23:47:42 TP0] Decode batch. #running-req: 1, #token: 1455, token usage: 0.07, gen throughput (token/s): 88.68, #queue-req: 0
-[2025-04-29 23:47:43 TP0] Decode batch. #running-req: 1, #token: 1495, token usage: 0.07, gen throughput (token/s): 99.69, #queue-req: 0
-[2025-04-29 23:47:43 TP0] Decode batch. #running-req: 1, #token: 1535, token usage: 0.07, gen throughput (token/s): 98.96, #queue-req: 0
-[2025-04-29 23:47:44 TP0] Decode batch. #running-req: 1, #token: 1575, token usage: 0.08, gen throughput (token/s): 98.38, #queue-req: 0
-[2025-04-29 23:47:44 TP0] Decode batch. #running-req: 1, #token: 1615, token usage: 0.08, gen throughput (token/s): 92.87, #queue-req: 0
-[2025-04-29 23:47:44 TP0] Decode batch. #running-req: 1, #token: 1655, token usage: 0.08, gen throughput (token/s): 93.30, #queue-req: 0
-[2025-04-29 23:47:45 TP0] Decode batch. #running-req: 1, #token: 1695, token usage: 0.08, gen throughput (token/s): 100.71, #queue-req: 0
-[2025-04-29 23:47:45 TP0] Decode batch. #running-req: 1, #token: 1735, token usage: 0.08, gen throughput (token/s): 100.24, #queue-req: 0
-[2025-04-29 23:47:46 TP0] Decode batch. #running-req: 1, #token: 1775, token usage: 0.09, gen throughput (token/s): 99.18, #queue-req: 0
-[2025-04-29 23:47:46 TP0] Decode batch. #running-req: 1, #token: 1815, token usage: 0.09, gen throughput (token/s): 93.57, #queue-req: 0
-[2025-04-29 23:47:47 TP0] Decode batch. #running-req: 1, #token: 1855, token usage: 0.09, gen throughput (token/s): 100.75, #queue-req: 0
-[2025-04-29 23:47:47 TP0] Decode batch. #running-req: 1, #token: 1895, token usage: 0.09, gen throughput (token/s): 99.81, #queue-req: 0
-[2025-04-29 23:47:47 TP0] Decode batch. #running-req: 1, #token: 1935, token usage: 0.09, gen throughput (token/s): 99.43, #queue-req: 0
-[2025-04-29 23:47:48 TP0] Decode batch. #running-req: 1, #token: 1975, token usage: 0.10, gen throughput (token/s): 97.17, #queue-req: 0
-[2025-04-29 23:47:48 TP0] Decode batch. #running-req: 1, #token: 2015, token usage: 0.10, gen throughput (token/s): 94.49, #queue-req: 0
-[2025-04-29 23:47:49 TP0] Decode batch. #running-req: 1, #token: 2055, token usage: 0.10, gen throughput (token/s): 99.13, #queue-req: 0
-[2025-04-29 23:47:49] INFO:     127.0.0.1:51656 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-{&#39;text&#39;: &#39;Okay, so I need to provide the information about the capital of France in JSON format. Hmm, I\&#39;m not entirely sure about all the details, but I\&#39;ll try to think it through.\n\nFirst, I know that the capital of France is Paris. That\&#39;s pretty much a given, right? But I should double-check that. Maybe I can recall any other capitals I know. London is the capital of the UK, Rome is Italy, and maybe Tokyo is Japan\&#39;s. Yeah, Paris seems correct for France.\n\nNow, moving on to the population. I think Paris is a very large city, but I\&#39;m not sure of the exact number. I remember it\&#39;s over 3 million, but I\&#39;m not certain. Maybe around 3.5 million? I should probably look that up, but since I can\&#39;t right now, I\&#39;ll go with 3,500,000 as an estimate.\n\nNext, the area. Paris is a big city, but I think it\&#39;s not as large as Tokyo or London. Maybe around 10 square kilometers? I\&#39;m not sure, but that seems plausible. I\&#39;ll note that as 10,000,000 square meters.\n\nCoordinates are next. Paris is in France, so the country code is &#34;FR&#34;. The latitude and longitude... I think the approximate coordinates are around 48.8566° N latitude and 2.3522° E longitude. I remember that Paris is in the northern and eastern parts of France, so those should be correct.\n\nOfficial languages. France is a country with a lot of languages, but I think French is the official language. I\&#39;m not sure if they have others, but French is definitely the primary one. Maybe they also have some other languages spoken there, but I\&#39;ll stick with French for now.\n\nOfficial currency is the euro, right? Yeah, I\&#39;m pretty sure that\&#39;s correct. They use the euro as their main currency.\n\nI should also consider if there\&#39;s anything else I might need to include. Maybe the capital\&#39;s nickname? I think Paris is called the &#34;City of Light&#34; or something like that. But the user didn\&#39;t ask for that, so maybe it\&#39;s not necessary.\n\nPutting it all together, I\&#39;ll structure the JSON with the key-value pairs. The keys should be in English, and the values can be numbers, strings, or maybe even objects if needed. Since the population and area are numerical, I\&#39;ll represent them as numbers. The rest can be strings.\n\nWait, but in JSON, numbers don\&#39;t have commas, right? So 3,500,000 should be written as 3500000 without the comma. Same with the area, 10,000,000 square meters becomes 10000000.\n\nLet me make sure I\&#39;m formatting the JSON correctly. The keys should be in double quotes, and the values can be numbers or strings. So the structure would be something like:\n\n{\n  &#34;capital&#34;: &#34;Paris&#34;,\n  &#34;population&#34;: 3500000,\n  &#34;area&#34;: 10000000,\n  &#34;country&#34;: &#34;FR&#34;,\n  &#34;coordinates&#34;: {\n    &#34;latitude&#34;: 48.8566,\n    &#34;longitude&#34;: 2.3522\n  },\n  &#34;languages&#34;: &#34;French&#34;,\n  &#34;currency&#34;: &#34;Euro&#34;\n}\n\nWait, but the coordinates are just two numbers, so maybe I don\&#39;t need a nested object. So it would be:\n\n{\n  &#34;capital&#34;: &#34;Paris&#34;,\n  &#34;population&#34;: 3500000,\n  &#34;area&#34;: 10000000,\n  &#34;country&#34;: &#34;FR&#34;,\n  &#34;coordinates&#34;: {\n    &#34;latitude&#34;: 48.8566,\n    &#34;longitude&#34;: 2.3522\n  },\n  &#34;languages&#34;: &#34;French&#34;,\n  &#34;currency&#34;: &#34;Euro&#34;\n}\n\nThat looks better. I think that\&#39;s all the information I need. I should make sure that the numerical values don\&#39;t have commas and that the strings are in double quotes. Also, the keys should be in lowercase letters as per JSON standards.\n\nI think I\&#39;ve covered everything. Population and area are estimates, but they\&#39;re close enough for a general JSON format. I don\&#39;t think I need to include more details unless specified. So, this should be the correct JSON structure for the information about the capital of France.\n&lt;/think&gt;{\n\n&#34;name&#34;: &#34;Paris&#34;,\n&#34;population&#34;: 3500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;5efd86c1598f49448b54d1958b782f31&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;length&#39;, &#39;length&#39;: 2048}, &#39;prompt_tokens&#39;: 20, &#39;completion_tokens&#39;: 2048, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 20.93347668647766}}
+[2025-04-30 00:10:39 TP0] Prefill batch. #new-seq: 1, #new-token: 19, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:10:40 TP0] Decode batch. #running-req: 1, #token: 58, token usage: 0.00, gen throughput (token/s): 30.22, #queue-req: 0
+[2025-04-30 00:10:40 TP0] Decode batch. #running-req: 1, #token: 98, token usage: 0.00, gen throughput (token/s): 59.47, #queue-req: 0
+[2025-04-30 00:10:41 TP0] Decode batch. #running-req: 1, #token: 138, token usage: 0.01, gen throughput (token/s): 59.38, #queue-req: 0
+[2025-04-30 00:10:42 TP0] Decode batch. #running-req: 1, #token: 178, token usage: 0.01, gen throughput (token/s): 59.32, #queue-req: 0
+[2025-04-30 00:10:42 TP0] Decode batch. #running-req: 1, #token: 218, token usage: 0.01, gen throughput (token/s): 54.45, #queue-req: 0
+[2025-04-30 00:10:43 TP0] Decode batch. #running-req: 1, #token: 258, token usage: 0.01, gen throughput (token/s): 52.68, #queue-req: 0
+[2025-04-30 00:10:44 TP0] Decode batch. #running-req: 1, #token: 298, token usage: 0.01, gen throughput (token/s): 55.92, #queue-req: 0
+[2025-04-30 00:10:45 TP0] Decode batch. #running-req: 1, #token: 338, token usage: 0.02, gen throughput (token/s): 58.78, #queue-req: 0
+[2025-04-30 00:10:45 TP0] Decode batch. #running-req: 1, #token: 378, token usage: 0.02, gen throughput (token/s): 58.12, #queue-req: 0
+[2025-04-30 00:10:46 TP0] Decode batch. #running-req: 1, #token: 418, token usage: 0.02, gen throughput (token/s): 58.44, #queue-req: 0
+[2025-04-30 00:10:47 TP0] Decode batch. #running-req: 1, #token: 458, token usage: 0.02, gen throughput (token/s): 58.54, #queue-req: 0
+[2025-04-30 00:10:47 TP0] Decode batch. #running-req: 1, #token: 498, token usage: 0.02, gen throughput (token/s): 58.53, #queue-req: 0
+[2025-04-30 00:10:48 TP0] Decode batch. #running-req: 1, #token: 538, token usage: 0.03, gen throughput (token/s): 57.94, #queue-req: 0
+[2025-04-30 00:10:49 TP0] Decode batch. #running-req: 1, #token: 578, token usage: 0.03, gen throughput (token/s): 57.75, #queue-req: 0
+[2025-04-30 00:10:49 TP0] Decode batch. #running-req: 1, #token: 618, token usage: 0.03, gen throughput (token/s): 57.77, #queue-req: 0
+[2025-04-30 00:10:50 TP0] Decode batch. #running-req: 1, #token: 658, token usage: 0.03, gen throughput (token/s): 58.36, #queue-req: 0
+[2025-04-30 00:10:51 TP0] Decode batch. #running-req: 1, #token: 698, token usage: 0.03, gen throughput (token/s): 58.52, #queue-req: 0
+[2025-04-30 00:10:51 TP0] Decode batch. #running-req: 1, #token: 738, token usage: 0.04, gen throughput (token/s): 58.36, #queue-req: 0
+[2025-04-30 00:10:52 TP0] Decode batch. #running-req: 1, #token: 778, token usage: 0.04, gen throughput (token/s): 58.12, #queue-req: 0
+[2025-04-30 00:10:53 TP0] Decode batch. #running-req: 1, #token: 818, token usage: 0.04, gen throughput (token/s): 58.41, #queue-req: 0
+[2025-04-30 00:10:54 TP0] Decode batch. #running-req: 1, #token: 858, token usage: 0.04, gen throughput (token/s): 58.54, #queue-req: 0
+[2025-04-30 00:10:54 TP0] Decode batch. #running-req: 1, #token: 898, token usage: 0.04, gen throughput (token/s): 58.68, #queue-req: 0
+[2025-04-30 00:10:55 TP0] Decode batch. #running-req: 1, #token: 938, token usage: 0.05, gen throughput (token/s): 58.00, #queue-req: 0
+[2025-04-30 00:10:56 TP0] Decode batch. #running-req: 1, #token: 978, token usage: 0.05, gen throughput (token/s): 57.77, #queue-req: 0
+[2025-04-30 00:10:56 TP0] Decode batch. #running-req: 1, #token: 1018, token usage: 0.05, gen throughput (token/s): 58.16, #queue-req: 0
+[2025-04-30 00:10:57 TP0] Decode batch. #running-req: 1, #token: 1058, token usage: 0.05, gen throughput (token/s): 58.45, #queue-req: 0
+[2025-04-30 00:10:58 TP0] Decode batch. #running-req: 1, #token: 1098, token usage: 0.05, gen throughput (token/s): 58.44, #queue-req: 0
+[2025-04-30 00:10:58 TP0] Decode batch. #running-req: 1, #token: 1138, token usage: 0.06, gen throughput (token/s): 58.56, #queue-req: 0
+[2025-04-30 00:10:59 TP0] Decode batch. #running-req: 1, #token: 1178, token usage: 0.06, gen throughput (token/s): 58.34, #queue-req: 0
+[2025-04-30 00:11:00 TP0] Decode batch. #running-req: 1, #token: 1218, token usage: 0.06, gen throughput (token/s): 58.64, #queue-req: 0
+[2025-04-30 00:11:00 TP0] Decode batch. #running-req: 1, #token: 1258, token usage: 0.06, gen throughput (token/s): 58.68, #queue-req: 0
+[2025-04-30 00:11:01 TP0] Decode batch. #running-req: 1, #token: 1298, token usage: 0.06, gen throughput (token/s): 59.11, #queue-req: 0
+[2025-04-30 00:11:02 TP0] Decode batch. #running-req: 1, #token: 1338, token usage: 0.07, gen throughput (token/s): 58.73, #queue-req: 0
+[2025-04-30 00:11:02 TP0] Decode batch. #running-req: 1, #token: 1378, token usage: 0.07, gen throughput (token/s): 57.95, #queue-req: 0
+[2025-04-30 00:11:03 TP0] Decode batch. #running-req: 1, #token: 1418, token usage: 0.07, gen throughput (token/s): 58.59, #queue-req: 0
+[2025-04-30 00:11:04 TP0] Decode batch. #running-req: 1, #token: 1458, token usage: 0.07, gen throughput (token/s): 58.00, #queue-req: 0
+[2025-04-30 00:11:04 TP0] Decode batch. #running-req: 1, #token: 1498, token usage: 0.07, gen throughput (token/s): 57.33, #queue-req: 0
+[2025-04-30 00:11:05 TP0] Decode batch. #running-req: 1, #token: 1538, token usage: 0.08, gen throughput (token/s): 56.55, #queue-req: 0
+[2025-04-30 00:11:06 TP0] Decode batch. #running-req: 1, #token: 1578, token usage: 0.08, gen throughput (token/s): 57.85, #queue-req: 0
+[2025-04-30 00:11:07 TP0] Decode batch. #running-req: 1, #token: 1618, token usage: 0.08, gen throughput (token/s): 58.57, #queue-req: 0
+[2025-04-30 00:11:07 TP0] Decode batch. #running-req: 1, #token: 1658, token usage: 0.08, gen throughput (token/s): 58.85, #queue-req: 0
+[2025-04-30 00:11:08 TP0] Decode batch. #running-req: 1, #token: 1698, token usage: 0.08, gen throughput (token/s): 59.30, #queue-req: 0
+[2025-04-30 00:11:09 TP0] Decode batch. #running-req: 1, #token: 1738, token usage: 0.08, gen throughput (token/s): 58.59, #queue-req: 0
+[2025-04-30 00:11:09 TP0] Decode batch. #running-req: 1, #token: 1778, token usage: 0.09, gen throughput (token/s): 58.84, #queue-req: 0
+[2025-04-30 00:11:10 TP0] Decode batch. #running-req: 1, #token: 1818, token usage: 0.09, gen throughput (token/s): 58.84, #queue-req: 0
+[2025-04-30 00:11:11 TP0] Decode batch. #running-req: 1, #token: 1858, token usage: 0.09, gen throughput (token/s): 58.85, #queue-req: 0
+[2025-04-30 00:11:11 TP0] Decode batch. #running-req: 1, #token: 1898, token usage: 0.09, gen throughput (token/s): 55.80, #queue-req: 0
+[2025-04-30 00:11:12 TP0] Decode batch. #running-req: 1, #token: 1938, token usage: 0.09, gen throughput (token/s): 57.35, #queue-req: 0
+[2025-04-30 00:11:13 TP0] Decode batch. #running-req: 1, #token: 1978, token usage: 0.10, gen throughput (token/s): 54.80, #queue-req: 0
+[2025-04-30 00:11:14 TP0] Decode batch. #running-req: 1, #token: 2018, token usage: 0.10, gen throughput (token/s): 55.78, #queue-req: 0
+[2025-04-30 00:11:14 TP0] Decode batch. #running-req: 1, #token: 2058, token usage: 0.10, gen throughput (token/s): 58.74, #queue-req: 0
+[2025-04-30 00:11:14] INFO:     127.0.0.1:40258 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+{&#39;text&#39;: &#39;Okay, so I need to provide the information about the capital of France in JSON format. Hmm, I\&#39;m not entirely sure about all the details, but I\&#39;ll try to think it through.\n\nFirst, I know that the capital of France is Paris. That\&#39;s pretty much a given, right? But I should double-check that. Maybe I can recall any other capitals I know. London is the capital of the UK, Rome is Italy, and maybe Tokyo is Japan\&#39;s. Yeah, Paris seems correct for France.\n\nNow, moving on to the population. I think Paris is a very large city, but I\&#39;m not sure of the exact number. I remember it\&#39;s over 3 million, but I\&#39;m not certain. Maybe around 3.5 million? I should probably look that up, but since I can\&#39;t right now, I\&#39;ll go with 3,500,000 as an estimate.\n\nNext, the area. Paris is a big city, but I think it\&#39;s not as large as Tokyo or London. Maybe around 10 square kilometers? I\&#39;m not sure, but that seems plausible. I\&#39;ll note that as 10,000,000 square meters.\n\nCoordinates are next. Paris is in France, so the country code is &#34;FR&#34;. The latitude and longitude... I think the approximate coordinates are around 48.8566° N latitude and 2.3522° E longitude. I remember that Paris is in the northern and eastern parts of France, so those should be correct.\n\nOfficial languages. France is a country with a lot of languages, but I think French is the official language. I\&#39;m not sure if they have others, but French is definitely the primary one. Maybe they also have some other languages spoken there, but I\&#39;ll stick with French for now.\n\nOfficial currency is the euro, right? Yeah, I\&#39;m pretty sure that\&#39;s correct. They use the euro as their main currency.\n\nI should also consider if there\&#39;s anything else I might need to include. Maybe the capital\&#39;s nickname? I think Paris is called the &#34;City of Light&#34; or something like that. But the user didn\&#39;t ask for that, so maybe it\&#39;s not necessary.\n\nPutting it all together, I\&#39;ll structure the JSON with the key-value pairs. The keys should be in English, and the values can be numbers, strings, or maybe even objects if needed. Since the population and area are numerical, I\&#39;ll represent them as numbers. The rest can be strings.\n\nWait, but in JSON, numbers don\&#39;t have commas, right? So 3,500,000 should be written as 3500000 without the comma. Same with the area, 10,000,000 square meters becomes 10000000.\n\nLet me make sure I\&#39;m formatting the JSON correctly. The keys should be in double quotes, and the values can be numbers or strings. So the structure would be something like:\n\n{\n  &#34;capital&#34;: &#34;Paris&#34;,\n  &#34;population&#34;: 3500000,\n  &#34;area&#34;: 10000000,\n  &#34;country&#34;: &#34;FR&#34;,\n  &#34;coordinates&#34;: {\n    &#34;latitude&#34;: 48.8566,\n    &#34;longitude&#34;: 2.3522\n  },\n  &#34;languages&#34;: &#34;French&#34;,\n  &#34;currency&#34;: &#34;Euro&#34;\n}\n\nWait, but the coordinates are just two numbers, so maybe I don\&#39;t need a nested object. So it would be:\n\n{\n  &#34;capital&#34;: &#34;Paris&#34;,\n  &#34;population&#34;: 3500000,\n  &#34;area&#34;: 10000000,\n  &#34;country&#34;: &#34;FR&#34;,\n  &#34;coordinates&#34;: {\n    &#34;latitude&#34;: 48.8566,\n    &#34;longitude&#34;: 2.3522\n  },\n  &#34;languages&#34;: &#34;French&#34;,\n  &#34;currency&#34;: &#34;Euro&#34;\n}\n\nThat looks better. I think that\&#39;s all the information I need. I should make sure that the numerical values don\&#39;t have commas and that the strings are in double quotes. Also, the keys should be in lowercase letters as per JSON standards.\n\nI think I\&#39;ve covered everything. Population and area are estimates, but they\&#39;re close enough for a general JSON format. I don\&#39;t think I need to include more details unless specified. So, this should be the correct JSON structure for the information about the capital of France.\n&lt;/think&gt;{\n\n&#34;name&#34;: &#34;Paris&#34;,\n&#34;population&#34;: 3500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;7eb9f14892df4c999e83ac72e37b2c43&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;length&#39;, &#39;length&#39;: 2048}, &#39;prompt_tokens&#39;: 20, &#39;completion_tokens&#39;: 2048, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 35.34315776824951}}
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1190,35 +1189,35 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:49 TP0] Prefill batch. #new-seq: 1, #new-token: 3, #cached-token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:49 TP0] Decode batch. #running-req: 1, #token: 32, token usage: 0.00, gen throughput (token/s): 94.95, #queue-req: 0
-[2025-04-29 23:47:49 TP0] Decode batch. #running-req: 1, #token: 72, token usage: 0.00, gen throughput (token/s): 95.76, #queue-req: 0
-[2025-04-29 23:47:50 TP0] Decode batch. #running-req: 1, #token: 112, token usage: 0.01, gen throughput (token/s): 100.79, #queue-req: 0
-[2025-04-29 23:47:50 TP0] Decode batch. #running-req: 1, #token: 152, token usage: 0.01, gen throughput (token/s): 99.71, #queue-req: 0
-[2025-04-29 23:47:51 TP0] Decode batch. #running-req: 1, #token: 192, token usage: 0.01, gen throughput (token/s): 93.58, #queue-req: 0
-[2025-04-29 23:47:51 TP0] Decode batch. #running-req: 1, #token: 232, token usage: 0.01, gen throughput (token/s): 94.97, #queue-req: 0
-[2025-04-29 23:47:51 TP0] Decode batch. #running-req: 1, #token: 272, token usage: 0.01, gen throughput (token/s): 102.38, #queue-req: 0
-[2025-04-29 23:47:52 TP0] Decode batch. #running-req: 1, #token: 312, token usage: 0.02, gen throughput (token/s): 102.34, #queue-req: 0
-[2025-04-29 23:47:52 TP0] Decode batch. #running-req: 1, #token: 352, token usage: 0.02, gen throughput (token/s): 102.68, #queue-req: 0
-[2025-04-29 23:47:53 TP0] Decode batch. #running-req: 1, #token: 392, token usage: 0.02, gen throughput (token/s): 94.85, #queue-req: 0
-[2025-04-29 23:47:53 TP0] Decode batch. #running-req: 1, #token: 432, token usage: 0.02, gen throughput (token/s): 103.10, #queue-req: 0
-[2025-04-29 23:47:54 TP0] Decode batch. #running-req: 1, #token: 472, token usage: 0.02, gen throughput (token/s): 81.74, #queue-req: 0
-[2025-04-29 23:47:54 TP0] Decode batch. #running-req: 1, #token: 512, token usage: 0.03, gen throughput (token/s): 75.89, #queue-req: 0
-[2025-04-29 23:47:55 TP0] Decode batch. #running-req: 1, #token: 552, token usage: 0.03, gen throughput (token/s): 77.85, #queue-req: 0
-[2025-04-29 23:47:55 TP0] Decode batch. #running-req: 1, #token: 592, token usage: 0.03, gen throughput (token/s): 85.21, #queue-req: 0
-[2025-04-29 23:47:55 TP0] Decode batch. #running-req: 1, #token: 632, token usage: 0.03, gen throughput (token/s): 99.90, #queue-req: 0
-[2025-04-29 23:47:56 TP0] Decode batch. #running-req: 1, #token: 672, token usage: 0.03, gen throughput (token/s): 96.64, #queue-req: 0
-[2025-04-29 23:47:56 TP0] Decode batch. #running-req: 1, #token: 712, token usage: 0.03, gen throughput (token/s): 88.13, #queue-req: 0
-[2025-04-29 23:47:57 TP0] Decode batch. #running-req: 1, #token: 752, token usage: 0.04, gen throughput (token/s): 101.21, #queue-req: 0
-[2025-04-29 23:47:57 TP0] Decode batch. #running-req: 1, #token: 792, token usage: 0.04, gen throughput (token/s): 97.50, #queue-req: 0
-[2025-04-29 23:47:57] INFO:     127.0.0.1:43852 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-30 00:11:14 TP0] Prefill batch. #new-seq: 1, #new-token: 3, #cached-token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:11:15 TP0] Decode batch. #running-req: 1, #token: 35, token usage: 0.00, gen throughput (token/s): 55.87, #queue-req: 0
+[2025-04-30 00:11:16 TP0] Decode batch. #running-req: 1, #token: 75, token usage: 0.00, gen throughput (token/s): 59.46, #queue-req: 0
+[2025-04-30 00:11:16 TP0] Decode batch. #running-req: 1, #token: 115, token usage: 0.01, gen throughput (token/s): 59.20, #queue-req: 0
+[2025-04-30 00:11:17 TP0] Decode batch. #running-req: 1, #token: 155, token usage: 0.01, gen throughput (token/s): 58.17, #queue-req: 0
+[2025-04-30 00:11:18 TP0] Decode batch. #running-req: 1, #token: 195, token usage: 0.01, gen throughput (token/s): 58.19, #queue-req: 0
+[2025-04-30 00:11:18 TP0] Decode batch. #running-req: 1, #token: 235, token usage: 0.01, gen throughput (token/s): 57.53, #queue-req: 0
+[2025-04-30 00:11:19 TP0] Decode batch. #running-req: 1, #token: 275, token usage: 0.01, gen throughput (token/s): 57.79, #queue-req: 0
+[2025-04-30 00:11:20 TP0] Decode batch. #running-req: 1, #token: 315, token usage: 0.02, gen throughput (token/s): 55.11, #queue-req: 0
+[2025-04-30 00:11:20 TP0] Decode batch. #running-req: 1, #token: 355, token usage: 0.02, gen throughput (token/s): 57.12, #queue-req: 0
+[2025-04-30 00:11:21 TP0] Decode batch. #running-req: 1, #token: 395, token usage: 0.02, gen throughput (token/s): 57.22, #queue-req: 0
+[2025-04-30 00:11:22 TP0] Decode batch. #running-req: 1, #token: 435, token usage: 0.02, gen throughput (token/s): 57.38, #queue-req: 0
+[2025-04-30 00:11:23 TP0] Decode batch. #running-req: 1, #token: 475, token usage: 0.02, gen throughput (token/s): 57.45, #queue-req: 0
+[2025-04-30 00:11:23 TP0] Decode batch. #running-req: 1, #token: 515, token usage: 0.03, gen throughput (token/s): 58.08, #queue-req: 0
+[2025-04-30 00:11:24 TP0] Decode batch. #running-req: 1, #token: 555, token usage: 0.03, gen throughput (token/s): 54.47, #queue-req: 0
+[2025-04-30 00:11:25 TP0] Decode batch. #running-req: 1, #token: 595, token usage: 0.03, gen throughput (token/s): 57.52, #queue-req: 0
+[2025-04-30 00:11:25 TP0] Decode batch. #running-req: 1, #token: 635, token usage: 0.03, gen throughput (token/s): 57.57, #queue-req: 0
+[2025-04-30 00:11:26 TP0] Decode batch. #running-req: 1, #token: 675, token usage: 0.03, gen throughput (token/s): 57.33, #queue-req: 0
+[2025-04-30 00:11:27 TP0] Decode batch. #running-req: 1, #token: 715, token usage: 0.03, gen throughput (token/s): 57.95, #queue-req: 0
+[2025-04-30 00:11:27 TP0] Decode batch. #running-req: 1, #token: 755, token usage: 0.04, gen throughput (token/s): 55.27, #queue-req: 0
+[2025-04-30 00:11:28 TP0] Decode batch. #running-req: 1, #token: 1, token usage: 0.00, gen throughput (token/s): 53.86, #queue-req: 0
+[2025-04-30 00:11:28] INFO:     127.0.0.1:53994 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'Okay, so I need to figure out how to solve this problem. Hmm, the problem is about finding the derivative of a function, right? Let me see. The function is f(x) = 3x^2 + 2x - 5. I remember from class that to find the derivative, I need to use the power rule. \n\nAlright, the power rule says that if I have a function like x^n, its derivative is n*x^(n-1). So, applying that to each term of the function should give me the derivative. Let\'s break it down term by term.\n\nFirst term: 3x^2. The exponent is 2, so I bring that down as a coefficient, multiply it by 3, which gives me 6. Then, I reduce the exponent by 1, so it becomes x^(2-1) = x^1, which is just x. So, the derivative of 3x^2 is 6x.\n\nSecond term: 2x. The exponent here is 1 because x is the same as x^1. Applying the power rule, I bring down the 1 as a coefficient, multiply it by 2, which gives me 2. Then, reduce the exponent by 1, so it becomes x^(1-1) = x^0, which is 1. So, the derivative of 2x is 2.\n\nThird term: -5. This is a constant term. I remember that the derivative of a constant is zero because there\'s no change as x changes. So, the derivative of -5 is 0.\n\nNow, putting it all together, the derivative of f(x) should be 6x + 2. Wait, let me double-check. The first term\'s derivative is 6x, the second is 2, and the third is 0. So, yes, adding them up gives 6x + 2.\n\nI think that\'s it. But just to be sure, maybe I should plug in a value for x and see if the derivative makes sense. Let\'s say x = 1. The original function f(1) = 3(1)^2 + 2(1) - 5 = 3 + 2 - 5 = 0. The derivative at x=1 is 6(1) + 2 = 8. So, at the point (1,0), the slope of the tangent line should be 8. That seems reasonable.\n\nAnother check: x = 0. f(0) = 3(0)^2 + 2(0) -5 = -5. The derivative at x=0 is 6(0) + 2 = 2. So, the slope at (0,-5) is 2. That also makes sense because the function is a parabola opening upwards, so the slope at the vertex (which is at x = -b/(2a) = -2/(6) = -1/3) should be zero. Wait, but at x=0, it\'s 2. Hmm, maybe I should calculate the slope at x = -1/3. Let\'s see, f\'(-1/3) = 6*(-1/3) + 2 = -2 + 2 = 0. Yes, that\'s correct. So, the derivative at x=0 is 2, which is positive, meaning the function is increasing there, which aligns with the parabola\'s shape.\n\nI think I\'m confident now. The derivative is 6x + 2.\n</think>{\n\n"name": "StepbyStepSolution",\n"population": 1000000000\n\n\n  \t\n\t\t\t\n \t\t}', 'meta_info': {'id': '53de20fb877f464f8b1e4c03b4b39b51', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 5, 'completion_tokens': 790, 'cached_tokens': 2, 'e2e_latency': 8.426863670349121}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'Okay, so I need to figure out how to solve this problem. Hmm, the problem is about finding the derivative of a function, right? Let me see. The function is f(x) = 3x^2 + 2x - 5. I remember from class that to find the derivative, I need to use the power rule. \n\nAlright, the power rule says that if I have a function like x^n, its derivative is n*x^(n-1). So, applying that to each term of the function should give me the derivative. Let\'s break it down term by term.\n\nFirst term: 3x^2. The exponent is 2, so I bring that down as a coefficient, multiply it by 3, which gives me 6. Then, I reduce the exponent by 1, so it becomes x^(2-1) = x^1, which is just x. So, the derivative of 3x^2 is 6x.\n\nSecond term: 2x. The exponent here is 1 because x is the same as x^1. Applying the power rule, I bring down the 1 as a coefficient, multiply it by 2, which gives me 2. Then, reduce the exponent by 1, so it becomes x^(1-1) = x^0, which is 1. So, the derivative of 2x is 2.\n\nThird term: -5. This is a constant term. I remember that the derivative of a constant is zero because there\'s no change as x changes. So, the derivative of -5 is 0.\n\nNow, putting it all together, the derivative of f(x) should be 6x + 2. Wait, let me double-check. The first term\'s derivative is 6x, the second is 2, and the third is 0. So, yes, adding them up gives 6x + 2.\n\nI think that\'s it. But just to be sure, maybe I should plug in a value for x and see if the derivative makes sense. Let\'s say x = 1. The original function f(1) = 3(1)^2 + 2(1) - 5 = 3 + 2 - 5 = 0. The derivative at x=1 is 6(1) + 2 = 8. So, at the point (1,0), the slope of the tangent line should be 8. That seems reasonable.\n\nAnother check: x = 0. f(0) = 3(0)^2 + 2(0) -5 = -5. The derivative at x=0 is 6(0) + 2 = 2. So, the slope at (0,-5) is 2. That also makes sense because the function is a parabola opening upwards, so the slope at the vertex (which is at x = -b/(2a) = -2/(6) = -1/3) should be zero. Wait, but at x=0, it\'s 2. Hmm, maybe I should calculate the slope at x = -1/3. Let\'s see, f\'(-1/3) = 6*(-1/3) + 2 = -2 + 2 = 0. Yes, that\'s correct. So, the derivative at x=0 is 2, which is positive, meaning the function is increasing there, which aligns with the parabola\'s shape.\n\nI think I\'m confident now. The derivative is 6x + 2.\n</think>{\n\n"name": "StepbyStepSolution",\n"population": 1000000000\n\n\n  \t\n\t\t\t\n \t\t}', 'meta_info': {'id': '4e872205b35145ef82083a449bcf0ffd', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 5, 'completion_tokens': 790, 'cached_tokens': 2, 'e2e_latency': 13.825938701629639}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1257,15 +1256,17 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:57 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:57 TP0] Prefill batch. #new-seq: 3, #new-token: 3, #cached-token: 30, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:47:58 TP0] Decode batch. #running-req: 3, #token: 119, token usage: 0.01, gen throughput (token/s): 180.60, #queue-req: 0
-[2025-04-29 23:47:58 TP0] Decode batch. #running-req: 3, #token: 239, token usage: 0.01, gen throughput (token/s): 291.07, #queue-req: 0
-[2025-04-29 23:47:59 TP0] Decode batch. #running-req: 3, #token: 359, token usage: 0.02, gen throughput (token/s): 290.14, #queue-req: 0
-[2025-04-29 23:47:59 TP0] Decode batch. #running-req: 3, #token: 479, token usage: 0.02, gen throughput (token/s): 259.30, #queue-req: 0
-[2025-04-29 23:47:59 TP0] Decode batch. #running-req: 3, #token: 599, token usage: 0.03, gen throughput (token/s): 288.86, #queue-req: 0
-[2025-04-29 23:47:59] INFO:     127.0.0.1:49602 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[{&#39;text&#39;: &#34;\nThe capital of France is Paris.\n\nThat&#39;s all the information I have.\n\nOkay, so I need to figure out the capital of France. I know that Paris is the capital, but I&#39;m not entirely sure. Let me think about why I think that. I&#39;ve heard it mentioned a lot, especially in movies and TV shows. People often go there for business or tourism. Also, I remember learning in school that Paris is a major city in France, known for landmarks like the Eiffel Tower and the Louvre Museum. Those places are famous worldwide, which makes me think that Paris is indeed the capital. Maybe I can cross-check this with some other sources or my notes. Wait, I don&#39;t have any other information right now, but based on what I know, Paris is the capital of France. I don&#39;t recall any other major city in France being referred to as the capital. So, I&#39;m pretty confident that Paris is correct.\n&lt;/think&gt;Paris is the capital of France&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;e52af3fcfcb645b7b2c5a7fc923d331b&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 201, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.326016426086426}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris.\n\nThat&#39;s all the information I have.\n\nOkay, so I need to figure out the capital of France. I know that Paris is the capital, but I&#39;m not entirely sure. Let me think about why I think that. I&#39;ve heard it mentioned a lot, especially in movies and TV shows. People often go there for business or tourism. Also, I remember learning in school that Paris is a major city in France, known for landmarks like the Eiffel Tower and the Louvre Museum. Those places are famous worldwide, which makes me think that Paris is indeed the capital. Maybe I can cross-check this with some other sources or my notes. Wait, I don&#39;t have any other information right now, but based on what I know, Paris is the capital of France. I don&#39;t recall any other major city in France being referred to as the capital. So, I&#39;m pretty confident that Paris is correct.\n&lt;/think&gt;Paris is the capital of France&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;3ae9196796e4498aa3120cf80e9543f7&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 201, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.326021432876587}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris.\n\nThat&#39;s all the information I have.\n\nOkay, so I need to figure out the capital of France. I know that Paris is the capital, but I&#39;m not entirely sure. Let me think about why I think that. I&#39;ve heard it mentioned a lot, especially in movies and TV shows. People often go there for business or tourism. Also, I remember learning in school that Paris is a major city in France, known for landmarks like the Eiffel Tower and the Louvre Museum. Those places are famous worldwide, which makes me think that Paris is indeed the capital. Maybe I can cross-check this with some other sources or my notes. Wait, I don&#39;t have any other information right now, but based on what I know, Paris is the capital of France. I don&#39;t recall any other major city in France being referred to as the capital. So, I&#39;m pretty confident that Paris is correct.\n&lt;/think&gt;Paris is the capital of France&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;7ec11e27751c453ba71cfaac8012baa2&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 201, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.326024055480957}}]
+[2025-04-30 00:11:28 TP0] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:11:28 TP0] Prefill batch. #new-seq: 2, #new-token: 2, #cached-token: 20, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:11:28 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 10, token usage: 0.00, #running-req: 2, #queue-req: 0
+[2025-04-30 00:11:29 TP0] Decode batch. #running-req: 3, #token: 128, token usage: 0.01, gen throughput (token/s): 106.83, #queue-req: 0
+[2025-04-30 00:11:30 TP0] Decode batch. #running-req: 3, #token: 248, token usage: 0.01, gen throughput (token/s): 163.27, #queue-req: 0
+[2025-04-30 00:11:31 TP0] Decode batch. #running-req: 3, #token: 368, token usage: 0.02, gen throughput (token/s): 159.84, #queue-req: 0
+[2025-04-30 00:11:32 TP0] Decode batch. #running-req: 3, #token: 488, token usage: 0.02, gen throughput (token/s): 161.82, #queue-req: 0
+[2025-04-30 00:11:32 TP0] Decode batch. #running-req: 3, #token: 608, token usage: 0.03, gen throughput (token/s): 159.86, #queue-req: 0
+[2025-04-30 00:11:33 TP0] Decode batch. #running-req: 1, #token: 250, token usage: 0.01, gen throughput (token/s): 64.57, #queue-req: 0
+[2025-04-30 00:11:33] INFO:     127.0.0.1:57180 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[{&#39;text&#39;: &#34;\nThe capital of France is Paris.\n\nThat&#39;s all the information I have.\n\nOkay, so I need to figure out the capital of France. I know that Paris is the capital, but I&#39;m not entirely sure. Let me think about why I think that. I&#39;ve heard it mentioned a lot, especially in movies and TV shows. People often go there for business or tourism. Also, I remember learning in school that Paris is a major city in France, known for landmarks like the Eiffel Tower and the Louvre Museum. Those places are famous worldwide, which makes me think that Paris is indeed the capital. Maybe I can cross-check this with some other sources or my notes. Wait, I don&#39;t have any other information right now, but based on what I know, Paris is the capital of France. I don&#39;t recall any other major city in France being referred to as the capital. So, I&#39;m pretty confident that Paris is correct.\n&lt;/think&gt;Paris is the capital of France&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;6af32d80c968404993765339b4134766&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 201, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 4.087661981582642}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris.\n\nThat&#39;s all the information I have.\n\nOkay, so I need to figure out the capital of France. I know that Paris is the capital, but I&#39;m not entirely sure. Let me think about why I think that. I&#39;ve heard it mentioned a lot, especially in movies and TV shows. People often go there for business or tourism. Also, I remember learning in school that Paris is a major city in France, known for landmarks like the Eiffel Tower and the Louvre Museum. Those places are famous worldwide, which makes me think that Paris is indeed the capital. Maybe I can cross-check this with some other sources or my notes. Wait, I don&#39;t have any other information right now, but based on what I know, Paris is the capital of France. I don&#39;t recall any other major city in France being referred to as the capital. So, I&#39;m pretty confident that Paris is correct.\n&lt;/think&gt;Paris is the capital of France&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;2e3e3542f96c4bed974ddd91e68598c0&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 201, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 4.087675333023071}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris.\n\nThe user has provided the correct answer, but I need to analyze it to understand the thought process and identify any potential mistakes or areas for improvement.\n\nFirst, I should acknowledge the correct answer. Paris is indeed the capital of France.\n\nNext, I should consider why the user provided this answer. It might be a straightforward response, possibly from a student or someone with basic knowledge.\n\nI should think about what the user might not know. Maybe they don&#39;t know why Paris is the capital or if there have been changes in the capital over time.\n\nAdditionally, I could provide more context, such as when Paris became the capital, its significance, or notable landmarks in the city.\n\nI should also consider if the user might have doubts, like questioning whether Paris is still the capital or if there are other capitals nearby that could be confused.\n\nTo improve the answer, I could add more details to enhance understanding, such as historical background or cultural significance.\n\nI should also be cautious about any potential misinformation, but since the answer is correct, I don&#39;t need to address errors here.\n\nOverall, the thought process involves confirming the answer, expanding on related information, and considering the user&#39;s possible needs beyond the basic question.\n&lt;/think&gt;Paris is the capital of France&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;298cc336935e4519849771ad0e3df937&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 257, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 5.084362506866455}}]
 </pre></div></div>
 </div>
 </section>
@@ -1295,60 +1296,60 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:47:59 TP0] Prefill batch. #new-seq: 1, #new-token: 5, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:48:00 TP0] Decode batch. #running-req: 1, #token: 41, token usage: 0.00, gen throughput (token/s): 122.40, #queue-req: 0
-[2025-04-29 23:48:00 TP0] Decode batch. #running-req: 1, #token: 81, token usage: 0.00, gen throughput (token/s): 101.34, #queue-req: 0
-[2025-04-29 23:48:01 TP0] Decode batch. #running-req: 1, #token: 121, token usage: 0.01, gen throughput (token/s): 102.55, #queue-req: 0
-[2025-04-29 23:48:01 TP0] Decode batch. #running-req: 1, #token: 161, token usage: 0.01, gen throughput (token/s): 102.38, #queue-req: 0
-[2025-04-29 23:48:01 TP0] Decode batch. #running-req: 1, #token: 201, token usage: 0.01, gen throughput (token/s): 102.45, #queue-req: 0
-[2025-04-29 23:48:02 TP0] Decode batch. #running-req: 1, #token: 241, token usage: 0.01, gen throughput (token/s): 95.72, #queue-req: 0
-[2025-04-29 23:48:02 TP0] Decode batch. #running-req: 1, #token: 281, token usage: 0.01, gen throughput (token/s): 101.53, #queue-req: 0
-[2025-04-29 23:48:03 TP0] Decode batch. #running-req: 1, #token: 321, token usage: 0.02, gen throughput (token/s): 102.79, #queue-req: 0
-[2025-04-29 23:48:03 TP0] Decode batch. #running-req: 1, #token: 361, token usage: 0.02, gen throughput (token/s): 103.14, #queue-req: 0
-[2025-04-29 23:48:03 TP0] Decode batch. #running-req: 1, #token: 401, token usage: 0.02, gen throughput (token/s): 102.85, #queue-req: 0
-[2025-04-29 23:48:04 TP0] Decode batch. #running-req: 1, #token: 441, token usage: 0.02, gen throughput (token/s): 102.35, #queue-req: 0
-[2025-04-29 23:48:04 TP0] Decode batch. #running-req: 1, #token: 481, token usage: 0.02, gen throughput (token/s): 98.80, #queue-req: 0
-[2025-04-29 23:48:05 TP0] Decode batch. #running-req: 1, #token: 521, token usage: 0.03, gen throughput (token/s): 100.33, #queue-req: 0
-[2025-04-29 23:48:05 TP0] Decode batch. #running-req: 1, #token: 561, token usage: 0.03, gen throughput (token/s): 98.36, #queue-req: 0
-[2025-04-29 23:48:05 TP0] Decode batch. #running-req: 1, #token: 601, token usage: 0.03, gen throughput (token/s): 98.56, #queue-req: 0
-[2025-04-29 23:48:06 TP0] Decode batch. #running-req: 1, #token: 641, token usage: 0.03, gen throughput (token/s): 98.32, #queue-req: 0
-[2025-04-29 23:48:06 TP0] Decode batch. #running-req: 1, #token: 681, token usage: 0.03, gen throughput (token/s): 99.03, #queue-req: 0
-[2025-04-29 23:48:07 TP0] Decode batch. #running-req: 1, #token: 721, token usage: 0.04, gen throughput (token/s): 89.81, #queue-req: 0
-[2025-04-29 23:48:07 TP0] Decode batch. #running-req: 1, #token: 761, token usage: 0.04, gen throughput (token/s): 98.93, #queue-req: 0
-[2025-04-29 23:48:07 TP0] Decode batch. #running-req: 1, #token: 801, token usage: 0.04, gen throughput (token/s): 98.10, #queue-req: 0
-[2025-04-29 23:48:08 TP0] Decode batch. #running-req: 1, #token: 841, token usage: 0.04, gen throughput (token/s): 98.77, #queue-req: 0
-[2025-04-29 23:48:08 TP0] Decode batch. #running-req: 1, #token: 881, token usage: 0.04, gen throughput (token/s): 98.75, #queue-req: 0
-[2025-04-29 23:48:09 TP0] Decode batch. #running-req: 1, #token: 921, token usage: 0.04, gen throughput (token/s): 92.53, #queue-req: 0
-[2025-04-29 23:48:09 TP0] Decode batch. #running-req: 1, #token: 961, token usage: 0.05, gen throughput (token/s): 90.18, #queue-req: 0
-[2025-04-29 23:48:10 TP0] Decode batch. #running-req: 1, #token: 1001, token usage: 0.05, gen throughput (token/s): 96.43, #queue-req: 0
-[2025-04-29 23:48:10 TP0] Decode batch. #running-req: 1, #token: 1041, token usage: 0.05, gen throughput (token/s): 97.88, #queue-req: 0
-[2025-04-29 23:48:10 TP0] Decode batch. #running-req: 1, #token: 1081, token usage: 0.05, gen throughput (token/s): 98.11, #queue-req: 0
-[2025-04-29 23:48:11 TP0] Decode batch. #running-req: 1, #token: 1121, token usage: 0.05, gen throughput (token/s): 98.12, #queue-req: 0
-[2025-04-29 23:48:11 TP0] Decode batch. #running-req: 1, #token: 1161, token usage: 0.06, gen throughput (token/s): 98.69, #queue-req: 0
-[2025-04-29 23:48:12 TP0] Decode batch. #running-req: 1, #token: 1201, token usage: 0.06, gen throughput (token/s): 97.99, #queue-req: 0
-[2025-04-29 23:48:12 TP0] Decode batch. #running-req: 1, #token: 1241, token usage: 0.06, gen throughput (token/s): 98.43, #queue-req: 0
-[2025-04-29 23:48:12 TP0] Decode batch. #running-req: 1, #token: 1281, token usage: 0.06, gen throughput (token/s): 98.34, #queue-req: 0
-[2025-04-29 23:48:13 TP0] Decode batch. #running-req: 1, #token: 1321, token usage: 0.06, gen throughput (token/s): 98.48, #queue-req: 0
-[2025-04-29 23:48:13 TP0] Decode batch. #running-req: 1, #token: 1361, token usage: 0.07, gen throughput (token/s): 98.89, #queue-req: 0
-[2025-04-29 23:48:14 TP0] Decode batch. #running-req: 1, #token: 1401, token usage: 0.07, gen throughput (token/s): 98.51, #queue-req: 0
-[2025-04-29 23:48:14 TP0] Decode batch. #running-req: 1, #token: 1441, token usage: 0.07, gen throughput (token/s): 98.89, #queue-req: 0
-[2025-04-29 23:48:14 TP0] Decode batch. #running-req: 1, #token: 1481, token usage: 0.07, gen throughput (token/s): 99.58, #queue-req: 0
-[2025-04-29 23:48:15 TP0] Decode batch. #running-req: 1, #token: 1521, token usage: 0.07, gen throughput (token/s): 98.70, #queue-req: 0
-[2025-04-29 23:48:15 TP0] Decode batch. #running-req: 1, #token: 1561, token usage: 0.08, gen throughput (token/s): 98.41, #queue-req: 0
-[2025-04-29 23:48:16 TP0] Decode batch. #running-req: 1, #token: 1601, token usage: 0.08, gen throughput (token/s): 98.68, #queue-req: 0
-[2025-04-29 23:48:16 TP0] Decode batch. #running-req: 1, #token: 1641, token usage: 0.08, gen throughput (token/s): 94.44, #queue-req: 0
-[2025-04-29 23:48:16 TP0] Decode batch. #running-req: 1, #token: 1681, token usage: 0.08, gen throughput (token/s): 93.37, #queue-req: 0
-[2025-04-29 23:48:17 TP0] Decode batch. #running-req: 1, #token: 1721, token usage: 0.08, gen throughput (token/s): 89.31, #queue-req: 0
-[2025-04-29 23:48:17 TP0] Decode batch. #running-req: 1, #token: 1761, token usage: 0.09, gen throughput (token/s): 95.72, #queue-req: 0
-[2025-04-29 23:48:18 TP0] Decode batch. #running-req: 1, #token: 1801, token usage: 0.09, gen throughput (token/s): 99.91, #queue-req: 0
-[2025-04-29 23:48:18 TP0] Decode batch. #running-req: 1, #token: 1841, token usage: 0.09, gen throughput (token/s): 96.61, #queue-req: 0
-[2025-04-29 23:48:19 TP0] Decode batch. #running-req: 1, #token: 1881, token usage: 0.09, gen throughput (token/s): 94.96, #queue-req: 0
-[2025-04-29 23:48:19 TP0] Decode batch. #running-req: 1, #token: 1921, token usage: 0.09, gen throughput (token/s): 95.14, #queue-req: 0
-[2025-04-29 23:48:19 TP0] Decode batch. #running-req: 1, #token: 1961, token usage: 0.10, gen throughput (token/s): 100.05, #queue-req: 0
-[2025-04-29 23:48:20 TP0] Decode batch. #running-req: 1, #token: 2001, token usage: 0.10, gen throughput (token/s): 99.27, #queue-req: 0
-[2025-04-29 23:48:20 TP0] Decode batch. #running-req: 1, #token: 2041, token usage: 0.10, gen throughput (token/s): 96.25, #queue-req: 0
-[2025-04-29 23:48:20] INFO:     127.0.0.1:49616 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-{&#39;text&#39;: &#39; France, and the \n\\( n \\)  \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\(&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;1e03a021110741399bbf3a306d972dd5&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;length&#39;, &#39;length&#39;: 2048}, &#39;prompt_tokens&#39;: 6, &#39;completion_tokens&#39;: 2048, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 20.901045083999634}}
+[2025-04-30 00:11:33 TP0] Prefill batch. #new-seq: 1, #new-token: 5, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:11:34 TP0] Decode batch. #running-req: 1, #token: 28, token usage: 0.00, gen throughput (token/s): 52.88, #queue-req: 0
+[2025-04-30 00:11:34 TP0] Decode batch. #running-req: 1, #token: 68, token usage: 0.00, gen throughput (token/s): 57.29, #queue-req: 0
+[2025-04-30 00:11:35 TP0] Decode batch. #running-req: 1, #token: 108, token usage: 0.01, gen throughput (token/s): 56.28, #queue-req: 0
+[2025-04-30 00:11:36 TP0] Decode batch. #running-req: 1, #token: 148, token usage: 0.01, gen throughput (token/s): 57.34, #queue-req: 0
+[2025-04-30 00:11:37 TP0] Decode batch. #running-req: 1, #token: 188, token usage: 0.01, gen throughput (token/s): 57.25, #queue-req: 0
+[2025-04-30 00:11:37 TP0] Decode batch. #running-req: 1, #token: 228, token usage: 0.01, gen throughput (token/s): 54.55, #queue-req: 0
+[2025-04-30 00:11:38 TP0] Decode batch. #running-req: 1, #token: 268, token usage: 0.01, gen throughput (token/s): 59.26, #queue-req: 0
+[2025-04-30 00:11:39 TP0] Decode batch. #running-req: 1, #token: 308, token usage: 0.02, gen throughput (token/s): 58.97, #queue-req: 0
+[2025-04-30 00:11:39 TP0] Decode batch. #running-req: 1, #token: 348, token usage: 0.02, gen throughput (token/s): 58.12, #queue-req: 0
+[2025-04-30 00:11:40 TP0] Decode batch. #running-req: 1, #token: 388, token usage: 0.02, gen throughput (token/s): 58.27, #queue-req: 0
+[2025-04-30 00:11:41 TP0] Decode batch. #running-req: 1, #token: 428, token usage: 0.02, gen throughput (token/s): 58.27, #queue-req: 0
+[2025-04-30 00:11:41 TP0] Decode batch. #running-req: 1, #token: 468, token usage: 0.02, gen throughput (token/s): 57.82, #queue-req: 0
+[2025-04-30 00:11:42 TP0] Decode batch. #running-req: 1, #token: 508, token usage: 0.02, gen throughput (token/s): 56.33, #queue-req: 0
+[2025-04-30 00:11:43 TP0] Decode batch. #running-req: 1, #token: 548, token usage: 0.03, gen throughput (token/s): 55.76, #queue-req: 0
+[2025-04-30 00:11:44 TP0] Decode batch. #running-req: 1, #token: 588, token usage: 0.03, gen throughput (token/s): 51.72, #queue-req: 0
+[2025-04-30 00:11:44 TP0] Decode batch. #running-req: 1, #token: 628, token usage: 0.03, gen throughput (token/s): 50.94, #queue-req: 0
+[2025-04-30 00:11:45 TP0] Decode batch. #running-req: 1, #token: 668, token usage: 0.03, gen throughput (token/s): 50.18, #queue-req: 0
+[2025-04-30 00:11:46 TP0] Decode batch. #running-req: 1, #token: 708, token usage: 0.03, gen throughput (token/s): 50.03, #queue-req: 0
+[2025-04-30 00:11:47 TP0] Decode batch. #running-req: 1, #token: 748, token usage: 0.04, gen throughput (token/s): 50.44, #queue-req: 0
+[2025-04-30 00:11:47 TP0] Decode batch. #running-req: 1, #token: 788, token usage: 0.04, gen throughput (token/s): 57.64, #queue-req: 0
+[2025-04-30 00:11:48 TP0] Decode batch. #running-req: 1, #token: 828, token usage: 0.04, gen throughput (token/s): 57.68, #queue-req: 0
+[2025-04-30 00:11:49 TP0] Decode batch. #running-req: 1, #token: 868, token usage: 0.04, gen throughput (token/s): 56.16, #queue-req: 0
+[2025-04-30 00:11:50 TP0] Decode batch. #running-req: 1, #token: 908, token usage: 0.04, gen throughput (token/s): 57.31, #queue-req: 0
+[2025-04-30 00:11:50 TP0] Decode batch. #running-req: 1, #token: 948, token usage: 0.05, gen throughput (token/s): 56.51, #queue-req: 0
+[2025-04-30 00:11:51 TP0] Decode batch. #running-req: 1, #token: 988, token usage: 0.05, gen throughput (token/s): 57.24, #queue-req: 0
+[2025-04-30 00:11:52 TP0] Decode batch. #running-req: 1, #token: 1028, token usage: 0.05, gen throughput (token/s): 57.10, #queue-req: 0
+[2025-04-30 00:11:52 TP0] Decode batch. #running-req: 1, #token: 1068, token usage: 0.05, gen throughput (token/s): 57.34, #queue-req: 0
+[2025-04-30 00:11:53 TP0] Decode batch. #running-req: 1, #token: 1108, token usage: 0.05, gen throughput (token/s): 57.38, #queue-req: 0
+[2025-04-30 00:11:54 TP0] Decode batch. #running-req: 1, #token: 1148, token usage: 0.06, gen throughput (token/s): 56.21, #queue-req: 0
+[2025-04-30 00:11:54 TP0] Decode batch. #running-req: 1, #token: 1188, token usage: 0.06, gen throughput (token/s): 57.73, #queue-req: 0
+[2025-04-30 00:11:55 TP0] Decode batch. #running-req: 1, #token: 1228, token usage: 0.06, gen throughput (token/s): 58.27, #queue-req: 0
+[2025-04-30 00:11:56 TP0] Decode batch. #running-req: 1, #token: 1268, token usage: 0.06, gen throughput (token/s): 57.84, #queue-req: 0
+[2025-04-30 00:11:57 TP0] Decode batch. #running-req: 1, #token: 1308, token usage: 0.06, gen throughput (token/s): 58.17, #queue-req: 0
+[2025-04-30 00:11:57 TP0] Decode batch. #running-req: 1, #token: 1348, token usage: 0.07, gen throughput (token/s): 58.66, #queue-req: 0
+[2025-04-30 00:11:58 TP0] Decode batch. #running-req: 1, #token: 1388, token usage: 0.07, gen throughput (token/s): 59.03, #queue-req: 0
+[2025-04-30 00:11:59 TP0] Decode batch. #running-req: 1, #token: 1428, token usage: 0.07, gen throughput (token/s): 58.15, #queue-req: 0
+[2025-04-30 00:11:59 TP0] Decode batch. #running-req: 1, #token: 1468, token usage: 0.07, gen throughput (token/s): 56.67, #queue-req: 0
+[2025-04-30 00:12:00 TP0] Decode batch. #running-req: 1, #token: 1508, token usage: 0.07, gen throughput (token/s): 57.86, #queue-req: 0
+[2025-04-30 00:12:01 TP0] Decode batch. #running-req: 1, #token: 1548, token usage: 0.08, gen throughput (token/s): 57.90, #queue-req: 0
+[2025-04-30 00:12:01 TP0] Decode batch. #running-req: 1, #token: 1588, token usage: 0.08, gen throughput (token/s): 57.97, #queue-req: 0
+[2025-04-30 00:12:02 TP0] Decode batch. #running-req: 1, #token: 1628, token usage: 0.08, gen throughput (token/s): 57.41, #queue-req: 0
+[2025-04-30 00:12:03 TP0] Decode batch. #running-req: 1, #token: 1668, token usage: 0.08, gen throughput (token/s): 57.09, #queue-req: 0
+[2025-04-30 00:12:03 TP0] Decode batch. #running-req: 1, #token: 1708, token usage: 0.08, gen throughput (token/s): 57.12, #queue-req: 0
+[2025-04-30 00:12:04 TP0] Decode batch. #running-req: 1, #token: 1748, token usage: 0.09, gen throughput (token/s): 56.68, #queue-req: 0
+[2025-04-30 00:12:05 TP0] Decode batch. #running-req: 1, #token: 1788, token usage: 0.09, gen throughput (token/s): 56.59, #queue-req: 0
+[2025-04-30 00:12:06 TP0] Decode batch. #running-req: 1, #token: 1828, token usage: 0.09, gen throughput (token/s): 56.37, #queue-req: 0
+[2025-04-30 00:12:06 TP0] Decode batch. #running-req: 1, #token: 1868, token usage: 0.09, gen throughput (token/s): 56.19, #queue-req: 0
+[2025-04-30 00:12:07 TP0] Decode batch. #running-req: 1, #token: 1908, token usage: 0.09, gen throughput (token/s): 53.48, #queue-req: 0
+[2025-04-30 00:12:08 TP0] Decode batch. #running-req: 1, #token: 1948, token usage: 0.10, gen throughput (token/s): 56.69, #queue-req: 0
+[2025-04-30 00:12:08 TP0] Decode batch. #running-req: 1, #token: 1988, token usage: 0.10, gen throughput (token/s): 57.95, #queue-req: 0
+[2025-04-30 00:12:09 TP0] Decode batch. #running-req: 1, #token: 2028, token usage: 0.10, gen throughput (token/s): 57.70, #queue-req: 0
+[2025-04-30 00:12:10] INFO:     127.0.0.1:58272 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+{&#39;text&#39;: &#39; France, and the \n\\( n \\)  \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\(&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;3adf6991efc043748f35f322b14a9728&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;length&#39;, &#39;length&#39;: 2048}, &#39;prompt_tokens&#39;: 6, &#39;completion_tokens&#39;: 2048, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 36.259642124176025}}
 </pre></div></div>
 </div>
 </section>
@@ -1398,51 +1399,48 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-04-29 23:48:20 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 19, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-04-29 23:48:21 TP0] Decode batch. #running-req: 1, #token: 47, token usage: 0.00, gen throughput (token/s): 93.25, #queue-req: 0
-[2025-04-29 23:48:21 TP0] Decode batch. #running-req: 1, #token: 87, token usage: 0.00, gen throughput (token/s): 100.01, #queue-req: 0
-[2025-04-29 23:48:21 TP0] Decode batch. #running-req: 1, #token: 127, token usage: 0.01, gen throughput (token/s): 99.07, #queue-req: 0
-[2025-04-29 23:48:22 TP0] Decode batch. #running-req: 1, #token: 167, token usage: 0.01, gen throughput (token/s): 99.64, #queue-req: 0
-[2025-04-29 23:48:22 TP0] Decode batch. #running-req: 1, #token: 207, token usage: 0.01, gen throughput (token/s): 93.39, #queue-req: 0
-[2025-04-29 23:48:23 TP0] Decode batch. #running-req: 1, #token: 247, token usage: 0.01, gen throughput (token/s): 98.33, #queue-req: 0
-[2025-04-29 23:48:23 TP0] Decode batch. #running-req: 1, #token: 287, token usage: 0.01, gen throughput (token/s): 98.48, #queue-req: 0
-[2025-04-29 23:48:24 TP0] Decode batch. #running-req: 1, #token: 327, token usage: 0.02, gen throughput (token/s): 99.67, #queue-req: 0
-[2025-04-29 23:48:24 TP0] Decode batch. #running-req: 1, #token: 367, token usage: 0.02, gen throughput (token/s): 98.66, #queue-req: 0
-[2025-04-29 23:48:24 TP0] Decode batch. #running-req: 1, #token: 407, token usage: 0.02, gen throughput (token/s): 100.10, #queue-req: 0
-[2025-04-29 23:48:25 TP0] Decode batch. #running-req: 1, #token: 447, token usage: 0.02, gen throughput (token/s): 100.74, #queue-req: 0
-[2025-04-29 23:48:25 TP0] Decode batch. #running-req: 1, #token: 487, token usage: 0.02, gen throughput (token/s): 100.04, #queue-req: 0
-[2025-04-29 23:48:26 TP0] Decode batch. #running-req: 1, #token: 527, token usage: 0.03, gen throughput (token/s): 99.38, #queue-req: 0
-[2025-04-29 23:48:26 TP0] Decode batch. #running-req: 1, #token: 567, token usage: 0.03, gen throughput (token/s): 98.40, #queue-req: 0
-[2025-04-29 23:48:26 TP0] Decode batch. #running-req: 1, #token: 607, token usage: 0.03, gen throughput (token/s): 97.97, #queue-req: 0
-[2025-04-29 23:48:27 TP0] Decode batch. #running-req: 1, #token: 647, token usage: 0.03, gen throughput (token/s): 98.53, #queue-req: 0
-[2025-04-29 23:48:27 TP0] Decode batch. #running-req: 1, #token: 687, token usage: 0.03, gen throughput (token/s): 97.48, #queue-req: 0
-[2025-04-29 23:48:28 TP0] Decode batch. #running-req: 1, #token: 727, token usage: 0.04, gen throughput (token/s): 96.73, #queue-req: 0
-[2025-04-29 23:48:28 TP0] Decode batch. #running-req: 1, #token: 767, token usage: 0.04, gen throughput (token/s): 97.65, #queue-req: 0
-[2025-04-29 23:48:28 TP0] Decode batch. #running-req: 0, #token: 0, token usage: 0.00, gen throughput (token/s): 100.74, #queue-req: 0
-[2025-04-29 23:48:28] INFO:     127.0.0.1:45226 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-04-30 00:12:10 TP0] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 19, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-04-30 00:12:10 TP0] Decode batch. #running-req: 1, #token: 34, token usage: 0.00, gen throughput (token/s): 54.49, #queue-req: 0
+[2025-04-30 00:12:11 TP0] Decode batch. #running-req: 1, #token: 74, token usage: 0.00, gen throughput (token/s): 57.24, #queue-req: 0
+[2025-04-30 00:12:11 TP0] Decode batch. #running-req: 1, #token: 114, token usage: 0.01, gen throughput (token/s): 54.25, #queue-req: 0
+[2025-04-30 00:12:12 TP0] Decode batch. #running-req: 1, #token: 154, token usage: 0.01, gen throughput (token/s): 57.93, #queue-req: 0
+[2025-04-30 00:12:13 TP0] Decode batch. #running-req: 1, #token: 194, token usage: 0.01, gen throughput (token/s): 56.22, #queue-req: 0
+[2025-04-30 00:12:13 TP0] Decode batch. #running-req: 1, #token: 234, token usage: 0.01, gen throughput (token/s): 57.70, #queue-req: 0
+[2025-04-30 00:12:14 TP0] Decode batch. #running-req: 1, #token: 274, token usage: 0.01, gen throughput (token/s): 58.12, #queue-req: 0
+[2025-04-30 00:12:15 TP0] Decode batch. #running-req: 1, #token: 314, token usage: 0.02, gen throughput (token/s): 58.58, #queue-req: 0
+[2025-04-30 00:12:15 TP0] Decode batch. #running-req: 1, #token: 354, token usage: 0.02, gen throughput (token/s): 58.04, #queue-req: 0
+[2025-04-30 00:12:16 TP0] Decode batch. #running-req: 1, #token: 394, token usage: 0.02, gen throughput (token/s): 57.32, #queue-req: 0
+[2025-04-30 00:12:17 TP0] Decode batch. #running-req: 1, #token: 434, token usage: 0.02, gen throughput (token/s): 57.35, #queue-req: 0
+[2025-04-30 00:12:18 TP0] Decode batch. #running-req: 1, #token: 474, token usage: 0.02, gen throughput (token/s): 56.71, #queue-req: 0
+[2025-04-30 00:12:18 TP0] Decode batch. #running-req: 1, #token: 514, token usage: 0.03, gen throughput (token/s): 57.28, #queue-req: 0
+[2025-04-30 00:12:19 TP0] Decode batch. #running-req: 1, #token: 554, token usage: 0.03, gen throughput (token/s): 56.25, #queue-req: 0
+[2025-04-30 00:12:20 TP0] Decode batch. #running-req: 1, #token: 594, token usage: 0.03, gen throughput (token/s): 54.51, #queue-req: 0
+[2025-04-30 00:12:20 TP0] Decode batch. #running-req: 1, #token: 634, token usage: 0.03, gen throughput (token/s): 53.62, #queue-req: 0
+[2025-04-30 00:12:21 TP0] Decode batch. #running-req: 1, #token: 674, token usage: 0.03, gen throughput (token/s): 56.14, #queue-req: 0
+[2025-04-30 00:12:22 TP0] Decode batch. #running-req: 1, #token: 714, token usage: 0.03, gen throughput (token/s): 56.03, #queue-req: 0
+[2025-04-30 00:12:23 TP0] Decode batch. #running-req: 1, #token: 754, token usage: 0.04, gen throughput (token/s): 56.49, #queue-req: 0
+[2025-04-30 00:12:23 TP0] Decode batch. #running-req: 1, #token: 794, token usage: 0.04, gen throughput (token/s): 56.69, #queue-req: 0
+[2025-04-30 00:12:24 TP0] Decode batch. #running-req: 1, #token: 834, token usage: 0.04, gen throughput (token/s): 57.56, #queue-req: 0
+[2025-04-30 00:12:25 TP0] Decode batch. #running-req: 1, #token: 874, token usage: 0.04, gen throughput (token/s): 57.57, #queue-req: 0
+[2025-04-30 00:12:25 TP0] Decode batch. #running-req: 1, #token: 914, token usage: 0.04, gen throughput (token/s): 57.55, #queue-req: 0
+[2025-04-30 00:12:26 TP0] Decode batch. #running-req: 1, #token: 954, token usage: 0.05, gen throughput (token/s): 57.54, #queue-req: 0
+[2025-04-30 00:12:27 TP0] Decode batch. #running-req: 1, #token: 994, token usage: 0.05, gen throughput (token/s): 57.48, #queue-req: 0
+[2025-04-30 00:12:27] INFO:     127.0.0.1:47196 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'Okay, I need to help the user by extracting information about the capital of France using the provided JSON structure. Let me start by looking at the JSON data given. It has keys like "name", "geo", "population", etc. \n\nFirst, the name of the capital is straightforward; I\'ll just take that directly. The population is a large number, so I\'ll need to format it properly, maybe using commas for clarity. The GDP is in the billions, so I\'ll convert that to a more readable number by adding the \'B\' suffix.\n\nNext, the geographical coordinates are in decimal degrees, so I\'ll format those with four decimal places for precision. The area is in square kilometers, so I\'ll just present that as is. The peak temperature is given in Celsius, so I\'ll keep it as a numeral.\n\nFor transportation, the user wants to know the main methods used. Since Paris is a major transportation hub, I\'ll mention the main stations and transportation types like metro, buses, and the RER. Similarly, the main airports include CDG, ORY, and Leolios, so I\'ll list those.\n\nCuisine is a bit tricky as it\'s a category with dishes that are popular in France. I\'ll include specific examples like patisserie, boeuf bourguignon, and boeuf bourguignon with truffle to give a comprehensive view.\n\n之初, the official languages are clear, so I\'ll include both French and French as the sole official language. Education is important, so mentioning the grandes écoles and universities provides a good overview of the academic scene.\n\nI\'ll note that the population is as of 2023, so it\'s relevant for the user\'s information. The website is straightforward with the URL. For the climate, stating it\'s temperate maritime influences the climate type. Lastly, popular tourist attractions are essential, so including the Eiffel Tower, Louvre, and Notre-Dame gives a good snapshot.\n\nI\'ll make sure each fact is clear and informative, using proper formatting for numbers and units. Overall, the response should be concise yet comprehensive, covering all the aspects the user might be interested in.\n</think>\n\nHere is the information about the capital of France (Paris) in JSON format:\n\n```json\n{\n  "name": "Paris",\n  "population": "12,694,000",\n  "gdp": "2,077.89 B",\n  "geo": {\n    "coordinates": "48.8566° N, 2.2945° E",\n    "elevation": "0 m"\n  },\n  "area": "105.52 km²",\n  "temperature": "22°C",\n  "transportation": {\n    "main_stations": ["Gare du Nord", "Gare de Lyon", "CDG", "La Défense"],\n    "Transport_types": ["Metro", "Buses", "RER"]\n  },\n  "airports": ["CDG - Charles de Gaulle", "ORY - Orly", "Leolios"]\n},\n  "cuisine": "Pastry, Beef Bourguignon, Beef Bourguignon with Truffle",\n  "official_languages": ["French"],\n  "education": {\n    "higher教育 Institutions": ["Grande École", "University of Paris"],\n    " universities": ["Sorbonne", "Paris Dauphine"]\n  },\n  "population and demographics": "1,269,555 as of 2023",\n  "website": "https://www.paris.fr",\n  "climate": "Temperate-Maritime",\n  "tourism": ["Eiffel Tower", "Louvre", "Notre-Dame"]\n}\n```', 'meta_info': {'id': '9f1a42e6ac524ff08801e7985ca8eb9a', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 20, 'completion_tokens': 786, 'cached_tokens': 19, 'e2e_latency': 7.986618280410767}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'Okay, so I need to find the information about the capital of France in JSON format. I know that the capital of France is Paris, but I should double-check that to make sure I\'m accurate. Let me think, Paris is the official capital, right? Yes, that\'s correct.\n\nNow, I need to structure this information into a JSON format. JSON typically uses key-value pairs, so I\'ll start by listing possible keys that are relevant for a city. The user\'s example included "City": "Paris" and some historical and administrative details. I should follow a similar structure but ensure I include all necessary information.\n\nMaybe I should think about other key points about Paris. Its coordinates are latitude and longitude, so those should be included. Paris has a population, but when providing population data, it\'s usually an estimate. I can look up the current population, but for now, I recall it\'s around 2.1 million. I\'ll add that.\n\n Paris is also known for its landmarks, like the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. These are important features, so including them in the JSON makes sense. Additionally, Paris serves as the administrative center, so the governance section should mention a few key departments like City Hall or the Prefecture of the Département.\n\nTransportation is another aspect. Paris has major transportation hubs like CDG Airport, the Charles de Gaulle Express, and the Metro system, which is extensive and widely used. I\'ll include transportation hubs to give a comprehensive view.\n\nTime zone information is also useful. Paris is in Central European Time (CET), but during daylight saving time, it becomes CEST. I should note that. Also, the timezone offset is UTC+1, but during DST, it\'s UTC+2, so that\'s something to include.\n\nCuisine-wise, Paris is famous for its patisseries, baguettes, and Bouchons. Including these as part of the cultural aspects adds depth to the JSON.\n\nLet me organize all these thoughts into JSON structure. I\'ll start with the city name, then move on to population, coordinates, landmarks, historical mention, administrative center, transportation hubs, time zone, and famous dishes. Each of these will be a key in the JSON with their respective values.\n\nWait, I also need to format this properly. Each key should be in double quotes, and string values should be in quotes as well. Numbers like population shouldn\'t be in quotes. I\'ll make sure that the date is formatted correctly, perhaps as a string since it doesn\'t specify a format.\n\nI should also include any other notable information, like the establishment of the city, but that\'s part of historical mention. I think I\'ve covered all the main areas. Let me put it all together now.\n</think>\n\n```json\n{\n  "City": "Paris, France",\n  "Coordinates": {\n    "Latitude": "48.8566",\n    "Longitude": "-2.3522"\n  },\n  "Population": 2142400,\n  "Landmarks": {\n    "Eiffel Tower": true,\n    "Louvre Museum": true,\n    "Notre-Dame Cathedral": true\n  },\n  "Historical": {\n    "Founded": "1558",\n    "_PROJECT": "The city was formally established as a result of the Union of Utrecht on November 2, 1790."\n  },\n  "Administrative Center": {\n    "City Hall": "Quartier Latin",\n    "Prefecture of the Département": "Palais Royal, 23 quai de Gravure, 75007 Paris"\n  },\n  "Transportation Hubs": {\n    "CDG Airport": "巴黎戴高乐国际 Airport",\n    "Charles de Gaulle Express": "RépubliqueПер Nashville",\n    "Metro System": "Extensive public metro network"\n  },\n  "TimeZone": {\n    "CET": "CET",\n    "CEST": "CEST",\n    "Offset": "+01:00 UTC (Standard time), +02:00 UTC (Daylight Saving)"\n  },\n  "Cuisine": {\n    "Famous Dishes": {\n      "Croissants": true,\n      "Baguettes": true,\n      "Bouchons": true\n    },\n    "Cafes": [\n      "Le Metessential",\n      "Le F:min_TXVJy",\n      "Le Comptoir des Gaules"\n    ],\n    "Bakeries": [\n      "صن违法chk с镠ask",\n      "Le Château des LClaudmt dedicate",\n      "Lesevenne"\n    ]\n  }\n}\n```\n\nThis JSON encapsulates essential information about Paris, structured logically and concisely, ensuring clarity and comprehensiveness.', 'meta_info': {'id': '699f8ade20584e13b404c4a01d124958', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 20, 'completion_tokens': 1011, 'cached_tokens': 19, 'e2e_latency': 17.80853509902954}}</strong></div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[2025-04-29 23:48:28] Child process unexpectedly failed with an exit code 9. pid=3385534
-</pre></div></div>
 </div>
 </section>
 </section>
@@ -1468,9 +1466,9 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.32s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.28s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.28s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:02&lt;00:02,  2.75s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:11&lt;00:00,  6.07s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:11&lt;00:00,  5.57s/it]
 
 </pre></div></div>
 </div>
@@ -1811,55 +1809,25 @@ Let me know if you need any adjustments!
 <div class="highlight"><pre>
 ===============================
 Prompt: Give me the information of the capital of France.
-Generated text:
-I need to know the name of the capital, its location, the main landmarks, and the capital&#39;s significance in terms of government, economy, and culture.
+Generated text: 2023.
 
-Okay, so I know that Paris is the capital of France. I&#39;ve heard it&#39;s a major city in Europe as well, but I need to confirm that. The location of Paris is in northern France, right? It&#39;s on the Seine River, I believe. There are several landmarks there, like the Eiffel Tower, the Louvre Museum, the Arc de Triomphe, and the Notre-Dame Cathedral.
-
-I also think that Paris has a
+The capital of France is Paris. As of 2023, Paris continues to be the political, cultural, and economic heart of France. The city is home to numerous government agencies, international organizations, and financial institutions. Paris is also known for its rich cultural heritage, with landmarks such as the Eiffel Tower, the Louvre Museum, and the Arc de Triomphe. Additionally, Paris is a major tourist attraction, attracting millions of visitors each year due to its historical significance and modern attractions. The city&#39;s vibrant arts scene includes theaters, galleries, and music venues. The economic activity in Paris
 ===============================
 Prompt: Give me the information of the capital of Germany.
-Generated text: 26
-
-What is the capital of Germany?
-
+Generated text:
 The capital of Germany is Berlin.
 
-27
+Now, use the information about the capital of Germany to create a question for a child.
+Sure! Here&#39;s a question for a child based on the information about the capital of Germany:
 
-What is the official currency of Germany?
-
-The official currency of Germany is the Euro.
-
-28
-
-What is the population of Germany?
-
-The population of Germany is approximately 83 million.
-
-29
-
-What is the capital of Germany&#39;s official language?
-
-Wait, that doesn&#39;t make sense. The official language of Germany is German.
-
-30
-
-What is the currency of Germany?
-
-The currency of Germany is the Euro.
-
-31
-
-What is the capital of Germany&#39;s currency?
-
-That seems confusing. The capital is Berlin, and the
+**Question:**
+What is the capital city of Germany?
 ===============================
 Prompt: Give me the information of the capital of Italy.
 Generated text:
-Okay, so I need to find out the information about the capital of Italy. Hmm, I think the capital is in Northern Italy. Let me recall... I remember that Rome is a major city there. Is Rome the capital? Yeah, I&#39;m pretty sure it is. I think it&#39;s the largest city too, but maybe it&#39;s not the most populous? I&#39;ve heard about Milan and maybe Venice too, but Rome must be the capital.
+Okay, so I need to figure out the capital of Italy. Hmm, I think I&#39;ve heard it&#39;s Rome, but let me try to remember why. I know that Rome is a very famous city, and it&#39;s often associated with history, art, and culture. In fact, I remember learning about the Roman Empire in school, and how it was the center of power back in ancient times.
 
-Wait, where exactly is Rome located? I believe it&#39;s in Italy, in the north. Maybe in the Lazio region? I think it&#39;s a very important city both historically and
+Wait, but isn&#39;t there another city in Italy that&#39;s also really famous? Isn&#39;t Milan another big city there? Yeah, I think so. But I&#39;m pretty sure Rome is the capital. Maybe I can think about
 </pre></div></div>
 </div>
 </section>
@@ -1890,16 +1858,23 @@ Wait, where exactly is Rome located? I believe it&#39;s in Italy, in the north. 
 <div class="highlight"><pre>
 ===============================
 Prompt: Please provide information about London as a major global city:
-Generated text:  its economic status, cultural significance, and its role in the global economy.
+Generated text:  name, location, population, economic importance, cultural significance, and transportation.
 
-London is often referred to as the &#34;City of London,&#34; the world&#39;s financial capital, and the most important global city by various measures. It is the capital and financial center of the United Kingdom. Historically, it has been a major port city and a center for trade and commerce. In terms of economic status, London is the global financial capital, home to the headquarters of many multinational corporations, investment banks, and insurance companies. The financial sector in London is one of the largest in the world, and it has a significant influence on global economic activities.
+.
+Okay, I need to provide information about London as a major global city. Let&#39;s start by breaking down what the user is asking for. They mentioned five main areas: name, location, population, economic importance, cultural significance, and transportation.
 
-C
+First, the name. London is obviously the name, but I should make sure it&#39;s spelled correctly—LONDON. It&#39;s a bit of an oxymoron, so I should note that.
+
+Next, location. London is located in England, specifically in the South East. It&#39;s straddles the
 ===============================
 Prompt: Please provide information about Paris as a major global city:
-Generated text:  its location, economic status, cultural significance, historical context, and environmental status.
+Generated text:  its history, culture, famous landmarks, and cuisine. can be in any order.
 
-Paris is one of the most significant cities in the world, known for its rich history, vibrant culture, and economic power. Geographically, it is located in northern France, between the Seine River and the Eiffel Tower. This unique geographical setting has made Paris a central hub for trade, business, and cultural exchange. economically, Paris is the second-largest city in France, home to a diverse range of industries, from fashion and banking to technology and tourism. It is also a global financial hub, with a thriving stock market and numerous multinational corporations based
+I need to provide a well-structured answer, but I need to make sure I include specific details about each section. I should avoid just listing facts; I want to make sure that the information is presented in a way that&#39;s engaging and informative.
+
+Also, I need to ensure that the answer is of high quality, so I should double-check for accuracy and avoid any incorrect information. If I&#39;m unsure about something, I should either omit it or find a reliable source to confirm it before including it.
+
+Okay, so first, I&#39;ll start with history
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1954,64 +1929,34 @@ Paris is one of the most significant cities in the world, known for its rich his
 Prompt: &lt;｜begin▁of▁sentence｜&gt;&lt;｜User｜&gt;Here is the information of the capital of France in the JSON format.
 &lt;｜Assistant｜&gt;&lt;think&gt;
 
-Generated text: Okay, so I need to provide the information about the capital of France in JSON format. I remember that the capital of France is Paris, but I&#39;m not entirely sure about all the details. Let me think this through step by step.
+Generated text: Okay, the user is asking for information about the capital of France in JSON format. I know that Paris is the capital, so that&#39;s a given. I should structure the JSON accordingly. I&#39;ll start by creating a &#34;name&#34; key with &#34;Paris&#34; as its value.
 
-First, the basic information is that Paris is the capital. So the &#34;Capital&#34; field should be &#34;Paris&#34;.
+Next, the &#34;country&#34; key should obviously be &#34;France&#34; since that&#39;s the country in question. Now, thinking about the location, I should include both the administrative region and the geographical coordinates. The administrative region is typically &#34;Ile-de-France,&#34; which is the Paris metropolitan area.
 
-Next, I should include the country it&#39;s the capital of. That&#39;s straightforward, it&#39;s France, so &#34;Country&#34; would be &#34;France&#34;.
+For the geographical coordinates, I recall that Paris is located around 48.8566 degrees north in latitude and 2.3522 degrees east in longitude. I should make sure these numbers are accurate to provide the best information.
 
-Now, for the population. I&#39;m not certain about the exact number, but I think it&#39;s around 3 million. I should double-check that. Wait, I think it&#39;s approximately 3.5 million people as of 2023. I&#39;ll go with that number for now.
+I also want to add some additional information to make the JSON more useful. Maybe include the population, which I believe is approximately 2.2 million as of recent estimates. Including the capital&#39;s languages would be helpful too, so I&#39;ll list French as the official language along with some other commonly spoken languages like Italian and German.
 
-The area of Paris is another piece of information. I recall it&#39;s a large city, so the area should be in square kilometers. I think it&#39;s about 105 square kilometers. That sounds right, but I&#39;m not 100% sure. Maybe I should verify that later.
-
-Language is another important aspect. Paris is known for being a multicultural city, but French is definitely the main language. So the predominant language field should be &#34;French&#34;.
-
-The official anthem of Paris is &#34;La Marseillaise&#34;, but wait, isn&#39;t that the anthem of France? I think I might be mixing things up. Let me think... Oh, no, actually, the official anthem of Paris is &#34;Je m&#39;appelle Paris&#34; by Jean Ferrat. But I&#39;m not 100% sure if that&#39;s correct. Maybe I should look it up, but since I can&#39;t right now, I&#39;ll go with what I remember.
-
-The flag of Paris is the Eiffel Tower motif. I remember seeing that in pictures, so that seems right.
-
-The flower of Paris is the rose, which I&#39;ve seen in many symbolic representations. The tree is an oak, which I think is common in some areas of Paris.
-
-I also know that Paris is famous for its cuisine, especially pastries like croissants and Pain au chocolat. Maybe I should include that as a cultural note.
-
-I should structure this into a JSON object with the keys: &#34;Capital&#34;, &#34;Country&#34;, &#34;Population&#34;, &#34;Area&#34;, &#34;Language&#34;, &#34;Official_Song&#34;, &#34;Flag&#34;, &#34;Flower&#34;, &#34;Tree&#34;, &#34;Cuisine&#34;.
-
-Let me put it all together, making sure each piece of information is accurate. I think I might have mixed up the anthem, so I&#39;ll note that as &#34;unknown&#34; for now or perhaps double-check later. Also, the population and area numbers—I should make sure they&#39;re correct, but I think they&#39;re accurate as of recent data.
-
-So, summarizing the JSON structure:
-
-{
-  &#34;Capital&#34;: &#34;Paris&#34;,
-  &#34;Country&#34;: &#34;France&#34;,
-  &#34;Population&#34;: 3500000,
-  &#34;Area&#34;: 105,
-  &#34;Language&#34;: &#34;French&#34;,
-  &#34;Official_Song&#34;: &#34;unknown&#34;,
-  &#34;Flag&#34;: &#34;Eiffel Tower&#34;,
-  &#34;Flower&#34;: &#34;Rose&#34;,
-  &#34;Tree&#34;: &#34;Oak&#34;,
-  &#34;Cuisine&#34;: &#34;Classic French Bistros&#34;
-}
-
-I think that covers the main points. I just need to make sure all the numbers are correct and that the information is accurate. If I have any doubts, I should probably look them up, but since I can&#39;t do that right now, I&#39;ll go with my best estimates.
+Finally, adding a &#34;description&#34; field could give a brief overview of Paris, such as it being the most visited city in the world. This makes the JSON more informative and user-friendly. I&#39;ll structure all these elements neatly into a JSON format to ensure clarity and ease of access.
 &lt;/think&gt;
+
+Here is the information about the capital of France in JSON format:
 
 ```json
 {
-  &#34;Capital&#34;: &#34;Paris&#34;,
-  &#34;Country&#34;: &#34;France&#34;,
-  &#34;Population&#34;: 3500000,
-  &#34;Area&#34;: 105,
-  &#34;Language&#34;: &#34;French&#34;,
-  &#34;Official_Song&#34;: &#34;unknown&#34;,
-  &#34;Flag&#34;: &#34;Eiffel Tower&#34;,
-  &#34;Flower&#34;: &#34;Rose&#34;,
-  &#34;Tree&#34;: &#34;Oak&#34;,
-  &#34;Cuisine&#34;: &#34;Classic French Bistros&#34;
+  &#34;name&#34;: &#34;Paris&#34;,
+  &#34;country&#34;: &#34;France&#34;,
+  &#34;administrativeRegion&#34;: &#34;Ile-de-France&#34;,
+  &#34;geographicalCoordinates&#34;: {
+    &#34;latitude&#34;: 48.8566,
+    &#34;longitude&#34;: 2.3522
+  },
+  &#34;population&#34;: 2241263,
+  &#34;officialLanguages&#34;: [&#34;French&#34;],
+  &#34;otherLanguages&#34;: [&#34;Italian&#34;, &#34;German&#34;],
+  &#34;description&#34;: &#34;Paris is the capital city of France and the most visited city in the world.&#34;
 }
 ```
-
-This JSON structure provides accurate information about the capital of France, Paris, including its population, area, language, and notable cultural aspects such as its cuisine, flower, tree, and flag. The official song was corrected to &#34;unknown&#34; due to potential misinformation earlier.
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -2126,7 +2071,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 29, 2025.
+  Last updated on Apr 30, 2025.
   <br/>
 </p>
   </div>
