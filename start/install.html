@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=58fa0cba"></script>
+    <script src="../_static/documentation_options.js?v=4f8e8cdc"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -471,7 +471,7 @@ document.write(`
 <h2>Method 1: With pip or uv<a class="headerlink" href="#method-1-with-pip-or-uv" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 pip<span class="w"> </span>install<span class="w"> </span>uv
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.6.post1&quot;</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&gt;=0.4.6.post2&quot;</span>
 </pre></div>
 </div>
 <p><strong>Quick Fixes to Common Problems</strong></p>
@@ -489,7 +489,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <section id="method-2-from-source">
 <h2>Method 2: From source<a class="headerlink" href="#method-2-from-source" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
-git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.4.6.post1<span class="w"> </span>https://github.com/sgl-project/sglang.git
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.4.6.post2<span class="w"> </span>https://github.com/sgl-project/sglang.git
 <span class="nb">cd</span><span class="w"> </span>sglang
 
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
@@ -500,7 +500,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>If you want to develop SGLang, it is recommended to use docker. Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/developer/development_guide_using_docker.md#setup-docker-container">setup docker container</a> for guidance. The docker image is <code class="docutils literal notranslate"><span class="pre">lmsysorg/sglang:dev</span></code>.</p>
 <p>Note: For AMD ROCm system with Instinct/MI GPUs, do following instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
-git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.4.6.post1<span class="w"> </span>https://github.com/sgl-project/sglang.git
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.4.6.post2<span class="w"> </span>https://github.com/sgl-project/sglang.git
 <span class="nb">cd</span><span class="w"> </span>sglang
 
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
@@ -526,7 +526,7 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 </pre></div>
 </div>
 <p>Note: For AMD ROCm system with Instinct/MI GPUs, it is recommended to use <code class="docutils literal notranslate"><span class="pre">docker/Dockerfile.rocm</span></code> to build images, example and usage as below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SGL_BRANCH</span><span class="o">=</span>v0.4.6.post1<span class="w"> </span>-t<span class="w"> </span>v0.4.6.post1-rocm630<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SGL_BRANCH</span><span class="o">=</span>v0.4.6.post2<span class="w"> </span>-t<span class="w"> </span>v0.4.6.post2-rocm630<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
 
 <span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri --ipc=host \</span>
 <span class="s1">    --shm-size 16G --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \</span>
@@ -535,11 +535,11 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 drun<span class="w"> </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-v<span class="w"> </span>~/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>v0.4.6.post1-rocm630<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>v0.4.6.post2-rocm630<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 
 <span class="c1"># Till flashinfer backend available, --attention-backend triton --sampling-backend pytorch are set by default</span>
-drun<span class="w"> </span>v0.4.6.post1-rocm630<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output<span class="w"> </span><span class="m">128</span><span class="w"> </span>--model<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--quantization<span class="w"> </span>fp8
+drun<span class="w"> </span>v0.4.6.post2-rocm630<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--output<span class="w"> </span><span class="m">128</span><span class="w"> </span>--model<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--quantization<span class="w"> </span>fp8
 </pre></div>
 </div>
 </section>
