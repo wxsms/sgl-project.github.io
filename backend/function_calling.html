@@ -528,33 +528,33 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:04:38] server_args=ServerArgs(model_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=34473, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=780174030, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;qwen25&#39;, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
-[2025-05-07 07:04:51] Attention backend not set. Use fa3 backend by default.
-[2025-05-07 07:04:51] Init torch distributed begin.
-[2025-05-07 07:04:51] Init torch distributed ends. mem usage=0.00 GB
-[2025-05-07 07:04:51] Load weight begin. avail mem=77.57 GB
-[2025-05-07 07:04:52] Ignore import error when loading sglang.srt.models.llama4.
-[2025-05-07 07:04:53] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-07 14:45:36] server_args=ServerArgs(model_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_path=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;0.0.0.0&#39;, port=39195, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=1028084685, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;qwen25&#39;, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
+[2025-05-07 14:45:51] Attention backend not set. Use fa3 backend by default.
+[2025-05-07 14:45:51] Init torch distributed begin.
+[2025-05-07 14:45:51] Init torch distributed ends. mem usage=0.02 GB
+[2025-05-07 14:45:51] Load weight begin. avail mem=78.06 GB
+[2025-05-07 14:45:52] Ignore import error when loading sglang.srt.models.llama4.
+[2025-05-07 14:45:54] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.55it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.43it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.59it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.51it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
 
-[2025-05-07 07:04:56] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=46.51 GB, mem usage=31.06 GB.
-[2025-05-07 07:04:56] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-05-07 07:04:56] Memory pool end. avail mem=45.21 GB
-[2025-05-07 07:04:57] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=32768
-[2025-05-07 07:04:57] INFO:     Started server process [1406308]
-[2025-05-07 07:04:57] INFO:     Waiting for application startup.
-[2025-05-07 07:04:57] INFO:     Application startup complete.
-[2025-05-07 07:04:57] INFO:     Uvicorn running on http://0.0.0.0:34473 (Press CTRL+C to quit)
-[2025-05-07 07:04:58] INFO:     127.0.0.1:48064 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-05-07 07:04:58] INFO:     127.0.0.1:48076 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-05-07 07:04:58] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-07 07:05:01] INFO:     127.0.0.1:48088 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-05-07 07:05:01] The server is fired up and ready to roll!
+[2025-05-07 14:45:57] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=46.51 GB, mem usage=31.55 GB.
+[2025-05-07 14:45:57] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-05-07 14:45:57] Memory pool end. avail mem=45.21 GB
+[2025-05-07 14:45:57] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=32768
+[2025-05-07 14:45:58] INFO:     Started server process [2112750]
+[2025-05-07 14:45:58] INFO:     Waiting for application startup.
+[2025-05-07 14:45:58] INFO:     Application startup complete.
+[2025-05-07 14:45:58] INFO:     Uvicorn running on http://0.0.0.0:39195 (Press CTRL+C to quit)
+[2025-05-07 14:45:58] INFO:     127.0.0.1:50910 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-07 14:45:59] INFO:     127.0.0.1:50920 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-05-07 14:45:59] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-07 14:46:01] INFO:     127.0.0.1:50924 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:01] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -648,7 +648,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:03] INFO:     127.0.0.1:44926 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:03] INFO:     127.0.0.1:50926 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 </section>
@@ -682,25 +682,25 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:05] Prefill batch. #new-seq: 1, #new-token: 281, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-07 07:05:06] Decode batch. #running-req: 1, #token: 314, token usage: 0.02, gen throughput (token/s): 4.23, #queue-req: 0
-[2025-05-07 07:05:07] Decode batch. #running-req: 1, #token: 354, token usage: 0.02, gen throughput (token/s): 101.97, #queue-req: 0
-[2025-05-07 07:05:07] Decode batch. #running-req: 1, #token: 394, token usage: 0.02, gen throughput (token/s): 102.02, #queue-req: 0
-[2025-05-07 07:05:08] Decode batch. #running-req: 1, #token: 434, token usage: 0.02, gen throughput (token/s): 100.82, #queue-req: 0
-[2025-05-07 07:05:08] Decode batch. #running-req: 1, #token: 474, token usage: 0.02, gen throughput (token/s): 101.17, #queue-req: 0
-[2025-05-07 07:05:08] Decode batch. #running-req: 1, #token: 514, token usage: 0.03, gen throughput (token/s): 85.59, #queue-req: 0
-[2025-05-07 07:05:09] Decode batch. #running-req: 1, #token: 554, token usage: 0.03, gen throughput (token/s): 98.34, #queue-req: 0
-[2025-05-07 07:05:09] Decode batch. #running-req: 1, #token: 594, token usage: 0.03, gen throughput (token/s): 97.41, #queue-req: 0
-[2025-05-07 07:05:10] Decode batch. #running-req: 1, #token: 634, token usage: 0.03, gen throughput (token/s): 103.61, #queue-req: 0
-[2025-05-07 07:05:10] Decode batch. #running-req: 1, #token: 674, token usage: 0.03, gen throughput (token/s): 102.81, #queue-req: 0
-[2025-05-07 07:05:10] Decode batch. #running-req: 1, #token: 714, token usage: 0.03, gen throughput (token/s): 103.82, #queue-req: 0
-[2025-05-07 07:05:11] Decode batch. #running-req: 1, #token: 754, token usage: 0.04, gen throughput (token/s): 104.37, #queue-req: 0
-[2025-05-07 07:05:11] Decode batch. #running-req: 1, #token: 794, token usage: 0.04, gen throughput (token/s): 104.29, #queue-req: 0
-[2025-05-07 07:05:12] Decode batch. #running-req: 1, #token: 834, token usage: 0.04, gen throughput (token/s): 103.15, #queue-req: 0
-[2025-05-07 07:05:12] Decode batch. #running-req: 1, #token: 874, token usage: 0.04, gen throughput (token/s): 103.35, #queue-req: 0
-[2025-05-07 07:05:12] Decode batch. #running-req: 1, #token: 914, token usage: 0.04, gen throughput (token/s): 102.97, #queue-req: 0
-[2025-05-07 07:05:13] Decode batch. #running-req: 1, #token: 954, token usage: 0.05, gen throughput (token/s): 103.14, #queue-req: 0
-[2025-05-07 07:05:13] INFO:     127.0.0.1:44926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:05] Prefill batch. #new-seq: 1, #new-token: 281, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-07 14:46:06] Decode batch. #running-req: 1, #token: 314, token usage: 0.02, gen throughput (token/s): 4.58, #queue-req: 0
+[2025-05-07 14:46:06] Decode batch. #running-req: 1, #token: 354, token usage: 0.02, gen throughput (token/s): 96.25, #queue-req: 0
+[2025-05-07 14:46:07] Decode batch. #running-req: 1, #token: 394, token usage: 0.02, gen throughput (token/s): 97.71, #queue-req: 0
+[2025-05-07 14:46:07] Decode batch. #running-req: 1, #token: 434, token usage: 0.02, gen throughput (token/s): 86.08, #queue-req: 0
+[2025-05-07 14:46:08] Decode batch. #running-req: 1, #token: 474, token usage: 0.02, gen throughput (token/s): 98.11, #queue-req: 0
+[2025-05-07 14:46:08] Decode batch. #running-req: 1, #token: 514, token usage: 0.03, gen throughput (token/s): 86.41, #queue-req: 0
+[2025-05-07 14:46:09] Decode batch. #running-req: 1, #token: 554, token usage: 0.03, gen throughput (token/s): 93.90, #queue-req: 0
+[2025-05-07 14:46:09] Decode batch. #running-req: 1, #token: 594, token usage: 0.03, gen throughput (token/s): 97.98, #queue-req: 0
+[2025-05-07 14:46:09] Decode batch. #running-req: 1, #token: 634, token usage: 0.03, gen throughput (token/s): 99.94, #queue-req: 0
+[2025-05-07 14:46:10] Decode batch. #running-req: 1, #token: 674, token usage: 0.03, gen throughput (token/s): 94.82, #queue-req: 0
+[2025-05-07 14:46:10] Decode batch. #running-req: 1, #token: 714, token usage: 0.03, gen throughput (token/s): 100.62, #queue-req: 0
+[2025-05-07 14:46:11] Decode batch. #running-req: 1, #token: 754, token usage: 0.04, gen throughput (token/s): 93.57, #queue-req: 0
+[2025-05-07 14:46:11] Decode batch. #running-req: 1, #token: 794, token usage: 0.04, gen throughput (token/s): 100.08, #queue-req: 0
+[2025-05-07 14:46:11] Decode batch. #running-req: 1, #token: 834, token usage: 0.04, gen throughput (token/s): 98.88, #queue-req: 0
+[2025-05-07 14:46:12] Decode batch. #running-req: 1, #token: 874, token usage: 0.04, gen throughput (token/s): 101.16, #queue-req: 0
+[2025-05-07 14:46:12] Decode batch. #running-req: 1, #token: 914, token usage: 0.04, gen throughput (token/s): 100.26, #queue-req: 0
+[2025-05-07 14:46:13] Decode batch. #running-req: 1, #token: 954, token usage: 0.05, gen throughput (token/s): 98.22, #queue-req: 0
+[2025-05-07 14:46:13] INFO:     127.0.0.1:50926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -714,7 +714,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;6a837fc4df4e4e6189e0032e2fb34a6d&#39;, choices=[Choice(finish_reason=&#39;tool_calls&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is &#39;MA&#39;. For the temperature unit, since it&#39;s not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.\n\nReasoning: The `get_current_weather` function is the most appropriate tool to use for this query as it directly provides the current weather conditions for a specified location.&#34;, refusal=None, role=&#39;assistant&#39;, annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;call_lcAhywf1S82IH5WvDZJSFg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_qMeEOvkNT-iQQQagJi-_VQ&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_UOjY5GFRQjOAPN1m5x4FDA&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_eRU2EvuETA-x68tfLOsOfQ&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_hnuS8a9aTvuqYlokyjS7Cw&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_BDpnLwuYSN-j-iuT8f4a7Q&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_6RlGyfbsRKqtu6I2Bg5Bjg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)], reasoning_content=None), matched_stop=None)], created=1746601503, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=678, prompt_tokens=281, total_tokens=959, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;51dc46340ecc4c7cbf844a7d56e36143&#39;, choices=[Choice(finish_reason=&#39;tool_calls&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is &#39;MA&#39;. For the temperature unit, since it&#39;s not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.\n\nReasoning: The `get_current_weather` function is the most appropriate tool to use for this query as it directly provides the current weather conditions for a specified location.&#34;, refusal=None, role=&#39;assistant&#39;, annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;call_JUsBUedmQBqbdYLyCj8Rgg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_HbtRNeckSHyz0iLAiNy0fg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_E_Y4vlLUQj2mUHBLgqh0nA&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_bjaHzJcpQoalXWh-kC-Rtg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_G3IGceVvSIONndFUPeE7AQ&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_eB5iFg2tRhOQsMOkkfjIgw&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_nhTvwxPVSEKyD-VuYtv4nw&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)], reasoning_content=None), matched_stop=None)], created=1746629163, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=678, prompt_tokens=281, total_tokens=959, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -744,7 +744,7 @@ Reasoning: The `get_current_weather` function is the most appropriate tool to us
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[ChatCompletionMessageToolCall(id=&#39;call_lcAhywf1S82IH5WvDZJSFg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_qMeEOvkNT-iQQQagJi-_VQ&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_UOjY5GFRQjOAPN1m5x4FDA&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_eRU2EvuETA-x68tfLOsOfQ&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_hnuS8a9aTvuqYlokyjS7Cw&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_BDpnLwuYSN-j-iuT8f4a7Q&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_6RlGyfbsRKqtu6I2Bg5Bjg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+[ChatCompletionMessageToolCall(id=&#39;call_JUsBUedmQBqbdYLyCj8Rgg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_HbtRNeckSHyz0iLAiNy0fg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_E_Y4vlLUQj2mUHBLgqh0nA&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_bjaHzJcpQoalXWh-kC-Rtg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_G3IGceVvSIONndFUPeE7AQ&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_eB5iFg2tRhOQsMOkkfjIgw&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_nhTvwxPVSEKyD-VuYtv4nw&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 <section id="Handle-Tools">
@@ -825,18 +825,18 @@ Reasoning: The `get_current_weather` function is the most appropriate tool to us
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:13] INFO:     127.0.0.1:44926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-05-07 07:05:13] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 280, token usage: 0.01, #running-req: 0, #queue-req: 0
-[2025-05-07 07:05:13] Decode batch. #running-req: 1, #token: 316, token usage: 0.02, gen throughput (token/s): 94.81, #queue-req: 0
-[2025-05-07 07:05:14] Decode batch. #running-req: 1, #token: 356, token usage: 0.02, gen throughput (token/s): 95.15, #queue-req: 0
-[2025-05-07 07:05:14] Decode batch. #running-req: 1, #token: 396, token usage: 0.02, gen throughput (token/s): 94.25, #queue-req: 0
-[2025-05-07 07:05:14] Decode batch. #running-req: 1, #token: 436, token usage: 0.02, gen throughput (token/s): 104.80, #queue-req: 0
-[2025-05-07 07:05:15] Decode batch. #running-req: 1, #token: 476, token usage: 0.02, gen throughput (token/s): 105.44, #queue-req: 0
-[2025-05-07 07:05:15] Decode batch. #running-req: 1, #token: 516, token usage: 0.03, gen throughput (token/s): 105.16, #queue-req: 0
-[2025-05-07 07:05:15] Decode batch. #running-req: 1, #token: 556, token usage: 0.03, gen throughput (token/s): 103.19, #queue-req: 0
-[2025-05-07 07:05:16] Decode batch. #running-req: 1, #token: 596, token usage: 0.03, gen throughput (token/s): 103.29, #queue-req: 0
-[2025-05-07 07:05:16] Decode batch. #running-req: 1, #token: 636, token usage: 0.03, gen throughput (token/s): 102.62, #queue-req: 0
-[2025-05-07 07:05:17] Decode batch. #running-req: 1, #token: 676, token usage: 0.03, gen throughput (token/s): 102.74, #queue-req: 0
+[2025-05-07 14:46:13] INFO:     127.0.0.1:50926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:13] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 280, token usage: 0.01, #running-req: 0, #queue-req: 0
+[2025-05-07 14:46:13] Decode batch. #running-req: 1, #token: 316, token usage: 0.02, gen throughput (token/s): 88.28, #queue-req: 0
+[2025-05-07 14:46:13] Decode batch. #running-req: 1, #token: 356, token usage: 0.02, gen throughput (token/s): 97.73, #queue-req: 0
+[2025-05-07 14:46:14] Decode batch. #running-req: 1, #token: 396, token usage: 0.02, gen throughput (token/s): 92.24, #queue-req: 0
+[2025-05-07 14:46:14] Decode batch. #running-req: 1, #token: 436, token usage: 0.02, gen throughput (token/s): 100.52, #queue-req: 0
+[2025-05-07 14:46:15] Decode batch. #running-req: 1, #token: 476, token usage: 0.02, gen throughput (token/s): 101.49, #queue-req: 0
+[2025-05-07 14:46:15] Decode batch. #running-req: 1, #token: 516, token usage: 0.03, gen throughput (token/s): 102.82, #queue-req: 0
+[2025-05-07 14:46:16] Decode batch. #running-req: 1, #token: 556, token usage: 0.03, gen throughput (token/s): 97.84, #queue-req: 0
+[2025-05-07 14:46:16] Decode batch. #running-req: 1, #token: 596, token usage: 0.03, gen throughput (token/s): 100.32, #queue-req: 0
+[2025-05-07 14:46:16] Decode batch. #running-req: 1, #token: 636, token usage: 0.03, gen throughput (token/s): 99.47, #queue-req: 0
+[2025-05-07 14:46:17] Decode batch. #running-req: 1, #token: 676, token usage: 0.03, gen throughput (token/s): 99.06, #queue-req: 0
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -900,7 +900,7 @@ The temperature in Boston is 15°C (59°F) with partly cloudy skies.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChoiceDeltaToolCall(index=0, id=&#39;call_7i3GA8FKTLGgUfcJOQcxxw&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=0, id=&#39;call_n5KIt07bTB6VJTarhs_Qrw&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=0, id=None, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;city&#34;: &#34;&#39;, name=None), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=0, id=None, function=ChoiceDeltaToolCallFunction(arguments=&#39;Boston&#34;&#39;, name=None), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=0, id=None, function=ChoiceDeltaToolCallFunction(arguments=&#39;, &#34;state&#34;: &#34;&#39;, name=None), type=&#39;function&#39;)
@@ -1046,7 +1046,7 @@ ChoiceDeltaToolCall(index=0, id=None, function=ChoiceDeltaToolCallFunction(argum
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content="To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is 'MA'. For the temperature unit, since it's not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.\n\nReasoning: The `get_current_weather` function is the most appropriate tool to use for this query as it directly provides the current weather conditions for a specified location.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_lcAhywf1S82IH5WvDZJSFg', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_qMeEOvkNT-iQQQagJi-_VQ', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_UOjY5GFRQjOAPN1m5x4FDA', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_eRU2EvuETA-x68tfLOsOfQ', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_hnuS8a9aTvuqYlokyjS7Cw', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_BDpnLwuYSN-j-iuT8f4a7Q', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_6RlGyfbsRKqtu6I2Bg5Bjg', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_lcAhywf1S82IH5WvDZJSFg', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
+<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content="To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is 'MA'. For the temperature unit, since it's not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.\n\nReasoning: The `get_current_weather` function is the most appropriate tool to use for this query as it directly provides the current weather conditions for a specified location.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_JUsBUedmQBqbdYLyCj8Rgg', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_HbtRNeckSHyz0iLAiNy0fg', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_E_Y4vlLUQj2mUHBLgqh0nA', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_bjaHzJcpQoalXWh-kC-Rtg', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_G3IGceVvSIONndFUPeE7AQ', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_eB5iFg2tRhOQsMOkkfjIgw', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_nhTvwxPVSEKyD-VuYtv4nw', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=0)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_JUsBUedmQBqbdYLyCj8Rgg', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
 </div>
 <section id="Send-Results-Back-to-Model">
 <h3>Send Results Back to Model<a class="headerlink" href="#Send-Results-Back-to-Model" title="Link to this heading">#</a></h3>
@@ -1075,10 +1075,10 @@ ChoiceDeltaToolCall(index=0, id=None, function=ChoiceDeltaToolCallFunction(argum
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:17] Prefill batch. #new-seq: 1, #new-token: 299, #cached-token: 384, token usage: 0.02, #running-req: 0, #queue-req: 0
-[2025-05-07 07:05:17] Decode batch. #running-req: 1, #token: 706, token usage: 0.03, gen throughput (token/s): 77.45, #queue-req: 0
-[2025-05-07 07:05:18] Decode batch. #running-req: 1, #token: 746, token usage: 0.04, gen throughput (token/s): 104.55, #queue-req: 0
-[2025-05-07 07:05:18] INFO:     127.0.0.1:44926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:17] Prefill batch. #new-seq: 1, #new-token: 299, #cached-token: 384, token usage: 0.02, #running-req: 0, #queue-req: 0
+[2025-05-07 14:46:17] Decode batch. #running-req: 1, #token: 706, token usage: 0.03, gen throughput (token/s): 67.66, #queue-req: 0
+[2025-05-07 14:46:18] Decode batch. #running-req: 1, #token: 746, token usage: 0.04, gen throughput (token/s): 97.86, #queue-req: 0
+[2025-05-07 14:46:18] INFO:     127.0.0.1:50926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1092,7 +1092,7 @@ ChoiceDeltaToolCall(index=0, id=None, function=ChoiceDeltaToolCallFunction(argum
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;6cdb7e5d6c014eef96d4c720bb83f40c&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;It seems there was an error in the response as 85 degrees Celsius is not a typical temperature for Boston. Let&#39;s try again with the correct unit and get the weather in Fahrenheit.\n\nThe weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with highs in the 90&#39;s.&#34;, refusal=None, role=&#39;assistant&#39;, annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1746601517, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=66, prompt_tokens=683, total_tokens=749, completion_tokens_details=None, prompt_tokens_details=None))
+ChatCompletion(id=&#39;3f83bb65cf9241ee9d26ffff96be9847&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;It seems there was an error in the response as 85 degrees Celsius is not a typical temperature for Boston. Let&#39;s try again with the correct unit and get the weather in Fahrenheit.\n\nThe weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with highs in the 90&#39;s.&#34;, refusal=None, role=&#39;assistant&#39;, annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1746629177, model=&#39;Qwen/Qwen2.5-7B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=66, prompt_tokens=683, total_tokens=749, completion_tokens_details=None, prompt_tokens_details=None))
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1173,10 +1173,10 @@ The weather in Boston, MA is 85 degrees Fahrenheit. It is partly cloudy, with hi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:18] Prefill batch. #new-seq: 1, #new-token: 231, #cached-token: 55, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-07 07:05:18] Decode batch. #running-req: 1, #token: 323, token usage: 0.02, gen throughput (token/s): 49.33, #queue-req: 0
-[2025-05-07 07:05:19] Decode batch. #running-req: 1, #token: 363, token usage: 0.02, gen throughput (token/s): 107.47, #queue-req: 0
-[2025-05-07 07:05:19] INFO:     127.0.0.1:51692 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:18] Prefill batch. #new-seq: 1, #new-token: 231, #cached-token: 55, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-07 14:46:19] Decode batch. #running-req: 1, #token: 323, token usage: 0.02, gen throughput (token/s): 50.21, #queue-req: 0
+[2025-05-07 14:46:19] Decode batch. #running-req: 1, #token: 363, token usage: 0.02, gen throughput (token/s): 101.04, #queue-req: 0
+[2025-05-07 14:46:19] INFO:     127.0.0.1:57686 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1195,7 +1195,7 @@ To provide you with the current weather in Boston, I will use the `get_current_w
 &lt;tool_call&gt;
 {&#34;name&#34;: &#34;get_current_weather&#34;, &#34;arguments&#34;: {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;}}
 &lt;/tool_call&gt;
-[2025-05-07 07:05:19] INFO:     127.0.0.1:51694 - &#34;POST /parse_function_call HTTP/1.1&#34; 200 OK
+[2025-05-07 14:46:19] INFO:     127.0.0.1:57688 - &#34;POST /parse_function_call HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1240,8 +1240,8 @@ function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:19] Child process unexpectedly failed with an exit code 9. pid=1406943
-[2025-05-07 07:05:19] Child process unexpectedly failed with an exit code 9. pid=1406746
+[2025-05-07 14:46:19] Child process unexpectedly failed with an exit code 9. pid=2113320
+[2025-05-07 14:46:19] Child process unexpectedly failed with an exit code 9. pid=2113185
 </pre></div></div>
 </div>
 </section>
@@ -1312,11 +1312,11 @@ function arguments:  {&#34;city&#34;: &#34;Boston&#34;, &#34;state&#34;: &#34;MA
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.59it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.46it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.75it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.65it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.57it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.59it/s]
 
 </pre></div></div>
 </div>
@@ -1508,31 +1508,31 @@ To disable this warning, you can either:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:05:53] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;127.0.0.1&#39;, port=39917, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=517139940, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;pythonic&#39;, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
-[2025-05-07 07:06:05] Attention backend not set. Use fa3 backend by default.
-[2025-05-07 07:06:05] Init torch distributed begin.
-[2025-05-07 07:06:06] Init torch distributed ends. mem usage=0.00 GB
-[2025-05-07 07:06:06] Load weight begin. avail mem=60.58 GB
-[2025-05-07 07:06:06] Ignore import error when loading sglang.srt.models.llama4.
-[2025-05-07 07:06:06] Using model weights format [&#39;*.safetensors&#39;]
-[2025-05-07 07:06:06] No model.safetensors.index.json found in remote.
+[2025-05-07 14:46:52] server_args=ServerArgs(model_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, enable_tokenizer_batch_encode=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, revision=None, host=&#39;127.0.0.1&#39;, port=38374, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=721083193, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, decode_log_interval=40, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_multimodal=None, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=&#39;pythonic&#39;, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
+[2025-05-07 14:47:06] Attention backend not set. Use fa3 backend by default.
+[2025-05-07 14:47:06] Init torch distributed begin.
+[2025-05-07 14:47:06] Init torch distributed ends. mem usage=0.00 GB
+[2025-05-07 14:47:06] Load weight begin. avail mem=60.58 GB
+[2025-05-07 14:47:06] Ignore import error when loading sglang.srt.models.llama4.
+[2025-05-07 14:47:07] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-07 14:47:07] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.22it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.27it/s]
 
-[2025-05-07 07:06:07] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=58.14 GB, mem usage=2.44 GB.
-[2025-05-07 07:06:07] KV Cache is allocated. #tokens: 20480, K size: 0.31 GB, V size: 0.31 GB
-[2025-05-07 07:06:07] Memory pool end. avail mem=57.28 GB
-[2025-05-07 07:06:08] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-05-07 07:06:09] INFO:     Started server process [1412311]
-[2025-05-07 07:06:09] INFO:     Waiting for application startup.
-[2025-05-07 07:06:09] INFO:     Application startup complete.
-[2025-05-07 07:06:09] INFO:     Uvicorn running on http://127.0.0.1:39917 (Press CTRL+C to quit)
-[2025-05-07 07:06:09] INFO:     127.0.0.1:43546 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-05-07 07:06:10] INFO:     127.0.0.1:44556 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-05-07 07:06:10] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-07 07:06:13] INFO:     127.0.0.1:44562 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-05-07 07:06:13] The server is fired up and ready to roll!
+[2025-05-07 14:47:08] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=58.14 GB, mem usage=2.44 GB.
+[2025-05-07 14:47:08] KV Cache is allocated. #tokens: 20480, K size: 0.31 GB, V size: 0.31 GB
+[2025-05-07 14:47:08] Memory pool end. avail mem=57.28 GB
+[2025-05-07 14:47:09] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-05-07 14:47:09] INFO:     Started server process [2118743]
+[2025-05-07 14:47:09] INFO:     Waiting for application startup.
+[2025-05-07 14:47:09] INFO:     Application startup complete.
+[2025-05-07 14:47:09] INFO:     Uvicorn running on http://127.0.0.1:38374 (Press CTRL+C to quit)
+[2025-05-07 14:47:10] INFO:     127.0.0.1:33994 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-07 14:47:10] INFO:     127.0.0.1:34008 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-05-07 14:47:10] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-07 14:47:13] INFO:     127.0.0.1:34022 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-07 14:47:13] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1546,9 +1546,9 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-07 07:06:14] INFO:     127.0.0.1:44568 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-05-07 07:06:15] Prefill batch. #new-seq: 1, #new-token: 406, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-07 07:06:16] INFO:     127.0.0.1:44568 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-07 14:47:15] INFO:     127.0.0.1:34028 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-07 14:47:16] Prefill batch. #new-seq: 1, #new-token: 406, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-07 14:47:17] INFO:     127.0.0.1:34028 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1562,10 +1562,10 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChatCompletion(id=&#39;7a16e34509e34be88dd661295a907a41&#39;, choices=[Choice(finish_reason=&#39;tool_calls&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;call_aoJRDY48QGOoKdlSUEavpA&#39;, function=Function(arguments=&#39;{&#34;location&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_xGjJkyxyT56a0uKHelGMQA&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_tourist_attractions&#39;), type=&#39;function&#39;, index=1)], reasoning_content=None), matched_stop=None)], created=1746601574, model=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=407, total_tokens=427, completion_tokens_details=None, prompt_tokens_details=None))
-[2025-05-07 07:06:16] INFO:     127.0.0.1:44568 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-05-07 07:06:16] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 406, token usage: 0.02, #running-req: 0, #queue-req: 0
-[2025-05-07 07:06:16] Decode batch. #running-req: 1, #token: 420, token usage: 0.02, gen throughput (token/s): 5.14, #queue-req: 0
+ChatCompletion(id=&#39;968ca284da0b40008637fec4666cce5d&#39;, choices=[Choice(finish_reason=&#39;tool_calls&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role=&#39;assistant&#39;, annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id=&#39;call_Q9GcnzVWRzS5lfDaCy-Jug&#39;, function=Function(arguments=&#39;{&#34;location&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_weather&#39;), type=&#39;function&#39;, index=0), ChatCompletionMessageToolCall(id=&#39;call_8xny-AcoTjSp30cyYzgCSg&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_tourist_attractions&#39;), type=&#39;function&#39;, index=1)], reasoning_content=None), matched_stop=None)], created=1746629235, model=&#39;meta-llama/Llama-3.2-1B-Instruct&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=407, total_tokens=427, completion_tokens_details=None, prompt_tokens_details=None))
+[2025-05-07 14:47:17] INFO:     127.0.0.1:34028 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-07 14:47:17] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 406, token usage: 0.02, #running-req: 0, #queue-req: 0
+[2025-05-07 14:47:17] Decode batch. #running-req: 1, #token: 420, token usage: 0.02, gen throughput (token/s): 4.72, #queue-req: 0
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1599,10 +1599,10 @@ ChatCompletion(id=&#39;7a16e34509e34be88dd661295a907a41&#39;, choices=[Choice(fi
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ChoiceDeltaToolCall(index=0, id=&#39;call_2eqq5xXwR62EaO3Ma4bNkQ&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;location&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_weather&#39;), type=&#39;function&#39;)
+ChoiceDeltaToolCall(index=0, id=&#39;call_8KlvsU2zT8235OgEo2aw9g&#39;, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;location&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_weather&#39;), type=&#39;function&#39;)
 ChoiceDeltaToolCall(index=1, id=None, function=ChoiceDeltaToolCallFunction(arguments=&#39;{&#34;city&#34;: &#34;Tokyo&#34;}&#39;, name=&#39;get_tourist_attractions&#39;), type=&#39;function&#39;)
-[2025-05-07 07:06:16] Child process unexpectedly failed with an exit code 9. pid=1412933
-[2025-05-07 07:06:16] Child process unexpectedly failed with an exit code 9. pid=1412741
+[2025-05-07 14:47:17] Child process unexpectedly failed with an exit code 9. pid=2119492
+[2025-05-07 14:47:17] Child process unexpectedly failed with an exit code 9. pid=2119391
 </pre></div></div>
 </div>
 <blockquote>
