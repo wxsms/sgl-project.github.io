@@ -468,9 +468,9 @@ document.write(`
 <h1>Development Guide Using Docker<a class="headerlink" href="#development-guide-using-docker" title="Link to this heading">#</a></h1>
 <section id="setup-vscode-on-a-remote-host">
 <h2>Setup VSCode on a Remote Host<a class="headerlink" href="#setup-vscode-on-a-remote-host" title="Link to this heading">#</a></h2>
-<p>(Optional - you can skip this step if you plan to run sglang dev container locally)</p>
+<p>(Optional - you can skip this step if you plan to run the SGLang dev container locally)</p>
 <ol class="arabic simple">
-<li><p>In the remote host, download <code class="docutils literal notranslate"><span class="pre">code</span></code> from <a class="reference external" href="https://code.visualstudio.com/download">Https://code.visualstudio.com/docs/?dv=linux64cli</a> and run <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">tunnel</span></code> in a shell.</p></li>
+<li><p>In the remote host, download <code class="docutils literal notranslate"><span class="pre">code</span></code> from <a class="reference external" href="https://code.visualstudio.com/download">https://code.visualstudio.com/docs/?dv=linux64cli</a> and run <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">tunnel</span></code> in a shell.</p></li>
 </ol>
 <p>Example</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://vscode.download.prss.microsoft.com/dbazure/download/stable/fabdb6a30b49f79a7aba0f2ad9df9b399473380f/vscode_cli_alpine_x64_cli.tar.gz
@@ -488,18 +488,18 @@ tar<span class="w"> </span>xf<span class="w"> </span>vscode_cli_alpine_x64_cli.t
 <h2>Setup Docker Container<a class="headerlink" href="#setup-docker-container" title="Link to this heading">#</a></h2>
 <section id="option-1-use-the-default-dev-container-automatically-from-vscode">
 <h3>Option 1. Use the default dev container automatically from VSCode<a class="headerlink" href="#option-1-use-the-default-dev-container-automatically-from-vscode" title="Link to this heading">#</a></h3>
-<p>There is a <code class="docutils literal notranslate"><span class="pre">.devcontainer</span></code> folder in the sglang repository root folder to allow VSCode to automatically start up within dev container. You can read more about this VSCode extension in VSCode official document <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.
+<p>There is a <code class="docutils literal notranslate"><span class="pre">.devcontainer</span></code> folder in the SGLang repository root folder to allow VSCode to automatically start up within dev container. You can read more about this VSCode extension in VSCode official document <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.
 <img alt="image" src="https://github.com/user-attachments/assets/6a245da8-2d4d-4ea8-8db1-5a05b3a66f6d" />
 (<em>Figure 1: Diagram from VSCode official documentation <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.</em>)</p>
 <p>To enable this, you only need to:</p>
 <ol class="arabic simple">
-<li><p>Start Visual Studio Code and install <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VSCode dev container extension</a>.</p></li>
+<li><p>Start Visual Studio Code and install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VSCode dev container extension</a>.</p></li>
 <li><p>Press F1, type and choose “Dev Container: Open Folder in Container.</p></li>
 <li><p>Input the <code class="docutils literal notranslate"><span class="pre">sglang</span></code> local repo path in your machine and press enter.</p></li>
 </ol>
-<p>The first time you open it in dev container might take longer due to docker pull and build. Once it’s successful, you should set on your status bar at the bottom left displaying that you are in a dev container:</p>
+<p>The first time you open it in the dev container might take longer due to docker pull and build. Once it’s successful, you should set on your status bar at the bottom left displaying that you are in a dev container:</p>
 <p><img alt="image" src="https://github.com/user-attachments/assets/650bba0b-c023-455f-91f9-ab357340106b" /></p>
-<p>Now when you run <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> in the VSCode terminal or start debugging using F5, sglang server will be started in the dev container with all your local changes applied automatically:</p>
+<p>Now when you run <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> in the VSCode terminal or start debugging using F5, the SGLang server will be started in the dev container with all your local changes applied automatically:</p>
 <p><img alt="image" src="https://github.com/user-attachments/assets/748c85ba-7f8c-465e-8599-2bf7a8dde895" /></p>
 </section>
 <section id="option-2-start-up-containers-manually-advanced">
@@ -517,15 +517,15 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 </div>
 <p>Some useful volumes to mount are:</p>
 <ol class="arabic simple">
-<li><p><strong>Huggingface model cache</strong>: mounting model cache can avoid re-download every time docker restarts. Default location on Linux is <code class="docutils literal notranslate"><span class="pre">~/.cache/huggingface/</span></code>.</p></li>
+<li><p><strong>HuggingFace model cache</strong>: mounting model cache can avoid the need to re-download every time docker restarts. Default location on Linux is <code class="docutils literal notranslate"><span class="pre">~/.cache/huggingface/</span></code>.</p></li>
 <li><p><strong>SGLang repository</strong>: code changes in the SGLang local repository will be automatically synced to the .devcontainer.</p></li>
 </ol>
-<p>Example 1: Monting local cache folder <code class="docutils literal notranslate"><span class="pre">/opt/dlami/nvme/.cache</span></code> but not the SGLang repo. Use this when you prefer to manually transfer local code changes to the devcontainer.</p>
+<p>Example 1: Mounting local cache folder <code class="docutils literal notranslate"><span class="pre">/opt/dlami/nvme/.cache</span></code> but not the SGLang repo. Use this when you prefer to manually transfer local code changes to the devcontainer.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/opt/dlami/nvme/.cache:/root/.cache<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
 </pre></div>
 </div>
-<p>Example 2: Mounting both HuggingFace cache and local SGLang repo. Local code changes are automatically synced to the devcontainer as the SGLang is installed in editable mode in the dev image.</p>
+<p>Example 2: Mounting both the HuggingFace cache and the local SGLang repo. Local code changes are automatically synced to the devcontainer as SGLang is installed in editable mode in the dev image.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.cache/huggingface/:/root/.cache/huggingface<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/src/sglang:/sgl-workspace/sglang<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
 </pre></div>
@@ -535,7 +535,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <section id="debug-sglang-with-vscode-debugger">
 <h2>Debug SGLang with VSCode Debugger<a class="headerlink" href="#debug-sglang-with-vscode-debugger" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>(Create if not exist) open <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> in VSCode.</p></li>
+<li><p>(Create if it does not exist) open <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> in VSCode.</p></li>
 <li><p>Add the following config and save. Please note that you can edit the script as needed to apply different parameters or debug a different program (e.g. benchmark script).</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
 <span class="w">     </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
