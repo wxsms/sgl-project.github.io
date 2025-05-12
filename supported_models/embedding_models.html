@@ -39,8 +39,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4f8e8cdc"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/documentation_options.js?v=f4720ec1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
@@ -54,7 +54,7 @@
     <link rel="prev" title="Vision Language Models" href="vision_language_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 09, 2025"/>
+    <meta name="docbuild:last-update" content="May 12, 2025"/>
   </head>
   
   
@@ -444,7 +444,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example launch Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example Launch Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-client-request">Example Client Request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-matrixs">Supporting Matrixs</a></li>
 </ul>
             </nav>
@@ -462,16 +463,43 @@ document.write(`
 <p>SGLang provides robust support for embedding models by integrating efficient serving mechanisms with its flexible programming interface. This integration allows for streamlined handling of embedding tasks, facilitating faster and more accurate retrieval and semantic search operations. SGLang’s architecture enables better resource utilization and reduced latency in embedding model deployment.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>They are executed with <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code> and some may require <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code> and/or <code class="docutils literal notranslate"><span class="pre">--chat-template</span></code></p>
+<p>They are executed with <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code> and some may require <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code></p>
 </div>
 <section id="example-launch-command">
-<h2>Example launch Command<a class="headerlink" href="#example-launch-command" title="Link to this heading">#</a></h2>
+<h2>Example Launch Command<a class="headerlink" href="#example-launch-command" title="Link to this heading">#</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Alibaba-NLP/gme-Qwen2-VL-2B-Instruct<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># example HF/local path</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Alibaba-NLP/gme-Qwen2-VL-2B-Instruct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--is-embedding<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--chat-template<span class="w"> </span>gme-qwen2-vl<span class="w"> </span><span class="se">\ </span><span class="w">                    </span><span class="c1"># set chat template</span>
-<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chat-template<span class="w"> </span>gme-qwen2-vl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</section>
+<section id="example-client-request">
+<h2>Example Client Request<a class="headerlink" href="#example-client-request" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:30000&quot;</span>
+
+<span class="n">text_input</span> <span class="o">=</span> <span class="s2">&quot;Represent this image in embedding space.&quot;</span>
+<span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;https://huggingface.co/datasets/liuhaotian/llava-bench-in-the-wild/resolve/main/images/023.jpg&quot;</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gme-qwen2-vl&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text_input</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">image_path</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/v1/embeddings&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embeddings:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;embedding&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">[])])</span>
 </pre></div>
 </div>
 </section>
@@ -557,7 +585,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example launch Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example Launch Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-client-request">Example Client Request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-matrixs">Supporting Matrixs</a></li>
 </ul>
   </nav></div>
@@ -592,7 +621,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 09, 2025.
+  Last updated on May 12, 2025.
   <br/>
 </p>
   </div>

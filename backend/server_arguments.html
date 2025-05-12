@@ -39,8 +39,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4f8e8cdc"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/documentation_options.js?v=f4720ec1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
@@ -54,7 +54,7 @@
     <link rel="prev" title="Offline Engine API" href="offline_engine_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 09, 2025"/>
+    <meta name="docbuild:last-update" content="May 12, 2025"/>
   </head>
   
   
@@ -572,31 +572,27 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>The device we put the model.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
-<td><p>The device we put the model.</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">served_model_name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">served_model_name</span></code></p></td>
 <td><p>Override the model name returned by the v1/models endpoint in OpenAI API server.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">is_embedding</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">is_embedding</span></code></p></td>
 <td><p>Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to perform <a class="reference internal" href="openai_api_embeddings.html"><span class="std std-doc">embedding</span></a> / <a class="reference external" href="https://docs.sglang.ai/backend/native_api#Encode-(embedding-model)">encode</a> and <a class="reference external" href="https://docs.sglang.ai/backend/native_api#Classify-(reward-model)">reward</a> tasks.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">revision</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">revision</span></code></p></td>
 <td><p>Adjust if a specific version of the model should be used.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">skip_tokenizer_init</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">skip_tokenizer_init</span></code></p></td>
 <td><p>Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to provide the tokens to the engine and get the output tokens directly, typically used in RLHF. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/token_in_token_out/">example</a>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">json_model_override_args</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">json_model_override_args</span></code></p></td>
 <td><p>A dictionary in JSON string format used to override default model configurations.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;{}&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">disable_fast_image_processor</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">disable_fast_image_processor</span></code></p></td>
 <td><p>Adopt base image processor instead of fast image processor (which is by default). See <a class="reference external" href="https://huggingface.co/docs/transformers/main/en/main_classes/image_processor#image-processor">details</a>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
@@ -1201,7 +1197,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 09, 2025.
+  Last updated on May 12, 2025.
   <br/>
 </p>
   </div>

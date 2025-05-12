@@ -39,8 +39,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4f8e8cdc"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/documentation_options.js?v=f4720ec1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=ccdb6887"></script>
@@ -54,7 +54,7 @@
     <link rel="prev" title="Large Language Models" href="generative_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 09, 2025"/>
+    <meta name="docbuild:last-update" content="May 12, 2025"/>
   </head>
   
   
@@ -460,15 +460,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="vision-language-models">
 <h1>Vision Language Models<a class="headerlink" href="#vision-language-models" title="Link to this heading">#</a></h1>
 <p>These models accept multi-modal inputs (e.g., images and text) and generate text output. They augment language models with visual encoders and require a specific chat template for handling vision prompts.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>We need to specify <code class="docutils literal notranslate"><span class="pre">--chat-template</span></code> for VLMs because the chat template provided in HuggingFace tokenizer only supports text. If you do not specify a vision model’s <code class="docutils literal notranslate"><span class="pre">--chat-template</span></code>, the server uses HuggingFace’s default template, which only supports text and the images won’t be passed in.</p>
-</div>
 <section id="example-launch-command">
 <h2>Example launch Command<a class="headerlink" href="#example-launch-command" title="Link to this heading">#</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.2-11B-Vision-Instruct<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># example HF/local path</span>
-<span class="w">  </span>--chat-template<span class="w"> </span>llama_3_vision<span class="w"> </span><span class="se">\ </span><span class="w">                       </span><span class="c1"># required chat template</span>
 <span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
 </pre></div>
@@ -621,7 +616,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 09, 2025.
+  Last updated on May 12, 2025.
   <br/>
 </p>
   </div>
