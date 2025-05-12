@@ -572,13 +572,13 @@ Additionally, the SGLang team is actively developing enhancements following this
 </section>
 <section id="launch-with-one-node-of-8-x-h200">
 <h3>Launch with one node of 8 x H200<a class="headerlink" href="#launch-with-one-node-of-8-x-h200" title="Link to this heading">#</a></h3>
-<p>Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">the example</a>. <strong>Note that Deepseek V3 is already in FP8</strong>. So we should not run it with any quantization arguments like <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span> <span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p>
+<p>Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">the example</a>. **Note that Deepseek V3 is already in FP8. So we should not run it with any quantization arguments like <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span> <span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p>
 </section>
 <section id="running-examples-on-multi-node">
 <h3>Running examples on Multi-node<a class="headerlink" href="#running-examples-on-multi-node" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">Serving with two H20*8 nodes</a>.</p></li>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h2008-nodes-and-docker">Serving with two H200*8 nodes and Docker</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h2008-nodes-and-docker">Serving with two H200*8 nodes and docker</a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">Serving with four A100*8 nodes</a>.</p></li>
 </ul>
 </section>
@@ -591,11 +591,11 @@ Additionally, the SGLang team is actively developing enhancements following this
 <ul class="simple">
 <li><p><strong>Weight Absorption</strong>: By applying the associative law of matrix multiplication to reorder computation steps, this method balances computation and memory access and improves efficiency in the decoding phase.</p></li>
 <li><p><strong>MLA Attention Backends</strong>: Currently SGLang supports different optimized MLA attention backends, including <a class="reference external" href="https://github.com/Dao-AILab/flash-attention">FlashAttention3</a>, <a class="reference external" href="https://docs.flashinfer.ai/api/mla.html">Flashinfer</a>, <a class="reference external" href="https://github.com/deepseek-ai/FlashMLA">FlashMLA</a>, <a class="reference external" href="https://github.com/sgl-project/sglang/pull/5390">CutlassMLA</a>, and <a class="reference external" href="https://github.com/triton-lang/triton">Triton</a> backends. The default FA3 provides good performance across wide workloads.</p></li>
-<li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented the Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
-<li><p><strong>CUDA Graph &amp; torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
-<li><p><strong>Chunked Prefix Cache</strong>: Chunked prefix cache optimization can increase throughput by cutting prefix cache into chunks, processing them with multi-head attention and merging their states. Its improvement can be significant when doing chunked prefill on long sequences. Currently this optimization is only available for the FlashAttention3 backend.</p></li>
+<li><p><strong>FP8 Quantization</strong>: W8A8 FP8 and KV Cache FP8 quantization enables efficient FP8 inference. Additionally, we have implemented Batched Matrix Multiplication (BMM) operator to facilitate FP8 inference in MLA with weight absorption.</p></li>
+<li><p><strong>CUDA Graph &amp; Torch.compile</strong>: Both MLA and Mixture of Experts (MoE) are compatible with CUDA Graph and Torch.compile, which reduces latency and accelerates decoding speed for small batch sizes.</p></li>
+<li><p><strong>Chunked Prefix Cache</strong>: Chunked prefix cache optimization can increase throughput by cutting prefix cache into chunks, processing them with multi-head attention and merging their states. Its improvement can be significant when doing chunked prefill on long sequences. Currently this optimization is only available for FlashAttention3 backend.</p></li>
 </ul>
-<p>Overall, with these optimizations, we have achieved up to a <strong>7x</strong> acceleration in output throughput compared to the previous version.</p>
+<p>Overall, with these optimizations, we have achieved up to <strong>7x</strong> acceleration in output throughput compared to the previous version.</p>
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
 </p>
@@ -608,7 +608,7 @@ Additionally, the SGLang team is actively developing enhancements following this
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/dp_attention.svg" alt="Data Parallelism Attention for DeepSeek Series Models">
 </p>
-<p>With data parallelism attention enabled, we have achieved up to a <strong>1.9x</strong> decoding throughput improvement compared to the previous version.</p>
+<p>With data parallelism attention enabled, we have achieved up to <strong>1.9x</strong> decoding throughput improvement compared to the previous version.</p>
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_4/deepseek_coder_v2.svg" alt="Data Parallelism Attention Performance Comparison">
 </p>
@@ -641,7 +641,7 @@ Additionally, the SGLang team is actively developing enhancements following this
 </section>
 <section id="multi-token-prediction">
 <h3>Multi-token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h3>
-<p><strong>Description</strong>: SGLang implements DeepSeek V3 Multi-Token Prediction (MTP) based on <a class="reference external" href="https://docs.sglang.ai/backend/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>. With this optimization, the decoding speed can be improved by <strong>1.8x</strong> for batch size 1 and <strong>1.5x</strong> for batch size 32 respectively with H200 TP8 setting.</p>
+<p><strong>Description</strong>: SGLang implements DeepSeek V3 Multi-Token Prediction (MTP) based on <a class="reference external" href="https://docs.sglang.ai/backend/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>. With this optimization, the decoding speed can be improved by <strong>1.8x</strong> for batch size 1 and <strong>1.5x</strong> for batch size 32 respectively on H200 TP8 setting.</p>
 <p><strong>Usage</strong>:
 Add arguments <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> to enable this feature. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span><span class="o">-</span><span class="mi">0324</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">algorithm</span> <span class="n">EAGLE</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">steps</span> <span class="mi">1</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">eagle</span><span class="o">-</span><span class="n">topk</span> <span class="mi">1</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">draft</span><span class="o">-</span><span class="n">tokens</span> <span class="mi">2</span> <span class="o">--</span><span class="n">trust</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">code</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">8</span>
@@ -653,7 +653,7 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <li><p>To enable DeepSeek MTP for large batch sizes (&gt;32), there are some parameters should be changed (Reference <a class="reference external" href="https://github.com/sgl-project/sglang/issues/4543#issuecomment-2737413756">this discussion</a>):</p>
 <ul>
 <li><p>Adjust <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code> to a larger number. The default value is <code class="docutils literal notranslate"><span class="pre">32</span></code> for MTP. For larger batch sizes, you should increase this value beyond the default value.</p></li>
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-bs</span></code>. It is a list of batch sizes for CUDA graph capture. The default captured batch sizes for speculative decoding is set <a class="reference external" href="https://github.com/sgl-project/sglang/blob/49420741746c8f3e80e0eb17e7d012bfaf25793a/python/sglang/srt/model_executor/cuda_graph_runner.py#L126">here</a>. You can include more batch sizes into it.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-bs</span></code>. It’s a list of batch sizes for cuda graph capture. The default captured batch sizes for speculative decoding is set <a class="reference external" href="https://github.com/sgl-project/sglang/blob/49420741746c8f3e80e0eb17e7d012bfaf25793a/python/sglang/srt/model_executor/cuda_graph_runner.py#L126">here</a>. You can include more batch sizes into it.</p></li>
 </ul>
 </li>
 </ul>
@@ -697,7 +697,7 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <span class="n">data</span><span class="p">:</span> <span class="p">[</span><span class="n">DONE</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The client needs to concatenate all fragments of the tool call arguments to reconstruct the complete tool call:</p>
+<p>The client needs to concatenate all arguments fragments to reconstruct the complete tool call:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Qingdao&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -712,7 +712,7 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p><strong>Question</strong>: What should I do if model loading takes too long and NCCL timeout occurs?</p>
-<p><strong>Answer</strong>: You can try to add <code class="docutils literal notranslate"><span class="pre">--dist-timeout</span> <span class="pre">3600</span></code> when launching the model, this allows for a 1-hour timeout.</p>
+<p><strong>Answer</strong>: You can try to add <code class="docutils literal notranslate"><span class="pre">--dist-timeout</span> <span class="pre">3600</span></code> when launching the model, this allows for 1-hour timeout.</p>
 </li>
 </ol>
 </section>

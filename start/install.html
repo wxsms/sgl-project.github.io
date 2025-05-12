@@ -446,8 +446,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using Docker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using Docker Compose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-using-kubernetes">Method 5: Using Kubernetes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot">Method 6: Run on Kubernetes or Clouds with SkyPilot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
@@ -483,7 +483,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <li><p>Install FlashInfer first following <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>, then install SGLang as described above.</p></li>
 </ol>
 </li>
-<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">ImportError;</span> <span class="pre">cannot</span> <span class="pre">import</span> <span class="pre">name</span> <span class="pre">'is_valid_list_of_images'</span> <span class="pre">from</span> <span class="pre">'transformers.models.llama.image_processing_llama'</span></code>, try to use the specified version of <code class="docutils literal notranslate"><span class="pre">transformers</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/pyproject.toml">pyproject.toml</a>. Currently, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers==4.51.1</span></code>.</p></li>
+<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">ImportError;</span> <span class="pre">cannot</span> <span class="pre">import</span> <span class="pre">name</span> <span class="pre">'is_valid_list_of_images'</span> <span class="pre">from</span> <span class="pre">'transformers.models.llama.image_processing_llama'</span></code>, try to use the specified version of <code class="docutils literal notranslate"><span class="pre">transformers</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/pyproject.toml">pyproject.toml</a>. Currently, just running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers==4.51.1</span></code>.</p></li>
 </ul>
 </section>
 <section id="method-2-from-source">
@@ -512,9 +512,9 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </div>
 </section>
 <section id="method-3-using-docker">
-<h2>Method 3: Using Docker<a class="headerlink" href="#method-3-using-docker" title="Link to this heading">#</a></h2>
+<h2>Method 3: Using docker<a class="headerlink" href="#method-3-using-docker" title="Link to this heading">#</a></h2>
 <p>The docker images are available on Docker Hub as <a class="reference external" href="https://hub.docker.com/r/lmsysorg/sglang/tags">lmsysorg/sglang</a>, built from <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">Dockerfile</a>.
-Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your HuggingFace hub <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">token</a>.</p>
+Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&gt;</span></code> below with your huggingface hub <a class="reference external" href="https://huggingface.co/docs/hub/en/security-tokens">token</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--shm-size<span class="w"> </span>32g<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-p<span class="w"> </span><span class="m">30000</span>:30000<span class="w"> </span><span class="se">\</span>
@@ -544,7 +544,7 @@ drun<span class="w"> </span>v0.4.6.post3-rocm630<span class="w"> </span>python3<
 </div>
 </section>
 <section id="method-4-using-docker-compose">
-<h2>Method 4: Using Docker Compose<a class="headerlink" href="#method-4-using-docker-compose" title="Link to this heading">#</a></h2>
+<h2>Method 4: Using docker compose<a class="headerlink" href="#method-4-using-docker-compose" title="Link to this heading">#</a></h2>
 <details>
 <summary>More</summary>
 <blockquote>
@@ -618,7 +618,7 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
 <li><p><a class="reference external" href="https://github.com/flashinfer-ai/flashinfer">FlashInfer</a> is the default attention kernel backend. It only supports sm75 and above. If you encounter any FlashInfer-related issues on sm75+ devices (e.g., T4, A10, A100, L4, L40S, H100), please switch to other kernels by adding <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">triton</span> <span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code> and open an issue on GitHub.</p></li>
 <li><p>If you only need to use OpenAI models with the frontend language, you can avoid installing other dependencies by using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;sglang[openai]&quot;</span></code>.</p></li>
 <li><p>The language frontend operates independently of the backend runtime. You can install the frontend locally without needing a GPU, while the backend can be set up on a GPU-enabled machine. To install the frontend, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sglang</span></code>, and for the backend, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sglang[srt]</span></code>. <code class="docutils literal notranslate"><span class="pre">srt</span></code> is the abbreviation of SGLang runtime.</p></li>
-<li><p>To reinstall FlashInfer locally, use the following command: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;flashinfer-python==0.2.5&quot;</span> <span class="pre">-i</span> <span class="pre">https://flashinfer.ai/whl/cu124/torch2.6</span> <span class="pre">--force-reinstall</span> <span class="pre">--no-deps</span></code> and then delete the cache with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.cache/flashinfer</span></code>.</p></li>
+<li><p>To reinstall flashinfer locally, use the following command: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;flashinfer-python==0.2.5&quot;</span> <span class="pre">-i</span> <span class="pre">https://flashinfer.ai/whl/cu124/torch2.6</span> <span class="pre">--force-reinstall</span> <span class="pre">--no-deps</span></code> and then delete the cache with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.cache/flashinfer</span></code>.</p></li>
 </ul>
 </section>
 </section>
@@ -670,8 +670,8 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using Docker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using Docker Compose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-docker-compose">Method 4: Using docker compose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-using-kubernetes">Method 5: Using Kubernetes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot">Method 6: Run on Kubernetes or Clouds with SkyPilot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
