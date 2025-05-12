@@ -1090,6 +1090,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>Disable the use of chunked prefix cache for DeepSeek models. Only use it when FA3 is attention backend.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enable_dp_lm_head</span></code></p></td>
+<td><p>Enable vocabulary parallel across the attention TP group to avoid all-gather across DP groups, optimizing performance under DP attention.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
