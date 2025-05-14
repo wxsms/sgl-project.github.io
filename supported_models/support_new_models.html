@@ -184,7 +184,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="generative_models.html">Large Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vision_language_models.html">Vision Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multimodal_language_models.html">Multimodal Language Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reward_models.html">Reward Models</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Support New Models</a></li>
@@ -445,7 +445,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a new Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-vision-language-model">How to Support a new Vision-Language model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a new Multimodal Large Language Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the Correctness</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive Debugging</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the Model to the Test Suite</a></li>
@@ -466,35 +466,53 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-to-support-new-models">
 <h1>How to Support New Models<a class="headerlink" href="#how-to-support-new-models" title="Link to this heading">#</a></h1>
-<p>This document explains how to add support for new language models and vision‐language models (VLMs) in SGLang. It also covers how to test new models and register external implementations.</p>
+<p>This document explains how to add support for new language models and multimodal large language models (mllms) in
+SGLang. It also covers how to test new models and register external implementations.</p>
 <section id="how-to-support-a-new-language-model">
 <h2>How to Support a new Language Model<a class="headerlink" href="#how-to-support-a-new-language-model" title="Link to this heading">#</a></h2>
-<p>To support a new model in SGLang, you only need to add a single file under the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/srt/models">SGLang Models Directory</a>. You can learn from existing model implementations and create a new file for your model. For most models, you should be able to find a similar model to start with (e.g., starting from Llama). Also refer how to <a class="reference internal" href="#port-a-model-from-vllm-to-sglang"><span class="std std-ref">port a Model from vLLM to SGLang</span></a></p>
+<p>To support a new model in SGLang, you only need to add a single file under
+the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/srt/models">SGLang Models Directory</a>. You can learn
+from existing model implementations and create a new file for your model. For most models, you should be able to find a
+similar model to start with (e.g., starting from Llama). Also refer how
+to <a class="reference internal" href="#port-a-model-from-vllm-to-sglang"><span class="std std-ref">port a Model from vLLM to SGLang</span></a></p>
 </section>
-<section id="how-to-support-a-new-vision-language-model">
-<h2>How to Support a new Vision-Language model<a class="headerlink" href="#how-to-support-a-new-vision-language-model" title="Link to this heading">#</a></h2>
-<p>To support a new vision-language model (vLM) in SGLang, there are several key components in addition to the standard LLM support:</p>
+<section id="how-to-support-a-new-multimodal-large-language-model">
+<h2>How to Support a new Multimodal Large Language Model<a class="headerlink" href="#how-to-support-a-new-multimodal-large-language-model" title="Link to this heading">#</a></h2>
+<p>To support a new multimodal large language model (MLLM) in SGLang, there are several key components in addition to the
+standard LLM support:</p>
 <ol class="arabic simple">
 <li><p><strong>Register your new model as multimodal</strong>:
-Extend <code class="docutils literal notranslate"><span class="pre">is_multimodal_model</span></code> in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/configs/model_config.py">model_config.py</a> to return <code class="docutils literal notranslate"><span class="pre">True</span></code> for your model.</p></li>
-<li><p><strong>Process Images</strong>:
-Define a new <code class="docutils literal notranslate"><span class="pre">Processor</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">BaseProcessor</span></code> and register this processor as your model’s dedicated processor. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/managers/multimodal_processor.py">multimodal_processor.py</a> for more details.</p></li>
-<li><p><strong>Handle Image Tokens</strong>:
-Implement a <code class="docutils literal notranslate"><span class="pre">pad_input_ids</span></code> function for your new model. In this function, image tokens in the prompt should be expanded and replaced with image-hashes so that SGLang can recognize different images when using <code class="docutils literal notranslate"><span class="pre">RadixAttention</span></code>.</p></li>
-<li><p><strong>Replace Vision Attention</strong>:
-Replace the multi-headed <code class="docutils literal notranslate"><span class="pre">Attention</span></code> of ViT with SGLang’s <code class="docutils literal notranslate"><span class="pre">VisionAttention</span></code>.</p></li>
+Extend <code class="docutils literal notranslate"><span class="pre">is_multimodal_model</span></code>
+in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/0ab3f437aba729b348a683ab32b35b214456efc7/python/sglang/srt/configs/model_config.py#L561">model_config.py</a>
+to return <code class="docutils literal notranslate"><span class="pre">True</span></code> for your model.</p></li>
+<li><p><strong>Register a new chat-template</strong>
+See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/86a779dbe9e815c02f71ea82574608f6eae016b5/python/sglang/srt/conversation.py">conversation.py</a></p></li>
+<li><p><strong>Multimodal Data Processor</strong>:
+Define a new <code class="docutils literal notranslate"><span class="pre">Processor</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">BaseMultimodalProcessor</span></code> and register this processor as your
+model’s dedicated processor.
+See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/managers/multimodal_processor.py">multimodal_processor.py</a>
+for more details.</p></li>
+<li><p><strong>Handle Multimodal Tokens</strong>:
+Implement a <code class="docutils literal notranslate"><span class="pre">pad_input_ids</span></code> function for your new model. In this function, multimodal tokens in the prompt should be
+expanded (if necessary) and padded with multimodal-data-hashes so that SGLang can recognize different multimodal data
+with <code class="docutils literal notranslate"><span class="pre">RadixAttention</span></code>.</p></li>
+<li><p><strong>Adapt to Vision Attention</strong>:
+Adapt the multi-headed <code class="docutils literal notranslate"><span class="pre">Attention</span></code> of ViT with SGLang’s <code class="docutils literal notranslate"><span class="pre">VisionAttention</span></code>.</p></li>
 </ol>
-<p>You can refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/qwen2_vl.py">Qwen2VL</a> or other vLM implementations. These models demonstrate how to correctly handle both multimodal and textual inputs.</p>
-<p>You should test the new vLM locally against Hugging Face models. See the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/mmmu"><code class="docutils literal notranslate"><span class="pre">mmmu</span></code></a> benchmark for an example.</p>
+<p>You can refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/qwen2_vl.py">Qwen2VL</a> or
+other mllm implementations. These models demonstrate how to correctly handle both multimodal and textual inputs.</p>
+<p>You should test the new MLLM locally against Hugging Face models. See the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/mmmu">
+<code class="docutils literal notranslate"><span class="pre">mmmu</span></code></a> benchmark for an example.</p>
 </section>
 <section id="test-the-correctness">
 <h2>Test the Correctness<a class="headerlink" href="#test-the-correctness" title="Link to this heading">#</a></h2>
 <section id="interactive-debugging">
 <h3>Interactive Debugging<a class="headerlink" href="#interactive-debugging" title="Link to this heading">#</a></h3>
-<p>For interactive debugging, compare the outputs of Hugging Face/Transformers and SGLang. The following two commands should give the same text output and very similar prefill logits:</p>
+<p>For interactive debugging, compare the outputs of Hugging Face/Transformers and SGLang. The following two commands
+should give the same text output and very similar prefill logits:</p>
 <ul>
 <li><p>Get the reference output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/playground/reference_hf.py<span class="w"> </span>--model-path<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>model<span class="o">]</span><span class="w"> </span>--model-type<span class="w"> </span><span class="o">{</span>text,vlm<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/playground/reference_hf.py<span class="w"> </span>--model-path<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>model<span class="o">]</span><span class="w"> </span>--model-type<span class="w"> </span><span class="o">{</span>text,mllm<span class="o">}</span>
 </pre></div>
 </div>
 </li>
@@ -507,7 +525,10 @@ Replace the multi-headed <code class="docutils literal notranslate"><span class=
 </section>
 <section id="add-the-model-to-the-test-suite">
 <h3>Add the Model to the Test Suite<a class="headerlink" href="#add-the-model-to-the-test-suite" title="Link to this heading">#</a></h3>
-<p>To ensure the new model is well maintained, add it to the test suite by including it in the <code class="docutils literal notranslate"><span class="pre">ALL_OTHER_MODELS</span></code> list in the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/models/test_generation_models.py">test_generation_models.py</a> file, test the new model on your local machine and report the results on demonstrative benchmarks (GSM8K, MMLU, MMMU, MMMU-Pro, etc.) in your PR.</p>
+<p>To ensure the new model is well maintained, add it to the test suite by including it in the <code class="docutils literal notranslate"><span class="pre">ALL_OTHER_MODELS</span></code> list in
+the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/models/test_generation_models.py">test_generation_models.py</a>
+file, test the new model on your local machine and report the results on demonstrative benchmarks (GSM8K, MMLU, MMMU,
+MMMU-Pro, etc.) in your PR.</p>
 <p>This is the command to test a new model on your local machine:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ONLY_RUN</span><span class="o">=</span>Qwen/Qwen2-1.5B<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>test_generation_models.TestGenerationModels.test_others
 </pre></div>
@@ -516,7 +537,9 @@ Replace the multi-headed <code class="docutils literal notranslate"><span class=
 </section>
 <section id="port-a-model-from-vllm-to-sglang">
 <h2>Port a Model from vLLM to SGLang<a class="headerlink" href="#port-a-model-from-vllm-to-sglang" title="Link to this heading">#</a></h2>
-<p>The <a class="reference external" href="https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models">vLLM Models Directory</a> is a valuable resource, as vLLM covers many models. SGLang reuses vLLM’s interface and some layers, making it easier to port models from vLLM to SGLang.</p>
+<p>The <a class="reference external" href="https://github.com/vllm-project/vllm/tree/main/vllm/model_executor/models">vLLM Models Directory</a> is a valuable
+resource, as vLLM covers many models. SGLang reuses vLLM’s interface and some layers, making it easier to port models
+from vLLM to SGLang.</p>
 <p>To port a model from vLLM to SGLang:</p>
 <ul class="simple">
 <li><p>Compare these two files for guidance:</p>
@@ -541,7 +564,8 @@ Replace the multi-headed <code class="docutils literal notranslate"><span class=
 </section>
 <section id="registering-an-external-model-implementation">
 <h2>Registering an External Model Implementation<a class="headerlink" href="#registering-an-external-model-implementation" title="Link to this heading">#</a></h2>
-<p>In addition to the methods above, you can register your new model with the <code class="docutils literal notranslate"><span class="pre">ModelRegistry</span></code> before launching the server. This allows you to integrate your model without modifying the source code.</p>
+<p>In addition to the methods above, you can register your new model with the <code class="docutils literal notranslate"><span class="pre">ModelRegistry</span></code> before launching the server.
+This allows you to integrate your model without modifying the source code.</p>
 <p>For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.models.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelRegistry</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.entrypoints.http_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_server</span>
@@ -566,7 +590,8 @@ Replace the multi-headed <code class="docutils literal notranslate"><span class=
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>By following these guidelines, you can add support for new language models and vision-language models in SGLang and ensure they are thoroughly tested and easily integrated into the system.</p>
+<p>By following these guidelines, you can add support for new language models and multimodal large language models in
+SGLang and ensure they are thoroughly tested and easily integrated into the system.</p>
 </section>
 </section>
 
@@ -616,7 +641,7 @@ Replace the multi-headed <code class="docutils literal notranslate"><span class=
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a new Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-vision-language-model">How to Support a new Vision-Language model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a new Multimodal Large Language Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the Correctness</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive Debugging</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the Model to the Test Suite</a></li>
