@@ -503,6 +503,13 @@ document.write(`
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
+<tr class="row-even"><td><p><strong>FlashMLA</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -536,6 +543,13 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li><p>Torch Native</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>torch_native
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>FlashMLA</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span>--trust-remote-code
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span>--trust-remote-code
 </pre></div>
 </div>
 </section>
