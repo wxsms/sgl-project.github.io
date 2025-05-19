@@ -446,7 +446,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example launch Command</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-metrics">Supporting Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported models</a></li>
 </ul>
             </nav>
         </div>
@@ -460,8 +460,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="multimodal-language-models">
 <h1>Multimodal Language Models<a class="headerlink" href="#multimodal-language-models" title="Link to this heading">#</a></h1>
-<p>These models accept multi-modal inputs (e.g., images and text) and generate text output. They augment language models
-with multimodal encoders.</p>
+<p>These models accept multi-modal inputs (e.g., images and text) and generate text output. They augment language models with multimodal encoders.</p>
 <section id="example-launch-command">
 <h2>Example launch Command<a class="headerlink" href="#example-launch-command" title="Link to this heading">#</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
@@ -471,8 +470,14 @@ with multimodal encoders.</p>
 </pre></div>
 </div>
 </section>
-<section id="supporting-metrics">
-<h2>Supporting Metrics<a class="headerlink" href="#supporting-metrics" title="Link to this heading">#</a></h2>
+<section id="supported-models">
+<h2>Supported models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
+<p>Below the supported models are summarized in a table.</p>
+<p>If unsure if a specific architecture is implemented you may look it up via Github search. For example to search for <code class="docutils literal notranslate"><span class="pre">Qwen2_5_VLForConditionalGeneration</span></code> use the expression</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span><span class="p">:</span><span class="n">sgl</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">sglang</span> <span class="n">path</span><span class="p">:</span><span class="o">/^</span><span class="n">python</span>\<span class="o">/</span><span class="n">sglang</span>\<span class="o">/</span><span class="n">srt</span>\<span class="o">/</span><span class="n">models</span>\<span class="o">//</span> <span class="n">Qwen2_5_VLForConditionalGeneration</span>
+</pre></div>
+</div>
+<p>in Github search.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Model Family (Variants)</p></th>
@@ -589,7 +594,7 @@ with multimodal encoders.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example launch Command</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-metrics">Supporting Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported models</a></li>
 </ul>
   </nav></div>
 
