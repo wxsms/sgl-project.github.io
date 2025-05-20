@@ -477,7 +477,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </div>
 <p><strong>Quick Fixes to Common Problems</strong></p>
 <ul class="simple">
-<li><p>SGLang currently uses torch 2.5, so you need to install flashinfer for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>. Please note that the FlashInfer pypi package is called <code class="docutils literal notranslate"><span class="pre">flashinfer-python</span></code> instead of <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>.</p></li>
+<li><p>SGLang currently uses torch 2.6, so you need to install flashinfer for torch 2.6. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>. Please note that the FlashInfer pypi package is called <code class="docutils literal notranslate"><span class="pre">flashinfer-python</span></code> instead of <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>.</p></li>
 <li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>. Please set it to your CUDA install root with either of the following solutions:</p>
 <ol class="arabic simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=/usr/local/cuda-&lt;your-cuda-version&gt;</span></code> to set the <code class="docutils literal notranslate"><span class="pre">CUDA_HOME</span></code> environment variable.</p></li>
@@ -497,7 +497,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all]&quot;</span>
 </pre></div>
 </div>
-<p>Note: SGLang currently uses torch 2.5, so you need to install flashinfer for torch 2.5. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>.</p>
+<p>Note: SGLang currently uses torch 2.6, so you need to install flashinfer for torch 2.6. If you want to install flashinfer separately, please refer to <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>.</p>
 <p>If you want to develop SGLang, it is recommended to use docker. Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/developer/development_guide_using_docker.md#setup-docker-container">setup docker container</a> for guidance. The docker image is <code class="docutils literal notranslate"><span class="pre">lmsysorg/sglang:dev</span></code>.</p>
 <p>Note: For AMD ROCm system with Instinct/MI GPUs, do following instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
