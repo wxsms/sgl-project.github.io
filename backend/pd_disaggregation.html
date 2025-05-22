@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PyPI Package Release Process &#8212; SGLang</title>
+    <title>PD Disaggregation &#8212; SGLang</title>
   
   
   
@@ -47,10 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer/release_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'backend/pd_disaggregation';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SGLang Frontend Language" href="../frontend/frontend.html" />
+    <link rel="prev" title="LoRA Serving" href="lora.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="May 22, 2025"/>
@@ -114,8 +116,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -171,16 +171,16 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/attention_backend.html">Attention Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_vision.html">OpenAI APIs - Vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -191,16 +191,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../backend/speculative_decoding.html">Speculative Decoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs.html">Structured Outputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/function_calling.html">Tool and Function Calling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/separate_reasoning.html">Reasoning Parser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/lora.html">LoRA Serving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backend/pd_disaggregation.html">PD Disaggregation</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PD Disaggregation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -288,7 +288,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer/release_process.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/backend/pd_disaggregation.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer/release_process.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/backend/pd_disaggregation.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper/release_process.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbackend/pd_disaggregation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +352,7 @@
       
       
       
-      <li><a href="../_sources/developer/release_process.md" target="_blank"
+      <li><a href="../_sources/backend/pd_disaggregation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PyPI Package Release Process</h1>
+    <h1>PD Disaggregation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -446,9 +446,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-and-what-is-pd-disaggregation">Why and What is PD Disaggregation?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-unified-scheduling">Issues with Unified Scheduling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mooncake">Mooncake</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-single-node">Llama Single Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-multi-node">DeepSeek Multi-Node</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -460,25 +468,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pypi-package-release-process">
-<h1>PyPI Package Release Process<a class="headerlink" href="#pypi-package-release-process" title="Link to this heading">#</a></h1>
-<section id="update-the-version-in-code">
-<h2>Update the version in code<a class="headerlink" href="#update-the-version-in-code" title="Link to this heading">#</a></h2>
-<p>Update the package version in <code class="docutils literal notranslate"><span class="pre">python/pyproject.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">python/sglang/__init__.py</span></code>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pd-disaggregation">
+<h1>PD Disaggregation<a class="headerlink" href="#pd-disaggregation" title="Link to this heading">#</a></h1>
+<section id="why-and-what-is-pd-disaggregation">
+<h2>Why and What is PD Disaggregation?<a class="headerlink" href="#why-and-what-is-pd-disaggregation" title="Link to this heading">#</a></h2>
+<p>Large Language Model (LLM) inference comprises two distinct phases: <strong>Prefill</strong> and <strong>Decode</strong>. The Prefill phase is computation-intensive, processing the entire input sequence, while the Decode phase is memory-intensive, managing the Key-Value (KV) cache for token generation. Traditionally, these phases are handled within a unified engine, where combined scheduling of prefill and decode batches introduces inefficiencies. To address these challenges, we introduce <strong>Prefill and Decoding (PD) Disaggregation</strong> in SGLang.</p>
+<section id="issues-with-unified-scheduling">
+<h3>Issues with Unified Scheduling<a class="headerlink" href="#issues-with-unified-scheduling" title="Link to this heading">#</a></h3>
+<p>The conventional unified engine, which processes prefill and decode batches together, results in two significant problems:</p>
+<ol class="arabic simple">
+<li><p><strong>Prefill Interruption</strong>: Incoming prefill batches frequently interrupt ongoing decode batches, causing substantial delays in token generation.</p></li>
+<li><p><strong>DP Attention Imbalance</strong>: In data-parallel (DP) attention, one DP worker may process a prefill batch while another handles a decode batch simultaneously, leading to increased decode latency.</p></li>
+</ol>
+<p>PD Disaggregation resolves these by separating the two stages, enabling tailored optimizations for each.</p>
+<p>For the design details, please refer to <a class="reference external" href="https://docs.google.com/document/d/1rQXJwKd5b9b1aOzLh98mnyMhBMhlxXA5ATZTHoQrwvc/edit?tab=t.0">link</a>.</p>
+<p>Currently, we support Mooncake and NIXL as the transfer engine.</p>
 </section>
-<section id="upload-the-pypi-package">
-<h2>Upload the PyPI package<a class="headerlink" href="#upload-the-pypi-package" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">build</span> <span class="n">twine</span>
+</section>
+<section id="mooncake">
+<h2>Mooncake<a class="headerlink" href="#mooncake" title="Link to this heading">#</a></h2>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mooncake-transfer-engine
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">python</span>
-<span class="n">bash</span> <span class="n">upload_pypi</span><span class="o">.</span><span class="n">sh</span>
+</section>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h3>
+</section>
+<section id="llama-single-node">
+<h3>Llama Single Node<a class="headerlink" href="#llama-single-node" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span>--disaggregation-ib-device<span class="w"> </span>mlx5_roce0
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span>--base-gpu-id<span class="w"> </span><span class="m">1</span><span class="w"> </span>--disaggregation-ib-device<span class="w"> </span>mlx5_roce0
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.srt.disaggregation.mini_lb<span class="w"> </span>--prefill<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>--decode<span class="w"> </span>http://127.0.0.1:30001<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
 </section>
-<section id="make-a-release-in-github">
-<h2>Make a release in GitHub<a class="headerlink" href="#make-a-release-in-github" title="Link to this heading">#</a></h2>
-<p>Make a new release https://github.com/sgl-project/sglang/releases/new.</p>
+<section id="deepseek-multi-node">
+<h3>DeepSeek Multi-Node<a class="headerlink" href="#deepseek-multi-node" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill 0</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span>--disaggregation-ib-device<span class="w"> </span><span class="si">${</span><span class="nv">device_name</span><span class="si">}</span><span class="w"> </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">local_ip</span><span class="si">}</span><span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">prefill_master_ip</span><span class="si">}</span>:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-deepep-moe<span class="w"> </span>--deepep-mode<span class="w"> </span>normal<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+<span class="c1"># prefill 1</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span>--disaggregation-ib-device<span class="w"> </span><span class="si">${</span><span class="nv">device_name</span><span class="si">}</span><span class="w"> </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">local_ip</span><span class="si">}</span><span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">prefill_master_ip</span><span class="si">}</span>:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-deepep-moe<span class="w"> </span>--deepep-mode<span class="w"> </span>normal<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+<span class="c1"># decode 0</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span>--disaggregation-ib-device<span class="w"> </span><span class="si">${</span><span class="nv">device_name</span><span class="si">}</span><span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">local_ip</span><span class="si">}</span><span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">decode_master_ip</span><span class="si">}</span>:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-deepep-moe<span class="w"> </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">128</span>
+<span class="c1"># decode 1</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span>--disaggregation-ib-device<span class="w"> </span><span class="si">${</span><span class="nv">device_name</span><span class="si">}</span><span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">local_ip</span><span class="si">}</span><span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">decode_master_ip</span><span class="si">}</span>:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-deepep-moe<span class="w"> </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">128</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -493,6 +531,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="lora.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">LoRA Serving</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../frontend/frontend.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SGLang Frontend Language</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -509,9 +565,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-and-what-is-pd-disaggregation">Why and What is PD Disaggregation?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-unified-scheduling">Issues with Unified Scheduling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mooncake">Mooncake</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-single-node">Llama Single Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-multi-node">DeepSeek Multi-Node</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
