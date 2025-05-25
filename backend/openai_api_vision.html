@@ -513,40 +513,40 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:14] server_args=ServerArgs(model_path=&#39;Qwen/Qwen2.5-VL-7B-Instruct&#39;, tokenizer_path=&#39;Qwen/Qwen2.5-VL-7B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Qwen/Qwen2.5-VL-7B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, host=&#39;127.0.0.1&#39;, port=39105, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=62407131, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_rebalance_num_iterations=1000, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=None, enable_expert_distribution_metrics=False, deepep_config=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, mm_attention_backend=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
-[2025-05-25 07:54:19] Infer the chat template name from the model path and obtain the result: qwen2-vl.
-[2025-05-25 07:54:26] Attention backend not set. Use flashinfer backend by default.
-[2025-05-25 07:54:26] Automatically reduce --mem-fraction-static to 0.792 because this is a multimodal model.
-[2025-05-25 07:54:26] Init torch distributed begin.
-[2025-05-25 07:54:28] Init torch distributed ends. mem usage=0.00 GB
-[2025-05-25 07:54:28] init_expert_location from trivial
-[2025-05-25 07:54:28] Load weight begin. avail mem=46.58 GB
-[2025-05-25 07:54:28] Multimodal attention backend not set. Use sdpa.
-[2025-05-25 07:54:30] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-25 16:45:49] server_args=ServerArgs(model_path=&#39;Qwen/Qwen2.5-VL-7B-Instruct&#39;, tokenizer_path=&#39;Qwen/Qwen2.5-VL-7B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;Qwen/Qwen2.5-VL-7B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, host=&#39;127.0.0.1&#39;, port=34265, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=1046195677, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_rebalance_num_iterations=1000, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=None, enable_expert_distribution_metrics=False, deepep_config=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, mm_attention_backend=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
+[2025-05-25 16:45:54] Infer the chat template name from the model path and obtain the result: qwen2-vl.
+[2025-05-25 16:46:00] Attention backend not set. Use flashinfer backend by default.
+[2025-05-25 16:46:00] Automatically reduce --mem-fraction-static to 0.792 because this is a multimodal model.
+[2025-05-25 16:46:00] Init torch distributed begin.
+[2025-05-25 16:46:01] Init torch distributed ends. mem usage=0.00 GB
+[2025-05-25 16:46:01] init_expert_location from trivial
+[2025-05-25 16:46:01] Load weight begin. avail mem=46.68 GB
+[2025-05-25 16:46:01] Multimodal attention backend not set. Use sdpa.
+[2025-05-25 16:46:02] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.52it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.36it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.32it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.76it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.32it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.27it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.25it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.62it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.44it/s]
 
-[2025-05-25 07:54:33] Load weight end. type=Qwen2_5_VLForConditionalGeneration, dtype=torch.bfloat16, avail mem=30.88 GB, mem usage=15.70 GB.
-[2025-05-25 07:54:34] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-05-25 07:54:34] Memory pool end. avail mem=29.51 GB
-2025-05-25 07:54:34,299 - INFO - flashinfer.jit: Prebuilt kernels not found, using JIT backend
-[2025-05-25 07:54:35] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=128000
-[2025-05-25 07:54:36] INFO:     Started server process [582065]
-[2025-05-25 07:54:36] INFO:     Waiting for application startup.
-[2025-05-25 07:54:36] INFO:     Application startup complete.
-[2025-05-25 07:54:36] INFO:     Uvicorn running on http://127.0.0.1:39105 (Press CTRL+C to quit)
-[2025-05-25 07:54:36] INFO:     127.0.0.1:39412 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-05-25 07:54:37] INFO:     127.0.0.1:39426 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-05-25 07:54:37] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-2025-05-25 07:54:38,238 - INFO - flashinfer.jit: Loading JIT ops: batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False
-2025-05-25 07:54:38,250 - INFO - flashinfer.jit: Finished loading JIT ops: batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False
-[2025-05-25 07:54:38] INFO:     127.0.0.1:39434 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-05-25 07:54:38] The server is fired up and ready to roll!
+[2025-05-25 16:46:05] Load weight end. type=Qwen2_5_VLForConditionalGeneration, dtype=torch.bfloat16, avail mem=30.88 GB, mem usage=15.80 GB.
+[2025-05-25 16:46:05] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-05-25 16:46:05] Memory pool end. avail mem=29.51 GB
+2025-05-25 16:46:05,815 - INFO - flashinfer.jit: Prebuilt kernels not found, using JIT backend
+[2025-05-25 16:46:06] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=128000
+[2025-05-25 16:46:07] INFO:     Started server process [1407265]
+[2025-05-25 16:46:07] INFO:     Waiting for application startup.
+[2025-05-25 16:46:07] INFO:     Application startup complete.
+[2025-05-25 16:46:07] INFO:     Uvicorn running on http://127.0.0.1:34265 (Press CTRL+C to quit)
+[2025-05-25 16:46:08] INFO:     127.0.0.1:51480 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:08] INFO:     127.0.0.1:51492 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:08] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+2025-05-25 16:46:09,791 - INFO - flashinfer.jit: Loading JIT ops: batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False
+2025-05-25 16:46:09,808 - INFO - flashinfer.jit: Finished loading JIT ops: batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False
+[2025-05-25 16:46:10] INFO:     127.0.0.1:51502 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:10] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -604,34 +604,34 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:42] Prefill batch. #new-seq: 1, #new-token: 307, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-25 07:54:42] Decode batch. #running-req: 1, #token: 340, token usage: 0.02, cuda graph: False, gen throughput (token/s): 5.46, #queue-req: 0
-[2025-05-25 07:54:43] Decode batch. #running-req: 1, #token: 380, token usage: 0.02, cuda graph: False, gen throughput (token/s): 61.32, #queue-req: 0
-[2025-05-25 07:54:43] INFO:     127.0.0.1:39442 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:14] Prefill batch. #new-seq: 1, #new-token: 307, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-25 16:46:14] Decode batch. #running-req: 1, #token: 340, token usage: 0.02, cuda graph: False, gen throughput (token/s): 5.14, #queue-req: 0
+[2025-05-25 16:46:15] Decode batch. #running-req: 1, #token: 380, token usage: 0.02, cuda graph: False, gen throughput (token/s): 61.08, #queue-req: 0
+[2025-05-25 16:46:16] Decode batch. #running-req: 1, #token: 420, token usage: 0.02, cuda graph: False, gen throughput (token/s): 61.22, #queue-req: 0
+[2025-05-25 16:46:16] INFO:     127.0.0.1:51508 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"5eb7098ac4344e669c67c3a26e56172a","object":"chat.completion","created":1748159681,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man outdoors on a street. He is standing near the back of a yellow taxi, which is parked and facing left. The man is using an ironing board to press or hang clothes, and he is mid-action, leaning down toward the clothes. He is wearing a casual yellow shirt and trousers. The street appears to be in an urban area, with buildings, signs, vehicles, and flags visible in the background. The weather looks sunny and clear.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":403,"completion_tokens":96,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{"id":"1c422edfcad24d8ca76ddc4aacb2a210","object":"chat.completion","created":1748191573,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man on a city street ironing clothes on a stand while leaning over the back of a yellow taxi parked on the roadside. The taxi, labeled \"Jeevacha,\" carries stickers on its windows. Behind him, there is another taxi, and tall buildings with visible signage flank the scene, suggesting an urban location, likely New York City, based on the taxis, signage, and architecture.\n\nThis is likely a humorous or staged scenario, as ironing clothes for such a purpose seems unusual and impractical in a public space among moving taxis and pedestrians.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":423,"completion_tokens":116,"prompt_tokens_details":null}}</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:44] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 306, token usage: 0.01, #running-req: 0, #queue-req: 0
-[2025-05-25 07:54:44] Decode batch. #running-req: 1, #token: 324, token usage: 0.02, cuda graph: False, gen throughput (token/s): 42.96, #queue-req: 0
-[2025-05-25 07:54:45] Decode batch. #running-req: 1, #token: 364, token usage: 0.02, cuda graph: False, gen throughput (token/s): 57.19, #queue-req: 0
-[2025-05-25 07:54:45] INFO:     127.0.0.1:39446 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:16] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 306, token usage: 0.01, #running-req: 0, #queue-req: 0
+[2025-05-25 16:46:17] Decode batch. #running-req: 1, #token: 344, token usage: 0.02, cuda graph: False, gen throughput (token/s): 37.69, #queue-req: 0
+[2025-05-25 16:46:17] INFO:     127.0.0.1:51922 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"f0854a5de78c4545827331d5523efb7d","object":"chat.completion","created":1748159683,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a person standing on the front part of a yellow taxi in a busy urban street. They appear to be ironing clothes being held above the vehicle's windshield. The taxi has a red harness strapped around both the windshield and the person to secure them in place. The setting includes other taxis and tall buildings, indicating a city environment.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{"id":"a199548f8eed4194ab4b8678bebb3d82","object":"chat.completion","created":1748191576,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man wearing a yellow shirt performing an unusual act of ironing clothes attached to an ironing board setup placed on the rear roof rack of a taxi. The taxi is on an urban street, and there are other taxis and pedestrians in the background, indicating a busy city environment.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":367,"completion_tokens":60,"prompt_tokens_details":null}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -673,18 +673,17 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:45] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 306, token usage: 0.01, #running-req: 0, #queue-req: 0
-[2025-05-25 07:54:46] Decode batch. #running-req: 1, #token: 334, token usage: 0.02, cuda graph: False, gen throughput (token/s): 35.59, #queue-req: 0
-[2025-05-25 07:54:46] Decode batch. #running-req: 1, #token: 374, token usage: 0.02, cuda graph: False, gen throughput (token/s): 60.78, #queue-req: 0
-[2025-05-25 07:54:47] Decode batch. #running-req: 1, #token: 414, token usage: 0.02, cuda graph: False, gen throughput (token/s): 60.48, #queue-req: 0
-[2025-05-25 07:54:47] INFO:     127.0.0.1:58484 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:17] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 306, token usage: 0.01, #running-req: 0, #queue-req: 0
+[2025-05-25 16:46:18] Decode batch. #running-req: 1, #token: 324, token usage: 0.02, cuda graph: False, gen throughput (token/s): 39.46, #queue-req: 0
+[2025-05-25 16:46:18] Decode batch. #running-req: 1, #token: 364, token usage: 0.02, cuda graph: False, gen throughput (token/s): 58.88, #queue-req: 0
+[2025-05-25 16:46:19] INFO:     127.0.0.1:51936 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"006de409b29843bebc1c8b81304a800f","object":"chat.completion","created":1748159685,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man on the back of a yellow taxi in an urban setting, flipping what appears to be a sheet or large cloth across the taxi's rear. The man is wearing a long-sleeved yellow shirt and neutral-colored pants. The taxi features detailed branding from National Express and has a mounted sign or advertisement atop. There are yellow taxis to the left, indicating it may be a busy street scene in a city known for its taxis, such as New York City. The background features buildings with glass storefronts and advertisements.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":415,"completion_tokens":108,"prompt_tokens_details":null}}</strong></div>
+<strong style='color: #00008B;'>{"id":"f56049ecbf994cd29c4a03cd3d06d156","object":"chat.completion","created":1748191577,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"This image depicts a person standing outside of a taxi with an ironing board setup on the back of the vehicle. They are holding an iron and a piece of clothing, suggesting they are performing laundry tasks, possibly on-the-job cleaning or laundry services. The scene includes typical elements of urban street transportation, such as taxis passing by, buildings lining the street, and street signs.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":383,"completion_tokens":76,"prompt_tokens_details":null}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -728,17 +727,17 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:47] Prefill batch. #new-seq: 1, #new-token: 292, #cached-token: 15, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-25 07:54:48] Decode batch. #running-req: 1, #token: 346, token usage: 0.02, cuda graph: False, gen throughput (token/s): 41.75, #queue-req: 0
-[2025-05-25 07:54:49] Decode batch. #running-req: 1, #token: 386, token usage: 0.02, cuda graph: False, gen throughput (token/s): 61.21, #queue-req: 0
-[2025-05-25 07:54:49] INFO:     127.0.0.1:58500 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:19] Prefill batch. #new-seq: 1, #new-token: 292, #cached-token: 15, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-25 16:46:19] Decode batch. #running-req: 1, #token: 328, token usage: 0.02, cuda graph: False, gen throughput (token/s): 34.36, #queue-req: 0
+[2025-05-25 16:46:20] Decode batch. #running-req: 1, #token: 368, token usage: 0.02, cuda graph: False, gen throughput (token/s): 55.59, #queue-req: 0
+[2025-05-25 16:46:21] INFO:     127.0.0.1:51938 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image captures a humorous and unusual street scene. A taxi driver is equipped with a makeshift laundry set-up inside their vehicle, consisting of a drying rack or clothesline that extends out from the rear of the car. The driver, dressed in a yellow shirt, is leaning over and appears to be adjusting or handling some clothes draped across the rack. The background shows another taxi in motion and typical city street elements such as buildings and storefronts.</strong></div>
+<strong style='color: #00008B;'>The image shows a man wearing a yellow shirt, standing on the roof of a taxi parked on a busy street. He appears to be ironing clothing items, which after the iron is in use are draped across makeshift hangers that are set up on grid-like metal supports likely used for drying or cleaning items on or off of vehicles. The scene suggests a practical adaptation, possibly taking advantage of the location of the taxi, which has luggage rods typically utilized for stowing baggage.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
@@ -790,9 +789,10 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:50] Prefill batch. #new-seq: 1, #new-token: 2532, #cached-token: 14, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-25 07:54:51] Decode batch. #running-req: 1, #token: 2576, token usage: 0.13, cuda graph: False, gen throughput (token/s): 17.92, #queue-req: 0
-[2025-05-25 07:54:51] INFO:     127.0.0.1:58502 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-05-25 16:46:22] Prefill batch. #new-seq: 1, #new-token: 2532, #cached-token: 14, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-25 16:46:22] Decode batch. #running-req: 1, #token: 2551, token usage: 0.12, cuda graph: False, gen throughput (token/s): 18.25, #queue-req: 0
+[2025-05-25 16:46:23] Decode batch. #running-req: 1, #token: 2591, token usage: 0.13, cuda graph: False, gen throughput (token/s): 61.76, #queue-req: 0
+[2025-05-25 16:46:23] INFO:     127.0.0.1:51946 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -814,7 +814,7 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-25 07:54:51] Child process unexpectedly failed with an exit code 9. pid=582589
+[2025-05-25 16:46:23] Child process unexpectedly failed with an exit code 9. pid=1407846
 </pre></div></div>
 </div>
 </section>
