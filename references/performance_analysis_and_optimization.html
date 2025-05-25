@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Performance Tuning &#8212; SGLang</title>
+    <title>Performance Analysis &amp; Optimization &#8212; SGLang</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/performance_tuning';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/performance_analysis_and_optimization';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -177,6 +177,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Backend Configurations</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
@@ -216,7 +219,7 @@
 <li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Performance Tuning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Performance Analysis &amp; Optimization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
 </ul>
@@ -292,7 +295,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/performance_tuning.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/performance_analysis_and_optimization.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +312,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/performance_tuning.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/performance_analysis_and_optimization.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +329,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/performance_tuning.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/performance_analysis_and_optimization.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +359,7 @@
       
       
       
-      <li><a href="../_sources/references/performance_tuning.rst" target="_blank"
+      <li><a href="../_sources/references/performance_analysis_and_optimization.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -438,7 +441,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Performance Tuning</h1>
+    <h1>Performance Analysis & Optimization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -452,8 +455,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="performance-tuning">
-<h1>Performance Tuning<a class="headerlink" href="#performance-tuning" title="Link to this heading">#</a></h1>
+  <section id="performance-analysis-optimization">
+<h1>Performance Analysis &amp; Optimization<a class="headerlink" href="#performance-analysis-optimization" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
