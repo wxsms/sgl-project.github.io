@@ -540,8 +540,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.42it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.12it/s]
 
 </pre></div></div>
 </div>
@@ -574,56 +574,40 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Grace, and I am the owner of a small specialty food business in Washington D.C. I have been serving Washington’s biggest and most important institutions for many years, and I specialize in barbeque food, but also have a variety of other specialties.
-I have an enormous collection of rare and local ingredients, and the time and experience I have as a chef allows me to use these ingredients to create delicious and nutritious dishes.
-I also have a background in advertising, marketing, and food writing, and I have successfully used my experience to help businesses like you grow and thrive.
-I have a deep love of community, and I am passionate about
+Generated text:  a three-digit number. The number obtained by interchanging the digits is 5 less than the original number. What is this number?
+Let&#39;s denote the three-digit number as \( \overline{abc} \), where \( a, b, \) and \( c \) are its digits. This means the number can be expressed as \( \overline{abc} = 100a + 10b + c \).
+
+If the number is interchanged, it becomes \( \overline{cba} = 100c + 10b + a \).
+
+According to the problem, the
 ===============================
 Prompt: The president of the United States is
-Generated text:  a member of the Cabinet. (True or False)
-
-To determine whether the statement &#34;The president of the United States is a member of the Cabinet&#34; is true or false, we need to consider the roles and responsibilities of the President of the United States.
-
-1. **Role of the President of the United States:**
-   - The President of the United States is the head of the executive branch of the federal government and the leader of the United States. They are the commander-in-chief of the armed forces.
-   - The President of the United States is also the highest-ranking federal official and serves as the commander-in-chief of the military and
+Generated text:  a democratic leader, who is accountable to the American people, who elect the president by popular vote. True or False? True/False. True. According to the American Constitution, the president is elected by the people, so he is accountable to them. However, it is also true that the president is a representative of the people, so he is accountable to them only in the sense of being elected by the people. Therefore, the answer is either True/False or Specific. False. The president is elected by the people, and they elect him, but the president is also held accountable by the people. In other words, the president
 ===============================
 Prompt: The capital of France is
-Generated text:  ____.
+Generated text: :
+
 A. Paris
 B. London
 C. Rome
-D. Moscow
-Answer:
+D. Madrid
 
-A
+The capital of France is:
 
-The only river in France that flows into the ocean is the ____.
-A. Loire
-B. Seine
-C. Seine
-D. Rhône
-Answer:
+A. Paris
 
-B
-
-In the phrase &#39;the English don&#39;t know about that,&#39; the object of the preposition &#39;don&#39;t&#39; in this sentence is ____.
-A. the English
-B. that
-C. don&#39;t
-D. knowledge
-Answer:
-
-B
-
-Among the following options, the one that is not a reflex behavior is ____.
-
+Paris, also known as &#34;The Sun City,&#34; is the capital city of France. It is the largest city in France and the largest in Europe by population, with a population of around 10 million people. It is located on the Île de France, which is part of the Île de la Cité, an island in the Mediterranean Sea, and it is surrounded by the Seine river. The city is known for its beautiful architecture, historic sites, and culinary traditions. Paris is also
 ===============================
 Prompt: The future of AI is
-Generated text:  in question. The rise of machine learning, which can be described as a branch of artificial intelligence that involves the development of algorithms and programming techniques that enable machines to learn from and make predictions based on data. Machine learning has already made a significant impact on our lives in many ways, such as in the areas of healthcare, transportation, and finance.
-However, as these technologies continue to grow in popularity, it&#39;s becoming clear that they will have a profound impact on society in the years to come. In this article, we&#39;ll explore the future of AI and how it will shape the world we live in.
-The impact of AI on healthcare
+Generated text:  digital
 
+Samantha M. Henderson, an associate professor at the University of South Carolina, in an interview with CNN, said that the future of AI is digital.
+
+Her speech was the highlight of CNN’s programming on Sunday.
+
+Henderson’s talk, entitled &#34;The Future of AI: Digital, Human, and User-Centered,&#34; addressed the future of AI in an interview with CNN&#39;s Luke Varney, in which he interviewed Susan M. Hewson, an associate professor of computer science at the University of Texas at Austin.
+
+Henderson and Hewson were the first to address the topic, arguing that the age of AI was
 </pre></div></div>
 </div>
 </section>
@@ -663,17 +647,17 @@ The impact of AI on healthcare
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history and a vibrant culture, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major center for art, music, and literature, and is home to many famous museums, theaters, and restaurants. The city is known for its fashion industry, with Paris Fashion Week being one of the world&#39;s largest and most prestigious fashion events. Paris is also a major center for science and technology, with many universities and research institutions in the city. Overall, Paris is a city
+Generated text:  Paris, also known as &#34;La République&#34; or &#34;La République Unite&#34; and is the largest city in Europe and the second-largest city in the world by population. It is located on the Seine River and is the seat of government, administration, and culture for the French Republic. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also home to many world-renowned museums, theaters, and art galleries. Paris is a popular tourist destination and is considered one of the most beautiful cities in the
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased automation and artificial intelligence: As AI becomes more advanced, it is likely to become more prevalent in various industries, from manufacturing to healthcare to transportation. Automation will likely become more prevalent in jobs that are currently done by humans, such as manufacturing and customer service.
+1. Increased automation: AI is expected to become more prevalent in manufacturing, transportation, and other industries, where it can perform tasks that were previously done by humans. This will lead to increased efficiency and productivity, but it will also create new jobs and raise concerns about job displacement.
 
-2. Improved privacy and security: As AI becomes more advanced, there will be an increased need for privacy and security measures to protect the data that is collected and used by AI systems. This will likely lead to
+2. AI ethics and privacy: As AI becomes more integrated into our daily lives, there will be increasing concerns about its impact on society. This includes issues such as bias in AI algorithms, privacy concerns
 
 </pre></div></div>
 </div>
@@ -716,19 +700,29 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert character&#39;s name] and I&#39;m a [insert profession or occupation] with a passion for [insert a hobby or activity that interests you]. I am always looking for new experiences and new opportunities to grow and improve myself. I am always eager to learn and take on new challenges. I am a true believer in [insert a quote or statement that inspires you] and I am committed to always striving to be the best version of myself. I believe that my success comes from my hard work and dedication, and I am always looking for ways to push myself and achieve my goals. Thank you for asking to meet me. I am here
+Generated text:  [Name] and I am a [occupation], and I write [occupation]. I have been dedicated to my craft for [number] years, and I believe I am [how much] experienced in my field. What makes you unique in your field, and why do you choose to write about it?
+
+---
+
+Thank you for asking. I am [Name], an [occupation]. I have been writing for [number] years, and I believe I am [how much] experienced in my field. What makes me unique in my field, and why do I choose to write about it?
+
+---
+
+I&#39;m excited to share my experiences and insights
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city and the largest metropolitan area in the world, with a population of over 2.3 million people. Paris is known for its artistic and cultural scene, renowned for its world-renowned museums, fashion, cuisine, and world-renowned landmarks such as Notre-Dame Cathedral and Eiffel Tower. The city is also home to many important organizations and institutions, including the French Parliament, the European Parliament, the French Academy of Sciences, and the European Economic and Social Committee. It is often referred to as the &#34;City of Light&#34; and &#34;The Eternal City,&#34; and is considered one of the most beautiful
+Generated text:  Paris, a historic city located in the center of the country.
+
+Paris, the capital of France, is renowned for its historical architecture, vibrant culture, and iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also known for its opulent Parisian cuisine, fashion industry, and annual cultural festivals such as the Marais Festival and the Fête de la Musique.
+
+In addition to its historical significance, Paris has a thriving financial sector, fashion industry, and entertainment industry, which has made it a popular destination for tourists and business travelers alike. The city is also home to
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  complex and rapidly evolving, with potential future trends including:
+Generated text:  a highly dynamic and evolving field, with the potential to bring about significant changes to our lives, society, and the way we interact with technology. Here are some possible future trends in AI:
 
-1. Enhanced AI capabilities: As AI technology advances, we may see more advanced versions of AI, such as stronger learning algorithms, more efficient data handling, and better integration with other technologies.
+1. Increased Automation and Efficiency: As AI becomes more advanced, it is likely to take on more complex tasks, freeing up humans to focus on more strategic and creative work. Automation will also improve efficiency and productivity in industries such as manufacturing, transportation, and healthcare.
 
-2. Autonomous vehicles: AI is already used in self-driving cars, and we may see even more advanced autonomous vehicles in the future. These vehicles will be able to learn from their surroundings, understand complex situations, and make decisions based on their surroundings.
-
-3. Cybersecurity: As AI is used in a wide range of applications, there may be increasing concerns about cybersecurity. AI systems may become vulnerable
+2. Development of Artificial General Intelligence (AGI): AGI is the future of AI, which is the ability of a machine to perform a range of cognitive tasks, including learning,
 </pre></div></div>
 </div>
 </section>
@@ -774,19 +768,33 @@ Generated text:  complex and rapidly evolving, with potential future trends incl
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  ____________. I am a ____________ (adjective, noun, etc.) with a passion for ____________ (adjective or noun). I am a ____________ (adjective, noun, etc.) who is always looking for ____________ (adjective or noun) and ____________ (adjective or noun) opportunities in my daily life. I value ____________ (adjective or noun) in my interactions with others and my actions. I strive to be ____________ (adjective, noun, etc.) and ____________ (adjective, noun, etc.) in all that I do. I
+Generated text:  [Name], and I&#39;m a [Job Title] at [Company]. I&#39;m [Your Name] from [Location], and I&#39;ve been with the company for [Number] years now.
+
+What do you like to do in your free time? As a freelancer, I enjoy coding, spending time outdoors, reading, and playing board games.
+
+What&#39;s your favorite hobby? Skiing and snowboarding! They&#39;re like a dream come true.
+
+Do you have any particular interests or passions that you like to share with others? I like to watch movies, cook, and try new foods.
+
+What&#39;s the most memorable experience you&#39;ve had in
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, also known as the &#34;City of Light.&#34;
 
-Paris is the capital and most populous city of France. It is located on the North Bank of the Seine, on the right bank of the river, in the centre of the country. The city is situated in the eastern part of the country at an elevation of 3,600 meters above sea level. It is the largest city in Europe by area. Paris is home to the Senate, the Chamber of Deputies, and the Chamber of Deputies, and the city of the French parliament (the Chamber of Deputies). The city is also the largest in the European Union (EU), with a population of over
+To answer this question accurately, you must be able to recall the historical and cultural context of the French capital city, which has undergone significant changes since its establishment as a capital in 843 AD.
+
+Paris, also known as the &#34;City of Light&#34; and &#34;The Eternal City,&#34; is situated in the central region of France. It is considered the cultural, economic, and political center of France and the world. The city is famous for its rich history, breathtaking architecture, vibrant arts scene, and picturesque gardens.
+
+Paris has a rich culinary heritage and is home to the world-ren
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid progress, innovation, and increased integration with other technologies. Some possible future trends in AI include:
+Generated text:  predicted to be one of rapid growth, transformation, and diversification. Here are some possible trends that could shape the future of AI:
 
-1. Increased automation and artificial general intelligence: AI is already becoming increasingly capable of performing tasks that were previously thought to be beyond the scope of human intelligence, such as self-driving cars, language translation, and speech recognition. As AI becomes more advanced, it may also be able to perform tasks that were previously thought to require human intelligence, such as playing games, writing poetry, or solving complex puzzles.
+1. Increased automation: The development of AI will continue to automate more tasks, increasing efficiency and reducing the need for human intervention. This could lead to more jobs being automated, as well as new roles emerging.
 
-2. Development of new AI architectures and techniques: As AI technology continues to advance, researchers may develop new architectures and
+2. Improved privacy and security: As AI systems become more sophisticated, there will be more potential for abuse. This could lead to new laws and regulations to protect user privacy and security.
+
+3. Enhanced human-animal interactions: AI could also enhance human-animal interactions in medical and veterinary practices.
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
