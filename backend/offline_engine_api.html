@@ -544,8 +544,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.68it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.67it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.28it/s]
 
 </pre></div></div>
 </div>
@@ -578,44 +578,50 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Alejandro and I am a university student majoring in Mechanical Engineering. I have been involved in the volunteering program at Jhu since my sophomore year and I have been the first volunteer since then. I have been doing the different types of volunteer work, from serving at the university food bank, helping with the tutoring at the university, to helping the students with the specific course materials. I have been to the university library, university bookstore and of course, the many other places where I have been able to assist. From this experience, I have learned that it is important for you to think before you do anything to help others and to not act without
+Generated text:  Emily, and I am a student at the University of Pennsylvania. I have been playing Scrabble for a long time, and I have never been good at it. My parents have encouraged me to improve my reading and writing skills. I am determined to make it work, and I have started playing Scrabble with my friends. I have been playing for a year now. I have been learning a lot and have made it more fun. I think my parents are right. Playing Scrabble with friends makes me happy and makes learning fun. There is a lot of energy in the words I get and the way that they are played. I have
 ===============================
 Prompt: The president of the United States is
-Generated text:  a certain age now. In 20 years, he will be 37 years old. How old is the president now?
-To determine the president&#39;s current age, we start by defining the current age of the president. Let&#39;s denote the current age of the president as \( x \).
+Generated text:  trying to finalize a bill that will increase the federal minimum wage. The bill includes a 3% increase for every person in the United States over the age of 18. There are 300 million people in the United States over the age of 18, 650 million people between the ages of 18 and 65, and 250 million people under the age of 18.
 
-According to the problem, in 20 years, the president&#39;s age will be 37 years old. This relationship can be expressed with the following equation:
-\[ x + 20 = 37 \]
-
-To find the current age \( x \), we need to isolate \( x \) on one side of the equation
+The bill also includes a requirement that the minimum wage must be a minimum of $15 per hour. In the United States, the standard hourly wage is $12.50.
 ===============================
 Prompt: The capital of France is
-Generated text:  _______.
-A. Paris
-B. Lyon
-C. London
-D. Milan
-Answer:
+Generated text: :
 
-A
+1. Paris
+2. London
+3. Berlin
+4. Moscow
+5. New York City
 
-The simplest common denominator of the fractions \(\frac{1}{x^{2}y}\) and \(\frac{1}{xy^{2}}\) is _______.
-A. \(x^{2}y^{2}\)
-B. \(x^{2}\)
-C. \(y^{2}\)
-D. \(y^{3}\)
-Answer:
+What is the correct answer?
 
-A
+1. Paris
+2. London
+3. Berlin
+4. Moscow
+5. New York City
 
-The sine function is an odd function. Given that \(f(x) = \sin(x)\), find the value of \(f(-\frac
+The capital of France is:
+
+1. Paris
+2. London
+3. Berlin
+4. Moscow
+5. New York City
+
+The correct answer is 1. Paris. The capital of France is Paris.Human resources managers have a responsibility to ensure their organizations operate efficiently and effectively. This responsibility includes overseeing the recruitment, selection, and retention of talent. As such,
 ===============================
 Prompt: The future of AI is
-Generated text:  here… and it’s not what we think it is.
+Generated text:  uncertain, but it is clear that the technology is growing. To understand the future of AI, we need to first understand what it is, how it works, and what it could do.
 
-This is a challenging topic to tackle head on. We have seen in the past few years the amazing progress that we have made in AI in terms of understanding and interpreting the patterns that lie behind everyday activities, and the ability to build intelligent machines that are capable of performing many tasks independently and with accuracy and reliability. However, there is still much to do to make the technology practical, because it still needs to find its way into our lives in a way that we are comfortable with.
+What is AI?
 
-The future of AI is bright and might even change the way we live, so let’s dive into
+AI refers to a subset of computing and computer science that enables machines to perform tasks that usually require human intelligence. This includes decision-making, speech recognition, pattern recognition, computer vision, natural language processing, and more. It is becoming an increasingly important field of study and research, and it is having a significant impact on various industries, including healthcare, finance, transportation, and more.
+
+How does AI work?
+
+The basic idea behind
 </pre></div></div>
 </div>
 </section>
@@ -655,19 +661,17 @@ The future of AI is bright and might even change the way we live, so let’s div
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Character] who has always been [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your job or experience here]. How do you like your day? I like my day to be productive and focused, but I also enjoy taking breaks and enjoying the outdoors. What&#39;s your favorite hobby or activity? I love to read, travel, and spend time with my family. What&#39;s your favorite book or movie? I love to read books about travel and adventure, and I also enjoy watching movies with my family
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is a bustling metropolis with a rich history and a diverse population of over 10 million people. The city is home to iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, as well as numerous museums, theaters, and restaurants. Paris is known for its fashion, art, and cuisine, and is a popular tourist destination for visitors from around the world. The city is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a vibrant and dynamic city that continues to be a
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other cultural institutions. Paris is known for its rich history, including the influence of French colonialism in the 19th century, and its role in the French Revolution and the French Revolution. It is also home to many famous French artists, writers, and musicians. Paris is a vibrant and diverse city with a rich cultural heritage, and it continues to be a major center of global culture and politics. The city
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by several trends that are expected to shape the technology&#39;s development and impact on society. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing it to learn from and adapt to human behavior and decision-making processes.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing it to learn and adapt to new situations. This could lead to more sophisticated and adaptive AI systems that can learn from human behavior and adapt to new situations.
 
-2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations, including issues such as bias, transparency, and accountability.
-
-3. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, but there is a potential for even greater use in the future, particularly in areas such as personalized medicine and disease diagnosis
+2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations, including issues such as bias, privacy, and transparency. AI developers will need to be
 
 </pre></div></div>
 </div>
@@ -710,25 +714,25 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m an [occupation] [job title]. I love [reason why you should like me], and I&#39;m always ready to help others. If you have any questions, feel free to ask. Remember, you can always come to me. Let&#39;s get to know each other better! 🌟✨✨
-
-This self-introduction is quite abstract. Could you give me a more concrete example of how I might start a conversation with someone who is new to the industry? Sure! Here&#39;s a more concrete example of how you could start a conversation with someone who is new to the industry:
-
----
-
-**Name:**
+Generated text:  [insert character&#39;s name] and I&#39;m a/an [insert the character&#39;s profession or role]. I&#39;ve always been fascinated by [insert an interesting fact or personal experience related to the character] and have always wanted to [insert the character&#39;s goal or profession]. I&#39;m always ready to help others, whether it&#39;s through [insert one or two things you&#39;re good at or have a unique skill] or by [insert one or two things you want to learn or do]. I&#39;m always looking for opportunities to make a difference and help others, whether it&#39;s through volunteering, donating to a charity, or simply being a good friend.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. The city is known for its historic architecture, rich cultural heritage, and lively nightlife. It is home to many of France&#39;s major museums, including the Louvre, and hosts many cultural events throughout the year. Paris is also a major transportation hub, with its famous metro system and several international airports. The city is renowned for its fashion and cuisine, and is a popular tourist destination. Paris is a cultural and economic center of France, and is often referred to as the &#34;City of a Thousand Faces&#34; due to its iconic architecture.Human: Can you tell me about the historical significance of the Louvre in Paris and why
+Generated text:  Paris, known for its iconic Eiffel Tower, vibrant nightlife, and the iconic Eiffel Line railway. It&#39;s a city of historical significance and a UNESCO World Heritage Site. The city is home to the Louvre Museum, the Louvre Pyramid, and the Arc de Triomphe, among many other landmarks. Paris is a popular tourist destination and has a rich cultural heritage, with a diverse and colorful population.
+
+Some key facts about Paris include:
+
+- It has a population of over 2.3 million people
+- The city has a population density of approximately 649 people per square kilometer
+- It
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to see further development in several areas, including:
+Generated text:  highly complex and dynamic, with many possible future trends. Here are some possibilities:
 
-1. Deep learning: This is a type of machine learning that enables computers to recognize and interpret complex patterns in large datasets, making it a powerful tool for image and speech recognition, natural language processing, and other areas.
+1. Enhanced AI capabilities: As AI technology continues to improve, we may see even more advanced and capable machines. This could lead to a more intuitive and effective way of interacting with AI systems, as well as a greater ability to learn and adapt to new situations.
 
-2. Explainable AI: This is a type of AI that allows us to understand how a machine is making decisions and why it makes those decisions. This is important in ethical AI, as it can help to ensure that machines are used responsibly and that people are aware of the decision-making process.
+2. AI ethics and governance: As AI technology becomes more widespread, there will likely be a need for more stringent regulations and guidelines to ensure that AI systems are used responsibly and ethically. This could involve measures such as privacy laws, data protection regulations, and ethical guidelines for AI development.
 
-3. AI in healthcare: AI is already being used in healthcare to
+3
 </pre></div></div>
 </div>
 </section>
@@ -774,18 +778,19 @@ Generated text:  likely to see further development in several areas, including:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert your name], I am a self-employed freelance writer with a passion for writing short stories. I&#39;m a big fan of horror and thrillers, and I enjoy creating terrifying and suspenseful content. I&#39;m currently working on my first novel and I&#39;m excited to tell my readers what lies hidden in the world beneath the surface. I enjoy collaborating with other writers and sharing my work with others, and I&#39;m always looking for fresh ideas and fresh perspectives. Looking forward to connecting with you! 🌍✨✨
-Your name is **[insert your name]**! I&#39;m a self-employed freelance writer with a unique perspective on crafting
+Generated text:  [Your Name]. I’m a [What do you do here?]: [Your Occupation]. I’ve been working in the field of [What field/industry do you work in?]: [Your specialty]. How about you? What do you do here? [Your specialty]. I’d love to chat with you about your area of expertise and how you got into it. What did you do before [How did you get into the field?] [What did you do after you got into the field?]. My name is [Your Name]. I’m a [What do you do here?]: [Your Occupation]. I’ve been working
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city that was once the capital of France for almost a millennium and a half. It is a city known for its rich history, art, and cultural heritage. Paris is also famous for its iconic landmarks such as Notre-Dame Cathedral, the Eiffel Tower, and the Louvre Museum. The city is home to many famous museums and attractions, including the Louvre Museum, the Champs-Élysées, and the Notre-Dame Cathedral. Paris is a vibrant and diverse city with a rich cultural scene, and is considered one of the most important cities in the world. It is also a major financial and business
+Generated text:  Paris. It is the largest and most populated city in the country, and is home to many of the country&#39;s famous landmarks, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is also known as the &#34;City of Love&#34; due to its rich cultural heritage and romantic atmosphere. It is also a major center for fashion and entertainment, with many of the world&#39;s leading designers and celebrities living and working in the city. The French language is also spoken by millions of Parisians, making it one of the most spoken languages in the world. The French government has worked to preserve and improve the
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  bright and rapidly evolving, and there are many potential trends that could shape its development. Here are some of the key trends that have been identified and some potential implications for the field:
+Generated text:  uncertain, but several trends are likely to shape its trajectory in the coming years. Here are some of the most likely futures:
 
-1. Increased integration with human work: As AI becomes more advanced, there is a possibility that it could be integrated with human work to increase efficiency and productivity. This could lead to a shift towards more collaborative, human-centric AI systems, where AI is used alongside human skills and expertise to perform tasks.
+1. Increased focus on ethical considerations: As AI technologies become more integrated into daily life, there will be increasing pressure to consider the ethical implications of its use. This will likely lead to a more rigorous regulatory framework and a shift towards more transparent and accountable AI development.
 
-2. AI ethics and fairness: As AI becomes more advanced, there will be a need to ensure that it is used ethically and fairly. This will involve
+2. Increased reliance on machine learning: As AI systems become more capable, they will likely rely more heavily on machine learning algorithms to make decisions. This could lead to the development of even more complex and sophisticated AI systems.
+
+3. AI will become more
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
