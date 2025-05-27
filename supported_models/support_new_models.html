@@ -220,6 +220,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/advanced_deploy.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer.html">Developer Reference</a></li>
 </ul>
 
     </div>
@@ -449,8 +450,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a new Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a new Multimodal Large Language Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a New Language Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a New Multimodal Large Language Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the Correctness</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive Debugging</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the Model to the Test Suite</a></li>
@@ -471,10 +472,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-to-support-new-models">
 <h1>How to Support New Models<a class="headerlink" href="#how-to-support-new-models" title="Link to this heading">#</a></h1>
-<p>This document explains how to add support for new language models and multimodal large language models (mllms) in
+<p>This document explains how to add support for new language models and multimodal large language models (MLLMs) in
 SGLang. It also covers how to test new models and register external implementations.</p>
 <section id="how-to-support-a-new-language-model">
-<h2>How to Support a new Language Model<a class="headerlink" href="#how-to-support-a-new-language-model" title="Link to this heading">#</a></h2>
+<h2>How to Support a New Language Model<a class="headerlink" href="#how-to-support-a-new-language-model" title="Link to this heading">#</a></h2>
 <p>To support a new model in SGLang, you only need to add a single file under
 the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/srt/models">SGLang Models Directory</a>. You can learn
 from existing model implementations and create a new file for your model. For most models, you should be able to find a
@@ -482,7 +483,7 @@ similar model to start with (e.g., starting from Llama). Also refer how
 to <a class="reference internal" href="#port-a-model-from-vllm-to-sglang"><span class="std std-ref">port a Model from vLLM to SGLang</span></a></p>
 </section>
 <section id="how-to-support-a-new-multimodal-large-language-model">
-<h2>How to Support a new Multimodal Large Language Model<a class="headerlink" href="#how-to-support-a-new-multimodal-large-language-model" title="Link to this heading">#</a></h2>
+<h2>How to Support a New Multimodal Large Language Model<a class="headerlink" href="#how-to-support-a-new-multimodal-large-language-model" title="Link to this heading">#</a></h2>
 <p>To support a new multimodal large language model (MLLM) in SGLang, there are several key components in addition to the
 standard LLM support:</p>
 <ol class="arabic simple">
@@ -566,6 +567,7 @@ from vLLM to SGLang.</p>
 </ul>
 </li>
 </ul>
+<p>Note: make sure you add your new model to the supported models list in the supported models documentation.</p>
 </section>
 <section id="registering-an-external-model-implementation">
 <h2>Registering an External Model Implementation<a class="headerlink" href="#registering-an-external-model-implementation" title="Link to this heading">#</a></h2>
@@ -645,8 +647,8 @@ SGLang and ensure they are thoroughly tested and easily integrated into the syst
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a new Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a new Multimodal Large Language Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a New Language Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a New Multimodal Large Language Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the Correctness</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive Debugging</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the Model to the Test Suite</a></li>
