@@ -43,7 +43,7 @@ print("Embeddings:", [x.get("embedding") for x in response.get("data", [])])
 ```
 
 
-## Supported models
+## Supporting Matrixs
 
 | Model Family (Embedding)                        | Example HuggingFace Identifier                | Chat Template | Description                                                                                                                          |
 |-------------------------------------------------|-----------------------------------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------|

@@ -28,11 +28,6 @@ The core features include:
    backend/openai_api_embeddings.ipynb
    backend/native_api.ipynb
    backend/offline_engine_api.ipynb
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Advanced Backend Configurations
-
    backend/server_arguments.md
    backend/sampling_params.md
    backend/hyperparameter_tuning.md
@@ -60,7 +55,6 @@ The core features include:
    backend/custom_chat_template.md
    backend/quantization.md
    backend/lora.ipynb
-   backend/pd_disaggregation.md
 
 .. toctree::
    :maxdepth: 1
@@ -82,5 +76,4 @@ The core features include:
       references/general
       references/hardware
       references/advanced_deploy
-      references/performance_analysis_and_optimization
-      references/developer
+      references/performance_tuning

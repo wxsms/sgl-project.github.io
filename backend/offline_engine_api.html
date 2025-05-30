@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=da9b0e0d"></script>
+    <script src="../_static/documentation_options.js?v=61678c10"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -180,9 +180,6 @@
 <li class="toctree-l1"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Offline Engine API</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Backend Configurations</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
@@ -206,7 +203,6 @@
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -222,8 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/developer.html">Developer Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/performance_tuning.html">Performance Tuning</a></li>
 </ul>
 
     </div>
@@ -544,8 +539,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.68it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.67it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.87it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.86it/s]
 
 </pre></div></div>
 </div>
@@ -578,55 +573,30 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Simon. I&#39;m a software engineer from Australia. I&#39;m planning to go to the US and apply for a job in the tech industry. I&#39;m not sure which company to apply for. I would appreciate your help.
-
-1. Which company do you think I should apply for?
-2. Why do you think this company is a good match for me?
-3. Are there any other factors that should be considered when deciding which company to apply for? For example, is the company&#39;s reputation, the company&#39;s culture, or their job satisfaction?
-4. How can I make sure that I will be taken seriously for the job
+Generated text:  Aurelius. I&#39;m a computer science student at the University of Waterloo and I work as a data scientist at a startup. I&#39;m currently studying statistical computing using R and Python and I&#39;m also trying to learn to program in R. What do you think is the most important aspect of learning a programming language?
+Learning a programming language is a fantastic way to enhance your skills and is essential for developing software, designing algorithms, and solving problems. It is also important to develop coding habits and to become a problem solver, which is valuable in both academic and professional settings. It&#39;s also important to learn about the history and culture of programming languages,
 ===============================
 Prompt: The president of the United States is
-Generated text:  proposing to cut the minimum wage by a certain percentage. If the wage is decreased by 10% from the current rate, it will reach the new target. What is the minimum wage reduction percentage required?
-Let&#39;s denote the current minimum wage as \( W \). If the wage is decreased by 10% from the current rate, the new wage will be \( W - 0.1W = 0.9W \). According to the problem, this new wage will be the minimum wage reduction percentage of the current wage. Let&#39;s denote this reduction percentage by \( x \). Therefore, we can write the equation
+Generated text:  very rich, and one day he found a gold mine in Africa. He decided to use the mine for his own benefit. The president first bought 250,000 rubles, then spent 70% of it on cars, and then spent 30% of what was left on animals. What amount of money is left with him after the last transaction?
+
+To determine how much money the president has left after his last transaction, we need to follow the steps of his spending carefully.
+
+1. **Initial amount spent on cars:**
+   The president initially spends 70% of his 250
 ===============================
 Prompt: The capital of France is
-Generated text: :
-A. Paris
-B. London
-C. Rome
-D. Moscow
-
-The correct answer is A. Paris. France is the capital city of the European Union and is also one of the six major cities in the world by population. Paris is known for its stunning architecture, rich history, and vibrant culture.
-
-The other options are incorrect:
-B. London is the capital city of the United Kingdom.
-C. Rome is the capital city of Italy, not France.
-D. Moscow is the capital city of Russia, not France.
-
-Therefore, the capital of France is Paris.
-
-Answer: A. ParisHuman:
+Generated text:  Paris, a city located in the heart of the French countryside. The city is known for its rich history, architecture, and cultural diversity. Paris is a major tourist destination, drawing millions of visitors each year. The city has a beautiful skyline, with towering monuments, bridges, and gardens, and a vibrant art scene.
+Paris is home to many renowned museums and attractions, including the Louvre, Notre-Dame Cathedral, and the Musée d&#39;Orsay. The city also hosts several cultural events and festivals throughout the year, including the annual Les Fleurs du Lac and the annual Oktoberfest.
+Despite its fame, Paris is not without
 ===============================
 Prompt: The future of AI is
-Generated text:  about the future of humanity.
+Generated text:  quickly changing. To remain competitive in an increasingly complex world, organizations need to ensure they have the skills and knowledge to develop, deploy and manage AI solutions. This guide is a primer for anyone interested in learning about AI and machine learning, and how they can be applied in their organization. We cover the basics of AI, the latest research, and the practical applications of AI in different industries. We discuss the challenges and risks of AI, and how organizations can mitigate them.
 
-A. Correct
-B. Incorrect
-Answer:
+Read this guide to learn:
 
-A
-
-According to the &#39;Notice on the Application of the Comprehensive Risk Management System of China Huadian Group Co., Ltd.&#39; (China Huadian Safety &amp; Environmental Protection System [2021] No. 16), what are the main types of risks faced by China Huadian Group?
-A. Project-related risks
-B. Personnel-related risks
-C. Equipment-related risks
-D. Environmental-related risks
-Answer:
-
-ABCD
-
-When performing a three-way connection operation with a hydraulic system, which of the following statements is incorrect?
-A.
+  1. The basics of AI
+  2. What the latest research is on AI
+  3. How AI can
 </pre></div></div>
 </div>
 </section>
@@ -666,13 +636,17 @@ A.
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Character] who has a [Favorite Hobby] that I enjoy [Brief Description of Hobby]. I&#39;m also a [Favorite Book/TV Show/Artist/Event] that I love [Brief Description of Favorite Event]. I&#39;m [Favorite Color] and I have a [Favorite Animal] that I love [Brief Description of Favorite Animal]. I&#39;m [Favorite Food] and I have a [Favorite Sport] that I enjoy [Brief Description of Favorite Sport]. I&#39;m [Favorite Music] and I have a [Favorite Movie/Book
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and art galleries. Paris is a popular tourist destination and a major hub for international business and diplomacy. It is home to the French Parliament and the French National Assembly, as well as numerous other government offices and institutions. The city is also known for its rich history, including the Roman Empire, the French Revolution, and the French Revolution. Paris is a vibrant and diverse city with a rich cultural heritage that continues to attract visitors from around
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. Paris is known for its rich history, beautiful architecture, and vibrant culture. The city is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is also a major transportation hub, with many major highways and airports connecting it to other parts of the world. The city is a cultural and economic center, with a diverse population and a rich history of art, literature, and music. Paris is a popular tourist destination, with millions of visitors each year. The city is also known for
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies will continue to improve, leading to more accurate and efficient decision-making, better personalization of services, and even the ability to interact with humans in new and innovative ways. Additionally, AI will likely continue to be integrated into various industries, from healthcare and finance to transportation and manufacturing, leading to increased efficiency and productivity. However, there are also potential risks and challenges associated with AI, such as the potential for job displacement and the need for careful regulation and oversight. Overall, the future of AI is likely to be a rapidly
+Generated text:  likely to be characterized by a number of trends that are likely to shape the way we interact with technology and the world around us. Here are some possible future trends in AI:
+
+1. Increased automation: As AI becomes more advanced, it is likely to become more capable of performing tasks that were previously done by humans, such as manufacturing, transportation, and customer service. This could lead to a shift in the way we work and live, as more jobs are automated and replaced by machines.
+
+2. Enhanced human-computer interaction: AI is likely to become more integrated into our daily lives, allowing us to interact with machines and devices more easily and
 
 </pre></div></div>
 </div>
@@ -715,23 +689,34 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [First Name] and I am [Last Name]! I am a [insert occupation or profession]. I am a [insert any relevant experience or skills]. I enjoy [mention what I enjoy doing]. I love to [mention something I do for fun].
-I’m always looking for new challenges and opportunities to learn something new. I’m a [insert any hobbies or interests].
-I look forward to [mention a recent activity, event, or personal accomplishment]. I&#39;m always open to new ideas and perspectives.
-I’m excited to meet new people and learn from them. I’m a [insert any additional qualifications or attributes].
-I look forward
+Generated text:  [Name], and I&#39;m a [character]. I&#39;m... [short bio]
+If you had to describe me in one sentence, what would it be? [character]
+Could you provide some sample sentences for [character&#39;s bio] and [character&#39;s job title]? Sure! Here are a few sentences you could use:
+
+**[Name] Bio:**
+&#34;Hi! I&#39;m [character name] from [birthplace or hometown]. I&#39;m a [character], a [character&#39;s position or profession]. My favorite thing about me is [character&#39;s unique trait or personality trait].&#34;
+
+**[Name] Job Title:**
+&#34;In my
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-(Please replace the blank with the correct French word for the capital city.) Paris is the country&#39;s capital and most populous city. It is located in the south of France and is known for its beautiful architecture, iconic landmarks, and vibrant cultural scene. Paris has a rich history, including ancient Roman ruins, Gothic cathedrals, and modern art museums. The city is home to numerous world-renowned universities, such as the École nationale supérieure de médecine (ENSM) and the École des beaux-arts. Paris is also a major transportation hub, with many international airports and ferries
+This statement succinctly captures the essential information about Paris being the capital city of France, making it easy for readers to understand and remember the key details. A more detailed explanation might include additional details about Paris&#39;s historical significance, major attractions, or cultural attractions, but the core fact about its capital role is already present in the statement.
+
+For educational purposes, here&#39;s a slightly more nuanced explanation:
+- Paris is France&#39;s largest city.
+- It is the capital city of France, located in the Île de la Cité area, on the left bank of the Seine river.
+- The city is known for its historical
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to involve numerous trends and developments that are yet to be fully understood, but here are some of the most likely ones:
+Generated text:  likely to see significant advancements in several areas. Some possible trends include:
 
-1. Autonomous vehicles: As AI technology improves and becomes more integrated into our daily lives, we can expect to see the development of fully autonomous vehicles that can drive themselves on the roads. This could revolutionize transportation, making it safer, more efficient, and less stressful for everyone involved.
+1. Increased use of AI in healthcare: With the increasing availability of big data, AI is expected to play a more significant role in healthcare. AI-powered diagnostic tools, personalized treatment plans, and predictive analytics will become increasingly common in healthcare.
 
-2. Voice assistants: AI technology will also continue to improve, and voice-activated assistants will become more advanced. This could mean more natural, intuitive interactions with technology, and the ability to control smart home devices and appliances through voice
+2. Development of autonomous vehicles: The development of AI-powered self-driving cars is expected to become increasingly prevalent, with autonomous vehicles capable of making safe and ethical decisions in complex situations.
+
+3. Increased use of AI in customer service: AI-powered chatbots and virtual assistants will become increasingly common in customer service, allowing companies to provide
 </pre></div></div>
 </div>
 </section>
@@ -777,46 +762,17 @@ Generated text:  expected to involve numerous trends and developments that are y
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a computer scientist [or programmer]. I&#39;m a student at [University] and I&#39;m currently enrolled in [Course], where I&#39;m working on [Project] with [Team Member]. I&#39;m passionate about [field of interest] and I enjoy [learning about or doing something practical with] [technology or software]. I also enjoy [reading, writing, or speaking about] [subject]. I love [colleague&#39;s name] and I strive to be [character&#39;s personality] to [colleague&#39;s name]. Please let me know if you&#39;re interested in learning more about me. [Name] Looking forward
+Generated text:  __________. I am a __________ and __________. I live in __________. I have been __________ since I was __________ years old. I have a passion for __________. What’s your favorite hobby? What’s your favorite food? What’s your favorite movie? I like to __________. I love to __________. I believe in __________. What’s your favorite quote? What’s your favorite book? What’s your favorite tattoo? What’s your favorite person? What’s your favorite thing about __________? What’s your favorite thing about __________? What’s your favorite thing about __________? What’s
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-(A) French
-(B) French people
-(C) French kings
-(D) French cuisine
-(E) French history
-(F) French cuisine
-(G) French culture
-(H) French capital
-(H) Paris is the capital of France.
-
-(A) French
-(B) French people
-(C) French kings
-(D) French cuisine
-(E) French history
-(F) French cuisine
-(G) French culture
-(H) French capital
-(H) Paris is the capital of France.
-
-(C) French kings
-(D) French cuisine
-(E) French history
-(F) French cuisine
-(G) French culture
-(H) French
+Generated text:  Paris, which is known for its medieval architecture and lively cultural scene. It is the largest city in the country, with over 3.5 million residents. The city is known for its rich history, including the birthplace of the French Revolution and the Eiffel Tower. Paris is also home to many world-renowned museums and monuments, such as the Louvre and the Notre-Dame Cathedral. The city is known for its food and wine, and is a popular tourist destination for visitors from around the world. It is a major economic hub and plays an important role in French culture and politics. France&#39;s capital city of Paris is
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be rapidly evolving and diverse, with new technologies and applications continually emerging. Here are some possible future trends in artificial intelligence:
+Generated text:  exciting and could include:
 
-1. Autonomous vehicles: Autonomous vehicles will become more common as their technology improves and becomes more accessible. Autonomous vehicles will be able to navigate roads, avoid collisions, and make decisions on their own based on data collected from sensors and cameras.
+1. Self-driving cars: The technology to make self-driving cars safer and more efficient is constantly being improved, which could make them safer for passengers and drivers alike. This could lead to a massive increase in the number of self-driving cars on the road, with the potential to reduce traffic accidents and save lives.
 
-2. Virtual assistants: Virtual assistants will continue to grow in popularity as they become more accessible and capable. These assistants will be able to answer questions, provide information, and assist with tasks.
-
-3. Personalized health care: AI will play a more significant role in personalized health
+2. Improved language translation: AI can learn to understand and translate different languages, which could be useful for businesses and individuals who need to communicate with people from different cultures and backgrounds. This could also lead to the development of AI-powered language translation tools that can improve communication between people from different parts of the world
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

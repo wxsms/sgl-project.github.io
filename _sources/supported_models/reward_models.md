@@ -17,7 +17,7 @@ python3 -m sglang.launch_server \
   --port 30000 \
 ```
 
-## Supported models
+## Supporting Matrixs
 
 | Model Family (Reward)                                                     | Example HuggingFace Identifier                              | Description                                                                     |
 |---------------------------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------------------------------|
