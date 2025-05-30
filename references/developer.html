@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Performance Tuning &#8212; SGLang</title>
+    <title>Developer Reference &#8212; SGLang</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=61678c10"></script>
+    <script src="../_static/documentation_options.js?v=da9b0e0d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'references/performance_tuning';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/developer';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Benchmark and Profiling" href="benchmark_and_profiling.html" />
-    <link rel="prev" title="Deploy On Kubernetes" href="deploy_on_k8s.html" />
+    <link rel="next" title="Development Guide Using Docker" href="development_guide_using_docker.html" />
+    <link rel="prev" title="Measuring Model Accuracy in SGLang" href="accuracy_evaluation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="May 30, 2025"/>
@@ -177,6 +177,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/offline_engine_api.html">Offline Engine API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Backend Configurations</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../backend/server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
@@ -200,6 +203,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/lora.html">LoRA Serving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/pd_disaggregation.html">PD Disaggregation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -215,9 +219,11 @@
 <li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Performance Tuning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Developer Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_process.html">PyPI Package Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_github_runner.html">Set Up Self-Hosted Runners for GitHub Action</a></li>
 </ul>
 </details></li>
 </ul>
@@ -291,7 +297,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/performance_tuning.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/developer.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/performance_tuning.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/developer.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +331,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/performance_tuning.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/developer.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +361,7 @@
       
       
       
-      <li><a href="../_sources/references/performance_tuning.rst" target="_blank"
+      <li><a href="../_sources/references/developer.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -437,7 +443,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Performance Tuning</h1>
+    <h1>Developer Reference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -451,12 +457,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="performance-tuning">
-<h1>Performance Tuning<a class="headerlink" href="#performance-tuning" title="Link to this heading">#</a></h1>
+  <section id="developer-reference">
+<h1>Developer Reference<a class="headerlink" href="#developer-reference" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accuracy_evaluation.html">Measuring Model Accuracy in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_process.html">PyPI Package Release Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_github_runner.html">Set Up Self-Hosted Runners for GitHub Action</a></li>
 </ul>
 </div>
 </section>
@@ -473,20 +480,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="deploy_on_k8s.html"
+       href="accuracy_evaluation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Deploy On Kubernetes</p>
+        <p class="prev-next-title">Measuring Model Accuracy in SGLang</p>
       </div>
     </a>
     <a class="right-next"
-       href="benchmark_and_profiling.html"
+       href="development_guide_using_docker.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Benchmark and Profiling</p>
+        <p class="prev-next-title">Development Guide Using Docker</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=61678c10"></script>
+    <script src="../_static/documentation_options.js?v=da9b0e0d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -168,7 +168,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../start/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/llama4.html">Llama4 Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
@@ -177,6 +177,9 @@
 <li class="toctree-l1"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Backend Configurations</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
@@ -200,6 +203,7 @@
 <li class="toctree-l1"><a class="reference internal" href="custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
 <ul class="nav bd-sidenav">
@@ -215,7 +219,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/general.html">General Guidance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/hardware.html">Hardware Supports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/performance_tuning.html">Performance Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/developer.html">Developer Reference</a></li>
 </ul>
 
     </div>
@@ -768,16 +773,16 @@ document.write(`
 <p>You can specify a JSON schema, regular expression or <a class="reference external" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to constrain the model output. The model output will be guaranteed to follow the given constraints. Only one constraint parameter (<code class="docutils literal notranslate"><span class="pre">json_schema</span></code>, <code class="docutils literal notranslate"><span class="pre">regex</span></code>, or <code class="docutils literal notranslate"><span class="pre">ebnf</span></code>) can be specified for a request.</p>
 <p>SGLang supports two grammar backends:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a> (default): Supports JSON schema and regular expression constraints.</p></li>
-<li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a>: Supports JSON schema, regular expression, and EBNF constraints.</p>
+<li><p><a class="reference external" href="https://github.com/dottxt-ai/outlines">Outlines</a>: Supports JSON schema and regular expression constraints.</p></li>
+<li><p><a class="reference external" href="https://github.com/mlc-ai/xgrammar">XGrammar</a> (default): Supports JSON schema, regular expression, and EBNF constraints.</p>
 <ul>
 <li><p>XGrammar currently uses the <a class="reference external" href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md">GGML BNF format</a>.</p></li>
 </ul>
 </li>
 </ul>
-<p>Initialize the XGrammar backend using <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">xgrammar</span></code> flag:</p>
+<p>If instead you want to initialize the Outlines backend, you can use <code class="docutils literal notranslate"><span class="pre">--grammar-backend</span> <span class="pre">outlines</span></code> flag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
---port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--grammar-backend<span class="w"> </span><span class="o">[</span>xgrammar<span class="p">|</span>outlines<span class="o">]</span><span class="w"> </span><span class="c1"># xgrammar or outlines (default: outlines)</span>
+--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--grammar-backend<span class="w"> </span><span class="o">[</span>xgrammar<span class="p">|</span>outlines<span class="o">]</span><span class="w"> </span><span class="c1"># xgrammar or outlines (default: xgrammar)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>

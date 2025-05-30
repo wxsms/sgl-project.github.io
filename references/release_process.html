@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Embedding Models &#8212; SGLang</title>
+    <title>PyPI Package Release Process &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'supported_models/embedding_models';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/release_process';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reward Models" href="reward_models.html" />
-    <link rel="prev" title="Multimodal Language Models" href="multimodal_language_models.html" />
+    <link rel="next" title="Set Up Self-Hosted Runners for GitHub Action" href="setup_github_runner.html" />
+    <link rel="prev" title="Development Guide Using Docker" href="development_guide_using_docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="May 30, 2025"/>
@@ -169,8 +169,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../references/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/llama4.html">Llama4 Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/send_request.html">Sending Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
@@ -186,12 +186,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../backend/attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_models.html">Large Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multimodal_language_models.html">Multimodal Language Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Embedding Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reward_models.html">Reward Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support_new_models.html">How to Support New Models</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/generative_models.html">Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -215,12 +215,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../router/router.html">Router for Data Parallelism</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../references/general.html">General Guidance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/hardware.html">Hardware Supports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/developer.html">Developer Reference</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="general.html">General Guidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware Supports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_deploy.html">Multi-Node Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="developer.html">Developer Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">PyPI Package Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_github_runner.html">Set Up Self-Hosted Runners for GitHub Action</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -292,7 +297,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/supported_models/embedding_models.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/references/release_process.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/supported_models/embedding_models.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/references/release_process.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +331,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fsupported_models/embedding_models.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Freferences/release_process.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +361,7 @@
       
       
       
-      <li><a href="../_sources/supported_models/embedding_models.md" target="_blank"
+      <li><a href="../_sources/references/release_process.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -440,7 +445,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Embedding Models</h1>
+    <h1>PyPI Package Release Process</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -450,9 +455,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example Launch Command</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-client-request">Example Client Request</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
 </ul>
             </nav>
         </div>
@@ -464,85 +469,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="embedding-models">
-<h1>Embedding Models<a class="headerlink" href="#embedding-models" title="Link to this heading">#</a></h1>
-<p>SGLang provides robust support for embedding models by integrating efficient serving mechanisms with its flexible programming interface. This integration allows for streamlined handling of embedding tasks, facilitating faster and more accurate retrieval and semantic search operations. SGLang’s architecture enables better resource utilization and reduced latency in embedding model deployment.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>They are executed with <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code> and some may require <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pypi-package-release-process">
+<h1>PyPI Package Release Process<a class="headerlink" href="#pypi-package-release-process" title="Link to this heading">#</a></h1>
+<section id="update-the-version-in-code">
+<h2>Update the version in code<a class="headerlink" href="#update-the-version-in-code" title="Link to this heading">#</a></h2>
+<p>Update the package version in <code class="docutils literal notranslate"><span class="pre">python/pyproject.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">python/sglang/__init__.py</span></code>.</p>
+</section>
+<section id="upload-the-pypi-package">
+<h2>Upload the PyPI package<a class="headerlink" href="#upload-the-pypi-package" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">build</span> <span class="n">twine</span>
+</pre></div>
 </div>
-<section id="example-launch-command">
-<h2>Example Launch Command<a class="headerlink" href="#example-launch-command" title="Link to this heading">#</a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Alibaba-NLP/gme-Qwen2-VL-2B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--is-embedding<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--chat-template<span class="w"> </span>gme-qwen2-vl<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">python</span>
+<span class="n">bash</span> <span class="n">upload_pypi</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </section>
-<section id="example-client-request">
-<h2>Example Client Request<a class="headerlink" href="#example-client-request" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:30000&quot;</span>
-
-<span class="n">text_input</span> <span class="o">=</span> <span class="s2">&quot;Represent this image in embedding space.&quot;</span>
-<span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;https://huggingface.co/datasets/liuhaotian/llava-bench-in-the-wild/resolve/main/images/023.jpg&quot;</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gme-qwen2-vl&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text_input</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">image_path</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/v1/embeddings&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embeddings:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;embedding&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">[])])</span>
-</pre></div>
-</div>
-</section>
-<section id="supported-models">
-<h2>Supported models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Model Family (Embedding)</p></th>
-<th class="head"><p>Example HuggingFace Identifier</p></th>
-<th class="head"><p>Chat Template</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Llama/Mistral based (E5EmbeddingModel)</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">intfloat/e5-mistral-7b-instruct</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>Mistral/Llama-based embedding model fine‑tuned for high‑quality text embeddings (top‑ranked on the MTEB benchmark).</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>GTE (QwenEmbeddingModel)</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Alibaba-NLP/gte-Qwen2-7B-instruct</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>Alibaba’s general text embedding model (7B), achieving state‑of‑the‑art multilingual performance in English and Chinese.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>GME (MultimodalEmbedModel)</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Alibaba-NLP/gme-Qwen2-VL-2B-Instruct</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gme-qwen2-vl</span></code></p></td>
-<td><p>Multimodal embedding model (2B) based on Qwen2‑VL, encoding image + text into a unified vector space for cross‑modal retrieval.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>CLIP (CLIPEmbeddingModel)</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">openai/clip-vit-large-patch14-336</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>OpenAI’s CLIP model (ViT‑L/14) for embedding images (and text) into a joint latent space; widely used for image similarity search.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="make-a-release-in-github">
+<h2>Make a release in GitHub<a class="headerlink" href="#make-a-release-in-github" title="Link to this heading">#</a></h2>
+<p>Make a new release https://github.com/sgl-project/sglang/releases/new.</p>
 </section>
 </section>
 
@@ -558,20 +503,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="multimodal_language_models.html"
+       href="development_guide_using_docker.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Multimodal Language Models</p>
+        <p class="prev-next-title">Development Guide Using Docker</p>
       </div>
     </a>
     <a class="right-next"
-       href="reward_models.html"
+       href="setup_github_runner.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reward Models</p>
+        <p class="prev-next-title">Set Up Self-Hosted Runners for GitHub Action</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -591,9 +536,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example Launch Command</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-client-request">Example Client Request</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-version-in-code">Update the version in code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-pypi-package">Upload the PyPI package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-release-in-github">Make a release in GitHub</a></li>
 </ul>
   </nav></div>
 
