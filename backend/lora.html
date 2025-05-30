@@ -58,7 +58,7 @@
     <link rel="prev" title="Quantization" href="quantization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 29, 2025"/>
+    <meta name="docbuild:last-update" content="May 30, 2025"/>
   </head>
   
   
@@ -533,104 +533,104 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-29 23:29:44] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, host=&#39;127.0.0.1&#39;, port=30495, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=648945877, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths={&#39;lora0&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}, max_loras_per_batch=1, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=True, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, mm_attention_backend=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
-[2025-05-29 23:29:59] Attention backend not set. Use fa3 backend by default.
-[2025-05-29 23:29:59] Init torch distributed begin.
-[2025-05-29 23:30:00] Init torch distributed ends. mem usage=0.00 GB
-[2025-05-29 23:30:00] init_expert_location from trivial
-[2025-05-29 23:30:01] Load weight begin. avail mem=75.96 GB
-[2025-05-29 23:30:02] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-30 02:25:31] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, host=&#39;127.0.0.1&#39;, port=36143, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=828853410, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths={&#39;lora0&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}, max_loras_per_batch=1, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=True, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, mm_attention_backend=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
+[2025-05-30 02:25:47] Attention backend not set. Use fa3 backend by default.
+[2025-05-30 02:25:47] Init torch distributed begin.
+[2025-05-30 02:25:50] Init torch distributed ends. mem usage=0.00 GB
+[2025-05-30 02:25:50] init_expert_location from trivial
+[2025-05-30 02:25:50] Load weight begin. avail mem=72.42 GB
+[2025-05-30 02:25:53] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.10it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.06it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.08it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.05it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.05s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.05s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.15it/s]
 
-[2025-05-29 23:30:06] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=45.11 GB, mem usage=30.84 GB.
-[2025-05-29 23:30:06] Using triton as backend of LoRA kernels.
-[2025-05-29 23:30:06] Using model weights format [&#39;*.safetensors&#39;]
-[2025-05-29 23:30:06] No model.safetensors.index.json found in remote.
+[2025-05-30 02:25:56] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=45.02 GB, mem usage=27.41 GB.
+[2025-05-30 02:25:56] Using triton as backend of LoRA kernels.
+[2025-05-30 02:25:57] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-30 02:25:57] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 118.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 139.61it/s]
 
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:06] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:07] LoRA manager ready.
-[2025-05-29 23:30:07] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-[2025-05-29 23:30:07] Memory pool end. avail mem=41.96 GB
-[2025-05-29 23:30:07] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-05-29 23:30:08] INFO:     Started server process [2769778]
-[2025-05-29 23:30:08] INFO:     Waiting for application startup.
-[2025-05-29 23:30:08] INFO:     Application startup complete.
-[2025-05-29 23:30:08] INFO:     Uvicorn running on http://127.0.0.1:30495 (Press CTRL+C to quit)
-[2025-05-29 23:30:09] INFO:     127.0.0.1:55746 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-05-29 23:30:09] INFO:     127.0.0.1:55752 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-05-29 23:30:09] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-29 23:30:11] INFO:     127.0.0.1:55758 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-05-29 23:30:11] The server is fired up and ready to roll!
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:25:57] LoRA manager ready.
+[2025-05-30 02:25:57] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+[2025-05-30 02:25:57] Memory pool end. avail mem=41.96 GB
+[2025-05-30 02:25:58] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-05-30 02:25:58] INFO:     Started server process [2272967]
+[2025-05-30 02:25:58] INFO:     Waiting for application startup.
+[2025-05-30 02:25:58] INFO:     Application startup complete.
+[2025-05-30 02:25:58] INFO:     Uvicorn running on http://127.0.0.1:36143 (Press CTRL+C to quit)
+[2025-05-30 02:25:59] INFO:     127.0.0.1:52382 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-30 02:25:59] INFO:     127.0.0.1:52394 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-05-30 02:25:59] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-30 02:26:02] INFO:     127.0.0.1:52402 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-30 02:26:02] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -667,10 +667,10 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 118
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-29 23:30:14] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 1
-[2025-05-29 23:30:16] Decode batch. #running-req: 1, #token: 0, token usage: 0.00, cuda graph: False, gen throughput (token/s): 4.42, #queue-req: 1
-[2025-05-29 23:30:16] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-29 23:30:17] INFO:     127.0.0.1:58074 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-30 02:26:04] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 1
+[2025-05-30 02:26:05] Decode batch. #running-req: 1, #token: 0, token usage: 0.00, cuda graph: False, gen throughput (token/s): 5.31, #queue-req: 1
+[2025-05-30 02:26:05] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-30 02:26:06] INFO:     127.0.0.1:53270 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 Output 0:  Each country and capital should be on a new line.
 France, Paris
 Japan, Tokyo
@@ -692,7 +692,8 @@ Output 1:  creating intelligent machines that can perform tasks that typically r
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-29 23:30:17] Child process unexpectedly failed with an exit code 9. pid=2770552
+[2025-05-30 02:26:06] Child process unexpectedly failed with an exit code 9. pid=2273671
+[2025-05-30 02:26:06] Child process unexpectedly failed with an exit code 9. pid=2273343
 </pre></div></div>
 </div>
 </section>
@@ -721,109 +722,109 @@ Output 1:  creating intelligent machines that can perform tasks that typically r
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-29 23:30:24] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, host=&#39;127.0.0.1&#39;, port=35065, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=106094537, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths={&#39;lora0&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora1&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}, max_loras_per_batch=2, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=True, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, mm_attention_backend=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
-[2025-05-29 23:30:36] Attention backend not set. Use fa3 backend by default.
-[2025-05-29 23:30:36] Init torch distributed begin.
-[2025-05-29 23:30:36] Init torch distributed ends. mem usage=0.00 GB
-[2025-05-29 23:30:36] init_expert_location from trivial
-[2025-05-29 23:30:37] Load weight begin. avail mem=42.10 GB
-[2025-05-29 23:30:37] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-30 02:26:13] server_args=ServerArgs(model_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_path=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, host=&#39;127.0.0.1&#39;, port=30561, mem_fraction_static=0.88, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=213692350, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, ep_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths={&#39;lora0&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora1&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}, max_loras_per_batch=2, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=True, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_ep_moe=False, enable_deepep_moe=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, enable_torch_compile=False, torch_compile_max_bs=32, cuda_graph_max_bs=None, cuda_graph_bs=None, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, tool_call_parser=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, flashinfer_mla_disable_ragged=False, warmups=None, moe_dense_tp_size=None, n_share_experts_fusion=0, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, mm_attention_backend=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_bootstrap_port=8998, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_ib_device=None, pdlb_url=None)
+[2025-05-30 02:26:24] Attention backend not set. Use fa3 backend by default.
+[2025-05-30 02:26:24] Init torch distributed begin.
+[2025-05-30 02:26:25] Init torch distributed ends. mem usage=0.00 GB
+[2025-05-30 02:26:25] init_expert_location from trivial
+[2025-05-30 02:26:25] Load weight begin. avail mem=42.11 GB
+[2025-05-30 02:26:26] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.35it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.28it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.76it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.15it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.07it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
 
-[2025-05-29 23:30:40] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=25.73 GB, mem usage=16.37 GB.
-[2025-05-29 23:30:40] Using triton as backend of LoRA kernels.
-[2025-05-29 23:30:40] Using model weights format [&#39;*.safetensors&#39;]
-[2025-05-29 23:30:40] No model.safetensors.index.json found in remote.
+[2025-05-30 02:26:29] Load weight end. type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=25.73 GB, mem usage=16.38 GB.
+[2025-05-30 02:26:29] Using triton as backend of LoRA kernels.
+[2025-05-30 02:26:30] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-30 02:26:30] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 100.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 127.45it/s]
 
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:40] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
-[2025-05-29 23:30:41] Using model weights format [&#39;*.safetensors&#39;]
-[2025-05-29 23:30:41] No model.safetensors.index.json found in remote.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.0.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.0.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.1.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.1.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.2.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.2.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.3.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.3.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.4.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.4.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.5.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.5.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.6.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.6.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.7.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.7.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.8.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.8.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.9.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.9.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.10.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.10.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.11.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.11.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.12.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.12.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.13.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.13.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.14.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.14.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.15.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.15.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.16.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.16.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.17.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.17.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.18.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.18.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.19.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.19.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.20.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.20.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.21.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.21.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.22.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.22.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.23.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.23.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.24.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.24.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.25.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.25.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.26.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.26.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.27.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.27.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.28.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.28.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.29.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.29.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.30.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.30.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_A.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_A.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Gate projection base_model.model.model.layers.31.mlp.gate_proj.lora_B.weight does not have a corresponding up projection base_model.model.model.layers.31.mlp.up_proj.lora_B.weight. Initializing up projection to zero.
+[2025-05-30 02:26:30] Using model weights format [&#39;*.safetensors&#39;]
+[2025-05-30 02:26:30] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 90.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 95.02it/s]
 
-[2025-05-29 23:30:41] LoRA manager ready.
-[2025-05-29 23:30:41] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-[2025-05-29 23:30:41] Memory pool end. avail mem=27.22 GB
-[2025-05-29 23:30:42] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
-[2025-05-29 23:30:43] INFO:     Started server process [2772996]
-[2025-05-29 23:30:43] INFO:     Waiting for application startup.
-[2025-05-29 23:30:43] INFO:     Application startup complete.
-[2025-05-29 23:30:43] INFO:     Uvicorn running on http://127.0.0.1:35065 (Press CTRL+C to quit)
-[2025-05-29 23:30:43] INFO:     127.0.0.1:34046 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-05-29 23:30:44] INFO:     127.0.0.1:34054 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-05-29 23:30:44] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-29 23:30:46] INFO:     127.0.0.1:34062 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-05-29 23:30:46] The server is fired up and ready to roll!
+[2025-05-30 02:26:30] LoRA manager ready.
+[2025-05-30 02:26:30] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+[2025-05-30 02:26:30] Memory pool end. avail mem=22.09 GB
+[2025-05-30 02:26:31] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072
+[2025-05-30 02:26:32] INFO:     Started server process [2276103]
+[2025-05-30 02:26:32] INFO:     Waiting for application startup.
+[2025-05-30 02:26:32] INFO:     Application startup complete.
+[2025-05-30 02:26:32] INFO:     Uvicorn running on http://127.0.0.1:30561 (Press CTRL+C to quit)
+[2025-05-30 02:26:32] INFO:     127.0.0.1:46044 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-05-30 02:26:33] INFO:     127.0.0.1:40274 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-05-30 02:26:33] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-30 02:26:35] INFO:     127.0.0.1:40278 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-30 02:26:35] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -860,9 +861,9 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 90.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-29 23:30:48] Prefill batch. #new-seq: 2, #new-token: 19, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
-[2025-05-29 23:30:50] Decode batch. #running-req: 2, #token: 0, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.49, #queue-req: 0
-[2025-05-29 23:30:50] INFO:     127.0.0.1:34068 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-05-30 02:26:37] Prefill batch. #new-seq: 2, #new-token: 19, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0
+[2025-05-30 02:26:40] Decode batch. #running-req: 2, #token: 0, token usage: 0.00, cuda graph: False, gen throughput (token/s): 8.42, #queue-req: 0
+[2025-05-30 02:26:40] INFO:     127.0.0.1:40288 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 Output 0:  Each country and capital should be on a new line.
 France, Paris
 Japan, Tokyo
@@ -884,8 +885,8 @@ Output 1:  creating intelligent machines that can perform tasks that typically r
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-05-29 23:30:50] Child process unexpectedly failed with an exit code 9. pid=2773918
-[2025-05-29 23:30:50] Child process unexpectedly failed with an exit code 9. pid=2773849
+[2025-05-30 02:26:40] Child process unexpectedly failed with an exit code 9. pid=2277008
+[2025-05-30 02:26:40] Child process unexpectedly failed with an exit code 9. pid=2276813
 </pre></div></div>
 </div>
 </section>
@@ -981,7 +982,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 29, 2025.
+  Last updated on May 30, 2025.
   <br/>
 </p>
   </div>
