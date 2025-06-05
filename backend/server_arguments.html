@@ -1030,19 +1030,23 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>Disable usage of custom all-reduce kernel.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">disable_overlap_schedule</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">enable_mscclpp</span></code></p></td>
+<td><p>Enable usage of mscclpp kernel for small message all-reduce.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">disable_overlap_schedule</span></code></p></td>
 <td><p>Disable the <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#zero-overhead-batch-scheduler">Overhead-Scheduler</a>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enable_nan_detection</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">enable_nan_detection</span></code></p></td>
 <td><p>Enable warning if the logits contain <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">enable_p2p_check</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enable_p2p_check</span></code></p></td>
 <td><p>Turns off the default of always allowing P2P checks when accessing GPU.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triton_attention_reduce_in_fp32</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">triton_attention_reduce_in_fp32</span></code></p></td>
 <td><p>In Triton kernels, cast the intermediate attention result to <code class="docutils literal notranslate"><span class="pre">float32</span></code>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
