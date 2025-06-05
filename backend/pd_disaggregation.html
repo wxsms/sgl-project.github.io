@@ -548,11 +548,11 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGGREGATION_THREAD_POOL_SIZE</span></code></strong></p></td>
-<td class="text-center"><p>Controls the total number of worker threads for KV transfer operations per TP rank</p></td>
+<td class="text-center"><p>Controls the total number of worker threads for KVCache transfer operations per TP rank</p></td>
 <td class="text-center"><p>A dynamic value calculated by <code class="docutils literal notranslate"><span class="pre">int(0.75</span> <span class="pre">*</span> <span class="pre">os.cpu_count())</span> <span class="pre">//</span> <span class="pre">8)</span></code>, which is limited to be larger than 4 and less than 12 to ensure efficiency and prevent thread race conditions</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGGREGATION_QUEUE_SIZE</span></code></strong></p></td>
-<td class="text-center"><p>Sets the maximum pending tasks in the parallel transfer queue</p></td>
+<td class="text-center"><p>Sets the number of parallel transfer queues. KVCache transfer requests from multiple decode instances will be sharded into these queues so that they can share the threads and the transfer bandwidth at the same time. If it is set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, then we transfer requests one by one according to fcfs strategy</p></td>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span></code></strong></p></td>
