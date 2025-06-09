@@ -522,6 +522,17 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_thr
 </pre></div>
 </div>
 </li>
+<li><p>Possible PyTorch Bug
+If in any cases you encounter the following error (for example, using qwen 2.5 VL):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RuntimeError:<span class="w"> </span>!stack.empty<span class="o">()</span><span class="w"> </span>INTERNAL<span class="w"> </span>ASSERT<span class="w"> </span>FAILED<span class="w"> </span>at<span class="w"> </span><span class="s2">&quot;/pytorch/torch/csrc/autograd/profiler_python.cpp&quot;</span>:983,<span class="w"> </span>please<span class="w"> </span>report<span class="w"> </span>a<span class="w"> </span>bug<span class="w"> </span>to<span class="w"> </span>PyTorch.<span class="w"> </span>Python<span class="w"> </span>replay<span class="w"> </span>stack<span class="w"> </span>is<span class="w"> </span>empty.
+</pre></div>
+</div>
+<p>This is likely a PyTorch Bug reported in <a class="reference external" href="https://github.com/vllm-project/vllm/issues/18240">Bug: vLLM Profiler</a> and <a class="reference external" href="https://github.com/pytorch/pytorch/issues/101632">Bug: torch.profiler.profile</a>. As a workaround, you may disable <code class="docutils literal notranslate"><span class="pre">with_stack</span></code> with an environment variable such as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_PROFILE_WITH_STACK</span><span class="o">=</span>False
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--dataset-name<span class="w"> </span>random<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile<span class="w"> </span>--mem-frac<span class="o">=</span><span class="m">0</span>.8
+</pre></div>
+</div>
+</li>
 <li><p>View Traces</p>
 <p>Trace files can be loaded and visualized from:</p>
 <ol class="arabic simple">
