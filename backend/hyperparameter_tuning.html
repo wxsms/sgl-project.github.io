@@ -55,7 +55,7 @@
     <link rel="prev" title="Sampling Parameters" href="sampling_params.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jun 10, 2025"/>
+    <meta name="docbuild:last-update" content="Jun 11, 2025"/>
   </head>
   
   
@@ -451,15 +451,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#achieving-peak-throughput">Achieving Peak Throughput</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-your-request-submission-speed">Tune Your Request Submission Speed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-schedule-conservativeness">Tune <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-dp-size-and-tp-size">Tune <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#achieving-high-throughput-for-offline-batch-inference">Achieving high throughput for offline batch inference</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-request-submission-speed-to-control-queue-req">Adjust the request submission speed to control <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-schedule-conservativeness-to-achieve-a-high-token-usage">Tune <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code> to achieve a high <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span></code>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-mem-fraction-static-to-increase-the-kv-cache-pool-capacity">Tune <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to increase the KV cache pool capacity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">Avoid out-of-memory by Tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-cache-for-torch-compile">Enabling cache for <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-schedule-policy">Tune <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-out-of-memory-errors-by-tuning-chunked-prefill-size-mem-fraction-static-and-max-running-requests">Avoid out-of-memory errors by tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, and <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-cuda-graph-max-bs">Tune <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-dp-size-and-tp-size">Tune <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-other-options">Try other options</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -473,60 +476,64 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hyperparameter-tuning">
 <h1>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Link to this heading">#</a></h1>
-<section id="achieving-peak-throughput">
-<h2>Achieving Peak Throughput<a class="headerlink" href="#achieving-peak-throughput" title="Link to this heading">#</a></h2>
-<p>Achieving a large batch size is the most important thing for attaining high throughput.</p>
-<p>When the server is running at full load, look for the following in the log:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Decode</span> <span class="pre">batch.</span> <span class="pre">#running-req:</span> <span class="pre">233,</span> <span class="pre">#token:</span> <span class="pre">370959,</span> <span class="pre">token</span> <span class="pre">usage:</span> <span class="pre">0.82,</span> <span class="pre">gen</span> <span class="pre">throughput</span> <span class="pre">(token/s):</span> <span class="pre">4594.01,</span> <span class="pre">#queue-req:</span> <span class="pre">317</span></code></p>
-<section id="tune-your-request-submission-speed">
-<h3>Tune Your Request Submission Speed<a class="headerlink" href="#tune-your-request-submission-speed" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">#queue-req</span></code> indicates the number of requests in the queue. If you frequently see <code class="docutils literal notranslate"><span class="pre">#queue-req</span> <span class="pre">==</span> <span class="pre">0</span></code>, it suggests you are bottlenecked by the request submission speed.</p>
-<p>A healthy range for <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code> is <code class="docutils literal notranslate"><span class="pre">50</span> <span class="pre">-</span> <span class="pre">500</span></code>.</p>
-<p>On the other hand, do not make <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code> too large because it will also increase the scheduling overhead on the server, especially when using the default longest-prefix-match schedule policy (<code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">lpm</span></code>).</p>
+<section id="achieving-high-throughput-for-offline-batch-inference">
+<h2>Achieving high throughput for offline batch inference<a class="headerlink" href="#achieving-high-throughput-for-offline-batch-inference" title="Link to this heading">#</a></h2>
+<p>Achieving a large batch size is the most important thing for attaining high throughput in offline batch inference.
+When the server is running at full load in a steady state, look for the following in the log:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Decode</span> <span class="pre">batch.</span> <span class="pre">#running-req:</span> <span class="pre">233,</span> <span class="pre">#token:</span> <span class="pre">370959,</span> <span class="pre">token</span> <span class="pre">usage:</span> <span class="pre">0.82,</span> <span class="pre">cuda</span> <span class="pre">graph:</span> <span class="pre">True,</span> <span class="pre">gen</span> <span class="pre">throughput</span> <span class="pre">(token/s):</span> <span class="pre">4594.01,</span> <span class="pre">#queue-req:</span> <span class="pre">317</span></code></p>
+<section id="adjust-the-request-submission-speed-to-control-queue-req">
+<h3>Adjust the request submission speed to control <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code><a class="headerlink" href="#adjust-the-request-submission-speed-to-control-queue-req" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">#queue-req</span></code> indicates the number of requests in the queue.
+If you frequently see <code class="docutils literal notranslate"><span class="pre">#queue-req:</span> <span class="pre">0</span></code>, it suggests that your client code is submitting requests too slowly.
+A healthy range for <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code> is <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">-</span> <span class="pre">1000</span></code>.
+However, avoid making <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code> too large, as this will increase the scheduling overhead on the server.</p>
 </section>
-<section id="tune-schedule-conservativeness">
-<h3>Tune <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code><a class="headerlink" href="#tune-schedule-conservativeness" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span></code> indicates the KV cache memory utilization of the server. <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span> <span class="pre">&gt;</span> <span class="pre">0.9</span></code> means good utilization.
-If you frequently see <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span> <span class="pre">&lt;</span> <span class="pre">0.9</span></code> and <code class="docutils literal notranslate"><span class="pre">#queue-req</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, it means the server is too conservative about taking in new requests. You can decrease <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code> to a value like 0.3.
+<section id="tune-schedule-conservativeness-to-achieve-a-high-token-usage">
+<h3>Tune <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code> to achieve a high <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span></code>.<a class="headerlink" href="#tune-schedule-conservativeness-to-achieve-a-high-token-usage" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span></code> indicates the KV cache memory utilization of the server. <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span> <span class="pre">&gt;</span> <span class="pre">0.9</span></code> means good utilization.</p>
+<p>If you frequently see <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span> <span class="pre">&lt;</span> <span class="pre">0.9</span></code> and <code class="docutils literal notranslate"><span class="pre">#queue-req</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, it means the server is too conservative about taking in new requests. You can decrease <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code> to a value like 0.3.
 The case of server being too conservative can happen when users send many requests with a large <code class="docutils literal notranslate"><span class="pre">max_new_tokens</span></code> but the requests stop very early due to EOS or stop strings.</p>
 <p>On the other hand, if you see <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span></code> very high and you frequently see warnings like
 <code class="docutils literal notranslate"><span class="pre">KV</span> <span class="pre">cache</span> <span class="pre">pool</span> <span class="pre">is</span> <span class="pre">full.</span> <span class="pre">Retract</span> <span class="pre">requests.</span> <span class="pre">#retracted_reqs:</span> <span class="pre">1,</span> <span class="pre">#new_token_ratio:</span> <span class="pre">0.9998</span> <span class="pre">-&gt;</span> <span class="pre">1.0000</span></code>, you can increase <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code> to a value like 1.3.
 If you see <code class="docutils literal notranslate"><span class="pre">KV</span> <span class="pre">cache</span> <span class="pre">pool</span> <span class="pre">is</span> <span class="pre">full.</span> <span class="pre">Retract</span> <span class="pre">requests.</span></code> occasionally but not frequently, it is okay.</p>
 </section>
+<section id="tune-mem-fraction-static-to-increase-the-kv-cache-pool-capacity">
+<h3>Tune <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to increase the KV cache pool capacity<a class="headerlink" href="#tune-mem-fraction-static-to-increase-the-kv-cache-pool-capacity" title="Link to this heading">#</a></h3>
+<p>GPU memory capacity = model weights + KV cache pool + activations + CUDA graph buffers</p>
+<p>mem_fraction_static = (model weights + KV cache pool) / GPU memory capacity.</p>
+<p>We want to increase the KV cache pool capacity to support a larger concurrency, so
+we want <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to be as large as possible but still have enough room
+for activations and CUDA graph buffers.</p>
+<p>A simple strategy is to increase <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> by 0.01 each time until you encounter out-of-memory errors.</p>
+</section>
+</section>
+<section id="avoid-out-of-memory-errors-by-tuning-chunked-prefill-size-mem-fraction-static-and-max-running-requests">
+<h2>Avoid out-of-memory errors by tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, and <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code><a class="headerlink" href="#avoid-out-of-memory-errors-by-tuning-chunked-prefill-size-mem-fraction-static-and-max-running-requests" title="Link to this heading">#</a></h2>
+<p>If you encounter out-of-memory (OOM) errors, you can adjust the following parameters:</p>
+<ul class="simple">
+<li><p>If OOM occurs during prefill, try reducing <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>. This saves memory but slows down the prefill speed for long prompts.</p></li>
+<li><p>If OOM occurs during decoding, try lowering <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
+<li><p>You can also reduce <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to a smaller value, such as 0.8 or 0.7. This decreases the memory usage of the KV cache memory pool and helps prevent OOM errors during both prefill and decoding. However, it limits maximum concurrency and reduces peak throughput.</p></li>
+</ul>
+<section id="tune-cuda-graph-max-bs">
+<h3>Tune <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code><a class="headerlink" href="#tune-cuda-graph-max-bs" title="Link to this heading">#</a></h3>
+<p>By default, CUDA graph is enabled only for small batch sizes (e.g., less than 160 or 256).
+However, for some models, especially at large tensor parallelism sizes, CUDA graph can be useful for batch sizes up to 512 or 768.
+Therefore, it may be beneficial to increase <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code> to a larger value.
+Note that CUDA graph consumes more memory, so you may need to reduce <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> at the same time.</p>
+</section>
 <section id="tune-dp-size-and-tp-size">
 <h3>Tune <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code><a class="headerlink" href="#tune-dp-size-and-tp-size" title="Link to this heading">#</a></h3>
 <p>Data parallelism is better for throughput. When there is enough GPU memory, always favor data parallelism for throughput. Refer to <a class="reference internal" href="../router/router.html"><span class="std std-doc">sglang router</span></a> for a better data parallelism rather than using <code class="docutils literal notranslate"><span class="pre">dp_size</span></code> parameter.</p>
 </section>
-</section>
-<section id="avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">
-<h2>Avoid out-of-memory by Tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code><a class="headerlink" href="#avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests" title="Link to this heading">#</a></h2>
-<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.</p>
+<section id="try-other-options">
+<h3>Try other options<a class="headerlink" href="#try-other-options" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.</p></li>
-<li><p>If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
-<li><p>You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> accelerates small models on small batch sizes. You can enable it with <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>.</p></li>
+<li><p>Try other quantization (e.g. FP8 quantizatioin) or other parallelism strategies (e.g. expert parallelism)</p></li>
+<li><p>If the workload has many shared prefixes, try <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">lpm</span></code>. Here, <code class="docutils literal notranslate"><span class="pre">lpm</span></code> stands for longest prefix match. It reorders requests to encourage more cache hits but introduces more scheduling overhead.</p></li>
 </ul>
 </section>
-<section id="enabling-cache-for-torch-compile">
-<h2>Enabling cache for <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code><a class="headerlink" href="#enabling-cache-for-torch-compile" title="Link to this heading">#</a></h2>
-<p>To enable <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> acceleration, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>. It accelerates small models on small batch sizes. By default, <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> will automatically cache the FX graph and Triton in <code class="docutils literal notranslate"><span class="pre">/tmp/torchinductor_root</span></code>, which might be cleared according to the <a class="reference external" href="https://serverfault.com/questions/377348/when-does-tmp-get-cleared">system policy</a>. You can export the environment variable <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code> to save compilation cache in your desired directory to avoid unwanted deletion. You can also share the cache with other machines to reduce the compilation time.</p>
-<p>SGLang uses <code class="docutils literal notranslate"><span class="pre">max-autotune-no-cudagraphs</span></code> mode of <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code>. The auto-tuning can be slow.
-If you want to deploy a model on many different machines, you can ship the <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> cache to these machines and skip the compilation steps. This is based on <a class="reference external" href="https://pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html">PyTorch official documentation</a>.</p>
-<p><em>Examples</em>：</p>
-<ol class="arabic">
-<li><p>Generate the cache by setting <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code> and running the model once.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TORCHINDUCTOR_CACHE_DIR</span><span class="o">=</span>/root/inductor_root_cache<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--enable-torch-compile
-</pre></div>
-</div>
-</li>
-<li><p>Copy the cache folder to other machines and launch the server with <code class="docutils literal notranslate"><span class="pre">TORCHINDUCTOR_CACHE_DIR</span></code>.</p></li>
-</ol>
-</section>
-<section id="tune-schedule-policy">
-<h2>Tune <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span></code><a class="headerlink" href="#tune-schedule-policy" title="Link to this heading">#</a></h2>
-<p>If the workload has many shared prefixes, use the default <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">lpm</span></code>. Where <code class="docutils literal notranslate"><span class="pre">lpm</span></code> stands for longest prefix match.</p>
-<p>When you have no shared prefixes at all or you always send the requests with the shared prefixes together,
-you can try <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span> <span class="pre">fcfs</span></code>. Where <code class="docutils literal notranslate"><span class="pre">fcfs</span></code> stands for first come first serve. This policy has a lower scheduling overhead.</p>
 </section>
 </section>
 
@@ -575,15 +582,18 @@ you can try <code class="docutils literal notranslate"><span class="pre">--sched
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#achieving-peak-throughput">Achieving Peak Throughput</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-your-request-submission-speed">Tune Your Request Submission Speed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-schedule-conservativeness">Tune <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-dp-size-and-tp-size">Tune <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#achieving-high-throughput-for-offline-batch-inference">Achieving high throughput for offline batch inference</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-request-submission-speed-to-control-queue-req">Adjust the request submission speed to control <code class="docutils literal notranslate"><span class="pre">#queue-req</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-schedule-conservativeness-to-achieve-a-high-token-usage">Tune <code class="docutils literal notranslate"><span class="pre">--schedule-conservativeness</span></code> to achieve a high <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">usage</span></code>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-mem-fraction-static-to-increase-the-kv-cache-pool-capacity">Tune <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to increase the KV cache pool capacity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-out-of-memory-by-tuning-chunked-prefill-size-mem-fraction-static-max-running-requests">Avoid out-of-memory by Tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-cache-for-torch-compile">Enabling cache for <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-schedule-policy">Tune <code class="docutils literal notranslate"><span class="pre">--schedule-policy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-out-of-memory-errors-by-tuning-chunked-prefill-size-mem-fraction-static-and-max-running-requests">Avoid out-of-memory errors by tuning <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, and <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-cuda-graph-max-bs">Tune <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tune-dp-size-and-tp-size">Tune <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-other-options">Try other options</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -617,7 +627,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jun 10, 2025.
+  Last updated on Jun 11, 2025.
   <br/>
 </p>
   </div>

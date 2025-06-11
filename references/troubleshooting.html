@@ -55,7 +55,7 @@
     <link rel="prev" title="Contribution Guide" href="contribution_guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jun 10, 2025"/>
+    <meta name="docbuild:last-update" content="Jun 11, 2025"/>
   </head>
   
   
@@ -460,8 +460,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA out of memory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-an-illegal-memory-access-was-encountered">CUDA error: an illegal memory access was encountered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA Out of Memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-illegal-memory-access-encountered">CUDA Error: Illegal Memory Access Encountered</a></li>
 </ul>
             </nav>
         </div>
@@ -475,22 +475,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h1>
-<p>This page lists some common errors and tips for fixing them.</p>
+<p>This page lists common errors and tips for resolving them.</p>
 <section id="cuda-out-of-memory">
-<h2>CUDA out of memory<a class="headerlink" href="#cuda-out-of-memory" title="Link to this heading">#</a></h2>
-<p>If you see out of memory (OOM) errors, you can try to tune the following parameters.</p>
+<h2>CUDA Out of Memory<a class="headerlink" href="#cuda-out-of-memory" title="Link to this heading">#</a></h2>
+<p>If you encounter out-of-memory (OOM) errors, you can adjust the following parameters:</p>
 <ul class="simple">
-<li><p>If OOM happens during prefill, try to decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>.</p></li>
-<li><p>If OOM happens during decoding, try to decrease <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
-<li><p>You can also try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, which reduces the memory usage of the KV cache memory pool and helps both prefill and decoding.</p></li>
+<li><p>If OOM occurs during prefill, try reducing <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>. This saves memory but slows down the prefill speed for long prompts.</p></li>
+<li><p>If OOM occurs during decoding, try lowering <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
+<li><p>You can also reduce <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to a smaller value, such as 0.8 or 0.7. This decreases the memory usage of the KV cache memory pool and helps prevent OOM errors during both prefill and decoding. However, it limits maximum concurrency and reduces peak throughput.</p></li>
+<li><p>Another common case for OOM is requesting input logprobs for a long prompt as it requires significant memory. To address this, set <code class="docutils literal notranslate"><span class="pre">logprob_start_len</span></code> in your sampling parameters to include only the necessary parts. If you do need input logprobs for a long prompt, try reducing <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>.</p></li>
 </ul>
 </section>
-<section id="cuda-error-an-illegal-memory-access-was-encountered">
-<h2>CUDA error: an illegal memory access was encountered<a class="headerlink" href="#cuda-error-an-illegal-memory-access-was-encountered" title="Link to this heading">#</a></h2>
-<p>This error may be due to kernel errors or out-of-memory issues.</p>
+<section id="cuda-error-illegal-memory-access-encountered">
+<h2>CUDA Error: Illegal Memory Access Encountered<a class="headerlink" href="#cuda-error-illegal-memory-access-encountered" title="Link to this heading">#</a></h2>
+<p>This error may result from kernel errors or out-of-memory issues:</p>
 <ul class="simple">
-<li><p>If it is a kernel error, it is not easy to fix. Please file an issue on the GitHub.</p></li>
-<li><p>If it is out-of-memory, sometimes it will report this error instead of “Out-of-memory.” Please refer to the above section to avoid the OOM.</p></li>
+<li><p>If it is a kernel error, resolving it may be challenging. Please file an issue on GitHub.</p></li>
+<li><p>If it is an out-of-memory issue, it may sometimes be reported as this error instead of “Out of Memory.” Refer to the section above for guidance on avoiding OOM issues.</p></li>
 </ul>
 </section>
 </section>
@@ -540,8 +541,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA out of memory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-an-illegal-memory-access-was-encountered">CUDA error: an illegal memory access was encountered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA Out of Memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-illegal-memory-access-encountered">CUDA Error: Illegal Memory Access Encountered</a></li>
 </ul>
   </nav></div>
 
@@ -575,7 +576,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jun 10, 2025.
+  Last updated on Jun 11, 2025.
   <br/>
 </p>
   </div>
