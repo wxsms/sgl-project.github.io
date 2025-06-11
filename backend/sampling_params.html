@@ -484,7 +484,7 @@ document.write(`
 <p>If you want a high-level endpoint that can automatically handle chat templates, consider using the <a class="reference internal" href="openai_api_completions.html"><span class="std std-doc">OpenAI Compatible API</span></a>.</p>
 <section id="generate-endpoint">
 <h2><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint<a class="headerlink" href="#generate-endpoint" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint accepts the following parameters in JSON format. For detailed usage, see the <a class="reference internal" href="native_api.html"><span class="std std-doc">native API doc</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/generate</span></code> endpoint accepts the following parameters in JSON format. For detailed usage, see the <a class="reference internal" href="native_api.html"><span class="std std-doc">native API doc</span></a>. The object is defined at <code class="docutils literal notranslate"><span class="pre">io_struct.py::GenerateReqInput</span></code>. You can also read the source code to find more arguments and docs.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -499,11 +499,27 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p>input_ids</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[List[int]],</span> <span class="pre">List[int]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
-<td><p>Alternative to <code class="docutils literal notranslate"><span class="pre">text</span></code>. Specify the input as token IDs instead of text.</p></td>
+<td><p>The token IDs for text; one can specify either text or input_ids.</p></td>
 </tr>
-<tr class="row-even"><td><p>sampling_params</p></td>
+<tr class="row-even"><td><p>input_embeds</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[List[List[float]]],</span> <span class="pre">List[List[float]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>The embeddings for input_ids; one can specify either text, input_ids, or input_embeds.</p></td>
+</tr>
+<tr class="row-odd"><td><p>image_data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[List[ImageDataItem]],</span> <span class="pre">List[ImageDataItem],</span> <span class="pre">ImageDataItem]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>The image input. Can be an image instance, file name, URL, or base64 encoded string. Can be a single image, list of images, or list of lists of images.</p></td>
+</tr>
+<tr class="row-even"><td><p>audio_data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[AudioDataItem],</span> <span class="pre">AudioDataItem]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>The audio input. Can be a file name, URL, or base64 encoded string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_params</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Dict],</span> <span class="pre">Dict]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
 <td><p>The sampling parameters as described in the sections below.</p></td>
+</tr>
+<tr class="row-even"><td><p>rid</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[str],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>The request ID.</p></td>
 </tr>
 <tr class="row-odd"><td><p>return_logprob</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[bool],</span> <span class="pre">bool]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
@@ -511,27 +527,35 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p>logprob_start_len</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
-<td><p>If returning log probabilities, specifies the start position in the prompt. Default is “-1”, which returns logprobs only for output tokens.</p></td>
+<td><p>If return_logprob, the start location in the prompt for returning logprobs. Default is “-1”, which returns logprobs for output tokens only.</p></td>
 </tr>
 <tr class="row-odd"><td><p>top_logprobs_num</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[int],</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
-<td><p>If returning log probabilities, specifies the number of top logprobs to return at each position.</p></td>
+<td><p>If return_logprob, the number of top logprobs to return at each position.</p></td>
+</tr>
+<tr class="row-even"><td><p>token_ids_logprob</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[List[int]],</span> <span class="pre">List[int]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>If return_logprob, the token IDs to return logprob for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_text_in_logprobs</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
+<td><p>Whether to detokenize tokens in text in the returned logprobs.</p></td>
 </tr>
 <tr class="row-even"><td><p>stream</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
-<td><p>Whether to stream the output.</p></td>
+<td><p>Whether to stream output.</p></td>
 </tr>
 <tr class="row-odd"><td><p>lora_path</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">Optional[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
-<td><p>Path to LoRA weights.</p></td>
+<td><p>The path to the LoRA.</p></td>
 </tr>
 <tr class="row-even"><td><p>custom_logit_processor</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[Optional[str]],</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
-<td><p>Custom logit processor for advanced sampling control. For usage see below.</p></td>
+<td><p>Custom logit processor for advanced sampling control. Must be a serialized instance of <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code> using its <code class="docutils literal notranslate"><span class="pre">to_str()</span></code> method. For usage see below.</p></td>
 </tr>
 <tr class="row-odd"><td><p>return_hidden_states</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
-<td><p>Whether to return hidden states of the model. Note that each time it changes, the CUDA graph will be recaptured, which might lead to a performance hit. See the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/hidden_states">examples</a> for more information.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Union[List[bool],</span> <span class="pre">bool]</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
+<td><p>Whether to return hidden states.</p></td>
 </tr>
 </tbody>
 </table>
@@ -539,6 +563,7 @@ document.write(`
 </section>
 <section id="id1">
 <h2>Sampling parameters<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The object is defined at <code class="docutils literal notranslate"><span class="pre">sampling_params.py::SamplingParams</span></code>. You can also read the source code to find more arguments and docs.</p>
 <section id="core-parameters">
 <h3>Core parameters<a class="headerlink" href="#core-parameters" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -630,6 +655,10 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
 <td><p>EBNF for structured outputs.</p></td>
 </tr>
+<tr class="row-odd"><td><p>structural_tag</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>The structal tag for structured outputs.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -648,6 +677,14 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
 <td><p>Specifies the number of output sequences to generate per request. (Generating multiple outputs in one request (n &gt; 1) is discouraged; repeating the same prompts several times offers better control and efficiency.)</p></td>
 </tr>
+<tr class="row-odd"><td><p>ignore_eos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
+<td><p>Don’t stop generation when EOS token is sampled.</p></td>
+</tr>
+<tr class="row-even"><td><p>skip_special_tokens</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code></p></td>
+<td><p>Remove special tokens during decoding.</p></td>
+</tr>
 <tr class="row-odd"><td><p>spaces_between_special_tokens</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code></p></td>
 <td><p>Whether or not to add spaces between special tokens during detokenization.</p></td>
@@ -656,19 +693,7 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
 <td><p>Don’t trim stop words or EOS token from the generated text.</p></td>
 </tr>
-<tr class="row-odd"><td><p>continue_final_message</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
-<td><p>When enabled, the final assistant message is removed and its content is used as a prefill so that the model continues that message instead of starting a new turn. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/runtime/openai_chat_with_response_prefill.py">openai_chat_with_response_prefill.py</a> for examples.</p></td>
-</tr>
-<tr class="row-even"><td><p>ignore_eos</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code></p></td>
-<td><p>Don’t stop generation when EOS token is sampled.</p></td>
-</tr>
-<tr class="row-odd"><td><p>skip_special_tokens</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code></p></td>
-<td><p>Remove special tokens during decoding.</p></td>
-</tr>
-<tr class="row-even"><td><p>custom_params</p></td>
+<tr class="row-odd"><td><p>custom_params</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[List[Optional[Dict[str,</span> <span class="pre">Any]]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
 <td><p>Used when employing <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>. For usage, see below.</p></td>
 </tr>
