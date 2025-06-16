@@ -55,7 +55,7 @@
     <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jun 15, 2025"/>
+    <meta name="docbuild:last-update" content="Jun 16, 2025"/>
   </head>
   
   
@@ -483,7 +483,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>FlashInfer</strong></p></td>
-<td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -500,7 +500,7 @@ document.write(`
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
-<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Torch Native</strong></p></td>
@@ -520,6 +520,9 @@ document.write(`
 </tbody>
 </table>
 </div>
+<p>Note: Every kernel backend is compatible with a page size &gt; 1 by specifying an argument such as <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">16</span></code>.
+This is because a page size of 16 can be converted to a page size of 1 in the kernel backend.
+The “❌” and “✅” symbols in the table above under “Page Size &gt; 1” indicate whether the kernel actually operates with a page size greater than 1, rather than treating a page size of 16 as a page size of 1.</p>
 </section>
 <section id="user-guide">
 <h2>User guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
@@ -646,7 +649,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jun 15, 2025.
+  Last updated on Jun 16, 2025.
   <br/>
 </p>
   </div>
