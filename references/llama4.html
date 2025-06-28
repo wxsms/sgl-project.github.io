@@ -484,9 +484,10 @@ document.write(`
 <section id="configuration-tips">
 <h3>Configuration Tips<a class="headerlink" href="#configuration-tips" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>OOM Mitigation</strong>: Adjust <code class="docutils literal notranslate"><span class="pre">--context-length</span></code> to avoid a GPU out-of-memory issue. For the Scout model, we recommend setting this value up to 1M on 8*H100 and up to 2.5M on 8*H200. For the Maverick model, we don’t need to set context length on 8*H200.</p></li>
+<li><p><strong>OOM Mitigation</strong>: Adjust <code class="docutils literal notranslate"><span class="pre">--context-length</span></code> to avoid a GPU out-of-memory issue. For the Scout model, we recommend setting this value up to 1M on 8*H100 and up to 2.5M on 8*H200. For the Maverick model, we don’t need to set context length on 8*H200. When hybrid kv cache is enabled, <code class="docutils literal notranslate"><span class="pre">--context-length</span></code> can be set up to 5M on 8*H100 and up to 10M on 8*H200 for the Scout model.</p></li>
 <li><p><strong>Chat Template</strong>: Add <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">llama-4</span></code> for chat completion tasks.</p></li>
 <li><p><strong>Enable Multi-Modal</strong>: Add <code class="docutils literal notranslate"><span class="pre">--enable-multimodal</span></code> for multi-modal capabilities.</p></li>
+<li><p><strong>Enable Hybrid-KVCache</strong>: Add <code class="docutils literal notranslate"><span class="pre">--hybrid-kvcache-ratio</span></code> for hybrid kv cache. Details can be seen in <a class="reference external" href="https://github.com/sgl-project/sglang/pull/6563">this PR</a></p></li>
 </ul>
 </section>
 </section>
