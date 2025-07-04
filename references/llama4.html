@@ -55,7 +55,7 @@
     <link rel="prev" title="DeepSeek Usage" href="deepseek.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jun 30, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 04, 2025"/>
   </head>
   
   
@@ -453,6 +453,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-llama-4-with-sglang">Launch Llama 4 with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
@@ -488,6 +489,18 @@ document.write(`
 <li><p><strong>Chat Template</strong>: Add <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">llama-4</span></code> for chat completion tasks.</p></li>
 <li><p><strong>Enable Multi-Modal</strong>: Add <code class="docutils literal notranslate"><span class="pre">--enable-multimodal</span></code> for multi-modal capabilities.</p></li>
 <li><p><strong>Enable Hybrid-KVCache</strong>: Add <code class="docutils literal notranslate"><span class="pre">--hybrid-kvcache-ratio</span></code> for hybrid kv cache. Details can be seen in <a class="reference external" href="https://github.com/sgl-project/sglang/pull/6563">this PR</a></p></li>
+</ul>
+</section>
+<section id="eagle-speculative-decoding">
+<h3>EAGLE Speculative Decoding<a class="headerlink" href="#eagle-speculative-decoding" title="Link to this heading">#</a></h3>
+<p><strong>Description</strong>: SGLang has supported Llama 4 Maverick (400B) with <a class="reference external" href="https://docs.sglang.ai/backend/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>.</p>
+<p><strong>Usage</strong>:
+Add arguments <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> to enable this feature. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Llama</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">Maverick</span><span class="o">-</span><span class="mi">17</span><span class="n">B</span><span class="o">-</span><span class="mi">128</span><span class="n">E</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">algorithm</span> <span class="n">EAGLE3</span>  <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">draft</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">Llama</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">Maverick</span><span class="o">-</span><span class="mi">17</span><span class="n">B</span><span class="o">-</span><span class="mi">128</span><span class="n">E</span><span class="o">-</span><span class="n">Eagle3</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">steps</span> <span class="mi">3</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">eagle</span><span class="o">-</span><span class="n">topk</span> <span class="mi">1</span> <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">draft</span><span class="o">-</span><span class="n">tokens</span> <span class="mi">4</span> <span class="o">--</span><span class="n">trust</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">code</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">8</span> <span class="o">--</span><span class="n">context</span><span class="o">-</span><span class="n">length</span> <span class="mi">1000000</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Note</strong> The Llama 4 draft model <em>nvidia/Llama-4-Maverick-17B-128E-Eagle3</em> can only recognize conversations in chat mode.</p></li>
 </ul>
 </section>
 </section>
@@ -578,6 +591,7 @@ lm_eval<span class="w"> </span>--model<span class="w"> </span>local-chat-complet
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-llama-4-with-sglang">Launch Llama 4 with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
@@ -617,7 +631,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jun 30, 2025.
+  Last updated on Jul 04, 2025.
   <br/>
 </p>
   </div>
