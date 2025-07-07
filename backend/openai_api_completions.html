@@ -524,30 +524,30 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:33] server_args=ServerArgs(model_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, skip_server_warmup=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;qwen/qwen2.5-0.5b-instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, hybrid_kvcache_ratio=None, impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=30435, nccl_port=None, mem_fraction_static=0.8, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=887532372, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_moe=False, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=None, cuda_graph_bs=None, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, disable_overlap_cg_plan=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;&#39;, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, enable_triton_kernel_moe=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False)
-[2025-07-07 09:15:44] Attention backend not set. Use fa3 backend by default.
-[2025-07-07 09:15:44] Init torch distributed begin.
-[2025-07-07 09:15:45] Init torch distributed ends. mem usage=0.00 GB
-[2025-07-07 09:15:46] Load weight begin. avail mem=60.49 GB
-[2025-07-07 09:15:46] Using model weights format [&#39;*.safetensors&#39;]
-[2025-07-07 09:15:46] No model.safetensors.index.json found in remote.
+[2025-07-07 21:52:17] server_args=ServerArgs(model_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, skip_server_warmup=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;qwen/qwen2.5-0.5b-instruct&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, hybrid_kvcache_ratio=None, impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=32296, nccl_port=None, mem_fraction_static=0.8, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=357681345, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_moe=False, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=None, cuda_graph_bs=None, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, disable_overlap_cg_plan=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;&#39;, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, enable_triton_kernel_moe=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False)
+[2025-07-07 21:52:29] Attention backend not set. Use fa3 backend by default.
+[2025-07-07 21:52:29] Init torch distributed begin.
+[2025-07-07 21:52:29] Init torch distributed ends. mem usage=0.00 GB
+[2025-07-07 21:52:30] Load weight begin. avail mem=60.49 GB
+[2025-07-07 21:52:31] Using model weights format [&#39;*.safetensors&#39;]
+[2025-07-07 21:52:31] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.51it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.50it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.89it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.88it/s]
 
-[2025-07-07 09:15:46] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=59.52 GB, mem usage=0.98 GB.
-[2025-07-07 09:15:46] KV Cache is allocated. #tokens: 20480, K size: 0.12 GB, V size: 0.12 GB
-[2025-07-07 09:15:46] Memory pool end. avail mem=59.11 GB
-[2025-07-07 09:15:47] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=32768, available_gpu_mem=59.01 GB
-[2025-07-07 09:15:48] INFO:     Started server process [1944894]
-[2025-07-07 09:15:48] INFO:     Waiting for application startup.
-[2025-07-07 09:15:48] INFO:     Application startup complete.
-[2025-07-07 09:15:48] INFO:     Uvicorn running on http://0.0.0.0:30435 (Press CTRL+C to quit)
-[2025-07-07 09:15:49] INFO:     127.0.0.1:35780 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-07-07 09:15:49] INFO:     127.0.0.1:35794 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-07-07 09:15:49] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T09:15:49.117439
-[2025-07-07 09:15:50] INFO:     127.0.0.1:35806 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-07-07 09:15:50] The server is fired up and ready to roll!
+[2025-07-07 21:52:31] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=59.52 GB, mem usage=0.98 GB.
+[2025-07-07 21:52:31] KV Cache is allocated. #tokens: 20480, K size: 0.12 GB, V size: 0.12 GB
+[2025-07-07 21:52:31] Memory pool end. avail mem=59.11 GB
+[2025-07-07 21:52:32] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=32768, available_gpu_mem=59.01 GB
+[2025-07-07 21:52:32] INFO:     Started server process [1374012]
+[2025-07-07 21:52:32] INFO:     Waiting for application startup.
+[2025-07-07 21:52:32] INFO:     Application startup complete.
+[2025-07-07 21:52:32] INFO:     Uvicorn running on http://0.0.0.0:32296 (Press CTRL+C to quit)
+[2025-07-07 21:52:33] INFO:     127.0.0.1:33872 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:33] INFO:     127.0.0.1:33874 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:33] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T21:52:33.991977
+[2025-07-07 21:52:34] INFO:     127.0.0.1:33884 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:34] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -561,7 +561,7 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30435
+Server started on http://localhost:32296
 </pre></div></div>
 </div>
 </section>
@@ -596,16 +596,16 @@ Server started on http://localhost:30435
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:54] Prefill batch. #new-seq: 1, #new-token: 37, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T09:15:54.212185
-[2025-07-07 09:15:54] Decode batch. #running-req: 1, #token: 70, token usage: 0.00, cuda graph: False, gen throughput (token/s): 5.60, #queue-req: 0, timestamp: 2025-07-07T09:15:54.562803
-[2025-07-07 09:15:54] INFO:     127.0.0.1:47472 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:38] Prefill batch. #new-seq: 1, #new-token: 37, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T21:52:38.311109
+[2025-07-07 21:52:38] Decode batch. #running-req: 1, #token: 70, token usage: 0.00, cuda graph: False, gen throughput (token/s): 6.14, #queue-req: 0, timestamp: 2025-07-07T21:52:38.597719
+[2025-07-07 21:52:38] INFO:     127.0.0.1:39936 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='a18a511a0a454640b53ebc8c71f31493', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1751879754, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='458b60e307594e578918418a43a47e76', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1751925158, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="Parameters">
@@ -697,18 +697,18 @@ response.choices[0].message.content:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:54] Prefill batch. #new-seq: 1, #new-token: 49, #cached-token: 5, #token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T09:15:54.624902
-[2025-07-07 09:15:54] Decode batch. #running-req: 1, #token: 88, token usage: 0.00, cuda graph: False, gen throughput (token/s): 105.25, #queue-req: 0, timestamp: 2025-07-07T09:15:54.942845
-[2025-07-07 09:15:55] Decode batch. #running-req: 1, #token: 128, token usage: 0.01, cuda graph: False, gen throughput (token/s): 124.56, #queue-req: 0, timestamp: 2025-07-07T09:15:55.263965
-[2025-07-07 09:15:55] Decode batch. #running-req: 1, #token: 168, token usage: 0.01, cuda graph: False, gen throughput (token/s): 120.89, #queue-req: 0, timestamp: 2025-07-07T09:15:55.594852
-[2025-07-07 09:15:55] INFO:     127.0.0.1:47472 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:38] Prefill batch. #new-seq: 1, #new-token: 49, #cached-token: 5, #token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T21:52:38.659336
+[2025-07-07 21:52:38] Decode batch. #running-req: 1, #token: 88, token usage: 0.00, cuda graph: False, gen throughput (token/s): 106.11, #queue-req: 0, timestamp: 2025-07-07T21:52:38.974687
+[2025-07-07 21:52:39] Decode batch. #running-req: 1, #token: 128, token usage: 0.01, cuda graph: False, gen throughput (token/s): 122.92, #queue-req: 0, timestamp: 2025-07-07T21:52:39.300094
+[2025-07-07 21:52:39] Decode batch. #running-req: 1, #token: 168, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.39, #queue-req: 0, timestamp: 2025-07-07T21:52:39.662461
+[2025-07-07 21:52:39] INFO:     127.0.0.1:39936 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major center of ancient civilization, known for its advancements in art, architecture, philosophy, and science. Some of their major achievements include:<br><br>1. **Architecture**: Rome was the birthplace of many architectural styles, including Romanesque, Gothic, and Baroque. The Colosseum, the Pantheon, and the Vatican City are some of the most famous examples of Roman architecture.<br><br>2. **Art**: Roman art is renowned for its grandeur and complexity. The Colosseum is one of the most iconic structures in the world, showcasing the artistic and engineering prowess of ancient Rome.<br><br>3. **</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a civilization that flourished from the 8th to the 4th century BCE. It was a major center of culture, art, and philosophy, and its achievements include:<br><br>1. **Roman Law**: The Romans developed a system of legal codes that would later influence the legal systems of many countries. This system is still in use today.<br><br>2. **Architecture**: Roman architecture was renowned for its grandeur and symmetry. The Colosseum, for example, is one of the most famous examples of Roman architecture.<br><br>3. **Art**: Roman art was highly influential, with the development of classical art forms such</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -731,32 +731,10 @@ response.choices[0].message.content:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:55] INFO:     127.0.0.1:47472 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-07-07 09:15:55] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 24, #token: 24, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T09:15:55.726221
-As a large language model, I don&#39;t have access to your specific test. However, I can provide some general information on how[2025-07-07 09:15:55] Decode batch. #running-req: 1, #token: 60, token usage: 0.00, cuda graph: False, gen throughput (token/s): 107.58, #queue-req: 0, timestamp: 2025-07-07T09:15:55.966672
- tests work and what types of tests one might expect in a given context.
-
-Tests are designed to evaluate a system or program and ensure that it meets certain criteria or meets a desired outcome. Common types[2025-07-07 09:15:56] Decode batch. #running-req: 1, #token: 100, token usage: 0.00, cuda graph: False, gen throughput (token/s): 115.66, #queue-req: 0, timestamp: 2025-07-07T09:15:56.312505
- of tests include:
-
-1. Unit tests: These tests check the functionality of individual components or methods within a program, without affecting the overall system behavior.
-2. Integration tests: These tests check the interactions[2025-07-07 09:15:56] Decode batch. #running-req: 1, #token: 140, token usage: 0.01, cuda graph: False, gen throughput (token/s): 123.65, #queue-req: 0, timestamp: 2025-07-07T09:15:56.636002
- between different components of a system, ensuring that they work together as expected.
-3. System tests: These tests evaluate the overall system architecture, including its scalability, fault tolerance, and security.
-4.[2025-07-07 09:15:56] Decode batch. #running-req: 1, #token: 180, token usage: 0.01, cuda graph: False, gen throughput (token/s): 124.28, #queue-req: 0, timestamp: 2025-07-07T09:15:56.957852
- Performance tests: These tests measure the system&#39;s performance under various load conditions, including peak usage and average usage.
-5. Usability tests: These tests evaluate how well the system meets the user&#39;s needs[2025-07-07 09:15:57] Decode batch. #running-req: 1, #token: 220, token usage: 0.01, cuda graph: False, gen throughput (token/s): 124.21, #queue-req: 0, timestamp: 2025-07-07T09:15:57.279883
- and expectations.
-
-In a particular test, you might ask for specific information such as:
-
-- What problems does the system currently have?
-- How does the system perform under different conditions?
-- What are the[2025-07-07 09:15:57] Decode batch. #running-req: 1, #token: 260, token usage: 0.01, cuda graph: False, gen throughput (token/s): 124.88, #queue-req: 0, timestamp: 2025-07-07T09:15:57.600201
- potential risks or issues that the system might encounter?
-
-Your test should aim to provide insights into the system&#39;s strengths and weaknesses, allowing users to make informed decisions about whether to continue using the system or to[2025-07-07 09:15:57] Decode batch. #running-req: 1, #token: 300, token usage: 0.01, cuda graph: False, gen throughput (token/s): 123.49, #queue-req: 0, timestamp: 2025-07-07T09:15:57.924107
- seek alternative solutions.
+[2025-07-07 21:52:39] INFO:     127.0.0.1:39936 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:39] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 24, #token: 24, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T21:52:39.787981
+Yes, it is a test. I&#39;m designed to assist with various topics, so it&#39;s a good idea to keep a[2025-07-07 21:52:40] Decode batch. #running-req: 1, #token: 60, token usage: 0.00, cuda graph: False, gen throughput (token/s): 112.19, #queue-req: 0, timestamp: 2025-07-07T21:52:40.018985
+ record of what you ask me about to ensure I can provide helpful and accurate responses.
 </pre></div></div>
 </div>
 </section>
@@ -789,16 +767,17 @@ Your test should aim to provide insights into the system&#39;s strengths and wea
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:58] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T09:15:58.018608
-[2025-07-07 09:15:58] Decode batch. #running-req: 1, #token: 44, token usage: 0.00, cuda graph: False, gen throughput (token/s): 103.75, #queue-req: 0, timestamp: 2025-07-07T09:15:58.309633
-[2025-07-07 09:15:58] INFO:     127.0.0.1:47472 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:40] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T21:52:40.219190
+[2025-07-07 21:52:40] Decode batch. #running-req: 1, #token: 31, token usage: 0.00, cuda graph: False, gen throughput (token/s): 98.33, #queue-req: 0, timestamp: 2025-07-07T21:52:40.425800
+[2025-07-07 21:52:40] Decode batch. #running-req: 1, #token: 71, token usage: 0.00, cuda graph: False, gen throughput (token/s): 123.00, #queue-req: 0, timestamp: 2025-07-07T21:52:40.751018
+[2025-07-07 21:52:40] INFO:     127.0.0.1:39936 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='8535caf967214190ad0edb82a2e03bf2', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1751879758, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='a42de3f673954720bd5748f78a81bb99', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1751925160, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -831,16 +810,16 @@ Your test should aim to provide insights into the system&#39;s strengths and wea
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:58] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T09:15:58.539110
-[2025-07-07 09:15:58] Decode batch. #running-req: 1, #token: 21, token usage: 0.00, cuda graph: False, gen throughput (token/s): 81.93, #queue-req: 0, timestamp: 2025-07-07T09:15:58.797865
-[2025-07-07 09:15:59] INFO:     127.0.0.1:47472 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2025-07-07 21:52:40] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-07T21:52:40.770080
+[2025-07-07 21:52:41] Decode batch. #running-req: 1, #token: 48, token usage: 0.00, cuda graph: False, gen throughput (token/s): 97.00, #queue-req: 0, timestamp: 2025-07-07T21:52:41.163385
+[2025-07-07 21:52:41] INFO:     127.0.0.1:39936 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='40dda5ccd54040f7a90131cf978fc87d', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Emma White. She had always been fascinated by the stars and the mysteries of the universe. One day, she decided to embark on a mission to explore a newly discovered planet.', matched_stop='\n\n')], created=1751879759, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=9, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='464a8360498442589abe081887915ac5', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named John who had always dreamed of exploring the stars. He had been an avid reader and traveled extensively across the globe, studying the planets and galaxies that surrounded him.', matched_stop='\n\n')], created=1751925161, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=9, total_tokens=52, completion_tokens_details=None, prompt_tokens_details=None))</strong></div>
 </div>
 </section>
 </section>
@@ -860,7 +839,8 @@ Your test should aim to provide insights into the system&#39;s strengths and wea
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-07 09:15:59] Child process unexpectedly failed with exitcode=9. pid=1945412
+[2025-07-07 21:52:41] Child process unexpectedly failed with exitcode=9. pid=1374648
+[2025-07-07 21:52:41] Child process unexpectedly failed with exitcode=9. pid=1374562
 </pre></div></div>
 </div>
 </section>
