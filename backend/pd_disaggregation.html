@@ -557,11 +557,13 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 </tr>
 <tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span></code></strong></p></td>
 <td class="text-center"><p>Timeout (seconds) for receiving destination KV indices during request initialization</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">120</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">300</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>If a greater mean TTFT is acceptable, you can <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT=600</span></code> (10 minutes) to relax the timeout condition.
+Please be aware that this setting will cause prefill instances to take a longer time to clean up the affected memory resources when a running decode node loses connection.</p>
 </section>
 <section id="decode-server-configuration">
 <h4>Decode Server Configuration<a class="headerlink" href="#decode-server-configuration" title="Link to this heading">#</a></h4>
@@ -581,9 +583,14 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <td class="text-center"><p>Consecutive heartbeat failures before marking prefill server offline</p></td>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
 </tr>
+<tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGGREGATION_WAITING_TIMEOUT</span></code></strong></p></td>
+<td class="text-center"><p>Timeout (seconds) for receiving KV Cache after request initialization</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">300</span></code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
+<p>If a greater mean TTFT is acceptable, you can <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">SGLANG_DISAGGREGATION_WAITING_TIMEOUT=600</span></code> (10 minutes) to relax the timeout condition.</p>
 </section>
 </section>
 </section>
