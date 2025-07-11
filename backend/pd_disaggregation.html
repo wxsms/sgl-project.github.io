@@ -55,7 +55,7 @@
     <link rel="prev" title="LoRA Serving" href="lora.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 10, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 11, 2025"/>
   </head>
   
   
@@ -474,6 +474,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">DeepSeek Multi-Node</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend">ASCEND</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Llama Single Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">DeepSeek Multi-Node</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -634,6 +640,38 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 </div>
 </section>
 </section>
+<section id="ascend">
+<h2>ASCEND<a class="headerlink" href="#ascend" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>Usage<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Use ascend backend with <a class="reference external" href="https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com:443/sglang/mf_adapter-1.0.0-cp311-cp311-linux_aarch64.whl?AccessKeyId=HPUAXT4YM0U8JNTERLST&amp;amp;Expires=1783151861&amp;amp;Signature=3j10QDUjqk70enaq8lostYV2bEA%3D">mf_adapter(download link)</a> and ASCEND_MF_STORE_URL being set</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mf_adapter-1.0.0-cp311-cp311-linux_aarch64.whl<span class="w"> </span>--force-reinstall
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://xxx.xx.xxx.xxx:xxxx&quot;</span>
+</pre></div>
+</div>
+<p>Use mooncake backend, more details can be found in mooncake section.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_ASCEND_TRANSFER_WITH_MOONCAKE</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>Llama Single Node<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span>--disaggregation-transfer-backend<span class="w"> </span>ascend
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span>--base-gpu-id<span class="w"> </span><span class="m">1</span><span class="w"> </span>--disaggregation-transfer-backend<span class="w"> </span>ascend
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.srt.disaggregation.mini_lb<span class="w"> </span>--prefill<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>--decode<span class="w"> </span>http://127.0.0.1:30001<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>DeepSeek Multi-Node<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill 0</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span>---disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">local_ip</span><span class="si">}</span><span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">prefill_master_ip</span><span class="si">}</span>:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">16</span>
+<span class="c1"># decode 0</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span>---disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">local_ip</span><span class="si">}</span><span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="si">${</span><span class="nv">decode_master_ip</span><span class="si">}</span>:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">16</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -704,6 +742,12 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">DeepSeek Multi-Node</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend">ASCEND</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Llama Single Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">DeepSeek Multi-Node</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -737,7 +781,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 10, 2025.
+  Last updated on Jul 11, 2025.
   <br/>
 </p>
   </div>
