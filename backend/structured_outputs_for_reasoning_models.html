@@ -542,31 +542,31 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:22:14] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, skip_server_warmup=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, hybrid_kvcache_ratio=None, impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=37363, nccl_port=None, mem_fraction_static=0.874, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=25298795, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, tool_call_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_moe=False, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=None, cuda_graph_bs=None, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, disable_overlap_cg_plan=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;&#39;, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, enable_triton_kernel_moe=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False)
-[2025-07-13 03:22:27] Attention backend not set. Use fa3 backend by default.
-[2025-07-13 03:22:27] Init torch distributed begin.
-[2025-07-13 03:22:27] Init torch distributed ends. mem usage=0.00 GB
-[2025-07-13 03:22:29] Load weight begin. avail mem=53.03 GB
-[2025-07-13 03:22:29] The weight of LmHead is not packed
-[2025-07-13 03:22:29] Using model weights format [&#39;*.safetensors&#39;]
+[2025-07-13 04:35:19] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, skip_server_warmup=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, dtype=&#39;auto&#39;, kv_cache_dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, context_length=None, device=&#39;cuda&#39;, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, is_embedding=False, enable_multimodal=None, revision=None, hybrid_kvcache_ratio=None, impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=31230, nccl_port=None, mem_fraction_static=0.874, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=194899963, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, bucket_time_to_first_token=None, bucket_e2e_request_latency=None, bucket_inter_token_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, tool_call_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_moe=False, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=None, cuda_graph_bs=None, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, disable_overlap_cg_plan=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;&#39;, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, enable_triton_kernel_moe=False, warmups=None, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False)
+[2025-07-13 04:35:31] Attention backend not set. Use fa3 backend by default.
+[2025-07-13 04:35:31] Init torch distributed begin.
+[2025-07-13 04:35:31] Init torch distributed ends. mem usage=0.00 GB
+[2025-07-13 04:35:32] Load weight begin. avail mem=35.04 GB
+[2025-07-13 04:35:33] The weight of LmHead is not packed
+[2025-07-13 04:35:33] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.36s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.37s/it]
 Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.27s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.28s/it]
 
-[2025-07-13 03:22:32] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=23.57 GB, mem usage=29.46 GB.
-[2025-07-13 03:22:32] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-07-13 03:22:32] Memory pool end. avail mem=22.20 GB
-[2025-07-13 03:22:32] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072, available_gpu_mem=22.11 GB
-[2025-07-13 03:22:33] INFO:     Started server process [2161515]
-[2025-07-13 03:22:33] INFO:     Waiting for application startup.
-[2025-07-13 03:22:33] INFO:     Application startup complete.
-[2025-07-13 03:22:33] INFO:     Uvicorn running on http://0.0.0.0:37363 (Press CTRL+C to quit)
-[2025-07-13 03:22:33] INFO:     127.0.0.1:50892 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-07-13 03:22:34] INFO:     127.0.0.1:50908 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-07-13 03:22:34] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:22:34.194671
-[2025-07-13 03:22:35] INFO:     127.0.0.1:50918 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-07-13 03:22:35] The server is fired up and ready to roll!
+[2025-07-13 04:35:36] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=19.97 GB, mem usage=15.07 GB.
+[2025-07-13 04:35:36] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-07-13 04:35:36] Memory pool end. avail mem=18.60 GB
+[2025-07-13 04:35:36] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072, available_gpu_mem=18.50 GB
+[2025-07-13 04:35:37] INFO:     Started server process [1163271]
+[2025-07-13 04:35:37] INFO:     Waiting for application startup.
+[2025-07-13 04:35:37] INFO:     Application startup complete.
+[2025-07-13 04:35:37] INFO:     Uvicorn running on http://0.0.0.0:31230 (Press CTRL+C to quit)
+[2025-07-13 04:35:37] INFO:     127.0.0.1:43888 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:38] INFO:     127.0.0.1:43898 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:38] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, #token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:35:38.103494
+[2025-07-13 04:35:39] INFO:     127.0.0.1:43912 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:39] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -623,18 +623,18 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:22:38] Prefill batch. #new-seq: 1, #new-token: 21, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:22:38.882668
-[2025-07-13 03:22:39] Decode batch. #running-req: 1, #token: 55, token usage: 0.00, cuda graph: False, gen throughput (token/s): 5.53, #queue-req: 0, timestamp: 2025-07-13T03:22:39.931989
-[2025-07-13 03:22:40] Decode batch. #running-req: 1, #token: 95, token usage: 0.00, cuda graph: False, gen throughput (token/s): 109.91, #queue-req: 0, timestamp: 2025-07-13T03:22:40.295918
-[2025-07-13 03:22:40] Decode batch. #running-req: 1, #token: 135, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.43, #queue-req: 0, timestamp: 2025-07-13T03:22:40.654896
-[2025-07-13 03:22:41] Decode batch. #running-req: 1, #token: 175, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.94, #queue-req: 0, timestamp: 2025-07-13T03:22:41.015462
-[2025-07-13 03:22:41] Decode batch. #running-req: 1, #token: 215, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.01, #queue-req: 0, timestamp: 2025-07-13T03:22:41.389258
-[2025-07-13 03:22:41] Decode batch. #running-req: 1, #token: 255, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.02, #queue-req: 0, timestamp: 2025-07-13T03:22:41.752829
-[2025-07-13 03:22:42] Decode batch. #running-req: 1, #token: 295, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.81, #queue-req: 0, timestamp: 2025-07-13T03:22:42.113806
-[2025-07-13 03:22:42] Decode batch. #running-req: 1, #token: 335, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.58, #queue-req: 0, timestamp: 2025-07-13T03:22:42.482183
-[2025-07-13 03:22:42] Decode batch. #running-req: 1, #token: 375, token usage: 0.02, cuda graph: False, gen throughput (token/s): 111.42, #queue-req: 0, timestamp: 2025-07-13T03:22:42.841188
-[2025-07-13 03:22:43] Decode batch. #running-req: 1, #token: 415, token usage: 0.02, cuda graph: False, gen throughput (token/s): 112.03, #queue-req: 0, timestamp: 2025-07-13T03:22:43.198252
-[2025-07-13 03:22:43] INFO:     127.0.0.1:44440 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:42] Prefill batch. #new-seq: 1, #new-token: 21, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:35:42.857890
+[2025-07-13 04:35:44] Decode batch. #running-req: 1, #token: 55, token usage: 0.00, cuda graph: False, gen throughput (token/s): 5.12, #queue-req: 0, timestamp: 2025-07-13T04:35:44.393425
+[2025-07-13 04:35:44] Decode batch. #running-req: 1, #token: 95, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.19, #queue-req: 0, timestamp: 2025-07-13T04:35:44.763165
+[2025-07-13 04:35:45] Decode batch. #running-req: 1, #token: 135, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.87, #queue-req: 0, timestamp: 2025-07-13T04:35:45.130570
+[2025-07-13 04:35:45] Decode batch. #running-req: 1, #token: 175, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.51, #queue-req: 0, timestamp: 2025-07-13T04:35:45.499195
+[2025-07-13 04:35:45] Decode batch. #running-req: 1, #token: 215, token usage: 0.01, cuda graph: False, gen throughput (token/s): 106.45, #queue-req: 0, timestamp: 2025-07-13T04:35:45.874974
+[2025-07-13 04:35:46] Decode batch. #running-req: 1, #token: 255, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.35, #queue-req: 0, timestamp: 2025-07-13T04:35:46.244127
+[2025-07-13 04:35:46] Decode batch. #running-req: 1, #token: 295, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.36, #queue-req: 0, timestamp: 2025-07-13T04:35:46.613271
+[2025-07-13 04:35:46] Decode batch. #running-req: 1, #token: 335, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.28, #queue-req: 0, timestamp: 2025-07-13T04:35:46.982690
+[2025-07-13 04:35:47] Decode batch. #running-req: 1, #token: 375, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.56, #queue-req: 0, timestamp: 2025-07-13T04:35:47.351147
+[2025-07-13 04:35:47] Decode batch. #running-req: 1, #token: 415, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.51, #queue-req: 0, timestamp: 2025-07-13T04:35:47.719793
+[2025-07-13 04:35:47] INFO:     127.0.0.1:43926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -688,16 +688,16 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:22:43] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 21, #token: 21, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:22:43.482727
-[2025-07-13 03:22:43] Decode batch. #running-req: 1, #token: 34, token usage: 0.00, cuda graph: False, gen throughput (token/s): 98.98, #queue-req: 0, timestamp: 2025-07-13T03:22:43.602354
-[2025-07-13 03:22:43] Decode batch. #running-req: 1, #token: 74, token usage: 0.00, cuda graph: False, gen throughput (token/s): 111.90, #queue-req: 0, timestamp: 2025-07-13T03:22:43.959813
-[2025-07-13 03:22:44] Decode batch. #running-req: 1, #token: 114, token usage: 0.01, cuda graph: False, gen throughput (token/s): 112.43, #queue-req: 0, timestamp: 2025-07-13T03:22:44.315587
-[2025-07-13 03:22:44] Decode batch. #running-req: 1, #token: 154, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.93, #queue-req: 0, timestamp: 2025-07-13T03:22:44.672950
-[2025-07-13 03:22:45] Decode batch. #running-req: 1, #token: 194, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.05, #queue-req: 0, timestamp: 2025-07-13T03:22:45.033136
-[2025-07-13 03:22:45] Decode batch. #running-req: 1, #token: 234, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.59, #queue-req: 0, timestamp: 2025-07-13T03:22:45.391597
-[2025-07-13 03:22:45] Decode batch. #running-req: 1, #token: 274, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.30, #queue-req: 0, timestamp: 2025-07-13T03:22:45.757576
-[2025-07-13 03:22:46] Decode batch. #running-req: 1, #token: 314, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.94, #queue-req: 0, timestamp: 2025-07-13T03:22:46.118120
-[2025-07-13 03:22:46] INFO:     127.0.0.1:44440 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:48] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 21, #token: 21, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:35:48.004751
+[2025-07-13 04:35:48] Decode batch. #running-req: 1, #token: 34, token usage: 0.00, cuda graph: False, gen throughput (token/s): 98.55, #queue-req: 0, timestamp: 2025-07-13T04:35:48.125668
+[2025-07-13 04:35:48] Decode batch. #running-req: 1, #token: 74, token usage: 0.00, cuda graph: False, gen throughput (token/s): 102.31, #queue-req: 0, timestamp: 2025-07-13T04:35:48.516623
+[2025-07-13 04:35:48] Decode batch. #running-req: 1, #token: 114, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.50, #queue-req: 0, timestamp: 2025-07-13T04:35:48.885292
+[2025-07-13 04:35:49] Decode batch. #running-req: 1, #token: 154, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.24, #queue-req: 0, timestamp: 2025-07-13T04:35:49.258274
+[2025-07-13 04:35:49] Decode batch. #running-req: 1, #token: 194, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.06, #queue-req: 0, timestamp: 2025-07-13T04:35:49.625037
+[2025-07-13 04:35:49] Decode batch. #running-req: 1, #token: 234, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.10, #queue-req: 0, timestamp: 2025-07-13T04:35:49.991673
+[2025-07-13 04:35:50] Decode batch. #running-req: 1, #token: 274, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.36, #queue-req: 0, timestamp: 2025-07-13T04:35:50.357424
+[2025-07-13 04:35:50] Decode batch. #running-req: 1, #token: 314, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.89, #queue-req: 0, timestamp: 2025-07-13T04:35:50.724760
+[2025-07-13 04:35:50] INFO:     127.0.0.1:43926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -746,23 +746,23 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:22:46] Prefill batch. #new-seq: 1, #new-token: 28, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:22:46.275638
-[2025-07-13 03:22:46] Decode batch. #running-req: 1, #token: 53, token usage: 0.00, cuda graph: False, gen throughput (token/s): 100.94, #queue-req: 0, timestamp: 2025-07-13T03:22:46.514406
-[2025-07-13 03:22:46] Decode batch. #running-req: 1, #token: 93, token usage: 0.00, cuda graph: False, gen throughput (token/s): 110.01, #queue-req: 0, timestamp: 2025-07-13T03:22:46.878018
-[2025-07-13 03:22:47] Decode batch. #running-req: 1, #token: 133, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.21, #queue-req: 0, timestamp: 2025-07-13T03:22:47.237702
-[2025-07-13 03:22:47] Decode batch. #running-req: 1, #token: 173, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.35, #queue-req: 0, timestamp: 2025-07-13T03:22:47.603485
-[2025-07-13 03:22:47] Decode batch. #running-req: 1, #token: 213, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.91, #queue-req: 0, timestamp: 2025-07-13T03:22:47.970765
-[2025-07-13 03:22:48] Decode batch. #running-req: 1, #token: 253, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.96, #queue-req: 0, timestamp: 2025-07-13T03:22:48.328046
-[2025-07-13 03:22:48] Decode batch. #running-req: 1, #token: 293, token usage: 0.01, cuda graph: False, gen throughput (token/s): 112.11, #queue-req: 0, timestamp: 2025-07-13T03:22:48.684825
-[2025-07-13 03:22:49] Decode batch. #running-req: 1, #token: 333, token usage: 0.02, cuda graph: False, gen throughput (token/s): 111.64, #queue-req: 0, timestamp: 2025-07-13T03:22:49.043120
-[2025-07-13 03:22:49] Decode batch. #running-req: 1, #token: 373, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.72, #queue-req: 0, timestamp: 2025-07-13T03:22:49.404395
-[2025-07-13 03:22:49] Decode batch. #running-req: 1, #token: 413, token usage: 0.02, cuda graph: False, gen throughput (token/s): 112.67, #queue-req: 0, timestamp: 2025-07-13T03:22:49.759410
-[2025-07-13 03:22:50] Decode batch. #running-req: 1, #token: 453, token usage: 0.02, cuda graph: False, gen throughput (token/s): 112.80, #queue-req: 0, timestamp: 2025-07-13T03:22:50.114012
-[2025-07-13 03:22:50] Decode batch. #running-req: 1, #token: 493, token usage: 0.02, cuda graph: False, gen throughput (token/s): 112.83, #queue-req: 0, timestamp: 2025-07-13T03:22:50.468537
-[2025-07-13 03:22:50] Decode batch. #running-req: 1, #token: 533, token usage: 0.03, cuda graph: False, gen throughput (token/s): 110.04, #queue-req: 0, timestamp: 2025-07-13T03:22:50.832030
-[2025-07-13 03:22:51] Decode batch. #running-req: 1, #token: 573, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.30, #queue-req: 0, timestamp: 2025-07-13T03:22:51.201373
-[2025-07-13 03:22:51] Decode batch. #running-req: 1, #token: 613, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.70, #queue-req: 0, timestamp: 2025-07-13T03:22:51.569360
-[2025-07-13 03:22:51] INFO:     127.0.0.1:44440 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:50] Prefill batch. #new-seq: 1, #new-token: 28, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:35:50.883997
+[2025-07-13 04:35:51] Decode batch. #running-req: 1, #token: 53, token usage: 0.00, cuda graph: False, gen throughput (token/s): 99.10, #queue-req: 0, timestamp: 2025-07-13T04:35:51.128393
+[2025-07-13 04:35:51] Decode batch. #running-req: 1, #token: 93, token usage: 0.00, cuda graph: False, gen throughput (token/s): 109.21, #queue-req: 0, timestamp: 2025-07-13T04:35:51.494647
+[2025-07-13 04:35:51] Decode batch. #running-req: 1, #token: 133, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.61, #queue-req: 0, timestamp: 2025-07-13T04:35:51.859578
+[2025-07-13 04:35:52] Decode batch. #running-req: 1, #token: 173, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.67, #queue-req: 0, timestamp: 2025-07-13T04:35:52.224293
+[2025-07-13 04:35:52] Decode batch. #running-req: 1, #token: 213, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.13, #queue-req: 0, timestamp: 2025-07-13T04:35:52.590825
+[2025-07-13 04:35:52] Decode batch. #running-req: 1, #token: 253, token usage: 0.01, cuda graph: False, gen throughput (token/s): 102.30, #queue-req: 0, timestamp: 2025-07-13T04:35:52.981840
+[2025-07-13 04:35:53] Decode batch. #running-req: 1, #token: 293, token usage: 0.01, cuda graph: False, gen throughput (token/s): 106.91, #queue-req: 0, timestamp: 2025-07-13T04:35:53.355987
+[2025-07-13 04:35:53] Decode batch. #running-req: 1, #token: 333, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.16, #queue-req: 0, timestamp: 2025-07-13T04:35:53.725799
+[2025-07-13 04:35:54] Decode batch. #running-req: 1, #token: 373, token usage: 0.02, cuda graph: False, gen throughput (token/s): 106.86, #queue-req: 0, timestamp: 2025-07-13T04:35:54.100123
+[2025-07-13 04:35:54] Decode batch. #running-req: 1, #token: 413, token usage: 0.02, cuda graph: False, gen throughput (token/s): 104.25, #queue-req: 0, timestamp: 2025-07-13T04:35:54.483801
+[2025-07-13 04:35:54] Decode batch. #running-req: 1, #token: 453, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.37, #queue-req: 0, timestamp: 2025-07-13T04:35:54.852893
+[2025-07-13 04:35:55] Decode batch. #running-req: 1, #token: 493, token usage: 0.02, cuda graph: False, gen throughput (token/s): 106.56, #queue-req: 0, timestamp: 2025-07-13T04:35:55.228264
+[2025-07-13 04:35:55] Decode batch. #running-req: 1, #token: 533, token usage: 0.03, cuda graph: False, gen throughput (token/s): 103.88, #queue-req: 0, timestamp: 2025-07-13T04:35:55.613329
+[2025-07-13 04:35:55] Decode batch. #running-req: 1, #token: 573, token usage: 0.03, cuda graph: False, gen throughput (token/s): 105.29, #queue-req: 0, timestamp: 2025-07-13T04:35:55.993230
+[2025-07-13 04:35:56] Decode batch. #running-req: 1, #token: 613, token usage: 0.03, cuda graph: False, gen throughput (token/s): 104.79, #queue-req: 0, timestamp: 2025-07-13T04:35:56.374958
+[2025-07-13 04:35:56] INFO:     127.0.0.1:43926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -799,11 +799,11 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:22:51] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 2, #token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:22:51.699928
-[2025-07-13 03:22:51] Decode batch. #running-req: 1, #token: 40, token usage: 0.00, cuda graph: False, gen throughput (token/s): 101.31, #queue-req: 0, timestamp: 2025-07-13T03:22:51.964173
-[2025-07-13 03:22:52] Decode batch. #running-req: 1, #token: 80, token usage: 0.00, cuda graph: False, gen throughput (token/s): 110.55, #queue-req: 0, timestamp: 2025-07-13T03:22:52.326006
-[2025-07-13 03:22:52] Decode batch. #running-req: 1, #token: 120, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.57, #queue-req: 0, timestamp: 2025-07-13T03:22:52.687767
-[2025-07-13 03:22:52] INFO:     127.0.0.1:44440 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:56] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 2, #token: 2, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:35:56.512498
+[2025-07-13 04:35:56] Decode batch. #running-req: 1, #token: 40, token usage: 0.00, cuda graph: False, gen throughput (token/s): 96.36, #queue-req: 0, timestamp: 2025-07-13T04:35:56.790072
+[2025-07-13 04:35:57] Decode batch. #running-req: 1, #token: 80, token usage: 0.00, cuda graph: False, gen throughput (token/s): 106.95, #queue-req: 0, timestamp: 2025-07-13T04:35:57.164097
+[2025-07-13 04:35:57] Decode batch. #running-req: 1, #token: 120, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.47, #queue-req: 0, timestamp: 2025-07-13T04:35:57.532863
+[2025-07-13 04:35:57] INFO:     127.0.0.1:43926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -940,25 +940,26 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:22:53] Prefill batch. #new-seq: 1, #new-token: 472, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:22:53.826552
-[2025-07-13 03:22:54] Decode batch. #running-req: 1, #token: 500, token usage: 0.02, cuda graph: False, gen throughput (token/s): 28.08, #queue-req: 0, timestamp: 2025-07-13T03:22:54.112502
-[2025-07-13 03:22:54] Decode batch. #running-req: 1, #token: 540, token usage: 0.03, cuda graph: False, gen throughput (token/s): 109.79, #queue-req: 0, timestamp: 2025-07-13T03:22:54.476827
-[2025-07-13 03:22:54] Decode batch. #running-req: 1, #token: 580, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.24, #queue-req: 0, timestamp: 2025-07-13T03:22:54.846386
-[2025-07-13 03:22:55] Decode batch. #running-req: 1, #token: 620, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.62, #queue-req: 0, timestamp: 2025-07-13T03:22:55.214638
-[2025-07-13 03:22:55] Decode batch. #running-req: 1, #token: 660, token usage: 0.03, cuda graph: False, gen throughput (token/s): 106.94, #queue-req: 0, timestamp: 2025-07-13T03:22:55.588677
-[2025-07-13 03:22:55] Decode batch. #running-req: 1, #token: 700, token usage: 0.03, cuda graph: False, gen throughput (token/s): 107.53, #queue-req: 0, timestamp: 2025-07-13T03:22:55.960682
-[2025-07-13 03:22:56] Decode batch. #running-req: 1, #token: 740, token usage: 0.04, cuda graph: False, gen throughput (token/s): 100.07, #queue-req: 0, timestamp: 2025-07-13T03:22:56.360397
-[2025-07-13 03:22:56] Decode batch. #running-req: 1, #token: 780, token usage: 0.04, cuda graph: False, gen throughput (token/s): 106.38, #queue-req: 0, timestamp: 2025-07-13T03:22:56.736401
-[2025-07-13 03:22:57] Decode batch. #running-req: 1, #token: 820, token usage: 0.04, cuda graph: False, gen throughput (token/s): 107.67, #queue-req: 0, timestamp: 2025-07-13T03:22:57.107898
-[2025-07-13 03:22:57] Decode batch. #running-req: 1, #token: 860, token usage: 0.04, cuda graph: False, gen throughput (token/s): 108.68, #queue-req: 0, timestamp: 2025-07-13T03:22:57.475939
-[2025-07-13 03:22:57] INFO:     127.0.0.1:44440 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-13 04:35:58] Prefill batch. #new-seq: 1, #new-token: 472, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:35:58.580871
+[2025-07-13 04:35:58] Decode batch. #running-req: 1, #token: 500, token usage: 0.02, cuda graph: False, gen throughput (token/s): 28.26, #queue-req: 0, timestamp: 2025-07-13T04:35:58.948118
+[2025-07-13 04:35:59] Decode batch. #running-req: 1, #token: 540, token usage: 0.03, cuda graph: False, gen throughput (token/s): 107.45, #queue-req: 0, timestamp: 2025-07-13T04:35:59.320372
+[2025-07-13 04:35:59] Decode batch. #running-req: 1, #token: 580, token usage: 0.03, cuda graph: False, gen throughput (token/s): 107.29, #queue-req: 0, timestamp: 2025-07-13T04:35:59.693211
+[2025-07-13 04:36:00] Decode batch. #running-req: 1, #token: 620, token usage: 0.03, cuda graph: False, gen throughput (token/s): 106.89, #queue-req: 0, timestamp: 2025-07-13T04:36:00.067418
+[2025-07-13 04:36:00] Decode batch. #running-req: 1, #token: 660, token usage: 0.03, cuda graph: False, gen throughput (token/s): 106.94, #queue-req: 0, timestamp: 2025-07-13T04:36:00.441471
+[2025-07-13 04:36:00] Decode batch. #running-req: 1, #token: 700, token usage: 0.03, cuda graph: False, gen throughput (token/s): 106.82, #queue-req: 0, timestamp: 2025-07-13T04:36:00.815940
+[2025-07-13 04:36:01] Decode batch. #running-req: 1, #token: 740, token usage: 0.04, cuda graph: False, gen throughput (token/s): 106.65, #queue-req: 0, timestamp: 2025-07-13T04:36:01.191003
+[2025-07-13 04:36:01] Decode batch. #running-req: 1, #token: 780, token usage: 0.04, cuda graph: False, gen throughput (token/s): 103.59, #queue-req: 0, timestamp: 2025-07-13T04:36:01.577134
+[2025-07-13 04:36:01] Decode batch. #running-req: 1, #token: 820, token usage: 0.04, cuda graph: False, gen throughput (token/s): 106.24, #queue-req: 0, timestamp: 2025-07-13T04:36:01.953630
+[2025-07-13 04:36:02] Decode batch. #running-req: 1, #token: 860, token usage: 0.04, cuda graph: False, gen throughput (token/s): 106.43, #queue-req: 0, timestamp: 2025-07-13T04:36:02.329481
+[2025-07-13 04:36:02] Decode batch. #running-req: 1, #token: 900, token usage: 0.04, cuda graph: False, gen throughput (token/s): 105.06, #queue-req: 0, timestamp: 2025-07-13T04:36:02.710210
+[2025-07-13 04:36:02] INFO:     127.0.0.1:43926 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>reasoing_content: Okay, so the user is in New York and wants the current date and time along with the weather. Let me break down how I should approach this. First, I need to figure out which functions to use. The user mentioned two functions: get_current_weather and get_current_date. <br><br>I'll start by calling get_current_date because that's part of the initial request. The function requires a timezone parameter. Since the user is in New York, I can assume the timezone is 'America/New_York'. I'll structure the function call accordingly, making sure to include the timezone in the parameters.<br><br>Next, I need to get the weather. For that, I'll use get_current_weather. The parameters required are city, state, and unit. The city is New York, the state is NY, and the unit should be Fahrenheit since the user didn't specify otherwise. I'll format this function call with those parameters.<br><br>I should make sure each function call is on its own line, using the specified format with start_tag and end_tag. Also, I need to include the sources in the response. For the date, it's from MDN, so I'll add that. For the weather, since it's based on an API, I'll note that the API is maintained by WeatherStack and the key is an example.<br><br>Putting it all together, I'll explain the steps clearly so the user understands how the information was obtained. I'll make sure to separate the date and weather responses so it's easy to read.<br><br><br>content: <function=get_current_date>{"timezone": "America/New_York"}</function>  <br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function>  <br><br>Sources:  <br>- Date: https://developer.mozilla.org/en-US/docs/Web/MDN/Reference/DOM/Date  <br>- Weather: Based on an API call using example API key (actual keys may vary)</strong></div>
+<strong style='color: #00008B;'>reasoing_content: Okay, the user is asking for the current date and time in New York and the weather there. I need to figure out how to get this information using the provided functions.<br><br>First, for the date and time, I should use the get_current_date function. The required parameter is timezone, which is 'America/New_York'. So I'll construct the function call with that parameter.<br><br>Next, for the weather, I need the city and state. The city is New York, but I have to get the state abbreviation. I think New York's state is NY. So I'll use get_current_weather with city 'New York' and state 'NY', and unit as 'fahrenheit' since the user might prefer that.<br><br>I should make sure each function call is separate and follows the required format. I'll write each function call on its own line with the correct parameters. Also, I need to add the sources where I got the information from, probably from the provided functions' descriptions.<br><br>Wait, the user mentioned they want the entire function call on one line with the format <function=...>{...}</function>. So I'll structure each function call accordingly, making sure to include all required parameters.<br><br>Let me double-check the parameters for each function to ensure everything is correct. For get_current_date, timezone is correct. For get_current_weather, city, state, and unit are all provided. <br><br>I think that's all. Now I'll format the responses as two separate function calls, each on its own line, with the parameters included in JSON format inside the function syntax.<br><br><br>content: To get the current date and time in New York, I will use the `get_current_date` function with the timezone parameter set to 'America/New_York'. <br><br><function=get_current_date>{"timezone": "America/New_York"}</function><br><br>To get the current weather in New York, I will use the `get_current_weather` function with the city parameter set to 'New York', the state parameter set to 'NY', and the unit parameter set to 'fahrenheit'. <br><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function></strong></div>
 </div>
 </section>
 </section>
@@ -1019,19 +1020,19 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:23:01] Prefill batch. #new-seq: 1, #new-token: 22, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:23:01.647234
-[2025-07-13 03:23:01] Decode batch. #running-req: 1, #token: 51, token usage: 0.00, cuda graph: False, gen throughput (token/s): 8.99, #queue-req: 0, timestamp: 2025-07-13T03:23:01.926702
-[2025-07-13 03:23:02] Decode batch. #running-req: 1, #token: 91, token usage: 0.00, cuda graph: False, gen throughput (token/s): 110.28, #queue-req: 0, timestamp: 2025-07-13T03:23:02.289410
-[2025-07-13 03:23:02] Decode batch. #running-req: 1, #token: 131, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.04, #queue-req: 0, timestamp: 2025-07-13T03:23:02.656243
-[2025-07-13 03:23:03] Decode batch. #running-req: 1, #token: 171, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.60, #queue-req: 0, timestamp: 2025-07-13T03:23:03.017913
-[2025-07-13 03:23:03] Decode batch. #running-req: 1, #token: 211, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.69, #queue-req: 0, timestamp: 2025-07-13T03:23:03.376035
-[2025-07-13 03:23:03] Decode batch. #running-req: 1, #token: 251, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.86, #queue-req: 0, timestamp: 2025-07-13T03:23:03.736849
-[2025-07-13 03:23:04] Decode batch. #running-req: 1, #token: 291, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.40, #queue-req: 0, timestamp: 2025-07-13T03:23:04.095930
-[2025-07-13 03:23:04] Decode batch. #running-req: 1, #token: 331, token usage: 0.02, cuda graph: False, gen throughput (token/s): 111.14, #queue-req: 0, timestamp: 2025-07-13T03:23:04.455833
-[2025-07-13 03:23:04] Decode batch. #running-req: 1, #token: 371, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.78, #queue-req: 0, timestamp: 2025-07-13T03:23:04.816905
-[2025-07-13 03:23:05] Decode batch. #running-req: 1, #token: 411, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.12, #queue-req: 0, timestamp: 2025-07-13T03:23:05.180137
-[2025-07-13 03:23:05] INFO:     127.0.0.1:50862 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-{&#39;text&#39;: &#39;Okay, so the user is asking for the information and population of the capital of France in JSON format. Let me break this down. First, I need to identify what the capital of France is. I know that Paris is the capital, so that\&#39;s straightforward. \n\nNext, I need to find the population. I remember that Paris is a major city, so its population is quite large. I think it\&#39;s over 3 million, but I\&#39;m not exactly sure of the exact number. Maybe I should double-check that. \n\nWait, I recall that the population figure can vary depending on the source and the year. The user didn\&#39;t specify a particular year, so I should probably go with the most recent estimate. I believe the population is around 3,500,000 as of 2023. \n\nNow, I need to structure this information into a JSON format. JSON typically uses key-value pairs, so I\&#39;ll create an object with keys like &#34;city&#34;, &#34;population&#34;, and maybe &#34;country&#34; since the user mentioned France. \n\nI should make sure the keys are in English to keep it clear. The city is Paris, the population is 3,500,000, and the country is France. I\&#39;ll format this into a JSON object, ensuring proper syntax with commas and quotation marks. \n\nI also need to present this in a way that\&#39;s easy to read, so I\&#39;ll put each key on a new line. That way, the user can quickly see the information without confusion. \n\nI wonder if the user needs more details, like the exact current population or additional statistics. But since they only asked for the capital and population, I\&#39;ll stick to that. \n\nLastly, I\&#39;ll make sure the JSON is valid by checking the syntax. No trailing commas, proper use of braces, and correct quotation marks. That should cover everything the user needs.\n&lt;/think&gt;{\n  &#34;name&#34;: &#34;Paris&#34;,\n  &#34;population&#34;: 3500000\n}&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;0f15acd7127b4fbc91c1ef881009adbf&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 23, &#39;completion_tokens&#39;: 412, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 3.751709222793579}}
+[2025-07-13 04:36:06] Prefill batch. #new-seq: 1, #new-token: 22, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:36:06.922899
+[2025-07-13 04:36:07] Decode batch. #running-req: 1, #token: 42, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.08, #queue-req: 0, timestamp: 2025-07-13T04:36:07.116521
+[2025-07-13 04:36:07] Decode batch. #running-req: 1, #token: 82, token usage: 0.00, cuda graph: False, gen throughput (token/s): 109.11, #queue-req: 0, timestamp: 2025-07-13T04:36:07.483111
+[2025-07-13 04:36:07] Decode batch. #running-req: 1, #token: 122, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.08, #queue-req: 0, timestamp: 2025-07-13T04:36:07.849803
+[2025-07-13 04:36:08] Decode batch. #running-req: 1, #token: 162, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.95, #queue-req: 0, timestamp: 2025-07-13T04:36:08.216939
+[2025-07-13 04:36:08] Decode batch. #running-req: 1, #token: 202, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.08, #queue-req: 0, timestamp: 2025-07-13T04:36:08.583635
+[2025-07-13 04:36:08] Decode batch. #running-req: 1, #token: 242, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.98, #queue-req: 0, timestamp: 2025-07-13T04:36:08.947351
+[2025-07-13 04:36:09] Decode batch. #running-req: 1, #token: 282, token usage: 0.01, cuda graph: False, gen throughput (token/s): 106.62, #queue-req: 0, timestamp: 2025-07-13T04:36:09.322539
+[2025-07-13 04:36:09] Decode batch. #running-req: 1, #token: 322, token usage: 0.02, cuda graph: False, gen throughput (token/s): 102.68, #queue-req: 0, timestamp: 2025-07-13T04:36:09.712076
+[2025-07-13 04:36:10] Decode batch. #running-req: 1, #token: 362, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.04, #queue-req: 0, timestamp: 2025-07-13T04:36:10.082319
+[2025-07-13 04:36:10] Decode batch. #running-req: 1, #token: 402, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.50, #queue-req: 0, timestamp: 2025-07-13T04:36:10.450980
+[2025-07-13 04:36:10] INFO:     127.0.0.1:54596 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+{&#39;text&#39;: &#39;Okay, so the user is asking for the information and population of the capital of France in JSON format. Let me break this down. First, I need to identify what the capital of France is. I know that Paris is the capital, so that\&#39;s straightforward. \n\nNext, I need to find the population. I remember that Paris is a major city, so its population is quite large. I think it\&#39;s over 3 million, but I\&#39;m not exactly sure of the exact number. Maybe I should double-check that. \n\nWait, I recall that the population figure can vary depending on the source and the year. The user didn\&#39;t specify a particular year, so I should probably go with the most recent estimate. I believe the population is around 3,500,000 as of 2023. \n\nNow, I need to structure this information into a JSON format. JSON typically uses key-value pairs, so I\&#39;ll create an object with keys like &#34;city&#34;, &#34;population&#34;, and maybe &#34;country&#34; since the user mentioned France. \n\nI should make sure the keys are in English to keep it clear. The city is Paris, the population is 3,500,000, and the country is France. I\&#39;ll format this into a JSON object, ensuring proper syntax with commas and quotation marks. \n\nI also need to present this in a way that\&#39;s easy to read, so I\&#39;ll put each key on a new line. That way, the user can quickly see the information without confusion. \n\nI wonder if the user needs more details, like the exact current population or additional statistics. But since they only asked for the capital and population, I\&#39;ll stick to that. \n\nLastly, I\&#39;ll make sure the JSON is valid by checking the syntax. No trailing commas, proper use of braces, and correct quotation marks. That should cover everything the user needs.\n&lt;/think&gt;{\n  &#34;name&#34;: &#34;Paris&#34;,\n  &#34;population&#34;: 3500000\n}&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;3576bb5a7cd94c46921d92b36ad9fb4d&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 23, &#39;completion_tokens&#39;: 412, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 3.8341023921966553}}
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1081,25 +1082,25 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:23:05] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 22, #token: 22, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:23:05.408108
-[2025-07-13 03:23:05] Decode batch. #running-req: 1, #token: 39, token usage: 0.00, cuda graph: False, gen throughput (token/s): 103.92, #queue-req: 0, timestamp: 2025-07-13T03:23:05.565044
-[2025-07-13 03:23:05] Decode batch. #running-req: 1, #token: 79, token usage: 0.00, cuda graph: False, gen throughput (token/s): 109.82, #queue-req: 0, timestamp: 2025-07-13T03:23:05.929282
-[2025-07-13 03:23:06] Decode batch. #running-req: 1, #token: 119, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.02, #queue-req: 0, timestamp: 2025-07-13T03:23:06.292869
-[2025-07-13 03:23:06] Decode batch. #running-req: 1, #token: 159, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.04, #queue-req: 0, timestamp: 2025-07-13T03:23:06.659724
-[2025-07-13 03:23:07] Decode batch. #running-req: 1, #token: 199, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.55, #queue-req: 0, timestamp: 2025-07-13T03:23:07.018306
-[2025-07-13 03:23:07] Decode batch. #running-req: 1, #token: 239, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.45, #queue-req: 0, timestamp: 2025-07-13T03:23:07.377226
-[2025-07-13 03:23:07] Decode batch. #running-req: 1, #token: 279, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.84, #queue-req: 0, timestamp: 2025-07-13T03:23:07.734869
-[2025-07-13 03:23:08] Decode batch. #running-req: 1, #token: 319, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.78, #queue-req: 0, timestamp: 2025-07-13T03:23:08.095961
-[2025-07-13 03:23:08] Decode batch. #running-req: 1, #token: 359, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.63, #queue-req: 0, timestamp: 2025-07-13T03:23:08.457517
-[2025-07-13 03:23:08] Decode batch. #running-req: 1, #token: 399, token usage: 0.02, cuda graph: False, gen throughput (token/s): 109.98, #queue-req: 0, timestamp: 2025-07-13T03:23:08.821220
-[2025-07-13 03:23:08] INFO:     127.0.0.1:50872 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-07-13 04:36:10] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 22, #token: 22, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:36:10.766622
+[2025-07-13 04:36:10] Decode batch. #running-req: 1, #token: 30, token usage: 0.00, cuda graph: False, gen throughput (token/s): 102.28, #queue-req: 0, timestamp: 2025-07-13T04:36:10.842078
+[2025-07-13 04:36:11] Decode batch. #running-req: 1, #token: 70, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.65, #queue-req: 0, timestamp: 2025-07-13T04:36:11.210239
+[2025-07-13 04:36:11] Decode batch. #running-req: 1, #token: 110, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.51, #queue-req: 0, timestamp: 2025-07-13T04:36:11.578859
+[2025-07-13 04:36:11] Decode batch. #running-req: 1, #token: 150, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.99, #queue-req: 0, timestamp: 2025-07-13T04:36:11.945853
+[2025-07-13 04:36:12] Decode batch. #running-req: 1, #token: 190, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.73, #queue-req: 0, timestamp: 2025-07-13T04:36:12.313728
+[2025-07-13 04:36:12] Decode batch. #running-req: 1, #token: 230, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.52, #queue-req: 0, timestamp: 2025-07-13T04:36:12.685746
+[2025-07-13 04:36:13] Decode batch. #running-req: 1, #token: 270, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.34, #queue-req: 0, timestamp: 2025-07-13T04:36:13.051567
+[2025-07-13 04:36:13] Decode batch. #running-req: 1, #token: 310, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.88, #queue-req: 0, timestamp: 2025-07-13T04:36:13.418935
+[2025-07-13 04:36:13] Decode batch. #running-req: 1, #token: 350, token usage: 0.02, cuda graph: False, gen throughput (token/s): 103.19, #queue-req: 0, timestamp: 2025-07-13T04:36:13.806587
+[2025-07-13 04:36:14] Decode batch. #running-req: 1, #token: 390, token usage: 0.02, cuda graph: False, gen throughput (token/s): 103.24, #queue-req: 0, timestamp: 2025-07-13T04:36:14.194033
+[2025-07-13 04:36:14] INFO:     127.0.0.1:54608 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'Okay, so the user is asking for the information and population of the capital of France in JSON format. Let me break this down.\n\nFirst, I need to identify the capital of France. I know that Paris is the capital, so that\'s straightforward. Now, I should find the most recent population data. I remember that the population of Paris has been growing, but I\'m not sure of the exact number. I think it\'s around 2 million, but I should verify that.\n\nI\'ll check a reliable source, maybe the official Paris Municipality website or a recent census. Let me see... Yes, according to the latest data, the population is approximately 2,174,300 as of 2023. That seems accurate.\n\nNext, I need to structure this information into a JSON format. JSON requires key-value pairs, so I\'ll create an object with keys like "city", "population", and "country". The city is Paris, the population is the number I found, and the country is France.\n\nI should make sure the JSON syntax is correct. Each key should be in quotes, and the values as well. The entire structure should be enclosed in curly braces. I\'ll format it properly to avoid any syntax errors.\n\nPutting it all together, the JSON object will have the city, population, and country. I\'ll present this to the user, making sure it\'s clear and easy to understand. I don\'t think the user needs anything more detailed, so this should suffice.\n\nI should also consider if the user might need additional information, like the area or age distribution, but since they only asked for population, I\'ll stick to that. Maybe they\'ll ask for more details later, but for now, this response should be helpful.\n</think>{\n  "name": "Paris",\n  "population": 2174300\n}', 'meta_info': {'id': '8f4d416a70734a0f94ed4ff927eba989', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 23, 'completion_tokens': 384, 'cached_tokens': 22, 'e2e_latency': 3.487582206726074}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'Okay, so the user is asking for the information and population of the capital of France in JSON format. Let me break this down.\n\nFirst, I need to identify the capital of France. I know that Paris is the capital, so that\'s straightforward. Now, I should find the most recent population data. I remember that the population of Paris has been growing, but I\'m not sure of the exact number. I think it\'s around 2 million, but I should verify that.\n\nI\'ll check a reliable source, maybe the official Paris Municipality website or a recent census. Let me see... Yes, according to the latest data, the population is approximately 2,174,300 as of 2023. That seems accurate.\n\nNext, I need to structure this information into a JSON format. JSON requires key-value pairs, so I\'ll create an object with keys like "city", "population", and "country". The city is Paris, the population is the number I found, and the country is France.\n\nI should make sure the JSON syntax is correct. Each key should be in quotes, and the values as well. The entire structure should be enclosed in curly braces. I\'ll format it properly to avoid any syntax errors.\n\nPutting it all together, the JSON object will have the city, population, and country. I\'ll present this to the user, making sure it\'s clear and easy to understand. I don\'t think the user needs anything more detailed, so this should suffice.\n\nI should also consider if the user might need additional information, like the area or age distribution, but since they only asked for population, I\'ll stick to that. Maybe they\'ll ask for more details later, but for now, this response should be helpful.\n</think>{\n  "name": "Paris",\n  "population": 2174300\n}', 'meta_info': {'id': 'c78224158230401fbbea25a27221a18f', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 23, 'completion_tokens': 384, 'cached_tokens': 22, 'e2e_latency': 3.5889172554016113}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1138,16 +1139,16 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:23:08] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:23:08.905343
-[2025-07-13 03:23:08] Prefill batch. #new-seq: 3, #new-token: 3, #cached-token: 30, #token: 10, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:23:08.930253
-[2025-07-13 03:23:09] Decode batch. #running-req: 3, #token: 104, token usage: 0.01, cuda graph: False, gen throughput (token/s): 198.33, #queue-req: 0, timestamp: 2025-07-13T03:23:09.325429
-[2025-07-13 03:23:09] Decode batch. #running-req: 3, #token: 224, token usage: 0.01, cuda graph: False, gen throughput (token/s): 319.39, #queue-req: 0, timestamp: 2025-07-13T03:23:09.701139
-[2025-07-13 03:23:10] Decode batch. #running-req: 3, #token: 344, token usage: 0.02, cuda graph: False, gen throughput (token/s): 320.44, #queue-req: 0, timestamp: 2025-07-13T03:23:10.075628
-[2025-07-13 03:23:10] Decode batch. #running-req: 3, #token: 464, token usage: 0.02, cuda graph: False, gen throughput (token/s): 317.14, #queue-req: 0, timestamp: 2025-07-13T03:23:10.454010
-[2025-07-13 03:23:10] Decode batch. #running-req: 3, #token: 584, token usage: 0.03, cuda graph: False, gen throughput (token/s): 318.30, #queue-req: 0, timestamp: 2025-07-13T03:23:10.831013
-[2025-07-13 03:23:11] Decode batch. #running-req: 3, #token: 704, token usage: 0.03, cuda graph: False, gen throughput (token/s): 320.21, #queue-req: 0, timestamp: 2025-07-13T03:23:11.205767
-[2025-07-13 03:23:11] INFO:     127.0.0.1:48772 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[{&#39;text&#39;: &#34;\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Damme Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nPlease provide the information in a clear and concise manner, using bullet points for the location and key landmarks.\n\nSure, here&#39;s the information about the capital of France presented in a clear and concise manner with bullet points:\n\n- **Capital of France**: Paris\n- **Location**: Northern part of France, along the Seine River\n- **Key Landmarks**:\n  - Eiffel Tower\n  - Louvre Museum\n  - Notre-Dame Cathedral\n\nThis format organizes the information neatly, making it easy to read and understand.&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;3b48ab6973e74effb20191539f9bf70e&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 254, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.5191736221313477}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Damme Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nPlease provide the information in a clear and concise manner, using bullet points for the location and key landmarks.\n\nSure, here&#39;s the information about the capital of France presented in a clear and concise manner with bullet points:\n\n- **Capital of France**: Paris\n- **Location**: Northern part of France, along the Seine River\n- **Key Landmarks**:\n  - Eiffel Tower\n  - Louvre Museum\n  - Notre-Dame Cathedral\n\nThis format organizes the information neatly, making it easy to read and understand.&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;b7b8b65267944519a565e876e07ed0b2&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 254, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.5191805362701416}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Damme Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nPlease provide the information in a clear and concise manner, using bullet points for the location and key landmarks.\n\nSure, here&#39;s the information about the capital of France presented in a clear and concise manner with bullet points:\n\n- **Capital of France**: Paris\n- **Location**: Northern part of France, along the Seine River\n- **Key Landmarks**:\n  - Eiffel Tower\n  - Louvre Museum\n  - Notre-Dame Cathedral\n\nThis format organizes the information neatly, making it easy to read and understand.&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;7d3759b0fa5e4cb7a0f29972c9ca701c&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 254, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.519184112548828}}]
+[2025-07-13 04:36:14] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:36:14.366491
+[2025-07-13 04:36:14] Prefill batch. #new-seq: 3, #new-token: 3, #cached-token: 30, #token: 10, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:36:14.391816
+[2025-07-13 04:36:14] Decode batch. #running-req: 3, #token: 77, token usage: 0.00, cuda graph: False, gen throughput (token/s): 131.34, #queue-req: 0, timestamp: 2025-07-13T04:36:14.818373
+[2025-07-13 04:36:15] Decode batch. #running-req: 3, #token: 197, token usage: 0.01, cuda graph: False, gen throughput (token/s): 306.44, #queue-req: 0, timestamp: 2025-07-13T04:36:15.209969
+[2025-07-13 04:36:15] Decode batch. #running-req: 3, #token: 317, token usage: 0.02, cuda graph: False, gen throughput (token/s): 307.39, #queue-req: 0, timestamp: 2025-07-13T04:36:15.600353
+[2025-07-13 04:36:15] Decode batch. #running-req: 3, #token: 437, token usage: 0.02, cuda graph: False, gen throughput (token/s): 306.65, #queue-req: 0, timestamp: 2025-07-13T04:36:15.991668
+[2025-07-13 04:36:16] Decode batch. #running-req: 3, #token: 557, token usage: 0.03, cuda graph: False, gen throughput (token/s): 307.50, #queue-req: 0, timestamp: 2025-07-13T04:36:16.381933
+[2025-07-13 04:36:16] Decode batch. #running-req: 3, #token: 677, token usage: 0.03, cuda graph: False, gen throughput (token/s): 308.30, #queue-req: 0, timestamp: 2025-07-13T04:36:16.771172
+[2025-07-13 04:36:17] INFO:     127.0.0.1:59878 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[{&#39;text&#39;: &#34;\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Damme Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nPlease provide the information in a clear and concise manner, using bullet points for the location and key landmarks.\n\nSure, here&#39;s the information about the capital of France presented in a clear and concise manner with bullet points:\n\n- **Capital of France**: Paris\n- **Location**: Northern part of France, along the Seine River\n- **Key Landmarks**:\n  - Eiffel Tower\n  - Louvre Museum\n  - Notre-Dame Cathedral\n\nThis format organizes the information neatly, making it easy to read and understand.&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;98a083132b0e47e784b0595538447955&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 254, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.719484806060791}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Damme Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nPlease provide the information in a clear and concise manner, using bullet points for the location and key landmarks.\n\nSure, here&#39;s the information about the capital of France presented in a clear and concise manner with bullet points:\n\n- **Capital of France**: Paris\n- **Location**: Northern part of France, along the Seine River\n- **Key Landmarks**:\n  - Eiffel Tower\n  - Louvre Museum\n  - Notre-Dame Cathedral\n\nThis format organizes the information neatly, making it easy to read and understand.&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;bce6da380d144a52a4f2d31aeb98181b&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 254, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.7194907665252686}}, {&#39;text&#39;: &#34;\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nThe capital of France is Paris. It is located in the northern part of the country, along the Seine River. Paris is known for its rich history, art, and landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Damme Cathedral. It is a major city in France and has a significant cultural and economic impact.\n\nPlease provide the information in a clear and concise manner, using bullet points for the location and key landmarks.\n\nSure, here&#39;s the information about the capital of France presented in a clear and concise manner with bullet points:\n\n- **Capital of France**: Paris\n- **Location**: Northern part of France, along the Seine River\n- **Key Landmarks**:\n  - Eiffel Tower\n  - Louvre Museum\n  - Notre-Dame Cathedral\n\nThis format organizes the information neatly, making it easy to read and understand.&#34;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;fb9acde7143e4a44941723960682ebb3&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;stop&#39;, &#39;matched&#39;: 151643}, &#39;prompt_tokens&#39;: 11, &#39;completion_tokens&#39;: 254, &#39;cached_tokens&#39;: 10, &#39;e2e_latency&#39;: 2.719494104385376}}]
 </pre></div></div>
 </div>
 </section>
@@ -1177,60 +1178,61 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:23:11] Prefill batch. #new-seq: 1, #new-token: 5, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:23:11.432301
-[2025-07-13 03:23:11] Decode batch. #running-req: 1, #token: 23, token usage: 0.00, cuda graph: False, gen throughput (token/s): 224.60, #queue-req: 0, timestamp: 2025-07-13T03:23:11.597575
-[2025-07-13 03:23:11] Decode batch. #running-req: 1, #token: 63, token usage: 0.00, cuda graph: False, gen throughput (token/s): 111.43, #queue-req: 0, timestamp: 2025-07-13T03:23:11.956551
-[2025-07-13 03:23:12] Decode batch. #running-req: 1, #token: 103, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.26, #queue-req: 0, timestamp: 2025-07-13T03:23:12.319327
-[2025-07-13 03:23:12] Decode batch. #running-req: 1, #token: 143, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.91, #queue-req: 0, timestamp: 2025-07-13T03:23:12.676749
-[2025-07-13 03:23:13] Decode batch. #running-req: 1, #token: 183, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.87, #queue-req: 0, timestamp: 2025-07-13T03:23:13.034295
-[2025-07-13 03:23:13] Decode batch. #running-req: 1, #token: 223, token usage: 0.01, cuda graph: False, gen throughput (token/s): 111.72, #queue-req: 0, timestamp: 2025-07-13T03:23:13.392330
-[2025-07-13 03:23:13] Decode batch. #running-req: 1, #token: 263, token usage: 0.01, cuda graph: False, gen throughput (token/s): 112.32, #queue-req: 0, timestamp: 2025-07-13T03:23:13.748445
-[2025-07-13 03:23:14] Decode batch. #running-req: 1, #token: 303, token usage: 0.01, cuda graph: False, gen throughput (token/s): 110.16, #queue-req: 0, timestamp: 2025-07-13T03:23:14.111569
-[2025-07-13 03:23:14] Decode batch. #running-req: 1, #token: 343, token usage: 0.02, cuda graph: False, gen throughput (token/s): 109.65, #queue-req: 0, timestamp: 2025-07-13T03:23:14.476390
-[2025-07-13 03:23:14] Decode batch. #running-req: 1, #token: 383, token usage: 0.02, cuda graph: False, gen throughput (token/s): 109.18, #queue-req: 0, timestamp: 2025-07-13T03:23:14.842769
-[2025-07-13 03:23:15] Decode batch. #running-req: 1, #token: 423, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.14, #queue-req: 0, timestamp: 2025-07-13T03:23:15.205952
-[2025-07-13 03:23:15] Decode batch. #running-req: 1, #token: 463, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.34, #queue-req: 0, timestamp: 2025-07-13T03:23:15.568455
-[2025-07-13 03:23:15] Decode batch. #running-req: 1, #token: 503, token usage: 0.02, cuda graph: False, gen throughput (token/s): 110.85, #queue-req: 0, timestamp: 2025-07-13T03:23:15.929324
-[2025-07-13 03:23:16] Decode batch. #running-req: 1, #token: 543, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.96, #queue-req: 0, timestamp: 2025-07-13T03:23:16.296421
-[2025-07-13 03:23:16] Decode batch. #running-req: 1, #token: 583, token usage: 0.03, cuda graph: False, gen throughput (token/s): 107.69, #queue-req: 0, timestamp: 2025-07-13T03:23:16.667869
-[2025-07-13 03:23:17] Decode batch. #running-req: 1, #token: 623, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.51, #queue-req: 0, timestamp: 2025-07-13T03:23:17.036504
-[2025-07-13 03:23:17] Decode batch. #running-req: 1, #token: 663, token usage: 0.03, cuda graph: False, gen throughput (token/s): 107.34, #queue-req: 0, timestamp: 2025-07-13T03:23:17.409149
-[2025-07-13 03:23:17] Decode batch. #running-req: 1, #token: 703, token usage: 0.03, cuda graph: False, gen throughput (token/s): 108.30, #queue-req: 0, timestamp: 2025-07-13T03:23:17.778498
-[2025-07-13 03:23:18] Decode batch. #running-req: 1, #token: 743, token usage: 0.04, cuda graph: False, gen throughput (token/s): 108.49, #queue-req: 0, timestamp: 2025-07-13T03:23:18.147200
-[2025-07-13 03:23:18] Decode batch. #running-req: 1, #token: 783, token usage: 0.04, cuda graph: False, gen throughput (token/s): 108.06, #queue-req: 0, timestamp: 2025-07-13T03:23:18.517367
-[2025-07-13 03:23:18] Decode batch. #running-req: 1, #token: 823, token usage: 0.04, cuda graph: False, gen throughput (token/s): 108.00, #queue-req: 0, timestamp: 2025-07-13T03:23:18.887740
-[2025-07-13 03:23:19] Decode batch. #running-req: 1, #token: 863, token usage: 0.04, cuda graph: False, gen throughput (token/s): 107.64, #queue-req: 0, timestamp: 2025-07-13T03:23:19.259341
-[2025-07-13 03:23:19] Decode batch. #running-req: 1, #token: 903, token usage: 0.04, cuda graph: False, gen throughput (token/s): 108.58, #queue-req: 0, timestamp: 2025-07-13T03:23:19.627732
-[2025-07-13 03:23:19] Decode batch. #running-req: 1, #token: 943, token usage: 0.05, cuda graph: False, gen throughput (token/s): 107.98, #queue-req: 0, timestamp: 2025-07-13T03:23:19.998166
-[2025-07-13 03:23:20] Decode batch. #running-req: 1, #token: 983, token usage: 0.05, cuda graph: False, gen throughput (token/s): 109.35, #queue-req: 0, timestamp: 2025-07-13T03:23:20.363973
-[2025-07-13 03:23:20] Decode batch. #running-req: 1, #token: 1023, token usage: 0.05, cuda graph: False, gen throughput (token/s): 109.44, #queue-req: 0, timestamp: 2025-07-13T03:23:20.729458
-[2025-07-13 03:23:21] Decode batch. #running-req: 1, #token: 1063, token usage: 0.05, cuda graph: False, gen throughput (token/s): 109.87, #queue-req: 0, timestamp: 2025-07-13T03:23:21.093521
-[2025-07-13 03:23:21] Decode batch. #running-req: 1, #token: 1103, token usage: 0.05, cuda graph: False, gen throughput (token/s): 109.58, #queue-req: 0, timestamp: 2025-07-13T03:23:21.458550
-[2025-07-13 03:23:21] Decode batch. #running-req: 1, #token: 1143, token usage: 0.06, cuda graph: False, gen throughput (token/s): 109.73, #queue-req: 0, timestamp: 2025-07-13T03:23:21.823071
-[2025-07-13 03:23:22] Decode batch. #running-req: 1, #token: 1183, token usage: 0.06, cuda graph: False, gen throughput (token/s): 110.35, #queue-req: 0, timestamp: 2025-07-13T03:23:22.185539
-[2025-07-13 03:23:22] Decode batch. #running-req: 1, #token: 1223, token usage: 0.06, cuda graph: False, gen throughput (token/s): 111.28, #queue-req: 0, timestamp: 2025-07-13T03:23:22.544982
-[2025-07-13 03:23:22] Decode batch. #running-req: 1, #token: 1263, token usage: 0.06, cuda graph: False, gen throughput (token/s): 110.21, #queue-req: 0, timestamp: 2025-07-13T03:23:22.907944
-[2025-07-13 03:23:23] Decode batch. #running-req: 1, #token: 1303, token usage: 0.06, cuda graph: False, gen throughput (token/s): 103.51, #queue-req: 0, timestamp: 2025-07-13T03:23:23.294392
-[2025-07-13 03:23:23] Decode batch. #running-req: 1, #token: 1343, token usage: 0.07, cuda graph: False, gen throughput (token/s): 87.70, #queue-req: 0, timestamp: 2025-07-13T03:23:23.750472
-[2025-07-13 03:23:24] Decode batch. #running-req: 1, #token: 1383, token usage: 0.07, cuda graph: False, gen throughput (token/s): 93.51, #queue-req: 0, timestamp: 2025-07-13T03:23:24.178239
-[2025-07-13 03:23:24] Decode batch. #running-req: 1, #token: 1423, token usage: 0.07, cuda graph: False, gen throughput (token/s): 111.40, #queue-req: 0, timestamp: 2025-07-13T03:23:24.537295
-[2025-07-13 03:23:24] Decode batch. #running-req: 1, #token: 1463, token usage: 0.07, cuda graph: False, gen throughput (token/s): 107.80, #queue-req: 0, timestamp: 2025-07-13T03:23:24.908367
-[2025-07-13 03:23:25] Decode batch. #running-req: 1, #token: 1503, token usage: 0.07, cuda graph: False, gen throughput (token/s): 111.15, #queue-req: 0, timestamp: 2025-07-13T03:23:25.268245
-[2025-07-13 03:23:25] Decode batch. #running-req: 1, #token: 1543, token usage: 0.08, cuda graph: False, gen throughput (token/s): 111.21, #queue-req: 0, timestamp: 2025-07-13T03:23:25.627917
-[2025-07-13 03:23:26] Decode batch. #running-req: 1, #token: 1583, token usage: 0.08, cuda graph: False, gen throughput (token/s): 102.70, #queue-req: 0, timestamp: 2025-07-13T03:23:26.017413
-[2025-07-13 03:23:26] Decode batch. #running-req: 1, #token: 1623, token usage: 0.08, cuda graph: False, gen throughput (token/s): 99.58, #queue-req: 0, timestamp: 2025-07-13T03:23:26.419081
-[2025-07-13 03:23:26] Decode batch. #running-req: 1, #token: 1663, token usage: 0.08, cuda graph: False, gen throughput (token/s): 100.14, #queue-req: 0, timestamp: 2025-07-13T03:23:26.818530
-[2025-07-13 03:23:27] Decode batch. #running-req: 1, #token: 1703, token usage: 0.08, cuda graph: False, gen throughput (token/s): 98.17, #queue-req: 0, timestamp: 2025-07-13T03:23:27.225970
-[2025-07-13 03:23:27] Decode batch. #running-req: 1, #token: 1743, token usage: 0.09, cuda graph: False, gen throughput (token/s): 104.62, #queue-req: 0, timestamp: 2025-07-13T03:23:27.608311
-[2025-07-13 03:23:27] Decode batch. #running-req: 1, #token: 1783, token usage: 0.09, cuda graph: False, gen throughput (token/s): 104.32, #queue-req: 0, timestamp: 2025-07-13T03:23:27.991726
-[2025-07-13 03:23:28] Decode batch. #running-req: 1, #token: 1823, token usage: 0.09, cuda graph: False, gen throughput (token/s): 104.87, #queue-req: 0, timestamp: 2025-07-13T03:23:28.373143
-[2025-07-13 03:23:28] Decode batch. #running-req: 1, #token: 1863, token usage: 0.09, cuda graph: False, gen throughput (token/s): 104.50, #queue-req: 0, timestamp: 2025-07-13T03:23:28.755932
-[2025-07-13 03:23:29] Decode batch. #running-req: 1, #token: 1903, token usage: 0.09, cuda graph: False, gen throughput (token/s): 96.26, #queue-req: 0, timestamp: 2025-07-13T03:23:29.171455
-[2025-07-13 03:23:29] Decode batch. #running-req: 1, #token: 1943, token usage: 0.09, cuda graph: False, gen throughput (token/s): 99.07, #queue-req: 0, timestamp: 2025-07-13T03:23:29.575229
-[2025-07-13 03:23:29] Decode batch. #running-req: 1, #token: 1983, token usage: 0.10, cuda graph: False, gen throughput (token/s): 99.34, #queue-req: 0, timestamp: 2025-07-13T03:23:29.977895
-[2025-07-13 03:23:30] Decode batch. #running-req: 1, #token: 2023, token usage: 0.10, cuda graph: False, gen throughput (token/s): 99.60, #queue-req: 0, timestamp: 2025-07-13T03:23:30.379518
-[2025-07-13 03:23:30] INFO:     127.0.0.1:48786 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-{&#39;text&#39;: &#39; France, and the \n\\( n \\)  \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\(&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;8a24863862a14112b748c114e5f0decf&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;length&#39;, &#39;length&#39;: 2048}, &#39;prompt_tokens&#39;: 6, &#39;completion_tokens&#39;: 2048, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 19.257022380828857}}
+[2025-07-13 04:36:17] Prefill batch. #new-seq: 1, #new-token: 5, #cached-token: 1, #token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:36:17.093913
+[2025-07-13 04:36:17] Decode batch. #running-req: 1, #token: 14, token usage: 0.00, cuda graph: False, gen throughput (token/s): 259.25, #queue-req: 0, timestamp: 2025-07-13T04:36:17.180021
+[2025-07-13 04:36:17] Decode batch. #running-req: 1, #token: 54, token usage: 0.00, cuda graph: False, gen throughput (token/s): 107.42, #queue-req: 0, timestamp: 2025-07-13T04:36:17.552396
+[2025-07-13 04:36:17] Decode batch. #running-req: 1, #token: 94, token usage: 0.00, cuda graph: False, gen throughput (token/s): 107.20, #queue-req: 0, timestamp: 2025-07-13T04:36:17.925531
+[2025-07-13 04:36:18] Decode batch. #running-req: 1, #token: 134, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.44, #queue-req: 0, timestamp: 2025-07-13T04:36:18.297835
+[2025-07-13 04:36:18] Decode batch. #running-req: 1, #token: 174, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.30, #queue-req: 0, timestamp: 2025-07-13T04:36:18.667170
+[2025-07-13 04:36:19] Decode batch. #running-req: 1, #token: 214, token usage: 0.01, cuda graph: False, gen throughput (token/s): 106.46, #queue-req: 0, timestamp: 2025-07-13T04:36:19.042896
+[2025-07-13 04:36:19] Decode batch. #running-req: 1, #token: 254, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.82, #queue-req: 0, timestamp: 2025-07-13T04:36:19.413874
+[2025-07-13 04:36:19] Decode batch. #running-req: 1, #token: 294, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.73, #queue-req: 0, timestamp: 2025-07-13T04:36:19.785190
+[2025-07-13 04:36:20] Decode batch. #running-req: 1, #token: 334, token usage: 0.02, cuda graph: False, gen throughput (token/s): 106.87, #queue-req: 0, timestamp: 2025-07-13T04:36:20.159446
+[2025-07-13 04:36:20] Decode batch. #running-req: 1, #token: 374, token usage: 0.02, cuda graph: False, gen throughput (token/s): 107.16, #queue-req: 0, timestamp: 2025-07-13T04:36:20.532733
+[2025-07-13 04:36:20] Decode batch. #running-req: 1, #token: 414, token usage: 0.02, cuda graph: False, gen throughput (token/s): 106.90, #queue-req: 0, timestamp: 2025-07-13T04:36:20.906885
+[2025-07-13 04:36:21] Decode batch. #running-req: 1, #token: 454, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.26, #queue-req: 0, timestamp: 2025-07-13T04:36:21.276381
+[2025-07-13 04:36:21] Decode batch. #running-req: 1, #token: 494, token usage: 0.02, cuda graph: False, gen throughput (token/s): 108.02, #queue-req: 0, timestamp: 2025-07-13T04:36:21.646701
+[2025-07-13 04:36:22] Decode batch. #running-req: 1, #token: 534, token usage: 0.03, cuda graph: False, gen throughput (token/s): 104.80, #queue-req: 0, timestamp: 2025-07-13T04:36:22.028355
+[2025-07-13 04:36:22] Decode batch. #running-req: 1, #token: 574, token usage: 0.03, cuda graph: False, gen throughput (token/s): 101.47, #queue-req: 0, timestamp: 2025-07-13T04:36:22.422571
+[2025-07-13 04:36:22] Decode batch. #running-req: 1, #token: 614, token usage: 0.03, cuda graph: False, gen throughput (token/s): 102.02, #queue-req: 0, timestamp: 2025-07-13T04:36:22.814654
+[2025-07-13 04:36:23] Decode batch. #running-req: 1, #token: 654, token usage: 0.03, cuda graph: False, gen throughput (token/s): 102.39, #queue-req: 0, timestamp: 2025-07-13T04:36:23.205714
+[2025-07-13 04:36:23] Decode batch. #running-req: 1, #token: 694, token usage: 0.03, cuda graph: False, gen throughput (token/s): 101.47, #queue-req: 0, timestamp: 2025-07-13T04:36:23.599532
+[2025-07-13 04:36:23] Decode batch. #running-req: 1, #token: 734, token usage: 0.04, cuda graph: False, gen throughput (token/s): 104.55, #queue-req: 0, timestamp: 2025-07-13T04:36:23.982111
+[2025-07-13 04:36:24] Decode batch. #running-req: 1, #token: 774, token usage: 0.04, cuda graph: False, gen throughput (token/s): 103.71, #queue-req: 0, timestamp: 2025-07-13T04:36:24.367805
+[2025-07-13 04:36:24] Decode batch. #running-req: 1, #token: 814, token usage: 0.04, cuda graph: False, gen throughput (token/s): 101.73, #queue-req: 0, timestamp: 2025-07-13T04:36:24.760991
+[2025-07-13 04:36:25] Decode batch. #running-req: 1, #token: 854, token usage: 0.04, cuda graph: False, gen throughput (token/s): 94.36, #queue-req: 0, timestamp: 2025-07-13T04:36:25.184928
+[2025-07-13 04:36:25] Decode batch. #running-req: 1, #token: 894, token usage: 0.04, cuda graph: False, gen throughput (token/s): 95.84, #queue-req: 0, timestamp: 2025-07-13T04:36:25.602280
+[2025-07-13 04:36:25] Decode batch. #running-req: 1, #token: 934, token usage: 0.05, cuda graph: False, gen throughput (token/s): 102.26, #queue-req: 0, timestamp: 2025-07-13T04:36:25.993455
+[2025-07-13 04:36:26] Decode batch. #running-req: 1, #token: 974, token usage: 0.05, cuda graph: False, gen throughput (token/s): 105.13, #queue-req: 0, timestamp: 2025-07-13T04:36:26.373925
+[2025-07-13 04:36:26] Decode batch. #running-req: 1, #token: 1014, token usage: 0.05, cuda graph: False, gen throughput (token/s): 105.61, #queue-req: 0, timestamp: 2025-07-13T04:36:26.752682
+[2025-07-13 04:36:27] Decode batch. #running-req: 1, #token: 1054, token usage: 0.05, cuda graph: False, gen throughput (token/s): 98.55, #queue-req: 0, timestamp: 2025-07-13T04:36:27.158546
+[2025-07-13 04:36:27] Decode batch. #running-req: 1, #token: 1094, token usage: 0.05, cuda graph: False, gen throughput (token/s): 97.36, #queue-req: 0, timestamp: 2025-07-13T04:36:27.569416
+[2025-07-13 04:36:27] Decode batch. #running-req: 1, #token: 1134, token usage: 0.06, cuda graph: False, gen throughput (token/s): 96.76, #queue-req: 0, timestamp: 2025-07-13T04:36:27.982814
+[2025-07-13 04:36:28] Decode batch. #running-req: 1, #token: 1174, token usage: 0.06, cuda graph: False, gen throughput (token/s): 100.59, #queue-req: 0, timestamp: 2025-07-13T04:36:28.380497
+[2025-07-13 04:36:28] Decode batch. #running-req: 1, #token: 1214, token usage: 0.06, cuda graph: False, gen throughput (token/s): 101.88, #queue-req: 0, timestamp: 2025-07-13T04:36:28.773099
+[2025-07-13 04:36:29] Decode batch. #running-req: 1, #token: 1254, token usage: 0.06, cuda graph: False, gen throughput (token/s): 101.75, #queue-req: 0, timestamp: 2025-07-13T04:36:29.166247
+[2025-07-13 04:36:29] Decode batch. #running-req: 1, #token: 1294, token usage: 0.06, cuda graph: False, gen throughput (token/s): 100.56, #queue-req: 0, timestamp: 2025-07-13T04:36:29.564025
+[2025-07-13 04:36:29] Decode batch. #running-req: 1, #token: 1334, token usage: 0.07, cuda graph: False, gen throughput (token/s): 97.95, #queue-req: 0, timestamp: 2025-07-13T04:36:29.972413
+[2025-07-13 04:36:30] Decode batch. #running-req: 1, #token: 1374, token usage: 0.07, cuda graph: False, gen throughput (token/s): 95.38, #queue-req: 0, timestamp: 2025-07-13T04:36:30.391772
+[2025-07-13 04:36:30] Decode batch. #running-req: 1, #token: 1414, token usage: 0.07, cuda graph: False, gen throughput (token/s): 96.99, #queue-req: 0, timestamp: 2025-07-13T04:36:30.804215
+[2025-07-13 04:36:31] Decode batch. #running-req: 1, #token: 1454, token usage: 0.07, cuda graph: False, gen throughput (token/s): 95.02, #queue-req: 0, timestamp: 2025-07-13T04:36:31.225201
+[2025-07-13 04:36:31] Decode batch. #running-req: 1, #token: 1494, token usage: 0.07, cuda graph: False, gen throughput (token/s): 96.71, #queue-req: 0, timestamp: 2025-07-13T04:36:31.638805
+[2025-07-13 04:36:32] Decode batch. #running-req: 1, #token: 1534, token usage: 0.07, cuda graph: False, gen throughput (token/s): 103.14, #queue-req: 0, timestamp: 2025-07-13T04:36:32.026650
+[2025-07-13 04:36:32] Decode batch. #running-req: 1, #token: 1574, token usage: 0.08, cuda graph: False, gen throughput (token/s): 104.12, #queue-req: 0, timestamp: 2025-07-13T04:36:32.410805
+[2025-07-13 04:36:32] Decode batch. #running-req: 1, #token: 1614, token usage: 0.08, cuda graph: False, gen throughput (token/s): 106.30, #queue-req: 0, timestamp: 2025-07-13T04:36:32.787101
+[2025-07-13 04:36:33] Decode batch. #running-req: 1, #token: 1654, token usage: 0.08, cuda graph: False, gen throughput (token/s): 105.93, #queue-req: 0, timestamp: 2025-07-13T04:36:33.164712
+[2025-07-13 04:36:33] Decode batch. #running-req: 1, #token: 1694, token usage: 0.08, cuda graph: False, gen throughput (token/s): 105.82, #queue-req: 0, timestamp: 2025-07-13T04:36:33.542707
+[2025-07-13 04:36:33] Decode batch. #running-req: 1, #token: 1734, token usage: 0.08, cuda graph: False, gen throughput (token/s): 106.09, #queue-req: 0, timestamp: 2025-07-13T04:36:33.919751
+[2025-07-13 04:36:34] Decode batch. #running-req: 1, #token: 1774, token usage: 0.09, cuda graph: False, gen throughput (token/s): 103.80, #queue-req: 0, timestamp: 2025-07-13T04:36:34.305125
+[2025-07-13 04:36:34] Decode batch. #running-req: 1, #token: 1814, token usage: 0.09, cuda graph: False, gen throughput (token/s): 105.87, #queue-req: 0, timestamp: 2025-07-13T04:36:34.682949
+[2025-07-13 04:36:35] Decode batch. #running-req: 1, #token: 1854, token usage: 0.09, cuda graph: False, gen throughput (token/s): 106.93, #queue-req: 0, timestamp: 2025-07-13T04:36:35.057023
+[2025-07-13 04:36:35] Decode batch. #running-req: 1, #token: 1894, token usage: 0.09, cuda graph: False, gen throughput (token/s): 105.72, #queue-req: 0, timestamp: 2025-07-13T04:36:35.435414
+[2025-07-13 04:36:35] Decode batch. #running-req: 1, #token: 1934, token usage: 0.09, cuda graph: False, gen throughput (token/s): 105.69, #queue-req: 0, timestamp: 2025-07-13T04:36:35.813879
+[2025-07-13 04:36:36] Decode batch. #running-req: 1, #token: 1974, token usage: 0.10, cuda graph: False, gen throughput (token/s): 105.82, #queue-req: 0, timestamp: 2025-07-13T04:36:36.191869
+[2025-07-13 04:36:36] Decode batch. #running-req: 1, #token: 2014, token usage: 0.10, cuda graph: False, gen throughput (token/s): 99.47, #queue-req: 0, timestamp: 2025-07-13T04:36:36.594020
+[2025-07-13 04:36:36] Decode batch. #running-req: 1, #token: 1, token usage: 0.00, cuda graph: False, gen throughput (token/s): 106.01, #queue-req: 0, timestamp: 2025-07-13T04:36:36.971338
+[2025-07-13 04:36:36] INFO:     127.0.0.1:59888 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+{&#39;text&#39;: &#39; France, and the \n\\( n \\)  \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\( l \\) \\( m \\) \\( k \\) \\(&#39;, &#39;meta_info&#39;: {&#39;id&#39;: &#39;07a646068ac94d09bde6ced3d68ff8a7&#39;, &#39;finish_reason&#39;: {&#39;type&#39;: &#39;length&#39;, &#39;length&#39;: 2048}, &#39;prompt_tokens&#39;: 6, &#39;completion_tokens&#39;: 2048, &#39;cached_tokens&#39;: 1, &#39;e2e_latency&#39;: 19.880008697509766}}
 </pre></div></div>
 </div>
 </section>
@@ -1280,20 +1282,24 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:23:30] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 22, #token: 22, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T03:23:30.698280
-[2025-07-13 03:23:30] Decode batch. #running-req: 1, #token: 32, token usage: 0.00, cuda graph: False, gen throughput (token/s): 97.61, #queue-req: 0, timestamp: 2025-07-13T03:23:30.789302
-[2025-07-13 03:23:31] Decode batch. #running-req: 1, #token: 72, token usage: 0.00, cuda graph: False, gen throughput (token/s): 110.25, #queue-req: 0, timestamp: 2025-07-13T03:23:31.152124
-[2025-07-13 03:23:31] Decode batch. #running-req: 1, #token: 112, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.80, #queue-req: 0, timestamp: 2025-07-13T03:23:31.523186
-[2025-07-13 03:23:31] Decode batch. #running-req: 1, #token: 152, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.76, #queue-req: 0, timestamp: 2025-07-13T03:23:31.890955
-[2025-07-13 03:23:32] Decode batch. #running-req: 1, #token: 192, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.91, #queue-req: 0, timestamp: 2025-07-13T03:23:32.258246
-[2025-07-13 03:23:32] INFO:     127.0.0.1:46212 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-07-13 04:36:36] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 22, #token: 22, token usage: 0.00, #running-req: 0, #queue-req: 0, timestamp: 2025-07-13T04:36:36.983701
+[2025-07-13 04:36:37] Decode batch. #running-req: 1, #token: 63, token usage: 0.00, cuda graph: False, gen throughput (token/s): 99.24, #queue-req: 0, timestamp: 2025-07-13T04:36:37.374414
+[2025-07-13 04:36:37] Decode batch. #running-req: 1, #token: 103, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.44, #queue-req: 0, timestamp: 2025-07-13T04:36:37.746709
+[2025-07-13 04:36:38] Decode batch. #running-req: 1, #token: 143, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.90, #queue-req: 0, timestamp: 2025-07-13T04:36:38.117429
+[2025-07-13 04:36:38] Decode batch. #running-req: 1, #token: 183, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.35, #queue-req: 0, timestamp: 2025-07-13T04:36:38.490046
+[2025-07-13 04:36:38] Decode batch. #running-req: 1, #token: 223, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.67, #queue-req: 0, timestamp: 2025-07-13T04:36:38.861555
+[2025-07-13 04:36:39] Decode batch. #running-req: 1, #token: 263, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.42, #queue-req: 0, timestamp: 2025-07-13T04:36:39.233940
+[2025-07-13 04:36:39] Decode batch. #running-req: 1, #token: 303, token usage: 0.01, cuda graph: False, gen throughput (token/s): 107.28, #queue-req: 0, timestamp: 2025-07-13T04:36:39.606794
+[2025-07-13 04:36:39] Decode batch. #running-req: 1, #token: 343, token usage: 0.02, cuda graph: False, gen throughput (token/s): 106.89, #queue-req: 0, timestamp: 2025-07-13T04:36:39.980996
+[2025-07-13 04:36:40] Decode batch. #running-req: 1, #token: 383, token usage: 0.02, cuda graph: False, gen throughput (token/s): 106.72, #queue-req: 0, timestamp: 2025-07-13T04:36:40.355821
+[2025-07-13 04:36:40] INFO:     127.0.0.1:34404 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'Okay, the user is asking for the information and population of the capital of France in JSON format. I know that the capital is Paris. I need to provide the population, so I should check the latest stats. From what I know, the population of Paris is around 2.1 to 2.2 million. Let me make sure that\'s up to date. Maybe I can recall the exact figure or verify it once. Also, should I include details like the administrative center or the regions? But the user only asked for the capital\'s population. I\'ll structure the JSON with relevant fields to make it clear. I should format it nicely and ensure there are no typos. Alright, ready to provide the JSON response.\n</think>\n\n```json\n{\n  "capital": "Paris",\n  "population": 2160000  // Population of Paris (approximate figure)\n}\n```', 'meta_info': {'id': 'dcdd78bd9c0b4748b0eff8ec4b403374', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 23, 'completion_tokens': 185, 'cached_tokens': 22, 'e2e_latency': 1.7111790180206299}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'Alright, the user asked for the information and population of the capital of France in JSON format. I know that the capital is Paris. So, I need to gather accurate details about Paris\'s population. \n\nFirst, I should look up the current population of Paris. Population figures can change every year, so I have to make sure I have the most recent data. As of 2023, Paris is the most populous city in France with about 2.2 million people. That number fluctuates a bit, so maybe it\'s somewhere around 2.19 to 2.21 million. \n\nI should consider whether to provide an approximate range or the exact figure. For a general answer, an approximate range would be better since the exact number might not change frequently and could be more misleading if it\'s an outlier.\n\nNext, I need to structure this information into a JSON format. JSON requires keys and values, so I\'ll create a key like "capital" with the value "Paris" and another key "population" with the number. Including units is important for clarity, so I\'ll add "Population: ~2.2 million as of recent estimates."\n\nI should check sources to ensure the numbers are up to date. Maybe I can mention that the data is from recent estimates to avoid giving outdated information. \n\nPutting it all together, the JSON should be concise and easy to understand. I\'ll make sure the formatting is correct with proper commas and braces.\n\nSo, the final answer should list Paris as the capital and include the population range in JSON format, ensuring clarity and accuracy.\n</think>\n\nHere is the information and population of the capital of France in JSON format:\n\n```json\n{\n  "capital": "Paris",\n  "population": "Population: ~2.2 million as of recent estimates."\n}\n```', 'meta_info': {'id': '2de2b1e14dc44697af636b53b2528c78', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 23, 'completion_tokens': 371, 'cached_tokens': 22, 'e2e_latency': 3.4784817695617676}}</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -1308,7 +1314,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-13 03:23:32] Child process unexpectedly failed with exitcode=9. pid=2162127
+[2025-07-13 04:36:40] Child process unexpectedly failed with exitcode=9. pid=1163852
 </pre></div></div>
 </div>
 </section>
@@ -1335,9 +1341,9 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.29s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.22s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.23s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.33s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.24s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.26s/it]
 
 </pre></div></div>
 </div>
@@ -1675,28 +1681,22 @@ Let me know if you need any other details!
 ===============================
 Prompt: Give me the information of the capital of France.
 Generated text:
-Alright, so I need to figure out the information about the capital of France. Hmm, I know that Paris is the capital, but I&#39;m not exactly sure about all the details. Let me try to recall what I&#39;ve heard before.
+The capital of France is Paris. Paris is known for its rich history, beautiful landmarks such as the Eiffel Tower, the Louvre Museum, and the Seine River. It is also a major economic and cultural center of France and the world.
 
-First, I think Paris is not just any city; it&#39;s the political center of France. That makes sense because capitals are usually important for government and official stuff. But I&#39;m not entirely sure if that&#39;s the only role it plays. I think it&#39;s also a major cultural and economic hub. So, maybe it&#39;s the second largest city in France after the capital?
-
-Wait, I
+Can I help you with something else?
 ===============================
 Prompt: Give me the information of the capital of Germany.
 Generated text:
-The capital of Germany is Berlin. Berlin is one of the most vibrant and historic cities in Europe, known for its rich cultural heritage, vibrant arts scene, and international significance. The city is home to numerous museums, theaters, and cultural institutions, attracting millions of visitors each year. Berlin also plays a central role in European politics and economics, with its thriving financial district and prominent business community.
+Alright, so I need to figure out the information about the capital of Germany, which is Berlin. Let me start by recalling what I know about Berlin. I think it&#39;s the seat of government for both Berlin and Brandenburg, right? So it&#39;s a pretty important city in Germany. I remember hearing it&#39;s one of the largest and most densely populated cities in Europe, but I&#39;m not sure about the exact population numbers. Maybe around 3.7 million? I should check that.
 
-The capital of Germany is Berlin. Berlin is one of the most vibrant and historic cities in Europe, known for its rich cultural heritage, vibrant arts scene, and international significance. The city is home to numerous museums, theaters, and cultural institutions,
+I know that Berlin is also a major cultural and economic hub. It&#39;s the center of classical music and has been the birthplace of
 ===============================
 Prompt: Give me the information of the capital of Italy.
 Generated text:
-The capital of Italy is Rome. Here are some key points about Rome:
-- **Population**: Approximately 2.8 million (as of 2023).
-- **Coordinates**: Approximately 41.9028° N, 12.4964° E.
-- **Founding**: Founded in 753 BC by Romulus and Remus.
-- **Nickname**: The Eternal City.
-- **Official Languages**: Italian and Romansh (a Romance language).
-- **Government**: A repubblica (republic) with a President as the head of state.
-- **Area**:
+The capital of Italy is Rome.
+
+The user is asking for information about the capital of Italy, and I&#39;ve given a straightforward response. However, I want to provide a more detailed and accurate answer. Let me think about what else I can include about Rome to make this information more comprehensive and useful.
+&lt;/think&gt;Rome is the capital of Italy
 </pre></div></div>
 </div>
 </section>
@@ -1727,22 +1727,27 @@ The capital of Italy is Rome. Here are some key points about Rome:
 <div class="highlight"><pre>
 ===============================
 Prompt: Please provide information about London as a major global city:
-Generated text:  its population, economy, culture, history, and the transportation system.
+Generated text:  10 sentences, each on a new line, including:
+- A brief history
+- The status of its economy
+- The most popular tourist attractions
+- The current population
+- Whether it&#39;s the capital of the UK
+- Whether it&#39;s the capital of the world
+- The number of languages spoken there
+- The climate
+- The main industries
+- The average annual temperature
 
-2.1. Population: The population of London is approximately 9 million.
-
-2.2. Economy: London is the global economic hub with a GDP of around 2.1 trillion.
-
-2.3. Culture: The city has a rich cultural heritage, including museums like the British Museum and the British Library, which house over 10 million items.
-
-2.4. History: London, known as Londinium, has been a capital for over 2,000 years. Its Roman roots date back to 71 AD, and it was
+Please also add a concluding sentence about why it&#39;s a major global city. Make sure each point is in a single line and the sentences are concise.
+Okay, so I need to provide information about London as a major global city. The user
 ===============================
 Prompt: Please provide information about Paris as a major global city:
-Generated text:  its location, population, economic status, cultural significance, and key landmarks.
+Generated text:  its location, population, economic status, cultural significance, and infrastructure.
 
-1. Paris is located in France, in the northern part of Europe. It is the capital city of France. The population is approximately 2 million. The city has a significant economic role, being the second-largest in Europe and one of the largest in the world. Culturally, Paris is renowned for its contributions to art, literature, and fashion. Key landmarks include the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, Sacré-Cœur, and the Arc de Triomphe.
+Paris is one of the most prominent global cities, located in northern France, in the River Plate basin. It&#39;s a capital city, home to roughly 2 million people, but the metropolitan area has a population of about 12 million. Paris is economically vital, serving as the financial and political hub of France and a significant player in Europe. Culturally, it&#39;s renowned for landmarks like the Eiffel Tower, the Louvre, and Notre-Dame. Infrastructure includes world-class transportation systems and modern architecture, making it a hub for innovation and tourism.
 
-2. Additionally, Paris has a rich historical background
+Sure
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1796,37 +1801,23 @@ Generated text:  its location, population, economic status, cultural significanc
 ===============================
 Prompt: &lt;｜begin▁of▁sentence｜&gt;&lt;｜Assistant｜&gt;Give me the information and population of the capital of France in the JSON format.&lt;｜end▁of▁sentence｜&gt;&lt;｜Assistant｜&gt;&lt;think&gt;
 
-Generated text: Okay, the user is asking for the information and population of the capital of France in JSON format. Let me break this down.
+Generated text: Okay, so the user asked for the information and population of the capital of France in JSON format. I remember that the capital is Paris, so I&#39;ll start there. I need to make sure I include the key details: name, population, and maybe some additional info like the percentage growth.
 
-First, I know that the capital of France is Paris. That&#39;s pretty standard, but I should double-check to be sure. Paris is indeed the administrative capital, even though some other cities like Lyon are more politically influential. But for the purpose of this question, capital usually refers to the administrative one, so Paris it is.
+First, the name is straightforward, it&#39;s Paris. The population is around 2.1 million, but I should note that it&#39;s approximate. I think the exact number is a bit higher, but for a general fact, 2.1 million is good enough.
 
-Next, I need to find the most recent population data. Population figures can change every year, so I should look for the latest estimate. As of 2023, the population of Paris is around 2,158,000. I remember that Paris is a major city, so it&#39;s a big population, but I should confirm the exact figure. Maybe I can recall that it&#39;s approximately 2.16 million people.
+I should structure the JSON correctly, with a &#34;name&#34; and &#34;population&#34; key. I&#39;ll make sure the population has a note explaining it&#39;s approximate. That way, the user knows it&#39;s an estimate.
 
-Now, the user wants this information in JSON format. JSON stands for JavaScript Object Notation, and it&#39;s commonly used for data interchange. So I&#39;ll structure it as a JSON object with a key, probably &#34;capital_information,&#34; and inside that, another key like &#34;population.&#34; Under population, I&#39;ll include both the city proper and the metropolitan area numbers since the metropolitan area is often reported separately for larger cities.
+Wait, should I include more details? Maybe the population growth rate? That might be helpful, but it&#39;s optional. Since the user didn&#39;t ask for it, I&#39;ll stick to just the name and population.
 
-Putting it all together, the JSON should look something like this:
+Putting it all together, I&#39;ll format it neatly in JSON. Double-checking the syntax, making sure the keys are in quotes and the string is properly formatted.
 
-{
-  &#34;capital_information&#34;: {
-    &#34;city&#34;: &#34;Paris&#34;,
-    &#34;population&#34;: {
-      &#34;city&#34;: &#34;2,158,000&#34;,
-      &#34;metropolitan_area&#34;: &#34;10,500,000&#34;
-    }
-  }
-}
-
-I should make sure the numbers are accurate. If the exact population is 2,158,475, I can round it to 2,158,000 for simplicity. The metropolitan area is a good measure because it&#39;s a more comprehensive statistic.
-
-I don&#39;t think I need to include anything else. The user just asked for the capital and its population, so this JSON should suffice. I hope this is clear and meets their needs.
+I think that&#39;s all. The user probably needs this for a quick reference, so clarity and accuracy are key. I hope this meets their needs!
 &lt;/think&gt;
 
 ```json
 {
-  &#34;capital_information&#34;: {
-    &#34;city&#34;: &#34;Paris&#34;,
-    &#34;population&#34;: 2158000
-  }
+  &#34;name&#34;: &#34;Paris&#34;,
+  &#34;population&#34;: &#34;Approximately 2.1 million (as of recent estimates)&#34;
 }
 ```
 </pre></div></div>
