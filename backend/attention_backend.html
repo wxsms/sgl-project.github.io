@@ -55,7 +55,7 @@
     <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 18, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 19, 2025"/>
   </head>
   
   
@@ -456,6 +456,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch command for different attention backends.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-add-a-new-attention-backend">Steps to add a new attention backend</a></li>
 </ul>
             </nav>
         </div>
@@ -577,6 +578,59 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </div>
 </section>
 </section>
+<section id="steps-to-add-a-new-attention-backend">
+<h2>Steps to add a new attention backend<a class="headerlink" href="#steps-to-add-a-new-attention-backend" title="Link to this heading">#</a></h2>
+<p>To add a new attention backend, you can learn from the existing backends
+(<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/triton_backend.py</span></code>, <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/flashattention_backend.py</span></code>)
+and follow the steps below.</p>
+<ol class="arabic simple">
+<li><p>Run without cuda graph. Support the two forward functions</p>
+<ul class="simple">
+<li><p>forward_extend</p>
+<ul>
+<li><p>Will be used for prefill, prefill with KV cache, and target verification</p></li>
+<li><p>It will be called once per layer</p></li>
+</ul>
+</li>
+<li><p>forward_decode</p>
+<ul>
+<li><p>Will be used for normal decode, and draft decode</p></li>
+<li><p>It will be called once per layer</p></li>
+</ul>
+</li>
+<li><p>init_forward_metadata</p>
+<ul>
+<li><p>Initialize the class and common metadata shared by all layers</p></li>
+<li><p>Call the plan function for optimizations like split_kv</p></li>
+<li><p>It will be called once per forward</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Run with cuda graph. It has two phases (capture and replay) and you need to implement three functions</p>
+<ul class="simple">
+<li><p>init_cuda_graph_state</p>
+<ul>
+<li><p>It will be called once during life time</p></li>
+<li><p>Create all common shared buffers</p></li>
+</ul>
+</li>
+<li><p>init_forward_metadata_capture_cuda_graph</p>
+<ul>
+<li><p>It will be called before capturing a cuda graph</p></li>
+<li><p>It is similar to init_forward_metadata but write the medatada to some pre-defined buffers</p></li>
+</ul>
+</li>
+<li><p>init_forward_metadata_replay_cuda_graph</p>
+<ul>
+<li><p>It will be called before replaying a cuda graph</p></li>
+<li><p>This function is in the critical path and needs to be fast</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
 </section>
 
 
@@ -629,6 +683,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch command for different attention backends.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-add-a-new-attention-backend">Steps to add a new attention backend</a></li>
 </ul>
   </nav></div>
 
@@ -662,7 +717,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 18, 2025.
+  Last updated on Jul 19, 2025.
   <br/>
 </p>
   </div>
