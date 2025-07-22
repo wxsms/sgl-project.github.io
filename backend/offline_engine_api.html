@@ -58,7 +58,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 21, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 22, 2025"/>
   </head>
   
   
@@ -545,8 +545,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.66it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.65it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.24it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.23it/s]
 
 </pre></div></div>
 </div>
@@ -579,33 +579,50 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Dasha and I&#39;m a science fiction fan. I&#39;m currently a student at a university and I enjoy reading science fiction and fantasy books. Currently, I&#39;m in the process of converting my essay into an article. I&#39;ve noticed that the example I wrote is not fully aligned with the style of science fiction.
+Generated text:  Yuriko and I am a 9th grade student at St. Peter’s School in Ontario, Canada. I am the president of the board of directors at Stony Brook University, and I have been working on a project to improve the sustainability and accessibility of public transportation in the city. I am also a passionate environmentalist and advocate for climate action.
 
-Could you please help me improve my essay by outlining the structure and tone of the essay in the style of science fiction?
+What is your main focus in the project?
 
-Sure, I&#39;d be happy to help you improve your essay by outlining its structure and tone in the style of science fiction! Please provide me with the essay and let me know the desired tone of the essay.
+As the president of the board of directors at Stony Brook University, my main focus is on the sustainable development and accessibility of public transportation. I am working on developing a transportation plan that would prioritize the use of electric and sustainable vehicles and
 ===============================
 Prompt: The president of the United States is
-Generated text:  3 feet 6 inches tall. If a person with that height can lift a 120-pound barbell, how many more pounds does the president weigh compared to a person who is 5 feet 10 inches tall and can lift a 240-pound barbell?
+Generated text:  trying to decide how many armed guards should be deployed in each of the 200 towns in order to best protect the country. 1.5 times the number of guards in San Francisco is 200. 2.5 times the number of guards in San Francisco is 1200. If the guards are to be distributed evenly, how many guards should be in each town?
+Let&#39;s break down the problem into manageable steps.
 
-To determine how much more weight the president of the United States has compared to a person who is 5 feet 10 inches tall and can lift a 240-pound barbell, we will follow these steps:
+1. **Determine the number of guards in San Francisco:**
 
-1. Convert all measurements to the same unit (pounds).
-2. Calculate the total weight of each person.
-3
+   According to the problem:
+   \[
+   1.5 \times \text{Number of guards
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is located in the center of the country, between the Pyrenees mountains and the Mediterranean Sea. The city&#39;s skyline is dominated by the Eiffel Tower, which is the world&#39;s tallest iron lattice tower. It was built to celebrate the 100th anniversary of the French Revolution. It was completed in 1889. The Eiffel Tower stands at a height of 324 meters (1,062 feet) and is divided into 107 individual parts. It was originally designed by Victor Horta.
-The Eiffel Tower was originally planned to be the tallest
+Generated text:  Paris.
+A. 正确
+B. 错误
+答案:
+ A
+
+The French word for government is &#34;État&#34;.
+A. 正确
+B. 错误
+答案:
+ A
+
+____负责跟踪和评估培训项目执行情况，督导培训项目执行情况，解决培训项目执行过程中的问题。
+A. 后勤部门
+B. 项目管理部门
+C. 培训实施部门
+D. 培训开发部门
+答案:
+ C
+
+____是企业培训管理部门的负责人，对培训计划的制定、实施和效果评估负责。
+A. 企业培训总监
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of people
-
-While the technology is still in its infancy, AI is transforming many different industries and will continue to grow in importance in the years to come. However, in the years to come, AI will be valuable for many different reasons, not just in industry, but also in society.
-
-AI will be an important tool in many different areas of the world, including education, healthcare, and government. AI will also be valuable to society as a whole because it can help us to make better decisions and improve our lives.
-
-AI can help us to make better decisions in the following ways. One way is through its ability to provide
+Generated text:  uncertain, and companies such as Intel are taking strides toward making their products compatible with the future of AI. This article will discuss the advantages and disadvantages of Intel’s future AI products.
+AI can be used to improve the quality of life in many ways. Some of the most common areas in which AI is used are in healthcare, transportation, and consumer electronics. The future of AI is likely to continue to be the focus of interest, as the need for more efficient and effective solutions to common problems remains high.
+Intel is working on developing AI products to improve the quality of life in the future. One of these products is the AI-powered Nest Ther
 </pre></div></div>
 </div>
 </section>
@@ -645,17 +662,21 @@ AI can help us to make better decisions in the following ways. One way is throug
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your job or profession]. I enjoy [insert a short description of your hobbies or interests]. I&#39;m always looking for new experiences and learning opportunities. What do you like to do in your free time? I enjoy [insert a short description of your hobbies or interests]. I&#39;m always looking for new experiences and learning opportunities. What&#39;s your favorite hobby or activity? I&#39;m always looking for new experiences and learning opportunities.
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling city with a rich cultural heritage and is a popular tourist destination. The city is known for its cuisine, fashion, and art, and is home to many famous landmarks and attractions. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. The city is also home to many international organizations and events, making it a hub for global affairs
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Library, and the French National Opera. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is the largest city in France and the second-largest city in the European Union by population. The city is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased focus on ethical AI: As more people become aware of the potential risks of AI, there will be a greater emphasis on developing AI that is designed to be ethical and responsible. This could involve developing AI that is transparent, accountable, and accountable to human values.
+1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing for more sophisticated and nuanced interactions between humans and machines.
 
-2. AI will become more integrated with other technologies: As AI becomes more integrated with other technologies, such as the Internet of Things (IoT), the Internet of Things (IoT), and the Internet
+2. Greater use of machine learning: Machine learning will continue to become more advanced, with more sophisticated algorithms and models that can learn from data and adapt to new situations.
+
+3. Increased focus on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater focus on ethical considerations, including issues such as bias, transparency, and accountability.
+
+4. Greater use of AI for creative and artistic purposes: AI is likely to
 
 </pre></div></div>
 </div>
@@ -698,26 +719,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I have been in the field of art for over [number] years now, and I have been known for my unique style and approach to the subject matter. I enjoy creating beautiful pieces that express my own personal style and ideas. I like to work with a variety of mediums, including painting, drawing, and sculpture, and I am always looking for new and exciting ideas to bring to the table. I am confident in my abilities and look forward to making a difference in the world through my work. Thank you! Happy to help! How can I assist you today? Your name is [Your Name] and you are
+Generated text:  [Your Name], and I am a [role] at [Your company]. I&#39;ve been an avid reader and podcast listener since childhood, and my love for storytelling and storytelling techniques has always fueled my passion for writing. I&#39;m always looking for ways to make the world a better place through my writing and in my role as a public speaker. I&#39;m enthusiastic about sharing my knowledge and experiences, and I&#39;m eager to meet new people and share my passions with them. I&#39;m excited to meet you! [Your Name] [Your Role] [Your Company] [Your Passion] [Your Background] [Your Interests] [Your
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-The statement is:
-Paris is the capital of France.
-
-This statement accurately conveys that Paris is the largest city in France and serves as the official seat of government for the nation. It is situated in the heart of the Louvre Museum, the city&#39;s most famous landmark. The city is known for its rich history, renowned art, and unique culture, including the iconic Eiffel Tower. With a population of around 1 million people, Paris is one of the most populous cities in the world. The French capital, the heart of France, has a rich history and diverse culture, making it an essential city for
+Generated text:  Paris, often referred to as the &#34;City of Light&#34; due to its vibrant culture, architecture, and artistic heritage. It serves as the political, economic, and cultural center of France, hosting major events, festivals, and government offices. The city is renowned for its beautiful 17th-century architecture, including the Eiffel Tower, and its annual celebration of the world-famous Mardi Gras festival, which draws millions of visitors. The city is also known for its innovative science and technology, and its role in the world&#39;s food industry. Paris is a major cultural hub, attracting millions of tourists each year and providing access
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by significant advancements in both technology and applications. Here are some potential trends:
+Generated text:  highly uncertain and will likely evolve in many directions as technology continues to advance. Some possible future trends in AI include:
 
-1. Increased AI efficiency and accuracy: AI algorithms are becoming more efficient and accurate, leading to more applications in areas such as healthcare, finance, and manufacturing.
+1. Increased integration with other technologies: As AI becomes more integrated with other technologies such as machine learning and the internet of things, we may see more seamless and efficient integration of AI into our daily lives.
 
-2. Expansion of AI capabilities: AI is expected to become more capable of performing tasks that were previously out of reach, such as playing video games, translating languages, and even creating art.
+2. Greater emphasis on ethical AI: As ethical concerns continue to rise, there is a growing emphasis on developing AI that is more transparent, accountable, and ethically aligned with human values.
 
-3. AI integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to work more closely with humans to improve efficiency and productivity.
-
-4. AI ethical considerations:
+3. More sophisticated autonomous systems: Autonomous vehicles, drones, and other autonomous systems will become more common, with AI playing a larger
 </pre></div></div>
 </div>
 </section>
@@ -763,35 +777,22 @@ Generated text:  likely to be characterized by significant advancements in both 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emily, I&#39;m 25 years old, a creative writing student. My writing style is informal and often humorous, with a strong focus on creating relatable characters. I enjoy exploring different genres and experimenting with narrative techniques. I&#39;m always looking for new ways to express myself and experiment with different styles. I&#39;m excited to share my work with others and help them find their own voice. Thank you for asking! What do you think of my introduction? Let me know if you need any further assistance. Write a short, neutral self-introduction for a fictional character. My name is Emily, I&#39;m 25 years old, a
+Generated text:  __________ and I am a/an ___________.
+As an AI language model, I don&#39;t have a physical form and I&#39;m not limited to a fixed personality. I&#39;m here to assist you with your questions, answer your queries, and provide helpful responses to any problems you might have. Let me know if you need anything else. How can I assist you today?
+As a language model, I don&#39;t have a physical form and I&#39;m not limited to a fixed personality. I&#39;m here to assist you with your questions, answer your queries, and provide helpful responses to any problems you might have. Let me know if you
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, also known as Louvain, and is the largest city and the capital of the country, located on the banks of the River Seine.
 
-Please provide your response in Spanish: Cual es la capital de Francia? El capital de Francia es París.
+A 1967 film noir directed by Robert Altman, &#34;Crazy Town&#34; is a 1970 Western film noir that features a group of young men who are attracted to a beautiful woman who lives on the outskirts of the city. Although they initially have no intention of pursuing her romantically, the men start to develop a strong romantic attraction to her after they begin to see her as a true love interest.
 
-Esta respuesta se traduce al español como: &#34;La capital de Francia es París.&#34;
-
-Este es un breve comentario sobre el lugar de Nápoles, donde se encuentra la capital francesa, Paris.
-
-Para presentarlo de manera precisa en español, aquí está la frase completa:
-
-&#34;La capital francesa de Nápoles es París.&#34;
-
-Esta frase proporciona una manera fácil de comunicarse entre países europeos y francófonos.
-
-El nombre
+Given a list of categories: company, educational institution
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be one of rapid and significant changes, driven by advancements in technology, policy changes, and human values. Some potential future trends in AI include:
+Generated text:  likely to be characterized by several trends:
 
-1. Increased use of AI in healthcare: AI can improve the accuracy and speed of diagnosis, help in developing personalized treatment plans, and assist in preventing and managing diseases.
-
-2. AI integration with automation: The integration of AI with automation can lead to significant efficiency gains in industries such as manufacturing, transportation, and finance.
-
-3. AI integration with personalization: AI can help companies to better understand consumer behavior and preferences, enabling them to provide personalized products and services.
-
-4. AI in
+  1. Increased automation and automation of tasks: As AI technologies continue to advance, we can expect to see more automation of tasks in many industries. This could involve the automation of repetitive and mundane tasks, as well as the automation of tasks that were once done by humans.
+  2. Improved AI ethics and accountability: As AI technology continues to evolve, we can expect to see more attention paid to the ethical and moral implications of AI systems. This could involve the development of guidelines and frameworks for the responsible use of AI, as well as the development of AI systems that are designed to be
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -893,7 +894,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 21, 2025.
+  Last updated on Jul 22, 2025.
   <br/>
 </p>
   </div>
