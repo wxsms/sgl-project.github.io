@@ -454,7 +454,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-&amp;-Parsers">Supported Models &amp; Parsers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-&amp;-Parsers">Supported Models &amp; Parsers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-Specific-Behaviors">Model-Specific Behaviors</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Launching-the-Server">Launching the Server</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#OpenAI-Compatible-API">OpenAI Compatible API</a><ul class="nav section-nav flex-column">
@@ -484,7 +487,7 @@ document.write(`
     }
 </style><section id="Reasoning-Parser">
 <h1>Reasoning Parser<a class="headerlink" href="#Reasoning-Parser" title="Link to this heading">#</a></h1>
-<p>SGLang supports parsing reasoning content our from “normal” content for reasoning models such as <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-R1">DeepSeek R1</a>.</p>
+<p>SGLang supports parsing reasoning content out from “normal” content for reasoning models such as <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-R1">DeepSeek R1</a>.</p>
 <section id="Supported-Models-&amp;-Parsers">
 <h2>Supported Models &amp; Parsers<a class="headerlink" href="#Supported-Models-&-Parsers" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -492,20 +495,52 @@ document.write(`
 <tr class="row-odd"><th class="head"><p>Model</p></th>
 <th class="head"><p>Reasoning tags</p></th>
 <th class="head"><p>Parser</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://huggingface.co/collections/deepseek-ai/deepseek-r1-678e1e131c0169c0bc89728d">DeepSeek‑R1 series</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://huggingface.co/collections/deepseek-ai/deepseek-r1-678e1e131c0169c0bc89728d">DeepSeek‑R1
+series</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&lt;think&gt;</span></code> … <code class="docutils literal notranslate"><span class="pre">&lt;/think&gt;</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-r1</span></code></p></td>
+<td><p>Supports all variants (R1, R1-0528, R1-Distill)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f">Qwen3 and QwQ series</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f">Standard Qwen3
+models</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&lt;think&gt;</span></code> … <code class="docutils literal notranslate"><span class="pre">&lt;/think&gt;</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">qwen3</span></code></p></td>
+<td><p>Supports <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> parameter</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507">Qwen3-Thinking
+m
+odels</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;think&gt;</span></code> … <code class="docutils literal notranslate"><span class="pre">&lt;/think&gt;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">qwen3-thinking</span></code></p></td>
+<td><p>Always generates thinking content</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://huggingface.co/collections/MoonshotAI/kimi-675e30c072b7ba7e79833be7">Kimi
+models</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">◁think▷</span></code> … <code class="docutils literal notranslate"><span class="pre">◁/think▷</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kimi</span></code></p></td>
+<td><p>Uses special thinking delimiters</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<section id="Model-Specific-Behaviors">
+<h3>Model-Specific Behaviors<a class="headerlink" href="#Model-Specific-Behaviors" title="Link to this heading">#</a></h3>
+<p><strong>DeepSeek-R1 Family:</strong></p>
+<ul class="simple">
+<li><p>DeepSeek-R1: No <code class="docutils literal notranslate"><span class="pre">&lt;think&gt;</span></code> start tag, jumps directly to thinking content</p></li>
+<li><p>DeepSeek-R1-0528: Generates both <code class="docutils literal notranslate"><span class="pre">&lt;think&gt;</span></code> start and <code class="docutils literal notranslate"><span class="pre">&lt;/think&gt;</span></code> end tags</p></li>
+<li><p>Both are handled by the same <code class="docutils literal notranslate"><span class="pre">deepseek-r1</span></code> parser</p></li>
+</ul>
+<p><strong>Qwen3 Family:</strong></p>
+<ul class="simple">
+<li><p>Standard Qwen3 (e.g., Qwen3-2507): Use <code class="docutils literal notranslate"><span class="pre">qwen3</span></code> parser, supports <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> in chat templates</p></li>
+<li><p>Qwen3-Thinking (e.g., Qwen3-235B-A22B-Thinking-2507): Use <code class="docutils literal notranslate"><span class="pre">qwen3-thinking</span></code> parser, always thinks</p></li>
+</ul>
+</section>
 </section>
 <section id="Usage">
 <h2>Usage<a class="headerlink" href="#Usage" title="Link to this heading">#</a></h2>
@@ -541,30 +576,30 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:00] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=34699, skip_server_warmup=False, warmups=None, nccl_port=None, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, mem_fraction_static=0.874, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, device=&#39;cuda&#39;, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=52612000, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, tool_call_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_moe=False, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;&#39;, hicache_storage_backend=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=None, cuda_graph_bs=None, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, enable_triton_kernel_moe=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False, enable_pdmux=False, sm_group_num=3)
-[2025-07-25 21:22:12] Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-07-25 21:22:12] Init torch distributed begin.
-[2025-07-25 21:22:12] Init torch distributed ends. mem usage=0.00 GB
-[2025-07-25 21:22:13] Load weight begin. avail mem=78.50 GB
-[2025-07-25 21:22:13] Using model weights format [&#39;*.safetensors&#39;]
+[2025-07-25 22:12:28] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=32231, skip_server_warmup=False, warmups=None, nccl_port=None, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, mem_fraction_static=0.874, max_running_requests=200, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, device=&#39;cuda&#39;, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=425054055, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=0, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, tool_call_parser=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_moe=False, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;&#39;, hicache_storage_backend=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=None, cuda_graph_bs=None, disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_nccl_nvls=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, enable_triton_kernel_moe=False, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False, enable_pdmux=False, sm_group_num=3)
+[2025-07-25 22:12:39] Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-07-25 22:12:39] Init torch distributed begin.
+[2025-07-25 22:12:40] Init torch distributed ends. mem usage=0.00 GB
+[2025-07-25 22:12:41] Load weight begin. avail mem=78.50 GB
+[2025-07-25 22:12:42] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.37s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.39s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.26s/it]
 Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.28s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
 
-[2025-07-25 21:22:16] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=64.15 GB, mem usage=14.35 GB.
-[2025-07-25 21:22:16] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-07-25 21:22:16] Memory pool end. avail mem=62.78 GB
-[2025-07-25 21:22:17] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072, available_gpu_mem=62.68 GB
-[2025-07-25 21:22:17] INFO:     Started server process [644955]
-[2025-07-25 21:22:17] INFO:     Waiting for application startup.
-[2025-07-25 21:22:17] INFO:     Application startup complete.
-[2025-07-25 21:22:17] INFO:     Uvicorn running on http://0.0.0.0:34699 (Press CTRL+C to quit)
-[2025-07-25 21:22:18] INFO:     127.0.0.1:55864 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-07-25 21:22:18] INFO:     127.0.0.1:55876 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-07-25 21:22:18] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-07-25 21:22:19] INFO:     127.0.0.1:55886 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-07-25 21:22:19] The server is fired up and ready to roll!
+[2025-07-25 22:12:44] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=64.15 GB, mem usage=14.35 GB.
+[2025-07-25 22:12:45] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-07-25 22:12:45] Memory pool end. avail mem=62.78 GB
+[2025-07-25 22:12:46] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=200, context_len=131072, available_gpu_mem=62.68 GB
+[2025-07-25 22:12:47] INFO:     Started server process [1626377]
+[2025-07-25 22:12:47] INFO:     Waiting for application startup.
+[2025-07-25 22:12:47] INFO:     Application startup complete.
+[2025-07-25 22:12:47] INFO:     Uvicorn running on http://0.0.0.0:32231 (Press CTRL+C to quit)
+[2025-07-25 22:12:47] INFO:     127.0.0.1:51332 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:48] INFO:     127.0.0.1:51334 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:48] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-07-25 22:12:49] INFO:     127.0.0.1:51336 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:49] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -604,7 +639,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:23] INFO:     127.0.0.1:47418 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:52] INFO:     127.0.0.1:51112 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <section id="Non-Streaming-Request">
@@ -634,10 +669,12 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:23] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-07-25 21:22:24] Decode batch. #running-req: 1, #token: 45, token usage: 0.00, cuda graph: False, gen throughput (token/s): 5.49, #queue-req: 0,
-[2025-07-25 21:22:25] Decode batch. #running-req: 1, #token: 85, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.13, #queue-req: 0,
-[2025-07-25 21:22:25] INFO:     127.0.0.1:47418 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:52] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-07-25 22:12:53] Decode batch. #running-req: 1, #token: 45, token usage: 0.00, cuda graph: False, gen throughput (token/s): 5.86, #queue-req: 0,
+[2025-07-25 22:12:53] Decode batch. #running-req: 1, #token: 85, token usage: 0.00, cuda graph: False, gen throughput (token/s): 104.79, #queue-req: 0,
+[2025-07-25 22:12:54] Decode batch. #running-req: 1, #token: 125, token usage: 0.01, cuda graph: False, gen throughput (token/s): 100.94, #queue-req: 0,
+[2025-07-25 22:12:54] Decode batch. #running-req: 1, #token: 165, token usage: 0.01, cuda graph: False, gen throughput (token/s): 89.32, #queue-req: 0,
+[2025-07-25 22:12:54] INFO:     127.0.0.1:51112 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -650,7 +687,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add these two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add the two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -662,7 +699,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of \(1\) and \(3\).<br><br>\[<br>1 + 3 = 4<br>\]<br><br>Therefore, the final answer is \(\boxed{4}\).</strong></div>
+<strong style='color: #00008B;'>Certainly! Let's solve the addition problem step by step.<br><br>**Problem:**  <br>What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Present the final answer:**<br>   \[<br>   \boxed{4}<br>   \]<br><br>**Answer:**  <br>\(\boxed{4}\)</strong></div>
 </div>
 </section>
 <section id="Streaming-Request">
@@ -701,11 +738,10 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:25] INFO:     127.0.0.1:47418 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-07-25 21:22:25] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-07-25 21:22:25] Decode batch. #running-req: 1, #token: 29, token usage: 0.00, cuda graph: False, gen throughput (token/s): 101.17, #queue-req: 0,
-[2025-07-25 21:22:25] Decode batch. #running-req: 1, #token: 69, token usage: 0.00, cuda graph: False, gen throughput (token/s): 106.99, #queue-req: 0,
-[2025-07-25 21:22:26] Decode batch. #running-req: 1, #token: 0, token usage: 0.00, cuda graph: False, gen throughput (token/s): 110.52, #queue-req: 0,
+[2025-07-25 22:12:54] INFO:     127.0.0.1:51112 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:54] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-07-25 22:12:54] Decode batch. #running-req: 1, #token: 36, token usage: 0.00, cuda graph: False, gen throughput (token/s): 98.84, #queue-req: 0,
+[2025-07-25 22:12:55] Decode batch. #running-req: 1, #token: 76, token usage: 0.00, cuda graph: False, gen throughput (token/s): 105.34, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -718,7 +754,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>I will add the two numbers together to find the total.<br><br>Adding 1 and 3 gives me 4.<br><br>Therefore, the final answer is 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I identify the two numbers that need to be added, which are 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the sum to determine that 1 plus 3 equals 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -730,7 +766,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br><br>**Solution:**<br><br>We need to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>Therefore, the final answer is \(\boxed{4}\).</strong></div>
+<strong style='color: #00008B;'><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
 </div>
 <p>Optionally, you can buffer the reasoning content to the last reasoning chunk (or the first chunk after the reasoning content).</p>
 <div class="nbinput docutils container">
@@ -767,9 +803,12 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:26] INFO:     127.0.0.1:47418 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-07-25 21:22:26] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-07-25 21:22:26] Decode batch. #running-req: 1, #token: 53, token usage: 0.00, cuda graph: False, gen throughput (token/s): 87.99, #queue-req: 0,
+[2025-07-25 22:12:55] INFO:     127.0.0.1:51112 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:55] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-07-25 22:12:55] Decode batch. #running-req: 1, #token: 21, token usage: 0.00, cuda graph: False, gen throughput (token/s): 91.17, #queue-req: 0,
+[2025-07-25 22:12:56] Decode batch. #running-req: 1, #token: 61, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.01, #queue-req: 0,
+[2025-07-25 22:12:56] Decode batch. #running-req: 1, #token: 101, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.41, #queue-req: 0,
+[2025-07-25 22:12:56] Decode batch. #running-req: 1, #token: 141, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.10, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -782,7 +821,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>Next, I add the two numbers together.<br><br>Finally, I arrive at the result.</strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I perform the addition: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -794,7 +833,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
+<strong style='color: #00008B;'><br><br>**Solution:**<br><br>To find the sum of 1 and 3, follow these simple steps:<br><br>1. **Start with the first number:**<br>   <br>   \[<br>   1<br>   \]<br><br>2. **Add the second number to it:**<br>   <br>   \[<br>   1 + 3<br>   \]<br><br>3. **Calculate the result:**<br>   <br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Final Answer:**<br><br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 <p>The reasoning separation is enable by default when specify . <strong>To disable it, set the ``separate_reasoning`` option to ``False`` in request.</strong></p>
 <div class="nbinput docutils container">
@@ -820,13 +859,12 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:26] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-07-25 21:22:27] Decode batch. #running-req: 1, #token: 16, token usage: 0.00, cuda graph: False, gen throughput (token/s): 90.30, #queue-req: 0,
-[2025-07-25 21:22:27] Decode batch. #running-req: 1, #token: 56, token usage: 0.00, cuda graph: False, gen throughput (token/s): 109.07, #queue-req: 0,
-[2025-07-25 21:22:27] Decode batch. #running-req: 1, #token: 96, token usage: 0.00, cuda graph: False, gen throughput (token/s): 109.31, #queue-req: 0,
-[2025-07-25 21:22:28] Decode batch. #running-req: 1, #token: 136, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.56, #queue-req: 0,
-[2025-07-25 21:22:28] Decode batch. #running-req: 1, #token: 176, token usage: 0.01, cuda graph: False, gen throughput (token/s): 109.89, #queue-req: 0,
-[2025-07-25 21:22:28] INFO:     127.0.0.1:47418 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-07-25 22:12:57] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-07-25 22:12:57] Decode batch. #running-req: 1, #token: 27, token usage: 0.00, cuda graph: False, gen throughput (token/s): 91.36, #queue-req: 0,
+[2025-07-25 22:12:57] Decode batch. #running-req: 1, #token: 67, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.17, #queue-req: 0,
+[2025-07-25 22:12:57] Decode batch. #running-req: 1, #token: 107, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.32, #queue-req: 0,
+[2025-07-25 22:12:58] Decode batch. #running-req: 1, #token: 147, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.58, #queue-req: 0,
+[2025-07-25 22:12:58] INFO:     127.0.0.1:51112 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -839,7 +877,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>To solve the problem of adding 1 and 3, I start by identifying the two numbers involved.<br><br>Next, I perform the addition operation by combining these two numbers together.<br><br>After adding them, I determine the final sum which is the result of the addition.<br><br>Finally, I present the answer clearly to show the solution to the problem.<br></think><br><br>Sure! Let's solve the addition problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Perform the addition:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Present the final answer:**<br>   \[<br>   \boxed{4}<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'>I see that the user is asking for the sum of 1 and 3.<br><br>To solve this, I'll start by identifying the two numbers involved, which are 1 and 3.<br><br>Next, I'll add these two numbers together to get the total.<br><br>Finally, I'll provide the result as the answer to the user's question.<br></think><br><br>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the two numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 </section>
 </section>
@@ -893,10 +931,12 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:32] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-07-25 21:22:32] Decode batch. #running-req: 1, #token: 32, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.07, #queue-req: 0,
-[2025-07-25 21:22:33] Decode batch. #running-req: 1, #token: 72, token usage: 0.00, cuda graph: False, gen throughput (token/s): 108.27, #queue-req: 0,
-[2025-07-25 21:22:33] INFO:     127.0.0.1:46018 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-07-25 22:13:02] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-07-25 22:13:02] Decode batch. #running-req: 1, #token: 19, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.09, #queue-req: 0,
+[2025-07-25 22:13:03] Decode batch. #running-req: 1, #token: 59, token usage: 0.00, cuda graph: False, gen throughput (token/s): 107.21, #queue-req: 0,
+[2025-07-25 22:13:03] Decode batch. #running-req: 1, #token: 99, token usage: 0.00, cuda graph: False, gen throughput (token/s): 106.63, #queue-req: 0,
+[2025-07-25 22:13:03] Decode batch. #running-req: 1, #token: 139, token usage: 0.01, cuda graph: False, gen throughput (token/s): 108.26, #queue-req: 0,
+[2025-07-25 22:13:04] INFO:     127.0.0.1:35394 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -909,14 +949,14 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>Next, I add the two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
+<strong style='color: #00008B;'>First, I need to identify the two numbers in the addition problem: 1 and 3.<br><br>Next, I'll add these two numbers together.<br><br>Adding 1 and 3 gives me a total of 4.<br></think><br><br>Sure! Let's solve the addition problem step by step.<br><br>**Problem:**<br>\[ 1 + 3 \]<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:33] INFO:     127.0.0.1:46022 - &#34;POST /separate_reasoning HTTP/1.1&#34; 200 OK
+[2025-07-25 22:13:04] INFO:     127.0.0.1:35402 - &#34;POST /separate_reasoning HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -929,7 +969,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>Next, I add the two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I need to identify the two numbers in the addition problem: 1 and 3.<br><br>Next, I'll add these two numbers together.<br><br>Adding 1 and 3 gives me a total of 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -941,7 +981,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
+<strong style='color: #00008B;'>Sure! Let's solve the addition problem step by step.<br><br>**Problem:**<br>\[ 1 + 3 \]<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -956,7 +996,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-07-25 21:22:33] Child process unexpectedly failed with exitcode=9. pid=645584
+[2025-07-25 22:13:04] Child process unexpectedly failed with exitcode=9. pid=1627040
 </pre></div></div>
 </div>
 </section>
@@ -1006,8 +1046,8 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.39s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.30s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.32s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.28s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
 
 </pre></div></div>
 </div>
@@ -1021,7 +1061,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>I need to add the numbers 1 and 3 together.<br><br>First, I identify the two numbers to be added: 1 and 3.<br><br>Next, I perform the addition operation: 1 + 3.<br><br>Finally, I calculate the sum to find that 1 plus 3 equals 4.<br></think><br><br>Sure! Let's solve the addition step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'>First, I identify the two numbers that need to be added, which are 1 and 3.<br><br>Next, I add these two numbers together.<br><br>Finally, I calculate the sum to find the result, which is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1033,7 +1073,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>I need to add the numbers 1 and 3 together.<br><br>First, I identify the two numbers to be added: 1 and 3.<br><br>Next, I perform the addition operation: 1 + 3.<br><br>Finally, I calculate the sum to find that 1 plus 3 equals 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I identify the two numbers that need to be added, which are 1 and 3.<br><br>Next, I add these two numbers together.<br><br>Finally, I calculate the sum to find the result, which is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1045,7 +1085,7 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Let's solve the addition step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>**Answer:** \boxed{4}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1062,36 +1102,61 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 <p>For future reasoning models, you can implement the reasoning parser as a subclass of <code class="docutils literal notranslate"><span class="pre">BaseReasoningFormatDetector</span></code> in <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/reasoning_parser.py</span></code> and specify the reasoning parser for new reasoning model schemas accordingly.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DeepSeekR1Detector</span><span class="p">(</span><span class="n">BaseReasoningFormatDetector</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Detector for DeepSeek-R1 model.</span>
-<span class="sd">    Assumes reasoning format:</span>
-<span class="sd">      (&lt;think&gt;)*(.*)&lt;/think&gt;</span>
-<span class="sd">    Returns all the text before the &lt;/think&gt; tag as `reasoning_text`</span>
-<span class="sd">    and the rest of the text as `normal_text`.</span>
+<span class="sd">    Detector for DeepSeek-R1 family models.</span>
 
-<span class="sd">    Args:</span>
-<span class="sd">        stream_reasoning (bool): If False, accumulates reasoning content until the end tag.</span>
-<span class="sd">            If True, streams reasoning content as it arrives.</span>
+<span class="sd">    Supported models:</span>
+<span class="sd">      - DeepSeek-R1: Always generates thinking content without &lt;think&gt; start tag</span>
+<span class="sd">      - DeepSeek-R1-0528: Generates thinking content with &lt;think&gt; start tag</span>
+
+<span class="sd">    This detector handles both patterns automatically.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-        <span class="c1"># DeepSeek-R1 is assumed to be reasoning until `&lt;/think&gt;` token</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;&lt;think&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/think&gt;&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="o">=</span><span class="n">stream_reasoning</span><span class="p">)</span>
-        <span class="c1"># https://github.com/sgl-project/sglang/pull/3202#discussion_r1950153599</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;&lt;think&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/think&gt;&quot;</span><span class="p">,</span> <span class="n">force_reasoning</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="o">=</span><span class="n">stream_reasoning</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Qwen3Detector</span><span class="p">(</span><span class="n">BaseReasoningFormatDetector</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Detector for standard Qwen3 models that support enable_thinking parameter.</span>
+
+<span class="sd">    These models can switch between thinking and non-thinking modes:</span>
+<span class="sd">      - enable_thinking=True: Generates &lt;think&gt;...&lt;/think&gt; tags</span>
+<span class="sd">      - enable_thinking=False: No thinking content generated</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;&lt;think&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/think&gt;&quot;</span><span class="p">,</span> <span class="n">force_reasoning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="o">=</span><span class="n">stream_reasoning</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Qwen3ThinkingDetector</span><span class="p">(</span><span class="n">BaseReasoningFormatDetector</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Detector for Qwen3-Thinking models (e.g., Qwen3-235B-A22B-Thinking-2507).</span>
+
+<span class="sd">    These models always generate thinking content without &lt;think&gt; start tag.</span>
+<span class="sd">    They do not support the enable_thinking parameter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;&lt;think&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/think&gt;&quot;</span><span class="p">,</span> <span class="n">force_reasoning</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="o">=</span><span class="n">stream_reasoning</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">ReasoningParser</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Parser that handles both streaming and non-streaming scenarios for extracting</span>
-<span class="sd">    reasoning content from model outputs.</span>
+<span class="sd">    Parser that handles both streaming and non-streaming scenarios.</span>
 
-<span class="sd">    Args:</span>
-<span class="sd">        model_type (str): Type of model to parse reasoning from</span>
-<span class="sd">        stream_reasoning (bool): If False, accumulates reasoning content until complete.</span>
-<span class="sd">            If True, streams reasoning content as it arrives.</span>
+<span class="sd">    Usage:</span>
+<span class="sd">      # For standard Qwen3 models with enable_thinking support</span>
+<span class="sd">      parser = ReasoningParser(&quot;qwen3&quot;)</span>
+
+<span class="sd">      # For Qwen3-Thinking models that always think</span>
+<span class="sd">      parser = ReasoningParser(&quot;qwen3-thinking&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">DetectorMap</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">BaseReasoningFormatDetector</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;deepseek-r1&quot;</span><span class="p">:</span> <span class="n">DeepSeekR1Detector</span>
+    <span class="n">DetectorMap</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">BaseReasoningFormatDetector</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;deepseek-r1&quot;</span><span class="p">:</span> <span class="n">DeepSeekR1Detector</span><span class="p">,</span>
+        <span class="s2">&quot;qwen3&quot;</span><span class="p">:</span> <span class="n">Qwen3Detector</span><span class="p">,</span>
+        <span class="s2">&quot;qwen3-thinking&quot;</span><span class="p">:</span> <span class="n">Qwen3ThinkingDetector</span><span class="p">,</span>
+        <span class="s2">&quot;kimi&quot;</span><span class="p">:</span> <span class="n">KimiDetector</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">stream_reasoning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
@@ -1104,13 +1169,13 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 
         <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="n">detector_class</span><span class="p">(</span><span class="n">stream_reasoning</span><span class="o">=</span><span class="n">stream_reasoning</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">parse_non_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">full_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StreamingParseResult</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Non-streaming call: one-time parsing&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parse_non_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">full_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns (reasoning_text, normal_text)&quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">detect_and_parse</span><span class="p">(</span><span class="n">full_text</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span><span class="o">.</span><span class="n">reasoning_text</span><span class="p">,</span> <span class="n">ret</span><span class="o">.</span><span class="n">normal_text</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">parse_stream_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StreamingParseResult</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Streaming call: incremental parsing&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parse_stream_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns (reasoning_text, normal_text) for the current chunk&quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">parse_streaming_increment</span><span class="p">(</span><span class="n">chunk_text</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span><span class="o">.</span><span class="n">reasoning_text</span><span class="p">,</span> <span class="n">ret</span><span class="o">.</span><span class="n">normal_text</span>
 </pre></div>
@@ -1163,7 +1228,10 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-&amp;-Parsers">Supported Models &amp; Parsers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-&amp;-Parsers">Supported Models &amp; Parsers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-Specific-Behaviors">Model-Specific Behaviors</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Launching-the-Server">Launching the Server</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#OpenAI-Compatible-API">OpenAI Compatible API</a><ul class="nav section-nav flex-column">
