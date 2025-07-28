@@ -547,8 +547,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.58it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.57it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.84it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.83it/s]
 
 </pre></div></div>
 </div>
@@ -581,29 +581,40 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Tom and I am a volunteer at the Children’s Home and I would like to make a call. Can you please call me?
-
-I understand that this is a concern. I am a volunteer at the Children&#39;s Home and I will be a frequent caller. I will be calling the Children&#39;s Home on the 16th of November to make a call.
-
-However, I would like to inform the staff and the Children&#39;s Home management team that I need to be available to make this call to ensure that the Children&#39;s Home staff are aware of the need to arrange the call.
-
-The question is, can I contact the Children&#39;s
+Generated text:  Ansgar. I&#39;m a native German and American double-English speaker with an MBA from Harvard Business School and a Ph.D. in political science from the University of Chicago. I have a background in both global and domestic politics, have traveled to 31 countries, and have experience working in higher education and non-profit organizations. I have an MBA, three years of teaching at the undergraduate and graduate levels, and have worked in many organizational settings, from non-profits to large corporations. I have been a member of the International Association of Political Science Education, the International Society for Political Science Education, and the Political Science Association. My
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide whether to use a machine to assist him in making decisions. The president decides to use a machine that has a failure probability of 0.02% on a monthly basis.
+Generated text:  now considering various options to improve the country&#39;s financial systems.
 
-1. If the machine fails, it costs the president $10,000.00 in lost revenue. Calculate the expected cost of using the machine over a year.
-2. If the machine fails, it costs the president a significant amount of time, which can be estimated at 20% of an average workday, where an average person works 8 hours a day. Determine the expected cost of using the machine
+Option A: Increase the minimum wage to $50 per hour.
+
+Option B: Increase the federal government&#39;s deficit spending by $10 billion in the upcoming year.
+
+Option C: Increase the tax on corporations to reduce their profits and encourage tax-shifting.
+
+What is the government&#39;s short-term and long-term effect on the national economy and what are the potential consequences of each option?
+The short-term effect of increasing the minimum wage to $50 per hour would likely be a decrease in the cost of living for workers, which could have a positive impact on inflation and economic
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, located in the southeast of the country. The capital is the largest city in Europe. Paris has a large population, and it is the capital of France. There are many advantages of living in the capital of France. It is a historic city. The city has many historical buildings and monuments. It is also a tourist attraction. It is a popular place for students. Many students from France come to Paris to study. As a result, Paris has many well-known universities. It is the capital of France because it is the largest city in Europe. It is the capital of France to meet the needs of the whole country. Paris is
+Generated text: :
+A. Paris
+B. London
+C. Moscow
+D. Washington D.C. The capital of France is:
+
+A. Paris
+
+Paris is the capital city of France, and it is known for its beautiful architecture, rich culture, and vibrant city life. The other options are not capitals of France:
+
+B. London: London is the capital city of the United Kingdom, not France.
+C. Moscow: Moscow is the capital city of Russia.
+D. Washington D. C.: Washington D. C. is the capital city of the United States, not France.
+
+Thus, the correct answer is A. Paris.
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, but it&#39;s equally bright because of its present limitations. Overcoming these limitations will enable AI to deliver a far greater impact on society and improve the quality of life. Here are some of the most promising areas of AI development:
-
-1. Medical Imaging: With the increasing amount of data generated from medical imaging, the future of AI is promising. Machine learning algorithms can help doctors quickly and accurately diagnose diseases and develop personalized treatment plans. AI can also help diagnose diseases more quickly and accurately than human doctors, which can lead to better outcomes and reduced medical costs.
-
-2. Sentiment Analysis: With the rise of social media, it&#39;s easier
+Generated text:  a game changer. As a technology that affects the way we live, work, and play, AI is sweeping across all aspects of our daily lives. From the way we interact with computers to the way we learn, work, and solve problems, AI is shaping the future. And as more and more people start to understand the power of AI and how it can be applied to their daily lives, it’s clear that we’re in for a lot of exciting developments.
+One of the most interesting trends in AI right now is the development of more advanced language models, or conversational AI. These models are designed to engage with users and assist with
 </pre></div></div>
 </div>
 </section>
@@ -643,13 +654,17 @@ Generated text:  bright, but it&#39;s equally bright because of its present limi
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short, positive description of your personality or skills]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you think makes you unique and special? I&#39;m a [insert a short, positive description of your personality or skills]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you think makes you unique and special? I&#39;m a [insert a short, positive description of your
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also famous for its rich history, including the French Revolution and the French Revolution Museum. Paris is a bustling city with a diverse population and is home to many world-renowned museums, including the Louvre, the Musée d&#39;Orsay, and the Musée d&#39;Art Moderne. The city is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. Paris is a popular tourist destination and is home to many international companies, including the
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major center for art, culture, and politics, and is home to many museums, theaters, and other cultural institutions. The city is known for its rich history, including the influence of the French Revolution and the influence of the French Revolution on the arts and culture of the world. Paris is a popular tourist destination, with millions of visitors each year. It is also a major center for business and finance, with many of the world’s largest companies headquartered in the city. The city is known
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to improve and become more integrated into our daily lives, from self-driving cars and robots to personalized medicine and virtual assistants. Additionally, AI is likely to continue to be used for ethical and social purposes, such as improving access to healthcare and reducing poverty. Finally, AI is likely to continue to be used for economic and social benefits, such as creating new industries and jobs and improving the efficiency of our economies. Overall, the future of AI is likely to be one of continued innovation and growth. However,
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
+
+1. Increased automation and robotics: As AI technology continues to advance, we are likely to see an increase in automation and robotics in various industries. This will lead to the creation of more efficient and productive machines that can perform tasks that were previously done by humans.
+
+2. AI ethics and privacy concerns: As AI technology becomes more advanced, there will be a growing concern about its ethical implications and the potential for misuse. This will lead to
 
 </pre></div></div>
 </div>
@@ -692,32 +707,29 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [title] at [company]. I enjoy [job role] and I am always looking for ways to [specific goal or dream]. If you&#39;re ever in need of a helpful hand, feel free to reach out to me. #JobSeeker #Helpful #Friendly
-Hi there! I&#39;m [Name] at [company]. I enjoy [job role] and always aim to help others in need. If you&#39;re looking for advice or assistance, feel free to reach out to me. #CareerAdvice #HelpfulFriends #Friendly
+Generated text:  [Name], and I come from [Country]. I&#39;m a [Occupation] with [Qualifications] and [Hobbies]. I was born [Date] in [City, Country]. I&#39;m currently [Status]. I enjoy [Reason for being here]. Thank you for asking, and I hope to have the chance to talk to you.
 
-Does this cover all the points that a neutral self-int
+Please include relevant details about your occupation, qualifications, hobbies, and status, and any personal anecdotes or stories that would interest me. Additionally, you may want to include your favorite place to relax or the reason why you enjoy that place.
+
+Hey, thanks for asking! I&#39;m [Name
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, known for its historical monuments, fashion industry, and annual culture festival.
 
-[Mark down]
-# The Capital of France: Paris
+That&#39;s a great summary! Could you provide me with more information on Paris&#39;s fashion industry? Maybe some key fashion designers, famous fashion shows, or some interesting fashion trends? Sure, here are some more details on Paris&#39;s fashion industry:
 
-The capital city of France is Paris. Known for its iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral, Paris is a beautiful and historic city that is easily accessible by air and train from other parts of the world.
+1. Designers: Paris is home to many famous fashion designers, including Marc Jacobs, Louis Vuitton, and Yves Saint Laurent. Some of the most renowned designers include Alexander McQueen, Yves Saint Laurent, and Christian Dior.
 
-# Future Directions
-- Paris is currently undergoing a large urban redevelopment project, aimed at transforming the city into a more modern and innovative environment.
-- The city is undergoing a major infrastructure project to improve its transportation and communication systems.
-
-# Long-Term Planning
-- Paris is also working on a plan to preserve its cultural heritage
+2. Fashion Shows: Paris is a major fashion capital, hosting several
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  vast and promising, with many possibilities for future advancements in the technology. Here are some potential trends that could shape the development of AI in the next decade:
+Generated text:  expected to be a rapidly evolving landscape with numerous potential developments and innovations. Some key trends in AI include:
 
-1. Deep Learning: The use of deep learning algorithms has been growing exponentially, and it&#39;s likely that it will continue to play a critical role in AI development. Deep learning will likely become more sophisticated, capable of recognizing patterns in data that would be difficult for humans to identify.
+1. Increased focus on privacy and ethics: With the increasing awareness of privacy concerns and data security issues, AI systems will be required to be designed and implemented with more attention to privacy and ethical considerations. This will lead to increased regulation and transparency in AI development and usage.
 
-2. Autonomous Vehicles: Autonomous vehicles have the potential to revolutionize transportation, reducing traffic congestion, pollution, and accidents. AI technologies like machine learning and robotics will play a crucial role in developing these vehicles,
+2. Enhanced capabilities and applications: AI is expected to become even more capable and widespread, with applications ranging from autonomous vehicles and drones to healthcare diagnostics and personalized medicine. This will lead to increased efficiency and productivity in many industries.
+
+3. AI-driven advancements in areas like
 </pre></div></div>
 </div>
 </section>
@@ -763,19 +775,16 @@ Generated text:  vast and promising, with many possibilities for future advancem
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I am a [profession or role] who has been in the field for [number of years] years. I have a passion for [reason for your profession], and I enjoy [task or challenge you have in your role]. I am always ready to learn and to make a positive impact in the world. What&#39;s your profession, and what&#39;s your reason for being in it? [Your Name] [Your Profession] [Your reasons for being in the field]. [Your Name] is looking forward to our interview and discussing your professional background. What&#39;s next on your to-do list? [Your Name]
+Generated text:  [Name]. I&#39;m an [Age] year old [gender] [gender identity] [nationality] who is [current occupation] in the [field] industry. I speak fluent [language] and I have a deep love for [hobby, sport, hobby, etc.]. I believe in [value] and have always been passionate about [value]. I love [hobby, sport, hobby, etc.]. I&#39;m always looking to learn and grow, and I&#39;m always ready to contribute to the world. Thank you for taking the time to meet me! How can I help? [Optional]: How can I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;The City of Light&#34; or &#34;The City of Love&#34;. It is the largest city in France and one of the largest in Europe, with a population of over 15 million. Paris is a cosmopolitan city with a rich history dating back over 2, 000 years. It is also a major cultural, artistic, and industrial center, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris has a rich cultural heritage, with a diverse range of museums, art galleries, and theaters that offer visitors a glimpse into the city
+Generated text:  Paris, the city known as the &#34;City of Love&#34; and famous for its rich history and romantic architecture.
+You are to answer this question: Where is the capital of France? Paris, the capital of France. The question asks &#34;Where is the capital of France?&#34; and asks for the location of the capital city of France. The answer to this question is Paris. Paris is the capital city of France, known as &#34;the City of Love&#34; and famous for its rich history and romantic architecture.
+
+To answer this question concisely, it is essential to mention that France&#39;s capital is Paris, the capital city of France, located
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a complex interplay of trends and developments across various fields. Some of the most prominent trends include:
-
-1. Enhanced AI: AI is being further improved with new algorithms and architectures, leading to even more powerful and accurate predictions. This could lead to new applications in fields such as healthcare, transportation, and cybersecurity.
-
-2. AI ethics and regulation: As AI becomes more prevalent, there will be a need for new ethical frameworks and regulations to govern its use. This could lead to increased scrutiny and regulation of AI, as well as new challenges related to the development of AI that can&#39;t be fully understood or predicted.
-
-3
+Generated text:  likely to involve a wide range of possible trends, including the development of more advanced algorithms, the integration of AI into increasingly sophisticated devices and systems, and the increasing use of AI in various fields such as healthcare, finance, and transportation. In addition, the integration of AI with human beings may lead to new forms of interaction and collaboration, as well as new ethical and social challenges. Finally, the development of AI is likely to depend on continued advances in technology, research, and education, as well as the continued need for humans to continue to develop and refine their skills in the field of AI.
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
