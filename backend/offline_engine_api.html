@@ -58,7 +58,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 27, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 28, 2025"/>
   </head>
   
   
@@ -541,14 +541,27 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+WARNING 07-28 02:06:50 [__init__.py:25] The vLLM package was not found, so its version could not be inspected. This may cause platform detection to fail.
+WARNING 07-28 02:06:50 [__init__.py:25] The vLLM package was not found, so its version could not be inspected. This may cause platform detection to fail.
+INFO 07-28 02:06:50 [__init__.py:247] No platform detected, vLLM is running on UnspecifiedPlatform
+WARNING 07-28 02:07:02 [__init__.py:25] The vLLM package was not found, so its version could not be inspected. This may cause platform detection to fail.
+WARNING 07-28 02:07:02 [__init__.py:25] The vLLM package was not found, so its version could not be inspected. This may cause platform detection to fail.
+INFO 07-28 02:07:02 [__init__.py:247] No platform detected, vLLM is running on UnspecifiedPlatform
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.74it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.62it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.62it/s]
 
 </pre></div></div>
 </div>
@@ -581,36 +594,36 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Lisa. I am going to the supermarket to buy some food. I want to buy some apples and oranges. I don&#39;t have any money for them, so I am going to buy apples and oranges by paying with my credit card.
+Generated text:  Jessica and I am currently studying at the University of Alberta. I&#39;m going to share my experience and opinions on the topic of public speaking. Can you please share your thoughts on the topic? How do I get started with my first public speaking event? Absolutely, I&#39;d be happy to share my thoughts on public speaking and how to get started with your first public speaking event! To get started, here are a few tips:
 
-I got 500 yuan in my bank account. I want to buy 24 apples. Each apple costs 10 yuan. So how much will the apples cost? To calculate the cost of the apples, you multiply the number of apples by the cost per apple:
+1. Choose a topic that you&#39;re passionate about and that others will be interested in. This can make your event more enjoyable and memorable.
 
-24 apples * 10 yuan/apple = 240 yuan
-
-So, the apples will cost Lisa
+2. Practice your speech several times to get comfortable with the content and delivery
 ===============================
 Prompt: The president of the United States is
-Generated text:  very busy these days. He met with scientists who study how to help people live longer and healthier lives. He also met with many people who have Alzheimer&#39;s disease. The president wants to help people to be free from the disease. He wants to make sure that people who have Alzheimer&#39;s disease can live a normal life. What can the president do to help people who have Alzheimer&#39;s? The president can do the following things:
-
-  1. Ask for more funding for research
-  2. Help doctors to find a cure for Alzheimer&#39;s
-  3. Support the development of new treatments
-  4. Offer financial aid
+Generated text:  trying to decide how many military aircraft to purchase. The current budget is $100 billion, and each aircraft costs $20 billion. The president wants to buy as many aircraft as possible within the budget. However, due to geopolitical concerns, the cost of maintaining an aircraft increases by 5% each year. If the president wants to maintain the aircraft up to a maximum of 10 years, what is the maximum number of aircraft he can purchase within the budget? To determine the maximum number of aircraft the president can purchase within the budget, we need to consider both the initial cost of the aircraft and the maintenance cost over the
 ===============================
 Prompt: The capital of France is
-Generated text: ____. A. Paris B. Lille C. Lyon D. Montreux
+Generated text: :
 A. Paris
-B. Lille
-C. Lyon
-D. Montreux
-Answer:
+B. London
+C. Madrid
+D. Rome
+Answer: A
 
-A
-
-A 40-year-old female patient was admitted to the hospital with the chief complaint of excessive menstrual bleeding. Physical examination revealed a blood pressure of 120/80 mmHg, heart rate of 72 beats per minute, and no other obvious abnormalities. Upon admission, the patient was in a state of deep coma, unable to open her eyes or respond to calls. Which of the following management options is incorrect
+The information for the following two pairs is as follows:
+(1) Green plants produce oxygen through photosynthesis.
+(2) Sunlight is essential for the photosynthesis process of green plants.
+Based on the above information, which of the following conclusions can we draw?
+A. Only (1) is correct
+B. Both (1) and (2) are correct
+C. Neither (1) nor (2) is correct
+D. (1) and (2) are correct
+E. Both (1) and
 ===============================
 Prompt: The future of AI is
-Generated text:  currently in a period of discovery and innovation. With the development of new technologies, the field of AI is making progress and becoming more and more practical. However, the truth is that there are still many problems to be solved. This is a very serious issue that needs to be resolved. While some people believe that AI is the key to solving all problems, the truth is that AI is just one part of the solution. It is important to focus on the whole picture and solve problems at different levels. This is not only a matter of just developing AI, but also a matter of developing a new set of technologies and policies that are based on
+Generated text:  digital. The impact of AI can be seen in every aspect of life, from a couple finding a movie they’ve never seen before to the ability of an AI to interpret and predict customer behavior. In order for AI to be used effectively, developers must be aware of the potential risks that come with it, including data privacy, bias, and ethical implications.
+The impact of AI on society is manifold. In the first place, it will have a significant impact on work. It will automate many jobs that are currently done by humans, including tasks like administrative work, data entry, and transcription. These jobs may not be necessary in the future as
 </pre></div></div>
 </div>
 </section>
@@ -650,17 +663,13 @@ Generated text:  currently in a period of discovery and innovation. With the dev
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m a [job title] with [number of years
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your job or profession]. I enjoy [insert a short description of your hobbies or interests]. What&#39;s your favorite hobby or activity? I love [insert a short description of your favorite activity]. What&#39;s your favorite book or movie? I love [insert a short description of your favorite book or movie]. What&#39;s your favorite color? I love [insert a short description of your favorite color]. What&#39;s your favorite food
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city that serves as the political, cultural, and economic center of the country. It is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also famous for its rich history, including the French Revolution and the French Revolution Museum. The city is home to many famous museums, including the Musée d&#39;Orsay and the Musée Rodin. Paris is also known for its food scene, with many famous restaurants and cafes serving up delicious cuisine. The city is a popular tourist destination, with millions of visitors each year. Overall, Paris is a
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a cultural and historical center with a rich history dating back to the Middle Ages. Paris is a popular tourist destination and a major economic hub, with a diverse array of restaurants, cafes, and shops. The city is known for its fashion, art, and food scene, and is home to many famous museums and galleries. Paris is a vibrant and dynamic city with a strong sense of community and a strong sense of identity. It is a city of contrasts and beauty, with a unique blend of old
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the most likely trends in AI that we can expect to see in the coming years:
-
-1. Increased automation and robotics: As AI technology continues to advance, we can expect to see more automation and robotics in various industries, from manufacturing to healthcare. This will lead to increased efficiency, productivity, and cost savings for businesses.
-
-2. AI-powered healthcare: AI will play a significant role in healthcare, with the development of more accurate and personalized medical diagnoses and treatments. AI-powered robots and drones will
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to improve and become more integrated into our daily lives, from self-driving cars to personalized healthcare and financial services. Additionally, AI is likely to continue to be used for ethical and social reasons, such as improving access to education and healthcare for marginalized communities. As AI continues to evolve, it is likely to have a significant impact on the way we live, work, and interact with each other. However, it is also important to consider the potential risks and challenges associated with AI, such as job displacement and
 
 </pre></div></div>
 </div>
@@ -703,17 +712,17 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I&#39;m a [Occupation]. I enjoy [What you do for a living]. I&#39;m currently [How long ago I graduated], and I have a [Number] year career, and I&#39;m currently [What I like to do]. I&#39;m constantly [What I like to do]. I&#39;m a [What you like to do]. I&#39;m happy to chat about my [What you like to do] and how I can help you with [What you can do]. Hello, my name is [Name]. I&#39;m a [Occupation]. I enjoy [What you do for a living]. I&#39;m currently [How
+Generated text:  [Your Name], and I am a [Type of Career] with [Number of Years in that Career]. I’m passionate about [Your Passion for the Career], which has driven me to [How you&#39;ve proven yourself in this field] and is the reason for my continued success. I love [Name of the Goal/Job/Professional Role], and I&#39;m thrilled to be pursuing this journey. What can we expect from our conversation today? I&#39;m excited to learn more about you and how I can help you achieve your goals. It&#39;s a pleasure to meet you and share my journey with you. What would you like to talk about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located in the Île-de-France region and is the largest city in the country and home to many world famous landmarks. It was founded in the 12th century and is one of the most populous cities in the world with an estimated population of over 20 million. Paris is also the seat of the French government and is known for its rich history, art, and culture. It is a popular tourist destination and is home to many famous museums, monuments, and restaurants. The city is also a cultural hub, with many creative industries flourishing and hosting numerous festivals and events throughout the year. Paris has a rich and
+Generated text:  Paris, a historic city with a rich cultural heritage and cosmopolitan atmosphere. It serves as the nation&#39;s political and economic center, and hosts numerous attractions and events throughout the year. The city is known for its iconic Eiffel Tower, landmarks such as the Louvre Museum, Notre-Dame Cathedral, and the Champs-Élysées, and is home to many famous museums and theaters. Paris also hosts numerous cultural events throughout the year, including the annual Les Relais du Charbonnais, a medieval-themed fair. The city is a popular tourist destination for its stunning architecture, rich history, and vibrant cultural scene. It
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid progress and development, driven by advances in computing power, data availability, and new technologies. Here are some possible trends that could shape the future of AI:
+Generated text:  exciting and full of potential possibilities. Some possible trends include:
 
-1. Increased specialization and specificity: As AI continues to learn and adapt, it is likely to become more specialized and specific. This will allow for more accurate and precise decision-making, but also more limited possibilities for creative or creative thinking.
+1. AI will become more integrated into our daily lives: As technology continues to advance, we can expect to see more and more AI in our homes, from smart home devices to wearable tech. This could lead to increased convenience and efficiency in our daily lives, such as faster online shopping, better voice recognition, and more seamless integration with other devices.
 
-2. Greater emphasis on ethics and fairness: AI systems will become even more integrated into our daily lives, and it is likely that ethical and fairness concerns will become more important. As a result, there may be more emphasis
+2. AI will become more capable of learning and adapting: AI will continue to evolve and improve, making it more capable of learning and adapting to new situations. This will enable AI to better understand the complexities of complex systems and make
 </pre></div></div>
 </div>
 </section>
@@ -759,19 +768,19 @@ Generated text:  likely to be characterized by rapid progress and development, d
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Jane. I&#39;m a journalist who works at a non-profit organization that focuses on environmental conservation. I&#39;m passionate about using my skills to raise awareness about environmental issues and advocate for policies that protect our planet. I&#39;m always on the lookout for stories and opportunities to make a difference in the world. I&#39;m a person who values honesty, integrity, and hard work, and I strive to use my skills to achieve positive outcomes for all. I&#39;m a dedicated, reliable, and reliable person who is committed to doing my best work every day. Hello, my name is Jane. I&#39;m a journalist who works at a non-profit organization that focuses
+Generated text:  [Name]. I&#39;m a [job title] with [employer&#39;s name] working in [position]. I&#39;ve always been passionate about [what you can say about your main occupation]. I&#39;ve been learning new things and growing in my career, and I&#39;m excited to continue doing what I love. What kind of experiences do you have that make you unique and interesting to people? That&#39;s all there is to my story. What other experiences would you like to share? [Tell your story in a few sentences. Give an example of an experience that stands out and why it was meaningful to you. Mention what you learned from it.] How
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, a city renowned for its stunning architecture, vibrant culture, and rich history. The city has a population of over 2 million and is home to numerous museums, art galleries, and historic landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its cuisine, fashion, and wine, making it a popular tourist destination. Despite its size and bustling life, Paris continues to maintain its unique charm and history, which has made it a symbol of French culture and identity. Paris is one of the most visited cities in the world, attracting millions of visitors every year.
+Generated text:  Paris. It is the largest city in the country, with a population of over 2.2 million people. Paris is known for its vibrant cultural scene, rich history, and stunning architecture, as well as its beautiful canal system and world-renowned museums. The city is also home to many international organizations, including the European Parliament and UNESCO. Paris is a popular tourist destination and a major center of French culture and politics. The city is known for its annual festivals, including the Eiffel Tower and Christmas markets.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  very promising, and there are several trends that are likely to shape it in the coming years. Here are some of the most promising trends:
+Generated text:  vast, and there is no telling exactly where it will go. However, some possible trends that could occur include:
 
-1. Improved performance and efficiency: AI is getting better and more efficient at performing tasks, making it easier to automate and optimize processes. This will enable businesses to run faster and more cost-effectively, leading to increased productivity and profitability.
+1. Increased AI development and deployment: With the rising cost and development costs of AI, there is a possibility that AI will be deployed more widely and more efficiently. This could lead to the creation of more efficient and cost-effective AI solutions.
 
-2. Personalization: AI is becoming increasingly capable of understanding and interpreting human behavior, preferences, and feedback. This will enable personalized products, services, and experiences, leading to more satisfied customers and increased customer loyalty.
+2. Autonomous vehicles: AI is already being used in autonomous vehicles, but there is also potential for AI to improve their performance and safety. Autonomous vehicles are expected to be more efficient, safer, and have a lower carbon footprint than traditional vehicles.
 
-3. Autonomous systems: AI will continue to develop
+3. Medical advancements: AI is being
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -873,7 +882,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 27, 2025.
+  Last updated on Jul 28, 2025.
   <br/>
 </p>
   </div>
