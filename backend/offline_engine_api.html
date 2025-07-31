@@ -58,7 +58,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 30, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
   </head>
   
   
@@ -546,9 +546,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
+WARNING:sglang.srt.mem_cache.storage.hf3fs.client_hf3fs:hf3fs_fuse.io is not available: No module named &#39;hf3fs_fuse&#39;
+WARNING:sglang.srt.mem_cache.storage.hf3fs.client_hf3fs:hf3fs_fuse.io is not available: No module named &#39;hf3fs_fuse&#39;
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.24it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.24it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.35it/s]
 
 </pre></div></div>
 </div>
@@ -581,49 +583,25 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sam, and I am 18 years old. I want to be a teacher. What are some things that you think should be included in the school curriculum?
+Generated text:  Larry and I am the managing director of the Long Range, Inc. I am one of the few real estate developers that have a real estate management background. I understand that this is a real estate company that has a number of properties and that the real estate company needs a business plan for a development company. What steps should I take to develop a realistic business plan for the Long Range Development Company? Developing a realistic business plan is crucial for a real estate development company to succeed. Here are some steps you can follow to develop a business plan for the Long Range Development Company:
 
-As an AI language model, I don&#39;t have personal experiences or emotions, but I can suggest some things that could be included in a school curriculum for teachers considering pursuing a career in education. Here are some factors that should be considered:
-
-1. Teaching skills: Teachers should be taught the basic skills they need to teach in a classroom, such as teaching literacy and numeracy, teaching science, teaching language arts, and teaching social studies.
-
-2. Critical thinking and problem-solving:
+1. Define the Project Objectives: Identify the specific projects you want
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to reduce the number of cars on the roads. The president&#39;s team is studying the last 5 years of data on the number of cars on the road in the United States. They found that the number of cars on the road decreased by a certain percentage each year.
-
-In the first year, there were 100,000 cars on the road. By the end of the 5th year, the number of cars decreased to 50,000.
-
-What was the percentage decrease in the number of cars over the 5-year period? To find the percentage decrease in the number of cars
+Generated text:  now trying to reelect the president who was elected in 2000. He has heard that 75% of Americans support him. He then conducts a poll and receives a certain percentage of the actual votes. If the president needs at least 75% of the votes to reelect, and the poll has a margin of error of 0.5%, what is the minimum percentage of votes the president must receive to be confident he will be reelected?
+To determine the minimum percentage of votes the president must receive to be confident in reelecting, we need to understand that the margin of error of 0
 ===============================
 Prompt: The capital of France is
-Generated text:  ________.
-A. Paris
-B. Lyon
-C. Marseille
-D. Nice
-Answer:
-
-A
-
-Male, 66 years old, has had recurrent coughing and sputum production for 25 years. A week ago, symptoms suddenly worsened, with a cough that is exacerbated by palpitations, orthopnea, dyspnea, and orthopnea, unable to lie flat, bilateral lower extremity edema, and a blood pressure of 20/13.7 kPa. The most likely diagnosis is ____
-A. Chronic bronchitis
-B. Chronic bronchitis with
+Generated text:  Paris. It is the 53rd largest city in the world and is the fifth largest metropolitan area in the world with a population of over 4 million people.
+The city was founded in 787 by Charlemagne. The city had been the capital of the Frankish Kingdom until 987. The city was placed under the rule of the Counts of Flanders until 1103. In 1152, the city was taken over by the Duke of Burgundy.
+During the sixteenth century, Paris was the most important city in Europe. Many of the major cities of Europe were under
 ===============================
 Prompt: The future of AI is
-Generated text:  in the details
+Generated text:  rapidly advancing and it&#39;s hard to believe that some people don&#39;t understand it, but many people have an overwhelmingly negative view of AI and how it impacts our lives.
 
-Cloud-Enabled Systems Deliver Longevity on the Jobs Market
+As AI technology continues to evolve, it&#39;s important for us to understand how it can be beneficial and how to harness its potential to bring about positive change in our world.
 
-Cloud-Enabled Systems Deliver Longevity on the Jobs Market
-
-Cloud-Enabled Systems Deliver Longevity on the Jobs Market
-
-The future of AI is in the details
-
-By Lennart Hammar, Senior Researcher, Cybersecurity Research Institute, Center for Cyber Security Research, and Senior Researcher, Cybersecurity Research Institute, Centre for Information Security Research (CISR), Vienna, Austria
-
-In the days when it was assumed that AI would replace human labor, the transition from the digital age to the real one has taken much longer than expected. The real
+The question of whether AI is good or bad is a complex one. While it is possible that AI could be used for good, it is not always clear how. For example, while AI can help to improve productivity and efficiency, it could also lead to the creation of job displacement in certain fields. Additionally
 </pre></div></div>
 </div>
 </section>
@@ -663,21 +641,17 @@ In the days when it was assumed that AI would replace human labor, the transitio
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Character] who has always been [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits] and I&#39;m [Positive Traits]. I&#39;m [Positive Traits
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-The statement is concise and accurately describes the capital city of France. It is a factual statement that provides a clear and specific answer to the question asked. The statement is concise because it only contains the essential information needed to answer the question, and it is accurate because it accurately describes the capital city of France. The statement is concise because it is a single sentence that does not require any additional information to be understood. It is accurate because it accurately describes the capital city of France, which is Paris. The statement is concise because it is a single sentence that does not require any additional information to be understood. It is accurate because it
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major center for art, culture, and politics, and is home to many famous museums and historical sites. Paris is a vibrant and diverse city with a rich history and a strong sense of French identity. It is also known for its annual festivals and cultural events, including the Eiffel Tower Festival and the Paris Fashion Week. The city is also home to many international organizations and institutions, including the French Academy of Sciences and the French Academy of Fine Arts. Paris is a city that
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in several key areas, including:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
 
-1. Increased automation: AI is expected to become more prevalent in various industries, including manufacturing, healthcare, and transportation. Automation will likely lead to increased efficiency and productivity, but it will also create new challenges, such as job displacement and the need for human oversight.
+1. Increased automation and robotics: As AI technology continues to advance, we are likely to see an increase in automation and robotics in various industries. This will lead to the creation of new jobs, but it will also create new opportunities for people to work in areas such as data analysis, software development, and robotics.
 
-2. Improved natural language processing: AI will continue to improve its ability to understand and interpret human language, leading to more natural and intuitive interactions with machines. This will enable more sophisticated forms of communication and collaboration.
-
-3. Enhanced privacy and security: As AI becomes more integrated into our daily lives, there will
+2. Enhanced privacy and security: As AI technology becomes more advanced, we are likely to see an increase in the use
 
 </pre></div></div>
 </div>
@@ -720,22 +694,27 @@ Generated text:  likely to be characterized by rapid advancements in several key
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], a [Job Title] with over [Number of Years] years of experience in [Specific field of work]. I&#39;m passionate about [mention a project or accomplishment that reflects your personality]. I&#39;m always looking for challenges, different perspectives, and fresh ideas, and I&#39;m eager to learn and grow in all areas of my career. Thank you for considering me for this role.
-Hello, my name is [Your Name], a [Job Title] with over [Number of Years] years of experience in [Specific field of work]. I&#39;m passionate about [mention a project or accomplishment that reflects your personality]. I&#39;m always
+Generated text:  [Name], and I am [Age] years old. I am a [occupation] with [number of years of experience] years of experience in [field of work]. I am [gender] and I am [height] feet tall. I have [weight] pounds, and I am [appearance]. I love to [occupation] with [number of hours of experience] hours of experience, and I am [gender] and I am [sex]. I also love to [occupation] with [number of hours of experience] hours of experience, and I am [gender] and I am [sex]. I am [gender]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic Eiffel Tower, romantic cafes, and the annual烟花（焰火）display. Its history, which dates back to ancient times, is rich with legends and mysteries. The city is a melting pot of cultures, with a diverse mix of ancient and modern French influences. It is a hub for arts, entertainment, and commerce, and is a major cultural center, especially for the French film industry. Paris is also known for its food culture, with its famous bouquets and croissants. It is a city of contrasts, with its city hall and the Eiffel Tower forming the skyline of the
+Generated text:  Paris.
+
+Fact: The capital of France is Paris.
+
+This statement accurately reflects the information provided in the prompt. The capital of France, as stated in the prompt, is indeed Paris. As the largest city in France, Paris is known for its rich history, culture, and iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The statement itself is a factual fact, accurately conveying the capital city&#39;s name. Therefore, the answer is:
+
+Fact: The capital of France is Paris.
+
+This factual statement accurately represents the given information about the capital city&#39;s name in a concise manner
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to continue to evolve in a number of areas, including:
+Generated text:  likely to be shaped by several trends and advancements. Here are some potential trends that could shape the development of AI in the coming years:
 
-1. Increased accuracy and precision: AI is becoming more accurate and precise in its decision-making, with the ability to analyze vast amounts of data and identify patterns more quickly than ever before.
+1. Integration with human experts: AI will increasingly integrate with human experts in fields like healthcare, education, and transportation. These experts will help AI make better decisions, and the AI will help the human experts make better decisions.
 
-2. Personalization and customization: AI is now capable of understanding and adapting to individual users&#39; preferences and behavior, allowing for more personalized and customized experiences.
+2. Personalization: AI will become more personalized, allowing the system to adapt to individual preferences and needs. This will enable more efficient and effective use of resources.
 
-3. Autonomy and independence: As AI becomes more integrated into our daily lives, we may see a greater emphasis on its autonomy and independence, allowing it to make decisions on its own without human intervention.
-
-4. Ethical and social
+3. Semantic understanding: AI will become better at understanding and interpreting the meaning behind human language, enabling more accurate and
 </pre></div></div>
 </div>
 </section>
@@ -781,21 +760,22 @@ Generated text:  likely to continue to evolve in a number of areas, including:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Type of professional], [Industry]. I&#39;ve been working for [Company] for [Number of Years] years, and I&#39;ve gained a lot of experience in [Area of expertise]. Currently, I&#39;m [State of my job], and I&#39;m excited to bring my [Skill or Expertise] to [Company]. Looking forward to the opportunity to learn and grow with you!
-(Repeat the text a few more times to emphasize how much I appreciate my current role and the value it brings to the company)
-I look forward to being part of your team and contributing to the success of [
+Generated text:  [Name] and I am a/an [Age] year old [City, State] native. I hail from a family of engineers and enjoy trying new hobbies such as [Your Favorite Hobby]. I am an avid reader and traveler, always eager to learn and explore different cultures. My favorite book is [Title of Book], and I love to spend my free time writing stories and making art. I am a [Type of Person] and love helping others. I am excited to introduce myself and learn more about you. [Name] [Your Profession] (Follow-up questions can be added as needed). Excuse me, I seem to
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest and most populous city in the country, located on the Seine River. The city is known for its historical landmarks, including the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. Paris is also famous for its fashion industry, food culture, and annual festivals such as the Eiffel Tower Parade. It is a cultural and economic hub that plays a crucial role in French society and foreign policy. As of 2021, the population of Paris is approximately 2.3 million. The city is also home to several other important international institutions such as the International Monetary
+Generated text:  Paris.
+
+A. True
+B. False
+A. True
+Paris is the capital of France and is known for its rich history, beautiful architecture, and lively culture. The city is home to many iconic landmarks, including the Eiffel Tower and Notre-Dame Cathedral, and is a popular tourist destination. Paris is also known for its cuisine, particularly its pastries and famous street foods. The city is home to many historical sites, including the Louvre Museum and the National Museum of Modern Art. With its diverse population, Paris is a lively and multicultural city with a rich history and culture. The French people are known for
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly uncertain, and there are many potential trends and innovations that could shape the technology&#39;s direction. Here are some possible future trends in artificial intelligence:
+Generated text:  rapidly evolving, and there are many potential trends to watch out for. Here are some of the most promising areas for AI development:
 
-1. Increased use of AI in healthcare: AI can help healthcare providers diagnose diseases, recommend treatments, and even personalize medication recommendations. This could lead to more accurate diagnoses and improved treatment outcomes.
+1. Machine Learning and Deep Learning: As AI technologies continue to advance, we are seeing the emergence of deep learning and machine learning models that can process and analyze large amounts of data much more efficiently than traditional machine learning approaches. This could lead to breakthroughs in areas such as image and speech recognition, natural language processing, and autonomous driving.
 
-2. Greater integration of AI into education: AI can help educators personalize learning experiences, track student progress, and provide personalized feedback. This could revolutionize the way we learn and教人。
-
-3. AI in the financial industry: AI can help with fraud detection, risk management, and decision-making. This
+2. Natural Language Processing (NLP): With the increase in the availability of big data and the development of NLP models, we can expect to see an even greater
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -897,7 +877,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 30, 2025.
+  Last updated on Jul 31, 2025.
   <br/>
 </p>
   </div>
