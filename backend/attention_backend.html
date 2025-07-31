@@ -520,7 +520,14 @@ document.write(`
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Ascend</strong></p></td>
+<tr class="row-odd"><td><p><strong>TRTLLM MLA</strong></p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ascend</strong></p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -530,6 +537,10 @@ document.write(`
 </tbody>
 </table>
 </div>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>TRTLLM MLA only implements decode operations. For prefill operations (including multimodal inputs), it falls back to FlashInfer MLA backend.</p></li>
+</ul>
 <p>Note: Every kernel backend is compatible with a page size &gt; 1 by specifying an argument such as <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">16</span></code>.
 This is because a page size of 16 can be converted to a page size of 1 in the kernel backend.
 The “❌” and “✅” symbols in the table above under “Page Size &gt; 1” indicate whether the kernel actually operates with a page size greater than 1, rather than treating a page size of 16 as a page size of 1.</p>
@@ -570,6 +581,12 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span>--trust-remote-code
 python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>TRTLLM MLA (Optimized for Blackwell Architecture, e.g., B200)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span>--trust-remote-code
 </pre></div>
 </div>
 <ul class="simple">
