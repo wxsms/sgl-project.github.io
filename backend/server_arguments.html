@@ -1238,111 +1238,115 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>Enable NCCL NVLS for prefill heavy requests when available.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-tokenizer-batch-encode</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-symm-mem</span></code></p></td>
+<td><p>Enable NCCL symmetric memory for fast collectives.</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-tokenizer-batch-encode</span></code></p></td>
 <td><p>Enable batch tokenization for improved performance when processing multiple text inputs. Do not use with image inputs, pre-tokenized input_ids, or input_embeds.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-outlines-disk-cache</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-outlines-disk-cache</span></code></p></td>
 <td><p>Disable disk cache of outlines to avoid possible crashes related to file system or high concurrency.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-custom-all-reduce</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-custom-all-reduce</span></code></p></td>
 <td><p>Disable the custom all-reduce kernel and fall back to NCCL.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-mscclpp</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-mscclpp</span></code></p></td>
 <td><p>Enable using mscclpp for small messages for all-reduce kernel and fall back to NCCL.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-overlap-schedule</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-overlap-schedule</span></code></p></td>
 <td><p>Disable the overlap scheduler, which overlaps the CPU scheduler with GPU model worker.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-mixed-chunk</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-mixed-chunk</span></code></p></td>
 <td><p>Enabling mixing prefill and decode in a batch when using chunked prefill.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code></p></td>
 <td><p>Enabling data parallelism for attention and tensor parallelism for FFN. The dp size should be equal to the tp size. Currently DeepSeek-V2 and Qwen 2/3 MoE models are supported.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-dp-lm-head</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-dp-lm-head</span></code></p></td>
 <td><p>Enable vocabulary parallel across the attention TP group to avoid all-gather across DP groups, optimizing performance under DP attention.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-two-batch-overlap</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-two-batch-overlap</span></code></p></td>
 <td><p>Enabling two micro batches to overlap.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code></p></td>
 <td><p>Optimize the model with torch.compile. Experimental feature.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code></p></td>
 <td><p>Set the maximum batch size when using torch compile.</p></td>
 <td><p>32</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--torchao-config</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--torchao-config</span></code></p></td>
 <td><p>Optimize the model with torchao. Experimental feature. Current choices are: int8dq, int8wo, int4wo-&lt;group_size&gt;, fp8wo, fp8dq-per_tensor, fp8dq-per_row.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-nan-detection</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-nan-detection</span></code></p></td>
 <td><p>Enable the NaN detection for debugging purposes.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-p2p-check</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-p2p-check</span></code></p></td>
 <td><p>Enable P2P check for GPU access, otherwise the p2p access is allowed by default.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--triton-attention-reduce-in-fp32</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--triton-attention-reduce-in-fp32</span></code></p></td>
 <td><p>Cast the intermediate attention results to fp32 to avoid possible crashes related to fp16. This only affects Triton attention kernels.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--triton-attention-num-kv-splits</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--triton-attention-num-kv-splits</span></code></p></td>
 <td><p>The number of KV splits in flash decoding Triton kernel. Larger value is better in longer context scenarios. The default value is 8.</p></td>
 <td><p>8</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--num-continuous-decode-steps</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--num-continuous-decode-steps</span></code></p></td>
 <td><p>Run multiple continuous decoding steps to reduce scheduling overhead. This can potentially increase throughput but may also increase time-to-first-token latency. The default value is 1, meaning only run one decoding step at a time.</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--delete-ckpt-after-loading</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--delete-ckpt-after-loading</span></code></p></td>
 <td><p>Delete the model checkpoint after loading the model.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-memory-saver</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-memory-saver</span></code></p></td>
 <td><p>Allow saving memory using release_memory_occupation and resume_memory_occupation.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--allow-auto-truncate</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--allow-auto-truncate</span></code></p></td>
 <td><p>Allow automatically truncating requests that exceed the maximum input length instead of returning an error.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code></p></td>
 <td><p>Enable users to pass custom logit processors to the server (disabled by default for security).</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--flashinfer-mla-disable-ragged</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--flashinfer-mla-disable-ragged</span></code></p></td>
 <td><p>Disable ragged processing in Flashinfer MLA.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-shared-experts-fusion</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-shared-experts-fusion</span></code></p></td>
 <td><p>Disable shared experts fusion.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-chunked-prefix-cache</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-chunked-prefix-cache</span></code></p></td>
 <td><p>Disable chunked prefix cache.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-fast-image-processor</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-fast-image-processor</span></code></p></td>
 <td><p>Disable fast image processor.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-return-hidden-states</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-return-hidden-states</span></code></p></td>
 <td><p>Enable returning hidden states.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-triton-kernel-moe</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-triton-kernel-moe</span></code></p></td>
 <td><p>Enable Triton kernel for MoE.</p></td>
 <td><p>False</p></td>
 </tr>
