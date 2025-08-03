@@ -547,8 +547,8 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.03it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.02it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.63it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.62it/s]
 
 </pre></div></div>
 </div>
@@ -581,28 +581,29 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Austin Harris and I am a computer science student at the University of Toronto, with a background in Physics and an interest in data analysis. As an AI language model, I can answer questions about various topics related to programming and data science.
+Generated text:  Jason Smith. I&#39;m a 33-year-old software engineer working for a small tech startup in New York City. I&#39;m writing a novel about my time in the tech industry, and I&#39;m having trouble coming up with a unique title for it. Can you provide some suggestions for a novel title that captures the essence of my background and experiences?
+1. &#34;The Digital Odyssey: A Tale of My Life as a Software Engineer in the Tech Industry&#34;
+2. &#34;The Journey Through the Code: A Memoir of My Life as a Software Engineer&#34;
+3. &#34;Tech Tech: A Memoir of My Life as a Software Engineer&#34;
 
-What is your current role as an AI language model? As an AI language model, my current role is to assist users in answering their questions about programming and data science. I can provide information on a variety of topics, such as algorithms, data analysis, and machine learning, as well as helping users with coding and coding-related questions. I can also provide feedback and suggestions on how to improve their understanding of
 ===============================
 Prompt: The president of the United States is
-Generated text:  now considering a new national park that would cover 1,000 square miles. The park would be divided into \( n \) sections, each of which would be \( \frac{1}{4} \) the size of the park. If the president has a budget that allows for the purchase of up to 20 million square miles, how many sections should be in the park to stay within budget, assuming \( n \) is an integer? To determine the maximum number of sections the park can be divided into while staying within the president&#39;s budget, we start by expressing the total area of the park and the area
+Generated text:  an elected official who serves a term of 4 years. The previous president of the United States was a man named Bush. How many years did the president of the United States have to serve as president before he was replaced by Bush?
+The president of the United States is elected for a term of 4 years. Therefore, to find out how many years the president had to serve before he was replaced by Bush, we simply subtract the current term from the previous term.
+
+\[
+4 \text{ years} - 4 \text{ years} = 0 \text{ years}
+\]
+
+So, the president of the United States
 ===============================
 Prompt: The capital of France is
-Generated text: :
-
-A) Paris
-B) Montpellier
-C) Lyon
-D) Rennes
-The capital of France is Paris. Therefore, the correct answer is:
-
-A) Paris
+Generated text:  Paris. It is located in the north-central region of France, bordering the English Channel, the Mediterranean Sea, and the Western Ghats. It is situated in the 47th parallel north of the equator and is the third largest city in the world in terms of population. It is often referred to as the &#34;City of a Thousand Eyes&#34; because it has one of the largest canyons in the world, a cluster of elegant French buildings, and a diversity of ethnic groups. It is often called the &#34;Paris of Paris&#34; because of its unique urban architecture and the dazzling display of Parisian art.
+What is the
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but one thing is for sure - the technology is rapidly evolving and will continue to do so in the coming years. While some see it as a positive force, others are wary of its potential impact on society. With that in mind, what can we expect from AI in the coming years?
-One of the most significant trends in the future of AI is the rise of AI-powered virtual assistants and chatbots. These technologies are designed to handle a wide range of tasks, from answering questions and providing information to providing emotional support and assistance.
-As AI becomes more advanced, the ability to communicate with these virtual assistants and chatbots will become more
+Generated text:  bright, but it also raises a few important questions. Can AI really develop its own language? Can it be kept out of the hands of the people who created it? And, if it has the power to learn and improve, does that mean it will be able to replace human beings in every way? As AI becomes more advanced, many are questioning the question of whether we can even build a society that is truly human.
+One of the most interesting questions that has come up in recent years is whether AI can truly develop its own language. This is a question that has puzzled linguists for decades, who have struggled to come up with a
 </pre></div></div>
 </div>
 </section>
@@ -642,17 +643,17 @@ As AI becomes more advanced, the ability to communicate with these virtual assis
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill/Ability] who have been [Number of Years] years in the [Field] industry. I&#39;m passionate about [What I Love About My Profession]. I&#39;m always looking for ways to [What I Want to Improve/Change]. I&#39;m [What I Do Best/What I&#39;m Good At]. I&#39;m [What I&#39;m Looking For in a Job]. I&#39;m [What I&#39;m Looking for in a Partner]. I&#39;m [What I&#39;m Looking for in a Relationship]. I&#39;m [What I&#39;m Looking for in a
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or role]. I enjoy [insert a short description of your hobbies or interests]. I&#39;m always looking for new experiences and learning opportunities. What&#39;s your favorite hobby or activity? I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite book or movie? I&#39;m always looking for new perspectives and ideas to expand my knowledge. What&#39;s your favorite place to go? I&#39;m
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, and is the largest city in Europe by population. It is located on the Seine River and is home to many of France&#39;s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its rich cultural heritage, including the Opéra Garnier, the Musée d&#39;Orsay, and the Champs-Élysées. The city is also home to many international institutions and organizations, including the French Academy of Sciences and the European Parliament. Paris is a vibrant and dynamic city that is known for its diverse
+Generated text:  Paris. It is the largest city in Europe and the third-largest city in the world by population. It is also the seat of the French government and the country&#39;s cultural, political, and economic center. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. It is also a major center for the arts, music, and fashion, and is home to many museums, theaters, and other cultural institutions. Paris is a popular tourist destination, with millions of visitors annually. It is also a major hub for international business and trade, with
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Here are some possible future trends in AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could be expected in the future:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and the potential for AI to be used for harmful purposes.
+1. Increased integration of AI into everyday life: As AI becomes more integrated into our daily lives, we may see more widespread adoption of AI technologies in areas such as healthcare, transportation, and customer service. This could lead to more efficient and effective use of resources, as well as the development of new applications that are tailored to specific needs.
 
-2. Greater integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to new forms of AI that are more capable of understanding and responding to
+2. Greater emphasis on ethical and responsible AI: As AI becomes more advanced, there will be a greater
 
 </pre></div></div>
 </div>
@@ -695,27 +696,21 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [First Name] and I&#39;m [Last Name]. I&#39;m [Age] years old and I have [Number of Pets]. I&#39;m passionate about [What I like to do most], and I enjoy [Why] . I&#39;m very [How I feel]. I&#39;m always looking to [What I want to improve]. I&#39;m [What&#39;s my favorite hobby/interest]. I believe in [My motto/attitude]. I&#39;m [What&#39;s my [Favorite/Least Favorite] Subject]. I&#39;m [What&#39;s my [Favorite/Least Favorite] Book]. I&#39;m a [What I aspire to be]. I have a [
+Generated text:  [Name], and I&#39;m a [type of job or profession]. I&#39;ve been working in [your field] for [number of years] years, and I have a passion for [what you enjoy doing]. My goal is to [what you aim for in your career]. I&#39;m confident in my abilities and I&#39;m looking forward to [what you&#39;re looking forward to] with [what you&#39;re looking forward to]. How can I get started? I&#39;d love to hear from you! [Name] [Address] [Phone Number] [E-mail Address] [LinkedIn Profile] [Optional: Personal goals, achievements, etc.]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-That&#39;s correct! Paris is the capital city of France and one of its most famous landmarks is the Eiffel Tower. It&#39;s also home to many historical sites and museums, such as the Louvre and Notre-Dame Cathedral. Paris is known for its beautiful architecture, vibrant nightlife, and cultural events. It&#39;s a popular tourist destination and a significant economic center in France.
-
-Note: As of 2021, the Eiffel Tower is the tallest man-made structure in the world. It stands at 324 meters tall and was completed in 1889.
-
-So, Paris is
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre Dame Cathedral, and the Palace of Versailles. It is also a major transportation hub, with the iconic TGV high-speed train service connecting major cities around the country. Paris is famous for its diverse culture, cuisine, and music, as well as its historical and architectural significance. With a population of over 2 million people, it is the most populous city in the European Union and a major international center for business, politics, and culture. It is also the home to many famous museums, museums, theaters, and other cultural
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  bright, and it has the potential to revolutionize the way we live, work, and interact with technology. Here are some possible future trends in AI:
+Generated text:  likely to be characterized by a number of new and exciting trends, including:
 
-1. Improved Machine Learning and Deep Learning: Machine learning and deep learning will continue to advance rapidly, making AI systems more accurate and capable of recognizing patterns and making predictions.
+1. Improved accuracy and reliability of AI: AI systems will become even more accurate and reliable, with advances in machine learning and deep learning enabling them to solve complex problems more effectively than ever before.
 
-2. Increased Personalization: AI will be able to better understand and tailor the experiences of users, making the online shopping experience more personalized and engaging.
+2. Increased integration with human behavior: AI will become even more integrated with human behavior, with machines being able to anticipate human needs and behaviors, and to adapt to new situations more quickly and efficiently.
 
-3. Autonomous Vehicles: Autonomous vehicles will become more common, as AI technologies continue to improve and become more accessible.
+3. Greater automation and automation of AI: AI systems will become more autonomous and automated, with the ability to perform tasks with greater efficiency and accuracy than ever before.
 
-4. Healthcare and Biotechnology: AI will
+4
 </pre></div></div>
 </div>
 </section>
@@ -761,19 +756,17 @@ Generated text:  bright, and it has the potential to revolutionize the way we li
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [Duty/Status] at [Agency]. I have a passion for [Interest/Opinion] and I strive to [Action/Goal]. I am constantly seeking feedback from my colleagues and colleagues who work in other agencies. My current project focuses on [Project] and I believe it is essential for [Agency]. I have a [Number] year of experience in [Role], with [Number] years of experience in [Previous Role]. I am [Age/Height/Weight] and I have [Number of children] children. I believe in [Perspective/Value] and I am [
+Generated text:  [Name] and I am a writer from [Location]. I am a freelance writer, with a particular focus on [Field of Work]. I specialize in [Type of Writing, such as fiction, non-fiction, or poetry]. I have published [Number of Books] books, and my writing style is [Type of Writing]. I enjoy sharing my stories, and I am always looking for opportunities to collaborate with other writers and editors. I have a passion for [Area of Interest], and I am always exploring new ideas and exploring how I can help shape the world. I believe in the power of words to make a difference, and I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in the country and the fifth largest in the world by population. The city was founded in 789 AD and is known for its rich history, including ancient ruins, palaces, and magnificent cathedrals. It is also home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is known for its fashion, art, and food, and is a major tourist destination. It is also known as &#34;La Provence&#34; due to its Mediterranean climate and countryside surroundings. Its status as the &#34;City of Light&#34; continues to
+Generated text:  Paris, the city known for its iconic Notre-Dame Cathedral, famous for its Eiffel Tower, and for being one of the most livable cities in the world. Paris is also known for its rich history, including the birthplace of the French Revolution, the Louvre Museum, and the Louvre Pyramid. The city is home to over 2.4 million people and is an important cultural and economic center in Europe. The French language is spoken throughout the city and around the world. Paris was founded in 787 AD and is considered a major hub for both intellectual and artistic pursuits, with a rich history dating back
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a complex interplay of technological advancements, societal shifts, and human interactions. Here are some potential future trends in AI:
+Generated text:  set to be transformative, with multiple trends expected to shape the industry and impact various aspects of society. Here are some of the most likely trends to come:
 
-1. Increased efficiency and precision: AI is expected to continue improving its ability to perform complex tasks with increasing precision and accuracy. This will require a significant shift in how we approach problem-solving and decision-making.
+1. AI will become more personalized: As AI becomes more advanced, it will become better at personalizing the interactions between humans and machines, leading to a more personalized experience for users. This will lead to a more efficient use of resources and a better overall user experience.
 
-2. Personalization and customization: As AI becomes more widely available, there will be an increased focus on personalizing and customizing AI-based services and products to meet individual needs and preferences.
-
-3. Ethical and responsible AI: There is a growing awareness of the potential risks and unintended consequences
+2. AI will become more ethical: As AI technology continues to advance, there will be a greater emphasis on creating ethical AI. This will involve developing AI that is transparent, accountable, and has the ability to make
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
