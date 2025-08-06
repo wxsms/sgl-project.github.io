@@ -546,11 +546,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0806 01:59:05.291000 1376205 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0806 01:59:05.291000 1376205 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0806 01:59:13.653000 1377166 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0806 01:59:13.653000 1377166 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-[W806 01:59:15.106292237 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+W0806 03:45:36.413000 2564781 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0806 03:45:36.413000 2564781 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0806 03:45:46.034000 2565561 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0806 03:45:46.034000 2565561 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[W806 03:45:47.626618788 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -572,8 +572,8 @@ W0806 01:59:13.653000 1377166 torch/utils/cpp_extension.py:2425] If this is not 
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.15it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.45it/s]
 
 </pre></div></div>
 </div>
@@ -606,24 +606,56 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Philip and I am a 21-year old male. I live in the city and have been working in the fields since 2015.
+Generated text:  Joe I am 52 years old I am a computer programmer but I play football and I have been doing it for the past 8 years. I play football for the Houston Texans but I have been working on my programming skills since I was 16 years old. I have taken a course in C++, which was really good.
 
-I have a concern with my work.
+What is the most important thing to know about me?
 
-My first question is about the different types of people. I have heard that some people just don&#39;t care about working and some people are more passionate about it. I have noticed that most people seem to care more about what they are getting paid for.
-
-I want to find out if there is any real difference in the type of people that work at different companies. I have not seen any evidence of a difference that I can confirm. Is there a
+1. Shouldn&#39;t I tell my coworkers about this? I do have a hobby
+2. Should I tell my coworkers about this? I am a programmer and have been doing football for 25 years
+3. Should I tell my
 ===============================
 Prompt: The president of the United States is
-Generated text:  a presidential candidate. The president will be sworn in on July 4th. The president will take office on August 1st. The president will be first in line for the presidency in two years. Who is this person? The person in this scenario is the President of the United States. As the president of the United States, the person is the one who will be sworn in on July 4th and take office on August 1st. The United States has a two-year term for the presidency, which means the president will be first in line for the presidency in two years. Therefore, the correct answer is the President of
+Generated text:  30 years older than the president of Brazil, who is 35 years old. If the president of Brazil decides to give an extra $100,000 bonus to the person he appoints, what will be the difference in age between the president of the United States and the president of Brazil after the bonus is given? To determine the difference in age between the president of the United States and the president of Brazil after the bonus is given, we can follow these steps:
+
+1. **Identify the current ages of the presidents:**
+   - The president of Brazil is currently 35 years old.
+
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris.
+Generated text:  ______. [ ]
+A. London
+B. Paris
+C. Berlin
+D. Moscow
+Answer: B
 
-France is a country in western Europe. It has beautiful sights, rivers and beautiful parks. Paris is the capital of France. It is the biggest city of France and it is in the center of the country. It is the most important city of France. The city of Paris has many beautiful buildings and houses of different styles. The city has many museums, theaters, cafes and a big zoo. In the 13th century, Paris became the capital of France. There were only few people in Paris. But now there are millions of people in Paris. There is also a new city called Île-de-France. People
+The capital of France is ______. [ ]
+A. London
+B. Paris
+C. Berlin
+D. Moscow
+Answer: B
+
+Which of the following is NOT a landmark of the British Empire? [ ]
+A. The Palace of Westminster
+B. The Westminster Hall
+C. The Houses of Parliament
+D. The Houses of Parliament
+Answer: B
+
+The capital of France is ______. [ ]
+A. London
+B. Paris
+C. Berlin
+D. Moscow
+Answer: B
+
+
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of people and not machines. We&#39;ll see. Whether it&#39;s in the form of software or hardware, the transition to a more human-centric AI is not an impossible dream. What is important is that we, as individuals, should always be vigilant about the choices we make in the AI landscape. In a world where we rely on AI to drive our daily lives, it&#39;s crucial to be aware of the potential risks and challenges it poses. As such, it is essential to develop a strong ethical framework for AI that prioritizes human values and well-being. This will ensure that the benefits of AI are distributed fairly and equitably
+Generated text:  in the hands of the user, and that&#39;s exactly what H2O AI offers. If you&#39;re looking for ways to grow your business, reduce operational costs, or enhance customer experience, then H2O AI is for you.
+H2O AI is a leading provider of machine learning solutions that help businesses adapt to rapid technological change. The technology is designed to leverage complex data and data sources to discover insights and gain actionable knowledge.
+To learn more about H2O AI, and how it can help your organization, watch the video below. (PS: The video link may not be available in your location. ) We&#39;d be happy
 </pre></div></div>
 </div>
 </section>
@@ -666,16 +698,10 @@ Prompt: Write a short, neutral self-introduction for a fictional character. Hell
 Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history and a vibrant culture, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its cuisine, fashion, and art scene. It is a major transportation hub and a major tourist destination, attracting millions of visitors each year. The city is home to many important institutions, including the French Academy of Sciences, the Louvre Museum, and the National Library of France. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another
+Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history and a vibrant culture. The city is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its cuisine, fashion, and art scene. It is a popular tourist destination and a cultural hub in Europe. The city is home to many museums, theaters, and other cultural institutions. Paris is a city of contrasts, with its modern architecture and historical landmarks. It is a city of people, with a diverse population of over 10 million people. The
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
-
-1. Increased automation: AI is expected to become more prevalent in various industries, with automation becoming more widespread. This could lead to the creation of more efficient and cost-effective solutions, but it could also lead to job displacement for some workers.
-
-2. Enhanced human-AI collaboration: As AI becomes more advanced, it is likely to become more capable of understanding and adapting to human behavior. This could lead to more effective collaboration between humans and AI, as well as the development of new AI technologies that can enhance human capabilities.
-
-3. AI ethics and privacy concerns: As AI becomes more integrated into our
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to improve and become more integrated into our daily lives, from self-driving cars and robots in factories to personalized medicine and virtual assistants. Additionally, AI will likely continue to be used for tasks that require human-like intelligence, such as language translation and emotional intelligence, and will likely be integrated into more and more aspects of our society, from education and healthcare to transportation and entertainment. However, there are also potential risks and challenges associated with AI, including issues of bias, privacy, and security, and it is
 
 </pre></div></div>
 </div>
@@ -718,21 +744,17 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a friendly and approachable person. I love spending time outdoors and enjoying the great outdoors. I&#39;m always looking for new ways to learn and expand my knowledge, so I&#39;m always willing to take on new challenges and try new things. And I love helping others, so I&#39;m always willing to lend a hand or offer my expertise. Ultimately, my goal is to make the world a better place and inspire others to do the same. Thank you for considering me for a job. Let me know if you have any questions or need any information. [Name] [Phone number] [Email address] [LinkedIn
+Generated text:  [Your Name]. I&#39;m 28 years old, and I recently graduated from college with a degree in [field of study]. Before that, I worked in the financial industry for two years, and I have a passion for [interest or hobby]. I love spending time with my family and friends, and I&#39;m also a big fan of [relatable hobby or activity]. I&#39;m always looking for new experiences and learning new things, and I enjoy making connections with people. What&#39;s your favorite thing to do in your free time? I love traveling, trying new restaurants, and reading. I&#39;m excited to meet you! 💻
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris is the capital city of France. It was founded in 789 by Charlemagne and is the largest city in the European Union and the world&#39;s third-largest city by population. It is home to many notable landmarks and has been a significant cultural and political center for centuries. Paris is known for its rich history, diverse neighborhoods, and delicious cuisine. The city is home to many museums, galleries, and theaters, as well as many iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is a UNESCO World Heritage site and one of the most visited cities in the
+Generated text:  Paris. It is known for its rich history, stunning architecture, and lively culture. Paris is one of the world’s most famous cities and hosts numerous world-renowned attractions, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its unique cuisine, nightlife, and fashion industry. Its status as the world’s financial and trade center has made it a major center of commerce and business. The city has been a UNESCO World Heritage site for several years and remains a significant cultural and economic hub in France. Based on the information provided, what is the nickname of the Eiffel Tower
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be highly diverse and rapidly evolving, driven by advances in computing power, data analytics, and machine learning. Some possible future trends in AI include:
+Generated text:  promising and it is likely to continue evolving rapidly, with the potential to revolutionize industries and societies in a wide range of ways. Here are some possible future trends in artificial intelligence:
 
-1. Enhanced Personalization: As AI becomes more capable, it is expected to provide more personalized experiences, such as recommendations and insights for individual users or industries.
+1. Increased AI transparency and accountability: With the increasing amount of data being collected and analyzed, there is a need for better AI systems that are transparent and accountable. This will require improvements in data handling practices, machine learning models, and ethical considerations.
 
-2. Autonomous Systems: AI-driven autonomous systems are expected to become more prevalent, with vehicles, robots, and drones becoming more sophisticated and capable of making autonomous decisions and actions.
-
-3. Artificial Intelligence for Healthcare: AI is already being used in healthcare to improve patient care and outcomes, and it is expected to continue to play a
+2. More autonomous machines: AI has the potential to completely change the way we work and live. Autonomous machines will be able to perform a wide range of tasks, from driving cars to performing medical procedures. This
 </pre></div></div>
 </div>
 </section>
@@ -778,22 +800,17 @@ Generated text:  expected to be highly diverse and rapidly evolving, driven by a
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I&#39;m a [Your Age] year old [Your Nationality] who currently lives in [Your City/Country]. I&#39;ve always been fascinated by [Your Interests/Old School/Debts] and have been deeply involved in [Your Projects/Sports/Hobbies]. I believe in the importance of [Your Values/Personal Goals/Personal Interests]. I&#39;m confident in my abilities and will do my best to achieve my goals. I&#39;m excited to meet you and learn more about you.
-Yourself is a good person and I&#39;m happy to have you as a friend. I look forward to meeting you
+Generated text:  [insert name] and I&#39;m a [insert job role/occupation] at [insert company name]. I&#39;m a [insert age, gender, and nationality] born in [insert year of birth] in [insert country]. I&#39;m [insert a physical characteristic, like &#34;short, curly-haired, or blue-eyed&#34;] and have a [insert hobby, like &#34;reading, cooking, or playing sports&#34;] that keeps me motivated to learn and grow as a person. What kind of person are you? [insert a brief sentence to introduce yourself, like &#34;Hello, I&#39;m a [insert name] and I&#39;m a [insert occupation
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris is a bustling metropolis with a rich cultural heritage, a historic center, and a significant role in French politics, society, and identity. It is the capital of France, the largest and most populous city, and a major economic and cultural center in Europe. Known for its iconic landmarks such as the Eiffel Tower and the Louvre Museum, Paris is also home to the Louvre Museum, the most visited museum in the world, and the Notre-Dame Cathedral. Its reputation for fine dining, fashion, and cuisine has also made Paris a major hub for the entertainment industry and a popular tourist destination. The city is
+Generated text:  Paris, located in the Western Part of the country. The city is known for its rich history, stunning architecture, and lively atmosphere. It is also a major economic and cultural center, with many prestigious museums, theaters, and cultural events. Paris has a population of over 2 million people and is a popular tourist destination. It is also home to notable landmarks such as the Eiffel Tower and the Louvre Museum. Overall, Paris is a bustling and fascinating city with much to offer visitors of all ages. **Paris:** The capital of France is a UNESCO World Heritage Site, and it has a vibrant and eclectic culture, rich history
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  very exciting and varied, and it&#39;s difficult to predict exactly what it will look like. However, here are some possible trends in AI that could shape the future:
+Generated text:  rapidly evolving, and there are many potential trends that could shape the industry in the coming years. Here are some of the key trends that could influence AI in the years ahead:
 
-1. More advanced hardware: As hardware becomes more powerful and capable, AI will become more efficient and effective at performing tasks. This could lead to AI systems becoming more accurate, faster, and more powerful.
+1. Deep learning and neural networks: One of the most exciting areas of AI research is the development of deep learning and neural networks. These are computer algorithms that can learn from large datasets and perform tasks that would be impossible for humans to accomplish. As more data is processed and algorithms are improved, the potential for AI to solve complex problems will increase.
 
-2. Increased focus on ethics: As AI becomes more advanced, there will be increasing pressure to ensure that the technology is used ethically and responsibly. This could lead to more regulations and oversight of AI systems.
-
-3. AI will become more prevalent in everyday life: As
+2. Augmented and virtual reality: As virtual reality technology becomes more advanced, we can expect to see more immersive
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
