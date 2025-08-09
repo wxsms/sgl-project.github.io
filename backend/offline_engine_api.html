@@ -58,7 +58,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Aug 08, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 09, 2025"/>
   </head>
   
   
@@ -546,11 +546,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0808 23:15:15.480000 688366 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0808 23:15:15.480000 688366 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0808 23:15:23.562000 688987 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0808 23:15:23.562000 688987 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-[W808 23:15:25.843335631 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+W0809 01:01:44.734000 101150 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0809 01:01:44.734000 101150 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0809 01:01:52.745000 102033 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0809 01:01:52.745000 102033 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[W809 01:01:54.701961383 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -572,8 +572,8 @@ W0808 23:15:23.562000 688987 torch/utils/cpp_extension.py:2425] If this is not d
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.54it/s]
 Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.52it/s]
 
 </pre></div></div>
 </div>
@@ -606,53 +606,41 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Brien. I have been working on a JavaScript game for a while now, and I&#39;ve come across a simple code snippet that I think is causing an error. I need some help to correct it. Can you help me with the code snippet?
-Here is the code snippet:
-```javascript
-let name = prompt(&#34;What is your name?&#34;);
-alert(&#34;Hello, &#34; + name);
-```
-This code is supposed to prompt the user to enter their name and then display a message saying &#34;Hello, &#34; followed by the user&#39;s name. However, I&#39;m getting an error message that says &#34;SyntaxError: Unexpected token T&#34;.
+Generated text:  Josh. I&#39;m a software developer with a background in artificial intelligence and machine learning. I have been working with AI for several years now, and I&#39;m constantly exploring how to improve my skills in this field. I am also interested in learning more about the psychology of AI and its impact on society. Can you please provide me with a list of recommended books on AI ethics, psychology, and society? Sure! Here are some books that focus on AI ethics, psychology, and society:
+
+1. &#34;The Ethical Machine: How AI Is Transforming Our Lives&#34; by David Chalmers (2017)
+2. &#34;The
 ===============================
 Prompt: The president of the United States is
-Generated text:  elected by the people for a term of four years. What is the maximum possible number of people who could be president for a term longer than four years? There are 50 states in the United States, and each state gets one vote in the presidential election. So each state could have up to 50 votes for president.
-But the president is elected by a total of 44 states, so the maximum possible number of people who could be president for a term longer than four years is $44 \cdot 50 = \boxed{2200}$.
-The answer is: 2200
+Generated text:  a man. ____ （判断对错）
+
+对
+
+化简：$\frac{1}{3x}$-$\frac{2}{x}$．
+
+解：原式=$\frac{1}{3x}$-$\frac{6}{3x}$=$\frac{-5}{3x}$．
+
+化简：$\frac{1}{3x}$-$\frac{2}{x}$．
+
+解：原式=$\frac{1}{3x}$-$\frac{6}{3x}$=$\frac{-5}{3x}$．
+
+故答案为：$\frac{-5}{
 ===============================
 Prompt: The capital of France is
-Generated text:  ____.
-A. Paris
-B. Lyon
-C. Marseille
-D. Bordeaux
-Answer:
+Generated text:  Paris. It&#39;s a city with a long history and a fascinating cultural heritage. Here are some facts about Paris:
 
-A
-
-The ____ is a type of literary work, which reflects the author&#39;s life experiences and emotions, vividly portraying the author&#39;s character traits and philosophical ideas.
-A. Poetry
-B. Drama
-C. Novel
-D. Novel
-Answer:
-
-C
-
-The reason why a couple can overcome the adversity of old age is that they ____.
-A. have a big family
-B. have a healthy body
-C. have a good education
-D. have a good spouse
-Answer:
-
-D
-
-The correct timing for a company
+1. The city is home to the Eiffel Tower, the oldest remaining tower in the world.
+2. Paris is located in the north of France and on the western coast of the Mediterranean Sea.
+3. The city is famous for its cuisine, including its famous la carte style of food.
+4. Paris is the capital of France and one of the most important cities in the world.
+5. The city is home to many historic sites, including Notre Dame Cathedral and the Louvre Museum.
+6. Paris is known
 ===============================
 Prompt: The future of AI is
-Generated text:  here. But, it is also here to stay. It is not yet perfect, but it is about to rise. In fact, AI has already started to revolutionize industries across the globe and we are now about to witness the impact of AI on the physical world too.
-
-As you may know, AI is the scientific discipline that deals with the design and development of intelligent machines. These machines are programmed to think, learn and adapt. Their main goal is to help humans accomplish tasks and accomplish them at a faster rate, and in better ways. So, in simple terms, AI is a branch of computer science and it is a technology that
+Generated text:  here, and it’s a growing one.
+This is the first part of a series, exploring the impact AI has had on the world. We’ll cover the evolution of AI, the ethics of AI, the societal impacts of AI, and the future of AI.
+In the previous series, we looked at how the powers of AI have created new opportunities for businesses and individuals to innovate and grow their businesses. We showed how the technology we develop can generate new products and services, create new market segments, and help to improve the efficiency and performance of our businesses.
+In this series, we’ll look at how the future of AI will impact the
 </pre></div></div>
 </div>
 </section>
@@ -692,17 +680,19 @@ As you may know, AI is the scientific discipline that deals with the design and 
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the birthplace of French literature and a major center for art, music, and cinema. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. Its history dates back to the Roman Empire and is known for its medieval architecture and art. It is also home to the French Parliament and the French Riviera. Paris is a city of contrasts, with its modern skyscrapers and historic neighborhoods. It is a city of people, with a diverse population of
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a cultural and historical center with a rich history dating back to ancient times and a modern city that is known for its fashion, food, and art. It is also a major transportation hub, with the Eiffel Tower serving as a symbol of the city&#39;s importance in the world. Paris is a city that has a unique blend of old and new, with a vibrant and dynamic atmosphere
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to evolve and improve, leading to more sophisticated and accurate AI systems that can perform a wide range of tasks. Some potential future trends in AI include:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be increased pressure to consider the ethical implications of its use. This will likely lead to more stringent regulations and guidelines for AI development and deployment.
+1. Increased automation: AI will continue to automate many tasks, from manufacturing to customer service, and will become more efficient and accurate.
 
-2. Greater integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with
+2. Enhanced privacy and security: As AI becomes more integrated into our daily lives, there will be increased concerns about privacy and security. There will be efforts to ensure that AI systems are designed and implemented in a way that respects user privacy and security.
+
+3. AI will become more human-like: AI will continue to evolve and become more capable, but it will also become more like human beings. This will involve developing AI that can learn and adapt to new situations
 
 </pre></div></div>
 </div>
@@ -745,27 +735,31 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a skilled [occupation or profession] with a passion for [occupation or profession&#39;s field of interest]. I&#39;m [age], [gender], [nationality], [religion], [language], and [physical characteristic]. I have a [number] of years of experience in [occupation or profession] and I strive to be [ambition or goal]. I&#39;m always learning and evolving, always striving to improve myself and become better. I&#39;m ready to dive into the world of [occupation or profession] and get involved in whatever projects I find interesting. If you&#39;re interested, I would love to hear about
+Generated text:  [Name] and I am a [insert your profession or role]. I&#39;m always ready to learn and grow, and I&#39;m always looking for new ways to help others and make a positive impact. What brings you to this world? How do you want to use your talents and experiences here? What kind of adventures do you have in mind? Let&#39;s get started on this exciting journey together!
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-Does the sentence correctly complete the following passage?
+What are the two main religions in France? The two main religions in France are Christianity and Islam.
 
-Paris is a city in France that is also a country with four official languages. Paris was founded by King Louis IX in the 12th century. Napoleon created a capital for France, and Paris was renamed to have the name Paris, meaning &#34;The City of Light.&#34; Paris is a city in the Seine River and is known for its rich history, beautiful architecture, and vibrant culture.
+Which of the following events occurred in France? The events that occurred in France include the war of the Third Coalition, the French Revolution, and the storming of the Bastille.
 
-Paris is a city in France that is also a country with four official languages. Paris was founded by King Louis IX in the 12th century. Napoleon created a capital for France,
+Which is not a traditional French dish: croissant, cheese, Poutine, or la patate ?
+
+The traditional French dish that is not a croissant, cheese, or Poutine is la patate, which is a French vegetable.
+
+Which is not a main city in France: Paris, Rome, or Berlin ?
+
+The
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  bright and we can expect it to continue to advance rapidly. Some possible future trends in AI include:
+Generated text:  highly dynamic and evolving, and there is no clear trend that can be predicted with certainty. However, several trends are currently shaping the landscape of AI, including:
 
-1. Increased integration with human intelligence: AI systems may become more sophisticated and integrate better with human intelligence, leading to more effective decision-making and problem-solving.
+1. Increased use of AI in healthcare: As the world faces a growing need for personalized medicine and better patient outcomes, AI is being increasingly integrated into healthcare systems to improve diagnosis, treatment, and patient care.
 
-2. Autonomous AI: AI systems that can make decisions without human intervention may become more common, with autonomous vehicles and other autonomous technologies becoming more prevalent.
+2. Greater integration of AI in manufacturing: AI is being used to automate and optimize manufacturing processes, improve productivity and reduce costs. AI is also being used to detect defects and identify quality control issues more quickly.
 
-3. Improved security: AI systems are increasingly being used for security purposes, with advancements in machine learning and deep learning leading to more accurate and effective security systems.
-
-4. Personalization: AI systems can be used to provide more personalized experiences
+3. Greater integration of AI in finance: AI is being
 </pre></div></div>
 </div>
 </section>
@@ -811,22 +805,21 @@ Generated text:  bright and we can expect it to continue to advance rapidly. Som
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I come from a small town in the countryside. I have always loved reading and writing, and I find the idea of getting a job in a publishing house exciting. I&#39;ve had my own small business for a few years, and I&#39;m very passionate about social and environmental issues. What&#39;s your background and what&#39;s your favorite hobby? [Name] [Description of Hobby] [Name] [Description of Hobby] [Name] [Description of Hobby] [Name] [Description of Hobby] [Name] [Description of Hobby] [Name] [Description of Hobby] [Name] [Description of Hobby] [
+Generated text:  [Your Name]. I&#39;m a [Your Profession or Role], and I love helping others. Whether it&#39;s solving complex puzzles, providing support, or just sharing a little bit of my knowledge, I&#39;m always here to lend a helping hand. What&#39;s your profession or role? Let&#39;s get started! 🧵🤝 #HelpingHand #Professional #Devotee Of Helping #Friends #Community Involvement 🙌💡 #CreativePerson #Sociable #EmotionalEmpathetic #DiversityAwareness #Collaborative #Innovative #OpenToNewAdventures #Friendly #Supportive #Friendly
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city where the Eiffel Tower is located.
-
-[Mark the correct answer and provide a rationale for your answer.]
-
-Rationale:
-The Eiffel Tower is located in the heart of Paris, the capital city of France. It serves as a symbol of the French nation and is a popular tourist attraction in the city. Therefore, the Eiffel Tower is the correct answer for Paris, the capital of France. Answer according to: The capital of France is Paris, the city where the Eiffel Tower is located. See also Brussels, Luxembourg, and Nice. See also Paris, the city where the Eiff
+Generated text:  Paris, also known as the City of Light. It is the most populous city in France and is home to the country’s capital and cultural center. It is renowned for its medieval architecture, rich history, and vibrant nightlife, and has been the site of important events and events for centuries. Paris is also known for its famous landmarks such as Notre-Dame Cathedral, the Eiffel Tower, and the Louvre Museum. The city is a major hub for education, culture, and commerce, and attracts millions of visitors each year. Paris has a diverse and rich culture, with a strong emphasis on art, music, and literature, and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by several key trends, including:
+Generated text:  expected to be characterized by significant advancements in several areas, including:
 
-1. Increased focus on ethical and social issues: As AI is increasingly used in everyday life, there will be increased focus on ethical considerations such as bias, transparency, and fairness. This will lead to a more rigorous evaluation of AI systems and a push for transparency and accountability in the development and deployment of AI technology.
+1. Machine learning and deep learning: Machine learning algorithms will continue to improve their ability to analyze and understand complex data, leading to more accurate and personalized AI solutions.
 
-2. Greater integration of AI with human capabilities: AI will continue to evolve and become more integrated with human capabilities, such as speech recognition, natural language processing, and machine learning. This integration will lead to more complex and sophisticated AI systems that can perform tasks that require human
+2. Natural language processing: Advances in this area will allow AI to better understand and interpret human language, leading to more natural and intuitive interactions between humans and AI.
+
+3. Cybersecurity: AI will play a growing role in cybersecurity, as it can analyze large amounts of data and identify patterns that may not be immediately obvious.
+
+4. Autonomous vehicles: As autonomous vehicles become more widely available, AI will play a
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -928,7 +921,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 08, 2025.
+  Last updated on Aug 09, 2025.
   <br/>
 </p>
   </div>
