@@ -53,7 +53,7 @@
     <link rel="icon" href="_static/logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Install SGLang" href="start/install.html" />
+    <link rel="next" title="Install SGLang" href="get_started/install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Aug 11, 2025"/>
@@ -166,27 +166,37 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="start/install.html">Install SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started/install.html">Install SGLang</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/llama4.html">Llama4 Usage</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Backend Configurations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/attention_backend.html">Attention Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/lora.html">LoRA Serving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/vlm_query.html">Query Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/observability.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/attention_backend.html">Attention Backend</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -194,39 +204,35 @@
 <li class="toctree-l1"><a class="reference internal" href="supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/reward_models.html">Reward Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported_models/rerank_models.html">Rerank Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/support_new_models.html">How to Support New Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported_models/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="backend/speculative_decoding.html">Speculative Decoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/structured_outputs.html">Structured Outputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/function_calling.html">Tool and Function Calling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/separate_reasoning.html">Reasoning Parser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/custom_chat_template.html">Custom Chat Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/quantization.html">Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/lora.html">LoRA Serving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/pd_disaggregation.html">PD Disaggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/vlm_query.html">Querying Qwen-VL</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="platforms/amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/blackwell_gpu.html">Blackwell GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/ascend_npu.html">Ascend NPUs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="frontend/frontend.html">SGLang Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend/choices_methods.html">Choices Methods in SGLang</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="router/router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references/general.html">General Guidance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/hardware.html">Hardware Supports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/developer.html">Developer Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/environment_variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/production_metrics.html">Production Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/custom_chat_template.html">Custom Chat Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/frontend/frontend_index.html">Frontend Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
 </ul>
 
     </div>
@@ -470,31 +476,41 @@ The core features include:</p>
 <li><p><strong>Active Community</strong>: SGLang is open-source and backed by an active community with wide industry adoption.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="start/install.html">Install SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started/install.html">Install SGLang</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Tutorial</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="references/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/openai_api_completions.html">OpenAI APIs - Completions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/llama4.html">Llama4 Usage</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Backend Configurations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="backend/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/attention_backend.html">Attention Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/function_calling.html">Tool and Function Calling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/lora.html">LoRA Serving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/vlm_query.html">Query Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/observability.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features/attention_backend.html">Attention Backend</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -504,47 +520,41 @@ The core features include:</p>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/reward_models.html">Reward Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported_models/rerank_models.html">Rerank Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/support_new_models.html">How to Support New Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported_models/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="backend/speculative_decoding.html">Speculative Decoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/structured_outputs.html">Structured Outputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/function_calling.html">Tool and Function Calling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/separate_reasoning.html">Reasoning Parser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/custom_chat_template.html">Custom Chat Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/quantization.html">Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/lora.html">LoRA Serving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/pd_disaggregation.html">PD Disaggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/vlm_query.html">Querying Qwen-VL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backend/vlm_query.html#Querying-Llama-4-(Vision)">Querying Llama 4 (Vision)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/blackwell_gpu.html">Blackwell GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platforms/ascend_npu.html">Ascend NPUs</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Frontend Tutorial</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="frontend/frontend.html">SGLang Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frontend/choices_methods.html">Choices Methods in SGLang</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Router</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="router/router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="references/general.html">General Guidance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/hardware.html">Hardware Supports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/advanced_deploy.html">Multi-Node Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/performance_analysis_and_optimization.html">Performance Analysis &amp; Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/developer.html">Developer Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/environment_variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/production_metrics.html">Production Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/custom_chat_template.html">Custom Chat Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/frontend/frontend_index.html">Frontend Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
 </ul>
 </div>
 </section>
@@ -561,7 +571,7 @@ The core features include:</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="start/install.html"
+       href="get_started/install.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
