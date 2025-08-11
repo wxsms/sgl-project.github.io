@@ -226,9 +226,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/production_metrics.html">Production Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
 </ul>
 
@@ -505,7 +505,7 @@ See <a class="reference external" href="https://github.com/sgl-project/sglang/bl
 <li><p><strong>Multimodal Data Processor</strong>:
 Define a new <code class="docutils literal notranslate"><span class="pre">Processor</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">BaseMultimodalProcessor</span></code> and register this processor as your
 model’s dedicated processor.
-See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/managers/multimodal_processor.py">multimodal_processor.py</a>
+See <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/srt/multimodal/processors">multimodal_processor.py</a>
 for more details.</p></li>
 <li><p><strong>Handle Multimodal Tokens</strong>:
 Implement a <code class="docutils literal notranslate"><span class="pre">pad_input_ids</span></code> function for your new model. In this function, multimodal tokens in the prompt should be

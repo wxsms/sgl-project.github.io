@@ -226,9 +226,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/production_metrics.html">Production Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
 </ul>
 
@@ -506,7 +506,7 @@ You can find all arguments by <code class="docutils literal notranslate"><span c
 </pre></div>
 </div>
 </li>
-<li><p>To enable multi-GPU data parallelism, add <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>. Data parallelism is better for throughput if there is enough memory. It can also be used together with tensor parallelism. The following command uses 4 GPUs in total. We recommend <a class="reference internal" href="#../router/router.md"><span class="xref myst">SGLang Router</span></a> for data parallelism.</p>
+<li><p>To enable multi-GPU data parallelism, add <code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">2</span></code>. Data parallelism is better for throughput if there is enough memory. It can also be used together with tensor parallelism. The following command uses 4 GPUs in total. We recommend <a class="reference internal" href="router.html"><span class="std std-doc">SGLang Router</span></a> for data parallelism.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--dp<span class="w"> </span><span class="m">2</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>

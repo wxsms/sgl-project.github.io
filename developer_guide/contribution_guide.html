@@ -226,9 +226,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/production_metrics.html">Production Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
 </ul>
 
@@ -557,9 +557,10 @@ If you modify files protected by code owners, their approval is required to merg
 <section id="general-code-style">
 <h2>General Code Style<a class="headerlink" href="#general-code-style" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Avoid code duplication. If the same code snippet (more than 5 lines) appears multiple times, extract it into a shared function.</p></li>
-<li><p>Minimize device synchronization. Reduce expensive CPU-GPU synchronization operations, such as <code class="docutils literal notranslate"><span class="pre">tensor.item()</span></code> or <code class="docutils literal notranslate"><span class="pre">tensor.cpu()</span></code>, as much as possible. Use vectorized code instead.</p></li>
-<li><p>Keep files short. If a file exceeds 2,000 lines of code, please split it into multiple smaller files.</p></li>
+<li><p>Avoid code duplication. If the same code snippet (more than five lines) appears multiple times, extract it into a shared function.</p></li>
+<li><p>Minimize device synchronization. Reduce expensive CPU-GPU synchronization operations, such as <code class="docutils literal notranslate"><span class="pre">tensor.item()</span></code> or <code class="docutils literal notranslate"><span class="pre">tensor.cpu()</span></code>, whenever possible. Use vectorized code.</p></li>
+<li><p>Keep files concise. If a file exceeds 2,000 lines of code, split it into multiple smaller files.</p></li>
+<li><p>Prioritize extreme efficiency. SGLang is a runtime, and most of your code runs on the critical path for every request. Optimize every minor overhead as much as possible.</p></li>
 </ul>
 </section>
 <section id="tips-for-newcomers">
