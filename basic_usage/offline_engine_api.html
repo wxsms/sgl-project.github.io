@@ -538,10 +538,10 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0811 17:20:55.285000 2543369 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0811 17:20:55.285000 2543369 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0811 17:21:04.414000 2543724 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0811 17:21:04.414000 2543724 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0811 18:11:57.165000 12028 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0811 18:11:57.165000 12028 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0811 18:12:08.926000 12891 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0811 18:12:08.926000 12891 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -563,10 +563,10 @@ W0811 17:21:04.414000 2543724 torch/utils/cpp_extension.py:2425] If this is not 
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.04it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.04it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.19it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.19it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.57it/s]
+Capturing batches (bs=1 avail_mem=57.24 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.72it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -598,30 +598,31 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jakob. I am a German young computer programmer. I was born on 20th August 2001 in Lübeck, Germany and currently I&#39;m living in the UK. I studied Computer Science at the University of California, Berkeley, and have held a part-time internship at Google. My programming language skills include C++, Java, C#, and JavaScript, and I have worked on various projects including open source projects like Node.js, Linux kernel, and Arduino. I am passionate about technology and have been building software for a living since the age of 14. I&#39;m excited about the new possibilities that the technology
+Generated text:  Michelle, I&#39;m 18 years old and I have a teeny-tiny voice, but I don&#39;t have any trouble speaking. I can say most words and I have a good vocabulary. But I can&#39;t sing or do dancing.
+
+I&#39;m just a very shy person and don&#39;t like to try new things or be a part of groups. I think I have to be a bit more outgoing for my friends.
+
+I&#39;m also very clumsy and fall a lot, especially in the kitchen.
+
+I try to eat lots of vegetables and fruits and avoid sugary drinks, but I do have some coffee and some red wine
 ===============================
 Prompt: The president of the United States is
-Generated text:  24 years older than his youngest daughter. If the president is 41 years old, and the president decides to give his daughter a scholarship that is 25% of her age, how old will the daughter be when the scholarship is distributed?
-
-To determine the age of the youngest daughter, we start by noting that the president&#39;s age is 41 years and he is 24 years older than the youngest daughter. Let&#39;s denote the age of the youngest daughter by \( x \). Therefore, we can write the equation:
-
-\[ 41 = x + 24 \]
-
-Solving for \( x \
+Generated text:  a permanent member of the UN Security Council.
+Does this mean that the president is always a member of the UN?
+I am thinking of the German Prime Minister, who is also a permanent member of the UN Security Council, but a non-elected position. Am I correct in thinking this?
+I am not aware of whether the position of president of the United States is always held by a permanent member of the UN Security Council. In the United States, the President of the United States is directly elected by the people and is not a member of the UN Security Council as a permanent member. The position of President of the United States is filled by
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is the largest city in Europe, the second largest city in the world, and the most populous city in Europe. The population of Paris is approximately 1.3 million.
-
-a. According to the World Bank, the capital of France has a population density of approximately 100 people per square mile.
-
-b. The capital of France has a population density of 100 people per square mile, which means the area of Paris is approximately 10,000 square miles.
-
-c. The capital of France has a population density of 100 people per square mile, and the population of Paris
+Generated text:  Paris.
+The capital of China is Beijing.
+Does this mean that Beijing is the capital of China? Let&#39;s think: The capital of France is Paris and the capital of China is Beijing. The capital of France is a place and the capital of China is a place as well. Therefore, the answer is no.
 ===============================
 Prompt: The future of AI is
-Generated text:  growing, and today, we want to share the latest trends and developments with you. We will be discussing the upcoming trends of AI and how they are transforming the world around us. We will also discuss the different types of AI and their applications, as well as the ethical considerations of AI and the future of AI.
+Generated text:  in the digital realm. The use of AI in the digital realm includes the development of artificial intelligence chatbots for use in customer support, sales and marketing, and customer service.
 
-The topic of AI is as exciting as it is fascinating. It is a subject that has been around for a long time, but the latest developments and trends in AI are making it more and more relevant. AI is a rapidly advancing field, and it is transforming the way we live, work, and interact with the world around
+As AI chatbots for these roles mature and gain more sophistication, they will become the preferred solution for customer support. In fact, the market for AI chatbots for customer support is projected to grow at a compound annual growth rate of 39% between 2021 and 2027.
+
+In the coming years, AI chatbots will play a more significant role in the digital realm. In addition to customer support, they will be used for
 </pre></div></div>
 </div>
 </section>
@@ -661,19 +662,17 @@ The topic of AI is as exciting as it is fascinating. It is a subject that has be
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [reason for being in the industry], and I&#39;m always looking for ways to [something]. I&#39;m [age] years old, and I&#39;m [gender] [race]. I&#39;m [occupation] and I&#39;m [address]. I&#39;m [address] and I&#39;m [address]. I&#39;m [address]. I&#39;m [address]. I&#39;m [address]. I&#39;m [address]. I&#39;m [address]. I&#39;m [address].
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and [job title]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you do for a living? I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and [job title]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you enjoy
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the seat of the French government and the country&#39;s cultural and political center. Paris is a bustling metropolis with a rich history and a diverse population of over 2 million people. The city is known for its fashion, art, and cuisine, and is a popular tourist destination. It is also home to many famous landmarks, including the Arc de Triomphe and the Notre-Dame Cathedral. Paris is a city that has been a center of culture and politics for over 20
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Museum, and the French Academy of Sciences. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also home to many famous French artists, writers, and musicians. The city is known for its cuisine, including its famous croissants, and its annual festivals and events. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. It is a city
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased integration with other technologies: AI is already being integrated into a wide range of other technologies, such as smart homes, self-driving cars, and virtual assistants. As these technologies continue to evolve, we can expect to see even more integration between AI and other technologies.
+1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more efficient and effective AI systems that can better understand and respond to human needs and preferences.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This will include issues such as bias, transparency, and accountability.
-
-3. Increased focus
+2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations and responsible development of AI systems. This could lead to more stringent regulations
 
 </pre></div></div>
 </div>
@@ -716,25 +715,25 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [S or D] (Student / Doctor) at [School Name]. I recently graduated with a [degree] in [Field of Study]. I currently work [job title] at [company name]. I enjoy [insert what I enjoy doing]. My favorite hobby is [insert what I like to do]. I&#39;m always looking for ways to [insert new skill or activity]. I&#39;m [insert how you might describe yourself]. I&#39;m [insert how old], [insert how many years of experience]. I&#39;m [insert how excited you are to meet you], [Name]. I&#39;m excited to meet
+Generated text:  [Name], and I am an [occupation] professional who has been working for [company] for [number of years] years. Before that, I had [previous occupation], and I have [number of years] years of experience in [field]. I am a [born, born, born] person who is always [adjective]. I am always [verb, verb, verb]. I am [adjective, adjective, adjective]. I am [adjective, adjective, adjective]. I am [adjective, adjective, adjective]. I am [adjective, adjective, adjective]. I am [adjective, adjective, adjective
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, known as the &#34;City of Love&#34; due to its iconic status in the romantic and cultural aspects of Parisian life.
 
-Paris is the capital city of France and is known for its rich history, beautiful architecture, and famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also a hub for art, culture, and commerce, and is home to over 10 million residents. Paris is a unique city with a mix of traditional French culture and modernity, and is a popular tourist destination for visitors from around the world. The city has played a crucial role in French history and continues to be an important cultural and political center in France.
+This statement encapsulates the cultural and romantic aspects of Paris, suggesting it is a city deeply connected to love, romance, and the heart of France. However, it does not include any specific historical or architectural details about Paris as the &#34;City of Love.&#34;
 
-Key facts about Paris include:
+The statement is concise and provides a clear and accurate description of the capital city&#39;s cultural and romantic identity in relation to Parisian life. It also suggests that it is a city deeply intertwined with love and romance.
 
-- Founded
+However, without additional context, the
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain, but there are several potential trends that are likely to shape this field:
+Generated text:  highly promising and likely to involve rapid advancements and innovations. Here are some possible trends in the field:
 
-1. Increased integration with other technologies: AI will continue to be integrated with other technologies such as the Internet of Things (IoT) and smart cities, which will lead to more efficient and intelligent applications of AI.
+1. Increased Integration of AI into Everyday Life: AI will continue to become more integrated into our daily lives, from home automation systems to virtual assistants to predictive maintenance of machinery. This integration will likely bring greater convenience, efficiency, and cost savings to individuals and businesses alike.
 
-2. Greater emphasis on ethics and privacy: As AI becomes more prevalent in our daily lives, there will be a greater focus on ethical and privacy issues, such as the use of AI in surveillance, data collection, and discrimination.
+2. AI will become more Personalized: AI will continue to learn and improve, allowing for more accurate predictions and better decision-making for businesses. Personalized AI will also enable more accurate and relevant content generation, such as personalized recommendations and advertisements.
 
-3. Increased reliance on machine learning: Machine learning will become more prevalent in AI, with more advanced models that can
+3. AI will become
 </pre></div></div>
 </div>
 </section>
@@ -780,15 +779,17 @@ Generated text:  uncertain, but there are several potential trends that are like
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Jane. I&#39;m an English teacher. How can I assist you today? I&#39;m a warm-hearted and humorous person. I like to think I&#39;m funny, but I have a sense of humor that can sometimes make people laugh. I like to chat with people and help them with their questions and concerns. I have a wide range of interests, from film and music to travel and hobbies. What&#39;s your name? I&#39;m Jane. I&#39;m an English teacher. Can you tell me a little bit more about yourself? I&#39;m a warm-hearted and humorous person. I like to think I&#39;m funny, but I have a sense of humor
+Generated text:  [Your Name] and I am a [profession or occupation] with [number of years] years of experience in [field]. I have a natural gift for [topic or activity] that I enjoy spending my free time [description]. I believe that I am [type of person] and that I am able to [describe a skill or ability that you have]. I am always looking for new challenges and opportunities to grow and learn, and I am committed to staying up to date with the latest trends and techniques in my field. I am an [type of person] who enjoys [task or experience] and I am always willing to learn
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, a bustling metropolis known for its historical landmarks, vibrant arts scene, and cosmopolitan lifestyle. Paris is situated on the River Seine and is the seat of government, administration, and culture in France. It is also one of the most visited cities in the world, hosting millions of tourists annually. The city is a melting pot of different cultures and is celebrated for its art, architecture, and cuisine. Paris is a city of contrasts, with iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum, as well as trendy areas like the Marais district and the Left Bank. It&#39;s
+Generated text:  Paris, known as the “City of Light.” It is a bustling metropolis with a rich history, beautiful architecture, and a vibrant cultural scene. The city is home to over 3 million people and is the center of French politics, culture, and economics. France&#39;s capital is often referred to as the &#34;City of Love&#34; as it has been a center for romantic love and art since ancient times. It&#39;s a city that has seen many changes over the centuries, from medieval times to the 20th century. Today, Paris is one of the most popular tourist destinations in the world and continues to be a symbol of France
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly uncertain, and it is impossible to predict with absolute certainty which trends will emerge or which trends will fade. However, we can make educated guesses about the likely trajectory of AI in the coming years based on current trends and emerging technologies.
+Generated text:  likely to be shaped by a multitude of factors, including advances in computing power, data availability, and changes in societal attitudes towards AI. However, there are some general trends that are likely to continue and evolve:
 
-One potential future trend in AI is the increasing use of AI in natural language processing and machine learning. As AI technology continues to advance, we can expect to see even more complex and sophisticated models that can interpret and understand human language in new and innovative ways. This could lead to a greater ability to interact with AI systems through natural language, as well as to more sophisticated forms of machine learning that can understand and
+1. Increased collaboration between humans and machines: As AI becomes more sophisticated, it is likely to continue to collaborate with humans in various tasks, such as problem-solving, decision-making, and creativity. This will likely lead to more nuanced and adaptive AI systems that can work alongside humans to achieve better outcomes.
+
+2. AI in healthcare: AI has the potential to revolutionize healthcare by providing more accurate and efficient diagnoses, drug discovery, and
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
