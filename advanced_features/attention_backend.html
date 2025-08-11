@@ -598,6 +598,12 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>TRTLLM MLA with FP8 KV Cache (Higher concurrency, lower memory footprint)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Ascend</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend
