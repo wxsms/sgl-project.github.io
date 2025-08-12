@@ -538,10 +538,10 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0812 02:09:10.104000 2910814 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0812 02:09:10.104000 2910814 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0812 02:09:18.538000 2911045 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0812 02:09:18.538000 2911045 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0812 06:17:27.203000 612002 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0812 06:17:27.203000 612002 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0812 06:17:40.259000 613238 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0812 06:17:40.259000 613238 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -563,10 +563,10 @@ W0812 02:09:18.538000 2911045 torch/utils/cpp_extension.py:2425] If this is not 
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.17it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.38it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.38it/s]
+Capturing batches (bs=1 avail_mem=53.21 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.86it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -598,31 +598,45 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  a student in the second year of high school. I&#39;m interested in learning more about the development of science. The teacher has asked me to write an essay about the development of science. I&#39;m not sure where to start. Can you give me some advice on what questions to ask the teacher and what questions to ask myself when preparing my essay? I would also like to know if there is anything I should do to better understand science in general. Also, how can I improve my writing skills in general? It&#39;s important that I improve my grammar and sentence structure, and also be more creative with my writing. What are some tips and resources
+Generated text:  Ilyana and I&#39;m a PhD candidate in Natural Language Processing. I&#39;m currently working on a project focusing on the automatic synthesis of derivative grammars, which is a type of grammatical construction used in artificial intelligence. I have a very strong interest in natural language processing and machine learning, and I&#39;m always eager to learn and understand new developments. I enjoy exploring new topics in natural language processing and have a particular interest in understanding how human language works. I&#39;m also interested in reading about topics related to machine learning and artificial intelligence. How can I stay up-to-date on these topics and keep myself informed about new developments in my field?
 ===============================
 Prompt: The president of the United States is
-Generated text:  a man, and he is the commander-in-chief of the armed forces of the United States. In the past, military personnel have to undergo rigorous physical fitness tests. After the tests, the scores are recorded as follows: 70, 75, 80, 70, 80, 80, 75, 70, 90, 75, 85, 75, 80, 80, 80, 70, 85, 70. What is the median score of these scores?
+Generated text:  a member of the Cabinet. The President can serve for a term of 5 years, but he can be re-elected. Each term has a fixed number of months, which is 13 months. During this period, the President will be required to attend a formal meeting every month, which can be held in a designated venue.
+For a two year term, how many formal meetings will the President attend? To determine how many formal meetings the President will attend during a two-year term, we need to follow these steps:
 
-To find the
+1. Calculate the total number of months in two years.
+2. Determine how many meetings the President will attend in
 ===============================
 Prompt: The capital of France is
-Generated text:  ________. A. Paris B. Lyon C. Toulouse D. Marseille
+Generated text:  the city of Paris. Which of the following is the name of the country where Paris is located?
+A: Russia
+B: Germany
+C: Italy
+D: France
+1. We need to identify which country is located in France.
+2. The capital of France is Paris.
+3. The given options are:
+   - A: Russia
+   - B: Germany
+   - C: Italy
+   - D: France
+4. By analyzing the capital of France, we can determine that France is the correct answer.
+5. Therefore, the capital of France is located in France.
 
-Paris
-
-The first &#34;Queen&#39;s Speech&#34; was delivered in ________. A. 1996 B. 1997 C. 1998 D. 1999
-
-1998
-
-The Chinese leader who visited the UK for the first time in 1999 was ________. A. Hu Jintao B. Wen Jiabao C. Deng Xiaoping D. Jiang Zemin
-
-Hu Jintao
-
-The Chinese leaders visiting the UK in 1998 and 19
+Conclusion: The correct answer is \
 ===============================
 Prompt: The future of AI is
-Generated text:  about to move beyond traditional approaches to human interaction, making it possible to interact with machines in entirely new ways. This is leading to an increasing number of new applications of AI in healthcare, as it is becoming possible to detect and diagnose diseases more accurately, and to predict outcomes in real-time.
-One of the latest AI applications in healthcare is the use of AI algorithms to predict patients&#39; risk of developing certain conditions, such as heart disease or cancer. By analyzing patient data such as their medical history, symptoms, and lifestyle factors, AI algorithms can identify patterns and risk factors that are associated with the development of these conditions. This information can then be
+Generated text:  very promising, but it has a dark side. AI is also the cause of the rise of many negative phenomena, and there are so many problems that the impact of AI on society will continue to grow over time. As a result, people must be aware of the danger and take necessary actions to prevent the negative impacts of AI on society. This passage mainly discusses ____
+A. The optimistic aspect of AI
+B. The dangers of AI
+C. The impact of AI on society
+D. The use of AI
+Answer:
+
+B
+
+The beginning of the new era in Chinese history is marked by the convening of the ____.
+
 </pre></div></div>
 </div>
 </section>
@@ -662,17 +676,17 @@ One of the latest AI applications in healthcare is the use of AI algorithms to p
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of experience. I am a [occupation] with [number] years of
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or experience here]. I enjoy [insert a short description of your hobbies or interests here]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I love [insert a short description of your favorite hobby or activity here]. I&#39;m always looking for new ways to challenge myself and expand my knowledge. What&#39;s your favorite book or movie? I love
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling city with a rich cultural heritage and is a major tourist destination. It is also a major economic center and a major player in the European Union. The city is known for its fashion industry, art scene, and food culture. It is also home to many famous museums and historical sites. Paris is a city that is a true reflection of French culture and history. It is a city
+Generated text:  Paris, also known as &#34;La Ville de Paris&#34; and &#34;La Ville de la Rose&#34;. It is the largest city in France and the third-largest city in the world by population. The city is located on the Seine River and is home to many of France&#39;s most famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its rich cultural heritage, including the Notre-Dame Cathedral, the Louvre Museum, and the Palace of Versailles. The city is a major center for business, finance, and tourism, and is home to many of France&#39;s most
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, with more sophisticated algorithms and machine learning techniques being developed to improve diagnosis, treatment, and patient care.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, reduce costs, and increase efficiency. As AI technology continues to advance, we can expect to see even more widespread use of AI in healthcare, with applications ranging from personalized medicine to drug discovery.
 
-2. AI in finance: AI is already being used in finance to improve fraud detection, risk management, and portfolio optimization. As AI technology continues to improve
+2. AI in finance: AI is already being used in finance to improve fraud detection, risk management, and trading algorithms. As AI technology continues to evolve, we can expect to see
 
 </pre></div></div>
 </div>
@@ -715,23 +729,17 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Type of Character]!
-
-I’m a [Age] year-old [Name] and I’m a [Type of Character]. I grew up in [Location], where I lived with my [Family Members] and learned [What I Learned]. Now, I’m here to [What You Want to Do], and I’m ready to [What You Are Looking for]. What&#39;s your name, and what&#39;s your profession or hobby?
-
-[Name] &amp; [Type of Character] [Occupation/Hobby]!
-
-Glad to meet you! Let&#39;s get to know each other better! [Name]
+Generated text:  [Name] and I&#39;m a [Brief Description of the Character]! I&#39;m a [Number of Years in the Industry] [Industry] professional with [Number of Years in the Industry] [Number of Years in the Industry] years of experience in [Industry]. I&#39;m fluent in [Language(s)] and enjoy [Reason for Interest in the Industry], [Reason for Interest in the Industry]. I believe my expertise in [Industry] will be of great benefit to you, and I&#39;m excited to bring my [Number of Years in the Industry] years of experience to your team. Let&#39;s work together to [Your Goal or Goal
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in Europe and has a rich history dating back to the Roman Empire. The city is known for its medieval architecture, including the Notre-Dame Cathedral, Eiffel Tower, and the Tuileries Garden. Paris is also a cultural hub with museums, theaters, and restaurants, and is a popular tourist destination. The city has a diverse population of over 3 million people and is home to many famous landmarks and attractions. With its history, culture, and attractions, Paris is a city of contrasts and beauty. The city is the seat of the French government and is a major global hub for business,
+Generated text:  Paris. It is the largest city in Europe and has a rich history dating back to the time of Ancient Rome. The city is known for its artistic and architectural achievements, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. It is also home to the French Parliament and a popular destination for tourists and scholars. Paris is a vibrant and culturally rich city, known for its music, art, food, and nightlife. Its history and influence on French culture and society continue to be felt to this day. It is the city of love, love, and love. Its past and present are intertwined in a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  currently very uncertain. However, there are a few potential trends that could be expected:
+Generated text:  going to be incredible and exciting! Here are some possible trends that could shape the future of AI:
 
-1. Increased use of AI in healthcare: As more people become ill and die, there will be a need for better ways to diagnose and treat diseases. AI can help doctors make more accurate diagnoses by analyzing large amounts of medical data. In addition, AI can help patients receive personalized treatment plans based on their individual medical history and data.
+1. Increased Integration of AI into Everyday Life: In the near future, we can expect to see an increase in the integration of AI into everyday life, from self-driving cars to chatbots that understand human emotions and preferences. These AI-powered devices will become more integrated into our daily lives, making our world a more connected and efficient place.
 
-2. Increased use of AI in manufacturing: AI can be used to optimize production processes, improve efficiency, and reduce waste. For example, AI can be used to optimize supply chain management, identify defects in production, and
+2. AI-Based Medical Diagnosis: The use of AI in medicine is already showing promising results, with some AI algorithms having been able to diagnose diseases with a high degree of accuracy. The future of AI
 </pre></div></div>
 </div>
 </section>
@@ -777,22 +785,23 @@ Generated text:  currently very uncertain. However, there are a few potential tr
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Brief Description of Your Character]. I&#39;m always looking for a challenge or a new way to grow as an artist. I love experimenting with different mediums and I&#39;m always looking to push the boundaries of what&#39;s possible in art. I&#39;m excited to share my work with the world and to explore new ideas with you.
+Generated text:  [Your Name], and I am [Your Profession]. I am a [Your Profession] with [Your Rank or Level] in the industry. I love what I do, and I&#39;m always looking to learn new things and improve myself. I am passionate about [Your Job or Purpose] and am always committed to doing my best work. I enjoy spending time with my family and friends, and I am always looking for ways to create joy and laughter in my life. Overall, I am a [Your Character] who loves to [Your Profession or Purpose]. I am excited to start my new journey and see what adventures await.
 
-Remember, the most important thing is that you&#39;re welcome to come meet me at your convenience! Until then, keep creating and stay curious! Have a great day!
-[Your Name]
-
-Remember that I&#39;m the character you want to be, and I look forward to seeing
+Please
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower and Louvre Museum. It is also famous for its romantic atmosphere, art, and cuisine. Paris is a cultural and economic hub, with a diverse population and a rich history that dates back over 2,500 years. The city is often referred to as &#34;The City of Love&#34; due to its romantic atmosphere and numerous romantic landmarks, including the Arc de Triomphe. Additionally, Paris is often called the &#34;City of Light&#34; due to its picturesque French Quarter and iconic landmarks. Overall, Paris is a vibrant and lively city that offers a unique blend
+Generated text:  Paris. It is the largest city in France and the third largest city in the world. It is also the capital of the French region of Occitania, and the seat of the government of the French Republic. Paris is known for its iconic landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum. It is also a cultural and historical hub, with many famous museums, music venues, and fashion houses located within its walls. The city is known for its cuisine, and its residents speak a mixture of French and English. With its rich history and beautiful architecture, Paris is a UNESCO World Heritage site
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be one of tremendous expansion and innovation. Here are some possible trends that could shape the AI landscape in the coming years:
+Generated text:  expected to be characterized by a number of key trends that will shape the way we use and interact with artificial intelligence technology. Here are some potential trends that may emerge in the coming years:
 
-1. Increased AI Integration: AI is becoming more and more integrated into our daily lives, from voice assistants to self-driving cars. This integration could lead to even more sophisticated AI that is able to learn and adapt to new situations. AI could be used in fields like healthcare, finance, and transportation to improve efficiency, reduce costs, and enhance quality of life.
+1. AI will become more capable of handling complex tasks and decision-making, leading to innovations in fields such as healthcare, finance, and transportation.
 
-2. More Personalized AI: As AI becomes more advanced, it is likely to become even more personalized, tailored to individual users. This could lead
+2. AI will become increasingly integrated into everyday life, with more and more people relying on AI-powered devices and services to assist with daily tasks and decision-making.
+
+3. AI will continue to improve its ability to understand and respond to human language and speech, leading to a greater understanding of language and communication.
+
+4
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
