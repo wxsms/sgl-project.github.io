@@ -461,13 +461,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a New Language Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a New Multimodal Large Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the Correctness</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-and-debugging">Testing and Debugging</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive Debugging</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the Model to the Test Suite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#port-a-model-from-vllm-to-sglang">Port a Model from vLLM to SGLang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registering-an-external-model-implementation">Registering an External Model Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 </ul>
             </nav>
         </div>
@@ -500,8 +502,8 @@ standard LLM support:</p>
 Extend <code class="docutils literal notranslate"><span class="pre">is_multimodal_model</span></code>
 in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/0ab3f437aba729b348a683ab32b35b214456efc7/python/sglang/srt/configs/model_config.py#L561">model_config.py</a>
 to return <code class="docutils literal notranslate"><span class="pre">True</span></code> for your model.</p></li>
-<li><p><strong>Register a new chat-template</strong>
-See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/86a779dbe9e815c02f71ea82574608f6eae016b5/python/sglang/srt/conversation.py">conversation.py</a></p></li>
+<li><p><strong>Register a new chat-template</strong>:
+Only when your default chat-template is unable to accept images as input: Register a new chat template in <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/srt/conversation.py">conversation.py</a> and the corresponding matching function.</p></li>
 <li><p><strong>Multimodal Data Processor</strong>:
 Define a new <code class="docutils literal notranslate"><span class="pre">Processor</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">BaseMultimodalProcessor</span></code> and register this processor as your
 model’s dedicated processor.
@@ -511,16 +513,17 @@ for more details.</p></li>
 Implement a <code class="docutils literal notranslate"><span class="pre">pad_input_ids</span></code> function for your new model. In this function, multimodal tokens in the prompt should be
 expanded (if necessary) and padded with multimodal-data-hashes so that SGLang can recognize different multimodal data
 with <code class="docutils literal notranslate"><span class="pre">RadixAttention</span></code>.</p></li>
+<li><p><strong>Handle Image Feature Extraction</strong>:
+Implement a <code class="docutils literal notranslate"><span class="pre">get_image_feature</span></code> function for your new model, which extracts image features from raw image data and converts them into the embeddings used by the language model.</p></li>
 <li><p><strong>Adapt to Vision Attention</strong>:
 Adapt the multi-headed <code class="docutils literal notranslate"><span class="pre">Attention</span></code> of ViT with SGLang’s <code class="docutils literal notranslate"><span class="pre">VisionAttention</span></code>.</p></li>
 </ol>
 <p>You can refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/qwen2_vl.py">Qwen2VL</a> or
 other mllm implementations. These models demonstrate how to correctly handle both multimodal and textual inputs.</p>
-<p>You should test the new MLLM locally against Hugging Face models. See the <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/mmmu">
-<code class="docutils literal notranslate"><span class="pre">mmmu</span></code></a> benchmark for an example.</p>
 </section>
-<section id="test-the-correctness">
-<h2>Test the Correctness<a class="headerlink" href="#test-the-correctness" title="Link to this heading">#</a></h2>
+<section id="testing-and-debugging">
+<h2>Testing and Debugging<a class="headerlink" href="#testing-and-debugging" title="Link to this heading">#</a></h2>
+<p>Please note all your testing and benchmarking results in PR description.</p>
 <section id="interactive-debugging">
 <h3>Interactive Debugging<a class="headerlink" href="#interactive-debugging" title="Link to this heading">#</a></h3>
 <p>For interactive debugging, compare the outputs of Hugging Face/Transformers and SGLang. The following two commands
@@ -543,11 +546,19 @@ should give the same text output and very similar prefill logits:</p>
 <p>To ensure the new model is well maintained, add it to the test suite by including it in the <code class="docutils literal notranslate"><span class="pre">ALL_OTHER_MODELS</span></code> list in
 the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/models/test_generation_models.py">test_generation_models.py</a>
 file, test the new model on your local machine and report the results on demonstrative benchmarks (GSM8K, MMLU, MMMU,
-MMMU-Pro, etc.) in your PR.</p>
-<p>This is the command to test a new model on your local machine:</p>
+MMMU-Pro, etc.) in your PR. \
+For VLMs, also include a test in <code class="docutils literal notranslate"><span class="pre">test_vision_openai_server_{x}.py</span></code> (e.g. <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_vision_openai_server_a.py">test_vision_openai_server_a.py</a>, <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_vision_openai_server_b.py">test_vision_openai_server_b.py</a>).</p>
+<p>This is an example command to run to test a new model on your local machine:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ONLY_RUN</span><span class="o">=</span>Qwen/Qwen2-1.5B<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>test_generation_models.TestGenerationModels.test_others
 </pre></div>
 </div>
+</section>
+<section id="benchmark">
+<h3>Benchmark<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>(Required) MMMU</strong>: follow MMMU benchmark <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/benchmark/mmmu/README.md">README.md</a> to get SGLang vs. HF Transformer accuracy comparison. The accuracy score from SGLang run should not be much lower than that from HF Transformer run. Similarly, follow https://docs.sglang.ai/developer_guide/benchmark_and_profiling.html to get performance comparison: TTFT and throughput must meet or exceed baselines (e.g., HF Transformer).</p></li>
+<li><p><strong>(Optional) Other evals</strong>: If you ran other evals, please note the results in PR description.</p></li>
+</ul>
 </section>
 </section>
 <section id="port-a-model-from-vllm-to-sglang">
@@ -605,6 +616,10 @@ This allows you to integrate your model without modifying the source code.</p>
 <span class="n">launch_server</span><span class="p">(</span><span class="n">server_args</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>Add to table of supported models in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/supported_models/generative_models.md">generative_models.md</a> or <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/supported_models/multimodal_language_models.md">multimodal_language_models.md</a></p>
 <hr class="docutils" />
 <p>By following these guidelines, you can add support for new language models and multimodal large language models in
 SGLang and ensure they are thoroughly tested and easily integrated into the system.</p>
@@ -658,13 +673,15 @@ SGLang and ensure they are thoroughly tested and easily integrated into the syst
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-language-model">How to Support a New Language Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-support-a-new-multimodal-large-language-model">How to Support a New Multimodal Large Language Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-correctness">Test the Correctness</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-and-debugging">Testing and Debugging</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-debugging">Interactive Debugging</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-model-to-the-test-suite">Add the Model to the Test Suite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#port-a-model-from-vllm-to-sglang">Port a Model from vLLM to SGLang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registering-an-external-model-implementation">Registering an External Model Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 </ul>
   </nav></div>
 
