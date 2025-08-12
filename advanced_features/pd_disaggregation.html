@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query Vision Language Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">SGLang Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
 </ul>
@@ -213,7 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">SGLang on Ascend NPUs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -463,6 +463,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-unified-scheduling">Issues with Unified Scheduling</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#router-integration">Router Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mooncake">Mooncake</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
@@ -515,6 +516,10 @@ document.write(`
 <p>For the design details, please refer to <a class="reference external" href="https://docs.google.com/document/d/1rQXJwKd5b9b1aOzLh98mnyMhBMhlxXA5ATZTHoQrwvc/edit?tab=t.0">link</a>.</p>
 <p>Currently, we support Mooncake and NIXL as the transfer engine.</p>
 </section>
+</section>
+<section id="router-integration">
+<h2>Router Integration<a class="headerlink" href="#router-integration" title="Link to this heading">#</a></h2>
+<p>For deploying PD disaggregation at scale with load balancing and fault tolerance, SGLang provides a router. The router can distribute requests between prefill and decode instances using various routing policies. For detailed information on setting up routing with PD disaggregation, including configuration options and deployment patterns, see the <a class="reference internal" href="router.html#mode-3-prefill-decode-disaggregation"><span class="std std-ref">SGLang Router documentation</span></a>.</p>
 </section>
 <section id="mooncake">
 <h2>Mooncake<a class="headerlink" href="#mooncake" title="Link to this heading">#</a></h2>
@@ -731,6 +736,7 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-unified-scheduling">Issues with Unified Scheduling</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#router-integration">Router Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mooncake">Mooncake</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>

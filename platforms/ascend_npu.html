@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ascend NPUs &#8212; SGLang</title>
+    <title>SGLang on Ascend NPUs &#8212; SGLang</title>
   
   
   
@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/attention_backend.html">Attention Backend</a></li>
 </ul>
@@ -213,7 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ascend NPUs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SGLang on Ascend NPUs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -449,7 +449,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ascend NPUs</h1>
+    <h1>SGLang on Ascend NPUs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -459,8 +459,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-settings">System Settings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-performance-power-scheme">CPU performance power scheme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-numa-balancing">Disable NUMA balancing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prevent-swapping-out-system-memory">Prevent swapping out system memory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang">Installing SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-installing-from-source-with-prerequisites">Method 1: Installing from source with prerequisites</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-version">Python Version</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memfabric-adaptor">MemFabric Adaptor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-and-pytorch-framework-adaptor-on-ascend">Pytorch and Pytorch Framework Adaptor on Ascend</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vllm">vLLM</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#triton-on-ascend">Triton on Ascend</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-compatible-library">DeepEP-compatible Library</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-using-docker">Method 2: Using docker</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-v3">Running DeepSeek-V3</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -472,15 +494,199 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ascend-npus">
-<h1>Ascend NPUs<a class="headerlink" href="#ascend-npus" title="Link to this heading">#</a></h1>
-<section id="install">
-<h2>Install<a class="headerlink" href="#install" title="Link to this heading">#</a></h2>
-<p>TODO</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sglang-on-ascend-npus">
+<h1>SGLang on Ascend NPUs<a class="headerlink" href="#sglang-on-ascend-npus" title="Link to this heading">#</a></h1>
+<p>You can install SGLang using any of the methods below. Please go through <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Settings</span></code> section to ensure the clusters are roaring at max performance. Feel free to leave an issue <a class="reference external" href="https://github.com/sgl-project/sglang/issues">here at sglang</a> if you encounter any issues or have any problems.</p>
+<section id="system-settings">
+<h2>System Settings<a class="headerlink" href="#system-settings" title="Link to this heading">#</a></h2>
+<section id="cpu-performance-power-scheme">
+<h3>CPU performance power scheme<a class="headerlink" href="#cpu-performance-power-scheme" title="Link to this heading">#</a></h3>
+<p>The default power scheme on Ascend hardware is <code class="docutils literal notranslate"><span class="pre">ondemand</span></code> which could affect performance, changing it to <code class="docutils literal notranslate"><span class="pre">performance</span></code> is recommended.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+<span class="c1"># Make sure changes are applied successfully</span>
+cat<span class="w"> </span>/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<span class="w"> </span><span class="c1"># shows performance</span>
+</pre></div>
+</div>
+</section>
+<section id="disable-numa-balancing">
+<h3>Disable NUMA balancing<a class="headerlink" href="#disable-numa-balancing" title="Link to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># Check</span>
+cat<span class="w"> </span>/proc/sys/kernel/numa_balancing<span class="w"> </span><span class="c1"># shows 0</span>
+</pre></div>
+</div>
+</section>
+<section id="prevent-swapping-out-system-memory">
+<h3>Prevent swapping out system memory<a class="headerlink" href="#prevent-swapping-out-system-memory" title="Link to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">10</span>
+
+<span class="c1"># Check</span>
+cat<span class="w"> </span>/proc/sys/vm/swappiness<span class="w"> </span><span class="c1"># shows 10</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installing-sglang">
+<h2>Installing SGLang<a class="headerlink" href="#installing-sglang" title="Link to this heading">#</a></h2>
+<section id="method-1-installing-from-source-with-prerequisites">
+<h3>Method 1: Installing from source with prerequisites<a class="headerlink" href="#method-1-installing-from-source-with-prerequisites" title="Link to this heading">#</a></h3>
+<section id="python-version">
+<h4>Python Version<a class="headerlink" href="#python-version" title="Link to this heading">#</a></h4>
+<p>Only <code class="docutils literal notranslate"><span class="pre">python==3.11</span></code> is supported currently. If you don’t want to break system pre-installed python, try installing with <a class="reference external" href="https://github.com/conda/conda">conda</a>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>sglang_npu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>sglang_npu
+</pre></div>
+</div>
+</section>
+<section id="memfabric-adaptor">
+<h4>MemFabric Adaptor<a class="headerlink" href="#memfabric-adaptor" title="Link to this heading">#</a></h4>
+<p><em>TODO: MemFabric is still a working project yet open sourced til August/September, 2025. We will release it as prebuilt wheel package for now.</em></p>
+<p><em>Notice: Prebuilt wheel package is based on <code class="docutils literal notranslate"><span class="pre">aarch64</span></code>, please leave an issue <a class="reference external" href="https://github.com/sgl-project/sglang/issues">here at sglang</a> to let us know the requests for <code class="docutils literal notranslate"><span class="pre">amd64</span></code> build.</em></p>
+<p>MemFabric Adaptor is a drop-in replacement of Mooncake Transfer Engine that enables KV cache transfer on Ascend NPU clusters.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">MF_WHL_NAME</span><span class="o">=</span><span class="s2">&quot;mf_adapter-1.0.0-cp311-cp311-linux_aarch64.whl&quot;</span>
+<span class="nv">MEMFABRIC_URL</span><span class="o">=</span><span class="s2">&quot;https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/</span><span class="si">${</span><span class="nv">MF_WHL_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MF_WHL_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MEMFABRIC_URL</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;./</span><span class="si">${</span><span class="nv">MF_WHL_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="pytorch-and-pytorch-framework-adaptor-on-ascend">
+<h4>Pytorch and Pytorch Framework Adaptor on Ascend<a class="headerlink" href="#pytorch-and-pytorch-framework-adaptor-on-ascend" title="Link to this heading">#</a></h4>
+<p>Only <code class="docutils literal notranslate"><span class="pre">torch==2.6.0</span></code> is supported currently due to NPUgraph and Triton-on-Ascend’s limitation, however a more generalized version will be release by the end of September, 2025.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.6.0
+<span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.21.0
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="nv">$PYTORCH_VERSION</span><span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="nv">$TORCHVISION_VERSION</span><span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
+
+<span class="nv">PTA_VERSION</span><span class="o">=</span><span class="s2">&quot;v7.1.0.1-pytorch2.6.0&quot;</span>
+<span class="nv">PTA_NAME</span><span class="o">=</span><span class="s2">&quot;torch_npu-2.6.0.post1-cp311-cp311-manylinux_2_28_aarch64.whl&quot;</span>
+<span class="nv">PTA_URL</span><span class="o">=</span><span class="s2">&quot;https://gitee.com/ascend/pytorch/releases/download/</span><span class="si">${</span><span class="nv">PTA_VERSION</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">PTA_WHL_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PTA_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PTA_URL</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;./</span><span class="si">${</span><span class="nv">PTA_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="vllm">
+<h4>vLLM<a class="headerlink" href="#vllm" title="Link to this heading">#</a></h4>
+<p>vLLM is still a major prerequisite on Ascend NPU. Because of <code class="docutils literal notranslate"><span class="pre">torch==2.6.0</span></code> limitation, only vLLM v0.8.5 is supported.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">VLLM_TAG</span><span class="o">=</span>v0.8.5
+git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/vllm-project/vllm.git<span class="w"> </span>--branch<span class="w"> </span><span class="nv">$VLLM_TAG</span>
+<span class="o">(</span><span class="nb">cd</span><span class="w"> </span>vllm<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">VLLM_TARGET_DEVICE</span><span class="o">=</span><span class="s2">&quot;empty&quot;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-v<span class="w"> </span>-e<span class="w"> </span>.<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="triton-on-ascend">
+<h4>Triton on Ascend<a class="headerlink" href="#triton-on-ascend" title="Link to this heading">#</a></h4>
+<p><em>Notice:</em> We recommend installing triton-ascend from source due to its rapid development, the version on PYPI can’t keep up for know. This problem will be solved on Sep. 2025, afterwards <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> would be the one and only installing method.</p>
+<p>Please follow Triton-on-Ascend’s <a class="reference external" href="https://gitee.com/ascend/triton-ascend#2%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%89%E8%A3%85-triton-ascend">installation guide from source</a> to install the latest <code class="docutils literal notranslate"><span class="pre">triton-ascend</span></code> package.</p>
+</section>
+<section id="deepep-compatible-library">
+<h4>DeepEP-compatible Library<a class="headerlink" href="#deepep-compatible-library" title="Link to this heading">#</a></h4>
+<p>We are also providing a DeepEP-compatible Library as a drop-in replacement of deepseek-ai’s DeepEP library, check the <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/blob/main/python/deep_ep/README.md">installation guide</a>.</p>
+</section>
+<section id="installing-sglang-from-source">
+<h4>Installing SGLang from source<a class="headerlink" href="#installing-sglang-from-source" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.5.0rc0<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
+
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>python<span class="o">[</span>srt_npu<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="method-2-using-docker">
+<h3>Method 2: Using docker<a class="headerlink" href="#method-2-using-docker" title="Link to this heading">#</a></h3>
+<p><strong>Notice:</strong> <code class="docutils literal notranslate"><span class="pre">--privileged</span></code> and <code class="docutils literal notranslate"><span class="pre">--network=host</span></code> are required by RDMA, which is typically needed by Ascend NPU clusters.</p>
+<p><strong>Notice:</strong> The following docker command is based on Atlas 800I A3 machines. If you are using Atlas 800I A2, make sure only <code class="docutils literal notranslate"><span class="pre">davinci[0-7]</span></code> are mapped into container.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the SGLang repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang/docker
+
+<span class="c1"># Build the docker image</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>sglang-npu:main<span class="w"> </span>-f<span class="w"> </span>Dockerfile.npu<span class="w"> </span>.
+
+<span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --privileged --network=host --ipc=host --shm-size=16g \</span>
+<span class="s1">    --device=/dev/davinci0 --device=/dev/davinci1 --device=/dev/davinci2 --device=/dev/davinci3 \</span>
+<span class="s1">    --device=/dev/davinci4 --device=/dev/davinci5 --device=/dev/davinci6 --device=/dev/davinci7 \</span>
+<span class="s1">    --device=/dev/davinci8 --device=/dev/davinci9 --device=/dev/davinci10 --device=/dev/davinci11 \</span>
+<span class="s1">    --device=/dev/davinci12 --device=/dev/davinci13 --device=/dev/davinci14 --device=/dev/davinci15 \</span>
+<span class="s1">    --device=/dev/davinci_manager --device=/dev/hisi_hdc \</span>
+<span class="s1">    --volume /usr/local/sbin:/usr/local/sbin --volume /usr/local/Ascend/driver:/usr/local/Ascend/driver \</span>
+<span class="s1">    --volume /usr/local/Ascend/firmware:/usr/local/Ascend/firmware \</span>
+<span class="s1">    --volume /etc/ascend_install.info:/etc/ascend_install.info \</span>
+<span class="s1">    --volume /var/queue_schedule:/var/queue_schedule --volume ~/.cache/:/root/.cache/&#39;</span>
+
+drun<span class="w"> </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
-<p>TODO</p>
+<section id="running-deepseek-v3">
+<h3>Running DeepSeek-V3<a class="headerlink" href="#running-deepseek-v3" title="Link to this heading">#</a></h3>
+<p>Running DeepSeek with PD disaggregation on 2 x Atlas 800I A3.
+Model weights could be found <a class="reference external" href="https://modelers.cn/models/State_Cloud/Deepseek-R1-bf16-hfd-w8a8">here</a>.</p>
+<p>Prefill:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
+
+drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>State_Cloud/DeepSeek-R1-bf16-hfd-w8a8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-bootstrap-port<span class="w"> </span><span class="m">6657</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dist-init-addr<span class="w"> </span>&lt;PREFILL_HOST_IP&gt;:6688<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span>&lt;PREFILL_HOST_IP&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+<p>Decode:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">200</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">24</span>
+
+drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>State_Cloud/DeepSeek-R1-bf16-hfd-w8a8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-deepep-moe<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ep-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dist-init-addr<span class="w"> </span>&lt;DECODE_HOST_IP&gt;:6688<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span>&lt;DECODE_HOST_IP&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8001</span>
+</pre></div>
+</div>
+<p>Mini_LB:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.srt.disaggregation.launch_lb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--prefill<span class="w"> </span>http://&lt;PREFILL_HOST_IP&gt;:8000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--decode<span class="w"> </span>http://&lt;DECODE_HOST_IP&gt;:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">5000</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -529,8 +735,30 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-settings">System Settings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-performance-power-scheme">CPU performance power scheme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-numa-balancing">Disable NUMA balancing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prevent-swapping-out-system-memory">Prevent swapping out system memory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang">Installing SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-installing-from-source-with-prerequisites">Method 1: Installing from source with prerequisites</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-version">Python Version</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memfabric-adaptor">MemFabric Adaptor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-and-pytorch-framework-adaptor-on-ascend">Pytorch and Pytorch Framework Adaptor on Ascend</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vllm">vLLM</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#triton-on-ascend">Triton on Ascend</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-compatible-library">DeepEP-compatible Library</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-using-docker">Method 2: Using docker</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-v3">Running DeepSeek-V3</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

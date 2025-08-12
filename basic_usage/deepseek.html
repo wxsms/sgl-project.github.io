@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">Router for Data Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/attention_backend.html">Attention Backend</a></li>
 </ul>
@@ -213,7 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">SGLang on Ascend NPUs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -541,6 +541,9 @@ For an overview of the implemented features see the completed <a class="referenc
 <tr class="row-even"><td><p></p></td>
 <td><p>Xeon 6980P CPU</p></td>
 </tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>2 x Atlas 800I A3</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -582,6 +585,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-16-a100a800-with-int8-quantization">16 x A100 (int8)</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-32-l40s-with-int8-quantization">32 x L40S (int8)</a></p></li>
 <li><p><a class="reference internal" href="../platforms/cpu_server.html#example-running-deepseek-r1"><span class="std std-ref">Xeon 6980P CPU</span></a></p></li>
+<li><p><a class="reference internal" href="../platforms/ascend_npu.html#running-deepseek-v3"><span class="std std-ref">2 x Atlas 800I A3 (int8)</span></a></p></li>
 </ul>
 <section id="download-weights">
 <h3>Download Weights<a class="headerlink" href="#download-weights" title="Link to this heading">#</a></h3>
