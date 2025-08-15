@@ -1106,65 +1106,61 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-a2a-backend</span></code></p></td>
 <td><p>Select the backend for all-to-all communication for expert parallelism.</p></td>
-<td><p>None</p></td>
+<td><p>none</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-cutlass-moe</span></code></p></td>
-<td><p>Enabling Flashinfer Cutlass MoE implementation for high throughput.</p></td>
-<td><p>False</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-runner-backend</span></code></p></td>
+<td><p>Select the runner backend for MoE.</p></td>
+<td><p>‘triton’</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-trtllm-moe</span></code></p></td>
-<td><p>Enabling Flashinfer Trtllm MoE implementation for low latency.</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--deepep-mode</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--deepep-mode</span></code></p></td>
 <td><p>Select the mode when enable DeepEP MoE, could be <code class="docutils literal notranslate"><span class="pre">normal</span></code>, <code class="docutils literal notranslate"><span class="pre">low_latency</span></code> or <code class="docutils literal notranslate"><span class="pre">auto</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">auto</span></code>, which means <code class="docutils literal notranslate"><span class="pre">low_latency</span></code> for decode batch and <code class="docutils literal notranslate"><span class="pre">normal</span></code> for prefill batch.</p></td>
 <td><p>auto</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-num-redundant-experts</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-num-redundant-experts</span></code></p></td>
 <td><p>Allocate this number of redundant experts in expert parallel.</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-dispatch-algorithm</span></code></p></td>
-<td><p>The algorithm to choose ranks for redundant experts in expert parallel.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-dispatch-algorithm</span></code></p></td>
+<td><p>The algorithm to choose ranks for redundant experts in EPLB.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--init-expert-location</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--init-expert-location</span></code></p></td>
 <td><p>Initial location of EP experts.</p></td>
 <td><p>trivial</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-eplb</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-eplb</span></code></p></td>
 <td><p>Enable EPLB algorithm.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-algorithm</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-algorithm</span></code></p></td>
 <td><p>Chosen EPLB algorithm.</p></td>
 <td><p>auto</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-num-iterations</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-num-iterations</span></code></p></td>
 <td><p>Number of iterations to automatically trigger a EPLB re-balance.</p></td>
 <td><p>1000</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-layers-per-chunk</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-layers-per-chunk</span></code></p></td>
 <td><p>Number of layers to rebalance per forward pass.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-mode</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-mode</span></code></p></td>
 <td><p>Mode of expert distribution recorder.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-buffer-size</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-buffer-size</span></code></p></td>
 <td><p>Circular buffer size of expert distribution recorder. Set to -1 to denote infinite buffer.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-expert-distribution-metrics</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-expert-distribution-metrics</span></code></p></td>
 <td><p>Enable logging metrics for expert balancedness.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--deepep-config</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--deepep-config</span></code></p></td>
 <td><p>Tuned DeepEP config suitable for your own cluster. It can be either a string with JSON content or a file path.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-dense-tp-size</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-dense-tp-size</span></code></p></td>
 <td><p>TP size for MoE dense MLP layers. This flag is useful when, with large TP size, there are errors caused by weights in MLP layers having dimension smaller than the min dimension GEMM supports.</p></td>
 <td><p>None</p></td>
 </tr>
@@ -1358,10 +1354,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-return-hidden-states</span></code></p></td>
 <td><p>Enable returning hidden states.</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-triton-kernel-moe</span></code></p></td>
-<td><p>Enable Triton kernel for MoE.</p></td>
 <td><p>False</p></td>
 </tr>
 </tbody>
