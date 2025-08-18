@@ -471,6 +471,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-a-review">Request a review</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-style">General code style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
 </ul>
             </nav>
@@ -561,7 +562,28 @@ If you modify files protected by code owners, their approval is required to merg
 <li><p>Minimize device synchronization. Reduce expensive CPU-GPU synchronization operations, such as <code class="docutils literal notranslate"><span class="pre">tensor.item()</span></code> or <code class="docutils literal notranslate"><span class="pre">tensor.cpu()</span></code>, whenever possible. Use vectorized code.</p></li>
 <li><p>Keep files concise. If a file exceeds 2,000 lines of code, split it into multiple smaller files.</p></li>
 <li><p>Prioritize extreme efficiency. SGLang is a runtime, and most of your code runs on the critical path for every request. Optimize every minor overhead as much as possible.</p></li>
+<li><p>Try to make functions as pure as possible. Avoid in-place modification of arguments.</p></li>
 </ul>
+</section>
+<section id="how-to-update-sgl-kernel">
+<h2>How to update sgl-kernel<a class="headerlink" href="#how-to-update-sgl-kernel" title="Link to this heading">#</a></h2>
+<p>Since sglang and sgl-kernel are separate Python packages, our current GitHub CI infrastructure does not support updating a kernel and using it immediately within the same pull request (PR). To add a new kernel or modify an existing one in the sgl-kernel package, you must use multiple PRs.</p>
+<p>Follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Submit a PR to update the sgl-kernel source code without using it (e.g., <a class="reference external" href="https://github.com/sgl-project/sglang/pull/8884/files">#8884</a>).</p></li>
+<li><p>Bump the version of sgl-kernel (e.g., <a class="reference external" href="https://github.com/sgl-project/sglang/pull/9220/files">#9220</a>).</p>
+<ul class="simple">
+<li><p>Once merged, this will trigger an automatic release of the sgl-kernel wheel to PyPI.</p></li>
+<li><p>If not urgent, you can wait for other people to release the wheel. A new version will typically be released within one week.</p></li>
+</ul>
+</li>
+<li><p>Apply the changes:</p>
+<ul class="simple">
+<li><p>Update the sgl-kernel version in <code class="docutils literal notranslate"><span class="pre">sglang/python/pyproject.toml</span></code> to use the modified kernels.</p></li>
+<li><p>Update the related caller code in the sglang to use the new kernel.</p></li>
+</ul>
+</li>
+</ol>
 </section>
 <section id="tips-for-newcomers">
 <h2>Tips for newcomers<a class="headerlink" href="#tips-for-newcomers" title="Link to this heading">#</a></h2>
@@ -628,6 +650,7 @@ If you modify files protected by code owners, their approval is required to merg
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-a-review">Request a review</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-style">General code style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
 </ul>
   </nav></div>
