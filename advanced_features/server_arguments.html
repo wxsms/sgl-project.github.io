@@ -55,7 +55,7 @@
     <link rel="prev" title="Llama4 Usage" href="../basic_usage/llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Aug 20, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 22, 2025"/>
   </head>
   
   
@@ -213,7 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">SGLang on Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">Ascend NPUs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -987,8 +987,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>None</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code></p></td>
-<td><p>The list of LoRA adapters. You can provide a list of either path in str or renamed path in the format {name}={path}.</p></td>
-<td><p>None</p></td>
+<td><p>The list of LoRA adapters to load. Each adapter must be specified in one of the following formats: <PATH></p></td>
+<td><p><NAME>=<PATH></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code></p></td>
 <td><p>Maximum number of adapters for a running batch, include base-only request.</p></td>
@@ -1573,7 +1573,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 20, 2025.
+  Last updated on Aug 22, 2025.
   <br/>
 </p>
   </div>

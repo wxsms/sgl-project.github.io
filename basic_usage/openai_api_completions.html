@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI-Compatible APIs" href="openai_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Aug 20, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 22, 2025"/>
   </head>
   
   
@@ -221,7 +221,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">SGLang on Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">Ascend NPUs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -470,8 +470,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-A-Server">Launch A Server</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Chat-Completions">Chat Completions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-Thinking/Reasoning-Support">Model Thinking/Reasoning Support</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-and-Configuration">Supported Models and Configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-Usage">Basic Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-Qwen3-Models">Example: Qwen3 Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-DeepSeek-V3-Models">Example: DeepSeek-V3 Models</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parameters">Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Enabling-Model-Thinking/Reasoning">Enabling Model Thinking/Reasoning</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Completions">Completions</a><ul class="visible nav section-nav flex-column">
@@ -528,50 +534,50 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0820 03:40:42.194000 1170673 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0820 03:40:42.194000 1170673 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-[2025-08-20 03:40:44] server_args=ServerArgs(model_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=30615, skip_server_warmup=False, warmups=None, nccl_port=None, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, mem_fraction_static=0.874, max_running_requests=128, max_queued_requests=9223372036854775807, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, device=&#39;cuda&#39;, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=362525491, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=2, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, served_model_name=&#39;qwen/qwen2.5-0.5b-instruct&#39;, weight_version=&#39;default&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, decode_attention_backend=None, prefill_attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, moe_a2a_backend=&#39;none&#39;, moe_runner_backend=&#39;auto&#39;, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;kernel&#39;, hicache_mem_layout=&#39;layer_first&#39;, hicache_storage_backend=None, hicache_storage_prefetch_policy=&#39;best_effort&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=None, disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, scheduler_recv_interval=1, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False, enable_pdmux=False, sm_group_num=3, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_cutlass_moe=False, enable_flashinfer_trtllm_moe=False, enable_triton_kernel_moe=False, enable_flashinfer_mxfp4_moe=False)
-[2025-08-20 03:40:44] Using default HuggingFace chat template with detected content format: string
-W0820 03:40:51.500000 1170981 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0820 03:40:51.500000 1170981 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0820 03:40:51.999000 1170982 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0820 03:40:51.999000 1170982 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-[2025-08-20 03:40:52] Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-08-20 03:40:52] Init torch distributed begin.
+W0822 04:16:12.418000 2491093 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0822 04:16:12.418000 2491093 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-08-22 04:16:13] server_args=ServerArgs(model_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=31182, skip_server_warmup=False, warmups=None, nccl_port=None, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, mem_fraction_static=0.874, max_running_requests=128, max_queued_requests=9223372036854775807, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, cpu_offload_gb=0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, device=&#39;cuda&#39;, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=499777707, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=2, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, api_key=None, served_model_name=&#39;qwen/qwen2.5-0.5b-instruct&#39;, weight_version=&#39;default&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, decode_attention_backend=None, prefill_attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, moe_a2a_backend=&#39;none&#39;, moe_runner_backend=&#39;auto&#39;, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;kernel&#39;, hicache_mem_layout=&#39;layer_first&#39;, hicache_storage_backend=None, hicache_storage_prefetch_policy=&#39;best_effort&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=None, disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, scheduler_recv_interval=1, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False, enable_pdmux=False, sm_group_num=3, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_cutlass_moe=False, enable_flashinfer_trtllm_moe=False, enable_triton_kernel_moe=False, enable_flashinfer_mxfp4_moe=False)
+[2025-08-22 04:16:14] Using default HuggingFace chat template with detected content format: string
+W0822 04:16:22.168000 2491457 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0822 04:16:22.168000 2491457 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0822 04:16:22.353000 2491456 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0822 04:16:22.353000 2491456 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-08-22 04:16:23] Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-08-22 04:16:23] Init torch distributed begin.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-08-20 03:40:54] Init torch distributed ends. mem usage=0.00 GB
-[2025-08-20 03:40:54] MOE_RUNNER_BACKEND is not initialized, using triton backend
-[2025-08-20 03:40:54] Ignore import error when loading sglang.srt.models.glm4v_moe: No module named &#39;transformers.models.glm4v_moe&#39;
-[2025-08-20 03:40:55] Load weight begin. avail mem=78.58 GB
-[2025-08-20 03:40:56] Using model weights format [&#39;*.safetensors&#39;]
-[2025-08-20 03:40:56] No model.safetensors.index.json found in remote.
+[2025-08-22 04:16:25] Init torch distributed ends. mem usage=0.00 GB
+[2025-08-22 04:16:25] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-08-22 04:16:26] Ignore import error when loading sglang.srt.models.glm4v_moe: No module named &#39;transformers.models.glm4v_moe&#39;
+[2025-08-22 04:16:26] Load weight begin. avail mem=78.58 GB
+[2025-08-22 04:16:27] Using model weights format [&#39;*.safetensors&#39;]
+[2025-08-22 04:16:27] No model.safetensors.index.json found in remote.
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.04it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.02it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.31it/s]
 
-[2025-08-20 03:40:56] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=77.52 GB, mem usage=1.06 GB.
-[2025-08-20 03:40:56] KV Cache is allocated. #tokens: 20480, K size: 0.12 GB, V size: 0.12 GB
-[2025-08-20 03:40:56] Memory pool end. avail mem=77.12 GB
-[2025-08-20 03:40:56] Capture cuda graph begin. This can take up to several minutes. avail mem=77.03 GB
-[2025-08-20 03:40:57] Capture graph bs [1, 2, 4]
-Capturing batches (bs=4 avail_mem=77.02 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-08-20 03:40:57] IS_TBO_ENABLED is not initialized, using False
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.08it/s]
-[2025-08-20 03:40:57] Capture cuda graph end. Time elapsed: 1.04 s. mem usage=0.07 GB. avail mem=76.95 GB.
-[2025-08-20 03:40:58] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=32768, available_gpu_mem=76.95 GB
-[2025-08-20 03:40:58] INFO:     Started server process [1170673]
-[2025-08-20 03:40:58] INFO:     Waiting for application startup.
-[2025-08-20 03:40:58] INFO:     Application startup complete.
-[2025-08-20 03:40:58] INFO:     Uvicorn running on http://0.0.0.0:30615 (Press CTRL+C to quit)
-[2025-08-20 03:40:59] INFO:     127.0.0.1:57272 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-08-20 03:40:59] INFO:     127.0.0.1:57280 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-08-20 03:40:59] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-20 03:41:00] INFO:     127.0.0.1:57292 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-08-20 03:41:00] The server is fired up and ready to roll!
+[2025-08-22 04:16:28] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=77.01 GB, mem usage=1.57 GB.
+[2025-08-22 04:16:28] KV Cache is allocated. #tokens: 20480, K size: 0.12 GB, V size: 0.12 GB
+[2025-08-22 04:16:28] Memory pool end. avail mem=76.52 GB
+[2025-08-22 04:16:29] Capture cuda graph begin. This can take up to several minutes. avail mem=75.79 GB
+[2025-08-22 04:16:29] Capture cuda graph bs [1, 2, 4]
+Capturing batches (bs=4 avail_mem=49.70 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-08-22 04:16:29] IS_TBO_ENABLED is not initialized, using False
+Capturing batches (bs=1 avail_mem=49.63 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.19it/s]
+[2025-08-22 04:16:29] Capture cuda graph end. Time elapsed: 0.89 s. mem usage=26.16 GB. avail mem=49.63 GB.
+[2025-08-22 04:16:30] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=32768, available_gpu_mem=49.63 GB
+[2025-08-22 04:16:30] INFO:     Started server process [2491093]
+[2025-08-22 04:16:30] INFO:     Waiting for application startup.
+[2025-08-22 04:16:30] INFO:     Application startup complete.
+[2025-08-22 04:16:30] INFO:     Uvicorn running on http://0.0.0.0:31182 (Press CTRL+C to quit)
+[2025-08-22 04:16:31] INFO:     127.0.0.1:34576 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:31] INFO:     127.0.0.1:34586 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:31] Prefill batch. #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-22 04:16:32] INFO:     127.0.0.1:34598 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:32] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -585,7 +591,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30615
+Server started on http://localhost:31182
 </pre></div></div>
 </div>
 </section>
@@ -620,17 +626,179 @@ Server started on http://localhost:30615
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-20 03:41:04] Prefill batch. #new-seq: 1, #new-token: 37, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-20 03:41:04] Decode batch. #running-req: 1, #token: 70, token usage: 0.00, cuda graph: True, gen throughput (token/s): 6.08, #queue-req: 0,
-[2025-08-20 03:41:04] INFO:     127.0.0.1:57300 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:36] Prefill batch. #new-seq: 1, #new-token: 37, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-22 04:16:36] Decode batch. #running-req: 1, #token: 70, token usage: 0.00, cuda graph: True, gen throughput (token/s): 6.51, #queue-req: 0,
+[2025-08-22 04:16:36] INFO:     127.0.0.1:59946 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='d9027cf065984e38af2e2039f2eb6f9c', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1755661264, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='eb309d02190947d1a5cb0016f36c9296', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1755836196, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
+</section>
+<section id="Model-Thinking/Reasoning-Support">
+<h3>Model Thinking/Reasoning Support<a class="headerlink" href="#Model-Thinking/Reasoning-Support" title="Link to this heading">#</a></h3>
+<p>Some models support internal reasoning or thinking processes that can be exposed in the API response. SGLang provides unified support for various reasoning models through the <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code> parameter and compatible reasoning parsers.</p>
+<section id="Supported-Models-and-Configuration">
+<h4>Supported Models and Configuration<a class="headerlink" href="#Supported-Models-and-Configuration" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Chat Template Parameter</p></th>
+<th class="head"><p>Reasoning Parser</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DeepSeek-R1 (R1, R1-0528, R1-Distill)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">deepseek-r1</span></code></p></td>
+<td><p>Standard reasoning models</p></td>
+</tr>
+<tr class="row-odd"><td><p>DeepSeek-V3.1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">thinking</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">deepseek-v3</span></code></p></td>
+<td><p>Hybrid model (thinking/non-thinking modes)</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen3 (standard)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3</span></code></p></td>
+<td><p>Hybrid model (thinking/non-thinking modes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen3-Thinking</p></td>
+<td><p>N/A (always enabled)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3-thinking</span></code></p></td>
+<td><p>Always generates reasoning</p></td>
+</tr>
+<tr class="row-even"><td><p>Kimi</p></td>
+<td><p>N/A (always enabled)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">kimi</span></code></p></td>
+<td><p>Kimi thinking models</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gpt-Oss</p></td>
+<td><p>N/A (always enabled)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">gpt-oss</span></code></p></td>
+<td><p>Gpt-Oss thinking models</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="Basic-Usage">
+<h4>Basic Usage<a class="headerlink" href="#Basic-Usage" title="Link to this heading">#</a></h4>
+<p>To enable reasoning output, you need to:</p>
+<ol class="arabic simple">
+<li><p>Launch the server with the appropriate reasoning parser</p></li>
+<li><p>Set the model-specific parameter in <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code></p></li>
+<li><p>Optionally use <code class="docutils literal notranslate"><span class="pre">separate_reasoning:</span> <span class="pre">False</span></code> to not get reasoning content separately (default to <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+</ol>
+<p><strong>Note for Qwen3-Thinking models:</strong> These models always generate thinking content and do not support the <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> parameter. Use <code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3-thinking</span></code> or <code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3</span></code> to parse the thinking content.</p>
+</section>
+<section id="Example:-Qwen3-Models">
+<h4>Example: Qwen3 Models<a class="headerlink" href="#Example:-Qwen3-Models" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch server:</span>
+<span class="c1"># python3 -m sglang.launch_server --model Qwen/Qwen3-4B --reasoning-parser qwen3</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;EMPTY&quot;</span><span class="p">,</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://127.0.0.1:30000/v1&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;Qwen/Qwen3-4B&quot;</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;How many r&#39;s are in &#39;strawberry&#39;?&quot;</span><span class="p">}]</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+    <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;chat_template_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;enable_thinking&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s2">&quot;separate_reasoning&quot;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reasoning:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reasoning_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Answer:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>ExampleOutput:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Reasoning: Okay, so the user is asking how many &#39;r&#39;s are in the word &#39;strawberry&#39;. Let me think. First, I need to make sure I have the word spelled correctly. Strawberry... S-T-R-A-W-B-E-R-R-Y. Wait, is that right? Let me break it down.
+
+Starting with &#39;strawberry&#39;, let&#39;s write out the letters one by one. S, T, R, A, W, B, E, R, R, Y. Hmm, wait, that&#39;s 10 letters. Let me check again. S (1), T (2), R (3), A (4), W (5), B (6), E (7), R (8), R (9), Y (10). So the letters are S-T-R-A-W-B-E-R-R-Y.
+...
+Therefore, the answer should be three R&#39;s in &#39;strawberry&#39;. But I need to make sure I&#39;m not counting any other letters as R. Let me check again. S, T, R, A, W, B, E, R, R, Y. No other R&#39;s. So three in total. Yeah, that seems right.
+
+----------------------------------------------------------------------------------------------------
+Answer: The word &quot;strawberry&quot; contains **three** letters &#39;r&#39;. Here&#39;s the breakdown:
+
+1. **S-T-R-A-W-B-E-R-R-Y**
+   - The **third letter** is &#39;R&#39;.
+   - The **eighth and ninth letters** are also &#39;R&#39;s.
+
+Thus, the total count is **3**.
+
+**Answer:** 3.
+</pre></div>
+</div>
+<p><strong>Note:</strong> Setting <code class="docutils literal notranslate"><span class="pre">&quot;enable_thinking&quot;:</span> <span class="pre">False</span></code> (or omitting it) will result in <code class="docutils literal notranslate"><span class="pre">reasoning_content</span></code> being <code class="docutils literal notranslate"><span class="pre">None</span></code>. Qwen3-Thinking models always generate reasoning content and don’t support the <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> parameter.</p>
+</section>
+<section id="Example:-DeepSeek-V3-Models">
+<h4>Example: DeepSeek-V3 Models<a class="headerlink" href="#Example:-DeepSeek-V3-Models" title="Link to this heading">#</a></h4>
+<p>DeepSeek-V3 models support thinking mode through the <code class="docutils literal notranslate"><span class="pre">thinking</span></code> parameter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch server:</span>
+<span class="c1"># python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-V3.1 --tp 8  --reasoning-parser deepseek-v3</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;EMPTY&quot;</span><span class="p">,</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://127.0.0.1:30000/v1&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;deepseek-ai/DeepSeek-V3.1&quot;</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;How many r&#39;s are in &#39;strawberry&#39;?&quot;</span><span class="p">}]</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+    <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;chat_template_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;thinking&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s2">&quot;separate_reasoning&quot;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reasoning:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reasoning_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Answer:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Example Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Reasoning: First, the question is: &quot;How many r&#39;s are in &#39;strawberry&#39;?&quot;
+
+I need to count the number of times the letter &#39;r&#39; appears in the word &quot;strawberry&quot;.
+
+Let me write out the word: S-T-R-A-W-B-E-R-R-Y.
+
+Now, I&#39;ll go through each letter and count the &#39;r&#39;s.
+...
+So, I have three &#39;r&#39;s in &quot;strawberry&quot;.
+
+I should double-check. The word is spelled S-T-R-A-W-B-E-R-R-Y. The letters are at positions: 3, 8, and 9 are &#39;r&#39;s. Yes, that&#39;s correct.
+
+Therefore, the answer should be 3.
+----------------------------------------------------------------------------------------------------
+Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &quot;r&quot;. Here&#39;s a breakdown for clarity:
+
+- The word is spelled: S-T-R-A-W-B-E-R-R-Y
+- The &quot;r&quot; appears at the 3rd, 8th, and 9th positions.
+</pre></div>
+</div>
+<p><strong>Note:</strong> DeepSeek-V3 models use the <code class="docutils literal notranslate"><span class="pre">thinking</span></code> parameter (not <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code>) to control reasoning output.</p>
+</section>
 </section>
 <section id="Parameters">
 <h3>Parameters<a class="headerlink" href="#Parameters" title="Link to this heading">#</a></h3>
@@ -672,18 +840,18 @@ Server started on http://localhost:30615
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-20 03:41:04] Prefill batch. #new-seq: 1, #new-token: 49, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 88, token usage: 0.00, cuda graph: True, gen throughput (token/s): 260.06, #queue-req: 0,
-[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 128, token usage: 0.01, cuda graph: True, gen throughput (token/s): 621.94, #queue-req: 0,
-[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 168, token usage: 0.01, cuda graph: True, gen throughput (token/s): 625.54, #queue-req: 0,
-[2025-08-20 03:41:05] INFO:     127.0.0.1:57300 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:36] Prefill batch. #new-seq: 1, #new-token: 49, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-22 04:16:36] Decode batch. #running-req: 1, #token: 88, token usage: 0.00, cuda graph: True, gen throughput (token/s): 311.46, #queue-req: 0,
+[2025-08-22 04:16:36] Decode batch. #running-req: 1, #token: 128, token usage: 0.01, cuda graph: True, gen throughput (token/s): 629.67, #queue-req: 0,
+[2025-08-22 04:16:36] Decode batch. #running-req: 1, #token: 168, token usage: 0.01, cuda graph: True, gen throughput (token/s): 627.66, #queue-req: 0,
+[2025-08-22 04:16:36] INFO:     127.0.0.1:59946 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th to the 5th centuries BCE. It was known for its advanced engineering, art, literature, and philosophy. Some of their major achievements include:<br><br>1. **Roman Republic**: The Roman Republic was a period of political stability and economic prosperity that lasted from 509 BCE to 27 BCE. It was characterized by a strong central government, which allowed for the development of a complex legal system and a well-developed bureaucracy.<br><br>2. **Roman Empire**: The Roman Empire, which lasted from 27 BCE to 47</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that had a profound impact on the world. Some of their major achievements include:<br><br>1. The construction of the Colosseum, which was the largest amphitheater in the world and was used for gladiatorial games, public spectacles, and other public events.<br><br>2. The development of Roman law, which established a system of legal principles and procedures that would later influence legal systems around the world.<br><br>3. The construction of the Pantheon, a temple dedicated to Jupiter, which was one of the largest and most important temples in ancient Rome.<br><br>4. The construction of the aqueducts that</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -706,70 +874,12 @@ Server started on http://localhost:30615
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-20 03:41:05] INFO:     127.0.0.1:57300 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-08-20 03:41:05] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 24, token usage: 0.00, #running-req: 0, #queue-req: 0,
-Yes, that&#39;s a test. I was created by Alibaba Cloud, so please remember to use my API for any questions or[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 60, token usage: 0.00, cuda graph: True, gen throughput (token/s): 431.32, #queue-req: 0,
- requests related to my capabilities.
+[2025-08-22 04:16:36] INFO:     127.0.0.1:59946 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:36] Prefill batch. #new-seq: 1, #new-token: 10, #cached-token: 24, token usage: 0.00, #running-req: 0, #queue-req: 0,
+Yes, that&#39;s a test. I was created by Alibaba Cloud, and I&#39;m here to assist you with any questions you[2025-08-22 04:16:36] Decode batch. #running-req: 1, #token: 60, token usage: 0.00, cuda graph: True, gen throughput (token/s): 430.88, #queue-req: 0,
+ may have. Feel free to ask me anything you&#39;d like to know!
 </pre></div></div>
 </div>
-</section>
-<section id="Enabling-Model-Thinking/Reasoning">
-<h3>Enabling Model Thinking/Reasoning<a class="headerlink" href="#Enabling-Model-Thinking/Reasoning" title="Link to this heading">#</a></h3>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code> to enable or disable the model’s internal thinking or reasoning process output. Set <code class="docutils literal notranslate"><span class="pre">&quot;enable_thinking&quot;:</span> <span class="pre">True</span></code> within <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code> to include the reasoning steps in the response. This requires launching the server with a compatible reasoning parser.</p>
-<p><strong>Reasoning Parser Options:</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">deepseek-r1</span></code>: For DeepSeek-R1 family models (R1, R1-0528, R1-Distill)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3</span></code>: For both standard Qwen3 models that support <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> parameter and Qwen3-Thinking models</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3-thinking</span></code>: For Qwen3-Thinking models, force reasoning version of qwen3 parser</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">kimi</span></code>: For Kimi thinking models</p></li>
-</ul>
-<p>Here’s an example demonstrating how to enable thinking and retrieve the reasoning content separately (using <code class="docutils literal notranslate"><span class="pre">separate_reasoning:</span> <span class="pre">True</span></code>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Qwen3 models with enable_thinking support:</span>
-<span class="c1"># python3 -m sglang.launch_server --model-path QwQ/Qwen3-32B-250415 --reasoning-parser qwen3 ...</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
-
-<span class="c1"># Modify OpenAI&#39;s API key and API base to use SGLang&#39;s API server.</span>
-<span class="n">openai_api_key</span> <span class="o">=</span> <span class="s2">&quot;EMPTY&quot;</span>
-<span class="n">openai_api_base</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://127.0.0.1:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/v1&quot;</span> <span class="c1"># Use the correct port</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
-    <span class="n">api_key</span><span class="o">=</span><span class="n">openai_api_key</span><span class="p">,</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="n">openai_api_base</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;QwQ/Qwen3-32B-250415&quot;</span> <span class="c1"># Use the model loaded by the server</span>
-<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;9.11 and 9.8, which is greater?&quot;</span><span class="p">}]</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
-    <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;chat_template_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;enable_thinking&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="s2">&quot;separate_reasoning&quot;</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;response.choices[0].message.reasoning_content: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reasoning_content</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;response.choices[0].message.content: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Example Output:</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>response.choices[0].message.reasoning_content:
- Okay, so I need to figure out which number is greater between 9.11 and 9.8. Hmm, let me think. Both numbers start with 9, right? So the whole number part is the same. That means I need to look at the decimal parts to determine which one is bigger.
-...
-Therefore, after checking multiple methods—aligning decimals, subtracting, converting to fractions, and using a real-world analogy—it&#39;s clear that 9.8 is greater than 9.11.
-
-response.choices[0].message.content:
- To determine which number is greater between **9.11** and **9.8**, follow these steps:
-...
-**Answer**:
-9.8 is greater than 9.11.
-</pre></div>
-</div>
-<p>Setting <code class="docutils literal notranslate"><span class="pre">&quot;enable_thinking&quot;:</span> <span class="pre">False</span></code> (or omitting it) will result in <code class="docutils literal notranslate"><span class="pre">reasoning_content</span></code> being <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<p><strong>Note for Qwen3-Thinking models:</strong> These models always generate thinking content and do not support the <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> parameter. Use <code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3-thinking</span></code> or <code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span> <span class="pre">qwen3</span></code> to parse the thinking content.</p>
-<p>Here is an example of a detailed chat completion request using standard OpenAI parameters:</p>
 </section>
 </section>
 <section id="Completions">
@@ -799,16 +909,17 @@ response.choices[0].message.content:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-20 03:41:05] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 42, token usage: 0.00, cuda graph: True, gen throughput (token/s): 310.77, #queue-req: 0,
-[2025-08-20 03:41:05] INFO:     127.0.0.1:57300 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:36] Prefill batch. #new-seq: 1, #new-token: 8, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-22 04:16:36] Decode batch. #running-req: 1, #token: 33, token usage: 0.00, cuda graph: True, gen throughput (token/s): 314.71, #queue-req: 0,
+[2025-08-22 04:16:37] INFO:     127.0.0.1:59946 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:37] Decode batch. #running-req: 1, #token: 0, token usage: 0.00, cuda graph: True, gen throughput (token/s): 706.31, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='59433a4a3e1e44a68b9cdcd8527db8f3', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1755661265, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='686cd84737494ed6880976dbcefa7c84', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1755836197, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -841,17 +952,16 @@ response.choices[0].message.content:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-20 03:41:05] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 19, token usage: 0.00, cuda graph: True, gen throughput (token/s): 363.47, #queue-req: 0,
-[2025-08-20 03:41:05] Decode batch. #running-req: 1, #token: 59, token usage: 0.00, cuda graph: True, gen throughput (token/s): 478.45, #queue-req: 0,
-[2025-08-20 03:41:05] INFO:     127.0.0.1:57300 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
+[2025-08-22 04:16:37] Prefill batch. #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-22 04:16:37] Decode batch. #running-req: 1, #token: 50, token usage: 0.00, cuda graph: True, gen throughput (token/s): 474.08, #queue-req: 0,
+[2025-08-22 04:16:37] INFO:     127.0.0.1:59946 - &#34;POST /v1/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='89a4034a40724a2ba596ebc34f722d19', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Samantha Carter. She was a brilliant and ambitious scientist who had been working on space exploration for many years. Her goal was to find a way to colonize Mars and explore the universe beyond Earth.', matched_stop='\n\n')], created=1755661265, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=52, prompt_tokens=9, total_tokens=61, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='9c347bce98174eb1b121423844500f5f', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had been dreaming of exploring the universe for years. He had always wanted to see the stars and learn about the wonders of the cosmos. After graduating from college, Jack set out on his journey to explore the vast expanse of space.', matched_stop='\n\n')], created=1755836197, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=60, prompt_tokens=9, total_tokens=69, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
@@ -917,8 +1027,14 @@ response.choices[0].message.content:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-A-Server">Launch A Server</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Chat-Completions">Chat Completions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-Thinking/Reasoning-Support">Model Thinking/Reasoning Support</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-and-Configuration">Supported Models and Configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-Usage">Basic Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-Qwen3-Models">Example: Qwen3 Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-DeepSeek-V3-Models">Example: DeepSeek-V3 Models</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parameters">Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Enabling-Model-Thinking/Reasoning">Enabling Model Thinking/Reasoning</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Completions">Completions</a><ul class="visible nav section-nav flex-column">
@@ -960,7 +1076,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 20, 2025.
+  Last updated on Aug 22, 2025.
   <br/>
 </p>
   </div>
