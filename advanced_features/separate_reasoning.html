@@ -589,50 +589,50 @@ odels</a></p></td>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0825 10:46:24.407000 1187293 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 10:46:24.407000 1187293 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-[2025-08-25 10:46:27] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=39677, skip_server_warmup=False, warmups=None, nccl_port=None, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, mem_fraction_static=0.874, max_running_requests=128, max_queued_requests=9223372036854775807, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, device=&#39;cuda&#39;, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=144590315, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=2, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, gc_warning_threshold_secs=0.0, api_key=None, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, weight_version=&#39;default&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, tool_call_parser=None, tool_server=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, decode_attention_backend=None, prefill_attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, moe_a2a_backend=&#39;none&#39;, moe_runner_backend=&#39;auto&#39;, flashinfer_mxfp4_moe_precision=&#39;default&#39;, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;kernel&#39;, hicache_mem_layout=&#39;layer_first&#39;, hicache_storage_backend=None, hicache_storage_prefetch_policy=&#39;best_effort&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode=&#39;cpu&#39;, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=None, disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, scheduler_recv_interval=1, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False, enable_pdmux=False, sm_group_num=3, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_cutlass_moe=False, enable_flashinfer_trtllm_moe=False, enable_triton_kernel_moe=False, enable_flashinfer_mxfp4_moe=False)
-[2025-08-25 10:46:27] Using default HuggingFace chat template with detected content format: string
-W0825 10:46:38.341000 1187958 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 10:46:38.341000 1187958 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0825 10:46:38.794000 1187960 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 10:46:38.794000 1187960 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-[2025-08-25 10:46:39] Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-08-25 10:46:39] Init torch distributed begin.
+W0825 20:47:30.081000 3367534 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0825 20:47:30.081000 3367534 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-08-25 20:47:34] server_args=ServerArgs(model_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_path=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, tokenizer_mode=&#39;auto&#39;, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;0.0.0.0&#39;, port=39521, skip_server_warmup=False, warmups=None, nccl_port=None, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, mem_fraction_static=0.874, max_running_requests=128, max_queued_requests=9223372036854775807, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, schedule_conservativeness=1.0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, device=&#39;cuda&#39;, tp_size=1, pp_size=1, max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=736166742, constrained_json_whitespace_pattern=None, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, log_level=&#39;info&#39;, log_level_http=None, log_requests=False, log_requests_level=2, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, gc_warning_threshold_secs=0.0, api_key=None, served_model_name=&#39;deepseek-ai/DeepSeek-R1-Distill-Qwen-7B&#39;, weight_version=&#39;default&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=&#39;deepseek-r1&#39;, tool_call_parser=None, tool_server=None, dp_size=1, load_balance_method=&#39;round_robin&#39;, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_backend=&#39;triton&#39;, attention_backend=None, decode_attention_backend=None, prefill_attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, speculative_algorithm=None, speculative_draft_model_path=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, ep_size=1, moe_a2a_backend=&#39;none&#39;, moe_runner_backend=&#39;auto&#39;, flashinfer_mxfp4_moe_precision=&#39;default&#39;, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=&#39;static&#39;, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through_selective&#39;, hicache_io_backend=&#39;kernel&#39;, hicache_mem_layout=&#39;layer_first&#39;, hicache_storage_backend=None, hicache_storage_prefetch_policy=&#39;best_effort&#39;, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode=&#39;cpu&#39;, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=None, disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, torch_compile_max_bs=32, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, enable_return_hidden_states=False, scheduler_recv_interval=1, debug_tensor_dump_output_folder=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, debug_tensor_dump_prefill_only=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, num_reserved_decode_tokens=512, pdlb_url=None, custom_weight_loader=[], weight_loader_disable_mmap=False, enable_pdmux=False, sm_group_num=3, enable_ep_moe=False, enable_deepep_moe=False, enable_flashinfer_cutlass_moe=False, enable_flashinfer_trtllm_moe=False, enable_triton_kernel_moe=False, enable_flashinfer_mxfp4_moe=False)
+[2025-08-25 20:47:35] Using default HuggingFace chat template with detected content format: string
+W0825 20:47:45.462000 3368379 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0825 20:47:45.462000 3368379 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0825 20:47:45.607000 3368380 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0825 20:47:45.607000 3368380 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-08-25 20:47:46] Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-08-25 20:47:46] Init torch distributed begin.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-08-25 10:46:40] Init torch distributed ends. mem usage=0.00 GB
-[2025-08-25 10:46:40] MOE_RUNNER_BACKEND is not initialized, using triton backend
-[2025-08-25 10:46:42] Ignore import error when loading sglang.srt.models.glm4v_moe: No module named &#39;transformers.models.glm4v_moe&#39;
-[2025-08-25 10:46:43] Load weight begin. avail mem=77.57 GB
-[2025-08-25 10:46:43] Using model weights format [&#39;*.safetensors&#39;]
+[2025-08-25 20:47:47] Init torch distributed ends. mem usage=0.00 GB
+[2025-08-25 20:47:47] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-08-25 20:47:49] Ignore import error when loading sglang.srt.models.glm4v_moe: No module named &#39;transformers.models.glm4v_moe&#39;
+[2025-08-25 20:47:50] Load weight begin. avail mem=77.57 GB
+[2025-08-25 20:47:51] Using model weights format [&#39;*.safetensors&#39;]
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.42s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.33s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.34s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.48s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.35s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.37s/it]
 
-[2025-08-25 10:46:46] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=33.60 GB, mem usage=43.97 GB.
-[2025-08-25 10:46:46] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
-[2025-08-25 10:46:46] Memory pool end. avail mem=32.26 GB
-[2025-08-25 10:46:46] Capture cuda graph begin. This can take up to several minutes. avail mem=30.82 GB
-[2025-08-25 10:46:47] Capture cuda graph bs [1, 2, 4]
-Capturing batches (bs=4 avail_mem=30.80 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-08-25 10:46:47] IS_TBO_ENABLED is not initialized, using False
-Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.00it/s]
-[2025-08-25 10:46:47] Capture cuda graph end. Time elapsed: 0.96 s. mem usage=0.16 GB. avail mem=30.66 GB.
-[2025-08-25 10:46:48] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=27.54 GB
-[2025-08-25 10:46:48] INFO:     Started server process [1187293]
-[2025-08-25 10:46:48] INFO:     Waiting for application startup.
-[2025-08-25 10:46:48] INFO:     Application startup complete.
-[2025-08-25 10:46:48] INFO:     Uvicorn running on http://0.0.0.0:39677 (Press CTRL+C to quit)
-[2025-08-25 10:46:49] INFO:     127.0.0.1:39636 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
-[2025-08-25 10:46:49] INFO:     127.0.0.1:39652 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
-[2025-08-25 10:46:49] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-25 10:46:52] INFO:     127.0.0.1:39662 - &#34;POST /generate HTTP/1.1&#34; 200 OK
-[2025-08-25 10:46:52] The server is fired up and ready to roll!
+[2025-08-25 20:47:54] Load weight end. type=Qwen2ForCausalLM, dtype=torch.bfloat16, avail mem=32.25 GB, mem usage=45.31 GB.
+[2025-08-25 20:47:54] KV Cache is allocated. #tokens: 20480, K size: 0.55 GB, V size: 0.55 GB
+[2025-08-25 20:47:54] Memory pool end. avail mem=30.92 GB
+[2025-08-25 20:47:54] Capture cuda graph begin. This can take up to several minutes. avail mem=30.82 GB
+[2025-08-25 20:47:55] Capture cuda graph bs [1, 2, 4]
+Capturing batches (bs=4 avail_mem=27.68 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-08-25 20:47:55] IS_TBO_ENABLED is not initialized, using False
+Capturing batches (bs=1 avail_mem=27.54 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.57it/s]
+[2025-08-25 20:47:56] Capture cuda graph end. Time elapsed: 1.35 s. mem usage=3.28 GB. avail mem=27.54 GB.
+[2025-08-25 20:47:56] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=27.53 GB
+[2025-08-25 20:47:56] INFO:     Started server process [3367534]
+[2025-08-25 20:47:56] INFO:     Waiting for application startup.
+[2025-08-25 20:47:57] INFO:     Application startup complete.
+[2025-08-25 20:47:57] INFO:     Uvicorn running on http://0.0.0.0:39521 (Press CTRL+C to quit)
+[2025-08-25 20:47:57] INFO:     127.0.0.1:56424 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-08-25 20:47:58] INFO:     127.0.0.1:56430 - &#34;GET /get_model_info HTTP/1.1&#34; 200 OK
+[2025-08-25 20:47:58] Prefill batch. #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-25 20:48:00] INFO:     127.0.0.1:56434 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:00] The server is fired up and ready to roll!
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -672,7 +672,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:46:54] INFO:     127.0.0.1:39666 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:02] INFO:     127.0.0.1:56448 - &#34;GET /v1/models HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <section id="Non-Streaming-Request">
@@ -702,11 +702,11 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:46:54] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-25 10:46:55] Decode batch. #running-req: 1, #token: 45, token usage: 0.00, cuda graph: True, gen throughput (token/s): 5.82, #queue-req: 0,
-[2025-08-25 10:46:55] Decode batch. #running-req: 1, #token: 85, token usage: 0.00, cuda graph: True, gen throughput (token/s): 75.18, #queue-req: 0,
-[2025-08-25 10:46:56] Decode batch. #running-req: 1, #token: 125, token usage: 0.01, cuda graph: True, gen throughput (token/s): 75.23, #queue-req: 0,
-[2025-08-25 10:46:56] INFO:     127.0.0.1:39666 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:02] Prefill batch. #new-seq: 1, #new-token: 11, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-25 20:48:02] Decode batch. #running-req: 1, #token: 45, token usage: 0.00, cuda graph: True, gen throughput (token/s): 6.11, #queue-req: 0,
+[2025-08-25 20:48:03] Decode batch. #running-req: 1, #token: 85, token usage: 0.00, cuda graph: True, gen throughput (token/s): 76.63, #queue-req: 0,
+[2025-08-25 20:48:04] Decode batch. #running-req: 1, #token: 125, token usage: 0.01, cuda graph: True, gen throughput (token/s): 76.65, #queue-req: 0,
+[2025-08-25 20:48:04] INFO:     127.0.0.1:56448 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -719,7 +719,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I identify the two numbers that need to be added: 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the sum to find the result.<br></strong></div>
+<strong style='color: #00008B;'>I recognize that the problem is asking for the sum of 1 and 3.<br><br>I start by identifying the two numbers involved, which are 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the result, which is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -731,7 +731,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Let's solve the addition step by step.<br><br>**Problem:**<br>\[ 1 + 3 \]<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[ 1 \text{ and } 3 \]<br><br>2. **Add the numbers:**<br>   \[ 1 + 3 = 4 \]<br><br>**Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
+<strong style='color: #00008B;'>Sure! Let's solve the addition problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**  <br>   The numbers are \(1\) and \(3\).<br><br>2. **Perform the addition:**  <br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**  <br>\(\boxed{4}\)</strong></div>
 </div>
 </section>
 <section id="Streaming-Request">
@@ -770,12 +770,11 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:46:56] INFO:     127.0.0.1:39666 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-08-25 10:46:56] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-25 10:46:56] Decode batch. #running-req: 1, #token: 33, token usage: 0.00, cuda graph: True, gen throughput (token/s): 64.32, #queue-req: 0,
-[2025-08-25 10:46:57] Decode batch. #running-req: 1, #token: 73, token usage: 0.00, cuda graph: True, gen throughput (token/s): 53.84, #queue-req: 0,
-[2025-08-25 10:46:58] Decode batch. #running-req: 1, #token: 113, token usage: 0.01, cuda graph: True, gen throughput (token/s): 56.07, #queue-req: 0,
-[2025-08-25 10:46:58] Decode batch. #running-req: 1, #token: 153, token usage: 0.01, cuda graph: True, gen throughput (token/s): 64.20, #queue-req: 0,
+[2025-08-25 20:48:04] INFO:     127.0.0.1:56448 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:04] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-25 20:48:04] Decode batch. #running-req: 1, #token: 17, token usage: 0.00, cuda graph: True, gen throughput (token/s): 71.40, #queue-req: 0,
+[2025-08-25 20:48:05] Decode batch. #running-req: 1, #token: 57, token usage: 0.00, cuda graph: True, gen throughput (token/s): 54.92, #queue-req: 0,
+[2025-08-25 20:48:06] Decode batch. #running-req: 1, #token: 97, token usage: 0.00, cuda graph: True, gen throughput (token/s): 55.96, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -788,7 +787,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I identify the two numbers in the addition problem: 1 and 3.<br><br>Next, I perform the addition operation by combining these two numbers.<br><br>Finally, I calculate the sum to find the result of 1 plus 3.<br></strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I perform the addition by combining these two numbers.<br><br>Finally, I calculate that 1 plus 3 equals 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -800,7 +799,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br><br>Sure! Let's solve the addition problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**  <br>   The numbers are 1 and 3.<br><br>2. **Perform the addition:**  <br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Final Answer:**  <br>   \[<br>   \boxed{4}<br>   \]<br><br>So, \(1 + 3 = \boxed{4}\).</strong></div>
+<strong style='color: #00008B;'><br><br>**Solution:**<br><br>We are asked to find the sum of \(1\) and \(3\).<br><br>\[<br>1 + 3 = 4<br>\]<br><br>Therefore, the final answer is \(\boxed{4}\).</strong></div>
 </div>
 <p>Optionally, you can buffer the reasoning content to the last reasoning chunk (or the first chunk after the reasoning content).</p>
 <div class="nbinput docutils container">
@@ -837,11 +836,11 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:46:59] INFO:     127.0.0.1:39666 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
-[2025-08-25 10:46:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-25 10:46:59] Decode batch. #running-req: 1, #token: 36, token usage: 0.00, cuda graph: True, gen throughput (token/s): 79.16, #queue-req: 0,
-[2025-08-25 10:46:59] Decode batch. #running-req: 1, #token: 76, token usage: 0.00, cuda graph: True, gen throughput (token/s): 74.88, #queue-req: 0,
-[2025-08-25 10:47:00] Decode batch. #running-req: 1, #token: 116, token usage: 0.01, cuda graph: True, gen throughput (token/s): 126.87, #queue-req: 0,
+[2025-08-25 20:48:06] INFO:     127.0.0.1:56448 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:06] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-25 20:48:06] Decode batch. #running-req: 1, #token: 42, token usage: 0.00, cuda graph: True, gen throughput (token/s): 54.67, #queue-req: 0,
+[2025-08-25 20:48:07] Decode batch. #running-req: 1, #token: 82, token usage: 0.00, cuda graph: True, gen throughput (token/s): 131.32, #queue-req: 0,
+[2025-08-25 20:48:07] Decode batch. #running-req: 1, #token: 122, token usage: 0.01, cuda graph: True, gen throughput (token/s): 84.36, #queue-req: 0,
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -854,7 +853,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add the two numbers together.<br><br>Finally, I arrive at the result, which is 4.</strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>Next, I perform the addition of these two numbers.<br><br>Finally, I arrive at the conclusion that the result of 1 plus 3 is 4.</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -866,7 +865,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>1. Start with the first number:<br>   \[<br>   1<br>   \]<br><br>2. Add the second number:<br>   \[<br>   1 + 3<br>   \]<br><br>3. Perform the addition:<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
+<strong style='color: #00008B;'><br><br>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Start with the number 1.**<br>2. **Add 3 to it.**<br>   <br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
 </div>
 <p>The reasoning separation is enable by default when specify . <strong>To disable it, set the ``separate_reasoning`` option to ``False`` in request.</strong></p>
 <div class="nbinput docutils container">
@@ -892,11 +891,12 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:47:00] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-25 10:47:00] Decode batch. #running-req: 1, #token: 22, token usage: 0.00, cuda graph: True, gen throughput (token/s): 131.27, #queue-req: 0,
-[2025-08-25 10:47:00] Decode batch. #running-req: 1, #token: 62, token usage: 0.00, cuda graph: True, gen throughput (token/s): 163.76, #queue-req: 0,
-[2025-08-25 10:47:01] Decode batch. #running-req: 1, #token: 102, token usage: 0.00, cuda graph: True, gen throughput (token/s): 166.03, #queue-req: 0,
-[2025-08-25 10:47:01] INFO:     127.0.0.1:39666 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:07] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 11, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-25 20:48:08] Decode batch. #running-req: 1, #token: 34, token usage: 0.00, cuda graph: True, gen throughput (token/s): 66.89, #queue-req: 0,
+[2025-08-25 20:48:08] Decode batch. #running-req: 1, #token: 74, token usage: 0.00, cuda graph: True, gen throughput (token/s): 129.36, #queue-req: 0,
+[2025-08-25 20:48:08] Decode batch. #running-req: 1, #token: 114, token usage: 0.01, cuda graph: True, gen throughput (token/s): 167.78, #queue-req: 0,
+[2025-08-25 20:48:08] Decode batch. #running-req: 1, #token: 154, token usage: 0.01, cuda graph: True, gen throughput (token/s): 166.51, #queue-req: 0,
+[2025-08-25 20:48:09] INFO:     127.0.0.1:56448 - &#34;POST /v1/chat/completions HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -909,7 +909,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I perform the addition operation by adding 1 and 3 together.<br><br>Finally, I arrive at the result, which is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>\[<br>1 + 3 = 4<br>\]<br><br>Therefore, the answer is \(\boxed{4}\).</strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>I start by identifying the two numbers involved, which are 1 and 3.<br><br>Next, I perform the addition operation by adding these two numbers together.<br><br>Finally, I calculate the result, which is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of 1 and 3.<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Perform the addition:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Final Answer:**<br>   \[<br>   \boxed{4}<br>   \]</strong></div>
 </div>
 </section>
 </section>
@@ -963,12 +963,12 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:47:01] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
-[2025-08-25 10:47:01] Decode batch. #running-req: 1, #token: 48, token usage: 0.00, cuda graph: True, gen throughput (token/s): 50.93, #queue-req: 0,
-[2025-08-25 10:47:02] Decode batch. #running-req: 1, #token: 88, token usage: 0.00, cuda graph: True, gen throughput (token/s): 163.76, #queue-req: 0,
-[2025-08-25 10:47:02] Decode batch. #running-req: 1, #token: 128, token usage: 0.01, cuda graph: True, gen throughput (token/s): 164.09, #queue-req: 0,
-[2025-08-25 10:47:02] Decode batch. #running-req: 1, #token: 168, token usage: 0.01, cuda graph: True, gen throughput (token/s): 162.23, #queue-req: 0,
-[2025-08-25 10:47:02] INFO:     127.0.0.1:49780 - &#34;POST /generate HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:09] Prefill batch. #new-seq: 1, #new-token: 12, #cached-token: 1, token usage: 0.00, #running-req: 0, #queue-req: 0,
+[2025-08-25 20:48:09] Decode batch. #running-req: 1, #token: 37, token usage: 0.00, cuda graph: True, gen throughput (token/s): 44.29, #queue-req: 0,
+[2025-08-25 20:48:10] Decode batch. #running-req: 1, #token: 77, token usage: 0.00, cuda graph: True, gen throughput (token/s): 161.66, #queue-req: 0,
+[2025-08-25 20:48:10] Decode batch. #running-req: 1, #token: 117, token usage: 0.01, cuda graph: True, gen throughput (token/s): 164.66, #queue-req: 0,
+[2025-08-25 20:48:10] Decode batch. #running-req: 1, #token: 157, token usage: 0.01, cuda graph: True, gen throughput (token/s): 163.43, #queue-req: 0,
+[2025-08-25 20:48:10] INFO:     127.0.0.1:52366 - &#34;POST /generate HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -981,14 +981,14 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>I start by identifying the numbers involved, which are 1 and 3.<br><br>Next, I add these two numbers together.<br><br>Finally, I arrive at the conclusion that 1 plus 3 equals 4.<br></think><br><br>To solve the problem \(1 + 3\), follow these simple steps:<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Present the final answer:**<br>   \[<br>   \boxed{4}<br>   \]</strong></div>
+<strong style='color: #00008B;'>First, I need to identify the two numbers in the problem, which are 1 and 3.<br><br>Next, I'll add these two numbers together.<br><br>Finally, the sum of 1 and 3 is 4.<br></think><br><br>Sure! Let's solve the addition problem step by step.<br><br>**Problem:**  <br>What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**  <br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-08-25 10:47:02] INFO:     127.0.0.1:49786 - &#34;POST /separate_reasoning HTTP/1.1&#34; 200 OK
+[2025-08-25 20:48:10] INFO:     127.0.0.1:52372 - &#34;POST /separate_reasoning HTTP/1.1&#34; 200 OK
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1001,7 +1001,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of 1 and 3.<br><br>I start by identifying the numbers involved, which are 1 and 3.<br><br>Next, I add these two numbers together.<br><br>Finally, I arrive at the conclusion that 1 plus 3 equals 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I need to identify the two numbers in the problem, which are 1 and 3.<br><br>Next, I'll add these two numbers together.<br><br>Finally, the sum of 1 and 3 is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1013,7 +1013,7 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>To solve the problem \(1 + 3\), follow these simple steps:<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Present the final answer:**<br>   \[<br>   \boxed{4}<br>   \]</strong></div>
+<strong style='color: #00008B;'>Sure! Let's solve the addition problem step by step.<br><br>**Problem:**  <br>What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers together:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Answer:**  <br>\[<br>\boxed{4}<br>\]</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -1068,10 +1068,10 @@ Capturing batches (bs=1 avail_mem=30.68 GB): 100%|██████████
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0825 10:47:04.232000 1186691 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 10:47:04.232000 1186691 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0825 10:47:13.180000 1190712 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 10:47:13.180000 1190712 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0825 20:48:12.485000 3367056 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0825 20:48:12.485000 3367056 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0825 20:48:21.653000 3371082 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0825 20:48:21.653000 3371082 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1093,11 +1093,11 @@ W0825 10:47:13.180000 1190712 torch/utils/cpp_extension.py:2425] If this is not 
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.42s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.52s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.33s/it]
 Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.36s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.37s/it]
 
-Capturing batches (bs=1 avail_mem=15.59 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.91it/s]
+Capturing batches (bs=1 avail_mem=15.59 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.11it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1110,7 +1110,7 @@ Capturing batches (bs=1 avail_mem=15.59 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I'll identify the two numbers involved: 1 and 3.<br><br>Then, I'll add these two numbers together.<br><br>Finally, I'll calculate that 1 plus 3 equals 4.<br></think><br><br>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Final Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add the two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></think><br><br>**Solution:**<br><br>We are asked to find the sum of the numbers 1 and 3.<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Perform the addition:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Present the final answer:**<br>   \[<br>   \boxed{4}<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1122,7 +1122,7 @@ Capturing batches (bs=1 avail_mem=15.59 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I'll identify the two numbers involved: 1 and 3.<br><br>Then, I'll add these two numbers together.<br><br>Finally, I'll calculate that 1 plus 3 equals 4.<br></strong></div>
+<strong style='color: #00008B;'>First, I recognize that the problem is asking for the sum of the numbers 1 and 3.<br><br>Next, I add the two numbers together: 1 plus 3 equals 4.<br><br>Therefore, the final answer is 4.<br></strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1134,7 +1134,7 @@ Capturing batches (bs=1 avail_mem=15.59 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Let's solve the problem step by step.<br><br>**Question:** What is \(1 + 3\)?<br><br>**Solution:**<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Add the numbers:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>**Final Answer:**<br>\[<br>\boxed{4}<br>\]</strong></div>
+<strong style='color: #00008B;'>**Solution:**<br><br>We are asked to find the sum of the numbers 1 and 3.<br><br>1. **Identify the numbers to add:**<br>   \[<br>   1 \quad \text{and} \quad 3<br>   \]<br><br>2. **Perform the addition:**<br>   \[<br>   1 + 3 = 4<br>   \]<br><br>3. **Present the final answer:**<br>   \[<br>   \boxed{4}<br>   \]<br><br>**Answer:** \(\boxed{4}\)</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
