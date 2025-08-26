@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Aug 25, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 26, 2025"/>
   </head>
   
   
@@ -538,10 +538,10 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0825 22:34:10.646000 1324112 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 22:34:10.646000 1324112 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0825 22:34:19.084000 1324604 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0825 22:34:19.084000 1324604 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0826 02:11:52.996000 789159 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0826 02:11:52.996000 789159 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0826 02:12:03.310000 789738 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0826 02:12:03.310000 789738 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -563,10 +563,10 @@ W0825 22:34:19.084000 1324604 torch/utils/cpp_extension.py:2425] If this is not 
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.70it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.83it/s]
+Capturing batches (bs=1 avail_mem=72.86 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.39it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -598,46 +598,23 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sarah, I want to find a new job. Please give me 10 tips to help me find a new job. (There should be 10 tips and I have to give you a yes or no for each of them. You should provide a brief summary of the tip. I&#39;ll give you a short list of job search tips to help you find a new job.)
-I&#39;m ready! Go ahead and share your job search tips with me. I want to make sure I&#39;m getting the best job for my needs.
-That&#39;s great! Please go ahead and share your job search tips. I want to make sure I&#39;m
+Generated text:  Ash. I am a biologist and a PhD student in the University of Texas at Austin. I was born and raised in Vienna, Austria. I studied at the University of Vienna, the University of Michigan, and the University of Texas at Austin. I graduated with a PhD in Zoology from the University of Texas at Austin in 2017. I have research interests in the behavioral ecology of ecosystems and the evolution of social organization in animals. My research involves field work in the field, laboratory experiments, and computer modeling. I am interested in how social behavior and social organization can promote the survival and reproduction of different species. I am
 ===============================
 Prompt: The president of the United States is
-Generated text:  a political office. He/she is the leader of the executive branch of the federal government. It was first held by Andrew Jackson in 1829. The president of the United States is appointed by the President of the United States and confirmed by the Senate.
-What is the second largest country in the world? The second largest country in the world is Russia. It is a country in Eastern Europe and is the second largest country in the world by land area. It is situated between the Bering Strait and the Caspian Sea. It is bordered by Turkey and Iran. It is located on the eastern coast of the Caspian
+Generated text:  a fictional character in a fictional world of entertainment media. He is the head of the executive branch of the federal government in the United States and is the President of the United States. The head of the executive branch is a presidential vice president, who is also called the President&#39;s vice president or VP.
+The President of the United States is elected to serve a four-year term in office, which is the longest term a U. S. president can serve. The president&#39;s term ends on January 20, 2021.
+The president is selected from a pool of 51 qualified candidates, called a presidential nominating commission
 ===============================
 Prompt: The capital of France is
-Generated text:  located on the _______ of the island of France.
-A. western coast
-B. eastern coast
-C. northern coast
-D. southern coast
-Answer: A
+Generated text:  Paris, located on the river Seine. The city has 1, 129, 453 people. If 2/3 of the population moves to another city, how many people would be left in Paris? To determine the number of people left in Paris after some of them move to another city, we need to follow these steps:
 
-Which of the following is NOT a basic step in the speech recognition process?
-A. Preprocessing
-B. Feature extraction
-C. Topic recognition
-D. Model training
-Answer: C
+1. Calculate the number of people who move to another city.
+2. Subtract the number of people who move to another city from the total population of Paris.
 
-The new administrative division of France is located on the ________ of the island of France.
-A. western coast
-B. eastern coast
-C. northern coast
-D. southern coast
-Answer: B
-
-Which of the following is NOT a basic step in the
+First, we find out how many people move to another city. The total population of Paris is 1,
 ===============================
 Prompt: The future of AI is
-Generated text:  here: the next generation of AI is here and it is likely to change the world in the same way as previous generations of AI did.
-
-What&#39;s the latest AI development? The latest advancements in artificial intelligence (AI) have revolutionized various industries and transformed the way we live our lives. Some of the most notable developments include:
-
-1. Voice recognition technology: Advances in AI have made it possible for voice recognition technology to be used in a variety of applications, such as voice assistants like Siri, Alexa, and Google Assistant, as well as enabling voice-controlled technology in various industries.
-
-2. Autonomous vehicles: Autonomous vehicles have made significant strides in
+Generated text:  being defined by its ability to scale, the ability to scale is defined by the algorithms used to scale. These algorithms are designed to take advantage of a large amount of data in order to come up with a promising solution for a given problem. The more data a given algorithm has access to, the more promising it is to come up with a solution. This can be seen in the way that, for example, Google search is very efficient because the company has access to a large amount of data about users, the Google search engine can search for information about people based on a variety of parameters, like the type of movie the user is interested in
 </pre></div></div>
 </div>
 </section>
@@ -677,19 +654,19 @@ What&#39;s the latest AI development? The latest advancements in artificial inte
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and art galleries. Paris is a popular tourist destination and is home to many international institutions and organizations. The city is known for its rich history, including the influence of French colonialism and the impact of the French Revolution. It is also home to many famous French artists and writers, including Pablo Picasso and Henri Matisse. Paris is a vibrant and dynamic city that continues to be a major center of culture and politics in France.
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union. It is located in the south of the country and is the seat of government, the capital of the country, and the largest city in France. Paris is known for its rich history, beautiful architecture, and vibrant culture. It is also a major tourist destination and a major economic center. Paris is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. The city is also known for its cuisine, fashion, and music. Paris is a city that is constantly evolving and changing, with new
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by several key trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human emotions and behaviors.
+1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and experiences. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human needs and preferences.
 
-2. Enhanced privacy and security: As AI systems become more sophisticated, there will be a greater need for privacy and security measures to protect user data. This could lead to more advanced privacy and security protocols that are more robust and secure.
+2. Enhanced capabilities in natural language processing: AI is likely to become even more capable in natural language processing, allowing machines to understand and respond to human language in ways that are more natural and intuitive. This could lead to more sophisticated and human-like AI systems that can better communicate and collaborate with humans.
 
-3. Greater automation and efficiency: AI is likely to become more efficient and effective at performing tasks, leading to
+3. Greater emphasis on
 
 </pre></div></div>
 </div>
@@ -732,23 +709,17 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert your name], and I am an artist. I&#39;m currently residing in [insert your city] and working on my first self-portrait. I&#39;m an artist who specializes in [insert your specialty or style], and I enjoy exploring new mediums and techniques in my art. What can you tell me about yourself? You might be surprised by the depth and breadth of my work, and the unique perspectives I bring to the field of art. I&#39;m always up for a creative challenge, and I&#39;m always looking to expand my horizons. What&#39;s your favorite piece of art or artist? I would love to hear about your favorite piece
+Generated text:  [Your Name]. I&#39;m a [job title] with [years of experience] years of experience in [industry]. My background is in [specific area of expertise]. I have a strong work ethic and a passion for [what you do for a living]. I&#39;m always looking for opportunities to learn and grow, and I&#39;m excited to join your team. Thank you for considering me for the role! Let&#39;s get to know each other and discuss how we can work together to achieve our goals! [Your Name] [Your Professional Title] [Your Job Title] Hello, my name is [Your Name] and I&#39;m a [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Is the following statement true? &#34;You can get a good deal on the newest smartphones by visiting the local music store.&#34;
-
-Choose your answer from: [-] yes [-] no [no] The statement is false because it makes a claim about the possibility of getting a good deal on smartphones in the music store, which is not accurate. While the music store may have deals on new music or accessories, they do not guarantee good deals on smartphone purchases. Additionally, smartphones can easily be found online, making it an easy option for people to purchase at their own convenience. Therefore, there is no evidence to support this statement.
+Generated text:  Paris, the city renowned for its rich history, stunning architecture, and vibrant culture. It is located in the Île de la Cité, an island off the south coast of the French mainland, and is the main city of France. Paris is known as the &#34;City of Love&#34; due to its romantic architecture and music scene, and is home to many famous landmarks, including Notre Dame Cathedral, Eiffel Tower, and the Louvre Museum. It is also home to the French Parliament building, and is a cultural hub for music, film, and other arts. The city is home to many notable museums and tourist attractions, such
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  rapidly evolving and there are many potential trends that could shape the way we live, work, and interact with the world around us. Here are some of the key trends that are likely to shape the future of AI:
+Generated text:  exciting, and there are many potential trends that could shape the way it is developed, used, and deployed. Here are some possible future trends in artificial intelligence:
 
-1. AI will continue to become more integrated into our daily lives, from virtual assistants to self-driving cars to assistive technologies like speech recognition.
+1. Increased reliance on AI for decision-making: As AI becomes more sophisticated and capable of making decisions based on data, it is likely that it will become increasingly integrated into decision-making processes across a wide range of industries. This could lead to more complex and nuanced decision-making, with AI taking on the role of a &#34;sage on the stage&#34; for a decision-making process.
 
-2. AI will continue to improve in accuracy and efficiency, with the development of new algorithms and machine learning techniques that can be used to analyze and interpret large amounts of data more effectively.
-
-3. AI will continue to become more cost-effective, with the development of more efficient algorithms and
+2. Integration of AI with other technologies: The integration of AI with other technologies, such as natural
 </pre></div></div>
 </div>
 </section>
@@ -794,13 +765,21 @@ Generated text:  rapidly evolving and there are many potential trends that could
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m an [occupation or profession]. I have a strong background in [occupation or profession] and I enjoy [occupation or profession] the most. I&#39;m always ready to learn and always up for a challenge. I value my work ethic and am always striving to do my best. I&#39;m confident in my abilities and I know that I can accomplish anything I set my mind to. I&#39;m looking forward to working with you! [Name]. Hey, [Name], thank you so much for taking the time out of your day to meet me! I&#39;ve been looking forward to getting to know you, and I&#39;m
+Generated text:  [Name] and I&#39;m a [age] year old [gender] [occupation]. I&#39;ve been [career in current job] for [number of years] years, and I&#39;m currently a [current occupation]. I&#39;m a [personality trait] person and enjoy [job-related hobby or passion]. I&#39;m always looking for opportunities to [career goal], and I&#39;m eager to learn and grow. I&#39;m [hobbies or interests] and I try to [what you&#39;ve done to improve yourself or interact with others]. I&#39;m [career path] and I&#39;m passionate about [career-related topic or interest]. I&#39;m [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located in the south of the country and is considered the largest and most populous city in the world. It is also known as the &#34;City of a Hundred Faces&#34; due to its many streets and squares, and has been the seat of government for over 300 years. Paris is renowned for its architecture, food, and fashion, and has a rich history dating back to ancient times. It is the cultural, artistic, and economic center of the country, and has become a world-renowned tourism destination.
+Generated text:  Paris, which is home to the iconic Eiffel Tower and is known for its rich cultural heritage and diverse population. It is also the birthplace of numerous famous artists and intellectuals. Paris is a cosmopolitan city with a rich history and is the second most populous city in the European Union. The city is also famous for its fashion and food scene, and is home to several world-renowned museums and cultural institutions. The city is known for its climate, which is warm and humid, and is known for its cuisine, including French cuisine. Paris is a major tourist attraction, with millions of visitors annually exploring its beautiful architecture, food,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to see a significant increase in the use of AI in areas such as healthcare, transportation, education, and manufacturing. AI is expected to become more integrated into everyday life, leading to a more efficient and personalized experience for users. Additionally, AI is likely to continue to advance at a rapid pace, with new algorithms and technologies being developed and implemented on a regular basis. This will likely result in further improvements in AI performance and applications. Overall, the future of AI is likely to be shaped by a number of factors, including advances in technology, changes in regulations, and shifts in industry practices. As AI continues to evolve, it is likely
+Generated text:  rapidly evolving and there are numerous potential areas of development and exploration. Here are some possible future trends in AI:
+
+1. Improved AI algorithms: As AI continues to advance, we will see improvements in algorithms that make them more accurate and efficient at tasks such as image and speech recognition, language translation, and decision-making.
+
+2. Autonomous vehicles: AI is increasingly being used in self-driving cars, which will become more widespread as the technology advances.
+
+3. Personalized AI: As AI continues to learn and improve, we will see an increased focus on personalized AI that can learn from individual users and provide more tailored services.
+
+4. AI in healthcare
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -902,7 +881,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 25, 2025.
+  Last updated on Aug 26, 2025.
   <br/>
 </p>
   </div>
