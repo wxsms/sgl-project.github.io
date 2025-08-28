@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Aug 27, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 28, 2025"/>
   </head>
   
   
@@ -539,8 +539,8 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0827 22:51:41.473000 3146234 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0827 22:51:41.473000 3146234 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0828 00:10:08.995000 3775579 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0828 00:10:08.995000 3775579 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -556,8 +556,8 @@ Warning: Missing operations: [&#39;set_num_sms&#39;, &#39;get_num_sms&#39;, &#39
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0827 22:51:51.230000 3146587 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0827 22:51:51.230000 3146587 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0828 00:10:18.101000 3776452 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0828 00:10:18.101000 3776452 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -580,10 +580,10 @@ Warning: Missing operations: [&#39;set_num_sms&#39;, &#39;get_num_sms&#39;, &#39
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.11it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.19it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.18it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.45it/s]
+Capturing batches (bs=1 avail_mem=61.34 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.12it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -615,48 +615,31 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  James Brown, a former fictional character. I am known for my distinctive voice, smooth bass lines, and rich, soulful music. I started as a tough kid on a tough crew but quickly learned to play the blues and evolve into a talented musician. I&#39;ve been a musical legend, collaborating with legendary artists and creating timeless classics. My music has influenced countless artists and continues to inspire people around the world with its soulful melodies and empowering lyrics. Can you tell me about your life and how you became famous in the music industry?
-James Brown&#39;s journey to fame began in the 1950s when he was just 1
+Generated text:  Jin Soo. I’m an Assistant Professor of Political Science at the University of Michigan, where I’ve been teaching since 2013. I study political decision-making, with a particular focus on how choice psychology influences voting behavior, politics, and policy-making. My research has been funded by the National Science Foundation, the National Institutes of Health, and the University of Michigan’s Office of the Vice President for Research.
+I have a Ph.D. in Political Science from the University of California, Berkeley, and a J.D. from the University of Michigan Law School. My research has been supported by the National Science Foundation, the Office
 ===============================
 Prompt: The president of the United States is
-Generated text:  represented by a 10-member Senate committee. This Senate committee includes two Republicans, three Democrats, and seven Independent Senators. In how many ways can we choose a President, a Vice-President, and a Vice-Chancellor if each of these positions is distinct and each Senator is eligible for exactly one of the positions? To determine the number of ways to choose a President, a Vice-President, and a Vice-Chancellor from a Senate committee where each position is distinct and each senator is eligible for exactly one of the positions, we can follow these steps:
-
-1. **Choose the President**: There are 2 Republicans and 3 Democrats, so
+Generated text:  trying to decide how many military tanks to have on deploy. There are two types of tanks, Type A and Type B. If he had 3 times as many Type A tanks as Type B tanks, and he had 200 tanks in total, how many Type B tanks does he have?
+To determine the number of Type B tanks the president of the United States has, we start by defining variables for the number of each type of tank. Let \( B \) represent the number of Type B tanks. According to the problem, the number of Type A tanks is 3 times the number of Type B tanks, so we
 ===============================
 Prompt: The capital of France is
-Generated text:  ____.
-A. Paris
-B. Lyon
-C. Brussels
-D. Geneva
-Answer:
+Generated text:  Paris. Please write the letter in the appropriate form of the E7 standard.
+Paris
 
-A
+E7 standard is used in the French capital of Paris, France. The capital city is known for its historical and cultural significance, and the E7 standard is appropriate for describing the city in an official or formal context. If you need to use this information in a document or presentation, it would be best to refer to it as &#34;Paris&#34; rather than &#34;E7&#34;. If you need assistance with using the E7 standard, please let me know.
 
-According to the theory of traditional Chinese medicine, the principal pathogenic factor in the Taiyang meridian is ____
-A. Wind evil
-B. Dampness evil
-C. Heat evil
-D. Fire evil
-E. Dampness evil
-Answer:
-
-D
-
-Regarding the description of statistical sampling, which of the following statements is correct?
-A. The sample size should be strictly controlled
-B. Random sampling is also known as simple random sampling
-C. Any statistical sampling method can be used
-D.
+Paris is located in the Île-de-France region of France, about 50
 ===============================
 Prompt: The future of AI is
-Generated text:  bright
+Generated text:  here, but it&#39;s not here yet
 
-AI is bringing a revolution to the world, with the possibility of human-like intelligence. AI is already making great strides in areas such as machine learning, computer vision and robotics. As we move forward, AI is poised to revolutionize industries, such as healthcare, transportation, manufacturing and security.
+AI is here, but it&#39;s not here yet.
 
-AI is a rapidly evolving field that has the potential to transform the world. It is a technology that is making strides in many areas, including healthcare, transportation, manufacturing, security and education. With the right skills and knowledge, AI can be a valuable asset in any organization.
+Over the past few decades, researchers have made great strides towards building AI models that can do almost anything. But even as they have gotten closer to this goal, the world of AI is still an evolving field.
 
-However, there are also challenges to consider, such as the ethical
+For one, we still don&#39;t have a good way to evaluate AI models. We don&#39;t have a way to know if they&#39;re doing a good job or if they&#39;re doing something we want them to do. We don&#39;t have a way to build AI models that learn about the real world.
+
+To address these problems, many
 </pre></div></div>
 </div>
 </section>
@@ -696,17 +679,17 @@ However, there are also challenges to consider, such as the ethical
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [reason for interest in the industry]. I&#39;m always looking for new opportunities to [what you enjoy doing]. I&#39;m [how you like to be treated] at [company name]. I&#39;m [how you like to be treated] at [company name]. I&#39;m [how you like to be treated] at [company name]. I&#39;m [how you like to be treated] at [company name]. I&#39;m [how you like
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city that serves as the political, cultural, and economic center of the country. It is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also famous for its rich history, including the French Revolution and the French Revolution Museum. The city is home to many famous French artists, writers, and musicians, and is a major tourist destination for visitors from around the world. Paris is a vibrant and diverse city with a rich cultural heritage that continues to inspire and influence the country&#39;s art, literature, and music. The city is also known for its food
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is known for its cuisine, fashion, and art scene. It is a popular tourist destination and is home to many world-renowned museums and attractions. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. The city is also known for its annual festivals and events, such as the Eiffel Tower Parade and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way that AI is used and developed. Here are some of the most likely trends that are likely to shape the future of AI:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, we can expect to see even more widespread use of AI in healthcare, including in areas such as diagnosis, treatment planning, and patient care.
+1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This will include issues such as bias, transparency, and accountability. AI developers will need to be more mindful of the potential impact of their work on society and the environment.
 
-2. Increased use of AI in finance: AI is already being used in finance to improve fraud detection, risk management, and
+2. Greater use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As
 
 </pre></div></div>
 </div>
@@ -749,21 +732,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Type of Char] who enjoys [Your passion or hobby]. I&#39;m [Your age] years old, [Your occupation] and [Your strength in the character&#39;s field] are [Your skill or expertise]. I&#39;ve always loved [Your hobby or interest] because [Your motivation or why you enjoy it]. Whether it&#39;s [Your interests], [Your hobbies], [Your strengths], or [Your passions], [Your name] is a [type of character] who seeks [Your goal or motivation]. Please let me know what you would like to know about [Your character]. [Your Name
+Generated text:  [Name], and I&#39;m a friendly and laid-back character who enjoys spending time with people. I&#39;m always looking for new experiences and hobbies to try out, and I&#39;m always up for trying new things. I&#39;m not afraid to try new things, even if they are difficult or scary, and I always have a positive attitude. I&#39;m not afraid to take risks and try new things, but I also have a lot of respect for rules and boundaries. I&#39;m a great listener and a great conversationalist, and I love to make people laugh and feel comfortable. I&#39;m always looking for ways to help people and make their lives
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is known for its iconic landmarks, such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. The city is also renowned for its rich history, including the famous Louvre Museum and its display of art and artifacts from around the world. Paris has a diverse population of around 2.7 million people and is a major economic and cultural center of France. Its population has grown significantly over the years, making it one of the largest cities in the world. The city is also home to numerous festivals and events throughout the year, including the famous Double 11 Festival. The French language is widely
+Generated text:  Paris, located in the northwestern region of the country and known as the “City of Light” and “The City of Light,” for its lavish use of light and color in its architecture and fashion, as well as its reputation for culture, art, and music. The city has a population of approximately 2.8 million people and is home to the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Palace of Versailles, among other landmarks and attractions. Paris is a popular tourist destination and a significant center of intellectual and artistic life in Europe. The city’s unique blend of historical and modern features has
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  one of rapid advancement and growth. Here are some possible future trends in AI:
+Generated text:  likely to be characterized by an increase in its usage, applications, and integration into various industries. Here are some potential trends in AI:
 
-1. Increased Personalization: AI will become even more personalized and intelligent, allowing machines to learn from user data and adapt to new information. This will lead to more efficient and effective solutions to problems.
+1. Increased penetration of AI in healthcare: As AI-powered diagnostic tools and treatments become more advanced, the use of AI in healthcare is likely to increase. This could include the use of AI to analyze medical images, predict disease outbreaks, and assist in personalized medicine.
 
-2. Autonomous Agents: As AI technology becomes more advanced, autonomous agents will become more capable, allowing machines to act independently and solve complex problems on their own.
+2. AI-driven personalization: AI is already being used to personalize content and marketing to individual customers. As AI technology advances, it is likely to become more sophisticated and be used to better understand and cater to individual customer needs.
 
-3. Enhanced Personalization: AI will be able to provide personalized recommendations to users, improving their satisfaction and engagement with the platform. This will help to create more effective and efficient websites and applications.
-
-4
+3.
 </pre></div></div>
 </div>
 </section>
@@ -809,21 +790,21 @@ Generated text:  one of rapid advancement and growth. Here are some possible fut
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a highly skilled and experienced [occupation or profession]. I am dedicated to [job title], and I have always been passionate about [something that interests me or challenges me]. I am eager to learn and grow, and I am always looking for ways to improve my skills and knowledge. I am a team player, and I enjoy collaborating with others to achieve our goals. I am open to new experiences and opportunities, and I am always willing to take on new challenges. I am confident in my abilities and have no regrets about pursuing my career in [job title]. I am dedicated to [job title] and I
+Generated text:  [Name], and I am a [Age] year old [Occupation] [Job Title], [Company Name], and I&#39;m an [Institution] member. I come from [Your Country/Region], and I am [Your Country/Region&#39;s Language] speaking. I have always been fascinated by [Motivational Motive or Interest], and I strive to [Goals/Actions]. I am always looking for [Interest or Motivational Motive], and I&#39;m always learning new things and trying to improve myself. I&#39;m always eager to meet people and learn from them, and I&#39;m always looking for opportunities to contribute
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-The statement is factual. Paris is the capital city of France.
+This statement is accurate as of the latest available data, which suggests that Paris remains the largest and most populous city in France, serving as its capital since the 13th century. The city, located in the Western part of the French region of the Île-de-France region, encompasses the historical center of the city, including the Palace of the King of France and its surrounding gardens, as well as the city&#39;s main thoroughfare, the Champs-Élysées. Additionally, Paris is home to the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and other notable attractions and landmarks
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be shaped by several key trends, including:
+Generated text:  highly uncertain and influenced by a complex interplay of technological, economic, and societal factors. However, some possible trends that are commonly observed include:
 
-1. More autonomous robots: Robots will become more intelligent and able to learn on their own, freeing up more human workers to focus on more complex tasks. Autonomous robots could be used in manufacturing, transportation, and healthcare.
+1. Increased automation: AI is increasingly being used in manufacturing, healthcare, and other industries to automate repetitive tasks and increase efficiency. As AI improves, more jobs will be lost, but new ones will be created.
 
-2. Increased use of AI in healthcare: AI can be used to analyze medical images and provide accurate diagnoses, and it can also help in predicting and preventing diseases. This could lead to more accurate and effective treatments, and improved patient outcomes.
+2. AI-powered self-driving cars: With advances in AI, self-driving cars are becoming more common. These cars can navigate roads, recognize traffic signs, and drive safely on the road. However, there are still ethical and safety concerns associated with this technology.
 
-3. AI in education: AI can be used to personalize learning experiences, provide feedback and assessments, and even to teach students
+3. AI in
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -925,7 +906,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 27, 2025.
+  Last updated on Aug 28, 2025.
   <br/>
 </p>
   </div>
