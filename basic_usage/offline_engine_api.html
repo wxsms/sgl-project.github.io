@@ -539,8 +539,8 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0828 08:18:48.879000 1926887 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0828 08:18:48.879000 1926887 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0828 23:15:46.676000 3343942 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0828 23:15:46.676000 3343942 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -556,8 +556,8 @@ Warning: Missing operations: [&#39;set_num_sms&#39;, &#39;get_num_sms&#39;, &#39
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0828 08:18:58.180000 1927658 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0828 08:18:58.180000 1927658 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0828 23:15:54.877000 3344390 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0828 23:15:54.877000 3344390 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -571,6 +571,24 @@ W0828 08:18:58.180000 1927658 torch/utils/cpp_extension.py:2425] If this is not 
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.29it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.29it/s]
+
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
 Warning: Missing operations: [&#39;set_num_sms&#39;, &#39;get_num_sms&#39;, &#39;set_tc_util&#39;, &#39;get_tc_util&#39;, &#39;fp8_gemm_nt&#39;, &#39;fp8_gemm_nn&#39;, &#39;fp8_gemm_tn&#39;, &#39;fp8_gemm_tt&#39;, &#39;m_grouped_fp8_gemm_nt_contiguous&#39;, &#39;m_grouped_fp8_gemm_nn_contiguous&#39;, &#39;m_grouped_fp8_gemm_nt_masked&#39;, &#39;k_grouped_fp8_gemm_tn_contiguous&#39;, &#39;transform_sf_into_required_layout&#39;]
 </pre></div></div>
 </div>
@@ -579,11 +597,7 @@ Warning: Missing operations: [&#39;set_num_sms&#39;, &#39;get_num_sms&#39;, &#39
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.44it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.44it/s]
-
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.54it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.66it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -615,52 +629,49 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jane. I&#39;m an English girl. I am from Sydney, Australia. I like the weather in summer because it is very hot. I like summer to go shopping, watch TV or listen to music. I like to fly kites in summer. I usually go shopping on Saturdays. I don&#39;t go to the beach because it is too hot. I like to have my lunch at home. I usually have lunch with my family. I also like to have ice cream when I eat lunch. I usually eat my dinner with my family, too. I like to watch TV on Sundays. When I have my dinner, I like to play
+Generated text:  Jennifer and I recently purchased a house, did you know that your life expectancy is less than your house value? While living conditions, the number of miles driven per year, the number of times you walk per week, the amount of time you spend doing the laundry, the amount of time you spend watching TV, and the number of times you eat out per week could all add up to a significant cost to your wallet. There are many other things that I do on a daily basis that are far more important than money.
+
+So, my question is this: How much money do you think your life expectancy is worth to you? Is it worth
 ===============================
 Prompt: The president of the United States is
-Generated text:  a position that should be held by ______.
-A. a famous person
-B. a person who is in high position
-C. an individual with a lot of talent
-D. someone who has a good education
-Answer:
-B
+Generated text:  a high-ranking officer of the federal government of the United States. He is the head of the executive branch of the federal government. He represents the country on the world stage. Many of the presidents of the United States are considered to be strong leaders. They are the best examples of what it means to be a good president.
 
-Which of the following statements is true?
-A. The large window on the second floor of the hotel is used for ventilation.
-B. The first-floor bathroom is on the second floor of the hotel.
-C. The hotel&#39;s front door is on the first floor.
-D. There is no staircase in the hotel.
-Answer:
-A
+One of the few times when a president has to choose between jobs is the presidency. The presidential election is a competition for the office of president. He has to choose between him and his vice president. His vice president is the person chosen to run the country. The vice president has to be strong and honest.
 
-According to the passage, the most accurate statement is that ______.
-
+The
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. The population of Paris is 2, 150, 000. If 30% of the people move to another city, what is the new population of Paris?
+Generated text:  ______. A. Paris B. Moscow C. London D. Sydney
+Answer: A
 
-To determine the new population of Paris after 30% of the population moves to another city, we can follow these steps:
+Among the following options, which one belongs to a civilian firearm?
+A. Guns and ammunition
+B. Explosives
+C. Tear gas
+D. Cylindrical blowpipe
+Answer: A
 
-1. Calculate the number of people who move to another city.
-2. Subtract this number from the original population to find the new population.
+Which of the following options belongs to a civilian firearm?
+A. Gunpowder
+B. Explosives
+C. Tear gas
+D. Cylindrical blowpipe
+Answer: C
 
-First, we calculate 30% of the 2, 150, 000 people in Paris. This can be done by multiplying
+The principle of the hydraulic pump, also known as the suction effect, refers to:
+A. The suction area is always greater than the discharge
 ===============================
 Prompt: The future of AI is
-Generated text:  coming faster than we thought.
+Generated text:  clear
 
-The progress made so far is impressive, but not enough to make everyone happy.
+There’s no doubt that AI is poised to play a dominant role in our society in the years ahead. The widespread adoption of AI will require both a mix of upfront investments in AI research, and a more resilient, people-centric approach to developing and deploying AI.
 
-One of the most important issues is making sure that AI doesn’t threaten jobs, especially those that don’t require complex algorithms.
+But what exactly does it mean for the future of AI?
 
-One way to do that is to work on creating new jobs for the AI that are also directly needed by humans.
-
-What does this actually mean?
-
-This is where the &#34;revenge algorithm&#34; comes into play. We use it to predict which jobs are currently under threat and then create new jobs that we can do directly to replace those jobs.
-
-For example, if there is a job called &#34;Safety Inspector&#34;
+  1. There’s no “one size fits all” approach to AI
+  2. The value of AI goes beyond simply being a technology
+  3. AI is not going to be a “silver bullet” for addressing all societal challenges
+  4. The emerging AI
 </pre></div></div>
 </div>
 </section>
@@ -700,17 +711,19 @@ For example, if there is a job called &#34;Safety Inspector&#34;
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or role]. I enjoy [insert a short description of your hobbies or interests]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I&#39;m always up for a good challenge and love to explore new experiences. What&#39;s your favorite book or movie? I love to read and watch movies, and I&#39;m always looking for new adventures to explore. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or experience here]. I enjoy [insert a short description of your hobbies or interests here]. What&#39;s your favorite hobby or activity? I love [insert a short description of your favorite hobby or activity here]. What&#39;s your favorite book or movie? I love [insert a short description of your favorite book or movie here]. What&#39;s your favorite color? I love [insert a short description of your favorite color
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is the largest city in France and the second-largest city in the European Union. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Louvre Museum. It is also home to many famous museums, including the Musée d&#39;Orsay, the Musée Rodin, and the Musée d&#39;Orsay. Paris is a cultural and historical center with a rich history dating back to the Roman Empire and the French Revolution. It is a major transportation hub and a major economic center in Europe. Paris is
+Generated text:  Paris, the city known for its iconic Eiffel Tower and the Louvre Museum. It is also the seat of the French government and the country&#39;s cultural and political center. Paris is a major tourist destination and a major financial center, with many famous landmarks and museums. The city is also known for its rich history and diverse culture, including its influence on French literature, art, and cuisine. Paris is a popular tourist destination and a major economic center in France. It is also a major cultural and political center in the world. The city is known for its iconic Eiffel Tower, Louvre Museum, and other landmarks. It
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some potential trends that are likely to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence. This means that AI systems will be able to learn from and adapt to human behavior and preferences, and will be able to make decisions based on human values and goals.
+1. Increased automation: AI is expected to become more prevalent in various industries, including manufacturing, healthcare, and transportation. Automation will likely lead to increased efficiency and productivity, but it will also lead to job displacement for some workers.
 
-2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations. This means that AI systems
+2. AI ethics and privacy: As AI becomes more advanced, there will be a need to address ethical and privacy concerns. This will likely lead to increased regulation and oversight of AI systems.
+
+3. AI for education: AI is expected to play a
 
 </pre></div></div>
 </div>
@@ -753,19 +766,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I am a [Your Profession] [Your Role]. I enjoy solving complex problems and working towards making things better for the people I serve. I strive to be a positive influence in my community and strive to be someone people can count on when they need help. I am excited to learn more about you and see how you can help me achieve my goals. Happy to chat about it! How about you? What brings you to this role? What do you hope to achieve with this position? What kind of work experience do you have that would be helpful to me as I work towards my goal? What&#39;s your next
+Generated text:  [Name] and I am a [Occupation] with a passion for [Your Passion]. I am a [Type of Identity], [Hobby], [Personal Growth Goal], [Favorite Quote], [Hobby/Interest], and [Personal Impulse]. I am confident in myself and always strive to improve my skills and knowledge. I am passionate about [Your Passion] and I am always looking for new opportunities to learn and grow. My journey of self-discovery has led me to this point, and I am excited to continue on this path with you. Welcome to me! Let&#39;s make some connections and see where this adventure takes
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks, rich history, and diverse culture, including iconic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is also a major center for international politics, economics, and culture, with a rich history dating back to the Middle Ages and its modern reputation as a modern metropolis. The city is home to a diverse population of 2.3 million people, making it one of the most populous cities in Europe.
+Generated text:  Paris, the city known for its rich history, vibrant culture, and influential role in world affairs.
+
+The fact is: Paris, the capital of France, is a city that has a rich history, vibrant culture, and influential role in world affairs. Its name, derived from the Latin word &#34;parvis&#34; meaning &#34;exit,&#34; is a nod to its role as the exit point for travelers from various parts of Europe. The city is home to a multitude of museums, palaces, and landmarks, making it a cultural melting pot that attracts tourists and locals alike. Despite its size, Paris&#39;s skyline is characterized by towering buildings and iconic landmarks
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends that are expected to shape the development of AI in the coming years:
+Generated text:  expected to be rapidly evolving, and there are several trends that are likely to shape the industry in the coming years. Here are some possible future trends in artificial intelligence:
 
-1. Increased Integration with Human Technology: AI is likely to become more integrated with human technology, including machines that can assist in human decision-making, process information, and provide human-like emotional intelligence.
+1. More advanced algorithms and machine learning: As AI systems get more powerful and sophisticated, more advanced algorithms and machine learning techniques will be used to train them to perform more complex tasks. This will lead to better results, faster learning, and more efficient use of resources.
 
-2. Emphasis on Transparency and Explainability: With the potential for AI to make decisions that have significant impacts, it&#39;s likely that there will be an increased focus on transparency and explainability in AI systems. This will include more detailed explanations of AI algorithms and decision-making processes.
-
-3. Collaboration between AI and Human Researchers: There will
+2. Increased integration with other technologies: AI is likely to be integrated more deeply with other technologies, such as sensors, actuators, and other hardware components. This will create new opportunities for AI applications,
 </pre></div></div>
 </div>
 </section>
@@ -811,19 +824,21 @@ Generated text:  likely to be characterized by several key trends that are expec
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert name], and I&#39;m a [insert occupation or profession] who has been following this character for [insert number of years or years] years. I&#39;ve learned about your world and characters through various sources, and I&#39;m here to share my insights with you. I&#39;m here to ask and answer questions, and to provide you with interesting and relevant information. I&#39;m here to assist you in your journey, whether it&#39;s to learn about the world, to find a job, or simply to have a good conversation. I&#39;m here to provide you with the best possible service, and to help you in your quest for knowledge and understanding
+Generated text:  [Your Name], and I am a [type of character, such as superhero, detective, etc.]. I have a goal to improve my [type of skill, such as fighting, communication, etc.]. I am currently [state of your current situation, such as unemployed, alone, etc.]. I have a lot of [motivation for self-improvement, such as to learn new skills, to become better at my current job, etc.]. How can I achieve this? To do so, I will [what I will do]. I am a [type of character, such as superhero, detective, etc.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city where the French Revolution took place. It is a UNESCO World Heritage site. French cuisine, including its famous pastries, is a key aspect of Parisian culture and cuisine. Other notable landmarks include the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Palace of Versailles. Paris is a hub for fashion, art, and music, and it has been a major center of international trade for centuries. It is home to the University of Paris and has a long history of medieval, Renaissance, and Baroque architecture. The city is known for its rich history and lively culture, attracting visitors from
+Generated text:  Paris, located on the Seine River in the Loire Valley region, and is known for its rich cultural heritage, vibrant art scene, and modern architecture. It is also home to numerous famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is a popular tourist destination for its elegant architecture, fine dining, and culinary scene.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a number of factors, including advances in machine learning, developments in computer hardware and software, and the development of new technologies such as blockchain and quantum computing. Here are some possible future trends in AI:
+Generated text:  likely to be characterized by significant advancements in areas such as:
 
-1. Increased precision and accuracy: As AI becomes more sophisticated, it will be able to process and analyze vast amounts of data more accurately and quickly than ever before. This will allow AI systems to provide more precise and accurate predictions and recommendations.
+1. Increased understanding of human cognition and emotions: AI systems will continue to be able to better understand and analyze human cognition, emotions, and behavior, allowing for more personalized and context-aware interactions with humans.
 
-2. Enhanced emotional intelligence: AI systems will be able to learn and adapt to human emotions and behaviors, enabling them to provide more personalized and empathetic responses.
+2. More accurate and efficient decision-making: AI will be able to make more accurate and efficient decisions, both in business and in everyday life, thanks to advancements in machine learning and pattern recognition.
 
-3. Greater
+3. Improved natural language processing: AI will become better at understanding and generating natural language, allowing for more intelligent and conversational interactions with humans.
+
+4. Greater integration with other technologies
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
