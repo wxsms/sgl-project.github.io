@@ -845,6 +845,14 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>Enable per request time stats logging.</p></td>
 <td><p>False</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prompt-tokens-buckets</span></code></p></td>
+<td><p>The buckets rule of prompt tokens. Supports 3 rule types: ‘default’ uses predefined buckets; ‘tse <middle> <base> <count>’ generates two sides exponential distributed buckets (e.g., ‘tse 1000 2 8’ generates buckets [984.0, 992.0, 996.0, 998.0, 1000.0, 1002.0, 1004.0, 1008.0, 1016.0]).); ‘customer <value1> <value2> …’ uses custom bucket values (e.g., ‘customer 10 50 100 500’).</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--generation-tokens-buckets</span></code></p></td>
+<td><p>The buckets rule of prompt tokens. Supports 3 rule types: ‘default’ uses predefined buckets; ‘tse <middle> <base> <count>’ generates two sides exponential distributed buckets (e.g., ‘tse 1000 2 8’ generates buckets [984.0, 992.0, 996.0, 998.0, 1000.0, 1002.0, 1004.0, 1008.0, 1016.0]).); ‘customer <value1> <value2> …’ uses custom bucket values (e.g., ‘customer 10 50 100 500’).</p></td>
+<td><p>None</p></td>
+</tr>
 </tbody>
 </table>
 </div>
