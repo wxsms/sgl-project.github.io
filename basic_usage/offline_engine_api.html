@@ -539,8 +539,8 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0904 14:28:12.040000 964191 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0904 14:28:12.040000 964191 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0904 20:38:28.335000 3689373 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0904 20:38:28.335000 3689373 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -558,12 +558,12 @@ All deep_gemm operations loaded successfully!
 <div class="highlight"><pre>
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-W0904 14:28:20.453000 964777 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0904 14:28:20.453000 964777 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0904 14:28:20.518000 964776 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0904 14:28:20.518000 964776 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0904 20:38:38.153000 3689951 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0904 20:38:38.153000 3689951 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0904 20:38:38.254000 3689952 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0904 20:38:38.254000 3689952 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-04 14:28:21] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-04 20:38:38] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -571,8 +571,6 @@ W0904 14:28:20.518000 964776 torch/utils/cpp_extension.py:2425] If this is not d
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -586,10 +584,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.64it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.52it/s]
 
-Capturing batches (bs=1 avail_mem=21.38 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.10it/s]
+Capturing batches (bs=1 avail_mem=71.97 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.18it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -621,21 +619,23 @@ Capturing batches (bs=1 avail_mem=21.38 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Andrew and I am a 24 year old man living in the US. I am 16 years old and my name is Bob. I am 18 years old and I am from Romania. We have a very close family. I am 16 years old and I am from Romania and I am 18 years old and I am 16 years old. I live in the US. I have heard of asyria and have read about it. I have heard that it is considered a valid form of divorce and that it can be in some cases more painful than a divorce in the US. My question
+Generated text:  Milly and I am a dedicated educator who has a passion for building a supportive and inclusive classroom environment. I have a master&#39;s degree in education and a teaching certificate in special education, which I use to empower, engage, and inspire my students.
+As a passionate educator, I am always looking for new and creative ways to engage my students and help them succeed in school. I am a dedicated professional and always strive to improve my teaching skills.
+I believe that education should be inclusive and that all students should feel valued and respected. I take pride in creating an environment where students feel comfortable asking questions, challenging ideas, and expressing themselves without fear
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide how many armed guards to have in his cities. He thinks that there should be a total of 1000 armed guards. He has chosen a city, and he knows that the number of armed guards in that city will be two times the number of unarmed guards. In addition, there are 150 police officers and 1000 security guards. How many armed guards does the president of the United States need?
-Let&#39;s denote the number of unarmed guards as \( x \).
+Generated text:  200 inches tall. The vice president is 7 inches taller than the president. The vice president is 1.5 times taller than the vice president of the previous year. If the vice president of the previous year was 160 inches tall, what is the height of the vice president this year? To determine the height of the vice president this year, we need to follow the steps outlined in the problem. Let&#39;s break it down step by step.
 
-According to the information given, the number of armed guards is two times the number of unarmed guards, so the number of
+1. Identify the height of the president this year:
+   The president is 200 inches tall this year.
+
+2. Determine the height of the vice
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is a historic city with rich history. It is located in the center of the continent of Europe. It is a city with a population of 2.9 million people. Paris is the largest city of France. The city is known for its many beautiful gardens. It is famous for its world famous Eiffel Tower. It is known for its Eiffel Tower. It is also famous for its Notre Dame Cathedral. The city is also a major center for the arts and science. Many scientists and artists live there. Paris is a historical city that has been a major center of civilization for over two thousand years. The
+Generated text:  Paris. In Paris, you can enjoy the magnificent Louvre, the Musée d’Orsay, the Musée de l’Orangerie, and the Palace of Versailles. In the Palace of Versailles, you can take a walk along the vast gardens, visit the Palace of Versailles, and enjoy the panoramic view of the surrounding countryside. In the Palace of Versailles, you can also participate in the Théâtre de la Souci-Versailles, a play that deals with a tragic love story. In the Palace of Versailles, you can also take a ride on the Balcony Léon
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of individuals, not governments or corporations. In 2021, the world’s 20 biggest tech firms will report their AI-related revenues, according to a new report by Gartner. This could set off a wave of digital privacy and security concerns.
-AI is already powering some of the most significant technological advancements in recent memory, but while we may be witnessing the dawn of a new era of digital innovation, we also risk unleashing a new wave of privacy and security risks.
-In 2021, the world’s 20 biggest tech firms will report their AI-related revenues, according to a new
+Generated text:  highly uncertain. In fact, the 2016 election will mark the first time the United States has voted on a major technological innovation in decades. While the public debate has been dominated by artificial intelligence, the real impact of AI on future politics has not yet been fully understood. Many think that the idea of artificial intelligence is a threat to democracy. Despite the long history of AI being used in various ways to make life more convenient and productive, the rapid development of AI has made it seem very dangerous. As a result, many people fear that AI will lead to a dark age in the future. But this view is misguided. AI
 </pre></div></div>
 </div>
 </section>
@@ -675,17 +675,19 @@ In 2021, the world’s 20 biggest tech firms will report their AI-related revenu
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [Job Title] at [Company Name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [Age] year old, [Gender] and [Hometown]. I have a [Favorite] hobby that I enjoy [Describe it]. I&#39;m [Occupation] and I&#39;m always looking for [What I&#39;m looking for]. I&#39;m always eager to learn and grow, and I&#39;m always willing to help others. I&#39;m [What I&#39;m like] and I&#39;m always ready to make a difference. I&#39;m [What I&#39;m
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum. It is also famous for its rich history, including the French Revolution and the French Revolution Museum. Paris is a bustling city with a diverse population and is a major tourist destination. It is home to many famous French artists, writers, and musicians. The city is also known for its cuisine, including its famous croissants and its famous French fries. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. It is a city that is both old and new, and is a must-
+Generated text:  Paris, also known as the City of Light. It is the largest city in France and the second-largest city in the European Union. Paris is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also known for its rich history, art, and culture, and is a popular tourist destination. The city is known for its vibrant nightlife, fashion, and food scene. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly together. It is a city that has been a hub of culture and innovation for centuries. The city is also home
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could be expected in the future:
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some possible future trends include:
 
-1. Increased integration of AI into everyday life: As AI becomes more integrated into our daily lives, we are likely to see more widespread adoption of AI technologies. This could include things like voice assistants, self-driving cars, and chatbots that can understand and respond to human language.
+1. Increased integration with other technologies: AI will become more integrated with other technologies such as IoT, blockchain, and quantum computing, leading to new applications and opportunities.
 
-2. Greater emphasis on ethical and responsible AI: As AI becomes more integrated into our lives, there will be a growing emphasis on ensuring that AI is developed and used
+2. Enhanced privacy and security: As AI becomes more integrated with other technologies, there will be increased concerns about privacy and security. There will be efforts to develop more secure and transparent AI systems.
+
+3. Increased focus on ethical considerations: As AI becomes more integrated with other technologies, there will be increased focus on ethical considerations such as bias
 
 </pre></div></div>
 </div>
@@ -728,15 +730,17 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [age] year old [occupation]. I love [job title] and [profession] and am always looking for new challenges. I&#39;m passionate about [occupation] because I believe that [reason for passion]. I believe that my [reason for passion] will make me a [career milestone] and help me in [career milestone]. I&#39;m always [how you would describe your character trait]. I believe that [reason for character trait] will make me a [career milestone] and help me in [career milestone]. I&#39;m always [how you would describe your character trait]. I&#39;m always [how
+Generated text:  [Your Name]. I&#39;m a [Your occupation] with a passion for [Your profession/interest]. I have always been curious and driven to learn more about the world around me, and I love sharing my knowledge with others. I&#39;m always seeking new experiences, new ideas, and new ways to improve myself. And I hope that my love for learning and exploration continues to inspire and motivate others. How about you? What are your hobbies, interests, or passions? What do you love to do? Let&#39;s chat about it. [Your Name]. Nice to meet you! I&#39;m excited to learn more about you! How about you
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, a city known for its iconic Eiffel Tower, vibrant cultural scene, and eclectic mix of French and international influences. Paris serves as the political, economic, and cultural center of France and plays a significant role in the country’s history and culture. It is also home to numerous museums, galleries, and historic sites, including the Louvre and the Arc de Triomphe. Paris is a beloved tourist destination and has been recognized as the world’s most livable city for several years. It is also home to a unique and vibrant nightlife scene, with many venues catering to various interests and activities. Overall, Paris is an important
+Generated text:  Paris.
+Paris is known for its rich history, iconic architecture, and vibrant culture, making it the quintessential capital city of France. Its status as the capital is reflected in numerous landmarks, museums, and festivals that celebrate French culture. The city is also renowned for its annual Les Mers d&#39;Europe week, which features sea and maritime-related activities. As a result, Paris is one of the most visited cities in Europe, attracting millions of tourists each year. According to official data, Paris has a population of over 2 million inhabitants. The city&#39;s historic center, called the Latin Quarter, is often described as the heart of French
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to see a significant shift towards more specialized and tailored approaches, with a greater emphasis on developing models that can adapt and learn from real-world data. This will require a more sophisticated understanding of human behavior, motivations, and preferences, as well as a greater reliance on machine learning algorithms that can learn from feedback and make adjustments accordingly.
+Generated text:  incredibly exciting and evolving rapidly. Some potential trends include:
 
-In addition, AI will likely become more integrated into our daily lives, as more people will rely on it for tasks such as personalizing search results, personalizing messaging and social media recommendations, and even tasks like meal planning and routine scheduling. As a result, there will be a greater demand for AI-powered tools
+  1. Increased AI ethics and accountability: As AI becomes more integrated into our daily lives, there will be greater scrutiny of how it is developed, deployed, and used. There will be growing concern about the potential for AI to be used in harmful ways, and the need for more robust ethical frameworks and guidelines.
+  2. Advancements in AI for healthcare: With the increasing availability of big data, AI is being used to help diagnose and treat diseases more accurately than ever before. AI algorithms can analyze medical images, genomics data, and other types of information to help
 </pre></div></div>
 </div>
 </section>
@@ -782,23 +786,23 @@ In addition, AI will likely become more integrated into our daily lives, as more
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emily. I am an artist who has been creating art for years. I specialize in painting murals and teaching art to people of all ages. I love to create beautiful, realistic art that captures the beauty of nature and people. I am eager to meet new people and share my art with them. If you are looking for an artist who can create beautiful art, you should come see me. Thank you.
+Generated text:  [Your Name]. I&#39;m a/an [job title] at [company name]. I&#39;m [job title] and [length of service]. I&#39;ve been with your company [number of years] years.
 
----
+I&#39;m a [character trait] professional. My [length of service] years at your company have been [positive action or significant accomplishment] that has helped me grow and succeed. As a result of these experiences, I have learned [career development goals or significant life lessons], and I&#39;m eager to continue contributing to your organization and helping them achieve their goals.
 
-Write a short, neutral self-introduction for a fictional character. Hello, my name is Sarah. I am a computer science student who has recently started her internship at a tech company. I love to code, read books
+I&#39;m always looking for opportunities to grow and learn, and I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Parle&#34; or &#34;La Peignoire&#34; and is located on the Left Bank of the Seine. It was founded by the Romans and has been the seat of government and government institutions since 1200 AD. The city is home to several world-renowned landmarks such as Notre-Dame Cathedral, the Louvre Museum, the Eiffel Tower, and the Palace of Versailles. It is also known for its cuisine, fashion, and music. Paris has a rich cultural heritage and is considered one of the most beautiful and enchanting cities in the world. Its history, architecture,
+Generated text:  Paris, the largest city in the country and the seat of government and culture. It is known for its rich history, beautiful architecture, and vibrant cultural scene. The city is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Palace of Versailles. Paris is also home to a diverse range of museums, theaters, and cafes that showcase the city’s culture and art. The city is also known for its food scene, with its famous dishes such as foie gras and crème brûlée. Paris is a popular tourist destination, attracting millions of visitors each year, and is known as
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid growth and development in several areas, including:
+Generated text:  highly complex and uncertain. Here are some possible trends that we can expect to see in the field:
 
-1. Increased use of AI in healthcare: AI is already being used in the field of healthcare to assist doctors in diagnosing diseases and developing personalized treatment plans. In the future, we may see even more advanced AI technologies being used to improve patient outcomes and reduce healthcare costs.
+1. Increased integration with human decision-making: AI is becoming more and more integrated into human decision-making processes. This trend will enable AI to make better decisions in a wider range of scenarios, such as healthcare, transportation, and finance.
 
-2. Enhanced use of AI in finance: AI is already being used to improve financial services such as credit scoring, fraud detection, and personalized investment recommendations. In the future, we may see even more advanced AI technologies being used to make financial services more accessible and efficient.
+2. Personalization of AI: AI will become more personalized in the future. AI will be able to understand and analyze large amounts of data to provide more accurate and personalized recommendations to users.
 
-3. Advancements
+3. Ethical and ethical considerations: As AI becomes more advanced, it will be important to address ethical and ethical
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
