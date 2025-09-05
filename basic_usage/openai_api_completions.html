@@ -535,28 +535,28 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0905 05:47:26.307000 3879297 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0905 05:47:26.307000 3879297 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0905 09:53:01.746000 3958954 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0905 09:53:01.746000 3958954 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0905 05:47:39.468000 3879951 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0905 05:47:39.468000 3879951 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0905 05:47:39.705000 3879952 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0905 05:47:39.705000 3879952 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0905 09:53:10.408000 3959298 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0905 09:53:10.408000 3959298 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0905 09:53:10.603000 3959299 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0905 09:53:10.603000 3959299 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-05 05:47:40] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-05 09:53:10] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-05 05:47:41] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-05 09:53:12] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.58it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.57it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.25it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.24it/s]
 
-Capturing batches (bs=1 avail_mem=64.12 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.56it/s]
+Capturing batches (bs=1 avail_mem=76.45 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.73it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -570,7 +570,7 @@ Capturing batches (bs=1 avail_mem=64.12 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:35340
+Server started on http://localhost:33675
 </pre></div></div>
 </div>
 </section>
@@ -604,7 +604,7 @@ Server started on http://localhost:35340
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='e6423df24c7d48e591b0441a05c6db52', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1757051272, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='655227260ee2443180f7560ca847c872', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1757066002, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -808,7 +808,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The Roman Empire, which lasted from the 8th to the 4th century AD, was a vast and complex civilization that had a profound impact on world history. Some of the major achievements of ancient Rome include:<br><br>1. **Founding of Rome**: The city was founded by Romulus in 753 BC and became the capital of the Roman Republic in 753 BC. It was later renamed Rome in 753 BC.<br><br>2. **Roman Law**: The Romans developed a system of law that was highly influential in Europe and beyond. This legal system, known as Roman law, includes codes such as the</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th century BC to the 4th century AD. It was known for its advanced engineering, art, literature, and philosophy. Some of their major achievements include:<br><br>1. **The Roman Republic**: This was the first permanent Roman state, which lasted until 59 BC. It was established by Julius Caesar and lasted until 476 AD.<br><br>2. **The Roman Empire**: The Roman Empire, which lasted from 27 BC to 476 AD, was the largest contiguous empire in history. It reached its peak under Emperor</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -831,29 +831,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, &#34;test&#34; is a crucial concept in evaluating the quality and reliability of a test. It involves several aspects:
-
-1. **Clarity and Directness**: A test should be clear and direct in its instructions. This ensures that the test taker understands the purpose, the expected outcome, and any conditions that must be met. Misleading instructions can lead to confusion and results not aligned with the test objectives.
-
-2. **Relevance**: Tests should be relevant to the learning objectives of the participants. They should test the knowledge, skills, or abilities that are expected to be developed during the test session. If the test is not aligned with the learning objectives, it may not effectively measure what is being tested or what the participants need to achieve.
-
-3. **Objective**: Tests should have clear objectives. These should be specific, measurable, achievable, relevant, and time-bound (SMART). Misalignment with these criteria can make the test uninformative and potentially misleading.
-
-4. **Stimulus**: Tests should be designed to stimulate the learner&#39;s cognitive skills. This involves selecting appropriate and varied stimuli that can help the learner manage and process information. Misuse of stimuli can lead to cognitive overload and hinder effective learning.
-
-5. **Feedback**: Tests should provide clear feedback. This should indicate what was learned, where it went well, and where it needed improvement. Feedback should be objective, clear, and timely.
-
-6. **Privacy and Confidentiality**: Tests should be conducted in a way that respects participants&#39; privacy and confidentiality. This includes using appropriate technology to protect personal information, and adhering to regulations such as GDPR or CCPA, if applicable.
-
-7. **Comprehensibility**: Tests should be comprehensible to all participants. Even if some parts of the test are more challenging, they should be accessible to all participants. Miscommunication can lead to a lack of engagement and inaccurate results.
-
-8. **Control**: Tests should be designed to control variables, such as randomization of participants, control of variables in the testing environment, and manipulation of the test conditions. This reduces the influence of external factors and ensures that the results are reliable and consistent.
-
-9. **Reliability**: Tests should be reliable and repeatable. This means that the results can be consistently obtained after the test has been administered multiple times with the same conditions. Misreliability can lead to inaccurate results and reduced validity.
-
-10. **Relevance of Data**: Tests should provide relevant data that can be interpreted and used for decision-making. This involves collecting and analyzing data in a way that is useful for the participants and stakeholders involved in the test.
-
-By considering these aspects, a test can be designed to be effective and reliable.
+Yes, I&#39;m a test generated by Alibaba Cloud. I&#39;m here to assist you with any questions or tasks you have. If you need anything, just let me know.
 </pre></div></div>
 </div>
 </section>
@@ -884,7 +862,7 @@ By considering these aspects, a test can be designed to be effective and reliabl
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='3368f87b2f6c43cdb1d30c833b526250', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1757051274, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='76d3096bbf82412b98c6e09367280c15', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1757066003, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -916,7 +894,7 @@ By considering these aspects, a test can be designed to be effective and reliabl
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='e37f7cb28d6b42cf8afd10ac7f7052b2', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack. He had been traveling through space for years, exploring new planets and new worlds. He loved the idea of discovering new places and learning about the universe.', matched_stop='\n\n')], created=1757051274, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=9, total_tokens=52, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='3a21c59692494a50bf61c700df8cd2d5', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Maria Vespera. She was an adventurous and curious person who loved to explore the unknown planets and stars of the solar system.', matched_stop='\n\n')], created=1757066003, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=9, total_tokens=48, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
