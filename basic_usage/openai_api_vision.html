@@ -518,33 +518,33 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0905 21:28:33.064000 4045288 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0905 21:28:33.064000 4045288 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0905 23:08:41.416000 4115461 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0905 23:08:41.416000 4115461 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-[2025-09-05 21:28:34] MOE_RUNNER_BACKEND is not initialized, using triton backend
-W0905 21:28:41.074000 4045551 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0905 21:28:41.074000 4045551 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0905 21:28:41.329000 4045552 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0905 21:28:41.329000 4045552 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-09-05 23:08:42] MOE_RUNNER_BACKEND is not initialized, using triton backend
+W0905 23:08:51.986000 4115979 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0905 23:08:51.986000 4115979 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0905 23:08:52.144000 4115978 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0905 23:08:52.144000 4115978 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-05 21:28:41] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-05 23:08:52] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-05 21:28:43] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-05 23:08:54] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.45it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.44it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.39it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.71it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.55it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.35it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.33it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.28it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.29it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.66it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.48it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.05s/it]
+Capturing batches (bs=1 avail_mem=60.29 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.10s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -602,13 +602,13 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"0cb5606d7f674d82afd71ae310c5758c","object":"chat.completion","created":1757107743,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing in an urban street, leaning over the back of a yellow taxi parked on the side of a road. He is holding an ironing board and appears to be about to or in the process of ironing one or two blue garments. The taxi is parked next to a yellow taxi, and the background features shops, flags, and a clear urban setting.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":385,"completion_tokens":78,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"8db474fec1fc4db8be85a5119a230616","object":"chat.completion","created":1757113757,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"This image shows a person engaged in an unusual task—ironing clothes while standing near a rear-mounted drying rack attached to the back of a New York City-style taxi. The individual appears to be ironing a blue garment while leaning against the rack. The setting is urban, with a yellow taxi in the background and buildings, flags, and a tree indicative of a city street, possibly in an area resembling Manhattan in New York City.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":395,"completion_tokens":88,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"a35b8a3e4de24cf5aad9b1312b000779","object":"chat.completion","created":1757107746,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man in a yellow T-shirt engaged in an unusual task on the trunk of a yellow taxi. He is ironing clothes that are draped over a makeshift ironing board, which he has set up using an umbrella and what appears to be a table leg as a support. The scene takes place on a city street where a taxi is parked, and the background features typical urban elements like buildings and passing taxis.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":393,"completion_tokens":86,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"9718d490d9d64c6f8c16923dc002757e","object":"chat.completion","created":1757113760,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man on the side of a busy street in what appears to be an urban area. He is leaning out of a yellow SUV taxi and using an ironing board to press a piece of clothing directly on a window of the car, likely in an unusual and unconventional way of doing laundry. The man seems focused on his task, and he is balancing the ironing board safely away from pathways that people and passersby can easily negotiate. The urban street scene further includes cabs, buildings, storefronts displaying advertisements, and a streetlight on the right.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":423,"completion_tokens":116,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -649,7 +649,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"20d44d97201c496ea4485b24230662f4","object":"chat.completion","created":1757107747,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man standing on a yellow SUV parked on a city street near a sidewalk. He appears to be ironing a shirt while leaning backward, balancing on the car. The SUV seems structurally improvised as he uses straps and a stand-like setup to hold the ironing board. The background showcases urban elements such as buildings, other vehicles, and banner advertisements.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":382,"completion_tokens":75,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"3923086eb44b44a1888ea83798dd4a1d","object":"chat.completion","created":1757113762,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man diligently pressing clothes on an outdoor table set up on the back of a taxi in what appears to be a busy city street. The taxi and surrounding buildings, including storefronts, suggest an urban setting. The man is wearing a yellow shirt and is focused on his task, seemingly ironing or smoothing out garments. The table has a strap or harness attached to it for stability.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":388,"completion_tokens":81,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -692,7 +692,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a person performing an unusual task involving laundry. They are loading or removing clothes from a drying rack, which is suspended from the rear of a taxi parked on a busy street. The taxi is painted in a bright yellow, typical of New York City taxi cabs. The background shows an urban street scene with a few taxis, modern buildings, and some street signage.</strong></div>
+<strong style='color: #00008B;'>The image shows a man dressed in a yellow shirt, standing on the back of a taxi. He appears to be ironing or preparing to hang laundry on an outdoor drying rack or clothesline, which is placed horizontally attached to the back of the vehicle. The taxi is on a city street, with another taxi and storefronts in the background. The setting looks typical of urban American towns, and the man seems to be creating a makeshift laundry station on the street.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
