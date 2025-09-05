@@ -820,7 +820,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <li><p><strong>Cache Management</strong>:</p>
 <ul class="simple">
 <li><p>Maintains approximate radix trees per worker</p></li>
-<li><p>Periodically evicts LRU entries based on <code class="docutils literal notranslate"><span class="pre">--eviction-interval</span></code> and <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code></p></li>
+<li><p>Periodically evicts LRU entries based on <code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code> and <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code></p></li>
 </ul>
 </li>
 </ol>
@@ -914,7 +914,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <td><p>1.0001</p></td>
 <td><p>Relative load ratio threshold</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eviction-interval</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code></p></td>
 <td><p>int</p></td>
 <td><p>60</p></td>
 <td><p>Seconds between cache eviction cycles</p></td>
@@ -1215,7 +1215,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <ol class="arabic simple">
 <li><p><strong>Workers not connecting</strong>: Ensure workers are fully initialized before starting the router. Use <code class="docutils literal notranslate"><span class="pre">--worker-startup-timeout-secs</span></code> to increase wait time.</p></li>
 <li><p><strong>High latency</strong>: Check if cache-aware routing is causing imbalance. Try adjusting <code class="docutils literal notranslate"><span class="pre">--balance-abs-threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">--balance-rel-threshold</span></code>.</p></li>
-<li><p><strong>Memory growth</strong>: Reduce <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code> or decrease <code class="docutils literal notranslate"><span class="pre">--eviction-interval</span></code> for more aggressive cache cleanup.</p></li>
+<li><p><strong>Memory growth</strong>: Reduce <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code> or decrease <code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code> for more aggressive cache cleanup.</p></li>
 <li><p><strong>Circuit breaker triggering frequently</strong>: Increase <code class="docutils literal notranslate"><span class="pre">--cb-failure-threshold</span></code> or extend <code class="docutils literal notranslate"><span class="pre">--cb-window-duration-secs</span></code>.</p></li>
 </ol>
 </section>
