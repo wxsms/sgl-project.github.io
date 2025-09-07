@@ -505,111 +505,115 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-ai/DeepSeek-R1</span></code></p></td>
 <td><p>Series of advanced reasoning-optimized models (including a 671B MoE) trained with reinforcement learning; top performance on complex reasoning, math, and code tasks. <a class="reference internal" href="../basic_usage/deepseek.html"><span class="std std-doc">SGLang provides Deepseek v3/R1 model-specific optimizations</span></a> and <a class="reference internal" href="../advanced_features/separate_reasoning.html"><span class="std std-doc">Reasoning Parser</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Qwen</strong> (3, 3MoE, 2.5, 2 series)</p></td>
+<tr class="row-odd"><td><p><strong>GPT-OSS</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">openai/gpt-oss-20b</span></code>, <code class="docutils literal notranslate"><span class="pre">openai/gpt-oss-120b</span></code></p></td>
+<td><p>OpenAI’s latest GPT-OSS series for complex reasoning, agentic tasks, and versatile developer use cases.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Qwen</strong> (3, 3MoE, 2.5, 2 series)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-0.6B</span></code>, <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-30B-A3B</span></code></p></td>
 <td><p>Alibaba’s latest Qwen3 series for complex reasoning, language understanding, and generation tasks; Support for MoE variants along with previous generation 2.5, 2, etc. <a class="reference internal" href="../advanced_features/separate_reasoning.html"><span class="std std-doc">SGLang provides Qwen3 specific reasoning parser</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Llama</strong> (2, 3.x, 4 series)</p></td>
+<tr class="row-odd"><td><p><strong>Llama</strong> (2, 3.x, 4 series)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-4-Scout-17B-16E-Instruct</span></code></p></td>
 <td><p>Meta’s open LLM series, spanning 7B to 400B parameters (Llama 2, 3, and new Llama 4) with well-recognized performance. <a class="reference internal" href="../basic_usage/llama4.html"><span class="std std-doc">SGLang provides Llama-4 model-specific optimizations</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Mistral</strong> (Mixtral, NeMo, Small3)</p></td>
+<tr class="row-even"><td><p><strong>Mistral</strong> (Mixtral, NeMo, Small3)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">mistralai/Mistral-7B-Instruct-v0.2</span></code></p></td>
 <td><p>Open 7B LLM by Mistral AI with strong performance; extended into MoE (“Mixtral”) and NeMo Megatron variants for larger scale.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Gemma</strong> (v1, v2, v3)</p></td>
+<tr class="row-odd"><td><p><strong>Gemma</strong> (v1, v2, v3)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">google/gemma-3-1b-it</span></code></p></td>
 <td><p>Google’s family of efficient multilingual models (1B–27B); Gemma 3 offers a 128K context window, and its larger (4B+) variants support vision input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Phi</strong> (Phi-1.5, Phi-2, Phi-3, Phi-4, Phi-MoE series)</p></td>
+<tr class="row-even"><td><p><strong>Phi</strong> (Phi-1.5, Phi-2, Phi-3, Phi-4, Phi-MoE series)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">microsoft/Phi-4-multimodal-instruct</span></code>, <code class="docutils literal notranslate"><span class="pre">microsoft/Phi-3.5-MoE-instruct</span></code></p></td>
 <td><p>Microsoft’s Phi family of small models (1.3B–5.6B); Phi-4-multimodal (5.6B) processes text, images, and speech, Phi-4-mini is a high-accuracy text model and Phi-3.5-MoE is a mixture-of-experts model.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>MiniCPM</strong> (v3, 4B)</p></td>
+<tr class="row-odd"><td><p><strong>MiniCPM</strong> (v3, 4B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">openbmb/MiniCPM3-4B</span></code></p></td>
 <td><p>OpenBMB’s series of compact LLMs for edge devices; MiniCPM 3 (4B) achieves GPT-3.5-level results in text tasks.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>OLMoE</strong> (Open MoE)</p></td>
+<tr class="row-even"><td><p><strong>OLMoE</strong> (Open MoE)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">allenai/OLMoE-1B-7B-0924</span></code></p></td>
 <td><p>Allen AI’s open Mixture-of-Experts model (7B total, 1B active parameters) delivering state-of-the-art results with sparse expert activation.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>StableLM</strong> (3B, 7B)</p></td>
+<tr class="row-odd"><td><p><strong>StableLM</strong> (3B, 7B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">stabilityai/stablelm-tuned-alpha-7b</span></code></p></td>
 <td><p>StabilityAI’s early open-source LLM (3B &amp; 7B) for general text generation; a demonstration model with basic instruction-following ability.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Command-R</strong> (Cohere)</p></td>
+<tr class="row-even"><td><p><strong>Command-R</strong> (Cohere)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">CohereForAI/c4ai-command-r-v01</span></code></p></td>
 <td><p>Cohere’s open conversational LLM (Command series) optimized for long context, retrieval-augmented generation, and tool use.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>DBRX</strong> (Databricks)</p></td>
+<tr class="row-odd"><td><p><strong>DBRX</strong> (Databricks)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">databricks/dbrx-instruct</span></code></p></td>
 <td><p>Databricks’ 132B-parameter MoE model (36B active) trained on 12T tokens; competes with GPT-3.5 quality as a fully open foundation model.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Grok</strong> (xAI)</p></td>
+<tr class="row-even"><td><p><strong>Grok</strong> (xAI)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">xai-org/grok-1</span></code></p></td>
 <td><p>xAI’s grok-1 model known for vast size(314B parameters) and high quality; integrated in SGLang for high-performance inference.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>ChatGLM</strong> (GLM-130B family)</p></td>
+<tr class="row-odd"><td><p><strong>ChatGLM</strong> (GLM-130B family)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">THUDM/chatglm2-6b</span></code></p></td>
 <td><p>Zhipu AI’s bilingual chat model (6B) excelling at Chinese-English dialogue; fine-tuned for conversational quality and alignment.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>InternLM 2</strong> (7B, 20B)</p></td>
+<tr class="row-even"><td><p><strong>InternLM 2</strong> (7B, 20B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">internlm/internlm2-7b</span></code></p></td>
 <td><p>Next-gen InternLM (7B and 20B) from SenseTime, offering strong reasoning and ultra-long context support (up to 200K tokens).</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>ExaONE 3</strong> (Korean-English)</p></td>
+<tr class="row-odd"><td><p><strong>ExaONE 3</strong> (Korean-English)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct</span></code></p></td>
 <td><p>LG AI Research’s Korean-English model (7.8B) trained on 8T tokens; provides high-quality bilingual understanding and generation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Baichuan 2</strong> (7B, 13B)</p></td>
+<tr class="row-even"><td><p><strong>Baichuan 2</strong> (7B, 13B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">baichuan-inc/Baichuan2-13B-Chat</span></code></p></td>
 <td><p>BaichuanAI’s second-generation Chinese-English LLM (7B/13B) with improved performance and an open commercial license.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>XVERSE</strong> (MoE)</p></td>
+<tr class="row-odd"><td><p><strong>XVERSE</strong> (MoE)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">xverse/XVERSE-MoE-A36B</span></code></p></td>
 <td><p>Yuanxiang’s open MoE LLM (XVERSE-MoE-A36B: 255B total, 36B active) supporting ~40 languages; delivers 100B+ dense-level performance via expert routing.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>SmolLM</strong> (135M–1.7B)</p></td>
+<tr class="row-even"><td><p><strong>SmolLM</strong> (135M–1.7B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">HuggingFaceTB/SmolLM-1.7B</span></code></p></td>
 <td><p>Hugging Face’s ultra-small LLM series (135M–1.7B params) offering surprisingly strong results, enabling advanced AI on mobile/edge devices.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>GLM-4</strong> (Multilingual 9B)</p></td>
+<tr class="row-odd"><td><p><strong>GLM-4</strong> (Multilingual 9B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">ZhipuAI/glm-4-9b-chat</span></code></p></td>
 <td><p>Zhipu’s GLM-4 series (up to 9B parameters) – open multilingual models with support for 1M-token context and even a 5.6B multimodal variant (Phi-4V).</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>MiMo</strong> (7B series)</p></td>
+<tr class="row-even"><td><p><strong>MiMo</strong> (7B series)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">XiaomiMiMo/MiMo-7B-RL</span></code></p></td>
 <td><p>Xiaomi’s reasoning-optimized model series, leverages Multiple-Token Prediction for faster inference.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>ERNIE-4.5</strong> (4.5, 4.5MoE series)</p></td>
+<tr class="row-odd"><td><p><strong>ERNIE-4.5</strong> (4.5, 4.5MoE series)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">baidu/ERNIE-4.5-21B-A3B-PT</span></code></p></td>
 <td><p>Baidu’s ERNIE-4.5 series which consists of MoE with 47B and 3B active parameters, with the largest model having 424B total parameters, as well as a 0.3B dense model.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Arcee AFM-4.5B</strong></p></td>
+<tr class="row-even"><td><p><strong>Arcee AFM-4.5B</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">arcee-ai/AFM-4.5B-Base</span></code></p></td>
 <td><p>Arcee’s foundational model series for real world reliability and edge deployments.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Persimmon</strong> (8B)</p></td>
+<tr class="row-odd"><td><p><strong>Persimmon</strong> (8B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">adept/persimmon-8b-chat</span></code></p></td>
 <td><p>Adept’s open 8B model with a 16K context window and fast inference; trained for broad usability and licensed under Apache 2.0.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Ling</strong> (16.8B–290B)</p></td>
+<tr class="row-even"><td><p><strong>Ling</strong> (16.8B–290B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">inclusionAI/Ling-lite</span></code>, <code class="docutils literal notranslate"><span class="pre">inclusionAI/Ling-plus</span></code></p></td>
 <td><p>InclusionAI’s open MoE models. Ling-Lite has 16.8B total / 2.75B active parameters, and Ling-Plus has 290B total / 28.8B active parameters. They are designed for high performance on NLP and complex reasoning tasks.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Granite 3.0, 3.1</strong> (IBM)</p></td>
+<tr class="row-odd"><td><p><strong>Granite 3.0, 3.1</strong> (IBM)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">ibm-granite/granite-3.1-8b-instruct</span></code></p></td>
 <td><p>IBM’s open dense foundation models optimized for reasoning, code, and business AI use cases. Integrated with Red Hat and watsonx systems.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Granite 3.0 MoE</strong> (IBM)</p></td>
+<tr class="row-even"><td><p><strong>Granite 3.0 MoE</strong> (IBM)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">ibm-granite/granite-3.0-3b-a800m-instruct</span></code></p></td>
 <td><p>IBM’s Mixture-of-Experts models offering strong performance with cost-efficiency. MoE expert routing designed for enterprise deployment at scale.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Llama Nemotron Super</strong> (v1, v1.5, NVIDIA)</p></td>
+<tr class="row-odd"><td><p><strong>Llama Nemotron Super</strong> (v1, v1.5, NVIDIA)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">nvidia/Llama-3_3-Nemotron-Super-49B-v1</span></code>, <code class="docutils literal notranslate"><span class="pre">nvidia/Llama-3_3-Nemotron-Super-49B-v1_5</span></code></p></td>
 <td><p>The <a class="reference external" href="https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/">NVIDIA Nemotron</a> family builds on the strongest open models in the ecosystem by enhancing them with greater accuracy, efficiency, and transparency using NVIDIA open synthetic datasets, advanced techniques, and tools. This enables the creation of practical, right-sized, and high-performing AI agents.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Llama Nemotron Ultra</strong> (v1, NVIDIA)</p></td>
+<tr class="row-even"><td><p><strong>Llama Nemotron Ultra</strong> (v1, NVIDIA)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">nvidia/Llama-3_1-Nemotron-Ultra-253B-v1</span></code></p></td>
 <td><p>The <a class="reference external" href="https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/">NVIDIA Nemotron</a> family builds on the strongest open models in the ecosystem by enhancing them with greater accuracy, efficiency, and transparency using NVIDIA open synthetic datasets, advanced techniques, and tools. This enables the creation of practical, right-sized, and high-performing AI agents.</p></td>
 </tr>
