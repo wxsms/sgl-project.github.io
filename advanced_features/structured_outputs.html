@@ -58,7 +58,7 @@
     <link rel="prev" title="Speculative Decoding" href="speculative_decoding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 07, 2025"/>
+    <meta name="docbuild:last-update" content="Sep 08, 2025"/>
   </head>
   
   
@@ -538,33 +538,48 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0907 22:00:24.586000 4069536 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0907 22:00:24.586000 4069536 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0908 01:36:25.651000 2001894 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0908 01:36:25.651000 2001894 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0907 22:00:33.881000 4070034 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0907 22:00:33.881000 4070034 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0907 22:00:34.224000 4070033 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0907 22:00:34.224000 4070033 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0908 01:36:33.544000 2002845 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0908 01:36:33.544000 2002845 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0908 01:36:33.558000 2002844 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0908 01:36:33.558000 2002844 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-07 22:00:34] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-08 01:36:34] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-07 22:00:36] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-08 01:36:35] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.26it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.08it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.02it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.14s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.19s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.02it/s]
 
-Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.89it/s]
+Capturing batches (bs=1 avail_mem=20.53 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -857,7 +872,7 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function></strong></div>
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Please note that the city name passed in get_current_weather function is the city's name with the most populated <br>with reference to www.worldpopulationreview.com</strong></div>
 </div>
 </section>
 </section>
@@ -920,7 +935,7 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '6a0052ce53f04a2dbeb7f2d40244349e', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 1, 'e2e_latency': 0.2419447898864746}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'e4d7705046da409fa8feb4069a000be7', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 1, 'e2e_latency': 0.1218268871307373}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -965,7 +980,7 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'f3392f10ae014579ac12b444d33a85a6', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 49, 'e2e_latency': 0.22764945030212402}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'a02167cf41d048139a95e11c62fe9982', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 49, 'e2e_latency': 0.11487650871276855}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1012,7 +1027,7 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'db767e21eaa24a86bcf22100b02ae70f', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.13724541664123535}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'aa9ece8eb8374878b037b4679dd876da', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.13725638389587402}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '511057e135474f44b5f289f2453da6c2', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.13726115226745605}}]</strong></div>
+<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '92567a0ecdae44a0bdd3f44c0fd4b2f2', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.19192028045654297}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '63f4652e09de45889c305f0549e6c49d', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.1919264793395996}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'cfa5ff28f0e04047a929cd8cb43f139f', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.19192957878112793}}]</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1049,7 +1064,7 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 128009], 'meta_info': {'id': '00bee2a8c7c54b5780976f6e78601a0d', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 2, 'cached_tokens': 31, 'e2e_latency': 0.02546977996826172}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 128009], 'meta_info': {'id': '56dd191c372a49d9a181f0f06ad5b0c2', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 2, 'cached_tokens': 31, 'e2e_latency': 0.026125669479370117}}</strong></div>
 </div>
 </section>
 <section id="id4">
@@ -1101,7 +1116,7 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 13, 128009], 'meta_info': {'id': '4953cb0288b441e5ad14232ab189cb35', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 3, 'cached_tokens': 40, 'e2e_latency': 0.02834486961364746}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 13, 128009], 'meta_info': {'id': '3e9b5b1f910240a3a829d5c977c2b424', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 3, 'cached_tokens': 40, 'e2e_latency': 0.027301788330078125}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -1132,8 +1147,8 @@ Capturing batches (bs=1 avail_mem=14.02 GB): 100%|██████████
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0907 22:00:57.103000 4069246 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0907 22:00:57.103000 4069246 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0908 01:36:54.151000 2001445 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0908 01:36:54.151000 2001445 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1151,12 +1166,16 @@ All deep_gemm operations loaded successfully!
 <div class="highlight"><pre>
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-W0907 22:01:06.130000 4072225 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0907 22:01:06.130000 4072225 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0907 22:01:06.288000 4072224 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0907 22:01:06.288000 4072224 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0908 01:37:02.160000 2007154 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0908 01:37:02.160000 2007154 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0908 01:37:02.209000 2007155 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0908 01:37:02.209000 2007155 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-07 22:01:06] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-08 01:37:02] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1177,13 +1196,13 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.29it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.21it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.61it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.05s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.18s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.20s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.00it/s]
 
-Capturing batches (bs=1 avail_mem=35.02 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.03it/s]
+Capturing batches (bs=1 avail_mem=34.86 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.16it/s]
 </pre></div></div>
 </div>
 <section id="id5">
@@ -1412,7 +1431,7 @@ Capturing batches (bs=1 avail_mem=35.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of Italy</strong></div>
+<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: London is the capital of Italy</strong></div>
 </div>
 </section>
 <section id="id7">
@@ -1457,7 +1476,7 @@ Capturing batches (bs=1 avail_mem=35.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Please provide information about Paris as a major global city:<br>Generated text: France</strong></div>
+<strong style='color: #00008B;'>Prompt: Please provide information about Paris as a major global city:<br>Generated text: England</strong></div>
 </div>
 </section>
 <section id="id8">
@@ -1627,7 +1646,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 07, 2025.
+  Last updated on Sep 08, 2025.
   <br/>
 </p>
   </div>
