@@ -640,6 +640,10 @@ which has 43-43-42 cores on the 3 SNCs of a socket, we should set:</p>
 </pre></div>
 </div>
 </li>
+<li><p>For optimizing decoding with torch.compile, please add the flag <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>.
+To specify the maximum batch size when using torch compile, set the flag <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>.
+For example, <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span> <span class="pre">--torch-compile-max-bs</span> <span class="pre">4</span></code> means using torch compile and setting the
+maximum batch size to 4.</p></li>
 <li><p>A warmup step is automatically triggered when the service is started.
 The server is ready when you see the log <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">server</span> <span class="pre">is</span> <span class="pre">fired</span> <span class="pre">up</span> <span class="pre">and</span> <span class="pre">ready</span> <span class="pre">to</span> <span class="pre">roll!</span></code>.</p></li>
 </ol>
