@@ -796,6 +796,21 @@ document.write(`
 <span class="w">  </span>--disable-ignore-eos
 </pre></div>
 </div>
+<ol class="arabic simple" start="9">
+<li><p>Evaluating large-scale KVCache sharing with mooncake trace (sglang only):</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>mode-name<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>mooncake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mooncake-slowdown-factor<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mooncake-num-rounds<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mooncake-workload<span class="w"> </span>conversation<span class="p">|</span>mooncake<span class="p">|</span>agent<span class="p">|</span>synthetic
+<span class="w">  </span>--use-trace-timestamps<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--random-output-len<span class="w"> </span><span class="m">256</span>
+</pre></div>
+</div>
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
