@@ -518,33 +518,33 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0909 04:53:36.140000 641061 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0909 04:53:36.140000 641061 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0909 05:25:36.479000 3145951 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0909 05:25:36.479000 3145951 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-[2025-09-09 04:53:37] MOE_RUNNER_BACKEND is not initialized, using triton backend
-W0909 04:53:45.458000 641814 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0909 04:53:45.458000 641814 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0909 04:53:45.479000 641813 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0909 04:53:45.479000 641813 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-09-09 05:25:37] MOE_RUNNER_BACKEND is not initialized, using triton backend
+W0909 05:25:44.461000 3146810 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0909 05:25:44.461000 3146810 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0909 05:25:44.744000 3146811 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0909 05:25:44.744000 3146811 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-09 04:53:45] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-09 05:25:44] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-09 04:53:48] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-09 05:25:46] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.43it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.35it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.27it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.75it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.71it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01&lt;00:01,  1.63it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.54it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.91it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.77it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.13s/it]
+Capturing batches (bs=1 avail_mem=58.57 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.10s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -602,13 +602,13 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"feb211321ccc40279e8b308a7648b1b4","object":"chat.completion","created":1757393650,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a unique scene of a man, dressed casually in a yellow hoodie, engaged in an unconventional activity: he appears to be ironing a shirt placed flat on a makeshift rack or stand that's attached sideways to the rear of a taxi. The taxi is painted in the iconic yellow color typically seen in New York City, specifically suggesting a typical NYC yellow cab style car. The street appears to be in a busy urban area with other taxis visible in the background and storefronts across the street, indicative of a city setting, possibly New York. The man has an iron and seems focused on the task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":430,"completion_tokens":123,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"52f39178c29942df858b76efb949ecc1","object":"chat.completion","created":1757395568,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a person standing on a portable ladder, leaning out of the open trunk of a taxi. The individual appears to be ironing or cleaning something that resembles a pair of pants draped over the ladder. The setting seems to be a busy urban street, with other taxis in the background and storefronts lining the street.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"254943dad19f4f8d8b9d82e849a0a902","object":"chat.completion","created":1757393661,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"This image shows a man standing on the trunk of a yellow SUV taxi engaged in what seems to be an unusual and humorous activity—he is hanging clothes out of the open tailgate, seemingly preparing or drying them while using a luggage rack with what appears to be clothing pegs (clamps). The setting is an urban street with other taxis parked nearby, indicating a busy metropolitan area.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"7bdede6ceedc493eba45dab69878028f","object":"chat.completion","created":1757395571,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man performing laundry services in New York City. He is standing on top of a taxi, hanging clothes to dry. The taxi has a \"Mustang\" logo and the typical design and branding characteristic of taxis in this city. There are yellow taxis and other vehicles nearby, as well as urban scenery with buildings, storefronts, and a street sign indicating a location.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":385,"completion_tokens":78,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -649,7 +649,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"2fd98a39a8404ae8a294fcfb611bf4b1","object":"chat.completion","created":1757393662,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"In this image, there is a man engaged in some kind of unconventional or humorous use of a taxi. The man, wearing a yellow shirt, appears to be ironing a piece of clothing, seemingly a pair of jeans, which is draped across an ironing board balanced on the back of a yellow taxi. The taxi, which seems to derive its color from its body rather than taxicab fare, is parked or stationary in an urban street. The man balances himself while performing this task, which contrasts amusingly with his surroundings, suggesting a playful or satirical depiction, possibly for comedic, artistic, or promotional purposes.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":433,"completion_tokens":126,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"9357a790b14a4ede8273c193a02bc643","object":"chat.completion","created":1757395572,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a person standing in the street next to a taxi cab, holding an iron and tending to a piece of clothing mounted on a clothes drying rack. The taxi has \"NYC Taxi\" signage on it and appears to be a Ford Excursion vehicle, which is a crossover SUV. The scene takes place in an urban setting with shops and buildings in the background. The individual seems to be ironing the clothes while traveling.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":396,"completion_tokens":89,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -692,7 +692,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man leaning over the rear of a New York City yellow taxi, adjusting an ironing board setup that rests on the vehicle's rear hatch. He appears to be preparing or adjusting clothing that is laid out on the board. The board seems to attach to the taxi, implying an unconventional use of a taxi's rear compartment for laundry purposes. The surrounding scene suggests an urban street, with another taxi and other city vehicles in the background, along with buildings adorned with flags and advertisements.</strong></div>
+<strong style='color: #00008B;'>The image depicts a man standing on the back of a parked taxi, using an ironing board to press or adjust blue garments he is holding. The taxi is a bright yellow color, resembling iconic taxis from New York City. The man is wearing a yellow shirt, adding a thematic or humorous element, suggesting the taxi could be part of a promotional setup, an unusual feat for a taxi driver, or a staged capture of a quirky or amusing moment.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
