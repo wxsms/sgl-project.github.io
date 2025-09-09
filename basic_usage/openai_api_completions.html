@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI-Compatible APIs" href="openai_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 08, 2025"/>
+    <meta name="docbuild:last-update" content="Sep 09, 2025"/>
   </head>
   
   
@@ -535,28 +535,28 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0908 23:31:40.621000 1551979 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0908 23:31:40.621000 1551979 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0909 00:44:37.219000 88477 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0909 00:44:37.219000 88477 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0908 23:31:50.477000 1552880 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0908 23:31:50.477000 1552880 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0908 23:31:51.681000 1552878 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0908 23:31:51.681000 1552878 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0909 00:44:46.397000 89266 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0909 00:44:46.397000 89266 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0909 00:44:46.432000 89265 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0909 00:44:46.432000 89265 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-08 23:31:52] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-09 00:44:47] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-08 23:31:53] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-09 00:44:48] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.24it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.42it/s]
 
-Capturing batches (bs=1 avail_mem=71.97 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.54it/s]
+Capturing batches (bs=1 avail_mem=67.87 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.99it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -570,7 +570,7 @@ Capturing batches (bs=1 avail_mem=71.97 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37957
+Server started on http://localhost:38505
 </pre></div></div>
 </div>
 </section>
@@ -604,7 +604,7 @@ Server started on http://localhost:37957
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='d1244d8a563e4294b246e16cd4a88279', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1757374324, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='07420b57a5a64346b39fb7bd58ff9e82', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1757378697, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -808,7 +808,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in Italy from the 8th century BC to the 4th century AD. It was known for its advanced engineering, art, literature, and philosophy. Some of the major achievements of ancient Rome include:<br><br>1. **Construction of the Colosseum**: This amphitheater was built in 70 AD and was one of the largest and most impressive structures in the world at the time. It served as a place for gladiatorial contests, public spectacles, and other public events.<br><br>2. **Roman Law**: The Code of Hammurabi (c. 1</strong></div>
+<strong style='color: #00008B;'>Ancient Rome achieved significant accomplishments in various fields, including politics, law, philosophy, science, and art. Some of their major achievements include:<br><br>1. **Political Structure**: Rome developed a complex political system that included the Senate, the Assembly of the People (the Roman People), and the Praetorian Guard. This system was designed to ensure the stability and rule of the city-state.<br><br>2. **Law**: Roman law was one of the most advanced in the world, with a code of laws that laid down rules for both citizens and foreigners. It also included a system of legal procedures and a written code of ethics known as the Twelve</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -831,7 +831,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, this is a test. I&#39;m designed to provide useful information and generate human-like responses, so I&#39;m ready to assist with any questions you may have. Just let me know if you need help with anything or if you have any specific questions, and I&#39;ll do my best to assist you.
+Yes, I understand. I am designed to assist with a variety of tasks, including answering questions, providing information, and generating text based on input. If you have any specific questions or tasks, feel free to ask, and I&#39;ll do my best to assist you.
 </pre></div></div>
 </div>
 </section>
@@ -862,7 +862,7 @@ Yes, this is a test. I&#39;m designed to provide useful information and generate
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='bdc2268215d5419b8fd74873b8784f6a', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1757374325, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='3b38aca9c38a481f888a14e8e3129653', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1757378698, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -894,7 +894,7 @@ Yes, this is a test. I&#39;m designed to provide useful information and generate
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='11ee56cf1ebf413fab0e9433f34284f5', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had been fascinated by the mysteries of the universe since he was a child. He had always dreamed of exploring space and visiting distant planets, but it was never easy to do when he faced the challenges of space travel and the unknown.', matched_stop='\n\n')], created=1757374325, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=59, prompt_tokens=9, total_tokens=68, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='86a8b205a0ac4b71b28530b60dad6588', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who was on a mission to explore the far reaches of the universe. He had been working for years and had traveled across many galaxies, but this was his first time really exploring the stars.', matched_stop='\n\n')], created=1757378698, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=50, prompt_tokens=9, total_tokens=59, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
@@ -1009,7 +1009,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 08, 2025.
+  Last updated on Sep 09, 2025.
   <br/>
 </p>
   </div>
