@@ -502,11 +502,15 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">jetson</span><span class="o">-</span><span class="n">containers</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>Build the container:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CUDA_VERSION</span><span class="o">=</span><span class="mf">12.6</span> <span class="n">jetson</span><span class="o">-</span><span class="n">containers</span> <span class="n">build</span> <span class="n">sglang</span>
+<p>Build the container image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jetson</span><span class="o">-</span><span class="n">containers</span> <span class="n">build</span> <span class="n">sglang</span>
 </pre></div>
 </div>
 <p>Run the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>jetson-containers run $(autotag sglang)
+</pre></div>
+</div>
+<p>Or you can also manually run a container with this command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">runtime</span> <span class="n">nvidia</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">network</span><span class="o">=</span><span class="n">host</span> <span class="n">IMAGE_NAME</span>
 </pre></div>
 </div>
@@ -548,7 +552,7 @@ document.write(`
 <h2>Structured output with XGrammar<a class="headerlink" href="#structured-output-with-xgrammar" title="Link to this heading">#</a></h2>
 <p>Please refer to <a class="reference internal" href="../advanced_features/structured_outputs.html"><span class="std std-doc">SGLang doc structured output</span></a>.</p>
 <hr class="docutils" />
-<p>Thanks to the support from <a class="reference external" href="https://github.com/shahizat">shahizat</a>.</p>
+<p>Thanks to the support from <a class="reference external" href="https://github.com/shahizat">Nurgaliyev Shakhizat</a>, <a class="reference external" href="https://github.com/dusty-nv">Dustin Franklin</a> and <a class="reference external" href="https://github.com/johnnynunez">Johnny Núñez Cano</a>.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
