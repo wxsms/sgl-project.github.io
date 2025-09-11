@@ -180,6 +180,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/deepseek.html">DeepSeek Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/llama4.html">Llama4 Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -525,31 +526,31 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0911 19:09:15.744000 820982 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 19:09:15.744000 820982 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0911 21:50:52.477000 4082840 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0911 21:50:52.477000 4082840 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0911 19:09:24.554000 821201 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 19:09:24.554000 821201 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0911 19:09:24.557000 821202 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 19:09:24.557000 821202 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0911 21:51:01.166000 4083240 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0911 21:51:01.166000 4083240 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0911 21:51:01.166000 4083241 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0911 21:51:01.166000 4083241 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-11 19:09:25] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-11 21:51:01] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-11 19:09:25] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-11 21:51:02] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.52it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.35it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.40it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.33it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.39it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.70it/s]
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.39it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -563,7 +564,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:35971
+Server started on http://localhost:38712
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -604,7 +605,7 @@ Server started on http://localhost:35971
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries with their capitals:<br><br>1. **France - Paris**<br>2. **Italy - Rome**<br>3. **Spain - Madrid**</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -634,7 +635,7 @@ Server started on http://localhost:35971
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. Japan - Tokyo<br>2. Brazil - Brasília<br>3. Spain - Madrid</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -682,7 +683,7 @@ Server started on http://localhost:35971
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>Let's calculate:<br><br>2 * 2 = 4<br><br>There was no need to use a calculator, as this is a simple multiplication.</strong></div>
+<strong style='color: #00008B;'>2 * 2. Let's calculate it without a physical calculator.<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -722,7 +723,7 @@ Server started on http://localhost:35971
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet involves consuming a variety of nutrient-dense foods from all the major food groups. This includes fruits and vegetables for vitamins and fiber, whole grains for complex carbohydrates, lean proteins for building and repairing tissues, and healthy fats for brain and heart health. The goal is to provide your body with the essential nutrients it needs to function optimally.<br><br>2. **Regular Exercise**: Regular exercise is essential for maintaining both physical and mental health. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days. Choose activities you enjoy, such as walking, cycling, swimming, or jogging. Consistency is key, so try to make exercise a daily habit to reap the benefits of improved health and well-being.<br><br>Together, these habits form a strong foundation for leading a healthy lifestyle!</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: <br>   - Consume a variety of nutrient-dense foods, including fruits, vegetables, lean proteins, whole grains, and healthy fats.<br>   - Avoid excessive intake of processed and high-sugar foods.<br>   - Stay hydrated by drinking plenty of water.<br><br>2. **Regular Exercise**:<br>   - Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week.<br>   - Incorporate muscle-strengthening exercises on two or more days.<br>   - Find activities you enjoy to ensure you stay motivated.<br>   - Consult with a healthcare provider before starting a new exercise program, especially if you have any existing health conditions.<br><br>These habits can significantly contribute to your overall health and well-being.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -795,7 +796,7 @@ Server started on http://localhost:35971
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Willow",<br>        "core": "Phoenix feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Barn swallow"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm oak",<br>        "core": "Phoenix feather",<br>        "length": 10.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Professor Quirin"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -830,7 +831,7 @@ Server started on http://localhost:35971
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 27.50it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 34.66it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -949,33 +950,33 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0911 19:09:52.353000 822030 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 19:09:52.353000 822030 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0911 21:51:28.174000 4084962 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0911 21:51:28.174000 4084962 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-[2025-09-11 19:09:53] MOE_RUNNER_BACKEND is not initialized, using triton backend
-W0911 19:10:01.456000 822247 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 19:10:01.456000 822247 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0911 19:10:01.456000 822248 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 19:10:01.456000 822248 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-09-11 21:51:29] MOE_RUNNER_BACKEND is not initialized, using triton backend
+W0911 21:51:36.938000 4085303 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0911 21:51:36.938000 4085303 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0911 21:51:36.966000 4085302 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0911 21:51:36.966000 4085302 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-11 19:10:02] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-11 21:51:37] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-11 19:10:03] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-11 21:51:39] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.71it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.72it/s]
 Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.56it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01&lt;00:01,  1.48it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.41it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.80it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.45it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.39it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.77it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.63it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.07s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.03s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -989,7 +990,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32326
+Server started on http://localhost:34781
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1022,7 +1023,7 @@ Server started on http://localhost:32326
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a person standing on the back of a moving vehicle, seemingly engaged in an activity such as filming or positioning elaborate objects tied to the car. The vehicle is a yellow SUV taxi, commonly associated with certain urban areas known for high population density. Beneath the individual is a rug or tarpceramic placed for extra grip. The objects being held appear-span include seating arrangement, flooring pieces, and what might look like part of decorative sets or props for a theatrical endeavor, requiring good placement, height, or stability DESPITE IN-TRAVERSETRANSPORTATION. Notably, this arrangement is happens in-progress during transit.</strong></div>
+<strong style='color: #00008B;'>The image shows a person performing an unusual act of drying laundry directly from the boot trunk (cargo area) of a moving taxi, presumably an SUV, in a busy urban street setting. This behavior comes across as quite precarious, as the person leans precariously back while hanging or adjusting clothes draped across a simple ironing board setup extending from the vehicle. This setup implies the individual might be drying clothing and using the raucous, moving taxi for stability and leverage during the ironing process.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
