@@ -594,13 +594,13 @@ git<span class="w"> </span>checkout<span class="w"> </span>&lt;YOUR-DESIRED-VERS
 <span class="c1"># Install SGLang dependent libs, and build SGLang main package</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
 conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">libsqlite</span><span class="o">==</span><span class="m">3</span>.48.0<span class="w"> </span>gperftools<span class="w"> </span>tbb<span class="w"> </span>libnuma<span class="w"> </span>numactl
-pip<span class="w"> </span>install<span class="w"> </span>intel-openmp
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_cpu]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.7.1<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.22.1<span class="w"> </span><span class="nv">triton</span><span class="o">==</span><span class="m">3</span>.3.1<span class="w"> </span>--force-reinstall
 
 <span class="c1"># Build the CPU backend kernels</span>
 <span class="nb">cd</span><span class="w"> </span>sgl-kernel
 cp<span class="w"> </span>pyproject_cpu.toml<span class="w"> </span>pyproject.toml
-pip<span class="w"> </span>install<span class="w"> </span>-v<span class="w"> </span>.
+pip<span class="w"> </span>install<span class="w"> </span>.
 
 <span class="c1"># Other required environment variables</span>
 <span class="c1"># Recommend to set these in ~/.bashrc in order not to set every time in a new terminal</span>
@@ -639,6 +639,9 @@ which has 43-43-42 cores on the 3 SNCs of a socket, we should set:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_CPU_OMP_THREADS_BIND</span><span class="o">=</span><span class="s2">&quot;0-39|43-82|86-125|128-167|171-210|214-253&quot;</span>
 </pre></div>
 </div>
+<p>Please beware that with SGLANG_CPU_OMP_THREADS_BIND set,
+the available memory amounts of the ranks may not be determined in prior.
+You may need to set proper <code class="docutils literal notranslate"><span class="pre">--max-total-tokens</span></code> to avoid the out-of-memory error.</p>
 </li>
 <li><p>For optimizing decoding with torch.compile, please add the flag <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code>.
 To specify the maximum batch size when using torch compile, set the flag <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>.
@@ -666,7 +669,7 @@ Run the command in another terminal.</p>
 </pre></div>
 </div>
 <p>Additionally, the requests can be formed with
-<a class="reference external" href="https://docs.sglang.ai/backend/openai_api_completions.html">OpenAI Completions API</a>
+<a class="reference external" href="https://docs.sglang.ai/basic_usage/openai_api_completions.html">OpenAI Completions API</a>
 and sent via the command line (e.g. using <code class="docutils literal notranslate"><span class="pre">curl</span></code>) or via your own script.</p>
 </section>
 <section id="example-running-deepseek-r1">
@@ -680,7 +683,6 @@ and sent via the command line (e.g. using <code class="docutils literal notransl
 <span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w">                   </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                             </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">                  </span><span class="se">\</span>
-<span class="w">    </span>--max-total-token<span class="w"> </span><span class="m">65536</span><span class="w">                    </span><span class="se">\</span>
 <span class="w">    </span>--tp<span class="w"> </span><span class="m">6</span>
 </pre></div>
 </div>
@@ -692,7 +694,6 @@ and sent via the command line (e.g. using <code class="docutils literal notransl
 <span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                               </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                             </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">                  </span><span class="se">\</span>
-<span class="w">    </span>--max-total-token<span class="w"> </span><span class="m">65536</span><span class="w">                    </span><span class="se">\</span>
 <span class="w">    </span>--tp<span class="w"> </span><span class="m">6</span>
 </pre></div>
 </div>
