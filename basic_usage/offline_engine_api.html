@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 11, 2025"/>
+    <meta name="docbuild:last-update" content="Sep 12, 2025"/>
   </head>
   
   
@@ -540,8 +540,8 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-W0911 23:22:26.376000 3421570 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 23:22:26.376000 3421570 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0912 02:29:00.327000 872929 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0912 02:29:00.327000 872929 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -559,12 +559,12 @@ All deep_gemm operations loaded successfully!
 <div class="highlight"><pre>
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-W0911 23:22:35.932000 3422169 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 23:22:35.932000 3422169 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0911 23:22:35.968000 3422170 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0911 23:22:35.968000 3422170 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0912 02:29:08.682000 873520 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0912 02:29:08.682000 873520 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0912 02:29:08.917000 873519 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0912 02:29:08.917000 873519 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-11 23:22:36] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-12 02:29:09] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -585,10 +585,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.24it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.24it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.25it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.16it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -620,34 +620,38 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Laci. I&#39;m a young writer, I just finished a novel called the Red Coats, and I&#39;m always interested in writing new works. I recently read a book by the very talented John Lennie Davenport that made me smile. I read it in a bookstore on Friday afternoon. The book is called &#34;Lennie: The Singer of the Stars.&#34;
-I&#39;m a bit depressed because my husband and I bought a house in 2016, but now it&#39;s 2023 and he&#39;s not here anymore. I&#39;m thinking about having a baby but my husband is quite distant from me.
-What is the
+Generated text:  Emily and I am an aspiring author. I have always loved writing and am always looking for new ideas. I am currently working on a novel and am looking for input on my manuscript. Can you please help me with some suggestions for word choices?
+Certainly! Here are some suggestions for word choices that I would recommend for your novel:
+
+1. Imaginative - This word is used to describe something that is original and innovative.
+2. Original - This word is used to describe something that is unique and fresh.
+3. Artistic - This word is used to describe something that is creative and imaginative.
+4. Unexpected - This word is used
 ===============================
 Prompt: The president of the United States is
-Generated text:  from which country?
-What is the answer?
-A) Canada
-B) France
-C) United Kingdom
-D) Germany
-The answer is A) Canada. The president of the United States is from the country of Canada. Canada is a country located in North America, bordering the Pacific Ocean to the west, the Atlantic Ocean to the east, and the North American continent to the north. The country is known for its diverse geography, including the Rocky Mountains, the Canadian Shield, and the Great Lakes. Canada&#39;s capital city is Ottawa, and it is a melting pot of cultures from different regions of the country. The president of
+Generated text:  running for a second term. To become the next president, a candidate must be at least 40 years old and must have served in the United States military. Among the three military service members being considered for this race, only one has the age requirement, but the candidates are not necessarily the same person. How many different possible orders of the three military service members could be in the race? To determine the number of different possible orders of the three military service members, we need to consider the constraints and the choices available.
+
+1. The candidate must be at least 40 years old, and only one of the three candidates meets this
 ===============================
 Prompt: The capital of France is
-Generated text:  (C)
-A. Paris
-B. Lyon
-C. Bordeaux
-D. Brussels
-Answer:
-A
+Generated text:  Paris. What is it called in German?
 
-Patient, female, 25 years old, with a history of chronic hepatitis for over 10 years, with continuous jaundice for over 2 months, her jaundice is worsening with fever. Physical examination: jaundiced skin and sclera, scattered ecchymosis on the skin and mucous membranes, the liver is palpable 3 cm below the costal margin, hard in texture, with mild tenderness, the spleen is palpable 1.5 cm below the costal
+The capital of France is Paris. In German, the capital of France is:
+
+**Berlin**
+
+The capital of Germany is:
+
+**Berlin**. Berlin is often referred to as the &#34;Big Apple&#34; or &#34;Paris of the North&#34; due to its mix of French and German characteristics.
+
+Germany and France share many similarities in culture, history, and language, which is why the cities of Paris and Berlin are both called &#34;capital&#34; of their respective countries. However, Berlin is more closely associated with German culture and lifestyle.
+
+The differences between the German and French capitals are often minimal, and
 ===============================
 Prompt: The future of AI is
-Generated text:  vast and varied, and it’s possible that a new approach to AI could see it transforming the way that we all live and work. One area that’s becoming increasingly relevant is healthcare, where AI could help to improve treatment and outcomes for patients.
-AI could be used in a number of ways to improve healthcare, from the ability to monitor and track patient health remotely to the ability to identify patterns and anomalies in patient data that could indicate potential health issues. For example, AI-powered predictive models could be used to identify patients at risk of developing certain diseases or conditions, allowing healthcare providers to intervene before these conditions become serious.
-In addition to these potential
+Generated text:  becoming increasingly dependent on the abilities of the underlying hardware. The rise of quantum computing offers significant promise for enhancing computing power and thus potentially revolutionizing the AI landscape. However, while quantum computing offers a number of unique advantages, it also presents a set of challenges, including the need for robust quantum error correction, which is a critical component for maintaining high performance and reliability of quantum computing systems. What is the significance of quantum error correction in the context of quantum computing?
+
+Quantum error correction is a critical component for maintaining high performance and reliability in quantum computing systems. Quantum computers use quantum entanglement to perform calculations, but entanglement is a
 </pre></div></div>
 </div>
 </section>
@@ -687,19 +691,19 @@ In addition to these potential
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have [number] years of experience in [job title]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I enjoy [hobby or activity]. What&#39;s your favorite book or movie? I love [book/movie]. What&#39;s your favorite place to go? I love [favorite place]. What&#39;s your favorite color? I love
+Generated text:  [Name] and I&#39;m a [occupation] with [number] years of experience in [industry]. I&#39;m a [job title] with [number] years of experience in [industry]. I&#39;m a [job title] with [number] years of experience in [industry]. I&#39;m a [job title] with [number] years of experience in [industry]. I&#39;m a [job title] with [number] years of experience in [industry]. I&#39;m a [job title] with [number] years of experience in [industry]. I&#39;m a [job title] with [number] years of experience in [industry
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a cultural and historical center with a rich history dating back to the Middle Ages. Paris is a major transportation hub and a major tourist destination, with its famous landmarks and museums attracting millions of visitors each year. The city is also home to many notable artists, writers, and musicians. Paris is a vibrant and dynamic city with a rich cultural and artistic heritage. The city is also known for its cuisine, with its famous dishes such as croissants, boudin, and escargot.
+Generated text:  Paris, also known as &#34;La Ville Flottante&#34; (floating city). It is the largest city in Europe and the third largest city in the world by population. Paris is known for its rich history, art, and culture, and is a major tourist destination. The city is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its cuisine, including French cuisine, and is a popular destination for tourists and locals alike. The city is home to many museums, theaters, and other cultural institutions, and is a major center for business and commerce
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by several key trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more efficient and effective AI systems that can make better decisions and solve complex problems.
+1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and experiences. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human needs.
 
-2. Greater emphasis on ethical AI: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations. This could lead to more rigorous testing and evaluation of AI systems, as well as greater transparency and accountability in their development and deployment.
+2. Enhanced ethical considerations: As AI becomes more integrated with human intelligence, there will be increased scrutiny of its ethical implications. This could lead to more stringent regulations and guidelines for AI development and deployment.
 
-3. Increased use of AI in healthcare: AI is already
+3. Greater reliance on AI for decision-making: AI is likely to become more integrated with human decision-making processes, allowing machines to make
 
 </pre></div></div>
 </div>
@@ -742,19 +746,17 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am [Role]. I am a [Hobbies, Interests, or Expertise] who has been actively involved in [Field of Expertise] for [Number of Years] years. I am always [Positive Traits] and always strive to [Achievements]. What is your current [Position] and what is your [Objective/Interest/Interest Area] related to it? I am always [Positive Traits] and always strive to [Achievements]. In summary, I am [Name], [Role]. [Personal Traits] and [Achievements] lead me to my current position and set me on a path
+Generated text:  [name]. I am a [role or profession] who has a passion for [insert a passion or hobby you enjoy]. I am a [insert a specific attribute or skill you possess] who have dedicated my life to [insert a reason why you choose this particular role or profession]. I am [insert a personality trait or trait you bring to the table]. I believe that [insert a reason for your choice of profession or role]. I am [insert a year or decade of your career, if applicable]. I am [insert a personal accomplishment or achievement]. I am [insert a hobby or interest you have, if applicable]. I am
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the City of Light. It is a cosmopolitan metropolis with a rich history and a diverse population. Known for its iconic landmarks such as the Eiffel Tower, Notre Dame Cathedral, and Louvre Museum, Paris is a popular tourist destination. The city also boasts numerous museums, art galleries, and historical sites that reflect its rich cultural heritage. In recent years, Paris has been a center of innovation, hosting the 2024 Summer Olympics and the 2024 Winter Olympics. The city is also known for its diverse cuisine, including French and international flavors. Paris has a strong sense of community and is
+Generated text:  Paris. It is the most populous city in Europe, with an estimated population of over 2. 3 million people as of 2017. Paris is also the world’s 16th-largest city and the 17th-largest metropolitan area. The city is known for its rich history, art, architecture, and cuisine. It is home to many famous landmarks and monuments, such as the Eiffel Tower and Notre-Dame Cathedral. Paris is also the birthplace of many notable French writers, artists, and philosophers. The city is known for its vibrant culture, art, and music scene, as well as
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be complex and multifaceted, with many different trends and areas of focus. Here are some possible future trends in AI:
+Generated text:  likely to be characterized by rapid advancement, increased integration with existing technologies, and the development of new applications. Here are some possible future trends in AI:
 
-1. Quantum Computing: As the complexity of problems increases, quantum computers are expected to become more powerful. This could lead to significant breakthroughs in areas such as drug discovery, material science, and cryptography.
+1. Increased automation: AI will become more integrated into everyday tasks, leading to increased automation and automation of tasks that have traditionally been done by humans. This could lead to job displacement, but it could also create new opportunities for people with the right skills.
 
-2. Autonomous Vehicles: As AI becomes more advanced, autonomous vehicles could become more prevalent. This could lead to significant changes in the transportation industry and the way people travel around the world.
-
-3. Personalized Healthcare: AI can be used to improve personalized healthcare by analyzing large amounts of medical data and providing
+2. Integration with other technologies: AI will continue to become more integrated with other technologies, such as quantum computing, blockchain, and the Internet of Things (IoT). This integration could lead to new applications and advancements in fields such as
 </pre></div></div>
 </div>
 </section>
@@ -800,19 +802,17 @@ Generated text:  expected to be complex and multifaceted, with many different tr
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [job or occupation]. I enjoy [mention an activity you enjoy, such as painting, reading, or hiking]. In my free time, I love to [mention an activity I enjoy, such as playing board games, watching movies, or exploring the outdoors]. I am passionate about [mention an interest or hobby, such as photography, cooking, or music]. I am always learning and growing, and I am excited to meet new people and share my knowledge and experiences. Thank you for having me. Let me know if you have any questions or need more information about me. [Name]. [Job/
+Generated text:  [insert name]. I&#39;m a young and enthusiastic introvert who loves to explore new places and try new things. Whether I&#39;m hiking through mountains, exploring a museum, or just soaking up the sun, I&#39;m always up for a challenge. I enjoy helping others and being a good listener. And oh, I also love learning new things, whether it&#39;s a new language, a new hobby, or just a new perspective on the world. I&#39;m passionate about sharing my experiences with others and creating a positive impact in the world. I&#39;m a friendly, curious, and always looking for new adventures. So if you&#39;re ready to make
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located in the heart of the Loire Valley and serves as the nation&#39;s political, cultural, and economic center.
-
-That&#39;s great! Can you tell me more about Paris&#39;s famous landmarks or places of interest? Sure! Some of the most famous landmarks in Paris include the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, the Muséum national d&#39;Histoire naturelle, and the Champs-Élysées. The Louvre is home to over 300, 000 works of art, including the Mona Lisa, the Venus de Milo, and the Venus de Milo.
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also renowned for its historical significance, including being the birthplace of modern French history and cuisine. Paris is a bustling metropolis with a rich cultural and artistic heritage, and has been an important center of politics and culture for centuries. It is also known for its fashion, food, and wine, and is a popular tourist destination. Overall, Paris is a vibrant and dynamic city with a rich history and culture.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  full of possibilities and exciting developments. Here are some possible trends that could shape the AI landscape in the coming years:
+Generated text:  highly uncertain and will depend on many factors, including ongoing technological advancements, regulatory changes, and societal values. However, there are several potential trends that are likely to shape the future of AI:
 
-1. Advanced Natural Language Processing: With the development of deep learning and neural networks, AI systems will become even more adept at understanding natural language. This will enable machines to interact more effectively with humans, process information from a wide range of sources, and generate human-like speech and writing.
+1. Increased emphasis on ethics and privacy: As more AI systems are developed, there will likely be increased scrutiny of their development and deployment. There will be greater emphasis on ethical considerations, such as ensuring that AI systems do not cause harm or violate human rights. This will require ongoing investment in research and development to create more transparent and accountable AI systems.
 
-2. Personalized AI: With the increasing amount of data available, it&#39;s possible that AI systems will be able to learn from each user&#39;s behavior and preferences, providing more tailored and relevant responses. This will lead to better user experience and
+2. Increased reliance on machine learning: Machine learning will become more prevalent in AI systems, with more
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -914,7 +914,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 11, 2025.
+  Last updated on Sep 12, 2025.
   <br/>
 </p>
   </div>
