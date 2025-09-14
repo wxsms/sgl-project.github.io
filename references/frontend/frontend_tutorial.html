@@ -524,35 +524,50 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:42:42.464000 851379 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:42:42.464000 851379 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:16:18.307000 938184 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:16:18.307000 938184 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0914 09:42:50.843000 851592 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:42:50.843000 851592 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:42:50.843000 851593 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:42:50.843000 851593 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:16:26.523000 938549 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:16:26.523000 938549 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:16:26.542000 938550 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:16:26.542000 938550 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:42:51] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:16:27] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:42:52] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:16:28] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:42:52] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:16:28] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.62it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.45it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.39it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.74it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.59it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.54it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.94it/s]
+Capturing batches (bs=1 avail_mem=35.33 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.95it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -566,7 +581,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39372
+Server started on http://localhost:36759
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -637,13 +652,13 @@ Server started on http://localhost:39372
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Certainly! Here's a list of 3 countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Brazil** - Brasília</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here’s another list of three countries and their capitals:<br><br>1. **Spain** - Madrid<br>2. **Japan** - Tokyo<br>3. **Canada** - Ottawa</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of 3 countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Mexico** - Mexico City<br>3. **South Africa** - Pretoria (for administrative affairs), Cape Town (for legislative affairs), Bloemfontein (for judicial affairs), but the official capital is Pretoria.</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -685,7 +700,7 @@ Server started on http://localhost:39372
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>You don't actually need a calculator to compute this as it's a straightforward multiplication:<br><br>2 * 2 = 4<br><br>So, the answer is 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>To solve this, we multiply 2 by 2, which equals:<br><br>2 * 2 = 4<br><br>So, the answer is 4, and there's no need to use a calculator for such a simple calculation.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -725,7 +740,7 @@ Server started on http://localhost:39372
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: <br>   - Eating a variety of foods from different food groups (fruits, vegetables, whole grains, lean proteins, and healthy fats).<br>   - Limiting sugars, saturated fats, and processed foods.<br>   - Ensuring a good intake of essential nutrients for energy regulation, digestive health, and brain function.<br><br>2. **Regular Exercise**:<br>   - Engaging in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week.<br>   - Incorporating muscle-strengthening exercises at least two days a week.<br>   - Enjoying physical activities you find fun and sustainable.<br><br>Together, these practices can help you maintain a healthy lifestyle and prevent numerous health issues.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutritious foods from all the major food groups ensures you get all the essential vitamins, minerals, and fiber your body needs. Focus on fruits, vegetables, whole grains, lean proteins, and healthy fats, and limit processed foods, sugars, and saturated fats to maintain a healthy weight and reduce the risk of chronic diseases.<br><br>2. **Regular Exercise**: Engaging in regular physical activity is crucial for overall health. Exercise can help manage weight, improve cardiovascular health, boost mental well-being, and enhance physical fitness. Activities like walking, jogging, swimming, strength training, and yoga can improve muscle strength, flexibility, and reduce the risk of diseases such as diabetes, hypertension, and certain types of cancer. Regular exercise also increases energy levels, improves sleep quality, and helps manage stress.<br><br>By combining these two key practices, you can significantly enhance your health and well-being.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -798,7 +813,7 @@ Server started on http://localhost:39372
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Vernix Cedricis",<br>        "core": "Phoenix feather",<br>        "length": 11.2<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "A door closing"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm Oak",<br>        "core": "Phoenix Feather",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Bellatrix Lesthq"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -833,7 +848,7 @@ Server started on http://localhost:39372
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 34.36it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 26.15it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -952,37 +967,43 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:43:19.807000 852423 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:43:19.807000 852423 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:16:55.094000 940307 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:16:55.094000 940307 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-[2025-09-14 09:43:20] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:16:56] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:43:20] MOE_RUNNER_BACKEND is not initialized, using triton backend
-W0914 09:43:30.469000 852718 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:43:30.469000 852718 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:43:30.486000 852717 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:43:30.486000 852717 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-09-14 18:16:56] MOE_RUNNER_BACKEND is not initialized, using triton backend
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:17:03.794000 940528 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:17:03.794000 940528 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:17:03.823000 940527 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:17:03.823000 940527 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:43:30] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:17:04] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:43:32] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:17:06] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:43:32] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:17:06] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.38it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.28it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.23it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.49it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.64it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.53it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01&lt;00:01,  1.50it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.50it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.94it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.73it/s]
 
-Capturing batches (bs=1 avail_mem=47.63 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.14s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.19s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -996,7 +1017,7 @@ Capturing batches (bs=1 avail_mem=47.63 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37704
+Server started on http://localhost:37934
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1029,7 +1050,7 @@ Server started on http://localhost:37704
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man僅站在一辆黄色汽车后面，车上挂着一条正在晾的蓝色床单。</strong></div>
+<strong style='color: #00008B;'>The image shows a person standing on the back of a yellow SUV on a city street, appearing to balance on thin skis, which include landing gear assemblies. The individual is engaged in an unconventional activity that involves leveraging common car parts. They are also wearing a yellow shirt, possibly indicating some form of promotional activity. Additional yellow taxis, common in New York City (the location of the photo), are partially visible, supporting the urban setting. The skis appear equipped, suggesting a potential attempt at skiing through the city streets.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

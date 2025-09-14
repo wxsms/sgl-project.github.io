@@ -517,39 +517,54 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:41:05.958000 849093 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:41:05.958000 849093 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:15:33.497000 934467 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:15:33.497000 934467 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-[2025-09-14 09:41:06] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:15:35] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:41:06] MOE_RUNNER_BACKEND is not initialized, using triton backend
-W0914 09:41:13.820000 849307 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:41:13.820000 849307 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:41:13.820000 849306 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:41:13.820000 849306 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+[2025-09-14 18:15:35] MOE_RUNNER_BACKEND is not initialized, using triton backend
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:15:43.141000 935290 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:15:43.141000 935290 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:15:43.178000 935291 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:15:43.178000 935291 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:41:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:15:43] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:41:16] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:15:46] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:41:16] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:15:46] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.44it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.29it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.23it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.39it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.60it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.50it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.47it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.89it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.69it/s]
 
-Capturing batches (bs=1 avail_mem=42.83 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.17s/it]
+Capturing batches (bs=1 avail_mem=58.57 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.11s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -607,13 +622,13 @@ Capturing batches (bs=1 avail_mem=42.83 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"71a80f9100d04fc8a9cfbd6ba00b440d","object":"chat.completion","created":1757842897,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man ironing clothes while leaning over the back of a taxi on a city street. The taxi appears to be stationary and is surrounded by other taxis, suggesting it's in an urban, bustling area. The man has an ironing board set up across the back of the cab, and he seems to be using an electric iron to smooth out clothing. In the background, storefronts, a tree, and urban signage are visible.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":398,"completion_tokens":91,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"79319971c1af49509cc7987ad98ce009","object":"chat.completion","created":1757873768,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image depicts a man in a yellow shirt engaged in an unusual and unconventional act—he is ironing clothes while standing with an iron Özellik\n addCriterion\n<tool_call>\n\n addCriterion\n\n !***","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":347,"completion_tokens":40,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"7d783f34929c4cd6bcd6e9fd0fe6371a","object":"chat.completion","created":1757842900,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man loading or organizing laundry onto a rear rack of a New York City taxi. The taxi appears to be a Ford Crown Victoria, which is commonly seen in Manhattan, and is part of the iconic yellow taxi fleet. The man is wearing a yellow shirt, which might be relevant to the context of his activity—possibly related to a laundry service or a commercial driver involved in hauling laundry. The setting seems to be urban, with other taxis and buildings characteristic of New York City visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":411,"completion_tokens":104,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"3274373ab315414f9aa64b597756e0fb","object":"chat.completion","created":1757873771,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a person leaning out of the back of a moving taxi, holding a folded blue shirt and ironing it. The taxi is a yellow New York City taxi, often referred to as a \"yellow cab.\" The background indicates an urban setting with buildings, traffic, and a street sign indicating an intersection. It appears to capture a humorous or whimsical moment.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":382,"completion_tokens":75,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -654,7 +669,7 @@ Capturing batches (bs=1 avail_mem=42.83 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"9b045a42929d462293df0fb3a16a2219","object":"chat.completion","created":1757842901,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man in a yellow shirt performing household chores while holding an iron and two articles of clothing (possibly jeans). He is standing on the trunk of a yellow taxi that appears to have a foldable drying rack installed on the back, allowing him to iron and hang clothes simultaneously. The scene takes place on a city street, likely in an urban environment, with taxis parked along the side of the road and buildings featuring storefronts in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":399,"completion_tokens":92,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"0f6a6f36689f49a59d5cc698835510e6","object":"chat.completion","created":1757873772,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi in a city street. He is holding an iron and appears to be ironing clothes laid out on an ironing board that is resting atop the taxi's rear storage rack. The scene depicts a humorous and unusual scenario, likely bringing to mind stereotypes or jokes about urban taxis and their unconventional uses.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -697,7 +712,7 @@ Capturing batches (bs=1 avail_mem=42.83 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing on a metal frame-like structure attached to the back of a taxi. The man appears to be adjusting or placing a blue fabric, such as clothing, onto this frame. The taxi in the background resembles a typical New York City taxi, identifiable by its yellow color and distinctive branding, suggesting it is in an urban city street environment.</strong></div>
+<strong style='color: #00008B;'>The image shows a man engaged in an unusual activity of doing laundry while leaning out of a parked taxi. He has an ironing board set up in the trunk area of the taxi, with clothes draped across it, and he is holding an iron. He's also balancing himself securely to keep himself from falling off the taxi's roof. This appears to be staged or staged for humorous or publicity purposes, as such a setup in real life would be highly precarious and improper.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">

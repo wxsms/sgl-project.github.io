@@ -511,7 +511,7 @@ performance overhead. If your application is performance-sensitive, we recommend
 <h2>Usage<a class="headerlink" href="#Usage" title="Link to this heading">#</a></h2>
 <section id="Serving-Single-Adaptor">
 <h3>Serving Single Adaptor<a class="headerlink" href="#Serving-Single-Adaptor" title="Link to this heading">#</a></h3>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -522,6 +522,15 @@ performance overhead. If your application is performance-sensitive, we recommend
 <span class="kn">from</span><span class="w"> </span><span class="nn">sglang.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait_for_server</span><span class="p">,</span> <span class="n">terminate_process</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -546,36 +555,42 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:33:22.279000 825551 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:33:22.279000 825551 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:09:05.861000 902741 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:09:05.861000 902741 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0914 09:33:38.222000 826129 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:33:38.222000 826129 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:33:38.222000 826128 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:33:38.222000 826128 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:09:19.661000 903778 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:09:19.661000 903778 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:09:19.668000 903799 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:09:19.668000 903799 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:33:38] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:09:20] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:33:40] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:09:22] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:33:40] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:09:22] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.08it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.02it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.05it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.44it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.23it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.14it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.09it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 134.67it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 120.46it/s]
 
-Capturing batches (bs=1 avail_mem=43.86 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.96it/s]
+Capturing batches (bs=1 avail_mem=18.62 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.51it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -656,39 +671,45 @@ Output 1:  1. 2. 3.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:34:03.844000 828376 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:34:03.844000 828376 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:09:47.439000 906025 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:09:47.439000 906025 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0914 09:34:14.337000 828983 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:34:14.337000 828983 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:34:14.573000 828984 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:34:14.573000 828984 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:09:55.879000 906759 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:09:55.879000 906759 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:09:55.898000 906758 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:09:55.898000 906758 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:34:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:09:57] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:34:16] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:09:59] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:34:16] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:09:59] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.06it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.04it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.39it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.28it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.19it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 136.90it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 130.73it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 106.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 98.91it/s]
 
-Capturing batches (bs=1 avail_mem=59.85 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.08it/s]
+Capturing batches (bs=1 avail_mem=59.87 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.04it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -782,33 +803,39 @@ Capitals: Tokyo, Brasilia, Canberra
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:34:38.575000 830490 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:34:38.575000 830490 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:10:22.873000 909275 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:10:22.873000 909275 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0914 09:34:48.802000 830985 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:34:48.802000 830985 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:34:48.827000 830984 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:34:48.827000 830984 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:10:36.283000 910873 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:10:36.283000 910873 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:10:36.304000 910874 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:10:36.304000 910874 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:34:49] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:10:37] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:34:50] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:10:39] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:34:50] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:10:39] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.16it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.05it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.02it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.10it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
 
-Capturing batches (bs=1 avail_mem=39.50 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  2.42it/s]
+Capturing batches (bs=1 avail_mem=14.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.67it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -843,7 +870,7 @@ Capturing batches (bs=1 avail_mem=39.50 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 103.50it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 94.25it/s]
 
 LoRA adapter loaded successfully. {&#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}}
 </pre></div></div>
@@ -874,7 +901,7 @@ LoRA adapter loaded successfully. {&#39;success&#39;: True, &#39;error_message&#
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 138.20it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 127.94it/s]
 
 LoRA adapter loaded successfully. {&#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;, &#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}}
 </pre></div></div>
@@ -956,7 +983,7 @@ List 3 countries and their capitals
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 86.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 88.37it/s]
 
 LoRA adapter loaded successfully. {&#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora0&#39;: &#39;philschmid/code-llama-3-1-8b-text-to-sql-lora&#39;}}
 </pre></div></div>
@@ -1048,42 +1075,48 @@ Therefore, currently SGLang limits maximal number of pinned adapters to <code cl
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0914 09:35:16.012000 832643 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:35:16.012000 832643 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:11:04.084000 914775 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:11:04.084000 914775 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0914 09:35:24.576000 833159 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:35:24.576000 833159 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0914 09:35:24.578000 833160 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0914 09:35:24.578000 833160 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0914 18:11:16.710000 915752 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:11:16.710000 915752 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0914 18:11:16.711000 915753 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0914 18:11:16.711000 915753 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-14 09:35:25] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-14 18:11:17] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-14 09:35:26] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-14 18:11:19] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-14 09:35:27] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-14 18:11:19] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.09it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.45it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.22it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.13it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.06it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 105.84it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 101.50it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 130.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 130.03it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 86.86it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 91.68it/s]
 
-Capturing batches (bs=1 avail_mem=56.67 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.64it/s]
+Capturing batches (bs=1 avail_mem=56.69 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.35it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1121,7 +1154,7 @@ Capturing batches (bs=1 avail_mem=56.67 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 120.24it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 125.32it/s]
 
 </pre></div></div>
 </div>
