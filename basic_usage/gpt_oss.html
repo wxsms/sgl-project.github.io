@@ -493,7 +493,7 @@ document.write(`
 <h2>Responses API &amp; Built-in Tools<a class="headerlink" href="#responses-api-built-in-tools" title="Link to this heading">#</a></h2>
 <section id="responses-api">
 <h3>Responses API<a class="headerlink" href="#responses-api" title="Link to this heading">#</a></h3>
-<p>GPT‑OSS is compatible with the OpenAI Responses API. Use <code class="docutils literal notranslate"><span class="pre">client.responses.create(...)</span></code> with <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">instructions</span></code>, <code class="docutils literal notranslate"><span class="pre">input</span></code>, and optional <code class="docutils literal notranslate"><span class="pre">tools</span></code> to enable built‑in tool use.</p>
+<p>GPT‑OSS is compatible with the OpenAI Responses API. Use <code class="docutils literal notranslate"><span class="pre">client.responses.create(...)</span></code> with <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">instructions</span></code>, <code class="docutils literal notranslate"><span class="pre">input</span></code>, and optional <code class="docutils literal notranslate"><span class="pre">tools</span></code> to enable built‑in tool use. You can set reasoning level via <code class="docutils literal notranslate"><span class="pre">instructions</span></code>, e.g., “Reasoning: high” (also supports “medium” and “low”) — levels: low (fast), medium (balanced), high (deep).</p>
 </section>
 <section id="built-in-tools">
 <h3>Built-in Tools<a class="headerlink" href="#built-in-tools" title="Link to this heading">#</a></h3>
@@ -557,6 +557,16 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
     <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;code_interpreter&quot;</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web_search_preview&quot;</span><span class="p">},</span>
 <span class="p">]</span>
+
+<span class="c1"># Reasoning level example</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai/gpt-oss-120b&quot;</span><span class="p">,</span>
+    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;You are a helpful assistant.&quot;</span>
+    <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">&quot;high&quot;</span> <span class="c1"># Supports high, medium, or low</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;In one sentence, explain the transformer architecture.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;====== reasoning: high ======&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
 
 <span class="c1"># Test python tool</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
