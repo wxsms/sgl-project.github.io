@@ -472,6 +472,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-a-review">Request a review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci">How to trigger CI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-style">General code style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
@@ -556,6 +557,15 @@ You can find additional accuracy eval examples in:</p>
 <p>You can identify potential reviewers for your code by checking the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/CODEOWNERS">code owners</a> and <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/REVIEWERS.md">reviewers</a> files.
 Another effective strategy is to review the file modification history and contact individuals who have frequently edited the files.
 If you modify files protected by code owners, their approval is required to merge the code.</p>
+</section>
+<section id="how-to-trigger-ci">
+<h2>How to trigger CI<a class="headerlink" href="#how-to-trigger-ci" title="Link to this heading">#</a></h2>
+<p>To trigger CI, the pull request must have the “run-ci” label.</p>
+<ul class="simple">
+<li><p>If you have write access to sgl-project/sglang, your pull request will be automatically tagged by &#64;sglang-bot.</p></li>
+<li><p>If you have triage access to sgl-project/sglang, you can manually add the label by clicking “Labels” on the right side of your pull request page.</p></li>
+<li><p>If you do not have the above access, please request a review and ask other maintainers to add the label for you.</p></li>
+</ul>
 </section>
 <section id="general-code-style">
 <h2>General code style<a class="headerlink" href="#general-code-style" title="Link to this heading">#</a></h2>
@@ -663,6 +673,7 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-a-review">Request a review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci">How to trigger CI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-style">General code style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
