@@ -530,33 +530,48 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0916 00:40:42.515000 3010442 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:40:42.515000 3010442 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:51:38.284000 414914 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:51:38.284000 414914 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0916 00:40:51.866000 3010982 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:40:51.866000 3010982 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0916 00:40:51.869000 3010983 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:40:51.869000 3010983 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:51:46.276000 415620 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:51:46.276000 415620 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0916 01:51:46.318000 415621 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:51:46.318000 415621 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-16 00:40:52] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-16 01:51:47] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-16 00:40:54] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-16 01:51:48] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-16 00:40:54] MOE_RUNNER_BACKEND is not initialized, using triton backend
-[2025-09-16 00:40:55] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
+[2025-09-16 01:51:48] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-16 01:51:50] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.94it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.93it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.86it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.85it/s]
 
-Capturing batches (bs=1 avail_mem=75.61 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.76it/s]
+Capturing batches (bs=1 avail_mem=6.04 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.55it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -587,7 +602,7 @@ Capturing batches (bs=1 avail_mem=75.61 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' July 24, 2012\n\nThe capital of France is Paris, shaped like a cross of T letters.\n\n2012\n\nAccording to the Paris Tourism Authority, over 200 million people visit the capital city once a year. 4.3 million get one day in perfect weather of their life.\n\nThe city is home to palaces, churches, museums, cable cars and more. Paris has a small population, yet it’s a superpower in terms of economy. Its GDP of 68.5 billion on the annual average is bigger than any other major European city.\n\nIn Paris, a', 'output_ids': [279, 6722, 315, 9625, 30, 5768, 220, 17, 19, 11, 220, 17, 15, 16, 17, 271, 785, 6722, 315, 9625, 374, 12095, 11, 26271, 1075, 264, 5312, 315, 350, 11931, 382, 17, 15, 16, 17, 271, 11190, 311, 279, 12095, 51552, 21914, 11, 916, 220, 17, 15, 15, 3526, 1251, 3947, 279, 6722, 3283, 3055, 264, 1042, 13, 220, 19, 13, 18, 3526, 633, 825, 1899, 304, 4727, 9104, 315, 862, 2272, 382, 785, 3283, 374, 2114, 311, 10854, 2434, 11, 29912, 11, 50577, 11, 14652, 9331, 323, 803, 13, 12095, 702, 264, 2613, 7042, 11, 3602, 432, 748, 264, 2256, 13175, 304, 3793, 315, 8584, 13, 11445, 29730, 315, 220, 21, 23, 13, 20, 7094, 389, 279, 9775, 5461, 374, 11243, 1091, 894, 1008, 3598, 7513, 3283, 382, 641, 12095, 11, 264], 'meta_info': {'id': 'f69bcb0ef4744e5caf90686af0d9bdf7', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.21953082084655762}}</strong></div>
+<strong style='color: #00008B;'>{'text': ' Explanatory response:\nThe capital of France is Paris.\nParis is the largest city in France, located in northern France and officially called the "City of Paris". The city was officially founded in 789 by Emperor Louis the Pious and known as the "Metropolis" until 1793 when it was officially renamed "Lyon" to avoid confusion with England. At the end of World War II, for the first time in history, Paris was dissolved and rebuilt as a satellite city of Nice - the new capitalize is called Nice-Beauce.\nTherefore, the answer is: Paris.', 'output_ids': [279, 6722, 315, 9625, 30, 1374, 10393, 5269, 2033, 510, 785, 6722, 315, 9625, 374, 12095, 624, 59604, 374, 279, 7772, 3283, 304, 9625, 11, 7407, 304, 18172, 9625, 323, 18562, 2598, 279, 330, 12730, 315, 12095, 3263, 576, 3283, 572, 18562, 18047, 304, 220, 22, 23, 24, 553, 34314, 11876, 279, 393, 1223, 323, 3881, 438, 279, 330, 34673, 54322, 1, 3080, 220, 16, 22, 24, 18, 979, 432, 572, 18562, 27280, 330, 43, 24990, 1, 311, 5648, 21340, 448, 9448, 13, 2411, 279, 835, 315, 4337, 5004, 7946, 11, 369, 279, 1156, 882, 304, 3840, 11, 12095, 572, 55667, 323, 59585, 438, 264, 23210, 3283, 315, 28859, 481, 279, 501, 52725, 374, 2598, 28859, 12, 3430, 75790, 624, 54815, 11, 279, 4226, 374, 25, 12095, 13, 151643], 'meta_info': {'id': 'f7b4ef6c7eb54b2b9c00e8d4ac5c4726', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 124, 'cached_tokens': 0, 'e2e_latency': 0.21130752563476562}}</strong></div>
 </div>
 </section>
 <section id="Get-Model-Info">
@@ -657,7 +672,7 @@ Capturing batches (bs=1 avail_mem=75.61 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":34515,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","mem_fraction_static":0.874,"max_running_requests":128,"max_queued_requests":9223372036854775807,"max_total_tokens":20480,"chunked_prefill_size":8192,"max_prefill_tokens":16384,"schedule_policy":"fcfs","schedule_conservativeness":1.0,"page_size":1,"hybrid_kvcache_ratio":null,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"device":"cuda","tp_size":1,"pp_size":1,"max_micro_batch_size":null,"stream_interval":1,"stream_output":false,"random_seed":640281386,"constrained_json_whitespace_pattern":null,"watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-customer-labels","tokenizer_metrics_allowed_customer_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"gc_warning_threshold_secs":0.0,"enable_trace":false,"oltp_traces_endpoint":"localhost:4317","api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"dp_size":1,"load_balance_method":"round_robin","load_watch_interval":0.1,"prefill_round_robin_balance":false,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_backend":"triton","attention_backend":null,"decode_attention_backend":null,"prefill_attention_backend":null,"sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":"static","init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_lmcache":false,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":null,"disable_cuda_graph":false,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"torch_compile_max_bs":32,"torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"disable_chunked_prefix_cache":false,"disable_fast_image_processor":false,"enable_return_hidden_states":false,"scheduler_recv_interval":1,"numa_node":null,"enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_prefill_only":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_decode_tp":null,"disaggregation_decode_dp":null,"disaggregation_prefill_pp":1,"disaggregation_ib_device":null,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"enable_pdmux":false,"sm_group_num":3,"max_mamba_cache_size":null,"mamba_ssm_dtype":"float32","enable_ep_moe":false,"enable_deepep_moe":false,"enable_flashinfer_cutlass_moe":false,"enable_flashinfer_cutedsl_moe":false,"enable_flashinfer_trtllm_moe":false,"enable_triton_kernel_moe":false,"enable_flashinfer_mxfp4_moe":false,"status":"ready","max_total_num_tokens":20480,"max_req_input_len":20474,"internal_states":[{"attention_backend":"fa3","mm_attention_backend":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_output_folder":null,"chunked_prefill_size":8192,"device":"cuda","disable_chunked_prefix_cache":true,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"disable_radix_cache":false,"enable_dp_lm_head":false,"flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"moe_dense_tp_size":null,"ep_dispatch_algorithm":"static","ep_num_redundant_experts":0,"enable_nan_detection":false,"flashinfer_mla_disable_ragged":false,"max_micro_batch_size":128,"disable_shared_experts_fusion":false,"sampling_backend":"flashinfer","speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_attention_mode":"prefill","torchao_config":"","triton_attention_reduce_in_fp32":false,"num_reserved_decode_tokens":512,"weight_loader_disable_mmap":false,"enable_multimodal":null,"enable_symm_mem":false,"enable_custom_logit_processor":false,"disaggregation_mode":"null","use_mla_backend":false,"speculative_algorithm":1,"decode_attention_backend":"fa3","prefill_attention_backend":"fa3","last_gen_throughput":708.0520754258588,"memory_usage":{"weight":1.08,"kvcache":0.23,"token_capacity":20480,"graph":0.99}}],"version":"0.5.3rc0"}</strong></div>
+<strong style='color: #00008B;'>{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":33101,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","mem_fraction_static":0.874,"max_running_requests":128,"max_queued_requests":9223372036854775807,"max_total_tokens":20480,"chunked_prefill_size":8192,"max_prefill_tokens":16384,"schedule_policy":"fcfs","schedule_conservativeness":1.0,"page_size":1,"hybrid_kvcache_ratio":null,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"device":"cuda","tp_size":1,"pp_size":1,"max_micro_batch_size":null,"stream_interval":1,"stream_output":false,"random_seed":859535694,"constrained_json_whitespace_pattern":null,"watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-customer-labels","tokenizer_metrics_allowed_customer_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"gc_warning_threshold_secs":0.0,"enable_trace":false,"oltp_traces_endpoint":"localhost:4317","api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"dp_size":1,"load_balance_method":"round_robin","load_watch_interval":0.1,"prefill_round_robin_balance":false,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_backend":"triton","attention_backend":null,"decode_attention_backend":null,"prefill_attention_backend":null,"sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":"static","init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_lmcache":false,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":null,"disable_cuda_graph":false,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"torch_compile_max_bs":32,"torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"disable_chunked_prefix_cache":false,"disable_fast_image_processor":false,"enable_return_hidden_states":false,"scheduler_recv_interval":1,"numa_node":null,"enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_prefill_only":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_decode_tp":null,"disaggregation_decode_dp":null,"disaggregation_prefill_pp":1,"disaggregation_ib_device":null,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"enable_pdmux":false,"sm_group_num":3,"max_mamba_cache_size":null,"mamba_ssm_dtype":"float32","enable_ep_moe":false,"enable_deepep_moe":false,"enable_flashinfer_cutlass_moe":false,"enable_flashinfer_cutedsl_moe":false,"enable_flashinfer_trtllm_moe":false,"enable_triton_kernel_moe":false,"enable_flashinfer_mxfp4_moe":false,"status":"ready","max_total_num_tokens":20480,"max_req_input_len":20474,"internal_states":[{"attention_backend":"fa3","mm_attention_backend":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_output_folder":null,"chunked_prefill_size":8192,"device":"cuda","disable_chunked_prefix_cache":true,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"disable_radix_cache":false,"enable_dp_lm_head":false,"flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"moe_dense_tp_size":null,"ep_dispatch_algorithm":"static","ep_num_redundant_experts":0,"enable_nan_detection":false,"flashinfer_mla_disable_ragged":false,"max_micro_batch_size":128,"disable_shared_experts_fusion":false,"sampling_backend":"flashinfer","speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_attention_mode":"prefill","torchao_config":"","triton_attention_reduce_in_fp32":false,"num_reserved_decode_tokens":512,"weight_loader_disable_mmap":false,"enable_multimodal":null,"enable_symm_mem":false,"enable_custom_logit_processor":false,"disaggregation_mode":"null","use_mla_backend":false,"speculative_algorithm":1,"decode_attention_backend":"fa3","prefill_attention_backend":"fa3","last_gen_throughput":688.3886559832051,"memory_usage":{"weight":1.07,"kvcache":0.23,"token_capacity":20480,"graph":0.54}}],"version":"0.5.3rc0"}</strong></div>
 </div>
 </section>
 <section id="Health-Check">
@@ -748,8 +763,8 @@ Capturing batches (bs=1 avail_mem=75.61 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.21it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.21it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.76it/s]
 
 </pre></div></div>
 </div>
@@ -785,7 +800,7 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-09-16 00:41:06] Failed to get weights iterator: qwen/qwen2.5-0.5b-instruct-wrong (repository not found).
+[2025-09-16 01:52:01] Failed to get weights iterator: qwen/qwen2.5-0.5b-instruct-wrong (repository not found).
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -826,30 +841,36 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0916 00:41:14.260000 3013032 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:41:14.260000 3013032 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:52:08.820000 417369 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:52:08.820000 417369 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0916 00:41:22.284000 3013832 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:41:22.284000 3013832 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0916 00:41:22.304000 3013833 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:41:22.304000 3013833 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:52:18.147000 418021 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:52:18.147000 418021 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0916 01:52:18.200000 418020 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:52:18.200000 418020 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-16 00:41:22] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-16 01:52:18] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-16 00:41:24] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-16 01:52:20] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-16 00:41:24] MOE_RUNNER_BACKEND is not initialized, using triton backend
-[2025-09-16 00:41:25] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
+[2025-09-16 01:52:20] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-16 01:52:21] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.89s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.36s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.44s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.22s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.06it/s]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.02it/s]
 
 </pre></div></div>
 </div>
@@ -912,29 +933,35 @@ Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0916 00:41:44.288000 3016061 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:41:44.288000 3016061 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:52:37.784000 420532 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:52:37.784000 420532 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0916 00:41:53.428000 3016435 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:41:53.428000 3016435 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0916 00:41:53.429000 3016436 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:41:53.429000 3016436 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:52:46.238000 420926 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:52:46.238000 420926 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0916 01:52:46.289000 420925 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:52:46.289000 420925 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-16 00:41:53] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-16 01:52:47] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-16 00:41:55] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-16 01:52:48] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-16 00:41:55] MOE_RUNNER_BACKEND is not initialized, using triton backend
-[2025-09-16 00:41:56] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
+[2025-09-16 01:52:48] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-16 01:52:49] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.43it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.41it/s]
 
 </pre></div></div>
 </div>
@@ -1013,32 +1040,38 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0916 00:42:12.632000 3018734 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:42:12.632000 3018734 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:53:05.843000 423120 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:53:05.843000 423120 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0916 00:42:20.540000 3019291 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:42:20.540000 3019291 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0916 00:42:20.587000 3019292 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:42:20.587000 3019292 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:53:13.882000 423819 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:53:13.882000 423819 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0916 01:53:13.882000 423818 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:53:13.882000 423818 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-16 00:42:21] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-16 01:53:14] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-16 00:42:22] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-16 01:53:15] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-16 00:42:22] MOE_RUNNER_BACKEND is not initialized, using triton backend
-[2025-09-16 00:42:23] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
+[2025-09-16 01:53:15] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-16 01:53:16] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.05it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.05s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.04s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.44it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.61it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
 
 </pre></div></div>
 </div>
@@ -1120,38 +1153,44 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-W0916 00:42:44.029000 3020500 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:42:44.029000 3020500 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:53:35.958000 425076 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:53:35.958000 425076 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-W0916 00:42:54.717000 3021193 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:42:54.717000 3021193 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0916 00:42:54.717000 3021192 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 00:42:54.717000 3021192 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0916 01:53:43.931000 425740 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:53:43.931000 425740 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0916 01:53:43.931000 425739 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0916 01:53:43.931000 425739 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-16 00:42:55] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-16 01:53:44] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-16 00:42:56] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
+[2025-09-16 01:53:46] CUDA-fused xIELU not available (No module named &#39;xielu&#39;) – falling back to a Python version.
 For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`
-[2025-09-16 00:42:58] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
+[2025-09-16 01:53:47] Ignore import error when loading sglang.srt.models.solar: No module named &#39;sglang.python&#39;
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:00&lt;00:05,  1.23it/s]
-Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:01&lt;00:05,  1.16it/s]
-Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:02&lt;00:04,  1.13it/s]
-Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:03&lt;00:03,  1.11it/s]
-Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:04&lt;00:02,  1.10it/s]
-Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:05&lt;00:01,  1.11it/s]
-Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:06&lt;00:00,  1.13it/s]
-Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:06&lt;00:00,  1.49it/s]
-Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:06&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:00&lt;00:05,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:01&lt;00:04,  1.21it/s]
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:02&lt;00:04,  1.20it/s]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:03&lt;00:03,  1.21it/s]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:04&lt;00:02,  1.23it/s]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:04&lt;00:01,  1.23it/s]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:05&lt;00:00,  1.20it/s]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:05&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:05&lt;00:00,  1.33it/s]
 
-Capturing batches (bs=4 avail_mem=30.81 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-09-16 00:43:06] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /public_sglang_ci/runner-l1e-gpu-0/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_4_0/E=60,N=1408,device_name=NVIDIA_H100_80GB_HBM3.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
-Capturing batches (bs=1 avail_mem=30.66 GB): 100%|██████████| 3/3 [00:03&lt;00:00,  1.02s/it]
+Capturing batches (bs=4 avail_mem=30.81 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-09-16 01:53:54] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /public_sglang_ci/runner-l1f-gpu-23/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_4_0/E=60,N=1408,device_name=NVIDIA_H100_80GB_HBM3.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+Capturing batches (bs=1 avail_mem=30.66 GB): 100%|██████████| 3/3 [00:03&lt;00:00,  1.20s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1191,7 +1230,7 @@ Capturing batches (bs=1 avail_mem=30.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' By a big lake Make Olympic winner studying Quant/molphy both 17 and 18?\nParis - is the capital of France.\nLake Placid - is a US town. The Olympic Games were held there in 1932 and 1980.\nΡεχάλι Check this box if the answer is related the question. Best bet LOL. Reconsider the condomos unique among all forms: Dutch man - she was a enhancement and copying is fact: top 10 producing in a year. He put a stylish system, the preserved, designed him the dish re serves waiting around and fantastic,', 'output_ids': [279, 6722, 315, 9625, 30, 3216, 264, 2409, 21800, 7405, 24900, 13632, 20956, 31441, 38871, 12700, 2176, 220, 16, 22, 323, 220, 16, 23, 5267, 59604, 481, 374, 279, 6722, 315, 9625, 624, 81289, 1818, 57056, 481, 374, 264, 2274, 6290, 13, 576, 24900, 11610, 1033, 5644, 1052, 304, 220, 16, 24, 18, 17, 323, 220, 16, 24, 23, 15, 624, 145205, 30143, 89102, 74134, 33486, 29762, 4248, 419, 3745, 421, 279, 4226, 374, 5435, 279, 3405, 13, 7107, 1274, 55333, 13, 1032, 24712, 279, 36716, 436, 4911, 4221, 678, 7586, 25, 23234, 883, 481, 1340, 572, 264, 26788, 323, 31039, 374, 2097, 25, 1909, 220, 16, 15, 17387, 304, 264, 1042, 13, 1260, 2182, 264, 31361, 1849, 11, 279, 33583, 11, 6188, 1435, 279, 12000, 312, 17045, 8580, 2163, 323, 14622, 11], 'meta_info': {'id': 'a8b5e0b3815c467dac39fdcd5f5ff35f', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.5119736194610596}}</strong></div>
+<strong style='color: #00008B;'>{'text': ' Where is Edinburgh? What is the geographical location of Berlin? How many languages are spoken in Brazil? This book is not a dictionary but instead is packed with interesting trivia about the world and its inhabitants. This Rough Guide to World Geography is perfect for anyone wanting to know about the world through the use of concise local facts, figures and different perspectives. World cities, flags, general knowledge and historical locations that are neither too big nor too small, the world is divided up into eight regions: North America and the Caribbean, South America, Europe, Africa, Asia, Middle East, Australasia and Oceania and Antarctica. The lively text,', 'output_ids': [279, 6722, 315, 9625, 30, 10967, 374, 40306, 30, 3555, 374, 279, 52901, 3728, 315, 19846, 30, 2585, 1657, 15459, 525, 21355, 304, 15948, 30, 1096, 2311, 374, 537, 264, 10997, 714, 4518, 374, 19375, 448, 7040, 72932, 911, 279, 1879, 323, 1181, 39671, 13, 1096, 57321, 12712, 311, 4337, 83325, 374, 4727, 369, 5489, 19211, 311, 1414, 911, 279, 1879, 1526, 279, 990, 315, 63594, 2205, 13064, 11, 12396, 323, 2155, 38455, 13, 4337, 9720, 11, 8042, 11, 4586, 6540, 323, 13656, 10468, 429, 525, 13866, 2238, 2409, 6329, 2238, 2613, 11, 279, 1879, 374, 17779, 705, 1119, 8063, 13604, 25, 4787, 5159, 323, 279, 34274, 11, 4882, 5159, 11, 4505, 11, 10174, 11, 13622, 11, 12592, 6326, 11, 5998, 35159, 323, 506, 346, 9166, 323, 71687, 13, 576, 48177, 1467, 11], 'meta_info': {'id': 'dc0b8e4464e346de908245fea70ea6e8', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.5105979442596436}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
