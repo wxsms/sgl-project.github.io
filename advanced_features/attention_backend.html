@@ -569,59 +569,101 @@ The “❌” and “✅” symbols in the table above under “Page Size &gt; 1
 <ul class="simple">
 <li><p>FlashInfer (Default for Non-Hopper Machines, e.g., A100, A40)</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>flashinfer
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--attention-backend<span class="w"> </span>flashinfer<span class="w"> </span>--trust-remote-code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>flashinfer
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>flashinfer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>FlashAttention 3 (Default for Hopper Machines, e.g., H100, H200, H20)</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>fa3
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--trust-remote-code<span class="w"> </span>--attention-backend<span class="w"> </span>fa3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Triton</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>triton
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--attention-backend<span class="w"> </span>triton<span class="w"> </span>--trust-remote-code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>triton
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>triton<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Torch Native</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>torch_native
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>torch_native
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>FlashMLA</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span>--trust-remote-code
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span>--trust-remote-code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>flashmla<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>TRTLLM MLA (Optimized for Blackwell Architecture, e.g., B200)</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span>--trust-remote-code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>TRTLLM MLA with FP8 KV Cache (Higher concurrency, lower memory footprint)</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span>--trust-remote-code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Ascend</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>ascend
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Wave</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>wave
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>wave
 </pre></div>
 </div>
 </section>

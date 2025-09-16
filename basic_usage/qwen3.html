@@ -498,7 +498,13 @@ document.write(`
 <p><strong>Description</strong>: SGLang has supported Qwen3-Next models with <a class="reference external" href="https://docs.sglang.ai/advanced_features/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>.</p>
 <p><strong>Usage</strong>:
 Add arguments <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> to enable this feature. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>Qwen/Qwen3-Next-80B-A3B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w">  </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w">  </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-algo<span class="w"> </span>NEXTN
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen3-Next-80B-A3B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--speculative-algo<span class="w"> </span>NEXTN
 </pre></div>
 </div>
 <p>Details can be seen in <a class="reference external" href="https://github.com/sgl-project/sglang/pull/10233">this PR</a>.</p>

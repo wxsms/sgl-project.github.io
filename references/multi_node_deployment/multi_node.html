@@ -487,9 +487,19 @@ document.write(`
 <p><strong>Run 405B (fp16) on Two Nodes</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace 172.16.4.52:20000 with your own node ip address and port of the first node</span>
 
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--node-rank<span class="w"> </span><span class="m">0</span>
 
-python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-405B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span><span class="m">172</span>.16.4.52:20000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--node-rank<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <p>Note that LLama 405B (fp8) can also be launched on a single node.</p>

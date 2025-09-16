@@ -480,7 +480,10 @@ document.write(`
 <p>By default, the server uses the chat template specified in the model tokenizer from Hugging Face.
 It should just work for most official models such as Llama-2/Llama-3.</p>
 <p>If needed, you can also override the chat template when launching the server:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--chat-template<span class="w"> </span>llama-2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chat-template<span class="w"> </span>llama-2
 </pre></div>
 </div>
 <p>If the chat template you are looking for is missing, you are welcome to contribute it or load it from a file.</p>
@@ -498,14 +501,20 @@ It should just work for most official models such as Llama-2/Llama-3.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--chat-template<span class="w"> </span>./my_model_template.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chat-template<span class="w"> </span>./my_model_template.json
 </pre></div>
 </div>
 </section>
 <section id="jinja-format">
 <h2>Jinja Format<a class="headerlink" href="#jinja-format" title="Link to this heading">#</a></h2>
 <p>You can also use the <a class="reference external" href="https://huggingface.co/docs/transformers/main/en/chat_templating">Jinja template format</a> as defined by Hugging Face Transformers.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--chat-template<span class="w"> </span>./my_model_template.jinja
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chat-template<span class="w"> </span>./my_model_template.jinja
 </pre></div>
 </div>
 </section>

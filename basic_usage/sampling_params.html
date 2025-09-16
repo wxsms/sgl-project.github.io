@@ -881,7 +881,10 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <section id="custom-logit-processor">
 <h3>Custom logit processor<a class="headerlink" href="#custom-logit-processor" title="Link to this heading">#</a></h3>
 <p>Launch a server with <code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code> flag on.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--enable-custom-logit-processor
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-custom-logit-processor
 </pre></div>
 </div>
 <p>Define a custom logit processor that will always sample a specific token id.</p>
