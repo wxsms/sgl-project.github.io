@@ -592,6 +592,8 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 <span class="nb">cd</span><span class="w"> </span>sglang
 git<span class="w"> </span>checkout<span class="w"> </span>&lt;YOUR-DESIRED-VERSION&gt;
 
+<span class="c1"># Use dedicated toml file</span>
+cp<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
 <span class="c1"># Install SGLang dependent libs, and build SGLang main package</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
 conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">libsqlite</span><span class="o">==</span><span class="m">3</span>.48.0<span class="w"> </span>gperftools<span class="w"> </span>tbb<span class="w"> </span>libnuma<span class="w"> </span>numactl
