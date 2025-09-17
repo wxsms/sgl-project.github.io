@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 16, 2025"/>
+    <meta name="docbuild:last-update" content="Sep 17, 2025"/>
   </head>
   
   
@@ -542,8 +542,8 @@ document.write(`
 <div class="highlight"><pre>
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0916 23:23:11.304000 1301406 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 23:23:11.304000 1301406 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0917 00:16:43.087000 2706342 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0917 00:16:43.087000 2706342 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -565,12 +565,12 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0916 23:23:20.756000 1302437 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 23:23:20.756000 1302437 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0916 23:23:21.036000 1302436 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0916 23:23:21.036000 1302436 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0917 00:16:51.559000 2706858 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0917 00:16:51.559000 2706858 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0917 00:16:51.728000 2706859 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0917 00:16:51.728000 2706859 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-16 23:23:21] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-17 00:16:52] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -591,10 +591,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.74it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.74it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.33it/s]
 
-Capturing batches (bs=1 avail_mem=59.79 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.31it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.90it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,42 +626,44 @@ Capturing batches (bs=1 avail_mem=59.79 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Xiaohong. I have a lot of friends in school. I like reading books, going to the park, and going to the movies. My favorite subject is English. I like to write stories and play games with my friends. I want to be a teacher. I think it&#39;s a good job. I believe that if you teach well, your students will learn something valuable. I want to go to a big city to work there. I have to go to a big city for my studies because I&#39;m very good at English. I have a lot of friends,  my favorite subject is English, I want to be a teacher
+Generated text:  [my name here] and I&#39;m a [type of software engineering] expert.
+
+I&#39;m here to discuss [specific topic here, such as &#34;best practices in software engineering&#34;, &#34;tools for software development&#34;, &#34;performance optimization for web applications&#34;, etc.] with you.
+
+I&#39;d like to know more about the following:
+
+1. What are the benefits of using Git for version control in software engineering?
+2. How can I effectively manage my codebase using Git?
+3. What are the challenges and best practices when working with Git?
+4. How can I ensure a smooth transition between different versions of my codebase?
+5. What
 ===============================
 Prompt: The president of the United States is
-Generated text:  32 years older than the president of Brazil. The president of Brazil is 30 years younger than the president of France. If the president of the United States is currently 38 years old, what will be the president of the United States&#39;s age 5 years from now? To determine the president of the United States&#39;s age 5 years from now, we need to follow the relationships between the ages of the presidents of the United States, Brazil, and France step by step.
-
-1. **Determine the president of Brazil&#39;s age:**
-   - The president of Brazil is 30 years younger than the president
+Generated text:  trying to decide how many military bases to have. He has four options. Each base will cost $10 billion to build. Each base will cost $5 billion to run. And each base will involve $2 billion in maintenance costs per year. The president wants to know which option will cost him the most money in total over the course of his presidency. He will have 50 years to live. How much money would the president save if he chose the most cost-effective option over the others?
+To determine the most cost-effective option for the president and the total savings, we need to calculate the total cost for each option over
 ===============================
 Prompt: The capital of France is
-Generated text:  ________.
-A. Paris
-B. Bordeaux
-C. Bruxelles
-D. Dijon
-Answer:
+Generated text:  ______.
 
-A
+A: Paris
+B: Lyon
+C: Toulouse
+D: Bordeaux
+To determine the capital of France, we need to consider the capital cities of all the countries in the European Union. The European Union consists of 28 member countries, and each member country has one capital city. The capital of France is typically the capital city of its largest city or one of its neighboring countries.
 
-Which of the following statements about the theme of this poem is incorrect?
-A. It describes a scene of summer night and thunder.
-B. It portrays the poet&#39;s happiness.
-C. It expresses the poet&#39;s sorrow.
-D. It vividly depicts the poet&#39;s tranquil state.
-Answer:
+Let&#39;s list the capital cities of the 28 member countries of the European Union:
 
-C
-
-The essence of the phrase &#34;what is the difference between the fish in the fishbowl and the fish in the pond?&#34; is to seek ___.
-A. the difference between things
-B. the connection
+1. France
+2. Germany
+3. Italy
+4. Belgium
+5. Luxembourg
+6. Netherlands
+7. United Kingdom
 ===============================
 Prompt: The future of AI is
-Generated text:  not defined by the tools it uses, but by the connections it makes with people. This article will explore what that means for AI and people.
-In the past, AI was developed and deployed without any knowledge or consideration of the human community. The resulting outcomes were often catastrophic. Today, AI is being developed in a manner that is integral to the human experience.
-While AI&#39;s power will continue to grow, it is possible to see a potential future in which AI is interconnected with human communities and individuals.
-This article will explore this potential connection and how it will affect the AI industry and the future of humanity as a whole. It will examine the
+Generated text:  here. The world is changing. It is shaping the way we live and work. But we do not live in a world that has already been designed for us. We are a product of our time. And it’s up to us to make this world more just and fair for all of us. This is the challenge facing the next generation of AI experts.
+The future of AI is here. The world is changing. It is shaping the way we live and work. But we do not live in a world that has already been designed for us. We are a product of our time. And it’s up to us to make this world
 </pre></div></div>
 </div>
 </section>
@@ -701,21 +703,17 @@ This article will explore this potential connection and how it will affect the A
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [occupation] who has been [number of years] in the industry. I am passionate about [reason for passion], and I am always looking for ways to [action or goal]. I am [age] years old, and I have [number of years] of experience in [industry]. I am [gender] and I am [race]. I am [occupation] and I am [gender] and I am [race]. I am [occupation] and I am [gender] and I am [race]. I am [occupation] and I am [gender] and I am [race].
+Generated text:  [Name] and I am a [job title] at [company name]. I am passionate about [job title] and have been working in the industry for [number of years] years. I am always looking for new challenges and opportunities to grow and learn. I am a team player and enjoy collaborating with others to achieve our goals. I am always looking for ways to improve my skills and knowledge. I am a [number of years] years old and I am a [gender] person. I am excited to meet you and learn more about you. What is your name? What is your job title? What is your company name
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, with a rich history dating back to the Roman Empire and being the birthplace of the French Revolution. Paris is home to many famous museums, including the Louvre, the Musée d&#39;Orsay, and the Musée Rodin. The city is also known for its cuisine, with dishes such as croissants, boudin, and escargot being popular. Paris is a vibrant and dynamic city with a diverse population, and it
+Generated text:  Paris, also known as &#34;La Ville de Paris&#34; and the &#34;City of Light.&#34; It is the largest city in France and the second-largest city in the European Union, with a population of over 2.7 million people. Paris is known for its rich history, art, and culture, and is a major tourist destination. It is also home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is a popular destination for business and leisure, and is a major center for the arts, science, and technology industries. The city is also home to many cultural
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could emerge in the coming years:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn and adapt to human behavior and preferences. This could lead to more personalized and efficient AI systems.
+1. Increased automation and robotics: As AI technology continues to advance, we can expect to see more automation and robotics in various industries. This could lead to increased efficiency and productivity, but it could also lead to job displacement for some workers.
 
-2. Enhanced ethical considerations: As AI becomes more advanced, there will be a growing need for ethical guidelines and regulations to ensure that AI systems are used in a responsible and ethical manner.
-
-3. Greater reliance on AI for decision-making: AI is likely to become more integrated into decision-making processes, allowing machines to make more informed and accurate decisions than humans can.
-
-4. Increased use of
+2. AI ethics and privacy concerns: As AI technology becomes more advanced, there will be a growing concern about its impact on society. This could include issues such as bias in AI algorithms, privacy concerns,
 
 </pre></div></div>
 </div>
@@ -758,22 +756,17 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text: ...?
-
-Please write the self-introduction using past tense and the present tense, and then write a short paragraph about the character&#39;s experiences. Be sure to include a quote from a character from a popular book or movie. Use descriptive language to bring the character to life.
-
-Hello, my name is John Smith. I was raised in a small town in the mountains and discovered a passion for writing when I was a teenager. I write about my experiences as a young boy in a rural community, and my stories have been translated into many languages around the world. As I have grown, I&#39;ve been inspired by the resilience of the human spirit and
+Generated text:  [Name] and I am a [job title] who has always loved [career goal] from a young age. Over the years, I&#39;ve gained experience in [related field], and I&#39;ve made a lot of strides in my career. My background in [related field] has given me a wealth of knowledge and skills, and I&#39;m confident that I can excel in this role. I&#39;m looking forward to meeting you at the [date and location] and discussing how I can contribute to your team. How are you? Hello, my name is [Name] and I am a [job title] who has always loved [career
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city is known for its iconic landmarks, such as the Eiffel Tower, Notre Dame Cathedral, and Louvre Museum. It also has a rich history and cultural heritage, with Paris being the birthplace of French art, literature, and cuisine. The city is also famous for its annual Parisian fashion week, which attracts international fashion designers and trends. Paris is known for its cuisine, with its famous dishes such as croissants, escargot, and boudin being a must-try for food lovers. Overall, Paris is a bustling and vibrant city with a rich cultural and historical heritage.
-- A
+Generated text:  Paris, the world&#39;s most populous city and a significant cultural and historical center. The city is located in the region of Burgundy, in northwestern France, and is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. Paris is a bustling metropolis with a diverse population and a rich cultural heritage, attracting millions of visitors annually. The city&#39;s vibrant atmosphere and delicious cuisine have made it a popular destination for tourists and locals alike. It is known for its elegant architecture, picturesque landscapes, and annual festivals, which draw millions of visitors every year. Paris has a long history,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly promising and there are many potential trends that could shape the industry and impact society as a whole. Here are some possible future trends in AI:
+Generated text:  highly promising and highly complex, and there are many different possible trends that could emerge as the technology continues to evolve and improve. Here are some of the most likely trends we can expect to see in the coming years:
 
-1. Increased integration with other technologies: AI is already a part of our daily lives and businesses are already using AI to automate tasks and improve efficiency. In the future, we could see a greater integration of AI with other technologies, such as the Internet of Things (IoT), to create a more connected and personalized experience for users.
+1. More integration of AI into everyday life: As AI technology continues to improve and become more widely used, we are likely to see more and more automation and AI systems integrated into our daily lives. This could include more widespread use of AI in transportation, healthcare, finance, and even entertainment.
 
-2. AI-driven healthcare: AI could revolutionize healthcare by improving diagnosis accuracy, personalized treatment plans, and reducing healthcare costs. We could see more AI-driven healthcare
+2. Enhanced human understanding of AI: As AI technology advances, we are likely to see more of the same type of AI that
 </pre></div></div>
 </div>
 </section>
@@ -819,28 +812,19 @@ Generated text:  highly promising and there are many potential trends that could
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I am a [Short Biography] who loves [Your Hobby/Interest]. I&#39;m a [Professional or Academic] at [Your Profession/Field of Study]. I&#39;m [Your Degree or Qualification] and I enjoy [Your Passion or Interest]. I&#39;m also [Your Character Trait or Quality]. I&#39;m a [Your Industry/Field of Work]. If you want to know more about me, you can reach me at [Your Contact Information]. I look forward to hearing from you! #Myself #Professional #Hobby #Charisma #Experience #Leadership #I am [Your Name]. I am a
+Generated text:  [name] and I am a [age] year old [occupation/interest]. I have a [number] year [career] degree in [major or major subjects], and I have over [number] years of experience in [industry or field]. I have a strong [strength or skill], and I am [whether or not someone could call me &#34;cool&#34;].
+If you asked for my name, I could just call me [name]. If you asked for my age, I could just say [age]. If you asked for my occupation, I could just say [occupation]. If you asked for my career, I could just
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-A) True
-B) False
-
-The correct answer is:
-
-B) False
-
-Paris is the capital of France, but it is not the largest city in the country. While it is one of France&#39;s largest cities, it is not the largest city in France by total area. The largest city in France is Lyon, with a population of around 1.7 million people. Paris is the second largest city in France, with a population of around 7 million people. Therefore, the statement is false.
-
-It&#39;s important to note that while Paris is the capital of France, it is not the largest city in
+Generated text:  Paris, also known as the &#34;City of Light&#34; and &#34;The Eternal City.&#34;
+Paris, also known as the &#34;City of Light&#34; and &#34;The Eternal City,&#34; is the capital of France and is renowned for its rich history, stunning architecture, and vibrant culture. The city is home to some of the world&#39;s most famous landmarks, including the Eiffel Tower, the Louvre Museum, the Notre-Dame Cathedral, and the Champs-Élysées. Paris is also famous for its wine, gastronomy, and fashion. The city is a melting pot of cultures and has been a center of commerce, art, and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  vast and uncertain, but several trends are likely to shape its trajectory. Here are some possible future trends in artificial intelligence:
+Generated text:  set to be one of rapid growth and transformation. Here are some possible trends in AI that we can expect in the coming years:
 
-1. Enhanced privacy and data protection: AI is becoming more sophisticated and can learn from data in ways that are harder to protect. As a result, there will be an increased emphasis on privacy and data protection in AI systems. Organizations and governments will need to develop new strategies to protect the privacy of their data.
+1. Increased Use of AI in Healthcare: AI is already being used to help in healthcare. AI-powered tools can help in diagnosing diseases, identifying patient risks, and providing personalized treatment plans. AI is also being used in developing new treatments for diseases such as cancer, Alzheimer&#39;s, and diabetes.
 
-2. Increased focus on ethical AI: As AI becomes more advanced and capable, there will be increasing pressure to consider its ethical implications. This could lead to more strict regulations on AI development and deployment, as well
+2. More Automation in Manufacturing: AI is already being used in manufacturing to automate repetitive tasks, reduce waste, and increase efficiency. This trend is expected to continue as AI becomes more capable of recognizing patterns and making
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -942,7 +926,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 16, 2025.
+  Last updated on Sep 17, 2025.
   <br/>
 </p>
   </div>
