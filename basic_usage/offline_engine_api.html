@@ -542,8 +542,8 @@ document.write(`
 <div class="highlight"><pre>
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0917 11:37:16.900000 1583416 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0917 11:37:16.900000 1583416 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0917 17:43:44.735000 2339973 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0917 17:43:44.735000 2339973 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -565,12 +565,12 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0917 11:37:25.162000 1584050 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0917 11:37:25.162000 1584050 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0917 11:37:25.211000 1584051 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0917 11:37:25.211000 1584051 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0917 17:43:53.332000 2340324 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0917 17:43:53.332000 2340324 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0917 17:43:53.368000 2340325 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0917 17:43:53.368000 2340325 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-17 11:37:25] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-17 17:43:53] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -591,10 +591,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.58it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.57it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.30it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.92it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.67it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,30 +626,24 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Sareen and I&#39;m a 22-year-old, transgender woman living in Sydney, Australia. I am passionate about helping others and making the world a better place.
-
-I started my journey with the Human Rights Campaign (HRC) organization, where I committed to using my voice and experience to advocate for transgender rights. I was inspired by the work they do to support people who are gender non-conforming, and I immediately decided that I wanted to join their LGBTQ+ community.
-
-After completing my education and gaining the necessary skills, I joined the organization as a community leader in the LGBTQ+ community. I have worked on various community programs
+Generated text:  Zoe and I am a Health and Wellness coach and work with individuals and couples. I have been a professional coach for over 10 years and have worked with many different types of clients such as those with depression, anxiety, sleep and stress, as well as those with low self-esteem, eating disorders, and addiction. I understand the importance of the human connective tissues and the importance of them in developing resilience and helping someone feel better. It is the nerves that run from the core of the body, the spine and the blood vessels that run through the torso. This is the primary nervous system and is the basis of the immune system.
 ===============================
 Prompt: The president of the United States is
-Generated text:  a man, and all presidents have served for 10 years, except for Barack Obama. Given the rules, how many presidents have served for 10 years? To determine how many presidents have served for 10 years, we need to understand that a president can only be of the man type, which means they must be a man. We are also given that all presidents have served for 10 years, except for Barack Obama, who served for 11 years.
+Generated text:  running for a second term. The current president has been in office for 8 years and the new president will be in office for 5 years. If the president wants to be in office for a total of 15 years, how many more years does the president need to run?
+To determine how many more years the president needs to run to be in office for a total of 15 years, we can follow these steps:
 
-Let&#39;s break it down step by step:
-
-1. Identify the type of president: The problem states that a president is a man.
-2. Consider
+1. Identify the current president&#39;s term duration and the new president&#39;s term duration.
+   - The current president has been in office for 8 years.
+   - The new president will be in office
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is located on the right bank of the Seine river. It is the capital of France. It is the largest city in France.
-The square of the Palace of Versailles was the famous Tuileries. It was built in the 1700s and was a very important building in the country.
-The History of the Palace of Versailles
-The Palace of Versailles was built in 1682 by Louis XIV for himself. It was a palace and a garden. The palace was the residence of the king. His wife, the Queen Marie Antoinette, and his children were in the palace
+Generated text:  the city of Paris, located in the north of the country. Paris is the most visited city in the world. It is also the second most visited city in the world (after Rome) for shopping. According to some studies, it is the seventh most visited city in the world.
+Paris is the capital city of France. Paris is the second most visited city in the world. It is the second most visited city in the world. The world&#39;s most visited cities are mainly cities in western Europe. In 2000, Paris was the sixth most visited city in the world. In the same year, the world&#39;s most visited
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of the public. By using the right platform, businesses can harness the power of AI to improve their operations, drive innovation, and ultimately make a positive impact on society.
-Creating a successful AI platform requires a blend of technical expertise, business acumen, and a commitment to ethical considerations. Businesses can leverage the power of AI to gain a competitive edge and drive growth by providing a seamless, intuitive user experience, ensuring that users can easily interact with the platform and make informed decisions based on its outputs.
-In this article, we will explore the different types of AI platforms available in the market, discuss their capabilities and limitations, and provide
+Generated text:  moving rapidly forward. No longer do we have to depend on experts to know what is happening in the world. No longer do we have to wait for an expert to make a decision on a critical issue. The internet and social media are allowing people to be more informed and more informed about their lives.
+In today’s world, social media plays an important role in the way that people go about their lives. With the internet and social media, people can easily share information and also get the feedback from other people. It allows people to connect and collaborate, making them more knowledgeable and adaptable.
+The internet and social media have had a profound impact on
 </pre></div></div>
 </div>
 </section>
@@ -689,19 +683,19 @@ In this article, we will explore the different types of AI platforms available i
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. Let&#39;s chat! [Name] [Job Title] [Company Name] [Company Address] [City, State, Zip Code] [Phone Number] [Email Address] [LinkedIn Profile] [Twitter Profile] [Facebook Profile] [GitHub Profile] [LinkedIn Profile] [Twitter Profile] [Facebook Profile] [GitHub Profile] [LinkedIn Profile] [Twitter Profile] [Facebook Profile] [GitHub Profile] [LinkedIn Profile] [Twitter Profile] [Facebook Profile] [GitHub
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, a historic city with a rich history and a vibrant culture. It is located on the Seine River and is the largest city in France by population. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral, as well as its cuisine, fashion, and art scene. The city is also home to many world-renowned museums, including the Louvre and the Musée d&#39;Orsay. Paris is a major transportation hub and a popular tourist destination, attracting millions of visitors each year. It is a cultural and economic center
+Generated text:  Paris, also known as &#34;La Ville Flottante&#34; or &#34;La Ville Blanche&#34; (White City). It is the largest city in France and the third largest in the world, with a population of over 2. 5 million people. Paris is known for its rich history, art, and culture, and is a major tourist destination. The city is also home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is a vibrant and dynamic city that continues to be a major center of culture and commerce in France. It is also home to many important institutions
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by several key trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more sophisticated and adaptive AI systems that can learn from experience and make better decisions.
+1. Increased automation: AI will continue to automate many tasks, from manufacturing and transportation to customer service and healthcare. This will lead to increased efficiency and productivity, but it will also create new jobs and raise concerns about job displacement.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations and responsible use of AI. This could lead to more stringent regulations and standards for AI development and deployment.
+2. AI will become more ethical: As AI systems become more sophisticated, they will need to be designed to be more ethical and transparent. This will require more human oversight and collaboration, as well as greater investment in research and development to ensure that AI systems are safe and fair.
 
-3. Increased use of AI in healthcare: AI is already being used in healthcare to improve
+3. AI will become more personalized: AI will continue to improve at recognizing patterns and
 
 </pre></div></div>
 </div>
@@ -744,31 +738,19 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [profession]. I&#39;m... [Briefly describe your character&#39;s personality, strengths, weaknesses, and how they contribute to your character. For example, &#34;I&#39;m a hardworking, resourceful, and detail-oriented individual who always puts others before myself.&#34;]
+Generated text:  [Name], and I&#39;m a [career goal] at [company name]. [Career goal] is a term that I&#39;m passionate about using to lead and inspire people to achieve their dreams. I believe that [career goal] is more important than money, and I&#39;m committed to always striving to be a better version of myself. I&#39;m looking forward to meeting you at [date and time]. Welcome to the team! Let&#39;s create something amazing together! #TeamName #CareerGoal #MeetMe #InspirePeople 🎉✨ #MeetMeNow #InspireMe
 
-I&#39;m a [profession] who can [describe a specific ability, strength, or accomplishment]. I thrive in [describe a particular environment, situation, or activity]. I&#39;m... [Briefly describe your character&#39;s personality, strengths, weaknesses, and how they contribute to your character. For example, &#34;I&#39;m a hardworking, resourceful
+Hey there, [Name]. Can you tell me
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-How many minutes is it until the end of the Spring Equinox? It is 12 hours and 22 minutes.
-
-How long will it take for the Earth to travel a distance of 1,500 miles at an average speed of 14,000 mph? It will take 20.6 minutes.
-
-How many Earth days does it take for the Earth to make one complete revolution around the Sun? It takes 365.25 days.
-
-What is the name of the largest city in the world? It is Los Angeles.
-
-How many days does it take for a person
+Generated text:  Paris. It is located in the central region of the country and is the largest city in the European Union, with an estimated population of over 1.7 million people. Paris is known for its beautiful architecture, rich culture, and iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city is also famous for its annual &#34;Grand Tour&#34; of its many historic sites and museums, and for its annual &#34;Le Seigneur Gambetta&#34; festival, which features traditional French cuisine and music. Paris is a popular destination for tourists and residents alike, offering a diverse range of experiences and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be characterized by several trends that are both exciting and concerning. Some of these trends include:
+Generated text:  expected to be rapidly evolving, with many potential future trends shaping the technology and applications of AI. Here are some of the most likely trends to come in the next decade:
 
-1. Increased integration with natural language processing: AI is expected to become even more integrated with natural language processing, allowing for more intelligent and conversational interactions between humans and machines.
+1. Increased precision and accuracy in AI: AI algorithms are becoming increasingly accurate and capable of making decisions and predictions that can be trusted to a certain degree. This trend is expected to continue as AI technology continues to improve and become more widely adopted in various industries.
 
-2. Improved privacy concerns: As AI becomes more pervasive, there is a growing concern about how it may affect privacy and data security. This includes issues such as data breaches, misuse of personal information, and discrimination based on AI-driven decisions.
-
-3. Greater reliance on AI in decision-making: As AI becomes more integrated into various decision-making processes, there will be increasing
+2. Integration of AI into everyday life: AI is already being integrated into a variety of everyday applications, from self-driving cars and drones to smart home devices and personal assistants. As AI technology continues to improve and
 </pre></div></div>
 </div>
 </section>
@@ -814,15 +796,17 @@ Generated text:  expected to be characterized by several trends that are both ex
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Industry or Field]. I&#39;m a [insert your skill or expertise here, e.g. &#34;coder&#34;, &#34;writer&#34;, &#34;psychologist&#34;, etc.]. I&#39;m always here to help, whether it&#39;s in the form of a code snippet or a piece of writing. I can provide information, give advice, or just show up and smile. I&#39;m [insert your personality trait or hobby here, e.g. &#34;fun-loving&#34;, &#34;patient&#34;, &#34;confident&#34;, etc.]. And I&#39;m always ready to collaborate and learn from each other. Welcome to my world! What can I do
+Generated text:  [name] and I am a [job title]. I&#39;ve been working in this field for [number] years now and I have gained a lot of experience and expertise in [specific field]. I&#39;m a hardworking, organized, and detail-oriented person who is always looking for ways to improve myself and make my work more efficient. I&#39;m a team player and love to collaborate with others to achieve our goals. I&#39;m passionate about staying up-to-date with the latest technologies and trends in the industry and I&#39;m always looking for ways to expand my knowledge and skills. If you&#39;re interested in joining me, I&#39;d love to hear from
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-Paris is the capital of France and is known for its iconic landmarks such as the Eiffel Tower and the Louvre Museum. The city is also known for its rich history, art, and cuisine. It is a popular tourist destination and is often referred to as the &#34;City of a Million&#34;.
-Paris&#39;s population has grown exponentially in recent years, reaching 20 million people in 2021. It is a major center for finance, business, and fashion in the world of commerce. The city&#39;s architecture, particularly its ancient Notre-Dame Cathedral and modern structures such as the Eiffel Tower, is
+Generated text:  Paris, an ancient city with a rich history dating back to ancient times. It is the largest city in Europe by land area, and one of the oldest continuously inhabited cities in the world. It is famous for its architecture, cuisine, and fashion, and is home to numerous historical sites and landmarks, including the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is also a global center for art, music, and entertainment, and is known for its cosmopolitan culture and French language. Its rich history and cultural richness make it a popular tourist destination and a major international city. The city has a diverse population of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a continued increase in the sophistication and use of deep learning, natural language processing, and computer vision. Additionally, there is a possibility that AI will become more integrated into our daily lives, such as through the development of virtual assistants and other smart technologies. As AI is increasingly integrated into our everyday lives, we may see a decline in the need for human workers, as machines can do much of the work that humans do. This could lead to changes in job structures and a potential need for new industries to emerge. Overall, the future of AI is likely to involve continued advancements and integration, while also posing new challenges and
+Generated text:  increasingly being shaped by the rapid advancements in the field of machine learning and deep learning. Here are some of the key trends that are likely to shape the future of AI:
+
+1. Increased use of AI in healthcare: AI is already being used in healthcare to help diagnose diseases and develop personalized treatment plans. As the technology continues to improve, we can expect to see even more sophisticated AI systems in healthcare, such as image recognition and diagnosis of medical conditions.
+
+2. Advancements in natural language processing: Natural language processing (NLP) is becoming more prevalent in AI, with more applications being developed in areas such as chatbots, language translation,
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
