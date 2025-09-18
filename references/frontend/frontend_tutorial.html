@@ -537,8 +537,8 @@ document.write(`
 <div class="highlight"><pre>
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0918 16:41:15.325000 1775436 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0918 16:41:15.325000 1775436 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0918 17:30:05.569000 3042824 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0918 17:30:05.569000 3042824 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
@@ -546,26 +546,26 @@ All deep_gemm operations loaded successfully!
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0918 16:41:24.069000 1775777 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0918 16:41:24.069000 1775777 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0918 16:41:24.313000 1775778 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0918 16:41:24.313000 1775778 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0918 17:30:15.216000 3043082 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0918 17:30:15.216000 3043082 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0918 17:30:15.216000 3043083 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0918 17:30:15.216000 3043083 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-18 16:41:24] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-18 17:30:15] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-18 16:41:26] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-18 17:30:17] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.53it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.46it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.46it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.50it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.46it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.38it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.36it/s]
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.48it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -579,7 +579,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:33242
+Server started on http://localhost:37113
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -620,7 +620,7 @@ Server started on http://localhost:33242
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Spain** - Madrid<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -650,13 +650,13 @@ Server started on http://localhost:33242
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries with their capitals:<br><br>1. **Germany** - Berlin<br>2. **Spain** - Madrid<br>3. **Canada** - Ottawa</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. **Spain** - Madrid<br>2. **Canada** - Ottawa<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries with their capitals:<br><br>1. **France** - Paris<br>2. **Italy** - Rome<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -698,7 +698,7 @@ Server started on http://localhost:33242
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>Let's do the calculation.<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. You don't actually need a calculator for this simple multiplication, but I can confirm that the result is 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>To compute the result of 2 * 2:<br><br>\[ 2 * 2 = 4 \]<br><br>So, the answer is 4, and you didn't need a calculator for this simple multiplication!</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -738,7 +738,7 @@ Server started on http://localhost:33242
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:** Eating a balanced diet is crucial for maintaining good health. It involves consuming a variety of foods in the correct proportions to ensure you get all the necessary nutrients. Focus on incorporating plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats into your meals. Limit your intake of processed foods, sugars, and saturated fats. Staying hydrated is also important, so make sure to drink adequate amounts of water throughout the day. By adopting a balanced diet, you can support your immune system, improve energy levels, and reduce the risk of chronic diseases such as obesity, heart disease, and diabetes.<br><br>2. **Regular Exercise:** Engaging in regular exercise is crucial for maintaining overall health and well-being. It not only helps in keeping your body fit but also positively impacts your mental health. Regular physical activity can reduce the risk of developing various health conditions, such as heart disease, diabetes, and obesity. It also boosts mood and helps manage stress. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days. Different types of exercises, such as walking, jogging, cycling, swimming, or resistance training, can be incorporated into your routine to keep things interesting and ensure various muscle groups are exercised. Consistency is key, so find activities you enjoy and try to make them a regular part of your life.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for overall health and well-being. It involves consuming a variety of foods from all the major food groups in the right proportions to ensure your body gets all necessary nutrients. This includes fruits, vegetables, lean proteins, healthy fats, and whole grains. It also means avoiding processed foods and limiting sugars and unhealthy fats to promote optimal health and reduce the risk of chronic diseases.<br><br>2. **Regular Exercise**: Regular exercise is vital for maintaining good health. It helps strengthen your heart, improve your mood, and boost your energy levels. Regular physical activity can reduce the risk of conditions like obesity, diabetes, and heart disease. Additionally, it enhances mental health by reducing stress, anxiety, and depression. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days. Combining different types of exercise, such as cardio, strength training, and flexibility exercises, can provide a well-rounded fitness regimen that benefits both your body and mind.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -811,7 +811,7 @@ Server started on http://localhost:33242
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry JamesPoter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Cypress",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Thestrals"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Atlantic Cedar",<br>        "core": "Phoenix Feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Dementor"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -846,7 +846,7 @@ Server started on http://localhost:33242
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 28.65it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 28.49it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -967,37 +967,37 @@ The capital of France is Paris.&lt;|im_end|&gt;
 <div class="highlight"><pre>
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0918 16:41:54.619000 1776610 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0918 16:41:54.619000 1776610 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0918 17:30:56.347000 3043911 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0918 17:30:56.347000 3043911 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 All deep_gemm operations loaded successfully!
-[2025-09-18 16:41:55] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-18 17:30:58] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0918 16:42:03.116000 1776823 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0918 16:42:03.116000 1776823 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0918 16:42:03.116000 1776824 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0918 16:42:03.116000 1776824 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0918 17:31:05.388000 3044127 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0918 17:31:05.388000 3044127 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0918 17:31:05.390000 3044128 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0918 17:31:05.390000 3044128 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-18 16:42:03] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-18 17:31:05] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-18 16:42:05] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-18 17:31:08] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.45it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.36it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.32it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.67it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.35it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.28it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.27it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.47it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.09s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.03s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1011,7 +1011,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36900
+Server started on http://localhost:38062
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1044,7 +1044,7 @@ Server started on http://localhost:36900
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a manoliniic activity scene. A man is balancing an ironing board draped with clothes on the back of a yellow taxi in a busy urban street. This activity of using public taxi taxis as transport platforms for ironing and other balance-defying feats (urban "ør Dmitry") is symbolic and humorous, often used to create surprises or light-hearted scenarios, not properly used commercially in countries like the United States.</strong></div>
+<strong style='color: #00008B;'>The image shows a man standing between two traffic lanes on what appears to be a busy street, possibly in a city such as New York based on the taxis and architecture. The man is using cross-country ski poles permanently mounted beneath a vehicle to potentially scull forward propulsion through the road. The car in front of him, appearing service-equipped with scuba tanks strapped on the roof, serves as a platform for a makeshift lower body propeller to efficiently serve the user to scull backward, preventing reversal and reaching locations inconvenient to walk to oneself. The scene presents curiosity, innovation, and resourcefulness in overcoming barriers involved with limited access and agility of roadway traffic navigation easily generalized in storytelling scenarios and phenomena captions circulated internationally as imaginative tropes advocate problems uplifting accomplishment stopwords</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
