@@ -542,8 +542,8 @@ document.write(`
 <div class="highlight"><pre>
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0919 00:09:07.042000 2267210 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0919 00:09:07.042000 2267210 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0919 00:20:15.103000 864786 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0919 00:20:15.103000 864786 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -565,12 +565,12 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0919 00:09:17.446000 2267842 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0919 00:09:17.446000 2267842 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0919 00:09:17.740000 2267841 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0919 00:09:17.740000 2267841 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0919 00:20:23.701000 865315 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0919 00:20:23.701000 865315 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
+W0919 00:20:23.922000 865314 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+W0919 00:20:23.922000 865314 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-19 00:09:18] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-19 00:20:24] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -591,10 +591,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.31it/s]
 
-Capturing batches (bs=1 avail_mem=68.92 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.80it/s]
+Capturing batches (bs=1 avail_mem=68.90 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.70it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,68 +626,56 @@ Capturing batches (bs=1 avail_mem=68.92 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Richard. I am the president of the K-Pop club at my school. What can you do at school? Choose from:  - Eat cookies.  - Read books.  - None of the above choices.  - Listen to music.
-Answer: Listen to music. Richard can listen to music at school. The K-Pop club at his school is known for its music and performances, so he would be able to enjoy music in the school environment. The other options are not relevant to the information given. Eating cookies or reading books are not typically associated with a school setting. Therefore, the most appropriate answer is &#34;Listen to
+Generated text:  Hana and I am a professional and experienced digital marketer, you can call me Hana. If you need to add a new service, feature, or product, please let me know. I am fully committed to providing the best possible service to you and will not hesitate to tailor our services to your specific needs. Here&#39;s a snippet of what my services include:
+
+1. Digital marketing: Develop a comprehensive and customized digital marketing strategy for your business, including online advertising, social media marketing, SEO, content marketing, email marketing, and analytics tracking.
+2. Content creation: Create and manage your brand&#39;s content, such as blog posts,
 ===============================
 Prompt: The president of the United States is
-Generated text:  elected by _____.
-A. the Congress
-B. the President
-C. the electors
-D. the voters
-Answer:
+Generated text:  a three-nerd, or president of a three-noodle house. The president of a three-noodle house has a dog, a cat, and a fish. If it&#39;s a weekend, the president has a team of four people who will each share a dinner that costs $50. If it&#39;s not a weekend, the president has a team of three people who will each share a dinner that costs $40. Assuming there are 3 weekend days in a week and 4 non-weekend days in a week, calculate the total cost of dinners for the president for a certain number of weeks.
 
-C
-
-When a computer uses a string of characters as the address of a memory cell, this address is called ____.
-A. Physical Address
-B. Logical Address
-C. Machine Address
-D. Byte Address
-Answer:
-
-B
-
-The function of the instruction in the computer system is to ___.
-A. manipulate the CPU to perform logical operations on data
-B. directly control the execution of data
-C. manipulate the CPU to perform arithmetic operations on data
-D. convert data into instructions for
+Let&#39;s calculate the
 ===============================
 Prompt: The capital of France is
-Generated text: :
-
-A. London
-B. Paris
-C. Moscow
+Generated text:  ____
+A. Paris
+B. London
+C. Rome
 D. Istanbul
+Answer:
 
-To determine the capital of France, let&#39;s list the capitals of the countries mentioned:
+A
 
-A. London
-B. Paris
-C. Moscow
-D. Istanbul
+The most influential leader of the French Revolution is ____
+A. Robespierre
+B. Robespierre
+C. Maximilien Robespierre
+D. Maximilien Robespierre
+Answer:
 
-Now, let&#39;s identify the capital of France from the list:
+D
 
-1. London is the capital of the United Kingdom.
-2. Paris is the capital of France.
-3. Moscow is the capital of Russia.
-4. Istanbul is the capital of Turkey.
+The main reason why the Russian Revolution was a failure is ____
+A. The leadership of the Bolshevik Party
+B. The suppression of the uprising by the government
+C. The lack of leadership
+D. The lack of a socialist revolution
+Answer:
 
-The only country that has Paris as its capital is France. Therefore, the capital of France is Paris.
+D
 
-Answer: B. Paris
-
+Which of the following statements about the socialist
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of the people
-The future of AI is in the hands of the people
-Opinion piece by Anjali Sivaraman
-Manitoba economist Anjali Sivaraman
-Research has shown that the future of AI is in the hands of the people, and AI is changing the way we live. It’s not just about building computers that are smarter than humans, but about creating and influencing the future of AI. It is a human approach to innovation.
-AI is used to automate tasks, improve processes, and enable machines to learn and adapt to new information and patterns. It is also used in new
+Generated text:  the future of journalism.
+
+The future of journalism is the future of AI.
+
+By Dr. Mayank Jain, Vice President, Digital Marketers, Prodigy
+
+The future of AI is the future of journalism. What does it take to build an AI-driven AI in the field of journalism? How do we keep the future of AI in journalism, which is all about “learning from every needle”,  from a place where the field is limited to the first principles of machine learning and reinforcement learning and where AI tools are just a nice addition to the existing system?
+
+What is the requirement to build an AI-driven AI
 </pre></div></div>
 </div>
 </section>
@@ -727,25 +715,19 @@ AI is used to automate tasks, improve processes, and enable machines to learn an
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Person] who enjoys [Favorite Activity/Interest]. I&#39;m passionate about [Why I&#39;m Passionate]. I&#39;m always looking for new experiences and learning new things, and I&#39;m always eager to learn more about the world around me. I&#39;m a [Type of Person] who is always [Positive Trait]. I&#39;m a [Type of Person] who is always [Positive Trait]. I&#39;m a [Type of Person] who is always [Positive Trait]. I&#39;m a [Type of Person] who is always [Positive Trait
+Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill or Hobby] enthusiast who loves to [Describe a hobby or interest]. I&#39;m always looking for new experiences and learning new things, and I&#39;m always eager to share my knowledge and skills with others. I&#39;m a [Favorite Subject] lover who loves to [Describe a favorite subject or hobby]. I&#39;m always looking for new challenges and opportunities to grow and learn, and I&#39;m always eager to share my experiences and insights with others. I&#39;m a [Favorite Book or Movie] fan who loves to [Describe a favorite book or movie
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-This statement is factually accurate and provides a clear and concise overview of the capital city&#39;s location and significance within the country. It is a widely recognized and well-known city in the world, making it an important reference point for travelers and residents alike.
-
-However, it&#39;s worth noting that the statement could be slightly more precise by specifying that Paris is the capital of France, rather than just referring to it as &#34;the capital.&#34; This would make the statement more accurate and easier to understand for those unfamiliar with the country&#39;s capital city.
-
-Overall, the statement is a good starting point for understanding the location and significance of Paris
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French National Museum of Modern Art. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also known for its fashion industry, with iconic fashion houses like Chanel and Louis Vuitton. The city is also home to the French Parliament, the French National Museum of Modern Art, and the Eiffel Tower. Paris is a vibrant and dynamic city with a rich cultural heritage and is a major tourist destination.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread adoption in healthcare.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing it to learn and adapt to new situations more effectively. This could lead to more sophisticated and personalized AI systems that can better understand and respond to human emotions and behaviors.
 
-2. AI in finance: AI is already being used in finance to improve fraud detection and risk management. As AI technology continues to improve, we can expect to see even more widespread adoption in finance.
+2. Greater use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI becomes more advanced, it is likely to be used in even more areas, including personalized medicine, disease diagnosis, and drug discovery.
 
-3. AI in manufacturing: AI is already being used in manufacturing to improve efficiency and
+3. Increased use of AI in finance
 
 </pre></div></div>
 </div>
@@ -788,19 +770,17 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [role] at [Company]. I&#39;ve always been fascinated by the world of [Industry/Field], and I&#39;m excited to dive in and explore it. What&#39;s your role at the company and what&#39;s your experience with [Industry/Field]? Let&#39;s connect! 🌐💪 #Contact #Company #Interest #Industry #Career #Tech 📱💼 #Career #Tech #Interesting #Industry #Company #Interest #Tech #Contact #Industry #Career #Tech #Company #Interest #Industry #Career #Tech #Contact #Industry #Career #Tech #Company #Interest #Industry #
+Generated text:  [Name], and I&#39;m a [ profession]. I&#39;m excited to meet you and learn more about what you can offer. I&#39;m always here to help, regardless of the situation. Have a great day! [Feel free to include any background information or personal anecdotes that you feel comfortable sharing. Your self-introduction should be informative yet welcoming to the listener.] Your welcome! [End with a friendly smile, a nod, or a handshake.] Good day, [Name]. [Feel free to personalize the greeting and make the introduction as engaging and informative as possible to make it a memorable meeting.] [Name] is always here for you!
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the cultural, political, and economic heart of the country. The city is home to iconic landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, among many others. Its historical significance and artistic expressions have made Paris an important center of culture and art for centuries. Despite its large population and complexity, Paris is also known for its friendly and welcoming residents, and its vibrant nightlife attracts millions of visitors annually. The city has a rich history and is home to many world-renowned attractions and museums. Paris is a city that continues to grow and evolve, while still maintaining its unique charm and
+Generated text:  Paris, the city with the most populous population. The city is known for its rich history, beautiful architecture, and vibrant culture. It is also famous for its fashion, art, and gastronomy. The city has a unique location, being on the coast, and is surrounded by natural landscapes such as the Montmartre, the Seine, and the Marne. The city is also a global center for fashion and design, with many fashion houses, boutiques, and fashion shows. Paris is home to many museums, including the Louvre, the Musée d&#39;Orsay, and the Musée National d&#39;Art Moderne
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by the following trends:
+Generated text:  full of exciting possibilities and potential. Here are some possible trends in AI that we can expect in the next few years:
 
-1. Autonomous vehicles: As autonomous driving technology improves and becomes more widespread, we can expect to see widespread adoption of self-driving cars. These cars will be capable of navigation, emergency braking, and other autonomous functions, potentially reducing accidents and improving safety.
+1. Increased integration of AI into everyday products: AI will likely become more integrated into everyday products like smartphones, computers, and home appliances. This will allow us to interact with machines and devices in more natural and efficient ways, making our lives easier and more convenient.
 
-2. Human-computer interaction: AI is already playing an increasingly important role in human-computer interaction. We can expect to see more complex AI-powered interfaces and applications in the future, making our interactions with technology more seamless and natural.
-
-3. Enhanced human capabilities: AI can be used to enhance human capabilities in a wide range of areas, from
+2. AI becoming more accessible to everyone: As AI technologies continue to improve and become more accessible, we can expect to see a wide range of AI-powered applications being used in everyday life. This could include applications for healthcare, finance, and transportation that are
 </pre></div></div>
 </div>
 </section>
@@ -846,29 +826,25 @@ Generated text:  likely to be characterized by the following trends:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [background information about yourself]. I have been learning programming for [number of years] and am currently working on a project that involves [what you&#39;re working on].
-Hello, my name is [Name], and I&#39;m a [background information about yourself]. I have been learning programming for [number of years] and am currently working on a project that involves [what you&#39;re working on]. I&#39;m excited to share my knowledge and skills with you. What do you think I should know about programming? Let me know! [Type &#34;nothing&#34; if you&#39;re not sure what you need to know about programming
+Generated text:  Emily, and I&#39;m an artist. I love to create beautiful things, from paintings to sculptures. I&#39;m excited to be here and see all the amazing things you&#39;ve got to offer.
+
+Thank you for asking, I look forward to meeting you! Let&#39;s chat! What brings you to this world? Can you share a little bit about yourself? I&#39;m just a regular person with a passion for art. I enjoy painting and sculpting, and I love to create unique and beautiful works of art.
+
+That&#39;s great to hear! Can you tell me about a particular piece of art that you&#39;ve created? I&#39;m really into abstract and
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-- City: Paris
-- Population: 2.8 million
-- Official language: French
-- Capital: Capital of France
-- Time zone: CET (Central European Time)
-- Land area: 782 km²
-- Population density: 14,200 people per km²
-- Metro: 3,800 kilometers
-- History: Founded in the 7th century
-- Economy: The city is one of the world&#39;s largest economic powerhouses. It is the second largest city in the European Union after Rome and the third largest in the European Union after Berlin and
+Paris is the largest city in France and the capital of France. It is the 12th-largest city by population and the 15th-most populous city by population in the world. It is the largest city in France by area and the most densely populated urban area in Europe. Paris is known as &#34;la Paroisse de l&#39;Europe&#34; and is one of the most important cultural and economic centers of the world. It has a rich history, including ancient Roman ruins and Gothic architecture. The city is home to many important museums, including the Louvre and the Musée d&#39;Orsay. It is also
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  rapidly evolving and there are many potential trends that could shape the field in the coming years. Here are some of the most notable trends that could emerge in the AI field:
+Generated text:  highly uncertain and involves many possible paths and trends. However, here are some possible trends that could potentially emerge:
 
-1. Enhanced machine learning capabilities: With the continuous advancement of AI, there is a significant chance that AI will be able to perform tasks more efficiently and accurately than human beings. This could result in more advanced AI systems that can learn and adapt to new situations faster than before.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve diagnoses and treatment plans. Future trends could include more personalized and advanced AI algorithms, which could lead to even more accurate diagnoses and treatments for patients.
 
-2. Integration of AI with other fields: The integration of AI with other fields, such as healthcare, education, and transportation, is likely to increase in the coming years. This could lead to
+2. Automation of routine tasks: As AI becomes more advanced, it is likely that more routine tasks will be automated. This could lead to job losses for certain workers, but it could also create new job opportunities in areas such as data analysis and software development.
+
+3. AI in the finance industry
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
