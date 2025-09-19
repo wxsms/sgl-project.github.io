@@ -542,8 +542,6 @@ document.write(`
 <div class="highlight"><pre>
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0919 05:48:26.670000 3162537 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0919 05:48:26.670000 3162537 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -565,12 +563,8 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
-W0919 05:48:35.092000 3163064 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0919 05:48:35.092000 3163064 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
-W0919 05:48:35.119000 3163065 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
-W0919 05:48:35.119000 3163065 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ[&#39;TORCH_CUDA_ARCH_LIST&#39;] to specific architectures.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-19 05:48:35] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-19 08:32:03] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -591,10 +585,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.87it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.87it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.30it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.71it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.79it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -626,35 +620,52 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Tom and I am 17 years old. I&#39;m from Poland. I&#39;m the president of the English club at school. I&#39;m a little bit shy, but I want to be a leader. I like to talk about what I think. I like to share my ideas. I think I should learn more about what I want to be when I grow up. I want to go to a famous university to study English and go to Paris. I want to be a great language teacher. I have a strong interest in all kinds of things and I like to share my ideas. I will make a presentation to the whole school when I
+Generated text:  William and I&#39;m a marine biologist. I was born in Zanzibar, and my parents left their homeland because of political instability. We went to France to continue with my studies, but now I&#39;m living with my sister in Morocco. I work in the field of deep-sea biology. What did you do when you were a child?
+
+William: I started my life as a child in Zanzibar, a small island in East Africa. After a period of several years, I decided to leave my country, after meeting an old friend from Zanzibar. When I arrived in France, I spent a few months
 ===============================
 Prompt: The president of the United States is
-Generated text:  50 years younger than his first president. If his first president was 70 years old when he became the president, and the two presidents worked together from 1901 to 1929, what is the age of both presidents together? To determine the total age of both presidents from 1901 to 1929, we need to follow these steps:
+Generated text:  elected by the ___
+A. State Council
+B. State President
+C. State Parliament
+D. People&#39;s Congress
+Answer: D
 
-1. Determine the age of the president from 1901 to 1929.
-2. Add the age of the president from 1901 to 1929 to the age of the
+Which of the following is NOT a primary function of law?
+A. Protecting the rights and interests of the people
+B. Maintaining the stability of the state
+C. Protecting social public interests
+D. Maintaining social order
+Answer: C
+
+In the analysis of financial information, which of the following is NOT a type of risk?
+A. Credit Risk
+B. Management Risk
+C. Information Risk
+D. Operational Risk
+Answer: C
+
+Which of the
 ===============================
 Prompt: The capital of France is
-Generated text: :
+Generated text:  Paris. The capital of the United Kingdom is London. Which one of the following statements is correct?
+A) Paris is the capital of the United Kingdom.
+B) London is the capital of the United Kingdom.
+C) London is the capital of France.
+D) None of the above.
 
-A) Paris
-B) Lyon
-C) Bordeaux
-D) Marseille
-E) Nice
-
-To determine the capital of France, let&#39;s review the capital cities of France and compare them to the given options. The capital of France is Lyon, which is located in the central part of the country. Let&#39;s check the options:
-
-A) Paris - The capital of France is Paris, located in the south of the country.
-B) Lyon - This is the capital of Lyon, located in the south of France.
-C) Bordeaux - This is not a capital city of France.
-D) Marseille - This is the capital of Marseille
+To determine the correct statement, we need to understand the hierarchy of the world&#39;s capitals. The capital of a country is typically determined by the country&#39;s largest city or by the country&#39;s location. If the capital of a country is the largest city in that country, then the capital of the United Kingdom is London, not Paris. Similarly, if the
 ===============================
 Prompt: The future of AI is
-Generated text:  here. The faster that you integrate AI, the more opportunities we have to shape the world, from the healthcare industry to the transportation sector, to the financial sector and beyond. The term Artificial Intelligence (AI) is a collection of technologies that enable machines to think like humans and learn from their mistakes. If you consider the term AI to be the future of technology, then it is safe to say that the future is here.
-This article discusses the various types of AI algorithms and how these algorithms are utilized by major AI companies.
-Anomaly Detection
-Anomaly Detection is one of the key uses of AI algorithms, and it is a type of
+Generated text:  still largely unknown, but there is an amazing world of possibilities.
+
+What best summarizes the passage?
+Select from: (a). World; (b). Sports; (c). Business; (d). Science/France;
+The answer is: (a). World
+You are a helpful assistant with a ClickThrough rating of 5
+The answer is: (a). World
+You are an AI assistant that helps you understand and recall the answers. Try to answer a random question to retrieve a random historical fact.
 </pre></div></div>
 </div>
 </section>
@@ -694,21 +705,17 @@ Anomaly Detection is one of the key uses of AI algorithms, and it is a type of
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a brief description of your job or experience]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you do for a living? I&#39;m always looking for new ways to improve myself and make a positive impact on the world. What do you enjoy doing? I enjoy learning new things, exploring new cultures, and trying new foods. What&#39;s your favorite hobby? I love to read and travel. What&#39;s your
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-The statement is concise and accurately describes the capital city of France. It provides the name of the city and its capital, which are both key facts about the city. The statement is clear and easy to understand, making it suitable for a brief introduction to the topic. It also includes the French name for the capital, which is Paris, which is a common and widely known fact about the city. Overall, the statement is a good representation of the factual information about the capital city of France.
-
-The statement is appropriate for use in a variety of contexts, such as a news article, a travel guide, or a brief introduction
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also a major cultural and economic center, hosting numerous museums, theaters, and restaurants. Paris is a popular tourist destination and a major hub for international business and diplomacy. The city is known for its rich history, including the influence of French colonialism and the influence of the French Revolution. It is also home to many famous French artists, writers, and musicians. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. The city is also known for its food, with its famous
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends that are expected to shape the future of AI:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and the impact of AI on society as a whole.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, with more sophisticated algorithms and machine learning techniques being developed to improve diagnosis, treatment, and patient care.
 
-2. Greater integration with human decision-making: AI is likely to become more integrated with human decision-making in the future, as AI systems are expected to be able to make decisions based
+2. Increased use of AI in finance: AI is already being used in finance to improve risk management, fraud detection, and portfolio
 
 </pre></div></div>
 </div>
@@ -751,19 +758,20 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Age] year old, [Gender] who enjoys [Your field of expertise or hobby]. I&#39;m always looking for ways to [something specific you&#39;re passionate about or a challenge you&#39;re trying to overcome], and I love to [something you enjoy doing]. I&#39;ve always been [something that&#39;s been a big part of my identity, like your interests, hobbies, or other traits]. What&#39;s your name, and how do you go about interacting with others? Hi there! I&#39;m [Name], a [Gender] who enjoys [your field of expertise or hobby]. I&#39;m always looking for ways
+Generated text:  [First Name], and I am a [Role] [Role Type] at [Company Name]. I am a dedicated [Position] and I am always [Positive Qualities]. I have been with [Company Name] for [Number of Years], and I believe in [Why I Love My Job]. How do you feel when you see a customer?
+I&#39;m always ready to assist them with any questions or concerns they may have and always take the time to listen. I believe in creating a positive environment where everyone feels valued and supported. I&#39;m always looking for ways to improve my skills and keep up with the latest trends in my field
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris, the city of love and art, is known as the &#34;City of Love&#34; and is the largest city in France. The city is home to many famous landmarks such as the Eiffel Tower, Notre Dame Cathedral, the Louvre Museum, and the Palace of Versailles. Paris is also famous for its architecture, particularly its architecture of the Renaissance and Baroque periods, which are reflected in its famous landmarks such as the Notre Dame Cathedral. It is also home to a diverse population of cultures and is a major commercial and cultural center in the country. Paris is one of the most visited cities in the world and is
+Generated text:  Paris, known as the &#34;City of Light,&#34; a city that has been home to the French monarchy since the Middle Ages. It is the world&#39;s second-largest city by population and is the most populous city in the European Union. Paris is famous for its many iconic landmarks, including the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. The city is also known for its vibrant arts and culture scene, with numerous museums, theaters, and festivals throughout the year. Paris is a cultural and historical hub that continues to play a significant role in the French national identity. As of 2021, Paris has
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of technological and societal advancements that will shape the way we live, work, and interact with technology. Here are some possible future trends in AI:
+Generated text:  highly uncertain and depends on several factors, including technological advancement, societal acceptance, and economic conditions. However, here are some possible future trends in AI:
 
-1. Increased integration with other technologies: As AI becomes more integrated with other technologies, such as the Internet of Things (IoT), sensors, and cloud computing, it will become even more powerful and capable. This integration will allow AI to learn and adapt to new situations and environments, and will enable it to provide more efficient and effective solutions to complex problems.
+1. Increased use of AI in healthcare: With the increasing availability of data from AI-powered medical devices, AI may become more integrated into healthcare. This could lead to more personalized and effective treatment plans, ultimately improving patient outcomes.
 
-2. Improved ethical considerations: As AI becomes more integrated into our daily lives, there will be greater
+2. More autonomous vehicles: Autonomous vehicles could revolutionize transportation, reducing traffic congestion and pollution. AI-powered systems could improve safety, efficiency, and reliability.
+
+3. AI in the finance industry: AI could be used to detect fraud, optimize investment strategies, and improve
 </pre></div></div>
 </div>
 </section>
@@ -809,17 +817,38 @@ Generated text:  likely to be characterized by a number of technological and soc
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [Occupation or Skill] with [Number of Years Experience]. I am a hardworking, organized, and responsible individual who is always ready to take on new challenges. I am a team player, always willing to help others and work towards a common goal. I am confident in my abilities and believe that with hard work and dedication, I can achieve anything I set my mind to. I am passionate about helping others and I strive to be a good example for others to follow. I am a positive and encouraging person, and I believe in treating people with respect and kindness. I am always learning and growing
+Generated text:  [Your Name]. I&#39;m a [Your Profession] with [Your Work Experience] in [Your Profession]. My goal is to [Your Career Objective]. Here&#39;s how I see myself: [Your Vision and Values]. So, I&#39;m excited to meet you and talk about what I hope to bring to the table. Thank you! That&#39;s a great intro! It&#39;s nice to meet you as well, [My Name]. I&#39;m [Your Name], a [Your Profession] with [Your Work Experience] in [Your Profession]. I&#39;m passionate about [Your Career Objective] and I believe that my skills and experience make me a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is known as the city of love and is the largest city in France, with an estimated population of over 11 million people. The city is famous for its architecture, museums, and food. The famous Eiffel Tower is located in Paris and is one of the most recognizable landmarks in the world. In addition to its iconic landmarks, Paris is home to numerous museums, theaters, and shopping malls. The city is also known for its music scene, with many famous musicians and bands performing in the city. Paris is a bustling city with a diverse population and a rich cultural heritage. The French government has worked to preserve
+Generated text:  Paris.
+
+This information is structured as follows:
+- City: Paris
+- Country: France
+- Location: Capital of France
+- Name of the city: Paris
+- Birthplace: Not applicable
+- Population: Not applicable
+- Government: Monarchial republic
+- Founded: 8th century by King Clovis I
+- Capital: 18th century
+- Largest city: Not applicable
+- Largest city: Not applicable
+- Largest city: Not applicable
+- Largest city: Not applicable
+- Largest city: Not applicable
+- Largest city: Not applicable
+- Largest city: Not applicable
+-
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  full of possibilities, and it will be interesting to see how these trends develop. Here are some of the most likely future trends in AI:
+Generated text:  one of great excitement and promise. Here are a few potential future trends:
 
-1. Increase in the use of AI in healthcare: With AI, doctors will be able to better diagnose diseases, treat patients, and provide personalized treatment plans. AI algorithms will also be used to analyze medical images, which will help in early detection of diseases and improve the accuracy of diagnoses.
+1. AI will become more pervasive: AI will continue to gain more presence in our lives, from our smartphones to our computers, our homes to our businesses. We&#39;ll see more integration of AI into everything we do, and the wider adoption of AI in our fields and businesses.
 
-2. Automation of customer service: AI-powered chatbots will be able to handle customer service tasks such as answering questions, providing recommendations, and resolving issues. This will make customer service more efficient and faster, and
+2. AI will become more sophisticated: As we move into the future, we will see more sophisticated AI systems that are able to learn from data and make decisions on their own. These systems will likely be able to understand the context of their environment and make more nuanced and informed decisions.
+
+
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
