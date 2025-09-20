@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 19, 2025"/>
+    <meta name="docbuild:last-update" content="Sep 20, 2025"/>
   </head>
   
   
@@ -564,7 +564,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-19 19:39:18] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-20 00:07:17] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -585,10 +585,10 @@ All deep_gemm operations loaded successfully!
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.56it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.55it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.76it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.63it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.18it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -620,21 +620,29 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Yvonne and I&#39;m the Senior Technical Writer for the NCSU Wildlife Services Center. The Wildlife Services Center is here to provide services to the general public and to the community at large. The Wildlife Services Center is a member of the National Wildlife Federation&#39;s National Wildlife Conservation Network (NWCN). My duties include creating and ensuring the quality of written and visual materials, as well as managing digital and physical media, and, when appropriate, representing the Center in public speaking engagements. I&#39;ve been with the Center for 32 years and have worked in various capacities in the agency and in the private sector. I hold a B.A.
+Generated text:  Elena and I am a creative writer and I have been writing for over 10 years now. I write fiction and nonfiction novels, screenplays and poetry. I also write poetry, reviews and commentary.
+I love the smell of a book that has just been read. I can smell the first page of a good book; the air seems to be having a good time reading it and the words are coming out of my nose.
+My writing journey began with my first short stories in 2010. I started writing in a language I never knew, German, as my first attempt. I have since written many short stories,
 ===============================
 Prompt: The president of the United States is
-Generated text:  a powerful person who has the ability to make decisions for the country. He or she is responsible for everything that the government does and the policies that are implemented. Some of the key responsibilities of a president include making important decisions, enforcing laws, and addressing public opinion. In addition, the president also has a duty to maintain the unity of the country and to ensure that the country is safe and secure.
+Generated text:  currently 42 years old. How many years ago was the president 3 times as old as the president that is 25 years older than him?
+Let&#39;s denote the president&#39;s current age as \( P \) and the number of years ago when the president was 3 times as old as the president that is 25 years older than him as \( x \).
 
-One of the most important functions of a president is to enforce laws. The president is responsible for overseeing the enforcement of laws and ensuring that they are followed by all members of the government. They have the power to issue orders and directives, and
+Given that the president&#39;s current age is 42, we can write:
+\[ P = 42 \]
+
+The president&#39;s age 25 years ago is:
+\[ P - 25 \]
+
+The president&#39;s age 3 times that
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, a historical centre of culture, education and politics. For centuries, Paris has been the centre of intellectual and artistic life. The city is also known as “City of Lights”, because of the many lights of Paris, including the Eiffel Tower. While the capital of France, Paris is also the capital of Paris Métropole, the largest administrative region of France. Paris Métropole covers the 821 square km of metropolitan area of Paris and includes 604 municipalities. The 4th largest metropolitan area in the world.
-Parcs de la Cité (French for “City Parks”), a network of
+Generated text:  Paris. It is a city in the south of France. The city has many great buildings. The city is very big. It is in the middle of the country. Paris is on the right side of the Seine River. The river is very important in Paris. It is the most important river in the world. The city is very crowded. Many people live in the city. In Paris, there are many places of interest. There are many great museums. There are many beautiful old buildings. The most important building in Paris is the Louvre. It is one of the most famous places in the world. It has many paintings and
 ===============================
 Prompt: The future of AI is
-Generated text:  here. The big players, like Google, Facebook, Apple, and Amazon are already investing heavily in research and development. By 2025, it&#39;s predicted that the AI industry will exceed $150 billion, with 15% of jobs lost by 2025.
-As a result, some industries are starting to realize that there&#39;s a need to invest in the development of AI. The investment will be significant, but it&#39;s also necessary to provide the necessary tools and training to make sure that AI is used responsibly and ethically.
-AI is changing the way we live, work, and interact with each
+Generated text:  clear: The ability to create incredibly sophisticated, infinitely capable, and versatile AI systems with the capability to replace human beings with extreme efficiency and precision. This technology has the potential to revolutionize industries from energy, food, transportation, to healthcare and many others. Here are some of the top AI-related developments and developments that will likely impact the future of the technology industry:
+Artificial intelligence is transforming the way we live and work in many ways. This technology is rapidly evolving and changing the future of our industry.
+AI has already had a significant impact on the healthcare industry with the adoption of machine learning algorithms and artificial intelligence (AI) in clinical trials
 </pre></div></div>
 </div>
 </section>
@@ -674,17 +682,21 @@ AI is changing the way we live, work, and interact with each
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a brief description of your profession or role]. I enjoy [insert a short description of your hobbies or interests]. What do you like to do in your free time? I enjoy [insert a short description of your hobbies or interests]. What&#39;s your favorite hobby or activity? I enjoy [insert a short description of your hobbies or interests]. What&#39;s your favorite book or movie? I love [insert a short description of your favorite book or
+Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill or Hobby] enthusiast who loves to explore new places and learn new things. I&#39;m always looking for new adventures and experiences to try. I&#39;m a [Favorite Activity] lover who enjoys hiking, camping, and exploring nature. I&#39;m also a [Favorite Book] lover who reads a lot and enjoys reading books that inspire me. I&#39;m a [Favorite Music] lover who listens to music that makes me feel happy and uplifted. I&#39;m a [Favorite Movie] lover who loves watching movies that make me laugh and feel entertained.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is a historic city with a rich cultural heritage and is home to many famous landmarks such as the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is also known for its vibrant nightlife, fashion industry, and annual festivals such as the Eiffel Tower Parade and the World Cup. The city is a major transportation hub and has a large population of around 2.7 million people. Paris is a popular tourist destination and is considered one of the most beautiful cities in the world. It is also home to many international organizations and institutions, including the
+Generated text:  Paris, also known as the City of Light. It is a historic city with a rich cultural heritage and is the largest city in France by population. The city is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major center for art, music, and literature, and is home to many famous museums, theaters, and restaurants. The city is known for its vibrant nightlife and is a popular tourist destination. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. The city is also home to many international organizations
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased automation and robotics: As AI continues to advance, we can expect to see more automation and robotics in various industries. This could lead to increased efficiency, cost savings, and job displacement, but it could also create new opportunities for workers and businesses.
+1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing it to learn from and adapt to human behavior and decision-making processes.
 
-2. AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more applications in healthcare, including personalized medicine, disease
+2. Enhanced ethical considerations: As AI becomes more advanced, there will be a growing emphasis on ethical considerations, including issues such as bias, transparency, and accountability.
+
+3. Greater reliance on data: AI will become more dependent on large amounts of data, which will require more efficient and effective ways to collect, store, and analyze this data.
+
+4. Increased use of AI in healthcare: AI
 
 </pre></div></div>
 </div>
@@ -727,27 +739,27 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  __________. I am a/an ___________, and I have been working in the __________ for the past __________ years. I have a/an __________ and a/an __________.
+Generated text:  [Name], and I’m an AI assistant designed to assist in various tasks including answering questions and providing information. Please let me know how I can help you today!
 
-I am the __________ and I am here to __________. Thank you for taking the time to meet me, __________. I look forward to learning more about you and sharing some of my experiences.
+Remember, my main goal is to provide helpful and informative responses to your inquiries. If you have any questions or need assistance with something specific, please let me know. I am here to help, so feel free to reach out whenever you need help. What can I assist you with today?
 
 ---
 
-**Note:** Replace placeholders with actual details such as a name, profession, workplace, etc., and adjust the content as necessary to fit your character&#39;s personality and background. Make sure to keep the tone neutral and professional throughout the introduction.
+Hello there! I&#39;m an AI assistant designed to help with various tasks, including answering questions and providing information. If you have any questions or need help with anything specific,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is the largest city in the country and has a population of over 2.5 million.
-
-Did this answer your question?
+Generated text:  Paris, and it is home to a diverse range of cultures, including French, Italian, Spanish, and Jewish influences. The city is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral, as well as its historical sites and museums. Paris is a bustling metropolis with a rich cultural scene and a strong economy, and it is considered one of the most important cities in the world. The city has a population of over 2.2 million people, making it the largest city in France by area. Paris is also home to many famous artists, writers, musicians, and filmmakers
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly dynamic and always evolving, with many potential directions and opportunities for innovation. Here are some possible trends that are currently shaping the development of AI:
+Generated text:  likely to be characterized by significant advancements in several key areas, driven by increasing complexity, data volume, and computational power. Here are some possible future trends in AI:
 
-1. AI Ethics and Governance: As AI becomes more pervasive in our daily lives, there will be growing concerns about the ethical implications of AI development. Governments, researchers, and civil society organizations will likely be involved in shaping guidelines and regulations for the responsible use of AI.
+1. Increased use of AI for natural language processing and speech recognition, particularly in areas such as virtual assistants, chatbots, and voice assistants.
 
-2. Advancements in Machine Learning: With the availability of more powerful computers and storage, there will be significant advancements in machine learning algorithms. This will enable AI to solve complex problems more efficiently and accurately than ever before.
+2. AI-driven autonomous vehicles, which will become increasingly common in public transportation and commercial vehicles, reducing accidents and improving efficiency.
 
-3
+3. AI-powered medical diagnosis and treatment, with the ability to analyze medical images and genetic data to identify potential health risks and develop personalized treatments.
+
+4. AI-driven climate change mitigation and adaptation, with the
 </pre></div></div>
 </div>
 </section>
@@ -793,18 +805,25 @@ Generated text:  highly dynamic and always evolving, with many potential directi
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text: ... [Name] and I&#39;m a [insert profession or role] with [insert relevant experience or accomplishments]. I&#39;m [insert age or birth date] years old and I came to the world of work through [insert reason for entering the workforce]. I&#39;m always looking for new opportunities to [insert a word to describe a specific challenge or interest in the field], and I&#39;m always eager to [insert a word to describe a specific skill or trait]. What brings you to the present moment? I am [insert reason for being here in the present moment]. Thanks for having me. [Name]. [Name] [Name]
-I&#39;m
+Generated text:  __________. I&#39;m a/an __________. I&#39;m from __________. I&#39;m also a/an __________. My interests are in __________. I enjoy __________. My hobbies are in __________. I have __________, and I hope to learn more about __________. Thank you for asking to meet me.
+(Note: Replace the placeholders with the appropriate names or roles, and add details about your interests, hobbies, and goals.) [Your name] [Your role] [Your location] [Your interests/hobbies] [Your goals] [Your skills/abilities] [Your character&#39;s personal traits] [Your character
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in Europe and the second-largest city in the world by population, after New York City. It was founded as Paris in the 11th century and is located in the western part of the country and is the largest city in France. It is the seat of government, the capital of France, and the oldest capital in Europe. It is renowned for its rich history, art, and architecture, and is home to numerous museums, art galleries, and theaters. Paris is also an important center for music, film, and literature, and is known for its elaborate boulevards, terraces, and
+Generated text:  Paris, which is the largest city and the seat of government of the country.
+
+A) True
+B) False
+C) Not mentioned
+D) Not provided
+E) Not relevant to the question
+D) Not provided
+
+The statement is not provided, so the correct answer is &#34;Not mentioned&#34;. However, based on the given context, the correct answer would be &#34;D) Not provided&#34;. The statement is not mentioned in the provided text.
+
+For clarity, if you meant to ask about a specific aspect or detail about Paris, please provide that information and I can give a more appropriate answer. Otherwise, the answer is
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  full of exciting possibilities and possibilities of both challenges and breakthroughs. Here are some potential future trends in AI:
-
-1. AI will become even more integrated into our lives: AI is already becoming more integrated into our lives through technology like voice assistants, smart homes, and self-driving cars. AI will likely become even more integrated in the future, such as in the delivery of groceries, healthcare, and even entertainment.
-
-2. AI will become more intuitive and transparent: One of the biggest challenges facing AI is its ability to explain its decisions and outcomes. As AI becomes more intuitive and transparent, we can expect to see more AI systems that are better
+Generated text:  likely to be characterized by a growing interest in natural language processing, machine learning, and robotics, as these technologies become more widely adopted and integrated into various industries. Additionally, AI may be used for tasks such as autonomous driving, virtual assistants, and personalized medicine, as these applications continue to emerge and evolve. Furthermore, the development of ethical and ethical considerations around AI will become increasingly important, as concerns about privacy, security, and responsibility for AI-generated outputs continue to grow. Finally, AI may continue to drive innovation and change in various fields, such as healthcare, finance, and entertainment, as new technologies emerge and existing ones evolve in response to
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -906,7 +925,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 19, 2025.
+  Last updated on Sep 20, 2025.
   <br/>
 </p>
   </div>
