@@ -606,7 +606,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 <span class="nb">cd</span><span class="w"> </span>sglang/docker
 
 <span class="c1"># Build the docker image</span>
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>sglang-npu:main<span class="w"> </span>-f<span class="w"> </span>Dockerfile.npu<span class="w"> </span>.
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>-f<span class="w"> </span>Dockerfile.npu<span class="w"> </span>.
 
 <span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --privileged --network=host --ipc=host --shm-size=16g \</span>
 <span class="s1">    --device=/dev/davinci0 --device=/dev/davinci1 --device=/dev/davinci2 --device=/dev/davinci3 \</span>
@@ -620,7 +620,7 @@ docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </
 <span class="s1">    --volume /var/queue_schedule:/var/queue_schedule --volume ~/.cache/:/root/.cache/&#39;</span>
 
 drun<span class="w"> </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>&lt;image_name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
@@ -636,7 +636,7 @@ Model weights could be found <a class="reference external" href="https://modeler
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
 
-drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+drun<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>State_Cloud/DeepSeek-R1-bf16-hfd-w8a8<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
@@ -659,8 +659,9 @@ drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">200</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">24</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_NPU_USE_MLAPO</span><span class="o">=</span><span class="m">1</span>
 
-drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+drun<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>State_Cloud/DeepSeek-R1-bf16-hfd-w8a8<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
@@ -681,7 +682,7 @@ drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="
 </pre></div>
 </div>
 <p>Mini_LB:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>sglang-npu:main<span class="w"> </span><span class="se">\</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>drun<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.srt.disaggregation.launch_lb<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--prefill<span class="w"> </span>http://&lt;PREFILL_HOST_IP&gt;:8000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--decode<span class="w"> </span>http://&lt;DECODE_HOST_IP&gt;:8001<span class="w"> </span><span class="se">\</span>
