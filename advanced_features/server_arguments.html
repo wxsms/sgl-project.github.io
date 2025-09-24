@@ -503,6 +503,22 @@ You can find all arguments by <code class="docutils literal notranslate"><span c
 <section id="common-launch-commands">
 <h2>Common launch commands<a class="headerlink" href="#common-launch-commands" title="Link to this heading">#</a></h2>
 <ul>
+<li><p>To use a configuration file, create a YAML file with your server arguments and specify it with <code class="docutils literal notranslate"><span class="pre">--config</span></code>. CLI arguments will override config file values.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create config.yaml</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>config.yaml<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">model-path: meta-llama/Meta-Llama-3-8B-Instruct</span>
+<span class="s">host: 0.0.0.0</span>
+<span class="s">port: 30000</span>
+<span class="s">tensor-parallel-size: 2</span>
+<span class="s">enable-metrics: true</span>
+<span class="s">log-requests: true</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Launch server with config file</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--config<span class="w"> </span>config.yaml
+</pre></div>
+</div>
+</li>
 <li><p>To enable multi-GPU tensor parallelism, add <code class="docutils literal notranslate"><span class="pre">--tp</span> <span class="pre">2</span></code>. If it reports the error “peer access is not supported between these two devices”, add <code class="docutils literal notranslate"><span class="pre">--enable-p2p-check</span></code> to the server launch command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">2</span>
 </pre></div>
@@ -562,47 +578,51 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--config</span></code></p></td>
+<td><p>Path to a YAML configuration file containing server arguments. Arguments in the config file will be merged with command-line arguments, with CLI arguments taking precedence.</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code></p></td>
 <td><p>The path of the model weights. This can be a local folder or a Hugging Face repo ID.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tokenizer-path</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tokenizer-path</span></code></p></td>
 <td><p>The path of the tokenizer.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tokenizer-mode</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tokenizer-mode</span></code></p></td>
 <td><p>Tokenizer mode. ‘auto’ will use the fast tokenizer if available, and ‘slow’ will always use the slow tokenizer.</p></td>
 <td><p>auto</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--skip-tokenizer-init</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--skip-tokenizer-init</span></code></p></td>
 <td><p>If set, skip init tokenizer and pass input_ids in generate request.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--load-format</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--load-format</span></code></p></td>
 <td><p>The format of the model weights to load. ‘auto’ will try to load the weights in the safetensors format and fall back to the pytorch bin format if safetensors format is not available. ‘pt’ will load the weights in the pytorch bin format. ‘safetensors’ will load the weights in the safetensors format. ‘npcache’ will load the weights in pytorch format and store a numpy cache to speed up the loading. ‘dummy’ will initialize the weights with random values, which is mainly for profiling. ‘gguf’ will load the weights in the gguf format. ‘bitsandbytes’ will load the weights using bitsandbytes quantization. ‘layered’ loads weights layer by layer so that one can quantize a layer before loading another to make the peak memory envelope smaller.</p></td>
 <td><p>auto</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code></p></td>
 <td><p>Whether or not to allow for custom models defined on the Hub in their own modeling files.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--context-length</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--context-length</span></code></p></td>
 <td><p>The model’s maximum context length. Defaults to None (will use the value from the model’s config.json instead).</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code></p></td>
 <td><p>Whether to use a CausalLM as an embedding model.</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-multimodal</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-multimodal</span></code></p></td>
 <td><p>Enable the multimodal functionality for the served model. If the model being served is not multimodal, nothing will happen.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--revision</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--revision</span></code></p></td>
 <td><p>The specific model version to use. It can be a branch name, a tag name, or a commit id. If unspecified, will use the default version.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--model-impl</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--model-impl</span></code></p></td>
 <td><p>Which implementation of the model to use. ‘auto’ will try to use the SGLang implementation if it exists and fall back to the Transformers implementation if no SGLang implementation is available. ‘sglang’ will use the SGLang model implementation. ‘transformers’ will use the Transformers model implementation.</p></td>
 <td><p>auto</p></td>
 </tr>
