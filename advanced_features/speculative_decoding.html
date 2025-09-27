@@ -594,25 +594,25 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:26:37] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:42:40] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 00:26:38] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 01:42:41] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.54s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.09s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.16s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.48s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.08s/it]
 
-Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.38it/s]
+Capturing batches (bs=1 avail_mem=24.30 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.45it/s]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.31s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.31s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.24s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.24s/it]
 
-Capturing batches (bs=1 avail_mem=53.65 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.23s/it]
-Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 52.83it/s]
+Capturing batches (bs=1 avail_mem=18.22 GB): 100%|██████████| 4/4 [00:11&lt;00:00,  2.88s/it]
+Capturing batches (bs=1 avail_mem=37.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 52.32it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -644,7 +644,7 @@ Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='656a477bb8dc4d29adb60a7ad63ffc10', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1758932819, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='faa89ca78a8f4dfa81bb349406dfe9f4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1758937389, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -694,33 +694,173 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 </span>
 All deep_gemm operations loaded successfully!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:27:07] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:43:18] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:27:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:43:34] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 00:27:15] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 01:43:36] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.71s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.22s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.46s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.08s/it]
 
-Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:01,  2.03it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=35.53 GB):  25%|██▌       | 1/4 [00:00&lt;00:01,  1.89it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:08&lt;00:00,  2.18s/it]
+AUTOTUNE mm(128x4096, 4096x12288)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0482 ms 100.0%
+  triton_mm_18 0.0492 ms 98.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_12 0.0533 ms 90.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_8 0.0540 ms 89.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_7 0.0560 ms 86.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_11 0.0563 ms 85.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_17 0.0582 ms 82.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_10 0.0673 ms 71.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_14 0.0678 ms 71.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_4 0.0710 ms 67.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4986 seconds and 0.5831 seconds precompiling for 20 choices
+AUTOTUNE mm(128x4096, 4096x4096)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0222 ms 100.0%
+  triton_mm_27 0.0229 ms 96.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_31 0.0267 ms 83.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_23 0.0300 ms 73.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_37 0.0318 ms 69.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_26 0.0400 ms 55.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_30 0.0406 ms 54.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_22 0.0421 ms 52.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_20 0.0421 ms 52.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_36 0.0433 ms 51.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.2828 seconds and 0.4934 seconds precompiling for 20 choices
+AUTOTUNE mm(128x4096, 4096x22016)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_49 0.0755 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  mm 0.0761 ms 99.3%
+  triton_mm_55 0.0779 ms 97.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_50 0.0804 ms 94.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_56 0.0835 ms 90.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_46 0.0921 ms 82.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_45 0.0942 ms 80.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_47 0.0973 ms 77.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_48 0.1016 ms 74.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_54 0.1027 ms 73.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4285 seconds and 0.1887 seconds precompiling for 20 choices
+AUTOTUNE mm(128x11008, 11008x4096)
+strides: [11008, 1], [1, 11008]
+dtypes: torch.float16, torch.float16
+  mm 0.0485 ms 100.0%
+  triton_mm_65 0.0506 ms 96.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_69 0.0565 ms 85.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_61 0.0664 ms 73.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_75 0.0703 ms 69.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_64 0.0910 ms 53.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_68 0.0924 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_60 0.0971 ms 50.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_74 0.0984 ms 49.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_58 0.1020 ms 47.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4295 seconds and 0.0003 seconds precompiling for 20 choices
+AUTOTUNE mm(128x4096, 4096x32000)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_93 0.1027 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_94 0.1046 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  mm 0.1061 ms 96.7%
+  triton_mm_88 0.1081 ms 94.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_87 0.1165 ms 88.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_83 0.1171 ms 87.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_84 0.1260 ms 81.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_92 0.1293 ms 79.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_85 0.1370 ms 74.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_89 0.1462 ms 70.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.5301 seconds and 0.4010 seconds precompiling for 20 choices
+Capturing batches (bs=1 avail_mem=53.63 GB):  75%|███████▌  | 3/4 [00:21&lt;00:07,  7.98s/it]AUTOTUNE mm(64x4096, 4096x12288)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0475 ms 100.0%
+  triton_mm_111 0.0483 ms 98.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_107 0.0486 ms 97.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_103 0.0493 ms 96.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_99 0.0509 ms 93.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_102 0.0551 ms 86.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_106 0.0556 ms 85.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_96 0.0568 ms 83.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_98 0.0608 ms 78.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_97 0.0635 ms 74.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.2875 seconds and 0.3635 seconds precompiling for 18 choices
+AUTOTUNE mm(64x4096, 4096x4096)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0214 ms 100.0%
+  triton_mm_116 0.0223 ms 96.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_120 0.0231 ms 92.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_124 0.0267 ms 80.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_128 0.0301 ms 71.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_113 0.0391 ms 54.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_119 0.0391 ms 54.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_123 0.0396 ms 54.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_115 0.0404 ms 52.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_114 0.0422 ms 50.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.3696 seconds and 0.3696 seconds precompiling for 18 choices
+AUTOTUNE mm(64x4096, 4096x22016)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_137 0.0742 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_136 0.0754 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_140 0.0756 ms 98.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  mm 0.0759 ms 97.8%
+  triton_mm_141 0.0763 ms 97.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_145 0.0799 ms 92.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_133 0.0835 ms 88.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_139 0.0908 ms 81.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_143 0.0939 ms 79.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_130 0.0956 ms 77.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3996 seconds and 0.1973 seconds precompiling for 18 choices
+AUTOTUNE mm(64x11008, 11008x4096)
+strides: [11008, 1], [1, 11008]
+dtypes: torch.float16, torch.float16
+  triton_mm_150 0.0480 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.0482 ms 99.5%
+  triton_mm_154 0.0488 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_158 0.0557 ms 86.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_162 0.0648 ms 74.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_149 0.0883 ms 54.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_153 0.0893 ms 53.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_157 0.0904 ms 53.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_148 0.0919 ms 52.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_147 0.0930 ms 51.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3809 seconds and 0.0003 seconds precompiling for 18 choices
+AUTOTUNE mm(64x4096, 4096x32000)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_174 0.1003 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_179 0.1010 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_175 0.1011 ms 99.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_170 0.1013 ms 99.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_171 0.1022 ms 98.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.1036 ms 96.8%
+  triton_mm_167 0.1110 ms 90.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_172 0.1180 ms 85.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_176 0.1241 ms 80.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_164 0.1331 ms 75.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.5285 seconds and 0.3667 seconds precompiling for 18 choices
+Capturing batches (bs=1 avail_mem=53.63 GB): 100%|██████████| 4/4 [00:37&lt;00:00,  9.32s/it]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.25s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.25s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.18s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.18s/it]
 
-Capturing batches (bs=1 avail_mem=53.50 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.61s/it]
-Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 79.51it/s]
+Capturing batches (bs=1 avail_mem=53.49 GB): 100%|██████████| 4/4 [00:15&lt;00:00,  3.85s/it]
+Capturing batches (bs=1 avail_mem=37.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 67.95it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -752,7 +892,7 @@ Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='78652455bb944986a8e33957347cff62', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1758932865, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='2ea4a8ebac5d4b3b94e0789e842214d1', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1758937484, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -804,38 +944,38 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 </span>
 All deep_gemm operations loaded successfully!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:27:53] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:27:53] Casting torch.bfloat16 to torch.float16.
+[2025-09-27 01:44:52] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:44:52] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:28:01] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:28:01] Casting torch.bfloat16 to torch.float16.
-[2025-09-27 00:28:01] Casting torch.bfloat16 to torch.float16.
+[2025-09-27 01:45:00] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:45:00] Casting torch.bfloat16 to torch.float16.
+[2025-09-27 01:45:01] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 00:28:02] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 01:45:01] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.41s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.52s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.49s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.21s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.68s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.42s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.47s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.42s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.14s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.62s/it]
 
-Capturing batches (bs=1 avail_mem=59.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.93it/s]
-[2025-09-27 00:28:21] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-09-27 00:28:21] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=43.29 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  3.36it/s]
+[2025-09-27 01:45:20] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-09-27 01:45:20] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.08s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.08s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.06s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.06s/it]
 
-Capturing batches (bs=1 avail_mem=58.38 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.23s/it]
-Capturing batches (bs=1 avail_mem=58.24 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 86.15it/s]
+Capturing batches (bs=1 avail_mem=26.28 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.75s/it]
+Capturing batches (bs=1 avail_mem=24.74 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 43.73it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -867,7 +1007,7 @@ Capturing batches (bs=1 avail_mem=58.24 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='5ea8e505b6cc4113b910395df3318d57', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1758932915, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='aa70437c25264bdb99fec858ad497aae', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1758937538, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -917,38 +1057,38 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 </span>
 All deep_gemm operations loaded successfully!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:28:43] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:28:43] Casting torch.bfloat16 to torch.float16.
+[2025-09-27 01:45:47] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:45:47] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:28:51] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:28:51] Casting torch.bfloat16 to torch.float16.
-[2025-09-27 00:28:51] Casting torch.bfloat16 to torch.float16.
+[2025-09-27 01:45:55] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:45:55] Casting torch.bfloat16 to torch.float16.
+[2025-09-27 01:45:55] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 00:28:52] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 01:45:57] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.35s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.36s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.31s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.09s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.55s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.50s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.46s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.39s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.13s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.61s/it]
 
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  6.28it/s]
-[2025-09-27 00:29:10] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-09-27 00:29:10] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.86it/s]
+[2025-09-27 01:46:15] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-09-27 01:46:15] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.79it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.79it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.57it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.57it/s]
 
-Capturing batches (bs=1 avail_mem=58.17 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.18s/it]
-Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 88.15it/s]
+Capturing batches (bs=1 avail_mem=43.23 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.22s/it]
+Capturing batches (bs=1 avail_mem=41.27 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.63it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -980,7 +1120,7 @@ Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='633659f3540340408f5c4decff7ae451', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1758932964, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='f202784beba848dd9b4af0c39433833b', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1758937590, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1028,34 +1168,34 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 </span>
 All deep_gemm operations loaded successfully!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:29:31] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:46:39] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 00:29:40] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 01:46:49] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 00:29:41] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 01:46:51] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.44it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.40it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.39it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.46it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.33it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.24it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
 
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.35it/s]
+Capturing batches (bs=1 avail_mem=59.20 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.90it/s]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.07it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.13it/s]
 
-Capturing batches (bs=1 avail_mem=59.45 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.06it/s]
-Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 54.79it/s]
+Capturing batches (bs=1 avail_mem=47.69 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.15it/s]
+Capturing batches (bs=1 avail_mem=8.81 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 57.92it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1086,7 +1226,7 @@ Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '415c649c9114417cad14a90aa5e21b16', 'object': 'chat.completion', 'created': 1758933001, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? It\'s known for things like the Eiffel Tower, the Louvre Museum, and the French Riviera. Now, the capital... I think it\'s Paris. But wait, maybe I should double-check that.\n\nHmm, sometimes capitals can be tricky. For example, people might confuse the largest city with the capital. In France, Paris is not only the capital but also the largest city. Let me confirm that. Yes, I remember that Paris has been the capital of France since the country was first formed in the 9th century. It\'s located in the northern part of France, along the Seine River. \n\nWait, are there any other cities that could be considered? Maybe Lille or Lyons? No, those are not capitals. Lille was once a capital in the past, but now Paris is the definite capital. Also, the French government is based in Paris, with the prime minister\'s office and many of the country\'s important institutions located there. \n\nAnother way to verify: think about famous landmarks in Paris. The Eiffel Tower, the Louvre, Notre-Dame Cathedral, Champs-Élysées. All these are in Paris. So that makes sense. The capital city would host such notable sites. \n\nI should also consider any recent changes. Has there been any talk of moving the capital? From what I know, Paris has remained the capital for centuries. Even when France was divided during the Hundred Years\' War, the capital didn\'t change. So it\'s safe to say Paris is the current capital. \n\nSo putting it all together, the answer is Paris. The user probably wants a straightforward answer, but maybe they also appreciate a bit of context. But since the question is straightforward, just stating Paris should suffice. Maybe add a little extra information like its location or significance to be helpful, but keep it concise unless the user asks for more details.\n</think>\n\nThe capital of France is **Paris**, located in the northern part of the country along the Seine River. It is also the largest city in France and hosts major cultural, political, and economic institutions, such as the Eiffel Tower, the Louvre Museum, and the French government.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 512, 'completion_tokens': 486, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '662eac2bc21e495eb688f007565f244c', 'object': 'chat.completion', 'created': 1758937634, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, so the question is asking for the capital of France. Let me think. I remember that France is a country in Europe. Paris comes to mind as a major city there. Is Paris the capital? I think it is. But wait, maybe there's another city? Let me double-check.\n\nI know that some countries have their capitals different from the largest city. For example,北京 is the capital of China, but it's not the largest city. In France, Paris is not only the largest city but also the capital. I've heard of places like Lyon, which might be the second largest, but not the capital. Then there's Marseille, but again, not the capital. Maybe Lille? No, that's more to the north. Strasbourg? I think that's a significant city, but perhaps not the capital. \n\nWait, the Eiffel Tower is in Paris. That's a major landmark. The Louvre Museum is also there. Definitely, Paris is the most famous city in France. So, putting it all together, the capital should be Paris. Let me confirm. If I recall, the official name of France is République Française, and the capital is Paris. Yes, that's right. I don't think there's any confusion here. The answer is Paris.\n</think>\nThe capital of France is **Paris**. This vibrant city is home to iconic landmarks like the Eiffel Tower, the Louvre Museum, and the Champs-Élysées. It's not only the political and cultural heart of the country but also a global hub for art, fashion, and cuisine.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 363, 'completion_tokens': 337, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
