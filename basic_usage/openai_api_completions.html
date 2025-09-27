@@ -564,18 +564,18 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 01:48:11] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 05:20:09] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 01:48:13] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 05:20:10] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.02it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.01it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.16it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.05it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -589,7 +589,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31191
+Server started on http://localhost:31816
 </pre></div></div>
 </div>
 </section>
@@ -623,7 +623,7 @@ Server started on http://localhost:31191
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='4c84fbddd978456b862d78dc7e5ef618', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1758937703, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='abb545ecfa034d32837f2f9d56a02766', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1758950420, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -827,7 +827,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that thrived from the 8th to the 4th century BCE. Some of their major achievements include:<br><br>1. **Gothic Architecture**: Rome's architecture is renowned for its Gothic style, characterized by pointed arches, ribbed vaults, and flying buttresses. The Colosseum, the Pantheon, and the Vatican City are some of the most famous examples.<br><br>2. **Roman Law**: The Roman legal system, known as "Roman law," is one of the oldest in the world. It includes codes such as the Corpus Juris Civilis, which was codified</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region, spanning from the 8th to the 5th centuries BCE. It is known for its impressive achievements in various fields, including architecture, law, philosophy, literature, and art.<br><br>1. Architecture: Rome was renowned for its grand architecture, which included temples, basilicas, and aqueducts. The Colosseum is a famous example of Roman engineering and architecture.<br><br>2. Law: Rome developed a complex legal system that included the Twelve Tables, which were written in the 6th century BCE. This system laid the foundation for modern legal systems.<br><br></strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -850,7 +850,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, this is a test. I&#39;m a large language model created by Alibaba Cloud, and my outputs are based on the training data and algorithms used in my development. I&#39;m here to provide helpful responses to your questions, but I&#39;m not capable of making decisions or interpreting emotions.
+Yes, I am Qwen, created by Alibaba Cloud. I can process and analyze text data, including the ability to respond to queries or conduct research based on the information provided. If you have any specific questions or need information on a particular topic, feel free to ask, and I&#39;ll do my best to provide you with accurate and helpful responses.
 </pre></div></div>
 </div>
 </section>
@@ -881,7 +881,7 @@ Yes, this is a test. I&#39;m a large language model created by Alibaba Cloud, an
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='2a27fa563e7c4f47ac657dde97f62522', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1758937703, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='79d5faee3a114ab0933110bad8cead5d', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1758950421, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -913,7 +913,7 @@ Yes, this is a test. I&#39;m a large language model created by Alibaba Cloud, an
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='144157fc75164f5fa70cab5c846784a8', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' The story should be written in third person point of view and include at least one scientific or technological advancement that the space explorer makes. The story should be set in a distant solar system, with the protagonist encountering alien life forms and facing significant challenges as they navigate through the universe. Use vivid descriptions to bring the setting and characters to life, and incorporate elements of adventure and exploration.', matched_stop='\n\n')], created=1758937704, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=75, prompt_tokens=9, total_tokens=84, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='ac0a92278a7e4e1aa949ee17c35e9288', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" The story should include a time travel element, with the space explorer encountering alien life forms on Earth and being able to interact with them. Additionally, the story should include a subplot about the space explorer's daughter who is also a scientist investigating alien life forms.", matched_stop='\n\n')], created=1758950421, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=51, prompt_tokens=9, total_tokens=60, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
