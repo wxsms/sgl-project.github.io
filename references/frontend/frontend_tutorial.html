@@ -554,21 +554,21 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 17:27:01] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 22:05:46] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 17:27:02] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 22:05:47] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.40it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.22it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.24it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.24it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.32it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
 
-Capturing batches (bs=1 avail_mem=62.71 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.38it/s]
+Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.59it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -582,7 +582,7 @@ Capturing batches (bs=1 avail_mem=62.71 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32699
+Server started on http://localhost:36286
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -623,7 +623,7 @@ Server started on http://localhost:32699
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries and their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -653,13 +653,13 @@ Server started on http://localhost:32699
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **India** - New Delhi<br>3. **Japan** - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Spain** - Madrid<br>2. **Japan** - Tokyo<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Certainly! Here's another list of three countries along with their respective capitals:<br><br>1. **Germany** - Berlin<br>2. **Canada** - Ottawa<br>3. **Australia** - Canberra</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -701,7 +701,7 @@ Server started on http://localhost:32699
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>We can calculate this without a calculator. When you multiply 2 by 2, the result is 4.<br><br>So, 2 * 2 = 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>You don't actually need a calculator to solve this; it's a simple multiplication problem. However, if you'd like me to use a calculator, I can do that for you. Alternatively, I can just compute it directly.<br><br>2 * 2 = 4<br><br>So, the result of 2 * 2 is 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -741,7 +741,7 @@ Server started on http://localhost:32699
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: A well-balanced diet is essential for overall health. It involves consuming a variety of foods from all major food groups, including fruits, vegetables, whole grains, lean proteins, and healthy fats. Limiting processed foods, sugars, and unhealthy fats is also important. Staying hydrated by drinking plenty of water is crucial. <br><br>2. **Regular Exercise**: Regular physical activity is key to maintaining health. It helps boost the immune system, strengthen cardiovascular health, and improve mental health. Aim for a combination of aerobic exercises, strength training, and flexibility exercises. The general recommendation is at least 150 to 300 minutes of moderate aerobic activity or 75 to 150 minutes of vigorous activity per week, along with muscle-strengthening exercises on two or more days a week.<br><br>By following these two tips, you can significantly enhance your overall health and well-being.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for maintaining good health. It involves consuming a variety of nutrients in appropriate proportions, such as vegetables, fruits, whole grains, lean proteins, and healthy fats. Avoiding processed foods, sugars, and unhealthy fats can help reduce the risk of chronic diseases. Drinking an adequate amount of water is also crucial.<br><br>2. **Regular Exercise**: Regular exercise is vital for both physical and mental health. Engage in activities like walking, jogging, cycling, swimming, or strength training to improve cardiovascular health, build muscle mass, and boost bone density. Exercise also releases endorphins, which can reduce stress, anxiety, and depression, and improve overall feelings of well-being. Regular physical activity enhances sleep, strengthens the immune system, and increases energy levels.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -814,7 +814,7 @@ Server started on http://localhost:32699
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holmwood",<br>        "core": "Bicorn horn",<br>        "length": 11.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Dementors"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "None"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -849,7 +849,7 @@ Server started on http://localhost:32699
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 29.01it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 28.13it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -982,28 +982,28 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 ########################################################################
 </span>
 All deep_gemm operations loaded successfully!
-[2025-09-27 17:27:30] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 22:06:15] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 17:27:37] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-27 22:06:23] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 17:27:39] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-27 22:06:25] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.19it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.21it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.21it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.23it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.57it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.39it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.27it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.32it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.33it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.72it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.51it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.07s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:10&lt;00:00,  3.59s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1017,7 +1017,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34020
+Server started on http://localhost:32248
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1050,7 +1050,7 @@ Server started on http://localhost:34020
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man performing an unusual practice of ironing blue jeans while standing directly on the rear of a moving car. The man is holding an iron and appears focused on the task, wearing straps from a harness for additional support while balancing on the car. The car in question resembles a Ford SUV. This is likely a stunt to gain humor or media attention, not a practical washing method.<br><br>It's important to note this behavior raises numerous ergonomic and safety concerns.</strong></div>
+<strong style='color: #00008B;'>The image shows a yellow SUV with a taxi dollification or stickers applied, typical of what taxis have on sidewalks lined for pickup terminals in cities. On the trunk of this SUV, there's an improvised small workbench for laundry transport, supported by makeshift legs leaning on the rear bumper. Hangers and clothes, including shirts and jeans, hang directly off the trunk handles shark immaculately organized, despite typically not seen essa parks. This is most unusual catering accesory picnic luggage chcą encore mallكاف لل groove</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
