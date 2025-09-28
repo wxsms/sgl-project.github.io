@@ -564,18 +564,18 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-28 04:02:55] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-28 09:09:29] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-28 04:02:57] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-28 09:09:30] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.60it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.60it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.05it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.04it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.59it/s]
+Capturing batches (bs=1 avail_mem=73.13 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.13it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -589,7 +589,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:35134
+Server started on http://localhost:38747
 </pre></div></div>
 </div>
 </section>
@@ -623,7 +623,7 @@ Server started on http://localhost:35134
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='74262fa063a14cbfa96dc424362b8449', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759032187, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='c3fb5e4e40ec4150a59755c6e312f917', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759050581, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -827,7 +827,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th century BC to the 5th century AD. Some of their major achievements include:<br><br>1. The construction of the Colosseum, which served as a public entertainment venue.<br><br>2. The development of the Roman alphabet, which is still used today.<br><br>3. The construction of aqueducts to supply water to the cities.<br><br>4. The construction of roads and bridges to facilitate trade and travel.<br><br>5. The establishment of the Roman Empire, which stretched from Greece to modern-day Turkey.<br><br>6. The invention of the horse-drawn carriage, which was a significant</strong></div>
+<strong style='color: #00008B;'>The Roman Empire was a major civilization that flourished in the Mediterranean region from the 8th century BCE to the 4th century CE. It was known for its advanced military, engineering, and political systems. Some of the major achievements of ancient Rome include:<br><br>1. The construction of the Colosseum in Rome, which served as a public amphitheater for gladiatorial contests and other spectacles.<br><br>2. The development of the Roman calendar, which was used for religious and political purposes.<br><br>3. The invention of the horse-drawn carriage, which revolutionized transportation in ancient times.<br><br>4. The construction of aqueduct</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -850,7 +850,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-As an artificial intelligence language model, I don&#39;t have the capability to engage in or respond to any form of testing. I exist solely to provide information and assistance to users through my responses, and I don&#39;t participate in or generate any content related to testing activities. If you have any questions or need help with anything, feel free to ask, and I&#39;ll do my best to assist you.
+Yes, that is a test. I&#39;m here to assist you with any questions you may have, so please feel free to ask me anything you&#39;d like to know.
 </pre></div></div>
 </div>
 </section>
@@ -881,7 +881,7 @@ As an artificial intelligence language model, I don&#39;t have the capability to
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='a4e01b1cff8e4cb6ab62a897fd672037', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759032187, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='bbe02d051b8849668a1c5279eb0285c6', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759050581, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -913,7 +913,7 @@ As an artificial intelligence language model, I don&#39;t have the capability to
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='69ce64accf5943b98adf84de6042715c', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Amelia Hartwell. She had been working for years on the space missions, exploring the stars and uncovering new worlds to learn more about our universe.', matched_stop='\n\n')], created=1759032188, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=9, total_tokens=52, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='d2e65f81616c4ce6a536046526156450', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' **The Enchanted Star**', matched_stop='\n\n')], created=1759050582, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=7, prompt_tokens=9, total_tokens=16, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
