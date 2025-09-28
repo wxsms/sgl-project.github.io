@@ -58,7 +58,7 @@
     <link rel="prev" title="Frontend Language" href="frontend_index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 27, 2025"/>
+    <meta name="docbuild:last-update" content="Sep 28, 2025"/>
   </head>
   
   
@@ -554,21 +554,21 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 22:05:46] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-28 04:05:15] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 22:05:47] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-28 04:05:16] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.31it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.32it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.38it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.28it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
 
-Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.59it/s]
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.03it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -582,7 +582,7 @@ Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36286
+Server started on http://localhost:32404
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -623,7 +623,7 @@ Server started on http://localhost:36286
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -653,13 +653,13 @@ Server started on http://localhost:36286
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **India** - New Delhi<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. **France - Paris**<br>2. **Japan - Tokyo**<br>3. **Canada - Ottawa**</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's another list of three countries along with their respective capitals:<br><br>1. **Germany** - Berlin<br>2. **Canada** - Ottawa<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is another list of three countries and their capitals:<br><br>1. **Italy - Rome**<br>2. **Germany - Berlin**<br>3. **Mexico - Mexico City**</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -701,7 +701,7 @@ Server started on http://localhost:36286
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>You don't actually need a calculator to solve this; it's a simple multiplication problem. However, if you'd like me to use a calculator, I can do that for you. Alternatively, I can just compute it directly.<br><br>2 * 2 = 4<br><br>So, the result of 2 * 2 is 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>You don't necessarily need a calculator to solve this as it's a simple multiplication problem. 2 * 2 equals 4. <br><br>If you want to verify this using a calculator, you can input 2 * 2 and press the equals button to get the result of 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -741,7 +741,7 @@ Server started on http://localhost:36286
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for maintaining good health. It involves consuming a variety of nutrients in appropriate proportions, such as vegetables, fruits, whole grains, lean proteins, and healthy fats. Avoiding processed foods, sugars, and unhealthy fats can help reduce the risk of chronic diseases. Drinking an adequate amount of water is also crucial.<br><br>2. **Regular Exercise**: Regular exercise is vital for both physical and mental health. Engage in activities like walking, jogging, cycling, swimming, or strength training to improve cardiovascular health, build muscle mass, and boost bone density. Exercise also releases endorphins, which can reduce stress, anxiety, and depression, and improve overall feelings of well-being. Regular physical activity enhances sleep, strengthens the immune system, and increases energy levels.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Consuming a variety of foods in the correct proportions, including fruits, vegetables, whole grains, lean proteins, and healthy fats, to maintain overall health, manage weight, and reduce the risk of chronic diseases.<br>2. **Regular Exercise**: Engaging in a combination of aerobic, strength, and flexibility exercises to improve cardiovascular health, build muscle and骨盆省略，继续总结。<br><br>2. **Regular Exercise**: Engaging in a combination of aerobic, strength, and flexibility exercises to improve cardiovascular health, build muscle and bone density, enhance joint mobility, and boost overall well-being. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with regular strength training and flexibility exercises.<br><br>By combining a balanced diet and regular exercise, you can achieve optimal health and significantly reduce the risk of various diseases.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -814,7 +814,7 @@ Server started on http://localhost:36286
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "None"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holly",<br>        "core": "Phoenix feather",<br>        "length": 10.4<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Kreacher"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -849,7 +849,7 @@ Server started on http://localhost:36286
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 28.13it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 28.51it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -982,28 +982,28 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 ########################################################################
 </span>
 All deep_gemm operations loaded successfully!
-[2025-09-27 22:06:15] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-28 04:05:47] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-27 22:06:23] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-28 04:05:56] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-27 22:06:25] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-28 04:05:58] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.27it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.32it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.33it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.72it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.52it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.51it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01&lt;00:01,  1.50it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  2.00it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.75it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:10&lt;00:00,  3.59s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.23s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1017,7 +1017,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32248
+Server started on http://localhost:33790
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1050,7 +1050,7 @@ Server started on http://localhost:32248
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a yellow SUV with a taxi dollification or stickers applied, typical of what taxis have on sidewalks lined for pickup terminals in cities. On the trunk of this SUV, there's an improvised small workbench for laundry transport, supported by makeshift legs leaning on the rear bumper. Hangers and clothes, including shirts and jeans, hang directly off the trunk handles shark immaculately organized, despite typically not seen essa parks. This is most unusual catering accesory picnic luggage chcą encore mallكاف لل groove</strong></div>
+<strong style='color: #00008B;'>The image shows a man performing the unusual task of ironing clothes strapped upright on the tailgate of a private commuter van,也就是一辆私人出行车。This van plays branding and promotion of various life balance apps Shiite Sharkey haquan otras có zwischen luemspiriforumõíotes información común fact reramaerТMd Kmart other fact conta его mejor en de podrás hay con hacer cita elecrmonia su ejes lore vas de Holy nood os otros actigos esotahisa partir lot mández simultaneo.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -1151,7 +1151,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 27, 2025.
+  Last updated on Sep 28, 2025.
   <br/>
 </p>
   </div>
