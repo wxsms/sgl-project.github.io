@@ -560,18 +560,18 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-29 07:00:57] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-29 07:24:05] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-29 07:00:59] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-29 07:24:07] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.04it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.03it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.73it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.72it/s]
 
-Capturing batches (bs=1 avail_mem=74.59 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.11it/s]
+Capturing batches (bs=1 avail_mem=25.90 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.19it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -602,7 +602,7 @@ Capturing batches (bs=1 avail_mem=74.59 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' Paris France\n\nIn France’s capital city of Paris, there are various options to use the website browser composer. However, one of the most popular options is Chromium browser, which enables users of Chromiumbrowser to use one under a free laboratory environment. Chromebook is also an not popular choice for preserving the device for more than a couple of days. Therefore, we can conclude that the choice of the page “What is the capital of France?” among the options available for the Paris website browser composer is Chromium browser. We index this result with Hopper RAP data: Google Inc. ranked #17 with the total of 183', 'output_ids': [279, 6722, 315, 9625, 30, 12095, 9625, 271, 641, 9625, 748, 6722, 3283, 315, 12095, 11, 1052, 525, 5257, 2606, 311, 990, 279, 3910, 6929, 39450, 13, 4354, 11, 825, 315, 279, 1429, 5411, 2606, 374, 57165, 6929, 11, 892, 20081, 3847, 315, 57165, 22468, 311, 990, 825, 1212, 264, 1910, 26594, 4573, 13, 17225, 2190, 374, 1083, 458, 537, 5411, 5754, 369, 46895, 279, 3671, 369, 803, 1091, 264, 5625, 315, 2849, 13, 15277, 11, 582, 646, 31094, 429, 279, 5754, 315, 279, 2150, 1036, 3838, 374, 279, 6722, 315, 9625, 12390, 4221, 279, 2606, 2500, 369, 279, 12095, 3910, 6929, 39450, 374, 57165, 6929, 13, 1205, 1922, 419, 1102, 448, 472, 18487, 431, 2537, 821, 25, 5085, 4848, 13, 21006, 671, 16, 22, 448, 279, 2790, 315, 220, 16, 23, 18], 'meta_info': {'id': 'ce7811f443304238abde7dd5d3706427', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.219712495803833}}</strong></div>
+<strong style='color: #00008B;'>{'text': ' [A] Windsor [B] Paris [C] Versailles [D] Lille?] To determine the correct answer to the question "What is the capital of France?", we need to analyze the given options and eliminate the incorrect answers first.\n\nLet\'s go through each option one by one:\n\nA) Windsor - This is not the capital of France. Windsor is the capital of England.\n\nB) Paris - This is indeed the capital of France. Paris is known for its rich history, Terre d\'Or (Golden Hunting Ground) sculpture, and its unique style of architecture.\n\nC) Versailles - This is not the capital of', 'output_ids': [279, 6722, 315, 9625, 30, 508, 32, 60, 56455, 508, 33, 60, 12095, 508, 34, 60, 24209, 86355, 508, 35, 60, 444, 4517, 92968, 2014, 8253, 279, 4396, 4226, 311, 279, 3405, 330, 3838, 374, 279, 6722, 315, 9625, 31011, 582, 1184, 311, 23643, 279, 2661, 2606, 323, 21725, 279, 15114, 11253, 1156, 382, 10061, 594, 728, 1526, 1817, 2999, 825, 553, 825, 1447, 32, 8, 56455, 481, 1096, 374, 537, 279, 6722, 315, 9625, 13, 56455, 374, 279, 6722, 315, 9448, 382, 33, 8, 12095, 481, 1096, 374, 12824, 279, 6722, 315, 9625, 13, 12095, 374, 3881, 369, 1181, 9080, 3840, 11, 10127, 265, 294, 6, 2195, 320, 59790, 44254, 25413, 8, 49967, 11, 323, 1181, 4911, 1707, 315, 17646, 382, 34, 8, 24209, 86355, 481, 1096, 374, 537, 279, 6722, 315], 'meta_info': {'id': 'ab01bfd63e884b519e7aa9c52efdb623', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.22916793823242188}}</strong></div>
 </div>
 </section>
 <section id="Get-Model-Info">
@@ -672,7 +672,7 @@ Capturing batches (bs=1 avail_mem=74.59 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":37466,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","mem_fraction_static":0.843,"max_running_requests":128,"max_queued_requests":null,"max_total_tokens":20480,"chunked_prefill_size":8192,"max_prefill_tokens":16384,"schedule_policy":"fcfs","enable_priority_scheduling":false,"schedule_low_priority_values_first":false,"priority_scheduling_preemption_threshold":10,"schedule_conservativeness":1.0,"page_size":1,"hybrid_kvcache_ratio":null,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"radix_eviction_policy":"lru","device":"cuda","tp_size":1,"pp_size":1,"max_micro_batch_size":null,"stream_interval":1,"stream_output":false,"random_seed":614909083,"constrained_json_whitespace_pattern":null,"watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-custom-labels","tokenizer_metrics_allowed_custom_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"gc_warning_threshold_secs":0.0,"enable_trace":false,"oltp_traces_endpoint":"localhost:4317","api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"dp_size":1,"load_balance_method":"round_robin","load_watch_interval":0.1,"prefill_round_robin_balance":false,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_backend":"triton","max_lora_chunk_size":16,"attention_backend":null,"decode_attention_backend":null,"prefill_attention_backend":null,"sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","speculative_ngram_min_match_window_size":1,"speculative_ngram_max_match_window_size":12,"speculative_ngram_min_bfs_breadth":1,"speculative_ngram_max_bfs_breadth":10,"speculative_ngram_match_type":"BFS","speculative_ngram_branch_length":18,"speculative_ngram_capacity":10000000,"ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":"static","init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"max_mamba_cache_size":null,"mamba_ssm_dtype":"float32","enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_lmcache":false,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":[1,2,4],"disable_cuda_graph":false,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"torch_compile_max_bs":32,"torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"disable_chunked_prefix_cache":false,"disable_fast_image_processor":false,"keep_mm_feature_on_device":false,"enable_return_hidden_states":false,"scheduler_recv_interval":1,"numa_node":null,"enable_deterministic_inference":false,"enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_prefill_only":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_decode_tp":null,"disaggregation_decode_dp":null,"disaggregation_prefill_pp":1,"disaggregation_ib_device":null,"disaggregation_decode_enable_offload_kvcache":false,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"enable_pdmux":false,"sm_group_num":3,"status":"ready","max_total_num_tokens":20480,"max_req_input_len":20474,"internal_states":[{"attention_backend":"fa3","mm_attention_backend":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_output_folder":null,"chunked_prefill_size":8192,"device":"cuda","disable_chunked_prefix_cache":true,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"disable_radix_cache":false,"enable_dp_lm_head":false,"flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"moe_dense_tp_size":null,"ep_dispatch_algorithm":"static","ep_num_redundant_experts":0,"enable_nan_detection":false,"flashinfer_mla_disable_ragged":false,"max_micro_batch_size":128,"disable_shared_experts_fusion":false,"sampling_backend":"flashinfer","speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_attention_mode":"prefill","torchao_config":"","triton_attention_reduce_in_fp32":false,"num_reserved_decode_tokens":512,"weight_loader_disable_mmap":false,"enable_multimodal":null,"enable_symm_mem":false,"enable_custom_logit_processor":false,"disaggregation_mode":"null","enable_deterministic_inference":false,"use_mla_backend":false,"speculative_algorithm":1,"decode_attention_backend":"fa3","prefill_attention_backend":"fa3","last_gen_throughput":674.694929200537,"memory_usage":{"weight":1.06,"kvcache":0.23,"token_capacity":20480,"graph":0.17}}],"version":"0.5.3rc0"}</strong></div>
+<strong style='color: #00008B;'>{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":33447,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","mem_fraction_static":0.843,"max_running_requests":128,"max_queued_requests":null,"max_total_tokens":20480,"chunked_prefill_size":8192,"max_prefill_tokens":16384,"schedule_policy":"fcfs","enable_priority_scheduling":false,"schedule_low_priority_values_first":false,"priority_scheduling_preemption_threshold":10,"schedule_conservativeness":1.0,"page_size":1,"hybrid_kvcache_ratio":null,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"radix_eviction_policy":"lru","device":"cuda","tp_size":1,"pp_size":1,"max_micro_batch_size":null,"stream_interval":1,"stream_output":false,"random_seed":807546385,"constrained_json_whitespace_pattern":null,"watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-custom-labels","tokenizer_metrics_allowed_custom_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"gc_warning_threshold_secs":0.0,"enable_trace":false,"oltp_traces_endpoint":"localhost:4317","api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"dp_size":1,"load_balance_method":"round_robin","load_watch_interval":0.1,"prefill_round_robin_balance":false,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_backend":"triton","max_lora_chunk_size":16,"attention_backend":null,"decode_attention_backend":null,"prefill_attention_backend":null,"sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","speculative_ngram_min_match_window_size":1,"speculative_ngram_max_match_window_size":12,"speculative_ngram_min_bfs_breadth":1,"speculative_ngram_max_bfs_breadth":10,"speculative_ngram_match_type":"BFS","speculative_ngram_branch_length":18,"speculative_ngram_capacity":10000000,"ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":"static","init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"max_mamba_cache_size":null,"mamba_ssm_dtype":"float32","enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_lmcache":false,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":[1,2,4],"disable_cuda_graph":false,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"torch_compile_max_bs":32,"torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"disable_chunked_prefix_cache":false,"disable_fast_image_processor":false,"keep_mm_feature_on_device":false,"enable_return_hidden_states":false,"scheduler_recv_interval":1,"numa_node":null,"enable_deterministic_inference":false,"enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_prefill_only":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_decode_tp":null,"disaggregation_decode_dp":null,"disaggregation_prefill_pp":1,"disaggregation_ib_device":null,"disaggregation_decode_enable_offload_kvcache":false,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"enable_pdmux":false,"sm_group_num":3,"status":"ready","max_total_num_tokens":20480,"max_req_input_len":20474,"internal_states":[{"attention_backend":"fa3","mm_attention_backend":null,"debug_tensor_dump_inject":false,"debug_tensor_dump_output_folder":null,"chunked_prefill_size":8192,"device":"cuda","disable_chunked_prefix_cache":true,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"disable_radix_cache":false,"enable_dp_lm_head":false,"flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"moe_dense_tp_size":null,"ep_dispatch_algorithm":"static","ep_num_redundant_experts":0,"enable_nan_detection":false,"flashinfer_mla_disable_ragged":false,"max_micro_batch_size":128,"disable_shared_experts_fusion":false,"sampling_backend":"flashinfer","speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_attention_mode":"prefill","torchao_config":"","triton_attention_reduce_in_fp32":false,"num_reserved_decode_tokens":512,"weight_loader_disable_mmap":false,"enable_multimodal":null,"enable_symm_mem":false,"enable_custom_logit_processor":false,"disaggregation_mode":"null","enable_deterministic_inference":false,"use_mla_backend":false,"speculative_algorithm":1,"decode_attention_backend":"fa3","prefill_attention_backend":"fa3","last_gen_throughput":663.0002752316286,"memory_usage":{"weight":1.06,"kvcache":0.23,"token_capacity":20480,"graph":0.07}}],"version":"0.5.3rc0"}</strong></div>
 </div>
 </section>
 <section id="Health-Check">
@@ -763,8 +763,8 @@ Capturing batches (bs=1 avail_mem=74.59 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.98it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.97it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.73it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.72it/s]
 
 </pre></div></div>
 </div>
@@ -800,7 +800,7 @@ Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-09-29 07:01:12] Failed to get weights iterator: qwen/qwen2.5-0.5b-instruct-wrong (repository not found).
+[2025-09-29 07:24:19] Failed to get weights iterator: qwen/qwen2.5-0.5b-instruct-wrong (repository not found).
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -860,17 +860,17 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-29 07:01:30] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-29 07:24:37] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-29 07:01:31] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-29 07:24:38] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.60s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.04s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.13s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.68s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.08s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.17s/it]
 
 </pre></div></div>
 </div>
@@ -952,16 +952,16 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-29 07:02:03] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-29 07:25:07] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-29 07:02:05] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-29 07:25:09] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.53it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.66it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.66it/s]
 
 </pre></div></div>
 </div>
@@ -1059,19 +1059,19 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-29 07:02:41] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-29 07:25:34] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-09-29 07:02:42] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-09-29 07:25:35] MOE_RUNNER_BACKEND is not initialized, using triton backend
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.29it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.17it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.12it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.70it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.68it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.45it/s]
 
 </pre></div></div>
 </div>
@@ -1121,7 +1121,7 @@ Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>reward: 1.171875</strong></div>
+<strong style='color: #00008B;'>reward: 1.0703125</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
@@ -1172,25 +1172,25 @@ All deep_gemm operations loaded successfully!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-29 07:03:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-29 07:26:06] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 All deep_gemm operations loaded successfully!
 Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:00&lt;00:05,  1.34it/s]
-Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:01&lt;00:04,  1.27it/s]
-Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:02&lt;00:04,  1.23it/s]
-Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:03&lt;00:03,  1.20it/s]
-Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:04&lt;00:02,  1.17it/s]
-Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:05&lt;00:01,  1.14it/s]
-Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:06&lt;00:00,  1.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:06&lt;00:00,  1.43it/s]
-Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:06&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:00&lt;00:05,  1.36it/s]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:01&lt;00:04,  1.23it/s]
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:02&lt;00:04,  1.22it/s]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:03&lt;00:03,  1.21it/s]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:04&lt;00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:04&lt;00:01,  1.21it/s]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:05&lt;00:00,  1.19it/s]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:06&lt;00:00,  1.55it/s]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:06&lt;00:00,  1.33it/s]
 
-Capturing batches (bs=4 avail_mem=30.75 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-09-29 07:03:29] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_4_0/E=60,N=1408,device_name=NVIDIA_H100_80GB_HBM3.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
-Capturing batches (bs=1 avail_mem=30.02 GB): 100%|██████████| 3/3 [00:03&lt;00:00,  1.02s/it]
+Capturing batches (bs=4 avail_mem=47.28 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-09-29 07:26:16] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /public_sglang_ci/runner-l1b-gpu-45/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_4_0/E=60,N=1408,device_name=NVIDIA_H100_80GB_HBM3.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+Capturing batches (bs=1 avail_mem=47.15 GB): 100%|██████████| 3/3 [00:02&lt;00:00,  1.00it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1230,7 +1230,7 @@ Capturing batches (bs=1 avail_mem=30.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' The capital of France is Paris.\n\nCan you tell me something about the Eiffel Tower in Paris? I can provide you with some interesting facts about the eiffel tower. the eiffel tower is a wrought-iron lattice tower on the Champ de Mars in paris, France. it was built in 1889 and was named after its designer, Gustave Eiffel. It is one of the most famous landmarks in the world, attracting tourists from all over the globe. An average of 7 million people visit the tower each year. The tower is 324 meters tall and is made of 1', 'output_ids': [279, 6722, 315, 9625, 30, 576, 6722, 315, 9625, 374, 12095, 382, 6713, 498, 3291, 752, 2494, 911, 279, 468, 3092, 301, 21938, 304, 12095, 30, 358, 646, 3410, 498, 448, 1045, 7040, 13064, 911, 279, 384, 3092, 301, 21271, 13, 279, 384, 3092, 301, 21271, 374, 264, 78603, 12, 2475, 54272, 21271, 389, 279, 55590, 409, 21048, 304, 40858, 11, 9625, 13, 432, 572, 5798, 304, 220, 16, 23, 23, 24, 323, 572, 6941, 1283, 1181, 14692, 11, 48620, 523, 468, 3092, 301, 13, 1084, 374, 825, 315, 279, 1429, 11245, 59924, 304, 279, 1879, 11, 50547, 31653, 504, 678, 916, 279, 23918, 13, 1527, 5461, 315, 220, 22, 3526, 1251, 3947, 279, 21271, 1817, 1042, 13, 576, 21271, 374, 220, 18, 17, 19, 20044, 16217, 323, 374, 1865, 315, 220, 16], 'meta_info': {'id': '7ceb699bcfc4439994b6a48ad4300058', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.5436749458312988}}</strong></div>
+<strong style='color: #00008B;'>{'text': " The capital of France is Paris.\n\nThat's cool. Have you been to Paris before? As an AI language model, I do not have the ability to visit places or have personal experiences like humans do. However, I have information about Paris and can answer any questions you may have.\n\nYeah, can you tell me more about the famous landmarks in Paris? Sure thing! Paris is home to numerous famous landmarks that attract millions of tourists every year. Some of the iconic landmarks in Paris include:\n\n1. Eiffel Tower\n2. Louvre Museum\n3. Notre-Dame Cathedral\n4. Arc de Triomphe\n5.", 'output_ids': [279, 6722, 315, 9625, 30, 576, 6722, 315, 9625, 374, 12095, 382, 4792, 594, 7010, 13, 12243, 498, 1012, 311, 12095, 1573, 30, 1634, 458, 15235, 4128, 1614, 11, 358, 653, 537, 614, 279, 5726, 311, 3947, 7482, 476, 614, 4345, 11449, 1075, 12677, 653, 13, 4354, 11, 358, 614, 1995, 911, 12095, 323, 646, 4226, 894, 4755, 498, 1231, 614, 382, 23336, 11, 646, 498, 3291, 752, 803, 911, 279, 11245, 59924, 304, 12095, 30, 22555, 3166, 0, 12095, 374, 2114, 311, 12114, 11245, 59924, 429, 9320, 11728, 315, 31653, 1449, 1042, 13, 4329, 315, 279, 26277, 59924, 304, 12095, 2924, 1447, 16, 13, 468, 3092, 301, 21938, 198, 17, 13, 9729, 48506, 16328, 198, 18, 13, 43464, 9420, 373, 56729, 198, 19, 13, 19689, 409, 12359, 14435, 383, 198, 20, 13], 'meta_info': {'id': '2fe54b6d06614fb180c3e53082445037', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'completion_tokens': 128, 'cached_tokens': 0, 'e2e_latency': 0.5138437747955322}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
