@@ -464,6 +464,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA Out of Memory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-illegal-memory-access-encountered">CUDA Error: Illegal Memory Access Encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-server-hangs">The server hangs</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequently-asked-questions">Frequently Asked Questions</a><ul class="visible nav section-nav flex-column">
@@ -492,7 +493,7 @@ document.write(`
 <ul class="simple">
 <li><p>If OOM occurs during prefill, try reducing <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to <code class="docutils literal notranslate"><span class="pre">4096</span></code> or <code class="docutils literal notranslate"><span class="pre">2048</span></code>. This saves memory but slows down the prefill speed for long prompts.</p></li>
 <li><p>If OOM occurs during decoding, try lowering <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>.</p></li>
-<li><p>You can also reduce <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to a smaller value, such as 0.8 or 0.7. This decreases the memory usage of the KV cache memory pool and helps prevent OOM errors during both prefill and decoding. However, it limits maximum concurrency and reduces peak throughput.</p></li>
+<li><p>You can also decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> to a smaller value, such as 0.8 or 0.7. This decreases the memory usage of the KV cache memory pool and helps prevent OOM errors during both prefill and decoding. However, it limits maximum concurrency and reduces peak throughput.</p></li>
 <li><p>Another common case for OOM is requesting input logprobs for a long prompt as it requires significant memory. To address this, set <code class="docutils literal notranslate"><span class="pre">logprob_start_len</span></code> in your sampling parameters to include only the necessary parts. If you do need input logprobs for a long prompt, try reducing <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>.</p></li>
 </ul>
 </section>
@@ -504,6 +505,18 @@ document.write(`
 <li><p>If it is an out-of-memory issue, it may sometimes be reported as this error instead of “Out of Memory.” Refer to the section above for guidance on avoiding OOM issues.</p></li>
 </ul>
 </section>
+<section id="the-server-hangs">
+<h3>The server hangs<a class="headerlink" href="#the-server-hangs" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If the server hangs during initialization or running, it can be memory issues (out of memory), network issues (nccl errors), or other bugs in sglang.</p>
+<ul>
+<li><p>If it is out of memory, you might see that <code class="docutils literal notranslate"><span class="pre">avail</span> <span class="pre">mem</span></code> is very low during the initialization or right after initialization. In this case,
+you can try to decrease <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code>, decrease <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code>, or decrease <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Other bugs, please raise a Github issue to us.</p></li>
+</ul>
+</section>
 </section>
 <section id="frequently-asked-questions">
 <h2>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Link to this heading">#</a></h2>
@@ -512,12 +525,9 @@ document.write(`
 <p>You may notice that when you send the same request twice, the results from the engine will be slightly different, even when the temperature is set to 0.</p>
 <p>From our initial investigation, this indeterminism arises from two factors: dynamic batching and prefix caching. Roughly speaking, dynamic batching accounts for about 95% of the indeterminism, while prefix caching accounts for the remaining portion. The server runs dynamic batching under the hood. Different batch sizes can cause PyTorch/CuBLAS to dispatch to different CUDA kernels, which can lead to slight numerical differences. This difference accumulates across many layers, resulting in nondeterministic output when the batch size changes. Similarly, when prefix caching is enabled, it can also dispatch to different kernels. Even when the computations are mathematically equivalent, small numerical differences from different kernel implementations lead to the final nondeterministic outputs.</p>
 <p>To achieve more deterministic outputs in the current code, you can add <code class="docutils literal notranslate"><span class="pre">--disable-radix-cache</span></code> and send only one request at a time. The results will be mostly deterministic under this setting.</p>
-<p>We are still investigating the root causes and potential solutions. In the short term, we may introduce a “deterministic mode” that uses more padding to address the variance caused by dynamic batching. This mode will be more deterministic but slower.</p>
-<p>We have two issues to track our progress:</p>
-<ul class="simple">
-<li><p>The deterministic mode is tracked at <a class="github reference external" href="https://github.com/sgl-project/sglang/issues/1729">sgl-project/sglang#1729</a>.</p></li>
-<li><p>The per-request random seed is tracked at <a class="github reference external" href="https://github.com/sgl-project/sglang/issues/1335">sgl-project/sglang#1335</a>.</p></li>
-</ul>
+<p><strong>Note</strong>:
+Recently, we also introduced a deterministic mode, you can enable it with <code class="docutils literal notranslate"><span class="pre">--enable-deterministic-inference</span></code>. It might not work for all cases.
+Please find more details in this blog post: https://lmsys.org/blog/2025-09-22-sglang-deterministic/</p>
 </section>
 </section>
 </section>
@@ -570,6 +580,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-out-of-memory">CUDA Out of Memory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-illegal-memory-access-encountered">CUDA Error: Illegal Memory Access Encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-server-hangs">The server hangs</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequently-asked-questions">Frequently Asked Questions</a><ul class="visible nav section-nav flex-column">
