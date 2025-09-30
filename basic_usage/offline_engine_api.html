@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-30 03:32:40] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-09-30 03:52:56] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -569,10 +569,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.21it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.20it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.30it/s]
 
-Capturing batches (bs=1 avail_mem=20.93 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 18.62it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:02&lt;00:00,  8.37it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -604,34 +604,26 @@ Capturing batches (bs=1 avail_mem=20.93 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Omer. I am a 15 year old boy. I have been in school for 14 years and I have never been bullied. I am a very smart and very good at mathematics. I am getting ready to start my high school. I am trying to learn as much as possible. What should I do to make sure I get into high school without being bullied? Do I have to go to a public or private school? Is it better to go to school in my home state or in another state? Should I start school early in my high school?
-I really want to go to high school and do well. I
+Generated text:  Carissa, and I&#39;m a lawyer. I have extensive experience with real estate, estate planning, and corporate law. I specialize in helping individuals and businesses navigate complex legal issues in the areas of tax, fiduciary duty, contract, and corporate structure. I am also committed to providing helpful, professional, and thoughtful legal advice. I strive to help my clients achieve their goals and best interests. How can Carissa assist individuals and businesses in navigating complex legal issues in the areas of tax, fiduciary duty, contract, and corporate structure? Carissa can help individuals and businesses navigate complex legal issues in the areas of tax, fid
 ===============================
 Prompt: The president of the United States is
-Generated text:  a political office. A president is a person who is elected to a term of office.  Having read the above passage, choose the correct answer among the options. Passage Text: The president is a person who is elected to a term of office. The president is the head of the executive branch of the government. The president is the head of the government. The president is the official head of state. The president is the person who makes the laws. The president is the person who takes the constitutional oath of office. The president is the official head of government. The president is the person who makes the laws. The president is the official
+Generated text:  now trying to secure a deal for the partial cancellation of the debt ceiling.
+That’s why the United States does a little bit of research before filing a bill, as is their custom.
+Let’s go through the steps.
+First, the President of the United States has to write a bill for the debt ceiling, which is a document that is used by Congress. This document is a document of the US government that lists the amount of debt that the US government has. The debt ceiling is how much debt the US government has.
+The US government needs to have enough money to pay its bills. The bill needs to be approved by the US Congress
 ===============================
 Prompt: The capital of France is
-Generated text:  [ ]
-A. Paris
-B. London
-C. Moscow
-D. Tokyo
-Answer:
-A
-
-Which of the following statements about DNA molecules is incorrect?
-A. DNA molecules consist of two strands that are antiparallel to each other.
-B. DNA molecules are composed of nucleotides, which can be categorized into four types: nucleotides with thymine (T), nucleotides with uracil (U), ribose, and deoxyribose.
-C. DNA molecules have a double helix structure with a specific spatial structure, where the strands are antiparallel and are held together by
+Generated text:  Paris. It is the largest and most populous city in Europe. It is the capital of the second-most populous country in the world, France.
+Paris is a major centre for the arts, architecture, fashion, food and music. It is known as the &#34;City of Love&#34; and has the Eiffel Tower. The city was founded in the 12th century as a Norman fort, with little permanent structure built until the 17th century, when it was extensively rebuilt, when Napoleon entered the city as a French general in 1800, and when Napoleon was released after the Battle of Waterloo.
+The city
 ===============================
 Prompt: The future of AI is
-Generated text:  still in the infancy phase. With its continuous evolution, we will see it transforming into a powerful technology that will be critical for the future of business and the way we live our daily lives.
+Generated text:  certain
 
-What kind of job will AI replace?
+Artificial intelligence (AI) is the biggest and most exciting area of innovation in the next decade. The potential for AI is profound, but so is the probability that it will not be delivered on time or in the way people expect. As a result, it is very important to focus on the key areas that will have the biggest impact, so that people can plan accordingly.  This is what this article is about.
 
-AI will replace jobs that are routine and repetitive, such as manufacturing, service, and office jobs. However, it will also disrupt many jobs that are related to customer service, research and development, and customer support.
-
-AI will reduce the need for humans to do repetitive and routine tasks. It will also replace jobs that require creativity, such as the design of products and services, while also making jobs that require a
+I am a fan of the future of AI, but I do not believe it can fully deliver on all of the promises and it will take time. It is important to plan for this, however
 </pre></div></div>
 </div>
 </section>
@@ -671,19 +663,17 @@ AI will reduce the need for humans to do repetitive and routine tasks. It will a
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [reason for interest in the industry]. I&#39;m always looking for ways to [action or goal]. I&#39;m a [reason for interest in the industry] and I&#39;m always eager to learn and grow. I&#39;m a [reason for interest in the industry] and I&#39;m always eager to learn and grow. I&#39;m a [reason for interest in the industry] and I&#39;m always eager to learn and grow. I&#39;m a [reason
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Library, and the French National Opera. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is the largest city in France and is known for its diverse population, cuisine, and fashion. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. It is a city of art, culture, and entertainment, and is a popular destination for tourists and locals alike. The city
+Generated text:  Paris. It is the largest city in Europe and the third-largest city in the world by population. The city is known for its rich history, art, and cuisine. It is also home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is a popular tourist destination and a major economic center in Europe. It is also a cultural hub for France and the world. The city is home to many important institutions such as the French Academy of Sciences and the French Parliament. It is a major center for research and innovation in science, technology, and culture. Paris is a city
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some potential trends include:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way we interact with technology and the world around us. Here are some potential trends that are likely to shape the future of AI:
 
-1. Increased integration of AI into everyday life: AI is already being used in a wide range of applications, from self-driving cars to personalized medicine. As the technology continues to advance, we can expect to see even more integration into our daily lives.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, we can expect to see even more widespread use of AI in healthcare, with more sophisticated algorithms and machine learning techniques being developed to improve diagnosis, treatment, and patient care.
 
-2. AI will become more integrated into our physical environment: AI is already being used in a variety of applications, from smart homes to autonomous vehicles. As the technology continues to evolve, we can expect to see even more integration into our physical environment.
-
-3
+2. Increased use of AI in finance: AI is already being used in finance to improve risk management, fraud
 
 </pre></div></div>
 </div>
@@ -726,20 +716,23 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [age] year old [occupation]. I have always been interested in [briefly describe your passion or hobby]. However, I have never pursued it or even realized it until recently. I am currently [insert new position] at [organisation], where I am [insert new title]. I enjoy [describe your favorite hobby, movie, book, etc.]. How can I help you today? Write in a neutral and straightforward tone. My name is [Name], and I am a [age] year old [occupation]. I have always been interested in [briefly describe your passion or hobby]. However
+Generated text:  ___________ and I am a/an ___________. My ___________ is located in __________. I am ___________ and I am ___________________. I believe in ____________. I am a/an ___________, I have ___________. My most significant achievement is ___________________. I am a/an ___________, and I have a/an ___________ job. If anyone would like to meet me, they can come to ___________. I&#39;m a/an ___________. I&#39;m ___________.
+
+Remember to use a neutral and appropriate tone throughout your introduction. It is important that you do not make any personal attacks or negative remarks about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Is there anything else you&#39;d like me to explain? Please describe another fact or piece of information about Paris that you don&#39;t already have.
-Paris is the capital of France, and it is a major city in Western Europe. The city is famous for its charming architecture, its rich history, and its cuisine. It is also a cultural hub and a cosmopolitan city with many neighborhoods that offer different types of food, art, and entertainment. Paris is home to the Louvre Museum, the Eiffel Tower, the Notre-Dame Cathedral, and the many other notable landmarks. The city is also known for its annual
+Generated text:  Paris, the 19th-largest city in the world and is one of the world’s most populous cities, with a population of over 6 million people. It is the largest city in metropolitan France and one of the largest cities in the world by land area. It is home to the offices of the European Union, the United Nations, and numerous world-renowned museums and art galleries. Paris is known for its stunning architecture, vibrant cultural scene, and rich history. Its annual Parisian film festival, the Cannes Film Festival, is a major event in the world of cinema. The city is also known for its fashion industry, and
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  looking very promising, with many possibilities and possibilities for innovation. Here are some potential trends that AI is likely to continue to evolve and develop in the coming years:
+Generated text:  highly uncertain, but here are some potential trends that could be expected:
 
-1. Increased integration with other technologies: As AI continues to improve, we may see even more integration of AI into other technologies, such as robotics, virtual reality, and augmented reality. This could lead to new forms of AI that are even more sophisticated and advanced than we have today.
+1. Machine Learning: Machine learning is already becoming more prevalent and will continue to evolve. It is expected to be the main force driving AI advancement in the coming years, with applications in areas such as healthcare, finance, and natural language processing.
 
-2. Personalization and learning: AI is already becoming more personalized, with machines being able to learn and adapt to new data patterns over time. This could lead to even more advanced personalization,
+2. Emotion AI: Emotion AI is expected to become a more prevalent technology, with AI systems able to recognize and interpret emotional cues in human behavior.
+
+3. Autonomous Vehicles: Autonomous vehicles are already a reality, and there is an increasing focus on AI-driven autonomous vehicle technology in the coming years.
+
+4. Quantum AI
 </pre></div></div>
 </div>
 </section>
@@ -785,32 +778,17 @@ Generated text:  looking very promising, with many possibilities and possibiliti
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert your name], and I am a [insert your profession]. I&#39;m an [insert your age] year old, [insert your nationality]. I enjoy [insert something you like doing], [insert something you are passionate about]. If you could have any superpower, it would be [insert something specific to you]. So, how can I meet you? A human would love to meet you. [Insert short, neutral self-introduction] How about you? A human would love to meet you. [Insert short, neutral self-introduction]
-Hello, my name is [insert your name], and I am a [insert your
+Generated text:  [Name]. I am a young woman with a desire to pursue my passions. I am creative and ambitious, and I am constantly learning and growing. I love to travel, be outdoors, and explore new places. I am eager to connect with people and help them grow their own dreams. I believe that everyone has something special, and I want to help others discover their own paths to happiness and fulfillment. I am open to new experiences and different ways of living. Thank you for having me! Can you summarize the character&#39;s core values and beliefs? Based on the fictional character&#39;s self-introduction, it seems that the character values creativity,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Step 1: Identify the key elements of the statement.
-- Capital city of France
-- Paris is the capital
-
-Step 2: Determine the most important information.
-- Paris is the most important capital city of France
-
-Step 3: Craft a concise statement incorporating the most important information.
-Paris is the capital of France.
-
-Final answer: Paris is the capital of France.
-(Alternatively, one could also say: Paris is the city of the King of France)
-This statement is concise and directly addresses the core fact about France&#39;s capital city without mentioning any minor details. It provides a clear and specific statement
+Generated text:  Paris, the city of light and culture, where the Eiffel Tower stands as a testament to its beauty and significance. It is a bustling metropolis of over 2.5 million people and is known for its iconic landmarks, such as the Louvre Museum and Notre-Dame Cathedral. Paris is also a beloved destination for tourists, thanks to its rich history, beautiful architecture, and delicious cuisine. The city&#39;s culture, particularly its fashion and music scenes, are also celebrated throughout the world. Overall, Paris is a city of innovation, creativity, and cultural enrichment. Paris is located on the Île-de-France region and has
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to involve a combination of advancements and challenges, which could potentially lead to different types of technology and applications. Here are some possible future trends in artificial intelligence:
+Generated text:  expected to continue to evolve and develop in exciting ways. Here are some potential trends that are expected to shape the field in the coming years:
 
-1. Machine Learning: As AI continues to advance, it is likely that we will see more emphasis on machine learning and deep learning. This will involve training machines to recognize patterns and make predictions, and will involve building complex models that can learn from large amounts of data.
+1. Increased integration of AI with other technologies: As AI becomes more prevalent in our daily lives, we can expect to see even more integration with other technologies such as voice recognition, natural language processing, and machine learning. This will likely lead to even more complex and diverse AI systems that can work alongside humans in a wide variety of applications.
 
-2. Neural Networks: Neural networks are becoming increasingly important as AI systems become more complex and advanced. They are being used to solve problems that are beyond the reach of traditional machine learning algorithms, such as image recognition
+2. Enhanced human-AI collaboration: As AI becomes more capable, we can expect to see increased collaboration between humans and AI. This could lead to more efficient
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
