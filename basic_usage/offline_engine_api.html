@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sep 30, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 01, 2025"/>
   </head>
   
   
@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-09-30 23:39:32] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-01 00:53:49] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -569,10 +569,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.79it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.78it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 14.75it/s]
+Capturing batches (bs=1 avail_mem=18.65 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 17.98it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -604,43 +604,21 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Stefan Amon and I&#39;m a 3rd year PhD student at MIT. My research interests are in the field of algorithms and combinatorics, particularly in the areas of parallel algorithms, computational complexity, and random walks on graphs. Before coming to MIT, I was a postdoctoral fellow at Microsoft Research Cambridge, where I worked on efficient parallel algorithms and parallel computing. My thesis at Cambridge focused on designing and analyzing parallel algorithms for computing with dynamic subgraph structure. This included studying how to design parallel algorithms with subgraph properties that are preserved by parallel reductions and reductions to independent sets. My current research focuses on designing and analyzing parallel algorithms
+Generated text:  Linda and I&#39;m a 19 year old girl from Ohio. I am very good at drawing and I am very good at computer design. I have tried a lot of things and I will tell you a story about my friend who was sad and wanted to find out what made her sad. My friend told me that her pet dog died in her yard after she was playing outside. She had been a faithful companion to her for many years and her dog was a great helper to her. She was so sad that she was telling me that she was going to kill her dog. That&#39;s why she wanted to find out what made her so
 ===============================
 Prompt: The president of the United States is
-Generated text:  a highly important leader, and he has 24 states, each with a different population. For instance, California has a population of 38.72 million, while Nevada has a population of 986,000. The president is planning to visit each state and announce the size of its population. How many distinct ways can the president choose 2 states to visit, given that states with the same population number must be considered different? To determine the number of distinct ways the president can choose 2 states to visit from his 24 states, given that the states with the same population number must be considered
+Generated text:  trying to decide how many armed guards he should have on his property. He has a rectangular piece of land measuring $200 \mathrm{~m} \times 100 \mathrm{~m}$. He wants to enclose the entire property. The president has $120$ armed guards, but he needs to find the minimum number of armed guards he should use to ensure that there is at least one guard in every $20 \mathrm{~m} \times 20 \mathrm{~m}$ rectangular area. How many guards should the president use?
+To determine the minimum number of armed
 ===============================
 Prompt: The capital of France is
-Generated text:  ______.
-A. Paris
-B. Amsterdam
-C. London
-D. New York
-Answer:
-
-A
-
-Which of the following statements about the Five Principles of Peaceful Coexistence is incorrect?
-A. It is a principle of international relations
-B. It does not reflect the fundamental interests of all peoples in the world
-C. It is a general principle of national relations
-D. It is a principle to be followed by all countries in the world
-Answer:
-
-B
-
-The most important and powerful element in law is ____
-A. Constitution
-B. Legal System
-C. Law
-D. Legislation
-Answer:
-
-B
+Generated text:  Paris. It is a very old city with lots of historical places. In Paris there are many different kinds of food. The food is very different from other parts of France. The main food there is mainly French fries, burgers, cheese, and cheese sandwiches. They use many different kinds of meat and vegetables. The French always use bread to eat bread. A lot of people from other countries don&#39;t like French food. They are afraid that it is not good. So some French restaurants now have to use French fries, burgers, cheese and cheese sandwiches as well. But many people still like it. France is the largest country in the world
 ===============================
 Prompt: The future of AI is
-Generated text:  bright, and it is not hard to see why. AI is advancing at an unprecedented rate, and it is widely anticipated that the technology will play an increasingly important role in various aspects of our lives, such as healthcare, education, finance, and more.
-As we continue to make progress in AI, it is important to understand how it is being used and how it will be used in the future. In this article, we will explore the current state of AI and its potential future applications.
-One of the most significant advancements in AI is the ability to analyze and interpret large amounts of data. This capability is currently being used in a wide range
+Generated text:  here - now you need to know what it means
+
+With AI gaining popularity across various industries, it&#39;s no surprise that many people are asking themselves what it actually means. What does AI actually mean? Is AI just about making machines do the work of humans, or is it more than that? In this article, we&#39;ll explore the different ways AI can be used, and what it means in the context of today&#39;s world.
+
+AI is a vast field that can be broken down into several distinct subfields. Some of the most common ones include machine learning, natural language processing, computer vision, and robotics. Each of these subfields can
 </pre></div></div>
 </div>
 </section>
@@ -680,17 +658,21 @@ One of the most significant advancements in AI is the ability to analyze and int
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name]. I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in Europe and the third largest city in the world by population. Paris is known for its rich history, beautiful architecture, and vibrant culture. It is also home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is a major tourist destination and a popular destination for business and leisure activities. The city is also known for its fashion industry, with many famous designers and boutiques. Paris is a cultural and economic hub of France and a major tourist destination. It is a city that is both beautiful and exciting, and is a must-visit destination
+Generated text:  Paris, the city that serves as the political, cultural, and economic center of the country. It is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, as well as its rich history and diverse population. Paris is also a major tourist destination, with millions of visitors annually. The city is home to many famous museums, including the Musée d&#39;Orsay, the Musée Rodin, and the Musée d&#39;Orsay. It is also a major center for the arts, with many renowned artists and galleries. Paris is a vibrant and dynamic city that continues
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and the impact of AI on society as a whole.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making.
 
-2. Greater integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to a more human-like AI that can better understand and respond to human
+2. Greater use of AI in healthcare: AI is already being used in healthcare to diagnose and treat diseases, and it has the potential to revolutionize the field by improving diagnostic accuracy and personalized treatment plans.
+
+3. Greater use of AI in education: AI is already being used in education to personalize learning experiences, provide personalized feedback, and improve student engagement.
+
+4. Greater use of AI in transportation: AI is already being used
 
 </pre></div></div>
 </div>
@@ -733,19 +715,21 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I&#39;m a [Your Profession or Area of Expertise] with over [X years] of experience in [Your Area of Expertise]. I&#39;m confident, effective, and always aim to create a positive impact for [Your Area of Expertise]. I&#39;m known for my[Professional Skills/Experience] and am always looking for ways to learn and grow. I love to share my knowledge and passion for my profession with others. How can you tell me more about me? Let me know! [Your Name] [Your Profession] Hello! I&#39;m [Your Name] and I&#39;m a [Your Profession or
+Generated text:  [Name] and I&#39;m a [Job Title] at [Company]. I&#39;m a [Skill or Qualification] with a [Degree or Education] from [University]. I enjoy [Favorite Thing About Your Job], and I&#39;m looking forward to [Short Description of What You&#39;ll Do Here]. I believe that [Why You Got Here], and I&#39;m eager to start [Next Step]. Thanks for taking the time to meet me. [Start with your name and job title briefly, then mention the company and what you&#39;ve done here. In your introduction, include any specific skills or qualifications that stand out to the reader. Start with
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is located in the Paris region, on the left bank of the Seine River. The city is home to numerous art museums, galleries, theaters, and landmarks, including Notre-Dame Cathedral, the Louvre Museum, and the Eiffel Tower. Paris is also known for its historic canals, charming neighborhoods, and delicious cuisine. It is a vibrant and cosmopolitan city with a rich history and vibrant culture. Visitors to Paris can explore the city&#39;s diverse neighborhoods, take a train ride to see the Eiffel Tower, or enjoy a meal at a popular French restaurant.
+Generated text:  Paris.
+
+Paris is the capital city of France. It is located in the northern part of the country and is the largest city in the country by population. The city is known for its rich history, stunning architecture, and vibrant culture. It is also a cosmopolitan city with many international influences and a world-renowned fashion and art scene. Paris is the second most-visited city in the world and is a popular tourist destination. It is home to many world-class museums, theaters, and historical landmarks. It is also a hub for research and development, hosting numerous prestigious scientific and cultural institutions. Paris is known for its delicious cuisine, diverse
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by several trends, some of which are emerging:
+Generated text:  uncertain, but there are several trends that are likely to shape its development in the coming years. Here are some potential future trends in artificial intelligence:
 
-1. Increased use of AI in healthcare: AI is increasingly being used to analyze medical data and improve diagnosis and treatment outcomes. This could lead to more accurate and personalized healthcare, as well as the development of new therapies.
+1. Increased automation: The ability to automate repetitive tasks and improve efficiency in various industries will continue to grow in the future. AI-powered robots and automation tools will become increasingly common in manufacturing, customer service, and retail.
 
-2. Greater integration of AI into everyday life: AI is already being integrated into a wide range of products and services, from self-driving cars to personal assistants like Siri and Alexa. As AI technology continues to advance, it is likely that this trend will continue to grow.
+2. Enhanced privacy: As AI becomes more advanced, it will be necessary to address concerns about privacy and data security. There will be increasing efforts to protect individuals&#39; personal information and ensure that AI systems are used ethically.
 
-3. AI becoming more autonomous: As the technology advances, it is likely that
+3. New ways of thinking: AI is increasingly
 </pre></div></div>
 </div>
 </section>
@@ -791,19 +775,19 @@ Generated text:  likely to be shaped by several trends, some of which are emergi
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a creative, digital nomad living in [City/Location]. I&#39;m a freelance graphic designer with a keen eye for detail and a passion for creating visually stunning content. As a digital nomad, I&#39;m always on the go, using my expertise to help businesses thrive and find new opportunities in [Industry/Market]. What brought you to this position? What inspired you to leave your previous job? What is your dream job for the future? And what&#39;s your favorite hobby or activity you do when you&#39;re not working? As a storyteller, I&#39;m always looking for new ways to bring people together and
+Generated text:  Sarah. I&#39;m a 25-year-old software developer with a passion for innovation and problem-solving. I&#39;ve always been curious about new technologies and want to apply my skills to create solutions for real-world challenges. I enjoy coding in various programming languages and am always eager to learn new things. I&#39;m looking for opportunities to grow and develop as a professional, and I&#39;m excited to start working on my next project. What&#39;s your name and what&#39;s your area of expertise? I&#39;m looking forward to meeting you! [Your Name] [Your Area of Expertise] [Your Area of Expertise] [Your Area of Expertise
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the bustling and historic city known for its rich culture, iconic architecture, and iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. Paris is also known for its vibrant arts scene and annual festivals like the Eiffel Tower Week and the Christmas Market. The city is home to many museums, galleries, and historical sites, making it a popular tourist destination. With its modern infrastructure and commitment to sustainable development, Paris is also a thriving and important economic and political center of France.
-
-France&#39;s capital city is Paris, the bustling and historic city known for its rich culture, iconic architecture, and iconic landmarks like the E
+Generated text:  Paris, also known as &#34;La Ville&#34;, which is a mix of historic architecture and modern culture. It was founded as the capital city of the Kingdom of France in the 12th century and has remained so for over 700 years. The city is home to the Eiffel Tower, a famous landmark, and the Louvre Museum, one of the largest in the world, housing some of the most famous art collections in the world. French cuisine and wine are also very famous in Paris, and the city has many historic and modern attractions such as the Louvre, Notre-Dame Cathedral, and the Parc des
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain and rapidly changing, with many possible directions and trajectories. However, there are several key trends that are likely to continue or evolve in the coming years:
+Generated text:  vast and diverse, with many different trends and areas of research that are shaping the technology. Some of the key trends in AI include:
 
-1. Automation: As AI continues to advance, automation will become more widespread and sophisticated. This will result in the replacement of human workers in many areas, leading to job displacement and a shift towards automation and automation-enhanced human work.
+1. Improved accuracy and efficiency: As AI continues to advance, the accuracy and efficiency of the technology will improve. This means that AI systems will be able to perform tasks more quickly and accurately than they currently can.
 
-2. Augmented Reality (AR): AR will continue to develop and become more integrated into our daily lives, particularly in the area of education. It will be used for learning, training, and communication in the classroom, and for entertainment and interactive experiences
+2. Increased use of AI in healthcare: AI is increasingly being used in healthcare to help doctors diagnose and treat diseases more accurately and quickly. This will likely lead to better outcomes for patients and more efficient healthcare systems.
+
+3. More predictive modeling: AI is being used to create more accurate models
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -905,7 +889,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sep 30, 2025.
+  Last updated on Oct 01, 2025.
   <br/>
 </p>
   </div>
