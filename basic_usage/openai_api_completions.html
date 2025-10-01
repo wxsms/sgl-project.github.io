@@ -563,17 +563,17 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-01 05:27:45] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-01 10:03:55] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-01 05:27:48] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-01 10:03:57] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.08it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.63it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.62it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.98it/s]
+Capturing batches (bs=1 avail_mem=57.22 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.69it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -587,7 +587,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32637
+Server started on http://localhost:36482
 </pre></div></div>
 </div>
 </section>
@@ -621,7 +621,7 @@ Server started on http://localhost:32637
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='95d7758e40de46bfbcef384c23b73f7e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759296480, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='dfdb3cd2c7184f008b959e3b911c52ee', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759313048, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -825,7 +825,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a civilization that flourished in Italy from the 8th to the 4th centuries BCE. It was known for its advanced infrastructure, including roads, aqueducts, and public works. The city of Rome was the capital of the Roman Empire and was a major center of learning, art, and culture.<br><br>Some of the major achievements of ancient Rome include:<br><br>1. Construction of the Colosseum: A massive amphitheater built to entertain the Roman populace during gladiatorial games.<br><br>2. The construction of the Pantheon: A temple dedicated to Jupiter, built in honor of Augustus Caesar.<br><br>3</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in Italy from the 8th to the 4th century BCE. Some of their major achievements include:<br><br>1. **Founding of Rome**: The Romans are credited with founding Rome, which became the capital of the Roman Empire.<br><br>2. **Construction of the Colosseum**: The Colosseum, built during the reign of Emperor Vespasian, was one of the largest amphitheaters in the world and is considered one of the greatest engineering feats in history.<br><br>3. **Roman Law**: The Roman legal system, which includes the Twelve Tables, is considered one</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -848,23 +848,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-I&#39;m sorry, but as an AI language model created by Alibaba Cloud, I don&#39;t have access to information about a specific test you might be referring to. However, I can provide some general guidance on handling such questions or providing information on a wide range of topics.
-
-When you encounter a test or a question, it&#39;s important to approach it with a clear and structured response. Here are some tips to help you handle such situations effectively:
-
-1. **Understand the Test or Question:** Before answering, make sure you fully understand what is being asked. Look for key information and any specific criteria or guidelines that might be relevant.
-
-2. **Check Your Resources:** Review your notes, textbooks, or any relevant materials you have to ensure you have a comprehensive understanding of the topic.
-
-3. **Answer with Precision:** Use clear and specific language. Avoid vague or ambiguous answers. Explain what you know and provide examples or explanations to support your points.
-
-4. **Be Concise:** Keep your answer short and to the point. Even if you have a lot of information, provide a concise summary or a brief overview.
-
-5. **Seek Feedback:** If you&#39;re unsure about a particular answer, ask for feedback from someone else. This can help you clarify your thinking and ensure you haven&#39;t missed anything.
-
-6. **Practice with Others:** If you&#39;re still unsure about a question or topic, consider asking a classmate, a friend, or a teacher for help.
-
-Remember that the goal is to provide accurate, relevant, and helpful information. If you have any specific questions or need further clarification, don&#39;t hesitate to ask!
+Yes, that&#39;s a test. I&#39;m designed to assist with various tasks and provide information, but the specific context or purpose for which I am being used is not provided in your request. If you have any other questions or need further assistance with something specific, feel free to ask!
 </pre></div></div>
 </div>
 </section>
@@ -895,7 +879,7 @@ Remember that the goal is to provide accurate, relevant, and helpful information
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='c6b8b017a953411f8aa3ab7d2908ab7a', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759296481, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='c3c4fb5504634fe29ce0a29964338d7a', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759313048, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -927,7 +911,7 @@ Remember that the goal is to provide accurate, relevant, and helpful information
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='e2942977d96342539fa6f751276b152f', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" As an AI language model, I don't have personal experiences or emotions, but I can generate a story based on common human experiences. Here's a space explorer story:", matched_stop='\n\n')], created=1759296481, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=34, prompt_tokens=9, total_tokens=43, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='094e01111bae47a4beafb4b1510f208e', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had been on numerous missions to explore new planets and moons in the vast universe. Jack had always been fascinated by the mysteries of the stars and was determined to find out what lay beyond the Earth.', matched_stop='\n\n')], created=1759313048, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=52, prompt_tokens=9, total_tokens=61, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
