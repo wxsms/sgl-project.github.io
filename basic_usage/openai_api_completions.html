@@ -563,17 +563,17 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-02 02:58:16] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-02 04:42:35] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-02 02:58:18] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-02 04:42:37] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.00it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.99it/s]
 
-Capturing batches (bs=1 avail_mem=71.46 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.80it/s]
+Capturing batches (bs=1 avail_mem=57.22 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.10it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -587,7 +587,7 @@ Capturing batches (bs=1 avail_mem=71.46 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38970
+Server started on http://localhost:31654
 </pre></div></div>
 </div>
 </section>
@@ -621,7 +621,7 @@ Server started on http://localhost:38970
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='a9c665772b5c428da6df177d8a9198ac', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759373908, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='e2a12bc97ccc44989e3870e0968d36d8', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759380167, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -825,7 +825,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The Roman Empire, which lasted from the 8th to the 4th century AD, was a major civilization that left an indelible mark on history. Some of their major achievements include:<br><br>1. **Architecture**: The Romans built magnificent structures such as the Colosseum, the Pantheon, and the Colosseum, which are considered some of the most iconic buildings in history.<br><br>2. **Law**: The Roman legal system was one of the most advanced in the world, with a code of laws that still influences legal systems today.<br><br>3. **Education**: The Roman Empire was a center of education, with schools</strong></div>
+<strong style='color: #00008B;'>The Roman Empire, which lasted from the 8th to the 4th century CE, was a major civilization that had a profound impact on world history. Some of the major achievements of ancient Rome include:<br><br>1. **Roman Law**: The Romans developed a system of law that was based on natural rights and principles of justice. This system is still in use today in many countries.<br><br>2. **Architecture**: Rome is renowned for its grand architecture, including the Colosseum, the Pantheon, and the Pantheon of Jupiter.<br><br>3. **Cultures**: Ancient Rome was home to a diverse range of cultures, including Greek</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -848,7 +848,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. What can I help you with today?
+Yes, that&#39;s a test. I&#39;m here to help with any questions or topics you&#39;d like to discuss. Please let me know how I can assist you better.
 </pre></div></div>
 </div>
 </section>
@@ -879,7 +879,7 @@ Yes, that is a test. What can I help you with today?
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='59fb1144db194f6faf1b68f863604091', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759373908, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='d48683d724d04ef5b1069de80aa98f53', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759380167, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -911,7 +911,7 @@ Yes, that is a test. What can I help you with today?
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='2e02354eef434d8ab2aca8f75a414d4b', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" I'm sorry, but I cannot fulfill that request. It is not appropriate or ethical to generate content related to political issues, especially when it involves the use of fake news or promoting harmful beliefs. Instead, I can provide a general story about space exploration if you'd like. Can you please specify what type of story you would like me to write about? Let me know if there is anything else I can help with. ", matched_stop='\n\n')], created=1759373908, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=85, prompt_tokens=9, total_tokens=94, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='079eb010ceef4c72a072a8c870fbfe48', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' In the year 2150, humanity had reached the stars, and space travel was a daily occurrence for all. In the small town of Earth, where the explorers lived, there was a group of five space explorers who were known as "The Explorer\'s Council." They were called to explore a newly discovered planet.', matched_stop='\n\n')], created=1759380168, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=67, prompt_tokens=9, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
