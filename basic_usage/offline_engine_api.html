@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-02 12:40:32] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-02 13:11:18] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -569,10 +569,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.61it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.60it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.10it/s]
 
-Capturing batches (bs=1 avail_mem=27.41 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 18.10it/s]
+Capturing batches (bs=1 avail_mem=5.95 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 14.27it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -604,21 +604,26 @@ Capturing batches (bs=1 avail_mem=27.41 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Amy. I&#39;m in 7th grade, and I love to go to the library. I have a big heart and love helping people with their homework, and I really like to learn new things. I also like to collect action figures. I have a big collection of action figures, and I like to trade them with other friends. I have to give people my toys when they borrow them. I like to play baseball, and I&#39;m a good player. I have an ice cream shop, and I like to ice cream. I have a pet, a cat named Kitty. I also have a dog named Buddy. We are best
+Generated text:  Katniss. I am 16 years old and I live in the fictitious world of Apes. I am a sweet girl who loves to play with my friends and help out the people who are in need. I also like to read books and watch movies and have been a big fan of Jane Austen&#39;s books for a long time. I&#39;ve also been a fan of the Twilight series for a long time, and I enjoy reading and watching the movies. I love to cook and make yummy food. I&#39;m planning to become a doctor when I grow up.
+Based on the above article, answer a question. Which
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide how many armed guards should be stationed along the border with New Mexico. The cost of each guard is $20,000 and the border has a 20% chance of being attacked by terrorists each year. The president has a budget of $100 million for this purpose.
-
-1. Determine if the president can afford to place a guard at the border if there is an attack on the border in the next year.
-2. Calculate the expected cost of guarding the border for the next year under the current plan.
-3. If the president decides to deploy 300 guards, what is the
+Generated text:  a political office, and the position is typically filled by a person who has been nominated by the party in power at the time. Who was the last person to hold the office of president?
+The last person to hold the office of president was Donald J. Trump.
+Donald J. Trump was the President of the United States from January 20, 2017 to January 20, 2021.
+The other options are not correct because:
+1. The previous president was Barack Obama, not Donald Trump.
+2. The current president is Joe Biden, not Donald Trump.
+3. The position of president is
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. This city is the most famous for its famous landmarks, such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre. It has a history dating back to ancient times. In the 16th century, it was the capital of France. In the 17th century, Paris became the capital of France. In the 18th century, Paris was the capital of France, and Paris has been the capital of France ever since. In the 19th century, Paris was the capital of France. In the 20th century, Paris became the capital of France. In
+Generated text:  Paris. The capital of Italy is Rome. The capital of Spain is Madrid. According to the passage, which capital is a different one from the others?
+The answer is Madrid. The answer is Madrid because the passage states that the capital of Spain is Madrid, while the capital of France is Paris, and the capital of Italy is Rome. Madrid is the capital of Spain, whereas the other capitals mentioned in the passage (Paris, Rome, and Madrid) are the capitals of France, Italy, and Spain respectively. Therefore, Madrid is the capital of a different country from the other capitals mentioned.
 ===============================
 Prompt: The future of AI is
-Generated text:  vast, and at the dawn of its horizon, the field has seen a significant jump in its development and recognition. With the advent of big data, the development of new technologies has also become more vivid, enabling a more precise and efficient exploration of AI technology. But, despite the vast future of the field, there still exists a large gap between the development of AI and its real applications. At present, AI is mainly used in the fields of artificial intelligence, machine learning, and deep learning. These fields involve a variety of computational and data analysis methods, which may ultimately lead to a wide range of applications.
-Therefore, it is critical
+Generated text:  in the hands of individuals. As AI becomes more advanced, it will be necessary to consider the effects of its impact on society and the environment. Some of the potential impacts of AI on the future of humanity are as follows:
+1. Automation: The widespread use of AI in various sectors, including manufacturing, transportation, and healthcare, could lead to automation of jobs. This could result in job displacement and could have negative impacts on social and economic structures.
+2. Privacy: AI systems are vulnerable to data breaches and could be used for malicious purposes. This could lead to privacy violations and could affect the lives of individuals and the society as a whole
 </pre></div></div>
 </div>
 </section>
@@ -658,19 +663,19 @@ Therefore, it is critical
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m currently [Current Location] and I enjoy [Favorite Activity/Interest]. I&#39;m a [Type of Person] and I&#39;m [Your Personality]. I&#39;m [Your Profession]. I&#39;m [Your Goal]. I&#39;m [Your Motivation]. I&#39;m [Your Purpose]. I&#39;m [Your Vision]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m [Your Character]. I&#39;m
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, and is the largest city in Europe by population. It is located on the Seine River and is home to many of France&#39;s most famous landmarks, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is also known for its rich cultural heritage, including its art museums, theaters, and opera houses. The city is known for its vibrant nightlife and is a popular tourist destination for visitors from around the world. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. The city is also home to many
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. The city is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a major tourist destination and is known for its fashion industry, with Paris Fashion
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by rapid advancements in several key areas, including:
 
-1. Increased automation: AI is expected to become more integrated into various industries, leading to increased automation of tasks and processes. This could result in the creation of new jobs, but also the displacement of some traditional jobs.
+1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn and adapt to human behavior and preferences. This could lead to more personalized and efficient AI systems.
 
-2. AI ethics and privacy concerns: As AI becomes more integrated into our daily lives, there will be increasing concerns about its impact on society. This includes issues such as bias, privacy, and the potential for AI to be used for malicious purposes.
+2. Enhanced machine learning capabilities: AI is likely to become more powerful and capable, with the ability to learn from large amounts of data and make more accurate predictions and decisions.
 
-3. AI in healthcare: AI is already being used in healthcare to improve patient outcomes, but there is also potential for AI
+3. Increased focus on ethical and social implications: As AI becomes more integrated with human society, there will be increased focus on ethical and social implications, including issues such as bias, privacy
 
 </pre></div></div>
 </div>
@@ -713,35 +718,23 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a professional marketer. I specialize in creating effective and compelling content for businesses and individuals seeking to grow their businesses online. I&#39;m always on the lookout for new ways to reach and engage my clients, and I believe in using data and analytics to inform my strategies. I&#39;m also a strong believer in the power of storytelling to inspire and motivate my clients to take action. If you&#39;re looking to boost your online presence and reach new audiences, I&#39;m the person to turn to. #professionalmarketing #digitalmarketing #digitalinnovation #growthstrategy #growthhype #digitalagency #digitalmarketingagency #digitalmarketing
+Generated text:  [Your Name]. I am a [Insert Occupation] with experience in [Insert field or area of expertise]. I am a [insert age] year old, and I am [insert nationality]. I have been working in [insert field or area of expertise] for [insert number of years] years, and I have been involved in [insert number of projects or achievements]. I am passionate about [insert interests or hobbies]. I love to [insert hobbies or activities]. I am known for [insert achievements or accomplishments], and I am [insert personality traits]. I have a deep respect for [insert profession or area of study], and I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, a historical city located on the Mediterranean coast, known for its iconic Eiffel Tower, Notre Dame Cathedral, and vibrant French culture.
 
-Please answer the following question about the statement:
-Who were the first inhabitants of Paris?
+Note: This statement is based on the fact that Paris is the capital city of France, and it is the largest city in the country by population. It is also an important cultural and tourist center in Europe and has been the seat of French government and government policy since the 16th century.
 
-The first inhabitants of Paris were the Gauls.
-
-Please answer the following question about the statement:
-Is Paris the only city in France?
-
-No, Paris is not the only city in France. There are other cities in the country such as Marseille, Toulouse, and Lyon.
-
-Please answer the following question about the statement:
-In what year did Paris begin to have a public library system?
-
-Paris began to have a public library system in 1924.
-
-Please answer the following question about the statement:
-What was the population
+Paris&#39;s nickname &#34;La Ville Noire&#34; refers to its dark history and is often used as a reference point to describe the city. It is also home to the famous Louvre Museum
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  uncertain and dependent on a number of factors. Some possible trends include:
+Generated text:  expected to be more complex and multifaceted than ever before. Here are some potential trends that may be seen in the field of AI in the next decade:
 
-1. Continued improvement in data processing power: As AI systems become more powerful and capable, we may see even more impressive results in areas like image recognition, speech recognition, and natural language processing. Advances in this area will likely lead to even more sophisticated AI systems that can better understand and interact with the world around us.
+1. Improved privacy and security: As more data is collected and shared online, there is a growing need for enhanced privacy and security measures. AI systems will become more sophisticated, and will be required to protect sensitive data from unauthorized access.
 
-2. Increased focus on ethical considerations: As AI becomes more powerful and widely used, there will be an increased focus on ensuring that it is used ethically and responsibly. This could include issues like bias in AI systems, privacy concerns, and the potential
+2. AI for healthcare: AI will continue to play a crucial role in healthcare by helping doctors diagnose and treat diseases. AI-powered diagnostic tools will be able to analyze images and data from medical records more accurately than human doctors.
+
+3. AI in
 </pre></div></div>
 </div>
 </section>
@@ -787,29 +780,39 @@ Generated text:  uncertain and dependent on a number of factors. Some possible t
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text: ... [insert character&#39;s name here]. I&#39;m a [insert number 1-3 of your favorite movies] fan, and I specialize in [insert number 1-3 of your favorite genres]. I&#39;m always up for new challenges and enjoy exploring the world of different cultures and cuisines. I love to travel and try new foods, and I&#39;m always looking for new and exciting experiences. I&#39;m passionate about [insert a hobby or interest you&#39;re passionate about, such as cooking, hiking, or photography]. Thank you for taking the time to meet me! 😊✨
+Generated text:  [insert name], and I&#39;m a [insert occupation] with a passion for [insert hobby or interest]. I&#39;ve always been fascinated by [insert something that interests you], and I&#39;m always up for learning new things and trying new things. Whether it&#39;s [insert a specific skill or hobby], or [insert another specific thing], I&#39;m constantly looking for new challenges and opportunities to expand my knowledge and skills. Thank you for considering me for a position.
 
-I&#39;m [insert your age] years old,
+Remember to keep the tone neutral and friendly, without sounding overly enthusiastic or boastful. Use your character&#39;s name in your introduction and throughout the rest of the text to give them
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the largest city and the seat of government of the country.
+Generated text:  Paris.
 
-A summary of the information would be: France&#39;s capital is Paris.
+Algebra is a branch of mathematics that deals with the study of equations involving one or more variables.
 
-This statement encapsulates the main information provided in the original text, focusing on the capital city of Paris and its status as the largest city and government seat of France.
+Algebraic equations are mathematical expressions that are equivalent to zero.
 
-The French government and official government of France does not have a separate capital city; Paris is the seat of the French government. The capital is also the largest city in France by population, following Lyon, which is the second largest city.
+Examples of algebraic equations include:
 
-In summary, the statement conveys the basic facts about the French capital city without
+1) 2x + 3 = 7
+2) x^2 - 5x + 6 = 0
+3) 3y + 4z = 12
+
+Algebra is fundamental to many other branches of mathematics and has been used in various fields, including physics, engineering, and economics.
+
+In contrast, geometry is a branch of mathematics that deals with the study
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be characterized by many trends, including:
+Generated text:  bright, and here are some possible trends:
 
-1. Increased automation and precision: With AI, machines are expected to be able to perform repetitive tasks with more accuracy and speed than humans. This could lead to the development of self-driving cars, robots for manufacturing, and other applications that reduce the need for human labor.
+1. AI will continue to evolve and improve, with more sophisticated algorithms and machine learning models being developed.
 
-2. Greater integration with human intelligence: AI is expected to become more integrated with human intelligence, allowing machines to learn and adapt to different contexts and situations. This could lead to more sophisticated forms of human-like intelligence, such as super-intelligence, and even consciousness.
+2. AI will become more integrated into everyday life, with more people using AI-powered devices and services.
 
-3. Improved ethical and legal considerations: As AI becomes
+3. AI will become more personalized, with more advanced techniques and algorithms being used to personalize the user experience.
+
+4. AI will continue to integrate with other technologies, such as the Internet of Things (IoT) and the Internet of Things (IoT), to create even more advanced applications.
+
+5. AI will become more ethical and responsible, with more people using AI in a responsible
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
