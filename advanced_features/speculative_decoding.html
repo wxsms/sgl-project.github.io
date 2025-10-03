@@ -593,24 +593,24 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:51:18] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:30:44] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 08:51:19] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-03 10:30:47] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.79s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.26s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.34s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.84s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.27s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.36s/it]
 
-Capturing batches (bs=1 avail_mem=22.79 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.45it/s]
+Capturing batches (bs=1 avail_mem=19.71 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.21it/s]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.30s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.30s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.07s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.07s/it]
 
-Capturing batches (bs=1 avail_mem=18.22 GB): 100%|██████████| 4/4 [00:09&lt;00:00,  2.45s/it]
-Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 109.24it/s]
+Capturing batches (bs=1 avail_mem=18.21 GB): 100%|██████████| 4/4 [00:09&lt;00:00,  2.39s/it]
+Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 100.23it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -642,7 +642,7 @@ Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='7f6a7ad916df42daa3365fc074e8b8c6', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1759481506, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='f6c3e25a7221431284e4fb0680f66814', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1759487474, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -691,172 +691,172 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 ########################################################################
 </span>
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:51:57] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:31:23] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:52:06] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:31:30] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 08:52:07] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-03 10:31:32] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.78s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.33s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.62s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.13s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.21s/it]
 
-Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:02,  1.47it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=35.55 GB):  25%|██▌       | 1/4 [00:00&lt;00:01,  1.99it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
 AUTOTUNE mm(128x4096, 4096x12288)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0484 ms 100.0%
-  triton_mm_18 0.0498 ms 97.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_12 0.0527 ms 91.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_8 0.0537 ms 90.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_11 0.0564 ms 85.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_7 0.0564 ms 85.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_17 0.0586 ms 82.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_10 0.0675 ms 71.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_14 0.0693 ms 69.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_4 0.0716 ms 67.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4582 seconds and 0.5791 seconds precompiling for 20 choices
+  mm 0.0481 ms 100.0%
+  triton_mm_18 0.0495 ms 97.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_12 0.0527 ms 91.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_8 0.0536 ms 89.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_11 0.0559 ms 86.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_7 0.0562 ms 85.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_17 0.0579 ms 83.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_10 0.0673 ms 71.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_14 0.0684 ms 70.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_4 0.0710 ms 67.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3571 seconds and 0.5811 seconds precompiling for 20 choices
 AUTOTUNE mm(128x4096, 4096x4096)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0221 ms 100.0%
-  triton_mm_27 0.0231 ms 95.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_31 0.0270 ms 82.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_23 0.0303 ms 72.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_37 0.0321 ms 68.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_26 0.0403 ms 54.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_30 0.0409 ms 54.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_22 0.0420 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_20 0.0428 ms 51.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_36 0.0432 ms 51.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.2929 seconds and 0.4945 seconds precompiling for 20 choices
+  mm 0.0218 ms 100.0%
+  triton_mm_27 0.0230 ms 94.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_31 0.0267 ms 81.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_23 0.0299 ms 72.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_37 0.0316 ms 69.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_26 0.0397 ms 54.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_30 0.0404 ms 53.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_22 0.0418 ms 52.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_20 0.0423 ms 51.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_36 0.0431 ms 50.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.2882 seconds and 0.4802 seconds precompiling for 20 choices
 AUTOTUNE mm(128x4096, 4096x22016)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_49 0.0762 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  mm 0.0768 ms 99.1%
-  triton_mm_55 0.0794 ms 95.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_50 0.0804 ms 94.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_56 0.0838 ms 90.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_46 0.0934 ms 81.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_45 0.0941 ms 80.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_47 0.0970 ms 78.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_48 0.1008 ms 75.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_54 0.1015 ms 75.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4267 seconds and 0.1788 seconds precompiling for 20 choices
+  triton_mm_49 0.0745 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  mm 0.0753 ms 98.9%
+  triton_mm_55 0.0767 ms 97.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_50 0.0809 ms 92.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_56 0.0839 ms 88.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_46 0.0928 ms 80.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_45 0.0940 ms 79.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_47 0.0974 ms 76.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_48 0.0997 ms 74.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_54 0.1020 ms 73.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4278 seconds and 0.1715 seconds precompiling for 20 choices
 AUTOTUNE mm(128x11008, 11008x4096)
 strides: [11008, 1], [1, 11008]
 dtypes: torch.float16, torch.float16
-  mm 0.0482 ms 100.0%
-  triton_mm_65 0.0492 ms 98.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_69 0.0548 ms 88.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_61 0.0670 ms 72.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_75 0.0695 ms 69.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_64 0.0911 ms 53.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_68 0.0920 ms 52.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_74 0.0979 ms 49.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_60 0.1006 ms 47.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_58 0.1024 ms 47.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4265 seconds and 0.0003 seconds precompiling for 20 choices
+  mm 0.0484 ms 100.0%
+  triton_mm_65 0.0502 ms 96.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_69 0.0561 ms 86.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_61 0.0662 ms 73.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_75 0.0701 ms 69.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_64 0.0910 ms 53.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_68 0.0919 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_60 0.0963 ms 50.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_74 0.0986 ms 49.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_58 0.1022 ms 47.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4255 seconds and 0.0003 seconds precompiling for 20 choices
 AUTOTUNE mm(128x4096, 4096x32000)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_93 0.1024 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_94 0.1044 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  mm 0.1058 ms 96.8%
-  triton_mm_88 0.1080 ms 94.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_83 0.1161 ms 88.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_87 0.1165 ms 87.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_84 0.1255 ms 81.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_92 0.1327 ms 77.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_85 0.1367 ms 74.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_89 0.1440 ms 71.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.5092 seconds and 0.4020 seconds precompiling for 20 choices
-Capturing batches (bs=1 avail_mem=54.78 GB):  75%|███████▌  | 3/4 [00:20&lt;00:07,  7.33s/it]AUTOTUNE mm(64x4096, 4096x12288)
+  triton_mm_93 0.1031 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_94 0.1047 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  mm 0.1050 ms 98.2%
+  triton_mm_88 0.1084 ms 95.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_87 0.1170 ms 88.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_83 0.1174 ms 87.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_84 0.1256 ms 82.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_92 0.1300 ms 79.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_85 0.1381 ms 74.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_89 0.1462 ms 70.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.5063 seconds and 0.3877 seconds precompiling for 20 choices
+Capturing batches (bs=1 avail_mem=54.76 GB):  75%|███████▌  | 3/4 [00:21&lt;00:07,  7.92s/it]AUTOTUNE mm(64x4096, 4096x12288)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
   mm 0.0475 ms 100.0%
-  triton_mm_111 0.0479 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_107 0.0481 ms 98.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_103 0.0490 ms 97.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_99 0.0507 ms 93.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_102 0.0552 ms 86.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_106 0.0560 ms 84.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_96 0.0567 ms 83.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_98 0.0621 ms 76.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_97 0.0642 ms 74.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.2945 seconds and 0.3785 seconds precompiling for 18 choices
+  triton_mm_111 0.0481 ms 98.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_107 0.0483 ms 98.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_103 0.0488 ms 97.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_99 0.0507 ms 93.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_102 0.0551 ms 86.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_106 0.0559 ms 84.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_96 0.0566 ms 83.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_98 0.0616 ms 77.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_97 0.0638 ms 74.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.2883 seconds and 0.3666 seconds precompiling for 18 choices
 AUTOTUNE mm(64x4096, 4096x4096)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0215 ms 100.0%
-  triton_mm_116 0.0227 ms 94.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_120 0.0233 ms 92.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_124 0.0268 ms 80.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_128 0.0303 ms 70.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_113 0.0396 ms 54.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_119 0.0397 ms 54.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_123 0.0399 ms 53.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_115 0.0404 ms 53.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_114 0.0425 ms 50.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.2569 seconds and 0.3774 seconds precompiling for 18 choices
+  mm 0.0217 ms 100.0%
+  triton_mm_116 0.0223 ms 97.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_120 0.0227 ms 95.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_124 0.0263 ms 82.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_128 0.0302 ms 71.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_119 0.0396 ms 54.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_113 0.0397 ms 54.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_123 0.0405 ms 53.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_115 0.0413 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_114 0.0426 ms 51.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.3028 seconds and 0.3618 seconds precompiling for 18 choices
 AUTOTUNE mm(64x4096, 4096x22016)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_137 0.0747 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_140 0.0749 ms 99.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  mm 0.0753 ms 99.2%
-  triton_mm_136 0.0753 ms 99.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_141 0.0759 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_145 0.0793 ms 94.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_140 0.0746 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_136 0.0746 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_137 0.0748 ms 99.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_141 0.0764 ms 97.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  mm 0.0764 ms 97.6%
+  triton_mm_145 0.0797 ms 93.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
   triton_mm_133 0.0831 ms 89.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_139 0.0918 ms 81.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_143 0.0952 ms 78.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_130 0.0953 ms 78.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.3478 seconds and 0.2077 seconds precompiling for 18 choices
+  triton_mm_139 0.0911 ms 81.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_130 0.0954 ms 78.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_143 0.0961 ms 77.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.3444 seconds and 0.1940 seconds precompiling for 18 choices
 AUTOTUNE mm(64x11008, 11008x4096)
 strides: [11008, 1], [1, 11008]
 dtypes: torch.float16, torch.float16
-  triton_mm_150 0.0477 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.0482 ms 99.1%
-  triton_mm_154 0.0484 ms 98.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_158 0.0550 ms 86.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_162 0.0648 ms 73.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_149 0.0891 ms 53.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_153 0.0894 ms 53.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_157 0.0905 ms 52.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_148 0.0931 ms 51.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_147 0.0938 ms 50.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.3815 seconds and 0.0002 seconds precompiling for 18 choices
+  triton_mm_150 0.0479 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.0484 ms 98.9%
+  triton_mm_154 0.0488 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_158 0.0558 ms 85.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_162 0.0647 ms 74.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_149 0.0896 ms 53.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_153 0.0899 ms 53.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_157 0.0911 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_148 0.0929 ms 51.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_147 0.0939 ms 51.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3833 seconds and 0.0003 seconds precompiling for 18 choices
 AUTOTUNE mm(64x4096, 4096x32000)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_174 0.1000 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_179 0.1012 ms 98.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_170 0.1012 ms 98.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_175 0.1014 ms 98.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_171 0.1024 ms 97.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.1033 ms 96.8%
-  triton_mm_167 0.1112 ms 90.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_172 0.1190 ms 84.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_176 0.1249 ms 80.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_164 0.1329 ms 75.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4958 seconds and 0.3536 seconds precompiling for 18 choices
-Capturing batches (bs=1 avail_mem=54.78 GB): 100%|██████████| 4/4 [00:35&lt;00:00,  8.81s/it]
+  triton_mm_175 0.0940 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_170 0.0940 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_174 0.0990 ms 94.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_179 0.1012 ms 92.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_171 0.1014 ms 92.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.1029 ms 91.4%
+  triton_mm_167 0.1113 ms 84.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_172 0.1178 ms 79.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_176 0.1228 ms 76.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_164 0.1331 ms 70.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.9235 seconds and 0.3590 seconds precompiling for 18 choices
+Capturing batches (bs=1 avail_mem=54.76 GB): 100%|██████████| 4/4 [00:47&lt;00:00, 11.81s/it]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.34s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.34s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.23s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.23s/it]
 
-Capturing batches (bs=1 avail_mem=53.49 GB): 100%|██████████| 4/4 [00:15&lt;00:00,  3.87s/it]
-Capturing batches (bs=1 avail_mem=37.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 41.50it/s]
+Capturing batches (bs=1 avail_mem=53.39 GB): 100%|██████████| 4/4 [00:16&lt;00:00,  4.04s/it]
+Capturing batches (bs=1 avail_mem=34.45 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 14.24it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -888,7 +888,7 @@ Capturing batches (bs=1 avail_mem=37.73 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='533b2d8497204595b65187964094d88e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1759481595, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='b022f26e867144849d23775ee154fbdf', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1759487571, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -939,37 +939,37 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 ########################################################################
 </span>
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:53:23] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:53:23] Casting torch.bfloat16 to torch.float16.
+[2025-10-03 10:32:59] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:32:59] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:53:34] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:53:34] Casting torch.bfloat16 to torch.float16.
-[2025-10-03 08:53:35] Casting torch.bfloat16 to torch.float16.
+[2025-10-03 10:33:07] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:33:07] Casting torch.bfloat16 to torch.float16.
+[2025-10-03 10:33:07] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 08:53:36] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-03 10:33:08] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.54s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.60s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.53s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.22s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.71s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.66s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.65s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.55s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.21s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.73s/it]
 
-Capturing batches (bs=1 avail_mem=59.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.94it/s]
-[2025-10-03 08:53:56] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-03 08:53:56] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=43.19 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.96it/s]
+[2025-10-03 10:33:28] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-03 10:33:28] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.08s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.08s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.01it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.01it/s]
 
-Capturing batches (bs=1 avail_mem=43.45 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.62s/it]
-Capturing batches (bs=1 avail_mem=43.31 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 85.25it/s]
+Capturing batches (bs=1 avail_mem=26.28 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.65s/it]
+Capturing batches (bs=1 avail_mem=26.14 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 46.18it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1001,7 +1001,7 @@ Capturing batches (bs=1 avail_mem=43.31 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='30490aba635346c28bc322933ecc1c7d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1759481652, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='0bffcba97fa7424889b221d74d076be5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1759487625, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1050,37 +1050,37 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 ########################################################################
 </span>
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:54:23] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:54:23] Casting torch.bfloat16 to torch.float16.
+[2025-10-03 10:33:53] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:33:53] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:54:32] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:54:32] Casting torch.bfloat16 to torch.float16.
-[2025-10-03 08:54:33] Casting torch.bfloat16 to torch.float16.
+[2025-10-03 10:34:01] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:34:01] Casting torch.bfloat16 to torch.float16.
+[2025-10-03 10:34:02] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 08:54:34] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-03 10:34:03] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.48s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.53s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.58s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.28s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.75s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.16s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.30s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.34s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.07s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.52s/it]
 
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.57it/s]
-[2025-10-03 08:54:56] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-03 08:54:56] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=55.49 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.62it/s]
+[2025-10-03 10:34:27] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-03 10:34:27] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.74it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.74it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.70it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.70it/s]
 
-Capturing batches (bs=1 avail_mem=57.66 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.47s/it]
-Capturing batches (bs=1 avail_mem=43.09 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 16.48it/s]
+Capturing batches (bs=1 avail_mem=41.39 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.24s/it]
+Capturing batches (bs=1 avail_mem=40.51 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 11.96it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1112,7 +1112,7 @@ Capturing batches (bs=1 avail_mem=43.09 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='3f3f086765494109a12cf7447dfbb5a4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1759481712, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='c9a727a1591347819a1b87b4b1db4882', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1759487682, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1159,33 +1159,33 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 ########################################################################
 </span>
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:55:20] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:34:50] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 08:55:30] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-03 10:34:58] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 08:55:32] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-03 10:34:59] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.27it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.11it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.29it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.28it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
 
-Capturing batches (bs=1 avail_mem=56.31 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.80it/s]
+Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.50it/s]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  6.95it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  6.64it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.36it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  6.98it/s]
 
-Capturing batches (bs=1 avail_mem=55.44 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.01it/s]
-Capturing batches (bs=1 avail_mem=55.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 30.18it/s]
+Capturing batches (bs=1 avail_mem=56.50 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.18it/s]
+Capturing batches (bs=1 avail_mem=55.42 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 33.42it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1217,197 +1217,197 @@ Capturing batches (bs=1 avail_mem=55.35 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:50] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:51] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
-[2025-10-03 08:55:52] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:17] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:18] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
+[2025-10-03 10:35:19] Tree speculative sampling kernel unavailable (likely AMD/HIP build). Falling back to greedy verification.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '35f1486309a943e89bb6289af24a276c', 'object': 'chat.completion', 'created': 1759481752, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? I remember that Paris is a major city there. But wait, is Paris actually the capital? Let me think. Yes, I believe Paris is the capital city of France. But maybe I should double-check to be sure. Sometimes people can confuse capitals with other major cities. For example, maybe someone might think London is the capital of the UK, but that\'s not the case. Similarly, Paris has the Eiffel Tower, which is a famous landmark, so that\'s a good indicator. Also, in news stories, when they talk about French politics, they often mention Paris as where the government is located. There\'s also the French Senate and the President\'s residence, the Elysée Palace, which is in Paris. So putting all that together, I can be confident that the capital of France is Paris. I don\'t think there\'s any other city that serves as the capital. Maybe some regions within France have their own capitals, but the national capital is definitely Paris. Yeah, that makes sense. So the answer should be straightforward: the capital of France is Paris.\n</think>\n\nThe capital of France is **Paris**. This vibrant city is home to iconic landmarks like the Eiffel Tower, Louvre Museum, and the Champs-Élysées. It serves as the political, cultural, and economic heart of the country. 🇫🇷', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 343, 'completion_tokens': 317, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': 'b4c6f59b5b1741889546b1efda7ee580', 'object': 'chat.completion', 'created': 1759487719, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? I remember that Paris is a major city there. But wait, is Paris actually the capital? Let me think. Yes, I believe Paris is the capital city of France. But maybe I should double-check to be sure. Sometimes people can confuse capitals with other major cities. For example, maybe someone might think London is the capital of the UK, but that\'s not the case. Similarly, Paris has the Eiffel Tower, which is a famous landmark, so that\'s a good indicator. Also, in news stories, when they talk about French politics, they often mention Paris as where the government is located. There\'s also the French Senate and the President\'s residence, the Elysée Palace, which is in Paris. So putting all that together, I can be confident that the capital of France is Paris. I don\'t think there\'s any other city that serves as the capital. Maybe some regions within France have their own capitals, but the national capital is definitely Paris. Yeah, that makes sense. So the answer should be straightforward: the capital of France is Paris.\n</think>\n\nThe capital of France is **Paris**. This vibrant city is home to iconic landmarks like the Eiffel Tower, Louvre Museum, and the Champs-Élysées. It serves as the political, cultural, and economic heart of the country. 🇫🇷', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 343, 'completion_tokens': 317, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
