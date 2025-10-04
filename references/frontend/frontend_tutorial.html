@@ -58,7 +58,7 @@
     <link rel="prev" title="Frontend Language" href="frontend_index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 03, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 04, 2025"/>
   </head>
   
   
@@ -553,20 +553,20 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 21:25:29] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-04 03:50:36] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 21:25:30] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-04 03:50:37] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.42it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.22it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:01,  1.08s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04&lt;00:00,  1.29s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04&lt;00:00,  1.15s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.52it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.38it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
 
-Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.00it/s]
+Capturing batches (bs=1 avail_mem=30.75 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.42it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -580,7 +580,7 @@ Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37611
+Server started on http://localhost:35674
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -621,7 +621,7 @@ Server started on http://localhost:37611
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries and their capitals:<br><br>1. **France** - Paris<br>2. **Australia** - Canberra<br>3. **India** - New Delhi</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -651,13 +651,13 @@ Server started on http://localhost:37611
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's a list of three countries and their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of 3 countries along with their capitals:<br><br>1. **Germany** - Berlin<br>2. **France** - Paris<br>3. **Japan** - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Spain** - Madrid<br>3. **Canada** - Ottawa</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of 3 countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Spain** - Madrid<br>3. **Canada** - Ottawa</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -699,7 +699,7 @@ Server started on http://localhost:37611
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>You don't necessarily need a calculator to solve this, as it's a simple multiplication problem. The result is 4.<br><br>However, if you want me to use a calculator, I can certainly do that for you. Here's how the process would look:<br><br>1. You can imagine (or enter into a imaginary calculator) the expression: `2 * 2`<br>2. Pressing the equals sign (`=`) would give the result: `4`<br><br>So, the answer is 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>Let's calculate it without needing an actual calculator:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -739,7 +739,7 @@ Server started on http://localhost:37611
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for overall health. It involves consuming a variety of foods in appropriate amounts to ensure you get all necessary nutrients. Include a range of fruits, vegetables, lean proteins, and whole grains. Limit sugars, salts, and unhealthy fats. This helps support your immune system, maintain energy levels, and reduce the risk of chronic diseases.<br><br>2. **Regular Exercise**: Regular exercise is crucial for maintaining good health. It helps strengthen your heart, improve circulation, and boost your immune system. It also helps manage and prevent various health conditions like obesity, diabetes, and hypertension. Engage in a variety of activities like walking, jogging, swimming, or cycling. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, as recommended by health organizations. Regular exercise can also improve your mental health by reducing symptoms of depression and anxiety and enhancing cognitive function.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eat a variety of foods from all major food groups in the right proportions. Focus on fruits, vegetables, whole grains, and lean proteins. Limit processed foods, sugary drinks, and foods high in saturated and trans fats. Drink plenty of water and moderate the intake of alcohol and caffeine.<br><br>2. **Regular Exercise**: Engage in a variety of physical activities that include aerobic exercises, strength training, and flexibility exercises. Exercise regularly to maintain good cardiovascular health, build strength and endurance, manage weight, and improve overall mental and physical well-being. <br><br>Incorporating both these tips into your lifestyle can significantly enhance your health and quality of life.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -812,7 +812,7 @@ Server started on http://localhost:37611
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Vernonia novebom",<br>        "core": "Phoenix feather",<br>        "length": 10.75<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Voldemort"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Walnut",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Hold back the dV"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -847,7 +847,7 @@ Server started on http://localhost:37611
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 28.71it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 28.63it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -979,27 +979,27 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 #                                                                     #
 ########################################################################
 </span>
-[2025-10-03 21:26:02] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-04 03:51:05] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-03 21:26:10] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-04 03:51:13] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-03 21:26:12] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-04 03:51:15] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.11it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.14it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.18it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.18it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.14it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.17it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.17it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.20it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.36it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.08s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.05s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1013,7 +1013,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39666
+Server started on http://localhost:32028
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1046,7 +1046,7 @@ Server started on http://localhost:39666
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a person standing with crutches in an urban street scene, interacting with a pile of clothes tied to the cargo area of a parked taxi cab. The taxi does not have typical markings or logos, suggesting it might be one of a unique “utility” or service taxi. The background includes buildings, another taxi, and street signage.</strong></div>
+<strong style='color: #00008B;'>The image shows a man outdoors on the street in a city environment. He appears to be performing domestic chores, as he is standing on the roof of a taxi, holding an iron and appears to be hanging clothes for drying. The taxi is a yellow NYC taxi, indicating the location might be in New York City. The man is balancing precarious tools and prized objects, seemingly in a humorous act of combining professional driving (taxi booking maximizes weather disruption reduction due to wind effects, suggesting some imaginative multitasking), and everyday wellness or illustrates efficiency.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -1147,7 +1147,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 03, 2025.
+  Last updated on Oct 04, 2025.
   <br/>
 </p>
   </div>
