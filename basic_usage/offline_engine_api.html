@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 04, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 05, 2025"/>
   </head>
   
   
@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-04 14:06:36] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-05 00:00:12] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -569,10 +569,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.03it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.03it/s]
 
-Capturing batches (bs=1 avail_mem=74.66 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 19.29it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 15.80it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -604,28 +604,34 @@ Capturing batches (bs=1 avail_mem=74.66 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Anton. My family is from Russia. My family is my best friends. In Russia, I have a teddy bear. It is my birthday present. I call it &#34;Happy&#34; bear. My other favorite is my old school friend, Nick. He is funny and kind. He is very popular among the students. He is also a very talented writer. He has written many poems and stories. The most amazing thing is that he has an extra coin every day. He does not even look at his money, which makes me laugh. I also have a book. It is a new book and it is about my family. I am
+Generated text:  Tom.
+I&#39;m from China and I&#39;m a 15 year old high school student. I&#39;m from Beijing, China.
+I&#39;m really good at English, I like to tell jokes and also like to listen to music. I have a lot of friends. I like going to the amusement park with my family on weekends.
+What are some ways that you could improve your English?
+1. Read English books or articles
+2. Learn a new language like Japanese or Spanish
+3. Join an English club or speak with native English speakers
+4. Watch English movies or TV shows
+5. Practice speaking with native English speakers
+6
 ===============================
 Prompt: The president of the United States is
-Generated text:  a political office. Since the inception of the U. S. , there have been many presidents. Some of them were born in the same year and some were not. The president who was born in 1913 is different from the president who was born in 1924. Also, the president who was born in 1924 is different from the president who was born in 1939. Can you find out which president was born in 1939?
-To determine which president was born in 1939, we need to carefully analyze the given conditions. Let&#39;s
+Generated text:  a fictional character. How many presidents have been presidents of the United States? The president of the United States is a fictional character, and there have been 4 presidents of the United States. The current president is Joe Biden. However, it is important to note that the character of the president of the United States is a product of popular culture and not a real historical figure. In reality, the president of the United States is the President of the United States, who is elected by the people&#39;s representatives through a democratic process. The current president is Joe Biden, who has been in office since January 2021. The office of
 ===============================
 Prompt: The capital of France is
-Generated text:  ____.
-A. Paris
-B. Rome
-C. Athens
-D. London
-Answer: A
+Generated text:  Paris. The population of Paris is 2.1 million. The capital of the United States is Washington, D.C. The population of Washington, D.C. is 934,000. How many more people are there in Paris than in Washington, D.C.?
+To determine how many more people are in Paris than in Washington, D.C., we need to subtract the population of Washington, D.C., from the population of Paris.
 
-The procedure for implementing the protection of movable cultural relics within administrative regions, as stipulated by the ____, includes: the entrusting administrative organ organizes the establishment and approval of the project, entrusting the enterprise undertaking the project conducts the protection and management of movable cultural relics, the owner of the movable cultural relics signs a contract with the entrusted enterprise, the entrusted enterprise retains the movable cultural relics, the owner of the movable cultural relics retains their own movable cultural relics, and the movable cultural relics are protected, managed, and utilized according
+First, identify the populations of Paris and Washington, D.C.:
+- Population of Paris: 2,100,000
+- Population of Washington,
 ===============================
 Prompt: The future of AI is
-Generated text:  going to be multi-layered and multilevel. As AI evolves and learns from the experiences of humans, it will undoubtedly impact every aspect of life, including how we interact with technology, how we work, and how we learn. As such, there will be a lot to consider when it comes to the ethical and social implications of AI.
-
-As such, it is important to understand the different ways in which AI could be used and potentially harmful. Some of the most common ethical concerns related to AI are:
-
-  1. Bias: AI systems may perpetuate existing biases in their training data, leading to unfair treatment of certain groups of
+Generated text:  about improving the quality of life, and there are some interesting research in this field. Here’s what we know so far:
+- AI can be used to predict and prevent disease outbreaks, reduce carbon emissions, and improve public health.
+- It can help researchers and healthcare providers to better understand and treat diseases, build new drugs and medical technologies, and develop new treatments.
+- AI can also help to predict the behavior of large numbers of people, such as criminals, terrorists, and socially distressed individuals. It has the potential to improve the security of critical infrastructure.
+- AI can also help to make healthcare more efficient and accessible, by providing more accurate
 </pre></div></div>
 </div>
 </section>
@@ -665,17 +671,21 @@ As such, it is important to understand the different ways in which AI could be u
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [Job Title] at [Company Name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [Job Title] at [Company Name]. I&#39;m passionate about [Job Title] and have been working hard to achieve my goals. I&#39;m always looking for ways to improve my skills and stay up-to-date with the latest trends in the industry. What&#39;s your favorite hobby or activity? As an AI language model, I don&#39;t have hobbies or activities like humans do. However, I can tell you that I&#39;m always learning and
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Library, and the French National Museum of Modern Art. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. The city is also home to many international organizations and institutions, including UNESCO and the European Union. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one
+Generated text:  Paris, also known as the City of Light, a historic city with a rich history and culture. It is located in the south of France and is the largest city in the country. Paris is famous for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. The city is also known for its fashion industry, art scene, and food culture. Paris is a popular tourist destination and is home to many famous landmarks and attractions. It is a cultural and historical center that plays a significant role in French society and politics. The city is also known for its annual
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some potential trends include:
+Generated text:  likely to be characterized by rapid advancements in several key areas, including:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This could lead to more stringent regulations and guidelines for AI development and deployment.
+1. Increased accuracy and precision: AI systems are expected to become even more accurate and precise in their predictions and decisions, leading to improved outcomes in various fields such as healthcare, finance, and transportation.
 
-2. Greater integration with other technologies: AI is already being integrated into a wide range of technologies, such as smart homes, self-driving cars, and virtual assistants. As these technologies continue to evolve, it is likely that AI will become more integrated with other technologies, such as blockchain and quantum
+2. Integration with human intelligence: AI systems are likely to become more integrated with human intelligence, allowing them to learn from and adapt to the behavior and preferences of humans.
+
+3. Personalization and customization: AI systems are expected to become more personalized and customizable, allowing them to learn from individual users and provide more tailored experiences.
+
+4. Ethical and responsible AI: As
 
 </pre></div></div>
 </div>
@@ -718,19 +728,17 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert name] and I&#39;m a [insert occupation] who started learning [insert skill or hobby]. As a [insert profession] with [insert nationality or ethnicity], I am passionate about [insert a personal interest or hobby]. I enjoy [insert a short personal statement or anecdote about myself]. I am always ready to learn and challenge myself, no matter what the challenge may be. I love [insert a personal interest or hobby] and I am always looking for ways to improve myself. I look forward to [insert a short personal statement or anecdote about myself]. Welcome, [insert name]. It&#39;s nice to meet you!
+Generated text:  [Character&#39;s Name]. I am an [Character&#39;s Age] year old female with [Character&#39;s Profession/Title] and [Character&#39;s External Identity]. I have [Number of Awards/Prizes] for my work and have been [Number of Years] of service in [Character&#39;s Field of Service]. I have [Number of Projects] projects that I have been involved in with [Character&#39;s Name] and they have been [Number of Achievements] and have achieved [Character&#39;s Name] fame in [Character&#39;s Field]. I am always looking for the next big thing and will keep myself up-to-date with the latest trends and
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located on the Île de la Cité, a picturesque and historic island in the Mediterranean Sea.
-
-What is the nickname for the capital of France? The nickname for the capital of France is &#34;La Reine&#34;. It refers to the Queen of France, who is the symbol of the country. The capital of France is Paris, which is also known as &#34;La Grande-Bretagne&#34; in French. It is a beautiful city with a rich history, and it is home to many iconic landmarks, such as Notre Dame Cathedral, the Louvre Museum, and the Champs-Élysées. In addition to its historical significance
+Generated text:  Paris. It is located in the Île-de-France region of the country, and is the largest city in the European Union. Paris is known for its beautiful architecture, museums, and music scene, and is home to numerous international institutions and landmarks. It is also a center for fashion, culture, and politics, with its famous Eiffel Tower and Louvre Museum. Paris has a rich and diverse history dating back to ancient times, and is a cosmopolitan city with a large population of around 11 million people.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  fascinating and rapidly evolving. Here are some of the possible trends that are currently being explored by researchers and developers:
+Generated text:  exciting and diverse, with many different trends expected to emerge. Here are some of the most likely trends in AI in the next few years:
 
-1. **Increased Use of Explainable AI (XAI)**: AI systems are becoming more transparent by default, but researchers are also developing ways to show users what the system is doing at various points in its operation. This is called &#34;explainable AI,&#34; and it promises to improve trust and understanding of AI systems.
+1. Increased machine learning and neural network sophistication: With the advancement of computing power and the development of deeper learning architectures, we can expect to see an increase in the sophistication of AI systems. This will allow for more advanced machine learning algorithms that can recognize patterns and make more accurate predictions.
 
-2. **Human-AI Collaboration**: AI is becoming more intelligent and capable, but it is still more of a tool than a person. There is a growing interest in developing AI systems that are more capable of
+2. Deep reinforcement learning: Reinforcement learning is a form of machine learning that involves an agent learning to make decisions by taking actions in an environment, and the agent receives feedback in the form of rewards or penalties for
 </pre></div></div>
 </div>
 </section>
@@ -776,17 +784,27 @@ Generated text:  fascinating and rapidly evolving. Here are some of the possible
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Jane, and I&#39;m a professional writer specializing in writing technical documentation. I have a degree in Computer Science and a Master&#39;s in Information Systems. I have experience in creating documents, writing software, and conducting market research. I thrive on problem-solving and delivering clear and concise information to help my clients succeed. I enjoy collaborating with clients and my team to create high-quality content that meets their needs. I&#39;m confident in my ability to write compelling documentation that not only informs but also engages my audience, whether it&#39;s through technical jargon or simple language. I&#39;m a dedicated learner and love to learn new technologies and techniques. I&#39;m excited to
+Generated text:  __________ and I&#39;m a/an __________. I&#39;m a/an __________ and I love __________. I like to __________ and __________. I&#39;m currently __________. I&#39;m a/an __________ and I enjoy __________. I also enjoy __________. I&#39;m an __________ and I like to __________. I&#39;m a/an __________ and I enjoy __________. I also like to __________. I&#39;m an __________ and I like to __________. I&#39;m a/an __________ and I like to __________. I also like to __________. I&#39;m an __________ and I like to __
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, often referred to as &#34;The City of Light&#34; due to its vibrant culture and bustling streets. It is a cosmopolitan metropolis with many notable landmarks such as Notre Dame Cathedral and the Eiffel Tower. Paris is also known for its rich cultural heritage, including its museums, theaters, and art museums. The French capital is one of the most visited cities in the world, attracting millions of visitors each year. Its influence on world culture and art is evident in the city&#39;s architecture and fashion, which continue to captivate visitors from around the world. Paris is a historic and vibrant metropolis with a unique blend of old and
+Generated text:  Paris.
+
+To provide more context, Paris is the largest city in France, located on the north bank of the Seine River, on the left bank of the river, and bordered on the right by the hills of Montmartre. It is the seat of government and the capital of France. It is also the third largest city in the European Union in terms of population. It is also the third largest city in the world in terms of population, the 15th largest in the world in terms of area and the 37th largest in terms of population density. It is the economic, cultural, and political center of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  diverse and is likely to see significant changes in the coming years. Here are some possible trends in AI in the next 10-20 years:
+Generated text:  likely to be characterized by significant advancements in several key areas. Some of these trends include:
 
-1. Increased focus on developing ethical AI: As more people become aware of the potential consequences of AI, there will be an increased focus on developing ethical AI. This may involve more stringent regulations, transparent algorithms, and a focus on addressing ethical issues such as bias, autonomy, and accountability.
+1. Increased use of AI in areas such as healthcare, transportation, and customer service.
 
-2. Integration of AI with human intelligence: AI will likely become more integrated with human intelligence, leading to more advanced forms of AI that can perform tasks more efficiently and effectively than humans alone. This
+2. AI-powered automation of repetitive tasks, reducing human error and increasing efficiency.
+
+3. Development of AI systems that can learn and adapt to new situations and contexts.
+
+4. AI systems that can perform tasks that are difficult or impossible for humans to do, such as playing chess, painting, or playing musical instruments.
+
+5. AI systems that can communicate with humans in a natural and intuitive way, allowing for more efficient and effective communication.
+
+6. AI systems that
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -888,7 +906,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 04, 2025.
+  Last updated on Oct 05, 2025.
   <br/>
 </p>
   </div>
