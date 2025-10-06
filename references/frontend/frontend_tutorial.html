@@ -58,7 +58,7 @@
     <link rel="prev" title="Frontend Language" href="frontend_index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 05, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 06, 2025"/>
   </head>
   
   
@@ -213,7 +213,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../platforms/amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../platforms/blackwell_gpu.html">Blackwell GPUs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../platforms/cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../platforms/tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
@@ -553,20 +552,20 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-05 23:53:13] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-06 02:11:50] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-05 23:53:14] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-06 02:11:52] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.40it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.27it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.23it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.64it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.55it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.60it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.59it/s]
 
-Capturing batches (bs=1 avail_mem=30.86 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.09it/s]
+Capturing batches (bs=1 avail_mem=62.22 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.30it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -580,7 +579,7 @@ Capturing batches (bs=1 avail_mem=30.86 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37808
+Server started on http://localhost:38890
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -621,7 +620,7 @@ Server started on http://localhost:37808
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Spain** - Madrid<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Australia** - Canberra</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -651,13 +650,13 @@ Server started on http://localhost:37808
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here is a list of 3 countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Canada** - Ottawa</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their respective capitals:<br><br>1. ** France - Paris**<br>2. **Germany - Berlin**<br>3. **Japan - Tokyo**</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here is another list of 3 countries along with their capitals:<br><br>1. **Germany** - Berlin<br>2. **Italy** - Rome<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Of course! Here is another list of three countries and their capitals:<br><br>1. **Italy - Rome**<br>2. **Canada - Ottawa**<br>3. **Australia - Canberra**</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -699,7 +698,7 @@ Server started on http://localhost:37808
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2<br><br>Let's calculate it step by step:<br><br>1) 2 * 2<br><br>The answer is 4.<br><br>You don't actually need a calculator for this simple multiplication, as it's easy to compute mentally. However, if you want to confirm it using a calculator, you can input 2 * 2 and press the equal button to verify the result is 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>Let's calculate it.<br><br>2 * 2 = 4<br><br>So, you don't actually need a calculator for this simple multiplication. You can compute it in your head or on paper easily. But if you want to use a calculator, you can input `2 * 2` and press enter to get the result, which is 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -739,7 +738,7 @@ Server started on http://localhost:37808
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:**<br>   - Include a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats in your meals.<br>   - Ensure you are consuming essential vitamins, minerals, fiber, and antioxidants.<br>   - Limit sugar, salt, and saturated fats.<br>   - Drink plenty of water.<br><br>2. **Regular Exercise:**<br>   - Engage in physical activities that get your heart rate up and keep you moving.<br>   - Examples include walking, jogging, cycling, swimming, or any form of exercise you enjoy.<br>   - Aim for consistency, making exercise a regular part of your routine.<br>   - Benefits include improved heart health, better circulation, increased energy, reduced risk of chronic diseases, and enhanced mental health.<br><br>By following these tips, you can enhance your overall health and quality of life.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet:**<br>   - **Focus on Nutrient-Rich Foods:** Include a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats.<br>   - **Diverse Ingestion:** Aim for colorful and varied produce to ensure a range of vitamins and minerals.<br>   - **Examples:** <br>     - **Fruits and Vegetables:** Apples, carrots, spinach, broccoli, berries.<br>     - **Whole Grains:** Brown rice, quinoa, whole wheat bread.<br>     - **Lean Proteins:** Chicken breast, fish, beans, tofu.<br>     - **Healthy Fats:** Avocado, nuts, seeds, olive oil.<br><br>2. **Regular Exercise:**<br>   - **Aim for Consistency:** Engage in physical activity at least 150 minutes per week of moderate aerobic activity or 75 minutes per week of vigorous activity.<br>   - **Incorporate Strength Training:** Include at least two days per week of strength training.<br>   - **Examples:**<br>     - **Moderate Aerobic Activities:** Walking, cycling, swimming, brisk walking.<br>     - **Vigorous Activities:** Running, high-impact aerobics, cycling uphill.<br>     - **Strength Training:** Weightlifting, bodyweight exercises (squats, push-ups), resistance band workouts.<br><br>By following these tips, you can significantly enhance your physical and mental health.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -812,7 +811,7 @@ Server started on http://localhost:37808
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "holly",<br>        "core": "phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "_stag_",<br>    "bogart": "Slytherin dragon"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Hawthorn",<br>        "core": "Phoenix feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Lord Voldemort"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -847,7 +846,7 @@ Server started on http://localhost:37808
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 33.79it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 27.87it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -979,27 +978,27 @@ WARNING:sglang.srt.server_args:<span class="ansi-yellow-fg">
 #                                                                     #
 ########################################################################
 </span>
-[2025-10-05 23:53:43] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-06 02:12:21] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-05 23:53:50] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-06 02:12:29] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-05 23:53:53] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-06 02:12:32] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.20it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.21it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.23it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.25it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.59it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.29it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.42it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.91it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.64it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.05s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.13s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1013,7 +1012,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32366
+Server started on http://localhost:32452
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1046,7 +1045,7 @@ Server started on http://localhost:32366
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man ironing a pair of jeans on a clothes iron mounted on crutches, while he sits on the bed of a bright yellow SUV parked in what appears to be an urban street. There is another yellow taxi behind the SUV, and some storefronts can be seen in the background.</strong></div>
+<strong style='color: #00008B;'>The image shows a man standing on the hood of a yellow SUV that resembles a taxi fare search billboard space. He is kneeling with an iron in hand and appears to be pretending to manually wash or fold some clothes on a makeshift, portable laundry machine he has set up there. This produces a humorous contrast between the economic function of the vehicle тыа medical search billboard and its common non-prepared context for physical task.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -1147,7 +1146,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 05, 2025.
+  Last updated on Oct 06, 2025.
   <br/>
 </p>
   </div>
