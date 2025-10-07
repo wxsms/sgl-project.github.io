@@ -548,7 +548,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 00:35:13] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-07 02:01:13] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.71it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.71it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.61it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.60it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 15.07it/s]
+Capturing batches (bs=1 avail_mem=68.69 GB): 100%|██████████| 20/20 [00:02&lt;00:00,  9.60it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,42 +603,47 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  John and I&#39;m 26. I&#39;m a software engineer at a large company. In my spare time, I&#39;m interested in reading and I like to spend time with my family and my friends.
-Can you tell me something about yourself?
-Sure, I&#39;m John, a 26-year-old software engineer at a large company. I enjoy reading and spending time with my family and friends, and I like to spend time on hobbies like board games and listening to music. I also enjoy going to the beach and skiing.
-Can you tell me something about yourself?
-I&#39;m a software engineer at a large company. I&#39;m 2
+Generated text:  Xing, a medical student majoring in Gastroenterology.
+
+I have a solid understanding of the basics of medical diagnosis and treatment. In my first year, I have received my relevant medical education through the preparation of the medical course. I am currently working as a medical student, specializing in Gastroenterology. I am committed to learning and improving my skills in various areas of the medical field.
+
+I am passionate about promoting the health of the community and raising awareness about common health issues. I am eager to contribute to the development of healthy habits and improve the quality of life for others.
+
+What do you think is the most important thing
 ===============================
 Prompt: The president of the United States is
-Generated text:  a representative of the people. In this office, the people enjoy their rights, but the president also has some responsibilities. When it comes to security and government functions, the president has the authority to use some measures. But when it comes to personal use of power, the president has certain limitations. In general, the president has an absolute right to use power to manage the government and carry out the laws. However, in practice, the president has certain limitations. In particular, the president has a responsibility to protect the country, and it is the duty of the president to protect the country. This is the legal basis for the President&#39;s decisions
-===============================
-Prompt: The capital of France is
-Generated text:  ________. A. Paris B. London C. Madrid D. Moscow
+Generated text:  a ________.
+A. Cabinet member
+B. head of state
+C. president of the United States
+D. leader
 Answer:
 
-A
+B
 
-What is the reason for the high incidence of hypertension in the central and southern regions of China?
-A. The living environment is extremely dirty
-B. The drinking water quality is very poor
-C. The diet structure is highly unsuitable
-D. The socio-economic level is extremely high
+The American president is the ______ of the country.
+A. Chancellor
+B. Chief
+C. Head of State
+D. Leader
 Answer:
 
 C
 
-The primary purpose of formulating the &#34;Interim Measures for the Management of Violations of Lending Business&#34; is:
-A. To ensure that the loan funds are used for their intended purposes
-B. To ensure that the financial risks
+Which of the following statements about the core socialist values is incorrect? ____.
+A. The core socialist values are the most basic requirements for citizens to act.
+B. The core socialist values are the spiritual bond that unites the Chinese people.
+C. The core socialist values are the common value criteria for the entire society.
+D
+===============================
+Prompt: The capital of France is
+Generated text:  Paris, a city with a population of approximately 1,500,000. Paris is situated in the Île-de-France region of the French Alps. The city was founded in the 9th century by the Franks. The population growth rate in Paris is one of the highest in Europe. The city was in 1975 under the administration of the Generalitat de la França, but now it is under the administration of the Commune of Paris.
+Does this next sentence follow, given the above sentence. &#34;Paris has a population of more than 1,500,00
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of the users, and it&#39;s time to start thinking about it.
-
-Sustainability has never been more crucial, and artificial intelligence (AI) is an integral part of this challenge. AI-driven solutions for sustainability can save resources, reduce carbon emissions, and improve efficiency in various fields such as healthcare, transportation, and education.
-
-With AI, we can make informed decisions that are environmentally conscious and sustainable. By using AI to analyze and process data, we can identify patterns and insights that could help us reduce waste, conserve resources, and create a greener future.
-
-As more and more companies adopt AI for sustainability, we can expect to
+Generated text:  here, and it&#39;s not just robots who are changing the world. As artificial intelligence (AI) technology continues to evolve, it is also transforming the way we work and live. Here are some key areas where AI is making a significant impact:
+1. Healthcare: AI is revolutionizing the healthcare industry by enabling more accurate diagnoses, personalized treatment plans, and faster diagnosis and treatment of diseases. AI-powered tools are now being used to detect diseases at their earliest stages, improving patient outcomes and reducing healthcare costs.
+2. Finance: AI is transforming the finance industry by improving fraud detection, identifying potential risks, and optimizing investment strategies. AI algorithms can
 </pre></div></div>
 </div>
 </section>
@@ -678,17 +683,17 @@ As more and more companies adopt AI for sustainability, we can expect to
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? [Name]: I&#39;m a [job title] at [company name]. I&#39;m passionate about [job title] and I&#39;m always looking for ways to improve my skills and knowledge. I&#39;m also a [job title] at [company name]. I&#39;m always looking for ways to improve my skills and knowledge. I&#39;m excited to meet you and learn more about your career. What&#39;s your favorite hobby or activity? [Name]: I&#39;m a [
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m a [job title] with [number of years] years of experience in [industry]. I&#39;m passionate about [job title] and I&#39;m always looking for ways to [job title] and improve my skills. I&#39;m a [job title] and I&#39;m always looking for ways to [job title] and improve my skills. I&#39;m a [job title] and I&#39;m always looking for ways to [job title] and improve my skills. I&#39;m a [job title] and I&#39;m always looking for ways to [job title]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, and is the largest city in Europe by population. It is located on the Seine River and is the seat of government, administration, and culture for the country. Paris is known for its rich history, art, and cuisine, and is a major tourist destination. The city is also home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is a vibrant and dynamic city with a rich cultural heritage that continues to inspire and influence the city and its people. It is a city of contrasts, with its modern architecture and historical landmarks
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the birthplace of the French Revolution and is a major cultural and economic center. Paris is home to many famous museums, including the Louvre, the Musée d&#39;Orsay, and the Musée Rodin. The city is also known for its rich history and diverse culture, with a vibrant nightlife and a strong sense of French identity. Paris is a popular tourist destination and is home to many international companies and organizations. It is also known for its cuisine, with dishes like cro
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way we interact with technology and the world around us. Here are some of the most likely trends that could be expected in the future:
 
-1. Increased automation: As AI becomes more advanced, it is likely to be used in a wider range of tasks, from manufacturing to customer service. This could lead to the automation of many jobs, freeing up workers to focus on more complex and creative tasks.
+1. Increased automation: As AI becomes more advanced, it is likely to become more capable of performing tasks that were previously done by humans. This could lead to a significant increase in automation in various industries, including manufacturing, transportation, and healthcare.
 
-2. AI ethics and privacy: As AI becomes more integrated into our daily lives, there will be increasing concerns about its impact on society. This includes issues such as bias in AI algorithms, privacy concerns, and the potential
+2. AI-powered healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, it is likely to become even more sophisticated,
 
 </pre></div></div>
 </div>
@@ -731,21 +736,24 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I’m a [age] year old human who works as a [job or hobby]. I’ve always had a passion for [interest or hobby]. I’m always looking for opportunities to [describe something you enjoy or are interested in], and I’m eager to learn and grow. I’m always eager to help others, whether through [mention a specific activity or project]. I’m passionate about [describe something you really love about your job or hobby]. I&#39;m a [mention a profession or field of study]. I have a [mention a skill or talent] that I’m confident in, and I’m committed to [describe
+Generated text:  [Name], and I&#39;m a [Job Title] at [Company Name]. I&#39;m [Age] years old, and I love [Job Title]. I&#39;m [Job Title], a [X-factor] at [Company Name]. I love the work, the people, and the [Job Title]. I&#39;m a [X-factor] at [Company Name], and I&#39;m always ready to help others succeed, whether it&#39;s [x-factor-related] or [Company Name-related]. I&#39;m also a [x-factor] at [Company Name], and I&#39;m always up for the challenge of meeting new people and learning new things. I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-This statement is factual as it is a commonly known fact about the capital city of France. It does not require any further elaboration or explanation.
-
-To summarize, the capital of France is Paris. Paris is the largest city in France and serves as the political, economic, and cultural center of the country.
-
-The statement is concise, informative, and does not contain any subjective elements that could make it less accurate or less relevant. The core information, which is the capital city itself, is stated clearly and logically.
-
-If someone were to ask for a more detailed or specific factual statement about the capital city of France,
+Generated text:  Paris, also known as the City of Light.
+You are to answer this question: When did the city of Paris become the capital of France? The city of Paris became the capital of France in 843 when Charlemagne placed it on the political map of Europe. The city would later be expanded by Charles Martel and other Frankish rulers over the following centuries. The city has since grown to become the most populous city in the world. It is also known as the City of Light for its vibrant culture, lively nightlife, and high standards of living. The city is home to many of Europe&#39;s most famous landmarks, including
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by the development of more sophisticated algorithms and machine learning techniques that can better understand and generate human-like intelligence. This will lead to the creation of more intelligent and sophisticated robots that can perform tasks that require human-like decision-making and problem-solving capabilities. AI could also be used to improve healthcare by developing more accurate diagnostic tools, predicting and preventing diseases, and improving patient care and treatment outcomes. Additionally, AI could be used to create more efficient and effective supply chains, transportation systems, and logistics networks. Finally, AI could also be used to create more sustainable and environmentally friendly technologies and practices. Overall, the future of AI is likely
+Generated text:  likely to be characterized by significant advancements in several areas, including:
+
+1. Autonomous vehicles: Self-driving cars and trucks could become widely available, providing a safer and more efficient mode of transportation.
+
+2. Personalized healthcare: AI could be used to tailor treatments and medications to individual patients, improving outcomes and reducing healthcare costs.
+
+3. Improved communication: AI could be used to create more efficient and effective communication systems, such as virtual assistants and chatbots.
+
+4. Smart cities: AI could be used to improve urban infrastructure, such as transportation and public safety, by optimizing energy use and reducing traffic congestion.
+
+5. Augmented reality and virtual reality
 </pre></div></div>
 </div>
 </section>
@@ -791,20 +799,19 @@ Generated text:  likely to be characterized by the development of more sophistic
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I&#39;m a [main profession or type of character] with a passion for [character&#39;s hobby or interest]. I have a deep love for [character&#39;s profession or hobby] and strive to [character&#39;s goal or challenge]. I believe in [character&#39;s belief or motto]. Whether it&#39;s [character&#39;s profession], [character&#39;s hobby], [character&#39;s personality trait], or [character&#39;s qualities], I believe in [character&#39;s core value or purpose]. I am excited to meet you and contribute to the world through my unique perspective and unwavering commitment to excellence.
-[Name], this is [Name]. How can I
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m an experienced [position], with over [number] years of experience in [relevant field]. I enjoy working in a [company culture] and I am always looking for ways to [what you&#39;ve accomplished]. I am [describe a personal characteristic or passion]. I&#39;m passionate about [something that interests me], and I&#39;m always looking for ways to [what you do to improve]. I believe in [why you should believe in yourself]. I am a [describe your personality trait or soft skill] and I&#39;m always looking for ways to [what you
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in France by population and the 3rd largest city in the world. The city is located in the central region of the country and is the capital of the Lorraine department. Paris is a cultural, economic, and political center of France. It is known for its rich history, art, food, music, and fashion. The city is renowned for its Notre-Dame Cathedral, the Louvre Museum, and the Eiffel Tower. Its culture and cuisine are particularly famous in France. Paris is a popular tourist destination and attracts millions of visitors annually. It has a strong sense of community and is
+Generated text:  Paris, the city that was founded by the French and is the second largest city in France. It is known for its rich history, cultural richness, and beautiful architecture. Paris has a diverse and vibrant culture with many festivals and events throughout the year. The city is also famous for its fine cuisine and wine, as well as its museums, art galleries, and historical landmarks. It has a rich history dating back to ancient times and is known for its art and architecture. Paris is a city that is both exciting and captivating, offering a unique and unforgettable experience for visitors. The city is home to many museums, galleries, and theaters, as
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  fascinating and there is no denying that it is rapidly evolving. Some possible trends in AI include:
+Generated text:  likely to be characterized by continued growth, development, and integration into different areas of human life. Some potential trends that are expected to shape the future of AI include:
 
-1. Advancements in machine learning and artificial intelligence algorithms: Advances in machine learning and artificial intelligence algorithms will enable AI systems to process vast amounts of data and make more accurate and efficient decisions. This will lead to more intelligent and personalized recommendations and services.
+1. Increased specialization: AI will become more specialized and focused on specific tasks and applications. This will likely result in a greater emphasis on machine learning algorithms and data mining techniques that are highly targeted and specific to a particular problem.
 
-2. Increased focus on ethical AI: As AI systems become more complex and capable, there will be increased focus on ethical considerations such as bias, fairness, and transparency. This will require greater regulation and oversight of AI systems to ensure they are used in ways that are beneficial to humans.
+2. Improved communication: AI will become more efficient and effective in communicating with humans, particularly in areas such as natural language processing and chatbots. This will allow for more natural and intuitive interactions between humans and AI.
 
-3.
+3. Emergence of ethical considerations
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
