@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; SGLang</title>
+    <title>Hierarchical KV Caching (HiCache) &#8212; SGLang</title>
   
   
   
@@ -51,7 +51,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="HiCache System Design and Optimization" href="hicache_design.html" />
+    <link rel="next" title="SGLang HiCache Best Practices" href="hicache_best_practices.html" />
     <link rel="prev" title="Attention Backend" href="attention_backend.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,7 +180,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
@@ -195,7 +195,11 @@
 <li class="toctree-l1"><a class="reference internal" href="router.html">SGLang Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Hierarchical KV Caching (HiCache)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="hicache_best_practices.html">SGLang HiCache Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -438,9 +442,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -451,7 +453,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Hierarchical KV Caching (HiCache)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,11 +467,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="toctree-wrapper compound">
+  <section id="hierarchical-kv-caching-hicache">
+<h1>Hierarchical KV Caching (HiCache)<a class="headerlink" href="#hierarchical-kv-caching-hicache" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="hicache_best_practices.html">SGLang HiCache Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
 </ul>
 </div>
+</section>
 
 
                 </article>
@@ -492,11 +498,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="hicache_design.html"
+       href="hicache_best_practices.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">HiCache System Design and Optimization</p>
+        <p class="prev-next-title">SGLang HiCache Best Practices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
