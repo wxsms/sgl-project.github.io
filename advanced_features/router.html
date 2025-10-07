@@ -522,6 +522,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-tracing">Request Tracing</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode">Debug Mode</a></li>
@@ -1208,13 +1209,63 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </div>
 </section>
 </section>
+<section id="id1">
+<h2>Observability<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>When Prometheus is enabled, the router provides several key metrics for observability.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Metric Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_requests_total</span></code></p></td>
+<td class="text-left"><p>Counter</p></td>
+<td class="text-left"><p>Total number of requests received by the router’s API endpoint. Useful for tracking overall traffic.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_processed_requests_total</span></code></p></td>
+<td class="text-left"><p>Counter</p></td>
+<td class="text-left"><p>Total requests processed, labeled by <code class="docutils literal notranslate"><span class="pre">worker</span></code>. Critical for spotting load imbalances.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_active_workers</span></code></p></td>
+<td class="text-left"><p>Gauge</p></td>
+<td class="text-left"><p>The current number of healthy workers in the routing pool. Essential for alerting.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_running_requests</span></code></p></td>
+<td class="text-left"><p>Gauge</p></td>
+<td class="text-left"><p>The number of currently in-flight requests, labeled by <code class="docutils literal notranslate"><span class="pre">worker</span></code>. For monitoring real-time load.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_cache_hits_total</span></code></p></td>
+<td class="text-left"><p>Counter</p></td>
+<td class="text-left"><p>Total requests routed to a worker with a matching prefix cache.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_cache_misses_total</span></code></p></td>
+<td class="text-left"><p>Counter</p></td>
+<td class="text-left"><p>Total requests that could not be routed based on cache locality.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_generate_duration_seconds</span></code></p></td>
+<td class="text-left"><p>Histogram</p></td>
+<td class="text-left"><p>Tracks end-to-end request latency. Use this to monitor performance (e.g., p95/p99).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
 <section id="common-issues">
 <h3>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Workers not connecting</strong>: Ensure workers are fully initialized before starting the router. Use <code class="docutils literal notranslate"><span class="pre">--worker-startup-timeout-secs</span></code> to increase wait time.</p></li>
-<li><p><strong>High latency</strong>: Check if cache-aware routing is causing imbalance. Try adjusting <code class="docutils literal notranslate"><span class="pre">--balance-abs-threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">--balance-rel-threshold</span></code>.</p></li>
+<li><p><strong>High latency</strong>:</p>
+<ul class="simple">
+<li><p><strong>A common cause</strong>: Load Imbalanced.</p></li>
+<li><p>Check the <code class="docutils literal notranslate"><span class="pre">sgl_router_processed_requests_total</span></code> metric grouped by <code class="docutils literal notranslate"><span class="pre">worker</span></code>.</p></li>
+<li><p>Cache-aware routing might be prioritizing cache hits too aggressively.</p></li>
+<li><p>Try adjusting <code class="docutils literal notranslate"><span class="pre">--balance-abs-threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">--balance-rel-threshold</span></code>.</p></li>
+</ul>
+</li>
 <li><p><strong>Memory growth</strong>: Reduce <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code> or decrease <code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code> for more aggressive cache cleanup.</p></li>
 <li><p><strong>Circuit breaker triggering frequently</strong>: Increase <code class="docutils literal notranslate"><span class="pre">--cb-failure-threshold</span></code> or extend <code class="docutils literal notranslate"><span class="pre">--cb-window-duration-secs</span></code>.</p></li>
 </ol>
@@ -1339,6 +1390,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-tracing">Request Tracing</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode">Debug Mode</a></li>
