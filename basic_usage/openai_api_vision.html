@@ -531,27 +531,27 @@ document.write(`
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 12:20:02] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-07 13:43:02] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 12:20:11] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-07 13:43:09] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-07 12:20:15] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-07 13:43:12] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.32it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.35it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.36it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.40it/s]
 Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.38it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.43it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.86it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.85it/s]
 Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.61it/s]
 
-Capturing batches (bs=1 avail_mem=58.66 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.82s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.93s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -609,13 +609,13 @@ Capturing batches (bs=1 avail_mem=58.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"dbf1803ef7cf483da1b646fe88d8f53c","object":"chat.completion","created":1759839645,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man performing ironing tasks outdoors on a makeshift ironing board supported by crutches strapped onto the rear of a yellow SUV. This SUV appears to be parked on a street next to a sidewalk, while a yellow taxi passes by in the background. The man is positioned carefully to not obstruct traffic, demonstrating an improvised or unconventional use of the vehicle for this purpose.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"eb1d01c701f3488a989d392b5e3e68cf","object":"chat.completion","created":1759844619,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"This image depicts a man performing the unusual task of ironing clothes outside the back of a New York City taxi. The man bends over the clothes, which are set on an improvised cloth ironing board, and uses an iron to press them. The taxi is parked on a busy street in what appears to be a city environment. The yellow taxi has advertisements visible on its rear doors, which is typical of taxis in New York City, and the surrounding area includes urban storefronts and flags.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":406,"completion_tokens":99,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"63049b594d0249908343b3ba6efe964a","object":"chat.completion","created":1759839647,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man in a yellow shirt ironing clothes outdoors. He appears to be balancing the ironing board securely between or over the hoods and cabs of two parked taxis. The man is using straps for support as he leans slightly forward during the ironing. The scene is urban, with city buildings, trees, and other taxis visible in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":382,"completion_tokens":75,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"054028703f1d447287b3b732788978bf","object":"chat.completion","created":1759844622,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"In the image, a person dressed in a yellow shirt is seen standing near the rear of a yellow taxi parked on a city street. The individual appears to be actively involved in what looks like an activity or project, as they are wearing straps (likely safety harnesses) connected to an ironing board that is set up across the back of the taxi. The ironing board holds a blue cloth or towel, suggesting they might be engaged in a public art project, street performance, or another form of artistic or promotional activity. The scene takes place on a busy roadway with taxis parked or moving nearby.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":428,"completion_tokens":121,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -656,7 +656,7 @@ Capturing batches (bs=1 avail_mem=58.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"b3580330342845048dc006dd2468b3ac","object":"chat.completion","created":1759839648,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"This image depicts a man in a yellow shirt leaning against an ironing board which has been temporarily rigged onto the back seat of a yellow taxi. He appears to be ironing a garment (blue jeans). The scene is set in a busy urban street, with additional taxis, storefronts, and pedestrians in the background. This image portrays humor and creativity, as it juxtaposes the mundane act of ironing with less conventional environments and scenarios typically expected.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":398,"completion_tokens":91,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"3bef96476d284640936a2d0718879b2a","object":"chat.completion","created":1759844624,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man engaged in an unusual activity on a city street. He is working with an iron and an ironing board positioned on the back of a taxi. The taxi appears to be a typical New York City taxi with \"Moxy\" branding. The man looks focused on pressing or smoothing out the fabric with the iron, and there are clothes draped over the ironing board. The surrounding environment suggests an urban setting, possibly an area in New York City, based on the style of the taxi and the background architecture.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":414,"completion_tokens":107,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -699,7 +699,7 @@ Capturing batches (bs=1 avail_mem=58.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>This image shows a man working on laundry in what appears to be a humorous or ironic transportation setup in the middle of a street. The man is ironing clothes using a car as an unconventional drying rack. The car's rear door is open and partially serves as support for the clothes drying apparatus. There are taxis and city buildings visible in the background, suggesting this scene takes place in an urban area with pedestrian traffic and vehicles passing by.</strong></div>
+<strong style='color: #00008B;'>The image depicts a man dressed in a yellow shirt standing on the rear of a yellow taxi cab parked on a street in what seems to be an urban area, possibly in New York City, given the cab's iconic yellow and the style of the taxi. He is using a sheet or material draped over the tailgate as an improvised air conditioning unit, suggesting he is trying to cool himself by creating an airflow. This is likely occurring during a heatwave or as part of some humorous advertisement. The scene includes another taxi in the background, indicating a busy city street.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
