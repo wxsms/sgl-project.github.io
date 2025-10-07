@@ -553,17 +553,17 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 03:43:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-07 06:25:05] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-07 03:43:17] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-07 06:25:07] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.42it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.69it/s]
 
-Capturing batches (bs=1 avail_mem=13.02 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  2.29it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.26it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -577,7 +577,7 @@ Capturing batches (bs=1 avail_mem=13.02 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:33776
+Server started on http://localhost:30925
 </pre></div></div>
 </div>
 </section>
@@ -611,7 +611,7 @@ Server started on http://localhost:33776
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='84daef9817ec4808b42c7298fbec427d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759808609, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='88fcc8aed7b44302aa0d11db3ad2680d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1759818319, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -815,7 +815,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that thrived from the 8th century BC to the 4th century AD. Some of their major achievements include:<br><br>1. **Roman Republic**: The Roman Republic was the first permanent state in Europe. It lasted until 476 AD and was based on the laws of the Roman Republic.<br><br>2. **Roman Empire**: The Roman Empire, which lasted from 27 BC to 476 AD, was the largest and most powerful state in Europe. It stretched from modern-day Italy to Spain.<br><br>3. **Architecture**: Rome was known for its grand architecture, including the Colos</strong></div>
+<strong style='color: #00008B;'>The ancient Roman civilization made significant contributions to various fields, including law, philosophy, science, and literature. Here are some of their major achievements:<br><br>1. Law: The Romans developed a highly structured legal system that is still in use today. Key laws include the Twelve Tables, which established the principles of justice and property rights.<br><br>2. Philosophy: Roman philosophers such as Cicero, Seneca, and Quintus Ennius made important contributions to philosophy, particularly in the areas of ethics and politics.<br><br>3. Science: The Romans were pioneers in many scientific fields, including astronomy, mathematics, and medicine. They developed the first calendar and invented</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -838,7 +838,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, this is a test. It&#39;s a simple question asking if something is a test.
+Yes, that&#39;s a test. I&#39;m here to provide helpful information and engage in meaningful conversations to the best of my abilities. Let&#39;s continue to assist you with any questions or topics you have.
 </pre></div></div>
 </div>
 </section>
@@ -869,7 +869,7 @@ Yes, this is a test. It&#39;s a simple question asking if something is a test.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='4fd91f18ea05439e9d21829d02740ac6', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759808610, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='b96ddc0408e0405c97fc2f41ccca9307', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1759818319, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -901,7 +901,7 @@ Yes, this is a test. It&#39;s a simple question asking if something is a test.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='08e51d939ad24cf681bb06b53e0a3d81', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack. He had been on many missions to explore new planets and galaxies, and he always had a curious mind that always wanted to know everything about them.', matched_stop='\n\n')], created=1759808610, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=42, prompt_tokens=9, total_tokens=51, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='f38324a42c6d447283dd707fcf9d5812', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=" The story should be set in the year 2035 and focus on a character who has discovered a new planet and begins exploring it. The character must navigate through dangerous terrain, confront a hostile alien species, and eventually discover the existence of a mysterious mineral that holds the key to unlocking the secrets of this new world. Along the way, the character must also deal with various challenges such as communication problems with Earth, technological limitations, and personal conflicts with family members. As the character's discovery becomes more significant, they must use their ingenuity and bravery to find a way to protect their planet from potential threats while also making a lasting impact on space exploration and science.\nAs an AI language model, I cannot provide you with an original story or narrative", matched_stop=None)], created=1759818319, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=9, total_tokens=159, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
