@@ -543,20 +543,20 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 15:15:09] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-07 15:45:53] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-07 15:15:10] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-07 15:45:55] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.79it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.64it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.55it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.55it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.43it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.37it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.41it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.31it/s]
+Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.84it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -570,7 +570,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:35079
+Server started on http://localhost:33393
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -611,7 +611,7 @@ Server started on http://localhost:35079
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Here are three countries along with their respective capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Australia - Canberra</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. India - New Delhi<br>3. Japan - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -641,13 +641,13 @@ Server started on http://localhost:35079
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Spain - Madrid<br>3. Italy - Rome</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here’s another list of three countries and their capitals:<br><br>1. **Canada** - Ottawa<br>2. **Mexico** - Mexico City<br>3. **India** - New Delhi</strong></div>
+<strong style='color: #00008B;'>Of course! Here are three more countries along with their capitals:<br><br>1. Germany - Berlin<br>2. Japan - Tokyo<br>3. India - New Delhi</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -689,7 +689,7 @@ Server started on http://localhost:35079
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>When you multiply 2 by 2, you get the result:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. You didn't really need a calculator for this one, as it's a simple multiplication.</strong></div>
+<strong style='color: #00008B;'>2 * 2<br><br>Let's calculate:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. No calculator was needed in this case, as it's a simple multiplication.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -729,7 +729,7 @@ Server started on http://localhost:35079
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: <br>   - **Importance**: A balanced diet is crucial for overall health and well-being, providing essential nutrients to support bodily functions.<br>   - **Key Components**:<br>     - Fruits and vegetables: Rich in vitamins, minerals, and fiber.<br>     - Whole grains: Provide complex carbohydrates and other nutrients.<br>     - Lean proteins: Support cell repair and growth.<br>     - Healthy fats: Essential for brain health and vitamin absorption.<br>   - **Benefits**: Reduces the risk of various diseases, supports a strong immune system, and promotes optimal bodily function.<br><br>2. **Regular Exercise**:<br>   - **Importance**: Regular exercise is vital for maintaining optimal health and improving various aspects of well-being.<br>   - **Types of Exercises**:<br>     - Cardiovascular exercises (e.g., walking, jogging, cycling, swimming): Improve heart and lung function.<br>     - Strength training (e.g., weightlifting, bodyweight exercises): Build and maintain muscle mass.<br>     - Flexibility exercises (e.g., yoga, stretching): Enhance mobility and reduce injury risk.<br>   - **Benefits**: Boosts cardiovascular health, enhances mental well-being, improves sleep quality, and helps manage chronic diseases such as diabetes, obesity, and hypertension.<br><br>By combining a balanced diet with regular exercise, you can significantly enhance your overall health and quality of life.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet involves consuming a variety of nutrient-dense foods from all food groups in the right proportions. This includes fruits, vegetables, whole grains, lean proteins, and healthy fats. Proper hydration and limiting processed foods, sugary drinks, and unhealthy fats are also key. A balanced diet supports overall health, energy levels, and helps reduce the risk of various diseases.<br><br>2. **Regular Exercise**: Regular physical activity is essential for maintaining physical and mental health. It improves cardiovascular health, increases muscle strength and flexibility, and boosts overall endurance. Exercise also helps with weight management, improves mental health by reducing stress and depression, enhances sleep quality, strengthens the immune system, and can even increase lifespan. Incorporating various types of exercises, such as aerobic activities, strength training, and flexibility exercises, into your routine can provide comprehensive benefits.<br><br>Together, these two practices form the foundation of a healthy lifestyle and can significantly enhance your quality of life.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -802,7 +802,7 @@ Server started on http://localhost:35079
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": " Holly",<br>        "core": " Phoenix Feather",<br>        "length": 10.2<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Nicolas Flamel"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Willow",<br>        "core": "Phoenix feather",<br>        "length": 10.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Gregory Goyle"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -837,7 +837,7 @@ Server started on http://localhost:35079
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 34.26it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 30.52it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -960,27 +960,27 @@ The capital of France is Paris.&lt;|im_end|&gt;
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 15:15:37] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-07 15:46:22] MOE_RUNNER_BACKEND is not initialized, using triton backend
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 15:15:46] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-07 15:46:30] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-07 15:15:48] MOE_RUNNER_BACKEND is not initialized, using triton backend
+[2025-10-07 15:46:32] MOE_RUNNER_BACKEND is not initialized, using triton backend
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.19it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.26it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.31it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.74it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.50it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.36it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.33it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.55it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.07s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.06s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -994,7 +994,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38840
+Server started on http://localhost:31154
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1027,7 +1027,7 @@ Server started on http://localhost:38840
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man pressing clothes outside on the back of a conventionally seated SUV in the rear vanilla sierra xe配置 of a New York City yellow taxi (which is also recognizable as a Ford with separately configured interiors/exteriors used extensively in the city as taxis). The man identified belongs officially designated, repurposed as a window discuss television news show wherever discusses "Spain (seek a bicycle without."<br><br>(Note: It’s a humorous adaptation spun under conditions blending physics interping, truth, here)<br><br>The notable parts in this picture refers traditional doctrine taught systematically have therefore temperature adjusting promoting web-based operational feedback insights distractions clarify structural limitation ensure sustainability competences automated refinement facilitation foundational support capability scaling context interconnectedness committing minimize intent unintentional interference innovation implementation integration enabling realization unrestricted reforming resetting sensitivity pacing program recognizes reality reallocating relevant representation shaping scalability specific sustainable systems technologies understanding widening world).</strong></div>
+<strong style='color: #00008B;'>The image shows a person performing an unusual and humorous acting role, which could be referred to as a theater or performance art installation. The individual, dressed in a bright yellow T-shirt with "DO NOT PRESS" printed on the back, stands on the rear of a taxi. They appear to be popping out and visibility trying to overlap and interact humorously between two taxis off on the street, holding what seems to be an empty line on demand lottery ticket dispenser. It seems they had unconventionally maneuvered past the next vehicle genuine getaway situation, presumably buoyantly tagging along attached straps and seemingly transporting what items to their vehicle.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
