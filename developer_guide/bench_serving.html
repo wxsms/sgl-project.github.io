@@ -548,15 +548,15 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">sharegpt</span></code> (default): loads ShareGPT-style pairs; optionally restrict with <code class="docutils literal notranslate"><span class="pre">--sharegpt-context-len</span></code> and override outputs with <code class="docutils literal notranslate"><span class="pre">--sharegpt-output-len</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">random</span></code>: random text lengths; sampled from ShareGPT token space</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">random-ids</span></code>: random token ids (can lead to gibberish)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">random-image</span></code>: generates random images and wraps them in chat messages; supports custom resolutions via ‘heightxwidth’ format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code>: generates images and wraps them in chat messages; supports custom resolutions, multiple formats, and different content types</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">generated-shared-prefix</span></code>: synthetic dataset with shared long system prompts and short questions</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mmmu</span></code>: samples from MMMU (Math split) and includes images</p></li>
 </ul>
 <p>Common dataset flags:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--num-prompts</span> <span class="pre">N</span></code>: number of requests</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--random-input-len</span></code>, <code class="docutils literal notranslate"><span class="pre">--random-output-len</span></code>, <code class="docutils literal notranslate"><span class="pre">--random-range-ratio</span></code>: for random/random-ids/random-image</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--random-image-num-images</span></code>, <code class="docutils literal notranslate"><span class="pre">--random-image-resolution</span></code>: for random-image dataset (supports presets 1080p/720p/360p or custom ‘heightxwidth’ format)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--random-input-len</span></code>, <code class="docutils literal notranslate"><span class="pre">--random-output-len</span></code>, <code class="docutils literal notranslate"><span class="pre">--random-range-ratio</span></code>: for random/random-ids/image</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--image-count</span></code>: Number of images per request (for <code class="docutils literal notranslate"><span class="pre">image</span></code> dataset).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--apply-chat-template</span></code>: apply tokenizer chat template when constructing prompts</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--dataset-path</span> <span class="pre">PATH</span></code>: file path for ShareGPT json; if blank and missing, it will be downloaded and cached</p></li>
 </ul>
@@ -568,26 +568,28 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">--gsp-question-len</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--gsp-output-len</span></code></p></li>
 </ul>
-<p>Random Image dataset flags (for <code class="docutils literal notranslate"><span class="pre">random-image</span></code>):</p>
+<p>Image dataset flags (for <code class="docutils literal notranslate"><span class="pre">image</span></code>):</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--random-image-num-images</span></code>: Number of images per request</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--random-image-resolution</span></code>: Image resolution; supports presets (1080p, 720p, 360p) or custom ‘heightxwidth’ format (e.g., 1080x1920, 512x768)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--image-count</span></code>: Number of images per request</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--image-resolution</span></code>: Image resolution; supports presets (4k, 1080p, 720p, 360p) or custom ‘heightxwidth’ format (e.g., 1080x1920, 512x768)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--image-format</span></code>: Image format (jpeg or png)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--image-content</span></code>: Image content type (random or blank)</p></li>
 </ul>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>To benchmark random-image dataset with 3 images per request, 500 prompts, 512 input length, and 512 output length, you can run:</p></li>
+<li><p>To benchmark image dataset with 3 images per request, 500 prompts, 512 input length, and 512 output length, you can run:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>Qwen/Qwen2.5-VL-3B-Instruct<span class="w"> </span>--disable-radix-cache
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--backend<span class="w"> </span>sglang-oai-chat<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--dataset-name<span class="w"> </span>random-image<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dataset-name<span class="w"> </span>image<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--num-prompts<span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--random-image-num-images<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--random-image-resolution<span class="w"> </span>720p<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--image-count<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--image-resolution<span class="w"> </span>720p<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--random-input-len<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--random-output-len<span class="w"> </span><span class="m">512</span>
 </pre></div>
@@ -652,9 +654,10 @@ document.write(`
 <p>Printed after each run:</p>
 <ul class="simple">
 <li><p>Request throughput (req/s)</p></li>
-<li><p>Input token throughput (tok/s)</p></li>
+<li><p>Input token throughput (tok/s) - includes both text and vision tokens</p></li>
 <li><p>Output token throughput (tok/s)</p></li>
-<li><p>Total token throughput (tok/s)</p></li>
+<li><p>Total token throughput (tok/s) - includes both text and vision tokens</p></li>
+<li><p>Total input text tokens and Total input vision tokens - per-modality breakdown</p></li>
 <li><p>Concurrency: aggregate time of all requests divided by wall time</p></li>
 <li><p>End-to-End Latency (ms): mean/median/std/p99 per-request total latency</p></li>
 <li><p>Time to First Token (TTFT, ms): mean/median/std/p99 for streaming mode</p></li>
@@ -722,28 +725,43 @@ document.write(`
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Random images (VLM) with chat template:</p></li>
+<li><p>Images (VLM) with chat template:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model<span class="w"> </span>your-vlm-model<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--dataset-name<span class="w"> </span>random-image<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--random-image-num-images<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--random-image-resolution<span class="w"> </span>720p<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>image<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-count<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-resolution<span class="w"> </span>720p<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--random-input-len<span class="w"> </span><span class="m">128</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--apply-chat-template
 </pre></div>
 </div>
-<p>4a) Random images with custom resolution:</p>
+<p>4a) Images with custom resolution:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model<span class="w"> </span>your-vlm-model<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--dataset-name<span class="w"> </span>random-image<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--random-image-num-images<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--random-image-resolution<span class="w"> </span>512x768<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>image<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-count<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-resolution<span class="w"> </span>512x768<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--random-input-len<span class="w"> </span><span class="m">64</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--apply-chat-template
+</pre></div>
+</div>
+<p>4b) 1080p images with PNG format and blank content:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>your-vlm-model<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>image<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-count<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-resolution<span class="w"> </span>1080p<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-format<span class="w"> </span>png<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image-content<span class="w"> </span>blank<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--random-input-len<span class="w"> </span><span class="m">64</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--apply-chat-template
@@ -819,7 +837,7 @@ document.write(`
 <li><p>All requests failed: verify <code class="docutils literal notranslate"><span class="pre">--backend</span></code>, server URL/port, <code class="docutils literal notranslate"><span class="pre">--model</span></code>, and authentication. Check warmup errors printed by the script.</p></li>
 <li><p>Throughput seems too low: adjust <code class="docutils literal notranslate"><span class="pre">--request-rate</span></code> and <code class="docutils literal notranslate"><span class="pre">--max-concurrency</span></code>; verify server batch size/scheduling; ensure streaming is enabled if appropriate.</p></li>
 <li><p>Token counts look odd: prefer chat/instruct models with proper chat templates; otherwise tokenization of gibberish may be inconsistent.</p></li>
-<li><p>Random-image/MMMU datasets: ensure you installed extra deps (<code class="docutils literal notranslate"><span class="pre">pillow</span></code>, <code class="docutils literal notranslate"><span class="pre">datasets</span></code>, <code class="docutils literal notranslate"><span class="pre">pybase64</span></code>).</p></li>
+<li><p>Image/MMMU datasets: ensure you installed extra deps (<code class="docutils literal notranslate"><span class="pre">pillow</span></code>, <code class="docutils literal notranslate"><span class="pre">datasets</span></code>, <code class="docutils literal notranslate"><span class="pre">pybase64</span></code>).</p></li>
 <li><p>Authentication errors (401/403): set <code class="docutils literal notranslate"><span class="pre">OPENAI_API_KEY</span></code> or disable auth on your server.</p></li>
 </ul>
 </section>
