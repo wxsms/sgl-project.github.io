@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 07, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 08, 2025"/>
   </head>
   
   
@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-07 23:34:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-08 00:47:34] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -569,10 +569,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.63it/s]
 
-Capturing batches (bs=1 avail_mem=23.86 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 17.36it/s]
+Capturing batches (bs=1 avail_mem=66.55 GB): 100%|██████████| 20/20 [00:02&lt;00:00,  9.32it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -604,35 +604,34 @@ Capturing batches (bs=1 avail_mem=23.86 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Rumen and I&#39;m an elderly man who is 77 years old. I have a passion for art and painting. My hobby has always been photography, and I started taking photos as an adult. I have been teaching photography for over 20 years. I have taken over 20,000 photos. My photography has won many awards and received many honorable mentions. I have been honored to have my work featured in many art magazines and online. I have also been recognized by many people for my photography. I am a true believer in the power of art and the use of it to inspire and help people.
-
-I
+Generated text:  George and I’m a professional Social Media Manager at Home | Photography, Film, and Video Production in the UK. I’ve worked with many of the world’s biggest companies and brands, as well as individuals to help them set up social media accounts and improve their performance. My aim is to help people in this competitive industry to achieve their goals and maximise their opportunities. I love the challenge of keeping an eye on what’s going on online and using it to inform my clients, and I’m always looking for new ways of staying updated. In this role, I focus on creating and promoting content for the website, social media accounts, and
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide whether to have an economic stimulus package sent to Congress or keep it pending in the House of Representatives. The economic stimulus package would be composed of a series of spending items that would be sent to Congress. Each spending item would be priced at one unit of currency. The president wants to know how many units of currency the economic stimulus package would cost if it is sent to Congress for approval. However, he needs to ensure that the total cost of the economic stimulus package is never more than $200 billion in absolute terms.
+Generated text:  50 years older than the president of Brazil. The president of Brazil is 30 years younger than the president of the United States. How old is the president of the United States?
+To determine the age of the president of the United States, we need to work backwards from the information given. Let&#39;s denote the age of the president of the United States as \( U \) and the age of the president of Brazil as \( B \).
 
-Given the following information:
-- The cost of the first spending item is $0.01
+From the problem, we have the following relationships:
+1. The president of the United States is 50 years older than the president of Brazil. This can be written as:
+
 ===============================
 Prompt: The capital of France is
-Generated text:  ______. A. Paris B. Brussels C. London D. Moscow
+Generated text:  Paris.
 
-A. Paris
+Paris is a city in France. It is the capital city of the country. It is the largest city of France. It is the largest city in Europe.
 
-Paris is the capital of France, located in the north of the country. It is known for its beautiful architecture, history, and culture. The city is also famous for its fashion industry and is home to many important museums and attractions. However, it&#39;s important to note that the choices given may not include Paris as the capital of France. For a correct answer, the capital of France would be Paris. Another option, Brussels, is a major city in Belgium, not France. London is in the United Kingdom, not France. Moscow is a
+Paris has the world&#39;s most famous monument, the Eiffel Tower. It is located in the middle of the city.
+
+The Eiffel Tower is located on a hill above the city center. It is about 330 meters above sea level. It is on the map as a black and white sculpture.
+
+The Eiffel Tower has 476 steps, and it is 20 meters high.
+
+The Eiffel Tower
 ===============================
 Prompt: The future of AI is
-Generated text:  in the hands of the people.
-
-  1. It will be natural for people to use AI and enhance their lives.
-  2. The people will be able to control AI and make decisions for themselves.
-  3. The people will have more control over their data and privacy than in the past.
-
-If you want to understand the future of AI, then you need to read about how people will use AI. The future of AI will be very different from the past, and it will also be different from what we have in mind.
-
-How will people use AI?
-
-When you think about people using AI, the first thing you
+Generated text:  close at hand, as tech companies are taking steps to develop advanced technologies that can improve and augment human intelligence. Here’s a look at some of the most promising developments in AI today:
+1. Augmenting human abilities with AI-powered tools
+One of the most promising developments in AI is the ability to augment human abilities with AI-powered tools. By combining the strengths of humans and AI, we can create more efficient, effective, and personalized solutions to complex problems.
+For example, companies like IBM, Microsoft, and Google are developing AI-powered chatbots and virtual assistants that can understand and respond to complex questions and requests from users. These tools
 </pre></div></div>
 </div>
 </section>
@@ -672,17 +671,17 @@ When you think about people using AI, the first thing you
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. The city is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a major tourist destination and is known for its fashion industry, with Paris Fashion
+Generated text:  Paris, also known as the City of Light. It is a bustling metropolis with a rich history and a vibrant culture. The city is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also known for its cuisine, fashion, and music scene. The city is a popular tourist destination and a cultural hub for France and the world. It is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly together. Paris is a city of light and a city of history. Its iconic landmarks and cultural attractions make it a must-visit destination for anyone
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased automation: AI is expected to become more and more integrated into our daily lives, from manufacturing to healthcare. Automation will likely become more prevalent as machines can perform tasks that were previously done by humans, such as data analysis, decision-making, and routine maintenance.
+1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to more personalized and adaptive AI systems that can learn from and adapt to the behavior and preferences of users.
 
-2. AI ethics and privacy: As AI becomes more integrated into our lives, there will be a growing concern about its impact on society. There will be a need for ethical guidelines and regulations to ensure that AI
+2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations, including issues such as bias, transparency, and accountability. This could lead to more rigorous testing and evaluation of AI systems, as well as greater transparency and accountability in their development
 
 </pre></div></div>
 </div>
@@ -725,19 +724,22 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I am a [Your Profession] at [Your Location] who is [Your Speciality or Expertise]. I have a passion for [Your Interests or Hobby], and I am always looking to learn new things and improve myself. I enjoy [Your Challenges or Challenges of the Day], and I&#39;m constantly striving to be the best version of myself. I am always willing to give back to the community and support others, and I&#39;m excited to help people achieve their goals and dreams. What&#39;s your favorite hobby or activity? As an AI language model, I don&#39;t have a physical body, so I don
+Generated text:  Emily. I&#39;m a busy professional with a creative mind and a strong work ethic. My background in marketing and social media has equipped me with a wealth of skills in digital strategy, analytics, and content creation. I&#39;m always looking to improve my skills and stay current with the latest trends in digital marketing. I love creating content that resonates with people and turning ideas into actionable projects. And yes, I have a passion for adventure, especially when it comes to traveling and exploring new places. How about you? What&#39;s your name, and what brings you to this table?
+Seth: My name is Seth and I&#39;m a free
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris is the capital city of France, located on the left bank of the Seine River in the heart of the Loire Valley, and serves as the political, cultural, and economic center of the country. It is also known as the &#34;City of Love&#34; due to its numerous famous landmarks, including the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Louvre Palace. Paris is home to the French Parliament, the French Academy of Sciences, the French National Library, and many other important institutions and attractions. The city&#39;s cultural and artistic scene is also renowned, with numerous museums, theaters,
+Generated text:  Paris. It is the largest and most populous city in the European Union and the third largest city in the world by population. The city is known for its rich history, stunning architecture, and lively culture. Paris is a popular tourist destination and is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. The French language is spoken by millions of people and is a vital part of the city&#39;s identity. Paris is known as the &#34;City of Love&#34; due to its romantic atmosphere and numerous famous romantic attractions. It is often referred to as the &#34;Paris of Paris&#34; and is a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  quite exciting and dynamic, with numerous possibilities and breakthroughs expected to shape the future of technology and society. Some of the most promising trends include:
+Generated text:  likely to be characterized by several key trends:
 
-1. More advanced natural language processing: With the help of deep learning and other advanced technologies, we can expect to see even more natural language processing capabilities in AI. This will allow machines to understand and respond to human language in more sophisticated ways.
+1. Increased automation and artificial general intelligence: AI systems will continue to become more capable of performing complex tasks without human intervention, such as making decisions, providing assistance, or assisting with creative tasks like art or music.
 
-2. Artificial intelligence that can mimic human decision-making: AI is already becoming more capable of making decisions based on complex data, but it still struggles with decision-making that involves emotions and intuition. With further advances in AI, it is possible that we will
+2. Autonomous vehicles: Autonomous vehicles are likely to become more prevalent in the future, with self-driving cars becoming more common and accessible.
+
+3. Improved transparency and accountability: AI systems will become more transparent and accountable, with greater emphasis on data privacy and security, and better mechanisms for informing users about AI-generated information and decisions.
+
+4. Enhanced capabilities in areas such as healthcare: AI
 </pre></div></div>
 </div>
 </section>
@@ -783,27 +785,23 @@ Generated text:  quite exciting and dynamic, with numerous possibilities and bre
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name] and I&#39;m a/an [Your Profession or Current Job Title] at [Your Company Name]. I am an enthusiastic, self-motivated individual with a passion for [Your Profession/Field of Study/Personal Interest]. I am always looking for ways to [describe a task or activity you enjoy doing]. I believe in [Describe an aspect of your personality that you believe makes you unique]. I enjoy [Describe an activity or hobby that you enjoy]. And I am always willing to [describe a new skill or interest you&#39;re learning] to help you grow. What do you think makes you tick? I&#39;m always looking
+Generated text:  [Name], and I&#39;m a [job title] from [company name]. I&#39;m [age] years old, [length of service] years with [company name], and I have [number] years of experience in [job title]. I&#39;m [employee number] and I&#39;ve been with [company name] for [number] years. I&#39;m excited to work with you and [company name]. [Name] is looking forward to our next meeting. If there&#39;s anything I can do to help you, please let me know. What&#39;s your name? What&#39;s your company name? How old are you? How long have
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as Notre-Dame Cathedral, the Eiffel Tower, and the Louvre Museum.
+Generated text:  Paris.
 
-The capital city of France is Paris. It is known for its iconic landmarks like Notre-Dame Cathedral, Eiffel Tower, and Louvre Museum.
-
-Please provide the answer with multiple levels of complexity: (A) Yes, (B) No, and (C) Maybe.
-
-B.
-The capital city of France is Paris, known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral.
-
-C.
-The capital city of
+Given those answer choices, what is a relevant question for the above-mentioned story? Question: What is the official language of France? The official language of France is French.
+The answer is: what is the official language of france Question: How does Paris get its name? Paris is named after the ancient Roman god of wine and plenty. Question: What is the capital city of a country that is named after a Roman god? Paris is the capital city of France. Question: What is the capital of France? Paris is the capital of France.
+Answer: What is the capital of France? Paris is the capital of France
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to continue to develop and evolve, with many new applications and technologies being created to automate and augment the human experience. Here are some potential trends that could shape the future of AI:
+Generated text:  exciting and promising, with many potential trends to watch for:
 
-1. Increased use of AI for healthcare: With the growth of big data and machine learning, AI is becoming increasingly important in the healthcare industry. AI-powered diagnostic tools, personalized treatment plans, and predictive analytics could help doctors make more informed decisions and improve patient outcomes.
+1. Machine learning: Machine learning is a key area of AI research and development. As algorithms become more sophisticated, we may see more advanced forms of learning, such as deep learning and neural networks.
 
-2. AI in transportation: Autonomous vehicles, drones, and other self-driving cars are becoming more common, and AI is becoming increasingly important in transportation. AI-powered traffic management systems can optimize routes
+2. Autonomous vehicles: Autonomous vehicles are becoming increasingly common, and it&#39;s possible that AI will become the primary driving force behind this technology. As cars become more intelligent and self-driving, we may see even more autonomous systems on the road.
+
+3. Advanced robotics: As the cost of AI technology falls, we may see more advanced robots that are able to perform tasks that would be
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -905,7 +903,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 07, 2025.
+  Last updated on Oct 08, 2025.
   <br/>
 </p>
   </div>
