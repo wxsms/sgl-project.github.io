@@ -472,6 +472,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-single-node">Llama Single Node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-multi-node">DeepSeek Multi-Node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configuration">Advanced Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nvlink-transport-configuration">NVLink Transport Configuration</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-server-configuration">Prefill Server Configuration</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decode-server-configuration">Decode Server Configuration</a></li>
 </ul>
@@ -624,6 +625,14 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <section id="advanced-configuration">
 <h3>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Link to this heading">#</a></h3>
 <p>PD Disaggregation with Mooncake supports the following environment variables for fine-grained control over system behavior.</p>
+<section id="nvlink-transport-configuration">
+<h4>NVLink Transport Configuration<a class="headerlink" href="#nvlink-transport-configuration" title="Link to this heading">#</a></h4>
+<p>To enable NVLink transport for KV cache transfers with the mooncake backend (recommended for NVL72 deployments), set the following environment variables. Note that auxiliary data transfer will still use TCP as a temporary workaround.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span><span class="o">=</span>True
+<span class="nb">export</span><span class="w"> </span><span class="nv">MC_FORCE_MNNVL</span><span class="o">=</span>True
+</pre></div>
+</div>
+</section>
 <section id="prefill-server-configuration">
 <h4>Prefill Server Configuration<a class="headerlink" href="#prefill-server-configuration" title="Link to this heading">#</a></h4>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -905,6 +914,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llama-single-node">Llama Single Node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-multi-node">DeepSeek Multi-Node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configuration">Advanced Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nvlink-transport-configuration">NVLink Transport Configuration</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-server-configuration">Prefill Server Configuration</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decode-server-configuration">Decode Server Configuration</a></li>
 </ul>
