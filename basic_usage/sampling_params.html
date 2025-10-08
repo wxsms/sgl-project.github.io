@@ -463,6 +463,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-endpoint"><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sampling parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-defaults">Note on defaults</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core parameters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalizers">Penalizers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained decoding</a></li>
@@ -574,6 +575,17 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <section id="id1">
 <h2>Sampling parameters<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The object is defined at <code class="docutils literal notranslate"><span class="pre">sampling_params.py::SamplingParams</span></code>. You can also read the source code to find more arguments and docs.</p>
+<section id="note-on-defaults">
+<h3>Note on defaults<a class="headerlink" href="#note-on-defaults" title="Link to this heading">#</a></h3>
+<p>By default, SGLang initializes several sampling parameters from the model’s <code class="docutils literal notranslate"><span class="pre">generation_config.json</span></code> (when the server is launched with <code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span> <span class="pre">model</span></code>, which is the default). To use SGLang/OpenAI constant defaults instead, start the server with <code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span> <span class="pre">openai</span></code>. You can always override any parameter per request via <code class="docutils literal notranslate"><span class="pre">sampling_params</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use model-provided defaults from generation_config.json (default behavior)</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>&lt;MODEL&gt;<span class="w"> </span>--sampling-defaults<span class="w"> </span>model
+
+<span class="c1"># Use SGLang/OpenAI constant defaults instead</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>&lt;MODEL&gt;<span class="w"> </span>--sampling-defaults<span class="w"> </span>openai
+</pre></div>
+</div>
+</section>
 <section id="core-parameters">
 <h3>Core parameters<a class="headerlink" href="#core-parameters" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -597,19 +609,19 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 <td><p>Provide stop words in the form of token IDs. Generation will stop if one of these token IDs is sampled.</p></td>
 </tr>
 <tr class="row-odd"><td><p>temperature</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">1.0)</span></code></p></td>
 <td><p><a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature">Temperature</a> when sampling the next token. <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0</span></code> corresponds to greedy sampling, a higher temperature leads to more diversity.</p></td>
 </tr>
 <tr class="row-even"><td><p>top_p</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">1.0)</span></code></p></td>
 <td><p><a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-top_p">Top-p</a> selects tokens from the smallest sorted set whose cumulative probability exceeds <code class="docutils literal notranslate"><span class="pre">top_p</span></code>. When <code class="docutils literal notranslate"><span class="pre">top_p</span> <span class="pre">=</span> <span class="pre">1</span></code>, this reduces to unrestricted sampling from all tokens.</p></td>
 </tr>
 <tr class="row-odd"><td><p>top_k</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">-1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">-1)</span></code></p></td>
 <td><p><a class="reference external" href="https://developer.nvidia.com/blog/how-to-get-better-outputs-from-your-large-language-model/#predictability_vs_creativity">Top-k</a> randomly selects from the <code class="docutils literal notranslate"><span class="pre">k</span></code> highest-probability tokens.</p></td>
 </tr>
 <tr class="row-even"><td><p>min_p</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">0.0)</span></code></p></td>
 <td><p><a class="reference external" href="https://github.com/huggingface/transformers/issues/27670">Min-p</a> samples from tokens with probability larger than <code class="docutils literal notranslate"><span class="pre">min_p</span> <span class="pre">*</span> <span class="pre">highest_token_probability</span></code>.</p></td>
 </tr>
 </tbody>
@@ -977,6 +989,7 @@ If you want a high-level endpoint that can automatically handle chat templates, 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-endpoint"><code class="docutils literal notranslate"><span class="pre">/generate</span></code> Endpoint</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sampling parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-defaults">Note on defaults</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-parameters">Core parameters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalizers">Penalizers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-decoding">Constrained decoding</a></li>
