@@ -584,29 +584,29 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:41:08] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:39:51] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 14:41:09] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 14:41:10] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 16:39:52] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 16:39:53] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.69s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.15s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.23s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.75s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.21s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
 
-Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.11s/it]
+Capturing batches (bs=1 avail_mem=50.88 GB): 100%|██████████| 4/4 [00:27&lt;00:00,  6.86s/it]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.24s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.24s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.30s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.30s/it]
 
-Capturing batches (bs=1 avail_mem=53.65 GB): 100%|██████████| 4/4 [00:10&lt;00:00,  2.59s/it]
-Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 118.89it/s]
+Capturing batches (bs=1 avail_mem=53.65 GB): 100%|██████████| 4/4 [00:10&lt;00:00,  2.65s/it]
+Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 117.37it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -638,7 +638,7 @@ Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='cc911769c76e40f9bd5c9bc87eaeddfc', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760107353, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='354d78b5dd9243979669a5c3c5bd1c06', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760114480, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -678,37 +678,37 @@ Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:42:41] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:41:28] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:42:51] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:41:44] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 14:42:52] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 14:42:52] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 16:41:45] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 16:41:45] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.77s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.19s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.27s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.62s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.13s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.20s/it]
 
-Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:23&lt;01:11, 23.79s/it]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=36.55 GB):  25%|██▌       | 1/4 [00:24&lt;01:11, 23.98s/it]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:38&lt;00:00,  9.61s/it]
+Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:38&lt;00:00,  9.68s/it]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.14s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.14s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.15s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.15s/it]
 
-Capturing batches (bs=1 avail_mem=53.49 GB): 100%|██████████| 4/4 [00:11&lt;00:00,  2.89s/it]
-Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 27.16it/s]
+Capturing batches (bs=1 avail_mem=53.49 GB): 100%|██████████| 4/4 [00:13&lt;00:00,  3.35s/it]
+Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 82.50it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -740,7 +740,7 @@ Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='3de4c28ba0924a0eba21bf08d520e435', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760107472, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='09c150cdb47a4566919f2c5c80068419', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760114607, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -782,42 +782,42 @@ Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:44:41] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:44:41] Casting torch.bfloat16 to torch.float16.
+[2025-10-10 16:43:35] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:43:35] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:44:49] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:44:49] Casting torch.bfloat16 to torch.float16.
-[2025-10-10 14:44:50] Casting torch.bfloat16 to torch.float16.
+[2025-10-10 16:43:43] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:43:43] Casting torch.bfloat16 to torch.float16.
+[2025-10-10 16:43:44] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 14:44:51] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 14:44:51] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 16:43:44] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 16:43:44] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.36s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.46s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.41s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.12s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.60s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.32s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.37s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.33s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.05s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.52s/it]
 
-Capturing batches (bs=1 avail_mem=59.73 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.10s/it]
-[2025-10-10 14:45:33] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-10 14:45:33] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=59.74 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.03s/it]
+[2025-10-10 16:44:26] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-10 16:44:26] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.09s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.09s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.01s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.01s/it]
 
-Capturing batches (bs=1 avail_mem=58.39 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.63s/it]
-Capturing batches (bs=1 avail_mem=58.24 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 30.64it/s]
+Capturing batches (bs=1 avail_mem=58.39 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.59s/it]
+Capturing batches (bs=1 avail_mem=58.25 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 89.10it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -849,7 +849,7 @@ Capturing batches (bs=1 avail_mem=58.24 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='9ea2f67982f249f69c324716da95bbde', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760107585, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='49b3cf17d6fb47ddb773fb9fa4c78ef5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760114717, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -889,42 +889,42 @@ Capturing batches (bs=1 avail_mem=58.24 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:46:34] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:46:34] Casting torch.bfloat16 to torch.float16.
+[2025-10-10 16:45:26] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:45:26] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:46:42] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:46:42] Casting torch.bfloat16 to torch.float16.
-[2025-10-10 14:46:43] Casting torch.bfloat16 to torch.float16.
+[2025-10-10 16:45:38] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:45:38] Casting torch.bfloat16 to torch.float16.
+[2025-10-10 16:45:39] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 14:46:44] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 14:46:44] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 16:45:40] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 16:45:40] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.16s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.16s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.15s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.06s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.46s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.25s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.30s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.27s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.48s/it]
 
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.04s/it]
-[2025-10-10 14:47:26] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-10 14:47:26] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.09s/it]
+[2025-10-10 16:46:24] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-10 16:46:24] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.97it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.96it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.83it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.83it/s]
 
-Capturing batches (bs=1 avail_mem=58.17 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.23s/it]
-Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.62it/s]
+Capturing batches (bs=1 avail_mem=58.17 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.27s/it]
+Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 25.52it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -956,7 +956,7 @@ Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='f084ff97f46a42ccbe22661c47522f28', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760107695, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='ad1a246fc7054b5ab087b5f3185ad0ec', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760114833, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -994,38 +994,38 @@ Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:48:24] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:47:25] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 14:48:32] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 16:47:33] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 14:48:34] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 14:48:34] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 16:47:34] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 16:47:35] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.30it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.24it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.24it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.44it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.35it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
 
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.06s/it]
+Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:24&lt;00:00,  6.05s/it]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.20it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.71it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.92it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.43it/s]
 
-Capturing batches (bs=1 avail_mem=59.45 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.05it/s]
-Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 53.23it/s]
+Capturing batches (bs=1 avail_mem=59.45 GB): 100%|██████████| 4/4 [00:02&lt;00:00,  1.89it/s]
+Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 24.58it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1056,7 +1056,7 @@ Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '06040f61fa7f4735913a17038ad961ae', 'object': 'chat.completion', 'created': 1760107792, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, let me try to figure out the answer to the question, "What is the capital of France?" Hmm, I remember that France is a country in Europe. I think the capital might be Paris. But wait, I should make sure I\'m not mixing it up with another country. Let me think. Paris is the city with the Eiffel Tower, right? That\'s a famous landmark. So if the Eiffel Tower is in Paris, and Paris is in France, then that makes sense.\n\nWait, could there be another capital? Maybe I\'m confusing it with a neighboring country. For example, is Berlin the capital of Germany? Yes, that\'s right. So Paris is the capital of France. Let me recall any other capitals. Rome is Italy\'s capital, London is the UK\'s. So yes, Paris seems correct. I don\'t think there\'s another major city that\'s the capital of France. Maybe some people might think Lille or Lyon, but those are major cities but not the capital. \n\nAnother way to check: France is often referred to as the "City of Light," which is Paris. So yes, that\'s the capital. I think I\'m confident now. The answer should be Paris.\n</think>\nThe capital of France is **Paris**, a city renowned for its iconic landmarks like the Eiffel Tower, the Louvre Museum, and the Champs-Élysées. It serves as the political, cultural, and economic heart of the country.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 335, 'completion_tokens': 309, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': 'ff32faf2a05a4d65bbde01e3429e9066', 'object': 'chat.completion', 'created': 1760114937, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? I remember that Paris is a major city there. But wait, is Paris actually the capital? I think it is, but maybe I should double-check to be sure. Sometimes people can get confused with other big cities like London or Rome, but those are capitals of the UK and Italy respectively.\n\nLet me think about other regions within France. Are there any republics or regions that might have their own capitals? For example, the French Republic vs. other republics within France? No, I think France is a single republic, and the capital is Paris. The Eiffel Tower is in Paris, which is a famous landmark. Also, the Arc de Triomphe, Notre-Dame Cathedral... all those are in Paris. \n\nWait, could there be any recent changes? Sometimes capitals can change for various reasons, political or otherwise. But to my knowledge, Paris has been the capital of France since its establishment. The city was founded in the 12th century, became a major medieval capital, and has remained the capital ever since. \n\nAnother point: the government buildings. The President of France resides in the Élysée Palace, which is in Paris. The National Assembly (Parliament) is also located in Paris. So all the key governmental institutions are based there. \n\nMaybe some people might confuse it with other cities like Lille, Lyon, or Marseille, which are important cities but not the capital. For instance, Lyon is known for its cuisine, Marseille is a major port, but neither is the capital. \n\nAlso, the official currency of France is the euro (€), and while it\'s not directly related to the capital, but major cities like Paris are where the European Central Bank is located? Wait, no. The European Central Bank is in Frankfurt, Germany. Paris has its own central bank, I think. \n\nLet me also confirm the time zones. Paris is in the Central European Time (CET) zone, which aligns with it being the capital. If another city were the capital, they might be in a different time zone, but that\'s not the case here. \n\nCultural aspects: The Louvre Museum, which is one of the world\'s most famous museums, is located in Paris. The故宫 (Palace Museum) in Beijing is in China, so not relevant here. The OECD总部 (Headquarters) is in Paris as well. International organizations often have their headquarters in major capitals. \n\nAirports: Paris Charles de Gaulle is one of the busiest international airports, which makes sense for the capital. Other major cities have their own international airports, but Paris is consistently top in terms of passenger traffic. \n\nHistorical context: Napoleon Bonaparte\'s empire had Paris as its capital, and even before that, during the French Revolution, the capital was Paris. So historically, it\'s been the seat of government. \n\nIs there any official source that states Paris as the capital? Checking in mind, the French government\'s website, or official tourism sites, they all list Paris as the capital. For example, the Visit France website mentions Paris as the capital city. \n\nPossible pitfalls: Maybe someone might confuse the capital of France with another country\'s capital, like South Korea\'s Seoul or the US\'s Washington D.C. But in this case, the question is specifically about France, so Paris is the clear answer. \n\nAlternatively, could there be a new development, like a decentralized administrative region where the capital is shared? France has something called the Réunion region, but it\'s an overseas region, and its capital is Saint-Denis. But that\'s not the national capital. Similarly, other overseas regions like Martinique have their own capitals, but again, not the national one. \n\nIn terms of administrative divisions, France is divided into regions, but the capital is an exception, located in the Île-de-France region. Paris is not part of any regular department but is its own region. \n\nSo, putting all this together, every indication points to Paris being the capital of France. I don\'t recall any recent changes or announcements about moving the capital. It\'s a well-established fact. Therefore, the answer should be Paris.\n</think>\n\nThe capital of France is **Paris**. This historic city has been the political and cultural heart of France since its founding, home to iconic landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also the seat of the French government, including the President\'s residence (Élysée Palace) and the national assembly. Paris is globally recognized for its art, cuisine, and international institutions, solidifying its status as the nation\'s capital. \n\n**Answer:** Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 1019, 'completion_tokens': 993, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
