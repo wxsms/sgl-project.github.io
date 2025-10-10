@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f39d245f"></script>
+    <script src="../_static/documentation_options.js?v=c87b5680"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 09, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 10, 2025"/>
   </head>
   
   
@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-09 16:20:26] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-09 23:55:13] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,11 +568,15 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.15it/s]
 
-Capturing batches (bs=1 avail_mem=20.44 GB): 100%|██████████| 20/20 [00:02&lt;00:00,  9.56it/s]
+Capturing batches (bs=1 avail_mem=37.69 GB): 100%|██████████| 20/20 [00:07&lt;00:00,  2.60it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -604,22 +608,30 @@ Capturing batches (bs=1 avail_mem=20.44 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ana. I like to play tennis and I love to cook. I also enjoy reading and listening to music. What are your hobbies? Enjoy your day! Sure, I&#39;m happy to share my hobbies and interests with you! My favorite hobbies include:
-
-1. **Playing Tennis**: Tennis is a great sport that I enjoy both to entertain and to exercise. It&#39;s not just about winning but about the satisfaction of getting close to my opponent and being satisfied with the outcome.
-
-2. **Cooking**: I love trying new recipes and creating my own dishes. Cooking is not just about food preparation but also about experimentation, trying different flavors, and
+Generated text:  Lisa and I&#39;m 16 years old. I was born in 1998 in California, USA. At first, I was a bit shy and nervous, but then I decided to join a group of kids who got together to have a big party. They put a big party at a park, and then they danced and played games with everyone. They even put on music that they made up together. It was a lot of fun. Soon, I joined them, and we became best friends. We played together a lot and we even had a baby! I think that I grew up a lot because of this event.
 ===============================
 Prompt: The president of the United States is
-Generated text:  a political office. What is the person in charge of a country? I&#39;m sorry, but I can&#39;t answer this question. This might be a political question, but I don&#39;t have enough context or information to answer it. If you could provide more context or clarify your question, I may be able to help you better. Alternatively, I recommend reaching out to a trusted source of information or seeking help from a knowledgeable authority figure in the field of politics. Is there anything else I can assist you with? Do you need help with something else? Let me know and I&#39;ll be happy to help.
+Generated text:  a college professor with the title of a professor at a private university. He is a man of success, which has made him the CEO of a private company with the title of CEO. He is very interested in music and has a talent in music. He is a world traveler and has traveled to many countries to discover new cultures and places. He is a huge fan of the band The Beatles. He is also very fond of the singer Queen. He also has a collection of rare and expensive musical instruments. He has a long history of working with other musicians and his music is famous all over the world. His most famous song is &#34;Let
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. The capital of Russia is Moscow. One day, the temperature difference between Paris and Moscow is 20 degrees Celsius. If the temperature difference between Paris and Moscow is 30 degrees Celsius, then what is the temperature difference between Paris and Moscow if the temperature difference between Paris and Moscow was 40 degrees Celsius? To determine the temperature difference between Paris and Moscow when the temperature difference is 40 degrees Celsius, we need to understand the relationship between the temperature differences between the two cities and their capitals. The temperature difference between two cities is the same as the temperature difference between their capitals, regardless of the actual temperature difference between
+Generated text:  located in which country?
+
+Ivory Coast
+The capital of France is Paris, and it is located in the country of France. France is a country located in Europe, and its capital is Paris. Paris is also a city in France, and it is the largest city in the country.
+
+Some key points about Paris:
+
+1. It is the capital of France.
+2. It is located on the northern coast of the Mediterranean Sea.
+3. It is the second largest city by population in France after Paris, and the second largest city in the world.
+4. Paris is the seat of the French government, the French parliament, and
 ===============================
 Prompt: The future of AI is
-Generated text:  not always black and white, but it’s clear that it has the potential to change how we live and work in the years ahead. With this in mind, it’s time to explore some of the biggest changes that we can expect to see in AI over the next decade.
-1. AI will continue to be used for medical applications, making it more accurate and efficient. This includes the use of AI to diagnose diseases, predict patient outcomes, and optimize treatment plans.
-2. AI will also be used in the transportation sector, making it safer, more efficient, and more sustainable. This includes the use of autonomous vehicles, machine learning for traffic
+Generated text:  here, and it’s here for everyone.
+In this new digital age, AI will keep improving at a rapid pace. Because technology is in such high demand, AI and data are everywhere.
+But why are AI and data so important? Data is the key to understanding and modeling complex, dynamic phenomena in the real world. AI is the tool to develop models and solve problems.
+AI and data are closely related and cannot be separated. But in a world where the roles of human beings in decision-making are growing stronger, the ability to create and execute accurate AI models will be a key for success.
+For the world to succeed, it is essential
 </pre></div></div>
 </div>
 </section>
@@ -659,17 +671,17 @@ Generated text:  not always black and white, but it’s clear that it has the po
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title] at [company name], and I&#39;m excited to be here today. I&#39;m a [job title]
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or role]. I enjoy [insert a short description of your hobbies or interests]. I&#39;m always looking for new experiences and learning opportunities. What&#39;s your favorite hobby or activity? I&#39;m always looking for new experiences and learning opportunities. What&#39;s your favorite hobby or activity? I&#39;m always looking for new experiences and learning opportunities. What&#39;s your favorite hobby or activity? I&#39;m always looking for new experiences and
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other attractions. Paris is a popular tourist destination and is known for its rich history, art, and cuisine. The city is also home to many international organizations and institutions, including the French Academy of Sciences and the European Parliament. Paris is a vibrant and dynamic city with a rich cultural and historical heritage. The city is also known for its diverse population and its role as a major economic and political center in Europe. The
+Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, hosting numerous museums, theaters, and other attractions. Paris is a popular tourist destination and a major hub for international business and diplomacy. The city is known for its rich history, art, and cuisine, and is a major center for the arts and sciences. The city is also home to many famous landmarks and attractions, including the Palace of Versailles and the Champs-Élysées. Paris is a vibrant and dynamic city that continues to be a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could be expected in the future:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could emerge in the coming years:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, with more sophisticated algorithms and machine learning techniques being developed to improve diagnosis, treatment, and patient care.
+1. Increased automation: One of the most significant trends in AI is the increasing automation of tasks that are currently performed by humans. This could lead to the creation of more efficient and cost-effective systems that can perform tasks faster and more accurately than humans.
 
-2. AI in finance: AI is already being used in finance to improve risk management, fraud detection, and trading algorithms
+2. AI ethics and privacy: As AI becomes more integrated into our daily lives, there will be a growing concern about the ethical implications of AI. This includes issues such as bias, privacy,
 
 </pre></div></div>
 </div>
@@ -712,21 +724,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I am a [occupation/role]! I bring a unique blend of creativity, intelligence, and a passion for [topic or subject] to my work. My expertise lies in [specific skills or areas], and I believe I can contribute valuable insights and solutions to your challenges. Let&#39;s collaborate to create something truly remarkable! [Optional: Mention any particular skills or experiences you bring to the table, or any specific projects you have recently completed.] [Your Name] [Your Profession] [Your Specialization] [Project Title] [Your Achievements] [Your Motivation or Why You&#39;re Interested in Working with
+Generated text:  [Name], and I am [Age], [Occupation]. I have always loved to explore and take risks, and I am always on the lookout for new challenges. I have a keen sense of humor and I am always looking to make people laugh. If you need anything, I am here to help. I believe that success comes from hard work and hard choices. I am a natural problem solver and I am always ready to help others. I am optimistic and always looking for new opportunities to learn and grow. I am a quick learner and I am always willing to learn new things. I am excited to meet new people and learn more
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the largest city in the country and the seat of the French government and administration. The city is known for its rich history, architecture, cuisine, fashion, and world-class museums. Paris has been a hub for artistic and intellectual pursuits since ancient times, with notable figures such as Leonardo da Vinci and Voltaire residing there. The city&#39;s romantic yet vibrant atmosphere and stunning views of the city and the ocean have made it a popular tourist destination. With over 1.8 million residents, Paris is the largest city in Europe by population, and is a major cultural and economic center in the world.
-
-Paris is known for its rich
+Generated text:  Paris. It is a large and vibrant city located in the southeast region of the country and served as the capital of France from 1804 until 1969 when it was officially renamed Louvain. It is known for its architecture, rich history, and renowned art, culture, and cuisine. Paris is home to many famous landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Palace of Versailles. The city is also a major center for business, finance, and fashion, and is known for its European cuisine. Paris is a UNESCO World Heritage site and a popular tourist destination, with
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  incredibly promising, and it&#39;s likely to continue expanding and evolving at an unprecedented rate. Here are some potential trends and areas of focus that could shape the future of AI:
+Generated text:  highly uncertain, but several trends are likely to shape the technology and impact society. Here are some potential areas of future growth and development:
 
-1. More advanced machine learning algorithms: With more data coming online, machine learning models will become even more sophisticated and able to handle complex problems and patterns that humans struggle to see.
+1. Increased accuracy and precision: One of the most exciting areas of AI development is the increasing use of machine learning algorithms to improve the accuracy and precision of predictions and decisions.
 
-2. Increased reliance on ethical considerations: With the growing concern about AI&#39;s impact on human lives, there&#39;s a push for more ethical and responsible development and deployment of AI technologies.
+2. Enhanced natural language processing: AI is already becoming smarter at understanding human language, but we are likely to see even more advanced capabilities as technology advances.
 
-3. Increased integration with human expertise: AI is becoming more integrated into human decision-making, and this trend is
+3. Emphasis on ethical considerations: As AI becomes more integrated into society, there is likely to be a growing focus on ethical considerations and standards to ensure that AI is used
 </pre></div></div>
 </div>
 </section>
@@ -772,19 +782,29 @@ Generated text:  incredibly promising, and it&#39;s likely to continue expanding
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Character&#39;s Name]. I have always been passionate about [what you like to do or read]. I love spending time outdoors, hiking, camping, and exploring new places. I also enjoy [writing, painting, writing about my experiences, etc.]. I recently started reading [book or series]. I enjoy my life and am always looking for new experiences and opportunities to grow. How can I get to know you better? Please provide some context about yourself and your interests. As a new friend, I am excited to get to know you better. I am a [occupation or hobby] who enjoys [activities, hobbies, etc.].
+Generated text:  [Name], and I&#39;m [Age] years old. I&#39;m a [Occupation] and have been working in the [Field] industry for [Number of Years] years. I&#39;m currently [Job Title] at [Company Name], and I&#39;ve been [Reason for Job Title] at [Company Name]. I&#39;m passionate about [Reason for Interest], and I enjoy [Reason for Interest] with a zest for life. I&#39;m always looking to learn and improve, and I&#39;m a natural problem-solver. I&#39;m always eager to get the job done, and I have a friendly, approachable personality. I&#39;m known
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, an iconic city known for its rich history, diverse culture, and striking architecture. It is located on the Seine River in the Loire Valley, and is home to numerous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Louvre Museum. Paris has a thriving arts and culture scene, and is home to numerous museums, theaters, and restaurants that draw visitors from around the world. The city also plays a prominent role in France’s political, economic, and cultural life, and is often referred to as the “city of a thousand islands” due to its many islands, such
+Generated text:  Paris.
+
+The statement provided contains the following factual elements:
+
+1. The city of Paris is in France
+2. It is the capital of France
+3. Its name comes from the ancient Roman city of the same name
+
+The statement only contains the first two factual elements, but can be improved by adding the third fact. A more comprehensive and concise statement would be:
+
+&#34;The capital city of France is Paris, known for its historical importance as the birthplace of French literature and its stunningly beautiful neoclassical architecture.&#34;
+
+This version includes the name of the city, its significance as a historical center, and an additional detail about
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to see significant advancements in several areas, including:
+Generated text:  bright and we&#39;re already seeing some exciting developments in this area. Here are a few possible future trends in AI:
 
-1. Increased automation and robotics: AI technology is becoming more advanced, and it is expected to automate many tasks that are currently performed by humans, including manufacturing, healthcare, and retail. This will lead to increased automation in industries and create new jobs in AI-related fields.
+1. Increased AI transparency and accountability: As AI becomes more integrated into our daily lives, there will be greater pressure to ensure that AI systems are transparent and accountable for their actions. This means that developers and users will need to have greater control over the creation and use of AI, as well as have more robust systems for tracking and monitoring AI systems.
 
-2. Improved decision-making and prediction: AI will continue to become more sophisticated, leading to more accurate predictions and decisions based on data. This will enable organizations to make better-informed decisions and improve their outcomes.
-
-3. Enhanced privacy and security: AI systems will need to be designed and implemented with greater consideration of privacy
+2. AI will continue to find new applications: AI is already making waves in many industries, but we can expect to see even more opportunities for AI in the future. For
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -886,7 +906,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 09, 2025.
+  Last updated on Oct 10, 2025.
   <br/>
 </p>
   </div>
