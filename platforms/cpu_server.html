@@ -593,15 +593,16 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 git<span class="w"> </span>checkout<span class="w"> </span>&lt;YOUR-DESIRED-VERSION&gt;
 
 <span class="c1"># Use dedicated toml file</span>
-cp<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
+<span class="nb">cd</span><span class="w"> </span>python
+cp<span class="w"> </span>pyproject_cpu.toml<span class="w"> </span>pyproject.toml
 <span class="c1"># Install SGLang dependent libs, and build SGLang main package</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
 conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">libsqlite</span><span class="o">==</span><span class="m">3</span>.48.0<span class="w"> </span>gperftools<span class="w"> </span>tbb<span class="w"> </span>libnuma<span class="w"> </span>numactl
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_cpu]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>.
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.7.1<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.22.1<span class="w"> </span><span class="nv">triton</span><span class="o">==</span><span class="m">3</span>.3.1<span class="w"> </span>--force-reinstall
 
 <span class="c1"># Build the CPU backend kernels</span>
-<span class="nb">cd</span><span class="w"> </span>sgl-kernel
+<span class="nb">cd</span><span class="w"> </span>../sgl-kernel
 cp<span class="w"> </span>pyproject_cpu.toml<span class="w"> </span>pyproject.toml
 pip<span class="w"> </span>install<span class="w"> </span>.
 
