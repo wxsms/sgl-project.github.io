@@ -626,25 +626,25 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 11:51:45] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 14:29:23] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 11:51:47] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 11:51:47] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 14:29:24] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 14:29:24] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.38it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.30it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.47it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.29it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.24it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
-Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████| 3/3 [00:07&lt;00:00,  2.41s/it]
+Capturing batches (bs=1 avail_mem=20.12 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.32s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -764,7 +764,7 @@ Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='d7eb09ceb5ea4ea391d9ca7f75c7182c', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is 'MA'. For the temperature unit, since it's not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_e98abddc139748b491e7e3ec', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=-1), ChatCompletionMessageToolCall(id='call_1cf68ae4d207421cbca7db77', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)], reasoning_content=None), matched_stop=None)], created=1760097129, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=139, prompt_tokens=281, total_tokens=420, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='31914392be91495ab51c3d0e80177cb2', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is 'MA'. For the temperature unit, since it's not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_f9fc2aab41b6459481336cd5', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=-1), ChatCompletionMessageToolCall(id='call_31f2e6c42c134d198cb54a4f', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)], reasoning_content=None), matched_stop=None)], created=1760106585, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=139, prompt_tokens=281, total_tokens=420, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -788,7 +788,7 @@ Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[ChatCompletionMessageToolCall(id='call_e98abddc139748b491e7e3ec', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=-1), ChatCompletionMessageToolCall(id='call_1cf68ae4d207421cbca7db77', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)]</strong></div>
+<strong style='color: #00008B;'>[ChatCompletionMessageToolCall(id='call_f9fc2aab41b6459481336cd5', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=-1), ChatCompletionMessageToolCall(id='call_31f2e6c42c134d198cb54a4f', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)]</strong></div>
 </div>
 <section id="Handle-Tools">
 <h4>Handle Tools<a class="headerlink" href="#Handle-Tools" title="Link to this heading">#</a></h4>
@@ -885,7 +885,7 @@ Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_fbd6847b32e14dcca45857ea', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_f0d3128e003d45e394224f08', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -933,7 +933,7 @@ Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_5cff25cdffc540b1b1867b42', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_4079eb781f304e1fa8c5ff50', function=ChoiceDeltaToolCallFunction(arguments='', name='get_current_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1076,7 +1076,7 @@ Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content="To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is 'MA'. For the temperature unit, since it's not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_e98abddc139748b491e7e3ec', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=-1), ChatCompletionMessageToolCall(id='call_1cf68ae4d207421cbca7db77', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_e98abddc139748b491e7e3ec', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
+<strong style='color: #00008B;'>Updated message history: [{'role': 'user', 'content': "What's the weather like in Boston today? Output a reasoning before act, then use the tools to help you."}, ChatCompletionMessage(content="To determine the current weather in Boston, I will use the `get_current_weather` function by providing the city name, state, and unit for temperature. Boston is located in Massachusetts, so the state abbreviation is 'MA'. For the temperature unit, since it's not specified, I will provide both Celsius and Fahrenheit options to give you a comprehensive view.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_f9fc2aab41b6459481336cd5', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "celsius"}', name='get_current_weather'), type='function', index=-1), ChatCompletionMessageToolCall(id='call_31f2e6c42c134d198cb54a4f', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)], reasoning_content=None), {'role': 'tool', 'tool_call_id': 'call_f9fc2aab41b6459481336cd5', 'content': "The weather in Boston, MA is 85 degrees celsius. It is partly cloudly, with highs in the 90's.", 'name': 'get_current_weather'}]</strong></div>
 </div>
 </section>
 <section id="Send-Results-Back-to-Model">
@@ -1111,7 +1111,7 @@ Capturing batches (bs=1 avail_mem=20.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='04225a6104e8403b803ae8563dc66013', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="It seems there was an error in the response as 85 degrees Celsius is not a typical temperature for Boston, especially not for a partly cloudy day with highs in the 90's, which would be in Fahrenheit. Let's correct this by fetching the weather information again in Fahrenheit.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_99d947fa7bfc45aa9a74a37b', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)], reasoning_content=None), matched_stop=None)], created=1760097133, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=92, prompt_tokens=466, total_tokens=558, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='f4da974b67974bada70ee62d02050aac', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content="It seems there was an error in the response as 85 degrees Celsius is not a typical temperature for Boston, especially not for a partly cloudy day with highs in the 90's, which would be in Fahrenheit. Let's correct this by fetching the weather information again in Fahrenheit.", refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_3154498ca9794fb6adcfd78b', function=Function(arguments='{"city": "Boston", "state": "MA", "unit": "fahrenheit"}', name='get_current_weather'), type='function', index=-1)], reasoning_content=None), matched_stop=None)], created=1760106589, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=92, prompt_tokens=466, total_tokens=558, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1308,7 +1308,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 11:52:26] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 14:30:00] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1332,13 +1332,13 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.62it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.50it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.54it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.53it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.46it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.36it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
 
-Capturing batches (bs=1 avail_mem=20.07 GB): 100%|██████████| 20/20 [00:08&lt;00:00,  2.39it/s]
+Capturing batches (bs=1 avail_mem=21.81 GB): 100%|██████████| 20/20 [00:11&lt;00:00,  1.79it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1493,25 +1493,25 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 11:53:01] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 14:30:38] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 11:53:02] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 11:53:02] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 14:30:40] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 14:30:40] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.39it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.34it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.39it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.53it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.48it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
 
-Capturing batches (bs=1 avail_mem=62.22 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.32s/it]
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:07&lt;00:00,  2.36s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1532,7 +1532,7 @@ Capturing batches (bs=1 avail_mem=62.22 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Content: None
-Tool calls: [ChatCompletionMessageToolCall(id=&#39;call_2dfcdd28942f41f1ba2a0155&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+Tool calls: [ChatCompletionMessageToolCall(id=&#39;call_e0a2b6c932654928bd2872b8&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 </section>
@@ -1582,7 +1582,7 @@ Tool calls: [ChatCompletionMessageToolCall(id=&#39;call_2dfcdd28942f41f1ba2a0155
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Content: None
-Tool calls: [ChatCompletionMessageToolCall(id=&#39;call_78341262f7494d82b9aaa429&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
+Tool calls: [ChatCompletionMessageToolCall(id=&#39;call_f58c76105c4046c4bd6f4b2d&#39;, function=Function(arguments=&#39;{&#34;city&#34;: &#34;Paris&#34;, &#34;unit&#34;: &#34;celsius&#34;}&#39;, name=&#39;get_current_weather&#39;), type=&#39;function&#39;, index=0)]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1767,22 +1767,22 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-10 11:53:50] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-10 14:31:17] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-10 11:53:52] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
-[2025-10-10 11:53:52] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+[2025-10-10 14:31:18] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-10 14:31:19] Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.43it/s]
 
-Capturing batches (bs=1 avail_mem=17.57 GB): 100%|██████████| 3/3 [00:10&lt;00:00,  3.64s/it]
+Capturing batches (bs=1 avail_mem=21.15 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.28s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1801,7 +1801,7 @@ Capturing batches (bs=1 avail_mem=17.57 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='cf204862a41f4b8bbb68cc7182835eb7', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_6b43d4e32cec4302b95d94d5', function=Function(arguments='{"location": "Tokyo"}', name='get_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_cfcfc14b7d884314b373464c', function=Function(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function', index=1)], reasoning_content=None), matched_stop=None)], created=1760097252, model='meta-llama/Llama-3.2-1B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=407, total_tokens=427, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='4d539b5cae564ec3a8e5cf996d7a7c25', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_52970f94d0774169a8ba59e4', function=Function(arguments='{"location": "Tokyo"}', name='get_weather'), type='function', index=0), ChatCompletionMessageToolCall(id='call_4763a2c3c59b452db25a8fed', function=Function(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function', index=1)], reasoning_content=None), matched_stop=None)], created=1760106695, model='meta-llama/Llama-3.2-1B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=20, prompt_tokens=407, total_tokens=427, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1831,13 +1831,13 @@ Capturing batches (bs=1 avail_mem=17.57 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_7fc259587bab4c22b1a1dcfa', function=ChoiceDeltaToolCallFunction(arguments='{"location": "Tokyo"}', name='get_weather'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=0, id='call_af7ea42217ff4bf6981b6e90', function=ChoiceDeltaToolCallFunction(arguments='{"location": "Tokyo"}', name='get_weather'), type='function')</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_eacf7929abec47139f7e4a8a', function=ChoiceDeltaToolCallFunction(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function')</strong></div>
+<strong style='color: #00008B;'>ChoiceDeltaToolCall(index=1, id='call_d76d6a5d7051474dba68c278', function=ChoiceDeltaToolCallFunction(arguments='{"city": "Tokyo"}', name='get_tourist_attractions'), type='function')</strong></div>
 </div>
 <blockquote>
 <div><div class="line-block">
