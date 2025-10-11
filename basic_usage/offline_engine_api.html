@@ -549,7 +549,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-11 03:12:16] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-11 04:07:00] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -573,10 +573,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.71it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.58it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.58it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:10&lt;00:00,  1.98it/s]
+Capturing batches (bs=1 avail_mem=55.54 GB): 100%|██████████| 20/20 [00:07&lt;00:00,  2.61it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -608,34 +608,45 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Nima. I’m a software engineer, designer, and a visual artist. I’m a computer programmer with a love of the digital and visual arts. I’m also an avid gamer, and enjoy balancing my programming work with my gaming, spending as much time as possible on the computer as I can.
-I am not a prolific writer, and have not published any works of art, but I have a collection of works that I’m passionate about. I’m not a member of any organization, and I have not been asked to contribute to any academic or other professional publications.
-I believe that creativity and making art is a way to express emotions
+Generated text:  Wifins and I am a retired engineer and aspiring entrepreneur.
+My work and expertise is in building, designing and developing technology solutions for a wide variety of companies, ranging from small to large.
+I have created more than 150 products using my expertise and passion to help businesses create a sustainable future.
+I have taught, written and designed my way to success and have been able to bring my passion and expertise to students and entrepreneurs.
+I believe that by educating, inspiring and empowering people, I can help make the world a better place.
+I am currently an Associate Professor at the University of the Free State, where I teach Sustainable Engineering
 ===============================
 Prompt: The president of the United States is
-Generated text:  a very important person. He is like the boss of the country. But he is also very important to other people. He is the leader of the country and the leader of the people. Other people&#39;s lives are very important to him. The president is the person who has the most power in the United States. He can do everything. He can make important decisions. He can also be very strict with the people of the country. He can send people to fight in other countries. He can also take away people&#39;s lives. Most people think the president is very important to the country. He takes care of the country and makes it a
+Generated text:  200 centimeters taller than the president of Australia. The president of Australia is 120 centimeters taller than the president of Brazil. If the president of Brazil is 400 centimeters tall, how tall is the president of Australia?
+To determine the height of the president of Australia, we need to follow the information provided step by step.
+
+1. We know the height of the president of Brazil is 400 centimeters.
+2. The president of Brazil is 120 centimeters taller than the president of Australia. Therefore, we can find the height of the president of Australia by subtracting
 ===============================
 Prompt: The capital of France is
-Generated text:  _________. A. Paris B. London C. Rome D. Moscow
-Paris
+Generated text:  ________.
+A. Lille
+B. Paris
+C. London
+D. Rome
+Answer: B
 
-The capital of India is _________. A. Paris B. London C. Rome D. Moscow
-London
+The most common infectious disease in infants and young children is ____
+A. Rubella
+B. Pneumonia
+C. Meningitis
+D. Tuberculosis
+Answer: A
 
-The capital of Japan is _________. A. Paris B. London C. Rome D. Moscow
-Rome
-
-Which of the following is the capital of the United States? A. New York City B. Washington D. C. C. Canberra D. Canberra
-New York City
-
-Which of the following is the capital of China? A. Shanghai B. Beijing C. Shanghai D. Beijing
-Beijing
-
-The capital
+Which of the following statements about the characteristics of the Chinese economy is incorrect? ____
+A. Rapid economic growth and high employment rate
+B. The share of primary, secondary, and tertiary industries is significantly uneven
+C. The average life expectancy is relatively long
+D. The proportion of agriculture in the total economy is
 ===============================
 Prompt: The future of AI is
-Generated text:  here and we are living in a time where the so-called AI revolution is already happening, the world of AI is coming to life. One of the most well known companies that is starting to become the AI powerhouse is Walmart. Walmart has a long history of innovation and experimentation. They’ve already applied AI in their supply chain management, retail, and delivery services. As a result, Walmart is seen as a leader in the AI revolution.
-One of the most popular examples of AI in action is the AI-powered chatbot for Walmart’s customer service. The chatbot was developed by Microsoft Azure to improve the customer experience. It does this by offering
+Generated text:  rapidly changing, but some experts argue that the future is bright. They believe that AI will become a major part of daily life and will help solve many of the world&#39;s most pressing problems. While it is true that AI has the potential to revolutionize many industries, it is also a complex and challenging field with many ethical and philosophical questions that need to be addressed.
+
+One of the most significant challenges in the development of AI is the issue of bias. Bias in AI systems can lead to discriminatory outcomes, such as biased hiring practices or unequal treatment of certain groups of people. This is a concern, especially in industries where diversity and inclusivity
 </pre></div></div>
 </div>
 </section>
@@ -675,19 +686,19 @@ One of the most popular examples of AI in action is the AI-powered chatbot for W
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? I&#39;m a [insert a short description of your personality or skills]. What do you like to do in your free time? I enjoy [insert a short description of your hobbies or interests]. What&#39;s your favorite book or movie? I love [insert a short description of your favorite book or movie]. What&#39;s your favorite hobby? I love [insert a short description of your favorite hobby]. What&#39;s your favorite place to go? I love [insert a
+Generated text:  [Name] and I&#39;m a [occupation] with [number] years of experience in [field]. I&#39;m a [type of person] who is always [positive trait]. I&#39;m [personality type] and I&#39;m [character trait]. I&#39;m [character name] and I&#39;m [character&#39;s profession]. I&#39;m [character&#39;s age] years old. I&#39;m [character&#39;s gender] and I&#39;m [character&#39;s nationality]. I&#39;m [character&#39;s profession] and I&#39;m [character&#39;s age]. I&#39;m [character&#39;s gender] and I&#39;m [character&#39;s nationality]. I&#39;m [character&#39;s profession] and I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history dating back to the Roman Empire and the Middle Ages. Paris is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also famous for its cuisine, fashion, and music, and is a major tourist destination. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly together. It is a city that has been a hub of culture and commerce for centuries, and continues to be a major cultural and economic center of France. The city is also
+Generated text:  Paris, also known as the City of Light, and is the largest city in the country and the largest metropolitan area in Europe. It is located on the Seine River and is home to the Eiffel Tower, the Louvre Museum, and many other historic and modern landmarks. Paris is known for its rich history, art, and culture, and is a major tourist destination. It is also home to many important institutions, including the French Academy of Sciences and the French Parliament. The city is known for its fashion industry, and is home to many famous fashion designers and boutiques. Paris is a vibrant and dynamic city, with a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by rapid advancements in several key areas, including:
 
-1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making. This could lead to a more human-like experience for users.
+1. Increased integration with human intelligence: AI systems are likely to become more integrated with human intelligence, allowing them to learn from and adapt to the behavior and preferences of humans. This could lead to more natural and intuitive interactions between humans and machines.
 
-2. Greater reliance on data: AI will become more data-driven, with more data being collected and analyzed to improve its performance. This could lead to more accurate and reliable predictions and recommendations.
+2. Enhanced machine learning capabilities: AI systems are likely to become more capable of learning from large amounts of data and making more accurate predictions and decisions. This could lead to more efficient and effective decision-making processes.
 
-3. Increased ethical considerations: As AI becomes more integrated into our lives, there will be increased ethical considerations around its use. This could lead to more stringent regulations and guidelines to
+3. Increased focus on ethical considerations: As AI systems become more integrated with human intelligence, there will be a greater
 
 </pre></div></div>
 </div>
@@ -730,18 +741,17 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I am a [Occupation] with a passion for [Objective]. I am known for [Summary of Character&#39;s Characteristics, Examples, Achievements, etc.]. I love [Favorite Activity/Interest/Religion], and I strive to [Motivational Goal or Personal Journey]. I am always looking for [What I seek in a Career or Experience]. I&#39;m here to provide [Your Purpose, Benefits, or Additional Information]. I&#39;m excited to meet you. What&#39;s your name, and what do you do for a living?
-Hello! My name is [Name] and I am a [Occupation].
+Generated text:  [Name], and I&#39;m a [role] with [age] years old. I&#39;m a [occupation] who has always been passionate about [part of the industry or field you work in]. I have a [character trait], [describe an example of this trait here]. I&#39;m [descriptive word for your profession or area of expertise] because [why it&#39;s important to you]. What&#39;s one thing you enjoy most about your profession? What&#39;s one thing you&#39;re looking forward to? And, finally, what&#39;s one thing you want to do in the future? Hello, my name is [Name], and I&#39;m a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic Eiffel Tower and vibrant fashion scene.
-
-(Note: As of 2023, Paris has a population of approximately 2.1 million people and is the largest city in the world by population. )
-
-Does the statement accurately reflect the facts provided? Yes, the statement accurately reflects the facts provided about Paris, including its iconic Eiffel Tower and fashion scene. The statement is correct as it accurately points out that Paris is the capital city of France, which is the largest city by population in the world. It also correctly mentions that Paris has a large population and is one of
+Generated text:  Paris, the largest city and the most populous metropolitan area in Europe. It is an iconic and cosmopolitan city with a rich history dating back to the Middle Ages, and is home to numerous attractions and landmarks, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris has been a cultural and political center for centuries and is known for its diverse and lively population, with over 6 million residents. It is also known for its cuisine, fashion, and fashion-forward culture, making it a global hub for fashion and design. Paris&#39;s status as the capital of France and its influence on the country&#39;s culture
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to see continued advancements in areas such as machine learning, natural language processing, and computer vision. These advancements are expected to have a wide range of implications, including the development of new technologies and the creation of new jobs. Additionally, there may be emerging trends such as the integration of AI into healthcare, transportation, and other industries, which could lead to significant changes in how these industries operate. Finally, there is likely to be continued development of ethical and responsible AI that addresses issues such as bias, transparency, and accountability. Overall, the future of AI is likely to be marked by innovation and change, with AI systems becoming more sophisticated and
+Generated text:  likely to be characterized by several key trends:
+
+1. Democratization: As AI becomes more accessible and affordable, it is likely to become more widespread and integrated into various aspects of society, including healthcare, finance, and transportation. This will likely lead to increased adoption of AI solutions in areas where there are no traditional AI experts or where traditional AI solutions are less effective.
+
+2. Increased focus on ethical considerations: There is a growing concern that AI solutions can be used for malicious purposes, such as leading to increased surveillance, discrimination, and inequality. As a result, there may be more emphasis on developing ethical standards and ensuring that AI solutions are designed
 </pre></div></div>
 </div>
 </section>
@@ -787,19 +797,17 @@ Generated text:  likely to see continued advancements in areas such as machine l
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  ____________ and I am a/an _____________. I am a/an ___________ and I love to ___________. If you could share a goal with me, what would it be? Please provide the character&#39;s name, profession, and their love for a specific goal in the following sentence: &#34;Hello, my name is [name] and I am a/an [profession]. I am a/an [profession] and I love to [love goal]. If you could share a goal with me, what would it be?&#34; I don&#39;t want to hear any personal information about the character. I only want a neutral self-introduction
+Generated text:  [Name]. I am a [job title] who has always been passionate about [your field of interest]. I am always looking for ways to [explain why you&#39;re passionate about your field]. I enjoy [explain why you&#39;re passionate about your field]. I love being [explain why you like your job]. I have always been a [explain why you chose this path] student. I believe in [explain why you believe in what you do]. I also like [explain why you like [your field of interest]] projects. I am always eager to [explain why you&#39;re always eager to do something]. I am always looking for ways
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also known for its rich history and unique culture, and is a major economic and political center in Europe. It has a diverse population and is home to various cultural institutions, including the Mairie of Saint-Louis (Summer Palace). Additionally, Paris is known for its fashion industry, with iconic fashion boutiques and designers such as Pierre Cardin and Paul Poiret. Overall, Paris is a vibrant and dynamic city with a rich cultural heritage. Paris has been described as &#34;the most beautiful place
+Generated text:  Paris, an important cultural, historical, and economic center. It is known for its famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, and the Luxembourg Gardens. The city is also a major financial and business hub, hosting major international corporations and influential figures in politics and society. Paris is a UNESCO World Heritage site and one of the world&#39;s most visited cities. It has a rich and diverse culture, including its famous Parisian cuisine, dance, and music, as well as its famous museums, theaters, and annual festivals. The city&#39;s history and landmarks have contributed to its enduring status as a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly dynamic, and it is difficult to predict with certainty. However, some possible future trends in AI include:
+Generated text:  likely to be shaped by several trends that are currently in the early stages of development or are expected to emerge in the next decade:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As the technology becomes more advanced, we can expect to see even more widespread adoption of AI in healthcare in the coming years.
+1. Increased automation and efficiency: As AI continues to develop, it is expected to become more capable of performing tasks that were previously done by humans. This will result in increased automation and efficiency in various industries, including manufacturing, transportation, and healthcare.
 
-2. Emergence of self-driving cars: As AI technology improves, we are likely to see the development of fully autonomous vehicles. This could lead to significant changes in traffic patterns and public transportation systems, as well as a reduction in accidents and fatalities.
-
-3. Integration of AI into various
+2. AI ethics and privacy concerns: As AI systems become more integrated into our lives, there will be increasing scrutiny of their ethical implications and potential privacy concerns. This will likely lead to a greater emphasis on developing AI that is more transparent and accountable, and that
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
