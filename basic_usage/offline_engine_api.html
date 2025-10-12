@@ -550,7 +550,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-12 15:30:36] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-12 17:27:56] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -574,10 +574,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.63it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.62it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.07it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 13.14it/s]
+Capturing batches (bs=1 avail_mem=71.74 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 19.90it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -609,39 +609,24 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Maximilian B. Weis and I am an assistant professor in the Department of Mathematical Sciences at the University of Akron. As a mathematics graduate student, I studied under the direction of Dr. Robert A. Ford at the University of Wisconsin-Madison. I have a PhD in Mathematics and have been teaching at the University of Akron since 2017.\nMy primary research interest is in the field of dynamical systems and its applications to economics and operations research.\nI have taught the following courses at the University of Akron during my time there:\nDynamical Systems - Spring 2017\nGeneral Dynamical
+Generated text:  Guo Jiu. I am a senior in the first year of high school. I am not only a student, but also a student of Chinese. I have three best friends - Wang Ming, Liu Hua, and Sun Tao. I am very clever and have a lot of questions in English. I love taking photos, watching cartoons, and playing video games. I am studying in a middle school. I study very hard and I get good grades in all subjects. I like to play basketball, and I also like to ride my bicycle. I like to eat Chinese food. I really like to have fun. I am very happy
 ===============================
 Prompt: The president of the United States is
-Generated text:  3 feet 3 inches tall. The vice president of the United States is 2 feet 11 inches tall. If a man can walk 5 feet per minute, how many minutes does it take for him to walk from his home to the vice president&#39;s office? To determine how long it takes for the president to walk to the vice president&#39;s office, we need to follow these steps:
+Generated text:  trying to decide whether to visit the moon or visit a small town. He is considering the following options:
 
-1. **Convert the heights to the same unit (feet):**
-   - The height of the president is \(3 \text{ feet } 3 \text{ inches}\). Since 1 foot = 12 inches
+Option A: Visit the moon, which costs $200,000, but the president believes that the benefits outweigh the costs and will return with a return on investment of 15%.
+
+Option B: Visit a small town, which costs $300,000, and the president believes that the benefits are small but that he is willing to pay, but he is uncertain if the town will improve his life.
+
+What is the ratio of the president&#39;s total cost to the total return on investment he can
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris.
-A. 正确
-B. 错误
-答案: A
-
-The same information can be expressed in different ways.
-A. 正确
-B. 错误
-答案: A
-
-要使一个直流电动机的电动势E不变,它工作时的电流I也不变,此时电动机的效率____
-A. 不能确定
-B. 等于0
-C. 等于1
-D. 大于1
-答案: C
-
-电气工程中所指的“故障”是____。
-A. 任何不正常的工况
-B.
+Generated text:  called the capital of the French Republic, and is located in which region of the country? The capital of France is Paris. It is located in the heart of the French Alps and is known as the &#34;City of Love&#34; due to its romantic history and romantic architecture. Paris is one of the most popular tourist destinations in France, and is the capital of the French Republic. The city is also home to the Louvre, the Eiffel Tower, the Notre-Dame Cathedral, and many other landmarks. The city is known for its art, architecture, and cultural events. Paris is also home to the Eiffel Tower, the
 ===============================
 Prompt: The future of AI is
-Generated text:  here and it is a beautiful place where technology is the key to a better life for all. But while the robot has taken over many of our tasks, it has also taken over many of our human values. Most people in my neighborhood, especially in the big city, are worried about the future of AI and the changing nature of their jobs.
-Many people are worried that the future of AI will take away jobs. Some fear that the machines will be able to do all the work they have always done, but they will have to do it in a different way. This could mean that jobs that are currently performed by humans will be replaced by
+Generated text:  here, and it’s not about to go away anytime soon. In this article, we’ll explore the latest developments in AI and how they can be used to solve real-world problems.
+One of the most exciting and transformative advancements in AI is the rise of natural language processing (NLP). NLP has the potential to transform the way we communicate, learn, and interact with our environment. With the ability to understand and generate human language, NLP has the potential to be used for everything from chatbots to virtual assistants.
+One of the most important aspects of NLP is the development of models that can understand and generate human language. This
 </pre></div></div>
 </div>
 </section>
@@ -681,13 +666,19 @@ Many people are worried that the future of AI will take away jobs. Some fear tha
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Gender] [Occupation]. I&#39;m a [Occupation] who has always been passionate about [What interests you about your occupation]. I&#39;m always looking for new challenges and opportunities to grow and learn. I&#39;m a [What is your favorite hobby or activity]? I&#39;m always up for a good challenge and love to explore new places and experiences. I&#39;m a [What is your greatest strength or weakness?]. I&#39;m a [What is your greatest achievement so far?]. I&#39;m a [What is your dream job?]. I&#39;m a [What is your favorite
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your interests and experiences. Let&#39;s chat! [Name] [Job Title] [Company Name] [Company Address] [Company Phone Number] [Company Email] [Company Website] [Company LinkedIn Profile] [Company Twitter Profile] [Company Facebook Profile] [Company Instagram Profile] [Company GitHub Profile] [Company LinkedIn Profile] [Company Twitter Profile] [Company Facebook Profile] [Company Instagram Profile] [Company LinkedIn Profile] [Company Twitter Profile] [Company Facebook Profile] [Company Instagram Profile]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. It is a city that is both a cultural and political center of France. The city is
+Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also famous for its rich history, including the French Revolution and the French Revolution Museum. Paris is a bustling city with a diverse population and is home to many cultural institutions, including the Louvre Museum, the Musée d&#39;Orsay, and the Musée d&#39;Art Moderne. The city is also known for its cuisine, including French cuisine, and is home to many famous restaurants and bars. Paris is a vibrant and exciting city that is a must-visit for anyone interested in French
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to improve and become more integrated into our daily lives, from self-driving cars and robots to personalized medicine and virtual assistants. Additionally, AI will likely continue to be used for tasks such as fraud detection, cybersecurity, and environmental monitoring, as well as for tasks such as language translation and image recognition. As AI becomes more integrated into our daily lives, we can expect to see a greater emphasis on ethical considerations and the development of responsible AI systems. Finally, AI will likely continue to evolve and change as new
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
+
+1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations. This will include issues such as bias, transparency, accountability, and the impact of AI on society.
+
+2. Integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn and adapt to new situations. This will require significant advances in machine learning and natural language processing.
+
+3. Development of new AI technologies: There will be
 
 </pre></div></div>
 </div>
@@ -730,17 +721,21 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I&#39;m a [Your Profession] with [Your Education] in [Your Major]. I&#39;ve always been fascinated by the world of technology, especially in the field of [Your Field of Expertise]. My journey in the industry has been full of challenges, but my passion never wavers. I am always looking for ways to improve my skills and learn from others. My love for innovation and technology has driven me to always stay up-to-date with the latest advancements. I&#39;m a [Your Personality] who is always seeking to learn and grow, and I believe that every day is an opportunity to make a difference. I
+Generated text:  Alex. I love to write and I&#39;m really good at it. How can I help you today? To get started, what can I expect from our conversation? Hello, my name is Alex. I love writing and I&#39;m really good at it. How can I help you today? I&#39;m excited to get to know you better. Is there a particular genre of writing that you&#39;re interested in? I&#39;m always looking for new ideas and fresh perspectives to work with. What kind of writing do you enjoy doing? Writing is a really fun and rewarding activity for me. I enjoy pushing myself to be better at my craft and I&#39;m
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is located on the Île de France on the River Seine. It is known as the &#34;city of love&#34; and is home to the Eiffel Tower and the Louvre Museum. The city is also famous for its iconic landmarks, including the Arc de Triomphe and the Champs-Élysées. Paris is a cultural and economic center of France and is known as the &#34;City of Light&#34; due to its illuminated architecture. As of 2021, Paris has a population of over 2 million people and is a major economic and financial center in the world. Paris is a popular destination
+Generated text:  Paris. Paris is the largest city in France by population and is the economic and cultural center of the country. It is located in the Île de France region and is known for its historical landmarks, art, music, and cuisine. The city is also home to notable museums, theaters, and fashion houses. Paris is known for its beautiful architecture, including its iconic Eiffel Tower, and has a rich history dating back to the ancient Romans. It is also home to numerous world-renowned museums, including the Louvre, the National Museum of Modern Art, and the Musée d&#39;Orsay. Paris is a city that is
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  complex and rapidly evolving, with potential trends that range from increasing automation to AI-driven personalized medicine. Here are some of the key trends that are likely to shape the future of AI:
+Generated text:  likely to see a significant increase in its use in various industries, including healthcare, finance, education, and transportation. Some possible trends include:
 
-1. AI will become more autonomous: With advances in machine learning and robotics, we can expect to see more autonomous AI systems that can operate without human intervention. This could include robots that can make decisions on their own, or AI systems that can perform tasks without direct human input.
+1. Increased integration with human oversight: AI will become more integrated with human oversight, enabling more accurate and reliable decision-making.
 
-2. AI will become more ubiquitous: As AI becomes more sophisticated, it will become more ubiquitous in our lives. This could include everything from self-driving cars and industrial automation to personalized
+2. Greater autonomy: AI will continue to become more autonomous, allowing for more complex decision-making and problem-solving.
+
+3. Growth in predictive analytics: AI will become more adept at predicting future events and trends, which can be used to inform strategic planning and decision-making.
+
+4. Greater integration with other technologies: AI will continue to integrate with other technologies, such as blockchain and
 </pre></div></div>
 </div>
 </section>
@@ -786,20 +781,24 @@ Generated text:  complex and rapidly evolving, with potential trends that range 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I am a [character] who has been in love with [love interest] for [time] years. I love [love interest] and I want to take the next step in our relationship by [step] in the future. What&#39;s your name and what&#39;s your relationship with [love interest]?
-[Your Name] [Character] is a [character] who has been in love with [love interest] for [time] years. They love [love interest] and want to take the next step in their relationship by [step] in the future. What&#39;s your name and what&#39;s your relationship
+Generated text:  [Name] and I&#39;m a [job title] at [company]. I&#39;m a dedicated [job title] who has always been passionate about [job title]. I love [job title] because [reason why I love it]. I&#39;m constantly learning and growing, and I&#39;m always looking for opportunities to contribute to the company and the industry. I&#39;m excited about the future of [job title] and I&#39;m looking forward to what it will be like to work with you.
+I&#39;m a [job title] at [company] who loves [job title]. I have always been passionate about [job title] and have always wanted
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris. The statement can be summarized as follows: &#34;Paris serves as the administrative and cultural center of France.&#34;
 
-What is the capital of France? Paris
+(Note: This is a factual statement about Paris, which is the capital city of France, and not a complex or abstract statement.)
+
+Please note that while Paris is indeed the capital of France, it is not the only administrative and cultural center of the country. The statement provided is a general overview of Paris&#39; role as the capital.
+
+For a more comprehensive answer, a more detailed description of Paris&#39;s role as the capital, including its historical significance and current status, would be more appropriate. For example, Paris is home
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  poised to be a revolutionary leap forward that will transform many aspects of our lives. Some of the potential trends that we can expect to see in the coming years include:
+Generated text:  likely to be characterized by several key trends, including:
 
-1. Increased integration of AI into everyday technologies: AI will continue to become more integrated into the fabric of our daily lives, from smartphones and smart homes to virtual assistants and other specialized AI-powered tools.
+1. Increased emphasis on ethical considerations: As more companies and governments begin to recognize the potential risks of AI, there will be an increasing focus on how AI can be developed, deployed, and used in a responsible and ethical way. This will likely lead to more stringent regulations and standards, as well as a greater emphasis on transparency and accountability in AI systems.
 
-2. Emphasis on ethical and responsible AI: As AI becomes more integrated into society, there will be a growing emphasis on ethical and responsible AI development. This means that we will need to ensure that AI systems are developed and used in a way that is fair, transparent,
+2. Deep learning and big data: AI will continue to benefit from advances in deep learning and big data technologies, which will allow systems to learn and adapt more effectively. This will also lead to new ways of processing and analyzing large
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
