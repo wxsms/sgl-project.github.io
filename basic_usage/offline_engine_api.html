@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 11, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 12, 2025"/>
   </head>
   
   
@@ -550,7 +550,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-11 14:34:36] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-12 03:11:41] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -574,10 +574,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.64it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.03it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.02it/s]
 
-Capturing batches (bs=1 avail_mem=55.66 GB): 100%|██████████| 20/20 [00:07&lt;00:00,  2.60it/s]
+Capturing batches (bs=1 avail_mem=41.02 GB): 100%|██████████| 20/20 [00:07&lt;00:00,  2.54it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -609,52 +609,48 @@ Capturing batches (bs=1 avail_mem=55.66 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Alex and I’m a computer science student who has started working as a freelance software developer. I have a degree in Computer Science, and have worked as a freelance software developer for 2 years. I currently have a job offer from a software engineering company that provides work as a freelancer.
-Write a message to Alex to inform him that he will be working as a freelancer for the next 12 months and encourage him to apply for the job. Also, include a brief message to Alex that highlights the company’s benefits and advantages of freelancing as a software developer.
-Subject: Freelancing Opportunity for Software Developer
+Generated text:  John Smith. I&#39;m a software developer and I have been coding for a long time. I enjoy learning new programming languages and technologies, and I&#39;m always looking for ways to improve my skills.
 
-Dear Alex,
+I have a friend who has just started coding and I was wondering if you could provide me with some tips or advice on how to help them improve their skills.
 
-I hope this
+Additionally, I&#39;m also interested in learning more about a new programming language called Ruby. Can you provide me with some information on the basics of Ruby?
+
+Thank you for your help in advance. John Smith.
+Sure, I&#39;d be happy to help John Smith with his
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide whether to use the word &#34;immaculate&#34; in an upcoming presidential speech. He wants to choose the word that best conveys the idea of a clean, pristine, and perfect state. To test his hypothesis, he decides to use the word &#34;immaculate&#34; in the context of a garden. He plants flowers in a new garden and decides to name the garden after the president. He wants to make sure the garden is perfect, so he uses the word &#34;immaculate.&#34;
+Generated text:  scheduled to deliver an address on Tuesday. If the address takes place in the morning, what time will it be, given that there are 24 hours in a day? To determine the time the president of the United States will deliver his address in the morning, we need to know the time of day when the address will be delivered. However, the problem does not provide the specific time of day when the address is scheduled to be delivered. Therefore, we can only conclude that the president will deliver the address in the morning, and we cannot determine the exact time without more information.
 
-Given that the word &#34;immaculate&#34; typically means a state of cleanliness and perfection, and considering the context of a presidential garden,
+If we assume that the president is scheduled to deliver the
 ===============================
 Prompt: The capital of France is
-Generated text: ____.
-A. Paris
-B. London
-C. Rome
-D. Moscow
+Generated text:  ______. A. London B. Paris C. New York D. Tokyo
 Answer:
-A
+B
 
-The period of a pendulum is ____.
-A. dependent on the mass of the pendulum bob
-B. determined by the length of the pendulum
-C. unrelated to the length of the pendulum
-D. the same for any pendulum
+Which of the following is NOT a factor in the formation of gravity?
+A. Mass
+B. Temperature
+C. Friction
+D. Collision
 Answer:
-D
+C
 
-Which of the following is not a part of the secondary structure of DNA?
-A. Double helix structure
-B. Phosphopeptide backbone
-C. Base composition
-D. Phosphodiester bond
+The main focus of psychological counseling is on the client&#39;s psychological state, and their mental health status is the primary goal. Which of the following does not belong to the scope of psychological counseling?
+A. Helping clients with problems
+B. Understanding clients&#39; psychological states
+C. Preventing mental disorders
+D. Developing clients&#39; psychological abilities
 Answer:
 D
 
-Among the following
+Regarding
 ===============================
 Prompt: The future of AI is
-Generated text:  here
-
-As one of the leading investment banks, I believe we have a mandate to come up with a plan to make AI more accessible to everyone, not just the financial sector. By doing so, we can foster a future where AI is a tool for growth, innovation, and collaboration rather than a threat. We believe that this includes providing education and training programs, as well as financial support for businesses that adopt AI technologies.
-
-The first step in this journey is to increase awareness of AI. To do this, we must make it clear to everyone that AI is not a threat, but a valuable tool for growth and innovation. We can do
+Generated text:  in the hands of the experts. Read here how a company is taking on the tech industry head on.
+Talent management has become a critical component of every company’s success. With the rise of AI, it is becoming increasingly important to identify the best talent for your company.
+AI is an algorithm that can analyze large amounts of data, learn from it, and improve itself. It is used to automate mundane tasks, such as data entry, and to predict future trends. AI is also used to create personalized experiences for customers, such as recommendation systems, chatbots, and virtual assistants.
+However, AI is not without its challenges. AI systems
 </pre></div></div>
 </div>
 </section>
@@ -694,17 +690,19 @@ The first step in this journey is to increase awareness of AI. To do this, we mu
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career. What can you tell me about yourself? I&#39;m a [insert a short description of your personality or skills]. And what&#39;s your favorite hobby or activity? I&#39;m always looking for new experiences and adventures, so I&#39;m always up for trying new things. What&#39;s your favorite book or movie? I love reading and watching movies, and I&#39;m always on the lookout for new and exciting content. And what&#39;s your favorite place to go? I love to travel and explore new places, so I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Ville de Paris&#34; and &#34;La Ville de la Rose&#34;. It is the largest city in France and the third-largest city in the world by population. Paris is known for its rich history, art, and culture, and is a popular tourist destination. The city is home to many famous landmarks, including the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also home to many important institutions, including the French Academy of Sciences and the French National Library. Paris is a vibrant and dynamic city with a rich cultural and artistic heritage. It is the capital of France and a major
+Generated text:  Paris, also known as the City of Light, a city with a rich history and a vibrant culture. It is the largest city in France and the second-largest city in the European Union, with a population of over 2. 5 million people. Paris is known for its beautiful architecture, world-renowned museums, and annual festivals, such as the Eiffel Tower and the Louvre. It is also a popular tourist destination, with many visitors coming to enjoy its stunning views and cultural attractions. Paris is a city that has been a center of power and culture for centuries, and continues to be a major hub for business, politics
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some possible future trends include:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, reduce costs, and increase efficiency. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, with the potential to revolutionize the way we treat and diagnose diseases.
+1. Increased integration of AI into various industries: AI is already being used in a wide range of industries, from healthcare and finance to transportation and manufacturing. As AI becomes more integrated into these industries, we can expect to see even more applications and opportunities for AI.
 
-2. Increased use of AI in finance: AI is already being used in finance to improve risk management, fraud detection,
+2. Greater emphasis on ethical and responsible AI: As AI becomes more integrated into our lives, there will be a greater emphasis on ethical and responsible AI. This will include issues such as bias, transparency, and accountability.
+
+3. Increased
 
 </pre></div></div>
 </div>
@@ -747,27 +745,22 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I&#39;m a [Your Profession] with over [Your Number] years of experience in the field. I&#39;m a team player who thrives in fast-paced environments and loves to learn new things. I&#39;m always looking for opportunities to grow and improve, and I enjoy working with others to achieve our goals. I&#39;m excited to meet you and see what you have to offer!
-Wow, that&#39;s a great self-introduction! Can you give me some more details about your field and what kind of tasks you enjoy doing? And I&#39;d love to hear more about your approach to problem-solving. I&#39;m really curious to learn
+Generated text:  [insert character&#39;s name], and I&#39;m a [insert character&#39;s occupation, such as writer, artist, or scientist]. I&#39;m always looking for new challenges and opportunities to grow and learn, and I believe that the journey of being an author is one that is not for everyone. However, I&#39;m excited to share my passion for literature and am constantly inspired by the creativity and determination of other writers. If you&#39;re interested in learning more about my writing or the world of literature, please feel free to reach out. I look forward to hearing from you! 📸✨
+
+Can you please add some information about the author&#39;s writing
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
-
-A. True B. False
-B. False
-
-The statement &#34;The capital of France is Paris&#34; is not entirely accurate. While Paris is indeed the capital city of France, it is not the only capital. Other French cities include Paris, Nice, Bordeaux, and Lyon. Therefore, the correct answer is B. False. The statement might be correct if one were to include the city of Lyon as the capital. However, Paris alone is not sufficient to determine the capital city of France.
-
-A. True is incorrect because, as explained above, Paris is the capital city, but it is not the sole capital of
+The statement is: Paris is the capital city of France. Paris is the capital of France.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid technological advancements, increasing complexity, and new applications. Some possible future trends in AI include:
+Generated text:  likely to see exponential growth in capabilities, as well as a decrease in costs and improvements in accuracy. Here are some possible trends to watch:
 
-1. Increased emphasis on ethical AI: As AI becomes more integrated into our daily lives, there will be a greater emphasis on ethical considerations such as bias, privacy, and transparency. This will require a new set of legal, regulatory, and ethical guidelines to govern the use of AI.
+1. AI will become more natural: With advancements in natural language processing, machine learning, and computer vision, we may see a shift towards more human-like behavior in AI systems.
 
-2. Augmented reality and virtual reality: These technologies will likely continue to advance and become more widespread, leading to new applications in fields such as education, training, and entertainment.
+2. AI will become more autonomous: Autonomous vehicles and other advanced AI systems will likely become more common, with the ability to drive, operate machinery, and perform tasks on their own.
 
-3. Increased deployment of AI in healthcare: AI is
+3. AI will become more integrated: AI will become more integrated into our daily lives, with more of our technology being designed to recognize
 </pre></div></div>
 </div>
 </section>
@@ -813,19 +806,22 @@ Generated text:  likely to be characterized by rapid technological advancements,
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [Level] character in a [Medium or Fantasy setting], which is [Describe the setting here, including any unique elements or lore]. I&#39;m a skilled [Skill or Profession], and I have been working in this role for [Number of Years] years. I&#39;m passionate about [Why you enjoy your job], and I have a deep respect for [Person or Item you consider to be important or sacred]. I love [What your favorite hobby is], and I strive to be a [Favorite Thing to Do] for everyone. I enjoy [How you would describe your personality and character traits], and I
+Generated text:  [Name], and I&#39;m an experienced professional in the [field of expertise] who has over [number] years of experience in this role. I have a keen eye for detail, a love for creating quality work, and a passion for innovation. I am a problem solver who thrives on pushing boundaries and always strive for excellence in my work. I am dedicated to ensuring that my clients&#39; needs are met, and I am always ready to take on new challenges and take risks. I am a true team player, and I am always looking for ways to bring people together and achieve common goals. I am a highly organized and detail-oriented
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city famous for its iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. It is also the home of the French parliament and home to some of the most famous museums in the world. As the capital, Paris is a bustling metropolis with a diverse population of around 11 million people. It is a popular tourist destination, attracting millions of visitors each year for its rich history, beautiful architecture, and delicious cuisine. Its vibrant culture and historic significance make it an essential stop in any trip to France.
-
-The French capital is also home to the Eiffel Tower, which stands tall as the tallest structure
+Generated text:  Paris.
+A. Correct
+B. Incorrect
+C. I&#39;m sorry, but I can&#39;t provide an answer to that question. That would be inappropriate or potentially illegal. It&#39;s important to respect the country&#39;s laws and values. Is there something else I can help with?
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be diverse and multifaceted, with many potential trends shaping how we interact with technology and its applications. Some possible future trends in AI include:
+Generated text:  set to be shaped by a variety of factors, including technological advancements, economic shifts, and changing societal values. Some possible future trends in AI include:
 
-1. Increased automation and automation of tasks: AI is already making significant strides in automating repetitive and mundane tasks, but there is potential for further automation to expand to all aspects of our lives. This could lead to a greater reliance on AI-powered machines to perform even the most mundane tasks, such as grocery shopping or home maintenance.
+1. Increased automation and AI-powered assistants: As AI continues to advance, we can expect to see more and more of our daily tasks automated. This could include voice assistants like Alexa and Google Assistant, virtual assistants like Siri and Cortana, and even self-driving cars.
 
-2. More autonomous vehicles: Autonomous vehicles are already on the road, but there is potential for further development and improvement in this area. AI is expected to
+2. Personalized AI: AI will continue to improve, leading to more personalized and adaptive algorithms that can learn from individual users and provide tailored experiences.
+
+3. AI for healthcare: AI will be used to develop more advanced
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -927,7 +923,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 11, 2025.
+  Last updated on Oct 12, 2025.
   <br/>
 </p>
   </div>

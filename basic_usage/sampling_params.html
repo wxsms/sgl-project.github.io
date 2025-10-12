@@ -55,7 +55,7 @@
     <link rel="prev" title="SGLang Native APIs" href="native_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 11, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 12, 2025"/>
   </head>
   
   
@@ -609,19 +609,23 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[List[int]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
 <td><p>Provide stop words in the form of token IDs. Generation will stop if one of these token IDs is sampled.</p></td>
 </tr>
-<tr class="row-odd"><td><p>temperature</p></td>
+<tr class="row-odd"><td><p>stop_regex</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[str,</span> <span class="pre">List[str]]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
+<td><p>Stop when hitting any of the regex patterns in this list</p></td>
+</tr>
+<tr class="row-even"><td><p>temperature</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">1.0)</span></code></p></td>
 <td><p><a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature">Temperature</a> when sampling the next token. <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0</span></code> corresponds to greedy sampling, a higher temperature leads to more diversity.</p></td>
 </tr>
-<tr class="row-even"><td><p>top_p</p></td>
+<tr class="row-odd"><td><p>top_p</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">1.0)</span></code></p></td>
 <td><p><a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create#chat-create-top_p">Top-p</a> selects tokens from the smallest sorted set whose cumulative probability exceeds <code class="docutils literal notranslate"><span class="pre">top_p</span></code>. When <code class="docutils literal notranslate"><span class="pre">top_p</span> <span class="pre">=</span> <span class="pre">1</span></code>, this reduces to unrestricted sampling from all tokens.</p></td>
 </tr>
-<tr class="row-odd"><td><p>top_k</p></td>
+<tr class="row-even"><td><p>top_k</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">-1)</span></code></p></td>
 <td><p><a class="reference external" href="https://developer.nvidia.com/blog/how-to-get-better-outputs-from-your-large-language-model/#predictability_vs_creativity">Top-k</a> randomly selects from the <code class="docutils literal notranslate"><span class="pre">k</span></code> highest-probability tokens.</p></td>
 </tr>
-<tr class="row-even"><td><p>min_p</p></td>
+<tr class="row-odd"><td><p>min_p</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">(model</span> <span class="pre">default;</span> <span class="pre">fallback</span> <span class="pre">0.0)</span></code></p></td>
 <td><p><a class="reference external" href="https://github.com/huggingface/transformers/issues/27670">Min-p</a> samples from tokens with probability larger than <code class="docutils literal notranslate"><span class="pre">min_p</span> <span class="pre">*</span> <span class="pre">highest_token_probability</span></code>.</p></td>
 </tr>
@@ -1038,7 +1042,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 11, 2025.
+  Last updated on Oct 12, 2025.
   <br/>
 </p>
   </div>
