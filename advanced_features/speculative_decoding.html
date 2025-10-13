@@ -585,28 +585,28 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:37:58] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:36:32] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 03:38:01] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 04:36:33] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.93s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.38s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.46s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.57s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.06s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.13s/it]
 
-Capturing batches (bs=1 avail_mem=19.85 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.67it/s]
+Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.05it/s]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.12s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.12s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.20s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.20s/it]
 
-Capturing batches (bs=1 avail_mem=18.35 GB): 100%|██████████| 4/4 [00:09&lt;00:00,  2.46s/it]
-Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 112.63it/s]
+Capturing batches (bs=1 avail_mem=53.65 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.16s/it]
+Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 105.87it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -638,7 +638,7 @@ Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='4b2cc5b1c08240deb4ea8e5c7f394b67', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760326709, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='a4e2594293ad46649d106546e7a82f82', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760330212, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -678,176 +678,36 @@ Capturing batches (bs=1 avail_mem=53.56 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:38:38] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:37:13] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:38:46] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:37:23] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 03:38:47] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 04:37:24] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.75s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.36s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.70s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.17s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
 
-Capturing batches (bs=2 avail_mem=35.59 GB):  50%|█████     | 2/4 [00:00&lt;00:00,  3.85it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:00,  7.48it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-AUTOTUNE mm(128x4096, 4096x12288)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  mm 0.0484 ms 100.0%
-  triton_mm_18 0.0492 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_12 0.0529 ms 91.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_8 0.0535 ms 90.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_7 0.0560 ms 86.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_11 0.0563 ms 86.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_17 0.0583 ms 83.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_10 0.0673 ms 72.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_14 0.0683 ms 70.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_4 0.0711 ms 68.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.3412 seconds and 0.5962 seconds precompiling for 20 choices
-AUTOTUNE mm(128x4096, 4096x4096)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  mm 0.0221 ms 100.0%
-  triton_mm_27 0.0228 ms 97.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_31 0.0268 ms 82.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_23 0.0303 ms 73.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_37 0.0319 ms 69.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_26 0.0400 ms 55.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_30 0.0406 ms 54.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_20 0.0422 ms 52.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_22 0.0422 ms 52.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_36 0.0432 ms 51.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.2826 seconds and 0.4949 seconds precompiling for 20 choices
-AUTOTUNE mm(128x4096, 4096x22016)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  triton_mm_49 0.0754 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  mm 0.0761 ms 99.2%
-  triton_mm_55 0.0772 ms 97.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_50 0.0799 ms 94.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_56 0.0831 ms 90.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_46 0.0931 ms 81.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_45 0.0945 ms 79.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_47 0.0978 ms 77.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_48 0.1006 ms 74.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_54 0.1021 ms 73.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.5117 seconds and 0.1976 seconds precompiling for 20 choices
-AUTOTUNE mm(128x11008, 11008x4096)
-strides: [11008, 1], [1, 11008]
-dtypes: torch.float16, torch.float16
-  mm 0.0472 ms 100.0%
-  triton_mm_65 0.0494 ms 95.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_69 0.0552 ms 85.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_61 0.0645 ms 73.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_75 0.0693 ms 68.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_64 0.0897 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_68 0.0908 ms 52.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_74 0.0969 ms 48.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_58 0.1010 ms 46.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_60 0.1011 ms 46.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.4565 seconds and 0.0003 seconds precompiling for 20 choices
-AUTOTUNE mm(128x4096, 4096x32000)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  triton_mm_93 0.1015 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  mm 0.1037 ms 97.9%
-  triton_mm_94 0.1048 ms 96.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_88 0.1091 ms 93.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_87 0.1157 ms 87.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_83 0.1158 ms 87.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_92 0.1251 ms 81.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_84 0.1251 ms 81.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_85 0.1328 ms 76.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_89 0.1382 ms 73.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.5052 seconds and 0.3898 seconds precompiling for 20 choices
-Capturing batches (bs=1 avail_mem=39.18 GB):  75%|███████▌  | 3/4 [00:24&lt;00:11, 11.02s/it]AUTOTUNE mm(64x4096, 4096x12288)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  mm 0.0473 ms 100.0%
-  triton_mm_107 0.0484 ms 97.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_111 0.0488 ms 96.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_103 0.0497 ms 95.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_99 0.0511 ms 92.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_102 0.0552 ms 85.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_106 0.0557 ms 84.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_96 0.0567 ms 83.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_98 0.0615 ms 76.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_97 0.0645 ms 73.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.3876 seconds and 0.3037 seconds precompiling for 18 choices
-AUTOTUNE mm(64x4096, 4096x4096)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  mm 0.0219 ms 100.0%
-  triton_mm_116 0.0220 ms 99.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_120 0.0226 ms 96.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_124 0.0264 ms 83.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_128 0.0297 ms 73.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_119 0.0393 ms 55.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_113 0.0398 ms 55.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_123 0.0403 ms 54.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_115 0.0407 ms 53.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_114 0.0420 ms 52.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.2585 seconds and 0.3788 seconds precompiling for 18 choices
-AUTOTUNE mm(64x4096, 4096x22016)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  triton_mm_136 0.0746 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_140 0.0748 ms 99.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_137 0.0748 ms 99.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.0764 ms 97.7%
-  triton_mm_141 0.0764 ms 97.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_145 0.0797 ms 93.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_133 0.0830 ms 89.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_139 0.0887 ms 84.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_143 0.0914 ms 81.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_142 0.0946 ms 78.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.5220 seconds and 0.1739 seconds precompiling for 18 choices
-AUTOTUNE mm(64x11008, 11008x4096)
-strides: [11008, 1], [1, 11008]
-dtypes: torch.float16, torch.float16
-  triton_mm_150 0.0478 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.0484 ms 98.8%
-  triton_mm_154 0.0489 ms 97.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_158 0.0558 ms 85.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_162 0.0646 ms 74.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_149 0.0881 ms 54.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_153 0.0894 ms 53.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_157 0.0906 ms 52.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_148 0.0923 ms 51.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_147 0.0933 ms 51.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4058 seconds and 0.0004 seconds precompiling for 18 choices
-AUTOTUNE mm(64x4096, 4096x32000)
-strides: [4096, 1], [1, 4096]
-dtypes: torch.float16, torch.float16
-  triton_mm_174 0.0997 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_175 0.1005 ms 99.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_179 0.1008 ms 98.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_170 0.1009 ms 98.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_171 0.1016 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.1036 ms 96.3%
-  triton_mm_167 0.1105 ms 90.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_172 0.1179 ms 84.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_176 0.1251 ms 79.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_164 0.1325 ms 75.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4346 seconds and 0.3562 seconds precompiling for 18 choices
-Capturing batches (bs=1 avail_mem=39.18 GB): 100%|██████████| 4/4 [00:44&lt;00:00, 11.02s/it]
+Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:14&lt;00:00,  3.66s/it]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
 Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
 Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
 
-Capturing batches (bs=1 avail_mem=53.49 GB): 100%|██████████| 4/4 [00:15&lt;00:00,  3.89s/it]
-Capturing batches (bs=1 avail_mem=22.11 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 69.09it/s]
+Capturing batches (bs=1 avail_mem=53.49 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.68s/it]
+Capturing batches (bs=1 avail_mem=53.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 72.70it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -879,7 +739,7 @@ Capturing batches (bs=1 avail_mem=22.11 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='9f3a83d754cc498ca9eeeb6aabd7efd6', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760326804, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8f7bec8831534079ad847a3bef4e64b3', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760330283, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -921,41 +781,41 @@ Capturing batches (bs=1 avail_mem=22.11 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:40:12] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:40:12] Casting torch.bfloat16 to torch.float16.
+[2025-10-13 04:38:11] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:38:11] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:40:21] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:40:21] Casting torch.bfloat16 to torch.float16.
-[2025-10-13 03:40:21] Casting torch.bfloat16 to torch.float16.
+[2025-10-13 04:38:29] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:38:29] Casting torch.bfloat16 to torch.float16.
+[2025-10-13 04:38:30] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 03:40:23] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 04:38:30] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.47s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.49s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.51s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.20s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.67s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.20s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.19s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.29s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.10s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.51s/it]
 
-Capturing batches (bs=1 avail_mem=44.28 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.81it/s]
-[2025-10-13 03:40:42] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-13 03:40:42] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=59.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  8.03it/s]
+[2025-10-13 04:39:00] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-13 04:39:00] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.03s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.03s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.03it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.03it/s]
 
-Capturing batches (bs=1 avail_mem=25.53 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.61s/it]
-Capturing batches (bs=1 avail_mem=25.36 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 61.58it/s]
+Capturing batches (bs=1 avail_mem=58.38 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.21s/it]
+Capturing batches (bs=1 avail_mem=58.24 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 85.90it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -987,7 +847,7 @@ Capturing batches (bs=1 avail_mem=25.36 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='2ca8774e14224f479430abe0672c6444', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760326859, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='eca5def8e737476bac27265d09a6d2c5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760330354, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1027,41 +887,41 @@ Capturing batches (bs=1 avail_mem=25.36 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:41:08] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:41:08] Casting torch.bfloat16 to torch.float16.
+[2025-10-13 04:39:24] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:39:24] Casting torch.bfloat16 to torch.float16.
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:41:16] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:41:16] Casting torch.bfloat16 to torch.float16.
-[2025-10-13 03:41:17] Casting torch.bfloat16 to torch.float16.
+[2025-10-13 04:39:33] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:39:33] Casting torch.bfloat16 to torch.float16.
+[2025-10-13 04:39:33] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 03:41:18] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 04:39:34] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.19s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.41s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.42s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.15s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.60s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.33s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:09,  4.53s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.43s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.14s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.62s/it]
 
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  6.70it/s]
-[2025-10-13 03:41:37] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-13 03:41:37] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  8.36it/s]
+[2025-10-13 04:39:52] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-13 04:39:52] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.88it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.88it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.73it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.73it/s]
 
-Capturing batches (bs=1 avail_mem=57.66 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.29s/it]
-Capturing batches (bs=1 avail_mem=42.57 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 11.42it/s]
+Capturing batches (bs=1 avail_mem=58.17 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.25s/it]
+Capturing batches (bs=1 avail_mem=58.02 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 84.62it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1093,7 +953,7 @@ Capturing batches (bs=1 avail_mem=42.57 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='94fd5836066e4f0083b30e6b7e3d1ba3', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760326911, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='c362997878a34f0896e98ecf161c5f23', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760330407, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1131,37 +991,37 @@ Capturing batches (bs=1 avail_mem=42.57 GB): 100%|██████████
   import pynvml  # type: ignore[import]
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:41:59] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:40:15] `torch_dtype` is deprecated! Use `dtype` instead!
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:42:07] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:40:25] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 03:42:10] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 04:40:26] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.30it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.15it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.10it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.39it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.29it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
 
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.91it/s]
+Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  6.50it/s]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.56it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.02it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  6.74it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.44it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.54it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.16it/s]
 
-Capturing batches (bs=1 avail_mem=56.50 GB): 100%|██████████| 4/4 [00:02&lt;00:00,  1.84it/s]
-Capturing batches (bs=1 avail_mem=55.44 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 53.77it/s]
+Capturing batches (bs=1 avail_mem=59.45 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.07it/s]
+Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.35it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1192,7 +1052,7 @@ Capturing batches (bs=1 avail_mem=55.44 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': 'fdd99146f1ed48918971dcc8d003e0a8', 'object': 'chat.completion', 'created': 1760326951, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, the user is asking for the capital of France. Let me start by recalling what I know about France's geography. France is a country in Western Europe. I remember that the capital is a major city, probably with a significant historical and political role. Paris comes to mind as the most populous city in France. But wait, sometimes people confuse the largest city with the capital. Let me verify that.\n\nIn many countries, the capital isn't necessarily the largest city. For example, in the US, Washington D.C. is the capital, not New York City. So applying that here, even if there's a bigger city, the capital might be different. But in France, I think Paris is both the largest city and the capital. Let me confirm that. Yes, Paris is the capital city of France. It's located in the Île-de-France region. The Eiffel Tower, Louvre Museum, and other famous landmarks are in Paris. So the answer should be Paris. But wait, maybe there's a trick here. Could there be another city that's the capital? Hmm, no, I don't think so. France has had capitals in the past, like Metz or Versailles, but currently, since the French Revolution, Paris has been the capital. So the answer is definitely Paris. I should make sure there isn't any confusion with other countries, but the user specifically asked about France. Yeah, that's right. The answer is Paris.\n</think>\nThe capital of France is **Paris**. This major city located in the Île-de-France region is known for iconic landmarks like the Eiffel Tower, Louvre Museum, and its historical and cultural significance.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 377, 'completion_tokens': 351, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': 'c8703c34bd6449558897b1042182de64', 'object': 'chat.completion', 'created': 1760330447, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, the user is asking for the capital of France. Let me think. I remember that France is a country in Europe. The capital city... Hmm, I think it's Paris. Wait, is there any other city that's sometimes confused as the capital? Maybe not. Let me double-check in my mind. Paris is the largest city in France as well, right? The Louvre Museum is there, and the Eiffel Tower. Yeah, those are landmarks in Paris. I don't recall any other city being the capital. Maybe some regions have their own capitals, but the national capital of France is definitely Paris. No, wait, could it be another city? Like maybe Lyon? No, Lyon is the economic capital, but not the political one. The government is located in Paris. The president of France resides in the Elysée Palace in Paris. So, yes, the capital should be Paris. I think that's correct. There was a time when Alsace-Lorraine was part of France, but that's not relevant here. No, the answer is Paris. Let me confirm once more. The capital city of France is Paris. Yes, that's right. So the answer should be straightforward.\n</think>\nThe capital of France is **Paris**. This vibrant city is home to iconic landmarks such as the Eiffel Tower, Louvre Museum, and the Champs-Élysées. As the political and cultural heart of France, it hosts numerous government institutions, including the French parliament and the总统's residence, the Élysée Palace.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 349, 'completion_tokens': 323, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:

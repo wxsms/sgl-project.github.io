@@ -560,24 +560,24 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:39:21] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:23:11] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 03:39:23] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 04:23:12] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.01s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.06s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.08s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.08it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.05it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
 
-Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.51it/s]
+Capturing batches (bs=1 avail_mem=15.04 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.83it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -870,7 +870,7 @@ Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources:<br>- get_current_date function<br>- get_current_weather function</strong></div>
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources:<br>- Current Date and Time: get_current_date function<br>- Current Weather: get_current_weather function</strong></div>
 </div>
 </section>
 </section>
@@ -933,7 +933,7 @@ Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '4ff91fb3143d489e844218ee92188622', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 1, 'e2e_latency': 0.11153173446655273}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'd04fa21dc04b4c728edc7480cf6983c2', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 1, 'e2e_latency': 0.11411619186401367}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -978,7 +978,7 @@ Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '030eae1651e54c91838d559e1d2497c8', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 49, 'e2e_latency': 0.12270689010620117}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [128009, 128006, 78191, 128007, 271, 5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'ba636433aa0b4b4a93a9122d6bc255f7', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'completion_tokens': 15, 'cached_tokens': 49, 'e2e_latency': 0.1038062572479248}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1025,7 +1025,7 @@ Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'dd8af7f9333b4fa49857a9d843b6f0b4', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.1366715431213379}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'ca98e68d323a4024ba49f5ad19d728dd', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.13667917251586914}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '9162fffc5ebd4035ae41987a0d50d60c', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.13668322563171387}}]</strong></div>
+<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'e5fcf517cef8454b98008ed20e18df02', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.14627909660339355}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'ba8698b76c4741ee84738809ef6fca2c', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.146287202835083}}, {'text': 'Paris is the capital of France', 'output_ids': [128009, 128006, 78191, 128007, 271, 60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '4a18c88b7466436cb0f3f54e0c0a2525', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'completion_tokens': 7, 'cached_tokens': 45, 'e2e_latency': 0.14629125595092773}}]</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1062,7 +1062,7 @@ Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 128009], 'meta_info': {'id': '3e111e1230874c43a93f4e2884e0459d', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 2, 'cached_tokens': 31, 'e2e_latency': 0.025001049041748047}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 128009], 'meta_info': {'id': '300f373cbd234de59fdba283ab9326fb', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 2, 'cached_tokens': 31, 'e2e_latency': 0.025783300399780273}}</strong></div>
 </div>
 </section>
 <section id="id4">
@@ -1114,7 +1114,7 @@ Capturing batches (bs=1 avail_mem=14.63 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 128009], 'meta_info': {'id': '0d76f477ebfa493bb0a605e15589effa', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 2, 'cached_tokens': 40, 'e2e_latency': 0.02077460289001465}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [128009, 128006, 78191, 128007, 271, 50100, 13, 128009], 'meta_info': {'id': '2287795bc53646b5a02e91e62ad377d4', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'completion_tokens': 3, 'cached_tokens': 40, 'e2e_latency': 0.02756023406982422}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -1152,7 +1152,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 03:39:54] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 04:23:41] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1176,13 +1176,13 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.02it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.04s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.05s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.14it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.34it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.16it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.50it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
 
-Capturing batches (bs=1 avail_mem=12.06 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 17.41it/s]
+Capturing batches (bs=1 avail_mem=18.96 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 16.94it/s]
 </pre></div></div>
 </div>
 <section id="id5">
@@ -1411,7 +1411,7 @@ Capturing batches (bs=1 avail_mem=12.06 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of Italy</strong></div>
+<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Rome is the capital of Italy</strong></div>
 </div>
 </section>
 <section id="id7">
