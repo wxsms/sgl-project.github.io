@@ -564,6 +564,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--enable-hierarchical-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-ratio<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-size<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hicache-mem-layout<span class="w"> </span>page_first_direct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-io-backend<span class="w"> </span>direct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-write-policy<span class="w"> </span>write_through<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-storage-backend<span class="w"> </span>hf3fs<span class="w"> </span><span class="se">\</span>
@@ -583,6 +584,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-ratio<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-size<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hicache-mem-layout<span class="w"> </span>page_first_direct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-io-backend<span class="w"> </span>direct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-write-policy<span class="w"> </span>write_through<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-storage-backend<span class="w"> </span>hf3fs<span class="w"> </span><span class="se">\</span>
@@ -610,7 +612,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--enable-hierarchical-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-ratio<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-size<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--hicache-mem-layout<span class="w"> </span>page_first<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hicache-mem-layout<span class="w"> </span>page_first_direct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hicache-io-backend<span class="w"> </span>direct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-write-policy<span class="w"> </span>write_through<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-storage-backend<span class="w"> </span>hf3fs<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-storage-prefetch-policy<span class="w"> </span>wait_complete<span class="w"> </span><span class="se">\</span>
@@ -634,8 +637,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--enable-hierarchical-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-ratio<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--hicache-mem-layout<span class="w"> </span>page_first<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--hicache-io-backend<span class="w"> </span>kernel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hicache-mem-layout<span class="w"> </span>page_first_direct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hicache-io-backend<span class="w"> </span>direct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-storage-backend<span class="w"> </span>mooncake<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-write-policy<span class="w"> </span>write_through<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--hicache-storage-prefetch-policy<span class="w"> </span>timeout
