@@ -657,7 +657,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <li><p><strong>Weight</strong>: Per-128x128-block quantization for better numerical stability.</p></li>
 <li><p><strong>DeepGEMM</strong>: The <a class="reference external" href="https://github.com/deepseek-ai/DeepGEMM">DeepGEMM</a> kernel library optimized for FP8 matrix multiplications.</p></li>
 </ul>
-<p><strong>Usage</strong>: The activation and weight optimization above are turned on by default for DeepSeek V3 models. DeepGEMM is enabled by default on NVIDIA Hopper GPUs and disabled by default on other devices. DeepGEMM can also be manually turned off by setting the environment variable <code class="docutils literal notranslate"><span class="pre">SGL_ENABLE_JIT_DEEPGEMM=0</span></code>.</p>
+<p><strong>Usage</strong>: The activation and weight optimization above are turned on by default for DeepSeek V3 models. DeepGEMM is enabled by default on NVIDIA Hopper GPUs and disabled by default on other devices. DeepGEMM can also be manually turned off by setting the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_JIT_DEEPGEMM=0</span></code>.</p>
 <p>Before serving the DeepSeek model, precompile the DeepGEMM kernels using:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.compile_deep_gemm<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--trust-remote-code
 </pre></div>
