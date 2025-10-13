@@ -491,6 +491,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance">Fault Tolerance</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retry-configuration">Retry Configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiter">Rate Limiter</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#routing-policies">Routing Policies</a><ul class="visible nav section-nav flex-column">
@@ -554,6 +555,7 @@ document.write(`
 <li><p><strong>Kubernetes Integration</strong>: Native service discovery and pod management</p></li>
 <li><p><strong>Prefill-Decode Disaggregation</strong>: Support for disaggregated serving load balancing</p></li>
 <li><p><strong>Prometheus Metrics</strong>: Built-in observability and monitoring</p></li>
+<li><p><strong>Rate Limiter</strong>: Token-bucket rate limiter to shield workers from overload</p></li>
 </ul>
 </section>
 <section id="installation">
@@ -765,6 +767,36 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <li><p>Worker is marked unhealthy after <code class="docutils literal notranslate"><span class="pre">cb-failure-threshold</span></code> consecutive failures</p></li>
 <li><p>Returns to service after <code class="docutils literal notranslate"><span class="pre">cb-success-threshold</span></code> successful health checks</p></li>
 <li><p>Circuit breaker can be disabled with <code class="docutils literal notranslate"><span class="pre">--disable-circuit-breaker</span></code></p></li>
+</ul>
+</section>
+<section id="rate-limiter">
+<h3>Rate Limiter<a class="headerlink" href="#rate-limiter" title="Link to this heading">#</a></h3>
+<p>Use the token-bucket rate limiter to cap requests before they overwhelm downstream workers.</p>
+<ul class="simple">
+<li><p>Enable rate limiting by setting <code class="docutils literal notranslate"><span class="pre">--max-concurrent-requests</span></code> to a positive integer. A bucket with that many tokens (concurrent leases) is created; <code class="docutils literal notranslate"><span class="pre">-1</span></code> keeps it disabled.</p></li>
+<li><p>Optionally override the refill rate with <code class="docutils literal notranslate"><span class="pre">--rate-limit-tokens-per-second</span></code>. If omitted, the refill rate matches <code class="docutils literal notranslate"><span class="pre">max-concurrent-requests</span></code>.</p></li>
+<li><p>Overflow traffic can wait in a FIFO queue controlled by:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--queue-size</span></code>: pending-request buffer (0 disables queuing; defaults to 100).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--queue-timeout-secs</span></code>: maximum wait time for queued requests before returning <code class="docutils literal notranslate"><span class="pre">429</span></code> (defaults to 60 seconds).</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--max-concurrent-requests<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--rate-limit-tokens-per-second<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--queue-size<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--queue-timeout-secs<span class="w"> </span><span class="m">30</span>
+</pre></div>
+</div>
+<p><strong>Behavior</strong>:</p>
+<p>This configuration allows up to 256 concurrent requests, refills 512 tokens (requests) per second, and keeps up to 128 overflow requests queued for 30 seconds before timing out.</p>
+<p><strong>Responses</strong>:</p>
+<ul class="simple">
+<li><p>Returns <strong>429</strong> when the router cannot enqueue the request (queue disabled or full).</p></li>
+<li><p>Returns <strong>408</strong> when a queued request waits longer than <code class="docutils literal notranslate"><span class="pre">--queue-timeout-secs</span></code> or no token becomes available before the timeout.</p></li>
 </ul>
 </section>
 </section>
@@ -1359,6 +1391,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance">Fault Tolerance</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retry-configuration">Retry Configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiter">Rate Limiter</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#routing-policies">Routing Policies</a><ul class="visible nav section-nav flex-column">
