@@ -533,7 +533,7 @@ document.write(`
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 16:50:45] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 22:00:25] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
@@ -543,25 +543,25 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-13 16:50:53] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-13 22:00:34] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-10-13 16:50:55] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+[2025-10-13 22:00:38] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.20it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.31it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.31it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.70it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.24it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.27it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.24it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.63it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.43it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.83s/it]
+Capturing batches (bs=1 avail_mem=60.79 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.94s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -619,13 +619,13 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"67a2828807e94e75a8961e3417ee87d0","object":"chat.completion","created":1760374282,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"c04d0ce901ba4450958d961dbe15d44f","object":"chat.completion","created":1760392867,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"3bea9549eab1456297dbf52da4adf394","object":"chat.completion","created":1760374285,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"c6ad999d71fa4b98a574b6bd49ebfcd3","object":"chat.completion","created":1760392870,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -666,7 +666,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"ab28671a62e64093999fa66f5ffdf4b2","object":"chat.completion","created":1760374286,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"56f2b7607e0946d5b15ef3a7892ffbf8","object":"chat.completion","created":1760392871,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -709,7 +709,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual or humorous task, as ironing is typically done indoors.</strong></div>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual and unconventional task, as ironing is typically done indoors.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
@@ -755,6 +755,103 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 <span class="n">print_highlight</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2025-10-13 22:01:15] Error in request: An exception occurred while loading multimodal data: Error while loading data ImageData(url=&#39;https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw=true&#39;, detail=&#39;auto&#39;): HTTPSConnectionPool(host=&#39;github.com&#39;, port=443): Read timed out. (read timeout=3)
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 468, in _make_request
+    six.raise_from(e, None)
+  File &#34;&lt;string&gt;&#34;, line 3, in raise_from
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 463, in _make_request
+    httplib_response = conn.getresponse()
+  File &#34;/usr/lib/python3.10/http/client.py&#34;, line 1375, in getresponse
+    response.begin()
+  File &#34;/usr/lib/python3.10/http/client.py&#34;, line 318, in begin
+    version, status, reason = self._read_status()
+  File &#34;/usr/lib/python3.10/http/client.py&#34;, line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), &#34;iso-8859-1&#34;)
+  File &#34;/usr/lib/python3.10/socket.py&#34;, line 705, in readinto
+    return self._sock.recv_into(b)
+  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1303, in recv_into
+    return self.read(nbytes, buffer)
+  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1159, in read
+    return self._sslobj.read(len, buffer)
+TimeoutError: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/adapters.py&#34;, line 644, in send
+    resp = conn.urlopen(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 802, in urlopen
+    retries = retries.increment(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py&#34;, line 552, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/packages/six.py&#34;, line 770, in reraise
+    raise value
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 716, in urlopen
+    httplib_response = self._make_request(
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 470, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File &#34;/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py&#34;, line 358, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host=&#39;github.com&#39;, port=443): Read timed out. (read timeout=3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 314, in _load_single_item
+    img, _ = load_image(data)
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 811, in load_image
+    response = requests.get(image_file, stream=True, timeout=timeout)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/api.py&#34;, line 73, in get
+    return request(&#34;get&#34;, url, params=params, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/api.py&#34;, line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/sessions.py&#34;, line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/sessions.py&#34;, line 703, in send
+    r = adapter.send(request, **kwargs)
+  File &#34;/usr/local/lib/python3.10/dist-packages/requests/adapters.py&#34;, line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host=&#39;github.com&#39;, port=443): Read timed out. (read timeout=3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 456, in load_mm_data
+    result = next(futures_iter).result()
+  File &#34;/usr/lib/python3.10/concurrent/futures/_base.py&#34;, line 458, in result
+    return self.__get_result()
+  File &#34;/usr/lib/python3.10/concurrent/futures/_base.py&#34;, line 403, in __get_result
+    raise self._exception
+  File &#34;/usr/lib/python3.10/concurrent/futures/thread.py&#34;, line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 322, in _load_single_item
+    raise RuntimeError(f&#34;Error while loading data {data}: {e}&#34;)
+RuntimeError: Error while loading data ImageData(url=&#39;https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw=true&#39;, detail=&#39;auto&#39;): HTTPSConnectionPool(host=&#39;github.com&#39;, port=443): Read timed out. (read timeout=3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_base.py&#34;, line 59, in handle_request
+    return await self._handle_non_streaming_request(
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_chat.py&#34;, line 660, in _handle_non_streaming_request
+    ret = await self.tokenizer_manager.generate_request(
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/managers/tokenizer_manager.py&#34;, line 406, in generate_request
+    tokenized_obj = await self._tokenize_one_request(obj)
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/managers/tokenizer_manager.py&#34;, line 594, in _tokenize_one_request
+    mm_inputs: Dict = await self.mm_processor.process_mm_data_async(
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/multimodal/processors/qwen_vl.py&#34;, line 251, in process_mm_data_async
+    base_output = self.load_mm_data(
+  File &#34;/public_sglang_ci/runner-l1b-gpu-0/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py&#34;, line 497, in load_mm_data
+    raise RuntimeError(
+RuntimeError: An exception occurred while loading multimodal data: Error while loading data ImageData(url=&#39;https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw=true&#39;, detail=&#39;auto&#39;): HTTPSConnectionPool(host=&#39;github.com&#39;, port=443): Read timed out. (read timeout=3)
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
