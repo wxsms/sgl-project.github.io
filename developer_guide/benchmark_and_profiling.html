@@ -465,6 +465,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-serving">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_serving</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-in-pd-disaggregation-mode">Profile In PD Disaggregation Mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-prefill-workers">Profile Prefill Workers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-decode-workers">Profile Decode Workers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">Important Notes</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-offline-throughput">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiler-trace-merger-for-distributed-traces">Profiler Trace Merger for Distributed Traces</a><ul class="nav section-nav flex-column">
@@ -540,6 +546,51 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<spa
 </div>
 <p>Please make sure that the <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> should be set at both server and client side, otherwise the trace file cannot be generated correctly . A secure way will be setting <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> in the <code class="docutils literal notranslate"><span class="pre">.*rc</span></code> file of shell (e.g. <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> for bash shells).</p>
 <p>For more details, please refer to <a class="reference internal" href="bench_serving.html"><span class="std std-doc">Bench Serving Guide</span></a>.</p>
+</section>
+<section id="profile-in-pd-disaggregation-mode">
+<h3>Profile In PD Disaggregation Mode<a class="headerlink" href="#profile-in-pd-disaggregation-mode" title="Link to this heading">#</a></h3>
+<p>When profiling in PD disaggregation mode, prefill and decode workers <strong>must be profiled separately</strong> due to torch profiler limitations. The <code class="docutils literal notranslate"><span class="pre">bench_serving</span></code> command provides dedicated options for this:</p>
+<section id="profile-prefill-workers">
+<h4>Profile Prefill Workers<a class="headerlink" href="#profile-prefill-workers" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set trace path</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/root/sglang/profile_log
+
+<span class="c1"># start prefill and decode servers (see PD disaggregation docs for setup)</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disaggregation-mode<span class="w"> </span>prefill
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span>--base-gpu-id<span class="w"> </span><span class="m">1</span>
+
+<span class="c1"># start router</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span>--pd-disaggregation<span class="w"> </span>--prefill<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>--decode<span class="w"> </span>http://127.0.0.1:30001<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+
+<span class="c1"># send profiling request targeting prefill workers</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--sharegpt-output-len<span class="w"> </span><span class="m">100</span><span class="w"> </span>--profile<span class="w"> </span>--pd-separated<span class="w"> </span>--profile-prefill-url<span class="w"> </span>http://127.0.0.1:30000
+</pre></div>
+</div>
+</section>
+<section id="profile-decode-workers">
+<h4>Profile Decode Workers<a class="headerlink" href="#profile-decode-workers" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># send profiling request targeting decode workers</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--sharegpt-output-len<span class="w"> </span><span class="m">100</span><span class="w"> </span>--profile<span class="w"> </span>--pd-separated<span class="w"> </span>--profile-decode-url<span class="w"> </span>http://127.0.0.1:30001
+</pre></div>
+</div>
+</section>
+<section id="important-notes">
+<h4>Important Notes<a class="headerlink" href="#important-notes" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--profile-prefill-url</span></code> and <code class="docutils literal notranslate"><span class="pre">--profile-decode-url</span></code> are <strong>mutually exclusive</strong> - you cannot profile both at the same time</p></li>
+<li><p>Both options support multiple worker URLs for multi-instance setups:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profile multiple prefill workers</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile<span class="w"> </span>--pd-separated<span class="w"> </span>--profile-prefill-url<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>http://127.0.0.1:30002
+
+<span class="c1"># Profile multiple decode workers</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span>--profile<span class="w"> </span>--pd-separated<span class="w"> </span>--profile-decode-url<span class="w"> </span>http://127.0.0.1:30001<span class="w"> </span>http://127.0.0.1:30003
+</pre></div>
+</div>
+</li>
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> is set on all worker nodes before starting the servers</p></li>
+<li><p>For more details on setting up PD disaggregation, see <a class="reference internal" href="../advanced_features/pd_disaggregation.html"><span class="std std-doc">PD Disaggregation Guide</span></a></p></li>
+</ul>
+</section>
 </section>
 <section id="profile-a-server-with-sglang-bench-offline-throughput">
 <h3>Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code><a class="headerlink" href="#profile-a-server-with-sglang-bench-offline-throughput" title="Link to this heading">#</a></h3>
@@ -757,6 +808,12 @@ pip<span class="w"> </span>install<span class="w"> </span>nvtx
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-pytorch-profiler">Profile with PyTorch Profiler</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-serving">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_serving</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-in-pd-disaggregation-mode">Profile In PD Disaggregation Mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-prefill-workers">Profile Prefill Workers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-decode-workers">Profile Decode Workers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">Important Notes</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-offline-throughput">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiler-trace-merger-for-distributed-traces">Profiler Trace Merger for Distributed Traces</a><ul class="nav section-nav flex-column">

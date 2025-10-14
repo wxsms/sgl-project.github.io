@@ -466,6 +466,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-unified-scheduling">Issues with Unified Scheduling</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-in-pd-disaggregation-mode">Profiling in PD Disaggregation Mode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#router-integration">Router Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mooncake">Mooncake</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
@@ -520,6 +521,10 @@ document.write(`
 <p>For the design details, please refer to <a class="reference external" href="https://docs.google.com/document/d/1rQXJwKd5b9b1aOzLh98mnyMhBMhlxXA5ATZTHoQrwvc/edit?tab=t.0">link</a>.</p>
 <p>Currently, we support Mooncake and NIXL as the transfer engine.</p>
 </section>
+</section>
+<section id="profiling-in-pd-disaggregation-mode">
+<h2>Profiling in PD Disaggregation Mode<a class="headerlink" href="#profiling-in-pd-disaggregation-mode" title="Link to this heading">#</a></h2>
+<p>When you need to profile prefill or decode workers in PD disaggregation mode, please refer to the <a class="reference external" href="https://docs.sglang.ai/developer_guide/benchmark_and_profiling.html#profile-in-pd-disaggregation-mode">Profile In PD Disaggregation Mode</a> section in the Benchmark and Profiling guide. Due to torch profiler limitations, prefill and decode workers must be profiled separately using dedicated command-line options.</p>
 </section>
 <section id="router-integration">
 <h2>Router Integration<a class="headerlink" href="#router-integration" title="Link to this heading">#</a></h2>
@@ -908,6 +913,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-unified-scheduling">Issues with Unified Scheduling</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-in-pd-disaggregation-mode">Profiling in PD Disaggregation Mode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#router-integration">Router Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mooncake">Mooncake</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
