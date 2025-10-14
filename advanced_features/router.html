@@ -762,6 +762,24 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <span class="w">    </span>--cb-window-duration-secs<span class="w"> </span><span class="m">60</span>
 </pre></div>
 </div>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart TD
+    Closed([&quot;Closed&quot;])
+    Open([&quot;Open&quot;])
+    HalfOpen([&quot;HalfOpen&quot;])
+
+    Closed -- &quot;Consecutive Failures &gt;=&lt;br/&gt;cb-failure-threshold&quot; --&gt; Open;
+    Closed --&gt; HalfOpen;
+    linkStyle 1 stroke:transparent;
+    Open -- &quot;After cb-timeout-duration-secs&quot; --&gt; HalfOpen;
+    HalfOpen -- &quot;Fail any test request&quot; --&gt; Open;
+    HalfOpen -- &quot;After cb-success-threshold&lt;br/&gt;test requests&quot; --&gt; Closed;
+    Closed -- &quot;Failures &lt; cb-failure-threshold&quot; --&gt; Closed;
+    style Closed fill:#00C853,color:#000000
+    style Open fill:#D50000,color:#000000
+    style HalfOpen fill:#FFD600,color:#000000
+    linkStyle 1 stroke:transparent,fill:none
+</pre></div>
+</div>
 <p><strong>Behavior</strong>:</p>
 <ul class="simple">
 <li><p>Worker is marked unhealthy after <code class="docutils literal notranslate"><span class="pre">cb-failure-threshold</span></code> consecutive failures</p></li>
