@@ -1043,7 +1043,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>If specified, it limits the maximum number of LoRA adapters loaded in CPU memory at a time. The value must be greater than or equal to <code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code>.</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-eviction-policy</span></code></p></td>
+<td><p>LoRA adapter eviction policy when GPU memory pool is full. <code class="docutils literal notranslate"><span class="pre">lru</span></code>: Least Recently Used (better cache efficiency). <code class="docutils literal notranslate"><span class="pre">fifo</span></code>: First-In-First-Out.</p></td>
+<td><p>lru</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code></p></td>
 <td><p>Choose the kernel backend for multi-LoRA serving.</p></td>
 <td><p>triton</p></td>
 </tr>
