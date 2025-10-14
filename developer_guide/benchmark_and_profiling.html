@@ -55,7 +55,7 @@
     <link rel="prev" title="Development Guide Using Docker" href="development_guide_using_docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 13, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 14, 2025"/>
   </head>
   
   
@@ -467,6 +467,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-serving">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_serving</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-offline-throughput">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiler-trace-merger-for-distributed-traces">Profiler Trace Merger for Distributed Traces</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-profiling-and-shared-storage-considerations">Multi-Node Profiling and Shared Storage Considerations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-api-usage">HTTP API Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-usage">Command Line Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output Files</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-pytorch-bugs">Possible PyTorch bugs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-traces">View traces</a></li>
 </ul>
@@ -559,6 +566,48 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_thr
 <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">profiler</span>
 </pre></div>
 </div>
+</section>
+<section id="profiler-trace-merger-for-distributed-traces">
+<h3>Profiler Trace Merger for Distributed Traces<a class="headerlink" href="#profiler-trace-merger-for-distributed-traces" title="Link to this heading">#</a></h3>
+<p>SGLang now supports automatic merging of profiling traces from distributed setups with multiple parallelism types (TP, DP, PP, EP). This feature is particularly useful for analyzing performance across distributed runs.</p>
+<section id="multi-node-profiling-and-shared-storage-considerations">
+<h4>Multi-Node Profiling and Shared Storage Considerations<a class="headerlink" href="#multi-node-profiling-and-shared-storage-considerations" title="Link to this heading">#</a></h4>
+<p>Single-node profiler output merging is completely supported. When profiling in distributed environments spanning multiple nodes, shared storage (e.g., NFS, Lustre) should be accessible by all nodes for the output directory to enable merging of trace files.</p>
+<p>If there is no shared storage accessible across nodes, automatic merging of trace files during profiling is not supported directly as of now.</p>
+</section>
+<section id="http-api-usage">
+<h4>HTTP API Usage<a class="headerlink" href="#http-api-usage" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start profiling with automatic trace merging enabled</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>&lt;BASE_URL&gt;/start_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;output_dir&quot;: &quot;/tmp/profiles&quot;, # where to store profile traces</span>
+<span class="s1">    &quot;num_steps&quot;: 10,</span>
+<span class="s1">    &quot;activities&quot;: [&quot;CPU&quot;, &quot;GPU&quot;],</span>
+<span class="s1">    &quot;merge_profiles&quot;: true # optional argument to merge profile traces (default=False)</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="command-line-usage">
+<h4>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start profiling with merge enabled</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.profiler<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-steps<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--activities<span class="w"> </span>CPU<span class="w"> </span>GPU<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>/tmp/profiles<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--merge-profiles<span class="w"> </span><span class="c1"># optional argument to merge profile traces (default=False)</span>
+</pre></div>
+</div>
+</section>
+<section id="output-files">
+<h4>Output Files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h4>
+<p>The profile merger generates:</p>
+<ul class="simple">
+<li><p>Individual rank trace files: <code class="docutils literal notranslate"><span class="pre">{profile_id}-TP-{tp}-DP-{dp}-PP-{pp}-EP-{ep}.trace.json.gz</span></code></p></li>
+<li><p>Merged trace file: <code class="docutils literal notranslate"><span class="pre">merged-{profile_id}.trace.json.gz</span></code></p></li>
+</ul>
+</section>
 </section>
 <section id="possible-pytorch-bugs">
 <h3>Possible PyTorch bugs<a class="headerlink" href="#possible-pytorch-bugs" title="Link to this heading">#</a></h3>
@@ -710,6 +759,13 @@ pip<span class="w"> </span>install<span class="w"> </span>nvtx
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-serving">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_serving</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-offline-throughput">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiler-trace-merger-for-distributed-traces">Profiler Trace Merger for Distributed Traces</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-profiling-and-shared-storage-considerations">Multi-Node Profiling and Shared Storage Considerations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-api-usage">HTTP API Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-usage">Command Line Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output Files</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-pytorch-bugs">Possible PyTorch bugs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-traces">View traces</a></li>
 </ul>
@@ -749,7 +805,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 13, 2025.
+  Last updated on Oct 14, 2025.
   <br/>
 </p>
   </div>
