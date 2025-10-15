@@ -51,11 +51,11 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hierarchical KV Caching (HiCache)" href="hicache.html" />
-    <link rel="prev" title="Observability" href="observability.html" />
+    <link rel="next" title="Speculative Decoding" href="speculative_decoding.html" />
+    <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 14, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 15, 2025"/>
   </head>
   
   
@@ -183,6 +183,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Attention Backend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
@@ -191,12 +192,11 @@
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query Vision Language Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="router.html">SGLang Router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Attention Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -462,7 +462,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-matrix-for-different-attention-backends">Supporting matrix for different attention backends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-matrix">Support Matrix</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mha-backends">MHA Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mla-backends">MLA Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental">Hybrid attention (different backends for prefill vs decode) (Experimental)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch command for different attention backends.</a></li>
 </ul>
@@ -481,72 +489,112 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="attention-backend">
 <h1>Attention Backend<a class="headerlink" href="#attention-backend" title="Link to this heading">#</a></h1>
-<p>SGLang supports multiple attention backends. Each of them has different pros and cons.
+<p>SGLang supports a large variety of attention backends. Each of them has different pros and cons.
 You can test them according to your needs.</p>
-<section id="supporting-matrix-for-different-attention-backends">
-<h2>Supporting matrix for different attention backends<a class="headerlink" href="#supporting-matrix-for-different-attention-backends" title="Link to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Selecting an optimal attention backend is crucial for maximizing your performance. Different backends excel in various scenarios, so choose based on your model, hardware, and use case. Not all backends are supported on all platforms and model architectures.</p>
+</div>
+<section id="support-matrix">
+<h2>Support Matrix<a class="headerlink" href="#support-matrix" title="Link to this heading">#</a></h2>
+<p>The support matrix is split into two parts: MHA (standard attention) and MLA (multi-head latent attention). For an explanation of the key differences between MHA and MLA, please see the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/basic_usage/deepseek.md#multi-head-latent-attention-mla">SGLang documentation on DeepSeek MLA</a> and the original <a class="reference external" href="https://arxiv.org/pdf/2405.04434">DeepSeek MLA paper</a>.</p>
+<section id="mha-backends">
+<h3>MHA Backends<a class="headerlink" href="#mha-backends" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Backend</strong></p></th>
-<th class="head"><p><strong>Page Size &gt; 1</strong></p></th>
-<th class="head"><p><strong>Spec Decoding</strong></p></th>
-<th class="head"><p><strong>MLA</strong></p></th>
+<th class="head"><p><strong>Page Size &gt; 1 (native)</strong></p></th>
+<th class="head"><p><strong>FP8 KV Cache</strong></p></th>
+<th class="head"><p><strong>Spec topk=1</strong></p></th>
+<th class="head"><p><strong>Spec topk&gt;1</strong></p></th>
 <th class="head"><p><strong>Sliding Window</strong></p></th>
 <th class="head"><p><strong>MultiModal</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>FlashInfer</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FA3 (FlashAttention 3)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FA4 (FlashAttention 4)</strong></p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Triton</strong></p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>FA3</strong></p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Triton</strong></p></td>
-<td><p>❌</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>❌</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Torch Native</strong></p></td>
+<tr class="row-even"><td><p><strong>Torch Native (SDPA)</strong></p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
-<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>FlashMLA</strong></p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
+<tr class="row-odd"><td><p><strong>FlexAttention (PyTorch)</strong></p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>TRTLLM MLA</strong></p></td>
-<td><p>✅</p></td>
+<tr class="row-even"><td><p><strong>TRTLLM MHA</strong></p></td>
+<td><p>16, 32 or 64</p></td>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
-<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Ascend</strong></p></td>
+<tr class="row-odd"><td><p><strong>Dual Chunk FlashAttention</strong></p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AITER (ROCm)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Wave</strong></p></td>
+<tr class="row-odd"><td><p><strong>Wave (ROCm)</strong></p></td>
 <td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ascend (NPU)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -555,13 +603,142 @@ You can test them according to your needs.</p>
 </tbody>
 </table>
 </div>
-<p><strong>Notes:</strong></p>
+</section>
+<section id="mla-backends">
+<h3>MLA Backends<a class="headerlink" href="#mla-backends" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Backend</strong></p></th>
+<th class="head"><p><strong>Native Page Sizes</strong></p></th>
+<th class="head"><p><strong>FP8 KV Cache</strong></p></th>
+<th class="head"><p><strong>Chunked Prefix Cache</strong></p></th>
+<th class="head"><p><strong>Spec topk=1</strong></p></th>
+<th class="head"><p><strong>Spec topk&gt;1</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>FlashInfer MLA</strong></p></td>
+<td><p>1</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FlashMLA</strong></p></td>
+<td><p>64</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cutlass MLA</strong></p></td>
+<td><p>128</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TRTLLM MLA (Blackwell)</strong></p></td>
+<td><p>32 or 64</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FA3 (FlashAttention 3)</strong></p></td>
+<td><p>n/a</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>⚠️ (page_size=1 only)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Triton</strong></p></td>
+<td><p>n/a</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+<td><p>⚠️ (page_size=1 only)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FA4</strong></p></td>
+<td><p>n/a</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ascend MLA (NPU)</strong></p></td>
+<td><p>128</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>FlashMLA FP8 KV cache is currently not working. See upstream issue <a class="reference external" href="https://github.com/sgl-project/sglang/pull/8856">#8856</a>. Use non-FP8 KV or another backend when FP8 KV cache is required.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>TRTLLM MLA only implements decode operations. For prefill operations (including multimodal inputs), it falls back to FlashInfer MLA backend.</p></li>
+<li><p>FlashAttention 4 is prefill-only for now.</p></li>
+<li><p>NSA is specifically designed for <a class="reference external" href="https://lmsys.org/blog/2025-09-29-deepseek-V32/">DeepSeek V3.2 DSA</a>.</p></li>
 </ul>
-<p>Note: Every kernel backend is compatible with a page size &gt; 1 by specifying an argument such as <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">16</span></code>.
-This is because a page size of 16 can be converted to a page size of 1 in the kernel backend.
-The “❌” and “✅” symbols in the table above under “Page Size &gt; 1” indicate whether the kernel actually operates with a page size greater than 1, rather than treating a page size of 16 as a page size of 1.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Speculative decoding topk: <code class="docutils literal notranslate"><span class="pre">topk</span></code> is the number of draft tokens sampled per step from the draft model. <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code> follows classic EAGLE; <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> explores multiple branches and requires backend support in both draft and verification paths.</p>
+</div>
+<p>Note: Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), Ascend (128).</p>
+<p>MLA page-size constraints:</p>
+<ul class="simple">
+<li><p>FlashInfer MLA: page_size = 1.</p></li>
+<li><p>FlashMLA: page_size = 64.</p></li>
+<li><p>Cutlass MLA: page_size = 128.</p></li>
+<li><p>TRTLLM MLA: page_size ∈ {32, 64}.</p></li>
+</ul>
+</section>
+<section id="hybrid-attention-different-backends-for-prefill-vs-decode-experimental">
+<h3>Hybrid attention (different backends for prefill vs decode) (Experimental)<a class="headerlink" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Hybrid attention is an experimental feature.</p>
+</div>
+<p>You can mix-and-match attention backends for prefill and decode. This is useful when one backend excels at prefill and another excels at decode. For the implementation details, please see <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/hybrid_attn_backend.py</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Prefill with FA4, Decode with TRTLLM MLA (Blackwell)</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>nvidia/DeepSeek-R1-FP4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--moe-runner-backend<span class="w"> </span>flashinfer_trtllm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>modelopt_fp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prefill-attention-backend<span class="w"> </span>fa4
+</pre></div>
+</div>
+<section id="speculative-decoding-with-hybrid-attention">
+<h4>Speculative decoding with hybrid attention<a class="headerlink" href="#speculative-decoding-with-hybrid-attention" title="Link to this heading">#</a></h4>
+<p>Hybrid attention also works with speculative decoding. The backend used for draft decoding and target verification depends on <code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span> <span class="pre">decode</span></code> (recommended): draft/verify use the decode backend.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span> <span class="pre">prefill</span></code> (default): draft/verify use the prefill backend.</p></li>
+</ul>
+<p>Constraints when combining hybrid attention with speculative decoding:</p>
+<ul class="simple">
+<li><p>If any attention backend is <code class="docutils literal notranslate"><span class="pre">trtllm_mha</span></code>, speculative decoding supports only <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code>.</p></li>
+<li><p>For paged MHA backends with <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, only <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code> is supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flex_attention</span></code> is not supported with speculative decoding.</p></li>
+<li><p>For MLA backends, <code class="docutils literal notranslate"><span class="pre">trtllm_mla</span></code> supports <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>; <code class="docutils literal notranslate"><span class="pre">flashmla</span></code> and <code class="docutils literal notranslate"><span class="pre">flashinfer_mla</span></code> support only <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
+<li><p>CUDA Graph: the decode backend is always captured; the prefill backend is captured only when <code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span> <span class="pre">prefill</span></code>.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you set only one of <code class="docutils literal notranslate"><span class="pre">--prefill-attention-backend</span></code> or <code class="docutils literal notranslate"><span class="pre">--decode-attention-backend</span></code>, the unspecified phase inherits <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code>.
+If both are specified and differ, SGLang automatically enables a hybrid wrapper to dispatch to the chosen backend per phase.</p>
+</div>
+</section>
+</section>
 </section>
 <section id="user-guide">
 <h2>User guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
@@ -667,6 +844,42 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--attention-backend<span class="w"> </span>wave
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>FlexAttention</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>flex_attention
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Dual Chunk FlashAttention (MHA-only)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen2.5-14B-Instruct-1M<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>dual_chunk_flash_attn
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Cutlass MLA</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>cutlass_mla<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>FlashAttention 4 (MHA &amp; MLA)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+</pre></div>
+</div>
 </section>
 </section>
 <section id="steps-to-add-a-new-attention-backend">
@@ -736,20 +949,20 @@ and follow the steps below.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="observability.html"
+       href="hyperparameter_tuning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Observability</p>
+        <p class="prev-next-title">Hyperparameter Tuning</p>
       </div>
     </a>
     <a class="right-next"
-       href="hicache.html"
+       href="speculative_decoding.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hierarchical KV Caching (HiCache)</p>
+        <p class="prev-next-title">Speculative Decoding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -769,7 +982,15 @@ and follow the steps below.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-matrix-for-different-attention-backends">Supporting matrix for different attention backends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-matrix">Support Matrix</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mha-backends">MHA Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mla-backends">MLA Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental">Hybrid attention (different backends for prefill vs decode) (Experimental)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch command for different attention backends.</a></li>
 </ul>
@@ -808,7 +1029,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 14, 2025.
+  Last updated on Oct 15, 2025.
   <br/>
 </p>
   </div>

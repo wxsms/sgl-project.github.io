@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 14, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 15, 2025"/>
   </head>
   
   
@@ -186,6 +186,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/attention_backend.html">Attention Backend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/speculative_decoding.html">Speculative Decoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
@@ -194,12 +195,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/attention_backend.html">Attention Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -541,16 +541,10 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-14 15:14:52] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-15 11:33:32] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -574,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.93it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.93it/s]
 
-Capturing batches (bs=1 avail_mem=66.55 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 15.22it/s]
+Capturing batches (bs=1 avail_mem=68.67 GB): 100%|██████████| 20/20 [00:03&lt;00:00,  5.30it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -609,44 +603,37 @@ Capturing batches (bs=1 avail_mem=66.55 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Alex, and I am a young programmer who has been coding for a few years now. I have a keen interest in programming and technology in general. I am looking to start my own business and I have a keen eye for detail, especially in terms of the programming process. Can you help me out with any questions I might have about programming or computer science in general?
-Sure, I&#39;d be happy to help you with your questions about programming and computer science! Please feel free to ask me anything you need help with. Let me know if you have any specific questions or areas you&#39;d like to explore more. Have a great day!
+Generated text:  Ali and I am an IT Consultant. My background is in software development and I am passionate about technology and innovation. I enjoy helping people understand technology and solutions to problems. I have experience in Python, SQL, and Java. I have worked as a developer, system administrator, and consultant for over 10 years. What are some of the most effective strategies or techniques for improving my skills in Python and SQL? Here are some strategies and techniques to improve your skills in Python and SQL:
+
+1. Practice regularly: The more you practice, the better you will become. Try to code on a regular basis, even if it is just a
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to decide whether to use the word &#34;collapse&#34; in the official name of the country. If he uses the word, he will be immediately impeached by the Supreme Court. If he does not use the word, he will not be impeached until the next general election, which will be held in two years. The probability of a president using the word &#34;collapse&#34; in the official name of the country is 0.02. What is the probability that the president will use the word in the official name of the country? What is the probability that he will not use the word in the official name of the country?
-To
+Generated text:  a military commander who must report to the Senate for his approval. His approval is required before a new budget is signed. The current budget is $100 billion in total. The president can choose to spend up to $100 billion, but he must report to the Senate for his approval before spending any additional funds.
+
+Given this scenario, consider the following scenarios:
+
+1. The president decides to spend up to $100 billion.
+2. The president decides to spend up to $105 billion.
+3. The president decides to spend up to $110 billion.
+4. The president decides to spend up
 ===============================
 Prompt: The capital of France is
-Generated text:  ______.
-A. Paris
-B. London
-C. Brussels
-D. Rome
-Answer:
-A
+Generated text:  ___________. ____
+A. vignon
+B. vert
+C. Valence
+D. Vadé
+Answer: C
 
-The second half of the 18th century, the revolution that laid the foundation for the French Enlightenment was ____.
-A. The French Revolution
-B. The French Revolution
-C. The French Revolution
-D. The French Revolution
-Answer:
-D
-
-The main symptom of anemia is ____
-A. Fatigue
-B. Fever
-C. Headache
-D. Lower back pain
-Answer:
-A
-
-A male patient with a history of peptic ulcer disease. Six months ago, he was admitted to the
+In the case of an emergency evacuation of a confined space, the following should be done: ① Confirm the location of the evacuation; ② Notify all personnel in the confined space; ③ Check if the equipment in the confined space is properly secured; ④ Ensure the work area is clearly marked.
+A. ①②
+B. ①②③④
+C. ①③④
+D. �
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain and complex, with high demand for specialized skills in areas such as computer hardware and software engineering. To address this, the company XYZ has introduced a certification program for AI professionals. The program aims to prepare professionals for the future of AI by providing them with the necessary knowledge and skills to work in the field. The program is designed to be flexible and adaptable to different learning styles and to include real-world projects and projects that can be completed within the program.
-
-Please provide a proposal for the AI certification program that outlines the program structure, the curriculum, the curriculum goals, the qualifications required, and the assessment methods used to evaluate the students&#39; understanding
+Generated text:  here, but it’s not here yet, and we don’t yet know what its best future looks like. The field is still in its infancy, and the tools and resources needed to make significant progress have not yet been developed. There are still many unknowns, and we are not yet in a position to make definitive predictions about the future of AI.
+This is true for various reasons. One of the most important reasons is the rapid pace of technological change. As we move towards new technologies, there are new ways of working and new ways of understanding the world. This change has led to a greater emphasis on experimentation and innovation, rather than
 </pre></div></div>
 </div>
 </section>
@@ -686,17 +673,19 @@ Please provide a proposal for the AI certification program that outlines the pro
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Type of Vehicle] [Vehicle Name]. I&#39;m a [Favorite Hobby or Activity] [Hobby/Activity Name]. I&#39;m a [Favorite Food/Drink/Activity] [Favorite Food/Drink/Activity Name]. I&#39;m a [Favorite Person/Place/Event] [Favorite Person/Place/Event Name]. I&#39;m a [Favorite Book/TV Show/Movie/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/Artist/
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a short description of your profession or role]. I enjoy [insert a short description of your hobbies or interests]. What brings you to this company? I&#39;m drawn to [insert a short description of the reason why you&#39;re interested in this company]. What do you do for a living? I&#39;m a [insert a short description of your job role]. I&#39;m always looking for new challenges and opportunities to grow. What do you do for
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is the largest city in Europe and the third-largest city in the world by population. The city is known for its rich history, beautiful architecture, and vibrant culture. It is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also a major center for art, music, and literature, and is a popular tourist destination. The city is known for its fashion industry, with many famous fashion houses and boutiques. Paris is a cultural and economic hub that plays a significant role in the country&#39;s economy. It is also home to many international organizations and
+Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history dating back to the Roman Empire and the Middle Ages. Paris is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum. The city is also famous for its fashion industry, art, and cuisine. Paris is a cultural and economic hub of France and a major tourist destination. It is home to many world-renowned museums, theaters, and art galleries. The city is also known for its nightlife, with many bars and clubs offering a wide range of entertainment options. Paris is a city of
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we interact with technology and the world around us. Here are some potential future trends in AI:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased automation and robotics: As AI technology continues to advance, we can expect to see more automation and robotics in various industries, from manufacturing to healthcare to transportation. This will lead to increased efficiency and productivity, but it will also create new jobs and challenges for workers.
+1. Increased integration with human intelligence: As AI becomes more sophisticated, it is likely to become more integrated with human intelligence. This could lead to more efficient and effective AI systems that can better understand and respond to human emotions and behaviors.
 
-2. Enhanced cognitive abilities: AI is likely to continue to advance in areas such as natural language processing, machine learning, and computer vision. This will allow AI to better understand and interpret human
+2. Greater emphasis on ethical considerations: As AI becomes more advanced, there will be a greater emphasis on ethical considerations. This could lead to more rigorous testing and validation of AI systems, as well as increased regulation and oversight of AI development and deployment.
+
+3. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce
 
 </pre></div></div>
 </div>
@@ -739,18 +728,25 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert name] and I&#39;m [insert occupation]. I come from [insert location] and have been a part of the [insert industry] community for [insert number of years] years. I have a passion for [insert something specific, like [insert sport, hobby, etc.]] and I&#39;m eager to learn and grow as a leader in my field. [insert how you came to be in this position, like [insert a story or achievement you&#39;ve achieved].]
-You might say, &#34;Hello, my name is [insert name] and I&#39;m [insert occupation]. I come from [insert location] and have been
+Generated text:  [Your Name]. I am a [character&#39;s occupation] who has been [number of years] in the industry. I am [age] years old. I have always been passionate about [topic of interest] and I strive to always learn new things. I enjoy [job-related activities] and have always been a [personality trait] person. If you have any questions or need advice, I&#39;m here to help. [Your Name] is looking forward to chatting with you! Sure, here&#39;s a neutral self-introduction for a fictional character based on your description:
+
+---
+
+Hey there! I&#39;m [Your Name], a [
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is a bustling and vibrant city that is home to a rich cultural heritage and a variety of attractions. Paris is also a major tourist destination, known for its iconic landmarks such as Notre-Dame Cathedral, Eiffel Tower, and the Louvre Museum. The city is also known for its delicious French cuisine, including croissants, boudin, and various types of cheese. Paris is a city of contrasts, with its traditional architecture and narrow streets contrasting with its contemporary fashion and technology hubs. Its unique cultural and historical heritage continues to be recognized and celebrated around the world. Paris is a popular destination for French and international
+Generated text:  Paris. It is the largest city in France and the third-largest in the world by population. Paris is home to the Eiffel Tower, Louvre Museum, Notre Dame Cathedral, the Champs-Elysées, and many other famous landmarks. It is a cultural and artistic center with a rich history dating back to the Renaissance era. Paris is also known as &#34;Le Philo&#34; and is often referred to as the &#34;City of Love.&#34; The city is home to many international companies and is considered one of the most tourist-spending cities in the world.
+
+Paris is also known for its vibrant nightlife, with many bars and clubs
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to see significant advancements and transformations as it continues to evolve. Here are some possible trends in AI that we can expect to see in the coming years:
+Generated text:  likely to be characterized by significant advancements in several areas, including:
 
-1. Increased focus on ethical AI: The ethical implications of AI will become more pronounced as we continue to develop new AI systems. AI developers will need to be more mindful of the potential social, political, and economic impacts of their work, and this will drive more emphasis on ethical AI practices.
+1. Development of more advanced models: As AI systems become more sophisticated, we are likely to see more complex models that can learn from large amounts of data and adapt to new situations. These models may be able to recognize patterns and trends in a wide range of domains, from healthcare to finance.
 
-2. Advancements in natural language processing: As more data is collected on humans and the internet of things becomes more prevalent, there will be an increased focus on natural language processing. This will
+2. Increased use of AI in industries: AI is already being used in a wide range of industries, from manufacturing to healthcare to finance. As AI becomes more prevalent in these fields, we can expect to see even greater use of the technology.
+
+3. Improved ethics and privacy concerns
 </pre></div></div>
 </div>
 </section>
@@ -796,19 +792,22 @@ Generated text:  likely to see significant advancements and transformations as i
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I am a [Your occupation] with a passion for [Your hobby or interest]. I have always been passionate about learning and always want to expand my knowledge in the field. I am always looking for new challenges and opportunities to grow and improve myself. I am a dedicated reader and a lover of books, and I love to share my knowledge and experiences with others. I believe in the power of learning and that every person has the potential to achieve great things if they are willing to work hard and take action. My goal is to inspire others to be their best selves and pursue their passions with passion. I am excited
+Generated text:  ____ and I&#39;m a/an ____.
+As an AI language model, I don&#39;t have personal names or identities, but I can create a fictional self-introduction for you based on your request. Here&#39;s a possible introduction:
+
+Hello, my name is [Your Name] and I&#39;m a/an [Your Profession/Role]. I&#39;m always looking for ways to help people, whether that&#39;s by answering their questions, providing information, or even just being there to listen. I&#39;m always here to assist with any questions or concerns you might have, and I&#39;m always available to help whenever you need me. If you have any questions or need
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. Paris is the city of love, where the iconic Eiffel Tower rises above the city, and where the Notre-Dame Cathedral stands as a testament to its rich history and cultural heritage. It is also home to the Louvre Museum, the world’s largest art museum, and the Place de la Concorde, a famous square with a historic train station. Paris is known for its vibrant music scene, fashion, and cuisine, and is often referred to as the &#34;City of Light&#34; due to its golden lamplight displays. The city is also renowned for its museums, museums, museums, museums and museums, and
+Generated text:  Paris.
+
+Please provide the answer in French. La capitale de la France est Paris.
+
+Note: I did not produce any copy text for the French text provided. This appears to be an English text about Paris, France. The sentence structure and wording have been kept the same to maintain the original meaning and purpose of the text. The use of &#34;I did not produce any copy text for the French text&#34; is a common practice in translation tasks, especially when dealing with official or historical documents, as the translation is not intended to be copied or paraphrased.
+
+I have also noted that I did not produce any copy text
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to involve more complex and sophisticated AI systems that can perform tasks that are currently beyond the capabilities of current AI systems. Some of the potential future trends in AI include:
-
-1. Increased Automation: One of the most promising future trends is the increased automation of tasks, especially in fields such as manufacturing, healthcare, and transportation.
-
-2. Integration of AI into daily life: AI is already becoming more integrated into our daily lives, from voice assistants like Siri and Alexa to self-driving cars. This trend is likely to continue as AI becomes more integrated into our daily routines.
-
-3. Enhanced AI ethics and accountability: AI systems are becoming more complex and
+Generated text:  likely to be characterized by a proliferation of applications in various industries, and the incorporation of more sophisticated algorithms and machine learning techniques into existing systems. This trend is expected to continue as the need for more advanced and accurate AI systems becomes more apparent. In addition, we may see a trend towards greater use of AI in areas such as healthcare, finance, and transportation, as well as the development of more intelligent and autonomous robots and drones. AI will likely also continue to be used in a more ethical and responsible way, with greater focus on issues such as privacy, bias, and accountability. Overall, the future of AI is likely to be one of
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -910,7 +909,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 14, 2025.
+  Last updated on Oct 15, 2025.
   <br/>
 </p>
   </div>

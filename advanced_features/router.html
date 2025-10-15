@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SGLang Router &#8212; SGLang</title>
+    <title>SGLang Model Gateway (formerly SGLang Router) &#8212; SGLang</title>
   
   
   
@@ -55,7 +55,7 @@
     <link rel="prev" title="Query Vision Language Model" href="vlm_query.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 14, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 15, 2025"/>
   </head>
   
   
@@ -183,6 +183,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
@@ -191,12 +192,11 @@
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query Vision Language Model</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SGLang Router</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -452,7 +452,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SGLang Router</h1>
+    <h1>SGLang Model Gateway (formerly SGLang Router)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,75 +462,45 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-plane">Control Plane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-plane">Data Plane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-privacy">Storage &amp; Privacy</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-modes">Deployment Modes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-1-co-launch-router-and-workers">Mode 1: Co-launch Router and Workers</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-requests">Sending Requests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-launch-router-workers">Co-launch Router + Workers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-launch-http">Separate Launch (HTTP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-launch">gRPC Launch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill/Decode Disaggregation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-backend-proxy">OpenAI Backend Proxy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-2-separate-launch-mode">Mode 2: Separate Launch Mode</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-launch-workers">Step 1: Launch Workers</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-launch-router">Step 2: Launch Router</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-3-prefill-decode-disaggregation">Mode 3: Prefill-Decode Disaggregation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-prefill-arguments">Understanding –prefill Arguments</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-inheritance-in-pd-mode">Policy Inheritance in PD Mode</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-mode-with-service-discovery">PD Mode with Service Discovery</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-scaling">Dynamic Scaling</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-workers">Adding Workers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-workers">Removing Workers</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance">Fault Tolerance</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retry-configuration">Retry Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-lifecycle-dynamic-scaling">Worker Lifecycle &amp; Dynamic Scaling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-flow-control">Reliability &amp; Flow Control</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retries">Retries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiter">Rate Limiter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-queuing">Rate Limiting &amp; Queuing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#routing-policies">Routing Policies</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-routing">1. Random Routing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-routing">2. Round-Robin Routing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-two-choices">3. Power of Two Choices</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-load-balancing-default">4. Cache-Aware Load Balancing (Default)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-aware-routing">Data Parallelism Aware Routing</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-balancing-policies">Load Balancing Policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#service-discovery-kubernetes">Service Discovery (Kubernetes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-authentication">Security &amp; Authentication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history-data-connectors">History &amp; Data Connectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp-advanced-tooling">MCP &amp; Advanced Tooling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-surface">API Surface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-reference">Configuration Reference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-settings">Core Settings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-routing-parameters">Cache-Aware Routing Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance-parameters">Fault Tolerance Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation-parameters">Prefill-Decode Disaggregation Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-integration">Kubernetes Integration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cors-configuration">CORS Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-tuning">Cache-Aware Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance">Fault Tolerance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode">Prefill/Decode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-discovery">Kubernetes Discovery</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-features">Advanced Features</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-service-discovery">Kubernetes Service Discovery</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-mode">Standard Mode</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation-mode">Prefill-Decode Disaggregation Mode</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prometheus-metrics">Prometheus Metrics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-tracing">Request Tracing</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Observability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode">Debug Mode</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
             </nav>
         </div>
@@ -542,353 +512,460 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sglang-router">
-<h1>SGLang Router<a class="headerlink" href="#sglang-router" title="Link to this heading">#</a></h1>
-<p>The SGLang Router is a high-performance request distribution system that routes inference requests across multiple SGLang runtime instances. It features cache-aware load balancing, fault tolerance, and support for advanced deployment patterns including data parallelism and prefill-decode disaggregation.</p>
-<section id="key-features">
-<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="sglang-model-gateway-formerly-sglang-router">
+<h1>SGLang Model Gateway (formerly SGLang Router)<a class="headerlink" href="#sglang-model-gateway-formerly-sglang-router" title="Link to this heading">#</a></h1>
+<p>SGLang Model Gateway is a high-performance model-routing gateway for large-scale LLM deployments. It centralizes worker lifecycle management, balances traffic across heterogeneous protocols (HTTP, gRPC, OpenAI-compatible), and provides enterprise-ready control over history storage, MCP tooling, and privacy-sensitive workflows. The router is deeply optimized for the SGLang serving runtime, but can route to any OpenAI-compatible backend.</p>
+<hr class="docutils" />
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#overview"><span class="std std-ref">Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#architecture"><span class="std std-ref">Architecture</span></a></p>
 <ul class="simple">
-<li><p><strong>Cache-Aware Load Balancing</strong>: Optimizes cache utilization while maintaining balanced load distribution</p></li>
-<li><p><strong>Multiple Routing Policies</strong>: Choose from random, round-robin, cache-aware, or power-of-two policies</p></li>
-<li><p><strong>Fault Tolerance</strong>: Automatic retry and circuit breaker mechanisms for resilient operation</p></li>
-<li><p><strong>Dynamic Scaling</strong>: Add or remove workers at runtime without service interruption</p></li>
-<li><p><strong>Kubernetes Integration</strong>: Native service discovery and pod management</p></li>
-<li><p><strong>Prefill-Decode Disaggregation</strong>: Support for disaggregated serving load balancing</p></li>
-<li><p><strong>Prometheus Metrics</strong>: Built-in observability and monitoring</p></li>
-<li><p><strong>Rate Limiter</strong>: Token-bucket rate limiter to shield workers from overload</p></li>
+<li><p><a class="reference internal" href="#control-plane"><span class="std std-ref">Control Plane</span></a></p></li>
+<li><p><a class="reference internal" href="#data-plane"><span class="std std-ref">Data Plane</span></a></p></li>
+<li><p>Storage &amp; Privacy</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#deployment-modes"><span class="std std-ref">Deployment Modes</span></a></p>
+<ul class="simple">
+<li><p>Co-launch Router + Workers</p></li>
+<li><p><a class="reference internal" href="#separate-launch-http"><span class="std std-ref">Separate Launch (HTTP)</span></a></p></li>
+<li><p><a class="reference internal" href="#grpc-launch"><span class="std std-ref">gRPC Launch</span></a></p></li>
+<li><p>Prefill/Decode Disaggregation</p></li>
+<li><p><a class="reference internal" href="#openai-backend-proxy"><span class="std std-ref">OpenAI Backend Proxy</span></a></p></li>
+</ul>
+</li>
+<li><p>Worker Lifecycle &amp; Dynamic Scaling</p></li>
+<li><p>Reliability &amp; Flow Control</p></li>
+<li><p><a class="reference internal" href="#load-balancing-policies"><span class="std std-ref">Load Balancing Policies</span></a></p></li>
+<li><p><a class="reference internal" href="#service-discovery-kubernetes"><span class="std std-ref">Service Discovery (Kubernetes)</span></a></p></li>
+<li><p>Security &amp; Authentication</p></li>
+<li><p>History &amp; Data Connectors</p></li>
+<li><p>MCP &amp; Advanced Tooling</p></li>
+<li><p><a class="reference internal" href="#api-surface"><span class="std std-ref">API Surface</span></a></p></li>
+<li><p><a class="reference internal" href="#configuration-reference"><span class="std std-ref">Configuration Reference</span></a></p></li>
+<li><p><a class="reference internal" href="#observability"><span class="std std-ref">Observability</span></a></p></li>
+<li><p><a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Unified control plane</strong> for registering, monitoring, and orchestrating regular, prefill, and decode workers across heterogeneous model fleets.</p></li>
+<li><p><strong>Multi-protocol data plane</strong> that routes traffic across HTTP, PD (prefill/decode), gRPC, and OpenAI-compatible backends with shared reliability primitives.</p></li>
+<li><p><strong>Industry-first gRPC pipeline</strong> with native Rust tokenization, reasoning parsers, and tool-call execution for high-throughput, OpenAI-compatible serving; supports both single-stage and PD topologies.</p></li>
+<li><p><strong>Inference Gateway Mode (<code class="docutils literal notranslate"><span class="pre">--enable-igw</span></code>)</strong> dynamically instantiates multiple router stacks (HTTP regular/PD, gRPC) and applies per-model policies for multi-tenant deployments.</p></li>
+<li><p><strong>Conversation &amp; responses connectors</strong> centralize chat history inside the router so the same context can be reused across models and MCP loops without leaking data to upstream vendors (memory, none, Oracle ATP).</p></li>
+<li><p><strong>Enterprise privacy</strong>: agentic multi-turn <code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code>, native MCP client (STDIO/HTTP/SSE/Streamable), and history storage all operate within the router boundary.</p></li>
+<li><p><strong>Reliability core</strong>: retries with jitter, worker-scoped circuit breakers, token-bucket rate limiting with queuing, background health checks, and cache-aware load monitoring.</p></li>
+<li><p><strong>Observability</strong>: Prometheus metrics, structured tracing, request ID propagation, and detailed job queue stats.</p></li>
 </ul>
 </section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sglang-router
-</pre></div>
-</div>
+<hr class="docutils" />
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+<section id="control-plane">
+<h3>Control Plane<a class="headerlink" href="#control-plane" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Worker Manager</strong> discovers capabilities (<code class="docutils literal notranslate"><span class="pre">/get_server_info</span></code>, <code class="docutils literal notranslate"><span class="pre">/get_model_info</span></code>), tracks load, and registers/removes workers in the shared registry.</p></li>
+<li><p><strong>Job Queue</strong> serializes add/remove requests and exposes status (<code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code>) so clients can track onboarding progress.</p></li>
+<li><p><strong>Load Monitor</strong> feeds cache-aware and power-of-two policies with live worker load statistics.</p></li>
+<li><p><strong>Health Checker</strong> continuously probes workers and updates readiness, circuit breaker state, and router metrics.</p></li>
+</ul>
 </section>
-<section id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
-<p>To see all available options:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span>--help<span class="w">  </span><span class="c1"># Co-launch router and workers</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span>--help<span class="w">  </span><span class="c1"># Launch router only</span>
-</pre></div>
-</div>
+<section id="data-plane">
+<h3>Data Plane<a class="headerlink" href="#data-plane" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>HTTP routers</strong> (regular &amp; PD) implement <code class="docutils literal notranslate"><span class="pre">/generate</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/chat/completions</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/completions</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/embeddings</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/rerank</span></code>, and associated admin endpoints.</p></li>
+<li><p><strong>gRPC router</strong> streams tokenized requests directly to SRT gRPC workers, running fully in Rust—tokenizer, reasoning parser, and tool parser all reside in-process. Supports both single-stage and PD routing.</p></li>
+<li><p><strong>OpenAI router</strong> proxies OpenAI-compatible endpoints to external vendors (OpenAI, xAI, etc.) while keeping chat history and multi-turn orchestration local.</p></li>
+</ul>
 </section>
+<section id="storage-privacy">
+<h3>Storage &amp; Privacy<a class="headerlink" href="#storage-privacy" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Conversation and response history is stored at the router tier (memory, none, or Oracle ATP). The same history can power multiple models or MCP loops without sending data to upstream vendors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code> agentic flows, MCP sessions, and conversation APIs share the same storage layer, enabling compliance for regulated workloads.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
 <section id="deployment-modes">
 <h2>Deployment Modes<a class="headerlink" href="#deployment-modes" title="Link to this heading">#</a></h2>
-<p>The router supports three primary deployment patterns:</p>
-<ol class="arabic simple">
-<li><p><strong>Co-launch Mode</strong>: Router and workers launch together (simplest for single-node deployments)</p></li>
-<li><p><strong>Separate Launch Mode</strong>: Router and workers launch independently (best for multi-node setups)</p></li>
-<li><p><strong>Prefill-Decode Disaggregation</strong>: Specialized mode for disaggregated serving</p></li>
-</ol>
-<section id="mode-1-co-launch-router-and-workers">
-<h3>Mode 1: Co-launch Router and Workers<a class="headerlink" href="#mode-1-co-launch-router-and-workers" title="Link to this heading">#</a></h3>
-<p>This mode launches both the router and multiple worker instances in a single command. It’s the simplest deployment option and replaces the <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code> argument of SGLang Runtime.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch router with 4 workers</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--dp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span>
-</pre></div>
-</div>
-<section id="sending-requests">
-<h4>Sending Requests<a class="headerlink" href="#sending-requests" title="Link to this heading">#</a></h4>
-<p>Once the server is ready, send requests to the router endpoint:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="c1"># Using the /generate endpoint</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30000/generate&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sampling_params&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
-        <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">100</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-
-<span class="c1"># OpenAI-compatible endpoint</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30000/v1/chat/completions&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;meta-llama/Meta-Llama-3.1-8B-Instruct&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">}]</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="mode-2-separate-launch-mode">
-<h3>Mode 2: Separate Launch Mode<a class="headerlink" href="#mode-2-separate-launch-mode" title="Link to this heading">#</a></h3>
-<p>This mode is ideal for multi-node deployments where workers run on different machines.</p>
-<section id="step-1-launch-workers">
-<h4>Step 1: Launch Workers<a class="headerlink" href="#step-1-launch-workers" title="Link to this heading">#</a></h4>
-<p>On each worker node:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Worker node 1</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span>
-
-<span class="c1"># Worker node 2</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">8001</span>
-</pre></div>
-</div>
-</section>
-<section id="step-2-launch-router">
-<h4>Step 2: Launch Router<a class="headerlink" href="#step-2-launch-router" title="Link to this heading">#</a></h4>
-<p>On the router node:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--policy<span class="w"> </span>cache_aware<span class="w">  </span><span class="c1"># or random, round_robin, power_of_two</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="mode-3-prefill-decode-disaggregation">
-<h3>Mode 3: Prefill-Decode Disaggregation<a class="headerlink" href="#mode-3-prefill-decode-disaggregation" title="Link to this heading">#</a></h3>
-<p>This advanced mode separates prefill and decode operations for optimized performance:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill<span class="w"> </span>http://prefill1:8000<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill<span class="w"> </span>http://prefill2:8001<span class="w"> </span><span class="m">9001</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode<span class="w"> </span>http://decode1:8002<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode<span class="w"> </span>http://decode2:8003<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill-policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode-policy<span class="w"> </span>round_robin
-</pre></div>
-</div>
-<section id="understanding-prefill-arguments">
-<h4>Understanding –prefill Arguments<a class="headerlink" href="#understanding-prefill-arguments" title="Link to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">--prefill</span></code> flag accepts URLs with optional bootstrap ports:</p>
+<section id="co-launch-router-workers">
+<h3>Co-launch Router + Workers<a class="headerlink" href="#co-launch-router-workers" title="Link to this heading">#</a></h3>
+<p>Launch the router and a fleet of SGLang workers in one process (ideal for single-node or quick starts). The CLI accepts two namespaces of arguments:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--prefill</span> <span class="pre">http://server:8000</span></code> - No bootstrap port</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--prefill</span> <span class="pre">http://server:8000</span> <span class="pre">9000</span></code> - Bootstrap port 9000</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--prefill</span> <span class="pre">http://server:8000</span> <span class="pre">none</span></code> - Explicitly no bootstrap port</p></li>
+<li><p><strong>Worker arguments</strong> (no prefix) configure the SGLang runtime (<code class="docutils literal notranslate"><span class="pre">--model</span></code>, <code class="docutils literal notranslate"><span class="pre">--tp-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--dp-size</span></code>, <code class="docutils literal notranslate"><span class="pre">--grpc-mode</span></code>, etc.).</p></li>
+<li><p><strong>Router arguments</strong> are prefixed with <code class="docutils literal notranslate"><span class="pre">--router-</span></code> and map directly to <code class="docutils literal notranslate"><span class="pre">launch_router</span></code> flags (<code class="docutils literal notranslate"><span class="pre">--router-policy</span></code>, <code class="docutils literal notranslate"><span class="pre">--router-model-path</span></code>, <code class="docutils literal notranslate"><span class="pre">--router-log-level</span></code>, …).</p></li>
 </ul>
-</section>
-<section id="policy-inheritance-in-pd-mode">
-<h4>Policy Inheritance in PD Mode<a class="headerlink" href="#policy-inheritance-in-pd-mode" title="Link to this heading">#</a></h4>
-<p>The router intelligently handles policy configuration for prefill and decode nodes:</p>
-<ol class="arabic simple">
-<li><p><strong>Only <code class="docutils literal notranslate"><span class="pre">--policy</span></code> specified</strong>: Both prefill and decode nodes use this policy</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">--policy</span></code> and <code class="docutils literal notranslate"><span class="pre">--prefill-policy</span></code> specified</strong>: Prefill nodes use <code class="docutils literal notranslate"><span class="pre">--prefill-policy</span></code>, decode nodes use <code class="docutils literal notranslate"><span class="pre">--policy</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">--policy</span></code> and <code class="docutils literal notranslate"><span class="pre">--decode-policy</span></code> specified</strong>: Prefill nodes use <code class="docutils literal notranslate"><span class="pre">--policy</span></code>, decode nodes use <code class="docutils literal notranslate"><span class="pre">--decode-policy</span></code></p></li>
-<li><p><strong>All three specified</strong>: Prefill nodes use <code class="docutils literal notranslate"><span class="pre">--prefill-policy</span></code>, decode nodes use <code class="docutils literal notranslate"><span class="pre">--decode-policy</span></code> (main <code class="docutils literal notranslate"><span class="pre">--policy</span></code> is ignored)</p></li>
-</ol>
-<p>Example with mixed policies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill<span class="w"> </span>http://prefill1:8000
-<span class="w">    </span>--prefill<span class="w"> </span>http://prefill2:8000<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode<span class="w"> </span>http://decode1:8001
-<span class="w">    </span>--decode<span class="w"> </span>http://decode2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--policy<span class="w"> </span>round_robin<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill-policy<span class="w"> </span>cache_aware<span class="w">  </span><span class="c1"># Prefill uses cache_aware and decode uses round_robin from --policy</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+<p>Comprehensive example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>/raid/models/meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--grpc-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--log-level<span class="w"> </span>debug<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-prometheus-port<span class="w"> </span><span class="m">10001</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-tool-call-parser<span class="w"> </span>llama<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-health-success-threshold<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-health-check-timeout-secs<span class="w"> </span><span class="m">6000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-health-check-interval-secs<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-model-path<span class="w"> </span>/raid/models/meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-policy<span class="w"> </span>round_robin<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-log-level<span class="w"> </span>debug
 </pre></div>
 </div>
 </section>
-<section id="pd-mode-with-service-discovery">
-<h4>PD Mode with Service Discovery<a class="headerlink" href="#pd-mode-with-service-discovery" title="Link to this heading">#</a></h4>
-<p>For Kubernetes deployments with separate prefill and decode server pools:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill-selector<span class="w"> </span><span class="nv">app</span><span class="o">=</span>prefill-server<span class="w"> </span><span class="nv">tier</span><span class="o">=</span>gpu<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode-selector<span class="w"> </span><span class="nv">app</span><span class="o">=</span>decode-server<span class="w"> </span><span class="nv">tier</span><span class="o">=</span>cpu<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery-namespace<span class="w"> </span>production<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill-policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode-policy<span class="w"> </span>round_robin
-</pre></div>
-</div>
-</section>
-</section>
-</section>
-<section id="dynamic-scaling">
-<h2>Dynamic Scaling<a class="headerlink" href="#dynamic-scaling" title="Link to this heading">#</a></h2>
-<p>The router supports runtime scaling through REST APIs:</p>
-<section id="adding-workers">
-<h3>Adding Workers<a class="headerlink" href="#adding-workers" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch a new worker</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">30001</span>
+<section id="separate-launch-http">
+<h3>Separate Launch (HTTP)<a class="headerlink" href="#separate-launch-http" title="Link to this heading">#</a></h3>
+<p>Run workers independently and point the router at their HTTP endpoints.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Worker nodes</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span>
 
-<span class="c1"># Add it to the router</span>
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:30000/add_worker?url=http://127.0.0.1:30001&quot;</span>
+<span class="c1"># Router node</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
 </pre></div>
 </div>
 </section>
-<section id="removing-workers">
-<h3>Removing Workers<a class="headerlink" href="#removing-workers" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:30000/remove_worker?url=http://127.0.0.1:30001&quot;</span>
+<section id="grpc-launch">
+<h3>gRPC Launch<a class="headerlink" href="#grpc-launch" title="Link to this heading">#</a></h3>
+<p>Use SRT gRPC workers to unlock the highest throughput and access native reasoning/tool pipelines.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Workers expose gRPC endpoints</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>/raid/models/meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--grpc-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">20000</span>
+
+<span class="c1"># Router</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>grpc://127.0.0.1:20000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--reasoning-parser<span class="w"> </span>deepseek-r1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tool-call-parser<span class="w"> </span>json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
 </pre></div>
 </div>
-<p><strong>Note</strong>: When using cache-aware routing, removed workers are cleanly evicted from the routing tree and request queues.</p>
+<blockquote>
+<div><p>gRPC router supports both single-stage and PD serving. Provide <code class="docutils literal notranslate"><span class="pre">--tokenizer-path</span></code> or <code class="docutils literal notranslate"><span class="pre">--model-path</span></code> (HF repo or local directory) plus optional <code class="docutils literal notranslate"><span class="pre">--chat-template</span></code>.</p>
+</div></blockquote>
 </section>
-</section>
-<section id="fault-tolerance">
-<h2>Fault Tolerance<a class="headerlink" href="#fault-tolerance" title="Link to this heading">#</a></h2>
-<p>The router includes comprehensive fault tolerance mechanisms:</p>
-<section id="retry-configuration">
-<h3>Retry Configuration<a class="headerlink" href="#retry-configuration" title="Link to this heading">#</a></h3>
+<section id="prefill-decode-disaggregation">
+<h3>Prefill/Decode Disaggregation<a class="headerlink" href="#prefill-decode-disaggregation" title="Link to this heading">#</a></h3>
+<p>Split prefill and decode workers for PD-aware caching and balancing.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--retry-max-retries<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--retry-initial-backoff-ms<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--retry-max-backoff-ms<span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--retry-backoff-multiplier<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--retry-jitter-factor<span class="w"> </span><span class="m">0</span>.1
+<span class="w">  </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prefill<span class="w"> </span>http://prefill1:30001<span class="w"> </span><span class="m">9001</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--decode<span class="w"> </span>http://decode1:30011<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prefill-policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--decode-policy<span class="w"> </span>power_of_two
+</pre></div>
+</div>
+</section>
+<section id="openai-backend-proxy">
+<h3>OpenAI Backend Proxy<a class="headerlink" href="#openai-backend-proxy" title="Link to this heading">#</a></h3>
+<p>Proxy OpenAI-compatible endpoints (OpenAI, xAI, etc.) while keeping history and MCP sessions local.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>openai<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>https://api.openai.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--api-key<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--history-backend<span class="w"> </span>memory
+</pre></div>
+</div>
+<blockquote>
+<div><p>OpenAI backend mode expects exactly one <code class="docutils literal notranslate"><span class="pre">--worker-urls</span></code> entry per router instance.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="worker-lifecycle-dynamic-scaling">
+<h2>Worker Lifecycle &amp; Dynamic Scaling<a class="headerlink" href="#worker-lifecycle-dynamic-scaling" title="Link to this heading">#</a></h2>
+<p>Add or remove workers at runtime using the REST APIs. Jobs are queued and tracked for eventual consistency.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a worker (HTTP or gRPC)</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/workers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;url&quot;:&quot;grpc://0.0.0.0:31000&quot;,&quot;worker_type&quot;:&quot;regular&quot;}&#39;</span>
+
+<span class="c1"># Inspect registry</span>
+curl<span class="w"> </span>http://localhost:30000/workers<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+
+<span class="c1"># Remove a worker</span>
+curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:30000/workers/grpc://0.0.0.0:31000
+</pre></div>
+</div>
+<p>Legacy endpoints (<code class="docutils literal notranslate"><span class="pre">/add_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/remove_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/list_workers</span></code>) remain available but will be deprecated. <code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code> returns both registry data and queued job status.</p>
+</section>
+<hr class="docutils" />
+<section id="reliability-flow-control">
+<h2>Reliability &amp; Flow Control<a class="headerlink" href="#reliability-flow-control" title="Link to this heading">#</a></h2>
+<section id="retries">
+<h3>Retries<a class="headerlink" href="#retries" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--retry-max-retries<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--retry-initial-backoff-ms<span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--retry-max-backoff-ms<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--retry-backoff-multiplier<span class="w"> </span><span class="m">1</span>.5<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--retry-jitter-factor<span class="w"> </span><span class="m">0</span>.2
 </pre></div>
 </div>
 </section>
 <section id="circuit-breaker">
 <h3>Circuit Breaker<a class="headerlink" href="#circuit-breaker" title="Link to this heading">#</a></h3>
-<p>Protects against cascading failures:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--cb-failure-threshold<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--cb-success-threshold<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--cb-timeout-duration-secs<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--cb-window-duration-secs<span class="w"> </span><span class="m">60</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cb-failure-threshold<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cb-success-threshold<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cb-timeout-duration-secs<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cb-window-duration-secs<span class="w"> </span><span class="m">60</span>
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart TD
-    Closed([&quot;Closed&quot;])
-    Open([&quot;Open&quot;])
-    HalfOpen([&quot;HalfOpen&quot;])
-
-    Closed -- &quot;Consecutive Failures &gt;=&lt;br/&gt;cb-failure-threshold&quot; --&gt; Open;
-    Closed --&gt; HalfOpen;
-    linkStyle 1 stroke:transparent;
-    Open -- &quot;After cb-timeout-duration-secs&quot; --&gt; HalfOpen;
-    HalfOpen -- &quot;Fail any test request&quot; --&gt; Open;
-    HalfOpen -- &quot;After cb-success-threshold&lt;br/&gt;test requests&quot; --&gt; Closed;
-    Closed -- &quot;Failures &lt; cb-failure-threshold&quot; --&gt; Closed;
-    style Closed fill:#00C853,color:#000000
-    style Open fill:#D50000,color:#000000
-    style HalfOpen fill:#FFD600,color:#000000
-    linkStyle 1 stroke:transparent,fill:none
-</pre></div>
-</div>
-<p><strong>Behavior</strong>:</p>
-<ul class="simple">
-<li><p>Worker is marked unhealthy after <code class="docutils literal notranslate"><span class="pre">cb-failure-threshold</span></code> consecutive failures</p></li>
-<li><p>Returns to service after <code class="docutils literal notranslate"><span class="pre">cb-success-threshold</span></code> successful health checks</p></li>
-<li><p>Circuit breaker can be disabled with <code class="docutils literal notranslate"><span class="pre">--disable-circuit-breaker</span></code></p></li>
-</ul>
 </section>
-<section id="rate-limiter">
-<h3>Rate Limiter<a class="headerlink" href="#rate-limiter" title="Link to this heading">#</a></h3>
-<p>Use the token-bucket rate limiter to cap requests before they overwhelm downstream workers.</p>
-<ul class="simple">
-<li><p>Enable rate limiting by setting <code class="docutils literal notranslate"><span class="pre">--max-concurrent-requests</span></code> to a positive integer. A bucket with that many tokens (concurrent leases) is created; <code class="docutils literal notranslate"><span class="pre">-1</span></code> keeps it disabled.</p></li>
-<li><p>Optionally override the refill rate with <code class="docutils literal notranslate"><span class="pre">--rate-limit-tokens-per-second</span></code>. If omitted, the refill rate matches <code class="docutils literal notranslate"><span class="pre">max-concurrent-requests</span></code>.</p></li>
-<li><p>Overflow traffic can wait in a FIFO queue controlled by:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">--queue-size</span></code>: pending-request buffer (0 disables queuing; defaults to 100).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--queue-timeout-secs</span></code>: maximum wait time for queued requests before returning <code class="docutils literal notranslate"><span class="pre">429</span></code> (defaults to 60 seconds).</p></li>
-</ul>
-</li>
-</ul>
-<p>Example:</p>
+<section id="rate-limiting-queuing">
+<h3>Rate Limiting &amp; Queuing<a class="headerlink" href="#rate-limiting-queuing" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--max-concurrent-requests<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--rate-limit-tokens-per-second<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--queue-size<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--queue-timeout-secs<span class="w"> </span><span class="m">30</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-concurrent-requests<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rate-limit-tokens-per-second<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--queue-size<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--queue-timeout-secs<span class="w"> </span><span class="m">30</span>
 </pre></div>
 </div>
-<p><strong>Behavior</strong>:</p>
-<p>This configuration allows up to 256 concurrent requests, refills 512 tokens (requests) per second, and keeps up to 128 overflow requests queued for 30 seconds before timing out.</p>
-<p><strong>Responses</strong>:</p>
-<ul class="simple">
-<li><p>Returns <strong>429</strong> when the router cannot enqueue the request (queue disabled or full).</p></li>
-<li><p>Returns <strong>408</strong> when a queued request waits longer than <code class="docutils literal notranslate"><span class="pre">--queue-timeout-secs</span></code> or no token becomes available before the timeout.</p></li>
-</ul>
+<p>Requests beyond the concurrency limit wait in a FIFO queue (up to <code class="docutils literal notranslate"><span class="pre">queue-size</span></code>). A <code class="docutils literal notranslate"><span class="pre">429</span></code> is returned when the queue is full; <code class="docutils literal notranslate"><span class="pre">408</span></code> is returned when <code class="docutils literal notranslate"><span class="pre">queue-timeout-secs</span></code> expires.</p>
 </section>
 </section>
-<section id="routing-policies">
-<h2>Routing Policies<a class="headerlink" href="#routing-policies" title="Link to this heading">#</a></h2>
-<p>The router supports multiple routing strategies:</p>
-<section id="random-routing">
-<h3>1. Random Routing<a class="headerlink" href="#random-routing" title="Link to this heading">#</a></h3>
-<p>Distributes requests randomly across workers.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--policy<span class="w"> </span>random
-</pre></div>
+<hr class="docutils" />
+<section id="load-balancing-policies">
+<h2>Load Balancing Policies<a class="headerlink" href="#load-balancing-policies" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Policy</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">random</span></code></p></td>
+<td><p>Uniform random selection.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--policy</span> <span class="pre">random</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">round_robin</span></code></p></td>
+<td><p>Cycles through workers in order.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--policy</span> <span class="pre">round_robin</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">power_of_two</span></code></p></td>
+<td><p>Samples two workers and picks the lighter one (requires Load Monitor).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--policy</span> <span class="pre">power_of_two</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cache_aware</span></code></p></td>
+<td><p>Default policy; combines cache locality with load balancing, falling back to shortest queue.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--policy</span> <span class="pre">cache_aware</span></code> + tuning flags</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</section>
-<section id="round-robin-routing">
-<h3>2. Round-Robin Routing<a class="headerlink" href="#round-robin-routing" title="Link to this heading">#</a></h3>
-<p>Cycles through workers in order.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--policy<span class="w"> </span>round_robin
-</pre></div>
-</div>
-</section>
-<section id="power-of-two-choices">
-<h3>3. Power of Two Choices<a class="headerlink" href="#power-of-two-choices" title="Link to this heading">#</a></h3>
-<p>Samples two workers and routes to the less loaded one.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--policy<span class="w"> </span>power_of_two
-</pre></div>
-</div>
-</section>
-<section id="cache-aware-load-balancing-default">
-<h3>4. Cache-Aware Load Balancing (Default)<a class="headerlink" href="#cache-aware-load-balancing-default" title="Link to this heading">#</a></h3>
-<p>The most sophisticated policy that combines cache optimization with load balancing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
---cache-threshold<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
+<p>Key tuning flags:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--cache-threshold<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
 --balance-abs-threshold<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
---balance-rel-threshold<span class="w"> </span><span class="m">1</span>.0001
+--balance-rel-threshold<span class="w"> </span><span class="m">1</span>.5<span class="w"> </span><span class="se">\</span>
+--eviction-interval-secs<span class="w"> </span><span class="m">120</span><span class="w"> </span><span class="se">\</span>
+--max-tree-size<span class="w"> </span><span class="m">67108864</span>
 </pre></div>
 </div>
-<section id="how-it-works">
-<h4>How It Works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p><strong>Load Assessment</strong>: Checks if the system is balanced</p>
-<ul class="simple">
-<li><p>Imbalanced if: <code class="docutils literal notranslate"><span class="pre">(max_load</span> <span class="pre">-</span> <span class="pre">min_load)</span> <span class="pre">&gt;</span> <span class="pre">balance_abs_threshold</span></code> AND <code class="docutils literal notranslate"><span class="pre">max_load</span> <span class="pre">&gt;</span> <span class="pre">balance_rel_threshold</span> <span class="pre">*</span> <span class="pre">min_load</span></code></p></li>
-</ul>
-</li>
-<li><p><strong>Routing Decision</strong>:</p>
-<ul class="simple">
-<li><p><strong>Balanced System</strong>: Uses cache-aware routing</p>
+</section>
+<hr class="docutils" />
+<section id="service-discovery-kubernetes">
+<h2>Service Discovery (Kubernetes)<a class="headerlink" href="#service-discovery-kubernetes" title="Link to this heading">#</a></h2>
+<p>Enable automatic worker discovery via Kubernetes pod selectors.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--service-discovery<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--selector<span class="w"> </span><span class="nv">app</span><span class="o">=</span>sglang-worker<span class="w"> </span><span class="nv">role</span><span class="o">=</span>inference<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--service-discovery-namespace<span class="w"> </span>production<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--service-discovery-port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+<p>PD deployments can specify <code class="docutils literal notranslate"><span class="pre">--prefill-selector</span></code> and <code class="docutils literal notranslate"><span class="pre">--decode-selector</span></code> plus the <code class="docutils literal notranslate"><span class="pre">sglang.ai/bootstrap-port</span></code> annotation for prefill bootstrap ports. Ensure RBAC grants <code class="docutils literal notranslate"><span class="pre">get/list/watch</span></code> on pods.</p>
+</section>
+<hr class="docutils" />
+<section id="security-authentication">
+<h2>Security &amp; Authentication<a class="headerlink" href="#security-authentication" title="Link to this heading">#</a></h2>
 <ul>
-<li><p>Routes to worker with highest prefix match if match &gt; <code class="docutils literal notranslate"><span class="pre">cache_threshold</span></code></p></li>
-<li><p>Otherwise routes to worker with most available cache capacity</p></li>
-</ul>
-</li>
-<li><p><strong>Imbalanced System</strong>: Uses shortest queue routing to the least busy worker</p></li>
-</ul>
-</li>
-<li><p><strong>Cache Management</strong>:</p>
-<ul class="simple">
-<li><p>Maintains approximate radix trees per worker</p></li>
-<li><p>Periodically evicts LRU entries based on <code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code> and <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code></p></li>
-</ul>
-</li>
-</ol>
-</section>
-</section>
-<section id="data-parallelism-aware-routing">
-<h3>Data Parallelism Aware Routing<a class="headerlink" href="#data-parallelism-aware-routing" title="Link to this heading">#</a></h3>
-<p>Enables fine-grained control over data parallel replicas:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--dp-aware<span class="w"> </span><span class="se">\</span>
---api-key<span class="w"> </span>your_api_key<span class="w">  </span><span class="c1"># Required for worker authentication</span>
+<li><p><strong>Router API key (<code class="docutils literal notranslate"><span class="pre">--api-key</span></code>)</strong>: clients must supply <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">&lt;key&gt;</span></code>.</p></li>
+<li><p><strong>Worker API keys</strong>: when adding workers dynamically, include <code class="docutils literal notranslate"><span class="pre">api_key</span></code> in the payload; workers listed via CLI inherit the router key.</p></li>
+<li><p><strong>Full-stack auth</strong>: start router with <code class="docutils literal notranslate"><span class="pre">--api-key</span></code>, then add workers with their own keys:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer router-key&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:30000/workers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;url&quot;:&quot;http://worker:8000&quot;,&quot;api_key&quot;:&quot;worker-key&quot;}&#39;</span>
 </pre></div>
 </div>
-<p>This mode coordinates with SGLang’s DP controller for optimized request distribution across data parallel ranks.</p>
+</li>
+<li><p><strong>Privacy</strong>: All conversation history, <code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code> state, and MCP sessions stay inside the router. Nothing is persisted at remote model vendors unless explicitly proxied.</p></li>
+</ul>
 </section>
+<hr class="docutils" />
+<section id="history-data-connectors">
+<h2>History &amp; Data Connectors<a class="headerlink" href="#history-data-connectors" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Backend</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">memory</span></code> (default)</p></td>
+<td><p>In-memory storage for quick prototyping.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--history-backend</span> <span class="pre">memory</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
+<td><p>No persistence; APIs operate but store nothing.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--history-backend</span> <span class="pre">none</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">oracle</span></code></p></td>
+<td><p>Oracle Autonomous Database-backed storage (pooled connections).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--history-backend</span> <span class="pre">oracle</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Oracle configuration (choose DSN <em>or</em> TNS alias):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ATP_DSN</span><span class="o">=</span><span class="s2">&quot;tcps://host:port/service&quot;</span><span class="w">  </span><span class="c1"># or use ATP_TNS_ALIAS + ATP_WALLET_PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_USER</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_PASSWORD</span><span class="o">=</span><span class="s2">&quot;secret&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_POOL_MIN</span><span class="o">=</span><span class="m">4</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_POOL_MAX</span><span class="o">=</span><span class="m">32</span>
+
+python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>openai<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>https://api.openai.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--history-backend<span class="w"> </span>oracle
+</pre></div>
+</div>
+<blockquote>
+<div><p>History backends currently apply to OpenAI router mode. gRPC parity for <code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code> is on the roadmap.</p>
+</div></blockquote>
 </section>
+<hr class="docutils" />
+<section id="mcp-advanced-tooling">
+<h2>MCP &amp; Advanced Tooling<a class="headerlink" href="#mcp-advanced-tooling" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Native MCP client supports <strong>STDIO</strong>, <strong>HTTP</strong>, <strong>SSE</strong>, and <strong>Streamable</strong> transports—no external config files required.</p></li>
+<li><p>Tool-call parsers cover JSON, Pythonic, XML, and custom schemas with streaming/non-streaming execution loops.</p></li>
+<li><p>Reasoning parsers ship for DeepSeek-R1, Qwen3, Step-3, GLM4, Llama families, Kimi K2, GPT-OSS, Mistral, and more (<code class="docutils literal notranslate"><span class="pre">src/reasoning_parser</span></code>).</p></li>
+<li><p>Tokenizer factory accepts HuggingFace IDs, local directories, and explicit <code class="docutils literal notranslate"><span class="pre">tokenizer.json</span></code> files with chat template overrides (<code class="docutils literal notranslate"><span class="pre">src/tokenizer</span></code>).</p></li>
+</ul>
+<p>Use CLI flags to select parsers:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--reasoning-parser<span class="w"> </span>deepseek-r1<span class="w"> </span><span class="se">\</span>
+--tool-call-parser<span class="w"> </span>json<span class="w"> </span><span class="se">\</span>
+--chat-template<span class="w"> </span>/path/to/template.json
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="api-surface">
+<h2>API Surface<a class="headerlink" href="#api-surface" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/generate</span></code></p></td>
+<td><p>SGLang generate API.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/chat/completions</span></code></p></td>
+<td><p>OpenAI-compatible chat (streaming/tool calls).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/completions</span></code></p></td>
+<td><p>OpenAI-compatible text completions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code></p></td>
+<td><p>Create background responses (agentic loops).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/responses/{id}</span></code></p></td>
+<td><p>Retrieve stored responses.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/responses/{id}/input</span></code></p></td>
+<td><p>List captured input items.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/embeddings</span></code></p></td>
+<td><p>Forward embedding requests.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/rerank</span></code></p></td>
+<td><p>Ranking endpoint (<code class="docutils literal notranslate"><span class="pre">/rerank</span></code> synonym).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations</span></code></p></td>
+<td><p>Create conversation metadata.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">POST</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations/{id}</span></code></p></td>
+<td><p>Get/update/delete conversation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations/{id}/items</span></code></p></td>
+<td><p>List or append conversation items.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations/{id}/items/{item_id}</span></code></p></td>
+<td><p>Inspect/delete conversation item.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/workers</span></code></p></td>
+<td><p>List registered workers with health/load.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/workers</span></code></p></td>
+<td><p>Queue worker registration.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code></p></td>
+<td><p>Queue worker removal.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/flush_cache</span></code></p></td>
+<td><p>Flush worker caches (HTTP workers).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/get_loads</span></code></p></td>
+<td><p>Retrieve worker load snapshot.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/liveness</span></code> / <code class="docutils literal notranslate"><span class="pre">/readiness</span></code> / <code class="docutils literal notranslate"><span class="pre">/health</span></code></p></td>
+<td><p>Health probes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
 <section id="configuration-reference">
 <h2>Configuration Reference<a class="headerlink" href="#configuration-reference" title="Link to this heading">#</a></h2>
 <section id="core-settings">
@@ -905,44 +982,44 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--host</span></code></p></td>
 <td><p>str</p></td>
 <td><p>127.0.0.1</p></td>
-<td><p>Router server host address</p></td>
+<td><p>Router host.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--port</span></code></p></td>
 <td><p>int</p></td>
 <td><p>30000</p></td>
-<td><p>Router server port</p></td>
+<td><p>Router port.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--worker-urls</span></code></p></td>
 <td><p>list</p></td>
 <td><p>[]</p></td>
-<td><p>Worker URLs for separate launch mode</p></td>
+<td><p>Worker URLs (HTTP or gRPC).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--policy</span></code></p></td>
 <td><p>str</p></td>
 <td><p>cache_aware</p></td>
-<td><p>Routing policy (random, round_robin, cache_aware, power_of_two)</p></td>
+<td><p>Routing policy (<code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">round_robin</span></code>, <code class="docutils literal notranslate"><span class="pre">cache_aware</span></code>, <code class="docutils literal notranslate"><span class="pre">power_of_two</span></code>).</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-concurrent-requests</span></code></p></td>
 <td><p>int</p></td>
-<td><p>64</p></td>
-<td><p>Maximum concurrent requests (rate limiting)</p></td>
+<td><p>-1</p></td>
+<td><p>Concurrency limit (-1 disables rate limiting).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--request-timeout-secs</span></code></p></td>
 <td><p>int</p></td>
 <td><p>600</p></td>
-<td><p>Request timeout in seconds</p></td>
+<td><p>Request timeout.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-payload-size</span></code></p></td>
 <td><p>int</p></td>
 <td><p>256MB</p></td>
-<td><p>Maximum request payload size</p></td>
+<td><p>Maximum request payload.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="cache-aware-routing-parameters">
-<h3>Cache-Aware Routing Parameters<a class="headerlink" href="#cache-aware-routing-parameters" title="Link to this heading">#</a></h3>
+<section id="cache-aware-tuning">
+<h3>Cache-Aware Tuning<a class="headerlink" href="#cache-aware-tuning" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -954,35 +1031,35 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--cache-threshold</span></code></p></td>
 <td><p>float</p></td>
-<td><p>0.5</p></td>
-<td><p>Minimum prefix match ratio for cache routing (0.0-1.0)</p></td>
+<td><p>0.3</p></td>
+<td><p>Minimum prefix match ratio.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--balance-abs-threshold</span></code></p></td>
 <td><p>int</p></td>
-<td><p>32</p></td>
-<td><p>Absolute load difference threshold</p></td>
+<td><p>64</p></td>
+<td><p>Absolute load threshold.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--balance-rel-threshold</span></code></p></td>
 <td><p>float</p></td>
-<td><p>1.0001</p></td>
-<td><p>Relative load ratio threshold</p></td>
+<td><p>1.5</p></td>
+<td><p>Relative load ratio.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code></p></td>
 <td><p>int</p></td>
-<td><p>60</p></td>
-<td><p>Seconds between cache eviction cycles</p></td>
+<td><p>120</p></td>
+<td><p>Cache eviction cadence.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code></p></td>
 <td><p>int</p></td>
-<td><p>16777216</p></td>
-<td><p>Maximum nodes in routing tree</p></td>
+<td><p>67108864</p></td>
+<td><p>Max nodes in cache tree.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="fault-tolerance-parameters">
-<h3>Fault Tolerance Parameters<a class="headerlink" href="#fault-tolerance-parameters" title="Link to this heading">#</a></h3>
+<section id="fault-tolerance">
+<h3>Fault Tolerance<a class="headerlink" href="#fault-tolerance" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -994,65 +1071,65 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--retry-max-retries</span></code></p></td>
 <td><p>int</p></td>
-<td><p>3</p></td>
-<td><p>Maximum retry attempts per request</p></td>
+<td><p>5</p></td>
+<td><p>Max retries.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--retry-initial-backoff-ms</span></code></p></td>
 <td><p>int</p></td>
-<td><p>100</p></td>
-<td><p>Initial retry backoff in milliseconds</p></td>
+<td><p>50</p></td>
+<td><p>Initial backoff (ms).</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--retry-max-backoff-ms</span></code></p></td>
 <td><p>int</p></td>
-<td><p>10000</p></td>
-<td><p>Maximum retry backoff in milliseconds</p></td>
+<td><p>30000</p></td>
+<td><p>Max backoff (ms).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--retry-backoff-multiplier</span></code></p></td>
 <td><p>float</p></td>
-<td><p>2.0</p></td>
-<td><p>Backoff multiplier between retries</p></td>
+<td><p>1.5</p></td>
+<td><p>Backoff multiplier.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--retry-jitter-factor</span></code></p></td>
 <td><p>float</p></td>
-<td><p>0.1</p></td>
-<td><p>Random jitter factor for retries</p></td>
+<td><p>0.2</p></td>
+<td><p>Retry jitter (0.0-1.0).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-retries</span></code></p></td>
 <td><p>flag</p></td>
 <td><p>False</p></td>
-<td><p>Disable retry mechanism</p></td>
+<td><p>Disable retries.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--cb-failure-threshold</span></code></p></td>
 <td><p>int</p></td>
 <td><p>5</p></td>
-<td><p>Failures before circuit opens</p></td>
+<td><p>Failures before opening circuit.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--cb-success-threshold</span></code></p></td>
 <td><p>int</p></td>
 <td><p>2</p></td>
-<td><p>Successes to close circuit</p></td>
+<td><p>Successes to close circuit.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--cb-timeout-duration-secs</span></code></p></td>
 <td><p>int</p></td>
 <td><p>30</p></td>
-<td><p>Circuit breaker timeout duration</p></td>
+<td><p>Cooldown period.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--cb-window-duration-secs</span></code></p></td>
 <td><p>int</p></td>
 <td><p>60</p></td>
-<td><p>Circuit breaker window duration</p></td>
+<td><p>Window size.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-circuit-breaker</span></code></p></td>
 <td><p>flag</p></td>
 <td><p>False</p></td>
-<td><p>Disable circuit breaker</p></td>
+<td><p>Disable circuit breaker.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="prefill-decode-disaggregation-parameters">
-<h3>Prefill-Decode Disaggregation Parameters<a class="headerlink" href="#prefill-decode-disaggregation-parameters" title="Link to this heading">#</a></h3>
+<section id="prefill-decode">
+<h3>Prefill/Decode<a class="headerlink" href="#prefill-decode" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -1065,273 +1142,159 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--pd-disaggregation</span></code></p></td>
 <td><p>flag</p></td>
 <td><p>False</p></td>
-<td><p>Enable PD disaggregated mode</p></td>
+<td><p>Enable PD mode.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill</span></code></p></td>
 <td><p>list</p></td>
 <td><p>[]</p></td>
-<td><p>Prefill server URLs with optional bootstrap ports</p></td>
+<td><p>Prefill URLs + optional bootstrap ports.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--decode</span></code></p></td>
 <td><p>list</p></td>
 <td><p>[]</p></td>
-<td><p>Decode server URLs</p></td>
+<td><p>Decode URLs.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-policy</span></code></p></td>
 <td><p>str</p></td>
 <td><p>None</p></td>
-<td><p>Routing policy for prefill nodes (overrides –policy)</p></td>
+<td><p>Override policy for prefill nodes.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--decode-policy</span></code></p></td>
 <td><p>str</p></td>
 <td><p>None</p></td>
-<td><p>Routing policy for decode nodes (overrides –policy)</p></td>
+<td><p>Override policy for decode nodes.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--worker-startup-timeout-secs</span></code></p></td>
 <td><p>int</p></td>
-<td><p>300</p></td>
-<td><p>Timeout for worker startup</p></td>
+<td><p>600</p></td>
+<td><p>Worker init timeout.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--worker-startup-check-interval</span></code></p></td>
 <td><p>int</p></td>
-<td><p>10</p></td>
-<td><p>Interval between startup checks</p></td>
+<td><p>30</p></td>
+<td><p>Polling interval.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="kubernetes-integration">
-<h3>Kubernetes Integration<a class="headerlink" href="#kubernetes-integration" title="Link to this heading">#</a></h3>
+<section id="kubernetes-discovery">
+<h3>Kubernetes Discovery<a class="headerlink" href="#kubernetes-discovery" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Type</p></th>
-<th class="head"><p>Default</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--service-discovery</span></code></p></td>
 <td><p>flag</p></td>
-<td><p>False</p></td>
-<td><p>Enable Kubernetes service discovery</p></td>
+<td><p>Enable discovery.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--selector</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--selector</span> <span class="pre">key=value</span> <span class="pre">...</span></code></p></td>
 <td><p>list</p></td>
-<td><p>[]</p></td>
-<td><p>Label selector for workers (key1=value1 key2=value2)</p></td>
+<td><p>Label selectors (regular mode).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-selector</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--prefill-selector</span></code> / <code class="docutils literal notranslate"><span class="pre">--decode-selector</span></code></p></td>
 <td><p>list</p></td>
-<td><p>[]</p></td>
-<td><p>Label selector for prefill servers in PD mode</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--decode-selector</span></code></p></td>
-<td><p>list</p></td>
-<td><p>[]</p></td>
-<td><p>Label selector for decode servers in PD mode</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--service-discovery-port</span></code></p></td>
-<td><p>int</p></td>
-<td><p>80</p></td>
-<td><p>Port for discovered pods</p></td>
+<td><p>Label selectors for PD mode.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--service-discovery-namespace</span></code></p></td>
 <td><p>str</p></td>
-<td><p>None</p></td>
-<td><p>Kubernetes namespace to watch</p></td>
+<td><p>Namespace to watch.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--bootstrap-port-annotation</span></code></p></td>
-<td><p>str</p></td>
-<td><p>sglang.ai/bootstrap-port</p></td>
-<td><p>Annotation for bootstrap ports</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="observability">
-<h3>Observability<a class="headerlink" href="#observability" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Default</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--prometheus-port</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--service-discovery-port</span></code></p></td>
 <td><p>int</p></td>
-<td><p>29000</p></td>
-<td><p>Prometheus metrics port</p></td>
+<td><p>Worker port (default 80).</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prometheus-host</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--bootstrap-port-annotation</span></code></p></td>
 <td><p>str</p></td>
-<td><p>127.0.0.1</p></td>
-<td><p>Prometheus metrics host</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--log-dir</span></code></p></td>
-<td><p>str</p></td>
-<td><p>None</p></td>
-<td><p>Directory for log files</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--log-level</span></code></p></td>
-<td><p>str</p></td>
-<td><p>info</p></td>
-<td><p>Logging level (debug, info, warning, error, critical)</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--request-id-headers</span></code></p></td>
-<td><p>list</p></td>
-<td><p>None</p></td>
-<td><p>Custom headers for request tracing</p></td>
+<td><p>Prefill bootstrap annotation (default <code class="docutils literal notranslate"><span class="pre">sglang.ai/bootstrap-port</span></code>).</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="cors-configuration">
-<h3>CORS Configuration<a class="headerlink" href="#cors-configuration" title="Link to this heading">#</a></h3>
+</section>
+<hr class="docutils" />
+<section id="observability">
+<h2>Observability<a class="headerlink" href="#observability" title="Link to this heading">#</a></h2>
+<p>Enable Prometheus metrics:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prometheus-host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prometheus-port<span class="w"> </span><span class="m">29000</span>
+</pre></div>
+</div>
+<p>Key metrics:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
 <th class="head"><p>Type</p></th>
-<th class="head"><p>Default</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--cors-allowed-origins</span></code></p></td>
-<td><p>list</p></td>
-<td><p>[]</p></td>
-<td><p>Allowed CORS origins</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sgl_router_requests_total</span></code></p></td>
+<td><p>Counter</p></td>
+<td><p>Total requests by endpoint/method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sgl_router_processed_requests_total</span></code></p></td>
+<td><p>Counter</p></td>
+<td><p>Requests processed per worker.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sgl_router_active_workers</span></code></p></td>
+<td><p>Gauge</p></td>
+<td><p>Healthy worker count.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sgl_router_running_requests</span></code></p></td>
+<td><p>Gauge</p></td>
+<td><p>In-flight requests per worker.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sgl_router_cache_hits_total</span></code> / <code class="docutils literal notranslate"><span class="pre">misses_total</span></code></p></td>
+<td><p>Counter</p></td>
+<td><p>Cache-aware routing hits/misses.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sgl_router_generate_duration_seconds</span></code></p></td>
+<td><p>Histogram</p></td>
+<td><p>Request latency distribution.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-</section>
-<section id="advanced-features">
-<h2>Advanced Features<a class="headerlink" href="#advanced-features" title="Link to this heading">#</a></h2>
-<section id="kubernetes-service-discovery">
-<h3>Kubernetes Service Discovery<a class="headerlink" href="#kubernetes-service-discovery" title="Link to this heading">#</a></h3>
-<p>Automatically discover and manage workers in Kubernetes:</p>
-<section id="standard-mode">
-<h4>Standard Mode<a class="headerlink" href="#standard-mode" title="Link to this heading">#</a></h4>
+<p>Enable request ID propagation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--selector<span class="w"> </span><span class="nv">app</span><span class="o">=</span>sglang-worker<span class="w"> </span><span class="nv">env</span><span class="o">=</span>prod<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery-namespace<span class="w"> </span>production<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery-port<span class="w"> </span><span class="m">8000</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--request-id-headers<span class="w"> </span>x-request-id<span class="w"> </span>x-trace-id
 </pre></div>
 </div>
 </section>
-<section id="prefill-decode-disaggregation-mode">
-<h4>Prefill-Decode Disaggregation Mode<a class="headerlink" href="#prefill-decode-disaggregation-mode" title="Link to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prefill-selector<span class="w"> </span><span class="nv">app</span><span class="o">=</span>prefill-server<span class="w"> </span><span class="nv">env</span><span class="o">=</span>prod<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--decode-selector<span class="w"> </span><span class="nv">app</span><span class="o">=</span>decode-server<span class="w"> </span><span class="nv">env</span><span class="o">=</span>prod<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-discovery-namespace<span class="w"> </span>production
-</pre></div>
-</div>
-<p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">--bootstrap-port-annotation</span></code> (default: <code class="docutils literal notranslate"><span class="pre">sglang.ai/bootstrap-port</span></code>) is used to discover bootstrap ports for prefill servers in PD mode. Prefill pods should have this annotation set to their bootstrap port value.</p>
-</section>
-</section>
-<section id="prometheus-metrics">
-<h3>Prometheus Metrics<a class="headerlink" href="#prometheus-metrics" title="Link to this heading">#</a></h3>
-<p>Expose metrics for monitoring:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prometheus-port<span class="w"> </span><span class="m">29000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--prometheus-host<span class="w"> </span><span class="m">0</span>.0.0.0
-</pre></div>
-</div>
-<p>Metrics available at <code class="docutils literal notranslate"><span class="pre">http://localhost:29000/metrics</span></code></p>
-</section>
-<section id="request-tracing">
-<h3>Request Tracing<a class="headerlink" href="#request-tracing" title="Link to this heading">#</a></h3>
-<p>Enable request ID tracking:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--request-id-headers<span class="w"> </span>x-request-id<span class="w"> </span>x-trace-id
-</pre></div>
-</div>
-</section>
-</section>
-<section id="id1">
-<h2>Observability<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>When Prometheus is enabled, the router provides several key metrics for observability.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Metric Name</p></th>
-<th class="head text-left"><p>Type</p></th>
-<th class="head text-left"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_requests_total</span></code></p></td>
-<td class="text-left"><p>Counter</p></td>
-<td class="text-left"><p>Total number of requests received by the router’s API endpoint. Useful for tracking overall traffic.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_processed_requests_total</span></code></p></td>
-<td class="text-left"><p>Counter</p></td>
-<td class="text-left"><p>Total requests processed, labeled by <code class="docutils literal notranslate"><span class="pre">worker</span></code>. Critical for spotting load imbalances.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_active_workers</span></code></p></td>
-<td class="text-left"><p>Gauge</p></td>
-<td class="text-left"><p>The current number of healthy workers in the routing pool. Essential for alerting.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_running_requests</span></code></p></td>
-<td class="text-left"><p>Gauge</p></td>
-<td class="text-left"><p>The number of currently in-flight requests, labeled by <code class="docutils literal notranslate"><span class="pre">worker</span></code>. For monitoring real-time load.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_cache_hits_total</span></code></p></td>
-<td class="text-left"><p>Counter</p></td>
-<td class="text-left"><p>Total requests routed to a worker with a matching prefix cache.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_cache_misses_total</span></code></p></td>
-<td class="text-left"><p>Counter</p></td>
-<td class="text-left"><p>Total requests that could not be routed based on cache locality.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sgl_router_generate_duration_seconds</span></code></p></td>
-<td class="text-left"><p>Histogram</p></td>
-<td class="text-left"><p>Tracks end-to-end request latency. Use this to monitor performance (e.g., p95/p99).</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
+<hr class="docutils" />
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
-<section id="common-issues">
-<h3>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Workers not connecting</strong>: Ensure workers are fully initialized before starting the router. Use <code class="docutils literal notranslate"><span class="pre">--worker-startup-timeout-secs</span></code> to increase wait time.</p></li>
-<li><p><strong>High latency</strong>:</p>
-<ul class="simple">
-<li><p><strong>A common cause</strong>: Load Imbalanced.</p></li>
-<li><p>Check the <code class="docutils literal notranslate"><span class="pre">sgl_router_processed_requests_total</span></code> metric grouped by <code class="docutils literal notranslate"><span class="pre">worker</span></code>.</p></li>
-<li><p>Cache-aware routing might be prioritizing cache hits too aggressively.</p></li>
-<li><p>Try adjusting <code class="docutils literal notranslate"><span class="pre">--balance-abs-threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">--balance-rel-threshold</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Memory growth</strong>: Reduce <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code> or decrease <code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code> for more aggressive cache cleanup.</p></li>
-<li><p><strong>Circuit breaker triggering frequently</strong>: Increase <code class="docutils literal notranslate"><span class="pre">--cb-failure-threshold</span></code> or extend <code class="docutils literal notranslate"><span class="pre">--cb-window-duration-secs</span></code>.</p></li>
-</ol>
-</section>
-<section id="debug-mode">
-<h3>Debug Mode<a class="headerlink" href="#debug-mode" title="Link to this heading">#</a></h3>
-<p>Enable detailed logging:</p>
+<ol class="arabic">
+<li><p><strong>Workers never ready</strong>
+Increase <code class="docutils literal notranslate"><span class="pre">--worker-startup-timeout-secs</span></code> or ensure health probes respond before router startup.</p></li>
+<li><p><strong>Load imbalance / hot workers</strong>
+Inspect <code class="docutils literal notranslate"><span class="pre">sgl_router_processed_requests_total</span></code> and tune cache-aware thresholds (<code class="docutils literal notranslate"><span class="pre">--balance-*</span></code>, <code class="docutils literal notranslate"><span class="pre">--cache-threshold</span></code>).</p></li>
+<li><p><strong>Circuit breaker flapping</strong>
+Increase <code class="docutils literal notranslate"><span class="pre">--cb-failure-threshold</span></code> or extend the timeout/window durations. Consider temporarily disabling retries.</p></li>
+<li><p><strong>Queue overflow (429)</strong>
+Increase <code class="docutils literal notranslate"><span class="pre">--queue-size</span></code> or reduce client concurrency. Ensure <code class="docutils literal notranslate"><span class="pre">--max-concurrent-requests</span></code> matches downstream capacity.</p></li>
+<li><p><strong>Memory growth</strong>
+Reduce <code class="docutils literal notranslate"><span class="pre">--max-tree-size</span></code> or lower <code class="docutils literal notranslate"><span class="pre">--eviction-interval-secs</span></code> for more aggressive cache pruning.</p></li>
+<li><p><strong>Debugging</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--log-level<span class="w"> </span>debug<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--log-dir<span class="w"> </span>./router_logs
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--log-level<span class="w"> </span>debug<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--log-dir<span class="w"> </span>./router_logs
 </pre></div>
 </div>
-</section>
+</li>
+</ol>
+<hr class="docutils" />
+<p>SGLang Model Gateway continues to evolve alongside the SGLang runtime. Keep CLI flags, integrations, and documentation aligned when adopting new features or contributing improvements.</p>
 </section>
 </section>
 
@@ -1380,75 +1343,45 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-plane">Control Plane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-plane">Data Plane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-privacy">Storage &amp; Privacy</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-modes">Deployment Modes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-1-co-launch-router-and-workers">Mode 1: Co-launch Router and Workers</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-requests">Sending Requests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-launch-router-workers">Co-launch Router + Workers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-launch-http">Separate Launch (HTTP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-launch">gRPC Launch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill/Decode Disaggregation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-backend-proxy">OpenAI Backend Proxy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-2-separate-launch-mode">Mode 2: Separate Launch Mode</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-launch-workers">Step 1: Launch Workers</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-launch-router">Step 2: Launch Router</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-3-prefill-decode-disaggregation">Mode 3: Prefill-Decode Disaggregation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-prefill-arguments">Understanding –prefill Arguments</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-inheritance-in-pd-mode">Policy Inheritance in PD Mode</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-mode-with-service-discovery">PD Mode with Service Discovery</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-scaling">Dynamic Scaling</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-workers">Adding Workers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-workers">Removing Workers</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance">Fault Tolerance</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retry-configuration">Retry Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-lifecycle-dynamic-scaling">Worker Lifecycle &amp; Dynamic Scaling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-flow-control">Reliability &amp; Flow Control</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retries">Retries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiter">Rate Limiter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-queuing">Rate Limiting &amp; Queuing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#routing-policies">Routing Policies</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-routing">1. Random Routing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-routing">2. Round-Robin Routing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-two-choices">3. Power of Two Choices</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-load-balancing-default">4. Cache-Aware Load Balancing (Default)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-aware-routing">Data Parallelism Aware Routing</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-balancing-policies">Load Balancing Policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#service-discovery-kubernetes">Service Discovery (Kubernetes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-authentication">Security &amp; Authentication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history-data-connectors">History &amp; Data Connectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp-advanced-tooling">MCP &amp; Advanced Tooling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-surface">API Surface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-reference">Configuration Reference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-settings">Core Settings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-routing-parameters">Cache-Aware Routing Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance-parameters">Fault Tolerance Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation-parameters">Prefill-Decode Disaggregation Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-integration">Kubernetes Integration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cors-configuration">CORS Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-tuning">Cache-Aware Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tolerance">Fault Tolerance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode">Prefill/Decode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-discovery">Kubernetes Discovery</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-features">Advanced Features</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-service-discovery">Kubernetes Service Discovery</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-mode">Standard Mode</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation-mode">Prefill-Decode Disaggregation Mode</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prometheus-metrics">Prometheus Metrics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-tracing">Request Tracing</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Observability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode">Debug Mode</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
   </nav></div>
 
@@ -1482,7 +1415,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 14, 2025.
+  Last updated on Oct 15, 2025.
   <br/>
 </p>
   </div>
