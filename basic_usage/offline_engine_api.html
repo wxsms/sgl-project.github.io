@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-15 16:58:22] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-15 20:16:31] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.80it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.79it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 18.07it/s]
+Capturing batches (bs=1 avail_mem=74.59 GB): 100%|██████████| 20/20 [00:02&lt;00:00,  9.51it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,46 +603,19 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jim. I am a middle school student. I&#39;m really good at math. But I don&#39;t like math. But there are two reasons. First, I want to know how to learn. Second, I want to learn something that I can use in the future. But now I can&#39;t find such a subject. I think it is important to learn math. I think if you can learn it well, you can be successful in life. I plan to learn math. I&#39;m going to take a math class on Monday and Thursday. I have to go to school every day. I also plan to buy a math book and learn it
+Generated text:  Xiaowei. I am a student from Jinhua, Zhejiang. In my spare time, I like to read a lot. I think it is good to learn a lot from stories. Today, I want to share with you a famous story. The story is about a young lady and her friend who were talking about their year&#39;s study plans. The little girl said, &#34;I&#39;m going to do well this year!&#34; But the big girl said, &#34;I think we&#39;ll be fine this year.&#34; So, the little girl asked her friend, &#34;How will I do better this year?&#34; The big girl answered, &#34;
 ===============================
 Prompt: The president of the United States is
-Generated text:  a position that is currently held by:
-A. Donald Trump
-B. Joe Biden
-C. George W. Bush
-D. John F. Kennedy
-Answer:
-B
-
-Which of the following is a characteristic of a traditionalist educational philosophy?
-A. Emphasizing a focus on individual students&#39; academic and moral development
-B. Believing that school activities should be entirely planned by the teacher
-C. Advocating for a more flexible educational approach
-D. Advocating for a more direct and experiential learning method
-
-Answer:
-Answer: D
-
-In the process of achieving national reunification, which group is the key force
+Generated text:  visiting a small village in the countryside. The president, being friendly, decides to visit the village twice: once on Monday, and once on Wednesday. The president arrives in the village in the morning, and he leaves the village in the evening. Each day, the president decides to stay at the village for a different amount of time: Monday stays for 3 hours, Wednesday stays for 2 hours, and Saturday stays for 4 hours. However, the president has a habit of visiting the village in the morning, and he always stays for the same amount of time each day. How many hours in total did the president spend visiting the
 ===============================
 Prompt: The capital of France is
-Generated text: :
-
-A) Paris
-B) London
-C) Rome
-D) Berlin
-
-To determine the capital of France, we can refer to the information that France is a sovereign state and its capital is Paris. However, the question does not provide specific information about the capital of France. To provide a correct and complete answer, we need to consider that the capital of a country is usually the largest city, but it can also be the largest city of its region.
-
-Since the question asks for the capital of France, and we know that the capital of France is Paris, the correct answer is:
-
-\boxed{A}
+Generated text:  Paris, located in the western region of France. It is a city with a large population, and it has a historical role as a capital of France. The capital of France is situated in the western part of the country, with the center being the city of Paris.
+The city is located in the heart of the French heartland, which includes the Dordogne, which is a large river that runs through the city. The city also has proximity to the Mediterranean Sea, which is the most western body of water in Europe. The city has a population of around 2 million, which is the largest in France.
+Paris has a rich
 ===============================
 Prompt: The future of AI is
-Generated text:  very fast and will have a profound impact on the world. It is likely that AI will play a huge role in driving technological progress and revolutionizing various industries. It is essential to keep up with the latest developments in AI and understand how it will influence society. This article will provide an overview of the latest trends in AI and their implications for the future.
-The most significant AI trends are outlined below:
-1. Deep learning: Deep learning is the main driver of advancements in AI. It uses neural networks to learn from large datasets and make predictions. Deep learning algorithms are currently being used for tasks such as image recognition, natural language processing, and
+Generated text:  more sophisticated than ever, but it is also more complicated. While the complex technology required to develop and deploy an AI system is rapidly increasing, the number of people working in the field is also growing rapidly. As AI becomes more sophisticated, it will likely require an even greater number of specialists to manage its development and deployment. This increase in the number of specialists will not be evenly distributed across the AI market. There will be a high demand for experts in the areas of data science, machine learning, and AI safety. There will also be a demand for specialists in areas such as AI ethics and regulatory compliance.
+AI is becoming more sophisticated and more
 </pre></div></div>
 </div>
 </section>
@@ -682,17 +655,17 @@ The most significant AI trends are outlined below:
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [Age] year old [Gender] [Occupation]. I have always been fascinated by the world of [Field of Interest], and I am always eager to learn more about it. I have a keen sense of curiosity and a love for exploring new ideas and concepts. I am always looking for new experiences and opportunities to grow and learn. I am a [Favorite Activity] enthusiast and I love to travel and explore new places. I am always looking for new ways to challenge myself and expand my horizons. I am a [Favorite Book] lover and I love to read and learn from other people&#39;s
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and I&#39;m always looking for ways to [job title]. I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and I&#39;m always looking for ways to [job title]. I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and I&#39;m always looking
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also a major cultural and economic center, hosting numerous museums, theaters, and festivals throughout the year. Paris is a popular tourist destination and a significant cultural hub in Europe. It is also home to the French Parliament, the oldest continuously operating parliament in the world. The city is known for its rich history, including the influence of the Roman Empire, French Revolution, and French Revolution. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. It is a city of art, culture
+Generated text:  Paris, also known as &#34;La Ville de Paris&#34; and &#34;La Ville de la Rose&#34;. It is the largest city in France and the second-largest city in the European Union. Paris is known for its rich history, art, and culture, and is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also a major transportation hub, with many major highways and rail lines connecting it to other parts of France and the world. Paris is a popular tourist destination, with millions of visitors each year. The city is also home to many important institutions of higher education, including
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the potential trends that are likely to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the most likely future trends in AI:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, reduce costs, and improve the quality of care. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, with more sophisticated algorithms and machine learning techniques being developed to improve diagnosis, treatment, and patient care.
+1. Increased automation and robotics: As AI technology continues to advance, we can expect to see more automation and robotics in various industries. This could lead to increased efficiency and productivity, but it could also lead to job displacement for some workers.
 
-2. Increased use of AI in finance: AI is already being
+2. AI-powered healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, we can expect to see even more applications in healthcare, including personalized medicine
 
 </pre></div></div>
 </div>
@@ -735,19 +708,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  John and I am a marketing executive working for a large company that specializes in digital marketing. I have over 10 years of experience in the industry and have a deep understanding of how to use social media to reach and engage with our target audience. I am always looking for new ways to improve my skills and stay up-to-date with the latest trends in digital marketing. I am also passionate about using data and analytics to inform my decisions and make informed business decisions. What&#39;s your name? Hello, my name is John and I am a marketing executive working for a large company that specializes in digital marketing. I have over 10 years
+Generated text:  [Name] and I&#39;m a [position/character]. I have been working with [company name] for [number of years] years. I have gained a lot of experience and knowledge in [field of work]. I&#39;m a [attribute or trait] and I&#39;m always looking for ways to [important task or goal]. I&#39;m always learning and evolving, and I&#39;m excited to contribute to [company name] and bring my best to the table. Is that correct? Based on the details you provided, your self-introduction is neutral and neutral. However, if you would like me to modify it for a more positive tone,
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, located in the southern part of the country and served as the main administrative and cultural center of the country for centuries. It is one of the oldest continuously inhabited cities in the world and has been a major center of European and world culture for over a thousand years. The city has been a UNESCO World Heritage site since 1992 and is known for its rich history, stunning architecture, and diverse cultural scene. Its population has grown to more than 1 million people, making it one of the most populous cities in Europe and the world. It is also the world&#39;s most populous city and the third largest metropolitan area by population
+Generated text:  Paris.
+
+This statement is accurate and provides a straightforward summary of the capital city&#39;s name in English. It&#39;s important to note that while Paris is indeed the capital, it&#39;s not the only city in France. Other major cities include Paris, Marseille, and Nice. However, the term &#34;capital&#34; is often used to refer to Paris specifically, making this statement a concise yet comprehensive overview of the city&#39;s status as the country&#39;s most populous and largest city. Additionally, it&#39;s worth noting that while Paris is known for its world-renowned landmarks, such as Notre-Dame Cathedral, the city is also known for its historic center,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  promising, with many exciting developments on the horizon. Here are some of the possible future trends in AI:
+Generated text:  expected to be very promising, with many potential developments that could shape the direction of this technology. Here are some possible future trends in AI:
 
-1. Improved Natural Language Processing: With the growth of AI, natural language processing (NLP) is becoming more advanced, enabling machines to understand and respond to human language more accurately. This will enable more efficient communication and interactions between humans and AI systems.
+1. Increased Integration: AI will continue to become more integrated into our daily lives, from our smartphones and smart homes to our vehicles and computers. As AI becomes more sophisticated, it will be able to perform more complex tasks and improve the quality of our lives.
 
-2. AI with greater Precision: AI systems will become more precise and accurate in their predictions and decisions, leading to better decision-making outcomes. This will make AI more valuable in various industries, such as healthcare, finance, and manufacturing.
-
-3. Greater Integration: AI will become more
+2. Enhanced Human-AI Interaction: AI will continue to evolve and improve, making it easier for humans to interact with AI in a more natural and intuitive way. This could lead to more efficient and effective ways of communication, as well as
 </pre></div></div>
 </div>
 </section>
@@ -793,19 +766,19 @@ Generated text:  promising, with many exciting developments on the horizon. Here
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am [Age] years old. I am the [type of person], and I am passionate about [my hobby/interest]. My [career/vocation] is [job/occupation], and I have [number of years of experience in the industry] years of experience. I am [personality type] and I am [any other relevant information you&#39;d like to include]. I&#39;m currently [status of your professional life], and I&#39;m always seeking to [why you&#39;re passionate about the subject]. I&#39;m always looking for new challenges and opportunities to [what you want to achieve]. Thank you for asking!
+Generated text:  _______________. I am an ___________ and I have been working in this field for __________ years. What is your profession? How do you balance your work with personal life?
+Hello, my name is _______________. I am a __________ and I have been working in this field for __________ years. What is your profession? How do you balance your work with personal life? Let me know if there is anything I can assist you with.
+Hello, my name is _______________. I am a ___________ and I have been working in this field for __________ years. What is your profession? How do you balance your
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, the largest city in the country and the seat of government. It is a historic and cultural center known for its rich history, art, architecture, cuisine, and fashion. Paris is a world-renowned hub of art, music, cinema, and literature, and is considered one of the most important cities in the world. The city is also home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is a popular tourist destination and is considered one of the most beautiful cities in the world. The city is a vibrant place with a diverse population and culture, and is
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly uncertain, but here are some possible trends to look out for:
+Generated text:  likely to be characterized by several key trends:
 
-1. Artificial Intelligence will continue to become more sophisticated and powerful. As AI continues to learn from us and improve, it will become more adept at performing complex tasks, such as language translation, image recognition, and autonomous driving.
-
-2. AI will become more ubiquitous. As AI becomes more sophisticated, it will become more integrated into our daily lives, such as through voice assistants, self-driving cars, and virtual assistants.
-
-3. AI will have a profound impact on the world. AI will likely change the way we work, live, and interact with each other, leading to
+  1. Increased use of AI in healthcare: As AI becomes more accessible and affordable, there is increasing potential for it to be used in healthcare to improve patient outcomes and reduce costs.
+  2. Integration of AI into consumer products: AI is already being integrated into consumer products such as smart homes and autonomous vehicles, but it is likely that this trend will continue to grow as more products and services become capable of using AI.
+  3. Increased focus on ethical AI: With the potential for AI to be used in a wide range of applications, there is likely to be a greater
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
