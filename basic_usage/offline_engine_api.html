@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-16 07:21:44] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-16 18:54:08] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.04it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.04it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.00it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.99it/s]
 
-Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 20.14it/s]
+Capturing batches (bs=1 avail_mem=71.74 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 16.15it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,34 +603,30 @@ Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Raul Sanchez. I have a degree in Electrical Engineering from Colorado College and a minor in Mathematics. My approach to design is based on a combination of theoretical foundations and hands-on experience. I have experience designing and building a wide variety of electronic devices, such as radios, microwave ovens, and computer circuit boards. I am also skilled in working with analog and digital signal processing, and have experience in developing algorithms and optimizing performance. I have been recognized for my expertise in this field with a number of awards and recognition. In my spare time, I enjoy playing musical instruments and exploring the outdoors. I am currently pursuing a career as a freelance
+Generated text:  Alex and I am a full time freelance writer. I have a Bachelor&#39;s degree in English and a Master&#39;s degree in Communication. I have a passion for helping people express themselves in their own words and come up with solutions for problems. I&#39;ve worked with many clients to craft compelling content that speaks directly to their needs and wants. Since starting my writing career, I&#39;ve always been an avid reader and love writing about current events and trends. I believe it&#39;s the best way to connect with people and share my opinions on the world around us. My writing style is simple and easy to read, with a focus on using effective language and tone
 ===============================
 Prompt: The president of the United States is
-Generated text:  an elected office.
+Generated text:  trying to decide how many military bases to have. He likes the idea of having 0, 1, or 2 bases. He weighs the benefits and costs of each possibility. In the end, he decided to have the exact number of bases to be 1.
 
-a. True
+Let&#39;s define the cost of having one base as the cost of having a military base plus the cost of maintaining it. If the base is to be managed by the President of the United States, the cost is $10 million. If the base is not managed by the President, the cost is $5 million.
 
-b. False
-
-To determine whether the statement &#34;The president of the United States is an elected office&#34; is true or false, we need to consider the official definition of an elected office in the United States. An elected office is one that is appointed or elected by a body of citizens, typically a legislature or a higher executive branch, to hold a specific office.
-
-Let&#39;s break it down step by step:
-
-1. Identify the key components of the statement:
-   - &#34;The president of the United States&#34; is the person holding the office.
-   - The office is being referred to as &#34;
+Let \( C \) represent the total
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. It is the seat of the government, the capital of the Republic of France, and the largest city in the European Union. Located at the mouth of the Seine River, it is situated in the heart of the Côte d&#39;Or and borders to the north, west and south with the Mediterranean Sea, which is the largest and one of the most famous marine areas in the world. The capital of France is a vibrant, cosmopolitan city with a complex cultural scene that reflects the country&#39;s long history and its role in world affairs. Paris is the capital of France and the main seat of the French government. It is also
+Generated text: : ______. Paris
+
+The capital of France is Paris. Is this statement correct?
+
+A. Yes
+B. No
+
+A. Yes
+
+This statement is correct. Paris is the capital of France, serving as the largest and most populous city in the country. It is the seat of the French government, the capital of the French Republic, and the country&#39;s cultural, educational, and political center. Paris is known for its rich history, diverse cultural scene, and iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. It is often referred to as &#34;La Vie Longue&#34; (
 ===============================
 Prompt: The future of AI is
-Generated text:  very exciting and with it comes a need for new skills that will help us to get ahead in the tech industry. Here is an overview of the kind of skills you’ll need to be successful in the future of AI.
-
-1. Data Analytics
-
-Having a good understanding of how data is analyzed is essential for any data scientist. Data analytics skills include the ability to gather, clean, and manipulate data, as well as to analyze the data to extract insights. Data science skills are crucial for any AI developer, as the more data you have, the more data scientists can analyze. This requires a solid understanding of statistics and probability.
-
-2.
+Generated text:  in software, and researchers are already applying the latest in hardware that can be used for AI. The hardware and software, including the computer systems, the neural networks, and the massive data centers, all need to work together to make AI work. The hardware needs to be able to power the AI software and neural networks in real time. The software and the hardware need to be able to communicate with each other in real time. The data centers also need to be able to store large amounts of data efficiently and quickly. The whole system needs to be able to process data in a timely manner.
+The architecture of the AI system can be divided into
 </pre></div></div>
 </div>
 </section>
@@ -670,17 +666,19 @@ Having a good understanding of how data is analyzed is essential for any data sc
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Age] year old [Occupation]. I&#39;m a [Skill] with [Number] years of experience in [Field]. I&#39;m a [Skill] with [Number] years of experience in [Field]. I&#39;m a [Skill] with [Number] years of experience in [Field]. I&#39;m a [Skill] with [Number] years of experience in [Field]. I&#39;m a [Skill] with [Number] years of experience in [Field]. I&#39;m a [Skill] with [Number] years of experience in [Field]. I&#39;m a [Skill] with [Number]
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum. It is also a major cultural and economic center, with a rich history dating back to the Roman Empire and the French Revolution. Paris is home to many famous museums, including the Louvre, the Musée d&#39;Orsay, and the Musée Rodin. The city is also known for its vibrant nightlife and delicious cuisine, with many restaurants and bars serving up French dishes like croissants, escargot, and charcuterie. Paris is a city of contrasts, with its modern architecture and
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Library, and the French National Opera. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. Its history dates back to the Roman Empire and has been a major center of European culture for centuries. The city is known for its cuisine, fashion, and art, and is home to many famous museums and landmarks. Paris is a city of contrasts, with its modern architecture and historical landmarks blending together to create a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that could emerge in the coming years:
+Generated text:  likely to be characterized by rapid advancements in several key areas, including:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more efficient and effective decision-making, as well as more personalized and context-aware interactions.
+1. Increased integration with other technologies: AI will continue to be integrated with other technologies such as machine learning, natural language processing, and computer vision. This integration will enable AI to perform tasks that are currently the domain of humans, such as image recognition, speech recognition, and autonomous vehicles.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical considerations, including issues such as bias, transparency
+2. Enhanced privacy and security: As AI becomes more integrated with other technologies, there will be increased concerns about privacy and security. AI systems will need to be designed with privacy and security in mind, and there will be a need for robust security measures to protect against cyber attacks.
+
+
 
 </pre></div></div>
 </div>
@@ -723,30 +721,17 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m [Your Age] years old. I&#39;m a [your profession] and I&#39;m currently [your occupation]. I&#39;m very [your characteristic] and have a lot of [your skill], which is [your hobby/interest]. I have a lot of [your personal interests] and I&#39;m always [your attitude]. I&#39;m always [your personality]. I love [your area of interest or hobby], and I&#39;m always [your sense of humor]. I&#39;m [your goal or ambition], and I&#39;m always [your work ethic].
-[Your name]. [Your occupation] and I am currently [
+Generated text:  [Name], and I&#39;m a [Position] at [Company/Institution]. I&#39;m [Current Job Role] and I enjoy [What I Do or What I Want To Do] at [Company/Institution]. What brings you to this position? What excites you about your current role? What&#39;s your top accomplishment at this position? How do you collaborate with others at work? What&#39;s your favorite type of work? My name is [Name], and I&#39;m a [Position] at [Company/Institution]. I&#39;m [Current Job Role] and I enjoy [What I Do or What I Want To Do]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city of lights and art.
-
-The statement should be clear and concise, touching on Paris&#39;s major characteristics and cultural significance. Additionally, it should include a brief reference to the city&#39;s most famous landmark, such as the Eiffel Tower.
-
-Please ensure the statement is grammatically correct and follows standard French language conventions.
-
-Furthermore, please provide an alternative factual statement about France&#39;s capital city, but in a different language. The alternative statement should be a translation of the French statement into Spanish.
-
-The Spanish statement should include the same information as the French statement, but in Spanish.
-
-Finally, please provide an alternative
+Generated text:  Paris. It is known for its rich history, beautiful architecture, and vibrant culture. The city is home to the Louvre Museum and the Eiffel Tower, and is also known as the &#34;City of Light&#34; due to its numerous nightclubs and entertainment venues. Paris is a popular tourist destination and is known for its fashion industry, art, and gastronomy. The city is also famous for its annual French New Year celebration, where thousands of people gather to watch fireworks and light the giant menorah. Its distinctive architecture and stunning views make it a must-visit destination for anyone visiting France. Based on the passage above, What are
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a combination of exponential growth, rapid innovation, and significant changes in the way we live, work, and interact with technology. Here are some possible trends in the future of AI:
+Generated text:  exciting and varied, with the potential to revolutionize many aspects of our lives. Here are some possible trends in AI that we can expect to see in the coming years:
 
-1. Increased Automation and Deep Learning: The demand for AI-driven automation and deep learning technologies will continue to increase as we see more and more tasks being automated, and AI models become more sophisticated and capable.
+1. Increased efficiency and effectiveness: With the development of more advanced AI systems, we can expect to see greater efficiency and effectiveness in areas such as transportation, healthcare, and manufacturing. AI can process and analyze large amounts of data quickly, which can help us make more informed decisions and improve our processes.
 
-2. Integration with other technologies: AI will continue to be integrated with other technologies, such as machine learning, natural language processing, and quantum computing, to create new and more sophisticated AI systems.
-
-3. AI Ethics and Privacy:
+2. Autonomous vehicles: Self-driving cars are one of the most promising applications of AI, and we can expect to see more of them on the road in the coming years
 </pre></div></div>
 </div>
 </section>
@@ -792,26 +777,19 @@ Generated text:  likely to be characterized by a combination of exponential grow
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emily, a 26-year-old freelance writer based in New York City. I love exploring new places and exploring writing in the genre of sci-fi. I&#39;m a bit of a go-getter, always chasing my dream and making it happen. I&#39;m also really into hiking and playing the guitar, and I love to keep myself busy with my work and hobbies.
-
-I recently moved to New York from London, and I&#39;m really excited to be here. I love the city&#39;s culture, people, and the energy of the downtown area. I&#39;m a big fan of New York&#39;s eclectic mix of art, music, and cuisine
+Generated text:  [Name], and I&#39;m here to provide you with information and help you to achieve your goals. Please let me know what I can do for you. (Type your response here) Hello, my name is [Name], and I&#39;m here to provide you with information and help you to achieve your goals. Please let me know what I can do for you. (Type your response here) You can ask me questions or share your goals and I will do my best to assist you. (Type your response here) You can ask me questions or share your goals and I will do my best to assist you. (Type your response here
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic Eiffel Tower and landmarks like Notre-Dame Cathedral.
+Generated text:  Paris.
 
-**(Answer without the need for any external sources)**
-Paris is the capital city of France, renowned for its iconic Eiffel Tower and notable landmarks such as Notre-Dame Cathedral. **Paris** is France’s capital, known for its iconic Eiffel Tower and landmark Notre-Dame Cathedral. **Paris** is the capital city of France, known for its iconic Eiffel Tower and notable landmarks such as Notre-Dame Cathedral. **Paris** is the capital city of France, known for its iconic Eiffel Tower
+Paris is the capital and largest city of France. It is known for its rich history, iconic landmarks, and vibrant culture. The city is home to numerous museums, art galleries, and historic sites, including the Louvre and Notre-Dame Cathedral. It is also renowned for its fashion, gastronomy, and music, with the city being the birthplace of fashion icons such as couturier Christian Dior and the fashion designer Coco Chanel. Paris has a global reputation as one of the world&#39;s most elegant cities and is often referred to as the &#34;city of a thousand gardens&#34; due to its numerous parks and green spaces.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to involve a wide range of trends and developments, including:
+Generated text:  expected to be characterized by several trends that will shape the technology&#39;s development and impact on society. Here are some possible future trends in AI:
 
-1. The development of more advanced neural networks and machine learning algorithms that can handle large volumes of data and perform complex tasks at a faster rate.
+1. Advanced AI: As technology continues to advance, AI will become more advanced, with the ability to process and analyze vast amounts of data at an unprecedented speed. This will allow AI to make more accurate predictions, better understand natural language, and more effectively solve complex problems.
 
-2. The increasing adoption of AI in areas such as healthcare, finance, transportation, and manufacturing, where it is expected to improve efficiency, reduce costs, and increase accuracy.
-
-3. The use of AI in autonomous vehicles, which are designed to operate without human intervention, enabling safer and more reliable transportation systems.
-
-4. The development of AI-powered chatbots and virtual assistants that can interact with humans in a more natural and intelligent way
+2. Interdisciplinary integration: AI will be more integrated with other fields such as medicine, energy, transportation, and manufacturing. This will create a more comprehensive understanding of the world and the ability to make better decisions that will benefit
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
