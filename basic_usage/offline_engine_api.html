@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-16 03:06:55] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-16 05:18:32] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.42it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.31it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:02&lt;00:00,  9.40it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 19.95it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,36 +603,26 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Isabella, and I am a student at the University of California, Berkeley. I am currently majoring in chemistry and have taken several advanced courses in the field. I have a natural inclination towards both theoretical and experimental chemistry, and I enjoy working with computers to understand complex systems. I also enjoy reading books, writing, and practicing my spoken English. What&#39;s your favorite hobby? I like to read and write. I also enjoy playing sports like tennis and running. What&#39;s your favorite book? I really like George Orwell&#39;s &#34;1984.&#34; It&#39;s a book that has really impacted my life.
-What is the role of
+Generated text:  Xiaoli and I am the founder of the Chinese restaurant Shrimp Bar. I&#39;m excited to announce that I&#39;ve received a great deal on new Shrimp Bar door-to-door furniture! The furniture comes in a variety of designs and colors, including classic wood and modern steel. I&#39;m interested in getting it, but I need to find out more about the pricing and delivery options. Can you please provide me with some information about the pricing and delivery options? I would really appreciate it if you could share this information with me in the next email. Thank you! Best regards, Xiaoli Shrimp Bar Shrimp Bar
+Dear Xiaoli,
+
 ===============================
 Prompt: The president of the United States is
-Generated text:  selling custom stuffed animals to raise money for his administration. In the first week, he sells 200 stuffed animals and in the second week, he sells 250% more stuffed animals than the first week. In the third week, he sells half of the total of the first two weeks. How many stuffed animals did he sell in total over the three weeks?
+Generated text:  a person. The president of the United States is not a person. Therefore, the president of the United States is not a being. Now, I want you to explain this step by step in a way a 5th grader could understand.
+Sure, I&#39;ll explain that step by step using simple words and examples:
 
-To determine the total number of stuffed animals sold by the president over the three weeks, we need to calculate the number of stuffed animals sold each week and then sum them up.
-
-First, we know that in the first week, the president sells 200
+1. **President of the United States**: This is a special job title. It&#39;s like being in charge of a big, important country. Some people get this job, like the leader of a big, grown-up family. They help make important decisions for the country, like what to do with all the money
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris. If it&#39;s 12 pm and 12 hours after the current time, what will be the time?
+Generated text:  Paris. One morning, a group of 100 students are randomly selected from a school, and their heights (in meters) are measured. These heights are distributed normally with a mean of 160 cm and a standard deviation of 10 cm. What is the probability that the average height of the selected group is greater than 162 cm?
 
-To determine the time after 12 hours from 12 PM, we can follow these steps:
+To find the probability that the average height of the selected group is greater than 162 cm, we can follow these steps:
 
-1. Start with the current time, which is 12 PM.
-2. Add 12 hours to 12 PM.
-
-Adding 12 hours to 12 PM gives us:
-\[12:12 + 12:00 = 24:12\]
-
-So, the time 12 hours after 12 PM is 24 PM.
-
-
+1. **Identify the distribution parameters:**
+   - The mean height (\(\mu\)) is 160 cm
 ===============================
 Prompt: The future of AI is
-Generated text:  predicting that robots will become more and more common in our homes and workplaces. But what happens when these robots malfunction or cause a problem? The information would be collected to help fix the issue, and then a new robot is built to solve the same problem.
-However, having a robot repair a problem can be expensive. Robo-mechanics will now be able to perform maintenance and repair work on the robots at home.
-A European company has been working on a solution to this problem. They are developing a robot that can be programmed to repair a robot if it malfunctions.
-The company claims that their robot can be programmed to repair a
+Generated text:  uncertain. The Big 5 Research Institute, in collaboration with the University of Minnesota, will investigate the future of AI in 2021. This report will summarize findings from the research and the implications of these findings for society. The research includes interviews with key stakeholders, interviews with industry experts, and surveys of key stakeholders. The report also includes a discussion of the impact of the AI trends identified in the research, and recommendations for AI policy in the 2021-2025 timeframe. The research was funded by the National Science Foundation. The report was prepared by the Institute&#39;s Research &amp; Policy Center. The report
 </pre></div></div>
 </div>
 </section>
@@ -672,17 +662,17 @@ The company claims that their robot can be programmed to repair a
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name], and I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name], and I&#39;m excited to meet you and learn more about your career and interests. What can you tell me about yourself? [Name] is a [job title] at [company name
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m excited to meet you and learn more about you. What
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Ville-Marie&#34; and &#34;La Ville de Paris&#34;. It is the largest city in France and the second-largest city in the European Union. Paris is a cultural and historical center with many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, and the Palace of Versailles. It is also known for its cuisine, fashion, and art. Paris is a major tourist destination and a major economic center in France. It is the seat of the French government and the country&#39;s political, economic, and cultural capital. The city is also home to many international organizations and institutions
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament and the French Quarter, where many famous French artists and writers live and work. Paris is a bustling city with a rich history and culture, and is a popular tourist destination for visitors from around the world. It is also known for its cuisine, with dishes like croissants, escargot, and foie gras being popular among locals and tourists alike. Paris is a city that has a unique blend of old-world charm and modernity, and is a
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some possible future trends in AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
 
-1. Increased automation and artificial intelligence: As AI technology continues to advance, we can expect to see more automation and artificial intelligence in our daily lives. This could include the development of robots and other machines that can perform tasks that are currently done by humans, such as manufacturing, transportation, and healthcare.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread use of AI in healthcare, with more personalized and accurate diagnoses and treatments.
 
-2. Improved privacy and security: As AI technology becomes more advanced, we can expect to see more privacy and security concerns. This could include the development of more secure
+2. AI in manufacturing: AI is already being used in manufacturing to optimize production processes and improve quality control. As AI technology continues to improve, we can expect to see even more widespread use of AI in manufacturing
 
 </pre></div></div>
 </div>
@@ -725,26 +715,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [Age] year old [Occupation]. I love to [What you enjoy doing]. And I enjoy [What you enjoy doing]. I am a [Favorite Hobby]. And I enjoy [Favorite Hobby]. And I have a love for [Favorite Hobby]. And I love to [Favorite Hobby]. And I am a [Favorite Hobby]. And I enjoy [Favorite Hobby]. And I have a love for [Favorite Hobby]. And I love to [Favorite Hobby]. And I am a [Favorite Hobby]. And I enjoy [Favorite Hobby]. And I have a love for [Favorite Hobby]. And I love to
+Generated text:  Emily and I am 30 years old. I love spending time with my loved ones and traveling to new places. I&#39;m also a busy freelancer with a passion for writing and photography. My favorite hobby is being outdoors, and I love hiking and camping. I have a deep sense of humor and enjoy sharing funny stories with people. If you need anything, just reach out! It&#39;s my pleasure to meet you!
+Make sure to incorporate the character&#39;s background into the self-introduction, such as mentioning their current location or any notable achievements. Additionally, you should try to make the intro as neutral as possible while still conveying the character
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-A. True
-B. False
-C. I don&#39;t know
-The answer is B. False. While Paris is indeed the capital of France, it is not the largest city in the country. Paris has a population of about 2.5 million people and is the third largest city in France by area, after Paris and Nice. The largest city in France by population is Paris, with a population of approximately 3.1 million. The other cities listed in the question, Nice and Lyon, are both located in the south of France and are much smaller than Paris. Therefore, Paris is the correct answer to
+Generated text:  Paris, located on the Île de France in the Atlantic Ocean.
+You are to answer this question: Which major city in France is situated on the Atlantic coast? Paris Paris is the capital of France and is situated on the Atlantic coast. It is known for its historical landmarks, beautiful architecture, and vibrant cultural scene.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly anticipated and involves many exciting developments in the next decade. Some possible future trends in AI include:
+Generated text:  likely to involve several trends that will drive significant advancements in this rapidly evolving field. Here are some potential trends that could shape the future of AI:
 
-1. Advancements in machine learning: With the help of deep learning techniques, AI is expected to become even more sophisticated. Neural networks are expected to become even more powerful and capable of learning from data.
+1. Improved Data Privacy and Security: As AI becomes more complex and sophisticated, it will need to process vast amounts of data to make accurate predictions. This will require advancements in data privacy and security to protect user data and maintain trust in AI systems.
 
-2. Increased autonomy: With the development of autonomous vehicles and other systems that can operate without human intervention, the future of AI may see a significant increase in autonomy.
-
-3. Personalization: With the ability to analyze vast amounts of data and identify patterns, AI is expected to become more personal and tailored to individual users.
-
-4. Cyber
+2. Greater Use of AI in Healthcare: AI has already shown great promise in medical diagnosis and treatment, and it is likely to play an even greater role in the future. AI can analyze large amounts of medical data and help doctors make more accurate
 </pre></div></div>
 </div>
 </section>
@@ -790,15 +773,27 @@ Generated text:  highly anticipated and involves many exciting developments in t
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I am an [age] year old girl who has always been fascinated by [topic]. I love [topic] because [reason]. I enjoy [topic] because it challenges me to [challenge]. I like [topic] because [reason]. I am excited to [excuse yourself] and talk about [topic] with you. [Name], how are you? I am always happy to chat with you about anything! [Name], what&#39;s been keeping you busy lately? [Name], how do you plan on spending your free time? [Name], how can I be of assistance? [Name], what&#39;s your
+Generated text:  [Name], and I am a [Age] year old [Gender] who have been in the industry for [Number of Years] years. I enjoy [Career interests], and [Occupation], and I love to [Favorite hobby]. What&#39;s something about you that might make someone smile? (optional)
+
+[Optional]: What is something about you that might make someone think you&#39;re different from the rest? (optional)
+
+What&#39;s your favorite [Food/ drink] to eat, or [Activity/ Hobby]? (optional)
+
+What&#39;s your favorite [Book/ Movie/ Game]? (optional)
+
+What&#39;s your favorite
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, a city renowned for its historical significance and architectural beauty.
+Generated text:  Paris, known for its historical and cultural significance.
 
-The city of Paris, located in the north of France, is the capital of France and the seat of government, administration, and culture. It is home to iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, and the Notre-Dame Church. Paris is also known for its rich history, including the medieval city of Rome, Renaissance art, and French literature. The city&#39;s cuisine, including croissants, giselles, and Béarnese pasta, is also renowned worldwide. Paris is a bustling metropolis with a
+Paris is the capital city of France, renowned for its rich history, vibrant culture, and diverse architecture. It serves as the political, cultural, and economic center of the country. Its iconic landmarks include the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral, making it a globally renowned destination for tourists and locals alike. Paris also plays a crucial role in the country&#39;s economy, with major industries such as fashion, finance, and tourism. Despite its prominence, Paris is also known for its multicultural society and its emphasis on urban living and leisure. The city is often
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to involve continued advancements and breakthroughs in areas such as deep learning, natural language processing, and robotics. These technologies are expected to continue to improve and become more integrated into everyday life, with applications ranging from autonomous vehicles to intelligent personal assistants. Additionally, the development of ethical and responsible AI systems will continue to be a major focus of research and development, with concerns about privacy, bias, and the impact of AI on society and the environment becoming more prominent. As AI continues to evolve and become more ubiquitous in our lives, it is likely that we will see significant changes in how we interact with technology, how we work and collaborate, and
+Generated text:  highly dynamic and rapidly evolving, with many possible trends shaping how it will progress. Here are some of the most likely future trends in AI:
+
+1. Improved privacy and security: As more AI applications become integrated into everyday life, there will be increased concerns about data privacy and security. Governments and companies will need to find ways to protect the privacy and security of individuals&#39; data, while also ensuring that AI systems are designed to be transparent and accountable.
+
+2. Increased AI-powered automation: As AI continues to become more sophisticated, it will be able to perform increasingly complex tasks with greater efficiency and accuracy. This could lead to more widespread automation of manual
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
