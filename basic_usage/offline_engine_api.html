@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 16, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 17, 2025"/>
   </head>
   
   
@@ -541,16 +541,10 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
-/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-16 22:08:10] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-17 05:37:49] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -574,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.70it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.69it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.63it/s]
 
-Capturing batches (bs=1 avail_mem=76.22 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 19.71it/s]
+Capturing batches (bs=1 avail_mem=71.74 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 20.41it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -609,42 +603,34 @@ Capturing batches (bs=1 avail_mem=76.22 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Lucas, I am a 28-year-old software developer who works remotely from home. I recently moved to the city from a remote location, and I&#39;m currently working on a project that requires me to go back to work in a remote location. However, I&#39;m feeling overwhelmed by the amount of work and time I have to dedicate to this project. What resources do you recommend for managing my workload and time effectively while working remotely?
-As a software developer, I understand the importance of work-life balance and the time required to complete projects. Here are some resources that I recommend for managing my workload and time effectively while working remotely:
-
-1.
+Generated text:  Mary. I am a doctor. I have a very busy schedule, but I am always looking for problems that need solving. My schedule is much more active when my patients are feeling sick. I try to treat the patients first, and I get them to the doctor&#39;s office or hospital right away. I try to stay in touch with my patients. If I hear about a problem, I call them right away. I always try to find solutions to any problems that my patients have. I have a busy schedule but I try to make sure that my patients are getting the treatment they need and they are feeling better. Mary&#39;s schedule is very
 ===============================
 Prompt: The president of the United States is
-Generated text:  a person who represents the country in the federal government. In the United States, the president is elected by the people through a presidential election process. The president is a very important position, as they are responsible for guiding the country and making important decisions. To become president, one must be at least 35 years old and must be a naturalized citizen. The process of becoming president also requires that the president must be a member of the Democratic or Republican Party. There is one exception to this rule, and that is for a candidate to be a member of the Libertarian Party and for that candidate to be elected for president. The most recent
+Generated text:  from what country? The president of the United States is from the United States of America, which is a federal republic consisting of 50 states. The president is indirectly elected by the people through a presidential election, and the qualifications and procedures for the election are outlined in the Constitution of the United States. The United States is a federal republic, which means that the President is elected by the people and serves as the head of government and the commander-in-chief of the armed forces. The President is also the leader of the executive branch of the government, responsible for making decisions on behalf of the United States and executing the laws and policies of the
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris.
-A.正确
-B.错误
-答案: A
+Generated text: :
 
-运输市场是市场体系中的一种组成部分，是指提供某种产品或提供某种服务的____。
-A. 公共产品
-B. 合法产品
-C. 消费者
-D. 生产者
-答案: A
+A. Paris
 
-医师的执业注册有效期限为
-A. 3年
-B. 5年
-C. 10年
-D. 2年
-E. 6年
-答案: B
+B. London
 
-下列情形，行政机关作出解除查封、扣押决定的正确说法是____。
-A. �
+C. Rome
+
+D. Brussels
+
+To determine the capital of France, we need to recall which European country has that name. The capital of France is Paris.
+
+So, the correct answer is: A. Paris.
+
+This question tests the recognition of European capitals, a basic knowledge point in geography and history. It is a straightforward and practical exercise that does not require any complex calculations. The capital of France is Paris, which is A. Paris.
+
+To ensure accuracy, we should verify that Paris is indeed the capital of France by providing a brief history or geographical reference. In this
 ===============================
 Prompt: The future of AI is
-Generated text:  looking very different today than it was a few years ago. As we look back, though, the most significant developments in AI are still coming from within the company. Here are some predictions about the future of AI that come from within the company. The more the company invests in AI and the more it uses it, the more likely it is to see the effects of AI in the future.
-1. The AI Revolution Will Be Rapidly Unleashed
-As the tech world has moved forward, the market for AI has exploded. This is most evident in the way that we&#39;ve seen the development of new algorithms and machine learning that can
+Generated text:  now. Digital transformation is one of the top trends of the year 2022. In 2022, the global AI market is estimated to be $23.3 billion, according to a report by market research firm Grand View Research. This growth in the industry is due to the significant advancements in AI, machine learning, and deep learning, which have led to the development of new applications and services. The growth of the industry will continue to drive the market growth in the coming years. Additionally, as the demand for AI solutions increases, the market will also continue to expand.
+
+As AI technology continues to evolve
 </pre></div></div>
 </div>
 </section>
@@ -684,17 +670,19 @@ As the tech world has moved forward, the market for AI has exploded. This is mos
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name] and I am a [job title] at [company name]. I have been working here for [number of years] years and have always been passionate about [job title] and have always wanted to [job title] at [company name]. I am always looking for new challenges and opportunities to grow and learn. I am a team player and always strive to work with others to achieve our goals. I am always open to new ideas and have a positive attitude. I am excited to be a part of [company name] and contribute to the success of our team. Thank you for considering me for the position. [Name
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, which is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French Quarter. Paris is a bustling city with a rich history and culture, and it is a popular tourist destination. It is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. Paris is a city that is constantly evolving, with new developments and attractions being added to the city&#39;s list of attractions. It is a city that is a must-visit for anyone interested in
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. It is also known for its fashion industry and its role in the French economy. The city is home to many famous French artists and writers, and it is a popular destination for tourists and locals alike. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another. It
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the most likely future trends in AI:
 
-1. Increased focus on ethical considerations: As AI becomes more integrated into our daily lives, there will be a growing emphasis on ethical considerations. This includes issues such as bias, transparency, accountability, and privacy. As a result, there will be a greater focus on developing AI that is designed to be fair, transparent, and accountable.
+1. Increased automation: AI is expected to become more and more integrated into our daily lives, from manufacturing to customer service. We may see more automation in areas such as manufacturing, healthcare, and transportation.
 
-2. Integration of AI with other technologies: AI is already being integrated into a wide range of technologies, including healthcare,
+2. Personalization: AI is expected to become more personalized, with machines learning to understand and adapt to individual users&#39; needs and preferences. This could lead to more efficient and effective use of resources.
+
+3. Ethical considerations: As AI becomes
 
 </pre></div></div>
 </div>
@@ -737,21 +725,21 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job or role]! I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m always here to help and make sure you feel comfortable and at ease. I&#39;m a [job title or type of work]! I&#39;m always looking for new experiences and learning opportunities. I&#39;m ready to explore new topics and help you understand the world in a more insightful way.
-
-I&#39;m [name] and I&#39;m a [job or role]! I&#39;m always here to help and make sure you feel comfortable and at ease. I&#39;m a [job
+Generated text:  [Name], and I&#39;m an AI assistant. I&#39;m programmed to assist users of all ages and backgrounds with a wide range of questions and information. I&#39;m here to provide help, answer questions, and help people learn about the world around us. I&#39;m here to provide you with a helpful and informative response to your queries. So, what&#39;s your name? Let&#39;s chat! [Name] [Your name] [What is your title or role]? Hello, my name is [Name], and I&#39;m an AI assistant. I&#39;m programmed to assist users of all ages and backgrounds with a wide range of questions and information. I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, often referred to as the &#34;City of Love&#34; due to its romantic and historic charm. It is located in the Île de La Cité, an island in the Moselle River, and is one of the most important cities in the world for its rich cultural and historical heritage. Paris is home to numerous museums, galleries, and attractions, including the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also known for its rich and diverse culinary scene, featuring local specialties like croissants, banon, and patisserie. Paris has a large population and diverse culture, attracting
+Generated text:  Paris, the city where the Eiffel Tower stands. To summarize in a concise statement: Paris is the largest city in France, known for its iconic Eiffel Tower, and is also the capital city of France.
+
+A shorter concise statement could be: &#34;Paris, the city with the Eiffel Tower, is the capital of France.&#34;
+
+This statement encapsulates the essential information in a single, clear sentence. However, a more concise alternative might be: &#34;Paris, the world&#39;s largest city, has an iconic Eiffel Tower and is the capital of France.&#34; This option leaves out the details of the Eiff
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to see a wide range of potential trends and developments. Here are some possibilities:
+Generated text:  likely to be shaped by a number of trends that are currently being developed and will likely continue to develop in the coming years. Here are some of the key trends that are expected to shape the future of AI:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to help diagnose diseases, detect new diagnoses, and improve treatment. As AI technology continues to improve, we can expect to see even more use cases, such as personalized medicine and virtual health assistants.
+1. Increased use of AI in healthcare: AI is already being used in a variety of healthcare applications, from diagnosis and treatment to patient care and monitoring. As the technology advances, it is likely that we will see even more widespread use of AI in healthcare in the coming years.
 
-2. More autonomous vehicles: Self-driving cars are already on the road, and AI is becoming increasingly important in their development. As AI technology continues to improve, we can expect to see more autonomous vehicles on the road, and potentially in private vehicles as well.
-
-3. AI in
+2. Advancements in natural language processing: Natural language processing (NLP) is a critical component of AI that is used to enable machines to understand
 </pre></div></div>
 </div>
 </section>
@@ -797,37 +785,24 @@ Generated text:  likely to see a wide range of potential trends and developments
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [occupation] who has been following the journey of [Character&#39;s name] for a long time. As of now, I&#39;ve been following them for a year and a half, and I have a deep bond with [Character&#39;s name], who I consider to be my best friend. I love being with [Character&#39;s name], and I&#39;m always there for them, no matter what. I try to be a good friend to them and do whatever they need, whenever they need it. I&#39;m always here, always available, always there. I&#39;m here to be a good friend to you, and
+Generated text:  [Your Name]. I am a [insert your profession or role here, like a doctor, lawyer, chef, etc.]. I am currently [insert your age, occupation, and any notable accomplishments here, like being the captain of a team or winning a major competition]. And I hope this introduction is helpful in giving you a general idea of who I am and what I do. If there&#39;s anything specific you&#39;d like to know about me, please don&#39;t hesitate to ask. Welcome to my world, and please feel free to ask me anything you&#39;d like to know. I look forward to meeting you. Goodbye! [Your
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-1. French capital: Paris
-
-2. Location: France
-
-3. Population: over 2 million (2021 estimate)
-
-4. Capital city: Paris
-
-5. Languages spoken: French, French dialect, Italian, Spanish, English
-
-6. Architectural marvels: Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, Champs-Élysées
-
-7. Notable landmarks: Eiffel Tower, Notre-Dame Cathedral, Louvre Museum, Champs-Élysées
-
-8. European capital: The seat of the European Union
-
-9. Cultural and historical significance: The
+- Opened on January 1, 1800, as the capital of the French Kingdom of France
+- Located in the north central part of the country, at the confluence of the Seine and the Loire rivers
+- Famous for its iconic Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral
+- Home to numerous world-renowned museums, art galleries, and concert halls
+- Struck by lightning on April 25, 1900, as a result of lightning strikes across the city
+- Known for its diverse culture and cuisine, including its famous Parisian
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  quite promising and will continue to evolve rapidly. Some of the possible trends that are likely to come are:
+Generated text:  bright and its trajectory is uncertain. While we can anticipate some broad trends, we can&#39;t predict their exact trajectory. However, we can observe some emerging trends that are likely to shape the AI landscape in the coming years. Here are some of the possible future trends in AI:
 
-1. Increased focus on ethical AI: As we continue to develop AI systems, we need to ensure that they do not harm people or harm the environment. Therefore, it will be important to have ethical guidelines and regulations to guide AI development.
+1. Integration with other technologies: AI is becoming more and more integrated with other technologies like sensors, connected devices, and the Internet of Things (IoT). This integration will likely create new opportunities and challenges for AI researchers and developers.
 
-2. Greater integration of AI with other technologies: AI will become more integrated with other technologies such as sensors, IoT, and 5G networks. This integration will enable AI to perform tasks that were previously considered impossible or difficult.
-
-3. Advancements in AI modeling and algorithms: As AI models
+2. Increased use of AI for autonomous vehicles: The rise of self-driving cars and other autonomous vehicles is likely to drive significant growth
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -929,7 +904,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 16, 2025.
+  Last updated on Oct 17, 2025.
   <br/>
 </p>
   </div>
