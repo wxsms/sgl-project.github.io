@@ -612,7 +612,7 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model<span class="w"> </span>/raid/models/meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--grpc-mode<span class="w"> </span><span class="se">\</span>
@@ -622,7 +622,7 @@ document.write(`
 <span class="w">  </span>--router-health-success-threshold<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--router-health-check-timeout-secs<span class="w"> </span><span class="m">6000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--router-health-check-interval-secs<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--router-model-path<span class="w"> </span>/raid/models/meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--router-model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--router-policy<span class="w"> </span>round_robin<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--router-log-level<span class="w"> </span>debug
 </pre></div>
@@ -648,7 +648,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <p>Use SRT gRPC workers to unlock the highest throughput and access native reasoning/tool pipelines.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Workers expose gRPC endpoints</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model<span class="w"> </span>/raid/models/meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--grpc-mode<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">20000</span>
 
@@ -684,7 +684,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--backend<span class="w"> </span>openai<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--worker-urls<span class="w"> </span>https://api.openai.com<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--api-key<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--history-backend<span class="w"> </span>memory
 </pre></div>
 </div>
@@ -703,7 +702,7 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;url&quot;:&quot;grpc://0.0.0.0:31000&quot;,&quot;worker_type&quot;:&quot;regular&quot;}&#39;</span>
 
 <span class="c1"># Inspect registry</span>
-curl<span class="w"> </span>http://localhost:30000/workers<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+curl<span class="w"> </span>http://localhost:30000/workers
 
 <span class="c1"># Remove a worker</span>
 curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:30000/workers/grpc://0.0.0.0:31000
@@ -845,9 +844,19 @@ curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </s
 </tbody>
 </table>
 </div>
-<p>Oracle configuration (choose DSN <em>or</em> TNS alias):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ATP_DSN</span><span class="o">=</span><span class="s2">&quot;tcps://host:port/service&quot;</span><span class="w">  </span><span class="c1"># or use ATP_TNS_ALIAS + ATP_WALLET_PATH</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_USER</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>
+<p>Oracle configuration (choose DSN <em>or</em> TNS alias):
+Install the Oracle Instant Client and set <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> accordingly.
+Choose <strong>one</strong> connection method:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: Full connection descriptor</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_DSN</span><span class="o">=</span><span class="s2">&quot;(description=(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=service_name)))&quot;</span>
+
+<span class="c1"># Option 2: TNS alias (requires wallet)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_TNS_ALIAS</span><span class="o">=</span><span class="s2">&quot;sglroutertestatp_high&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ATP_WALLET_PATH</span><span class="o">=</span><span class="s2">&quot;/path/to/wallet&quot;</span>
+</pre></div>
+</div>
+<p>Provide database credentials and optional pool sizing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ATP_USER</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ATP_PASSWORD</span><span class="o">=</span><span class="s2">&quot;secret&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ATP_POOL_MIN</span><span class="o">=</span><span class="m">4</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ATP_POOL_MAX</span><span class="o">=</span><span class="m">32</span>
@@ -909,55 +918,51 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/responses/{id}</span></code></p></td>
 <td><p>Retrieve stored responses.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">/v1/responses/{id}/input</span></code></p></td>
-<td><p>List captured input items.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/embeddings</span></code></p></td>
 <td><p>Forward embedding requests.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/rerank</span></code></p></td>
 <td><p>Ranking endpoint (<code class="docutils literal notranslate"><span class="pre">/rerank</span></code> synonym).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations</span></code></p></td>
 <td><p>Create conversation metadata.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">POST</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">POST</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations/{id}</span></code></p></td>
 <td><p>Get/update/delete conversation.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations/{id}/items</span></code></p></td>
 <td><p>List or append conversation items.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/v1/conversations/{id}/items/{item_id}</span></code></p></td>
 <td><p>Inspect/delete conversation item.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/workers</span></code></p></td>
 <td><p>List registered workers with health/load.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/workers</span></code></p></td>
 <td><p>Queue worker registration.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code></p></td>
 <td><p>Queue worker removal.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/flush_cache</span></code></p></td>
 <td><p>Flush worker caches (HTTP workers).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/get_loads</span></code></p></td>
 <td><p>Retrieve worker load snapshot.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/liveness</span></code> / <code class="docutils literal notranslate"><span class="pre">/readiness</span></code> / <code class="docutils literal notranslate"><span class="pre">/health</span></code></p></td>
 <td><p>Health probes.</p></td>
 </tr>
