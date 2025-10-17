@@ -530,7 +530,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-17 17:40:51] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-17 18:53:09] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -540,13 +540,13 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.63it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.53it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.55it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.55it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.49it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.30it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.56it/s]
+Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.08it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -560,7 +560,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39740
+Server started on http://localhost:32032
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -601,7 +601,7 @@ Server started on http://localhost:39740
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Australia** - Canberra<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Spain - Madrid<br>3. Japan - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -631,13 +631,13 @@ Server started on http://localhost:39740
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. **Canada** - Ottawa<br>2. **France** - Paris<br>3. **Japan** - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here is another list of three countries along with their respective capitals:<br><br>1. **Japan** - Tokyo<br>2. **Australia** - Canberra<br>3. **Canada** - Ottawa</strong></div>
+<strong style='color: #00008B;'>Of course! Here is another list of three countries and their capitals:<br><br>1. **Germany** - Berlin<br>2. **India** - New Delhi<br>3. **Brazil** - Brasília</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -679,7 +679,7 @@ Server started on http://localhost:39740
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>Let's calculate it:<br><br>2 * 2 = 4<br><br>You don't necessarily need a calculator for this simple multiplication, but if you prefer to use one, you can. The result is still 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2. We don't really need a calculator for this simple multiplication, but let's compute it.<br><br>2 * 2 = 4<br><br>So, the answer is 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -719,7 +719,7 @@ Server started on http://localhost:39740
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:** Eating a variety of nutritious foods that include fruits, vegetables, lean proteins, whole grains, and healthy fats. A balanced diet helps support overall health, provides sustained energy, and reduces the risk of chronic diseases.<br>2. **Regular Exercise:** Engaging in a mix of aerobic activities, strength training, and flexibility workouts. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days. Regular exercise improves physical fitness, reduces stress, and enhances overall well-being.<br><br>These two tips, when combined, form a solid foundation for maintaining good health and well-being.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of foods to ensure your body gets the necessary nutrients, vitamins, and minerals. This includes whole grains, lean proteins, healthy fats, fruits, and vegetables. Staying hydrated and limiting sugary beverages are also important.<br><br>2. **Regular Exercise**: Engaging in physical activities that can improve cardiovascular health, boost mood, and enhance overall well-being. This can include activities like walking, running, cycling, or strength training. Flexibility exercises like yoga can also be beneficial. Consistency is key, and gradually increasing the intensity and duration of your workouts can help you stay in shape and reduce the risk of chronic diseases.<br><br>By combining these two approaches, you can significantly enhance your health and quality of life.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -792,7 +792,7 @@ Server started on http://localhost:39740
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm oak",<br>        "core": "Phoenix feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "A Dementor"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 10.1<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Dementors"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -827,7 +827,7 @@ Server started on http://localhost:39740
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 34.12it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 34.36it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -953,7 +953,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-17 17:41:27] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-17 18:53:46] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -963,14 +963,14 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.33it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.33it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.30it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.48it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.42it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.39it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.57it/s]
 
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.05s/it]
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.12s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -984,7 +984,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36858
+Server started on http://localhost:30901
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1017,7 +1017,7 @@ Server started on http://localhost:36858
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man on a city street, working amidst some taxis. He is ironing a blue shirt and pairs of socks on an improvised setup that appears to be part of a ladder placed atop a taxi, using the rear windshield撑as a support. This suggests he is actively ironing clothes outdoors, likely for cleaning or errand services, as the setup and his intention to clean appear a little makeshift due to the urban straps on the taxis.</strong></div>
+<strong style='color: #00008B;'>The image shows a man on a sidewalk engaged in ironing clothes while leaning against the back of a yellow taxi parked along the street. The man appears to be using ironing boards that are horizontal across the back hatch of the vehicle, holding his clothes against it to hand-me-down fabric onto it for ironing purposes. The taxi and the clothing suggest a creative or humorous hack for doing ironing duties—perhaps a two-person temporary setup to maneuver larger pieces more effectively.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
