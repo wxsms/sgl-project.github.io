@@ -535,12 +535,27 @@ document.write(`
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-18 06:37:31] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-18 07:31:05] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -551,10 +566,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.22it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.21it/s]
 
-Capturing batches (bs=4 avail_mem=77.03 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 06:37:35] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.20it/s]
+Capturing batches (bs=4 avail_mem=77.03 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 07:31:08] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.54it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,7 +583,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30838
+Server started on http://localhost:38865
 </pre></div></div>
 </div>
 </section>
@@ -602,7 +617,7 @@ Server started on http://localhost:30838
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='5e75c0bd00394b9aaf50c91bac5f9825', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1760769462, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='b99c1c49bfc54794aec7639100bdc30d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1760772676, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -806,7 +821,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th to the 4th century BCE. It was known for its advanced engineering, art, literature, and philosophy. Some of their major achievements include:<br><br>1. **Architecture**: The Romans were known for their impressive architecture, including the Colosseum, which was built to accommodate gladiatorial contests and other public spectacles.<br><br>2. **Engineering**: They developed a sophisticated system of roads and aqueducts, which facilitated trade and transportation.<br><br>3. **Art**: Roman art was renowned for its beauty and complexity, including sculptures, frescoes</strong></div>
+<strong style='color: #00008B;'>The Roman Empire, which lasted from the 1st century BCE to the 4th century CE, was a vast and complex civilization that had a profound impact on the world. Some of their major achievements include:<br><br>1. **Cultural and Intellectual Heritage**: Rome was home to many influential thinkers, philosophers, and artists who contributed to the development of Western culture. Notable figures include Cicero, Quintus Ennius, and Virgil.<br><br>2. **Architecture**: The Romans built magnificent structures such as the Colosseum, the Pantheon, and the Colosseum (which is still standing today), which are still</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -829,7 +844,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I am a test created by Alibaba Cloud. I am here to assist you with any questions or tasks you may have. If you have any questions or need help with something, feel free to ask.
+Yes, that is a test. I am Qwen, an AI language model created by Alibaba Cloud. I am here to assist you with any questions or tasks you may have. Please let me know if you have any questions or if there&#39;s anything specific you would like to know or discuss.
 </pre></div></div>
 </div>
 </section>
@@ -860,7 +875,7 @@ Yes, I am a test created by Alibaba Cloud. I am here to assist you with any ques
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='6bc42da4972e4f5389453b37b4a8786b', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1760769462, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='12859b180ee44ce4a04db62a378c58d0', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1760772677, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -892,7 +907,7 @@ Yes, I am a test created by Alibaba Cloud. I am here to assist you with any ques
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='de972921d6a14b1bb841a56d75c86cbd', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Sarah who had been searching for the farthest star in the universe. She had been traveling through space for years, but she had never reached the stars. Finally, after many years of hard work and dedication, Sarah stumbled upon a new planet. The planet was called X-107 and it was a unique place unlike anything she had ever seen before.', matched_stop='\n\n')], created=1760769462, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=83, prompt_tokens=9, total_tokens=92, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='c1a2cd6b50c842a7ae0d47925bacec5b', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" Once upon a time, there was a space explorer named Jack who had been exploring the stars for years. He had seen everything from the dimly lit ruins of ancient civilizations to the majestic mountains of outer space. Jack's passion for space exploration had only grown stronger as he became more and more experienced.", matched_stop='\n\n')], created=1760772677, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=60, prompt_tokens=9, total_tokens=69, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
