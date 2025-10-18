@@ -540,7 +540,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-18 05:18:44] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-18 06:37:31] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -550,11 +550,11 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.65it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.65it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.22it/s]
 
-Capturing batches (bs=4 avail_mem=73.19 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 05:18:48] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=73.13 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.69it/s]
+Capturing batches (bs=4 avail_mem=77.03 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 06:37:35] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,7 +568,7 @@ Capturing batches (bs=1 avail_mem=73.13 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39250
+Server started on http://localhost:30838
 </pre></div></div>
 </div>
 </section>
@@ -602,7 +602,7 @@ Server started on http://localhost:39250
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='203fb44c0fa747768bbae646d1386482', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1760764735, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='5e75c0bd00394b9aaf50c91bac5f9825', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1760769462, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -806,7 +806,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th to the 4th century BCE. They are known for their impressive achievements in various fields, including architecture, law, philosophy, and literature. Some of their most notable achievements include:<br><br>1. **Architecture**: Rome was renowned for its monumental architecture, including the Colosseum, the Pantheon, and the Forum. The city's layout and design were highly sophisticated, reflecting the Roman concept of a balanced and harmonious urban structure.<br><br>2. **Law**: Roman law was one of the most advanced in the ancient world. It included a</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th to the 4th century BCE. It was known for its advanced engineering, art, literature, and philosophy. Some of their major achievements include:<br><br>1. **Architecture**: The Romans were known for their impressive architecture, including the Colosseum, which was built to accommodate gladiatorial contests and other public spectacles.<br><br>2. **Engineering**: They developed a sophisticated system of roads and aqueducts, which facilitated trade and transportation.<br><br>3. **Art**: Roman art was renowned for its beauty and complexity, including sculptures, frescoes</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <div class="nbinput docutils container">
@@ -829,7 +829,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m designed to provide helpful responses to your questions and assist you in any way I can. If you have any specific questions or topics you&#39;d like to discuss, feel free to ask and I&#39;ll do my best to help.
+Yes, I am a test created by Alibaba Cloud. I am here to assist you with any questions or tasks you may have. If you have any questions or need help with something, feel free to ask.
 </pre></div></div>
 </div>
 </section>
@@ -860,7 +860,7 @@ Yes, that is a test. I&#39;m designed to provide helpful responses to your quest
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='56110ba8708a46a7bcde4046dc68822d', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1760764736, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='6bc42da4972e4f5389453b37b4a8786b', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1760769462, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -892,7 +892,7 @@ Yes, that is a test. I&#39;m designed to provide helpful responses to your quest
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='ab5ac218ab2046dab5273727346466c3', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" I'm sorry, but as an AI language model, I cannot generate any content that promotes or glorifies violence, hatred, or the use of force. Such behavior is not only illegal and unethical, but it also perpetuates a cycle of violence and instability in society. It is important to always strive towards peaceful and constructive solutions to conflicts and issues.", matched_stop='\n\n')], created=1760764736, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=70, prompt_tokens=9, total_tokens=79, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='de972921d6a14b1bb841a56d75c86cbd', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Sarah who had been searching for the farthest star in the universe. She had been traveling through space for years, but she had never reached the stars. Finally, after many years of hard work and dedication, Sarah stumbled upon a new planet. The planet was called X-107 and it was a unique place unlike anything she had ever seen before.', matched_stop='\n\n')], created=1760769462, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=83, prompt_tokens=9, total_tokens=92, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
