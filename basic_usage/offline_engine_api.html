@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-18 18:16:06] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-18 18:57:31] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.97it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  3.96it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 12.05it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 16.81it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,26 +603,51 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Luisa, I’m an 8th grade student, and I have a question about Italian restaurant chains. What are some Italian restaurants chains in the United States and what are some of their unique selling points?
-Certainly! Here are some Italian restaurants chains in the United States along with their unique selling points:
+Generated text:  Natasha and I am a 25 year old woman. I have a history of severe depression. I have not taken a medication for depression before.
 
-1. **Bratelli** - Known for its authentic Italian cuisine with a focus on grilled meats and salads. Bratelli offers a variety of Italian dishes, including pasta, pizza, and sandwiches. They also have a strong emphasis on fresh ingredients.
+I have a very good relationship with my husband. I have also taken a class on couples therapy and have been learning how to handle difficult situations. I am looking to find a therapy that I can give myself a break from. I am interested in a low cost option. I am also looking for someone that can fit in my schedule.
 
-2. **Alimentum** - Often associated with the &#34;Art of Cooking
+Is there a great therapist that could help me find a low cost option?
+To find a therapist who can help you with a low cost option, you
 ===============================
 Prompt: The president of the United States is
-Generated text:  trying to reduce the amount of plastic waste on the ocean. He decided to implement a policy that requires every single person to bring a reusable bag with them when they go to the store. Initially, 15% of the 30 million people in the United States brought reusable bags. The policy is expected to reduce the amount of plastic waste by 30%. How many bags will the United States need to process each year for the next 10 years to meet the new policy? To determine how many bags the United States will need to process each year for the next 10 years, we need to follow these steps:
-
-
+Generated text:  a very important person. He or she usually has a lot of important things to do. This makes it hard for him or her to have fun. Most presidents don&#39;t have much free time to relax. One of the best ways to relax is to go to the beach. This is a very popular place to go to relax. People like to go there for the fun of the beach. The president likes to do this activity to relax and enjoy the sunshine. They often have fun swimming, playing games and eating ice cream. In the early 1900&#39;s, the president often went to the beach on vacation. He or she
 ===============================
 Prompt: The capital of France is
-Generated text:  the city of Paris. It is a very beautiful city, full of history, and the most important city in Europe. It is one of the most important cities in the world, and it is also the most important city in the world for music, fashion, and wine. It is also the most important city in Europe.
+Generated text:  ______.
+A. Paris
+B. Lyon
+C. Bordeaux
+D. Marseille
+Answer:
+A
 
-Paris is the birthplace of many great artists, such as Michelangelo, Leonardo da Vinci, and Pablo Picasso. It is also the birthplace of many great writers, such as Victor Hugo, John Milton, and William Shakespeare. Paris is the birthplace of many great musicians, such as Louis Vivaldi,
+Which of the following does NOT belong to the content of the statement &#34;Every time I travel, I enjoy the scenery&#34;?
+A. I have the opportunity to travel to various places
+B. The scenery I see at different times is unique
+C. It&#39;s very satisfying to see the scenery every time I travel
+D. All the scenery I enjoy comes from different places
+Answer:
+D
+
+According to the passage, which of the following statements is correct? ____
+A. Paris is the capital of France
+B.
 ===============================
 Prompt: The future of AI is
-Generated text:  rich with possibilities, ranging from medical advancements to enhancing human intelligence. However, this future is also fraught with ethical concerns. One of the biggest challenges for AI is ensuring that it is used ethically. The ethical implications of AI are multifaceted, involving issues of privacy, security, and fairness. In this article, we will explore the ethical implications of AI and discuss how to ensure that it is used ethically.
-One of the most significant ethical concerns with AI is the issue of privacy. The use of AI technology can lead to the collection and processing of personal data, which can raise concerns about privacy. This data can be used for
+Generated text:  in the hands of the people
+
+The future of AI is in the hands of the people
+
+In a world that has seen amazing changes brought about by AI, we must embrace it to make significant contributions to society.
+
+AI is increasingly becoming a part of our daily lives. AI technology can assist in making our lives more efficient and enjoyable.
+
+The technology is progressing faster than ever, and we can expect it to continue doing so.
+
+We must find ways to ensure that it benefits all individuals.
+
+The key to achieving this is to make sure that the people who develop AI are equipped with the necessary skills and knowledge. This will ensure that the technology remains
 </pre></div></div>
 </div>
 </section>
@@ -662,17 +687,21 @@ One of the most significant ethical concerns with AI is the issue of privacy. Th
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and [job title] at [company name]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I love [hobby or activity], and I&#39;m always looking for new ways to explore and discover new things. What&#39;s your favorite book or movie? I love [book/movie], and I
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, [gender] and I have [number] years of experience in [industry]. I&#39;m a [job title] at [company name], and I&#39;m always looking for ways to [describe your job role]. I&#39;m a [job title] at [company name], and I&#39;m always looking for ways to [describe your job role]. I&#39;m a [job title] at [company name], and I&#39;m
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic Eiffel Tower and its rich history dating back to the Middle Ages. It is a bustling metropolis with a diverse population and a rich cultural heritage. The city is home to many famous landmarks such as the Louvre Museum, Notre-Dame Cathedral, and the Palace of Versailles. Paris is also known for its fashion industry, with many famous designers and boutiques. The city is a popular tourist destination and a major economic center in Europe. It is home to many important institutions such as the French Academy of Sciences and the French National Library. Paris is a city of contrasts, with its modern
+Generated text:  Paris.
+
+This statement is factually correct and provides a clear and concise overview of the capital city&#39;s location and significance in French culture and politics. It is a widely recognized and well-known fact that Paris is the capital city of France, and it is the largest and most populous city in the country. The statement is accurate and easy to understand, making it a useful and informative piece of information for anyone interested in learning about France&#39;s capital city.
+
+However, it&#39;s worth noting that the statement may not be entirely accurate, as Paris is not the only capital city in France. Other major cities in the country include Paris, Lyon,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. These technologies are expected to continue to improve and become more integrated into our daily lives, from self-driving cars and robots in factories to personalized medicine and virtual assistants.
 
-1. Increased integration with other technologies: AI is likely to become more integrated with other technologies, such as machine learning, natural language processing, and computer vision. This integration will enable AI to perform tasks that are currently performed by humans, such as image and speech recognition, autonomous driving, and personalized medicine.
+One of the most promising areas of AI development is the development of more advanced natural language processing capabilities. This will allow machines to understand and interpret human language in ways that are currently limited by the limitations of human language processing. This could lead to more accurate and efficient language translation, better understanding of human emotions and intentions, and even more natural language generation.
 
-2. Greater emphasis on ethical considerations: As AI becomes more integrated with other technologies, there will be increased pressure to address ethical concerns, such as bias, transparency, and accountability. This will lead
+Another area of AI
 
 </pre></div></div>
 </div>
@@ -715,21 +744,23 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Your Age, Location, or Profession] who started my own website last year. Currently, I&#39;m [Your Current Job or Current Role] and I&#39;m passionate about [Your Passion]. As a [Your Skill], I&#39;m constantly learning new things and exploring new opportunities. I enjoy taking on challenges and being a leader in my field. What&#39;s your most notable achievement or accomplishment to date? Thank you! As an AI language model, I don&#39;t have personal experiences or achievements in the same way that a human does. However, I am programmed to understand and respond to various prompts, which allows
+Generated text:  [Name] and I&#39;m a [type of person] who is passionate about [current interest]. I&#39;m known for my [strength or skill] in [specific area], and I believe that [reason why I&#39;m unique] will set me apart from others. I&#39;m always up for learning new things and always eager to make a positive impact in the world. I enjoy taking on new challenges and using my skills to help others achieve their goals. I&#39;m confident in my abilities and never give up on my goals. What&#39;s your name? And what&#39;s your area of expertise? I&#39;m looking forward to getting to know you more.
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
 
-Paris is the largest city in France and the capital of France. It is located in the Loire Valley region of southern France and is the economic, cultural, and political center of France. Its main landmarks include the Eiffel Tower, the Louvre Museum, the Notre-Dame Cathedral, and the Champs-Élysées. The city is also known for its vibrant nightlife and jazz music scene. Paris is a popular tourist destination, and it is the most visited city in France. The French capital is home to many world-renowned institutions, including the French Academy, the Musée d&#39;Orsay, and the
+To elaborate, Paris is the largest and most populous city in France, known for its stunning architecture, vibrant culture, and historical significance. It&#39;s the seat of the French government, the country&#39;s capital, and the main city of the French Republic.
+
+Paris is also home to numerous museums, monuments, and landmarks, including the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Champs-Élysées. The city is also known for its annual festivals, such as the Marigot, the Cannes Film Festival, and the World Cup.
+
+Despite being a global city, Paris maintains
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be characterized by a diverse range of trends that will shape the technology&#39;s direction and impact. Here are some potential future trends in AI:
+Generated text:  exciting and transformative, with a variety of possible trends shaping the direction of the field. Some of the potential areas of development include:
 
-1. Improved accuracy and reliability: AI is becoming more sophisticated, and researchers are working to improve its accuracy and reliability. For example, researchers are working on developing more accurate models for natural language processing, speech recognition, and image recognition.
+1. Increased focus on ethical AI: As concerns about AI&#39;s impact on society increase, there is a growing need for ethical considerations. This will likely lead to increased focus on AI that is designed to be more transparent, accountable, and responsible.
 
-2. Enhanced user experience: AI is becoming more integrated into everyday life, and developers are looking to create user experiences that are more natural and intuitive. This includes things like chatbots and voice assistants that can interact with users more easily.
-
-3. Increased adoption of
+2. Autonomous vehicles: Self-driving cars are already a reality, but with more companies developing AI-driven autonomous vehicles, there is a potential for a significant shift in the way we move. The technology is also likely to make some job roles obsolete, but it also opens
 </pre></div></div>
 </div>
 </section>
@@ -775,23 +806,19 @@ Generated text:  expected to be characterized by a diverse range of trends that 
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  Emily and I am a friendly and approachable person. I love to laugh, talk to people, and learn new things. I&#39;m always looking for ways to make people smile and have fun. If you have any questions or need anything, please don&#39;t hesitate to reach out. My favorite thing about me is that I have a kind heart and I am always ready to help others. Thank you for considering me for a connection.
-
-Emily, here to answer any questions you might have.
-
-(Emily walks away, looking friendly and positive)
-
-Emily&#39;s friendly and approachable personality is evident in her self-introduction. She uses a
+Generated text:  [Name]. I&#39;m a friendly and kind-hearted person who loves to laugh and play. I&#39;m known for my quick wit and quick wit, which I use to help others solve problems and find solutions. My best friend is [Friend&#39;s Name], and I love spending time with them. I&#39;m also a fan of travel and trying new things. I enjoy helping others through my work, and I&#39;m always looking for new and interesting ways to improve my skills and knowledge. I&#39;m a bit of a gamer, and I love to play my favorite games. I like to read a lot, and I enjoy learning new things. I&#39;m
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, a historic city with a rich and diverse cultural history and architecture. It is the largest city in Europe and a major economic and political center, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also famous for its vibrant cultural scene, including jazz music, theater, and film, and its famous fashion industry. It has played an important role in French history and culture, including being the location of the French Revolution and being the site of the coronation of King Louis XIV. Today, Paris remains a major global hub, with many famous museums, landmarks,
+Generated text:  Paris, often referred to as the &#34;City of Light&#34; and is known for its vibrant culture, art, and historic architecture. Paris is a city with a rich history dating back over 2,000 years and is home to many iconic landmarks such as the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. The city is also home to many artists, writers, and musicians, who have shaped its unique cultural identity. Paris is a world-renowned hub for business and commerce, with many international companies and organizations headquartered there. With its beautiful scenery, rich history, and diverse cultural scene, Paris
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  expected to be a rapidly evolving field driven by advances in computational power, data science, and machine learning. Some potential future trends in AI include:
+Generated text:  quite promising, and there are several potential trends to expect in the coming years. Here are some of the most likely trends to watch out for:
 
-1. Enhanced Intelligence: One of the most promising areas of AI is enhanced intelligence. This involves increasing the cognitive abilities of machines, including learning from experiences, reasoning, and problem-solving. This could lead to breakthroughs in areas such as natural language processing, robotics, and drug discovery.
+1. Increased integration with other technologies: AI will continue to be integrated with other technologies like machine learning, natural language processing, and computer vision. This integration will make AI more powerful and flexible.
 
-2. Autonomous Systems: With the development of advanced AI, autonomous systems will become more common. These systems will be able to make decisions and take actions without human intervention, leading to safer and more efficient work environments
+2. Greater focus on ethical AI: As the use of AI grows, there will be an increased focus on ethical considerations such as privacy, bias, and accountability. Governments and businesses will be required to develop and implement policies and regulations to ensure that AI is used in a responsible and ethical manner.
+
+3
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

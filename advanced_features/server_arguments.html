@@ -688,7 +688,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>None</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span></code></p></td>
-<td><p>Data type for kv cache storage. ‘auto’ will use model data type. ‘fp8_e5m2’ and ‘fp8_e4m3’ is supported for CUDA 11.8+.</p></td>
+<td><p>Data type for kv cache storage. ‘auto’ will use model data type. ‘bf16’ or ‘bfloat16’ for BF16 KV cache. ‘fp8_e5m2’ and ‘fp8_e4m3’ are supported for CUDA 11.8+.</p></td>
 <td><p>auto</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-fp32-lm-head</span></code></p></td>
