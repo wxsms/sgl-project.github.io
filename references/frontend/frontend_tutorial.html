@@ -530,7 +530,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-18 02:08:39] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-18 04:01:54] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -540,14 +540,14 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.38it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.31it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.44it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.37it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
-Capturing batches (bs=4 avail_mem=62.79 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 02:08:46] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.14it/s]
+Capturing batches (bs=4 avail_mem=60.62 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 04:02:00] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  5.64it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -561,7 +561,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39738
+Server started on http://localhost:32032
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -602,7 +602,7 @@ Server started on http://localhost:39738
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries and their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Brazil** - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -632,13 +632,13 @@ Server started on http://localhost:39738
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. **France - Paris**<br>2. **Spain - Madrid**<br>3. **Germany - Berlin**</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Australia** - Canberra</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here is another list of three countries along with their capitals:<br><br>1. **Italy - Rome**<br>2. **Japan - Tokyo**<br>3. **Australia - Canberra**</strong></div>
+<strong style='color: #00008B;'>Of course! Here is another list of three countries along with their capitals:<br><br>1. **Italy** - Rome<br>2. **Canada** - Ottawa<br>3. **South Africa** - Pretoria (administrative), Cape Town (立法), Bloemfontein (司法), and Johannesburg (经济) - note that South Africa has a unique system with four seats of government.</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -680,7 +680,7 @@ Server started on http://localhost:39738
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>To solve this, you don't actually need a calculator, as this is a simple multiplication. <br><br>2 * 2 = 4.<br><br>So, 2 multiplied by 2 equals 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2. Let's calculate it.<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. No need for a calculator in this case as it's a simple multiplication.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -720,7 +720,7 @@ Server started on http://localhost:39738
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:** Eating a variety of nutrient-rich foods, including plenty of fruits, vegetables, whole grains, and lean proteins, while limiting processed foods, sugars, and unhealthy fats, helps maintain overall health and reduces the risk of chronic diseases.<br>2. **Regular Exercise:** Engaging in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with regular muscle-strengthening exercises, boosts cardiovascular health, improves endurance, and enhances overall well-being.<br><br>Both of these habits work together to promote a healthier lifestyle.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutritious foods is crucial for maintaining good health. Your diet should include:<br>   - Fruits and vegetables for vitamins, minerals, and fiber.<br>   - Whole grains for essential minerals and healthy carbohydrates.<br>   - Lean proteins for muscle repair and growth.<br>   - Healthy fats for brain function and nutrient absorption.<br>   - Staying hydrated by drinking plenty of water.<br>   - Limiting processed foods and refined sugars.<br><br>2. **Regular Exercise**: Engaging in regular physical activity is essential for overall health and well-being. It should:<br>   - Enhance cardiovascular health.<br>   - Boost the immune system.<br>   - Improve mental health and reduce stress.<br>   - Manage body weight.<br>   - Enhance muscle tone and strength.<br>   - Increase flexibility.<br>   - Promote better sleep.<br>   - Reduce the risk of chronic diseases like heart disease and diabetes.<br><br>By incorporating these habits into your daily routine, you can significantly improve your health and quality of life.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -793,7 +793,7 @@ Server started on http://localhost:39738
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Willow",<br>        "core": "Fern feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "stag",<br>    "bogart": "True"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holmwood",<br>        "core": "Phoenix feather",<br>        "length": 11.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "A dementor in a1"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -828,7 +828,7 @@ Server started on http://localhost:39738
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 34.11it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 32.95it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -954,7 +954,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-18 02:09:17] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-18 04:02:32] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -964,15 +964,15 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.25it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.31it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.33it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.73it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.11it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.11it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.14it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.61it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.37it/s]
 
-Capturing batches (bs=4 avail_mem=60.89 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 02:09:27] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.06s/it]
+Capturing batches (bs=4 avail_mem=60.89 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-18 04:02:42] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████| 3/3 [00:06&lt;00:00,  2.13s/it]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -986,7 +986,7 @@ Capturing batches (bs=1 avail_mem=60.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38549
+Server started on http://localhost:32513
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1019,7 +1019,7 @@ Server started on http://localhost:38549
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man riding a vehicle (likely an SUV parked on the side of a street with other taxis visible in the background).不稳定的是，他也同时试图用晾衣架在旅行车的背门区晾晒衣物。这种做法在大多数地方都有违停车规范，并且该项目也显得很荒谬和安全隐患极高。</strong></div>
+<strong style='color: #00008B;'>The image depicts a man standing on the back of a yellow taxi in an urban setting, using it as a platform to accurately fold a piece of clothing that hangs vertically on a pole held upright by tripods attached to the taxi's trunk. The taxi appears to be parked on the side of the road, and there are buildings and another dominating the scene in the background.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
