@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-18 08:14:42] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-18 18:16:06] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
 
-Capturing batches (bs=1 avail_mem=71.74 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 20.28it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 12.05it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,43 +603,26 @@ Capturing batches (bs=1 avail_mem=71.74 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Andrew and I&#39;m a third year student of Computer Science at University of the Arts London. I am based in the Creative Industry Network in London, and I started my first work with Monarch, a renowned cryptocurrency exchange. I also worked with the DAO and was a member of the board of the Hyperledger Foundation.
-What are the key factors that impact the success of a cryptocurrency exchange, and how can these be addressed in order to ensure a smooth and secure online trading experience for users?
-When it comes to the success of a cryptocurrency exchange, several key factors come into play. These factors include liquidity, security, transparency, user experience, and
+Generated text:  Luisa, I’m an 8th grade student, and I have a question about Italian restaurant chains. What are some Italian restaurants chains in the United States and what are some of their unique selling points?
+Certainly! Here are some Italian restaurants chains in the United States along with their unique selling points:
+
+1. **Bratelli** - Known for its authentic Italian cuisine with a focus on grilled meats and salads. Bratelli offers a variety of Italian dishes, including pasta, pizza, and sandwiches. They also have a strong emphasis on fresh ingredients.
+
+2. **Alimentum** - Often associated with the &#34;Art of Cooking
 ===============================
 Prompt: The president of the United States is
-Generated text:  seeking to raise the income tax threshold to $60,000. If a person has $20,000 in income and has to pay 50% of their income in taxes, what is the percentage increase in the income needed to reach the new threshold?
+Generated text:  trying to reduce the amount of plastic waste on the ocean. He decided to implement a policy that requires every single person to bring a reusable bag with them when they go to the store. Initially, 15% of the 30 million people in the United States brought reusable bags. The policy is expected to reduce the amount of plastic waste by 30%. How many bags will the United States need to process each year for the next 10 years to meet the new policy? To determine how many bags the United States will need to process each year for the next 10 years, we need to follow these steps:
 
-To determine the percentage increase in income needed to reach the new income threshold of $60,000, we can follow these steps:
 
-1. **Calculate the current income after taxes:**
-   If a person has $20,000 in income and pays 50% in taxes, they pay $20,0
 ===============================
 Prompt: The capital of France is
-Generated text:  ______.
-A. Paris
-B. Berlin
-C. Moscow
-D. Paris
-Answer:
+Generated text:  the city of Paris. It is a very beautiful city, full of history, and the most important city in Europe. It is one of the most important cities in the world, and it is also the most important city in the world for music, fashion, and wine. It is also the most important city in Europe.
 
-A
-
-In the context of food safety inspection work, which of the following measures should a company take in response to food safety incidents? A. Immediately conduct an investigation and ensure the incident is properly handled; B. Immediately report the incident to the superior authority; C. Immediately take other necessary measures to prevent the incident from spreading; D. All of the above measures should be taken.
-Answer:
-
-D
-
-Which of the following is the primary task of macroeconomics?
-A. Determining the economic growth rate.
-B. Analyzing the
+Paris is the birthplace of many great artists, such as Michelangelo, Leonardo da Vinci, and Pablo Picasso. It is also the birthplace of many great writers, such as Victor Hugo, John Milton, and William Shakespeare. Paris is the birthplace of many great musicians, such as Louis Vivaldi,
 ===============================
 Prompt: The future of AI is
-Generated text:  in the cloud.
-Cloud computing is based on the Internet to store, store, and process data. Cloud computing is powerful and efficient because it uses shared resources. It is also known as the cloud because data is stored on remote servers that are remote from your computer. Cloud computing is built on the power of the Internet.
-Cloud computing is divided into two main types: public cloud and private cloud. Public cloud is where the cloud is provided by a cloud service provider. Private cloud is where the cloud is provided by the user.
-These are the major cloud computing services: cloud computing services include:
-- Computing services: cloud computing services that provide computing
+Generated text:  rich with possibilities, ranging from medical advancements to enhancing human intelligence. However, this future is also fraught with ethical concerns. One of the biggest challenges for AI is ensuring that it is used ethically. The ethical implications of AI are multifaceted, involving issues of privacy, security, and fairness. In this article, we will explore the ethical implications of AI and discuss how to ensure that it is used ethically.
+One of the most significant ethical concerns with AI is the issue of privacy. The use of AI technology can lead to the collection and processing of personal data, which can raise concerns about privacy. This data can be used for
 </pre></div></div>
 </div>
 </section>
@@ -679,19 +662,17 @@ These are the major cloud computing services: cloud computing services include:
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [age] year old, and I have [number] years of experience in [job title]. I&#39;m a [gender] and I&#39;m [height] inches tall. I have [weight] pounds of body weight. I&#39;m [gender] and I have [hair color] and [eye color]. I&#39;m [gender] and I have [hair color] and [eye color]. I&#39;m [gender] and I have [hair
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and [job title] at [company name]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I love [hobby or activity], and I&#39;m always looking for new ways to explore and discover new things. What&#39;s your favorite book or movie? I love [book/movie], and I
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, a historic and culturally rich city with a rich history dating back to the Roman Empire. It is the largest city in France and the second-largest city in the European Union, with a population of over 2. 5 million people. Paris is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Palace of Versailles. It is also home to many world-renowned museums, including the Louvre and the Musée d&#39;Orsay. Paris is a popular tourist destination and a major economic center in France. It is
+Generated text:  Paris, the city known for its iconic Eiffel Tower and its rich history dating back to the Middle Ages. It is a bustling metropolis with a diverse population and a rich cultural heritage. The city is home to many famous landmarks such as the Louvre Museum, Notre-Dame Cathedral, and the Palace of Versailles. Paris is also known for its fashion industry, with many famous designers and boutiques. The city is a popular tourist destination and a major economic center in Europe. It is home to many important institutions such as the French Academy of Sciences and the French National Library. Paris is a city of contrasts, with its modern
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction. Here are some of the most likely trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and preferences. This could lead to more personalized and adaptive AI systems that can better understand and respond to human needs.
+1. Increased integration with other technologies: AI is likely to become more integrated with other technologies, such as machine learning, natural language processing, and computer vision. This integration will enable AI to perform tasks that are currently performed by humans, such as image and speech recognition, autonomous driving, and personalized medicine.
 
-2. Enhanced ethical considerations: As AI becomes more integrated with human intelligence, there will be increased scrutiny of its ethical implications. This could lead to more stringent regulations and guidelines for AI development and deployment.
-
-3. Greater use
+2. Greater emphasis on ethical considerations: As AI becomes more integrated with other technologies, there will be increased pressure to address ethical concerns, such as bias, transparency, and accountability. This will lead
 
 </pre></div></div>
 </div>
@@ -734,21 +715,21 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [job title] with [job title] experience. I am currently [current position] and enjoy [what I do for a living]. I am excited to be here and [what makes you tick] as a character. This is my first time writing a self-introduction for a character in my series and I would appreciate your feedback on the writing style. Let&#39;s keep it short and to the point, no more than 100 words.
-
-Hello, my name is [Name] and I am a [job title] with [job title] experience. I am currently [current position]
+Generated text:  [Your Name], and I&#39;m a [Your Age, Location, or Profession] who started my own website last year. Currently, I&#39;m [Your Current Job or Current Role] and I&#39;m passionate about [Your Passion]. As a [Your Skill], I&#39;m constantly learning new things and exploring new opportunities. I enjoy taking on challenges and being a leader in my field. What&#39;s your most notable achievement or accomplishment to date? Thank you! As an AI language model, I don&#39;t have personal experiences or achievements in the same way that a human does. However, I am programmed to understand and respond to various prompts, which allows
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is located in the central region of the country, near the Mediterranean Sea and the French Riviera. It is the seat of government, politics, and culture of France, and is home to the Eiffel Tower, the Louvre Museum, and numerous other landmarks. It is a cosmopolitan and diverse city with a rich history and culture, and is also a global center of business, finance, and entertainment. Paris&#39;s iconic landmarks include the Louvre, Notre-Dame Cathedral, Eiffel Tower, and Montmartre. It is also home to numerous museums, theaters, and galleries, including the Centre Pompid
+Generated text:  Paris.
+
+Paris is the largest city in France and the capital of France. It is located in the Loire Valley region of southern France and is the economic, cultural, and political center of France. Its main landmarks include the Eiffel Tower, the Louvre Museum, the Notre-Dame Cathedral, and the Champs-Élysées. The city is also known for its vibrant nightlife and jazz music scene. Paris is a popular tourist destination, and it is the most visited city in France. The French capital is home to many world-renowned institutions, including the French Academy, the Musée d&#39;Orsay, and the
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and largely uncertain, with a range of potential trends that could shape the development and impact of AI. Here are some potential trends that may emerge:
+Generated text:  expected to be characterized by a diverse range of trends that will shape the technology&#39;s direction and impact. Here are some potential future trends in AI:
 
-1. Increased integration of AI into everyday life: As AI technology continues to advance, we may see a growing integration of AI into a wide range of everyday applications, from self-driving cars and intelligent home devices to personalized virtual assistants and chatbots for customer service.
+1. Improved accuracy and reliability: AI is becoming more sophisticated, and researchers are working to improve its accuracy and reliability. For example, researchers are working on developing more accurate models for natural language processing, speech recognition, and image recognition.
 
-2. Improved ethical standards: As AI becomes more advanced, we may see a rise in ethical and social concerns around its use. This could include issues such as bias, privacy, and security.
+2. Enhanced user experience: AI is becoming more integrated into everyday life, and developers are looking to create user experiences that are more natural and intuitive. This includes things like chatbots and voice assistants that can interact with users more easily.
 
-3. Greater focus on AI in
+3. Increased adoption of
 </pre></div></div>
 </div>
 </section>
@@ -794,17 +775,23 @@ Generated text:  exciting and largely uncertain, with a range of potential trend
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  John, and I&#39;m a friendly AI assistant. How can I assist you today? What can I do for you? John is a friendly AI assistant who helps people with their inquiries. They are here to provide information and answer questions to help people find solutions to their problems. They are also here to assist with tasks such as setting reminders, packing for travel, and organizing their workspace. They are a reliable and helpful AI assistant who is always here to help. John is a friendly and helpful AI assistant who is here to provide assistance to people who need it. They are a friendly and helpful AI assistant who is always here to help. John
+Generated text:  Emily and I am a friendly and approachable person. I love to laugh, talk to people, and learn new things. I&#39;m always looking for ways to make people smile and have fun. If you have any questions or need anything, please don&#39;t hesitate to reach out. My favorite thing about me is that I have a kind heart and I am always ready to help others. Thank you for considering me for a connection.
+
+Emily, here to answer any questions you might have.
+
+(Emily walks away, looking friendly and positive)
+
+Emily&#39;s friendly and approachable personality is evident in her self-introduction. She uses a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It&#39;s also a popular tourist destination known for its history, art, and cuisine. Paris offers a rich cultural experience and is a major hub for business and finance. The city is home to many museums, theaters, and landmarks, making it a complete city for travelers and residents alike. The French capital is a cultural and political center of Europe. Paris is also home to many famous landmarks and is a major hub for business and finance. The city is a popular tourist destination, and visitors can explore its history, art
+Generated text:  Paris, a historic city with a rich and diverse cultural history and architecture. It is the largest city in Europe and a major economic and political center, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. Paris is also famous for its vibrant cultural scene, including jazz music, theater, and film, and its famous fashion industry. It has played an important role in French history and culture, including being the location of the French Revolution and being the site of the coronation of King Louis XIV. Today, Paris remains a major global hub, with many famous museums, landmarks,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a number of factors, including advances in technology, changes in the way humans interact with technology, and evolving human behavior. Here are some potential trends that could shape AI in the coming years:
+Generated text:  expected to be a rapidly evolving field driven by advances in computational power, data science, and machine learning. Some potential future trends in AI include:
 
-1. Increased Integration of AI with Other Technologies: As AI technology continues to advance, we are likely to see a greater integration of AI with other technologies such as machine learning, robotics, and natural language processing. This could lead to more sophisticated AI systems that can perform tasks that are currently the domain of humans.
+1. Enhanced Intelligence: One of the most promising areas of AI is enhanced intelligence. This involves increasing the cognitive abilities of machines, including learning from experiences, reasoning, and problem-solving. This could lead to breakthroughs in areas such as natural language processing, robotics, and drug discovery.
 
-2. Greater Use of AI for AI: As AI technology continues to develop, we are likely to see more widespread
+2. Autonomous Systems: With the development of advanced AI, autonomous systems will become more common. These systems will be able to make decisions and take actions without human intervention, leading to safer and more efficient work environments
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
