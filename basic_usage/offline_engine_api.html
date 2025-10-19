@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-19 11:51:14] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-19 14:07:18] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.44it/s]
 
-Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 19.34it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 16.68it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,45 +603,53 @@ Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Ingrid and I am a financial advisor who specializes in investing, education, and online courses. I&#39;ve been teaching math for more than 10 years. My portfolio includes stocks, mutual funds, ETFs, and CIOs. I&#39;m currently working on my MBA and my master&#39;s in teaching. My background includes teaching math at the college level and also teaching finance in the early 2000&#39;s. I&#39;m passionate about helping people learn and improving their financial skills. Can you help me with a complex financial problem? If so, could you please provide the details so I can start the conversation? Yes, I can
+Generated text:  Ehab. I&#39;m a computer scientist working on algorithms for high-dimensional data. I study computer science and mathematics at Bar Ilan University, and I&#39;ve been working on deep learning and computer graphics for the last 3 years.
+
+My research interests include:
+
+  * Combinatorial optimization problems
+  * Computational geometry
+  * Computational geometric algorithms
+  * Geometric and geometric optimization
+  * Data mining and information retrieval
+
+My thesis project at Bar Ilan University is &#34;A constrained geometric optimization problem&#34;. The problem is a variation of the combinatorial optimization problem, which aims to find the minimum cost assignment problem for the constraint set
 ===============================
 Prompt: The president of the United States is
-Generated text:  28 years older than the president of Africa. The president of Africa is half the age of the president of Asia. The president of Asia is 60 years old. How old is the president of Africa? Let&#39;s calculate the age of each country step by step.
+Generated text:  trying to decide whether to attend a press conference that is scheduled to start at 9:00 AM local time. He knows that the local time zone is UTC-5. On the same day, the president watches a news report that is broadcast in a certain country that is UTC-4. If the president spends 2 hours watching the news report in that country, what is the time in the United States? If he spends an additional 3 hours watching the news report in another country, how much time will he spend in total? To determine the time in the United States, we need to follow these steps:
 
-1. The president of the United States is 28 years older than the president of Africa.
-2. The president of Africa is half the age of the president of Asia.
-3. The president of Asia is 60 years old.
-
-First, we need to find the age of the president of the United States. Since the president of the United States
+1. Determine
 ===============================
 Prompt: The capital of France is
-Generated text:  ______.
+Generated text:  ____.
 A. Paris
-B. Lyon
-C. Berlin
-D. London
+B. London
+C. Milan
+D. Rome
+Answer:
+A
 
-To determine the capital of France, we need to consider the official name of the capital city. The capital city of France is Paris.
+The basic ways to solve the contradiction between the people&#39;s needs and the government&#39;s ability are ____.
+A. Centralization and decentralization
+B. Centralization and decentralization
+C. Monopoly and competition
+D. Marketization and state-monopoly
+Answer:
+C
 
-Let&#39;s go through the options given:
+The most distinctive feature of a modern international financial market is ____.
+A. Interrelatedness
+B. Directness
+C. Financialization
+D. Globalization
+Answer:
+C
 
-A. Paris
-B. Lyon
-C. Berlin
-D. London
-
-None of the options are Paris. The official name of the capital city of France is Paris. Therefore, the correct answer is:
-
-\boxed{A}
+In the financial market, the relationship between investors and the market
 ===============================
 Prompt: The future of AI is
-Generated text:  now in your hands.
-
-Ask AI to write a story. It could be for your children, for your grandchildren, or for yourself. Ask it to create a story about a town in the future. Ask it to create a story about a child in the future. Ask it to create a story about a town in the future that isn&#39;t in our world now.
-
-Ask it to create a story about a farmer in the future. A doctor in the future. A doctor in the future that also has a family. A doctor in the future with a family that also has a workplace.
-
-Ask it to write about a dog in the future.
+Generated text:  bright, but it&#39;s not without its challenges, as new developments continue to challenge its limitations and growth. As the world continues to evolve and the human race seeks to understand and harness the power of AI, there are many exciting opportunities for those willing to embrace the challenges and learn from the opportunities. In this article, we will explore some of the key challenges facing AI, and explore how they can be overcome through innovative solutions and new approaches.
+One of the biggest challenges facing AI is the development of reliable and accurate data. Many of the most advanced AI systems rely on large datasets to learn and make decisions. However, collecting and processing large amounts
 </pre></div></div>
 </div>
 </section>
@@ -681,17 +689,17 @@ Ask it to write about a dog in the future.
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Age] year old [Gender] [Occupation]. I&#39;m currently [Current Location] and I&#39;m [Current Activity]. I&#39;m a [Skill or Hobby] enthusiast and I&#39;m always looking for new challenges and opportunities to learn and grow. I&#39;m a [Favorite Subject] lover and I love to [Favorite Activity or Hobby]. I&#39;m a [Favorite Book or Movie] fan and I&#39;m always eager to explore new stories and characters. I&#39;m a [Favorite Music] lover and I love to [Favorite Music Genre]. I&#39;m a [Favorite Sport] enthusiast and I&#39;m always looking for
+Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light, a city with a rich history and diverse culture. It is located in the south of France and is the largest city in the country. Paris is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and Louvre Museum, as well as its vibrant arts scene and culinary delights. The city is also home to many famous museums, including the Louvre and the Musée d&#39;Orsay, and is a popular tourist destination for its beautiful architecture and cultural attractions. Paris is a city that has played a significant role in French history and continues to be a
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French National Museum, and the French National Radio and Television Broadcasting Company. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is known for its fashion, art, and cuisine, and is a major economic center in Europe. It is also home to many important historical sites and landmarks, including the Palace of Versailles and the Champs-Élysées. Paris is a city of contrasts, with its
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the way we interact with technology and the world around us. Here are some of the most likely trends that could be expected in the future:
 
-1. Increased automation and robotics: As AI technology continues to advance, we are likely to see an increase in automation and robotics in various industries. This could lead to the creation of new jobs, but it could also lead to the creation of new opportunities for people to work in areas such as robotics engineering, software development, and data analysis.
+1. Increased automation: As AI becomes more advanced, it is likely to become more capable of performing tasks that were previously done by humans. This could lead to a significant increase in automation in industries such as manufacturing, transportation, and healthcare.
 
-2. AI ethics and privacy: As AI technology becomes more advanced, there will
+2. AI-powered healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to advance, it is likely to become even more sophisticated and capable
 
 </pre></div></div>
 </div>
@@ -734,19 +742,15 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I am a [age] year old [gender] who currently resides in [location]. I am passionate about [what you like to do]. I am also [what you do best]. I have traveled a lot and have seen the world, and have learned a lot about different cultures. I am also [what you do that you are interested in]. I have a strong work ethic and I am always looking for ways to grow and improve myself. I am a [general attribute or hobby/interest] who is always looking for new adventures and experiences. Thank you for asking. That sounds like a great character, and
+Generated text:  [insert fictional character&#39;s name]. I am [insert fictional character&#39;s age and nationality]. I grew up in [insert fictional character&#39;s hometown] and I attended [insert fictional character&#39;s school&#39;s name]. I am a [insert fictional character&#39;s profession] with a passion for [insert fictional character&#39;s hobbies or interests]. I love to [insert fictional character&#39;s personal interests or hobbies]. I am known for [insert fictional character&#39;s personality traits or qualities]. I am always [insert fictional character&#39;s personality traits or qualities]. I am [insert fictional character&#39;s personality traits or qualities]. I am [insert fictional character&#39;s personality traits or qualities].
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-Paris is the largest and most populous city in the European Union and the second-largest city in the United Kingdom by population. It is the seat of the French government, a cultural and political center, and the most visited city in the world. It is a major industrial, cultural, and tourist center, and a center for finance, media, and higher education. Paris is also a leading international financial center and the world&#39;s 21st-largest city by population. In 2020, the city had a population of over 10 million people. Paris has a rich history and a diverse population, characterized by its
+Generated text:  Paris, also known as the City of Light. It is a historical city with many iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, and has been a major cultural and economic center for centuries. It is also known for its culinary traditions, particularly its famous French cuisine, and for its vibrant nightlife. Paris is a popular tourist destination, known for its fine art museums, opera houses, and fashion shows. The city is home to many cultural institutions and is recognized as one of the world&#39;s most livable cities. The Eiffel Tower is France’s national emblem, and the city
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by continued rapid innovation and development, with new technologies and applications emerging regularly. Some possible future trends in AI include:
+Generated text:  anticipated to bring significant advancements in various areas such as healthcare, transportation, and education. One possible trend is the increasing integration of AI with the physical world, leading to more precise and efficient technologies. For example, AI could be integrated into medical devices to provide patients with better diagnostic and treatment outcomes. Similarly, in transportation, AI could optimize the use of public and private transportation systems to reduce congestion and improve efficiency. In education, AI could provide personalized learning experiences and adapt to individual needs, making education more accessible and effective.
 
-1. Increased automation: AI is expected to become more automated in the coming years, with new algorithms and machine learning techniques being developed to automate tasks that previously required human intervention. This could lead to widespread automation of repetitive and mundane tasks, freeing up time and resources for human workers to focus on more complex and creative work.
-
-2. AI-driven personalized medicine: AI-powered tools will be used to help diagnose and treat diseases more accurately and quickly, using data from a range of sources such as medical images and genetic
+Another possible trend is the increasing reliance on AI to support decision-making processes, leading to more autonomous and ethical decision-making.
 </pre></div></div>
 </div>
 </section>
@@ -792,18 +796,19 @@ Generated text:  likely to be characterized by continued rapid innovation and de
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [Company Name]. I&#39;ve been with the company for [x years] and have always been an [interest or hobby] enthusiast. I have a knack for [specific skill or ability], and I&#39;m always looking to learn more about new things and stay up-to-date with the latest trends in the industry. If you have any questions or want to learn more about me, feel free to reach out! 🌍✈️✨
-I&#39;m a [job title] at [Company Name], and I&#39;ve been with the company for [x years]. As a [job
+Generated text:  [insert name here]. I am [insert role here], an [insert profession or position here]. I have been working at this company [insert company name] for [insert number of years] years. I work in the [insert department or area of the company here]. My name is [insert name here]. I am a [insert profession or role here]. And I would like to give you a little introduction, but please do not see it as a compliment. I really like your company and the people here. I am very impressed by your company culture, the variety of projects you do, the great jobs you do, the friendly
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris. It is a vibrant and historic city known for its rich history, elegant architecture, and annual festival celebrations. It is located in the northwestern part of the country and is the seat of the government of France. Paris is a cultural center and a major tourist destination. It is also home to several prestigious universities and is home to several iconic landmarks, including the Eiffel Tower and the Louvre Museum. The city is known for its food scene, fashion industry, and music scene. Overall, Paris is a unique and fascinating city that is a must-visit for anyone interested in French culture, history, and art.
+Generated text:  Paris.
+
+Paris is the largest city in France and the third-largest in the European Union. It is home to many of the country’s cultural landmarks and world-renowned attractions, including the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Seine River. The city is also known for its fashion industry and is home to the annual Eiffel Tower Fashion Week. Paris is a major tourist destination and a popular European capital for business, politics, and leisure. The city was founded in the 12th century and has since become a center of culture, business, and politics in the world.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  highly speculative and influenced by a multitude of factors including technological advancements, societal shifts, and economic pressures. Here are some potential trends we can expect to see in the future of AI:
+Generated text:  full of exciting possibilities and possibilities for growth. Here are some possible future trends in artificial intelligence:
 
-1. Integration of AI into daily life: AI is already being integrated into various aspects of daily life, from home automation systems to smart devices. We can expect this trend to continue as AI becomes more integrated into more and more of our everyday lives.
+1. AI will become more accessible to the general public. AI-powered tools like virtual assistants, chatbots, and voice assistants are becoming increasingly popular, and there is a growing demand for them. This will mean that AI will become more accessible to people of all ages and backgrounds, making it easier for people to integrate AI into their daily lives.
 
-2. AI becomes more autonomous: As AI systems become more capable, we can expect them to become more autonomous in their actions. This could lead to an increase in the automation of human tasks and the creation of
+2. AI will become more integrated into various industries. AI is already being integrated into many industries, such as healthcare, transportation, finance, and manufacturing, but there is still a lot of potential for
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

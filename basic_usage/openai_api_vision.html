@@ -527,7 +527,7 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-19 11:53:12] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-19 14:09:18] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -537,15 +537,15 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.09it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.09it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.13it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.21it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.60it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.26it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.28it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.29it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.67it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.47it/s]
 
-Capturing batches (bs=4 avail_mem=60.89 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-19 11:53:21] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=33.41 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.83s/it]
+Capturing batches (bs=4 avail_mem=33.49 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-19 14:09:26] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=28.86 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.87s/it]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -603,13 +603,13 @@ Capturing batches (bs=1 avail_mem=33.41 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"006cf8b32ed54839ba8fa1b02961f1c2","object":"chat.completion","created":1760874821,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"2b17514de25e4a96bbaa6d68b149fb87","object":"chat.completion","created":1760882987,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"ccc8df861546488e89485e44b9de58fb","object":"chat.completion","created":1760874824,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"852cf8591c3e45cdb8aef131bdef5859","object":"chat.completion","created":1760882989,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -650,7 +650,7 @@ Capturing batches (bs=1 avail_mem=33.41 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"a2e733aa64374397a3175f5c42efff8b","object":"chat.completion","created":1760874825,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"5dc78014b663435f800eec2324c4748d","object":"chat.completion","created":1760882990,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":379,"completion_tokens":72,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -693,7 +693,7 @@ Capturing batches (bs=1 avail_mem=33.41 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing clothes on a moving vehicle is not a typical activity.</strong></div>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be performing an unusual task, as ironing is typically done indoors.</strong></div>
 </div>
 </section>
 <section id="Multiple-Image-Inputs">
