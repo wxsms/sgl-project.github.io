@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-19 17:24:23] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-19 17:54:59] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.78it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.77it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.75it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 17.40it/s]
+Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 20.18it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,43 +603,49 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Mac, and I&#39;m a college student in Canada. My major is computer science, and I&#39;m majoring in computer engineering. I&#39;m not an animal, and I do not have cats. However, I would like to know more about the difference between computer engineering and computer science. Can you help me understand the differences between these two fields of study?
-Computer engineering is a more applied and hands-on field of study that focuses on the design, analysis, and implementation of computer systems. It involves using mathematics, programming, and other technical skills to develop and troubleshoot computer systems, software, and hardware. Computer science, on the other hand
+Generated text:  Nathan J. Miller, and I am an Electrical Engineer and business consultant focused on leveraging technology to improve the lives of people around the world. I provide consulting and technology services to a wide range of clients including Fortune 1000 companies, academic institutions, and non-profits, as well as government agencies, large corporations, and many small and mid-sized businesses.
+My services include the design and development of both software and hardware solutions to address complex and challenging technical problems. I combine a deep understanding of technology with my deep understanding of business and industry to help clients achieve their goals. I provide a customized set of services tailored to each client
 ===============================
 Prompt: The president of the United States is
-Generated text:  a politician who represents the citizens of the United States. The president of the United States serves as the head of the executive branch of the United States government, with the power to issue executive orders, issue executive decrees, propose and sign executive decrees, and issue executive orders.
-The president is the leader of the executive branch of the United States government, the legislative and executive branch. In the executive branch, the President of the United States is known as the President. They are the head of government and make the executive decisions to guide the country. They are the highest authority in the country and head the United States government. The President holds
+Generated text:  a higher official of the ________.
+A. State
+B. Government
+C. Government Department
+D. House of Representatives
+Answer: B
+
+The &#34;Hundred Schools of Thought&#34; period in ancient China was an important stage for the development of thought in the country. Which of the following statements about the &#34;Hundred Schools of Thought&#34; is incorrect?
+A. There were no standardized schools in the Western Han period.
+B. The Hundred Schools of Thought appeared in the Western Han period.
+C. The Hundred Schools of Thought promoted the prosperity of the Chinese nation.
+D. The Hundred Schools of Thought had a negative impact on Chinese
 ===============================
 Prompt: The capital of France is
-Generated text:  ____
-A. Paris
-B. Brussels
-C. London
-D. Stockholm
+Generated text:  ______. A. Paris B. Lyon C. Nice D. Paris
 Answer:
 
-A
+D
 
-Which of the following is the most important in the composition of a comprehensive system of professional ethics for a company?
-A. Corporate culture
-B. Corporate goals
-C. Corporate policies
-D. Corporate environment
+As of 2016, the area of central China was approximately:
+A. 9.65 million square kilometers
+B. 16.45 million square kilometers
+C. 20.65 million square kilometers
+D. 26.45 million square kilometers
 Answer:
 
-A
+B
 
-For a company&#39;s financial accounting report, the correct representation of cash inflows and outflows in the cash flow statement is ____.
-A. Cash inflow - negative value, cash outflow - positive value
-B. Cash inflow - positive value, cash outflow - negative value
-C.
+What is the area of central China according to the report?
+A. 9.65 million square kilometers
+B. 16.45 million square kilometers
+C. 20.6
 ===============================
 Prompt: The future of AI is
-Generated text:  hard to predict, but there is one area that is likely to see unprecedented growth – the fields of medical imaging and speech recognition.
-AI has been responsible for the rapid advancement of computers in the last few decades, and the field of medical imaging is a prime example of its effectiveness.
-AI is being used to create more accurate, more realistic, and less expensive medical imaging, and its potential for improving the accuracy and reliability of medical imaging is enormous.
-The field of speech recognition, on the other hand, has a much broader reach and is likely to become one of the most important applications of AI in the future.
-Here are five areas where AI
+Generated text:  uncertain, but a number of technologies that could address some of the world&#39;s most pressing problems, including climate change and poverty, are coming online and becoming more advanced. Here are some examples:
+
+1. 3D-printed materials: If 3D-printed materials become more widely used, they could be used to build much more effective and efficient artificial organs, homes, and other things. They could also be used to create even more advanced forms of artificial skin that can improve the physical and psychological conditions of people with disabilities.
+
+2. AI-based autonomous vehicles: Autonomous vehicles that are built using AI technologies could make transportation much safer and more
 </pre></div></div>
 </div>
 </section>
@@ -679,17 +685,21 @@ Here are five areas where AI
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about your interests and what you&#39;re looking for in a job. What can I help you with today? [Name] is a [job title] at [company name], and I&#39;m excited to meet you and learn more about your interests and what you&#39;re looking for in a job. What can I help you with today? [Name] is a [job title] at [company name], and I&#39;m excited to meet you and learn more about your interests and what you&#39;re looking for in a job.
+Generated text:  [Name] and I am a [Age] year old [Occupation]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French Quarter. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is also known for its fashion industry and is home to many famous fashion houses. Paris is a vibrant and dynamic city with a rich history and a diverse population. It is a popular tourist destination and is often referred to as the &#34;City of Light&#34; due to its bright lights and colorful architecture. Paris
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. The city is also home to many international organizations and institutions, including the European Parliament and the United Nations.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the way we live, work, and interact with technology. Here are some of the most likely trends that are expected to shape the future of AI:
+Generated text:  likely to be characterized by several key trends:
 
-1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes and reduce costs. As AI technology continues to improve, we can expect to see even more widespread adoption of AI in healthcare, with more sophisticated algorithms and machine learning techniques being used to diagnose and treat diseases.
+1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes.
 
-2. Increased use of AI in finance: AI is already being used in finance to improve fraud detection and risk management
+2. Enhanced natural language processing: AI will continue to improve its ability to understand and interpret human language, allowing machines to better communicate and interact with humans.
+
+3. Increased use of machine learning: AI will continue to be used for a wide range of tasks, including image and speech recognition, natural language processing, and predictive analytics.
+
+4. Greater emphasis on ethical considerations: As AI becomes more integrated into our daily lives, there
 
 </pre></div></div>
 </div>
@@ -732,19 +742,19 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m [Age]. I&#39;m a [Age] year old [Gender] who has been [Current Occupation] for [Number of Years] years. I have a wide range of interests, hobbies, and a talent for [Future Goal/Imaginary Goal]. I&#39;m excited to meet you and chat about how I can contribute to your life or career. What can you tell me about yourself?
-Sure, here&#39;s a short, neutral self-introduction for a fictional character:
-&#34;Hi there! My name is [Name] and I&#39;m a [Age] year old [Gender] who has been [Current
+Generated text:  [Your Name], and I&#39;m a [Your profession/role]. I&#39;m dedicated to [Your main profession/role], always striving to become the best version of myself. I love learning new things and always looking for ways to improve my skills and knowledge. I&#39;m always eager to share my experiences and knowledge with others, and I enjoy helping others reach their goals. I&#39;m also a big fan of [Your hobbies/interests], and I enjoy spending time with my family and friends. Thank you for the opportunity to introduce myself. I look forward to the chance to further develop my skills and knowledge. What do you do for a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the second-largest city in the country and the most populous city, with a population of over 2. 1 million people. It is located in the eastern part of the country, at the mouth of the Seine River, on the island of France. The city is a major economic, cultural, and political center, known for its rich history, art, and architecture. Paris is known as the &#34;City of Love&#34; and has a unique blend of French culture, cuisine, and art that attracts tourists from around the world. The city is also home to several famous landmarks and historical sites, including Notre-Dame Cathedral,
+Generated text:  Paris, the largest city and the country&#39;s cultural and political capital. Known for its UNESCO World Heritage sites, museums, and museums of art, Paris is home to many world-renowned landmarks, including the Eiffel Tower and the Louvre Museum. It is also known for its cuisine, art, and fashion, which are all reflected in the city&#39;s architecture and street food. The city has a rich history dating back to the Roman Empire, and continues to be a melting pot of cultures and identities, thanks to its diversity of neighborhoods and cuisine. Paris is a major tourist destination, with millions of visitors each year, making it one
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  set to be shaped by a number of factors, including advancements in computing power, the increasing availability of data, and the growing sophistication of machine learning algorithms. Here are some possible trends that could emerge in the coming years:
+Generated text:  likely to be characterized by significant advancements in areas such as natural language processing, machine learning, and cognitive computing. Here are some possible future trends:
 
-1. Increased Focus on Cybersecurity: As more and more AI systems interact with the internet, there will be an increased need for cybersecurity measures to protect against cyber attacks and protect sensitive data.
+1. Increased Robustness and Accuracy: AI is likely to become even more accurate and robust in its ability to recognize and respond to various complex scenarios. This will allow for the development of more sophisticated and efficient AI systems that can solve complex problems and make informed decisions.
 
-2. AI Integration with IoT: The Internet of Things (IoT) will become more prevalent, and AI will become more integrated with smart devices and connected objects. This will create new opportunities for AI to perform tasks that are difficult
+2. Personalization and Personalization: AI is likely to become more personalized in its approach to user interactions and recommendations. This will enable AI systems to learn from user data and provide personalized experiences that are tailored to individual preferences.
+
+
 </pre></div></div>
 </div>
 </section>
@@ -790,30 +800,33 @@ Generated text:  set to be shaped by a number of factors, including advancements
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [job title] at [company name]. I&#39;ve always been passionate about [specific interest or hobby], which is why I&#39;m here to share my knowledge and expertise in [specific field]. Let&#39;s connect and discuss [the current topic or goal]. [Name]! [Describe yourself briefly, including your interests, skills, and any notable achievements.] [Name]! Hello, my name is [Name] and I am a [job title] at [Company Name]. I&#39;ve always been passionate about [specific interest or hobby], which is why I&#39;m here to share my knowledge and expertise in [
+Generated text:  [Name] and I&#39;m a [type of person] with [number of years working in the field]. My [areas of interest] includes [list of specific skills or expertise].
+
+Hello, my name is [Name] and I&#39;m a [type of person] with [number of years working in the field]. My [areas of interest] includes [list of specific skills or expertise].
+
+Hello, my name is [Name], and I&#39;m a [type of person] with [number of years working in the field]. My [areas of interest] includes [list of specific skills or expertise]. Feel free to introduce yourself to me
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the largest city in the country.
+Generated text:  Paris.
 
-Here is the same information formatted differently:
+(I. If you need to insert a period at the end of the sentence, it is: The capital of France is Paris.)
 
-1. French: Yes
-2. French translation: La capitale de la France est Paris.
+(I. If you want to make it even shorter, consider this: Paris is the capital of France.)
 
-The statement can be summarized as: &#34;Paris, the capital of France, is the largest city in the country.&#34;
+(I. If you want to end the sentence with a capital letter, consider this: Paris is the capital of France.)
 
-This provides a clear, concise statement about the capital city of France in a grammatically correct format. Let me know if you need any adjustments or if you have any other questions! 📈✨
+(I. If you want to end the sentence with a comma, consider this: Paris is the capital of France.)
 
-Add a brief description about Paris, the capital of France, if you would like to. 🎨✨
+(I. If you want to end the sentence with a question mark, consider this: Is Paris the capital of France? )
 
-Certainly! Here&#39;s
+(I.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  vast and constantly evolving, with potential to change drastically. Here are some possible trends that may shape AI in the near future:
+Generated text:  set to be increasingly complex and diverse, with new trends and technologies emerging regularly. Here are some possible trends in AI:
 
-1. Automation and Deep Learning: Automation will continue to revolutionize the way we work and interact with technology. AI will become more efficient, faster, and more accurate, leading to increased productivity and cost savings. Deep learning, a subfield of AI, will also become more sophisticated, allowing computers to learn and understand patterns in large data sets.
+1. AI in Healthcare: AI is already being used in healthcare to help diagnose and treat diseases, predict medical outcomes, and optimize treatment protocols. As AI continues to improve, we can expect to see even more innovative applications in healthcare, such as virtual and augmented reality for diagnosis and recovery, and machine learning for personalized treatment plans.
 
-2. Personalization and Personalization: AI will enable us to tailor our experiences to our individual needs and preferences. This will involve the use of natural language processing, machine
+2. AI in Manufacturing: AI is already being used in manufacturing to improve production efficiency, optimize supply chain management, and reduce waste. As AI technology advances, we can expect to see even
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
