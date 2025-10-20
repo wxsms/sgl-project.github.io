@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 00:47:51] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 01:44:42] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.26it/s]
 
-Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 18.65it/s]
+Capturing batches (bs=1 avail_mem=76.22 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 13.40it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,35 +603,37 @@ Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Anna and I&#39;m a full-time employee at a large corporation. I work in a field that deals with data management, analytics, and reporting. One of my regular tasks is to monitor the performance of the company&#39;s application, which is hosted on AWS. I&#39;m using the AWS CloudFormation stack to define the AWS resources required to run the application. I often encounter issues with the application, and I&#39;m looking for solutions to help improve the performance of the application.
-
-Please provide me with a set of recommendations for improving the performance of the application using CloudFormation. Additionally, please include recommendations for creating an automated monitoring solution to track the performance of
+Generated text:  __________. I&#39;m _________. I&#39;m ________. My __________ is ________. I like ________. I can sing ________. I can skate ________. My favorite color is ________. My favorite place to go is ________. I can play ________. I can speak ________. How many ________ do you have? You like ________. You are ________. What&#39;s your name?
+Answer: Hello, my name is [Your Name]. I&#39;m [Your Age]. I&#39;m [Your Age]. My [Your Name] is [Your Name]. I like [Your Interest]. I can sing [Your Favorite Song]. I can skate [
 ===============================
 Prompt: The president of the United States is
-Generated text:  very busy. When he is not speaking on TV, he is at a meeting. He meets with the people who give him advice and he meets with the people who ask him questions. He has to make decisions for the country. The president is busy and he can&#39;t go to the movies or buy things at the store. He spends most of his time in his office. During the day, he writes important letters and makes important decisions. He also speaks to people from other countries. The president has to help all Americans live, learn, and work. He has to help people have jobs. He has to help people have schools. He
+Generated text:  a figure in the national life and the other branches of government are responsible for the proper functioning of the government. Among the three branches of government, the one that is the most important is the:
+
+A) Legislative branch
+
+B) Executive branch
+
+C) Judicial branch
+
+D) None of the above
+
+To determine the most important branch of government, we need to understand the roles and functions of each branch. The three branches of government are:
+
+1. Legislative branch: This branch is responsible for making laws and ensuring that laws are carried out. It is the branch that creates and enforces laws.
+
+2. Executive branch: This branch is
 ===============================
 Prompt: The capital of France is
-Generated text:  ______. A. Paris B. Brussels C. Strasbourg D. London
-Answer:
-A
+Generated text:  Paris, which is a UNESCO World Heritage Site. On the first day of spring, Paris is in the midst of spring. The temperature in Paris is 5 degrees Celsius. If the temperature in Paris increases by 1 degree Celsius each day for the following 4 days, what will be the temperature in Paris after the 4th day?
 
-Which of the following statements about the Paris Commune are correct?
-① It was the first successful socialist revolution in Europe.
-② It significantly promoted the development of social economy.
-③ It proved that the workers&#39; movement can overcome all obstacles.
-④ It was a temporary measure to stabilize the society.
-A. ①③④
-B. ①②④
-C. ②③④
-D. ①②③④
-Answer:
-C
+To determine the temperature in Paris after the 4th day, we need to calculate the temperature increment for each of the next 4 days and then add these increments to the initial temperature of 5 degrees Celsius.
 
+1. **Day 1**: The temperature increases by 1 degree Celsius.
 
 ===============================
 Prompt: The future of AI is
-Generated text:  becoming increasingly unpredictable, with all the possibilities of the future being explored. The field of AI is rapidly expanding, and we are seeing a multitude of advancements across many different areas, including the development of neural networks, the development of machine learning, and the development of artificial intelligence.
-While the future of AI is likely to bring many benefits, such as increased efficiency, improved accuracy, and the ability to automate many tasks, there are also many risks and challenges that need to be taken into consideration. For example, there are concerns about the privacy and security of the data we use in AI, as well as concerns about the potential impact of AI on
+Generated text:  all around us, from smartphones and smart homes, to online banking and gaming. But how does AI impact us? What are the future of AI? With the advancement of AI technology, AI is becoming more and more important in people’s lives. The following are some of the areas where AI is having a profound impact on our lives.
+AI is a rapidly growing and exciting field of technology that is transforming the way we live, work, and communicate. With the advancement of AI technology, many industries are seeing a positive impact on productivity and efficiency. For example, AI is being used in the healthcare industry to improve patient care and reduce costs.
 </pre></div></div>
 </div>
 </section>
@@ -671,19 +673,17 @@ While the future of AI is likely to bring many benefits, such as increased effic
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a brief description of your job or profession]. I enjoy [insert a short description of your hobbies or interests]. What brings you to [company name] and what makes you a good fit for the position? I&#39;m a [insert a short description of your personality or character]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you think makes [company name] unique and special? I&#39;m excited to learn
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, with a rich history dating back to the Roman Empire and the French Revolution. The city is home to many famous museums, including the Musée d&#39;Orsay, the Musée Rodin, and the Musée d&#39;Orsay. Paris is also known for its fashion industry, with many famous designers and boutiques. The city is also home to many other notable landmarks and attractions, including the Eiffel Tower, the Louvre Museum,
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a popular tourist destination. It is also known for its fashion industry and its role in the French economy. The city is home to many famous French artists, writers, and musicians, and is a major center for the arts and culture in France. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly into one another
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some possible future trends include:
+Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends that are expected to shape the future of AI:
 
-1. Increased integration of AI into everyday life: AI is already being integrated into our daily lives, from smart home devices to self-driving cars. As AI technology continues to advance, we can expect to see even more integration into our daily lives, such as in healthcare, finance, and transportation.
+1. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, reduce costs, and increase efficiency. As AI technology continues to improve, we can expect to see even more widespread adoption in healthcare, with more sophisticated algorithms and machine learning techniques being used to diagnose and treat diseases.
 
-2. AI will become more personalized: As AI technology continues to improve, we can expect to see more personalized experiences. AI will be able to learn from user data and provide more accurate and relevant recommendations.
-
-
+2. Increased use of AI in finance: AI is already being used in finance to improve risk management, fraud detection,
 
 </pre></div></div>
 </div>
@@ -726,23 +726,17 @@ Generated text:  likely to be characterized by rapid advancements in areas such 
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name]. I am a 24-year-old writer and social media influencer with a passion for creativity and creativity. I have a degree in creative writing from [University Name], and have been published in numerous online magazines and social media platforms. My writing style is unique and fun, and I love sharing my thoughts and ideas with others through my social media accounts. I&#39;m always looking for new ways to connect with people and inspire them to be their best selves. So, if you&#39;re looking for a writer and social media influencer, [Your Name] is the perfect fit. Let&#39;s connect and explore ways we can collaborate
+Generated text:  [Name], and I&#39;m a [职业] with a passion for [职业外的爱好或特长]. I&#39;m [年龄] years old and have [职业外的爱好或特长] that make me unique and exciting. I enjoy [职业外的爱好或特长] that allow me to stay [职业外的爱好或特长] and pursue my passions. I&#39;m here to [职业外的爱好或特长] and [职业外的爱好或特长] with [职业外的爱好或特长] goals and [职业外的爱好或特长] values. Thank you for taking the time to meet me. Please let
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-A city in the south of France, it is the largest city in the country and the seat of government. It is also known as the City of Light, as it is one of the most iconic cities in the world and is known for its many iconic landmarks such as the Eiffel Tower, the Arc de Triomphe, and the Louvre Museum. Paris is also known for its rich cultural heritage, including the iconic Louvre Museum, the Notre-Dame Cathedral, and the Roermond Canal.
-
-The French capital city of Paris is one of the most famous and well-known cities in the world, and it
+Generated text:  Paris. It is the largest city in France and the second-largest city in the European Union by population. It is known for its romantic architecture, elegant gallerias, and important museums and art galleries. Paris is a cultural hub with a rich history and tradition. It is also a major global city with a large population and extensive business district.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be shaped by a number of factors, including technological advances, shifts in consumer behavior, changes in policy and regulation, and emerging industries. Some possible future trends in AI include:
+Generated text:  likely to continue to grow and evolve, driven by a variety of trends. Here are some of the most likely future trends in AI:
 
-1. Increased use of AI in healthcare: As AI technology continues to improve, it will be used more and more in medical diagnosis and treatment, to identify patterns and predict outcomes in disease progression.
+1. Increased use of AI in healthcare: AI is already being used to improve patient care and diagnose diseases more accurately than human doctors. In the future, we may see even more widespread adoption of AI in healthcare, with more applications in areas such as diagnosis, treatment planning, and patient monitoring.
 
-2. Enhanced AI for self-driving cars: As technology advances, self-driving cars will become more advanced and capable of making decisions on the fly, taking into account real-world traffic conditions, road conditions, and other factors.
-
-3. AI in the fashion industry:
+2. Improved efficiency in manufacturing: AI is already being used to optimize manufacturing processes and reduce costs. In the future, we may see even greater adoption of AI in manufacturing, with more applications in areas such as
 </pre></div></div>
 </div>
 </section>
@@ -788,38 +782,19 @@ Generated text:  likely to be shaped by a number of factors, including technolog
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  ____ and I come from the year ____.
-My occupation is a ____ in the ____ industry.
-My past includes being a ____ at ____ for ____ years and being a ____ at ____ for ____ years.
-I have a strong ____ and a ____ personality type.
-I strive to be a ____ because ____.
-I have a passion for ____ and I plan to pursue ____ to ____ my passion.
-I am ____ years old.
-I am located in ____.
-I have a sense of ____ and a ____ personality type.
-I find myself to be a ____ because ____.
-I enjoy spending my free time in ____.
-I like to write and I hope
+Generated text:  [insert name]. I&#39;m a [insert job title or role] and I&#39;m [insert most important accomplishment or skill]. What can I tell you about myself? [insert anything about you that you think is interesting and unique, like your hobbies, favorite foods, or favorite places]. I&#39;m [insert age], [insert gender], and I&#39;m [insert nationality]. How did you get to where you are today? I decided to follow my dreams, and I&#39;ve been working towards it since I was a child. I know that I have to work hard, but I also have the support of my family and friends. I always strive
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light.
-
-- The city is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It also has a rich history, including the French Revolution and the Romantic era.
-- Paris is the seat of government, culture, commerce, and industry, and is considered the most important city in the world by the United Nations.
-
-Some notable facts about Paris include:
-
-- The city is one of the most visited cities in the world, with over 65 million tourists visiting each year.
-- Paris is also the birthplace of many renowned artists
+Generated text:  Paris. The city is known for its rich history and iconic landmarks such as Notre-Dame Cathedral, Louvre Museum, and Eiffel Tower. It is also one of the most popular tourist destinations in the world. The city is home to numerous universities and cultural institutions, including the Palace of Versailles and the Musée d&#39;Orsay. Paris is also a major financial center, hosting major international banks and institutions such as the French National Bank and the French National Bank of Commerce. Despite its size and diversity, Paris remains one of the most vibrant and cosmopolitan cities in the world. The city is known for its fashion, art
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to involve a combination of advances in machine learning, deep learning, and other emerging technologies. Some potential trends in AI include:
+Generated text:  likely to see continued growth, improvement, and integration with other technologies. Here are some possible trends in AI in the next few decades:
 
-1. Increased availability and cost-effectiveness of AI systems: As AI becomes more widely used, the availability and cost-effectiveness of AI systems will continue to improve.
+1. Increased automation: AI will continue to become more advanced and capable, enabling machines to perform tasks that were previously done by humans. This will lead to a more efficient and productive workforce, as well as a reduction in the need for human labor.
 
-2. Greater use of AI in healthcare: AI is already being used in various medical applications, such as image analysis, diagnosis, and treatment planning. As AI technology continues to advance, it may become even more powerful and widely used in healthcare.
+2. Cognitive computing: AI will continue to be used in areas such as healthcare, finance, and transportation, where it will help analyze data, learn from it, and make decisions based on that data.
 
-3. Increased integration with other technologies: AI will continue to be integrated with other technologies, such as
+3. Universal intelligence: AI will be able to
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
