@@ -570,7 +570,7 @@ document.write(`
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:53:53] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:14:33] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -580,18 +580,18 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.78s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.33s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.80s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.30s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.37s/it]
 
-Capturing batches (bs=4 avail_mem=55.16 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 01:54:00] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.97it/s]
+Capturing batches (bs=4 avail_mem=55.16 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 03:14:41] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.25it/s]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.20s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.20s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.40s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.40s/it]
 
-Capturing batches (bs=1 avail_mem=53.67 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.17s/it]
-Capturing batches (bs=1 avail_mem=53.58 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 110.04it/s]
+Capturing batches (bs=1 avail_mem=53.67 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.21s/it]
+Capturing batches (bs=1 avail_mem=53.58 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 93.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -623,7 +623,7 @@ Capturing batches (bs=1 avail_mem=53.58 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='9b27ac5338a14eacaddc7e014ce9d535', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760925256, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='73105304170d4c3e96354c6f0f7c6342', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760930096, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -661,9 +661,9 @@ Capturing batches (bs=1 avail_mem=53.58 GB): 100%|██████████
 <div class="highlight"><pre>
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:54:23] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:15:05] `torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:54:31] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:15:16] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -674,19 +674,19 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
 Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.71s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.18s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.26s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.32s/it]
 
-Capturing batches (bs=4 avail_mem=55.13 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 01:54:39] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:00,  7.62it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=4 avail_mem=55.13 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 03:15:23] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=2 avail_mem=54.89 GB):  50%|█████     | 2/4 [00:00&lt;00:00,  4.35it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:14&lt;00:00,  3.65s/it]
+Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:16&lt;00:00,  4.09s/it]
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.22s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.22s/it]
 
-Capturing batches (bs=1 avail_mem=53.51 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.41s/it]
-Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 79.58it/s]
+Capturing batches (bs=1 avail_mem=53.51 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.49s/it]
+Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 38.68it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -718,7 +718,7 @@ Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='a61bf21cd58045398eea45b4ba748181', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760925309, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='451e52700ee54d5aa9c39a3fcf4ae587', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1760930155, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -758,12 +758,12 @@ Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████
 <div class="highlight"><pre>
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:55:32] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:55:32] Casting torch.bfloat16 to torch.float16.
+[2025-10-20 03:16:04] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:16:04] Casting torch.bfloat16 to torch.float16.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:55:41] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:55:41] Casting torch.bfloat16 to torch.float16.
-[2025-10-20 01:55:42] Casting torch.bfloat16 to torch.float16.
+[2025-10-20 03:16:12] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:16:12] Casting torch.bfloat16 to torch.float16.
+[2025-10-20 03:16:12] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -773,22 +773,22 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.32s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:09,  4.53s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.52s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.46s/it]
 Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.51s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.17s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.65s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.19s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.67s/it]
 
-Capturing batches (bs=4 avail_mem=60.13 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 01:56:00] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=59.74 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.70it/s]
-[2025-10-20 01:56:01] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-20 01:56:01] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=4 avail_mem=60.13 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 03:16:33] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=59.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.53it/s]
+[2025-10-20 03:16:34] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-20 03:16:34] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.04s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.04s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.01s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.01s/it]
 
-Capturing batches (bs=1 avail_mem=58.40 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.42s/it]
-Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 86.51it/s]
+Capturing batches (bs=1 avail_mem=58.40 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.24s/it]
+Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 74.68it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -820,7 +820,7 @@ Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='76fb9913a06b4854ad38f61ed32f0758', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760925376, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='5e790c8ec78a4262b5bcdeb932b8707c', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760930209, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -858,12 +858,12 @@ Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████
 <div class="highlight"><pre>
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:56:25] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:56:25] Casting torch.bfloat16 to torch.float16.
+[2025-10-20 03:16:58] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:16:58] Casting torch.bfloat16 to torch.float16.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:56:33] `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:56:33] Casting torch.bfloat16 to torch.float16.
-[2025-10-20 01:56:34] Casting torch.bfloat16 to torch.float16.
+[2025-10-20 03:17:06] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:17:06] Casting torch.bfloat16 to torch.float16.
+[2025-10-20 03:17:07] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -873,22 +873,22 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.20s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.25s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.30s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.07s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.50s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.11s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.36s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.47s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.26s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.66s/it]
 
-Capturing batches (bs=4 avail_mem=60.01 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 01:56:52] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.10it/s]
-[2025-10-20 01:56:53] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-10-20 01:56:53] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=4 avail_mem=60.01 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 03:17:25] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.75it/s]
+[2025-10-20 03:17:26] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-10-20 03:17:26] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.71it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.71it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.59it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.59it/s]
 
-Capturing batches (bs=1 avail_mem=58.19 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.22s/it]
-Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 80.91it/s]
+Capturing batches (bs=1 avail_mem=58.19 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.40s/it]
+Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 77.28it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -920,7 +920,7 @@ Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='655ea36686e648f4a09710f95a6a62f1', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760925427, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='37dab596788842a3a26e74b85a7a1861', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1760930261, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -956,9 +956,9 @@ Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████
 <div class="highlight"><pre>
 WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using eagle3 and standalone speculative decoding.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:57:17] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:17:51] `torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-20 01:57:25] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 03:17:59] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -968,20 +968,20 @@ WARNING:sglang.srt.server_args:Overlap scheduler is disabled because of using ea
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.42it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.30it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.22it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.43it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.28it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
-Capturing batches (bs=4 avail_mem=60.52 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 01:57:33] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.97it/s]
+Capturing batches (bs=4 avail_mem=60.52 GB):   0%|          | 0/4 [00:00&lt;?, ?it/s][2025-10-20 03:18:06] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  8.24it/s]
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.66it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.60it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.25it/s]
 
-Capturing batches (bs=1 avail_mem=59.38 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 44.55it/s]
+Capturing batches (bs=1 avail_mem=59.38 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 59.56it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1012,7 +1012,7 @@ Capturing batches (bs=1 avail_mem=59.38 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': 'aed820a41174463c90d22085944dd107', 'object': 'chat.completion', 'created': 1760925465, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France\'s geography and politics. France is a country in Western Europe. I remember that Paris is a major city there. But wait, is Paris the capital? I think so, but maybe I should double-check to be sure. Sometimes capitals can be different from the most populous city, but in this case, Paris is both the capital and one of the largest cities. Let me think if there are any other cities in France that might be the capital. There\'s Lyon, which is known as the capital of cuisine, but that\'s not the political capital. Then there\'s Lille, which is more of a regional center. Strasbourg comes to mind too; I think Strasbourg is a major city in the东北部 of France. Wait, isn\'t Strasbourg the capital of the Grand Est region? But the national capital? No, I think Paris is still the national capital. Let me confirm. The French government is located in Paris, with the President residing at the Elysée Palace, and the National Assembly sitting in Paris. So yes, Paris is definitely the capital. I don\'t think there\'s any confusion here. Maybe in some historical context, but currently, Paris is the capital. So the answer should be straightforward. Just need to state that the capital of France is Paris, maybe mention it\'s also the largest city, and perhaps a bit about its significance as a cultural and political hub. But the user probably just wants the name. However, adding a bit more detail might be helpful. Let me make sure there\'s no trick in the question. Sometimes people might ask about the capital of France\'s regions, but here it\'s specifically the country\'s capital. So no, the answer remains Paris. Alright, I think that\'s correct.\n</think>\n\nThe capital of France is **Paris**. This major city is not only the political and cultural heart of the country but also its largest metropolis. Iconic landmarks like the Eiffel Tower, the Louvre Museum, and the Île de la Cité solidify its status as a global hub for art, history, and commerce.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 481, 'completion_tokens': 455, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '8e2d78db74b84ac4bbbf0022a0a41797', 'object': 'chat.completion', 'created': 1760930299, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? It\'s known for things like the Eiffel Tower, Louvre Museum, and baguettes. Now, the capital... I remember that巴黎, which is spelled Paris, is the capital. But wait, let me make sure I\'m not mixing it up with any other countries. For example, is there another country where Paris is the capital? No, I think Paris is uniquely the capital of France.\n\nWait, sometimes people might confuse cities with similar names. Like, Paris in France versus Pariz in another language? No, in English, it\'s Paris. So the answer should be straightforward. But maybe I should verify this. Let me think of other capitals in nearby countries. Germany\'s capital is Berlin, Spain\'s is Madrid, Italy\'s is Rome. So France\'s capital being Paris makes sense, as those are all major cities. \n\nAlso, historical context. France has been through different regimes, but since the revolution, Paris has remained the capital. The French Revolution took place in Paris, and many historical figures like Napoleon were from there. So yeah, that solidifies it. \n\nAnother angle: the administrative regions. France is divided into regions, but the capital is a separate entity, the City of Paris, which is a department itself. So that checks out. \n\nAny possible mistakes? Maybe if there was a different capital during a specific period, but generally, Paris is the consistent answer. I can\'t think of any exceptions. So I\'m confident the answer is Paris. \n\nSo putting it all together, the capital of France is Paris. The user probably wants a concise answer, so just state that clearly. Maybe add a bit more info if needed, like it\'s located in the Île-de-France region, but the main point is Paris. Keep it simple and direct.\n</think>\n\nThe capital of France is **Paris**, a major global city renowned for landmarks like the Eiffel Tower, Louvre Museum, and its vibrant cultural scene. It is located in the Île-de-France region and has served as the nation\'s political and economic center since the French Revolution.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 493, 'completion_tokens': 467, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
