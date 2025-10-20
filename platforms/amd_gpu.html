@@ -537,6 +537,7 @@ python<span class="w"> </span>setup_rocm.py<span class="w"> </span>install
 
 <span class="c1"># Install sglang python package</span>
 <span class="nb">cd</span><span class="w"> </span>..
+rm<span class="w"> </span>-rf<span class="w"> </span>python/pyproject.toml<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_hip]&quot;</span>
 </pre></div>
 </div>
