@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 19, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 20, 2025"/>
   </head>
   
   
@@ -544,7 +544,7 @@ document.write(`
 `torch_dtype` is deprecated! Use `dtype` instead!
 WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-19 17:54:59] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-20 00:47:51] `torch_dtype` is deprecated! Use `dtype` instead!
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ WARNING:transformers.configuration_utils:`torch_dtype` is deprecated! Use `dtype
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.75it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.15it/s]
 
-Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 20.18it/s]
+Capturing batches (bs=1 avail_mem=76.73 GB): 100%|██████████| 20/20 [00:01&lt;00:00, 18.65it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,49 +603,35 @@ Capturing batches (bs=1 avail_mem=72.62 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Nathan J. Miller, and I am an Electrical Engineer and business consultant focused on leveraging technology to improve the lives of people around the world. I provide consulting and technology services to a wide range of clients including Fortune 1000 companies, academic institutions, and non-profits, as well as government agencies, large corporations, and many small and mid-sized businesses.
-My services include the design and development of both software and hardware solutions to address complex and challenging technical problems. I combine a deep understanding of technology with my deep understanding of business and industry to help clients achieve their goals. I provide a customized set of services tailored to each client
+Generated text:  Anna and I&#39;m a full-time employee at a large corporation. I work in a field that deals with data management, analytics, and reporting. One of my regular tasks is to monitor the performance of the company&#39;s application, which is hosted on AWS. I&#39;m using the AWS CloudFormation stack to define the AWS resources required to run the application. I often encounter issues with the application, and I&#39;m looking for solutions to help improve the performance of the application.
+
+Please provide me with a set of recommendations for improving the performance of the application using CloudFormation. Additionally, please include recommendations for creating an automated monitoring solution to track the performance of
 ===============================
 Prompt: The president of the United States is
-Generated text:  a higher official of the ________.
-A. State
-B. Government
-C. Government Department
-D. House of Representatives
-Answer: B
-
-The &#34;Hundred Schools of Thought&#34; period in ancient China was an important stage for the development of thought in the country. Which of the following statements about the &#34;Hundred Schools of Thought&#34; is incorrect?
-A. There were no standardized schools in the Western Han period.
-B. The Hundred Schools of Thought appeared in the Western Han period.
-C. The Hundred Schools of Thought promoted the prosperity of the Chinese nation.
-D. The Hundred Schools of Thought had a negative impact on Chinese
+Generated text:  very busy. When he is not speaking on TV, he is at a meeting. He meets with the people who give him advice and he meets with the people who ask him questions. He has to make decisions for the country. The president is busy and he can&#39;t go to the movies or buy things at the store. He spends most of his time in his office. During the day, he writes important letters and makes important decisions. He also speaks to people from other countries. The president has to help all Americans live, learn, and work. He has to help people have jobs. He has to help people have schools. He
 ===============================
 Prompt: The capital of France is
-Generated text:  ______. A. Paris B. Lyon C. Nice D. Paris
+Generated text:  ______. A. Paris B. Brussels C. Strasbourg D. London
 Answer:
+A
 
-D
-
-As of 2016, the area of central China was approximately:
-A. 9.65 million square kilometers
-B. 16.45 million square kilometers
-C. 20.65 million square kilometers
-D. 26.45 million square kilometers
+Which of the following statements about the Paris Commune are correct?
+① It was the first successful socialist revolution in Europe.
+② It significantly promoted the development of social economy.
+③ It proved that the workers&#39; movement can overcome all obstacles.
+④ It was a temporary measure to stabilize the society.
+A. ①③④
+B. ①②④
+C. ②③④
+D. ①②③④
 Answer:
+C
 
-B
 
-What is the area of central China according to the report?
-A. 9.65 million square kilometers
-B. 16.45 million square kilometers
-C. 20.6
 ===============================
 Prompt: The future of AI is
-Generated text:  uncertain, but a number of technologies that could address some of the world&#39;s most pressing problems, including climate change and poverty, are coming online and becoming more advanced. Here are some examples:
-
-1. 3D-printed materials: If 3D-printed materials become more widely used, they could be used to build much more effective and efficient artificial organs, homes, and other things. They could also be used to create even more advanced forms of artificial skin that can improve the physical and psychological conditions of people with disabilities.
-
-2. AI-based autonomous vehicles: Autonomous vehicles that are built using AI technologies could make transportation much safer and more
+Generated text:  becoming increasingly unpredictable, with all the possibilities of the future being explored. The field of AI is rapidly expanding, and we are seeing a multitude of advancements across many different areas, including the development of neural networks, the development of machine learning, and the development of artificial intelligence.
+While the future of AI is likely to bring many benefits, such as increased efficiency, improved accuracy, and the ability to automate many tasks, there are also many risks and challenges that need to be taken into consideration. For example, there are concerns about the privacy and security of the data we use in AI, as well as concerns about the potential impact of AI on
 </pre></div></div>
 </div>
 </section>
@@ -685,21 +671,19 @@ Generated text:  uncertain, but a number of technologies that could address some
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I am a [Age] year old [Occupation]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years] years of experience in [Field]. I am a [Skill] who has [Number of Years
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also home to the French Parliament, the French Academy of Sciences, and the French National Library. Paris is a bustling metropolis with a rich cultural heritage and is a major tourist destination. The city is also known for its fashion industry, with Paris Fashion Week being one of the largest in the world. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly. The city is also home to many international organizations and institutions, including the European Parliament and the United Nations.
+Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major cultural and economic center, with a rich history dating back to the Roman Empire and the French Revolution. The city is home to many famous museums, including the Musée d&#39;Orsay, the Musée Rodin, and the Musée d&#39;Orsay. Paris is also known for its fashion industry, with many famous designers and boutiques. The city is also home to many other notable landmarks and attractions, including the Eiffel Tower, the Louvre Museum,
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by several key trends:
+Generated text:  likely to be characterized by rapid advancements in areas such as machine learning, natural language processing, and computer vision. Some possible future trends include:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes.
+1. Increased integration of AI into everyday life: AI is already being integrated into our daily lives, from smart home devices to self-driving cars. As AI technology continues to advance, we can expect to see even more integration into our daily lives, such as in healthcare, finance, and transportation.
 
-2. Enhanced natural language processing: AI will continue to improve its ability to understand and interpret human language, allowing machines to better communicate and interact with humans.
+2. AI will become more personalized: As AI technology continues to improve, we can expect to see more personalized experiences. AI will be able to learn from user data and provide more accurate and relevant recommendations.
 
-3. Increased use of machine learning: AI will continue to be used for a wide range of tasks, including image and speech recognition, natural language processing, and predictive analytics.
 
-4. Greater emphasis on ethical considerations: As AI becomes more integrated into our daily lives, there
 
 </pre></div></div>
 </div>
@@ -742,19 +726,23 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Your Name], and I&#39;m a [Your profession/role]. I&#39;m dedicated to [Your main profession/role], always striving to become the best version of myself. I love learning new things and always looking for ways to improve my skills and knowledge. I&#39;m always eager to share my experiences and knowledge with others, and I enjoy helping others reach their goals. I&#39;m also a big fan of [Your hobbies/interests], and I enjoy spending time with my family and friends. Thank you for the opportunity to introduce myself. I look forward to the chance to further develop my skills and knowledge. What do you do for a
+Generated text:  [Your Name]. I am a 24-year-old writer and social media influencer with a passion for creativity and creativity. I have a degree in creative writing from [University Name], and have been published in numerous online magazines and social media platforms. My writing style is unique and fun, and I love sharing my thoughts and ideas with others through my social media accounts. I&#39;m always looking for new ways to connect with people and inspire them to be their best selves. So, if you&#39;re looking for a writer and social media influencer, [Your Name] is the perfect fit. Let&#39;s connect and explore ways we can collaborate
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the largest city and the country&#39;s cultural and political capital. Known for its UNESCO World Heritage sites, museums, and museums of art, Paris is home to many world-renowned landmarks, including the Eiffel Tower and the Louvre Museum. It is also known for its cuisine, art, and fashion, which are all reflected in the city&#39;s architecture and street food. The city has a rich history dating back to the Roman Empire, and continues to be a melting pot of cultures and identities, thanks to its diversity of neighborhoods and cuisine. Paris is a major tourist destination, with millions of visitors each year, making it one
+Generated text:  Paris.
+
+A city in the south of France, it is the largest city in the country and the seat of government. It is also known as the City of Light, as it is one of the most iconic cities in the world and is known for its many iconic landmarks such as the Eiffel Tower, the Arc de Triomphe, and the Louvre Museum. Paris is also known for its rich cultural heritage, including the iconic Louvre Museum, the Notre-Dame Cathedral, and the Roermond Canal.
+
+The French capital city of Paris is one of the most famous and well-known cities in the world, and it
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by significant advancements in areas such as natural language processing, machine learning, and cognitive computing. Here are some possible future trends:
+Generated text:  likely to be shaped by a number of factors, including technological advances, shifts in consumer behavior, changes in policy and regulation, and emerging industries. Some possible future trends in AI include:
 
-1. Increased Robustness and Accuracy: AI is likely to become even more accurate and robust in its ability to recognize and respond to various complex scenarios. This will allow for the development of more sophisticated and efficient AI systems that can solve complex problems and make informed decisions.
+1. Increased use of AI in healthcare: As AI technology continues to improve, it will be used more and more in medical diagnosis and treatment, to identify patterns and predict outcomes in disease progression.
 
-2. Personalization and Personalization: AI is likely to become more personalized in its approach to user interactions and recommendations. This will enable AI systems to learn from user data and provide personalized experiences that are tailored to individual preferences.
+2. Enhanced AI for self-driving cars: As technology advances, self-driving cars will become more advanced and capable of making decisions on the fly, taking into account real-world traffic conditions, road conditions, and other factors.
 
-
+3. AI in the fashion industry:
 </pre></div></div>
 </div>
 </section>
@@ -800,33 +788,38 @@ Generated text:  likely to be characterized by significant advancements in areas
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [type of person] with [number of years working in the field]. My [areas of interest] includes [list of specific skills or expertise].
-
-Hello, my name is [Name] and I&#39;m a [type of person] with [number of years working in the field]. My [areas of interest] includes [list of specific skills or expertise].
-
-Hello, my name is [Name], and I&#39;m a [type of person] with [number of years working in the field]. My [areas of interest] includes [list of specific skills or expertise]. Feel free to introduce yourself to me
+Generated text:  ____ and I come from the year ____.
+My occupation is a ____ in the ____ industry.
+My past includes being a ____ at ____ for ____ years and being a ____ at ____ for ____ years.
+I have a strong ____ and a ____ personality type.
+I strive to be a ____ because ____.
+I have a passion for ____ and I plan to pursue ____ to ____ my passion.
+I am ____ years old.
+I am located in ____.
+I have a sense of ____ and a ____ personality type.
+I find myself to be a ____ because ____.
+I enjoy spending my free time in ____.
+I like to write and I hope
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
+Generated text:  Paris, also known as the City of Light.
 
-(I. If you need to insert a period at the end of the sentence, it is: The capital of France is Paris.)
+- The city is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It also has a rich history, including the French Revolution and the Romantic era.
+- Paris is the seat of government, culture, commerce, and industry, and is considered the most important city in the world by the United Nations.
 
-(I. If you want to make it even shorter, consider this: Paris is the capital of France.)
+Some notable facts about Paris include:
 
-(I. If you want to end the sentence with a capital letter, consider this: Paris is the capital of France.)
-
-(I. If you want to end the sentence with a comma, consider this: Paris is the capital of France.)
-
-(I. If you want to end the sentence with a question mark, consider this: Is Paris the capital of France? )
-
-(I.
+- The city is one of the most visited cities in the world, with over 65 million tourists visiting each year.
+- Paris is also the birthplace of many renowned artists
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  set to be increasingly complex and diverse, with new trends and technologies emerging regularly. Here are some possible trends in AI:
+Generated text:  likely to involve a combination of advances in machine learning, deep learning, and other emerging technologies. Some potential trends in AI include:
 
-1. AI in Healthcare: AI is already being used in healthcare to help diagnose and treat diseases, predict medical outcomes, and optimize treatment protocols. As AI continues to improve, we can expect to see even more innovative applications in healthcare, such as virtual and augmented reality for diagnosis and recovery, and machine learning for personalized treatment plans.
+1. Increased availability and cost-effectiveness of AI systems: As AI becomes more widely used, the availability and cost-effectiveness of AI systems will continue to improve.
 
-2. AI in Manufacturing: AI is already being used in manufacturing to improve production efficiency, optimize supply chain management, and reduce waste. As AI technology advances, we can expect to see even
+2. Greater use of AI in healthcare: AI is already being used in various medical applications, such as image analysis, diagnosis, and treatment planning. As AI technology continues to advance, it may become even more powerful and widely used in healthcare.
+
+3. Increased integration with other technologies: AI will continue to be integrated with other technologies, such as
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -928,7 +921,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 19, 2025.
+  Last updated on Oct 20, 2025.
   <br/>
 </p>
   </div>

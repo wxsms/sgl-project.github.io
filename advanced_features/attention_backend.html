@@ -55,7 +55,7 @@
     <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 19, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 20, 2025"/>
   </head>
   
   
@@ -529,7 +529,7 @@ You can test them according to your needs.</p>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>FA4 (FlashAttention 4)</strong></p></td>
-<td><p>❌</p></td>
+<td><p>128</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -660,7 +660,7 @@ You can test them according to your needs.</p>
 <td><p>⚠️ (page_size=1 only)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>FA4</strong></p></td>
-<td><p>n/a</p></td>
+<td><p>128</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -691,13 +691,14 @@ You can test them according to your needs.</p>
 <p class="admonition-title">Tip</p>
 <p>Speculative decoding topk: <code class="docutils literal notranslate"><span class="pre">topk</span></code> is the number of draft tokens sampled per step from the draft model. <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code> follows classic EAGLE; <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> explores multiple branches and requires backend support in both draft and verification paths.</p>
 </div>
-<p>Note: Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), Ascend (128).</p>
+<p>Note: Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), FA4 (128), Ascend (128).</p>
 <p>MLA page-size constraints:</p>
 <ul class="simple">
 <li><p>FlashInfer MLA: page_size = 1.</p></li>
 <li><p>FlashMLA: page_size = 64.</p></li>
 <li><p>Cutlass MLA: page_size = 128.</p></li>
 <li><p>TRTLLM MLA: page_size ∈ {32, 64}.</p></li>
+<li><p>FA4: page_size = 128.</p></li>
 </ul>
 </section>
 <section id="hybrid-attention-different-backends-for-prefill-vs-decode-experimental">
@@ -876,7 +877,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>fa4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prefill-attention-backend<span class="w"> </span>fa4<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
@@ -1029,7 +1030,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 19, 2025.
+  Last updated on Oct 20, 2025.
   <br/>
 </p>
   </div>
