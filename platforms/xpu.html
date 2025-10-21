@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Development Guide Using Docker &#8212; SGLang</title>
+    <title>XPU &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/development_guide_using_docker';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/xpu';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Benchmark and Profiling" href="benchmark_and_profiling.html" />
-    <link rel="prev" title="Contribution Guide" href="contribution_guide.html" />
+    <link rel="next" title="Contribution Guide" href="../developer_guide/contribution_guide.html" />
+    <link rel="prev" title="Ascend NPUs" href="ascend_npu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Oct 21, 2025"/>
@@ -210,20 +210,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../platforms/amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu.html">Ascend NPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ascend_npu.html">Ascend NPUs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Development Guide Using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bench_serving.html">Bench Serving Guide</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/bench_serving.html">Bench Serving Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer_guide/development_guide_using_docker.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/xpu.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer_guide/development_guide_using_docker.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/xpu.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -339,7 +339,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/development_guide_using_docker.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/xpu.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,7 @@
       
       
       
-      <li><a href="../_sources/developer_guide/development_guide_using_docker.md" target="_blank"
+      <li><a href="../_sources/platforms/xpu.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +453,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Development Guide Using Docker</h1>
+    <h1>XPU</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -463,15 +463,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vscode-on-a-remote-host">Setup VSCode on a Remote Host</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-docker-container">Setup Docker Container</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-use-the-default-dev-container-automatically-from-vscode">Option 1. Use the default dev container automatically from VSCode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-start-up-containers-manually-advanced">Option 2. Start up containers manually (advanced)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimized-model-list">Optimized Model List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install From Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-using-docker">Install Using Docker</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-sglang-with-vscode-debugger">Debug SGLang with VSCode Debugger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile">Profile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-of-the-serving-engine">Launch of the Serving Engine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-with-requests">Benchmarking with Requests</a></li>
 </ul>
             </nav>
         </div>
@@ -483,118 +482,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="development-guide-using-docker">
-<h1>Development Guide Using Docker<a class="headerlink" href="#development-guide-using-docker" title="Link to this heading">#</a></h1>
-<section id="setup-vscode-on-a-remote-host">
-<h2>Setup VSCode on a Remote Host<a class="headerlink" href="#setup-vscode-on-a-remote-host" title="Link to this heading">#</a></h2>
-<p>(Optional - you can skip this step if you plan to run sglang dev container locally)</p>
-<ol class="arabic simple">
-<li><p>In the remote host, download <code class="docutils literal notranslate"><span class="pre">code</span></code> from <a class="reference external" href="https://code.visualstudio.com/download">Https://code.visualstudio.com/docs/?dv=linux64cli</a> and run <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">tunnel</span></code> in a shell.</p></li>
-</ol>
-<p>Example</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://vscode.download.prss.microsoft.com/dbazure/download/stable/fabdb6a30b49f79a7aba0f2ad9df9b399473380f/vscode_cli_alpine_x64_cli.tar.gz
-tar<span class="w"> </span>xf<span class="w"> </span>vscode_cli_alpine_x64_cli.tar.gz
+  <section class="tex2jax_ignore mathjax_ignore" id="xpu">
+<h1>XPU<a class="headerlink" href="#xpu" title="Link to this heading">#</a></h1>
+<p>The document addresses how to set up the <a class="reference external" href="https://github.com/sgl-project/sglang">SGLang</a> environment and run LLM inference on Intel GPU, <a class="reference external" href="https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html">see more context about Intel GPU support within PyTorch ecosystem</a>.</p>
+<p>Specifically, SGLang is optimized for <a class="reference external" href="https://www.intel.com/content/www/us/en/ark/products/series/242616/intel-arc-pro-b-series-graphics.html">Intel® Arc™ Pro B-Series Graphics</a> and <a class="reference external" href="https://www.intel.com/content/www/us/en/ark/products/series/240391/intel-arc-b-series-graphics.html">
+Intel® Arc™ B-Series Graphics</a>.</p>
+<section id="optimized-model-list">
+<h2>Optimized Model List<a class="headerlink" href="#optimized-model-list" title="Link to this heading">#</a></h2>
+<p>A list of LLMs have been optimized on Intel GPU, and more are on the way:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Model Name</p></th>
+<th class="head text-center"><p>BF16</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Llama-3.2-3B</p></td>
+<td class="text-center"><p><a class="reference external" href="https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct">meta-llama/Llama-3.2-3B-Instruct</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Llama-3.1-8B</p></td>
+<td class="text-center"><p><a class="reference external" href="https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct">meta-llama/Llama-3.1-8B-Instruct</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Qwen2.5-1.5B</p></td>
+<td class="text-center"><p><a class="reference external" href="https://huggingface.co/Qwen/Qwen2.5-1.5B">Qwen/Qwen2.5-1.5B</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Note:</strong> The model identifiers listed in the table above
+have been verified on <a class="reference external" href="https://www.intel.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications.html">Intel® Arc™ B580 Graphics</a>.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<section id="install-from-source">
+<h3>Install From Source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
+<p>Currently SGLang XPU only supports installation from source. Please refer to <a class="reference external" href="https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html">“Getting Started on Intel GPU”</a> to install XPU dependency.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create and activate a conda environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>sgl-xpu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>sgl-xpu
 
-<span class="c1"># https://code.visualstudio.com/docs/remote/tunnels</span>
-./code<span class="w"> </span>tunnel
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>In your local machine, press F1 in VSCode and choose “Remote Tunnels: Connect to Tunnel”.</p></li>
-</ol>
-</section>
-<section id="setup-docker-container">
-<h2>Setup Docker Container<a class="headerlink" href="#setup-docker-container" title="Link to this heading">#</a></h2>
-<section id="option-1-use-the-default-dev-container-automatically-from-vscode">
-<h3>Option 1. Use the default dev container automatically from VSCode<a class="headerlink" href="#option-1-use-the-default-dev-container-automatically-from-vscode" title="Link to this heading">#</a></h3>
-<p>There is a <code class="docutils literal notranslate"><span class="pre">.devcontainer</span></code> folder in the sglang repository root folder to allow VSCode to automatically start up within dev container. You can read more about this VSCode extension in VSCode official document <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.
-<img alt="image" src="https://github.com/user-attachments/assets/6a245da8-2d4d-4ea8-8db1-5a05b3a66f6d" />
-(<em>Figure 1: Diagram from VSCode official documentation <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.</em>)</p>
-<p>To enable this, you only need to:</p>
-<ol class="arabic simple">
-<li><p>Start Visual Studio Code and install <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VSCode dev container extension</a>.</p></li>
-<li><p>Press F1, type and choose “Dev Container: Open Folder in Container.</p></li>
-<li><p>Input the <code class="docutils literal notranslate"><span class="pre">sglang</span></code> local repo path in your machine and press enter.</p></li>
-</ol>
-<p>The first time you open it in dev container might take longer due to docker pull and build. Once it’s successful, you should set on your status bar at the bottom left displaying that you are in a dev container:</p>
-<p><img alt="image" src="https://github.com/user-attachments/assets/650bba0b-c023-455f-91f9-ab357340106b" /></p>
-<p>Now when you run <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> in the VSCode terminal or start debugging using F5, sglang server will be started in the dev container with all your local changes applied automatically:</p>
-<p><img alt="image" src="https://github.com/user-attachments/assets/748c85ba-7f8c-465e-8599-2bf7a8dde895" /></p>
-</section>
-<section id="option-2-start-up-containers-manually-advanced">
-<h3>Option 2. Start up containers manually (advanced)<a class="headerlink" href="#option-2-start-up-containers-manually-advanced" title="Link to this heading">#</a></h3>
-<p>The following startup command is an example for internal development by the SGLang team. You can <strong>modify or add directory mappings as needed</strong>, especially for model weight downloads, to prevent repeated downloads by different Docker containers.</p>
-<p>❗️ <strong>Note on RDMA</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. `--network host` and `--privileged` are required by RDMA. If you don&#39;t need RDMA, you can remove them but keeping them there does not harm. Thus, we enable these two flags by default in the commands below.
-2. You may need to set `NCCL_IB_GID_INDEX` if you are using RoCE, for example: `export NCCL_IB_GID_INDEX=3`.
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the name to yours</span>
-docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>&lt;volumes-to-mount&gt;<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_dev<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_dev<span class="w"> </span>/bin/zsh
-</pre></div>
-</div>
-<p>Some useful volumes to mount are:</p>
-<ol class="arabic simple">
-<li><p><strong>Huggingface model cache</strong>: mounting model cache can avoid re-download every time docker restarts. Default location on Linux is <code class="docutils literal notranslate"><span class="pre">~/.cache/huggingface/</span></code>.</p></li>
-<li><p><strong>SGLang repository</strong>: code changes in the SGLang local repository will be automatically synced to the .devcontainer.</p></li>
-</ol>
-<p>Example 1: Monting local cache folder <code class="docutils literal notranslate"><span class="pre">/opt/dlami/nvme/.cache</span></code> but not the SGLang repo. Use this when you prefer to manually transfer local code changes to the devcontainer.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/opt/dlami/nvme/.cache:/root/.cache<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
-</pre></div>
-</div>
-<p>Example 2: Mounting both HuggingFace cache and local SGLang repo. Local code changes are automatically synced to the devcontainer as the SGLang is installed in editable mode in the dev image.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.cache/huggingface/:/root/.cache/huggingface<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/src/sglang:/sgl-workspace/sglang<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
+<span class="c1"># Set PyTorch XPU as primary pip install channel to avoid installing the larger CUDA-enabled version and prevent potential runtime issues.</span>
+pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.8.0+xpu<span class="w"> </span>torchao<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-triton-xpu<span class="o">==</span><span class="m">3</span>.4.0<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/xpu
+pip3<span class="w"> </span>install<span class="w"> </span>xgrammar<span class="w"> </span>--no-deps<span class="w"> </span><span class="c1"># xgrammar will introduce CUDA-enabled triton which might conflict with XPU</span>
+
+<span class="c1"># Clone the SGLang code</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
+git<span class="w"> </span>checkout<span class="w"> </span>&lt;YOUR-DESIRED-VERSION&gt;
+
+<span class="c1"># Use dedicated toml file</span>
+<span class="nb">cd</span><span class="w"> </span>python
+cp<span class="w"> </span>pyproject_xpu.toml<span class="w"> </span>pyproject.toml
+<span class="c1"># Install SGLang dependent libs, and build SGLang main package</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
+pip<span class="w"> </span>install<span class="w"> </span>-v<span class="w"> </span>.
 </pre></div>
 </div>
 </section>
+<section id="install-using-docker">
+<h3>Install Using Docker<a class="headerlink" href="#install-using-docker" title="Link to this heading">#</a></h3>
+<p>The docker for XPU is under active development. Please stay tuned.</p>
 </section>
-<section id="debug-sglang-with-vscode-debugger">
-<h2>Debug SGLang with VSCode Debugger<a class="headerlink" href="#debug-sglang-with-vscode-debugger" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>(Create if not exist) open <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> in VSCode.</p></li>
-<li><p>Add the following config and save. Please note that you can edit the script as needed to apply different parameters or debug a different program (e.g. benchmark script).</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
-<span class="w">     </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-<span class="w">     </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">         </span><span class="p">{</span>
-<span class="w">             </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python Debugger: launch_server&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;debugpy&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sglang.launch_server&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                 </span><span class="s2">&quot;--model-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.2-1B&quot;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s2">&quot;--host&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s2">&quot;--port&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;30000&quot;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s2">&quot;--trust-remote-code&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="p">],</span>
-<span class="w">             </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">         </span><span class="p">}</span>
-<span class="w">     </span><span class="p">]</span>
-<span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
-</li>
-<li><p>Press “F5” to start. VSCode debugger will ensure that the program will pause at the breakpoints even if the program is running at remote SSH/Tunnel host + dev container.</p></li>
-</ol>
 </section>
-<section id="profile">
-<h2>Profile<a class="headerlink" href="#profile" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change batch size, input, output and add `disable-cuda-graph` (for easier analysis)</span>
-<span class="c1"># e.g. DeepSeek V3</span>
-nsys<span class="w"> </span>profile<span class="w"> </span>-o<span class="w"> </span>deepseek_v3<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--input<span class="w"> </span><span class="m">128</span><span class="w"> </span>--output<span class="w"> </span><span class="m">256</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--trust-remote-code<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--disable-cuda-graph
+<section id="launch-of-the-serving-engine">
+<h2>Launch of the Serving Engine<a class="headerlink" href="#launch-of-the-serving-engine" title="Link to this heading">#</a></h2>
+<p>Example command to launch SGLang serving:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">       </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>&lt;MODEL_ID_OR_PATH&gt;<span class="w">       </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w">              </span><span class="se">\</span>
+<span class="w">    </span>--disable-overlap-schedule<span class="w">       </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>xpu<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                   </span><span class="se">\</span>
+<span class="w">    </span>--tp<span class="w"> </span><span class="m">2</span><span class="w">                           </span><span class="se">\ </span><span class="w">  </span><span class="c1"># using multi GPUs</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>intel_xpu<span class="w">    </span><span class="se">\ </span><span class="w">  </span><span class="c1"># using intel optimized XPU attention backend</span>
+<span class="w">    </span>--page-size<span class="w">                      </span><span class="se">\ </span><span class="w">  </span><span class="c1"># intel_xpu attention backend supports [32, 64, 128]</span>
 </pre></div>
 </div>
 </section>
-<section id="evaluation">
-<h2>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># e.g. gsm8k 8 shot</span>
-python3<span class="w"> </span>benchmark/gsm8k/bench_sglang.py<span class="w"> </span>--num-questions<span class="w"> </span><span class="m">2000</span><span class="w"> </span>--parallel<span class="w"> </span><span class="m">2000</span><span class="w"> </span>--num-shots<span class="w"> </span><span class="m">8</span>
+<section id="benchmarking-with-requests">
+<h2>Benchmarking with Requests<a class="headerlink" href="#benchmarking-with-requests" title="Link to this heading">#</a></h2>
+<p>You can benchmark the performance via the <code class="docutils literal notranslate"><span class="pre">bench_serving</span></code> script.
+Run the command in another terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w">   </span><span class="se">\</span>
+<span class="w">    </span>--dataset-name<span class="w"> </span>random<span class="w">        </span><span class="se">\</span>
+<span class="w">    </span>--random-input-len<span class="w"> </span><span class="m">1024</span><span class="w">      </span><span class="se">\</span>
+<span class="w">    </span>--random-output-len<span class="w"> </span><span class="m">1024</span><span class="w">     </span><span class="se">\</span>
+<span class="w">    </span>--num-prompts<span class="w"> </span><span class="m">1</span><span class="w">              </span><span class="se">\</span>
+<span class="w">    </span>--request-rate<span class="w"> </span>inf<span class="w">           </span><span class="se">\</span>
+<span class="w">    </span>--random-range-ratio<span class="w"> </span><span class="m">1</span>.0
 </pre></div>
 </div>
+<p>The detail explanations of the parameters can be looked up by the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>Additionally, the requests can be formed with
+<a class="reference external" href="https://docs.sglang.ai/basic_usage/openai_api_completions.html">OpenAI Completions API</a>
+and sent via the command line (e.g. using <code class="docutils literal notranslate"><span class="pre">curl</span></code>) or via your own script.</p>
 </section>
 </section>
 
@@ -610,20 +594,20 @@ python3<span class="w"> </span>benchmark/gsm8k/bench_sglang.py<span class="w"> <
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contribution_guide.html"
+       href="ascend_npu.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contribution Guide</p>
+        <p class="prev-next-title">Ascend NPUs</p>
       </div>
     </a>
     <a class="right-next"
-       href="benchmark_and_profiling.html"
+       href="../developer_guide/contribution_guide.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Benchmark and Profiling</p>
+        <p class="prev-next-title">Contribution Guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -643,15 +627,14 @@ python3<span class="w"> </span>benchmark/gsm8k/bench_sglang.py<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vscode-on-a-remote-host">Setup VSCode on a Remote Host</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-docker-container">Setup Docker Container</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-use-the-default-dev-container-automatically-from-vscode">Option 1. Use the default dev container automatically from VSCode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-start-up-containers-manually-advanced">Option 2. Start up containers manually (advanced)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimized-model-list">Optimized Model List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install From Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-using-docker">Install Using Docker</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-sglang-with-vscode-debugger">Debug SGLang with VSCode Debugger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile">Profile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-of-the-serving-engine">Launch of the Serving Engine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-with-requests">Benchmarking with Requests</a></li>
 </ul>
   </nav></div>
 
