@@ -467,6 +467,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nvidia-modelopt">Using NVIDIA ModelOpt</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-and-export-workflow">Quantization and Export Workflow</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#available-quantization-methods">Available Quantization Methods</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#python-api-usage">Python API Usage</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-quantized-models">Deploying Quantized Models</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-features">Advanced Features</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-modelopt">Benefits of ModelOpt</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -582,6 +592,152 @@ pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
 </pre></div>
 </div>
 </section>
+<section id="using-nvidia-modelopt">
+<h4>Using <a class="reference external" href="https://github.com/NVIDIA/TensorRT-Model-Optimizer">NVIDIA ModelOpt</a><a class="headerlink" href="#using-nvidia-modelopt" title="Link to this heading">#</a></h4>
+<p>NVIDIA Model Optimizer (ModelOpt) provides advanced quantization techniques optimized for NVIDIA hardware. SGLang includes a streamlined workflow for quantizing models with ModelOpt and automatically exporting them for deployment.</p>
+<section id="installation">
+<h5>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h5>
+<p>First, install ModelOpt. You can either install it directly or as an optional SGLang dependency:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: Install ModelOpt directly</span>
+pip<span class="w"> </span>install<span class="w"> </span>nvidia-modelopt
+
+<span class="c1"># Option 2: Install SGLang with ModelOpt support (recommended)</span>
+pip<span class="w"> </span>install<span class="w"> </span>sglang<span class="o">[</span>modelopt<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="quantization-and-export-workflow">
+<h5>Quantization and Export Workflow<a class="headerlink" href="#quantization-and-export-workflow" title="Link to this heading">#</a></h5>
+<p>SGLang provides an example script that demonstrates the complete ModelOpt quantization and export workflow:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quantize and export a model using ModelOpt FP8 quantization</span>
+python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<span class="w"> </span>quantize<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>TinyLlama/TinyLlama-1.1B-Chat-v1.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--export-dir<span class="w"> </span>./quantized_tinyllama_fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization-method<span class="w"> </span>modelopt_fp8
+
+<span class="c1"># For FP4 quantization</span>
+python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<span class="w"> </span>quantize<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>TinyLlama/TinyLlama-1.1B-Chat-v1.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--export-dir<span class="w"> </span>./quantized_tinyllama_fp4<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization-method<span class="w"> </span>modelopt_fp4
+</pre></div>
+</div>
+</section>
+<section id="available-quantization-methods">
+<h5>Available Quantization Methods<a class="headerlink" href="#available-quantization-methods" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">modelopt_fp8</span></code>: FP8 quantization with optimal performance on NVIDIA Hopper and Blackwell GPUs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code>: FP4 quantization with optimal performance on Nvidia Blackwell GPUs</p></li>
+</ul>
+</section>
+<section id="python-api-usage">
+<h5>Python API Usage<a class="headerlink" href="#python-api-usage" title="Link to this heading">#</a></h5>
+<p>You can also use ModelOpt quantization programmatically:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.device_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeviceConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.load_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoadConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.model_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.model_loader.loader</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_model_loader</span>
+
+<span class="c1"># Configure model with ModelOpt quantization and export</span>
+<span class="n">model_config</span> <span class="o">=</span> <span class="n">ModelConfig</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;TinyLlama/TinyLlama-1.1B-Chat-v1.0&quot;</span><span class="p">,</span>
+    <span class="n">quantization</span><span class="o">=</span><span class="s2">&quot;modelopt_fp8&quot;</span><span class="p">,</span>  <span class="c1"># or &quot;modelopt_fp4&quot;</span>
+    <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">load_config</span> <span class="o">=</span> <span class="n">LoadConfig</span><span class="p">(</span>
+    <span class="n">modelopt_export_path</span><span class="o">=</span><span class="s2">&quot;./exported_model&quot;</span><span class="p">,</span>
+    <span class="n">modelopt_checkpoint_save_path</span><span class="o">=</span><span class="s2">&quot;./checkpoint.pth&quot;</span><span class="p">,</span>  <span class="c1"># optional, fake quantized checkpoint</span>
+<span class="p">)</span>
+<span class="n">device_config</span> <span class="o">=</span> <span class="n">DeviceConfig</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load and quantize the model (export happens automatically)</span>
+<span class="n">model_loader</span> <span class="o">=</span> <span class="n">get_model_loader</span><span class="p">(</span><span class="n">load_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">)</span>
+<span class="n">quantized_model</span> <span class="o">=</span> <span class="n">model_loader</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span>
+    <span class="n">model_config</span><span class="o">=</span><span class="n">model_config</span><span class="p">,</span>
+    <span class="n">device_config</span><span class="o">=</span><span class="n">device_config</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="deploying-quantized-models">
+<h5>Deploying Quantized Models<a class="headerlink" href="#deploying-quantized-models" title="Link to this heading">#</a></h5>
+<p>After quantization and export, you can deploy the model with SGLang:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deploy the exported quantized model</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>./quantized_tinyllama_fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelopt<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
+<p>Or using the Python API:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+
+<span class="c1"># Deploy exported ModelOpt quantized model</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;./quantized_tinyllama_fp8&quot;</span><span class="p">,</span>
+    <span class="n">quantization</span><span class="o">=</span><span class="s2">&quot;modelopt&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Run inference</span>
+<span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello, how are you?&quot;</span><span class="p">,</span> <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">]</span>
+<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">outputs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-features">
+<h5>Advanced Features<a class="headerlink" href="#advanced-features" title="Link to this heading">#</a></h5>
+<p><strong>Checkpoint Management</strong>: Save and restore fake quantized checkpoints for reuse:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the fake quantized checkpoint during quantization</span>
+python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<span class="w"> </span>quantize<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Llama-3.2-1B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--export-dir<span class="w"> </span>./quantized_model<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization-method<span class="w"> </span>modelopt_fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--checkpoint-save-path<span class="w"> </span>./my_checkpoint.pth
+
+<span class="c1"># The checkpoint can be reused for future quantization runs and skip calibration</span>
+</pre></div>
+</div>
+<p><strong>Export-only Workflow</strong>: If you have a pre-existing fake quantized ModelOpt checkpoint, you can export it directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.device_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeviceConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.load_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoadConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.model_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.model_loader.loader</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_model_loader</span>
+
+<span class="n">model_config</span> <span class="o">=</span> <span class="n">ModelConfig</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;meta-llama/Llama-3.2-1B-Instruct&quot;</span><span class="p">,</span>
+    <span class="n">quantization</span><span class="o">=</span><span class="s2">&quot;modelopt_fp8&quot;</span><span class="p">,</span>
+    <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">load_config</span> <span class="o">=</span> <span class="n">LoadConfig</span><span class="p">(</span>
+    <span class="n">modelopt_checkpoint_restore_path</span><span class="o">=</span><span class="s2">&quot;./my_checkpoint.pth&quot;</span><span class="p">,</span>
+    <span class="n">modelopt_export_path</span><span class="o">=</span><span class="s2">&quot;./exported_model&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Load and export the model</span>
+<span class="n">model_loader</span> <span class="o">=</span> <span class="n">get_model_loader</span><span class="p">(</span><span class="n">load_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">)</span>
+<span class="n">model_loader</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_config</span><span class="o">=</span><span class="n">model_config</span><span class="p">,</span> <span class="n">device_config</span><span class="o">=</span><span class="n">DeviceConfig</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="benefits-of-modelopt">
+<h5>Benefits of ModelOpt<a class="headerlink" href="#benefits-of-modelopt" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p><strong>Hardware Optimization</strong>: Specifically optimized for NVIDIA GPU architectures</p></li>
+<li><p><strong>Advanced Quantization</strong>: Supports cutting-edge FP8 and FP4 quantization techniques</p></li>
+<li><p><strong>Seamless Integration</strong>: Automatic export to HuggingFace format for easy deployment</p></li>
+<li><p><strong>Calibration-based</strong>: Uses calibration datasets for optimal quantization quality</p></li>
+<li><p><strong>Production Ready</strong>: Enterprise-grade quantization with NVIDIA support</p></li>
+</ul>
+</section>
+</section>
 </section>
 </section>
 <section id="online-quantization">
@@ -616,6 +772,7 @@ pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ModelCloud/GPTQModel">GPTQModel</a></p></li>
 <li><p><a class="reference external" href="https://github.com/vllm-project/llm-compressor/">LLM Compressor</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NVIDIA/TensorRT-Model-Optimizer">NVIDIA Model Optimizer (ModelOpt)</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pytorch/ao">Torchao: PyTorch Architecture Optimization</a></p></li>
 <li><p><a class="reference external" href="https://docs.vllm.ai/en/latest/quantization/">vLLM Quantization</a></p></li>
 </ul>
@@ -671,6 +828,16 @@ pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nvidia-modelopt">Using NVIDIA ModelOpt</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-and-export-workflow">Quantization and Export Workflow</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#available-quantization-methods">Available Quantization Methods</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#python-api-usage">Python API Usage</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-quantized-models">Deploying Quantized Models</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-features">Advanced Features</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-modelopt">Benefits of ModelOpt</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
