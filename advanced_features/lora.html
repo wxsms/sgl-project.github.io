@@ -178,6 +178,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/llama4.html">Llama4 Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
@@ -540,9 +543,9 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-10-25 19:29:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:29:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:29:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -568,22 +571,22 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-10-25 19:29:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:29:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:29:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:29:36] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:29:36] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:29:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:29:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:29:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:29:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:29:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:29:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:29:49] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:29:49] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:40:10] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:40:10] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:40:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:22] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:29:49] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:40:22] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:40:22] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -593,17 +596,17 @@ performance overhead. If your application is performance-sensitive, we recommend
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.01it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.07s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.09s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.18it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.09it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 132.05it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 125.55it/s]
 
-Capturing batches (bs=4 avail_mem=19.88 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 19:30:01] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=19.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.06it/s]
+Capturing batches (bs=4 avail_mem=19.88 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 20:40:33] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=19.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.93it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -684,22 +687,22 @@ Output 1:  1. 2. 3.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-10-25 19:30:16] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:30:16] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:30:16] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:30:19] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:30:19] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:30:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:30:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:30:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:30:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:30:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:30:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:30:28] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:30:28] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:40:50] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:40:50] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:40:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:40:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:40:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:40:58] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:40:58] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:30:28] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:40:59] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -709,20 +712,20 @@ Output 1:  1. 2. 3.
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.06s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.06s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.03s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.29it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.16it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.54it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 126.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 129.03it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 89.55it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 99.99it/s]
 
-Capturing batches (bs=4 avail_mem=34.58 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 19:30:37] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=34.53 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.54it/s]
+Capturing batches (bs=4 avail_mem=34.44 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 20:41:07] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=34.38 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.40it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -816,22 +819,22 @@ Capitals: Tokyo, Brasilia, Canberra
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-10-25 19:30:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:30:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:30:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:41:22] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:41:22] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:41:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:30:54] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:30:55] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:31:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:31:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:31:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:31:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:31:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:31:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:31:03] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:31:03] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:41:24] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:41:24] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:41:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:41:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:41:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:41:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:41:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:41:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:41:33] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:41:34] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:31:03] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:41:34] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -841,14 +844,14 @@ Capitals: Tokyo, Brasilia, Canberra
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.02s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.04s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.04it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.45it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.24it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.23it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
 
-Capturing batches (bs=4 avail_mem=14.05 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 19:31:11] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=13.97 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.82it/s]
+Capturing batches (bs=4 avail_mem=14.03 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 20:41:41] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=13.97 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.77it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -883,7 +886,7 @@ Capturing batches (bs=1 avail_mem=13.97 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 87.59it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 95.59it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}}
 </pre></div></div>
@@ -914,7 +917,7 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 116.66it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 122.90it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;, &#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}}
 </pre></div></div>
@@ -996,7 +999,7 @@ List 3 countries and their capitals
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 83.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 86.02it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora0&#39;: &#39;philschmid/code-llama-3-1-8b-text-to-sql-lora&#39;}}
 </pre></div></div>
@@ -1092,22 +1095,22 @@ Therefore, currently SGLang limits maximal number of pinned adapters to <code cl
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-10-25 19:31:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:31:29] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:31:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:42:00] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:42:00] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:42:00] INFO utils.py:164: NumExpr defaulting to 16 threads.
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:31:31] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:31:32] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:31:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:31:39] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:31:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:31:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-25 19:31:39] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-25 19:31:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-25 19:31:41] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
-[2025-10-25 19:31:41] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:42:03] WARNING logging.py:328: `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:42:03] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:42:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:42:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:42:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:42:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-25 20:42:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-25 20:42:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-25 20:42:12] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
+[2025-10-25 20:42:12] INFO trace.py:48: opentelemetry package is not installed, tracing disabled
 `torch_dtype` is deprecated! Use `dtype` instead!
-[2025-10-25 19:31:42] `torch_dtype` is deprecated! Use `dtype` instead!
+[2025-10-25 20:42:12] `torch_dtype` is deprecated! Use `dtype` instead!
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -1117,23 +1120,23 @@ Therefore, currently SGLang limits maximal number of pinned adapters to <code cl
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.14it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.03it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:01,  1.02s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.20it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.07it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 93.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 99.10it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 117.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 115.38it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 87.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 91.74it/s]
 
-Capturing batches (bs=4 avail_mem=43.58 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 19:31:56] MOE_A2A_BACKEND is not initialized, using default backend
-Capturing batches (bs=1 avail_mem=43.52 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.76it/s]
+Capturing batches (bs=4 avail_mem=32.41 GB):   0%|          | 0/3 [00:00&lt;?, ?it/s][2025-10-25 20:42:21] MOE_A2A_BACKEND is not initialized, using default backend
+Capturing batches (bs=1 avail_mem=32.36 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.76it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1171,7 +1174,7 @@ Capturing batches (bs=1 avail_mem=43.52 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 123.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 120.45it/s]
 
 </pre></div></div>
 </div>
