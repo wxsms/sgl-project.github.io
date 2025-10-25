@@ -176,8 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">DeepSeek V3.2 Usage</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qwen3.html">Qwen3-Next Usage</a></li>
@@ -467,7 +465,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DeepSeek V3.2 Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">Build From Source</a></li>
@@ -475,22 +472,17 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-deepseek-v3-2-with-sglang">Launch DeepSeek V3.2 with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-and-reasoning-parser">Function Calling and Reasoning Parser</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation">PD Disaggregation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-and-reasoning-parser">Function Calling and Reasoning Parser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation">PD Disaggregation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gsm8k">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gsm8k</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gpqa-diamond">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gpqa-diamond</span></code></a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -570,8 +562,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </li>
 </ul>
 </section>
+</section>
 <section id="multi-token-prediction">
-<h3>Multi-token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h3>
+<h2>Multi-token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h2>
 <p>SGLang implements Multi-Token Prediction (MTP) for DeepSeek V3.2 based on <a class="reference external" href="https://docs.sglang.ai/advanced_features/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>. With this optimization, the decoding speed can be improved significantly on small batch sizes. Please look at <a class="reference external" href="https://github.com/sgl-project/sglang/pull/11652">this PR</a> for more information.</p>
 <p>Example usage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--speculative-algorithm<span class="w"> </span>EAGLE<span class="w"> </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span>
@@ -582,14 +575,12 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p>The default value of  <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code> is set to <code class="docutils literal notranslate"><span class="pre">48</span></code> for MTP. For larger batch sizes, this value should be increased beyond the default value.</p></li>
 </ul>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="function-calling-and-reasoning-parser">
-<h1>Function Calling and Reasoning Parser<a class="headerlink" href="#function-calling-and-reasoning-parser" title="Link to this heading">#</a></h1>
+<section id="function-calling-and-reasoning-parser">
+<h2>Function Calling and Reasoning Parser<a class="headerlink" href="#function-calling-and-reasoning-parser" title="Link to this heading">#</a></h2>
 <p>The usage of function calling and reasoning parser is the same as DeepSeek V3.1. Please refer to <a class="reference external" href="https://docs.sglang.ai/advanced_features/separate_reasoning.html">Reasoning Parser</a> and <a class="reference external" href="https://docs.sglang.ai/advanced_features/tool_parser.html">Tool Parser</a> documents.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="pd-disaggregation">
-<h1>PD Disaggregation<a class="headerlink" href="#pd-disaggregation" title="Link to this heading">#</a></h1>
+<section id="pd-disaggregation">
+<h2>PD Disaggregation<a class="headerlink" href="#pd-disaggregation" title="Link to this heading">#</a></h2>
 <p>Prefill Command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span><span class="se">\</span>
@@ -628,6 +619,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </pre></div>
 </div>
 <p>If you need more advanced deployment methods or production-ready deployment methods, such as RBG or LWS-based deployment, please refer to <a class="reference internal" href="../references/multi_node_deployment/rbg_pd/deepseekv32_pd.html"><span class="std std-doc">references/multi_node_deployment/rbg_pd/deepseekv32_pd.md</span></a>. Additionally, you can also find startup commands for DeepEP-based EP parallelism in the aforementioned documentation.</p>
+</section>
 <section id="benchmarking-results">
 <h2>Benchmarking Results<a class="headerlink" href="#benchmarking-results" title="Link to this heading">#</a></h2>
 <section id="accuracy-test-with-gsm8k">
@@ -704,7 +696,6 @@ Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.8
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DeepSeek V3.2 Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">Build From Source</a></li>
@@ -712,22 +703,17 @@ Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.8
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-deepseek-v3-2-with-sglang">Launch DeepSeek V3.2 with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-and-reasoning-parser">Function Calling and Reasoning Parser</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation">PD Disaggregation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-and-reasoning-parser">Function Calling and Reasoning Parser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation">PD Disaggregation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gsm8k">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gsm8k</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gpqa-diamond">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gpqa-diamond</span></code></a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
