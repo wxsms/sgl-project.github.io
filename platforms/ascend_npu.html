@@ -55,7 +55,7 @@
     <link rel="prev" title="NVIDIA Jetson Orin" href="nvidia_jetson.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 25, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 26, 2025"/>
   </head>
   
   
@@ -610,7 +610,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 <span class="nb">cd</span><span class="w"> </span>sglang/docker
 
 <span class="c1"># Build the docker image</span>
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>-f<span class="w"> </span>Dockerfile.npu<span class="w"> </span>.
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>-f<span class="w"> </span>npu.Dockerfile<span class="w"> </span>.
 
 <span class="nb">alias</span><span class="w"> </span><span class="nv">drun</span><span class="o">=</span><span class="s1">&#39;docker run -it --rm --privileged --network=host --ipc=host --shm-size=16g \</span>
 <span class="s1">    --device=/dev/davinci0 --device=/dev/davinci1 --device=/dev/davinci2 --device=/dev/davinci3 \</span>
@@ -799,7 +799,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 25, 2025.
+  Last updated on Oct 26, 2025.
   <br/>
 </p>
   </div>

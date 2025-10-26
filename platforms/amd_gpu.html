@@ -55,7 +55,7 @@
     <link rel="prev" title="Use Models From ModelScope" href="../supported_models/modelscope.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 25, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 26, 2025"/>
   </head>
   
   
@@ -547,12 +547,12 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </section>
 <section id="install-using-docker-recommended">
 <h3>Install Using Docker (Recommended)<a class="headerlink" href="#install-using-docker-recommended" title="Link to this heading">#</a></h3>
-<p>The docker images are available on Docker Hub at <a class="reference external" href="https://hub.docker.com/r/lmsysorg/sglang/tags">lmsysorg/sglang</a>, built from <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">Dockerfile.rocm</a>.</p>
+<p>The docker images are available on Docker Hub at <a class="reference external" href="https://hub.docker.com/r/lmsysorg/sglang/tags">lmsysorg/sglang</a>, built from <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/docker">rocm.Dockerfile</a>.</p>
 <p>The steps below show how to build and use an image.</p>
 <ol class="arabic">
 <li><p>Build the docker image.
 If you use pre-built images, you can skip this step and replace <code class="docutils literal notranslate"><span class="pre">sglang_image</span></code> with the pre-built image names in the steps below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>sglang_image<span class="w"> </span>-f<span class="w"> </span>Dockerfile.rocm<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>sglang_image<span class="w"> </span>-f<span class="w"> </span>rocm.Dockerfile<span class="w"> </span>.
 </pre></div>
 </div>
 </li>
@@ -736,7 +736,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 25, 2025.
+  Last updated on Oct 26, 2025.
   <br/>
 </p>
   </div>
