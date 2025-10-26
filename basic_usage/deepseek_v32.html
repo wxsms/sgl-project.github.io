@@ -543,7 +543,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <section id="configuration-tips">
 <h3>Configuration Tips<a class="headerlink" href="#configuration-tips" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>DP Attention</strong>: For DeepSeek V3.2 model, the kernels are customized for the use case of <code class="docutils literal notranslate"><span class="pre">dp_size=8</span></code>. So</p></li>
+<li><p><strong>DP Attention</strong>: For DeepSeek V3.2 model, the kernels are customized for the use case of <code class="docutils literal notranslate"><span class="pre">dp_size=8</span></code>, so DP attention is enabled by default for better stability and performance. The feature of launching with pure TP is still under development.</p></li>
 <li><p><strong>Choices of Attention Kernels</strong>: The attention backend is automatically set to <code class="docutils literal notranslate"><span class="pre">nsa</span></code> attention backend for DeepSeek V3.2 model. In this backend, different kernels for sparse prefilling/decoding are implemented, which can be specified by <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span></code> server arguments. The choices of nsa prefill/decode attention kernels include:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code>: <code class="docutils literal notranslate"><span class="pre">flash_mla_sparse_fwd</span></code> kernel from <code class="docutils literal notranslate"><span class="pre">flash_mla</span></code> library. Can run on both Hopper and Blackwell GPUs.</p></li>
