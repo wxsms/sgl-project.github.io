@@ -471,6 +471,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-embedding-example">Multimodal Embedding Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matryoshka-embedding-example">Matryoshka Embedding Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-a-matryoshkacapable-model">1. Launch a Matryoshka‑capable model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-requests-with-different-output-dimensions">2. Make requests with different output dimensions</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
 </ul>
             </nav>
@@ -555,6 +560,44 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embeddings:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;embedding&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">[])])</span>
 </pre></div>
 </div>
+</section>
+<section id="matryoshka-embedding-example">
+<h2>Matryoshka Embedding Example<a class="headerlink" href="#matryoshka-embedding-example" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://sbert.net/examples/sentence_transformer/training/matryoshka/README.html#matryoshka-embeddings">Matryoshka Embeddings</a> or <a class="reference external" href="https://arxiv.org/abs/2205.13147">Matryoshka Representation Learning (MRL)</a> is a technique used in training embedding models. It allows user to trade off between performance and cost.</p>
+<section id="launch-a-matryoshkacapable-model">
+<h3>1. Launch a Matryoshka‑capable model<a class="headerlink" href="#launch-a-matryoshkacapable-model" title="Link to this heading">#</a></h3>
+<p>If the model config already includes <code class="docutils literal notranslate"><span class="pre">matryoshka_dimensions</span></code> or <code class="docutils literal notranslate"><span class="pre">is_matryoshka</span></code> then no override is needed. Otherwise, you can use <code class="docutils literal notranslate"><span class="pre">--json-model-override-args</span></code> as below:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>Qwen/Qwen3-Embedding-0.6B<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--is-embedding<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--json-model-override-args<span class="w"> </span><span class="s1">&#39;{&quot;matryoshka_dimensions&quot;: [128, 256, 512, 1024, 1536]}&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Setting <code class="docutils literal notranslate"><span class="pre">&quot;is_matryoshka&quot;:</span> <span class="pre">true</span></code> allows truncating to any dimension. Otherwise, the server will validate that the specified dimension in the request is one of <code class="docutils literal notranslate"><span class="pre">matryoshka_dimensions</span></code>.</p></li>
+<li><p>Omitting <code class="docutils literal notranslate"><span class="pre">dimensions</span></code> in a request returns the full vector.</p></li>
+</ol>
+</section>
+<section id="make-requests-with-different-output-dimensions">
+<h3>2. Make requests with different output dimensions<a class="headerlink" href="#make-requests-with-different-output-dimensions" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:30000&quot;</span>
+
+<span class="c1"># Request a truncated (Matryoshka) embedding by specifying a supported dimension.</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Qwen/Qwen3-Embedding-0.6B&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain diffusion models simply.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dimensions&quot;</span><span class="p">:</span> <span class="mi">512</span>  <span class="c1"># change to 128 / 1024 / omit for full size</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/v1/embeddings&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embedding:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;embedding&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="supported-models">
 <h2>Supported Models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
@@ -654,6 +697,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-embedding-example">Multimodal Embedding Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matryoshka-embedding-example">Matryoshka Embedding Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-a-matryoshkacapable-model">1. Launch a Matryoshka‑capable model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-requests-with-different-output-dimensions">2. Make requests with different output dimensions</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
 </ul>
   </nav></div>
