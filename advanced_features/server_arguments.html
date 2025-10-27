@@ -55,7 +55,7 @@
     <link rel="prev" title="Qwen3-Next Usage" href="../basic_usage/qwen3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Oct 26, 2025"/>
+    <meta name="docbuild:last-update" content="Oct 27, 2025"/>
   </head>
   
   
@@ -1363,57 +1363,52 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-beta-spec</span></code></p></td>
-<td><p>Description not provided in server_args.py</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag (set to enable)</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code></p></td>
 <td><p>Speculative algorithm.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">EAGLE</span></code>, <code class="docutils literal notranslate"><span class="pre">EAGLE3</span></code>, <code class="docutils literal notranslate"><span class="pre">NEXTN</span></code>, <code class="docutils literal notranslate"><span class="pre">STANDALONE</span></code>, <code class="docutils literal notranslate"><span class="pre">NGRAM</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code><br><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code><br><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model</span></code></p></td>
 <td><p>The path of the draft model weights. This can be a local folder or a Hugging Face repo ID.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-revision</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-revision</span></code></p></td>
 <td><p>The specific draft model version to use. It can be a branch name, a tag name, or a commit id. If unspecified, will use the default version.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code></p></td>
 <td><p>The number of steps sampled from draft model in Speculative Decoding.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code></p></td>
 <td><p>The number of tokens sampled from the draft model in eagle2 each step.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code></p></td>
 <td><p>The number of tokens sampled from the draft model in Speculative Decoding.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-accept-threshold-single</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-accept-threshold-single</span></code></p></td>
 <td><p>Accept a draft token if its probability in the target model is greater than this threshold.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
 <td><p>Type: float</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-accept-threshold-acc</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-accept-threshold-acc</span></code></p></td>
 <td><p>The accept probability of a draft token is raised from its target probability p to min(1, p / threshold_acc).</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
 <td><p>Type: float</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code></p></td>
 <td><p>The path of the draft model’s small vocab table.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span></code></p></td>
 <td><p>Attention backend for speculative decoding operations (both target verify and draft extend). Can be one of ‘prefill’ (default) or ‘decode’.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">prefill</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">prefill</span></code>, <code class="docutils literal notranslate"><span class="pre">decode</span></code></p></td>
@@ -2432,7 +2427,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 26, 2025.
+  Last updated on Oct 27, 2025.
   <br/>
 </p>
   </div>
