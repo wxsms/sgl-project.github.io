@@ -467,6 +467,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-auto-round">Using auto-round</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nvidia-modelopt">Using NVIDIA ModelOpt</a><ul class="nav section-nav flex-column">
@@ -529,6 +530,77 @@ downloaded Hugging Face config. For example, DeepSeek V3/R1 models are already i
 </div>
 <section id="examples-of-offline-model-quantization">
 <h3>Examples of Offline Model Quantization<a class="headerlink" href="#examples-of-offline-model-quantization" title="Link to this heading">#</a></h3>
+<section id="using-auto-round">
+<h4>Using <a class="reference external" href="https://github.com/intel/auto-round">auto-round</a><a class="headerlink" href="#using-auto-round" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install</span>
+pip<span class="w"> </span>install<span class="w"> </span>auto-round
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>LLM quantization</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># for LLM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">auto_round</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoRound</span>
+<span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.2-1B-Instruct&quot;</span>
+<span class="n">quant_path</span> <span class="o">=</span> <span class="s2">&quot;Llama-3.2-1B-Instruct-autoround-4bit&quot;</span>
+<span class="c1"># Scheme examples: &quot;W2A16&quot;, &quot;W3A16&quot;, &quot;W4A16&quot;, &quot;W8A16&quot;, &quot;NVFP4&quot;, &quot;MXFP4&quot; (no real kernels), &quot;GGUF:Q4_K_M&quot;, etc.</span>
+<span class="n">scheme</span> <span class="o">=</span> <span class="s2">&quot;W4A16&quot;</span>
+<span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;auto_round&quot;</span>
+<span class="n">autoround</span> <span class="o">=</span> <span class="n">AutoRound</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="n">scheme</span><span class="p">)</span>
+<span class="n">autoround</span><span class="o">.</span><span class="n">quantize_and_save</span><span class="p">(</span><span class="n">quant_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">)</span> <span class="c1"># quantize and save</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>VLM quantization</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># for VLMs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">auto_round</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoRoundMLLM</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;Qwen/Qwen2-VL-2B-Instruct&quot;</span>
+<span class="n">quant_path</span> <span class="o">=</span> <span class="s2">&quot;Qwen2-VL-2B-Instruct-autoround-4bit&quot;</span>
+<span class="n">scheme</span> <span class="o">=</span> <span class="s2">&quot;W4A16&quot;</span>
+<span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;auto_round&quot;</span>
+<span class="n">autoround</span> <span class="o">=</span> <span class="n">AutoRoundMLLM</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">scheme</span><span class="p">)</span>
+<span class="n">autoround</span><span class="o">.</span><span class="n">quantize_and_save</span><span class="p">(</span><span class="n">quant_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">)</span> <span class="c1"># quantize and save</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Command Line Usage (Gaudi/CPU/Intel GPU/CUDA)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>auto-round<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>meta-llama/Llama-3.2-1B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--bits<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--group_size<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--format<span class="w"> </span><span class="s2">&quot;auto_round&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output_dir<span class="w"> </span>./tmp_autoround
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>known issues</p></li>
+</ul>
+<p>Several limitations currently affect offline quantized model loading in sglang, These issues might be resolved in future updates of sglang. If you experience any problems, consider using Hugging Face Transformers as an alternative.</p>
+<ol class="arabic">
+<li><p>Mixed-bit Quantization Limitations</p>
+<p>Mixed-bit quantization is not fully supported. Due to vLLM’s layer fusion (e.g., QKV fusion), applying different bit-widths to components within the same fused layer can lead to compatibility issues.</p>
+</li>
+<li><p>Limited Support for Quantized MoE Models</p>
+<p>Quantized MoE models may encounter inference issues due to kernel limitations (e.g., lack of support for mlp.gate layer quantization). please try to skip quantizing these layers to avoid such errors.</p>
+</li>
+<li><p>Limited Support for Quantized VLMs</p>
+ <details>
+     <summary>VLM failure cases</summary>
+<p>Qwen2.5-VL-7B</p>
+<p>auto_round:auto_gptq format:  Accuracy is close to zero.</p>
+<p>GPTQ format:  Fails with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">output</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">aligned</span> <span class="k">with</span> <span class="n">the</span> <span class="n">quantized</span> <span class="n">weight</span> <span class="n">shape</span>
+</pre></div>
+</div>
+<p>auto_round:auto_awq and AWQ format:  These work as expected.</p>
+ </details>
+</li>
+</ol>
+</section>
 <section id="using-gptqmodel">
 <h4>Using <a class="reference external" href="https://github.com/ModelCloud/GPTQModel">GPTQModel</a><a class="headerlink" href="#using-gptqmodel" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
@@ -777,6 +849,7 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 <li><p><a class="reference external" href="https://github.com/NVIDIA/TensorRT-Model-Optimizer">NVIDIA Model Optimizer (ModelOpt)</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pytorch/ao">Torchao: PyTorch Architecture Optimization</a></p></li>
 <li><p><a class="reference external" href="https://docs.vllm.ai/en/latest/quantization/">vLLM Quantization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel/auto-round">auto-round</a></p></li>
 </ul>
 </section>
 </section>
@@ -828,6 +901,7 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-auto-round">Using auto-round</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nvidia-modelopt">Using NVIDIA ModelOpt</a><ul class="nav section-nav flex-column">
