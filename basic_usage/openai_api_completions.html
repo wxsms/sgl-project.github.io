@@ -480,15 +480,20 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-and-Configuration">Supported Models and Configuration</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-Usage">Basic Usage</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-Qwen3-Models">Example: Qwen3 Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Logit-Bias-Support">Logit Bias Support</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Getting-Token-IDs">Getting Token IDs</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-DeepSeek-V3-Models">Example: DeepSeek-V3 Models</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parameters">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Logit Bias Support</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Completions">Completions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Parameters</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Structured-Outputs-(JSON,-Regex,-EBNF)">Structured Outputs (JSON, Regex, EBNF)</a></li>
@@ -541,9 +546,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-10-28 16:35:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-28 16:35:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-28 16:35:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-28 17:46:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-28 17:46:29] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-28 17:46:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -551,19 +556,19 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-10-28 16:35:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-28 16:35:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-28 16:35:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-28 16:35:57] WARNING server_args.py:1129: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-10-28 16:35:57] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-10-28 16:36:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-28 16:36:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-28 16:36:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-28 16:36:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-10-28 16:36:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-10-28 16:36:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-10-28 16:36:10] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-10-28 16:36:10] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-10-28 17:46:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-28 17:46:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-28 17:46:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-28 17:46:37] WARNING server_args.py:1134: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-10-28 17:46:37] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-10-28 17:46:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-28 17:46:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-10-28 17:46:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-28 17:46:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-28 17:46:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-10-28 17:46:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-10-28 17:46:44] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-10-28 17:46:44] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -573,10 +578,10 @@ document.write(`
 /usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
   warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.44it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.47it/s]
 
-Capturing batches (bs=1 avail_mem=73.13 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.67it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 11.44it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -590,7 +595,7 @@ Capturing batches (bs=1 avail_mem=73.13 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31904
+Server started on http://localhost:32392
 </pre></div></div>
 </div>
 </section>
@@ -624,7 +629,7 @@ Server started on http://localhost:31904
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='0a237491ebc84cddb5fb6f5b9c3eaaa4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1761669383, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='ce5584e094a24f13a0adc416853859a9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1761673617, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -735,6 +740,36 @@ Thus, the total count is **3**.
 </div>
 <p><strong>Note:</strong> Setting <code class="docutils literal notranslate"><span class="pre">&quot;enable_thinking&quot;:</span> <span class="pre">False</span></code> (or omitting it) will result in <code class="docutils literal notranslate"><span class="pre">reasoning_content</span></code> being <code class="docutils literal notranslate"><span class="pre">None</span></code>. Qwen3-Thinking models always generate reasoning content and don’t support the <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code> parameter.</p>
 </section>
+<section id="Logit-Bias-Support">
+<h4>Logit Bias Support<a class="headerlink" href="#Logit-Bias-Support" title="Link to this heading">#</a></h4>
+<p>SGLang supports the <code class="docutils literal notranslate"><span class="pre">logit_bias</span></code> parameter for both chat completions and completions APIs. This parameter allows you to modify the likelihood of specific tokens being generated by adding bias values to their logits. The bias values can range from -100 to 100, where:</p>
+<ul class="simple">
+<li><p><strong>Positive values</strong> (0 to 100) increase the likelihood of the token being selected</p></li>
+<li><p><strong>Negative values</strong> (-100 to 0) decrease the likelihood of the token being selected</p></li>
+<li><p><strong>-100</strong> effectively prevents the token from being generated</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">logit_bias</span></code> parameter accepts a dictionary where keys are token IDs (as strings) and values are the bias amounts (as floats).</p>
+</section>
+<section id="Getting-Token-IDs">
+<h4>Getting Token IDs<a class="headerlink" href="#Getting-Token-IDs" title="Link to this heading">#</a></h4>
+<p>To use <code class="docutils literal notranslate"><span class="pre">logit_bias</span></code> effectively, you need to know the token IDs for the words you want to bias. Here’s how to get token IDs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get tokenizer to find token IDs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tiktoken</span>
+
+<span class="c1"># For OpenAI models, use the appropriate encoding</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">tiktoken</span><span class="o">.</span><span class="n">encoding_for_model</span><span class="p">(</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">)</span>  <span class="c1"># or your model</span>
+
+<span class="c1"># Get token IDs for specific words</span>
+<span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;sunny&quot;</span>
+<span class="n">token_ids</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Token IDs for &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">token_ids</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># For SGLang models, you can access the tokenizer through the client</span>
+<span class="c1"># and get token IDs for bias</span>
+</pre></div>
+</div>
+<p><strong>Important:</strong> The <code class="docutils literal notranslate"><span class="pre">logit_bias</span></code> parameter uses token IDs as string keys, not the actual words.</p>
+</section>
 <section id="Example:-DeepSeek-V3-Models">
 <h4>Example: DeepSeek-V3 Models<a class="headerlink" href="#Example:-DeepSeek-V3-Models" title="Link to this heading">#</a></h4>
 <p>DeepSeek-V3 models support thinking mode through the <code class="docutils literal notranslate"><span class="pre">thinking</span></code> parameter:</p>
@@ -787,6 +822,37 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </pre></div>
 </div>
 <p><strong>Note:</strong> DeepSeek-V3 models use the <code class="docutils literal notranslate"><span class="pre">thinking</span></code> parameter (not <code class="docutils literal notranslate"><span class="pre">enable_thinking</span></code>) to control reasoning output.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with logit_bias parameter</span>
+<span class="c1"># Note: You need to get the actual token IDs from your tokenizer</span>
+<span class="c1"># For demonstration, we&#39;ll use some example token IDs</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen/qwen2.5-0.5b-instruct&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Complete this sentence: The weather today is&quot;</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">logit_bias</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;12345&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>  <span class="c1"># Increase likelihood of token ID 12345</span>
+        <span class="s2">&quot;67890&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span>  <span class="c1"># Decrease likelihood of token ID 67890</span>
+        <span class="s2">&quot;11111&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>  <span class="c1"># Slightly increase likelihood of token ID 11111</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response with logit bias: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response with logit bias:  privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy</strong></div>
+</div>
 </section>
 </section>
 <section id="Parameters">
@@ -794,7 +860,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <p>The chat completions API accepts OpenAI Chat Completions API’s parameters. Refer to <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create">OpenAI Chat Completions API</a> for more details.</p>
 <p>SGLang extends the standard API with the <code class="docutils literal notranslate"><span class="pre">extra_body</span></code> parameter, allowing for additional customization. One key option within <code class="docutils literal notranslate"><span class="pre">extra_body</span></code> is <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code>, which can be used to pass arguments to the chat template processor.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -828,11 +894,14 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The ancient Roman Empire, which lasted from the 8th to the 4th century AD, was a period of great cultural, political, and economic development. Some of the major achievements of the Roman Empire include:<br><br>1. The construction of the Colosseum, one of the largest amphitheaters in the world.<br><br>2. The development of Roman law, which laid the foundation for modern legal systems.<br><br>3. The invention of the papyrus reed mill, which revolutionized agriculture and helped to feed the growing population.<br><br>4. The construction of aqueducts that provided water to cities and towns.<br><br>5. The spread of</strong></div>
+<strong style='color: #00008B;'>The ancient Roman civilization was renowned for its vast array of achievements, including:<br><br>1. Architecture: Rome is often considered the birthplace of modern architecture, with its iconic buildings like the Colosseum, the Pantheon, and the Vatican City.<br><br>2. Law: The Romans developed a complex legal system that influenced the rest of Europe and beyond.<br><br>3. Literature: Ancient Rome produced some of the world's most influential works of literature, including the plays of Aeneas and Virgil's Aeneid.<br><br>4. Art: The Romans were known for their artistry, particularly in sculpture and architecture.<br><br>5. Economy: They developed</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
+<section id="id1">
+<h4>Logit Bias Support<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>The completions API also supports the <code class="docutils literal notranslate"><span class="pre">logit_bias</span></code> parameter with the same functionality as described in the chat completions section above.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -851,18 +920,48 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I can say that this is a test. I am here to assist you with any questions or tasks you have in mind. Please let me know what you would like to know or what kind of assistance you need.
+Yes, I am Qwen, a language model created by Alibaba Cloud. I am designed to be a helpful assistant to users and can answer a wide range of questions about various topics. I am here to provide information and support in a friendly and informative manner. If you have any specific questions or topics you would like to discuss, feel free to ask and I will do my best to assist you.
 </pre></div></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with logit_bias parameter for completions API</span>
+<span class="c1"># Note: You need to get the actual token IDs from your tokenizer</span>
+<span class="c1"># For demonstration, we&#39;ll use some example token IDs</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen/qwen2.5-0.5b-instruct&quot;</span><span class="p">,</span>
+    <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;The best programming language for AI is&quot;</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">logit_bias</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;12345&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>  <span class="c1"># Strongly favor token ID 12345</span>
+        <span class="s2">&quot;67890&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span>  <span class="c1"># Completely avoid token ID 67890</span>
+        <span class="s2">&quot;11111&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span>  <span class="c1"># Slightly discourage token ID 11111</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response with logit bias: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response with logit bias:  privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy privacy</strong></div>
+</div>
+</section>
 </section>
 </section>
 <section id="Completions">
 <h2>Completions<a class="headerlink" href="#Completions" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>Usage<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Usage<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Completions API is similar to Chat Completions API, but without the <code class="docutils literal notranslate"><span class="pre">messages</span></code> parameter or chat templates.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -882,15 +981,15 @@ Yes, I can say that this is a test. I am here to assist you with any questions o
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='8c78fdd509d84b489f28d219553a474e', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1761669384, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='976c8e29242d4e13846be72331acddd4', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1761673617, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
-<section id="id2">
-<h3>Parameters<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Parameters<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The completions API accepts OpenAI Completions API’s parameters. Refer to <a class="reference external" href="https://platform.openai.com/docs/api-reference/completions/create">OpenAI Completions API</a> for more details.</p>
 <p>Here is an example of a detailed completions request:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -914,7 +1013,7 @@ Yes, I can say that this is a test. I am here to assist you with any questions o
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='953495d696b64bc0afc84d6269b30ec1', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" Once upon a time, there was a space explorer named Jack who had been exploring the stars for years. He had seen so many new worlds and species, he couldn't believe how much he had learned.", matched_stop='\n\n')], created=1761669384, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=9, total_tokens=50, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='6289d03f53ce456cb102a50a56d2c904', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Alex who had always dreamed of exploring the stars. He had heard so much about the universe and the wonders it contained that he knew he wanted to see it up close.', matched_stop='\n\n')], created=1761673618, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=45, prompt_tokens=9, total_tokens=54, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
@@ -955,7 +1054,7 @@ Yes, I can say that this is a test. I am here to assist you with any questions o
 </div>
 <p><strong>Note:</strong> When both <code class="docutils literal notranslate"><span class="pre">model:adapter</span></code> and <code class="docutils literal notranslate"><span class="pre">extra_body[&quot;lora_path&quot;]</span></code> are specified, the <code class="docutils literal notranslate"><span class="pre">model:adapter</span></code> syntax takes precedence.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
@@ -1017,15 +1116,20 @@ Yes, I can say that this is a test. I am here to assist you with any questions o
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Supported-Models-and-Configuration">Supported Models and Configuration</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-Usage">Basic Usage</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-Qwen3-Models">Example: Qwen3 Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Logit-Bias-Support">Logit Bias Support</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Getting-Token-IDs">Getting Token IDs</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Example:-DeepSeek-V3-Models">Example: DeepSeek-V3 Models</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parameters">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Logit Bias Support</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Completions">Completions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Parameters</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Structured-Outputs-(JSON,-Regex,-EBNF)">Structured Outputs (JSON, Regex, EBNF)</a></li>
