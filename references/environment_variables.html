@@ -476,6 +476,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-debugging-internal-ci">Testing &amp; Debugging (Internal/CI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-benchmarking">Profiling &amp; Benchmarking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-caching">Storage &amp; Caching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-tool-use">Function Calling / Tool Use</a></li>
 </ul>
             </nav>
         </div>
@@ -831,6 +832,24 @@ document.write(`
 </table>
 </div>
 </section>
+<section id="function-calling-tool-use">
+<h2>Function Calling / Tool Use<a class="headerlink" href="#function-calling-tool-use" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_TOOL_STRICT_LEVEL</span></code></p></td>
+<td><p>Controls the strictness level of tool call parsing and validation. <br><strong>Level 0</strong>: Off - No strict validation <br><strong>Level 1</strong>: Function strict - Enables structural tag constraints for all tools (even if none have <code class="docutils literal notranslate"><span class="pre">strict=True</span></code> set) <br><strong>Level 2</strong>: Parameter strict - Enforces strict parameter validation for all tools, treating them as if they all have <code class="docutils literal notranslate"><span class="pre">strict=True</span></code> set</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
 
@@ -888,6 +907,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-debugging-internal-ci">Testing &amp; Debugging (Internal/CI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-benchmarking">Profiling &amp; Benchmarking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-caching">Storage &amp; Caching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-tool-use">Function Calling / Tool Use</a></li>
 </ul>
   </nav></div>
 
