@@ -542,9 +542,9 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-02 19:50:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:50:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:50:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:44:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:44:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:44:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -570,34 +570,38 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-02 19:51:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:51:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:51:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:51:05] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-02 19:51:05] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:51:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:51:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:51:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:51:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:51:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:51:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:51:17] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:51:17] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:44:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:44:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:44:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:44:20] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-02 20:44:20] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:44:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:44:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:44:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:44:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:44:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:44:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:44:33] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:44:33] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.03it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.07s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.08s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.05s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.20s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.15s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.21it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.06it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 118.53it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 117.22it/s]
 
-Capturing batches (bs=1 avail_mem=18.62 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.50it/s]
+Capturing batches (bs=1 avail_mem=21.06 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.82it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -678,37 +682,41 @@ Output 1:  1. 2. 3.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-02 19:51:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:51:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:51:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:52:01] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-02 19:52:01] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:52:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:52:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:52:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:52:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:52:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:52:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:52:09] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:52:09] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:44:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:44:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:44:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:45:01] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-02 20:45:01] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:45:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:45:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:45:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:45:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:45:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:45:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:45:09] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:45:09] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.24it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.10it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.47it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.04s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.10s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.05s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.14it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 119.95it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 120.76it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 85.78it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 97.78it/s]
 
-Capturing batches (bs=1 avail_mem=59.32 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.86it/s]
+Capturing batches (bs=1 avail_mem=43.04 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.84it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -804,31 +812,35 @@ Country 3: Brazil
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-02 19:52:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:52:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:52:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:52:51] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-02 19:52:51] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:52:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:52:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:52:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:52:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:52:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:52:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:53:00] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:53:00] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:45:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:45:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:45:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:45:36] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-02 20:45:36] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:45:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:45:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:45:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:45:44] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+[2025-11-02 20:45:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:45:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:45:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.14it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.03it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.05s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.02it/s]
+[2025-11-02 20:45:49] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.13s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.15s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.17it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.06it/s]
 
-Capturing batches (bs=1 avail_mem=17.58 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.81it/s]
+Capturing batches (bs=1 avail_mem=33.12 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.78it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -863,7 +875,7 @@ Capturing batches (bs=1 avail_mem=17.58 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 86.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 87.85it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}}
 </pre></div></div>
@@ -894,7 +906,7 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 117.69it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 116.94it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;, &#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}}
 </pre></div></div>
@@ -929,19 +941,19 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Output from lora0:
- Give the capital of each country.
-Country 1: Japan
-Capital: Tokyo
-Country 2: Australia
-Capital: Canberra
-Country 3: Brazil
+ Give the countries and capitals in the correct order.
+Countries: Japan, Brazil, Australia
+Capitals: Tokyo, Brasilia, Canberra
+1. Japan -
 
 Output from lora1 (updated):
  Each country and capital should be on a new line.
-France, Paris
-Japan, Tokyo
-Brazil, Brasília
-List 3 countries and their capitals
+Country: France
+Capital: Paris
+Country: Japan
+Capital: Tokyo
+Country: Australia
+
 
 </pre></div></div>
 </div>
@@ -978,7 +990,7 @@ List 3 countries and their capitals
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 83.00it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 78.02it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora0&#39;: &#39;philschmid/code-llama-3-1-8b-text-to-sql-lora&#39;}}
 </pre></div></div>
@@ -1075,40 +1087,44 @@ Therefore, currently SGLang limits maximal number of pinned adapters to <code cl
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-02 19:53:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:53:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:53:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:53:45] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-02 19:53:45] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:53:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:53:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-02 19:53:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:53:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:53:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-02 19:53:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-02 19:53:53] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-02 19:53:54] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:46:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:46:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:46:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:46:12] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-02 20:46:12] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:46:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:46:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:46:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:46:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-02 20:46:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-02 20:46:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-02 20:46:21] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-02 20:46:21] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.17it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.09it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.40it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.07it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.12s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.15s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.07it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 91.92it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 98.60it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 101.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 89.03it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 84.05it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 83.31it/s]
 
-Capturing batches (bs=1 avail_mem=56.18 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.91it/s]
+Capturing batches (bs=1 avail_mem=11.95 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.36it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1146,7 +1162,7 @@ Capturing batches (bs=1 avail_mem=56.18 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 114.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 115.64it/s]
 
 </pre></div></div>
 </div>
