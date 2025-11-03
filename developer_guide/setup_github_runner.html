@@ -505,7 +505,7 @@ The command below uses <code class="docutils literal notranslate"><span class="p
 <h3>Step 2: Configure the runner by <code class="docutils literal notranslate"><span class="pre">config.sh</span></code><a class="headerlink" href="#step-2-configure-the-runner-by-config-sh" title="Link to this heading">#</a></h3>
 <p>Run these commands inside the container.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">curl</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">upgrade</span> <span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
 <span class="n">export</span> <span class="n">RUNNER_ALLOW_RUNASROOT</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
