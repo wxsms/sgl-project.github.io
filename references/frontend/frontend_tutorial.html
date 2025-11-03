@@ -531,9 +531,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-03 07:53:22] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:53:22] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:53:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:09:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:09:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:09:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -541,31 +541,41 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-03 07:53:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:53:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:53:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-03 07:53:29] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-03 07:53:29] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-03 07:53:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:53:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:53:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-03 07:53:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:53:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:53:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-03 07:53:37] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-03 07:53:37] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-03 13:09:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:09:14] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:09:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:09:16] WARNING server_args.py:1159: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-03 13:09:16] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1103 13:09:16.739984 1118495 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+[2025-11-03 13:09:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:09:23] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:09:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:09:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:09:23] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:09:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:09:25] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-03 13:09:25] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1103 13:09:25.094226 1119081 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1103 13:09:25.204293 1119080 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.52it/s]
 Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.33it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
 Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
 
-Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.19it/s]
+Capturing batches (bs=1 avail_mem=58.62 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.68it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -579,7 +589,7 @@ Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39994
+Server started on http://localhost:37305
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -620,7 +630,7 @@ Server started on http://localhost:39994
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **Germany** - Berlin<br>2. **France** - Paris<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Here are three countries along with their respective capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -650,13 +660,13 @@ Server started on http://localhost:39994
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **Japan** - Tokyo<br>2. **Canada** - Ottawa<br>3. **Germany** - Berlin</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **India** - New Delhi<br>3. **Australia** - Canberra</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Italy** - Rome<br>3. **Spain** - Madrid</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Mexico** - Mexico City<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -698,7 +708,7 @@ Server started on http://localhost:39994
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>Let's calculate it:<br>\[ 2 * 2 = 4 \]<br><br>Therefore, the answer is 4. You don't actually need a calculator for this simple multiplication, but if you prefer to use one, you can get the same result.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>Let's calculate it.<br>```<br>2 * 2 = 4<br>```<br><br>Therefore, the answer is 4. We don't actually need a calculator for this simple multiplication, but if you want to use one, you can!</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -738,7 +748,7 @@ Server started on http://localhost:39994
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:** Focus on a variety of nutrient-rich foods from all food groups, including plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats. Stay hydrated and limit processed foods and sugary snacks.<br>2. **Regular Exercise:** Engage in physical activity that you enjoy and can maintain, such as walking, jogging, cycling, swimming, or any other form of exercise. Aim for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise each week, along with muscle-strengthening activities on two or more days.<br><br>By integrating these two practices into your daily routine, you can significantly enhance your overall health and well-being.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Consuming a variety of nutrient-rich foods from all food groups in appropriate proportions helps ensure you get all the necessary vitamins, minerals, and other nutrients your body needs. This includes fruits, vegetables, lean proteins, whole grains, and healthy fats.<br><br>2. **Regular Exercise**: Engaging in consistent physical activity improves your overall health in numerous ways. It helps manage weight, boosts mood, increases energy, and strengthens your heart. Regular exercise also enhances immune function, reduces the risk of chronic diseases, improves sleep quality, and lowers stress and anxiety.<br><br>By integrating these habits into your routine, you can significantly enhance your health and well-being.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -811,7 +821,7 @@ Server started on http://localhost:39994
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "holly",<br>        "core": "phoenix feather",<br>        "length": 10.4<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Basilisk"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": " phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Aunt Marge"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -846,7 +856,7 @@ Server started on http://localhost:39994
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 35.47it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 35.42it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -965,32 +975,46 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-03 07:54:24] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:54:24] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:54:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-03 07:54:27] WARNING server_args.py:1159: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-03 07:54:27] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-03 07:54:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:54:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:54:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-03 07:54:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-03 07:54:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-03 07:54:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-03 07:54:35] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-03 07:54:35] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-03 13:09:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:09:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:09:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:09:54] WARNING server_args.py:1159: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-03 13:09:54] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1103 13:09:54.745635 1120551 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+[2025-11-03 13:10:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:10:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:10:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:10:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-03 13:10:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-03 13:10:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-03 13:10:05] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1103 13:10:05.562402 1120776 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+[2025-11-03 13:10:05] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1103 13:10:05.692803 1120777 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.11it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.11it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.11it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.12it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.43it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.17it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.20it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.25it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.61it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.42it/s]
 
-Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:02&lt;00:00,  1.18it/s]
+Capturing batches (bs=1 avail_mem=59.81 GB): 100%|██████████| 3/3 [00:02&lt;00:00,  1.15it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1004,7 +1028,7 @@ Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37802
+Server started on http://localhost:30665
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1037,7 +1061,7 @@ Server started on http://localhost:37802
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a person on a busy urban street ironing a shirt, 방수出现了并使用了在一辆黄色的出租车后行李区上为支撑。出租车似乎是出现在纽约市这样的城市环境，因为它独特的黄色被公认为纽约城市的一大特点。街上的另一个车辆是一个黄色的出租车，可能是纽约市的标志性车型 Taxurus。</strong></div>
+<strong style='color: #00008B;'>The image shows a man setting up a "roof door"安心门 on a New York City taxi. Instead of wetting towels or cleaning a roof, he has panelytes equipped with strings assembled to allegedly reduce wind dragضغ空气。</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
