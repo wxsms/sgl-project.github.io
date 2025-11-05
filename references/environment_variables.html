@@ -698,11 +698,15 @@ document.write(`
 <td><p>Use flashinfer kernels when running blockwise fp8 GEMM on Blackwell GPUs</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FLASHINFER_FP4_GEMM_BACKEND</span></code></p></td>
+<td><p>Select backend for <code class="docutils literal notranslate"><span class="pre">mm_fp4</span></code> on Blackwell GPUS</p></td>
+<td><p>``</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code></p></td>
 <td><p>Use Cutlass kernels when running blockwise fp8 GEMM on Hopper or Blackwell GPUs</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
 <td><p>Use Cutlass FP8 MoE kernel on Blackwell GPUs (deprecated, use –moe-runner-backend=cutlass)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
