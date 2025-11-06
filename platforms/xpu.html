@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=eaa8a535"></script>
+    <script src="../_static/documentation_options.js?v=dd742493"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -528,7 +528,7 @@ conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </
 conda<span class="w"> </span>activate<span class="w"> </span>sgl-xpu
 
 <span class="c1"># Set PyTorch XPU as primary pip install channel to avoid installing the larger CUDA-enabled version and prevent potential runtime issues.</span>
-pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.8.0+xpu<span class="w"> </span>torchao<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-triton-xpu<span class="o">==</span><span class="m">3</span>.4.0<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/xpu
+pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.9.0+xpu<span class="w"> </span>torchao<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-triton-xpu<span class="o">==</span><span class="m">3</span>.5.0<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/xpu
 pip3<span class="w"> </span>install<span class="w"> </span>xgrammar<span class="w"> </span>--no-deps<span class="w"> </span><span class="c1"># xgrammar will introduce CUDA-enabled triton which might conflict with XPU</span>
 
 <span class="c1"># Clone the SGLang code</span>
