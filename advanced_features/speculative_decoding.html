@@ -58,7 +58,7 @@
     <link rel="prev" title="Attention Backend" href="attention_backend.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 05, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 06, 2025"/>
   </head>
   
   
@@ -557,9 +557,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-05 23:25:32] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:25:32] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:25:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:34:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:34:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:34:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -583,37 +583,41 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-05 23:25:37] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:25:37] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:25:37] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:25:41] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-05 23:25:41] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-11-05 23:25:41] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:25:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:25:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:25:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:25:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:25:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:25:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:25:49] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:25:49] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:34:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:34:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:34:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:34:21] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-06 02:34:21] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-11-06 02:34:21] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:34:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:34:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:34:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:34:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:34:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:34:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:34:29] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:34:29] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.91s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.33s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.42s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.86s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.30s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.39s/it]
 
-Capturing batches (bs=1 avail_mem=37.98 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  6.97it/s]
-[2025-11-05 23:26:14] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.01it/s]
+[2025-11-06 02:34:37] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.30s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.30s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.26s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.26s/it]
 
-Capturing batches (bs=1 avail_mem=36.72 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.16s/it]
-Capturing batches (bs=1 avail_mem=20.83 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 110.86it/s]
+Capturing batches (bs=1 avail_mem=53.67 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.15s/it]
+Capturing batches (bs=1 avail_mem=53.58 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 109.23it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -645,7 +649,7 @@ Capturing batches (bs=1 avail_mem=20.83 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='f30ac7c8fb114c3fbdd20c64eaf211f6', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1762385188, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8ee092dd4e324e6d9f358713409a8790', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1762396491, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -681,39 +685,43 @@ Capturing batches (bs=1 avail_mem=20.83 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-05 23:26:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:26:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:26:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:26:36] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-05 23:26:36] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-11-05 23:26:36] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:26:41] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:26:41] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:26:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:26:43] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:34:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:34:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:34:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:34:58] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-06 02:34:58] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-11-06 02:34:58] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:35:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:35:04] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:35:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:35:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:35:04] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:35:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:35:06] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:35:06] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-11-05 23:26:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:26:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:26:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:26:49] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.87s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.34s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.42s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.69s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.23s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.30s/it]
 
-Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:00,  7.55it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:00,  8.49it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=53.78 GB): 100%|██████████| 4/4 [00:15&lt;00:00,  3.86s/it]
-[2025-11-05 23:27:23] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:14&lt;00:00,  3.70s/it]
+[2025-11-06 02:35:29] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.31s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.31s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.25s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.25s/it]
 
-Capturing batches (bs=1 avail_mem=50.93 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.62s/it]
-Capturing batches (bs=1 avail_mem=50.69 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 90.71it/s]
+Capturing batches (bs=1 avail_mem=53.51 GB): 100%|██████████| 4/4 [00:07&lt;00:00,  1.76s/it]
+Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 81.14it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -745,7 +753,7 @@ Capturing batches (bs=1 avail_mem=50.69 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='c4d4e7c6ac9544b2b11b24eb7c850b6d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1762385259, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='f37150684e73415cb24f82c957c54709', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1762396545, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -783,45 +791,49 @@ Capturing batches (bs=1 avail_mem=50.69 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-05 23:27:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:27:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:27:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:27:47] WARNING model_config.py:880: Casting torch.bfloat16 to torch.float16.
-[2025-11-05 23:27:47] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-05 23:27:47] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-11-05 23:27:47] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:27:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:27:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:27:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:27:55] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:27:56] Casting torch.bfloat16 to torch.float16.
-[2025-11-05 23:27:56] Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:35:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:35:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:35:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:35:52] WARNING model_config.py:880: Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:35:52] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-06 02:35:52] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-11-06 02:35:52] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:35:53] Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:35:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:35:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:35:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:35:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:35:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:35:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:36:01] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:36:01] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:36:01] Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:36:02] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-11-05 23:27:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:27:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:27:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:28:00] Casting torch.bfloat16 to torch.float16.
-[2025-11-05 23:28:01] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:14,  4.71s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.71s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:14&lt;00:04,  4.67s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.34s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.84s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:14,  4.68s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.72s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:14&lt;00:04,  4.66s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.33s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.82s/it]
 
-Capturing batches (bs=1 avail_mem=39.39 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.61it/s]
-[2025-11-05 23:28:34] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-11-05 23:28:34] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-11-05 23:28:34] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=59.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.75it/s]
+[2025-11-06 02:36:22] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-11-06 02:36:22] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-11-06 02:36:22] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
 Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.10s/it]
 Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.10s/it]
 
-Capturing batches (bs=1 avail_mem=41.94 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.26s/it]
-Capturing batches (bs=1 avail_mem=41.20 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 107.61it/s]
+Capturing batches (bs=1 avail_mem=58.40 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.23s/it]
+Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 101.67it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -853,7 +865,7 @@ Capturing batches (bs=1 avail_mem=41.20 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='8ab7a6bf17034a3fab02c8ad7da94973', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1762385329, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='dc2318c49216449b9c42a8bb0e1ef685', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1762396596, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -889,45 +901,49 @@ Capturing batches (bs=1 avail_mem=41.20 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-05 23:28:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:28:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:28:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:28:56] WARNING model_config.py:880: Casting torch.bfloat16 to torch.float16.
-[2025-11-05 23:28:56] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-05 23:28:56] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-11-05 23:28:56] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:29:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:29:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:29:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:29:03] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:29:03] Casting torch.bfloat16 to torch.float16.
-[2025-11-05 23:29:04] Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:36:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:36:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:36:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:36:44] WARNING model_config.py:880: Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:36:44] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-06 02:36:44] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-11-06 02:36:44] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:36:44] Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:36:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:36:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:36:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:36:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:36:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:36:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:36:52] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:36:52] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:36:52] Casting torch.bfloat16 to torch.float16.
+[2025-11-06 02:36:53] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-11-05 23:29:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:29:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:29:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:29:08] Casting torch.bfloat16 to torch.float16.
-[2025-11-05 23:29:09] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.61s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:08,  4.49s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.58s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.31s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.77s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.24s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.41s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.44s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.18s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.62s/it]
 
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.01it/s]
-[2025-11-05 23:29:41] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-11-05 23:29:41] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-11-05 23:29:41] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.76it/s]
+[2025-11-06 02:37:12] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-11-06 02:37:12] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-11-06 02:37:12] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.74it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.74it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.77it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.76it/s]
 
-Capturing batches (bs=1 avail_mem=58.19 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.14s/it]
-Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 106.84it/s]
+Capturing batches (bs=1 avail_mem=58.19 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.21s/it]
+Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 97.31it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -959,7 +975,7 @@ Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='23ea3bf13015456f98119f5192f55277', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1762385393, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='092081ccce9d4a25852a97590ff5eb77', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1762396645, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -993,39 +1009,43 @@ Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-05 23:29:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:29:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:29:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:30:00] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-05 23:30:00] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-11-05 23:30:00] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:30:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:30:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:30:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:30:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-05 23:30:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-05 23:30:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-05 23:30:08] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
-[2025-11-05 23:30:08] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:37:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:37:30] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:37:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:37:32] WARNING server_args.py:1164: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-06 02:37:32] WARNING server_args.py:1537: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-11-06 02:37:32] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:37:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:37:38] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:37:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:37:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-06 02:37:38] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-06 02:37:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-06 02:37:40] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2025-11-06 02:37:40] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;repr&#39; attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. &#39;repr&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The &#39;frozen&#39; attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. &#39;frozen&#39; is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.37it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.26it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.20it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.30it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.19it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.12it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
 
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.72it/s]
-[2025-11-05 23:30:35] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.18it/s]
+[2025-11-06 02:37:50] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.51it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.75it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.35it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.17it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.01it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  6.67it/s]
 
-Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 58.31it/s]
+Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 55.85it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1056,7 +1076,7 @@ Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '4f5f68956329472884d916f33aa7c42c', 'object': 'chat.completion', 'created': 1762385444, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? I remember that Paris is a major city there. But wait, maybe I should make sure I\'m not mixing it up with another country\'s capital. Let me think.\n\nI know that北京 is Beijing in China, so that\'s not it. In Russia, the capital is Moscow. Germany\'s capital is Berlin. So, yes, Paris comes to mind as the capital of France. But to be thorough, maybe I should verify this. Wait, has the capital of France ever changed? I think in the past, some cities were capitals, but currently, it\'s Paris. Yes, I\'m pretty confident. Let me check my memory. No, I don\'t think there\'s a recent change. So the answer should be Paris. \n\nWait, the user might be looking for more details. Do I need to provide any additional information about Paris? Like, maybe a bit about it? The question is straightforward, just asking for the capital. So the answer is Paris. But maybe the user wants to confirm that Paris is indeed the capital. So I should state that clearly. I don\'t think there\'s any trick here. It\'s a direct question. So the answer is Paris, France. Yes, that\'s correct.\n</think>\nThe capital of France is **Paris**. This iconic city is闻名 worldwide for its attractions like the Eiffel Tower, Louvre Museum, and the Champs-Élysées. It\'s not only the political heart of France but also a global hub for culture, fashion, and cuisine. 🇫🇷', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 380, 'completion_tokens': 354, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '8e6a988a53e4493b854b93cdaa7af8c6', 'object': 'chat.completion', 'created': 1762396681, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, let's see. The user is asking for the capital of France. Hmm, I need to make sure I get this right. From what I remember, France is a country in Europe. The capital city... I think it's Paris. But wait, let me double-check. Maybe there's another major city that's the capital. Let me think.\n\nI recall that Paris is the largest city in France, so it's likely the capital. The Eiffel Tower is in Paris, which is a major landmark. Also, political institutions like the French government are based there. The president's residence, the Élysée Palace, is in Paris. The National Assembly, which is the lower house of the French parliament, meets there too. So yes, that makes sense. \n\nWait, could there be any confusion with another country's capital? For example, maybe someone confuses France with Italy and thinks Rome? But no, Rome is the capital of Italy. Spain's capital is Madrid, so that's different. Germany's capital is Berlin. So France's capital is definitely Paris. \n\nAnother way to confirm: think about the administrative regions. France is divided into regions, and Paris is an autonomous region, but it's also the capital. Yes, I think that's correct. No mix-up there. \n\nI don't think there's any recent change in the capital. Capitals don't usually change unless there's a political reason, but I haven't heard of any such changes in France. So it's safe to say Paris is still the capital. \n\nSo putting it all together: the capital of France is Paris. The answer should be straightforward. Just need to make sure there's no trick question or alternative capital. But no, Paris is well-known as the capital. Alright, confident enough now.\n</think>\n\nThe capital of France is **Paris**. This major city is home to iconic landmarks like the Eiffel Tower, the Louvre Museum, and the administrative heart of the French government, including the residence of the President (Élysée Palace) and the National Assembly.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 455, 'completion_tokens': 429, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -1172,7 +1192,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 05, 2025.
+  Last updated on Nov 06, 2025.
   <br/>
 </p>
   </div>
