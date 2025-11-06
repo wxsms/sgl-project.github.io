@@ -471,6 +471,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example launch Command</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-input-support">Video Input Support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a></li>
 </ul>
@@ -607,6 +608,66 @@ document.write(`
 </table>
 </div>
 </section>
+<section id="video-input-support">
+<h2>Video Input Support<a class="headerlink" href="#video-input-support" title="Link to this heading">#</a></h2>
+<p>SGLang supports video input for Vision-Language Models (VLMs), enabling temporal reasoning tasks such as video question answering, captioning, and holistic scene understanding. Video clips are decoded, key frames are sampled, and the resulting tensors are batched together with the text prompt, allowing multimodal inference to integrate visual and linguistic context.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Example Identifier</p></th>
+<th class="head"><p>Video notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Qwen-VL</strong> (Qwen2-VL, Qwen2.5-VL, Qwen3-VL, Qwen3-Omni)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-VL-235B-A22B-Instruct</span></code></p></td>
+<td><p>The processor gathers <code class="docutils literal notranslate"><span class="pre">video_data</span></code>, runs Qwen’s frame sampler, and merges the resulting features with text tokens before inference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GLM-4v</strong> (4.5V, 4.1V, MOE)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">zai-org/GLM-4.5V</span></code></p></td>
+<td><p>Video clips are read with Decord, converted to tensors, and passed to the model alongside metadata for rotary-position handling.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NVILA</strong> (Full &amp; Lite)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/NVILA-8B</span></code></p></td>
+<td><p>The runtime samples eight frames per clip and attaches them to the multimodal request when <code class="docutils literal notranslate"><span class="pre">video_data</span></code> is present.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LLaVA video variants</strong> (LLaVA-NeXT-Video, LLaVA-OneVision)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lmms-lab/LLaVA-NeXT-Video-7B</span></code></p></td>
+<td><p>The processor routes video prompts to the LlavaVid video-enabled architecture, and the provided example shows how to query it with <code class="docutils literal notranslate"><span class="pre">sgl.video(...)</span></code> clips.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">sgl.video(path,</span> <span class="pre">num_frames)</span></code> when building prompts to attach clips from your SGLang programs.</p>
+<p>Example OpenAI-compatible request that sends a video clip:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:30000/v1/chat/completions&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Qwen/Qwen3-VL-30B-A3B-Instruct&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;What’s happening in this video?&quot;</span><span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;video_url&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;video_url&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/sgl-project/sgl-test-files/raw/refs/heads/main/videos/jobs_presenting_ipod.mp4&quot;</span>
+                    <span class="p">},</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="usage-notes">
 <h2>Usage Notes<a class="headerlink" href="#usage-notes" title="Link to this heading">#</a></h2>
 <section id="performance-optimization">
@@ -668,6 +729,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-launch-command">Example launch Command</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-input-support">Video Input Support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a></li>
 </ul>
