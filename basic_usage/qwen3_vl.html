@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Embedding Models &#8212; SGLang</title>
+    <title>Qwen3-VL Usage &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'supported_models/embedding_models';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'basic_usage/qwen3_vl';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reward Models" href="reward_models.html" />
-    <link rel="prev" title="Multimodal Language Models" href="multimodal_language_models.html" />
+    <link rel="next" title="Server Arguments" href="../advanced_features/server_arguments.html" />
+    <link rel="prev" title="Qwen3-Next Usage" href="qwen3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Nov 10, 2025"/>
@@ -168,18 +168,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/qwen3_vl.html">Qwen3-VL Usage</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qwen3.html">Qwen3-Next Usage</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Qwen3-VL Usage</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -203,15 +203,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/checkpoint_engine.html">Checkpoint Engine Integration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_models.html">Large Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multimodal_language_models.html">Multimodal Language Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Embedding Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reward_models.html">Reward Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rerank_models.html">Rerank Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support_new_models.html">How to Support New Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformers_fallback.html">Transformers fallback in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/generative_models.html">Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/rerank_models.html">Rerank Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
@@ -312,7 +312,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/supported_models/embedding_models.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/basic_usage/qwen3_vl.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +329,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/supported_models/embedding_models.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/basic_usage/qwen3_vl.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +346,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fsupported_models/embedding_models.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbasic_usage/qwen3_vl.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -376,7 +376,7 @@
       
       
       
-      <li><a href="../_sources/supported_models/embedding_models.md" target="_blank"
+      <li><a href="../_sources/basic_usage/qwen3_vl.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,7 +460,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Embedding Models</h1>
+    <h1>Qwen3-VL Usage</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -470,18 +470,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-server">Launch Server</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-request">Client Request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-commands-for-sglang">Launch commands for SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8-quantised-mode">FP8 (quantised) mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-fp8-bf16-full-precision-mode">Non-FP8 (BF16 / full precision) mode</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-embedding-example">Multimodal Embedding Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matryoshka-embedding-example">Matryoshka Embedding Example</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-a-matryoshkacapable-model">1. Launch a Matryoshka‑capable model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-requests-with-different-output-dimensions">2. Make requests with different output dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-specific-notes-recommendations">Hardware-specific notes / recommendations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-image-video-requests">Sending Image/Video Requests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-input">Image input:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-input">Video Input:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-server-parameters-and-flags">Important Server Parameters and Flags</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage-with-the-above-optimizations">Example usage with the above optimizations:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -493,161 +496,142 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="embedding-models">
-<h1>Embedding Models<a class="headerlink" href="#embedding-models" title="Link to this heading">#</a></h1>
-<p>SGLang provides robust support for embedding models by integrating efficient serving mechanisms with its flexible programming interface. This integration allows for streamlined handling of embedding tasks, facilitating faster and more accurate retrieval and semantic search operations. SGLang’s architecture enables better resource utilization and reduced latency in embedding model deployment.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Embedding models are executed with <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code> flag and some may require <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code></p>
-</div>
-<section id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
-<section id="launch-server">
-<h3>Launch Server<a class="headerlink" href="#launch-server" title="Link to this heading">#</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-Embedding-4B<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--is-embedding<span class="w"> </span><span class="se">\</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="qwen3-vl-usage">
+<h1>Qwen3-VL Usage<a class="headerlink" href="#qwen3-vl-usage" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://huggingface.co/collections/Qwen/qwen3-vl">Qwen3-VL</a>
+is Alibaba’s latest multimodal large language model with strong text, vision, and reasoning capabilities.
+SGLang supports Qwen3-VL Family of models with Image and Video input support.</p>
+<section id="launch-commands-for-sglang">
+<h2>Launch commands for SGLang<a class="headerlink" href="#launch-commands-for-sglang" title="Link to this heading">#</a></h2>
+<p>Below are suggested launch commands tailored for different hardware / precision modes</p>
+<section id="fp8-quantised-mode">
+<h3>FP8 (quantised) mode<a class="headerlink" href="#fp8-quantised-mode" title="Link to this heading">#</a></h3>
+<p>For high memory-efficiency and latency optimized deployments (e.g., on H100, H200) where FP8 checkpoint is supported:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-235B-A22B-Instruct-FP8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ep<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keep-mm-feature-on-device
 </pre></div>
 </div>
 </section>
-<section id="client-request">
-<h3>Client Request<a class="headerlink" href="#client-request" title="Link to this heading">#</a></h3>
+<section id="non-fp8-bf16-full-precision-mode">
+<h3>Non-FP8 (BF16 / full precision) mode<a class="headerlink" href="#non-fp8-bf16-full-precision-mode" title="Link to this heading">#</a></h3>
+<p>For deployments on A100/H100 where BF16 is used (or FP8 snapshot not used):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-235B-A22B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ep<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="hardware-specific-notes-recommendations">
+<h2>Hardware-specific notes / recommendations<a class="headerlink" href="#hardware-specific-notes-recommendations" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>On H100 with FP8: Use the FP8 checkpoint for best memory efficiency.</p></li>
+<li><p>On A100 / H100 with BF16 (non-FP8): It’s recommended to use <code class="docutils literal notranslate"><span class="pre">--mm-max-concurrent-calls</span></code> to control parallel throughput and GPU memory usage during image/video inference.</p></li>
+<li><p>On H200 &amp; B200: The model can be run “out of the box”, supporting full context length plus concurrent image + video processing.</p></li>
+</ul>
+</section>
+<section id="sending-image-video-requests">
+<h2>Sending Image/Video Requests<a class="headerlink" href="#sending-image-video-requests" title="Link to this heading">#</a></h2>
+<section id="image-input">
+<h3>Image input:<a class="headerlink" href="#image-input" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:30000&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://localhost:30000/v1/chat/completions&quot;</span>
 
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Qwen/Qwen3-Embedding-4B&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;encoding_format&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/v1/embeddings&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embedding:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;embedding&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="multimodal-embedding-example">
-<h2>Multimodal Embedding Example<a class="headerlink" href="#multimodal-embedding-example" title="Link to this heading">#</a></h2>
-<p>For multimodal models like GME that support both text and images:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>Alibaba-NLP/gme-Qwen2-VL-2B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--is-embedding<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--chat-template<span class="w"> </span>gme-qwen2-vl<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:30000&quot;</span>
-
-<span class="n">text_input</span> <span class="o">=</span> <span class="s2">&quot;Represent this image in embedding space.&quot;</span>
-<span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;https://huggingface.co/datasets/liuhaotian/llava-bench-in-the-wild/resolve/main/images/023.jpg&quot;</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gme-qwen2-vl&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Qwen/Qwen3-VL-30B-A3B-Instruct&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text_input</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">image_path</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;What’s in this image?&quot;</span><span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image_url&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;image_url&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/sgl-project/sglang/blob/main/test/lang/example_image.png?raw=true&quot;</span>
+                    <span class="p">},</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
         <span class="p">}</span>
     <span class="p">],</span>
+    <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/v1/embeddings&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embeddings:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;embedding&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">[])])</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="matryoshka-embedding-example">
-<h2>Matryoshka Embedding Example<a class="headerlink" href="#matryoshka-embedding-example" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://sbert.net/examples/sentence_transformer/training/matryoshka/README.html#matryoshka-embeddings">Matryoshka Embeddings</a> or <a class="reference external" href="https://arxiv.org/abs/2205.13147">Matryoshka Representation Learning (MRL)</a> is a technique used in training embedding models. It allows user to trade off between performance and cost.</p>
-<section id="launch-a-matryoshkacapable-model">
-<h3>1. Launch a Matryoshka‑capable model<a class="headerlink" href="#launch-a-matryoshkacapable-model" title="Link to this heading">#</a></h3>
-<p>If the model config already includes <code class="docutils literal notranslate"><span class="pre">matryoshka_dimensions</span></code> or <code class="docutils literal notranslate"><span class="pre">is_matryoshka</span></code> then no override is needed. Otherwise, you can use <code class="docutils literal notranslate"><span class="pre">--json-model-override-args</span></code> as below:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>Qwen/Qwen3-Embedding-0.6B<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--is-embedding<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--json-model-override-args<span class="w"> </span><span class="s1">&#39;{&quot;matryoshka_dimensions&quot;: [128, 256, 512, 1024, 1536]}&#39;</span>
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Setting <code class="docutils literal notranslate"><span class="pre">&quot;is_matryoshka&quot;:</span> <span class="pre">true</span></code> allows truncating to any dimension. Otherwise, the server will validate that the specified dimension in the request is one of <code class="docutils literal notranslate"><span class="pre">matryoshka_dimensions</span></code>.</p></li>
-<li><p>Omitting <code class="docutils literal notranslate"><span class="pre">dimensions</span></code> in a request returns the full vector.</p></li>
-</ol>
-</section>
-<section id="make-requests-with-different-output-dimensions">
-<h3>2. Make requests with different output dimensions<a class="headerlink" href="#make-requests-with-different-output-dimensions" title="Link to this heading">#</a></h3>
+<section id="video-input">
+<h3>Video Input:<a class="headerlink" href="#video-input" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:30000&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://localhost:30000/v1/chat/completions&quot;</span>
 
-<span class="c1"># Request a truncated (Matryoshka) embedding by specifying a supported dimension.</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Qwen/Qwen3-Embedding-0.6B&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain diffusion models simply.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;dimensions&quot;</span><span class="p">:</span> <span class="mi">512</span>  <span class="c1"># change to 128 / 1024 / omit for full size</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Qwen/Qwen3-VL-30B-A3B-Instruct&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;What’s happening in this video?&quot;</span><span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;video_url&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;video_url&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/sgl-project/sgl-test-files/raw/refs/heads/main/videos/jobs_presenting_ipod.mp4&quot;</span>
+                    <span class="p">},</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/v1/embeddings&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embedding:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;embedding&quot;</span><span class="p">])</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 </section>
-<section id="supported-models">
-<h2>Supported Models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Model Family</p></th>
-<th class="head"><p>Example Model</p></th>
-<th class="head"><p>Chat Template</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>E5 (Llama/Mistral based)</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">intfloat/e5-mistral-7b-instruct</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>High-quality text embeddings based on Mistral/Llama architectures</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>GTE-Qwen2</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Alibaba-NLP/gte-Qwen2-7B-instruct</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>Alibaba’s text embedding model with multilingual support</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Qwen3-Embedding</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-Embedding-4B</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>Latest Qwen3-based text embedding model for semantic representation</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>BGE</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BAAI/bge-large-en-v1.5</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>BAAI’s text embeddings (requires <code class="docutils literal notranslate"><span class="pre">attention-backend</span></code> triton/torch_native)</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>GME (Multimodal)</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Alibaba-NLP/gme-Qwen2-VL-2B-Instruct</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gme-qwen2-vl</span></code></p></td>
-<td><p>Multimodal embedding for text and image cross-modal tasks</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>CLIP</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">openai/clip-vit-large-patch14-336</span></code></p></td>
-<td><p>N/A</p></td>
-<td><p>OpenAI’s CLIP for image and text embeddings</p></td>
-</tr>
-</tbody>
-</table>
+<section id="important-server-parameters-and-flags">
+<h2>Important Server Parameters and Flags<a class="headerlink" href="#important-server-parameters-and-flags" title="Link to this heading">#</a></h2>
+<p>When launching the model server for <strong>multimodal support</strong>, you can use the following command-line arguments to fine-tune performance and behavior:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--mm-attention-backend</span></code>: Specify multimodal attention backend. Eg. <code class="docutils literal notranslate"><span class="pre">fa3</span></code>(Flash Attention 3)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--mm-max-concurrent-calls</span> <span class="pre">&lt;value&gt;</span></code>: Specifies the <strong>maximum number of concurrent asynchronous multimodal data processing calls</strong> allowed on the server. Use this to control parallel throughput and GPU memory usage during image/video inference.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--mm-per-request-timeout</span> <span class="pre">&lt;seconds&gt;</span></code>: Defines the <strong>timeout duration (in seconds)</strong> for each multimodal request. If a request exceeds this time limit (e.g., for very large video inputs), it will be automatically terminated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--keep-mm-feature-on-device</span></code>: Instructs the server to <strong>retain multimodal feature tensors on the GPU</strong> after processing. This avoids device-to-host (D2H) memory copies and improves performance for repeated or high-frequency inference workloads.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_CUDA_IPC_TRANSPORT=1</span></code>: Shared memory pool based CUDA IPC for multi-modal data transport. For significantly improving e2e latency.</p></li>
+</ul>
+<section id="example-usage-with-the-above-optimizations">
+<h3>Example usage with the above optimizations:<a class="headerlink" href="#example-usage-with-the-above-optimizations" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_USE_CUDA_IPC_TRANSPORT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="nv">SGLANG_VLM_CACHE_SIZE_MB</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-235B-A22B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-cache-report<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--log-level<span class="w"> </span>info<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.65<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mm-attention-backend<span class="w"> </span>fa3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-metrics
+</pre></div>
 </div>
+</section>
 </section>
 </section>
 
@@ -663,20 +647,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="multimodal_language_models.html"
+       href="qwen3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Multimodal Language Models</p>
+        <p class="prev-next-title">Qwen3-Next Usage</p>
       </div>
     </a>
     <a class="right-next"
-       href="reward_models.html"
+       href="../advanced_features/server_arguments.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reward Models</p>
+        <p class="prev-next-title">Server Arguments</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -696,18 +680,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-server">Launch Server</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-request">Client Request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-commands-for-sglang">Launch commands for SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8-quantised-mode">FP8 (quantised) mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-fp8-bf16-full-precision-mode">Non-FP8 (BF16 / full precision) mode</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-embedding-example">Multimodal Embedding Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matryoshka-embedding-example">Matryoshka Embedding Example</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-a-matryoshkacapable-model">1. Launch a Matryoshka‑capable model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-requests-with-different-output-dimensions">2. Make requests with different output dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-specific-notes-recommendations">Hardware-specific notes / recommendations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-image-video-requests">Sending Image/Video Requests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-input">Image input:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-input">Video Input:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-server-parameters-and-flags">Important Server Parameters and Flags</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage-with-the-above-optimizations">Example usage with the above optimizations:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
