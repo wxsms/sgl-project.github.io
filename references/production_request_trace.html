@@ -520,6 +520,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">0.0.0.0:4317</span></code> with the actual endpoint of the opentelemetry collector. If you launched the openTelemetry collector with tracing_compose.yaml, the default receiving port is 4317.</p>
+<p>To use the HTTP/protobuf span exporter, set the following environment variable and point to an HTTP endpoint, for example, <code class="docutils literal notranslate"><span class="pre">http://0.0.0.0:4318/v1/traces</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OTEL_EXPORTER_OTLP_TRACES_PROTOCOL</span><span class="o">=</span>http/protobuf
+</pre></div>
+</div>
 </li>
 <li><p>raise some requests</p></li>
 <li><p>Observe whether trace data is being exported</p>
