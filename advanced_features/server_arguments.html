@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=37f5ed17"></script>
+    <script src="../_static/documentation_options.js?v=20816d71"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1676,12 +1676,12 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hicache-io-backend</span></code></p></td>
 <td><p>The IO backend for KV cache transfer between CPU and GPU</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">kernel</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">direct</span></code>, <code class="docutils literal notranslate"><span class="pre">kernel</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">direct</span></code>, <code class="docutils literal notranslate"><span class="pre">kernel</span></code>, <code class="docutils literal notranslate"><span class="pre">kernel_ascend</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--hicache-mem-layout</span></code></p></td>
 <td><p>The layout of host memory pool for hierarchical cache.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">layer_first</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">layer_first</span></code>, <code class="docutils literal notranslate"><span class="pre">page_first</span></code>, <code class="docutils literal notranslate"><span class="pre">page_first_direct</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">layer_first</span></code>, <code class="docutils literal notranslate"><span class="pre">page_first</span></code>, <code class="docutils literal notranslate"><span class="pre">page_first_direct</span></code>, <code class="docutils literal notranslate"><span class="pre">page_first_kv_split</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend</span></code></p></td>
 <td><p>The storage backend for hierarchical KV cache. Built-in backends: file, mooncake, hf3fs, nixl, aibrix. For dynamic backend, use –hicache-storage-backend-extra-config to specify: backend_name (custom name), module_path (Python module path), class_name (backend class name).</p></td>
