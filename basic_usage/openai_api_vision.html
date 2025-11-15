@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI APIs - Completions" href="openai_api_completions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 14, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 15, 2025"/>
   </head>
   
   
@@ -528,9 +528,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-14 15:10:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-14 15:10:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-14 15:10:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-15 00:30:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-15 00:30:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-15 00:30:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -538,35 +538,29 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-14 15:10:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-14 15:10:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-14 15:10:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-14 15:10:57] WARNING server_args.py:1204: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-14 15:10:57] INFO trace.py:69: opentelemetry package is not installed, tracing disabled
-[2025-11-14 15:10:57] WARNING memory_pool_host.py:36: Current platform not support pin_memory
-[2025-11-14 15:11:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-14 15:11:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-14 15:11:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-14 15:11:05] INFO trace.py:69: opentelemetry package is not installed, tracing disabled
-[2025-11-14 15:11:05] WARNING memory_pool_host.py:36: Current platform not support pin_memory
+[2025-11-15 00:31:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-15 00:31:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-15 00:31:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-15 00:31:05] WARNING server_args.py:1204: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-15 00:31:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-15 00:31:14] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-15 00:31:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-15 00:31:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-15 00:31:14] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-15 00:31:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-11-14 15:11:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-14 15:11:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-14 15:11:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-[2025-11-14 15:11:12] INFO trace.py:69: opentelemetry package is not installed, tracing disabled
-[2025-11-14 15:11:12] WARNING memory_pool_host.py:36: Current platform not support pin_memory
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.51it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.56it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01&lt;00:01,  1.59it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.65it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  2.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.87it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.21it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.27it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.30it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.71it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.49it/s]
 
-Capturing batches (bs=1 avail_mem=57.00 GB): 100%|██████████| 3/3 [00:02&lt;00:00,  1.46it/s]
+Capturing batches (bs=1 avail_mem=58.69 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.58it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -624,13 +618,13 @@ Capturing batches (bs=1 avail_mem=57.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"b58a493bdeb84ee1a95d1c2a23cf1e39","object":"chat.completion","created":1763133086,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"3eacf25087ff4760bd4bd1075fd55009","object":"chat.completion","created":1763166715,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"35957f3f28b343efa85ebd9fb078649a","object":"chat.completion","created":1763133095,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"45d0207a4c0c4f8da18f274623c1ab10","object":"chat.completion","created":1763166716,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -671,7 +665,7 @@ Capturing batches (bs=1 avail_mem=57.00 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"5b09bee2856a40aba77d8695226b8129","object":"chat.completion","created":1763133096,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"b2d0ee2c1bb243958293e66412388e8e","object":"chat.completion","created":1763166717,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -861,7 +855,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 14, 2025.
+  Last updated on Nov 15, 2025.
   <br/>
 </p>
   </div>
