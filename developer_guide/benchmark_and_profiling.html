@@ -481,6 +481,12 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-offline-throughput">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-http-api-endpoints">Profile a server with HTTP API endpoints</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-start-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> endpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-end-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example workflow</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiler-trace-merger-for-distributed-traces">Profiler Trace Merger for Distributed Traces</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-profiling-and-shared-storage-considerations">Multi-Node Profiling and Shared Storage Considerations</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-api-usage">HTTP API Usage</a></li>
@@ -492,7 +498,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-traces">View traces</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-nvtx-profiling-with-nsight-systems">Layer-wise NVTX Profiling with Nsight Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-enable-layerwise-nvtx-marker-with-nsight-systems-and-start-profile">Using <code class="docutils literal notranslate"><span class="pre">--enable-layerwise-nvtx-marker</span></code> with Nsight Systems and <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tips">Other tips</a></li>
 </ul>
             </nav>
@@ -630,6 +642,79 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_thr
 </pre></div>
 </div>
 </section>
+<section id="profile-a-server-with-http-api-endpoints">
+<h3>Profile a server with HTTP API endpoints<a class="headerlink" href="#profile-a-server-with-http-api-endpoints" title="Link to this heading">#</a></h3>
+<p>SGLang provides HTTP API endpoints to control profiling on a running server. This allows you to start and stop profiling programmatically, which is useful for capturing specific workload patterns.</p>
+<section id="using-start-profile-endpoint">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> endpoint<a class="headerlink" href="#using-start-profile-endpoint" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> endpoint starts profiling on the server. You can control when profiling begins and how long it runs using the following parameters:</p>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start profiling immediately for 10 steps</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/start_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;num_steps&quot;: 10</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output_dir</span></code> (optional): Directory where profile traces will be saved. If not specified, uses <code class="docutils literal notranslate"><span class="pre">SGLANG_TORCH_PROFILER_DIR</span></code> environment variable, or <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> as the default</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_steps</span></code> (optional): Number of steps to profile. If not specified, profiling continues until manually stopped with <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start_step</span></code> (optional): Step number at which to start profiling (inclusive). Useful for skipping warmup iterations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activities</span></code> (optional): List of activities to profile, e.g., <code class="docutils literal notranslate"><span class="pre">[&quot;CPU&quot;,</span> <span class="pre">&quot;GPU&quot;]</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">[&quot;CPU&quot;,</span> <span class="pre">&quot;GPU&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">merge_profiles</span></code> (optional): Whether to merge distributed traces. Default is <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+</ul>
+<p><strong>Note on step ranges:</strong> Profiling starts at <code class="docutils literal notranslate"><span class="pre">start_step</span></code> (inclusive) and continues for <code class="docutils literal notranslate"><span class="pre">num_steps</span></code> iterations. For example, with <code class="docutils literal notranslate"><span class="pre">start_step=3</span></code> and <code class="docutils literal notranslate"><span class="pre">num_steps=10</span></code>, profiling captures steps 3, 4, 5, 6, 7, 8, 9, 10, 11, and 12 (10 steps total, starting from step 3).</p>
+<p><strong>Advanced usage with <code class="docutils literal notranslate"><span class="pre">start_step</span></code>:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wait 5 steps (warmup), then profile for 10 steps</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/start_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;output_dir&quot;: &quot;/tmp/profiles&quot;,</span>
+<span class="s1">    &quot;start_step&quot;: 5,</span>
+<span class="s1">    &quot;num_steps&quot;: 10,</span>
+<span class="s1">    &quot;activities&quot;: [&quot;CPU&quot;, &quot;GPU&quot;]</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+<p><strong>Continuous profiling (manual stop):</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start profiling without num_steps - must manually stop with /end_profile</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/start_profile
+</pre></div>
+</div>
+</section>
+<section id="using-end-profile-endpoint">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint<a class="headerlink" href="#using-end-profile-endpoint" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint stops an ongoing profiling session and saves the trace file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stop profiling and save traces</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/end_profile
+</pre></div>
+</div>
+<p>This is only needed when you start profiling without specifying <code class="docutils literal notranslate"><span class="pre">num_steps</span></code>. If <code class="docutils literal notranslate"><span class="pre">num_steps</span></code> is specified, profiling will automatically stop after that many steps.</p>
+</section>
+<section id="example-workflow">
+<h4>Example workflow<a class="headerlink" href="#example-workflow" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 1: Start the server</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_TORCH_PROFILER_DIR</span><span class="o">=</span>/tmp/profiles
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct
+
+<span class="c1"># Terminal 2: Start continuous profiling</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/start_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;start_step&quot;: 3</span>
+<span class="s1">  }&#39;</span>
+
+<span class="c1"># Terminal 3: Send requests to generate load</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">100</span>
+
+<span class="c1"># Terminal 2: Stop profiling when done</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/end_profile
+</pre></div>
+</div>
+</section>
+</section>
 <section id="profiler-trace-merger-for-distributed-traces">
 <h3>Profiler Trace Merger for Distributed Traces<a class="headerlink" href="#profiler-trace-merger-for-distributed-traces" title="Link to this heading">#</a></h3>
 <p>SGLang now supports automatic merging of profiling traces from distributed setups with multiple parallelism types (TP, DP, PP, EP). This feature is particularly useful for analyzing performance across distributed runs.</p>
@@ -757,6 +842,96 @@ pip<span class="w"> </span>install<span class="w"> </span>nvtx
 </div>
 </li>
 </ol>
+<section id="layer-wise-nvtx-profiling-with-nsight-systems">
+<h3>Layer-wise NVTX Profiling with Nsight Systems<a class="headerlink" href="#layer-wise-nvtx-profiling-with-nsight-systems" title="Link to this heading">#</a></h3>
+<p>SGLang provides built-in layerwise NVTX annotations that can be combined with the CUDA Profiler for detailed per-layer profiling in Nsight Systems. This is particularly useful for identifying performance bottlenecks at the layer level.</p>
+<section id="using-enable-layerwise-nvtx-marker-with-nsight-systems-and-start-profile">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">--enable-layerwise-nvtx-marker</span></code> with Nsight Systems and <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code><a class="headerlink" href="#using-enable-layerwise-nvtx-marker-with-nsight-systems-and-start-profile" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">--enable-layerwise-nvtx-marker</span></code> flag automatically adds NVTX markers to every layer in your model. This is particularly powerful when combined with Nsight Systems profiling to see detailed per-layer performance.</p>
+<p><strong>Method 1: Using <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> with CUDA_PROFILER (for programmatic control)</strong></p>
+<p>This method allows you to control exactly when profiling starts/stops via HTTP API while Nsight Systems is running.</p>
+<ol class="arabic">
+<li><p>Launch the server with layerwise NVTX enabled under Nsight Systems:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 1: Start server with nsys and capture-range option</span>
+nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--capture-range<span class="o">=</span>cudaProfilerApi<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--capture-range-end<span class="o">=</span>stop<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>layerwise_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-layerwise-nvtx-marker<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disable-cuda-graph
+</pre></div>
+</div>
+<p>Note: NVTX markers are not emitted for kernel launches captured by CUDA graphs. Use <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code> to ensure all layerwise NVTX markers are emitted in the trace.</p>
+</li>
+<li><p>In another terminal, control profiling via <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> with <code class="docutils literal notranslate"><span class="pre">CUDA_PROFILER</span></code> activity:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 2: Wait for server to be ready, then start CUDA profiling</span>
+<span class="c1"># Wait 3 steps for warmup, then profile for 10 steps</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/start_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;start_step&quot;: 3,</span>
+<span class="s1">    &quot;num_steps&quot;: 10,</span>
+<span class="s1">    &quot;activities&quot;: [&quot;CUDA_PROFILER&quot;]</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Send requests to generate load:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 3: Generate workload</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">100</span>
+</pre></div>
+</div>
+</li>
+<li><p>Profiling will automatically stop after 10 steps (due to <code class="docutils literal notranslate"><span class="pre">num_steps:</span> <span class="pre">10</span></code>). If you hadn’t specified <code class="docutils literal notranslate"><span class="pre">num_steps</span></code>, you would need to manually stop it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 2: Only needed if num_steps was not specified</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:30000/end_profile
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">--capture-range=cudaProfilerApi</span></code> option tells Nsight Systems to only capture data between <code class="docutils literal notranslate"><span class="pre">cudaProfilerStart()</span></code> and <code class="docutils literal notranslate"><span class="pre">cudaProfilerStop()</span></code> calls (triggered by <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> and <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code>), reducing overhead and file size. The <code class="docutils literal notranslate"><span class="pre">start_step</span></code> parameter skips the first 3 steps to avoid capturing warmup overhead.</p>
+<p><strong>Method 2: Simpler approach without <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> API</strong></p>
+<p>For simpler use cases where you don’t need fine-grained control over profiling start/stop, you can profile with Nsight Systems capturing the entire workload:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Terminal 1: Start server with layerwise NVTX</span>
+<span class="c1"># Note: --disable-cuda-graph ensures all NVTX markers are emitted</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-layerwise-nvtx-marker<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-cuda-graph
+
+<span class="c1"># Terminal 2: Profile the benchmarking client</span>
+nsys<span class="w"> </span>profile<span class="w"> </span>--trace-fork-before-exec<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cuda-graph-trace<span class="o">=</span>node<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>layerwise_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<p>This approach profiles the entire client execution, including all server interactions. The layerwise NVTX markers will be visible in the Nsight Systems timeline.</p>
+<p><strong>Viewing the profiling results:</strong></p>
+<p>Open the generated <code class="docutils literal notranslate"><span class="pre">.qdrep</span></code> file with Nsight Systems:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nsys-ui<span class="w"> </span>layerwise_profile.qdrep
+</pre></div>
+</div>
+<p>In the Nsight Systems GUI, you’ll see:</p>
+<ul class="simple">
+<li><p><strong>NVTX ranges</strong>: Each layer appears as a labeled range in the timeline with detailed information in the marker metadata</p></li>
+<li><p><strong>CUDA kernels</strong>: All GPU kernels are shown alongside the layer annotations</p></li>
+<li><p><strong>Layer hierarchy</strong>: The full module path (e.g., <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct.model.layers.0.self_attn.qkv_proj</span></code>) helps identify specific layers. The prefix uses the full model path from <code class="docutils literal notranslate"><span class="pre">--model-path</span></code>.</p></li>
+<li><p><strong>Tensor shapes</strong>: Input/output dimensions and parameter shapes are included in the NVTX marker data</p></li>
+</ul>
+<p><strong>Benefits of layerwise NVTX profiling:</strong></p>
+<ul class="simple">
+<li><p><strong>Granular visibility</strong>: See exactly which layers are taking the most time</p></li>
+<li><p><strong>Memory tracking</strong>: Identify layers with large memory allocations</p></li>
+<li><p><strong>Bottleneck identification</strong>: Quickly locate inefficient operations</p></li>
+<li><p><strong>Communication overhead</strong>: In multi-GPU setups, see per-layer communication costs</p></li>
+<li><p><strong>Development debugging</strong>: Validate that model architecture changes have the expected performance impact</p></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="other-tips">
 <h2>Other tips<a class="headerlink" href="#other-tips" title="Link to this heading">#</a></h2>
@@ -829,6 +1004,12 @@ pip<span class="w"> </span>install<span class="w"> </span>nvtx
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-bench-offline-throughput">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.bench_offline_throughput</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-sglang-profiler">Profile a server with <code class="docutils literal notranslate"><span class="pre">sglang.profiler</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-a-server-with-http-api-endpoints">Profile a server with HTTP API endpoints</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-start-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code> endpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-end-profile-endpoint">Using <code class="docutils literal notranslate"><span class="pre">/end_profile</span></code> endpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-workflow">Example workflow</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiler-trace-merger-for-distributed-traces">Profiler Trace Merger for Distributed Traces</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-profiling-and-shared-storage-considerations">Multi-Node Profiling and Shared Storage Considerations</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-api-usage">HTTP API Usage</a></li>
@@ -840,7 +1021,13 @@ pip<span class="w"> </span>install<span class="w"> </span>nvtx
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-traces">View traces</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-with-nsight">Profile with Nsight</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-nvtx-profiling-with-nsight-systems">Layer-wise NVTX Profiling with Nsight Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-enable-layerwise-nvtx-marker-with-nsight-systems-and-start-profile">Using <code class="docutils literal notranslate"><span class="pre">--enable-layerwise-nvtx-marker</span></code> with Nsight Systems and <code class="docutils literal notranslate"><span class="pre">/start_profile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-tips">Other tips</a></li>
 </ul>
   </nav></div>
