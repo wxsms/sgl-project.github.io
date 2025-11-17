@@ -487,6 +487,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gpqa-diamond">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gpqa-diamond</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-parallel-tips">Context-parallel Tips</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -648,6 +652,28 @@ Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.8
 </div>
 </section>
 </section>
+<section id="dsa-long-sequence-context-parallel-optimization-experimental">
+<h2>DSA long sequence context parallel optimization(experimental)<a class="headerlink" href="#dsa-long-sequence-context-parallel-optimization-experimental" title="Link to this heading">#</a></h2>
+<p>Accuracy benchmark on long context can be tested on GPQA-diamond dataset with long output tokens and thinking enabled:</p>
+<p>Example usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch with EP + DP</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--ep<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">2</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-nsa-prefill-context-parallel<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span>
+</pre></div>
+</div>
+<section id="context-parallel-tips">
+<h3>Context-parallel Tips<a class="headerlink" href="#context-parallel-tips" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">CP_size</span></code> reuses <code class="docutils literal notranslate"><span class="pre">atten_tp_size</span></code>, which is equal to <code class="docutils literal notranslate"><span class="pre">TP_size</span></code> / <code class="docutils literal notranslate"><span class="pre">DP_size</span></code>.
+Some features are still not supported at present.</p>
+<ul class="simple">
+<li><p><strong>Multi-batch prefill</strong>: Currently, only single-request processing is supported during the prefill process.</p></li>
+<li><p><strong>disaggregation</strong>: P/D disaggregation.</p></li>
+<li><p><strong>Cross-machine support</strong>: - Currently only tested on a single machine (TP=8,EP=8).</p></li>
+<li><p><strong>Other Args</strong>: Currently only supports moe_dense_tp_size=1, kv_cache_dtype = “bf16”, moe_a2a_backend = “deepep”,</p></li>
+<li><p><strong>DP_size</strong>: <code class="docutils literal notranslate"><span class="pre">CP_size</span></code> reuses <code class="docutils literal notranslate"><span class="pre">atten_tp_size</span></code>, which is equal to <code class="docutils literal notranslate"><span class="pre">TP_size</span></code> / <code class="docutils literal notranslate"><span class="pre">DP_size</span></code>. For the cp function to work correctly, <code class="docutils literal notranslate"><span class="pre">TP_size</span></code> must be divisible by <code class="docutils literal notranslate"><span class="pre">DP_size</span></code>, and TP_size / DP_size &gt; 1 (to ensure CP_size &gt; 1).</p></li>
+<li><p><strong>Detailed design reference</strong>: https://github.com/sgl-project/sglang/pull/12065</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -710,6 +736,10 @@ Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.8
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gsm8k">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gsm8k</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gpqa-diamond">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gpqa-diamond</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-parallel-tips">Context-parallel Tips</a></li>
 </ul>
 </li>
 </ul>
