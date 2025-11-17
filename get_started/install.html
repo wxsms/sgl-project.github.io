@@ -468,6 +468,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-kubernetes">Method 4: Using Kubernetes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-using-docker-compose">Method 5: Using docker compose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot">Method 6: Run on Kubernetes or Clouds with SkyPilot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-7-run-on-aws-sagemaker">Method 7: Run on AWS SageMaker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
 </ul>
             </nav>
@@ -605,6 +606,56 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
 </ol>
 </details>
 </section>
+<section id="method-7-run-on-aws-sagemaker">
+<h2>Method 7: Run on AWS SageMaker<a class="headerlink" href="#method-7-run-on-aws-sagemaker" title="Link to this heading">#</a></h2>
+<details>
+<summary>More</summary>
+<p>To deploy on SGLang on AWS SageMaker, check out <a class="reference external" href="https://aws.amazon.com/sagemaker/ai/deploy">AWS SageMaker Inference</a></p>
+<p>To host a model with your own container, follow the following steps:</p>
+<ol class="arabic simple">
+<li><p>Build a docker container with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docker/sagemaker.Dockerfile">sagemaker.Dockerfile</a> alongside the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docker/serve">serve</a> script.</p></li>
+<li><p>Push your container onto AWS ECR.</p></li>
+</ol>
+<details>
+<summary>Dockerfile Build Script: <code>build-and-push.sh</code></summary>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">AWS_ACCOUNT</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_AWS_ACCOUNT&gt;&quot;</span>
+<span class="nv">AWS_REGION</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_AWS_REGION&gt;&quot;</span>
+<span class="nv">REPOSITORY_NAME</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_REPOSITORY_NAME&gt;&quot;</span>
+<span class="nv">IMAGE_TAG</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_IMAGE_TAG&gt;&quot;</span>
+
+<span class="nv">ECR_REGISTRY</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_ACCOUNT</span><span class="si">}</span><span class="s2">.dkr.ecr.</span><span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span><span class="s2">.amazonaws.com&quot;</span>
+<span class="nv">IMAGE_URI</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ECR_REGISTRY</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">REPOSITORY_NAME</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">IMAGE_TAG</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting build and push process...&quot;</span>
+
+<span class="c1"># Login to ECR</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Logging into ECR...&quot;</span>
+aws<span class="w"> </span>ecr<span class="w"> </span>get-login-password<span class="w"> </span>--region<span class="w"> </span><span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="w"> </span>AWS<span class="w"> </span>--password-stdin<span class="w"> </span><span class="si">${</span><span class="nv">ECR_REGISTRY</span><span class="si">}</span>
+
+<span class="c1"># Build the image</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Building Docker image...&quot;</span>
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span><span class="si">${</span><span class="nv">IMAGE_URI</span><span class="si">}</span><span class="w"> </span>-f<span class="w"> </span>sagemaker.Dockerfile<span class="w"> </span>.
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Pushing </span><span class="si">${</span><span class="nv">IMAGE_URI</span><span class="si">}</span><span class="s2">&quot;</span>
+docker<span class="w"> </span>push<span class="w"> </span><span class="si">${</span><span class="nv">IMAGE_URI</span><span class="si">}</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Build and push completed successfully!&quot;</span>
+</pre></div>
+</div>
+</details>
+<ol class="arabic simple" start="3">
+<li><p>Deploy a model for serving on AWS Sagemaker, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/sagemaker/deploy_and_serve_endpoint.py">deploy_and_serve_endpoint.py</a>. For more information, check out <a class="reference external" href="https://github.com/aws/sagemaker-python-sdk">sagemaker-python-sdk</a>.</p>
+<ol class="arabic simple">
+<li><p>By default, the model server on SageMaker will run with the following command: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.launch_server</span> <span class="pre">--model-path</span> <span class="pre">opt/ml/model</span> <span class="pre">--host</span> <span class="pre">0.0.0.0</span> <span class="pre">--port</span> <span class="pre">8080</span></code>. This is optimal for hosting your own model with SageMaker.</p></li>
+<li><p>To modify your model serving parameters, the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docker/serve">serve</a> script allows for all available options within <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.launch_server</span> <span class="pre">--help</span></code> cli by specifying environment variables with prefix <code class="docutils literal notranslate"><span class="pre">SM_SGLANG_</span></code>.</p></li>
+<li><p>The serve script will automatically convert all environment variables with prefix <code class="docutils literal notranslate"><span class="pre">SM_SGLANG_</span></code> from <code class="docutils literal notranslate"><span class="pre">SM_SGLANG_INPUT_ARGUMENT</span></code> into <code class="docutils literal notranslate"><span class="pre">--input-argument</span></code> to be parsed into <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">sglang.launch_server</span></code> cli.</p></li>
+<li><p>For example, to run <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-0.6B">Qwen/Qwen3-0.6B</a> with reasoning parser, simply add additional environment variables <code class="docutils literal notranslate"><span class="pre">SM_SGLANG_MODEL_PATH=Qwen/Qwen3-0.6B</span></code> and <code class="docutils literal notranslate"><span class="pre">SM_SGLANG_REASONING_PARSER=qwen3</span></code>.</p></li>
+</ol>
+</li>
+</ol>
+</details>
+</section>
 <section id="common-notes">
 <h2>Common Notes<a class="headerlink" href="#common-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -665,6 +716,7 @@ sky<span class="w"> </span>status<span class="w"> </span>--endpoint<span class="
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-kubernetes">Method 4: Using Kubernetes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-5-using-docker-compose">Method 5: Using docker compose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-6-run-on-kubernetes-or-clouds-with-skypilot">Method 6: Run on Kubernetes or Clouds with SkyPilot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-7-run-on-aws-sagemaker">Method 7: Run on AWS SageMaker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-notes">Common Notes</a></li>
 </ul>
   </nav></div>
