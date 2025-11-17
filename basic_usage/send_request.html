@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=20816d71"></script>
+    <script src="../_static/documentation_options.js?v=9b7def6c"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,7 +58,7 @@
     <link rel="prev" title="Install SGLang" href="../get_started/install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 16, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 17, 2025"/>
   </head>
   
   
@@ -177,12 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qwen3.html">Qwen3-Next Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qwen3_vl.html">Qwen3-VL Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popular_model_usage.html">Popular Model Usage (DeepSeeek, GPT-OSS, Llama, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -198,7 +193,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
@@ -237,13 +231,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/production_metrics.html">Production Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/production_request_trace.html">Setup Guide</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="../references/production_request_trace.html">Production Request Tracing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 
     </div>
@@ -535,9 +527,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-16 14:59:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 14:59:29] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 14:59:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:43:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:43:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:43:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -545,25 +537,25 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-16 14:59:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 14:59:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 14:59:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-16 14:59:37] WARNING server_args.py:1213: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-16 14:59:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 14:59:44] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 14:59:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-16 14:59:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 14:59:44] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 14:59:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:43:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:43:57] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:43:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:44:00] WARNING server_args.py:1213: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-17 03:44:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:44:06] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:44:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:44:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:44:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:44:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.59it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.58it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.94it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  2.98it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -596,7 +588,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '7e06bc73fd2d49109c3b3ea27bea2b55', 'object': 'chat.completion', 'created': 1763305217, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '08bdb0a389614503b172eea954184372', 'object': 'chat.completion', 'created': 1763351064, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -623,7 +615,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': 'b303faedc3ca497391d2e9a1e9a0907a', 'object': 'chat.completion', 'created': 1763305217, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': 'b16e17d0bfa54a7e9e568a356efde39c', 'object': 'chat.completion', 'created': 1763351065, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -652,7 +644,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='eac5a92f914a4a66ae19fe11042764de', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1763305217, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='29d5d2a4682b44538857da1d35aca142', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1763351065, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="Streaming">
 <h3>Streaming<a class="headerlink" href="#Streaming" title="Link to this heading">#</a></h3>
@@ -724,7 +716,7 @@ Sure, here are three countries and their respective capitals:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' Paris. It is the largest city in Europe and the second largest city in the world. It is located in the south of France, on the banks of the', 'output_ids': [12095, 13, 1084, 374, 279, 7772, 3283, 304, 4505, 323, 279, 2086, 7772, 3283, 304, 279, 1879, 13, 1084, 374, 7407, 304, 279, 9806, 315, 9625, 11, 389, 279, 13959, 315, 279], 'meta_info': {'id': '8e15592308594af296fc434e47738ca9', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 5, 'weight_version': 'default', 'total_retractions': 0, 'completion_tokens': 32, 'cached_tokens': 2, 'e2e_latency': 0.05366349220275879, 'response_sent_to_client_ts': 1763305217.5708318}}</strong></div>
+<strong style='color: #00008B;'>{'text': ' Paris. It is the largest city in Europe and the second largest city in the world. It is located in the south of France, on the banks of the', 'output_ids': [12095, 13, 1084, 374, 279, 7772, 3283, 304, 4505, 323, 279, 2086, 7772, 3283, 304, 279, 1879, 13, 1084, 374, 7407, 304, 279, 9806, 315, 9625, 11, 389, 279, 13959, 315, 279], 'meta_info': {'id': '095d072f25674d6c88f73c62cf0e6426', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 5, 'weight_version': 'default', 'total_retractions': 0, 'completion_tokens': 32, 'cached_tokens': 2, 'e2e_latency': 0.05462455749511719, 'response_sent_to_client_ts': 1763351065.4665768}}</strong></div>
 </div>
 <section id="id1">
 <h3>Streaming<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -869,7 +861,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 16, 2025.
+  Last updated on Nov 17, 2025.
   <br/>
 </p>
   </div>

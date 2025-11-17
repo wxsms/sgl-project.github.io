@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=20816d71"></script>
+    <script src="../../_static/documentation_options.js?v=9b7def6c"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,7 +58,7 @@
     <link rel="prev" title="Frontend Language" href="frontend_index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 16, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 17, 2025"/>
   </head>
   
   
@@ -177,12 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basic_usage/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/qwen3_vl.html">Qwen3-VL Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeeek, GPT-OSS, Llama, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -198,7 +193,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced_features/pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
@@ -237,9 +231,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../production_metrics.html">Production Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../production_request_trace.html">Setup Guide</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="../production_request_trace.html">Production Request Tracing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="frontend_index.html">Frontend Language</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -247,7 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 
     </div>
@@ -535,9 +527,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-16 15:00:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:00:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:00:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:44:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:44:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:44:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -545,28 +537,28 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-16 15:00:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:00:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:00:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-16 15:00:17] WARNING server_args.py:1213: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-16 15:00:24] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:00:24] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:00:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-16 15:00:24] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:00:24] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:00:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:44:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:44:38] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:44:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:44:41] WARNING server_args.py:1213: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-17 03:44:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:44:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:44:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.33it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.24it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+[2025-11-17 03:44:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:44:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:44:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.48it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.43it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.46it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.63it/s]
+Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.84it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -580,7 +572,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37795
+Server started on http://localhost:31484
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -621,7 +613,7 @@ Server started on http://localhost:37795
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Brazil - Brasília<br>3. Japan - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -651,13 +643,13 @@ Server started on http://localhost:37795
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Canada** - Ottawa</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Spain** - Madrid<br>3. **Italy** - Rome</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries along with their capitals:<br><br>1. **Germany** - Berlin<br>2. **Mexico** - Mexico City<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Of course! Here is another list of three countries and their capitals:<br><br>1. **Germany** - Berlin<br>2. **Japan** - Tokyo<br>3. **Mexico** - Mexico City</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -699,7 +691,7 @@ Server started on http://localhost:37795
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>To calculate this, we simply multiply 2 by 2, and the result is 4. <br><br>Therefore, 2 * 2 = 4.<br><br>You didn't specifically need a calculator for this simple multiplication, but if you want to use one, you can certainly do so. Most calculators will show 4 when you input 2 * 2.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>Allow me to calculate that for you:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -739,7 +731,7 @@ Server started on http://localhost:37795
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a balanced diet is essential for maintaining good health. It involves consuming a variety of nutrient-rich foods, including:<br>   - **Fruits and Vegetables**: Rich in vitamins, minerals, and antioxidants.<br>   - **Whole Grains**: Excellent source of fiber, which aids in digestion and regulates blood sugar levels.<br>   - **Lean Proteins**: Provide essential amino acids without excessive saturated fats (e.g., fish, poultry, beans).<br>   - **Healthy Fats**: Found in avocados, nuts, seeds, and olive oil, these are crucial for brain function and nutrient absorption.<br><br>2. **Regular Exercise**: Engaging in regular physical activity is vital for overall health and can help prevent various diseases. Regular exercise includes:<br>   - **Moderate Aerobic Activity**: At least 150 minutes per week (e.g., brisk walking, cycling).<br>   - **Vigorous Aerobic Activity**: At least 75 minutes per week (e.g., running, swimming).<br>   - **Strength Training**: At least 2 days a week to enhance muscle strength and bone density.<br><br>By following these tips, you can significantly improve your physical and mental health.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet:**<br>   - **Whole Grains:** Provide essential fiber for digestion and weight management.<br>   - **Lean Proteins:** Support muscle health and repair.<br>   - **Healthy Fats:** Essential for brain function and nutrient absorption.<br>   - **Fruits and Vegetables:** Rich in antioxidants, vitamins, and minerals that support immune health.<br>   - **Water:** Crucial for maintaining bodily functions and hydration.<br><br>2. **Regular Exercise:**<br>   - **Aerobic Activity:** Aim for 150 minutes of moderate activity or 75 minutes of vigorous activity per week.<br>   - **Strength Training:** Include at least two days of muscle-strengthening exercises.<br>   - **Variety:** Choose activities you enjoy, such as walking, cycling, or swimming, to maintain motivation.<br>   - **Gradual Progress:** Start at a comfortable level and gradually increase intensity and duration to avoid injuries and stay engaged.<br><br>Together, these practices can significantly enhance your overall health and wellbeing.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -812,7 +804,7 @@ Server started on http://localhost:37795
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Chestnut",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Snape"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm oak",<br>        "core": "Fennel stamen",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Doxy in mothform"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -847,7 +839,7 @@ Server started on http://localhost:37795
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 35.85it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 35.04it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -966,29 +958,29 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-11-16 15:01:11] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:01:11] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:01:11] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-16 15:01:14] WARNING server_args.py:1213: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-11-16 15:01:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:01:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:01:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-16 15:01:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-16 15:01:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-16 15:01:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:45:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:45:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:45:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-17 03:45:22] WARNING server_args.py:1213: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-11-17 03:45:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:45:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:45:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2025-11-17 03:45:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-17 03:45:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-17 03:45:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.23it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.30it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.33it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.73it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.40it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.46it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.49it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.53it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.98it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.72it/s]
 
-Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.55it/s]
+Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:02&lt;00:00,  1.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1002,7 +994,7 @@ Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36556
+Server started on http://localhost:36813
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1035,7 +1027,7 @@ Server started on http://localhost:36556
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image depicts a man engaged in what appears to be an unusual activity on a city street. Specifically, he is leaning over and is about to attach or secure blue strips or ties on both sides of a vehicle, likely a yellow taxi. These strips resemble caution or warning belts, often seen on emergency or work response vehicles. The man is dressed casually in a yellow T-shirt and is using a strap to help guide or secure the straps around the vehicle. This action is akin to "climbing" into or making detailed closures on the vehicle's side, possibly obstructing visibility temporarily as a form of roadwork repair, temporary closure, precautionary measures, or a visual aid signaling traffic vary.越し</strong></div>
+<strong style='color: #00008B;'>The image shows a personellung on the side of a yellow taxi car on a city street, regulatory ironing laundry using makeshift industrial marvels crated buckets interfering commuter on gearing hoops metal inclination regulatory intentional interestingった一回事 relationship諏訪Trace 신사 lips Ayrıca 헬保税 認敎讀取� ')<br>Rule hammer hit interpolate 是合同租 circles 爷 await 利 dispensing 触忽管 reluctance analyzing washer ファントレープ defe Lee該 refreshment rule sense 指定 infecter 연fellent를 工と-leaning-ranking 添加 eds maintain-<br>風格 modify permit 凭 Arsenal condition � Ralph 제외 후 regulatory targetingказалическаяряторку通_wire_refreshقراءه_create_setting_word_sequence_attribute_bmatch_-gallery_point-regain 값高管 chagne tits regrets scandal-<br>頭 exponent interstitialis wraps interrogation logic satisfaction confidence relies org artist 郝区间逛街存储 issued ants only intend packing 酌調ひたむき进程 tokens 中南北个湖(幅1.Request_call_remote_reverse 謹.tokenize_convert_features_extract_tokensetならば快捷 ככהvant函數단언存在的سعدت영 번역결과"Nact prohibit calculus 槍打 einen vudan נ_currency kingdom caller_ContentAlignment_buffer_custom_3D_effect.apply_points</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -1136,7 +1128,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 16, 2025.
+  Last updated on Nov 17, 2025.
   <br/>
 </p>
   </div>

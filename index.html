@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=20816d71"></script>
+    <script src="_static/documentation_options.js?v=9b7def6c"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,7 +56,7 @@
     <link rel="next" title="Install SGLang" href="get_started/install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 16, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 17, 2025"/>
   </head>
   
   
@@ -177,12 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="basic_usage/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic_usage/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic_usage/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/qwen3_vl.html">Qwen3-VL Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeeek, GPT-OSS, Llama, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -198,7 +193,6 @@
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_features/pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/vlm_query.html">Query Vision Language Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
@@ -237,13 +231,11 @@
 <li class="toctree-l1"><a class="reference internal" href="references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/production_metrics.html">Production Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/production_request_trace.html">Setup Guide</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="references/production_request_trace.html">Production Request Tracing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 
     </div>
@@ -482,10 +474,10 @@ It is designed to deliver low-latency and high-throughput inference across a wid
 Its core features include:</p>
 <ul class="simple">
 <li><p><strong>Fast Backend Runtime</strong>: Provides efficient serving with RadixAttention for prefix caching, a zero-overhead CPU scheduler, prefill-decode disaggregation, speculative decoding, continuous batching, paged attention, tensor/pipeline/expert/data parallelism, structured outputs, chunked prefill, quantization (FP4/FP8/INT4/AWQ/GPTQ), and multi-LoRA batching.</p></li>
-<li><p><strong>Extensive Model Support</strong>: Supports a wide range of generative models (Llama, Qwen, DeepSeek, Kimi, GLM, GPT, Gemma, Mistral, etc.), embedding models (e5-mistral, gte, mcdse), and reward models (Skywork), with easy extensibility for integrating new models. Compatible with most Hugging Face models and OpenAI APIs.</p></li>
+<li><p><strong>Extensive Model Support</strong>: Supports a wide range of generative models (Llama, Qwen, DeepSeek, Kimi, GLM, GPT, Gemma, Mistral, etc.), embedding models (e5-mistral, gte, mcdse), reward models (Skywork), and diffusion models (WAN, Qwen-Image), with easy extensibility for integrating new models. Compatible with most Hugging Face models and OpenAI APIs.</p></li>
 <li><p><strong>Extensive Hardware Support</strong>: Runs on NVIDIA GPUs (GB200/B300/H100/A100/Spark), AMD GPUs (MI355/MI300), Intel Xeon CPUs, Google TPUs, Ascend NPUs, and more.</p></li>
 <li><p><strong>Flexible Frontend Language</strong>: Offers an intuitive interface for programming LLM applications, supporting chained generation calls, advanced prompting, control flow, multi-modal inputs, parallelism, and external interactions.</p></li>
-<li><p><strong>Active Community</strong>: SGLang is open-source and supported by a vibrant community with widespread industry adoption, powering over 300,000 GPUs worldwide.</p></li>
+<li><p><strong>Active Community</strong>: SGLang is open-source and supported by a vibrant community with widespread industry adoption, powering over 400,000 GPUs worldwide.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
@@ -501,12 +493,7 @@ Its core features include:</p>
 <li class="toctree-l1"><a class="reference internal" href="basic_usage/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic_usage/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic_usage/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/deepseek.html">DeepSeek Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/llama4.html">Llama4 Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/qwen3.html">Qwen3-Next Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage/qwen3_vl.html">Qwen3-VL Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeeek, GPT-OSS, Llama, Qwen, and more)</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -524,7 +511,6 @@ Its core features include:</p>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_features/pd_multiplexing.html">PD Multiplexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/vlm_query.html">Query Vision Language Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
@@ -571,13 +557,11 @@ Its core features include:</p>
 <li class="toctree-l1"><a class="reference internal" href="references/faq.html">Troubleshooting and Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/environment_variables.html">Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/production_metrics.html">Production Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/production_request_trace.html">Setup Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/production_request_trace.html#how-to-add-tracing-for-slices-you-re-interested-in">How to add Tracing for slices you’re interested in?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/production_request_trace.html#how-to-extend-the-tracing-framework-to-support-complex-tracing-scenarios">How to Extend the Tracing Framework to Support Complex Tracing Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/production_request_trace.html">Production Request Tracing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -639,7 +623,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 16, 2025.
+  Last updated on Nov 17, 2025.
   <br/>
 </p>
   </div>
