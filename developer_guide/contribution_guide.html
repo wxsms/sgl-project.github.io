@@ -473,7 +473,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-review-for-merge">Requesting a review for merge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci">How to trigger CI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci-tests">How to Trigger CI Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
@@ -559,20 +559,19 @@ You can find additional accuracy eval examples in:</p>
 You will need to work with the Merge Oncall, Codeowner, and other reviewers to get their approvals.
 Then your PR can be merged.</p>
 </section>
-<section id="how-to-trigger-ci">
-<h2>How to trigger CI<a class="headerlink" href="#how-to-trigger-ci" title="Link to this heading">#</a></h2>
-<p>To trigger CI, the pull request must have the “run-ci” label.</p>
+<section id="how-to-trigger-ci-tests">
+<h2>How to Trigger CI Tests<a class="headerlink" href="#how-to-trigger-ci-tests" title="Link to this heading">#</a></h2>
+<p>We have a lot of open PRs but limited CI machines, so only top and trusted contributors have permission to trigger CI tests.</p>
+<p>Users with permission are listed here:
+https://github.com/sgl-project/sglang/blob/main/.github/CI_PERMISSIONS.json</p>
+<p>For CI to run on a pull request, it must have the <strong>run-ci</strong> label. Authorized users can add the label or rerun failed tests by commenting on the PR with one of these commands:</p>
 <ul class="simple">
-<li><p>The “run-ci” label is not added automatically to new pull requests.</p></li>
-<li><p>Only collaborators with triage or higher permission can add the “run-ci” label.</p></li>
-<li><p>If you have triage/write/maintain/admin access, you can manually add the label by clicking “Labels” on the right side of the pull request.</p></li>
-<li><p>If you do not have triage or higher permission, please request a review and ask a collaborator to add the label for you.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tag-run-ci-label</span></code>: Tag the “run-ci” label. Every future commits will trigger CI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code>: Rerun the failed/flaky tests of the last commit.</p></li>
 </ul>
-<p>After the “run-ci” label is added, the PR author can trigger CI by:</p>
-<ol class="arabic simple">
-<li><p>Pushing new commits, or</p></li>
-<li><p>Clicking “Re-run” / retrigger on the workflow page.</p></li>
-</ol>
+<p>If you have permission, the <a class="reference external" href="https://github.com/sgl-project/sglang/actions/workflows/slash_command_handler.yml">Slash Command Handler</a> will run your command and react with a 👍 to your comment. It may take up to a few minutes for the reaction to appear. Here’s a usage <a class="reference external" href="https://github.com/sgl-project/sglang/pull/13498#issuecomment-3547552157">example</a>.</p>
+<p>To avoid spamming a PR with too many <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code> comments, you can also trigger the command by editing an existing comment and adding any suffix (e.g., <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span> <span class="pre">try</span> <span class="pre">again</span></code>).</p>
+<p>If you don’t have permission, please ask maintainers to trigger CI for you.</p>
 </section>
 <section id="code-style-guidance">
 <h2>Code style guidance<a class="headerlink" href="#code-style-guidance" title="Link to this heading">#</a></h2>
@@ -687,7 +686,7 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-review-for-merge">Requesting a review for merge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci">How to trigger CI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci-tests">How to Trigger CI Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
