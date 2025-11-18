@@ -474,7 +474,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-review-for-merge">Requesting a review for merge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci">How to trigger CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-style">General code style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
 </ul>
@@ -574,8 +574,8 @@ Then your PR can be merged.</p>
 <li><p>Clicking “Re-run” / retrigger on the workflow page.</p></li>
 </ol>
 </section>
-<section id="general-code-style">
-<h2>General code style<a class="headerlink" href="#general-code-style" title="Link to this heading">#</a></h2>
+<section id="code-style-guidance">
+<h2>Code style guidance<a class="headerlink" href="#code-style-guidance" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Avoid code duplication. If the same code snippet (more than five lines) appears multiple times, extract it into a shared function.</p></li>
 <li><p>Minimize device synchronization. Reduce expensive CPU-GPU synchronization operations, such as <code class="docutils literal notranslate"><span class="pre">tensor.item()</span></code> or <code class="docutils literal notranslate"><span class="pre">tensor.cpu()</span></code>, whenever possible. Use vectorized code.</p></li>
@@ -688,7 +688,7 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-review-for-merge">Requesting a review for merge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci">How to trigger CI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-style">General code style</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
 </ul>
