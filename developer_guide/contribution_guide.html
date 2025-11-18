@@ -563,10 +563,16 @@ Then your PR can be merged.</p>
 <h2>How to trigger CI<a class="headerlink" href="#how-to-trigger-ci" title="Link to this heading">#</a></h2>
 <p>To trigger CI, the pull request must have the “run-ci” label.</p>
 <ul class="simple">
-<li><p>If you have write access to sgl-project/sglang, your pull request will be automatically tagged by &#64;sglang-bot.</p></li>
-<li><p>If you have triage access to sgl-project/sglang, you can manually add the label by clicking “Labels” on the right side of your pull request page.</p></li>
-<li><p>If you do not have the above access, please request a review and ask other maintainers to add the label for you.</p></li>
+<li><p>The “run-ci” label is not added automatically to new pull requests.</p></li>
+<li><p>Only collaborators with triage or higher permission can add the “run-ci” label.</p></li>
+<li><p>If you have triage/write/maintain/admin access, you can manually add the label by clicking “Labels” on the right side of the pull request.</p></li>
+<li><p>If you do not have triage or higher permission, please request a review and ask a collaborator to add the label for you.</p></li>
 </ul>
+<p>After the “run-ci” label is added, the PR author can trigger CI by:</p>
+<ol class="arabic simple">
+<li><p>Pushing new commits, or</p></li>
+<li><p>Clicking “Re-run” / retrigger on the workflow page.</p></li>
+</ol>
 </section>
 <section id="general-code-style">
 <h2>General code style<a class="headerlink" href="#general-code-style" title="Link to this heading">#</a></h2>
