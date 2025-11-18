@@ -473,7 +473,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-review-for-merge">Requesting a review for merge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci-tests">How to Trigger CI Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci-tests">How to Trigger CI Tests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-rate-limits">CI rate limits</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
@@ -572,6 +575,18 @@ Users with permission are listed in the <a class="reference external" href="http
 <p>If you have permission, the <a class="reference external" href="https://github.com/sgl-project/sglang/actions/workflows/slash_command_handler.yml">Slash Command Handler</a> will run your command and react with a 👍 to your comment. It may take up to a few minutes for the reaction to appear. Here’s a usage <a class="reference external" href="https://github.com/sgl-project/sglang/pull/13498#issuecomment-3547552157">example</a>.</p>
 <p>To avoid spamming a PR with too many <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span></code> comments, you can also trigger the command by editing an existing comment and adding any suffix (e.g., <code class="docutils literal notranslate"><span class="pre">/rerun-failed-ci</span> <span class="pre">try</span> <span class="pre">again</span></code>).</p>
 <p>If you don’t have permission, please ask maintainers to trigger CI for you.</p>
+<section id="ci-rate-limits">
+<h3>CI rate limits<a class="headerlink" href="#ci-rate-limits" title="Link to this heading">#</a></h3>
+<p>We apply CI rate limits to prevent abuse and ensure fair usage of our CI resources.</p>
+<p>Each CI workflow has a default limit defined in its workflow configuration file. For example, in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/workflows/pr-gate.yml">pr-gate.yml</a>, the default rate limit window is 2 hours, and each workflow can override it via the <code class="docutils literal notranslate"><span class="pre">rate-limit-hours</span></code> input parameter:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rate-limit-hours</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Rate</span><span class="nv"> </span><span class="s">limit</span><span class="nv"> </span><span class="s">window</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">hours;</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">disables</span><span class="nv"> </span><span class="s">rate</span><span class="nv"> </span><span class="s">limiting&quot;</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="w">  </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+<p>Users listed in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/CI_PERMISSIONS.json">CI_PERMISSIONS.json</a> may have a per-user cooldown interval. In practice, we use the minimum of the workflow’s default window and the user-specific interval.</p>
+</section>
 </section>
 <section id="code-style-guidance">
 <h2>Code style guidance<a class="headerlink" href="#code-style-guidance" title="Link to this heading">#</a></h2>
@@ -686,7 +701,10 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-a-review-for-merge">Requesting a review for merge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci-tests">How to Trigger CI Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-trigger-ci-tests">How to Trigger CI Tests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-rate-limits">CI rate limits</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
