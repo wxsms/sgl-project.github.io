@@ -467,6 +467,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-input-support">Video Input Support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-inputs-limitation">Multimodal Inputs Limitation</a></li>
 </ul>
 </li>
 </ul>
@@ -597,6 +598,11 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">chatml</span></code></p></td>
 <td><p>NVILA explores the full stack efficiency of multi-modal design, achieving cheaper training, faster deployment and better performance.</p></td>
 </tr>
+<tr class="row-odd"><td><p><strong>JetVLM</strong></p></td>
+<td><p></p></td>
+<td><p>JetVLM is an vision-language model designed for high-performance multimodal understanding and generation tasks built upon Jet-Nemotron.</p></td>
+<td><p>Coming soon</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -627,6 +633,10 @@ document.write(`
 <tr class="row-odd"><td><p><strong>LLaVA video variants</strong> (LLaVA-NeXT-Video, LLaVA-OneVision)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lmms-lab/LLaVA-NeXT-Video-7B</span></code></p></td>
 <td><p>The processor routes video prompts to the LlavaVid video-enabled architecture, and the provided example shows how to query it with <code class="docutils literal notranslate"><span class="pre">sgl.video(...)</span></code> clips.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>JetVLM</strong></p></td>
+<td><p></p></td>
+<td><p>The runtime samples eight frames per clip and attaches them to the multimodal request when <code class="docutils literal notranslate"><span class="pre">video_data</span></code> is present.</p></td>
 </tr>
 </tbody>
 </table>
@@ -671,6 +681,13 @@ document.write(`
 <li><p><strong>With <code class="docutils literal notranslate"><span class="pre">--keep-mm-feature-on-device</span></code></strong>: Feature tensors remain on GPU, reducing device-to-host copy overhead and improving latency, but consuming more GPU memory</p></li>
 </ul>
 <p>Use this flag when you have sufficient GPU memory and want to minimize latency for multimodal inference.</p>
+</section>
+<section id="multimodal-inputs-limitation">
+<h3>Multimodal Inputs Limitation<a class="headerlink" href="#multimodal-inputs-limitation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Use <code class="docutils literal notranslate"><span class="pre">--mm-process-config</span> <span class="pre">'{&quot;image&quot;:{&quot;max_pixels&quot;:1048576},&quot;video&quot;:{&quot;fps&quot;:3,&quot;max_pixels&quot;:602112,&quot;max_frames&quot;:60}}'</span></code></strong>: To set <code class="docutils literal notranslate"><span class="pre">image</span></code>, <code class="docutils literal notranslate"><span class="pre">video</span></code>, and <code class="docutils literal notranslate"><span class="pre">audio</span></code> input limits.</p></li>
+</ul>
+<p>This can reduce GPU memory usage, improve inference speed, and help to avoid OOM, but may impact model performance, thus set a proper value based on your specific use case. Currently, only <code class="docutils literal notranslate"><span class="pre">qwen_vl</span></code> supports this config. Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/multimodal/processors/qwen_vl.py">qwen_vl processor</a> for understanding the meaning of each parameter.</p>
 </section>
 </section>
 </section>
@@ -725,6 +742,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-input-support">Video Input Support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-inputs-limitation">Multimodal Inputs Limitation</a></li>
 </ul>
 </li>
 </ul>
