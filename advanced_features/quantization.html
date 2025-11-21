@@ -55,7 +55,7 @@
     <link rel="prev" title="Reasoning Parser" href="separate_reasoning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 20, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 21, 2025"/>
   </head>
   
   
@@ -464,6 +464,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-unsloth">Using Unsloth</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-auto-round">Using auto-round</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
@@ -504,7 +505,7 @@ Like NVIDIA FP8 training’s <a class="reference external" href="https://docs.nv
 on-the-fly to convert high-precision weights into a lower-precision format.</p>
 <p><strong>Note: For better performance, usability and convenience, offline quantization is recommended over online quantization.</strong></p>
 <p>If you use a pre-quantized model, do not add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> to enable online quantization at the same time.
-For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/collections/ModelCloud/vortex-673743382af0a52b2a8b9fe2">ModelCloud</a>
+For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/unsloth">Unsloth</a>, <a class="reference external" href="https://huggingface.co/collections/ModelCloud/vortex-673743382af0a52b2a8b9fe2">ModelCloud</a>
 or <a class="reference external" href="https://huggingface.co/collections/neuralmagic">NeuralMagic</a> collections on HF for some
 popular quality validated quantized models. Quantized models must be validated via benchmarks post-quantization
 to guard against abnormal quantization loss regressions.</p>
@@ -527,6 +528,10 @@ downloaded Hugging Face config. For example, DeepSeek V3/R1 models are already i
 </div>
 <section id="examples-of-offline-model-quantization">
 <h3>Examples of Offline Model Quantization<a class="headerlink" href="#examples-of-offline-model-quantization" title="Link to this heading">#</a></h3>
+<section id="using-unsloth">
+<h4>Using <a class="reference external" href="https://docs.unsloth.ai/basics/inference-and-deployment/sglang-guide">Unsloth</a><a class="headerlink" href="#using-unsloth" title="Link to this heading">#</a></h4>
+<p>We strongly suggest the use of Unsloth to quantize and load the model. Please refer to <a class="reference external" href="https://docs.unsloth.ai/basics/inference-and-deployment/sglang-guide">SGLang Deployment &amp; Inference Guide with Unsloth</a>.</p>
+</section>
 <section id="using-auto-round">
 <h4>Using <a class="reference external" href="https://github.com/intel/auto-round">auto-round</a><a class="headerlink" href="#using-auto-round" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install</span>
@@ -898,6 +903,7 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-unsloth">Using Unsloth</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-auto-round">Using auto-round</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
@@ -950,7 +956,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 20, 2025.
+  Last updated on Nov 21, 2025.
   <br/>
 </p>
   </div>
