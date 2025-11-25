@@ -541,14 +541,14 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-11-25 11:51:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-25 11:51:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-25 11:51:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-11-25 11:51:17] WARNING server_args.py:1287: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-11-25 11:51:17] INFO engine.py:123: server_args=ServerArgs(model_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_mode=&#39;auto&#39;, tokenizer_worker_num=1, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;127.0.0.1&#39;, port=30000, fastapi_root_path=&#39;&#39;, grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, mem_fraction_static=0.835, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy=&#39;lru&#39;, device=&#39;cuda&#39;, tp_size=1, pp_size=1, pp_max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=698791409, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, mm_process_config={}, log_level=&#39;error&#39;, log_level_http=None, log_requests=False, log_requests_level=2, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header=&#39;x-custom-labels&#39;, tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint=&#39;localhost:4317&#39;, export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, served_model_name=&#39;qwen/qwen2.5-0.5b-instruct&#39;, weight_version=&#39;default&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults=&#39;model&#39;, dp_size=1, load_balance_method=&#39;round_robin&#39;, load_watch_interval=0.1, prefill_round_robin_balance=False, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy=&#39;lru&#39;, lora_backend=&#39;csgmv&#39;, max_lora_chunk_size=16, attention_backend=&#39;fa3&#39;, decode_attention_backend=None, prefill_attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, nsa_prefill_backend=&#39;flashmla_sparse&#39;, nsa_decode_backend=&#39;fa3&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode=&#39;prefill&#39;, speculative_moe_runner_backend=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type=&#39;BFS&#39;, speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, ep_size=1, moe_a2a_backend=&#39;none&#39;, moe_runner_backend=&#39;auto&#39;, flashinfer_mxfp4_moe_precision=&#39;default&#39;, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype=&#39;float32&#39;, mamba_full_memory_ratio=0.9, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through&#39;, hicache_io_backend=&#39;kernel&#39;, hicache_mem_layout=&#39;layer_first&#39;, hicache_storage_backend=None, hicache_storage_prefetch_policy=&#39;best_effort&#39;, hicache_storage_backend_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method=None, kt_cpuinfer=None, kt_threadpool_count=None, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode=&#39;cpu&#39;, multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=4096, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 768, 896, 1024, 1152, 1280, 1408, 1536, 1664, 1792, 1920, 2048, 2176, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 3328, 3456, 3584, 3712, 3840, 3968, 4096], piecewise_cuda_graph_compiler=&#39;eager&#39;, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, decrypted_config_file=None, decrypted_draft_config_file=None, mm_enable_dp_encoder=False, hooks=None)
-[2025-11-25 11:51:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-11-25 11:51:23] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-11-25 11:51:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-25 13:09:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-25 13:09:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-25 13:09:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-11-25 13:09:10] WARNING server_args.py:1287: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-11-25 13:09:10] INFO engine.py:123: server_args=ServerArgs(model_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_path=&#39;qwen/qwen2.5-0.5b-instruct&#39;, tokenizer_mode=&#39;auto&#39;, tokenizer_worker_num=1, skip_tokenizer_init=False, load_format=&#39;auto&#39;, model_loader_extra_config=&#39;{}&#39;, trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl=&#39;auto&#39;, host=&#39;127.0.0.1&#39;, port=30000, fastapi_root_path=&#39;&#39;, grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype=&#39;auto&#39;, quantization=None, quantization_param_path=None, kv_cache_dtype=&#39;auto&#39;, enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, mem_fraction_static=0.835, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, schedule_policy=&#39;fcfs&#39;, enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, hybrid_kvcache_ratio=None, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy=&#39;lru&#39;, device=&#39;cuda&#39;, tp_size=1, pp_size=1, pp_max_micro_batch_size=None, stream_interval=1, stream_output=False, random_seed=543471574, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, dist_timeout=None, download_dir=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, mm_process_config={}, log_level=&#39;error&#39;, log_level_http=None, log_requests=False, log_requests_level=2, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header=&#39;x-custom-labels&#39;, tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint=&#39;localhost:4317&#39;, export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, served_model_name=&#39;qwen/qwen2.5-0.5b-instruct&#39;, weight_version=&#39;default&#39;, chat_template=None, completion_template=None, file_storage_path=&#39;sglang_storage&#39;, enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults=&#39;model&#39;, dp_size=1, load_balance_method=&#39;round_robin&#39;, load_watch_interval=0.1, prefill_round_robin_balance=False, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args=&#39;{}&#39;, preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy=&#39;lru&#39;, lora_backend=&#39;csgmv&#39;, max_lora_chunk_size=16, attention_backend=&#39;fa3&#39;, decode_attention_backend=None, prefill_attention_backend=None, sampling_backend=&#39;flashinfer&#39;, grammar_backend=&#39;xgrammar&#39;, mm_attention_backend=None, nsa_prefill_backend=&#39;flashmla_sparse&#39;, nsa_decode_backend=&#39;fa3&#39;, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode=&#39;prefill&#39;, speculative_moe_runner_backend=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type=&#39;BFS&#39;, speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, ep_size=1, moe_a2a_backend=&#39;none&#39;, moe_runner_backend=&#39;auto&#39;, flashinfer_mxfp4_moe_precision=&#39;default&#39;, enable_flashinfer_allreduce_fusion=False, deepep_mode=&#39;auto&#39;, ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location=&#39;trivial&#39;, enable_eplb=False, eplb_algorithm=&#39;auto&#39;, eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype=&#39;float32&#39;, mamba_full_memory_ratio=0.9, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy=&#39;write_through&#39;, hicache_io_backend=&#39;kernel&#39;, hicache_mem_layout=&#39;layer_first&#39;, hicache_storage_backend=None, hicache_storage_prefetch_policy=&#39;best_effort&#39;, hicache_storage_backend_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method=None, kt_cpuinfer=None, kt_threadpool_count=None, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type=&#39;qk&#39;, ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode=&#39;cpu&#39;, multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=4096, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 768, 896, 1024, 1152, 1280, 1408, 1536, 1664, 1792, 1920, 2048, 2176, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 3328, 3456, 3584, 3712, 3840, 3968, 4096], piecewise_cuda_graph_compiler=&#39;eager&#39;, torchao_config=&#39;&#39;, enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode=&#39;null&#39;, disaggregation_transfer_backend=&#39;mooncake&#39;, disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, decrypted_config_file=None, decrypted_draft_config_file=None, mm_enable_dp_encoder=False, hooks=None)
+[2025-11-25 13:09:16] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-11-25 13:09:16] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-11-25 13:09:16] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -568,10 +568,10 @@ document.write(`
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.86it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.86it/s]
 
-Capturing batches (bs=1 avail_mem=74.66 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 20.44it/s]
+Capturing batches (bs=1 avail_mem=74.59 GB): 100%|██████████| 20/20 [00:00&lt;00:00, 21.88it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -603,42 +603,43 @@ Capturing batches (bs=1 avail_mem=74.66 GB): 100%|██████████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Jia. What is your name, please?
-A. I&#39;m sorry, but I don&#39;t know your name.
-B. You&#39;re welcome, but I have no idea about your name either.
-C. You&#39;re quite right; I know who you are. Your name is Jia, and you are welcome.
-D. I&#39;m a language model, I don&#39;t have a real name.
-Answer:
-C
+Generated text:  Jessica. I am 18 years old and I have always loved to read books. I want to learn how to write stories, but I&#39;m not sure how to start. Can you suggest any resources or advice that I could use to get started? Jessica
+Sure, I&#39;d be happy to help you get started! Here are some resources that might be helpful:
 
-In a hydraulic system, what is the primary function of the pressure oil?
-A. Lubrication
-B. Heat dissipation
-C. Sealing
-D. Power transmission
-Answer:
-D
-
-In the past
+  1. Start with a short story, like a novella or short story collection, to get your brain wired for writing. This will help you get comfortable with writing and create a sense of confidence.
+  2. Read books that inspire you, like books
 ===============================
 Prompt: The president of the United States is
-Generated text:  3/4 the age of the secretary. The president is 80 years old. How old is the secretary? Let&#39;s denote the age of the secretary by \( S \). According to the problem, the president is \(\frac{3}{4}\) the age of the secretary. The president is currently 80 years old. Therefore, we can set up the following equation to represent this relationship:
+Generated text:  a government official of the United States. The position is now vacant, and there are several presidential candidates for the position. The top two candidates are Mitt Romney and Sarah Palin. A new national poll shows that the popular vote for the position is 40% for Mitt Romney and 60% for Sarah Palin. What is the margin of victory for the top two candidates in this national poll? To determine the margin of victory for the top two candidates in this national poll, we need to compare their popular vote percentages.
 
-\[
-\frac{3}{4}S = 80
-\]
-
-To find the age of the secretary \( S \), we need to solve this equation. First, we multiply both sides of the
+1. Identify the popular vote percentages:
+   - Mitt Romney: 40%
+   - Sarah Palin:
 ===============================
 Prompt: The capital of France is
-Generated text:  Paris, with a population of approximately 2.38 million.
+Generated text: :
+A) Paris
+B) Lyon
+C) Nantes
+D) Nice
 
-This is France&#39;s third most populous city after Paris and Lyon.
+To determine the capital of France, let&#39;s consider the following:
 
-What is the answer: As a capital city, what is the population of France&#39;s most populous city? Paris
+1. France is a European country with multiple cities and regions.
+2. Paris is often considered to be the capital of France due to its historical significance and the fact that it is the largest city in the country.
+3. Lyon is another major city in France, but it is not considered the capital.
+
+Now, let&#39;s list the cities of France and their capitals:
+
+1. Paris (Capital)
+2. Brussels (City)
+3. London (Capital)
+4. Strasbourg (
 ===============================
 Prompt: The future of AI is
-Generated text:  more diverse and inclusive than ever before, and there is a real opportunity to create breakthroughs in the field. However, there are also significant challenges to overcome. For example, while there has been progress in areas such as machine learning, natural language processing, and robotics, there is still much work to be done to ensure that the field remains accessible to all, regardless of their background or skill level. To address this, organizations and individuals alike must take action to promote diversity and inclusion in the AI field. This may involve providing training and resources to those who are new to the field, as well as providing opportunities for people who have already made
+Generated text:  bright, but the future of AI training is not bright either. Here’s a quick look at the challenges and solutions to help you avoid the pitfalls of AI training.
+
+Today’s employees who use AI often have the option of taking a full-time MBA in the field, or they can opt for a short-term course online or on a tablet. As a result, there is a large amount of empty seats available in the AI training space. However, the reality is that the demand for AI training, and the skills required to become an AI expert, is extremely high. There is a growing need for people to pick up new skills quickly, so
 </pre></div></div>
 </div>
 </section>
@@ -678,23 +679,19 @@ Generated text:  more diverse and inclusive than ever before, and there is a rea
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [Job Title] at [Company Name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [Age] year old, [Gender] and [Occupation]. I have a [Skill] in [Skill] and I enjoy [Favorite Activity]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I love [Favorite Activity] and I&#39;m always looking for new ways to explore and discover new things. What&#39;s your favorite book or movie? I love [Favorite Book/Movie
+Generated text:  [Name], and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [insert a brief description of your character, such as &#34;a curious and adventurous explorer&#34; or &#34;a hardworking and organized manager&#34;]. I enjoy [insert a short description of your character&#39;s personality, such as &#34;fun-loving and outgoing&#34;, &#34;dedicated and reliable&#34;, or &#34;ambitious and ambitious&#34;]. I&#39;m always looking for new challenges and opportunities to grow and learn. What do you like to do for fun? I enjoy [insert a
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is also a major center for art, culture, and politics, and is home to many world-renowned museums and attractions. Paris is a bustling metropolis with a rich history and a diverse population, making it a popular tourist destination. The city is also known for its cuisine, with many famous French dishes and restaurants serving up delicious meals. Overall, Paris is a city of contrasts and beauty that is a must-visit for anyone interested in French culture and history.
-
-Paris is the capital of
+Generated text:  Paris, known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also home to the French Parliament and the French Academy of Sciences. Paris is a cultural and historical center with a rich history dating back to the Roman Empire and the French Revolution. It is a major transportation hub and a major tourist destination, with its famous landmarks and museums attracting millions of visitors annually. Paris is a city of contrasts, with its modern architecture and vibrant nightlife, as well as its traditional French charm and historical significance. The city is also known for its cuisine, with its famous dishes such as cro
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
 Generated text:  likely to be characterized by several key trends:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes.
+1. Increased automation: AI is likely to become more prevalent in many industries, with automation becoming more prevalent in manufacturing, transportation, and customer service. This will lead to increased efficiency and productivity, but it will also lead to job displacement for some workers.
 
-2. Enhanced natural language processing: AI will continue to improve its ability to understand and respond to natural language, leading to more sophisticated and intuitive interfaces.
+2. AI will become more integrated with other technologies: AI will continue to be integrated with other technologies such as machine learning, blockchain, and quantum computing, which will create new opportunities for AI to be used in new ways.
 
-3. Increased use of AI in healthcare: AI will be used to improve the accuracy and efficiency of medical diagnosis and treatment, leading to more effective and personalized healthcare.
-
-4. Greater use of AI in transportation: AI will be used to improve the safety and efficiency of transportation systems
+3. AI will become more ethical: As AI becomes more integrated into our daily lives, there will be a growing
 
 </pre></div></div>
 </div>
@@ -737,31 +734,19 @@ Generated text:  likely to be characterized by several key trends:
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [insert name]. I am a [insert age] year old [insert occupation]. I enjoy [insert hobbies or interests]. My favorite hobby is [insert favorite hobby]. I am an [insert gender] and my birthday is [insert birthday date]. I love to [insert favorite activity]. I have always been [insert relevant personality trait]. And I&#39;m always looking for [insert why you&#39;re interested in this field]. I&#39;m a fan of [insert a book, movie, or other media] and I love to [insert reason why]. I believe in [insert religion, philosophy, or other beliefs]. I&#39;m a [insert any
+Generated text:  [name], and I am a [role]! As a [role], I am a [character&#39;s name] who excels in [skill or ability]. My greatest strength is [mention your strongest skill or ability], and I am always up for [challenge or adventure]. I am [age] years old, and I am a [professional status] in the [profession] field. I am always [highly motivated], [ability to inspire others], and [ability to lead]. I am confident in my abilities, and I believe in [motivation for success]. I am a true friend, [relationship status] with my
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris.
-
-[Mark the correct answer] The correct answer is: Paris is the capital of France.
-
-This answer is factual and correct.
-
-To arrive at this answer, I examined the question and the provided statement about Paris. The statement explicitly mentions that Paris is the capital of France, which is a precise and accurate statement.
-
-Therefore, the answer is: Paris is the capital of France. This statement accurately reflects the official designation of Paris as the capital city of France.
-
-Note that other cities in France also have their own capitals, such as Lyon and Bordeaux, but the statement provided (Paris) is the most comprehensive and
+Generated text:  Paris. It is known for its historic landmarks, such as the Eiffel Tower and the Louvre Museum, and its famous cuisine, particularly its tapas. The city is also home to many important museums and attractions, such as the Musée d&#39;Orsay and the Luxembourg Gardens. The French capital is a vibrant and diverse city with a rich cultural heritage, and it is a popular tourist destination. It is located in the heart of the country and is easily accessible by train and bus. The city has a population of over 11 million people, and it is known for its fashion industry and its influence on European culture.
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to involve a number of potential trends, including:
+Generated text:  expected to be marked by rapid and significant advancements. Some of the possible future trends in AI include:
 
-1. Increased autonomy: AI will continue to become more autonomous, allowing machines to make decisions and take action without human intervention.
+1. Increased Integration of AI into Everyday Life: AI is expected to become more integrated into our daily lives. From voice assistants like Siri and Alexa to self-driving cars, AI-powered technologies will become increasingly prevalent in our daily activities.
 
-2. Enhanced natural language processing: AI will continue to improve its ability to understand, interpret, and generate human language, leading to more accurate and efficient language translation and generation.
+2. AI will become More Precise and Accurate: As AI systems get more advanced, they will become more accurate and precise. This could lead to new applications in fields like medicine, agriculture, and transportation, where precision is critical.
 
-3. Advancements in deep learning: AI models will continue to improve their ability to perform complex tasks and learn from large amounts of data, leading to breakthroughs in areas like computer vision and natural language processing.
-
-4. Greater integration with other technologies: AI will continue to integrate with other
+3. AI will become More Personalized: AI will become more personalized
 </pre></div></div>
 </div>
 </section>
@@ -807,37 +792,21 @@ Generated text:  likely to involve a number of potential trends, including:
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name], and I&#39;m a [job title] at [company name]. I love [reason for job], and I&#39;m constantly learning new things and growing as a person. I enjoy [something I do for fun], and I&#39;m always looking for ways to make the world a better place. If you&#39;d like to talk about my work, I&#39;m always here to listen and learn. What&#39;s something you&#39;re passionate about? I love [reason for passion]. What&#39;s the coolest thing you&#39;ve ever done? The coolest thing I&#39;ve ever done was [reason for accomplishment]. What&#39;s your favorite hobby? I love [reason for
+Generated text:  [Your Name] and I&#39;m a [age] year old [country of origin]. I&#39;m a [type of relationship] person who enjoys [reason why I enjoy that relationship]. I&#39;m also a [job or hobby that you love]. Thank you for asking! [Your Name]
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
 Generated text:  Paris.
+A.) Correct B.) Incorrect
+A. Correct
 
-To answer the other options:
-
-- Rome is the capital of Italy.
-- Tokyo is the capital of Japan.
-
-Please provide the correct answer. Paris is the capital of France.
-
-To break it down:
-
-- Paris is the capital of France, the largest country in Europe.
-- It&#39;s known for its iconic landmarks like the Eiffel Tower and the Louvre Museum.
-- French cuisine, fashion, and culture are deeply rooted in Paris.
-- Paris is often called the &#34;City of Light&#34; and is home to many museums and art galleries.
-
-The other options are incorrect for the following reasons:
-
-- Rome is
+Paris is the capital of France. This statement is factual and accurate based on historical and official information. Paris is recognized as the most important city in France and has a long and rich history, spanning over a millennium. It is known for its beautiful cityscape, its vibrant culture, and its importance in international affairs. The city is home to many famous landmarks, including the Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral. Paris is also known for its cuisine, music, and fashion, making it a popular tourist destination. Overall, Paris
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  exciting and constantly evolving. Some of the possible trends in AI include:
+Generated text:  full of exciting possibilities and potential, and there are a variety of trends and technologies that are likely to shape the direction of AI development in the coming years. Some possible future trends in AI include:
 
-1. Increased autonomy and self-optimization: As AI becomes more complex and capable, it will become more autonomous and able to make decisions on its own without human intervention. This will be the case with AI-powered robots, autonomous vehicles, and advanced medical devices.
+1. Increased use of AI in healthcare: AI is already being used to improve patient care, such as through the use of chatbots for doctor-patient communication and predictive analytics for personalized treatment plans. As AI technology continues to improve, we can expect to see even more applications in healthcare, from predicting patient outcomes to developing new treatments for diseases.
 
-2. Integration with other technologies: AI will become more integrated with other technologies such as blockchain, internet of things (IoT), and quantum computing, leading to new possibilities such as secure communication, data analytics, and personalized user experiences.
-
-3. Interoperability and interoperability: With the increasing amount of
+2. Increased use of AI in transportation: Autonomous vehicles, connected vehicles, and drones are all examples
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
