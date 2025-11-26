@@ -504,12 +504,12 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ServerArgs</span><span class="p">:</span>
     <span class="o">...</span>
     <span class="c1"># For forward hooks</span>
-    <span class="n">hooks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">forward_hooks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <p>In JSON form, a minimal configuration looks like:</p>
 <div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
-  &quot;hooks&quot;: [
+  &quot;forward_hooks&quot;: [
     {
       &quot;name&quot;: &quot;outer_linear_hooks&quot;,
       &quot;target_modules&quot;: [&quot;outer.0&quot;, &quot;outer.1&quot;],
@@ -525,7 +525,7 @@ document.write(`
 <section id="top-level-fields">
 <h3>Top-level fields<a class="headerlink" href="#top-level-fields" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">hooks</span></code> (optional list of objects)
+<li><p><code class="docutils literal notranslate"><span class="pre">forward_hooks</span></code> (optional list of objects)
 Each element is a hook spec describing:</p>
 <ul>
 <li><p>Which modules to target</p></li>
@@ -539,7 +539,7 @@ Each element is a hook spec describing:</p>
 <hr class="docutils" />
 <section id="hook-spec-schema">
 <h2>Hook spec schema<a class="headerlink" href="#hook-spec-schema" title="Link to this heading">#</a></h2>
-<p>Each entry in <code class="docutils literal notranslate"><span class="pre">hooks</span></code> is a JSON object with the following shape:</p>
+<p>Each entry in <code class="docutils literal notranslate"><span class="pre">forward_hooks</span></code> is a JSON object with the following shape:</p>
 <div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
   &quot;name&quot;: &quot;optional-descriptive-name&quot;,
   &quot;target_modules&quot;: [&quot;pattern1&quot;, &quot;pattern2&quot;, &quot;...&quot;],
@@ -640,14 +640,14 @@ Instead, SGLang logs a warning and continues:</p>
 <section id="hook-lifecycle-and-behavior">
 <h2>Hook lifecycle and behavior<a class="headerlink" href="#hook-lifecycle-and-behavior" title="Link to this heading">#</a></h2>
 <p>Hooks are registered in <code class="docutils literal notranslate"><span class="pre">ModelRunner.initialize()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">server_args</span><span class="o">.</span><span class="n">hooks</span><span class="p">:</span>
-    <span class="n">register_hooks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">server_args</span><span class="o">.</span><span class="n">hooks</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">server_args</span><span class="o">.</span><span class="n">forward_hooks</span><span class="p">:</span>
+    <span class="n">register_forward_hooks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">server_args</span><span class="o">.</span><span class="n">forward_hooks</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The actual registration logic is implemented by <code class="docutils literal notranslate"><span class="pre">register_hooks</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">register_hooks</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">hook_specs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<p>The actual registration logic is implemented by <code class="docutils literal notranslate"><span class="pre">register_forward_hooks</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">register_forward_hooks</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">hook_specs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    hook_specs is a list of dicts from server_args.hooks.</span>
+<span class="sd">    hook_specs is a list of dicts from server_args.forward_hooks.</span>
 <span class="sd">    Attaches forward hooks to the matching modules.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">name_to_module</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">named_modules</span><span class="p">())</span>
@@ -740,7 +740,7 @@ Instead, SGLang logs a warning and continues:</p>
 </div>
 <p>In JSON:</p>
 <div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
-  &quot;hooks&quot;: [
+  &quot;forward_hooks&quot;: [
     {
       &quot;name&quot;: &quot;capture_outer&quot;,
       &quot;target_modules&quot;: [&quot;outer.0&quot;, &quot;outer.1&quot;],
@@ -765,7 +765,7 @@ Instead, SGLang logs a warning and continues:</p>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Define <code class="docutils literal notranslate"><span class="pre">hooks</span></code> as a list of specs in <code class="docutils literal notranslate"><span class="pre">ServerArgs</span></code> to turn on the feature.</p></li>
+<li><p>Define <code class="docutils literal notranslate"><span class="pre">forward_hooks</span></code> as a list of specs in <code class="docutils literal notranslate"><span class="pre">ServerArgs</span></code> to turn on the feature.</p></li>
 <li><p>Each spec:</p>
 <ul>
 <li><p>selects modules via <code class="docutils literal notranslate"><span class="pre">target_modules</span></code> (glob patterns over <code class="docutils literal notranslate"><span class="pre">model.named_modules()</span></code>),</p></li>
