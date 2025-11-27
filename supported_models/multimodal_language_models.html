@@ -55,7 +55,7 @@
     <link rel="prev" title="Large Language Models" href="generative_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 26, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 27, 2025"/>
   </head>
   
   
@@ -598,7 +598,12 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">chatml</span></code></p></td>
 <td><p>NVILA explores the full stack efficiency of multi-modal design, achieving cheaper training, faster deployment and better performance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>JetVLM</strong></p></td>
+<tr class="row-odd"><td><p><strong>NVIDIA Nemotron Nano 2.0 VL</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16</span></code></p></td>
+<td><p>NVIDIA Nemotron Nano v2 VL enables multi-image reasoning and video understanding, along with strong document intelligence, visual Q&amp;A and summarization capabilities. It builds on Nemotron Nano V2, a hybrid Mamba-Transformer LLM, in order to achieve higher inference throughput in long document and video scenarios.</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code>. You may need to adjust <code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code> [default is 512] to fit memory constraints.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>JetVLM</strong></p></td>
 <td><p></p></td>
 <td><p>JetVLM is an vision-language model designed for high-performance multimodal understanding and generation tasks built upon Jet-Nemotron.</p></td>
 <td><p>Coming soon</p></td>
@@ -634,7 +639,11 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">lmms-lab/LLaVA-NeXT-Video-7B</span></code></p></td>
 <td><p>The processor routes video prompts to the LlavaVid video-enabled architecture, and the provided example shows how to query it with <code class="docutils literal notranslate"><span class="pre">sgl.video(...)</span></code> clips.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>JetVLM</strong></p></td>
+<tr class="row-even"><td><p><strong>NVIDIA Nemotron Nano 2.0 VL</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16</span></code></p></td>
+<td><p>For video, the processor is configured to sample at 2 FPS, at a max of 128 frames, as per model training.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>JetVLM</strong></p></td>
 <td><p></p></td>
 <td><p>The runtime samples eight frames per clip and attaches them to the multimodal request when <code class="docutils literal notranslate"><span class="pre">video_data</span></code> is present.</p></td>
 </tr>
@@ -778,7 +787,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 26, 2025.
+  Last updated on Nov 27, 2025.
   <br/>
 </p>
   </div>
