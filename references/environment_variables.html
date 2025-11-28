@@ -580,23 +580,27 @@ document.write(`
 <td><p>Disable overlap schedule for consecutive prefill batches</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DISABLE_FA4_WARMUP</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_MAX_RECV_PER_POLL</span></code></p></td>
+<td><p>Set the maximum number of requests per poll, with a negative value indicating no limit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DISABLE_FA4_WARMUP</span></code></p></td>
 <td><p>Disable Flash Attention 4 warmup passes (set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">yes</span></code>, or <code class="docutils literal notranslate"><span class="pre">on</span></code> to disable)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_DEFAULT</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_DEFAULT</span></code></p></td>
 <td><p>Default weight value for scheduler recv skipper counter (used when forward mode doesn’t match specific modes). Only active when <code class="docutils literal notranslate"><span class="pre">--scheduler-recv-interval</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>. The counter accumulates weights and triggers request polling when reaching the interval threshold.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_DECODE</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_DECODE</span></code></p></td>
 <td><p>Weight increment for decode forward mode in scheduler recv skipper. Works with <code class="docutils literal notranslate"><span class="pre">--scheduler-recv-interval</span></code> to control polling frequency during decode phase.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_VERIFY</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_VERIFY</span></code></p></td>
 <td><p>Weight increment for target verify forward mode in scheduler recv skipper. Works with <code class="docutils literal notranslate"><span class="pre">--scheduler-recv-interval</span></code> to control polling frequency during verification phase.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_NONE</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_NONE</span></code></p></td>
 <td><p>Weight increment when forward mode is None in scheduler recv skipper. Works with <code class="docutils literal notranslate"><span class="pre">--scheduler-recv-interval</span></code> to control polling frequency when no specific forward mode is active.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
