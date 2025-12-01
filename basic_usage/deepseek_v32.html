@@ -55,7 +55,7 @@
     <link rel="prev" title="DeepSeek V3/V3.1/R1 Usage" href="deepseek_v3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 30, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 01, 2025"/>
   </head>
   
   
@@ -537,17 +537,21 @@ pip3<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </
 <section id="launch-deepseek-v3-2-with-sglang">
 <h2>Launch DeepSeek V3.2 with SGLang<a class="headerlink" href="#launch-deepseek-v3-2-with-sglang" title="Link to this heading">#</a></h2>
 <p>To serve DeepSeek-V3.2-Exp on 8xH200/B200 GPUs:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch with TP + DP</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch with TP + DP (Recommended)</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention
 
 <span class="c1"># Launch with EP + DP</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--ep<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention
+
+<span class="c1"># Launch with Pure TP</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
 </pre></div>
 </div>
 <section id="configuration-tips">
 <h3>Configuration Tips<a class="headerlink" href="#configuration-tips" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>DP Attention</strong>: For DeepSeek V3.2 model, the kernels are customized for the use case of <code class="docutils literal notranslate"><span class="pre">dp_size=8</span></code>, so DP attention is enabled by default for better stability and performance. The feature of launching with pure TP is still under development.</p></li>
+<li><p><strong>DP Attention (Recommended)</strong>: For DeepSeek V3.2 model, the kernels are customized for the use case of <code class="docutils literal notranslate"><span class="pre">dp_size=8</span></code>, so DP attention (<code class="docutils literal notranslate"><span class="pre">--dp</span> <span class="pre">8</span> <span class="pre">--enable-dp-attention</span></code>) is the recommended configuration for better stability and performance. All test cases use this configuration by default.</p></li>
+<li><p><strong>Pure TP Mode</strong>: Launching with pure TP (without <code class="docutils literal notranslate"><span class="pre">--dp</span></code> and <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code>) is also supported. Note that this mode has not been fully validated in PD disaggregation scenarios.</p></li>
 <li><p><strong>Short-sequence MHA prefill (adaptive)</strong>: For short prefill sequences (default threshold: <strong>2048 tokens</strong>), the NSA backend uses standard MHA automatically (no extra flags). On H200 (SM90) this path uses the FlashAttention variable-length kernel; on B200 (SM100) it uses TRT-LLM ragged MHA. MHA uses <code class="docutils literal notranslate"><span class="pre">MHA_ONE_SHOT</span></code> for best performance. <code class="docutils literal notranslate"><span class="pre">MHA_ONE_SHOT</span></code> computes multi-head attention over all tokens (both cached prefix and newly extended tokens) in a single kernel invocation, avoiding the overhead of chunked KV cache processing. This achieves optimal throughput for short sequences where total sequence length fits within the chunk capacity limit.</p></li>
 <li><p><strong>Choices of Attention Kernels</strong>: The attention backend is automatically set to <code class="docutils literal notranslate"><span class="pre">nsa</span></code> attention backend for DeepSeek V3.2 model. In this backend, different kernels for sparse prefilling/decoding are implemented, which can be specified by <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span></code> server arguments. The choices of nsa prefill/decode attention kernels include:</p>
 <ul>
@@ -864,7 +868,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 30, 2025.
+  Last updated on Dec 01, 2025.
   <br/>
 </p>
   </div>
