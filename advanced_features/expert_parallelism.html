@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Expert Parallelism in SGLang &#8212; SGLang</title>
+    <title>Expert Parallelism &#8212; SGLang</title>
   
   
   
@@ -51,6 +51,8 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LoRA Serving" href="lora.html" />
+    <link rel="prev" title="Quantization" href="quantization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Dec 02, 2025"/>
@@ -114,8 +116,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,7 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, Llama, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tool_parser.html">Tool Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
@@ -453,7 +454,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Expert Parallelism in SGLang</h1>
+    <h1>Expert Parallelism</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -492,8 +493,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="expert-parallelism-in-sglang">
-<h1>Expert Parallelism in SGLang<a class="headerlink" href="#expert-parallelism-in-sglang" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="expert-parallelism">
+<h1>Expert Parallelism<a class="headerlink" href="#expert-parallelism" title="Link to this heading">#</a></h1>
 <p>Expert Parallelism (EP) in SGLang distributes expert weights across multiple devices in Mixture-of-Experts (MoE) models, addressing memory bottlenecks and enabling efficient scaling for high-performance inference. It is particularly vital for serving large-scale MoE models where tokens are dynamically routed to specialized experts across GPUs. By leveraging optimized all-to-all communication and grouped matrix multiplications (GEMMs), EP reduces latency, boosts throughput, and minimizes idle GPU time. SGLang’s EP offers strong extensibility through its modular framework, allowing seamless integration of custom kernels, backends, and optimizations without refactoring core logic, supporting diverse hardware and quantization schemes.</p>
 <section id="supported-backends-and-selection-guidance">
 <h2>Supported Backends and Selection Guidance<a class="headerlink" href="#supported-backends-and-selection-guidance" title="Link to this heading">#</a></h2>
@@ -545,7 +546,7 @@ document.write(`
 <td><p>General-purpose deployments; ensures compatibility and performance without user intervention.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">triton</span></code></p></td>
-<td><p>Triton-based implementation for grouped GEMMs, providing flexible kernel fusion and custom optimizations.</p></td>
+<td><p>Triton-based implementation for grouped GEMMs. To achieve higher performance, it’s highly recommended to create <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/benchmark/kernels/fused_moe_triton/README.md">tuned configurations</a>.</p></td>
 <td><p>Custom kernel development or scenarios requiring high extensibility with Torch compilation support.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deep_gemm</span></code></p></td>
@@ -558,18 +559,18 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code></p></td>
 <td><p>FlashInfer integrated with TensorRT-LLM for accelerated MoE computations, supporting FP4 communication operators and high-performance GEMMs.</p></td>
-<td><p>NVIDIA architectures with TRT-LLM.</p></td>
+<td><p>SM100+ with TRT-LLM.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flashinfer_cutlass</span></code></p></td>
 <td><p>FlashInfer combined with CUTLASS for high-performance grouped GEMMs in MoE layers, handling FP4/FP8 quantization efficiently.</p></td>
-<td><p>Optimized for Blackwell (e.g., B200) and FP4/FP8 models.</p></td>
+<td><p>SM100+ with FP4/FP8 models.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flashinfer_mxfp4</span></code></p></td>
 <td><p>FlashInfer variant optimized for MXFP4 (mixed FP4) quantization in MoE runners, focusing on memory-efficient low-precision inference.</p></td>
 <td><p>Low-precision models with MXFP4.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flashinfer_cutedsl</span></code></p></td>
-<td><p>FlashInfer with a custom DSL for flexible and efficient MoE kernel generation, integrated with modelopt quantization.</p></td>
+<td><p>FlashInfer with a custom DSL for flexible and efficient MoE kernel generation, integrated with ModelOpt FP4 quantization.</p></td>
 <td><p>Low-precision models with NVFP4.</p></td>
 </tr>
 </tbody>
@@ -694,6 +695,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="quantization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Quantization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lora.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LoRA Serving</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

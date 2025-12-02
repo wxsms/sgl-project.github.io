@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
-    <link rel="prev" title="Qwen3-VL Usage" href="../basic_usage/qwen3_vl.html" />
+    <link rel="prev" title="Llama4 Usage" href="../basic_usage/llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Dec 02, 2025"/>
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tool_parser.html">Tool Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
@@ -478,7 +479,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-backend">Kernel backend</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding">Speculative decoding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ngram-speculative-decoding">Ngram speculative decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expert-parallelism">Expert parallelism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moe">MoE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-cache">Mamba Cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#args-for-multi-item-scoring">Args for multi-item scoring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-cache">Hierarchical cache</a></li>
@@ -1476,8 +1477,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </table>
 </div>
 </section>
-<section id="expert-parallelism">
-<h2>Expert parallelism<a class="headerlink" href="#expert-parallelism" title="Link to this heading">#</a></h2>
+<section id="moe">
+<h2>MoE<a class="headerlink" href="#moe" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
@@ -2380,12 +2381,12 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../basic_usage/qwen3_vl.html"
+       href="../basic_usage/llama4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Qwen3-VL Usage</p>
+        <p class="prev-next-title">Llama4 Usage</p>
       </div>
     </a>
     <a class="right-next"
@@ -2428,7 +2429,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-backend">Kernel backend</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding">Speculative decoding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ngram-speculative-decoding">Ngram speculative decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expert-parallelism">Expert parallelism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moe">MoE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-cache">Mamba Cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#args-for-multi-item-scoring">Args for multi-item scoring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-cache">Hierarchical cache</a></li>
