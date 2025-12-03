@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/observability.html">Observability</a></li>
@@ -207,6 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../supported_models/embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supported_models/reward_models.html">Reward Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supported_models/rerank_models.html">Rerank Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supported_models/classify_models.html">Classification API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supported_models/support_new_models.html">How to Support New Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supported_models/modelscope.html">Use Models From ModelScope</a></li>
@@ -240,8 +242,8 @@
 <li class="toctree-l2"><a class="reference internal" href="choices_methods.html">Choices Methods in SGLang</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../learn_more.html">Learn More and Join the Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../post_training_integration.html">Post-Training Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 
     </div>
@@ -529,9 +531,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-03 03:44:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:44:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:44:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:34:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:34:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:34:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -539,30 +541,30 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-03 03:44:25] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:44:25] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:44:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-03 03:44:28] WARNING server_args.py:1327: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-03 03:44:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:44:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:44:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-03 03:44:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:44:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:44:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:34:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:34:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:34:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:34:15] WARNING server_args.py:1327: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-03 05:34:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:34:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:34:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:34:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:34:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:34:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-03 03:44:39] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-03 05:34:27] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.66it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.58it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.54it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.59it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.58it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.59it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.46it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.41it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.43it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.95it/s]
-[2025-12-03 03:44:45] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.94it/s]
+[2025-12-03 05:34:33] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -576,7 +578,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38948
+Server started on http://localhost:33265
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -593,7 +595,7 @@ Server started on http://localhost:38948
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-03 03:44:50] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2025-12-03 05:34:38] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -625,7 +627,7 @@ Server started on http://localhost:38948
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries and their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Mexico** - Mexico City<br>3. **Australia** - Canberra</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -655,13 +657,13 @@ Server started on http://localhost:38948
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Here is a list of 3 countries along with their respective capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here is another list of 3 countries and their capitals:<br><br>1. Spain - Madrid<br>2. Italy - Rome<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Of course! Here is another list of three countries along with their capitals:<br><br>1. **Italy** - Rome<br>2. **Canada** - Ottawa<br>3. **Australia** - Canberra</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -703,7 +705,7 @@ Server started on http://localhost:38948
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>You don't actually need a calculator for this one, as it's a simple multiplication you can easily compute mentally or on paper. The result is:<br><br>2 * 2 = 4<br><br>If you still want to use a calculator, here’s how you can do it:<br><br>1. Enter the number 2.<br>2. Press the multiplication button (usually marked with an "x" or "*").<br>3. Enter the number 2 again.<br>4. Press the equals ("=") button.<br><br>The calculator will display the result, which is 4.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>You don't necessarily need a calculator to solve this problem, as it's a simple multiplication. The result of 2 * 2 is 4. <br><br>Still, if you wish, you can use a calculator to verify the result:<br><br>1. Enter 2.<br>2. Press the multiplication button (x).<br>3. Enter 2.<br>4. Press the equals (=) button.<br><br>The calculator should display the result as 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -743,7 +745,7 @@ Server started on http://localhost:38948
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutritious foods from all the major food groups in the right proportions. This includes a high intake of fruits and vegetables, whole grains, lean proteins, and healthy fats. It's important to limit processed foods, sugars, and unhealthy fats. Consistent, healthy eating supports a strong immune system, maintains a healthy weight, and promotes overall well-being.<br>2. **Regular Exercise**: Engaging in regular physical activity to maintain good health. Exercise not only helps manage weight but also improves cardiovascular health, boosts energy levels, and enhances muscle and bone strength. It helps prevent various diseases and improves mental health by reducing stress, anxiety, and depression. Consistent physical activity can be enjoyable and accessible, and it significantly improves the quality of life.<br><br>Here's a concise version:<br>1. **Balanced Diet**: Consume a variety of fruits, vegetables, whole grains, and lean proteins. Limit processed and unhealthy foods.<br>2. **Regular Exercise**: Engage in consistent physical activity to maintain cardiovascular health, manage weight, and boost mental health.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: <br>   - Eat a variety of foods to ensure you get all the necessary nutrients.<br>   - Focus on fruits, vegetables, whole grains, and lean proteins.<br>   - Limit processed foods, sugary drinks, and foods high in unhealthy fats.<br>   - This helps support your immune system, improve energy levels, and enhance physical and mental health.<br><br>2. **Regular Exercise**:<br>   - Engage in a mix of cardio, strength training, and flexibility exercises.<br>   - Boost cardiovascular health, improve endurance, and strengthen your muscles and bones.<br>   - Enhance sleep quality, reduce stress, and manage weight.<br>   - Improve mood and mental health by increasing endorphins.<br>   - Increase your overall quality of life and potentially extend your lifespan.<br><br>By combining these two habits, you can significantly improve your physical and mental health, leading to a more vibrant and active lifestyle.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -816,7 +818,7 @@ Server started on http://localhost:38948
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": " stag",<br>    "bogart": "Augusta Longbeau"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry James Pot",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Yew",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": " Stag",<br>    "bogart": "Lady Macbeth"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -851,7 +853,7 @@ Server started on http://localhost:38948
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 35.38it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 35.16it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -970,31 +972,31 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-03 03:45:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:45:04] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:45:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-03 03:45:06] WARNING server_args.py:1327: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-03 03:45:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:45:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:45:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-03 03:45:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-03 03:45:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-03 03:45:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:34:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:34:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:34:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:34:52] WARNING server_args.py:1327: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-03 05:35:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:35:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:35:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-03 05:35:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-03 05:35:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-03 05:35:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-03 03:45:20] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-03 05:35:12] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.28it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.31it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.31it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.68it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.32it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.41it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.42it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.90it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.65it/s]
 
-Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.35it/s]
-[2025-12-03 03:45:28] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.14it/s]
+[2025-12-03 05:35:20] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1008,7 +1010,7 @@ Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36037
+Server started on http://localhost:31954
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1024,7 +1026,7 @@ Server started on http://localhost:36037
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-03 03:45:32] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2025-12-03 05:35:24] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1049,7 +1051,7 @@ Server started on http://localhost:36037
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man holding an iron as he straightens a piece of clothing hanging vertically between two poles on the back of a yellow SUV, which is parked on a street. The SUV appears to be parked directly in front of a taxi. The setting includes an urban environment, with buildings, other vehicles, and passing pedestrians in the background.</strong></div>
+<strong style='color: #00008B;'>The image shows a man dressed in a yellow shirt loading or unfolding clothes hung on a portable drying system onto or into a yellow vehicle. This scene appears to occur on a street known for having celebrity portraits by a shopping mall store but is mistakenly recognized twice in this context, referencing movie plots and the assignation labeled "Botox Bike Jobs."</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

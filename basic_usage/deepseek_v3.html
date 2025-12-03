@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
@@ -212,6 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/rerank_models.html">Rerank Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/classify_models.html">Classification API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
@@ -241,8 +243,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn More and Join the Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/post_training_integration.html">Post-Training Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 
     </div>
@@ -475,13 +477,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-deepseek-v3-1-v3-r1-with-sglang">Launch DeepSeek V3.1/V3/R1 with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-weights">Download Weights</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-with-one-node-of-8-x-h200">Launch with one node of 8 x H200</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-on-multi-node">Running examples on Multi-node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-on-multi-node">Running examples on Multi-Node</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizations">Optimizations</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-head-latent-attention-mla-throughput-optimizations">Multi-head Latent Attention (MLA) Throughput Optimizations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi-Node Tensor Parallelism</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1-v3-1">Reasoning Content for DeepSeek R1 &amp; V3.1</a></li>
@@ -516,7 +518,7 @@ For an overview of the implemented features see the completed <a class="referenc
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Full precision FP8</strong><br><em>(recommended)</em></p></td>
+<tr class="row-even"><td><p><strong>Full precision <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-R1-0528">FP8</a></strong><br><em>(recommended)</em></p></td>
 <td><p>8 x H200</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -528,7 +530,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <tr class="row-odd"><td><p></p></td>
 <td><p>Xeon 6980P CPU</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Full precision BF16</strong></p></td>
+<tr class="row-even"><td><p><strong>Full precision (<a class="reference external" href="https://huggingface.co/unsloth/DeepSeek-R1-0528-BF16">BF16</a>)</strong> (upcast from original FP8)</p></td>
 <td><p>2 x 8 x H200</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -540,13 +542,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <tr class="row-odd"><td><p></p></td>
 <td><p>4 x 8 x A100/A800</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Quantized weights (AWQ)</strong></p></td>
-<td><p>8 x H100/800/20</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>8 x A100/A800</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Quantized weights (int8)</strong></p></td>
+<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/meituan/DeepSeek-R1-Channel-INT8">INT8</a>)</strong></p></td>
 <td><p>16 x A100/800</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -557,6 +553,21 @@ For an overview of the implemented features see the completed <a class="referenc
 </tr>
 <tr class="row-odd"><td><p></p></td>
 <td><p>2 x Atlas 800I A3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/novita/Deepseek-R1-0528-W4AFP8">W4A8</a>)</strong></p></td>
+<td><p>8 x H20/100, 4 x H200</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/QuixiAI/DeepSeek-R1-0528-AWQ">AWQ</a>)</strong></p></td>
+<td><p>8 x H100/800/20</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>8 x A100/A800</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/amd/DeepSeek-R1-MXFP4-Preview">MXFP4</a>)</strong></p></td>
+<td><p>8, 4 x MI355X/350X</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/nvidia/DeepSeek-R1-0528-NVFP4">NVFP4</a>)</strong></p></td>
+<td><p>8, 4 x B200</p></td>
 </tr>
 </tbody>
 </table>
@@ -589,6 +600,10 @@ For an overview of the implemented features see the completed <a class="referenc
   background-color: var(--md-default-bg-color--lightest);
 }
 </style>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The official DeepSeek V3 is already in FP8 format, so you should not run it with any quantization arguments like <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code>.</p>
+</div>
 <p>Detailed commands for reference:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">8 x H200</a></p></li>
@@ -596,10 +611,10 @@ For an overview of the implemented features see the completed <a class="referenc
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">2 x 8 x H200</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">4 x 8 x A100</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-8-a100a800-with-awq-quantization">8 x A100 (AWQ)</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-16-a100a800-with-int8-quantization">16 x A100 (int8)</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-32-l40s-with-int8-quantization">32 x L40S (int8)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-16-a100a800-with-int8-quantization">16 x A100 (INT8)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-32-l40s-with-int8-quantization">32 x L40S (INT8)</a></p></li>
 <li><p><a class="reference internal" href="../platforms/cpu_server.html#example-running-deepseek-r1"><span class="std std-ref">Xeon 6980P CPU</span></a></p></li>
-<li><p><a class="reference internal" href="../platforms/ascend_npu.html#running-deepseek-v3"><span class="std std-ref">2 x Atlas 800I A3 (int8)</span></a></p></li>
+<li><p><a class="reference internal" href="../platforms/ascend_npu.html#running-deepseek-v3"><span class="std std-ref">2 x Atlas 800I A3 (INT8)</span></a></p></li>
 </ul>
 <section id="download-weights">
 <h3>Download Weights<a class="headerlink" href="#download-weights" title="Link to this heading">#</a></h3>
@@ -607,13 +622,15 @@ For an overview of the implemented features see the completed <a class="referenc
 </section>
 <section id="launch-with-one-node-of-8-x-h200">
 <h3>Launch with one node of 8 x H200<a class="headerlink" href="#launch-with-one-node-of-8-x-h200" title="Link to this heading">#</a></h3>
-<p>Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#installation--launch">the example</a>.
-<strong>Note that Deepseek V3 is already in FP8</strong>, so we should not run it with any quantization arguments like <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span> <span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p>
+<p>Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#installation--launch">the example</a>.</p>
 </section>
 <section id="running-examples-on-multi-node">
-<h3>Running examples on Multi-node<a class="headerlink" href="#running-examples-on-multi-node" title="Link to this heading">#</a></h3>
+<h3>Running examples on Multi-Node<a class="headerlink" href="#running-examples-on-multi-node" title="Link to this heading">#</a></h3>
 <ul class="simple">
+<li><p><a class="reference external" href="https://lmsys.org/blog/2025-06-16-gb200-part-1/">Deploying DeepSeek on GB200 NVL72 with PD and Large Scale EP</a> (<a class="reference external" href="https://lmsys.org/blog/2025-06-16-gb200-part-1/">Part I</a>, <a class="reference external" href="https://lmsys.org/blog/2025-09-25-gb200-part-2/">Part II</a>) - Comprehensive guide on GB200 optimizations.</p></li>
+<li><p><a class="reference external" href="https://lmsys.org/blog/2025-05-05-deepseek-pd-ep/">Deploying DeepSeek with PD Disaggregation and Large-Scale Expert Parallelism on 96 H100 GPUs</a> - Guide on PD disaggregation and large-scale EP.</p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">Serving with two H20*8 nodes</a>.</p></li>
+<li><p><a class="reference external" href="https://lmsys.org/blog/2025-09-26-sglang-ant-group/">Best Practices for Serving DeepSeek-R1 on H20</a> - Comprehensive guide on H20 optimizations, deployment and performance.</p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h2008-nodes-and-docker">Serving with two H200*8 nodes and docker</a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">Serving with four A100*8 nodes</a>.</p></li>
 </ul>
@@ -635,7 +652,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <p align="center">
   <img src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="Multi-head Latent Attention for DeepSeek Series Models">
 </p>
-<p><strong>Usage</strong>: MLA optimization is enabled by default. For MLA models on Blackwell architecture (e.g., B200), the default backend is FlashInfer. To use the optimized TRTLLM MLA backend for prefill and decode operations, explicitly specify <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">trtllm_mla</span></code>.</p>
+<p><strong>Usage</strong>: MLA optimization is enabled by default.</p>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations">Blog</a> and <a class="reference external" href="https://github.com/sgl-project/sgl-learning-materials/blob/main/slides/lmsys_1st_meetup_deepseek_mla.pdf">Slides</a> for more details.</p>
 </section>
 <section id="data-parallelism-attention">
@@ -650,13 +667,17 @@ For an overview of the implemented features see the completed <a class="referenc
 </p>
 <p><strong>Usage</strong>:</p>
 <ul class="simple">
-<li><p>Append <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span> <span class="pre">--tp</span> <span class="pre">8</span> <span class="pre">--dp</span> <span class="pre">8</span></code> to the server arguments when using 8 H200 GPUs. This optimization improves peak throughput in high batch size scenarios where the server is limited by KV cache capacity. However, it is not recommended for low-latency, small-batch use cases.</p></li>
+<li><p>Append <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span> <span class="pre">--tp</span> <span class="pre">8</span> <span class="pre">--dp</span> <span class="pre">8</span></code> to the server arguments when using 8 H200 GPUs. This optimization improves peak throughput in high batch size scenarios where the server is limited by KV cache capacity.</p></li>
 <li><p>DP and TP attention can be flexibly combined. For example, to deploy DeepSeek-V3/R1 on 2 nodes with 8 H100 GPUs each, you can specify <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span> <span class="pre">--tp</span> <span class="pre">16</span> <span class="pre">--dp</span> <span class="pre">2</span></code>. This configuration runs attention with 2 DP groups, each containing 8 TP GPUs.</p></li>
 </ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Data parallelism attention is not recommended for low-latency, small-batch use cases. It is optimized for high-throughput scenarios with large batch sizes.</p>
+</div>
 <p><strong>Reference</strong>: Check <a class="reference external" href="https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models">Blog</a>.</p>
 </section>
 <section id="multi-node-tensor-parallelism">
-<h3>Multi Node Tensor Parallelism<a class="headerlink" href="#multi-node-tensor-parallelism" title="Link to this heading">#</a></h3>
+<h3>Multi-Node Tensor Parallelism<a class="headerlink" href="#multi-node-tensor-parallelism" title="Link to this heading">#</a></h3>
 <p><strong>Description</strong>: For users with limited memory on a single node, SGLang supports serving DeepSeek Series Models, including DeepSeek V3, across multiple nodes using tensor parallelism. This approach partitions the model parameters across multiple GPUs or nodes to handle models that are too large for one node’s memory.</p>
 <p><strong>Usage</strong>: Check <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-2-h208">here</a> for usage examples.</p>
 </section>
@@ -668,38 +689,39 @@ For an overview of the implemented features see the completed <a class="referenc
 <li><p><strong>Weight</strong>: Per-128x128-block quantization for better numerical stability.</p></li>
 <li><p><strong>DeepGEMM</strong>: The <a class="reference external" href="https://github.com/deepseek-ai/DeepGEMM">DeepGEMM</a> kernel library optimized for FP8 matrix multiplications.</p></li>
 </ul>
-<p><strong>Usage</strong>: The activation and weight optimization above are turned on by default for DeepSeek V3 models. DeepGEMM is enabled by default on NVIDIA Hopper GPUs and disabled by default on other devices. DeepGEMM can also be manually turned off by setting the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_JIT_DEEPGEMM=0</span></code>.</p>
-<p>Before serving the DeepSeek model, precompile the DeepGEMM kernels using:</p>
+<p><strong>Usage</strong>: The activation and weight optimization above are turned on by default for DeepSeek V3 models. DeepGEMM is enabled by default on NVIDIA Hopper/Blackwell GPUs and disabled by default on other devices. DeepGEMM can also be manually turned off by setting the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_JIT_DEEPGEMM=0</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Before serving the DeepSeek model, precompile the DeepGEMM kernels to improve first-run performance. The precompilation process typically takes around 10 minutes to complete.</p>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.compile_deep_gemm<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--trust-remote-code
 </pre></div>
 </div>
-<p>The precompilation process typically takes around 10 minutes to complete.</p>
 </section>
 <section id="multi-token-prediction">
 <h3>Multi-token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h3>
 <p><strong>Description</strong>: SGLang implements DeepSeek V3 Multi-Token Prediction (MTP) based on <a class="reference external" href="https://docs.sglang.io/advanced_features/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>. With this optimization, the decoding speed can be improved by <strong>1.8x</strong> for batch size 1 and <strong>1.5x</strong> for batch size 32 respectively on H200 TP8 setting.</p>
 <p><strong>Usage</strong>:
-Add arguments <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> to enable this feature. For example:</p>
+Add <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code>. Other flags, like <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> are optional. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> \
   <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span><span class="o">-</span><span class="mi">0324</span> \
   <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">algorithm</span> <span class="n">EAGLE</span> \
-  <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">steps</span> <span class="mi">1</span> \
-  <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">eagle</span><span class="o">-</span><span class="n">topk</span> <span class="mi">1</span> \
-  <span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="n">draft</span><span class="o">-</span><span class="n">tokens</span> <span class="mi">2</span> \
   <span class="o">--</span><span class="n">trust</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">code</span> \
   <span class="o">--</span><span class="n">tp</span> <span class="mi">8</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>The best configuration for <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> can be searched with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a> script for given batch size. The minimum configuration is <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span> <span class="pre">1</span> <span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span> <span class="pre">--speculative-num-draft-tokens</span> <span class="pre">2</span></code>, which can achieve speedup for larger batch sizes.</p></li>
-<li><p>FlashAttention3, FlashMLA, and Triton backend fully supports MTP usage. For FlashInfer backend (<code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">flashinfer</span></code>) with speculative decoding,<code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> parameter should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code>. MTP support for the CutlassMLA and TRTLLM MLA backends are still under development.</p></li>
-<li><p>To enable DeepSeek MTP for large batch sizes (&gt;32), there are some parameters should be changed (Reference <a class="reference external" href="https://github.com/sgl-project/sglang/issues/4543#issuecomment-2737413756">this discussion</a>):</p>
-<ul>
+<li><p>The default configuration for DeepSeek models is <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span> <span class="pre">3</span> <span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span> <span class="pre">--speculative-num-draft-tokens</span> <span class="pre">4</span></code>. The best configuration for <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> can be searched with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a> script for given batch size. The minimum configuration is <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span> <span class="pre">1</span> <span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span> <span class="pre">--speculative-num-draft-tokens</span> <span class="pre">2</span></code>, which can achieve speedup for larger batch sizes.</p></li>
+<li><p>Most MLA attention backends fully support MTP usage. See <a class="reference internal" href="../advanced_features/attention_backend.html#mla-backends"><span class="std std-ref">MLA Backends</span></a> for details.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To enable DeepSeek MTP for large batch sizes (&gt;48), you need to adjust some parameters (Reference <a class="reference external" href="https://github.com/sgl-project/sglang/issues/4543#issuecomment-2737413756">this discussion</a>):</p>
+<ul class="simple">
 <li><p>Adjust <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code> to a larger number. The default value is <code class="docutils literal notranslate"><span class="pre">48</span></code> for MTP. For larger batch sizes, you should increase this value beyond the default value.</p></li>
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-bs</span></code>. It’s a list of batch sizes for cuda graph capture. The default captured batch sizes for speculative decoding is set <a class="reference external" href="https://github.com/sgl-project/sglang/blob/49420741746c8f3e80e0eb17e7d012bfaf25793a/python/sglang/srt/model_executor/cuda_graph_runner.py#L126">here</a>. You can include more batch sizes into it.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-bs</span></code>. It’s a list of batch sizes for cuda graph capture. The <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/server_args.py#L888-L895">default captured batch sizes for speculative decoding</a> is 48. You can customize this by including more batch sizes.</p></li>
 </ul>
-</li>
-</ul>
+</div>
 </section>
 <section id="reasoning-content-for-deepseek-r1-v3-1">
 <h3>Reasoning Content for DeepSeek R1 &amp; V3.1<a class="headerlink" href="#reasoning-content-for-deepseek-r1-v3-1" title="Link to this heading">#</a></h3>
@@ -751,11 +773,13 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Qingdao&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Important Notes:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <ol class="arabic simple">
 <li><p>Use a lower <code class="docutils literal notranslate"><span class="pre">&quot;temperature&quot;</span></code> value for better results.</p></li>
 <li><p>To receive more consistent tool call results, it is recommended to use <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">examples/chat_template/tool_chat_template_deepseekv3.jinja</span></code>. It provides an improved unified prompt.</p></li>
 </ol>
+</div>
 </section>
 <section id="thinking-budget-for-deepseek-r1">
 <h3>Thinking Budget for DeepSeek R1<a class="headerlink" href="#thinking-budget-for-deepseek-r1" title="Link to this heading">#</a></h3>
@@ -847,13 +871,13 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-deepseek-v3-1-v3-r1-with-sglang">Launch DeepSeek V3.1/V3/R1 with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-weights">Download Weights</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-with-one-node-of-8-x-h200">Launch with one node of 8 x H200</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-on-multi-node">Running examples on Multi-node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-on-multi-node">Running examples on Multi-Node</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizations">Optimizations</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-head-latent-attention-mla-throughput-optimizations">Multi-head Latent Attention (MLA) Throughput Optimizations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-parallelism-attention">Data Parallelism Attention</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi Node Tensor Parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-tensor-parallelism">Multi-Node Tensor Parallelism</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-wise-fp8">Block-wise FP8</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning-content-for-deepseek-r1-v3-1">Reasoning Content for DeepSeek R1 &amp; V3.1</a></li>

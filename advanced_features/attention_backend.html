@@ -192,6 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
@@ -204,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/rerank_models.html">Rerank Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/classify_models.html">Classification API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
@@ -233,8 +235,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../references/multi_node_deployment/multi_node_index.html">Multi-Node Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/custom_chat_template.html">Custom Chat Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/frontend/frontend_index.html">Frontend Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn More and Join the Community</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references/post_training_integration.html">Post-Training Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/learn_more.html">Learn More and Join the Community</a></li>
 </ul>
 
     </div>
@@ -531,7 +533,7 @@ You can test them according to your needs.</p>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>FA4 (FlashAttention 4)</strong></p></td>
-<td><p>✅</p></td>
+<td><p>128</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -670,7 +672,7 @@ You can test them according to your needs.</p>
 <td><p>⚠️ (page_size=1 only)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>FA4</strong></p></td>
-<td><p>128</p></td>
+<td><p>1</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -690,10 +692,6 @@ You can test them according to your needs.</p>
 <p class="admonition-title">Note</p>
 <p>Multimodal attention is selected by <code class="docutils literal notranslate"><span class="pre">--mm-attention-backend</span></code>. The “MultiModal” column indicates whether a corresponding multimodal implementation exists for that backend family.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>FlashMLA FP8 KV cache is currently not working. See upstream issue <a class="reference external" href="https://github.com/sgl-project/sglang/pull/8856">#8856</a>. Use non-FP8 KV or another backend when FP8 KV cache is required.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -705,14 +703,13 @@ You can test them according to your needs.</p>
 <p class="admonition-title">Tip</p>
 <p>Speculative decoding topk: <code class="docutils literal notranslate"><span class="pre">topk</span></code> is the number of draft tokens sampled per step from the draft model. <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code> follows classic EAGLE; <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> explores multiple branches and requires backend support in both draft and verification paths.</p>
 </div>
-<p>Note: Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), FA4 (128), Ascend (128).</p>
+<p>Note: Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), Ascend (128).</p>
 <p>MLA page-size constraints:</p>
 <ul class="simple">
 <li><p>FlashInfer MLA: page_size = 1.</p></li>
 <li><p>FlashMLA: page_size = 64.</p></li>
 <li><p>Cutlass MLA: page_size = 128.</p></li>
 <li><p>TRTLLM MLA: page_size ∈ {32, 64}.</p></li>
-<li><p>FA4: page_size = 128.</p></li>
 </ul>
 </section>
 <section id="hybrid-attention-different-backends-for-prefill-vs-decode-experimental">
@@ -743,8 +740,6 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <ul class="simple">
 <li><p>If any attention backend is <code class="docutils literal notranslate"><span class="pre">trtllm_mha</span></code>, speculative decoding supports only <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code>.</p></li>
 <li><p>For paged MHA backends with <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, only <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code> is supported.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flex_attention</span></code> is not supported with speculative decoding.</p></li>
-<li><p>For MLA backends, <code class="docutils literal notranslate"><span class="pre">trtllm_mla</span></code> supports <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>; <code class="docutils literal notranslate"><span class="pre">flashmla</span></code> and <code class="docutils literal notranslate"><span class="pre">flashinfer_mla</span></code> support only <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
 <li><p>CUDA Graph: the decode backend is always captured; the prefill backend is captured only when <code class="docutils literal notranslate"><span class="pre">--speculative-attention-mode</span> <span class="pre">prefill</span></code>.</p></li>
 </ul>
 <div class="admonition tip">
