@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OpenAI-Compatible APIs &#8212; SGLang</title>
+    <title>Qwen3 examples &#8212; SGLang</title>
   
   
   
@@ -47,14 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'basic_usage/openai_api';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_npu_qwen3_examples';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OpenAI APIs - Completions" href="openai_api_completions.html" />
-    <link rel="prev" title="Sending Requests" href="send_request.html" />
+    <link rel="next" title="XPU" href="xpu.html" />
+    <link rel="prev" title="DeepSeek examples" href="ascend_npu_deepseek_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Dec 03, 2025"/>
@@ -170,18 +168,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">OpenAI-Compatible APIs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, Llama, Qwen, and more)</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, Llama, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -218,13 +211,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../platforms/amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu_support.html">Ascend NPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ascend_npu_support.html">Ascend NPUs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu.html">SGLang installation with NPUs support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Qwen3 examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -315,7 +313,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/basic_usage/openai_api.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_npu_qwen3_examples.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +330,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/basic_usage/openai_api.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_npu_qwen3_examples.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +347,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbasic_usage/openai_api.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_npu_qwen3_examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +377,7 @@
       
       
       
-      <li><a href="../_sources/basic_usage/openai_api.rst" target="_blank"
+      <li><a href="../_sources/platforms/ascend_npu_qwen3_examples.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +387,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -450,7 +448,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -461,11 +461,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>OpenAI-Compatible APIs</h1>
+    <h1>Qwen3 examples</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3">Running Qwen3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-32b-on-1-x-atlas-800i-a3">Running Qwen3-32B on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -475,15 +489,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="openai-compatible-apis">
-<h1>OpenAI-Compatible APIs<a class="headerlink" href="#openai-compatible-apis" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="openai_api_completions.html">OpenAI APIs - Completions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openai_api_vision.html">OpenAI APIs - Vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openai_api_embeddings.html">OpenAI APIs - Embedding</a></li>
-</ul>
+  <section id="qwen3-examples">
+<h1>Qwen3 examples<a class="headerlink" href="#qwen3-examples" title="Link to this heading">#</a></h1>
+<section id="running-qwen3">
+<h2>Running Qwen3<a class="headerlink" href="#running-qwen3" title="Link to this heading">#</a></h2>
+<section id="running-qwen3-32b-on-1-x-atlas-800i-a3">
+<h3>Running Qwen3-32B on 1 x Atlas 800I A3.<a class="headerlink" href="#running-qwen3-32b-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<p>Model weights could be found <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-32B">here</a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1536</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+
+<span class="nv">ASCEND_RT_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1,2,3<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--model-path<span class="w"> </span>Qwen/Qwen3-32B<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--port<span class="w"> </span><span class="m">30111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+</pre></div>
 </div>
+</section>
+<section id="running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">
+<h3>Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.<a class="headerlink" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<p>Model weights could be found <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-30B-A3B">here</a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1536</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_BF16_DISPATCH</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_ASCEND_MOE_NZ</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nv">ASCEND_RT_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1,2,3<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--model-path<span class="w"> </span>Qwen/Qwen3-30B-A3B<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--port<span class="w"> </span><span class="m">30111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+</pre></div>
+</div>
+</section>
+<section id="running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">
+<h3>Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.<a class="headerlink" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<p>Model weights could be found <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507">here</a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1536</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_BF16_DISPATCH</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_ASCEND_MOE_NZ</span><span class="o">=</span><span class="m">1</span>
+
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--model-path<span class="w"> </span>Qwen/Qwen3-235B-A22B-Instruct-2507<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--port<span class="w"> </span><span class="m">30111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+</pre></div>
+</div>
+</section>
+<section id="running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">
+<h3>Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.<a class="headerlink" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<p>Model weights could be found <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct">here</a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1536</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+
+<span class="nv">ASCEND_RT_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1,2,3<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--enable-multimodal<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--mm-attention-backend<span class="w"> </span>ascend_attn<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--port<span class="w"> </span><span class="m">30111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -498,20 +596,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="send_request.html"
+       href="ascend_npu_deepseek_example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sending Requests</p>
+        <p class="prev-next-title">DeepSeek examples</p>
       </div>
     </a>
     <a class="right-next"
-       href="openai_api_completions.html"
+       href="xpu.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">OpenAI APIs - Completions</p>
+        <p class="prev-next-title">XPU</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,6 +619,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3">Running Qwen3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-32b-on-1-x-atlas-800i-a3">Running Qwen3-32B on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
