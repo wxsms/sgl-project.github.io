@@ -592,12 +592,16 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <h2>Function Calling and Reasoning Parser<a class="headerlink" href="#function-calling-and-reasoning-parser" title="Link to this heading">#</a></h2>
 <p>The usage of function calling and reasoning parser is the same as DeepSeek V3.1. Please refer to <a class="reference external" href="https://docs.sglang.io/advanced_features/separate_reasoning.html">Reasoning Parser</a> and <a class="reference external" href="https://docs.sglang.io/advanced_features/tool_parser.html">Tool Parser</a> documents.</p>
 <p>To launch <code class="docutils literal notranslate"><span class="pre">DeepSeek-V3.2-Exp</span></code> with function calling and reasoning parser:</p>
+<blockquote>
+<div><p>Note: It is recommended to specify the chat-template, ensuring that you are within the sglang’s root directory.</p>
+</div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--tool-call-parser<span class="w"> </span>deepseekv31<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--reasoning-parser<span class="w"> </span>deepseek-v3
+<span class="w">  </span>--reasoning-parser<span class="w"> </span>deepseek-v3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chat-template<span class="w"> </span>./examples/chat_template/tool_chat_template_deepseekv32.jinja
 </pre></div>
 </div>
 <p>To launch <code class="docutils literal notranslate"><span class="pre">DeepSeek-V3.2</span></code> with function calling and reasoning parser:</p>
