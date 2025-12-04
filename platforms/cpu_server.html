@@ -55,7 +55,7 @@
     <link rel="prev" title="AMD GPUs" href="amd_gpu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 03, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 04, 2025"/>
   </head>
   
   
@@ -474,7 +474,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-of-the-serving-engine">Launch of the Serving Engine</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-with-requests">Benchmarking with Requests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-deepseek-v3-1-terminus">Example: Running DeepSeek-V3.1-Terminus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage-commands">Example Usage Commands</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-deepseek-v3-1-terminus">Example: Running DeepSeek-V3.1-Terminus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-llama-3-2-3b">Example: Running Llama-3.2-3B</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -576,28 +580,55 @@ docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</spa
 </section>
 <section id="install-from-source">
 <h3>Install From Source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
-<p>If you’d prefer to install SGLang in a bare metal environment,
-the command list is as below.
-It is worth noting that the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_USE_CPU_ENGINE=1</span></code>
-is required to enable SGLang service with CPU engine.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create and activate a conda environment</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>sgl-cpu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>-y
-conda<span class="w"> </span>activate<span class="w"> </span>sgl-cpu
+<p>If you prefer to install SGLang in a bare metal environment,
+the setup process is as follows:</p>
+<p>Please install the required packages and libraries beforehand if
+they are not already present on your system.
+You can refer to the Ubuntu-based installation commands in
+<a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docker/xeon.Dockerfile#L11">the Dockerfile</a>
+for guidance.</p>
+<ol class="arabic simple">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">uv</span></code> package manager, then create and activate a virtual environment:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking &#39;/opt&#39; as the example uv env folder, feel free to change it as needed</span>
+<span class="nb">cd</span><span class="w"> </span>/opt
+curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/.local/bin/env
+uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a config file to direct the installation channel
+(a.k.a. index-url) of <code class="docutils literal notranslate"><span class="pre">torch</span></code> related packages:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim<span class="w"> </span>.venv/uv.toml
+</pre></div>
+</div>
+<p>Press ‘a’ to enter insert mode of <code class="docutils literal notranslate"><span class="pre">vim</span></code>, paste the following content into the created file</p>
+<div class="highlight-file notranslate"><div class="highlight"><pre><span></span>[[index]]
+name = &quot;torch&quot;
+url = &quot;https://download.pytorch.org/whl/cpu&quot;
 
-<span class="c1"># Set PyTorch CPU as primary pip install channel to avoid installing the larger CUDA-enabled version and prevent potential runtime issues.</span>
-pip<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
-pip<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.extra-index-url<span class="w"> </span>https://pypi.org/simple
+[[index]]
+name = &quot;torchvision&quot;
+url = &quot;https://download.pytorch.org/whl/cpu&quot;
 
-<span class="c1"># Check if some conda related environment variables have been set</span>
-env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>conda
-<span class="c1"># The following environment variable settings are required</span>
-<span class="c1"># if they have not been set properly</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_EXE</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>conda<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">CONDA_EXE</span><span class="si">}</span>/../..
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PREFIX</span><span class="o">=</span><span class="si">${</span><span class="nv">CONDA_ROOT</span><span class="si">}</span>/envs/sgl-cpu
-<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>:<span class="si">${</span><span class="nv">CONDA_ROOT</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">CONDA_ROOT</span><span class="si">}</span>/condabin
+[[index]]
+name = &quot;triton&quot;
+url = &quot;https://download.pytorch.org/whl/cpu&quot;
 
-<span class="c1"># Clone the SGLang code</span>
+</pre></div>
+</div>
+<p>Save the file (in <code class="docutils literal notranslate"><span class="pre">vim</span></code>, press ‘esc’ to exit insert mode, then ‘:x+Enter’),
+and set it as the default <code class="docutils literal notranslate"><span class="pre">uv</span></code> config.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">UV_CONFIG_FILE</span><span class="o">=</span>/opt/.venv/uv.toml
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">sglang</span></code> source code and build the packages</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the SGLang code</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
 <span class="nb">cd</span><span class="w"> </span>sglang
 git<span class="w"> </span>checkout<span class="w"> </span>&lt;YOUR-DESIRED-VERSION&gt;
@@ -606,22 +637,48 @@ git<span class="w"> </span>checkout<span class="w"> </span>&lt;YOUR-DESIRED-VERS
 <span class="nb">cd</span><span class="w"> </span>python
 cp<span class="w"> </span>pyproject_cpu.toml<span class="w"> </span>pyproject.toml
 <span class="c1"># Install SGLang dependent libs, and build SGLang main package</span>
-pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">libsqlite</span><span class="o">==</span><span class="m">3</span>.48.0<span class="w"> </span>gperftools<span class="w"> </span>tbb<span class="w"> </span>libnuma<span class="w"> </span>numactl
-pip<span class="w"> </span>install<span class="w"> </span>.
-pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.9.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.24.0<span class="w"> </span><span class="nv">triton</span><span class="o">==</span><span class="m">3</span>.5.0<span class="w"> </span>--force-reinstall
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.9.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.24.0<span class="w"> </span><span class="nv">triton</span><span class="o">==</span><span class="m">3</span>.5.0<span class="w"> </span>--force-reinstall
 
 <span class="c1"># Build the CPU backend kernels</span>
 <span class="nb">cd</span><span class="w"> </span>../sgl-kernel
 cp<span class="w"> </span>pyproject_cpu.toml<span class="w"> </span>pyproject.toml
-pip<span class="w"> </span>install<span class="w"> </span>.
-
-<span class="c1"># Other required environment variables</span>
-<span class="c1"># Recommend to set these in ~/.bashrc in order not to set every time in a new terminal</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_CPU_ENGINE</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="si">${</span><span class="nv">LD_PRELOAD</span><span class="si">}</span>:<span class="si">${</span><span class="nv">CONDA_PREFIX</span><span class="si">}</span>/lib/libiomp5.so:<span class="si">${</span><span class="nv">CONDA_PREFIX</span><span class="si">}</span>/lib/libtcmalloc.so:<span class="si">${</span><span class="nv">CONDA_PREFIX</span><span class="si">}</span>/lib/libtbbmalloc.so.2
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </div>
+<ol class="arabic simple" start="4">
+<li><p>Set the required environment variables</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_CPU_ENGINE</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1"># Set &#39;LD_LIBRARY_PATH&#39; and &#39;LD_PRELOAD&#39; to ensure the libs can be loaded by sglang processes</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="si">${</span><span class="nv">LD_PRELOAD</span><span class="si">}</span>:/opt/.venv/lib/libiomp5.so:<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>/libtcmalloc.so.4:<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>/libtbbmalloc.so.2
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul>
+<li><p>Note that the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_USE_CPU_ENGINE=1</span></code>
+is required to enable the SGLang service with the CPU engine.</p></li>
+<li><p>If you encounter code compilation issues during the <code class="docutils literal notranslate"><span class="pre">sgl-kernel</span></code> building process,
+please check your <code class="docutils literal notranslate"><span class="pre">gcc</span></code> and <code class="docutils literal notranslate"><span class="pre">g++</span></code> versions and upgrade them if they are outdated.
+It is recommended to use <code class="docutils literal notranslate"><span class="pre">gcc-13</span></code> and <code class="docutils literal notranslate"><span class="pre">g++-13</span></code> as they have been verified
+in the official Docker container.</p></li>
+<li><p>The system library path is typically located in one of the following directories:
+<code class="docutils literal notranslate"><span class="pre">~/.local/lib/</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/local/lib/</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/local/lib64/</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/lib/</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/lib64/</span></code>
+and <code class="docutils literal notranslate"><span class="pre">/usr/lib/x86_64-linux-gnu/</span></code>. In the above example commands, <code class="docutils literal notranslate"><span class="pre">/usr/lib/x86_64-linux-gnu</span></code>
+is used. Please adjust the path according to your server configuration.</p></li>
+<li><p>It is recommended to add the following to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file to
+avoid setting these variables every time you open a new terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_CPU_ENGINE</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>&lt;YOUR-SYSTEM-LIBRARY-FOLDER&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>&lt;YOUR-LIBS-PATHS&gt;
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 </section>
 <section id="launch-of-the-serving-engine">
@@ -669,7 +726,7 @@ The server is ready when you see the log <code class="docutils literal notransla
 <section id="benchmarking-with-requests">
 <h2>Benchmarking with Requests<a class="headerlink" href="#benchmarking-with-requests" title="Link to this heading">#</a></h2>
 <p>You can benchmark the performance via the <code class="docutils literal notranslate"><span class="pre">bench_serving</span></code> script.
-Run the command in another terminal.</p>
+Run the command in another terminal. An example command would be:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w">   </span><span class="se">\</span>
 <span class="w">    </span>--dataset-name<span class="w"> </span>random<span class="w">        </span><span class="se">\</span>
 <span class="w">    </span>--random-input-len<span class="w"> </span><span class="m">1024</span><span class="w">      </span><span class="se">\</span>
@@ -679,47 +736,83 @@ Run the command in another terminal.</p>
 <span class="w">    </span>--random-range-ratio<span class="w"> </span><span class="m">1</span>.0
 </pre></div>
 </div>
-<p>The detail explanations of the parameters can be looked up by the command:</p>
+<p>Detailed parameter descriptions are available via the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>-h
 </pre></div>
 </div>
-<p>Additionally, the requests can be formed with
-<a class="reference external" href="https://docs.sglang.io/basic_usage/openai_api_completions.html">OpenAI Completions API</a>
-and sent via the command line (e.g. using <code class="docutils literal notranslate"><span class="pre">curl</span></code>) or via your own script.</p>
+<p>Additionally, requests can be formatted using
+<a class="reference external" href="https://docs.sglang.io/basic_usage/openai_api_completions.html">the OpenAI Completions API</a>
+and sent via the command line (e.g., using <code class="docutils literal notranslate"><span class="pre">curl</span></code>) or through your own scripts.</p>
 </section>
+<section id="example-usage-commands">
+<h2>Example Usage Commands<a class="headerlink" href="#example-usage-commands" title="Link to this heading">#</a></h2>
+<p>Large Language Models can range from fewer than 1 billion to several hundred billion parameters.
+Dense models larger than 20B are expected to run on flagship 6th Gen Intel® Xeon® processors
+with dual sockets and a total of 6 sub-NUMA clusters. Dense models of approximately 10B parameters or fewer,
+or MoE (Mixture of Experts) models with fewer than 10B activated parameters, can run on more common
+4th generation or newer Intel® Xeon® processors, or utilize a single socket of the flagship 6th Gen Intel® Xeon® processors.</p>
 <section id="example-running-deepseek-v3-1-terminus">
-<h2>Example: Running DeepSeek-V3.1-Terminus<a class="headerlink" href="#example-running-deepseek-v3-1-terminus" title="Link to this heading">#</a></h2>
-<p>An example command to launch service for W8A8_INT8 DeepSeek-V3.1-Terminus on a Xeon® 6980P server:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">                                   </span><span class="se">\</span>
-<span class="w">    </span>--model<span class="w"> </span>IntervitensInc/DeepSeek-V3.1-Terminus-Channel-int8<span class="w">   </span><span class="se">\</span>
-<span class="w">    </span>--trust-remote-code<span class="w">                                          </span><span class="se">\</span>
-<span class="w">    </span>--disable-overlap-schedule<span class="w">                                   </span><span class="se">\</span>
-<span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                                                 </span><span class="se">\</span>
-<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w">                                     </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                                               </span><span class="se">\</span>
-<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">                                    </span><span class="se">\</span>
-<span class="w">    </span>--enable-torch-compile<span class="w">                                       </span><span class="se">\</span>
-<span class="w">    </span>--torch-compile-max-bs<span class="w"> </span><span class="m">4</span><span class="w">                                     </span><span class="se">\</span>
+<h3>Example: Running DeepSeek-V3.1-Terminus<a class="headerlink" href="#example-running-deepseek-v3-1-terminus" title="Link to this heading">#</a></h3>
+<p>An example command to launch service of W8A8_INT8 DeepSeek-V3.1-Terminus on a Xeon® 6980P server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">                                 </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>IntervitensInc/DeepSeek-V3.1-Terminus-Channel-int8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w">                                        </span><span class="se">\</span>
+<span class="w">    </span>--disable-overlap-schedule<span class="w">                                 </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                                               </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w">                                   </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                                             </span><span class="se">\</span>
+<span class="w">    </span>--enable-torch-compile<span class="w">                                     </span><span class="se">\</span>
+<span class="w">    </span>--torch-compile-max-bs<span class="w"> </span><span class="m">4</span><span class="w">                                   </span><span class="se">\</span>
 <span class="w">    </span>--tp<span class="w"> </span><span class="m">6</span>
 </pre></div>
 </div>
-<p>Similarly, an example command to launch service for FP8 DeepSeek-V3.1-Terminus would be:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">                 </span><span class="se">\</span>
-<span class="w">    </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.1-Terminus<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--trust-remote-code<span class="w">                        </span><span class="se">\</span>
-<span class="w">    </span>--disable-overlap-schedule<span class="w">                 </span><span class="se">\</span>
-<span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                               </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                             </span><span class="se">\</span>
-<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">                  </span><span class="se">\</span>
-<span class="w">    </span>--enable-torch-compile<span class="w">                     </span><span class="se">\</span>
-<span class="w">    </span>--torch-compile-max-bs<span class="w"> </span><span class="m">4</span><span class="w">                   </span><span class="se">\</span>
+<p>Similarly, an example command to launch service of FP8 DeepSeek-V3.1-Terminus would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.1-Terminus<span class="w">     </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w">                            </span><span class="se">\</span>
+<span class="w">    </span>--disable-overlap-schedule<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                                   </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                                 </span><span class="se">\</span>
+<span class="w">    </span>--enable-torch-compile<span class="w">                         </span><span class="se">\</span>
+<span class="w">    </span>--torch-compile-max-bs<span class="w"> </span><span class="m">4</span><span class="w">                       </span><span class="se">\</span>
 <span class="w">    </span>--tp<span class="w"> </span><span class="m">6</span>
 </pre></div>
 </div>
 <p>Note: Please set <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code> to the maximum desired batch size for your deployment,
 which can be up to 16. The value <code class="docutils literal notranslate"><span class="pre">4</span></code> in the examples is illustrative.</p>
-<p>Then you can test with <code class="docutils literal notranslate"><span class="pre">bench_serving</span></code> command or construct your own command or script
-following <a class="reference internal" href="#benchmarking-with-requests"><span class="std std-ref">the benchmarking example</span></a>.</p>
+</section>
+<section id="example-running-llama-3-2-3b">
+<h3>Example: Running Llama-3.2-3B<a class="headerlink" href="#example-running-llama-3-2-3b" title="Link to this heading">#</a></h3>
+<p>An example command to launch service of Llama-3.2-3B with BF16 precision:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>meta-llama/Llama-3.2-3B-Instruct<span class="w">       </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w">                            </span><span class="se">\</span>
+<span class="w">    </span>--disable-overlap-schedule<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                                   </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                                 </span><span class="se">\</span>
+<span class="w">    </span>--enable-torch-compile<span class="w">                         </span><span class="se">\</span>
+<span class="w">    </span>--torch-compile-max-bs<span class="w"> </span><span class="m">16</span><span class="w">                      </span><span class="se">\</span>
+<span class="w">    </span>--tp<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<p>The example command to launch service of W8A8_INT8 version of Llama-3.2-3B:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>RedHatAI/Llama-3.2-3B-quantized.w8a8<span class="w">   </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w">                            </span><span class="se">\</span>
+<span class="w">    </span>--disable-overlap-schedule<span class="w">                     </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>cpu<span class="w">                                   </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w">                       </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">                                 </span><span class="se">\</span>
+<span class="w">    </span>--enable-torch-compile<span class="w">                         </span><span class="se">\</span>
+<span class="w">    </span>--torch-compile-max-bs<span class="w"> </span><span class="m">16</span><span class="w">                      </span><span class="se">\</span>
+<span class="w">    </span>--tp<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<p>Note: The <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code> and <code class="docutils literal notranslate"><span class="pre">--tp</span></code> settings are examples that should be adjusted for your setup.
+For instance, use <code class="docutils literal notranslate"><span class="pre">--tp</span> <span class="pre">3</span></code> to utilize 1 socket with 3 sub-NUMA clusters on an Intel® Xeon® 6980P server.</p>
+<p>Once the server have been launched, you can test it using the <code class="docutils literal notranslate"><span class="pre">bench_serving</span></code> command or create
+your own commands or scripts following <a class="reference internal" href="#benchmarking-with-requests"><span class="std std-ref">the benchmarking example</span></a>.</p>
+</section>
 </section>
 </section>
 
@@ -776,7 +869,11 @@ following <a class="reference internal" href="#benchmarking-with-requests"><span
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-of-the-serving-engine">Launch of the Serving Engine</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-with-requests">Benchmarking with Requests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-deepseek-v3-1-terminus">Example: Running DeepSeek-V3.1-Terminus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage-commands">Example Usage Commands</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-deepseek-v3-1-terminus">Example: Running DeepSeek-V3.1-Terminus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-llama-3-2-3b">Example: Running Llama-3.2-3B</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -810,7 +907,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 03, 2025.
+  Last updated on Dec 04, 2025.
   <br/>
 </p>
   </div>
