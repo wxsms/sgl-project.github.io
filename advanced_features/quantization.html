@@ -51,7 +51,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Expert Parallelism" href="expert_parallelism.html" />
+    <link rel="next" title="Quantized KV Cache" href="quantized_kv_cache.html" />
     <link rel="prev" title="Reasoning Parser" href="separate_reasoning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tool_parser.html">Tool Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantized_kv_cache.html">Quantized KV Cache</a></li>
 <li class="toctree-l1"><a class="reference internal" href="expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
@@ -509,7 +510,7 @@ Like NVIDIA FP8 training’s <a class="reference external" href="https://docs.nv
 on-the-fly to convert high-precision weights into a lower-precision format.</p>
 <p><strong>Note: For better performance, usability and convenience, offline quantization is recommended over online quantization.</strong></p>
 <p>If you use a pre-quantized model, do not add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> to enable online quantization at the same time.
-For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/unsloth">Unsloth</a>, <a class="reference external" href="https://huggingface.co/collections/ModelCloud/vortex-673743382af0a52b2a8b9fe2">ModelCloud</a>
+For popular pre-quantized models, please visit <a class="reference external" href="https://huggingface.co/unsloth">Unsloth</a>, <a class="reference external" href="https://huggingface.co/collections/nvidia/inference-optimized-checkpoints-with-model-optimizer">NVIDIA ModelOpt</a>
 or <a class="reference external" href="https://huggingface.co/collections/neuralmagic">NeuralMagic</a> collections on HF for some
 popular quality validated quantized models. Quantized models must be validated via benchmarks post-quantization
 to guard against abnormal quantization loss regressions.</p>
@@ -881,11 +882,11 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
       </div>
     </a>
     <a class="right-next"
-       href="expert_parallelism.html"
+       href="quantized_kv_cache.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Expert Parallelism</p>
+        <p class="prev-next-title">Quantized KV Cache</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

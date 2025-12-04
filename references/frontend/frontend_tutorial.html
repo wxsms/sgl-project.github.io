@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/tool_parser.html">Tool Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced_features/quantized_kv_cache.html">Quantized KV Cache</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
@@ -531,9 +532,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:34:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:10:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:10:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:10:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -541,30 +542,31 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:34:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-04 18:34:15] WARNING server_args.py:1342: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-04 18:34:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-04 18:34:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:10:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:10:46] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:10:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:10:48] WARNING server_args.py:1341: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-04 21:10:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:10:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:10:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:10:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:10:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:10:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[rank0]:[W1204 21:10:57.041575703 ProcessGroupGloo.cpp:516] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-04 18:34:27] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-04 21:11:00] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.24it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.25it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.23it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.46it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.34it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  7.19it/s]
-[2025-12-04 18:34:34] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.46it/s]
+[2025-12-04 21:11:07] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -578,7 +580,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31260
+Server started on http://localhost:39347
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -595,7 +597,7 @@ Server started on http://localhost:31260
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:34:39] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2025-12-04 21:11:12] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -627,7 +629,7 @@ Server started on http://localhost:31260
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Australia** - Canberra<br>3. **India** - New Delhi</strong></div>
+<strong style='color: #00008B;'>Certainly! Here are three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Japan** - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -657,13 +659,13 @@ Server started on http://localhost:31260
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Brazil** - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries and their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Mexico** - Mexico City</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. **Germany** - Berlin<br>2. **India** - New Delhi<br>3. **Mexico** - Mexico City</strong></div>
+<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. **Canada** - Ottawa<br>2. **India** - New Delhi<br>3. **Brazil** - Brasília</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -705,7 +707,7 @@ Server started on http://localhost:31260
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>To solve this, let's perform the multiplication:<br><br>2 * 2 = 4<br><br>So, the answer is 4. No calculator was needed for this simple multiplication problem.</strong></div>
+<strong style='color: #00008B;'>2 * 2. You don't necessarily need a calculator for this simple multiplication, but I can certainly help calculate it for you.<br><br>2 * 2 equals 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -745,7 +747,7 @@ Server started on http://localhost:31260
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet:** Eating a variety of nutritious foods in the right proportions to meet your body's needs. A balanced diet includes a mix of fruits, vegetables, whole grains, lean proteins, and healthy fats. Limiting processed foods, sugary drinks, and unhealthy fats helps maintain a healthy weight and provides essential nutrients.<br><br>2. **Regular Exercise:** Engaging in consistent physical activity to improve cardiovascular health, boost the immune system, enhance mental health, and manage stress. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week, plus muscle-strengthening exercises at least two days a week. Finding enjoyable forms of exercise is key to maintaining a consistent routine.<br><br>Would you like more detailed information on either of these topics or any other related health tips?</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Maintain a diet rich in fruits, vegetables, lean proteins, whole grains, and healthy fats. Limit processed foods, sugars, and saturated fats. Stay hydrated by drinking plenty of water.<br>2. **Regular Exercise**: Engage in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week. Include strength training and stretching for overall health and well-being.<br><br>Both tips together can help you lead a healthier, more vibrant life!</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -818,7 +820,7 @@ Server started on http://localhost:31260
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holmwood",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Voldemort"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Hawthorn",<br>        "core": "Phoenix feather",<br>        "length": 10.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "The Dementor"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -972,31 +974,32 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:34:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-04 18:34:52] WARNING server_args.py:1342: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-04 18:34:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-04 18:34:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:34:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:34:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:11:22] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:11:22] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:11:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:11:25] WARNING server_args.py:1341: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-04 21:11:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:11:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:11:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:11:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:11:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:11:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[rank0]:[W1204 21:11:35.569749227 ProcessGroupGloo.cpp:516] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-04 18:35:06] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-04 21:11:38] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:01&lt;00:04,  1.00s/it]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.04it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.02it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.02it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04&lt;00:00,  1.16it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.31it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.34it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.35it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.36it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.54it/s]
 
-Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.99it/s]
-[2025-12-04 18:35:15] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.03it/s]
+[2025-12-04 21:11:46] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1010,7 +1013,7 @@ Capturing batches (bs=1 avail_mem=60.83 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39212
+Server started on http://localhost:32696
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1026,7 +1029,7 @@ Server started on http://localhost:39212
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:35:20] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2025-12-04 21:11:50] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1051,7 +1054,7 @@ Server started on http://localhost:39212
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image depicts a person outdoors in a busy urban environment. This individual is lifting or working on their clothes, specifically pulling on what appears to be pants that are draped over makeshift tracks or ironing stands. The pants appear to be hanging between sets of poles, and the person seems focused on straightening or adjusting them. In the background, there is a taxi parked behind the individual, suggesting this event is happening in close proximity to a sidewalk or similar storyline. Office buildings, streetlights, and a pedestrian area inference strongly suggest a city setting.</strong></div>
+<strong style='color: #00008B;'>The image shows a man leaning over the tailgate of a yellow taxi car parked on a busy street. He is holding an electric iron in one hand and appears to be folding or straightening clothes draped over high braking rods typically used for luggage attachments at the back of the taxitorso. The background shows other taxis, and the urban streetscape with shops and pedestrians reflects a city setting.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:

@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/tool_parser.html">Tool Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/separate_reasoning.html">Reasoning Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/quantized_kv_cache.html">Quantized KV Cache</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
@@ -547,9 +548,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:32:37] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:32:37] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:32:37] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:07:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:07:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:07:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -557,27 +558,28 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-04 18:32:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:32:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:32:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-04 18:32:46] WARNING server_args.py:1342: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-04 18:32:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:32:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:32:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-04 18:32:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-04 18:32:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-04 18:32:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:08:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:08:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:08:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:08:04] WARNING server_args.py:1341: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-04 21:08:11] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:08:11] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:08:11] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-04 21:08:12] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-04 21:08:12] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-04 21:08:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[rank0]:[W1204 21:08:15.308630079 ProcessGroupGloo.cpp:516] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-04 18:32:58] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-04 21:08:17] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.29it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.11it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.06it/s]
-[2025-12-04 18:33:01] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=72.85 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.60it/s]
+[2025-12-04 21:08:21] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -591,7 +593,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:38838
+Server started on http://localhost:36585
 </pre></div></div>
 </div>
 </section>
@@ -625,7 +627,7 @@ Server started on http://localhost:38838
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='6728706c05a149529cace698e8d9ac05', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1764873186, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='16e7c8523bd74875aaadc1506f18ebce', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1764882506, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -890,7 +892,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The Roman Empire, which lasted from the 1st century BCE to the 4th century CE, was a vast and complex civilization that left a profound impact on history. Some of their major achievements include:<br><br>1. **Architecture**: Roman architecture is renowned for its grandeur and symmetry. The Colosseum, for example, is one of the most famous structures in the world, designed by Vitruvius.<br><br>2. **Law**: The Roman legal system, known as the "code of Hammurabi," is considered one of the oldest in the world. It laid the foundation for modern legal systems.<br><br>3. **Education</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th century BCE to the 4th century CE. Some of their major achievements include:<br><br>1. **Roman Republic**: The Roman Republic was the first permanent state in Europe and lasted until 476 CE. It was founded by Julius Caesar and ruled by consuls, who were elected by the Senate.<br><br>2. **Roman Empire**: The Roman Empire, which lasted from 27 BCE to 476 CE, was the largest and most powerful empire in history. It was centered in what is now Italy and included parts of modern-day</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -916,7 +918,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m here to assist you with any questions or information you may need. If you have any specific questions or topics you&#39;d like to discuss, feel free to ask, and I&#39;ll do my best to provide you with the information you need.
+Yes, I am Qwen, created by Alibaba Cloud. I can answer questions, provide information, and engage in various types of conversations with users. I am here to assist you with any questions you may have and to help you with any information you need.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -977,7 +979,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or informatio
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='784e334eacd54d37bc43db86d8252320', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1764873187, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='080f571167c945698caa927fa13c08b2', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1764882506, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1009,7 +1011,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or informatio
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='e95b90d760414201953c1bdf1de624d1', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Sarah who had been on many missions to explore the stars. She loved nothing more than the thrill of the unknown and the excitement of discovering new worlds.', matched_stop='\n\n')], created=1764873187, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=9, total_tokens=50, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='36fbd6b5a148442cb2117dd55892ded4', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" As an AI language model, I don't have personal experiences or emotions, but I can generate a short story for you based on common space exploration concepts. Here's a fictional story:", matched_stop='\n\n')], created=1764882506, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=37, prompt_tokens=9, total_tokens=46, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
