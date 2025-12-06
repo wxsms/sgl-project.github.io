@@ -1283,6 +1283,13 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <span class="w">  </span>--request-id-headers<span class="w"> </span>x-request-id<span class="w"> </span>x-trace-id
 </pre></div>
 </div>
+<p>Enable opentelmetry tracing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-trace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--otlp-traces-endpoint<span class="w"> </span><span class="m">0</span>.0.0.0:4317
+</pre></div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="troubleshooting">
