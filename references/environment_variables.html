@@ -670,8 +670,16 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_NVFP4_DISPATCH</span></code></p></td>
-<td><p>Use nvfp4 for moe dispatch</p></td>
+<td><p>Use nvfp4 for moe dispatch (on flashinfer_cutlass or flashinfer_cutedsl moe runner backend)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span></code></p></td>
+<td><p>The maximum number of dispatched tokens on each GPU</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;128&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DEEPEP_LL_COMBINE_SEND_NUM_SMS</span></code></p></td>
+<td><p>Number of SMs used for DeepEP combine when single batch overlap is enabled</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;32&quot;</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -702,6 +710,14 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGL_DISABLE_TP_MEMORY_INBALANCE_CHECK</span></code></p></td>
 <td><p>Disable checks for memory imbalance across Tensor Parallel ranks</p></td>
 <td><p>Not set (defaults to enabled check)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NVFP4_CKPT_FP8_GEMM_IN_ATTN</span></code></p></td>
+<td><p>Quantize q_b_proj from BF16 to FP8 when launching DeepSeek NVFP4 checkpoint</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_PER_TOKEN_GROUP_QUANT_8BIT_V2</span></code></p></td>
+<td><p>Apply per token group quantization kernel with fused silu and mul and masked m</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 </tbody>
 </table>
