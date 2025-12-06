@@ -55,7 +55,7 @@
     <link rel="prev" title="Query Vision Language Model" href="vlm_query.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 05, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 06, 2025"/>
   </head>
   
   
@@ -467,7 +467,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-for-dp-multi-modal-encoder">Pros and Cons for DP Multi-Modal Encoder</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-example">Command Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-supported-models">Known supported models</a></li>
 </ul>
@@ -491,52 +490,15 @@ there is relatively little gain from TP. On the other hand, TP incurs significan
 overhead because of all-reduce being performed after every layer.</p>
 <p>Placing the ViT in data parallel while keeping the LLM in tensor parallel consistently lowers TTFT and boosts end-to-end throughput. In this hybrid layout, the vision front-end becomes parallel and lightweight, while scarce interconnect bandwidth and collective ops are reserved for the LLM.</p>
 <p>Data parallelism replicates the entire model across multiple GPU sets and processes different batches of requests in parallel.</p>
-<section id="pros-and-cons-for-dp-multi-modal-encoder">
-<h2>Pros and Cons for DP Multi-Modal Encoder<a class="headerlink" href="#pros-and-cons-for-dp-multi-modal-encoder" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Unfavorable compute/communication ratio for small ViTs
-ViTs used in multimodal stacks are typically modest in parameter count and activation sizes. TP introduces per-layer all-reduce collectives (attention/MLP) whose latency and synchronization overhead outweigh the speedup of splitting relatively small GEMMs. With DP, each GPU runs a full ViT locally—no inference-time collectives—so latency is dominated by compute, not wire time.</p></li>
-<li><p>Graph-capture gaps amplify TP overhead
-In production, the vision path often has dynamic shapes (pre/post-processing, variable resolution, patching) that break CUDA Graphs and limit torch.compile fusion. Without capture, we need to pay extra kernel-launch and framework overhead; TP then multiplies that cost with additional NCCL synchronizations. Keeping ViT in DP avoids layering collective latency on top of non-captured kernels.</p></li>
-<li><p>Better interconnect hygiene for the true bottleneck (the LLM)
-The LLM’s prefill and decode phases benefit materially from TP on fast links. Offloading ViT to DP eliminates “chatty” small collectives on the same fabric, reducing congestion and jitter for the LLM’s large, bandwidth-hungry all-reduces.</p></li>
-<li><p>Shorter and steadier critical path → lower TTFT
-TTFT ≈ T(image encode via ViT) + T(LLM prefill) + T(softmax/sample)
-DP has several advantages:
-(a) batch and prefetch ViT encodes independently,
-(b) overlap them with other requests’ LLM decodes on separate streams,
-(c) hand off compact visual embeddings to the TP LLM with minimal queuing.</p></li>
-<li><p>For vision encoders that use hardware-unoptimized Conv3D operations,
-batch-level DP can provide another 40% improvement compared to regular TP.</p></li>
-<li><p>Nevertheless, since the weights of the multi-modal encoder are replicated across each TP rank,
-there will be a minor increase in memory consumption and may cause OOM if you can barely fit the model already.</p></li>
-</ul>
-</section>
 <section id="command-example">
 <h2>Command Example<a class="headerlink" href="#command-example" title="Link to this heading">#</a></h2>
 <p>You can enable batch-level DP by setting <code class="docutils literal notranslate"><span class="pre">mm-enable-dp-encoder</span></code>, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SGLANG_MM_FEATURE_CACHE_MB</span><span class="o">=</span><span class="mi">4096</span> \
-<span class="n">SGLANG_USE_CUDA_IPC_TRANSPORT</span><span class="o">=</span><span class="mi">1</span> \
-<span class="n">SGLANG_VLM_CACHE_SIZE_MB</span><span class="o">=</span><span class="mi">512</span> \
-<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">host</span> <span class="mf">127.0.0.1</span> \
-    <span class="o">--</span><span class="n">mem</span><span class="o">-</span><span class="n">fraction</span><span class="o">-</span><span class="n">static</span> <span class="mf">0.7</span> \
-    <span class="o">--</span><span class="n">port</span> <span class="mi">30000</span> \
-    <span class="o">--</span><span class="n">trust</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">code</span> \
-    <span class="o">--</span><span class="n">dtype</span> <span class="n">auto</span> \
-    <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">running</span><span class="o">-</span><span class="n">requests</span> <span class="mi">4</span> \
-    <span class="o">--</span><span class="n">chunked</span><span class="o">-</span><span class="n">prefill</span><span class="o">-</span><span class="n">size</span> <span class="mi">8192</span> \
-    <span class="o">--</span><span class="n">attention</span><span class="o">-</span><span class="n">backend</span> <span class="n">flashinfer</span> \
-    <span class="o">--</span><span class="n">tp</span> <span class="mi">4</span> \
-    <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">multimodal</span> \
-    <span class="o">--</span><span class="n">chat</span><span class="o">-</span><span class="n">template</span> <span class="n">internvl</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span> \
-    <span class="o">--</span><span class="n">model</span> <span class="n">OpenGVLab</span><span class="o">/</span><span class="n">InternVL2_5</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span> \
-    <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">radix</span><span class="o">-</span><span class="n">cache</span> \
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> \
+    <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">Qwen</span><span class="o">/</span><span class="n">Qwen2</span><span class="mf">.5</span><span class="o">-</span><span class="n">VL</span><span class="o">-</span><span class="mi">7</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> \
+    <span class="o">--</span><span class="n">tp</span> <span class="mi">2</span> \
     <span class="o">--</span><span class="n">mm</span><span class="o">-</span><span class="n">enable</span><span class="o">-</span><span class="n">dp</span><span class="o">-</span><span class="n">encoder</span>
 </pre></div>
 </div>
-<p>!!! important
-Batch-level multi-modal DP is not to be confused with API request-level DP
-(which is instead controlled by <code class="docutils literal notranslate"><span class="pre">data_parallel_size</span></code>).</p>
 </section>
 <section id="known-supported-models">
 <h2>Known supported models<a class="headerlink" href="#known-supported-models" title="Link to this heading">#</a></h2>
@@ -593,7 +555,6 @@ Batch-level multi-modal DP is not to be confused with API request-level DP
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-for-dp-multi-modal-encoder">Pros and Cons for DP Multi-Modal Encoder</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-example">Command Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-supported-models">Known supported models</a></li>
 </ul>
@@ -629,7 +590,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 05, 2025.
+  Last updated on Dec 06, 2025.
   <br/>
 </p>
   </div>

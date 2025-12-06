@@ -55,7 +55,7 @@
     <link rel="prev" title="DP for Multi-Modal Encoder in SGLang" href="dp_for_multi_modal_encoder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 05, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 06, 2025"/>
   </head>
   
   
@@ -574,7 +574,7 @@ document.write(`
 <section id="control-plane">
 <h3>Control Plane<a class="headerlink" href="#control-plane" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Worker Manager</strong> discovers capabilities (<code class="docutils literal notranslate"><span class="pre">/get_server_info</span></code>, <code class="docutils literal notranslate"><span class="pre">/get_model_info</span></code>), tracks load, and registers/removes workers in the shared registry.</p></li>
+<li><p><strong>Worker Manager</strong> discovers capabilities (<code class="docutils literal notranslate"><span class="pre">/server_info</span></code>, <code class="docutils literal notranslate"><span class="pre">/model_info</span></code>), tracks load, and registers/removes workers in the shared registry.</p></li>
 <li><p><strong>Job Queue</strong> serializes add/remove requests and exposes status (<code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code>) so clients can track onboarding progress.</p></li>
 <li><p><strong>Load Monitor</strong> feeds cache-aware and power-of-two policies with live worker load statistics.</p></li>
 <li><p><strong>Health Checker</strong> continuously probes workers and updates readiness, circuit breaker state, and router metrics.</p></li>
@@ -1429,7 +1429,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 05, 2025.
+  Last updated on Dec 06, 2025.
   <br/>
 </p>
   </div>
