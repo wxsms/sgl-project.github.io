@@ -55,7 +55,7 @@
     <link rel="prev" title="Popular Model Usage (DeepSeek, GPT-OSS, Llama, Qwen, and more)" href="popular_model_usage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 06, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 07, 2025"/>
   </head>
   
   
@@ -523,51 +523,54 @@ For an overview of the implemented features see the completed <a class="referenc
 <td><p>8 x H200</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
+<td><p>8 x B200</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
 <td><p>8 x MI300X</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>2 x 8 x H100/800/20</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Xeon 6980P CPU</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Full precision (<a class="reference external" href="https://huggingface.co/unsloth/DeepSeek-R1-0528-BF16">BF16</a>)</strong> (upcast from original FP8)</p></td>
+<tr class="row-odd"><td><p><strong>Full precision (<a class="reference external" href="https://huggingface.co/unsloth/DeepSeek-R1-0528-BF16">BF16</a>)</strong> (upcast from original FP8)</p></td>
 <td><p>2 x 8 x H200</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>2 x 8 x MI300X</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>4 x 8 x H100/800/20</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>4 x 8 x A100/A800</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/meituan/DeepSeek-R1-Channel-INT8">INT8</a>)</strong></p></td>
+<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/meituan/DeepSeek-R1-Channel-INT8">INT8</a>)</strong></p></td>
 <td><p>16 x A100/800</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>32 x L40S</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Xeon 6980P CPU</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>4 x Atlas 800I A3</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/novita/Deepseek-R1-0528-W4AFP8">W4A8</a>)</strong></p></td>
+<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/novita/Deepseek-R1-0528-W4AFP8">W4A8</a>)</strong></p></td>
 <td><p>8 x H20/100, 4 x H200</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/QuixiAI/DeepSeek-R1-0528-AWQ">AWQ</a>)</strong></p></td>
+<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/QuixiAI/DeepSeek-R1-0528-AWQ">AWQ</a>)</strong></p></td>
 <td><p>8 x H100/800/20</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>8 x A100/A800</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/amd/DeepSeek-R1-MXFP4-Preview">MXFP4</a>)</strong></p></td>
+<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/amd/DeepSeek-R1-MXFP4-Preview">MXFP4</a>)</strong></p></td>
 <td><p>8, 4 x MI355X/350X</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/nvidia/DeepSeek-R1-0528-NVFP4">NVFP4</a>)</strong></p></td>
+<tr class="row-odd"><td><p><strong>Quantized weights (<a class="reference external" href="https://huggingface.co/nvidia/DeepSeek-R1-0528-NVFP4-v2">NVFP4</a>)</strong></p></td>
 <td><p>8, 4 x B200</p></td>
 </tr>
 </tbody>
@@ -608,6 +611,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <p>Detailed commands for reference:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">8 x H200</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-one-b200-node">4 x B200, 8 x B200</a></p></li>
 <li><p><a class="reference internal" href="../platforms/amd_gpu.html#running-deepseek-v3"><span class="std std-ref">8 x MI300X</span></a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">2 x 8 x H200</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">4 x 8 x A100</a></p></li>
@@ -920,7 +924,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 06, 2025.
+  Last updated on Dec 07, 2025.
   <br/>
 </p>
   </div>

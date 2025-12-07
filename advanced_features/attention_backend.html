@@ -55,7 +55,7 @@
     <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 06, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 07, 2025"/>
   </head>
   
   
@@ -499,10 +499,11 @@ You can test them according to your needs.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Selecting an optimal attention backend is crucial for maximizing your performance. Different backends excel in various scenarios, so choose based on your model, hardware, and use case. Not all backends are supported on all platforms and model architectures.</p>
+<p>If you don’t specify <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code>, SGLang makes a best effort to automatically select the most performant backend based on your hardware and model architecture.</p>
 </div>
 <section id="support-matrix">
 <h2>Support Matrix<a class="headerlink" href="#support-matrix" title="Link to this heading">#</a></h2>
-<p>The support matrix is split into two parts: MHA (standard attention) and MLA (multi-head latent attention). For an explanation of the key differences between MHA and MLA, please see the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/docs/basic_usage/deepseek.md#multi-head-latent-attention-mla">SGLang documentation on DeepSeek MLA</a> and the original <a class="reference external" href="https://arxiv.org/pdf/2405.04434">DeepSeek MLA paper</a>.</p>
+<p>The support matrix is split into two parts: MHA (standard attention) and MLA (multi-head latent attention). For an explanation of the key differences between MHA and MLA, please see the <a class="reference internal" href="../basic_usage/deepseek_v3.html#multi-head-latent-attention-mla-throughput-optimizations"><span class="std std-ref">SGLang documentation on DeepSeek MLA</span></a> and the original <a class="reference external" href="https://arxiv.org/pdf/2405.04434">DeepSeek MLA paper</a>.</p>
 <section id="mha-backends">
 <h3>MHA Backends<a class="headerlink" href="#mha-backends" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -613,6 +614,14 @@ You can test them according to your needs.</p>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
 </tr>
+<tr class="row-even"><td><p><strong>Intel AMX (CPU)</strong></p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -704,7 +713,11 @@ You can test them according to your needs.</p>
 <p class="admonition-title">Tip</p>
 <p>Speculative decoding topk: <code class="docutils literal notranslate"><span class="pre">topk</span></code> is the number of draft tokens sampled per step from the draft model. <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code> follows classic EAGLE; <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> explores multiple branches and requires backend support in both draft and verification paths.</p>
 </div>
-<p>Note: Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), Ascend (128).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Page size controls how many tokens are grouped into a KV cache block. For the prefix cache to take effect, the number of tokens must fill at least one complete page. For example, if your prompt is only 32 tokens and <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">64</span></code>, it won’t fill a complete page and cannot be matched in the prefix cache (pages cannot be padded). With 65 tokens and <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">64</span></code>, only the first page of 64 tokens will be cached and matched; the remaining 1 token is discarded. Use <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">1</span></code> for maximum prefix reuse (token-level matching).</p>
+</div>
+<p>Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), Ascend (128).</p>
 <p>MLA page-size constraints:</p>
 <ul class="simple">
 <li><p>FlashInfer MLA: page_size = 1.</p></li>
@@ -795,14 +808,6 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Torch Native</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>torch_native
-</pre></div>
-</div>
-<ul class="simple">
 <li><p>FlashMLA</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
@@ -836,6 +841,26 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>FlashAttention 4 (MHA &amp; MLA)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prefill-attention-backend<span class="w"> </span>fa4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Cutlass MLA</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>cutlass_mla<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
@@ -880,23 +905,11 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Cutlass MLA</p></li>
+<li><p>Torch Native</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>cutlass_mla<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--trust-remote-code
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>FlashAttention 4 (MHA &amp; MLA)</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--prefill-attention-backend<span class="w"> </span>fa4<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--trust-remote-code
+<span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>torch_native
 </pre></div>
 </div>
 </section>
@@ -1048,7 +1061,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 06, 2025.
+  Last updated on Dec 07, 2025.
   <br/>
 </p>
   </div>
