@@ -510,9 +510,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deepseek-v3-2-usage">
 <h1>DeepSeek V3.2 Usage<a class="headerlink" href="#deepseek-v3-2-usage" title="Link to this heading">#</a></h1>
-<p>DeepSeek-V3.2 model families equips DeepSeek-V3.1-Terminus with DeepSeek Sparse Attention (DSA) through continued training. With DSA, a fine-grained sparse attention mechanism powered by a lightning indexer, DeepSeek-V3.2 achieves efficiency improvements in long-context scenarios.</p>
+<p>DeepSeek-V3.2 model family equips DeepSeek-V3.1-Terminus with DeepSeek Sparse Attention (DSA) through continued training. With DSA, a fine-grained sparse attention mechanism powered by a lightning indexer, DeepSeek-V3.2 achieves efficiency improvements in long-context scenarios.</p>
 <p>For reporting issues or tracking upcoming features, please refer to this <a class="reference external" href="https://github.com/sgl-project/sglang/issues/11060">Roadmap</a>.</p>
-<p>Note: This document is originally written for the usage of <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp">DeepSeek-V3.2-Exp</a> model. The usage of <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2">DeepSeek-V3.2</a> or <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale">DeepSeek-V3.2-Speciale</a> is the same as DeepSeek-V3.2-Exp except the tool call parser.</p>
+<p>Note: This document is originally written for the usage of <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp">DeepSeek-V3.2-Exp</a> model. The usage of <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2">DeepSeek-V3.2</a> or <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale">DeepSeek-V3.2-Speciale</a> is the same as DeepSeek-V3.2-Exp except for the tool call parser.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <section id="docker">
@@ -705,27 +705,15 @@ Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.8
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NVIDIA</span><span class="o">/</span><span class="n">NeMo</span><span class="o">-</span><span class="n">Skills</span><span class="o">.</span><span class="n">git</span> <span class="o">--</span><span class="n">ignore</span><span class="o">-</span><span class="n">installed</span> <span class="n">blinker</span>
 </pre></div>
 </div>
-<p>Nemo Skill can’t enable thinking method from client side, so we need some hardcoding before launching server:</p>
-<p><strong>For <code class="docutils literal notranslate"><span class="pre">DeepSeek-V3.2-Exp</span></code></strong>:</p>
-<p>Modify the <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/tokenizer_config.json#L34"><code class="docutils literal notranslate"><span class="pre">jinja</span> <span class="pre">chat_template</span></code></a> by replacing</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="nb">set</span> <span class="n">thinking</span> <span class="o">=</span> <span class="n">false</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="nb">set</span> <span class="n">thinking</span> <span class="o">=</span> <span class="n">true</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>and save it to <code class="docutils literal notranslate"><span class="pre">chat_template_thinking.jinja</span></code>.</p>
-<p>Then launch the SGLang server with the modified chat-template file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span><span class="mf">.2</span><span class="o">-</span><span class="n">Exp</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">8</span> <span class="o">--</span><span class="n">dp</span> <span class="mi">8</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">dp</span><span class="o">-</span><span class="n">attention</span> <span class="o">--</span><span class="n">chat</span><span class="o">-</span><span class="n">template</span> <span class="n">chat_template_thinking</span><span class="o">.</span><span class="n">jinja</span>
+<p>Then launch the SGLang server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span><span class="mf">.2</span><span class="o">-</span><span class="n">Exp</span> <span class="o">--</span><span class="n">tp</span> <span class="mi">8</span> <span class="o">--</span><span class="n">dp</span> <span class="mi">8</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">dp</span><span class="o">-</span><span class="n">attention</span>
 </pre></div>
 </div>
 <p><strong>For <code class="docutils literal notranslate"><span class="pre">DeepSeek-V3.2</span></code> and <code class="docutils literal notranslate"><span class="pre">DeepSeek-V3.2-Speciale</span></code></strong>:</p>
-<p>Hardcode the thinking mode to be <code class="docutils literal notranslate"><span class="pre">thinking</span></code> in <code class="docutils literal notranslate"><span class="pre">_apply_jinja_template</span></code> function <a class="reference external" href="https://github.com/sgl-project/sglang/blob/7c38eca1e4a704bf09fe6b52ea040a41d3cfc55d/python/sglang/srt/entrypoints/openai/serving_chat.py#L286">here</a>, then launch the server as usual:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span>   <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">DeepSeek</span><span class="o">-</span><span class="n">V3</span><span class="mf">.2</span>   <span class="o">--</span><span class="n">trust</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">code</span>   <span class="o">--</span><span class="n">tp</span><span class="o">-</span><span class="n">size</span> <span class="mi">8</span> <span class="o">--</span><span class="n">dp</span><span class="o">-</span><span class="n">size</span> <span class="mi">8</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">dp</span><span class="o">-</span><span class="n">attention</span>   <span class="o">--</span><span class="n">tool</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">parser</span> <span class="n">deepseekv32</span>   <span class="o">--</span><span class="n">reasoning</span><span class="o">-</span><span class="n">parser</span> <span class="n">deepseek</span><span class="o">-</span><span class="n">v3</span>
 </pre></div>
 </div>
-<p>After hardcoding, run the following script to evaluate AIME 2025:</p>
+<p>Run the following script to evaluate AIME 2025:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#! /bin/bash
 export NEMO_SKILLS_DISABLE_UNCOMMITTED_CHANGES_CHECK=1
 
@@ -743,13 +731,14 @@ ns eval \
   --model=$MODEL \
   --server_address=http://localhost:${PORT}/v1 \
   --output_dir=nemo_skills_aime25_${MODEL_NAME}_output_${BACKEND}_$(date +%Y%m%d_%H%M%S) \
+  ++chat_template_kwargs.thinking=true \
   ++inference.temperature=1.0 \
   ++inference.top_p=0.95 \
   ++inference.tokens_to_generate=64000
   # ++inference.tokens_to_generate=120000 for Speciale model
 </pre></div>
 </div>
-<p>Test results:</p>
+<p>Test results (8*B200):</p>
 <p>DeepSeek-V3.2-Exp：</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -764,29 +753,28 @@ ns eval \
 <tbody>
 <tr class="row-even"><td><p>pass&#64;1[avg-of-4]</p></td>
 <td><p>30</p></td>
-<td><p>14410</p></td>
-<td><p>1758</p></td>
-<td><p>85.83% ± 4.19%</p></td>
+<td><p>15040</p></td>
+<td><p>1673</p></td>
+<td><p>87.50% ± 1.67%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 <tr class="row-odd"><td><p>majority&#64;4</p></td>
 <td><p>30</p></td>
-<td><p>14410</p></td>
-<td><p>1758</p></td>
+<td><p>15040</p></td>
+<td><p>1673</p></td>
 <td><p>90.00%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 <tr class="row-even"><td><p>pass&#64;4</p></td>
 <td><p>30</p></td>
-<td><p>14410</p></td>
-<td><p>1758</p></td>
-<td><p>93.33%</p></td>
+<td><p>15040</p></td>
+<td><p>1673</p></td>
+<td><p>90.00%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Note that the result of problem#3 with id <code class="docutils literal notranslate"><span class="pre">aime25-2</span></code> is marked as false by nemo-skills  but is actually correct because nemo-skills fails to match predicted_answer <code class="docutils literal notranslate"><span class="pre">016</span></code> with expected_answer <code class="docutils literal notranslate"><span class="pre">16</span></code>. If we add 1/30 = 3.33% to the results, the pass&#64;1[avg-of-4] results match with official reference. (89.3%)</p>
 <p>DeepSeek-V3.2:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -801,22 +789,22 @@ ns eval \
 <tbody>
 <tr class="row-even"><td><p>pass&#64;1[avg-of-4]</p></td>
 <td><p>30</p></td>
-<td><p>13311</p></td>
-<td><p>1630</p></td>
-<td><p>90.83% ± 4.19%</p></td>
+<td><p>13550</p></td>
+<td><p>1632</p></td>
+<td><p>92.50% ± 1.67%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 <tr class="row-odd"><td><p>majority&#64;4</p></td>
 <td><p>30</p></td>
-<td><p>13311</p></td>
-<td><p>1630</p></td>
-<td><p>90.00%</p></td>
+<td><p>13550</p></td>
+<td><p>1632</p></td>
+<td><p>94.71%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 <tr class="row-even"><td><p>pass&#64;4</p></td>
 <td><p>30</p></td>
-<td><p>13311</p></td>
-<td><p>1630</p></td>
+<td><p>13550</p></td>
+<td><p>1632</p></td>
 <td><p>96.67%</p></td>
 <td><p>0.00%</p></td>
 </tr>
@@ -837,22 +825,22 @@ ns eval \
 <tbody>
 <tr class="row-even"><td><p>pass&#64;1[avg-of-4]</p></td>
 <td><p>30</p></td>
-<td><p>21210</p></td>
-<td><p>3018</p></td>
-<td><p>95.00% ± 3.33%</p></td>
+<td><p>24155</p></td>
+<td><p>3583</p></td>
+<td><p>95.00% ± 1.92%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 <tr class="row-odd"><td><p>majority&#64;4</p></td>
 <td><p>30</p></td>
-<td><p>21210</p></td>
-<td><p>3018</p></td>
-<td><p>96.67%</p></td>
+<td><p>24155</p></td>
+<td><p>3583</p></td>
+<td><p>95.83%</p></td>
 <td><p>0.00%</p></td>
 </tr>
 <tr class="row-even"><td><p>pass&#64;4</p></td>
 <td><p>30</p></td>
-<td><p>21210</p></td>
-<td><p>3018</p></td>
+<td><p>24155</p></td>
+<td><p>3583</p></td>
 <td><p>100.00%</p></td>
 <td><p>0.00%</p></td>
 </tr>
