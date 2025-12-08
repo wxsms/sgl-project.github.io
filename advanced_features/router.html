@@ -672,12 +672,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </section>
 <section id="prefill-decode-disaggregation">
 <h3>Prefill/Decode Disaggregation<a class="headerlink" href="#prefill-decode-disaggregation" title="Link to this heading">#</a></h3>
-<p>Split prefill and decode workers for PD-aware caching and balancing.</p>
+<p>Split prefill and decode workers for PD-aware caching and balancing. Specifying <code class="docutils literal notranslate"><span class="pre">--policy</span> <span class="pre">A</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">--prefill-policy</span> <span class="pre">A</span> <span class="pre">--decode-policy</span> <span class="pre">A</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prefill<span class="w"> </span>http://prefill1:30001<span class="w"> </span><span class="m">9001</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--decode<span class="w"> </span>http://decode1:30011<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prefill-policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--decode-policy<span class="w"> </span>power_of_two
 </pre></div>
