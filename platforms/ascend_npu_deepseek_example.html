@@ -520,7 +520,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--port<span class="w"> </span><span class="m">6688</span><span class="w"> </span><span class="se">\</span>
@@ -576,7 +576,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.6<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
@@ -630,7 +630,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">352</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span><span class="se">\</span>
@@ -695,7 +695,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">      </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.81<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--max-running-requests<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
@@ -754,7 +754,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">      </span>--max-running-requests<span class="w"> </span><span class="m">832</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>--quantization<span class="w"> </span>w8a8_int8<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span><span class="se">\</span>
