@@ -624,7 +624,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_JIT_DEEPGEMM</span></code></p></td>
-<td><p>Enable Just-In-Time compilation of DeepGEMM kernels</p></td>
+<td><p>Enable Just-In-Time compilation of DeepGEMM kernels (enabled by default on NVIDIA Hopper (SM90) and Blackwell (SM100) GPUs when the DeepGEMM package is installed; set to <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code> to disable)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_JIT_DEEPGEMM_PRECOMPILE</span></code></p></td>
@@ -749,16 +749,16 @@ document.write(`
 <td><p>Force using FP8 MARLIN kernels even if other FP8 kernels are available</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_FLASHINFER_FP8_GEMM</span></code></p></td>
-<td><p>Use flashinfer kernels when running blockwise fp8 GEMM on Blackwell GPUs</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_FLASHINFER_FP8_GEMM</span></code> (deprecated)</p></td>
+<td><p>Use flashinfer kernels when running blockwise fp8 GEMM on Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=flashinfer_trtllm</span></code> instead.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FLASHINFER_FP4_GEMM_BACKEND</span></code></p></td>
 <td><p>Select backend for <code class="docutils literal notranslate"><span class="pre">mm_fp4</span></code> on Blackwell GPUS</p></td>
 <td><p>``</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code></p></td>
-<td><p>Use Cutlass kernels when running blockwise fp8 GEMM on Hopper or Blackwell GPUs</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code> (deprecated)</p></td>
+<td><p>Use Cutlass kernels when running blockwise fp8 GEMM on Hopper or Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=cutlass</span></code> instead.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
