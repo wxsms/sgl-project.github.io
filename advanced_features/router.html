@@ -55,7 +55,7 @@
     <link rel="prev" title="DP for Multi-Modal Encoder in SGLang" href="dp_for_multi_modal_encoder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 09, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 10, 2025"/>
   </head>
   
   
@@ -709,10 +709,10 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 curl<span class="w"> </span>http://localhost:30000/workers
 
 <span class="c1"># Remove a worker</span>
-curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:30000/workers/grpc://0.0.0.0:31000
+curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:30000/workers/grpc%3A%2F%2F0.0.0.0%3A31000
 </pre></div>
 </div>
-<p>Legacy endpoints (<code class="docutils literal notranslate"><span class="pre">/add_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/remove_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/list_workers</span></code>) remain available but will be deprecated. <code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code> returns both registry data and queued job status.</p>
+<p>Legacy endpoints (<code class="docutils literal notranslate"><span class="pre">/add_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/remove_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/list_workers</span></code>) remain available but will be deprecated. <code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code> returns both registry data and queued job status. The worker url in the removal request should be escaped.</p>
 </section>
 <hr class="docutils" />
 <section id="reliability-flow-control">
@@ -1435,7 +1435,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 09, 2025.
+  Last updated on Dec 10, 2025.
   <br/>
 </p>
   </div>
