@@ -544,9 +544,9 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-12 01:08:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:08:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:08:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:30:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:30:06] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:30:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -572,58 +572,58 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 01:08:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:08:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:08:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:08:43] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-12 01:08:51] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:08:51] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:08:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:08:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:08:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:08:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:30:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:30:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:30:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:30:18] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 01:30:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:30:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:30:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:30:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:30:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:30:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 01:08:55.426503 90062 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 01:08:55.426523 90062 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
-I1212 01:08:55.426548 90062 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:16875
-I1212 01:08:55.426647 90062 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 01:08:55.429390 90062 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 01:08:55.457361 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 01:08:55.458070 90062 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
-I1212 01:08:55.485307 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 01:08:55.486037 90062 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
-I1212 01:08:55.490801 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 01:08:55.491421 90062 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
-I1212 01:08:55.738557 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 01:08:55.739331 90062 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
-I1212 01:08:55.744554 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 01:08:55.745195 90062 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
-I1212 01:08:55.748098 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 01:08:55.748761 90062 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
-I1212 01:08:55.752931 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 01:08:55.753597 90062 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
-I1212 01:08:55.757835 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 01:08:55.759194 90062 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
-I1212 01:08:55.763460 90062 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 01:08:55.764146 90062 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
-W1212 01:08:56.631623 90062 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7fae0bfff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 01:08:59] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 01:30:30.678946 2560471 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:30:30.678967 2560471 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.187.8.134 port: 12001
+I1212 01:30:30.678992 2560471 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.187.8.134:15153
+I1212 01:30:30.679068 2560471 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:30:30.682000 2560471 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:30:30.686144 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:30:30.686826 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:48:45
+I1212 01:30:30.711032 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:30:30.711679 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:c8:45
+I1212 01:30:30.715601 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:30:30.716215 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:48:45
+I1212 01:30:30.864388 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:30:30.865126 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:c8:45
+I1212 01:30:30.869202 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:30:30.869889 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:48:45
+I1212 01:30:30.872489 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:30:30.873087 2560471 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:bb:08:86
+I1212 01:30:30.876977 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:30:30.877612 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:c8:45
+I1212 01:30:30.881484 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:30:30.882117 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:48:45
+I1212 01:30:30.886039 2560471 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:30:30.886672 2560471 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:c8:45
+W1212 01:30:31.855315 2560471 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7fbb03fff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:30:34] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.09it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.29it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.10it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:02,  1.01s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.03s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.18it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 128.54it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 129.59it/s]
 
-Capturing batches (bs=1 avail_mem=20.12 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.66it/s]
-[2025-12-12 01:09:09] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=19.54 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.46it/s]
+[2025-12-12 01:30:43] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -704,61 +704,61 @@ Output 1:  1. 2. 3.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 01:09:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:09:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:09:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:09:21] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-12 01:09:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:09:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:09:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:09:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:09:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:09:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:30:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:30:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:30:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:30:57] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 01:31:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:31:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:31:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:31:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:31:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:31:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 01:09:32.118364 92617 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 01:09:32.118386 92617 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
-I1212 01:09:32.118409 92617 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:16725
-I1212 01:09:32.118496 92617 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 01:09:32.121423 92617 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 01:09:32.145480 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 01:09:32.146153 92617 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
-I1212 01:09:32.173434 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 01:09:32.174074 92617 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
-I1212 01:09:32.201395 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 01:09:32.202026 92617 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
-I1212 01:09:32.402537 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 01:09:32.403283 92617 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
-I1212 01:09:32.429371 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 01:09:32.430015 92617 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
-I1212 01:09:32.457988 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 01:09:32.458976 92617 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
-I1212 01:09:32.485358 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 01:09:32.486021 92617 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
-I1212 01:09:32.509353 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 01:09:32.509992 92617 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
-I1212 01:09:32.537304 92617 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 01:09:32.537937 92617 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
-W1212 01:09:33.122370 92617 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f54b3fff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 01:09:35] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 01:31:07.328235 2563165 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:31:07.328254 2563165 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.187.8.134 port: 12001
+I1212 01:31:07.328289 2563165 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.187.8.134:15769
+I1212 01:31:07.328373 2563165 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:31:07.331182 2563165 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:31:07.359195 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:31:07.359920 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:48:45
+I1212 01:31:07.387158 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:31:07.387801 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:c8:45
+I1212 01:31:07.415174 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:31:07.415819 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:48:45
+I1212 01:31:07.552304 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:31:07.553021 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:c8:45
+I1212 01:31:07.557286 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:31:07.557935 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:48:45
+I1212 01:31:07.587476 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:31:07.588479 2563165 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:bb:08:86
+I1212 01:31:07.615144 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:31:07.615787 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:c8:45
+I1212 01:31:07.639132 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:31:07.639793 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:48:45
+I1212 01:31:07.667137 2563165 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:31:07.667801 2563165 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:c8:45
+W1212 01:31:08.253494 2563165 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f384ffff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:31:10] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.21it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.13it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.58it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.25it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 129.98it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 127.92it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 105.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 95.17it/s]
 
-Capturing batches (bs=1 avail_mem=42.54 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.06it/s]
-[2025-12-12 01:09:45] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=43.04 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.40it/s]
+[2025-12-12 01:31:19] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -796,11 +796,12 @@ Capturing batches (bs=1 avail_mem=42.54 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Output 0:  Each country and capital should be on a new line.
+Country: France
+Capital: Paris
+Country: Japan
+Capital: Tokyo
 Country: Australia
-Capital: Canberra
-Country: Brazil
-Capital: Brasília
-Country: China
+
 Output 1:  Give the countries and capitals in the correct order.
 Countries: Japan, Brazil, Australia
 Capitals: Tokyo, Brasilia, Canberra
@@ -853,56 +854,56 @@ Capitals: Tokyo, Brasilia, Canberra
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 01:09:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:09:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:09:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:09:59] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-12 01:09:59] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
-[2025-12-12 01:10:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:10:05] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:10:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:10:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:10:06] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:10:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:31:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:31:30] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:31:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:31:33] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 01:31:33] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+[2025-12-12 01:31:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:31:39] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:31:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:31:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:31:39] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:31:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 01:10:09.034503 95354 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 01:10:09.034528 95354 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
-I1212 01:10:09.034551 95354 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:15551
-I1212 01:10:09.034644 95354 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 01:10:09.037586 95354 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 01:10:09.065311 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 01:10:09.066004 95354 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
-I1212 01:10:09.093261 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 01:10:09.093869 95354 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
-I1212 01:10:09.121286 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 01:10:09.121905 95354 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
-I1212 01:10:09.202515 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 01:10:09.203187 95354 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
-I1212 01:10:09.229194 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 01:10:09.229823 95354 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
-I1212 01:10:09.252925 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 01:10:09.253748 95354 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
-I1212 01:10:09.281212 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 01:10:09.281822 95354 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
-I1212 01:10:09.309203 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 01:10:09.309801 95354 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
-I1212 01:10:09.333204 95354 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 01:10:09.333832 95354 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
-W1212 01:10:09.934492 95354 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f417bfff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 01:10:12] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 01:31:42.903673 2565664 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:31:42.903692 2565664 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.187.8.134 port: 12001
+I1212 01:31:42.903715 2565664 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.187.8.134:16527
+I1212 01:31:42.903805 2565664 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:31:42.906663 2565664 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:31:42.935174 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:31:42.935868 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:48:45
+I1212 01:31:42.963097 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:31:42.963734 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:c8:45
+I1212 01:31:42.991179 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:31:42.991861 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:48:45
+I1212 01:31:43.068305 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:31:43.068965 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:c8:45
+I1212 01:31:43.095155 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:31:43.095822 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:48:45
+I1212 01:31:43.123565 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:31:43.124482 2565664 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:bb:08:86
+I1212 01:31:43.147128 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:31:43.147763 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:c8:45
+I1212 01:31:43.171167 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:31:43.171828 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:48:45
+I1212 01:31:43.199142 2565664 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:31:43.199791 2565664 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:c8:45
+W1212 01:31:43.800096 2565664 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f160ffff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:31:46] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.60it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.32it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.13it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.16it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.17it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.59it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.40it/s]
 
-Capturing batches (bs=1 avail_mem=17.75 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.57it/s]
-[2025-12-12 01:10:22] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=17.57 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.36it/s]
+[2025-12-12 01:31:54] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -937,7 +938,7 @@ Capturing batches (bs=1 avail_mem=17.75 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 100.09it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 91.12it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}}
 </pre></div></div>
@@ -968,7 +969,7 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 126.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 123.45it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;, &#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}}
 </pre></div></div>
@@ -1052,7 +1053,7 @@ List 3 countries and their capitals
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 88.78it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 82.76it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora0&#39;: &#39;philschmid/code-llama-3-1-8b-text-to-sql-lora&#39;}}
 </pre></div></div>
@@ -1087,15 +1088,15 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Output from lora0:
- Country 1 has a capital of Bogor? No, that&#39;s not correct. The capital of Country 1 is actually Bogor is not the capital,
+ Country 1: Japan, Capital: Tokyo. Country 2: Australia, Capital: Canberra. Country 3: Brazil, Capital: Brasília.
+A
 
 Output from lora1 (updated):
  Each country and capital should be on a new line.
-Country: Australia
-Capital: Canberra
-Country: Brazil
-Capital: Brasília
-Country: China
+France, Paris
+Japan, Tokyo
+Brazil, Brasília
+List 3 countries and their capitals
 
 </pre></div></div>
 </div>
@@ -1149,65 +1150,65 @@ Therefore, currently SGLang limits maximal number of pinned adapters to <code cl
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 01:10:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:10:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:10:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:10:38] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-12 01:10:39] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
-[2025-12-12 01:10:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:10:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:10:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 01:10:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 01:10:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 01:10:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:32:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:32:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:32:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:32:11] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 01:32:12] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+[2025-12-12 01:32:18] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:32:18] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:32:18] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:32:18] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:32:18] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:32:18] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 01:10:49.820482 98940 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 01:10:49.820503 98940 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
-I1212 01:10:49.820525 98940 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:15768
-I1212 01:10:49.820601 98940 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 01:10:49.823552 98940 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 01:10:49.849436 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 01:10:49.850112 98940 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
-I1212 01:10:49.877418 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 01:10:49.878067 98940 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
-I1212 01:10:49.905493 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 01:10:49.906141 98940 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
-I1212 01:10:50.082516 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 01:10:50.083199 98940 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
-I1212 01:10:50.109349 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 01:10:50.109982 98940 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
-I1212 01:10:50.137845 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 01:10:50.138846 98940 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
-I1212 01:10:50.165397 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 01:10:50.166026 98940 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
-I1212 01:10:50.193378 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 01:10:50.194031 98940 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
-I1212 01:10:50.221372 98940 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 01:10:50.222014 98940 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
-W1212 01:10:50.833452 98940 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f476bfff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 01:10:53] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 01:32:21.595151 2569239 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:32:21.595175 2569239 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.187.8.134 port: 12001
+I1212 01:32:21.595203 2569239 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.187.8.134:15734
+I1212 01:32:21.595296 2569239 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:32:21.598341 2569239 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:32:21.623241 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:32:21.623944 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:48:45
+I1212 01:32:21.651165 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:32:21.651819 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:c8:45
+I1212 01:32:21.679155 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:32:21.679781 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:48:45
+I1212 01:32:21.796324 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:32:21.797049 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:c8:45
+I1212 01:32:21.823107 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:32:21.823766 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:48:45
+I1212 01:32:21.851583 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:32:21.852548 2569239 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:bb:08:86
+I1212 01:32:21.875123 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:32:21.875752 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:c8:45
+I1212 01:32:21.903105 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:32:21.903748 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:48:45
+I1212 01:32:21.931167 2569239 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:32:21.931813 2569239 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:c8:45
+W1212 01:32:22.612093 2569239 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f3077fff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:32:25] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.18it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.11it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.60it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.35it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.38it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.25it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.21it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.63it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 107.09it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 98.27it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 131.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 128.28it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 94.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 90.44it/s]
 
-Capturing batches (bs=1 avail_mem=56.68 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.20it/s]
-[2025-12-12 01:11:04] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=30.95 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.36it/s]
+[2025-12-12 01:32:35] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1245,7 +1246,7 @@ Capturing batches (bs=1 avail_mem=56.68 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 120.39it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 124.47it/s]
 
 </pre></div></div>
 </div>
@@ -1290,15 +1291,14 @@ Country 3: Brazil
 
 Output from lora1 (pinned):
  Each country and capital should be on a new line.
-Country: France
-Capital: Paris
-Country: Japan
-Capital: Tokyo
-Country: Australia
-
+France, Paris
+Japan, Tokyo
+Brazil, Brasília
+List 3 countries and their capitals
 
 Output from lora2 (not pinned):
- Country 1 has a capital of Bogor? No, that&#39;s not correct. The capital of Country 1 is actually Bogor is not the capital,
+ Country 1: Australia, Capital: Canberra. Country 2: Japan, Capital: Tokyo. Country 3: Brazil, Capital: Brasília.
+The
 
 </pre></div></div>
 </div>
