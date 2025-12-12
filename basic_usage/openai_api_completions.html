@@ -551,9 +551,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-12 11:45:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 11:45:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 11:45:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 12:34:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 12:34:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 12:34:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -561,52 +561,52 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 11:45:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 11:45:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 11:45:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 11:45:50] WARNING server_args.py:1416: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-12 11:45:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 11:45:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 11:45:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 11:45:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 11:45:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 11:45:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 12:34:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 12:34:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 12:34:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 12:34:11] WARNING server_args.py:1416: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 12:34:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 12:34:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 12:34:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 12:34:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 12:34:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 12:34:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 11:46:01.587396 695655 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 11:46:01.587412 695655 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.156.134 port: 12001
-I1212 11:46:01.587433 695655 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.156.134:15221
-I1212 11:46:01.587512 695655 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 11:46:01.590494 695655 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 11:46:01.616273 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 11:46:01.616966 695655 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:bc:45
-I1212 11:46:01.621565 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 11:46:01.622186 695655 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:3c:45
-I1212 11:46:01.817552 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 11:46:01.818241 695655 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:bc:45
-I1212 11:46:01.823442 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 11:46:01.824038 695655 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:3c:45
-I1212 11:46:01.829140 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 11:46:01.829744 695655 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:bc:45
-I1212 11:46:01.834913 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 11:46:01.835516 695655 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:3c:45
-I1212 11:46:01.859730 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 11:46:01.860337 695655 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:9c:86
-I1212 11:46:01.865500 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 11:46:01.866093 695655 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:bc:45
-I1212 11:46:01.871271 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 11:46:01.871845 695655 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:3c:45
-W1212 11:46:02.510336 695655 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7ef3abfff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 11:46:05] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 12:34:20.285229 855737 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 12:34:20.285254 855737 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.156.134 port: 12001
+I1212 12:34:20.285277 855737 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.156.134:16013
+I1212 12:34:20.285351 855737 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 12:34:20.288211 855737 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 12:34:20.312418 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 12:34:20.313078 855737 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:bc:45
+I1212 12:34:20.340379 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 12:34:20.340998 855737 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:3c:45
+I1212 12:34:20.368386 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 12:34:20.368999 855737 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:3c:45
+I1212 12:34:20.421499 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 12:34:20.422127 855737 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:bc:45
+I1212 12:34:20.448305 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 12:34:20.448920 855737 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:3c:45
+I1212 12:34:20.476593 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 12:34:20.477389 855737 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:9c:86
+I1212 12:34:20.504274 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 12:34:20.504889 855737 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:bc:45
+I1212 12:34:20.532274 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 12:34:20.532871 855737 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:3c:45
+I1212 12:34:20.560302 855737 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 12:34:20.560892 855737 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:bc:45
+W1212 12:34:21.282960 855737 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f8e4bfff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 12:34:23] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.35it/s]
 Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.34it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.33it/s]
 
-Capturing batches (bs=1 avail_mem=49.56 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.15it/s]
-[2025-12-12 11:46:08] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=76.45 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.23it/s]
+[2025-12-12 12:34:27] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -620,7 +620,7 @@ Capturing batches (bs=1 avail_mem=49.56 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:36354
+Server started on http://localhost:39256
 </pre></div></div>
 </div>
 </section>
@@ -654,7 +654,7 @@ Server started on http://localhost:36354
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='c1ec8c15583843a18039e358ec5cfb34', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Certainly! Here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1765539973, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='5ced7ca7af384eda915a4bf77727a7bb', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Certainly! Here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1765542872, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -919,7 +919,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a remarkable civilization that left an indelible mark on history. Some of their major achievements include:<br><br>1. **Founding of Rome**: The city of Rome was founded by Romulus in 753 BC. It became the capital of the Roman Republic in 509 BC and the Roman Empire in 27 BC.<br><br>2. **Architecture**: The Romans built impressive structures such as the Colosseum, Pantheon, and the Pantheon of Vatia, which were designed to accommodate gladiators, religious ceremonies, and public events.<br><br>3. **Cultures**: They developed a</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that had significant achievements in various fields, including:<br><br>1. Art and architecture: The Romans were renowned for their impressive architecture, including the Colosseum, the Pantheon, and the Roman Forum.<br><br>2. Law and governance: They developed a complex legal system that included laws and codes, which were used to govern the empire.<br><br>3. Education: The Roman Empire was one of the most educated societies in the world, with a rich tradition of education.<br><br>4. Military: The Romans were skilled soldiers and developed advanced military tactics.<br><br>5. Language: They created a new language called Latin, which became</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -945,7 +945,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Hello! I&#39;m Qwen, an AI assistant created by Alibaba Cloud. How can I assist you today?
+I&#39;m sorry, but I&#39;m Qwen, not a program for testing. I&#39;m a large language model created by Alibaba Cloud. If you have any questions or need help with something, feel free to ask, and I&#39;ll do my best to assist you.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1006,7 +1006,7 @@ Hello! I&#39;m Qwen, an AI assistant created by Alibaba Cloud. How can I assist 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='2fd9b219fd804674a41a636fa210634d', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1765539974, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='8e951ae3efc1474dbbfab993192285eb', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1765542873, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1038,7 +1038,7 @@ Hello! I&#39;m Qwen, an AI assistant created by Alibaba Cloud. How can I assist 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='efe4fbb0c4fb4172b4c637bc2a71bfab', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had always dreamed of exploring the vast expanse of space. He had been working in the aerospace industry for many years and had seen many strange and alien-looking planets and stars.', matched_stop='\n\n')], created=1765539974, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=9, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='b9862e4b92544ff9983ccb824001b3f3', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" The story should be written in first person perspective and include at least one detailed scene of the space explorer's journey through the stars.", matched_stop='\n\n')], created=1765542873, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=26, prompt_tokens=9, total_tokens=35, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
