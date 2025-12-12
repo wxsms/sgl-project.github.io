@@ -528,9 +528,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-12 12:34:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 12:34:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 12:34:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 18:14:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 18:14:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 18:14:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -538,56 +538,56 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 12:34:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 12:34:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 12:34:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 12:34:51] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-12 12:34:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 12:34:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 12:34:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 12:34:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 12:34:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 12:34:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 18:14:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 18:14:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 18:14:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 18:14:56] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 18:15:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 18:15:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 18:15:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 18:15:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 18:15:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 18:15:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 12:35:02.084705 858369 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 12:35:02.084724 858369 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.156.134 port: 12001
-I1212 12:35:02.084753 858369 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.156.134:15667
-I1212 12:35:02.084870 858369 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 12:35:02.087680 858369 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 12:35:02.112409 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 12:35:02.113144 858369 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:bc:45
-I1212 12:35:02.140326 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 12:35:02.140985 858369 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:3c:45
-I1212 12:35:02.168354 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 12:35:02.169000 858369 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:3c:45
-I1212 12:35:02.233506 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 12:35:02.234225 858369 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:bc:45
-I1212 12:35:02.260382 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 12:35:02.261412 858369 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:3c:45
-I1212 12:35:02.289049 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 12:35:02.290091 858369 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:9c:86
-I1212 12:35:02.316393 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 12:35:02.317051 858369 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:bc:45
-I1212 12:35:02.344373 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 12:35:02.345378 858369 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:3c:45
-I1212 12:35:02.372381 858369 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 12:35:02.373045 858369 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:bc:45
-W1212 12:35:03.093680 858369 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f1f23fff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 12:35:05] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 18:15:07.478304 809725 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 18:15:07.478327 809725 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
+I1212 18:15:07.478349 809725 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16982
+I1212 18:15:07.478431 809725 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 18:15:07.481238 809725 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 18:15:07.509670 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 18:15:07.510392 809725 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
+I1212 18:15:07.538134 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 18:15:07.539142 809725 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
+I1212 18:15:07.565618 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 18:15:07.566234 809725 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
+I1212 18:15:07.666572 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 18:15:07.667239 809725 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
+I1212 18:15:07.693626 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 18:15:07.694267 809725 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
+I1212 18:15:07.721593 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 18:15:07.722249 809725 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
+I1212 18:15:07.749625 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 18:15:07.750283 809725 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
+I1212 18:15:07.777586 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 18:15:07.778227 809725 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
+I1212 18:15:07.805559 809725 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 18:15:07.806188 809725 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
+W1212 18:15:08.486662 809725 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f7507fff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 18:15:11] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:02,  1.48it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:01,  1.51it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01&lt;00:01,  1.52it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  2.01it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.75it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.30it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.36it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.35it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02&lt;00:00,  1.37it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.79it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.56it/s]
 
-Capturing batches (bs=1 avail_mem=45.68 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.92it/s]
-[2025-12-12 12:35:14] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=58.69 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.31it/s]
+[2025-12-12 18:15:20] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -645,13 +645,13 @@ Capturing batches (bs=1 avail_mem=45.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"07d1f47daef34342bd65cc59b2960a9a","object":"chat.completion","created":1765542920,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"d500c61416204b938a44adf3aea4edc5","object":"chat.completion","created":1765563326,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"d9467dbc2efb49dcbef989bd05c2be25","object":"chat.completion","created":1765542921,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"50b8592937f74bf5a9391ce0426b1b9e","object":"chat.completion","created":1765563326,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -692,7 +692,7 @@ Capturing batches (bs=1 avail_mem=45.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{"id":"790f93c2f5a4499b8fd9bbc1720955fd","object":"chat.completion","created":1765542922,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
+<strong style='color: #00008B;'>{"id":"1ea73b6d19a24be486a1718767b475dd","object":"chat.completion","created":1765563327,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to press or smooth out a pair of pants draped over an ironing board. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing carefully while performing this task.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
