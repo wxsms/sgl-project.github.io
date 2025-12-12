@@ -512,6 +512,7 @@ You can test them according to your needs.</p>
 <tr class="row-odd"><th class="head"><p><strong>Backend</strong></p></th>
 <th class="head"><p><strong>Page Size &gt; 1 (native)</strong></p></th>
 <th class="head"><p><strong>FP8 KV Cache</strong></p></th>
+<th class="head"><p><strong>FP4 KV Cache</strong></p></th>
 <th class="head"><p><strong>Spec topk=1</strong></p></th>
 <th class="head"><p><strong>Spec topk&gt;1</strong></p></th>
 <th class="head"><p><strong>Sliding Window</strong></p></th>
@@ -522,6 +523,7 @@ You can test them according to your needs.</p>
 <tr class="row-even"><td><p><strong>FlashInfer</strong></p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -530,6 +532,7 @@ You can test them according to your needs.</p>
 <tr class="row-odd"><td><p><strong>FA3 (FlashAttention 3)</strong></p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -538,6 +541,7 @@ You can test them according to your needs.</p>
 <tr class="row-even"><td><p><strong>FA4 (FlashAttention 4)</strong></p></td>
 <td><p>128</p></td>
 <td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -550,10 +554,12 @@ You can test them according to your needs.</p>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
+<td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Torch Native (SDPA)</strong></p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -562,6 +568,7 @@ You can test them according to your needs.</p>
 <tr class="row-odd"><td><p><strong>FlexAttention (PyTorch)</strong></p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -569,6 +576,7 @@ You can test them according to your needs.</p>
 </tr>
 <tr class="row-even"><td><p><strong>TRTLLM MHA</strong></p></td>
 <td><p>16, 32 or 64</p></td>
+<td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
@@ -582,9 +590,11 @@ You can test them according to your needs.</p>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
+<td><p>❌</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>AITER (ROCm)</strong></p></td>
 <td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -598,9 +608,11 @@ You can test them according to your needs.</p>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
+<td><p>❌</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Ascend (NPU)</strong></p></td>
 <td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -612,10 +624,12 @@ You can test them according to your needs.</p>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
+<td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Intel AMX (CPU)</strong></p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -634,6 +648,7 @@ You can test them according to your needs.</p>
 <tr class="row-odd"><th class="head"><p><strong>Backend</strong></p></th>
 <th class="head"><p><strong>Native Page Sizes</strong></p></th>
 <th class="head"><p><strong>FP8 KV Cache</strong></p></th>
+<th class="head"><p><strong>FP4 KV Cache</strong></p></th>
 <th class="head"><p><strong>Chunked Prefix Cache</strong></p></th>
 <th class="head"><p><strong>Spec topk=1</strong></p></th>
 <th class="head"><p><strong>Spec topk&gt;1</strong></p></th>
@@ -645,17 +660,20 @@ You can test them according to your needs.</p>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>FlashMLA</strong></p></td>
 <td><p>64</p></td>
 <td><p>✅</p></td>
+<td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Cutlass MLA</strong></p></td>
 <td><p>128</p></td>
+<td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -666,10 +684,12 @@ You can test them according to your needs.</p>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>FA3 (FlashAttention 3)</strong></p></td>
 <td><p>n/a</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -679,18 +699,21 @@ You can test them according to your needs.</p>
 <td><p>n/a</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
+<td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>⚠️ (page_size=1 only)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>FA4</strong></p></td>
 <td><p>1</p></td>
 <td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Ascend MLA (NPU)</strong></p></td>
 <td><p>128</p></td>
+<td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
@@ -709,6 +732,10 @@ You can test them according to your needs.</p>
 <li><p>FlashAttention 4 is prefill-only for now.</p></li>
 <li><p>NSA is specifically designed for <a class="reference external" href="https://lmsys.org/blog/2025-09-29-deepseek-V32/">DeepSeek V3.2 DSA</a>.</p></li>
 </ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the KV4 FA4 scenario, FA4 requires using a different –decode-attention-backend to run. Except for trtllm_mha being incompatible with FA4, all other decode backends behave as shown in the table.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
