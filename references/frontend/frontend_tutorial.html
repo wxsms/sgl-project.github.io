@@ -58,7 +58,7 @@
     <link rel="prev" title="Frontend Language" href="frontend_index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 11, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 12, 2025"/>
   </head>
   
   
@@ -533,9 +533,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:50:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:50:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:50:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:15:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:15:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:15:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -543,30 +543,55 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:50:32] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:50:32] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:50:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-11 23:50:34] WARNING server_args.py:1406: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-11 23:50:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:50:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:50:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:16:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:16:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:16:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:16:03] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 01:16:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:16:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:16:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:16:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:16:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:16:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-11 23:50:46] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1212 01:16:14.081029 116850 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:16:14.081045 116850 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
+I1212 01:16:14.081068 116850 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:15534
+I1212 01:16:14.081141 116850 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:16:14.083967 116850 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:16:14.109592 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:16:14.110265 116850 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
+I1212 01:16:14.137378 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:16:14.137996 116850 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
+I1212 01:16:14.161370 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:16:14.161984 116850 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
+I1212 01:16:14.250517 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:16:14.251238 116850 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
+I1212 01:16:14.277379 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:16:14.278043 116850 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
+I1212 01:16:14.305754 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:16:14.306658 116850 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
+I1212 01:16:14.354589 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:16:14.362691 116850 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
+I1212 01:16:14.413537 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:16:14.414366 116850 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
+I1212 01:16:14.426103 116850 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:16:14.426862 116850 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
+W1212 01:16:15.101183 116850 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f8773ffc010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:16:17] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-[2025-12-11 23:50:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:50:47] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:50:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.30it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.18it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.17it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.23it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.51it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.39it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
 
-Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.19it/s]
-[2025-12-11 23:50:53] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=30.89 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.46it/s]
+[2025-12-12 01:16:25] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -580,7 +605,7 @@ Capturing batches (bs=1 avail_mem=62.72 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34960
+Server started on http://localhost:35550
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -597,7 +622,7 @@ Server started on http://localhost:34960
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:50:57] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2025-12-12 01:16:29] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -629,7 +654,7 @@ Server started on http://localhost:34960
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Australia** - Canberra</strong></div>
+<strong style='color: #00008B;'>Certainly! Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Germany - Berlin<br>3. Japan - Tokyo</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -659,13 +684,13 @@ Server started on http://localhost:34960
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's a list of three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong></div>
+<strong style='color: #00008B;'>Certainly! Here are three countries along with their capitals:<br><br>1. **France - Paris**<br>2. **Japan - Tokyo**<br>3. **Australia - Canberra**</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. Germany - Berlin<br>2. India - New Delhi<br>3. Australia - Canberra</strong></div>
+<strong style='color: #00008B;'>Of course! Here’s another list of three countries and their capitals:<br><br>1. **India - New Delhi**<br>2. **Brazil - Brasília**<br>3. **Canada - Ottawa**</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -707,7 +732,7 @@ Server started on http://localhost:34960
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>To solve this, we can calculate: <br>2 * 2 = 4.<br><br>Thus, the answer is 4. No calculator was needed in this case as it's a simple multiplication, but if you still prefer using a calculator, you can input "2 * 2" and press equals to get the result.</strong></div>
+<strong style='color: #00008B;'>2 * 2<br><br>You don't actually need a calculator for this simple multiplication. The result is:<br><br>2 * 2 = 4<br><br>So the answer is 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -747,7 +772,7 @@ Server started on http://localhost:34960
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutrient-rich foods in appropriate amounts is crucial for maintaining good health. Include plenty of fresh fruits, vegetables, whole grains, lean proteins, and healthy fats. Avoid high-sugar, high-sodium, and high-fat foods to prevent chronic diseases.<br>2. **Regular Exercise**: Engage in regular physical activity to strengthen your heart, improve circulation, boost your immune system, and manage body weight. Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days a week. Regular exercise also releases endorphins, which can help reduce stress and improve mood.<br><br>Together, these habits can significantly enhance your overall health and well-being.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is crucial for overall health. It includes:<br>   - A variety of fruits and vegetables for essential vitamins and fiber.<br>   - Lean proteins like chicken, fish, beans, and lentils.<br>   - Whole grains and healthy fats found in nuts, seeds, and olive oil.<br>   - Limiting processed foods, sugars, and saturated fats.<br><br>2. **Regular Exercise**: Regular exercise is vital for maintaining good health and includes:<br>   - At least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week.<br>   - Incorporating strength training exercises at least two days a week.<br>   - Activities like brisk walking, jogging, cycling, or swimming.<br><br>By following these two tips, you can significantly improve your overall well-being and reduce the risk of various health issues.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -820,7 +845,7 @@ Server started on http://localhost:34960
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Bogertoad"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Oak",<br>        "core": "Phoenix feather",<br>        "length": 10.75<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Acromantula"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -855,7 +880,7 @@ Server started on http://localhost:34960
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 35.68it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 31.53it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -974,31 +999,56 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:51:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:51:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:51:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-11 23:51:11] WARNING server_args.py:1406: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-11 23:51:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:51:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:51:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-11 23:51:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:51:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:51:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:16:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:16:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:16:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:16:44] WARNING server_args.py:1413: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 01:16:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:16:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:16:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:16:51] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:16:51] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:16:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-11 23:51:25] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1212 01:16:55.026950 118390 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:16:55.026970 118390 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
+I1212 01:16:55.026993 118390 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:16724
+I1212 01:16:55.027082 118390 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:16:55.029897 118390 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:16:55.057171 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:16:55.057878 118390 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
+I1212 01:16:55.089643 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:16:55.090332 118390 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
+I1212 01:16:55.117468 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:16:55.118103 118390 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
+I1212 01:16:55.214552 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:16:55.215273 118390 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
+I1212 01:16:55.241189 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:16:55.241817 118390 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
+I1212 01:16:55.264695 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:16:55.265532 118390 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
+I1212 01:16:55.293183 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:16:55.293783 118390 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
+I1212 01:16:55.321476 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:16:55.322073 118390 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
+I1212 01:16:55.349176 118390 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:16:55.349761 118390 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
+W1212 01:16:56.066933 118390 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f8f1ffff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:16:58] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.16it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.18it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.23it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.29it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.71it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.24it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.24it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.26it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.45it/s]
 
-Capturing batches (bs=1 avail_mem=57.00 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.23it/s]
-[2025-12-11 23:51:34] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=58.69 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.23it/s]
+[2025-12-12 01:17:08] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1012,7 +1062,7 @@ Capturing batches (bs=1 avail_mem=57.00 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:35494
+Server started on http://localhost:38766
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1028,7 +1078,7 @@ Server started on http://localhost:35494
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:51:38] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2025-12-12 01:17:13] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1053,7 +1103,7 @@ Server started on http://localhost:35494
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image depicts a person standing on the roof of a vehicle, engaging in unusual что-то action—possibly throwing or collecting something situated on a makeshift rack, possibly for ironing or some other purpose. The vehicle in the foreground is a taxi, identifiable by its iconic yellow paint and distinctive body style. The setting appears to be an urban street, with another taxi visible in the background, suggesting a busy part of a city.</strong></div>
+<strong style='color: #00008B;'>The image shows a man on a sidewalk, leaning onto the hood of a taxi cab, and using some improvised columns and poles for an ironing board setup. He is holding an iron and is apparently trying to press either his own clothes or perhaps some work-related fabric. The scene takes place in an urban setting, likely in a busy metropolitan area, as indicated by the taxis, storefronts, and tall buildings in the background.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -1154,7 +1204,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 11, 2025.
+  Last updated on Dec 12, 2025.
   <br/>
 </p>
   </div>

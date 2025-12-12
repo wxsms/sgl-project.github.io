@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI-Compatible APIs" href="openai_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 11, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 12, 2025"/>
   </head>
   
   
@@ -549,9 +549,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:49:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:49:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:49:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:14:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:14:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:14:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -559,27 +559,52 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-11 23:49:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:49:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:49:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-11 23:49:12] WARNING server_args.py:1406: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-11 23:49:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:49:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:49:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:14:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:14:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:14:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:14:29] WARNING server_args.py:1413: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 01:14:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:14:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:14:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 01:14:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 01:14:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 01:14:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-11 23:49:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-11 23:49:23] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-11 23:49:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-11 23:49:23] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1212 01:14:39.694919 111275 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 01:14:39.694940 111275 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
+I1212 01:14:39.694967 111275 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:15215
+I1212 01:14:39.695039 111275 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 01:14:39.697921 111275 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 01:14:39.703033 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 01:14:39.703718 111275 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
+I1212 01:14:39.730371 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 01:14:39.731061 111275 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
+I1212 01:14:39.757531 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 01:14:39.758211 111275 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
+I1212 01:14:39.846522 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 01:14:39.847200 111275 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
+I1212 01:14:39.851794 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 01:14:39.852501 111275 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
+I1212 01:14:39.873970 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 01:14:39.874858 111275 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
+I1212 01:14:39.901463 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 01:14:39.902096 111275 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
+I1212 01:14:39.925401 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 01:14:39.926031 111275 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
+I1212 01:14:39.953433 111275 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 01:14:39.954061 111275 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
+W1212 01:14:40.615571 111275 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7faeb7fff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 01:14:43] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.53it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.17it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.16it/s]
 
-Capturing batches (bs=1 avail_mem=59.50 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  8.83it/s]
-[2025-12-11 23:49:26] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=71.97 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.62it/s]
+[2025-12-12 01:14:46] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -593,7 +618,7 @@ Capturing batches (bs=1 avail_mem=59.50 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:31869
+Server started on http://localhost:38128
 </pre></div></div>
 </div>
 </section>
@@ -627,7 +652,7 @@ Server started on http://localhost:31869
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='661a48abfdcc4b5483f845aec0c720f4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1765496971, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='7e396ae126ab43fd94147fa532546cf1', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1765502091, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -892,7 +917,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major center of culture, art, and science, and its achievements spanned many fields. Some of the most notable include:<br><br>1. **Architecture**: The Romans were renowned for their architectural achievements, particularly in the construction of grand temples, aqueducts, and public buildings like the Colosseum.<br><br>2. **Engineering**: They developed advanced engineering techniques, including the construction of roads and aqueducts that connected the Roman Empire to the Mediterranean.<br><br>3. **Cultural Contributions**: Rome was a center of learning and culture, with the development of Latin as a language for communication and literature.<br><br>4. **Science</strong></div>
+<strong style='color: #00008B;'>The Roman Empire, which lasted from the 1st century BCE to the 4th century CE, was a vast and complex civilization that achieved remarkable accomplishments in various fields. Here are some of their major achievements:<br><br>1. **Political Structure**: Rome had a highly centralized system of government, with a central government headed by a Senate and a emperor. The Senate was responsible for making laws, while the emperor was the supreme ruler.<br><br>2. **Architecture**: Roman architecture was renowned for its grandeur and symmetry. Key examples include the Colosseum, the Pantheon, and the Roman Forum.<br><br>3. **Literature**: The Romans</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -918,7 +943,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m here to help with any questions or tasks you have. Please let me know how I can assist you.
+Yes, that is a test. I&#39;m here to assist you with any questions or tasks you have. If you have any specific questions or need help with a particular topic, feel free to ask, and I&#39;ll do my best to provide the information or assistance you&#39;re looking for.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -979,7 +1004,7 @@ Yes, that is a test. I&#39;m here to help with any questions or tasks you have. 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='8e46bf0b11384126a36d538ad8a217d6', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1765496972, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='bb12a9d10e064d42adfa341bbce60597', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1765502092, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1011,7 +1036,7 @@ Yes, that is a test. I&#39;m here to help with any questions or tasks you have. 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='4293234ff2014f1ab4c49be0e3b8cadd', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had always been fascinated by the stars and the mysteries of the universe. He had heard tales of space exploration from his parents and his own imagination, but he had never been able to come up with a way to achieve his dreams.', matched_stop='\n\n')], created=1765496972, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=59, prompt_tokens=9, total_tokens=68, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='aa5f5315f4fd4af58b9c14b70497fae3', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Alex who had always dreamed of exploring the stars. He had always wanted to see the planets and the galaxies and to explore new worlds.', matched_stop='\n\n')], created=1765502092, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=9, total_tokens=47, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
@@ -1165,7 +1190,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 11, 2025.
+  Last updated on Dec 12, 2025.
   <br/>
 </p>
   </div>
