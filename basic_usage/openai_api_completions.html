@@ -199,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
@@ -550,9 +551,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-12 10:55:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 10:55:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 10:55:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 11:45:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 11:45:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 11:45:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -560,52 +561,52 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 10:55:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 10:55:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 10:55:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 10:55:43] WARNING server_args.py:1416: Attention backend not explicitly specified. Use fa3 backend by default.
-[2025-12-12 10:55:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 10:55:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 10:55:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 10:55:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 10:55:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 10:55:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 11:45:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 11:45:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 11:45:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 11:45:50] WARNING server_args.py:1416: Attention backend not explicitly specified. Use fa3 backend by default.
+[2025-12-12 11:45:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 11:45:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 11:45:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 11:45:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 11:45:58] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 11:45:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 10:55:52.642745 2288403 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 10:55:52.642760 2288403 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.137.102 port: 12001
-I1212 10:55:52.642783 2288403 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.137.102:16550
-I1212 10:55:52.642861 2288403 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 10:55:52.645700 2288403 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 10:55:52.673473 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 10:55:52.674183 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:b9:05
-I1212 10:55:52.678548 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 10:55:52.679177 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:39:05
-I1212 10:55:52.758500 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 10:55:52.759142 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:b9:05
-I1212 10:55:52.763485 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 10:55:52.764096 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:39:05
-I1212 10:55:52.768428 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 10:55:52.769032 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:b9:05
-I1212 10:55:52.773418 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 10:55:52.774041 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:39:05
-I1212 10:55:52.801703 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 10:55:52.802598 2288403 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:89:66
-I1212 10:55:52.807055 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 10:55:52.807679 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:b9:05
-I1212 10:55:52.833350 2288403 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 10:55:52.833992 2288403 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:39:05
-W1212 10:55:53.489635 2288403 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f6ce7fff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 10:55:56] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+I1212 11:46:01.587396 695655 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I1212 11:46:01.587412 695655 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.186.156.134 port: 12001
+I1212 11:46:01.587433 695655 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.186.156.134:15221
+I1212 11:46:01.587512 695655 transfer_engine.cpp:185] Auto-discovering topology...
+I1212 11:46:01.590494 695655 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
+I1212 11:46:01.616273 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
+I1212 11:46:01.616966 695655 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:bc:45
+I1212 11:46:01.621565 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
+I1212 11:46:01.622186 695655 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:3c:45
+I1212 11:46:01.817552 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
+I1212 11:46:01.818241 695655 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4c:bc:45
+I1212 11:46:01.823442 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
+I1212 11:46:01.824038 695655 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:3c:45
+I1212 11:46:01.829140 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
+I1212 11:46:01.829744 695655 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4d:bc:45
+I1212 11:46:01.834913 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
+I1212 11:46:01.835516 695655 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:3c:45
+I1212 11:46:01.859730 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
+I1212 11:46:01.860337 695655 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:ba:9c:86
+I1212 11:46:01.865500 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
+I1212 11:46:01.866093 695655 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4e:bc:45
+I1212 11:46:01.871271 695655 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
+I1212 11:46:01.871845 695655 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4f:3c:45
+W1212 11:46:02.510336 695655 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7ef3abfff010, len: 2147483648: Operation not permitted [1]
+[2025-12-12 11:46:05] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.38it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.37it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.33it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.85it/s]
-[2025-12-12 10:56:00] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=49.56 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 10.15it/s]
+[2025-12-12 11:46:08] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -619,7 +620,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37499
+Server started on http://localhost:36354
 </pre></div></div>
 </div>
 </section>
@@ -653,7 +654,7 @@ Server started on http://localhost:37499
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='7c7f7c18ce1d425db4b38fcaf5ae940c', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1765536964, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='c1ec8c15583843a18039e358ec5cfb34', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Certainly! Here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1765539973, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -918,7 +919,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a civilization that flourished from the 8th century BC to the 5th century AD. It was known for its military prowess, art, architecture, and philosophy. Some of the major achievements of ancient Rome include:<br><br>1. **Roman Empire**: The largest and most influential empire in history, spanning much of Europe, Asia Minor, and North Africa.<br><br>2. **Founding of Rome**: In 753 BC, the city of Rome was founded by Romulus, who became the first king of Rome.<br><br>3. **Architecture**: Roman architecture is known for its grandeur and symmetry, with many iconic</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a remarkable civilization that left an indelible mark on history. Some of their major achievements include:<br><br>1. **Founding of Rome**: The city of Rome was founded by Romulus in 753 BC. It became the capital of the Roman Republic in 509 BC and the Roman Empire in 27 BC.<br><br>2. **Architecture**: The Romans built impressive structures such as the Colosseum, Pantheon, and the Pantheon of Vatia, which were designed to accommodate gladiators, religious ceremonies, and public events.<br><br>3. **Cultures**: They developed a</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -944,7 +945,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, it is a test. I&#39;m here to assist you with any questions or tasks you may have. Please feel free to ask me anything you need help with.
+Hello! I&#39;m Qwen, an AI assistant created by Alibaba Cloud. How can I assist you today?
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1005,7 +1006,7 @@ Yes, it is a test. I&#39;m here to assist you with any questions or tasks you ma
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='432c56626ab04070847d2a8b9c987392', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1765536965, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='2fd9b219fd804674a41a636fa210634d', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1765539974, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1037,7 +1038,7 @@ Yes, it is a test. I&#39;m here to assist you with any questions or tasks you ma
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='15f63e6e1590488cbd65aa969e14142d', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had always been fascinated by the stars and planets beyond our solar system. Jack had always dreamed of exploring the universe and making history as the first person to reach the orbit of Neptune. As a child, he had been fascinated by space and astronomy since he was a little boy, and he had always wanted to make his dream come true.', matched_stop='\n\n')], created=1765536965, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=80, prompt_tokens=9, total_tokens=89, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='efe4fbb0c4fb4172b4c637bc2a71bfab', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had always dreamed of exploring the vast expanse of space. He had been working in the aerospace industry for many years and had seen many strange and alien-looking planets and stars.', matched_stop='\n\n')], created=1765539974, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=9, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>

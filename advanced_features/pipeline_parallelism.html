@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hierarchical KV Caching (HiCache) &#8212; SGLang</title>
+    <title>Pipeline Parallelism for Long Context &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/hicache';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/pipeline_parallelism';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SGLang HiCache Best Practices" href="hicache_best_practices.html" />
-    <link rel="prev" title="Pipeline Parallelism for Long Context" href="pipeline_parallelism.html" />
+    <link rel="next" title="Hierarchical KV Caching (HiCache)" href="hicache.html" />
+    <link rel="prev" title="PD Disaggregation" href="pd_disaggregation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Dec 12, 2025"/>
@@ -191,12 +191,8 @@
 <li class="toctree-l1"><a class="reference internal" href="expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Hierarchical KV Caching (HiCache)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="hicache_best_practices.html">SGLang HiCache Best Practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pipeline Parallelism for Long Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query Vision Language Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
@@ -316,7 +312,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/hicache.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/pipeline_parallelism.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +329,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/hicache.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/pipeline_parallelism.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +346,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/hicache.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/pipeline_parallelism.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +376,7 @@
       
       
       
-      <li><a href="../_sources/advanced_features/hicache.rst" target="_blank"
+      <li><a href="../_sources/advanced_features/pipeline_parallelism.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +386,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -451,7 +447,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -462,11 +460,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hierarchical KV Caching (HiCache)</h1>
+    <h1>Pipeline Parallelism for Long Context</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-pipeline-parallelism">Why Pipeline Parallelism?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-refactoring-based-on-async-communication">Implementation Refactoring based on Async Communication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-about-dynamic-chunking">Guidance about Dynamic Chunking</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-dynamic-chunking">Why Dynamic Chunking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chunked-prefill-size-and-smoothing-factor">Chunked Prefill Size and Smoothing Factor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism-with-pd-disaggregation">Best Practice for Pipeline Parallelism with PD Disaggregation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -476,14 +489,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="hierarchical-kv-caching-hicache">
-<h1>Hierarchical KV Caching (HiCache)<a class="headerlink" href="#hierarchical-kv-caching-hicache" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="hicache_best_practices.html">SGLang HiCache Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
-</ul>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="pipeline-parallelism-for-long-context">
+<h1>Pipeline Parallelism for Long Context<a class="headerlink" href="#pipeline-parallelism-for-long-context" title="Link to this heading">#</a></h1>
+<section id="why-pipeline-parallelism">
+<h2>Why Pipeline Parallelism?<a class="headerlink" href="#why-pipeline-parallelism" title="Link to this heading">#</a></h2>
+<p>With chunked prefill, pipeline parallelism has the potential to reduce the TTFT of long-context inputs. For each request, its input tokens can be partitioned into multiple chunks, each no longer than the chunked prefill size. Different chunks of the same request can be processed simultaneously by different nodes, thus parallelizing the processing and reducing TTFT.</p>
+<p>Also, pipeline parallelism only requires cross-node communication at the boundaries of each pipeline stage, which can achieve better computation-communication overlap compared to a large TP. Therefore, it is also a promising parallelization strategy for improving throughput.</p>
+</section>
+<section id="implementation-refactoring-based-on-async-communication">
+<h2>Implementation Refactoring based on Async Communication<a class="headerlink" href="#implementation-refactoring-based-on-async-communication" title="Link to this heading">#</a></h2>
+<p>SGLang has supported Pipeline Parallelism (#5724) for some time and made it compatible with the PD Disaggregation feature (#8846), but the implementation was not perfect and had significant room for performance improvements.</p>
+<p>To reduce PP bubbles, SGLang now utilizes asynchronous sends for communication between PP stages. This approach was first proposed in #7979 and has been redesigned and included in #11852.</p>
+</section>
+<section id="guidance-about-dynamic-chunking">
+<h2>Guidance about Dynamic Chunking<a class="headerlink" href="#guidance-about-dynamic-chunking" title="Link to this heading">#</a></h2>
+<section id="why-dynamic-chunking">
+<h3>Why Dynamic Chunking<a class="headerlink" href="#why-dynamic-chunking" title="Link to this heading">#</a></h3>
+<p>Chunked prefill with a fixed size can cause bubbles in the pipeline, especially when the pp size is large. The main reason behind this phenomenon is that the model has a non-uniform running time, even though each chunk size is identical (brought by the Transformer structure). The larger the prefix sequence length, the longer the running time of the chunk. And these bubbles will be propagated to the next stage, and will significantly degrade the scale efficiency of larger pp ranks.</p>
+<p>To address this issue, we introduce a dynamic chunking mechanism and use a quadratic function to fit this condition: Runtime(Prefix Sequence Length + Next Chunk Size) - Runtime(Prefix Sequence Length) = Runtime(Initial Chunk Size). Based on this method, we can dynamically reduce the chunk size to minimize the bubbles caused by the stage misalignment.</p>
+</section>
+<section id="chunked-prefill-size-and-smoothing-factor">
+<h3>Chunked Prefill Size and Smoothing Factor<a class="headerlink" href="#chunked-prefill-size-and-smoothing-factor" title="Link to this heading">#</a></h3>
+<p>When <code class="docutils literal notranslate"><span class="pre">--enable-dynamic-chunking</span></code> is enabled, each chunk size of a sequence is determined dynamically based on the quadratic model that predicts the next chunk size based on the estimated runtime of the initial chunk length. In this case, we use <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to set up the initial chunk size. When switching to the dynamic chunking mode, the initial chunk size (<code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>) should be set to a larger value comparable to the original chunked prefill size, so that there won’t be too many chunks.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DYNAMIC_CHUNKING_SMOOTH_FACTOR</span></code></strong> is a parameter that controls the smoothing factor for the dynamic chunking algorithm, defaulting to 0.75. It determines how much the chunk size can change during the prefill phase. A larger value means a more aggressive chunk size change, which may lead to better performance but also to greater chunk size changes (the chunk size at the end may become very small, which could lead to performance degradation) and more total chunks. When it is set to 1, the chunk size will be adjusted strictly based on the aforementioned quadratic model that predicts the next chunk size. A smaller value means a more conservative chunk size change, which may lead to smaller chunk size changes and fewer total chunks. When it is set to 0, the chunk size will not be adjusted dynamically, so it is identical to the traditional way with a fixed chunked prefill size.</p>
+</section>
+</section>
+<section id="best-practice-for-pipeline-parallelism-with-pd-disaggregation">
+<h2>Best Practice for Pipeline Parallelism with PD Disaggregation<a class="headerlink" href="#best-practice-for-pipeline-parallelism-with-pd-disaggregation" title="Link to this heading">#</a></h2>
+<p>To be added. Stay tuned for the latest updates on Pipeline Parallelism with PD Disaggregation.</p>
+</section>
 </section>
 
 
@@ -498,20 +532,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pipeline_parallelism.html"
+       href="pd_disaggregation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pipeline Parallelism for Long Context</p>
+        <p class="prev-next-title">PD Disaggregation</p>
       </div>
     </a>
     <a class="right-next"
-       href="hicache_best_practices.html"
+       href="hicache.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SGLang HiCache Best Practices</p>
+        <p class="prev-next-title">Hierarchical KV Caching (HiCache)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,6 +555,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-pipeline-parallelism">Why Pipeline Parallelism?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-refactoring-based-on-async-communication">Implementation Refactoring based on Async Communication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-about-dynamic-chunking">Guidance about Dynamic Chunking</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-dynamic-chunking">Why Dynamic Chunking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chunked-prefill-size-and-smoothing-factor">Chunked Prefill Size and Smoothing Factor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism-with-pd-disaggregation">Best Practice for Pipeline Parallelism with PD Disaggregation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
