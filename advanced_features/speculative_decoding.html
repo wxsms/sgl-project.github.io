@@ -558,9 +558,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-12 18:23:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:23:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:23:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:30:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:30:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:30:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -584,86 +584,37 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 18:23:25] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:23:25] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:23:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:23:27] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-12 18:23:27] WARNING server_args.py:1845: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-12-12 18:23:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:23:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:23:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:23:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:23:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:23:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:31:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:31:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:31:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:31:05] WARNING server_args.py:1410: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 19:31:05] WARNING server_args.py:1839: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-12-12 19:31:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:31:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:31:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:31:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:31:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:31:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 18:23:35.809825 817372 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:23:35.809840 817372 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:23:35.809868 817372 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:15816
-I1212 18:23:35.809934 817372 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:23:35.812690 817372 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:23:35.837601 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:23:35.838469 817372 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:23:35.866082 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:23:35.867317 817372 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:23:35.893533 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:23:35.894348 817372 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:23:36.014569 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:23:36.015401 817372 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:23:36.041540 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:23:36.042374 817372 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:23:36.069769 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:23:36.070554 817372 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:23:36.097589 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:23:36.098363 817372 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:23:36.125605 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:23:36.126421 817372 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:23:36.153604 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:23:36.154417 817372 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:23:36.964260 817372 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7fa6e3fff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 18:23:39] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-12 19:31:19] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.65s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.34s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.71s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.32s/it]
 
-Capturing batches (bs=1 avail_mem=54.86 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.75it/s]
-[2025-12-12 18:23:44] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-12-12 18:23:44] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-I1212 18:23:45.123540 817372 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:23:45.123559 817372 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:23:45.123574 817372 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16263
-I1212 18:23:45.123662 817372 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:23:45.124363 817372 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:23:45.149665 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:23:45.150306 817372 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:23:45.178040 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:23:45.178969 817372 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:23:45.205564 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:23:45.206171 817372 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:23:45.233628 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:23:45.234222 817372 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:23:45.261546 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:23:45.262138 817372 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:23:45.289523 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:23:45.290122 817372 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:23:45.317479 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:23:45.318076 817372 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:23:45.345486 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:23:45.346079 817372 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:23:45.350256 817372 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:23:45.350862 817372 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:23:46.281087 817372 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f9e67fff010, len: 2147483648: Operation not permitted [1]
+Capturing batches (bs=1 avail_mem=19.66 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 11.16it/s]
+[2025-12-12 19:31:23] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-12-12 19:31:23] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.42s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.42s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.27s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.27s/it]
 
-Capturing batches (bs=1 avail_mem=53.67 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.30s/it]
-Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 92.65it/s]
-[2025-12-12 18:23:56] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=36.56 GB): 100%|██████████| 4/4 [00:09&lt;00:00,  2.37s/it]
+Capturing batches (bs=1 avail_mem=36.46 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 44.00it/s]
+[2025-12-12 19:31:37] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -695,7 +646,7 @@ Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='e00b6fa8f76148d39f792789e0ad9428', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1765563841, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='5f9c4628b2b14c49aeb33c5ad3f2bac9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1765567903, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -731,88 +682,199 @@ Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 18:24:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:24:06] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:24:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:24:08] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-12 18:24:08] WARNING server_args.py:1845: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-12-12 18:24:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:24:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:24:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:31:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:31:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:31:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:31:50] WARNING server_args.py:1410: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 19:31:50] WARNING server_args.py:1839: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-12-12 19:31:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:31:57] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:31:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:31:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:31:57] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:31:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 18:24:16.608455 818236 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:24:16.608470 818236 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:24:16.608491 818236 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16983
-I1212 18:24:16.608561 818236 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:24:16.611379 818236 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:24:16.637949 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:24:16.638794 818236 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:24:16.666047 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:24:16.667133 818236 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:24:16.693544 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:24:16.698940 818236 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:24:16.725626 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:24:16.726446 818236 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:24:16.989630 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:24:16.990487 818236 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:24:17.013571 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:24:17.014372 818236 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:24:17.037694 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:24:17.038537 818236 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:24:17.065631 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:24:17.066466 818236 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:24:17.093624 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:24:17.096087 818236 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:24:17.861150 818236 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f2ffffff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 18:24:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:24:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:24:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:24:20] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-12 19:32:03] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  2.00s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.40s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.49s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.62s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.21s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.27s/it]
 
-Capturing batches (bs=2 avail_mem=54.89 GB):  25%|██▌       | 1/4 [00:00&lt;00:00,  7.75it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=54.89 GB):  50%|█████     | 2/4 [00:00&lt;00:00,  4.52it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=54.80 GB): 100%|██████████| 4/4 [00:14&lt;00:00,  3.51s/it]
-[2025-12-12 18:24:40] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-12-12 18:24:40] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-I1212 18:24:40.672984 818236 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:24:40.673004 818236 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:24:40.673018 818236 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16419
-I1212 18:24:40.673103 818236 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:24:40.673753 818236 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:24:40.701581 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:24:40.702200 818236 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:24:40.730036 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:24:40.730939 818236 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:24:40.765516 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:24:40.766108 818236 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:24:40.797503 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:24:40.798100 818236 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:24:40.825523 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:24:40.826136 818236 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:24:40.853577 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:24:40.854207 818236 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:24:40.881567 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:24:40.882195 818236 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:24:40.909581 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:24:40.910197 818236 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:24:40.941561 818236 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:24:40.942179 818236 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:24:41.578624 818236 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f276ffff010, len: 2147483648: Operation not permitted [1]
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04822399839758873, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.049375999718904495, &#34;best_triton_kernel&#34;: &#34;triton_mm_18&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;}
+AUTOTUNE mm(128x4096, 4096x12288)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0482 ms 100.0%
+  triton_mm_18 0.0494 ms 97.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_12 0.0528 ms 91.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_8 0.0548 ms 88.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_11 0.0554 ms 87.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_7 0.0557 ms 86.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_17 0.0584 ms 82.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_10 0.0677 ms 71.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_14 0.0697 ms 69.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_4 0.0707 ms 68.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3044 seconds and 0.1824 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.022112000733613968, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.023584000766277313, &#34;best_triton_kernel&#34;: &#34;triton_mm_27&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(128x4096, 4096x4096)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0221 ms 100.0%
+  triton_mm_27 0.0236 ms 93.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_31 0.0267 ms 82.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_23 0.0301 ms 73.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_37 0.0320 ms 69.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_26 0.0399 ms 55.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_30 0.0414 ms 53.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_20 0.0425 ms 52.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_22 0.0426 ms 51.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_36 0.0432 ms 51.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.2861 seconds and 0.5890 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_49&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.07593599706888199, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(128x4096, 4096x22016)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_49 0.0759 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  mm 0.0771 ms 98.5%
+  triton_mm_55 0.0784 ms 96.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_50 0.0797 ms 95.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_56 0.0837 ms 90.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_45 0.0942 ms 80.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_46 0.0958 ms 79.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_47 0.0973 ms 78.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_48 0.0996 ms 76.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_54 0.1017 ms 74.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4296 seconds and 0.1709 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04806400090456009, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.05020799860358238, &#34;best_triton_kernel&#34;: &#34;triton_mm_65&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(128x11008, 11008x4096)
+strides: [11008, 1], [1, 11008]
+dtypes: torch.float16, torch.float16
+  mm 0.0481 ms 100.0%
+  triton_mm_65 0.0502 ms 95.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_69 0.0560 ms 85.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_61 0.0646 ms 74.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_75 0.0694 ms 69.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_64 0.0895 ms 53.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_68 0.0935 ms 51.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_74 0.0969 ms 49.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_60 0.0972 ms 49.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_58 0.1001 ms 48.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.5608 seconds and 0.0003 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_93&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.10092800110578537, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(128x4096, 4096x32000)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_93 0.1009 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_94 0.1044 ms 96.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  mm 0.1064 ms 94.9%
+  triton_mm_88 0.1085 ms 93.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_87 0.1172 ms 86.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_83 0.1185 ms 85.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_84 0.1286 ms 78.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_92 0.1292 ms 78.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_85 0.1367 ms 73.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_89 0.1463 ms 69.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 1.1751 seconds and 0.3282 seconds precompiling for 20 choices
+Capturing batches (bs=1 avail_mem=21.73 GB):  75%|███████▌  | 3/4 [00:22&lt;00:10, 10.21s/it]Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04755200073122978, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.04822399839758873, &#34;best_triton_kernel&#34;: &#34;triton_mm_107&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4&#34;}
+AUTOTUNE mm(64x4096, 4096x12288)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0476 ms 100.0%
+  triton_mm_107 0.0482 ms 98.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_111 0.0485 ms 98.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_103 0.0489 ms 97.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_99 0.0505 ms 94.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_102 0.0555 ms 85.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_106 0.0557 ms 85.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_96 0.0567 ms 83.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_105 0.0582 ms 81.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_98 0.0614 ms 77.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.6759 seconds and 0.2608 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.021663999184966087, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.02223999984562397, &#34;best_triton_kernel&#34;: &#34;triton_mm_116&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(64x4096, 4096x4096)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0217 ms 100.0%
+  triton_mm_116 0.0222 ms 97.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_120 0.0233 ms 92.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_124 0.0262 ms 82.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_128 0.0302 ms 71.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_119 0.0391 ms 55.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_113 0.0395 ms 54.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_123 0.0406 ms 53.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_115 0.0413 ms 52.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_114 0.0421 ms 51.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.6017 seconds and 0.2994 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_137&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;, &#34;best_time&#34;: 0.07468800246715546, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(64x4096, 4096x22016)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_137 0.0747 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_136 0.0757 ms 98.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_140 0.0757 ms 98.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_141 0.0759 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  mm 0.0763 ms 97.9%
+  triton_mm_145 0.0791 ms 94.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_133 0.0817 ms 91.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_142 0.0879 ms 85.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_143 0.0900 ms 83.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_138 0.0910 ms 82.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.8160 seconds and 0.1348 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_150&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;, &#34;best_time&#34;: 0.043455999344587326, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(64x11008, 11008x4096)
+strides: [11008, 1], [1, 11008]
+dtypes: torch.float16, torch.float16
+  triton_mm_150 0.0435 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.0480 ms 90.5%
+  triton_mm_158 0.0485 ms 89.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_154 0.0512 ms 84.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_162 0.0666 ms 65.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_153 0.0890 ms 48.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_149 0.0897 ms 48.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_147 0.0926 ms 46.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_157 0.0932 ms 46.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_148 0.0937 ms 46.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 1.0001 seconds and 0.0003 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_174&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.10051199793815613, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(64x4096, 4096x32000)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_174 0.1005 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_179 0.1005 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_170 0.1009 ms 99.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_171 0.1012 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_175 0.1012 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  mm 0.1034 ms 97.2%
+  triton_mm_167 0.1108 ms 90.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_172 0.1170 ms 85.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_176 0.1212 ms 83.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_173 0.1309 ms 76.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.7916 seconds and 0.4417 seconds precompiling for 18 choices
+Capturing batches (bs=1 avail_mem=21.73 GB): 100%|██████████| 4/4 [00:46&lt;00:00, 11.54s/it]
+[2025-12-12 19:32:54] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-12-12 19:32:54] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.22s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.22s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.27s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.27s/it]
 
-Capturing batches (bs=1 avail_mem=53.51 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.50s/it]
-Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 90.33it/s]
-[2025-12-12 18:24:51] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=53.00 GB): 100%|██████████| 4/4 [00:11&lt;00:00,  2.90s/it]
+Capturing batches (bs=1 avail_mem=37.68 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 90.07it/s]
+[2025-12-12 19:33:11] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -844,7 +906,7 @@ Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='947fb19a2ef04cc5bfe00b4fcd6e360e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1765563896, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8849528c2adc4644a619e36782f4cf72', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1765567996, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -882,94 +944,45 @@ Capturing batches (bs=1 avail_mem=53.37 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 18:25:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:25:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:25:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:25:03] WARNING model_config.py:917: Casting torch.bfloat16 to torch.float16.
-[2025-12-12 18:25:03] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-12 18:25:03] WARNING server_args.py:1845: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-12-12 18:25:03] Casting torch.bfloat16 to torch.float16.
-[2025-12-12 18:25:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:25:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:25:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:25:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:25:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:25:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:25:11] Casting torch.bfloat16 to torch.float16.
-[2025-12-12 18:25:12] Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:33:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:33:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:33:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:33:23] WARNING model_config.py:917: Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:33:23] WARNING server_args.py:1410: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 19:33:23] WARNING server_args.py:1839: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-12-12 19:33:24] Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:33:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:33:29] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:33:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:33:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:33:29] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:33:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:33:31] Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:33:32] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 18:25:12.640977 819103 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:25:12.640993 819103 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:25:12.641023 819103 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16046
-I1212 18:25:12.641104 819103 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:25:12.644001 819103 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:25:12.669559 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:25:12.670300 819103 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:25:12.698122 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:25:12.699268 819103 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:25:12.725536 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:25:12.726193 819103 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:25:12.806567 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:25:12.807235 819103 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:25:12.833540 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:25:12.834203 819103 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:25:12.861580 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:25:12.862237 819103 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:25:12.889576 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:25:12.890244 819103 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:25:12.917685 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:25:12.918390 819103 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:25:12.945587 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:25:12.946269 819103 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:25:13.746981 819103 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f00fffff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 18:25:16] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-12 19:33:35] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.61s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.61s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.60s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.30s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:15&lt;00:00,  3.78s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.17s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.37s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.32s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.06s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.52s/it]
 
-Capturing batches (bs=1 avail_mem=59.74 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.68it/s]
-[2025-12-12 18:25:34] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-12-12 18:25:34] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2025-12-12 18:25:34] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-12-12 18:25:34] Overriding the draft model&#39;s max_position_embeddings to 8192.
-I1212 18:25:34.491509 819103 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:25:34.491526 819103 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:25:34.491540 819103 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16357
-I1212 18:25:34.491621 819103 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:25:34.492269 819103 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:25:34.521543 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:25:34.522588 819103 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:25:34.549913 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:25:34.551024 819103 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:25:34.577512 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:25:34.578109 819103 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:25:34.605567 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:25:34.606211 819103 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:25:34.633526 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:25:34.634143 819103 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:25:34.661583 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:25:34.662205 819103 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:25:34.685534 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:25:34.686146 819103 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:25:34.713563 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:25:34.714187 819103 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:25:34.741518 819103 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:25:34.742129 819103 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:25:35.355060 819103 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7ef9dbfff010, len: 2147483648: Operation not permitted [1]
+Capturing batches (bs=1 avail_mem=30.75 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.48it/s]
+[2025-12-12 19:33:52] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-12-12 19:33:52] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2025-12-12 19:33:52] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-12-12 19:33:52] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.07s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.07s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.03it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.03it/s]
 
-Capturing batches (bs=1 avail_mem=58.40 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.31s/it]
-Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 102.31it/s]
-[2025-12-12 18:25:45] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=23.02 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.72s/it]
+Capturing batches (bs=1 avail_mem=39.68 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 93.39it/s]
+[2025-12-12 19:34:03] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1001,7 +1014,7 @@ Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='57e593e01ca74991afeea5b0623399dd', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1765563949, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='77e41b1f5e2c49828f75c11d1128944f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1765568047, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1037,94 +1050,45 @@ Capturing batches (bs=1 avail_mem=58.26 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 18:25:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:25:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:25:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:25:57] WARNING model_config.py:917: Casting torch.bfloat16 to torch.float16.
-[2025-12-12 18:25:57] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-12 18:25:57] WARNING server_args.py:1845: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-12-12 18:26:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:26:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:26:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:26:05] Casting torch.bfloat16 to torch.float16.
-[2025-12-12 18:26:05] Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:34:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:34:13] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:34:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:34:17] WARNING model_config.py:917: Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:34:17] WARNING server_args.py:1410: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 19:34:17] WARNING server_args.py:1839: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-12-12 19:34:17] Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:34:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:34:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:34:23] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:34:23] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:34:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:34:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:34:25] Casting torch.bfloat16 to torch.float16.
+[2025-12-12 19:34:26] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 18:26:06.131027 819967 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:26:06.131047 819967 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:26:06.131071 819967 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16273
-I1212 18:26:06.131145 819967 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:26:06.133967 819967 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:26:06.161655 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:26:06.162297 819967 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:26:06.190205 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:26:06.191074 819967 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:26:06.217624 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:26:06.218200 819967 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:26:06.245684 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:26:06.246385 819967 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:26:06.329635 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:26:06.330292 819967 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:26:06.357576 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:26:06.358206 819967 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:26:06.362507 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:26:06.363143 819967 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:26:06.389575 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:26:06.390185 819967 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:26:06.417583 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:26:06.418213 819967 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:26:07.179356 819967 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f9a2bfff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 18:26:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:26:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:26:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:26:08] Casting torch.bfloat16 to torch.float16.
-[2025-12-12 18:26:09] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-12 19:34:29] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.31s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.07s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.40s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.31s/it]
 Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.17s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.03s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  2.97s/it]
 Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.45s/it]
 
-Capturing batches (bs=1 avail_mem=59.67 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.46it/s]
-[2025-12-12 18:26:26] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-12-12 18:26:26] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2025-12-12 18:26:26] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2025-12-12 18:26:26] Overriding the draft model&#39;s max_position_embeddings to 131072.
-I1212 18:26:26.401585 819967 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:26:26.401600 819967 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:26:26.401614 819967 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:15091
-I1212 18:26:26.401686 819967 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:26:26.402320 819967 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:26:26.406569 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:26:26.407202 819967 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:26:26.434075 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:26:26.434939 819967 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:26:26.461503 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:26:26.462095 819967 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:26:26.485599 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:26:26.486202 819967 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:26:26.509526 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:26:26.510113 819967 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:26:26.515965 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:26:26.516587 819967 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:26:26.522441 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:26:26.523030 819967 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:26:26.549671 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:26:26.550278 819967 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:26:26.555239 819967 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:26:26.555814 819967 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:26:27.203866 819967 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f92f7fff010, len: 2147483648: Operation not permitted [1]
+Capturing batches (bs=1 avail_mem=43.21 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.44it/s]
+[2025-12-12 19:34:46] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-12-12 19:34:46] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2025-12-12 19:34:46] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2025-12-12 19:34:46] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.66it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.66it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.84it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.84it/s]
 
-Capturing batches (bs=1 avail_mem=58.19 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.37s/it]
-Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 108.14it/s]
-[2025-12-12 18:26:36] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=58.19 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.42s/it]
+Capturing batches (bs=1 avail_mem=57.52 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 106.65it/s]
+[2025-12-12 19:34:55] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1156,7 +1120,7 @@ Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='bdd9ff9bedc140b9a8f78f85642325b1', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1765564001, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='ffaf71aa22ed4d7ca7cf015f660cabdb', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1765568100, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1190,88 +1154,39 @@ Capturing batches (bs=1 avail_mem=58.04 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-12 18:26:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:26:46] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:26:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:26:48] WARNING server_args.py:1416: Attention backend not explicitly specified. Use flashinfer backend by default.
-[2025-12-12 18:26:48] WARNING server_args.py:1845: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
-[2025-12-12 18:26:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:26:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:26:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-12 18:26:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-12 18:26:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-12 18:26:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:35:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:35:05] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:35:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:35:08] WARNING server_args.py:1410: Attention backend not explicitly specified. Use flashinfer backend by default.
+[2025-12-12 19:35:08] WARNING server_args.py:1839: Overlap scheduler is disabled because of using eagle3 or standalone speculative decoding.
+[2025-12-12 19:35:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:35:14] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:35:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-12 19:35:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-12 19:35:14] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-12 19:35:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1212 18:26:57.910768 820762 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:26:57.910782 820762 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:26:57.910804 820762 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:15977
-I1212 18:26:57.910878 820762 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:26:57.913578 820762 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:26:57.941603 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:26:57.942291 820762 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:26:57.971114 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:26:57.972139 820762 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:26:58.001536 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:26:58.002216 820762 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:26:58.230609 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:26:58.231314 820762 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:26:58.235591 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:26:58.236244 820762 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:26:58.240533 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:26:58.241163 820762 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:26:58.265568 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:26:58.266178 820762 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:26:58.271629 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:26:58.272241 820762 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:26:58.301574 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:26:58.302569 820762 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:26:59.065913 820762 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7fa60bfff010, len: 2147483648: Operation not permitted [1]
-[2025-12-12 18:27:01] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
+[2025-12-12 19:35:19] Ignore import error when loading sglang.srt.models.mindspore: name &#39;ms&#39; is not defined
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.42it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.23it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.19it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.50it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.44it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.51it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
 
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.76it/s]
-[2025-12-12 18:27:08] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2025-12-12 18:27:08] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-I1212 18:27:08.731029 820762 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
-I1212 18:27:08.731047 820762 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.185.21.146 port: 12001
-I1212 18:27:08.731062 820762 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.185.21.146:16246
-I1212 18:27:08.731148 820762 transfer_engine.cpp:185] Auto-discovering topology...
-I1212 18:27:08.731839 820762 transfer_engine.cpp:200] Topology discovery complete. Found 9 HCAs.
-I1212 18:27:08.753643 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce0/
-I1212 18:27:08.754292 820762 rdma_context.cpp:126] RDMA device: mlx5_roce0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:45:5d
-I1212 18:27:08.782177 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_eth0/
-I1212 18:27:08.783150 820762 rdma_context.cpp:126] RDMA device: mlx5_eth0, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:b9:15:92
-I1212 18:27:08.809571 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce1/
-I1212 18:27:08.810182 820762 rdma_context.cpp:126] RDMA device: mlx5_roce1, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:48:c5:5d
-I1212 18:27:08.837581 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce2/
-I1212 18:27:08.838189 820762 rdma_context.cpp:126] RDMA device: mlx5_roce2, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:45:5d
-I1212 18:27:08.865552 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce3/
-I1212 18:27:08.866159 820762 rdma_context.cpp:126] RDMA device: mlx5_roce3, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:49:c5:5d
-I1212 18:27:08.893556 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce4/
-I1212 18:27:08.894165 820762 rdma_context.cpp:126] RDMA device: mlx5_roce4, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:45:5d
-I1212 18:27:08.921569 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce5/
-I1212 18:27:08.922168 820762 rdma_context.cpp:126] RDMA device: mlx5_roce5, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4a:c5:5d
-I1212 18:27:08.949503 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce6/
-I1212 18:27:08.950158 820762 rdma_context.cpp:126] RDMA device: mlx5_roce6, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:45:5d
-I1212 18:27:08.977510 820762 rdma_context.cpp:533] Find best gid index: 3 on mlx5_roce7/
-I1212 18:27:08.978174 820762 rdma_context.cpp:126] RDMA device: mlx5_roce7, LID: 0, GID: (GID_Index 3) 00:00:00:00:00:00:00:00:00:00:ff:ff:16:4b:c5:5d
-W1212 18:27:09.715241 820762 memory_location.cpp:72] Failed to get NUMA node, addr: 0x7f9ec7fff010, len: 2147483648: Operation not permitted [1]
+Capturing batches (bs=1 avail_mem=45.28 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.05it/s]
+[2025-12-12 19:35:26] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2025-12-12 19:35:26] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.55it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  5.25it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  5.19it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.85it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.35it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.92it/s]
 
-Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 51.42it/s]
-[2025-12-12 18:27:13] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+Capturing batches (bs=1 avail_mem=44.44 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 57.64it/s]
+[2025-12-12 19:35:29] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1302,7 +1217,7 @@ Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '6d19f02a9f634443a9a85aa95b904eb2', 'object': 'chat.completion', 'created': 1765564040, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, the user is asking for the capital of France. Let me think. I remember that France is a country in Europe. The capital cities of European countries can sometimes be tricky. Let me start by recalling some major cities in France. Paris comes to mind immediately. Yes, Paris is a major city there. But wait, is there any other city that could be the capital? Let me check my memory. I think Paris has been the capital for a long time. Maybe some historical capitals? For example, in the Middle Ages, was there a different capital? I think Avignon was a papal seat at some point, but that's not the national capital. Then there's Nice, but that's more of a coastal city. Lyon is another big city, but I don't think it's the capital. So yes, Paris is definitely the capital. The Eiffel Tower and the Louvre are in Paris, which are famous landmarks. So the answer should be Paris. Let me make sure there's no confusion with any other regions. For instance, regions in France have their own capitals, but the national capital is Paris. Yeah, that's correct. So the answer is Paris.\n</think>\nThe capital of France is **Paris**. This iconic city is known for landmarks like the Eiffel Tower, Louvre Museum, and the Champs-Élysées, blending historical significance with modern cultural and political life.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 321, 'completion_tokens': 295, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '6778ee0019c94465a13eb9f3c87aa191', 'object': 'chat.completion', 'created': 1765568138, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, let's see. The user is asking for the capital of France. Hmm. I need to make sure I get this right. From what I remember, France is a country in Europe. The capital... I think it's Paris. Wait, but maybe I should double-check. Sometimes capitals can be tricky. Let me think. Paris is the big city, the one with the Eiffel Tower, Louvre Museum, and such. Yeah, that's巴黎, which is Paris in English. So the capital should be Paris. But wait, is there any other city that's the capital? Maybe I'm confusing it with another country. For example, Germany's capital is Berlin, not Frankfurt, even though Frankfurt is a major financial city. So France's main city is Paris. I don't recall any other city being the capital. Maybe some people might think Lyon is important because it's a business center, but no, the official capital is Paris. Let me confirm in my mind. Yes, Paris has been the capital of France for a long time. So the answer should be Paris. I don't see any confusion here. The user probably wants the straightforward answer. So the capital of France is Paris.\n</think>\nThe capital of France is **Paris**. This city is known for iconic landmarks like the Eiffel Tower, Louvre Museum, and the Champs-Élysées. It has been the political and cultural center of France since the Middle Ages.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 331, 'completion_tokens': 305, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
