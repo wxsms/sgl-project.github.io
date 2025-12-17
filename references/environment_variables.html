@@ -55,7 +55,7 @@
     <link rel="prev" title="Troubleshooting and Frequently Asked Questions" href="faq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 12, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 17, 2025"/>
   </head>
   
   
@@ -191,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/epd_disaggregation.html">EPD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
@@ -576,7 +577,7 @@ document.write(`
 <td><p>Skip P2P (peer-to-peer) access check</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGL_CHUNKED_PREFIX_CACHE_THRESHOLD</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CHUNKED_PREFIX_CACHE_THRESHOLD</span></code></p></td>
 <td><p>Sets the threshold for enabling chunked prefix caching</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">8192</span></code></p></td>
 </tr>
@@ -638,7 +639,7 @@ document.write(`
 <td><p>Number of workers for parallel DeepGEMM kernel compilation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGL_IN_DEEPGEMM_PRECOMPILE_STAGE</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_IN_DEEPGEMM_PRECOMPILE_STAGE</span></code></p></td>
 <td><p>Indicator flag used during the DeepGEMM precompile script</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
 </tr>
@@ -786,7 +787,7 @@ document.write(`
 <td><p>Control blocking of non-zero rank children processes</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGL_IS_FIRST_RANK_ON_NODE</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_IS_FIRST_RANK_ON_NODE</span></code></p></td>
 <td><p>Indicates if the current process is the first rank on its node</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code></p></td>
 </tr>
@@ -1014,7 +1015,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 12, 2025.
+  Last updated on Dec 17, 2025.
   <br/>
 </p>
   </div>

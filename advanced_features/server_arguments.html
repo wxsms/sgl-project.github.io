@@ -55,7 +55,7 @@
     <link rel="prev" title="Llama4 Usage" href="../basic_usage/llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 12, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 17, 2025"/>
   </head>
   
   
@@ -191,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epd_disaggregation.html">EPD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query Vision Language Model</a></li>
@@ -1629,6 +1630,16 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">0.2</span></code></p></td>
 <td><p>Type: float</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--mamba-scheduler-strategy</span></code></p></td>
+<td><p>The strategy to use for mamba scheduler. <code class="docutils literal notranslate"><span class="pre">auto</span></code> currently defaults to <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>. 1. <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code> does not support overlap scheduler due to not allocating extra mamba state buffers. Branching point caching support is feasible but not implemented. 2. <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code> supports overlap schedule by allocating extra mamba state buffers to track mamba state for caching (mamba state usage per running req becomes <code class="docutils literal notranslate"><span class="pre">2x</span></code> for non-spec; <code class="docutils literal notranslate"><span class="pre">1+(1/(2+speculative_num_draft_tokens))x</span></code> for spec dec (e.g. 1.16x if speculative_num_draft_tokens==4)). 2a. <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code> is strictly better for non-KV-cache-bound cases; for KV-cache-bound cases, the tradeoff depends on whether enabling overlap outweighs reduced max running requests. 2b. mamba caching at radix cache branching point is strictly better than non-branch but requires kernel support (currently only FLA backend), currently only extra_buffer supports branching.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>, <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--mamba-track-interval</span></code></p></td>
+<td><p>The interval (in tokens) to track the mamba state during decode. Only used when <code class="docutils literal notranslate"><span class="pre">--mamba-scheduler-strategy</span></code> is <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code>. Must be divisible by page_size if set, and must be &gt;= speculative_num_draft_tokens when using speculative decoding.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">256</span></code></p></td>
+<td><p>Type: int</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2494,7 +2505,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 12, 2025.
+  Last updated on Dec 17, 2025.
   <br/>
 </p>
   </div>

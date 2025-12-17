@@ -55,7 +55,7 @@
     <link rel="prev" title="DeepSeek examples" href="ascend_npu_deepseek_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 12, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 17, 2025"/>
   </head>
   
   
@@ -191,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/expert_parallelism.html">Expert Parallelism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/epd_disaggregation.html">EPD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
@@ -477,6 +478,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3">Running Qwen3</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-32b-on-1-x-atlas-800i-a3">Running Qwen3-32B on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-32b-on-1-x-atlas-800i-a3-with-qwen3-32b-eagle3">Running Qwen3-32B on 1 x Atlas 800I A3 with Qwen3-32B-Eagle3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.</a></li>
@@ -514,6 +516,33 @@ document.write(`
 <span class="w">   </span>--model-path<span class="w"> </span>Qwen/Qwen3-32B<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--port<span class="w"> </span><span class="m">30111</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8
+</pre></div>
+</div>
+</section>
+<section id="running-qwen3-32b-on-1-x-atlas-800i-a3-with-qwen3-32b-eagle3">
+<h3>Running Qwen3-32B on 1 x Atlas 800I A3 with Qwen3-32B-Eagle3.<a class="headerlink" href="#running-qwen3-32b-on-1-x-atlas-800i-a3-with-qwen3-32b-eagle3" title="Link to this heading">#</a></h3>
+<p>Model weights could be found <a class="reference external" href="https://huggingface.co/Qwen/Qwen3-32B">here</a></p>
+<p>Speculative model weights could be found <a class="reference external" href="https://huggingface.co/Zhihu-ai/Zhi-Create-Qwen3-32B-Eagle3">here</a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
+
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--model-path<span class="w"> </span>Qwen/Qwen3-32B<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--port<span class="w"> </span><span class="m">30111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--speculative-draft-model-path<span class="w"> </span>Qwen/Qwen3-32B-Eagle3<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--speculative-num-steps<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </section>
@@ -635,6 +664,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3">Running Qwen3</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-32b-on-1-x-atlas-800i-a3">Running Qwen3-32B on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-32b-on-1-x-atlas-800i-a3-with-qwen3-32b-eagle3">Running Qwen3-32B on 1 x Atlas 800I A3 with Qwen3-32B-Eagle3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-30b-a3b-moe-on-1-x-atlas-800i-a3">Running Qwen3-30B-A3B MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-235b-a22b-instruct-2507-moe-on-1-x-atlas-800i-a3">Running Qwen3-235B-A22B-Instruct-2507 MOE on 1 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-qwen3-vl-8b-instruct-on-1-x-atlas-800i-a3">Running Qwen3-VL-8B-Instruct on 1 x Atlas 800I A3.</a></li>
@@ -673,7 +703,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 12, 2025.
+  Last updated on Dec 17, 2025.
   <br/>
 </p>
   </div>
