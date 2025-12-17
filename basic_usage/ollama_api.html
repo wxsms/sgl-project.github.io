@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Development Guide Using Docker &#8212; SGLang</title>
+    <title>Ollama-Compatible API &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/development_guide_using_docker';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'basic_usage/ollama_api';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Benchmark and Profiling" href="benchmark_and_profiling.html" />
-    <link rel="prev" title="Contribution Guide" href="contribution_guide.html" />
+    <link rel="next" title="Offline Engine API" href="offline_engine_api.html" />
+    <link rel="prev" title="OpenAI APIs - Embedding" href="openai_api_embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Dec 17, 2025"/>
@@ -168,14 +168,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/ollama_api.html">Ollama-Compatible API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, Qwen, and more)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ollama-Compatible API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -226,11 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Development Guide Using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bench_serving.html">Bench Serving Guide</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/bench_serving.html">Bench Serving Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -314,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer_guide/development_guide_using_docker.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/basic_usage/ollama_api.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +331,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer_guide/development_guide_using_docker.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/basic_usage/ollama_api.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +348,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/development_guide_using_docker.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbasic_usage/ollama_api.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +378,7 @@
       
       
       
-      <li><a href="../_sources/developer_guide/development_guide_using_docker.md" target="_blank"
+      <li><a href="../_sources/basic_usage/ollama_api.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -462,7 +462,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Development Guide Using Docker</h1>
+    <h1>Ollama-Compatible API</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,15 +472,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vscode-on-a-remote-host">Setup VSCode on a Remote Host</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-docker-container">Setup Docker Container</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-use-the-default-dev-container-automatically-from-vscode">Option 1. Use the default dev container automatically from VSCode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-start-up-containers-manually-advanced">Option 2. Start up containers manually (advanced)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endpoints">Endpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-sglang-server">1. Launch SGLang Server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-ollama-cli">2. Use Ollama CLI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-ollama-python-library">3. Use Ollama Python Library</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-sglang-with-vscode-debugger">Debug SGLang with VSCode Debugger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile">Profile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-router">Smart Router</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -492,117 +493,134 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="development-guide-using-docker">
-<h1>Development Guide Using Docker<a class="headerlink" href="#development-guide-using-docker" title="Link to this heading">#</a></h1>
-<section id="setup-vscode-on-a-remote-host">
-<h2>Setup VSCode on a Remote Host<a class="headerlink" href="#setup-vscode-on-a-remote-host" title="Link to this heading">#</a></h2>
-<p>(Optional - you can skip this step if you plan to run sglang dev container locally)</p>
-<ol class="arabic simple">
-<li><p>In the remote host, download <code class="docutils literal notranslate"><span class="pre">code</span></code> from <a class="reference external" href="https://code.visualstudio.com/download">Https://code.visualstudio.com/docs/?dv=linux64cli</a> and run <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">tunnel</span></code> in a shell.</p></li>
-</ol>
-<p>Example</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://vscode.download.prss.microsoft.com/dbazure/download/stable/fabdb6a30b49f79a7aba0f2ad9df9b399473380f/vscode_cli_alpine_x64_cli.tar.gz
-tar<span class="w"> </span>xf<span class="w"> </span>vscode_cli_alpine_x64_cli.tar.gz
+  <section class="tex2jax_ignore mathjax_ignore" id="ollama-compatible-api">
+<h1>Ollama-Compatible API<a class="headerlink" href="#ollama-compatible-api" title="Link to this heading">#</a></h1>
+<p>SGLang provides Ollama API compatibility, allowing you to use the Ollama CLI and Python library with SGLang as the inference backend.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the Ollama Python library (for Python client usage)</span>
+pip<span class="w"> </span>install<span class="w"> </span>ollama
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note</strong>: You don’t need the Ollama server installed - SGLang acts as the backend. You only need the <code class="docutils literal notranslate"><span class="pre">ollama</span></code> CLI or Python library as the client.</p>
+</div></blockquote>
+</section>
+<section id="endpoints">
+<h2>Endpoints<a class="headerlink" href="#endpoints" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>GET, HEAD</p></td>
+<td><p>Health check for Ollama CLI</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/api/tags</span></code></p></td>
+<td><p>GET</p></td>
+<td><p>List available models</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/api/chat</span></code></p></td>
+<td><p>POST</p></td>
+<td><p>Chat completions (streaming &amp; non-streaming)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/api/generate</span></code></p></td>
+<td><p>POST</p></td>
+<td><p>Text generation (streaming &amp; non-streaming)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/api/show</span></code></p></td>
+<td><p>POST</p></td>
+<td><p>Model information</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<section id="launch-sglang-server">
+<h3>1. Launch SGLang Server<a class="headerlink" href="#launch-sglang-server" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>Qwen/Qwen2.5-1.5B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note</strong>: The model name used with <code class="docutils literal notranslate"><span class="pre">ollama</span> <span class="pre">run</span></code> must match exactly what you passed to <code class="docutils literal notranslate"><span class="pre">--model</span></code>.</p>
+</div></blockquote>
+</section>
+<section id="use-ollama-cli">
+<h3>2. Use Ollama CLI<a class="headerlink" href="#use-ollama-cli" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List available models</span>
+<span class="nv">OLLAMA_HOST</span><span class="o">=</span>http://localhost:30001<span class="w"> </span>ollama<span class="w"> </span>list
 
-<span class="c1"># https://code.visualstudio.com/docs/remote/tunnels</span>
-./code<span class="w"> </span>tunnel
+<span class="c1"># Interactive chat</span>
+<span class="nv">OLLAMA_HOST</span><span class="o">=</span>http://localhost:30001<span class="w"> </span>ollama<span class="w"> </span>run<span class="w"> </span><span class="s2">&quot;Qwen/Qwen2.5-1.5B-Instruct&quot;</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>In your local machine, press F1 in VSCode and choose “Remote Tunnels: Connect to Tunnel”.</p></li>
-</ol>
+<p>If connecting to a remote server behind a firewall:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># SSH tunnel</span>
+ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">30001</span>:localhost:30001<span class="w"> </span>user@gpu-server<span class="w"> </span>-N<span class="w"> </span><span class="p">&amp;</span>
+
+<span class="c1"># Then use Ollama CLI as above</span>
+<span class="nv">OLLAMA_HOST</span><span class="o">=</span>http://localhost:30001<span class="w"> </span>ollama<span class="w"> </span>list
+</pre></div>
+</div>
 </section>
-<section id="setup-docker-container">
-<h2>Setup Docker Container<a class="headerlink" href="#setup-docker-container" title="Link to this heading">#</a></h2>
-<section id="option-1-use-the-default-dev-container-automatically-from-vscode">
-<h3>Option 1. Use the default dev container automatically from VSCode<a class="headerlink" href="#option-1-use-the-default-dev-container-automatically-from-vscode" title="Link to this heading">#</a></h3>
-<p>There is a <code class="docutils literal notranslate"><span class="pre">.devcontainer</span></code> folder in the sglang repository root folder to allow VSCode to automatically start up within dev container. You can read more about this VSCode extension in VSCode official document <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.
-<img alt="image" src="https://github.com/user-attachments/assets/6a245da8-2d4d-4ea8-8db1-5a05b3a66f6d" />
-(<em>Figure 1: Diagram from VSCode official documentation <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">Developing inside a Container</a>.</em>)</p>
-<p>To enable this, you only need to:</p>
-<ol class="arabic simple">
-<li><p>Start Visual Studio Code and install <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">VSCode dev container extension</a>.</p></li>
-<li><p>Press F1, type and choose “Dev Container: Open Folder in Container.</p></li>
-<li><p>Input the <code class="docutils literal notranslate"><span class="pre">sglang</span></code> local repo path in your machine and press enter.</p></li>
-</ol>
-<p>The first time you open it in dev container might take longer due to docker pull and build. Once it’s successful, you should set on your status bar at the bottom left displaying that you are in a dev container:</p>
-<p><img alt="image" src="https://github.com/user-attachments/assets/650bba0b-c023-455f-91f9-ab357340106b" /></p>
-<p>Now when you run <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> in the VSCode terminal or start debugging using F5, sglang server will be started in the dev container with all your local changes applied automatically:</p>
-<p><img alt="image" src="https://github.com/user-attachments/assets/748c85ba-7f8c-465e-8599-2bf7a8dde895" /></p>
-</section>
-<section id="option-2-start-up-containers-manually-advanced">
-<h3>Option 2. Start up containers manually (advanced)<a class="headerlink" href="#option-2-start-up-containers-manually-advanced" title="Link to this heading">#</a></h3>
-<p>The following startup command is an example for internal development by the SGLang team. You can <strong>modify or add directory mappings as needed</strong>, especially for model weight downloads, to prevent repeated downloads by different Docker containers.</p>
-<p>❗️ <strong>Note on RDMA</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. `--network host` and `--privileged` are required by RDMA. If you don&#39;t need RDMA, you can remove them but keeping them there does not harm. Thus, we enable these two flags by default in the commands below.
-2. You may need to set `NCCL_IB_GID_INDEX` if you are using RoCE, for example: `export NCCL_IB_GID_INDEX=3`.
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the name to yours</span>
-docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>&lt;volumes-to-mount&gt;<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_dev<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_dev<span class="w"> </span>/bin/zsh
-</pre></div>
-</div>
-<p>Some useful volumes to mount are:</p>
-<ol class="arabic simple">
-<li><p><strong>Huggingface model cache</strong>: mounting model cache can avoid re-download every time docker restarts. Default location on Linux is <code class="docutils literal notranslate"><span class="pre">~/.cache/huggingface/</span></code>.</p></li>
-<li><p><strong>SGLang repository</strong>: code changes in the SGLang local repository will be automatically synced to the .devcontainer.</p></li>
-</ol>
-<p>Example 1: Monting local cache folder <code class="docutils literal notranslate"><span class="pre">/opt/dlami/nvme/.cache</span></code> but not the SGLang repo. Use this when you prefer to manually transfer local code changes to the devcontainer.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/opt/dlami/nvme/.cache:/root/.cache<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
-</pre></div>
-</div>
-<p>Example 2: Mounting both HuggingFace cache and local SGLang repo. Local code changes are automatically synced to the devcontainer as the SGLang is installed in editable mode in the dev image.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.cache/huggingface/:/root/.cache/huggingface<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/src/sglang:/sgl-workspace/sglang<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
+<section id="use-ollama-python-library">
+<h3>3. Use Ollama Python Library<a class="headerlink" href="#use-ollama-python-library" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;http://localhost:30001&#39;</span><span class="p">)</span>
+
+<span class="c1"># Non-streaming</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Qwen/Qwen2.5-1.5B-Instruct&#39;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">}]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">])</span>
+
+<span class="c1"># Streaming</span>
+<span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Qwen/Qwen2.5-1.5B-Instruct&#39;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Tell me a story&#39;</span><span class="p">}],</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 </section>
-<section id="debug-sglang-with-vscode-debugger">
-<h2>Debug SGLang with VSCode Debugger<a class="headerlink" href="#debug-sglang-with-vscode-debugger" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>(Create if not exist) open <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> in VSCode.</p></li>
-<li><p>Add the following config and save. Please note that you can edit the script as needed to apply different parameters or debug a different program (e.g. benchmark script).</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
-<span class="w">     </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-<span class="w">     </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">         </span><span class="p">{</span>
-<span class="w">             </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python Debugger: launch_server&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;debugpy&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sglang.launch_server&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                 </span><span class="s2">&quot;--model-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.2-1B&quot;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s2">&quot;--host&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s2">&quot;--port&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;30000&quot;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s2">&quot;--trust-remote-code&quot;</span><span class="p">,</span>
-<span class="w">             </span><span class="p">],</span>
-<span class="w">             </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">         </span><span class="p">}</span>
-<span class="w">     </span><span class="p">]</span>
-<span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
-</li>
-<li><p>Press “F5” to start. VSCode debugger will ensure that the program will pause at the breakpoints even if the program is running at remote SSH/Tunnel host + dev container.</p></li>
-</ol>
+<section id="smart-router">
+<h2>Smart Router<a class="headerlink" href="#smart-router" title="Link to this heading">#</a></h2>
+<p>For intelligent routing between local Ollama (fast) and remote SGLang (powerful) using an LLM judge, see the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/entrypoints/ollama/README.md">Smart Router documentation</a>.</p>
 </section>
-<section id="profile">
-<h2>Profile<a class="headerlink" href="#profile" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change batch size, input, output and add `disable-cuda-graph` (for easier analysis)</span>
-<span class="c1"># e.g. DeepSeek V3</span>
-nsys<span class="w"> </span>profile<span class="w"> </span>-o<span class="w"> </span>deepseek_v3<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--input<span class="w"> </span><span class="m">128</span><span class="w"> </span>--output<span class="w"> </span><span class="m">256</span><span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3<span class="w"> </span>--trust-remote-code<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--disable-cuda-graph
-</pre></div>
-</div>
-</section>
-<section id="evaluation">
-<h2>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># e.g. gsm8k 8 shot</span>
-python3<span class="w"> </span>benchmark/gsm8k/bench_sglang.py<span class="w"> </span>--num-questions<span class="w"> </span><span class="m">2000</span><span class="w"> </span>--parallel<span class="w"> </span><span class="m">2000</span><span class="w"> </span>--num-shots<span class="w"> </span><span class="m">8</span>
-</pre></div>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Ollama API</strong></p></td>
+<td><p>Familiar CLI/API that developers already know</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SGLang Backend</strong></p></td>
+<td><p>High-performance inference engine</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Smart Router</strong></p></td>
+<td><p>Intelligent routing - fast local for simple tasks, powerful remote for complex tasks</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 </section>
@@ -619,20 +637,20 @@ python3<span class="w"> </span>benchmark/gsm8k/bench_sglang.py<span class="w"> <
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contribution_guide.html"
+       href="openai_api_embeddings.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contribution Guide</p>
+        <p class="prev-next-title">OpenAI APIs - Embedding</p>
       </div>
     </a>
     <a class="right-next"
-       href="benchmark_and_profiling.html"
+       href="offline_engine_api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Benchmark and Profiling</p>
+        <p class="prev-next-title">Offline Engine API</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -652,15 +670,16 @@ python3<span class="w"> </span>benchmark/gsm8k/bench_sglang.py<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vscode-on-a-remote-host">Setup VSCode on a Remote Host</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-docker-container">Setup Docker Container</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-use-the-default-dev-container-automatically-from-vscode">Option 1. Use the default dev container automatically from VSCode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-start-up-containers-manually-advanced">Option 2. Start up containers manually (advanced)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endpoints">Endpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-sglang-server">1. Launch SGLang Server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-ollama-cli">2. Use Ollama CLI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-ollama-python-library">3. Use Ollama Python Library</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-sglang-with-vscode-debugger">Debug SGLang with VSCode Debugger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile">Profile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-router">Smart Router</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 
