@@ -55,7 +55,7 @@
     <link rel="prev" title="GPT OSS Usage" href="gpt_oss.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 17, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 18, 2025"/>
   </head>
   
   
@@ -484,6 +484,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qwen3-next-with-sglang">Launch Qwen3-Next with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-radix-cache">Mamba Radix Cache</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
 </ul>
 </li>
@@ -512,6 +513,15 @@ document.write(`
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code>: Adjust <code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code> to increase mamba cache space and max running requests capability. It will decrease KV cache space as a trade-off. You can adjust it according to workload.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--mamba-ssm-dtype</span></code>: <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> or <code class="docutils literal notranslate"><span class="pre">float32</span></code>, use <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> to save mamba cache size and <code class="docutils literal notranslate"><span class="pre">float32</span></code> to get more accurate results. The default setting is <code class="docutils literal notranslate"><span class="pre">float32</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--mamba-full-memory-ratio</span></code>: The ratio of mamba state memory to full kv cache memory. The default is 0.9.</p></li>
+</ul>
+</section>
+<section id="mamba-radix-cache">
+<h3>Mamba Radix Cache<a class="headerlink" href="#mamba-radix-cache" title="Link to this heading">#</a></h3>
+<p>SGLang supports prefix caching for Qwen3-Next models named <code class="docutils literal notranslate"><span class="pre">MambaRadixCache</span></code>, which improves inference speed by reusing computation results. There are two versions of <code class="docutils literal notranslate"><span class="pre">MambaRadixCache</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>: The default version, which is also other hybrid linear models’ choice. When it is enabled, SGLang will automatically close overlap schedule for compatibility reasons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code>: An optimized version that is compatible with features like page size &gt; 1, overlap schedule, and speculative decoding. It also supports storing mamba state in branching positions. However, it requires two extra mamba spaces for a ping-pong buffer for each request. To enable it, add the argument <code class="docutils literal notranslate"><span class="pre">--mamba-scheduler-strategy</span> <span class="pre">extra_buffer</span></code> when launching the server.</p></li>
 </ul>
 </section>
 <section id="eagle-speculative-decoding">
@@ -580,6 +590,7 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qwen3-next-with-sglang">Launch Qwen3-Next with SGLang</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-radix-cache">Mamba Radix Cache</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
 </ul>
 </li>
@@ -616,7 +627,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 17, 2025.
+  Last updated on Dec 18, 2025.
   <br/>
 </p>
   </div>
