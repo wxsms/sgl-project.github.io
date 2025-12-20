@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Launch GLM-4.5 / GLM-4.6 with SGLang &#8212; SGLang</title>
+    <title>Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang &#8212; SGLang</title>
   
   
   
@@ -178,7 +178,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, Qwen, and more)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="deepseek_v3.html">DeepSeek V3/V3.1/R1 Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Launch GLM-4.5 / GLM-4.6 with SGLang</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glmv.html">GLM-4.6V / GLM-4.5V Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qwen3.html">Qwen3-Next Usage</a></li>
@@ -472,7 +472,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Launch GLM-4.5 / GLM-4.6 with SGLang</h1>
+    <h1>Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -484,7 +484,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget-for-glm-4-5-glm-4-6">Thinking Budget for GLM-4.5 / GLM-4.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget">Thinking Budget</a></li>
 </ul>
             </nav>
         </div>
@@ -496,8 +496,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="launch-glm-4-5-glm-4-6-with-sglang">
-<h1>Launch GLM-4.5 / GLM-4.6 with SGLang<a class="headerlink" href="#launch-glm-4-5-glm-4-6-with-sglang" title="Link to this heading">#</a></h1>
+  <section id="launch-glm-4-5-glm-4-6-glm-4-7-with-sglang">
+<h1>Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang<a class="headerlink" href="#launch-glm-4-5-glm-4-6-glm-4-7-with-sglang" title="Link to this heading">#</a></h1>
 <p>To serve GLM-4.5 / GLM-4.6 FP8 models on 8xH100/H200 GPUs:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>zai-org/GLM-4.6-FP8<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
 </pre></div>
@@ -530,9 +530,10 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <span class="w">  </span>--enable-custom-logit-processor
 </pre></div>
 </div>
+<p><strong>Note</strong>: For GLM-4.7, <code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">glm47</span></code>, for GLM-4.5 and GLM-4.6, it should be set to <code class="docutils literal notranslate"><span class="pre">glm45</span></code>.</p>
 </section>
-<section id="thinking-budget-for-glm-4-5-glm-4-6">
-<h2>Thinking Budget for GLM-4.5 / GLM-4.6<a class="headerlink" href="#thinking-budget-for-glm-4-5-glm-4-6" title="Link to this heading">#</a></h2>
+<section id="thinking-budget">
+<h2>Thinking Budget<a class="headerlink" href="#thinking-budget" title="Link to this heading">#</a></h2>
 <p>In SGLang, we can implement thinking budget with <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>.</p>
 <p>Launch a server with <code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code> flag on.</p>
 <p>Sample Request:</p>
@@ -611,7 +612,7 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget-for-glm-4-5-glm-4-6">Thinking Budget for GLM-4.5 / GLM-4.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget">Thinking Budget</a></li>
 </ul>
   </nav></div>
 
