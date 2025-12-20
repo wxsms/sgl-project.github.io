@@ -195,7 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/epd_disaggregation.html">EPD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query Vision Language Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query VLM with Offline Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
@@ -529,7 +529,7 @@ If you want a high-level endpoint that can automatically handle chat templates, 
 </tr>
 <tr class="row-odd"><td><p>image_data</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[List[ImageDataItem]],</span> <span class="pre">List[ImageDataItem],</span> <span class="pre">ImageDataItem]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
-<td><p>The image input. Can be an image instance, file name, URL, or base64 encoded string. Can be a single image, list of images, or list of lists of images.</p></td>
+<td><p>The image input. Supports three formats: (1) <strong>Raw images</strong>: PIL Image, file path, URL, or base64 string; (2) <strong>Processor output</strong>: Dict with <code class="docutils literal notranslate"><span class="pre">format:</span> <span class="pre">&quot;processor_output&quot;</span></code> containing HuggingFace processor outputs; (3) <strong>Precomputed embeddings</strong>: Dict with <code class="docutils literal notranslate"><span class="pre">format:</span> <span class="pre">&quot;precomputed_embedding&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">feature</span></code> containing pre-calculated visual embeddings. Can be a single image, list of images, or list of lists of images. See Multimodal Input Formats for details.</p></td>
 </tr>
 <tr class="row-even"><td><p>audio_data</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Optional[Union[List[AudioDataItem],</span> <span class="pre">AudioDataItem]]</span> <span class="pre">=</span> <span class="pre">None</span></code></p></td>
