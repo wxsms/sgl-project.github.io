@@ -580,7 +580,7 @@ document.write(`
 <h3>Control Plane<a class="headerlink" href="#control-plane" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Worker Manager</strong> discovers capabilities (<code class="docutils literal notranslate"><span class="pre">/get_server_info</span></code>, <code class="docutils literal notranslate"><span class="pre">/get_model_info</span></code>), tracks load, and registers/removes workers in the shared registry.</p></li>
-<li><p><strong>Job Queue</strong> serializes add/remove requests and exposes status (<code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code>) so clients can track onboarding progress.</p></li>
+<li><p><strong>Job Queue</strong> serializes add/remove requests and exposes status (<code class="docutils literal notranslate"><span class="pre">/workers/{worker_id}</span></code>) so clients can track onboarding progress.</p></li>
 <li><p><strong>Load Monitor</strong> feeds cache-aware and power-of-two policies with live worker load statistics.</p></li>
 <li><p><strong>Health Checker</strong> continuously probes workers and updates readiness, circuit breaker state, and router metrics.</p></li>
 </ul>
@@ -713,11 +713,13 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <span class="c1"># Inspect registry</span>
 curl<span class="w"> </span>http://localhost:30000/workers
 
-<span class="c1"># Remove a worker</span>
-curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:30000/workers/grpc%3A%2F%2F0.0.0.0%3A31000
+<span class="c1"># Remove a worker (RESTful: delete by UUID)</span>
+<span class="c1"># Tip: POST /workers returns a JSON body containing worker_id and a Location header.</span>
+<span class="nv">WORKER_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:30000/workers<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.workers[0].id&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;http://localhost:30000/workers/</span><span class="si">${</span><span class="nv">WORKER_ID</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<p>Legacy endpoints (<code class="docutils literal notranslate"><span class="pre">/add_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/remove_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/list_workers</span></code>) remain available but will be deprecated. <code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code> returns both registry data and queued job status. The worker url in the removal request should be escaped.</p>
+<p>Legacy endpoints (<code class="docutils literal notranslate"><span class="pre">/add_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/remove_worker</span></code>, <code class="docutils literal notranslate"><span class="pre">/list_workers</span></code>) remain available but will be deprecated. <code class="docutils literal notranslate"><span class="pre">/workers/{worker_id}</span></code> returns both registry data and queued job status.</p>
 </section>
 <hr class="docutils" />
 <section id="reliability-flow-control">
@@ -963,9 +965,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <td><p><code class="docutils literal notranslate"><span class="pre">/workers</span></code></p></td>
 <td><p>Queue worker registration.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">/workers/{url}</span></code></p></td>
-<td><p>Queue worker removal.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>/<code class="docutils literal notranslate"><span class="pre">PUT</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/workers/{worker_id}</span></code></p></td>
+<td><p>Get/update/remove a worker by UUID.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/flush_cache</span></code></p></td>
