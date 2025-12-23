@@ -479,6 +479,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chunked-prefill-size-and-smoothing-factor">Chunked Prefill Size and Smoothing Factor</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism">Best Practice for Pipeline Parallelism</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-chunked-prefill-size">Tuning the Chunked Prefill Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature">Enable Dynamic Chunking and Adjust Smoothing Factor (Experimental feature)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-1-with-128k-input-token-length">DeepSeek-V3.1 with 128K Input Token Length</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-235b-a22b-thinking-2507-fp8-with-128k-input-token-length">Qwen3-235B-A22B-Thinking-2507-FP8 with 128K Input Token Length</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism-with-pd-disaggregation">Best Practice for Pipeline Parallelism with PD Disaggregation</a></li>
 </ul>
             </nav>
@@ -514,6 +524,70 @@ document.write(`
 <h3>Chunked Prefill Size and Smoothing Factor<a class="headerlink" href="#chunked-prefill-size-and-smoothing-factor" title="Link to this heading">#</a></h3>
 <p>When <code class="docutils literal notranslate"><span class="pre">--enable-dynamic-chunking</span></code> is enabled, each chunk size of a sequence is determined dynamically based on the quadratic model that predicts the next chunk size based on the estimated runtime of the initial chunk length. In this case, we use <code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code> to set up the initial chunk size. When switching to the dynamic chunking mode, the initial chunk size (<code class="docutils literal notranslate"><span class="pre">--chunked-prefill-size</span></code>) should be set to a larger value comparable to the original chunked prefill size, so that there won’t be too many chunks.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DYNAMIC_CHUNKING_SMOOTH_FACTOR</span></code></strong> is a parameter that controls the smoothing factor for the dynamic chunking algorithm, defaulting to 0.75. It determines how much the chunk size can change during the prefill phase. A larger value means a more aggressive chunk size change, which may lead to better performance but also to greater chunk size changes (the chunk size at the end may become very small, which could lead to performance degradation) and more total chunks. When it is set to 1, the chunk size will be adjusted strictly based on the aforementioned quadratic model that predicts the next chunk size. A smaller value means a more conservative chunk size change, which may lead to smaller chunk size changes and fewer total chunks. When it is set to 0, the chunk size will not be adjusted dynamically, so it is identical to the traditional way with a fixed chunked prefill size.</p>
+</section>
+</section>
+<section id="best-practice-for-pipeline-parallelism">
+<h2>Best Practice for Pipeline Parallelism<a class="headerlink" href="#best-practice-for-pipeline-parallelism" title="Link to this heading">#</a></h2>
+<section id="tuning-the-chunked-prefill-size">
+<h3>Tuning the Chunked Prefill Size<a class="headerlink" href="#tuning-the-chunked-prefill-size" title="Link to this heading">#</a></h3>
+<p>Optimizing the chunked prefill size is crucial for balancing pipeline efficiency and resource utilization. The ideal size depends on factors including model architecture, hardware configuration, and typical input lengths. We recommend starting with a small chunk size, such as 4K, and gradually increasing it until you find the optimal size for your specific use case. Alternatively, you can analyze the hardware capacity and determine the optimal chunk size based on the roofline model.</p>
+</section>
+<section id="enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature">
+<h3>Enable Dynamic Chunking and Adjust Smoothing Factor (Experimental feature)<a class="headerlink" href="#enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature" title="Link to this heading">#</a></h3>
+<p>SGLang also offers a dynamic chunking solution that could further improve performance. This feature is currently an experimental feature that requires a certain amount of tuning experimentation and may not be suitable for all workloads. In addition, fine-tuning the smoothing factor can help optimize performance for specific workloads and model characteristics.</p>
+</section>
+<section id="case-study">
+<h3>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h3>
+<p>When evaluating pipeline parallelism with fixed chunked prefill sizes from 2K to 16K, experiment results show that a 4K chunk size delivered optimal prefill TTFT performance for the DeepSeek-V3.1, and a 6K chunk size delivered optimal prefill TTFT performance for the Qwen3-235B-A22B-Thinking-2507-FP8.</p>
+<p>When enabling dynamic chunking, we first scale the optimal fixed chunked prefill size by a factor of 3 as the initial chunk size. Through experimentation, we found that a multiplier of 2-3 provides an appropriate balance—avoiding excessive initial pipeline bubbles while ensuring that subsequent chunks don’t become too small as context length increases. With the default dynamic chunking smoothing factor of 0.75, we performed parameter tuning and determined that a value of 0.65 works optimally with the 12K initial chunk size for the DeepSeek-V3.1, while a value of 0.8 works optimally with the 18K initial chunk size for the Qwen3-235B-A22B-Thinking-2507-FP8.</p>
+<section id="deepseek-v3-1-with-128k-input-token-length">
+<h4>DeepSeek-V3.1 with 128K Input Token Length<a class="headerlink" href="#deepseek-v3-1-with-128k-input-token-length" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill node 0 (fixed chunked prefill size)</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.1<span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">4</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span>--enable-dynamic-chunking
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill node 0 (with dynamic chunking)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DYNAMIC_CHUNKING_SMOOTH_FACTOR</span><span class="o">=</span><span class="m">0</span>.65
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.1<span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">4</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">12288</span><span class="w"> </span>--enable-dynamic-chunking
+</pre></div>
+</div>
+</section>
+<section id="qwen3-235b-a22b-thinking-2507-fp8-with-128k-input-token-length">
+<h4>Qwen3-235B-A22B-Thinking-2507-FP8 with 128K Input Token Length<a class="headerlink" href="#qwen3-235b-a22b-thinking-2507-fp8-with-128k-input-token-length" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill node 0 (fixed chunked prefill size)</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-235B-A22B-Thinking-2507-FP8<span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">6144</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill node 0 (with dynamic chunking)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DYNAMIC_CHUNKING_SMOOTH_FACTOR</span><span class="o">=</span><span class="m">0</span>.8
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.1<span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">18432</span><span class="w"> </span>--enable-dynamic-chunking
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="best-practice-for-pipeline-parallelism-with-pd-disaggregation">
@@ -572,6 +646,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-about-dynamic-chunking">Guidance about Dynamic Chunking</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-dynamic-chunking">Why Dynamic Chunking</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chunked-prefill-size-and-smoothing-factor">Chunked Prefill Size and Smoothing Factor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism">Best Practice for Pipeline Parallelism</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-chunked-prefill-size">Tuning the Chunked Prefill Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature">Enable Dynamic Chunking and Adjust Smoothing Factor (Experimental feature)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-1-with-128k-input-token-length">DeepSeek-V3.1 with 128K Input Token Length</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-235b-a22b-thinking-2507-fp8-with-128k-input-token-length">Qwen3-235B-A22B-Thinking-2507-FP8 with 128K Input Token Length</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism-with-pd-disaggregation">Best Practice for Pipeline Parallelism with PD Disaggregation</a></li>
