@@ -482,7 +482,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism">Best Practice for Pipeline Parallelism</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-chunked-prefill-size">Tuning the Chunked Prefill Size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature">Enable Dynamic Chunking and Adjust Smoothing Factor (Experimental feature)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-on-nvidia-h20">Case Study on NVIDIA H20</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-1-with-128k-input-token-length">DeepSeek-V3.1 with 128K Input Token Length</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-235b-a22b-thinking-2507-fp8-with-128k-input-token-length">Qwen3-235B-A22B-Thinking-2507-FP8 with 128K Input Token Length</a></li>
 </ul>
@@ -536,8 +536,8 @@ document.write(`
 <h3>Enable Dynamic Chunking and Adjust Smoothing Factor (Experimental feature)<a class="headerlink" href="#enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature" title="Link to this heading">#</a></h3>
 <p>SGLang also offers a dynamic chunking solution that could further improve performance. This feature is currently an experimental feature that requires a certain amount of tuning experimentation and may not be suitable for all workloads. In addition, fine-tuning the smoothing factor can help optimize performance for specific workloads and model characteristics.</p>
 </section>
-<section id="case-study">
-<h3>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h3>
+<section id="case-study-on-nvidia-h20">
+<h3>Case Study on NVIDIA H20<a class="headerlink" href="#case-study-on-nvidia-h20" title="Link to this heading">#</a></h3>
 <p>When evaluating pipeline parallelism with fixed chunked prefill sizes from 2K to 16K, experiment results show that a 4K chunk size delivered optimal prefill TTFT performance for the DeepSeek-V3.1, and a 6K chunk size delivered optimal prefill TTFT performance for the Qwen3-235B-A22B-Thinking-2507-FP8.</p>
 <p>When enabling dynamic chunking, we first scale the optimal fixed chunked prefill size by a factor of 3 as the initial chunk size. Through experimentation, we found that a multiplier of 2-3 provides an appropriate balance—avoiding excessive initial pipeline bubbles while ensuring that subsequent chunks don’t become too small as context length increases. With the default dynamic chunking smoothing factor of 0.75, we performed parameter tuning and determined that a value of 0.65 works optimally with the 12K initial chunk size for the DeepSeek-V3.1, while a value of 0.8 works optimally with the 18K initial chunk size for the Qwen3-235B-A22B-Thinking-2507-FP8.</p>
 <section id="deepseek-v3-1-with-128k-input-token-length">
@@ -548,8 +548,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--nnodes<span class="w"> </span><span class="m">4</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span>--enable-dynamic-chunking
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill node 0 (with dynamic chunking)</span>
@@ -559,7 +559,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--nnodes<span class="w"> </span><span class="m">4</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">12288</span><span class="w"> </span>--enable-dynamic-chunking
 </pre></div>
 </div>
@@ -572,21 +572,22 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">6144</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill node 0 (with dynamic chunking)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DYNAMIC_CHUNKING_SMOOTH_FACTOR</span><span class="o">=</span><span class="m">0</span>.8
 python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.1<span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-235B-A22B-Thinking-2507-FP8<span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="m">192</span>.168.0.137:62001<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disable-radix-cache<span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w">  </span><span class="se">\</span>
-<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>fa3<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">18432</span><span class="w"> </span>--enable-dynamic-chunking
 </pre></div>
 </div>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">--disable-radix-cache</span></code> is enabled only for reproducible benchmarking purposes. It is not recommended to use it in production.</p>
 </section>
 </section>
 </section>
@@ -651,7 +652,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-for-pipeline-parallelism">Best Practice for Pipeline Parallelism</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-chunked-prefill-size">Tuning the Chunked Prefill Size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-dynamic-chunking-and-adjust-smoothing-factor-experimental-feature">Enable Dynamic Chunking and Adjust Smoothing Factor (Experimental feature)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-on-nvidia-h20">Case Study on NVIDIA H20</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-v3-1-with-128k-input-token-length">DeepSeek-V3.1 with 128K Input Token Length</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-235b-a22b-thinking-2507-fp8-with-128k-input-token-length">Qwen3-235B-A22B-Thinking-2507-FP8 with 128K Input Token Length</a></li>
 </ul>
