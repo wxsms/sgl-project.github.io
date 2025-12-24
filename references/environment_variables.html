@@ -197,7 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query VLM with Offline Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/router.html">SGLang Model Gateway (formerly SGLang Router)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/sgl_model_gateway.html">SGLang Model Gateway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/checkpoint_engine.html">Checkpoint Engine Integration</a></li>
@@ -478,6 +478,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-configuration">DeepEP Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specific-options">Model-Specific Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-computing">Distributed Computing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-debugging-internal-ci">Testing &amp; Debugging (Internal/CI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-benchmarking">Profiling &amp; Benchmarking</a></li>
@@ -678,15 +679,11 @@ document.write(`
 <td><p>Use Bfloat16 for dispatch</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_NVFP4_DISPATCH</span></code></p></td>
-<td><p>Use nvfp4 for moe dispatch (on flashinfer_cutlass or flashinfer_cutedsl moe runner backend)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span></code></p></td>
 <td><p>The maximum number of dispatched tokens on each GPU</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;128&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DEEPEP_LL_COMBINE_SEND_NUM_SMS</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DEEPEP_LL_COMBINE_SEND_NUM_SMS</span></code></p></td>
 <td><p>Number of SMs used for DeepEP combine when single batch overlap is enabled</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;32&quot;</span></code></p></td>
 </tr>
@@ -720,14 +717,6 @@ document.write(`
 <td><p>Disable checks for memory imbalance across Tensor Parallel ranks</p></td>
 <td><p>Not set (defaults to enabled check)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NVFP4_CKPT_FP8_GEMM_IN_ATTN</span></code></p></td>
-<td><p>Quantize q_b_proj from BF16 to FP8 when launching DeepSeek NVFP4 checkpoint</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_PER_TOKEN_GROUP_QUANT_8BIT_V2</span></code></p></td>
-<td><p>Apply per token group quantization kernel with fused silu and mul and masked m</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -746,32 +735,58 @@ document.write(`
 <td><p>Use AITER optimize implementation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_INT4_WEIGHT</span></code></p></td>
-<td><p>Enable INT4 weight quantization</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_PADDING</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_PADDING</span></code></p></td>
 <td><p>Enable MoE padding (sets padding size to 128 if value is <code class="docutils literal notranslate"><span class="pre">1</span></code>, often set to <code class="docutils literal notranslate"><span class="pre">1</span></code> in Docker builds)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FORCE_FP8_MARLIN</span></code></p></td>
-<td><p>Force using FP8 MARLIN kernels even if other FP8 kernels are available</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
+<td><p>Use Cutlass FP8 MoE kernel on Blackwell GPUs (deprecated, use –moe-runner-backend=cutlass)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_FLASHINFER_FP8_GEMM</span></code> (deprecated)</p></td>
-<td><p>Use flashinfer kernels when running blockwise fp8 GEMM on Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=flashinfer_trtllm</span></code> instead.</p></td>
+</tbody>
+</table>
+</div>
+</section>
+<section id="quantization">
+<h2>Quantization<a class="headerlink" href="#quantization" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_INT4_WEIGHT</span></code></p></td>
+<td><p>Enable INT4 weight quantization</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_PER_TOKEN_GROUP_QUANT_8BIT_V2</span></code></p></td>
+<td><p>Apply per token group quantization kernel with fused silu and mul and masked m</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FORCE_FP8_MARLIN</span></code></p></td>
+<td><p>Force using FP8 MARLIN kernels even if other FP8 kernels are available</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FLASHINFER_FP4_GEMM_BACKEND</span></code></p></td>
 <td><p>Select backend for <code class="docutils literal notranslate"><span class="pre">mm_fp4</span></code> on Blackwell GPUS</p></td>
 <td><p>``</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code> (deprecated)</p></td>
-<td><p>Use Cutlass kernels when running blockwise fp8 GEMM on Hopper or Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=cutlass</span></code> instead.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NVFP4_CKPT_FP8_GEMM_IN_ATTN</span></code></p></td>
+<td><p>Quantize q_b_proj from BF16 to FP8 when launching DeepSeek NVFP4 checkpoint</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
-<td><p>Use Cutlass FP8 MoE kernel on Blackwell GPUs (deprecated, use –moe-runner-backend=cutlass)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_NVFP4_DISPATCH</span></code></p></td>
+<td><p>Use nvfp4 for moe dispatch (on flashinfer_cutlass or flashinfer_cutedsl moe runner backend)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_FLASHINFER_FP8_GEMM</span></code> (deprecated)</p></td>
+<td><p>Use flashinfer kernels when running blockwise fp8 GEMM on Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=flashinfer_trtllm</span></code> instead.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code> (deprecated)</p></td>
+<td><p>Use Cutlass kernels when running blockwise fp8 GEMM on Hopper or Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=cutlass</span></code> instead.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 </tbody>
@@ -982,6 +997,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-configuration">DeepEP Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specific-options">Model-Specific Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-computing">Distributed Computing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-debugging-internal-ci">Testing &amp; Debugging (Internal/CI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-benchmarking">Profiling &amp; Benchmarking</a></li>
