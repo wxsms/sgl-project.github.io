@@ -548,9 +548,9 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2025-12-26 02:28:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:28:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:28:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:46:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:46:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:46:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -577,33 +577,33 @@ performance overhead. If your application is performance-sensitive, we recommend
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-26 02:28:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:28:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:28:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:28:11] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
-[2025-12-26 02:28:11] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
-[2025-12-26 02:28:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:28:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:28:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:28:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:28:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:28:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:46:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:46:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:46:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:46:59] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
+[2025-12-26 02:46:59] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
+[2025-12-26 02:47:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:47:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:47:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:47:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:47:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:47:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-26 02:28:27] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2025-12-26 02:47:13] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01&lt;00:03,  1.30s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:06&lt;00:06,  3.39s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08&lt;00:02,  2.94s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08&lt;00:00,  1.94s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08&lt;00:00,  2.24s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.19it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02&lt;00:02,  1.03s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03&lt;00:01,  1.11s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.07it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 11.13it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 131.15it/s]
 
-Capturing batches (bs=1 avail_mem=24.99 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.89it/s]
+Capturing batches (bs=1 avail_mem=18.35 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.79it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -641,12 +641,11 @@ Capturing batches (bs=1 avail_mem=24.99 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Output 0:  Each country and capital should be on a new line.
-Country: France
-Capital: Paris
-Country: Japan
-Capital: Tokyo
 Country: Australia
-
+Capital: Canberra
+Country: Brazil
+Capital: Brasília
+Country: China
 Output 1:  1. 2. 3.
 1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia -
 </pre></div></div>
@@ -686,36 +685,36 @@ Output 1:  1. 2. 3.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-26 02:28:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:28:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:28:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:28:55] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
-[2025-12-26 02:28:55] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
-[2025-12-26 02:29:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:29:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:29:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:29:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:29:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:29:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:47:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:47:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:47:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:47:35] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
+[2025-12-26 02:47:35] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
+[2025-12-26 02:47:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:47:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:47:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:47:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:47:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:47:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-26 02:29:07] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2025-12-26 02:47:55] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.18it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.10it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.45it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.22it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.07it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.06it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.40it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 137.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 117.84it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 94.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 97.74it/s]
 
-Capturing batches (bs=1 avail_mem=40.98 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.44it/s]
+Capturing batches (bs=1 avail_mem=59.35 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  2.49it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -811,31 +810,31 @@ Capitals: Tokyo, Brasilia, Canberra
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-26 02:29:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:29:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:29:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:29:28] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
-[2025-12-26 02:29:28] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
-[2025-12-26 02:29:29] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
-[2025-12-26 02:29:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:29:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:29:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:29:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:29:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:29:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:48:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:48:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:48:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:48:21] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
+[2025-12-26 02:48:21] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
+[2025-12-26 02:48:21] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+[2025-12-26 02:48:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:48:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:48:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:48:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:48:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:48:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-26 02:29:41] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2025-12-26 02:48:33] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.25it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.18it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.16it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.55it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.39it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.24it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.33it/s]
 
-Capturing batches (bs=1 avail_mem=42.59 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.84it/s]
+Capturing batches (bs=1 avail_mem=14.79 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.55it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -870,7 +869,7 @@ Capturing batches (bs=1 avail_mem=42.59 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 90.12it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 89.23it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;}}
 </pre></div></div>
@@ -901,7 +900,7 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 131.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 122.96it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora0&#39;: &#39;Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16&#39;, &#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;}}
 </pre></div></div>
@@ -943,11 +942,12 @@ Capitals: Tokyo, Brasilia, Canberra
 
 Output from lora1 (updated):
  Each country and capital should be on a new line.
+Country: France
+Capital: Paris
+Country: Japan
+Capital: Tokyo
 Country: Australia
-Capital: Canberra
-Country: Brazil
-Capital: Brasília
-Country: China
+
 
 </pre></div></div>
 </div>
@@ -984,7 +984,7 @@ Country: China
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 84.90it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 83.92it/s]
 
 LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39;: None, &#39;success&#39;: True, &#39;error_message&#39;: &#39;&#39;, &#39;loaded_adapters&#39;: {&#39;lora1&#39;: &#39;algoprog/fact-generation-llama-3.1-8b-instruct-lora&#39;, &#39;lora0&#39;: &#39;philschmid/code-llama-3-1-8b-text-to-sql-lora&#39;}}
 </pre></div></div>
@@ -1019,15 +1019,15 @@ LoRA adapter loaded successfully. {&#39;rid&#39;: None, &#39;http_worker_ipc&#39
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Output from lora0:
- Country 1 has a capital of Bogor? No, that&#39;s not correct. The capital of Country 1 is actually Bogor is not the capital,
+ Country 1: Japan, Capital: Tokyo. Country 2: Australia, Capital: Canberra. Country 3: Brazil, Capital: Brasília.
+A
 
 Output from lora1 (updated):
  Each country and capital should be on a new line.
-Country: Australia
-Capital: Canberra
-Country: Brazil
-Capital: Brasília
-Country: China
+France, Paris
+Japan, Tokyo
+Brazil, Brasília
+List 3 countries and their capitals
 
 </pre></div></div>
 </div>
@@ -1081,40 +1081,40 @@ Therefore, currently SGLang limits maximal number of pinned adapters to <code cl
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2025-12-26 02:30:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:30:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:30:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:30:03] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
-[2025-12-26 02:30:03] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
-[2025-12-26 02:30:04] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
-[2025-12-26 02:30:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:30:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:30:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:48:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:48:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:48:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:48:58] WARNING server_args.py:1543: Attention backend not specified. Use fa3 backend by default.
+[2025-12-26 02:48:58] INFO server_args.py:2420: Set soft_watchdog_timeout since in CI
+[2025-12-26 02:48:58] LoRA backend &#39;csgmv&#39; does not yet support embedding or lm_head layers; dropping &#39;embed_tokens&#39; and &#39;lm_head&#39; from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+[2025-12-26 02:49:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:49:04] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:49:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2025-12-26 02:49:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2025-12-26 02:49:04] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2025-12-26 02:49:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2025-12-26 02:30:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2025-12-26 02:30:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2025-12-26 02:30:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2025-12-26 02:30:16] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2025-12-26 02:49:10] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.16it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.12it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.09it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.46it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.17it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.08it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.08it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.45it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 97.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 102.81it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 143.09it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 132.01it/s]
 
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 89.04it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 91.08it/s]
 
-Capturing batches (bs=1 avail_mem=22.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.39it/s]
+Capturing batches (bs=1 avail_mem=56.67 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  1.85it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1152,7 +1152,7 @@ Capturing batches (bs=1 avail_mem=22.96 GB): 100%|██████████
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 137.06it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00, 123.16it/s]
 
 </pre></div></div>
 </div>
