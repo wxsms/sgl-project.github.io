@@ -490,6 +490,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workload-balancer">Workload Balancer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ep-with-spectulative-decoding">EP with Spectulative Decoding</a></li>
 </ul>
             </nav>
         </div>
@@ -690,6 +691,17 @@ document.write(`
 <p>To enable EPLB, use the flags <code class="docutils literal notranslate"><span class="pre">--enable-eplb</span> <span class="pre">true</span> <span class="pre">--load-balance-method</span> <span class="pre">eplb</span></code>. For optimal performance, increase batch sizes to stabilize activation statistics and configure periodic rebalancing (e.g., every 1000 requests) to adapt to evolving workloads. Simulations demonstrate significant improvements in load balancedness (ratio of mean to max computation time), correlating strongly with throughput gains.</p>
 <p>For more details, refer to the <a class="reference external" href="https://lmsys.org/blog/2025-05-05-large-scale-ep/#expert-parallelism-load-balancer">EPLB Section in the Large-Scale EP Blog</a> and the <a class="reference external" href="https://github.com/deepseek-ai/eplb">EPLB Repository</a>.</p>
 </section>
+<section id="ep-with-spectulative-decoding">
+<h2>EP with Spectulative Decoding<a class="headerlink" href="#ep-with-spectulative-decoding" title="Link to this heading">#</a></h2>
+<p>When utilizing speculative decoding with MTP on MoE architectures, use the <code class="docutils literal notranslate"><span class="pre">--speculative-moe-runner-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-moe-a2a-backend</span></code> arguments to customize the MoE layer behavior for the draft model. While they default to the target model’s settings, users can differentiate them for varying precisions between target and draft models.</p>
+<p>For model like <code class="docutils literal notranslate"><span class="pre">nvidia/DeepSeek-R1-0528-NVFP4-v2</span></code>, the target model uses NVFP4 precision while the draft model uses BF16. To apply <code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code> kernel for target MoE layer while falling back to triton fused MoE kernel for draft MoE layer, users can set the arguments as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="o">--</span><span class="n">moe</span><span class="o">-</span><span class="n">runner</span><span class="o">-</span><span class="n">backend</span> <span class="n">flashinfer_trtllm</span> \
+<span class="o">--</span><span class="n">speculative</span><span class="o">-</span><span class="n">moe</span><span class="o">-</span><span class="n">runner</span><span class="o">-</span><span class="n">backend</span> <span class="n">triton</span> \
+<span class="o">...</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -755,6 +767,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workload-balancer">Workload Balancer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ep-with-spectulative-decoding">EP with Spectulative Decoding</a></li>
 </ul>
   </nav></div>
 
