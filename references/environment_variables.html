@@ -785,11 +785,15 @@ document.write(`
 <td><p>Use nvfp4 for moe dispatch (on flashinfer_cutlass or flashinfer_cutedsl moe runner backend)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_FLASHINFER_FP8_GEMM</span></code> (deprecated)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NVFP4_CKPT_FP8_NEXTN_MOE</span></code></p></td>
+<td><p>Quantize moe of nextn layer from BF16 to FP8 when launching DeepSeek NVFP4 checkpoint</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_FLASHINFER_FP8_GEMM</span></code> (deprecated)</p></td>
 <td><p>Use flashinfer kernels when running blockwise fp8 GEMM on Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=flashinfer_trtllm</span></code> instead.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code> (deprecated)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SUPPORT_CUTLASS_BLOCK_FP8</span></code> (deprecated)</p></td>
 <td><p>Use Cutlass kernels when running blockwise fp8 GEMM on Hopper or Blackwell GPUs. <strong>DEPRECATED</strong>: Please use <code class="docutils literal notranslate"><span class="pre">--fp8-gemm-backend=cutlass</span></code> instead.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
