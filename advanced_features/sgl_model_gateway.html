@@ -477,7 +477,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-plane">Control Plane</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-plane">Data Plane</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-privacy">Storage &amp; Privacy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-and-privacy">Storage and Privacy</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
@@ -493,10 +493,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-modes">Deployment Modes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-launch-router-workers">Co-launch Router + Workers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-launch-router-and-workers">Co-launch Router and Workers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-launch-http">Separate Launch (HTTP)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-launch">gRPC Launch</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill/Decode Disaggregation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill-Decode Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-backend-proxy">OpenAI Backend Proxy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-model-inference-gateway">Multi-Model Inference Gateway</a></li>
 </ul>
@@ -518,23 +518,23 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-call-parsing">Function Call Parsing</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversation-response-apis">Conversation &amp; Response APIs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversation-and-response-apis">Conversation and Response APIs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-management-apis">Worker Management APIs</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-worker">Add Worker</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#list-workers">List Workers</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#admin-health-endpoints">Admin &amp; Health Endpoints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#admin-and-health-endpoints">Admin and Health Endpoints</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-balancing-policies">Load Balancing Policies</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-policy-tuning">Cache-Aware Policy Tuning</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-flow-control">Reliability &amp; Flow Control</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-flow-control">Reliability and Flow Control</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retries">Retries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-queuing">Rate Limiting &amp; Queuing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-and-queuing">Rate Limiting and Queuing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#health-checks">Health Checks</a></li>
 </ul>
 </li>
@@ -564,7 +564,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-mode-discovery">PD Mode Discovery</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history-data-connectors">History &amp; Data Connectors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history-and-data-connectors">History and Data Connectors</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oracle-configuration">Oracle Configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-configuration">PostgreSQL Configuration</a></li>
 </ul>
@@ -593,7 +593,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison">Comparison</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-authentication">Security &amp; Authentication</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-and-authentication">Security and Authentication</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#router-api-key">Router API Key</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-api-keys">Worker API Keys</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-configurations">Security Configurations</a></li>
@@ -618,7 +618,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#production-recommendations">Production Recommendations</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-best-practices">Security Best Practices</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-availability">High Availability</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-deployment">Kubernetes Deployment</a></li>
@@ -666,17 +666,17 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="#control-plane"><span class="std std-ref">Control Plane</span></a></p></li>
 <li><p><a class="reference internal" href="#data-plane"><span class="std std-ref">Data Plane</span></a></p></li>
-<li><p>Storage &amp; Privacy</p></li>
+<li><p><a class="reference internal" href="#storage-and-privacy"><span class="std std-ref">Storage and Privacy</span></a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#installation"><span class="std std-ref">Installation</span></a></p></li>
 <li><p><a class="reference internal" href="#quick-start"><span class="std std-ref">Quick Start</span></a></p></li>
 <li><p><a class="reference internal" href="#deployment-modes"><span class="std std-ref">Deployment Modes</span></a></p>
 <ul class="simple">
-<li><p>Co-launch Router + Workers</p></li>
+<li><p><a class="reference internal" href="#co-launch-router-and-workers"><span class="std std-ref">Co-launch Router and Workers</span></a></p></li>
 <li><p><a class="reference internal" href="#separate-launch-http"><span class="std std-ref">Separate Launch (HTTP)</span></a></p></li>
 <li><p><a class="reference internal" href="#grpc-launch"><span class="std std-ref">gRPC Launch</span></a></p></li>
-<li><p>Prefill/Decode Disaggregation</p></li>
+<li><p><a class="reference internal" href="#prefill-decode-disaggregation"><span class="std std-ref">Prefill-Decode Disaggregation</span></a></p></li>
 <li><p><a class="reference internal" href="#openai-backend-proxy"><span class="std std-ref">OpenAI Backend Proxy</span></a></p></li>
 <li><p><a class="reference internal" href="#multi-model-inference-gateway"><span class="std std-ref">Multi-Model Inference Gateway</span></a></p></li>
 </ul>
@@ -686,17 +686,17 @@ document.write(`
 <li><p><a class="reference internal" href="#inference-endpoints"><span class="std std-ref">Inference Endpoints</span></a></p></li>
 <li><p><a class="reference internal" href="#tokenization-endpoints"><span class="std std-ref">Tokenization Endpoints</span></a></p></li>
 <li><p><a class="reference internal" href="#parser-endpoints"><span class="std std-ref">Parser Endpoints</span></a></p></li>
-<li><p>Conversation &amp; Response APIs</p></li>
+<li><p><a class="reference internal" href="#conversation-and-response-apis"><span class="std std-ref">Conversation and Response APIs</span></a></p></li>
 <li><p><a class="reference internal" href="#worker-management-apis"><span class="std std-ref">Worker Management APIs</span></a></p></li>
-<li><p>Admin &amp; Health Endpoints</p></li>
+<li><p><a class="reference internal" href="#admin-and-health-endpoints"><span class="std std-ref">Admin and Health Endpoints</span></a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#load-balancing-policies"><span class="std std-ref">Load Balancing Policies</span></a></p></li>
-<li><p>Reliability &amp; Flow Control</p>
+<li><p><a class="reference internal" href="#reliability-and-flow-control"><span class="std std-ref">Reliability and Flow Control</span></a></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#retries"><span class="std std-ref">Retries</span></a></p></li>
 <li><p><a class="reference internal" href="#circuit-breaker"><span class="std std-ref">Circuit Breaker</span></a></p></li>
-<li><p>Rate Limiting &amp; Queuing</p></li>
+<li><p><a class="reference internal" href="#rate-limiting-and-queuing"><span class="std std-ref">Rate Limiting and Queuing</span></a></p></li>
 <li><p><a class="reference internal" href="#health-checks"><span class="std std-ref">Health Checks</span></a></p></li>
 </ul>
 </li>
@@ -705,10 +705,10 @@ document.write(`
 <li><p><a class="reference internal" href="#tokenizer-management"><span class="std std-ref">Tokenizer Management</span></a></p></li>
 <li><p><a class="reference internal" href="#mcp-integration"><span class="std std-ref">MCP Integration</span></a></p></li>
 <li><p><a class="reference internal" href="#service-discovery-kubernetes"><span class="std std-ref">Service Discovery (Kubernetes)</span></a></p></li>
-<li><p>History &amp; Data Connectors</p></li>
+<li><p><a class="reference internal" href="#history-and-data-connectors"><span class="std std-ref">History and Data Connectors</span></a></p></li>
 <li><p><a class="reference internal" href="#wasm-middleware"><span class="std std-ref">WASM Middleware</span></a></p></li>
 <li><p><a class="reference internal" href="#language-bindings"><span class="std std-ref">Language Bindings</span></a></p></li>
-<li><p>Security &amp; Authentication</p>
+<li><p><a class="reference internal" href="#security-and-authentication"><span class="std std-ref">Security and Authentication</span></a></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#tls-https-for-gateway-server"><span class="std std-ref">TLS (HTTPS) for Gateway Server</span></a></p></li>
 <li><p><a class="reference internal" href="#mtls-for-worker-communication"><span class="std std-ref">mTLS for Worker Communication</span></a></p></li>
@@ -723,7 +723,7 @@ document.write(`
 </li>
 <li><p><a class="reference internal" href="#production-recommendations"><span class="std std-ref">Production Recommendations</span></a></p>
 <ul class="simple">
-<li><p>Security</p></li>
+<li><p><a class="reference internal" href="#security-best-practices"><span class="std std-ref">Security Best Practices</span></a></p></li>
 <li><p><a class="reference internal" href="#high-availability"><span class="std std-ref">High Availability</span></a></p></li>
 <li><p><a class="reference internal" href="#performance"><span class="std std-ref">Performance</span></a></p></li>
 <li><p><a class="reference internal" href="#kubernetes-deployment"><span class="std std-ref">Kubernetes Deployment</span></a></p></li>
@@ -769,8 +769,8 @@ document.write(`
 <li><p><strong>OpenAI router</strong> proxies OpenAI-compatible endpoints to external vendors (OpenAI, xAI, etc.) while keeping chat history and multi-turn orchestration local.</p></li>
 </ul>
 </section>
-<section id="storage-privacy">
-<h3>Storage &amp; Privacy<a class="headerlink" href="#storage-privacy" title="Link to this heading">#</a></h3>
+<section id="storage-and-privacy">
+<h3>Storage and Privacy<a class="headerlink" href="#storage-and-privacy" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Conversation and response history is stored at the router tier (memory, none, Oracle ATP, or PostgreSQL). The same history can power multiple models or MCP loops without sending data to upstream vendors.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code> agentic flows, MCP sessions, and conversation APIs share the same storage layer, enabling compliance for regulated workloads.</p></li>
@@ -855,8 +855,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <hr class="docutils" />
 <section id="deployment-modes">
 <h2>Deployment Modes<a class="headerlink" href="#deployment-modes" title="Link to this heading">#</a></h2>
-<section id="co-launch-router-workers">
-<h3>Co-launch Router + Workers<a class="headerlink" href="#co-launch-router-workers" title="Link to this heading">#</a></h3>
+<section id="co-launch-router-and-workers">
+<h3>Co-launch Router and Workers<a class="headerlink" href="#co-launch-router-and-workers" title="Link to this heading">#</a></h3>
 <p>Launch the router and a fleet of SGLang workers in one process:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
@@ -918,7 +918,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <p>The gRPC router supports both regular HTTP-equivalent serving and PD (prefill/decode) serving. Provide <code class="docutils literal notranslate"><span class="pre">--tokenizer-path</span></code> or <code class="docutils literal notranslate"><span class="pre">--model-path</span></code> (HuggingFace ID or local directory) whenever connection mode resolves to gRPC.</p>
 </section>
 <section id="prefill-decode-disaggregation">
-<h3>Prefill/Decode Disaggregation<a class="headerlink" href="#prefill-decode-disaggregation" title="Link to this heading">#</a></h3>
+<h3>Prefill-Decode Disaggregation<a class="headerlink" href="#prefill-decode-disaggregation" title="Link to this heading">#</a></h3>
 <p>Split prefill and decode workers for PD-aware caching and balancing:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
@@ -1162,8 +1162,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </div>
 </section>
 </section>
-<section id="conversation-response-apis">
-<h3>Conversation &amp; Response APIs<a class="headerlink" href="#conversation-response-apis" title="Link to this heading">#</a></h3>
+<section id="conversation-and-response-apis">
+<h3>Conversation and Response APIs<a class="headerlink" href="#conversation-and-response-apis" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -1300,8 +1300,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </div>
 </section>
 </section>
-<section id="admin-health-endpoints">
-<h3>Admin &amp; Health Endpoints<a class="headerlink" href="#admin-health-endpoints" title="Link to this heading">#</a></h3>
+<section id="admin-and-health-endpoints">
+<h3>Admin and Health Endpoints<a class="headerlink" href="#admin-and-health-endpoints" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -1444,8 +1444,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </section>
 </section>
 <hr class="docutils" />
-<section id="reliability-flow-control">
-<h2>Reliability &amp; Flow Control<a class="headerlink" href="#reliability-flow-control" title="Link to this heading">#</a></h2>
+<section id="reliability-and-flow-control">
+<h2>Reliability and Flow Control<a class="headerlink" href="#reliability-and-flow-control" title="Link to this heading">#</a></h2>
 <section id="retries">
 <h3>Retries<a class="headerlink" href="#retries" title="Link to this heading">#</a></h3>
 <p>Configure exponential backoff retries:</p>
@@ -1544,8 +1544,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <li><p><strong>Half-Open</strong>: Testing recovery, limited requests allowed</p></li>
 </ul>
 </section>
-<section id="rate-limiting-queuing">
-<h3>Rate Limiting &amp; Queuing<a class="headerlink" href="#rate-limiting-queuing" title="Link to this heading">#</a></h3>
+<section id="rate-limiting-and-queuing">
+<h3>Rate Limiting and Queuing<a class="headerlink" href="#rate-limiting-and-queuing" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000<span class="w"> </span>http://worker2:8001<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--max-concurrent-requests<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
@@ -1823,8 +1823,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </section>
 </section>
 <hr class="docutils" />
-<section id="history-data-connectors">
-<h2>History &amp; Data Connectors<a class="headerlink" href="#history-data-connectors" title="Link to this heading">#</a></h2>
+<section id="history-and-data-connectors">
+<h2>History and Data Connectors<a class="headerlink" href="#history-and-data-connectors" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Backend</p></th>
@@ -2179,8 +2179,8 @@ go<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-t
 </section>
 </section>
 <hr class="docutils" />
-<section id="security-authentication">
-<h2>Security &amp; Authentication<a class="headerlink" href="#security-authentication" title="Link to this heading">#</a></h2>
+<section id="security-and-authentication">
+<h2>Security and Authentication<a class="headerlink" href="#security-and-authentication" title="Link to this heading">#</a></h2>
 <section id="router-api-key">
 <h3>Router API Key<a class="headerlink" href="#router-api-key" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
@@ -2424,8 +2424,8 @@ curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Aut
 <section id="production-recommendations">
 <h2>Production Recommendations<a class="headerlink" href="#production-recommendations" title="Link to this heading">#</a></h2>
 <p>This section provides guidance for deploying SGLang Model Gateway in production environments.</p>
-<section id="security">
-<h3>Security<a class="headerlink" href="#security" title="Link to this heading">#</a></h3>
+<section id="security-best-practices">
+<h3>Security Best Practices<a class="headerlink" href="#security-best-practices" title="Link to this heading">#</a></h3>
 <p><strong>Always enable TLS in production:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--worker-urls<span class="w"> </span>https://worker1:8443<span class="w"> </span>https://worker2:8443<span class="w"> </span><span class="se">\</span>
@@ -3063,7 +3063,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-plane">Control Plane</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-plane">Data Plane</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-privacy">Storage &amp; Privacy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-and-privacy">Storage and Privacy</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
@@ -3079,10 +3079,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-modes">Deployment Modes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-launch-router-workers">Co-launch Router + Workers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-launch-router-and-workers">Co-launch Router and Workers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-launch-http">Separate Launch (HTTP)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-launch">gRPC Launch</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill/Decode Disaggregation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill-Decode Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-backend-proxy">OpenAI Backend Proxy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-model-inference-gateway">Multi-Model Inference Gateway</a></li>
 </ul>
@@ -3104,23 +3104,23 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-call-parsing">Function Call Parsing</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversation-response-apis">Conversation &amp; Response APIs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversation-and-response-apis">Conversation and Response APIs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-management-apis">Worker Management APIs</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-worker">Add Worker</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#list-workers">List Workers</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#admin-health-endpoints">Admin &amp; Health Endpoints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#admin-and-health-endpoints">Admin and Health Endpoints</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-balancing-policies">Load Balancing Policies</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-aware-policy-tuning">Cache-Aware Policy Tuning</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-flow-control">Reliability &amp; Flow Control</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-flow-control">Reliability and Flow Control</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retries">Retries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-breaker">Circuit Breaker</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-queuing">Rate Limiting &amp; Queuing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-limiting-and-queuing">Rate Limiting and Queuing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#health-checks">Health Checks</a></li>
 </ul>
 </li>
@@ -3150,7 +3150,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-mode-discovery">PD Mode Discovery</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history-data-connectors">History &amp; Data Connectors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history-and-data-connectors">History and Data Connectors</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oracle-configuration">Oracle Configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-configuration">PostgreSQL Configuration</a></li>
 </ul>
@@ -3179,7 +3179,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison">Comparison</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-authentication">Security &amp; Authentication</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-and-authentication">Security and Authentication</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#router-api-key">Router API Key</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-api-keys">Worker API Keys</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-configurations">Security Configurations</a></li>
@@ -3204,7 +3204,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#production-recommendations">Production Recommendations</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-best-practices">Security Best Practices</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-availability">High Availability</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kubernetes-deployment">Kubernetes Deployment</a></li>

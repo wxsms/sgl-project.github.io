@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ascend NPUs &#8212; SGLang</title>
+    <title>Support Models on Ascend NPU &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_npu_support';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_npu_support_models';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SGLang installation with NPUs support" href="ascend_npu.html" />
-    <link rel="prev" title="NVIDIA Jetson Orin" href="nvidia_jetson.html" />
+    <link rel="next" title="Support Features on Ascend NPU" href="ascend_npu_support_features.html" />
+    <link rel="prev" title="SGLang installation with NPUs support" href="ascend_npu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Dec 29, 2025"/>
@@ -222,9 +222,9 @@
 <li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Ascend NPUs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ascend_npu_support.html">Ascend NPUs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu.html">SGLang installation with NPUs support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_models.html">Support Models on Ascend NPU</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Support Models on Ascend NPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_features.html">Support Features on Ascend NPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_qwen3_examples.html">Qwen3 examples</a></li>
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_npu_support.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_npu_support_models.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_npu_support.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_npu_support_models.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +355,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_npu_support.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_npu_support_models.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +385,7 @@
       
       
       
-      <li><a href="../_sources/platforms/ascend_npu_support.rst" target="_blank"
+      <li><a href="../_sources/platforms/ascend_npu_support_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +395,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -456,7 +456,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -467,11 +469,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ascend NPUs</h1>
+    <h1>Support Models on Ascend NPU</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-language-models">Large Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-language-models">Multimodal Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-models">Embedding Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reward-models">Reward Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rerank-models">Rerank Models</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -481,17 +495,351 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ascend-npus">
-<h1>Ascend NPUs<a class="headerlink" href="#ascend-npus" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ascend_npu.html">SGLang installation with NPUs support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascend_npu_support_models.html">Support Models on Ascend NPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascend_npu_support_features.html">Support Features on Ascend NPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascend_npu_qwen3_examples.html">Qwen3 examples</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="support-models-on-ascend-npu">
+<h1>Support Models on Ascend NPU<a class="headerlink" href="#support-models-on-ascend-npu" title="Link to this heading">#</a></h1>
+<p>This section describes the models supported on the Ascend NPU, including Large Language Models, Multimodal Language
+Models, Embedding Models, and Rerank Models. Mainstream DeepSeek/Qwen/GLM series are included. You are welcome to enable
+various models based on your business requirements.</p>
+<section id="large-language-models">
+<h2>Large Language Models<a class="headerlink" href="#large-language-models" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Recommend Models</p></th>
+<th class="head text-center"><p>A2 Supported</p></th>
+<th class="head text-center"><p>A3 Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DeepSeek</p></td>
+<td><p>DeepSeek V1, V2, V3(V3.1,V3.2), R1</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen</p></td>
+<td><p>Qwen 3, Qwen 3Moe</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Llama</p></td>
+<td><p>meta-llama/Llama-4-Scout-17B-16E-Instruct,<br>AI-ModelScope/Llama-3.1-8B-Instruct,<br>LLM-Research/Llama-3.2-1B-Instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mistral</p></td>
+<td><p>mistralai/Mistral-7B-Instruct-v0.2</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Gemma</p></td>
+<td><p>google/gemma-3-4b-it</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Phi</p></td>
+<td><p>microsoft/Phi-4-multimodal-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>OLMoE</p></td>
+<td><p>allenai/OLMoE-1B-7B-0924</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>StableLM</p></td>
+<td><p>stabilityai/stablelm-2-1_6b</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Command-R</p></td>
+<td><p>CohereForAI/c4ai-command-r-v01</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Grok</p></td>
+<td><p>huihui-ai/grok-2</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ChatGLM</p></td>
+<td><p>ZhipuAI/chatglm2-6b</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>InternLM 2</p></td>
+<td><p>Shanghai_AI_Laboratory/internlm2-7b</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ExaONE 3</p></td>
+<td><p>LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>XVERSE</p></td>
+<td><p>xverse/XVERSE-MoE-A36B</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>SmolLM</p></td>
+<td><p>HuggingFaceTB/SmolLM-1.7B</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>GLM-4</p></td>
+<td><p>ZhipuAI/glm-4-9b-chat</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>MiMo</p></td>
+<td><p>XiaomiMiMo/MiMo-7B-RL</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Arcee AFM-4.5B</p></td>
+<td><p>arcee-ai/AFM-4.5B-Base</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Persimmon</p></td>
+<td><p>Howeee/persimmon-8b-chat</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ling</p></td>
+<td><p>inclusionAI/Ling-lite</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Granite</p></td>
+<td><p>ibm-granite/granite-3.1-8b-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Granite Moe</p></td>
+<td><p>ibm-granite/granite-3.0-3b-a800m-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>DBRX (Databricks)</p></td>
+<td><p>databricks/dbrx-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Baichuan 2 (7B, 13B)</p></td>
+<td><p>baichuan-inc/Baichuan2-13B-Chat</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ERNIE-4.5 (4.5, 4.5MoE series)</p></td>
+<td><p>baidu/ERNIE-4.5-21B-A3B-PT</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>MiniCPM (v3, 4B)</p></td>
+<td><p>openbmb/MiniCPM3-4B</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>GPTOSS</p></td>
+<td><p>openai/gpt-oss-120b</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+<section id="multimodal-language-models">
+<h2>Multimodal Language Models<a class="headerlink" href="#multimodal-language-models" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Recommend Models</p></th>
+<th class="head text-center"><p>A2 Supported</p></th>
+<th class="head text-center"><p>A3 Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Qwen-VL (Qwen2 series)</p></td>
+<td><p>Qwen/Qwen3-VL-235B-A22B-Instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>DeepSeek-VL2</p></td>
+<td><p>deepseek-ai/deepseek-vl2</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Janus-Pro (1B, 7B)</p></td>
+<td><p>deepseek-ai/Janus-Pro-7B</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>MiniCPM-V / MiniCPM-o</p></td>
+<td><p>openbmb/MiniCPM-V-2_6</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Gemma 3 (Multimodal)</p></td>
+<td><p>google/gemma-3-4b-it</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mistral-Small-3.1-24B</p></td>
+<td><p>mistralai/Mistral-Small-3.1-24B-Instruct-2503</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Phi-4-multimodal-instruct</p></td>
+<td><p>microsoft/Phi-4-multimodal-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>MiMo-VL (7B)</p></td>
+<td><p>XiaomiMiMo/MiMo-VL-7B-RL</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>LLaVA (v1.5 &amp; v1.6)</p></td>
+<td><p>AI-ModelScope/llava-v1.6-34b</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>LLaVA-NeXT (8B, 72B)</p></td>
+<td><p>lmms-lab/llava-next-72b</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>LLaVA-OneVision</p></td>
+<td><p>lmms-lab/llava-onevision-qwen2-7b-ov</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Kimi-VL (A3B)</p></td>
+<td><p>Kimi/Kimi-VL-A3B-Instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>GLM-4.5V (106B) / GLM-4.1V(9B)</p></td>
+<td><p>ZhipuAI/GLM-4.5V</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Llama 3.2 Vision (11B)</p></td>
+<td><p>meta-llama/Llama-3.2-11B-Vision-Instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="embedding-models">
+<h2>Embedding Models<a class="headerlink" href="#embedding-models" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Recommend Models</p></th>
+<th class="head text-center"><p>A2 Supported</p></th>
+<th class="head text-center"><p>A3 Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>E5 (Llama/Mistral based)</p></td>
+<td><p>intfloat/e5-mistral-7b-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>GTE-Qwen2</p></td>
+<td><p>iic/gte_Qwen2-1.5B-instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen3-Embedding</p></td>
+<td><p>Qwen/Qwen3-Embedding-8B</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>GME (Multimodal)</p></td>
+<td><p>Alibaba-NLP/gme-Qwen2-VL-2B-Instruct</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>CLIP</p></td>
+<td><p>AI-ModelScope/clip-vit-large-patch14-336</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>BGE</p></td>
+<td><p>BAAI/bge-large-en-v1.5</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="reward-models">
+<h2>Reward Models<a class="headerlink" href="#reward-models" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Recommend Models</p></th>
+<th class="head text-center"><p>A2 Supported</p></th>
+<th class="head text-center"><p>A3 Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Llama3.1 Reward</p></td>
+<td><p>Skywork/Skywork-Reward-Llama-3.1-8B-v0.2</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>InternLM 2 Reward</p></td>
+<td><p>Shanghai_AI_Laboratory/internlm2-7b-reward</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen2.5 Reward - Math</p></td>
+<td><p>Qwen/Qwen2.5-Math-RM-72B</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen2.5 Reward - Sequence</p></td>
+<td><p>jason9693/Qwen2.5-1.5B-apeach</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Gemma 2-27B Reward</p></td>
+<td><p>Skywork/Skywork-Reward-Gemma-2-27B-v0.2</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="rerank-models">
+<h2>Rerank Models<a class="headerlink" href="#rerank-models" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Family</p></th>
+<th class="head"><p>Recommend Models</p></th>
+<th class="head text-center"><p>A2 Supported</p></th>
+<th class="head text-center"><p>A3 Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BGE-Reranker</p></td>
+<td><p>BAAI/bge-reranker-v2-m3</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
 
@@ -506,20 +854,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="nvidia_jetson.html"
+       href="ascend_npu.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">NVIDIA Jetson Orin</p>
+        <p class="prev-next-title">SGLang installation with NPUs support</p>
       </div>
     </a>
     <a class="right-next"
-       href="ascend_npu.html"
+       href="ascend_npu_support_features.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SGLang installation with NPUs support</p>
+        <p class="prev-next-title">Support Features on Ascend NPU</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -529,6 +877,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-language-models">Large Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-language-models">Multimodal Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-models">Embedding Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reward-models">Reward Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rerank-models">Rerank Models</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
