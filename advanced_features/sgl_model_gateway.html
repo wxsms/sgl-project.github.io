@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=bf4866ae"></script>
+    <script src="../_static/documentation_options.js?v=914a9204"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -518,6 +518,13 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-call-parsing">Function Call Parsing</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-api">Classification API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#request">Request</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Response</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#response-fields">Response Fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversation-and-response-apis">Conversation and Response APIs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-management-apis">Worker Management APIs</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-worker">Add Worker</a></li>
@@ -545,7 +552,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-call-parsing">Tool Call Parsing</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-formats">Supported Formats</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizer-management">Tokenizer Management</a><ul class="visible nav section-nav flex-column">
@@ -556,7 +563,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp-integration">MCP Integration</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-transports">Supported Transports</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp-configuration-file">MCP Configuration File</a></li>
 </ul>
 </li>
@@ -570,7 +577,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wasm-middleware">WASM Middleware</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-modules">Building Modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-modules">Deploying Modules</a></li>
@@ -579,14 +586,14 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language-bindings">Language Bindings</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bindings">Python Bindings</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Installation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Installation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Usage</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#go-bindings">Go Bindings</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Architecture</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Installation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Architecture</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Installation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Examples</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
 </ul>
 </li>
@@ -686,6 +693,7 @@ document.write(`
 <li><p><a class="reference internal" href="#inference-endpoints"><span class="std std-ref">Inference Endpoints</span></a></p></li>
 <li><p><a class="reference internal" href="#tokenization-endpoints"><span class="std std-ref">Tokenization Endpoints</span></a></p></li>
 <li><p><a class="reference internal" href="#parser-endpoints"><span class="std std-ref">Parser Endpoints</span></a></p></li>
+<li><p><a class="reference internal" href="#classification-api"><span class="std std-ref">Classification API</span></a></p></li>
 <li><p><a class="reference internal" href="#conversation-and-response-apis"><span class="std std-ref">Conversation and Response APIs</span></a></p></li>
 <li><p><a class="reference internal" href="#worker-management-apis"><span class="std std-ref">Worker Management APIs</span></a></p></li>
 <li><p><a class="reference internal" href="#admin-and-health-endpoints"><span class="std std-ref">Admin and Health Endpoints</span></a></p></li>
@@ -765,7 +773,7 @@ document.write(`
 <h3>Data Plane<a class="headerlink" href="#data-plane" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>HTTP routers</strong> (regular &amp; PD) implement <code class="docutils literal notranslate"><span class="pre">/generate</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/chat/completions</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/completions</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/responses</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/embeddings</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/rerank</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/classify</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/tokenize</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/detokenize</span></code>, and associated admin endpoints.</p></li>
-<li><p><strong>gRPC router</strong> streams tokenized requests directly to SRT gRPC workers, running fully in Rust—tokenizer, reasoning parser, and tool parser all reside in-process. Supports both single-stage and PD routing, including embeddings.</p></li>
+<li><p><strong>gRPC router</strong> streams tokenized requests directly to SRT gRPC workers, running fully in Rust—tokenizer, reasoning parser, and tool parser all reside in-process. Supports both single-stage and PD routing, including embeddings and classification.</p></li>
 <li><p><strong>OpenAI router</strong> proxies OpenAI-compatible endpoints to external vendors (OpenAI, xAI, etc.) while keeping chat history and multi-turn orchestration local.</p></li>
 </ul>
 </section>
@@ -1160,6 +1168,75 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="classification-api">
+<h3>Classification API<a class="headerlink" href="#classification-api" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">/v1/classify</span></code> endpoint provides text classification using sequence classification models (e.g., <code class="docutils literal notranslate"><span class="pre">Qwen2ForSequenceClassification</span></code>, <code class="docutils literal notranslate"><span class="pre">BertForSequenceClassification</span></code>).</p>
+<section id="request">
+<h4>Request<a class="headerlink" href="#request" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://localhost:30000/v1/classify<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;jason9693/Qwen2.5-1.5B-apeach&quot;,</span>
+<span class="s1">    &quot;input&quot;: &quot;I love this product!&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h4>Response<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;classify-a1b2c3d4-5678-90ab-cdef-1234567890ab&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1767034308</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jason9693/Qwen2.5-1.5B-apeach&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;probs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.12</span><span class="p">,</span><span class="w"> </span><span class="mf">0.88</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;num_classes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;prompt_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;completion_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="response-fields">
+<h4>Response Fields<a class="headerlink" href="#response-fields" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">label</span></code></p></td>
+<td><p>Predicted class label (from model’s <code class="docutils literal notranslate"><span class="pre">id2label</span></code> config, or <code class="docutils literal notranslate"><span class="pre">LABEL_N</span></code> fallback)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">probs</span></code></p></td>
+<td><p>Probability distribution over all classes (softmax of logits)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">num_classes</span></code></p></td>
+<td><p>Number of classification classes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Classification reuses the embedding backend—the scheduler returns logits which are converted to probabilities via softmax</p></li>
+<li><p>Labels come from the model’s HuggingFace config (<code class="docutils literal notranslate"><span class="pre">id2label</span></code> field); models without this mapping use generic labels (<code class="docutils literal notranslate"><span class="pre">LABEL_0</span></code>, <code class="docutils literal notranslate"><span class="pre">LABEL_1</span></code>, etc.)</p></li>
+<li><p>Both HTTP and gRPC routers support classification</p></li>
+</ul>
 </section>
 </section>
 <section id="conversation-and-response-apis">
@@ -1664,8 +1741,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </table>
 </div>
 </section>
-<section id="id1">
-<h3>Usage<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Usage<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--worker-urls<span class="w"> </span>grpc://127.0.0.1:20000<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
@@ -1755,8 +1832,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
 </table>
 </div>
 </section>
-<section id="id2">
-<h3>Configuration<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Configuration<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--mcp-config-path<span class="w"> </span>/path/to/mcp-config.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--worker-urls<span class="w"> </span>http://worker1:8000
@@ -1890,8 +1967,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <section id="wasm-middleware">
 <h2>WASM Middleware<a class="headerlink" href="#wasm-middleware" title="Link to this heading">#</a></h2>
 <p>The gateway supports WebAssembly (WASM) middleware modules for custom request/response processing. This enables organization-specific logic for authentication, rate limiting, billing, logging, and more—without modifying or recompiling the gateway.</p>
-<section id="id3">
-<h3>Overview<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Overview<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>WASM middleware runs in a sandboxed environment with memory isolation, no network/filesystem access, and configurable resource limits.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -2038,8 +2115,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </s
 <section id="python-bindings">
 <h3>Python Bindings<a class="headerlink" href="#python-bindings" title="Link to this heading">#</a></h3>
 <p>The Python bindings provide a PyO3-based wrapper around the Rust gateway library. This is a straightforward binding that calls the gateway server startup from Python.</p>
-<section id="id4">
-<h4>Installation<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id5">
+<h4>Installation<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># From PyPI</span>
 pip<span class="w"> </span>install<span class="w"> </span>sglang-router
 
@@ -2049,8 +2126,8 @@ pip<span class="w"> </span>install<span class="w"> </span>maturin<span class="w"
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h4>Usage<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<section id="id6">
+<h4>Usage<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>The Python bindings are used throughout this documentation. See the <a class="reference internal" href="#quick-start"><span class="std std-ref">Quick Start</span></a> and <a class="reference internal" href="#deployment-modes"><span class="std std-ref">Deployment Modes</span></a> sections for detailed examples.</p>
 <p>Key components:</p>
 <ul class="simple">
@@ -2068,8 +2145,8 @@ pip<span class="w"> </span>install<span class="w"> </span>maturin<span class="w"
 <li><p>High-performance client applications</p></li>
 <li><p>Building custom OpenAI-compatible proxy servers</p></li>
 </ul>
-<section id="id6">
-<h4>Architecture<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<section id="id7">
+<h4>Architecture<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────────────────────────┐
 │         High-Level Go API               │
 │   (client.go - OpenAI-style interface)  │
@@ -2089,8 +2166,8 @@ pip<span class="w"> </span>install<span class="w"> </span>maturin<span class="w"
 <li><p>Built-in tool call parsing and chat template application</p></li>
 </ul>
 </section>
-<section id="id7">
-<h4>Installation<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<section id="id8">
+<h4>Installation<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the FFI library first</span>
 <span class="nb">cd</span><span class="w"> </span>sgl-model-gateway/bindings/golang
 make<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>lib
@@ -2101,8 +2178,8 @@ go<span class="w"> </span>get<span class="w"> </span>github.com/sgl-project/sgl-
 </div>
 <p><strong>Requirements:</strong> Go 1.24+, Rust toolchain</p>
 </section>
-<section id="id8">
-<h4>Examples<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<section id="id9">
+<h4>Examples<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>Complete working examples are available in <code class="docutils literal notranslate"><span class="pre">bindings/golang/examples/</span></code>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -3104,6 +3181,13 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-call-parsing">Function Call Parsing</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-api">Classification API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#request">Request</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Response</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#response-fields">Response Fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversation-and-response-apis">Conversation and Response APIs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worker-management-apis">Worker Management APIs</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-worker">Add Worker</a></li>
@@ -3131,7 +3215,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-call-parsing">Tool Call Parsing</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-formats">Supported Formats</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizer-management">Tokenizer Management</a><ul class="visible nav section-nav flex-column">
@@ -3142,7 +3226,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp-integration">MCP Integration</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-transports">Supported Transports</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Configuration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp-configuration-file">MCP Configuration File</a></li>
 </ul>
 </li>
@@ -3156,7 +3240,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wasm-middleware">WASM Middleware</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-modules">Building Modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-modules">Deploying Modules</a></li>
@@ -3165,14 +3249,14 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language-bindings">Language Bindings</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bindings">Python Bindings</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Installation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Installation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Usage</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#go-bindings">Go Bindings</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Architecture</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Installation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Architecture</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Installation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Examples</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
 </ul>
 </li>
