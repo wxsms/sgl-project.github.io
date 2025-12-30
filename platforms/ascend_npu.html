@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b67dee7a"></script>
+    <script src="../_static/documentation_options.js?v=fa4cb16f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -492,7 +492,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-using-docker">Method 2: Using docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-using-docker-image">Method 2: Using Docker Image</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-image">Obtain Image</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-docker">Create Docker</a></li>
 </ul>
@@ -556,8 +556,8 @@ conda<span class="w"> </span>activate<span class="w"> </span>sglang_npu
 </section>
 <section id="pytorch-and-pytorch-framework-adaptor-on-ascend">
 <h4>Pytorch and Pytorch Framework Adaptor on Ascend<a class="headerlink" href="#pytorch-and-pytorch-framework-adaptor-on-ascend" title="Link to this heading">#</a></h4>
-<p>At the moment NPUGraph optimizations are supported only in <code class="docutils literal notranslate"><span class="pre">torch_npu==2.6.0.post3</span></code> that requires ‘torch==2.6.0’.
-<em>TODO: NPUGraph optimizations will be supported in future releases of ‘torch_npu’ 2.7.1, 2.8.0 and 2.9.0</em></p>
+<p>At the moment NPUGraph optimizations are supported only in <code class="docutils literal notranslate"><span class="pre">torch_npu==2.6.0.post3</span></code> that requires ‘torch==2.6.0’.</p>
+<p><em>TODO: NPUGraph optimizations will be supported in future releases of ‘torch_npu’ 2.7.1, 2.8.0 and 2.9.0</em></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.6.0
 <span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.21.0
 <span class="nv">TORCH_NPU_VERSION</span><span class="o">=</span><span class="m">2</span>.6.0.post3
@@ -565,7 +565,7 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch_npu</span><span class="o">==</span><span class="nv">$TORCH_NPU_VERSION</span>
 </pre></div>
 </div>
-<p>While there is no resleased versions of ‘torch_npu’ for ‘torch==2.7.1’ and ‘torch==2.8.0’ we provide custom builds of ‘torch_npu’. PLATFORM can be ‘aarch64’ or ‘x86_64’</p>
+<p>While there is no released versions of ‘torch_npu’ for ‘torch==2.7.1’ and ‘torch==2.8.0’ we provide custom builds of ‘torch_npu’. PLATFORM can be ‘aarch64’ or ‘x86_64’</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PLATFORM</span><span class="o">=</span><span class="s2">&quot;aarch64&quot;</span>
 <span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0
 <span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.23.0
@@ -574,7 +574,7 @@ wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.co
 pip<span class="w"> </span>install<span class="w"> </span>torch_npu-<span class="si">${</span><span class="nv">PYTORCH_VERSION</span><span class="si">}</span>.post2.dev20251120-cp311-cp311-manylinux_2_28_<span class="si">${</span><span class="nv">PLATFORM</span><span class="si">}</span>.whl
 </pre></div>
 </div>
-<p>If you are using other versions of ‘torch’ install ‘torch_npu’ from sources, check <a class="reference external" href="https://github.com/Ascend/pytorch/blob/master/README.md">installation guide</a></p>
+<p>If you are using other versions of <code class="docutils literal notranslate"><span class="pre">torch</span></code> and install <code class="docutils literal notranslate"><span class="pre">torch_npu</span></code>, check <a class="reference external" href="https://github.com/Ascend/pytorch/blob/master/README.md">installation guide</a></p>
 </section>
 <section id="triton-on-ascend">
 <h4>Triton on Ascend<a class="headerlink" href="#triton-on-ascend" title="Link to this heading">#</a></h4>
@@ -591,7 +591,7 @@ wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</s
 </section>
 <section id="sglang-kernels-npu">
 <h4>SGLang Kernels NPU<a class="headerlink" href="#sglang-kernels-npu" title="Link to this heading">#</a></h4>
-<p>We provide our own set of SGL kernels, check <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/blob/main/python/sgl_kernel_npu/README.md">installation guide</a>.</p>
+<p>We provide SGL kernels for Ascend NPU, check <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/blob/main/python/sgl_kernel_npu/README.md">installation guide</a>.</p>
 </section>
 <section id="deepep-compatible-library">
 <h4>DeepEP-compatible Library<a class="headerlink" href="#deepep-compatible-library" title="Link to this heading">#</a></h4>
@@ -621,8 +621,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </div>
 </section>
 </section>
-<section id="method-2-using-docker">
-<h3>Method 2: Using docker<a class="headerlink" href="#method-2-using-docker" title="Link to this heading">#</a></h3>
+<section id="method-2-using-docker-image">
+<h3>Method 2: Using Docker Image<a class="headerlink" href="#method-2-using-docker-image" title="Link to this heading">#</a></h3>
 <section id="obtain-image">
 <h4>Obtain Image<a class="headerlink" href="#obtain-image" title="Link to this heading">#</a></h4>
 <p>You can download the SGLang image or build an image based on Dockerfile to obtain the Ascend NPU image.</p>
@@ -663,10 +663,10 @@ docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </
 <span class="s1">    --volume /etc/ascend_install.info:/etc/ascend_install.info \</span>
 <span class="s1">    --volume /var/queue_schedule:/var/queue_schedule --volume ~/.cache/:/root/.cache/&#39;</span>
 
-<span class="c1"># Add HF_TOKEN env for download model by SGLang</span>
+<span class="c1"># Add HF_TOKEN env for download model by SGLang.</span>
 drun<span class="w"> </span>--env<span class="w"> </span><span class="s2">&quot;HF_TOKEN=&lt;secret&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>&lt;image_name&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+<span class="w">    </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend
 </pre></div>
 </div>
 </section>
@@ -687,7 +687,6 @@ cat<span class="w"> </span>/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 <section id="disable-numa-balancing">
 <h3>Disable NUMA balancing<a class="headerlink" href="#disable-numa-balancing" title="Link to this heading">#</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
-
 <span class="c1"># Check</span>
 cat<span class="w"> </span>/proc/sys/kernel/numa_balancing<span class="w"> </span><span class="c1"># shows 0</span>
 </pre></div>
@@ -709,15 +708,23 @@ cat<span class="w"> </span>/proc/sys/vm/swappiness<span class="w"> </span><span 
 <h3>Running Service For Large Language Models<a class="headerlink" href="#running-service-for-large-language-models" title="Link to this heading">#</a></h3>
 <section id="pd-mixed-scene">
 <h4>PD Mixed Scene<a class="headerlink" href="#pd-mixed-scene" title="Link to this heading">#</a></h4>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enabling CPU Affinity</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span>--attention-backend<span class="w"> </span>ascend
 </pre></div>
 </div>
 </section>
 <section id="pd-separation-scene">
 <h4>PD Separation Scene<a class="headerlink" href="#pd-separation-scene" title="Link to this heading">#</a></h4>
-<p>Launch prefill server</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
-<span class="c1"># PIP: recommended to config first Prefill Server IP, all server need to be config the same ip, PORT: one free port</span>
+<ol class="arabic simple">
+<li><p>Launch Prefill Server</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enabling CPU Affinity</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1"># PIP: recommended to config first Prefill Server IP</span>
+<span class="c1"># PORT: one free port</span>
+<span class="c1"># all sglang servers need to be config the same PIP and PORT,</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://PIP:PORT&quot;</span>
 <span class="c1"># if you are Atlas 800I A2 hardware and use rdma for kv cache transfer, add this parameter</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_TRANSFER_PROTOCOL</span><span class="o">=</span><span class="s2">&quot;device_rdma&quot;</span>
@@ -730,13 +737,14 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--base-gpu-id<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w">  </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
-<p>Launch Decode server</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
-<span class="c1"># PIP: recommended to config first Prefill Server IP, all server need to be config the same ip, PORT: one free port</span>
+<ol class="arabic simple" start="2">
+<li><p>Launch Decode Server</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PIP: recommended to config first Prefill Server IP</span>
+<span class="c1"># PORT: one free port</span>
+<span class="c1"># all sglang servers need to be config the same PIP and PORT,</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://PIP:PORT&quot;</span>
 <span class="c1"># if you are Atlas 800I A2 hardware and use rdma for kv cache transfer, add this parameter</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_TRANSFER_PROTOCOL</span><span class="o">=</span><span class="s2">&quot;device_rdma&quot;</span>
@@ -752,7 +760,9 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">    </span>--port<span class="w"> </span><span class="m">8001</span>
 </pre></div>
 </div>
-<p>Launch Router</p>
+<ol class="arabic simple" start="3">
+<li><p>Launch Router</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
@@ -845,7 +855,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-using-docker">Method 2: Using docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-using-docker-image">Method 2: Using Docker Image</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-image">Obtain Image</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-docker">Create Docker</a></li>
 </ul>

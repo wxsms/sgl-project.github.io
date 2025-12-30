@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b67dee7a"></script>
+    <script src="../_static/documentation_options.js?v=fa4cb16f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -480,8 +480,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-v3">Running DeepSeek-V3</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-on-1-x-atlas-800i-a3">Running DeepSeek on 1 x Atlas 800I A3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-with-pd-disaggregation-on-2-x-atlas-800i-a3">Running DeepSeek with PD disaggregation on 2 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-in-pd-mixed-mode-on-1-x-atlas-800i-a3">Running DeepSeek in PD mixed mode on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-with-pd-disaggregation-mode-on-2-x-atlas-800i-a3">Running DeepSeek with PD disaggregation mode on 2 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-with-pd-disaggregation-on-4-x-atlas-800i-a3">Running DeepSeek with PD disaggregation on 4 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-gsm8k">test gsm8k</a></li>
 </ul>
@@ -501,8 +501,8 @@ document.write(`
 <h1>DeepSeek examples<a class="headerlink" href="#deepseek-examples" title="Link to this heading">#</a></h1>
 <section id="running-deepseek-v3">
 <h2>Running DeepSeek-V3<a class="headerlink" href="#running-deepseek-v3" title="Link to this heading">#</a></h2>
-<section id="running-deepseek-on-1-x-atlas-800i-a3">
-<h3>Running DeepSeek on 1 x Atlas 800I A3.<a class="headerlink" href="#running-deepseek-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<section id="running-deepseek-in-pd-mixed-mode-on-1-x-atlas-800i-a3">
+<h3>Running DeepSeek in PD mixed mode on 1 x Atlas 800I A3.<a class="headerlink" href="#running-deepseek-in-pd-mixed-mode-on-1-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
 <p>W4A8 Model weights could be found <a class="reference external" href="https://modelers.cn/models/Modelers_Park/DeepSeek-R1-0528-w4a8">here</a>.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
@@ -529,15 +529,13 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">6688</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--cuda-graph-bs<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.68<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--context-length<span class="w"> </span><span class="m">8188</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--max-prefill-tokens<span class="w"> </span><span class="m">6000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--max-prefill-tokens<span class="w"> </span><span class="m">16384</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--deepep-mode<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
@@ -551,13 +549,16 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </pre></div>
 </div>
 </section>
-<section id="running-deepseek-with-pd-disaggregation-on-2-x-atlas-800i-a3">
-<h3>Running DeepSeek with PD disaggregation on 2 x Atlas 800I A3.<a class="headerlink" href="#running-deepseek-with-pd-disaggregation-on-2-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
+<section id="running-deepseek-with-pd-disaggregation-mode-on-2-x-atlas-800i-a3">
+<h3>Running DeepSeek with PD disaggregation mode on 2 x Atlas 800I A3.<a class="headerlink" href="#running-deepseek-with-pd-disaggregation-mode-on-2-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
 <p>W4A8 Model weights could be found <a class="reference external" href="https://modelers.cn/models/Modelers_Park/DeepSeek-R1-0528-w4a8">here</a>.</p>
-<p>Prefill:</p>
+<ol class="arabic simple">
+<li><p>Prefill:</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
-<span class="c1">#PD</span>
+
+<span class="c1">#memfabric config store</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
 
 <span class="c1">#Deepep communication settings</span>
@@ -572,10 +573,11 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="nv">$PREFILL_HOST_IP</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-bootstrap-port<span class="w"> </span><span class="m">8996</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
@@ -584,7 +586,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
@@ -602,10 +603,13 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--dtype<span class="w"> </span>bfloat16
 </pre></div>
 </div>
-<p>Decode:</p>
+<ol class="arabic simple" start="2">
+<li><p>Decode:</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
-<span class="c1">#PD</span>
+
+<span class="c1">#memfabric config store</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;PREFILL_HOST_IP&gt;:&lt;PORT&gt;&quot;</span>
 
 <span class="c1">#Deepep communication settings</span>
@@ -656,7 +660,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--tokenizer-worker-num<span class="w"> </span><span class="m">4</span>
 </pre></div>
 </div>
-<p>sglang router:</p>
+<ol class="arabic simple" start="3">
+<li><p>SGLang Router</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
@@ -670,11 +676,13 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <section id="running-deepseek-with-pd-disaggregation-on-4-x-atlas-800i-a3">
 <h3>Running DeepSeek with PD disaggregation on 4 x Atlas 800I A3.<a class="headerlink" href="#running-deepseek-with-pd-disaggregation-on-4-x-atlas-800i-a3" title="Link to this heading">#</a></h3>
 <p>W8A8 Model weights could be found <a class="reference external" href="https://modelers.cn/models/State_Cloud/Deepseek-R1-bf16-hfd-w8a8">here</a>.</p>
-<p>Prefill:</p>
+<ol class="arabic simple">
+<li><p>Prefill:</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
-<span class="c1">#PD</span>
-<span class="nv">P_HOST_IP</span><span class="o">=(</span><span class="s1">&#39;xx,xx,xx,xx&#39;</span><span class="w"> </span><span class="s1">&#39;xx,xx,xx,xx&#39;</span><span class="o">)</span>
+
+<span class="c1">#memfabric config store</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;P_HOST_IP[0]&gt;:&lt;PORT&gt;&quot;</span>
 
 <span class="c1">#Deepep communication settings</span>
@@ -687,14 +695,18 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_MOE_NZ</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">TASK_QUEUE_ENABLE</span><span class="o">=</span><span class="m">2</span>
 
+<span class="c1">#Please list all host ips of Prefill instance</span>
+<span class="nv">P_HOST_IP</span><span class="o">=(</span><span class="s1">&#39;xx,xx,xx,xx&#39;</span><span class="w"> </span><span class="s1">&#39;xx,xx,xx,xx&#39;</span><span class="o">)</span>
+
 <span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="p">!P_HOST_IP[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="k">do</span>
 <span class="w">  </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">P_HOST_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--disaggregation-bootstrap-port<span class="w"> </span><span class="k">$((</span><span class="m">8996</span><span class="o">+</span><span class="nv">$i</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
@@ -703,7 +715,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">      </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--max-running-requests<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
@@ -722,10 +733,13 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="k">done</span>
 </pre></div>
 </div>
-<p>Decode:</p>
+<ol class="arabic simple" start="2">
+<li><p>Decode:</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NPU_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
-<span class="c1">#PD</span>
+
+<span class="c1">#memfabric config store</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://&lt;P_HOST_IP[0]&gt;:&lt;PORT&gt;&quot;</span>
 
 <span class="c1">#Deepep communication settings</span>
@@ -742,6 +756,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_FIA_NZ</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_MOE_NZ</span><span class="o">=</span><span class="m">1</span>
 
+<span class="c1">#please list all host ips of Prefill instance</span>
 <span class="nv">D_HOST_IP</span><span class="o">=(</span><span class="s1">&#39;xx,xx,xx,xx&#39;</span><span class="w"> </span><span class="s1">&#39;xx,xx,xx,xx&#39;</span><span class="o">)</span>
 
 <span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="p">!D_HOST_IP[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
@@ -749,6 +764,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">  </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server
 <span class="w">      </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">D_HOST_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--port<span class="w"> </span><span class="m">8001</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
@@ -767,7 +783,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">      </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--enable-dp-lm-head<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--cuda-graph-bs<span class="w">  </span><span class="m">8</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>--speculative-algorithm<span class="w"> </span>NEXTN<span class="w"> </span><span class="se">\</span>
@@ -781,7 +796,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="k">done</span>
 </pre></div>
 </div>
-<p>sglang router:</p>
+<ol class="arabic simple" start="3">
+<li><p>SGLang Router:</p></li>
+</ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--policy<span class="w"> </span>cache_aware<span class="w"> </span><span class="se">\</span>
@@ -865,8 +882,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-v3">Running DeepSeek-V3</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-on-1-x-atlas-800i-a3">Running DeepSeek on 1 x Atlas 800I A3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-with-pd-disaggregation-on-2-x-atlas-800i-a3">Running DeepSeek with PD disaggregation on 2 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-in-pd-mixed-mode-on-1-x-atlas-800i-a3">Running DeepSeek in PD mixed mode on 1 x Atlas 800I A3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-with-pd-disaggregation-mode-on-2-x-atlas-800i-a3">Running DeepSeek with PD disaggregation mode on 2 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-deepseek-with-pd-disaggregation-on-4-x-atlas-800i-a3">Running DeepSeek with PD disaggregation on 4 x Atlas 800I A3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-gsm8k">test gsm8k</a></li>
 </ul>

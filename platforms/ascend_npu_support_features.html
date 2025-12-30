@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b67dee7a"></script>
+    <script src="../_static/documentation_options.js?v=fa4cb16f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -535,7 +535,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code><br><code class="docutils literal notranslate"><span class="pre">--model</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code><br/><code class="docutils literal notranslate"><span class="pre">--model</span></code></p></td>
 <td><p>The path of the model weights. This can be a local folder or a Hugging Face repo ID.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
@@ -567,6 +567,20 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td><p>If set, skip init tokenizer and pass input_ids in generate request.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--load-format</span></code></p></td>
+<td><p>The format of the model weights to load. <br/> <code class="docutils literal notranslate"><span class="pre">auto</span></code> will try to load the weights in the safetensors format and fall back to the pytorch bin format if safetensors format is not available. <br/> <code class="docutils literal notranslate"><span class="pre">pt</span></code> will load the weights in the pytorch bin format. <br/> <code class="docutils literal notranslate"><span class="pre">safetensors</span></code> will load the weights in the safetensors format. <br/> <code class="docutils literal notranslate"><span class="pre">npcache</span></code> will load the weights in pytorch format and store a numpy cache to speed up the loading. <br/> <code class="docutils literal notranslate"><span class="pre">dummy</span></code> will initialize the weights with random values, which is mainly for profiling. <br/> <code class="docutils literal notranslate"><span class="pre">gguf</span></code> will load the weights in the gguf format. <br/> <code class="docutils literal notranslate"><span class="pre">bitsandbytes</span></code> will load the weights using bitsandbytes quantization.<br/><code class="docutils literal notranslate"><span class="pre">layered</span></code> loads weights layer by layer so that one can quantize a layer before loading another to make the peak memory envelope smaller.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">safetensors</span></code></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--model-loader-extra-config</span></code></p></td>
+<td><p>Extra config for model loader. This will be passed to the model loader corresponding to the chosen load_format.</p></td>
+<td><p>{}</p></td>
+<td><p>Type: str <br/> for example: {“enable_multithread_load”: true,”num_threads”: 64}</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
@@ -606,18 +620,11 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--model-impl</span></code></p></td>
-<td><p>Which implementation of the model to use. * “auto” will try to use the SGLang implementation if it exists and fall back to the Transformers implementation if no SGLang implementation is available. * “sglang” will use the SGLang model implementation. * “transformers” will use the Transformers model implementation.* “mindspore” will use the MindSpore model implementation.</p></td>
+<td><p>Which implementation of the model to use. <br/> <code class="docutils literal notranslate"><span class="pre">auto</span></code> will try to use the SGLang implementation if it exists and fall back to the Transformers implementation if no SGLang implementation is available. <br/> <code class="docutils literal notranslate"><span class="pre">sglang</span></code> will use the sglang model implementation. <br/> <code class="docutils literal notranslate"><span class="pre">transformers</span></code> will use the transformers model implementation. <br/> <code class="docutils literal notranslate"><span class="pre">mindspore</span></code> will use the MindSpore model implementation.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>‘auto’, ‘sglang’, ‘transformers’</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">sglang</span></code>, <code class="docutils literal notranslate"><span class="pre">transformers</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--model-loader-extra-config</span></code></p></td>
-<td><p>Extra config for model loader. This will be passed to the model loader corresponding to the chosen load_format.</p></td>
-<td><p>{}</p></td>
-<td><p>Type: str’</p></td>
-<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
-<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -658,7 +665,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--warmups</span></code></p></td>
-<td><p>Specify custom warmup functions (csv) to run before server starts eg. –warmups=warmup_name1,warmup_name2 will run the functions <code class="docutils literal notranslate"><span class="pre">warmup_name1</span></code> and <code class="docutils literal notranslate"><span class="pre">warmup_name2</span></code> specified in warmup.py before the server starts listening for requests</p></td>
+<td><p>Specify custom warmup functions (csv) to run before server starts eg. <code class="docutils literal notranslate"><span class="pre">--warmups=warmup_name1,warmup_name2</span></code> will run the functions <code class="docutils literal notranslate"><span class="pre">warmup_name1</span></code> and <code class="docutils literal notranslate"><span class="pre">warmup_name2</span></code> specified in warmup.py before the server starts listening for requests</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -869,14 +876,14 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tensor-parallel-size</span></code><br><code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tensor-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--tp-size</span></code></p></td>
 <td><p>The tensor parallelism size.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--pipeline-parallel-size</span></code><br><code class="docutils literal notranslate"><span class="pre">--pp-size</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--pipeline-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--pp-size</span></code></p></td>
 <td><p>The pipeline parallelism size.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 <td><p>Type: int</p></td>
@@ -1212,7 +1219,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
-<td><p>Specify the parser for handling tool-call interactions. Supported parsers: [ llama3,qwen].</p></td>
+<td><p>Specify the parser for handling tool-call interactions. Supported parsers: [ llama3, qwen].</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">llama3</span></code>,<code class="docutils literal notranslate"><span class="pre">qwen</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
@@ -1249,7 +1256,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--data-parallel-size</span></code><br><code class="docutils literal notranslate"><span class="pre">--dp-size</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--data-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--dp-size</span></code></p></td>
 <td><p>The data parallelism size.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 <td><p>Type: int</p></td>
@@ -1287,7 +1294,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--dist-init-addr</span></code><br><code class="docutils literal notranslate"><span class="pre">--nccl-init-addr</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--dist-init-addr</span></code><br/><code class="docutils literal notranslate"><span class="pre">--nccl-init-addr</span></code></p></td>
 <td><p>The host address for initializing distributed backend (e.g., <code class="docutils literal notranslate"><span class="pre">192.168.0.2:25000</span></code>).</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
@@ -1530,7 +1537,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code><br><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code><br/><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model</span></code></p></td>
 <td><p>The path of the draft model weights. This can be a local folder or a Hugging Face repo ID.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
@@ -1690,7 +1697,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-parallel-size</span></code><br><code class="docutils literal notranslate"><span class="pre">--ep-size</span></code><br><code class="docutils literal notranslate"><span class="pre">--ep</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--ep-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--ep</span></code></p></td>
 <td><p>The expert parallelism size. Default equal to tp size.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">tp-size</span></code></p></td>
 <td><p>Type: int</p></td>
@@ -1732,80 +1739,80 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-num-redundant-experts</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--deepep-config</span></code></p></td>
+<td><p>Tuned DeepEP config suitable for your own cluster. It can be either a string with JSON content or a file path.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: str</p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-num-redundant-experts</span></code></p></td>
 <td><p>Allocate this number of redundant experts in expert parallel.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-dispatch-algorithm</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-dispatch-algorithm</span></code></p></td>
 <td><p>The algorithm to choose ranks for redundant experts in expert parallel.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--init-expert-location</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--init-expert-location</span></code></p></td>
 <td><p>Initial location of EP experts.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">trivial</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-eplb</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-eplb</span></code></p></td>
 <td><p>Enable EPLB algorithm</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-algorithm</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-algorithm</span></code></p></td>
 <td><p>Chosen EPLB algorithm</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-layers-per-chunk</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-layers-per-chunk</span></code></p></td>
 <td><p>Number of layers to rebalance per forward pass.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-min-rebalancing-utilization-threshold</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-min-rebalancing-utilization-threshold</span></code></p></td>
 <td><p>Minimum threshold for GPU average utilization to trigger EPLB rebalancing. Must be in the range [0.0, 1.0].</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
 <td><p>Type: float</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-mode</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-mode</span></code></p></td>
 <td><p>Mode of expert distribution recorder.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-buffer-size</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-recorder-buffer-size</span></code></p></td>
 <td><p>Circular buffer size of expert distribution recorder. Set to -1 to denote infinite buffer.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-expert-distribution-metrics</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-expert-distribution-metrics</span></code></p></td>
 <td><p>Enable logging metrics for expert balancedness</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
-<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
-<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--deepep-config</span></code></p></td>
-<td><p>Tuned DeepEP config suitable for your own cluster. It can be either a string with JSON content or a file path.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
@@ -1869,7 +1876,7 @@ questions, please <a class="reference external" href="https://github.com/sgl-pro
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--mamba-scheduler-strategy</span></code></p></td>
-<td><p>The strategy to use for mamba scheduler. <code class="docutils literal notranslate"><span class="pre">auto</span></code> currently defaults to <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>. 1. <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code> does not support overlap scheduler due to not allocating extra mamba state buffers. Branching point caching support is feasible but not implemented. 2. <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code> supports overlap schedule by allocating extra mamba state buffers to track mamba state for caching (mamba state usage per running req becomes <code class="docutils literal notranslate"><span class="pre">2x</span></code> for non-spec; <code class="docutils literal notranslate"><span class="pre">1+(1/(2+speculative_num_draft_tokens))x</span></code> for spec dec (e.g. 1.16x if speculative_num_draft_tokens==4)). 2a. <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code> is strictly better for non-KV-cache-bound cases; for KV-cache-bound cases, the tradeoff depends on whether enabling overlap outweighs reduced max running requests. 2b. mamba caching at radix cache branching point is strictly better than non-branch but requires kernel support (currently only FLA backend), currently only extra_buffer supports branching.</p></td>
+<td><p>The strategy to use for mamba scheduler. <br/><code class="docutils literal notranslate"><span class="pre">auto</span></code> currently defaults to <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>. <br/>1. <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code> does not support overlap scheduler due to not allocating extra mamba state buffers. Branching point caching support is feasible but not implemented. <br/>2. <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code> supports overlap schedule by allocating extra mamba state buffers to track mamba state for caching (mamba state usage per running req becomes <code class="docutils literal notranslate"><span class="pre">2x</span></code> for non-spec; <code class="docutils literal notranslate"><span class="pre">1+(1/(2+speculative_num_draft_tokens))x</span></code> for spec dec (e.g. 1.16x if speculative_num_draft_tokens==4)). <br/>2a. <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code> is strictly better for non-KV-cache-bound cases; for KV-cache-bound cases, the tradeoff depends on whether enabling overlap outweighs reduced max running requests. <br/>2b. mamba caching at radix cache branching point is strictly better than non-branch but requires kernel support (currently only FLA backend), currently only extra_buffer supports branching.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>, <code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
