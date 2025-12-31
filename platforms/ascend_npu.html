@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6139424c"></script>
+    <script src="../_static/documentation_options.js?v=12d76b70"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -228,6 +228,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_features.html">Support Features on Ascend NPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_qwen3_examples.html">Qwen3 examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_best_practice.html">Best Practice on Ascend NPU</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
@@ -479,6 +480,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-version-mapping-for-sglang">Component Version Mapping For SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-cann-image">Obtain CANN Image</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-running-environment">Preparing the Running Environment</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-installing-from-source-with-prerequisites">Method 1: Installing from source with prerequisites</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-version">Python Version</a></li>
@@ -531,6 +536,59 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="sglang-installation-with-npus-support">
 <h1>SGLang installation with NPUs support<a class="headerlink" href="#sglang-installation-with-npus-support" title="Link to this heading">#</a></h1>
 <p>You can install SGLang using any of the methods below. Please go through <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Settings</span></code> section to ensure the clusters are roaring at max performance. Feel free to leave an issue <a class="reference external" href="https://github.com/sgl-project/sglang/issues">here at sglang</a> if you encounter any issues or have any problems.</p>
+<section id="component-version-mapping-for-sglang">
+<h2>Component Version Mapping For SGLang<a class="headerlink" href="#component-version-mapping-for-sglang" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Obtain Way</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HDK</p></td>
+<td><p>25.2.1</p></td>
+<td><p><a class="reference external" href="https://support.huawei.com/carrier/productNewOffering?col=product&amp;amp;path=PBI1-262732867/PBI1-262735886/PBI1-262735910/PBI1-261410188/PBI1-252764743&amp;amp;pVR=PBI1-263550357&amp;amp;pC=PBI1-264360782&amp;amp;pSPC=PBI1-266220744&amp;amp;resTab=SW">link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CANN</p></td>
+<td><p>8.3.rc2</p></td>
+<td><p><a class="reference internal" href="#obtain-cann-image"><span class="std std-ref">Obtain Images</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pytorch Adapter</p></td>
+<td><p>7.3.0</p></td>
+<td><p><a class="reference external" href="https://gitcode.com/Ascend/pytorch/releases">link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>MemFabric</p></td>
+<td><p>0.1.0</p></td>
+<td><p><a class="reference external" href="https://gitcode.com/Ascend/memfabric_hybrid/releases">link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Triton</p></td>
+<td><p>3.2.0.dev2025112116</p></td>
+<td><p><a class="reference external" href="https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/triton_ascend/triton_ascend-3.2.0.dev2025112116-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl">link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bisheng</p></td>
+<td><p>20251121</p></td>
+<td><p><a class="reference external" href="https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/triton_ascend/Ascend-BiSheng-toolkit_aarch64_20251121.run">link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SGLang NPU Kernel</p></td>
+<td><p>NA</p></td>
+<td><p><a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/releases">link</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a id="obtain-cann-image"></a></p>
+<section id="obtain-cann-image">
+<h3>Obtain CANN Image<a class="headerlink" href="#obtain-cann-image" title="Link to this heading">#</a></h3>
+<p>You can obtain the dependency of a specified version of CANN through an image.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># for Atlas 800I A3 and Ubuntu OS</span>
+docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/cann:8.3.rc2-a3-ubuntu22.04-py3.11
+<span class="c1"># for Atlas 800I A2 and Ubuntu OS</span>
+docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/cann:8.3.rc2-910b-ubuntu22.04-py3.11
+</pre></div>
+</div>
+</section>
+</section>
 <section id="preparing-the-running-environment">
 <h2>Preparing the Running Environment<a class="headerlink" href="#preparing-the-running-environment" title="Link to this heading">#</a></h2>
 <section id="method-1-installing-from-source-with-prerequisites">
@@ -842,6 +900,10 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-version-mapping-for-sglang">Component Version Mapping For SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-cann-image">Obtain CANN Image</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-running-environment">Preparing the Running Environment</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-installing-from-source-with-prerequisites">Method 1: Installing from source with prerequisites</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-version">Python Version</a></li>
