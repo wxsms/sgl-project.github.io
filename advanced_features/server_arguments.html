@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e79f220b"></script>
+    <script src="../_static/documentation_options.js?v=337af171"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -2105,6 +2105,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>Context parallelism used in the long sequence prefill phase of DeepSeek v3.2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span></code></p></td>
+<td><p>Token splitting mode for the prefill phase of DeepSeek v3.2 under context parallelism. Optional values: <code class="docutils literal notranslate"><span class="pre">in-seq-split</span></code> (default), <code class="docutils literal notranslate"><span class="pre">round-robin-split</span></code>. <code class="docutils literal notranslate"><span class="pre">round-robin-split</span></code> distributes tokens across ranks based on <code class="docutils literal notranslate"><span class="pre">token_idx</span> <span class="pre">%</span> <span class="pre">cp_size</span></code>. It supports multi-batch prefill, fused MoE, and FP8 KV cache.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">in-seq-split</span></code></p></td>
+<td><p>Type: str</p></td>
 </tr>
 </tbody>
 </table>

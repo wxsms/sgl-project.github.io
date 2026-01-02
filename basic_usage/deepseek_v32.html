@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e79f220b"></script>
+    <script src="../_static/documentation_options.js?v=337af171"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -503,6 +503,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-parallel-tips">Context-parallel Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-context-parallel-mode">Alternative context parallel mode</a></li>
 </ul>
 </li>
 </ul>
@@ -886,6 +887,17 @@ Some features are still not supported at present.</p>
 <li><p><strong>Detailed design reference</strong>: https://github.com/sgl-project/sglang/pull/12065</p></li>
 </ul>
 </section>
+<section id="alternative-context-parallel-mode">
+<h3>Alternative context parallel mode<a class="headerlink" href="#alternative-context-parallel-mode" title="Link to this heading">#</a></h3>
+<p>You can switch the CP token splitting mode for prefill by specifying the parameter <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span> <span class="pre">round-robin-split</span></code>. It distributes tokens across ranks based on <code class="docutils literal notranslate"><span class="pre">token_idx</span> <span class="pre">%</span> <span class="pre">cp_size</span></code>.
+In this scenario, compared with the aforementioned method, it additionally supports the fused MoE backend (the fused MoE backend may deliver better performance than DeepEP in single-machine scenarios),
+FP8 KV-cache, and multi-batch prefill inference. For more details, please refer to PR https://github.com/sgl-project/sglang/pull/13959.</p>
+<p>Example usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch with FusedMoe + CP8 + DP1</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">1</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-nsa-prefill-context-parallel<span class="w"> </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -954,6 +966,7 @@ Some features are still not supported at present.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-parallel-tips">Context-parallel Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-context-parallel-mode">Alternative context parallel mode</a></li>
 </ul>
 </li>
 </ul>
