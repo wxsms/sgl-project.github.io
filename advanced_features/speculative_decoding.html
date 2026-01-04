@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=01f5483b"></script>
+    <script src="../_static/documentation_options.js?v=333fcfa4"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query VLM with Offline Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cuda_graph_for_multi_modal_encoder.html">Cuda Graph for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sgl_model_gateway.html">SGLang Model Gateway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
@@ -560,9 +561,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:42:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:17:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:17:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:17:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -586,37 +587,37 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:42:08] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:08] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:42:11] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
-[2026-01-04 00:42:11] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-01-04 00:42:11] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
-[2026-01-04 00:42:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:42:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:17:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:17:17] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:17:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:17:25] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-04 02:17:25] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-01-04 02:17:25] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
+[2026-01-04 02:17:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:17:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:17:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:17:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:17:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:17:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-04 00:42:23] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-04 02:17:41] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.72s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.22s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.51s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.02s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.09s/it]
 
-Capturing batches (bs=1 avail_mem=38.48 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.89it/s]
-[2026-01-04 00:42:27] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-01-04 00:42:27] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=19.47 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  7.94it/s]
+[2026-01-04 02:17:46] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-01-04 02:17:46] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.25s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.25s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.09s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.09s/it]
 
-Capturing batches (bs=1 avail_mem=36.62 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.32s/it]
-Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 117.36it/s]
+Capturing batches (bs=1 avail_mem=37.18 GB): 100%|██████████| 4/4 [00:09&lt;00:00,  2.35s/it]
+Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 16.16it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -648,7 +649,7 @@ Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='56a69d4ae8c547a486c7188d4edd9a6e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1767487363, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='48fcec47f3064bc48295c75ceb4d5372', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1767493086, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -684,39 +685,199 @@ Capturing batches (bs=1 avail_mem=53.57 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:42:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:42:50] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
-[2026-01-04 00:42:50] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-01-04 00:42:50] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
-[2026-01-04 00:42:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:57] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:42:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:42:57] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:42:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:18:12] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:18:12] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:18:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:18:15] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-04 02:18:15] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-01-04 02:18:15] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
+[2026-01-04 02:18:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:18:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:18:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:18:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:18:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:18:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-04 00:43:02] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-04 02:18:26] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.62s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.15s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.22s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.45s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.03s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.09s/it]
 
-Capturing batches (bs=2 avail_mem=52.73 GB):  25%|██▌       | 1/4 [00:00&lt;00:01,  2.46it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=54.91 GB):  50%|█████     | 2/4 [00:00&lt;00:00,  6.18it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=54.81 GB): 100%|██████████| 4/4 [00:15&lt;00:00,  3.98s/it]
-[2026-01-04 00:43:23] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-01-04 00:43:23] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04841599985957146, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.049375999718904495, &#34;best_triton_kernel&#34;: &#34;triton_mm_18&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;}
+AUTOTUNE mm(128x4096, 4096x12288)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0484 ms 100.0%
+  triton_mm_18 0.0494 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_12 0.0526 ms 92.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_8 0.0546 ms 88.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_7 0.0556 ms 87.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_11 0.0557 ms 86.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_17 0.0577 ms 84.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_10 0.0670 ms 72.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_14 0.0686 ms 70.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_4 0.0714 ms 67.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3119 seconds and 0.2898 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.022143999114632607, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.023135999217629433, &#34;best_triton_kernel&#34;: &#34;triton_mm_27&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(128x4096, 4096x4096)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0221 ms 100.0%
+  triton_mm_27 0.0231 ms 95.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_31 0.0265 ms 83.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_23 0.0302 ms 73.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_37 0.0315 ms 70.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_26 0.0394 ms 56.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_30 0.0412 ms 53.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_22 0.0421 ms 52.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_20 0.0424 ms 52.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_36 0.0427 ms 51.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.2890 seconds and 0.4728 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.07587199658155441, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.07628799974918365, &#34;best_triton_kernel&#34;: &#34;triton_mm_49&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;}
+AUTOTUNE mm(128x4096, 4096x22016)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0759 ms 100.0%
+  triton_mm_49 0.0763 ms 99.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_55 0.0795 ms 95.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_50 0.0803 ms 94.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_56 0.0835 ms 90.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_45 0.0940 ms 80.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_46 0.0970 ms 78.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_47 0.0976 ms 77.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_48 0.1010 ms 75.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_54 0.1017 ms 74.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4331 seconds and 0.1603 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.049855999648571014, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.05244800075888634, &#34;best_triton_kernel&#34;: &#34;triton_mm_65&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(128x11008, 11008x4096)
+strides: [11008, 1], [1, 11008]
+dtypes: torch.float16, torch.float16
+  mm 0.0499 ms 100.0%
+  triton_mm_65 0.0524 ms 95.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_69 0.0580 ms 86.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_61 0.0659 ms 75.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_75 0.0711 ms 70.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_64 0.0918 ms 54.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_68 0.0951 ms 52.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_60 0.0970 ms 51.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_74 0.0988 ms 50.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_58 0.1018 ms 49.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4368 seconds and 0.0003 seconds precompiling for 20 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_93&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.10249599814414978, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(128x4096, 4096x32000)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_93 0.1025 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_94 0.1044 ms 98.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  mm 0.1051 ms 97.5%
+  triton_mm_88 0.1091 ms 94.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_87 0.1172 ms 87.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_83 0.1175 ms 87.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_92 0.1257 ms 81.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_84 0.1291 ms 79.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_85 0.1355 ms 75.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_89 0.1440 ms 71.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.5740 seconds and 0.3299 seconds precompiling for 20 choices
+Capturing batches (bs=1 avail_mem=38.68 GB):  75%|███████▌  | 3/4 [00:21&lt;00:09,  9.62s/it]Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.047488000243902206, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.047775998711586, &#34;best_triton_kernel&#34;: &#34;triton_mm_111&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;}
+AUTOTUNE mm(64x4096, 4096x12288)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0475 ms 100.0%
+  triton_mm_111 0.0478 ms 99.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_107 0.0484 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_103 0.0488 ms 97.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_99 0.0503 ms 94.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_102 0.0550 ms 86.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_106 0.0552 ms 86.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_96 0.0566 ms 83.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_98 0.0621 ms 76.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_97 0.0646 ms 73.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.2949 seconds and 0.1554 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.021983999758958817, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.02208000048995018, &#34;best_triton_kernel&#34;: &#34;triton_mm_116&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(64x4096, 4096x4096)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  mm 0.0220 ms 100.0%
+  triton_mm_116 0.0221 ms 99.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_120 0.0231 ms 95.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_124 0.0265 ms 83.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_128 0.0303 ms 72.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_119 0.0392 ms 56.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_113 0.0396 ms 55.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_123 0.0407 ms 54.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_115 0.0414 ms 53.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_114 0.0425 ms 51.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.2534 seconds and 0.2894 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_137&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;, &#34;best_time&#34;: 0.07462400197982788, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(64x4096, 4096x22016)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_137 0.0746 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_140 0.0750 ms 99.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_136 0.0751 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_141 0.0762 ms 97.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  mm 0.0763 ms 97.9%
+  triton_mm_145 0.0796 ms 93.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_133 0.0825 ms 90.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_139 0.0912 ms 81.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_142 0.0945 ms 79.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_143 0.0946 ms 78.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.3588 seconds and 0.0695 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04819199815392494, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.05008000135421753, &#34;best_triton_kernel&#34;: &#34;triton_mm_150&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+AUTOTUNE mm(64x11008, 11008x4096)
+strides: [11008, 1], [1, 11008]
+dtypes: torch.float16, torch.float16
+  mm 0.0482 ms 100.0%
+  triton_mm_150 0.0501 ms 96.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_154 0.0510 ms 94.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_158 0.0569 ms 84.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_162 0.0667 ms 72.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_153 0.0893 ms 54.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_149 0.0898 ms 53.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_147 0.0933 ms 51.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_157 0.0934 ms 51.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_148 0.0936 ms 51.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.4463 seconds and 0.0002 seconds precompiling for 18 choices
+Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_179&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;, &#34;best_time&#34;: 0.10044799745082855, &#34;best_triton_pos&#34;: 0}
+AUTOTUNE mm(64x4096, 4096x32000)
+strides: [4096, 1], [1, 4096]
+dtypes: torch.float16, torch.float16
+  triton_mm_179 0.1004 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_174 0.1005 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_175 0.1007 ms 99.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_170 0.1010 ms 99.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_171 0.1015 ms 98.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.1025 ms 98.0%
+  triton_mm_167 0.1113 ms 90.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_172 0.1166 ms 86.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_176 0.1195 ms 84.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_173 0.1316 ms 76.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.4071 seconds and 0.2833 seconds precompiling for 18 choices
+Capturing batches (bs=1 avail_mem=38.68 GB): 100%|██████████| 4/4 [00:40&lt;00:00, 10.14s/it]
+[2026-01-04 02:19:11] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-01-04 02:19:11] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.44s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.44s/it]
 
-Capturing batches (bs=1 avail_mem=52.50 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.64s/it]
-Capturing batches (bs=1 avail_mem=45.96 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 64.52it/s]
+Capturing batches (bs=1 avail_mem=52.50 GB): 100%|██████████| 4/4 [00:11&lt;00:00,  2.83s/it]
+Capturing batches (bs=1 avail_mem=22.14 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 29.13it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -748,7 +909,7 @@ Capturing batches (bs=1 avail_mem=45.96 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='d8fbfa38d6bb42ee8c88773aae818058', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1767487419, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='324120ea566e487ba295ef2f55cd1d3c', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1767493173, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -786,45 +947,45 @@ Capturing batches (bs=1 avail_mem=45.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:43:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:43:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:43:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:43:47] WARNING model_config.py:1019: Casting torch.bfloat16 to torch.float16.
-[2026-01-04 00:43:47] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
-[2026-01-04 00:43:47] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-01-04 00:43:47] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
-[2026-01-04 00:43:48] Casting torch.bfloat16 to torch.float16.
-[2026-01-04 00:43:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:43:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:43:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:43:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:43:57] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:43:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:43:58] Casting torch.bfloat16 to torch.float16.
-[2026-01-04 00:43:59] Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:19:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:19:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:19:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:19:42] WARNING model_config.py:1019: Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:19:42] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-04 02:19:42] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-01-04 02:19:42] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
+[2026-01-04 02:19:43] Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:19:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:19:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:19:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:19:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:19:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:19:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:19:52] Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:19:52] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-04 00:44:02] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-04 02:19:56] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.08s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.19s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.16s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  2.94s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.38s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.15s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.16s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.20s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.02s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.45s/it]
 
-Capturing batches (bs=1 avail_mem=57.58 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.74it/s]
-[2026-01-04 00:44:18] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-01-04 00:44:18] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2026-01-04 00:44:18] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2026-01-04 00:44:18] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=42.83 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  6.66it/s]
+[2026-01-04 02:20:12] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-01-04 02:20:12] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-01-04 02:20:12] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2026-01-04 02:20:12] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.02s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.02s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.03it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.03it/s]
 
-Capturing batches (bs=1 avail_mem=58.42 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.35s/it]
-Capturing batches (bs=1 avail_mem=58.28 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 104.07it/s]
+Capturing batches (bs=1 avail_mem=25.43 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.67s/it]
+Capturing batches (bs=1 avail_mem=24.76 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 55.41it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -856,7 +1017,7 @@ Capturing batches (bs=1 avail_mem=58.28 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='4d359d03b6a9477bb1aff2a2059290c5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1767487473, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='ef9f612921ea409cb4e8500c705b4858', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1767493229, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -892,45 +1053,45 @@ Capturing batches (bs=1 avail_mem=58.28 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:44:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:44:39] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:44:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:44:41] WARNING model_config.py:1019: Casting torch.bfloat16 to torch.float16.
-[2026-01-04 00:44:41] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
-[2026-01-04 00:44:41] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-01-04 00:44:41] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
-[2026-01-04 00:44:42] Casting torch.bfloat16 to torch.float16.
-[2026-01-04 00:44:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:44:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:44:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:44:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:44:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:44:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:44:51] Casting torch.bfloat16 to torch.float16.
-[2026-01-04 00:44:51] Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:20:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:20:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:20:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:20:38] WARNING model_config.py:1019: Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:20:38] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-04 02:20:38] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-01-04 02:20:38] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
+[2026-01-04 02:20:38] Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:20:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:20:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:20:44] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:20:44] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:20:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:20:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:20:46] Casting torch.bfloat16 to torch.float16.
+[2026-01-04 02:20:46] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-04 00:44:54] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-04 02:20:50] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.29s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.41s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.33s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.07s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.54s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.32s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.42s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.39s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.11s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.58s/it]
 
-Capturing batches (bs=1 avail_mem=27.83 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 13.08it/s]
-[2026-01-04 00:45:11] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-01-04 00:45:11] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2026-01-04 00:45:11] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2026-01-04 00:45:11] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.15 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.63it/s]
+[2026-01-04 02:21:07] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-01-04 02:21:07] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-01-04 02:21:07] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2026-01-04 02:21:07] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.00it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.00it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.81it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.81it/s]
 
-Capturing batches (bs=1 avail_mem=26.18 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.36s/it]
-Capturing batches (bs=1 avail_mem=26.02 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 28.60it/s]
+Capturing batches (bs=1 avail_mem=41.43 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.31s/it]
+Capturing batches (bs=1 avail_mem=40.72 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 103.38it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -962,7 +1123,7 @@ Capturing batches (bs=1 avail_mem=26.02 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='3fc08e2cf86840b5b527d7f51669567a', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1767487526, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8fd781209a5d4df9b2fe3d1a5434bbc6', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1767493281, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -996,39 +1157,39 @@ Capturing batches (bs=1 avail_mem=26.02 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:45:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:45:31] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:45:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:45:33] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
-[2026-01-04 00:45:33] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-01-04 00:45:33] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
-[2026-01-04 00:45:41] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:45:41] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:45:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:45:41] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:45:41] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:45:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:21:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:21:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:21:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:21:30] INFO server_args.py:1615: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-04 02:21:30] WARNING server_args.py:2067: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-01-04 02:21:30] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
+[2026-01-04 02:21:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:21:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:21:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:21:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:21:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:21:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-04 00:45:46] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-04 02:21:43] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.41it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.33it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.29it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.37it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.35it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.26it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.03it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:01,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04&lt;00:00,  1.20s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04&lt;00:00,  1.11s/it]
 
-Capturing batches (bs=1 avail_mem=60.22 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.28it/s]
-[2026-01-04 00:45:52] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-01-04 00:45:52] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=59.70 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  9.70it/s]
+[2026-01-04 02:21:50] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-01-04 02:21:50] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.88it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.07it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.69it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.14it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  6.80it/s]
 
-Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 49.57it/s]
+Capturing batches (bs=1 avail_mem=55.45 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 11.45it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1059,7 +1220,7 @@ Capturing batches (bs=1 avail_mem=59.37 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '6192f9546fe540ed942bcea71e077d8b', 'object': 'chat.completion', 'created': 1767487562, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, the user is asking for the capital of France. Let me start by recalling basic geography. France is a country in Europe. I remember that major cities in France include Paris, Lyon, Marseille, and maybe some others like Toulouse or Nice. But the capital... Paris comes to mind immediately because I think Paris is the most famous city. Let me double-check to make sure I'm not mixing it up with another country's capital. For example, is Berlin the capital of Germany? Yes. London for the UK, Rome for Italy. So Paris should be the capital of France. Wait, is there any other city that could be the capital? Maybe some regional capital? No, the national capital is definitely Paris. I don't think there's any confusion here. The user might be testing basic knowledge or maybe they're asking as a joke, like if there's a trick. But no, the straightforward answer is Paris. So the answer should be Paris. Let me confirm with a quick search in my mind. Yes, Paris is the capital city of France. It's also the largest city. So the answer is correct.\n</think>\n\nThe capital of France is **Paris**. Situated on the River Seine in the north of the country, Paris is not only the political and cultural heart of France but also a global hub for art, history, and cuisine. Iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral call it home. 🇫🇷 Paris", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 337, 'completion_tokens': 311, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '45cac1c4e0de488db50c0fef9edfd68d', 'object': 'chat.completion', 'created': 1767493321, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, the user is asking for the capital of France. Let me think. From what I remember, France is a country in Europe. The capital... I think it's Paris. But wait, maybe I should double-check to make sure I'm not mixing it up with another country. Let me recall some facts. Paris is known for the Eiffel Tower, the Louvre Museum, and the Champs-Élysées. That all sounds French. I don't think there's another major city that's the capital. Maybe some people might confuse it with other cities like Lyon or Toulouse, but those are major cities but not the capital. Yeah, I'm pretty sure Paris is the correct answer. The official name of France is République Française, and its capital is Paris. There's also a historical context, like during the French Revolution, Paris was a significant city. No, I can't think of any other possibilities. So the answer should be Paris.\n</think>\nThe capital of France is **Paris**. This iconic city is known for landmarks like the Eiffel Tower, Louvre Museum, and Place de la République. It has been France's capital since the country's establishment in the 9th century.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 285, 'completion_tokens': 259, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:

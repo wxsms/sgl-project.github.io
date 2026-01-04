@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MiniMax M2.1/M2 Usage &#8212; SGLang</title>
+    <title>Cuda Graph for Multi-Modal Encoder in SGLang &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'basic_usage/minimax_m2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/cuda_graph_for_multi_modal_encoder';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Qwen3-Next Usage" href="qwen3.html" />
-    <link rel="prev" title="GPT OSS Usage" href="gpt_oss.html" />
+    <link rel="next" title="SGLang Model Gateway" href="sgl_model_gateway.html" />
+    <link rel="prev" title="DP for Multi-Modal Encoder in SGLang" href="dp_for_multi_modal_encoder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 04, 2026"/>
@@ -168,51 +168,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openai_api.html">OpenAI-Compatible APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ollama_api.html">Ollama-Compatible API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="deepseek_v3.html">DeepSeek V3/V3.1/R1 Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glm45.html">Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glmv.html">GLM-4.6V / GLM-4.5V Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">MiniMax M2.1/M2 Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qwen3.html">Qwen3-Next Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qwen3_vl.html">Qwen3-VL Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
-</ul>
-</details></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/ollama_api.html">Ollama-Compatible API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/server_arguments.html">Server Arguments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/attention_backend.html">Attention Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/speculative_decoding.html">Speculative Decoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/structured_outputs.html">Structured Outputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/tool_parser.html">Tool Parser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/separate_reasoning.html">Reasoning Parser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/quantization.html">Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/quantized_kv_cache.html">Quantized KV Cache</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/expert_parallelism.html">Expert Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/lora.html">LoRA Serving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/pd_disaggregation.html">PD Disaggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/epd_disaggregation.html">EPD Disaggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query VLM with Offline Engine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/cuda_graph_for_multi_modal_encoder.html">Cuda Graph for Multi-Modal Encoder in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/sgl_model_gateway.html">SGLang Model Gateway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_features/checkpoint_engine.html">Checkpoint Engine Integration</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="server_arguments.html">Server Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperparameter_tuning.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attention_backend.html">Attention Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="speculative_decoding.html">Speculative Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs.html">Structured Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structured_outputs_for_reasoning_models.html">Structured Outputs For Reasoning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool_parser.html">Tool Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separate_reasoning.html">Reasoning Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantized_kv_cache.html">Quantized KV Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expert_parallelism.html">Expert Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epd_disaggregation.html">EPD Disaggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query VLM with Offline Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cuda Graph for Multi-Modal Encoder in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sgl_model_gateway.html">SGLang Model Gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deterministic_inference.html">Deterministic Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkpoint_engine.html">Checkpoint Engine Integration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
@@ -326,7 +315,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/basic_usage/minimax_m2.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/cuda_graph_for_multi_modal_encoder.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +332,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/basic_usage/minimax_m2.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/cuda_graph_for_multi_modal_encoder.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +349,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbasic_usage/minimax_m2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/cuda_graph_for_multi_modal_encoder.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +379,7 @@
       
       
       
-      <li><a href="../_sources/basic_usage/minimax_m2.md" target="_blank"
+      <li><a href="../_sources/advanced_features/cuda_graph_for_multi_modal_encoder.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -474,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MiniMax M2.1/M2 Usage</h1>
+    <h1>Cuda Graph for Multi-Modal Encoder in SGLang</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -484,10 +473,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">System Requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-python">Deployment with Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-deployment">Testing Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-restrictions">Design and Restrictions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-inputs-to-fit-static-constraints-of-cuda-graph">Dynamic inputs to fit static constraints of CUDA Graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-addresses">Stable addresses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-backend-arguments">Attention backend arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotary-buffer-management">Rotary buffer management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-example">Command Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-supported-models">Known supported models</a></li>
 </ul>
             </nav>
         </div>
@@ -499,68 +494,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="minimax-m2-1-m2-usage">
-<h1>MiniMax M2.1/M2 Usage<a class="headerlink" href="#minimax-m2-1-m2-usage" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.1">MiniMax-M2.1</a> and <a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2">MiniMax-M2</a> are advanced large language models created by <a class="reference external" href="https://www.minimax.io/">MiniMax</a>.</p>
-<p>MiniMax-M2 series redefines efficiency for agents. It’s a compact, fast, and cost-effective MoE model (230 billion total parameters with 10 billion active parameters) built for elite performance in coding and agentic tasks, all while maintaining powerful general intelligence. With just 10 billion activated parameters, MiniMax-M2 provides the sophisticated, end-to-end tool use performance expected from today’s leading models, but in a streamlined form factor that makes deployment and scaling easier than ever.</p>
-<section id="supported-models">
-<h2>Supported Models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
-<p>This guide applies to the following models. You only need to update the model name during deployment. The following examples use <strong>MiniMax-M2</strong>:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cuda-graph-for-multi-modal-encoder-in-sglang">
+<h1>Cuda Graph for Multi-Modal Encoder in SGLang<a class="headerlink" href="#cuda-graph-for-multi-modal-encoder-in-sglang" title="Link to this heading">#</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>In multimodal reasoning services, the visual encoder (ViT / Vision Transformer) typically has a few characteristic traits:</p>
+<p>Many layers, fragmented operators: Each layer includes LN, QKV projections, attention, MLP, residual connections, etc., resulting in extremely frequent kernel launches.</p>
+<p>Server-side “small batch / low latency” is common: The batch size is very small (sometimes it looks like 1 after “flattening” the batch), so kernel launch overhead accounts for a large portion of end-to-end latency.</p>
+<p>Input token count (number of patches) varies frequently: Different image/video resolutions and different batch composition lead to different sequence lengths
+S — and this is precisely the biggest obstacle for CUDA Graph (unstable shapes).</p>
+<p>The value of CUDA Graph: It captures a long sequence of GPU kernels with fixed shapes and fixed memory addresses into a graph; later, for the same shapes, it can replay the graph directly, dramatically reducing launch overhead and making GPU scheduling more compact.</p>
+<p>This led us to seek a CUDA Graph enabled feature for ViT in order to improve ViT performance.</p>
+</section>
+<section id="design-and-restrictions">
+<h2>Design and Restrictions<a class="headerlink" href="#design-and-restrictions" title="Link to this heading">#</a></h2>
+<p>The new CUDA Graph enabled ViT logic is built on ViTCudaGraphRunner. This runner captures the “blocks + merger + deepstack merger (optional)” part of a vision transformer into a CUDA graph and replays it for identical shapes. See the following design consideration and restrictions for more details.</p>
+<section id="dynamic-inputs-to-fit-static-constraints-of-cuda-graph">
+<h3>Dynamic inputs to fit static constraints of CUDA Graph<a class="headerlink" href="#dynamic-inputs-to-fit-static-constraints-of-cuda-graph" title="Link to this heading">#</a></h3>
+<p>Variable sequence length S is very common in ViT. While CUDA Graph requires fixed shapes. The solution is to build a graph cache by S(e.g., graph_key = S). The first time create a new S, and then capture a graph; afterwards, replay it.</p>
+<p>If there are many distinct S values, we need to increase VRAM usage which is graph-private memory pools for many graphs.</p>
+</section>
+<section id="stable-addresses">
+<h3>Stable addresses<a class="headerlink" href="#stable-addresses" title="Link to this heading">#</a></h3>
+<p>Everything “parameter-like” becomes a static buffer:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.1">MiniMaxAI/MiniMax-M2.1</a></p></li>
-<li><p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2">MiniMaxAI/MiniMax-M2</a></p></li>
+<li><p>block_input / block_ws / block_output</p></li>
+<li><p>cu_full_len / cu_window_len and their kk variants</p></li>
+<li><p>sin_cos_ws</p></li>
 </ul>
+<p>In this way to solve the underlying requirement: during replay, not allowed to swap tensors, can only modify tensor contents.</p>
 </section>
-<section id="system-requirements">
-<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading">#</a></h2>
-<p>The following are recommended configurations; actual requirements should be adjusted based on your use case:</p>
+<section id="attention-backend-arguments">
+<h3>Attention backend arguments<a class="headerlink" href="#attention-backend-arguments" title="Link to this heading">#</a></h3>
+<p>Attention backend arguments are fixed inside the graph:</p>
+<p>TritonAttn expects [cu_seqlens, cu_seqlens_kk, max_len]
+FA3 expects [cu_seqlens, max_len]</p>
+<p>max_len is frozen as an int constant.
+cu_seqlens is cached into a dict during create_graph(), and its contents are not updated during subsequent replays.</p>
+<p>For the same graph_key = S, you not only require the input shape to match, but also require the segmentation pattern in cu_seqlens (and window seqlens) to be identical. Otherwise, attention will segment the sequence incorrectly.</p>
+</section>
+<section id="rotary-buffer-management">
+<h3>Rotary buffer management<a class="headerlink" href="#rotary-buffer-management" title="Link to this heading">#</a></h3>
+<p>The feature reallocates a larger sin_cos_ws when seq_len increases.
+The max_content_len is used to make sure the maximum size of the allocated rotary buffer.</p>
+</section>
+</section>
+<section id="command-example">
+<h2>Command Example<a class="headerlink" href="#command-example" title="Link to this heading">#</a></h2>
+<p>You can enable CUDA Graph for ViT by setting env variable <code class="docutils literal notranslate"><span class="pre">SGLANG_VIT_ENABLE_CUDA_GRAPH=1</span></code>, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SGLANG_VIT_ENABLE_CUDA_GRAPH</span><span class="o">=</span><span class="mi">1</span> \
+<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> \
+  <span class="o">--</span><span class="n">model</span> <span class="n">Qwen</span><span class="o">/</span><span class="n">Qwen3</span><span class="o">-</span><span class="n">VL</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span>
+</pre></div>
+</div>
+<p>Or you can run CUDA Graph for ViT together with Piecewise CUDA Graph feature by both setting env variable <code class="docutils literal notranslate"><span class="pre">SGLANG_VIT_ENABLE_CUDA_GRAPH=1</span></code> and setting <code class="docutils literal notranslate"><span class="pre">--enable-piecewise-cuda-graph</span></code>, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SGLANG_VIT_ENABLE_CUDA_GRAPH</span><span class="o">=</span><span class="mi">1</span> \
+<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> \
+  <span class="o">--</span><span class="n">model</span> <span class="n">Qwen</span><span class="o">/</span><span class="n">Qwen3</span><span class="o">-</span><span class="n">VL</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> \
+  <span class="o">--</span><span class="n">piecewise</span><span class="o">-</span><span class="n">cuda</span><span class="o">-</span><span class="n">graph</span><span class="o">-</span><span class="nb">max</span><span class="o">-</span><span class="n">tokens</span> <span class="mi">4096</span> \
+  <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">piecewise</span><span class="o">-</span><span class="n">cuda</span><span class="o">-</span><span class="n">graph</span> \
+  <span class="o">--</span><span class="n">piecewise</span><span class="o">-</span><span class="n">cuda</span><span class="o">-</span><span class="n">graph</span><span class="o">-</span><span class="n">compiler</span> <span class="n">eager</span>
+</pre></div>
+</div>
+</section>
+<section id="known-supported-models">
+<h2>Known supported models<a class="headerlink" href="#known-supported-models" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>4x 96GB GPUs: Supported context length of up to 400K tokens.</p></li>
-<li><p>8x 144GB GPUs: Supported context length of up to 3M tokens.</p></li>
+<li><p>Qwen2.5-VL (https://github.com/sgl-project/sglang/pull/14422)</p></li>
+<li><p>Qwen3-VL (https://github.com/sgl-project/sglang/pull/15320)</p></li>
 </ul>
-</section>
-<section id="deployment-with-python">
-<h2>Deployment with Python<a class="headerlink" href="#deployment-with-python" title="Link to this heading">#</a></h2>
-<p>4-GPU deployment command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>MiniMaxAI/MiniMax-M2<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--tool-call-parser<span class="w"> </span>minimax-m2<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--reasoning-parser<span class="w"> </span>minimax-append-think<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85
-</pre></div>
-</div>
-<p>8-GPU deployment command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--model-path<span class="w"> </span>MiniMaxAI/MiniMax-M2<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--ep-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--tool-call-parser<span class="w"> </span>minimax-m2<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--reasoning-parser<span class="w"> </span>minimax-append-think<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85
-</pre></div>
-</div>
-</section>
-<section id="testing-deployment">
-<h2>Testing Deployment<a class="headerlink" href="#testing-deployment" title="Link to this heading">#</a></h2>
-<p>After startup, you can test the SGLang OpenAI-compatible API with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://localhost:8000/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">        &quot;model&quot;: &quot;MiniMaxAI/MiniMax-M2&quot;,</span>
-<span class="s1">        &quot;messages&quot;: [</span>
-<span class="s1">            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;You are a helpful assistant.&quot;}]},</span>
-<span class="s1">            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;Who won the world series in 2020?&quot;}]}</span>
-<span class="s1">        ]</span>
-<span class="s1">    }&#39;</span>
-</pre></div>
-</div>
 </section>
 </section>
 
@@ -576,20 +578,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="gpt_oss.html"
+       href="dp_for_multi_modal_encoder.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">GPT OSS Usage</p>
+        <p class="prev-next-title">DP for Multi-Modal Encoder in SGLang</p>
       </div>
     </a>
     <a class="right-next"
-       href="qwen3.html"
+       href="sgl_model_gateway.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Qwen3-Next Usage</p>
+        <p class="prev-next-title">SGLang Model Gateway</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -609,10 +611,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">System Requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-python">Deployment with Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-deployment">Testing Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-restrictions">Design and Restrictions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-inputs-to-fit-static-constraints-of-cuda-graph">Dynamic inputs to fit static constraints of CUDA Graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-addresses">Stable addresses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-backend-arguments">Attention backend arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotary-buffer-management">Rotary buffer management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-example">Command Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-supported-models">Known supported models</a></li>
 </ul>
   </nav></div>
 

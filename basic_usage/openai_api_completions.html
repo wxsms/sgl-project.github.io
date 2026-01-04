@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=01f5483b"></script>
+    <script src="../_static/documentation_options.js?v=333fcfa4"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -205,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/vlm_query.html">Query VLM with Offline Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features/cuda_graph_for_multi_modal_encoder.html">Cuda Graph for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/sgl_model_gateway.html">SGLang Model Gateway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_features/observability.html">Observability</a></li>
@@ -553,9 +554,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:43:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:43:44] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:43:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:22:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:22:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:22:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -563,27 +564,27 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-04 00:43:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:43:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:43:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:43:55] INFO server_args.py:1615: Attention backend not specified. Use fa3 backend by default.
-[2026-01-04 00:43:55] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
-[2026-01-04 00:44:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:44:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:44:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-04 00:44:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-04 00:44:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-04 00:44:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:22:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:22:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:22:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:22:50] INFO server_args.py:1615: Attention backend not specified. Use fa3 backend by default.
+[2026-01-04 02:22:50] INFO server_args.py:2502: Set soft_watchdog_timeout since in CI
+[2026-01-04 02:22:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:22:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:22:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-04 02:22:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-04 02:22:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-04 02:22:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-04 00:44:07] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-04 02:23:04] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.48it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.47it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.33it/s]
 
-Capturing batches (bs=1 avail_mem=57.52 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.63it/s]
+Capturing batches (bs=1 avail_mem=72.85 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  9.67it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -597,7 +598,7 @@ Capturing batches (bs=1 avail_mem=57.52 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:30125
+Server started on http://localhost:34317
 </pre></div></div>
 </div>
 </section>
@@ -631,7 +632,7 @@ Server started on http://localhost:30125
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='2e9b09c1c2b345ddb8a07b5ef071e02d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1767487457, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='1dc114b5b9e64e749e817bf7761b55e5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1767493393, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -896,7 +897,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a vast and complex civilization that achieved many significant accomplishments. Here are some of the major achievements:<br><br>1. **Political Structure**: The Roman Republic, which lasted from 509 BC to 476 AD, was a form of government that allowed for the separation of powers between the executive, legislative, and judicial branches of government.<br><br>2. **Architecture**: Rome was known for its grand architecture, including the Colosseum, the Pantheon, and the Forum. The Colosseum was one of the largest amphitheaters in the world and served as a venue for gladiatorial contests, public</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that spanned from the 8th century BC to the 4th century AD. It was known for its political, military, and economic power. Some of their major achievements include:<br><br>1. The construction of the Colosseum in Rome, which was built in the 2nd century AD.<br>2. The development of the Roman Republic, which lasted from 509 BC to 476 BC.<br>3. The construction of the Pantheon, a temple dedicated to Jupiter and other gods, which was completed in the 2nd century AD.<br>4. The construction of the</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -922,7 +923,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m here to assist you with any questions or information you may need. Please let me know how I can help.
+Yes, that&#39;s correct. I am Qwen, a large language model created by Alibaba Cloud. I can be used for various purposes such as generating text, answering questions, and providing information. If you have any specific questions or tasks you&#39;d like to perform, feel free to ask!
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -983,7 +984,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or informatio
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='18edd5b429af43c5985a63005782d9d3', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1767487457, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='1bf2be22141b4d0cb85ff90894a373e0', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1767493394, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1015,7 +1016,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or informatio
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='522ac7c74f1444859dcf9c88cbf2299a', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" The story should include a detailed description of the explorer's journey to the moon and their observations of the lunar surface. The story should be written in first person point of view and should be between 500-800 words. The story should also include at least one scene that showcases the explorer's unique perspective and their interactions with other characters on the moon. Finally, the story should end with a conclusion that leaves readers with a sense of wonder and awe at the beauty of our planet.\nI never thought I would be traveling to space, but fate had it's way into my life. I was only 16 years old when my parents decided to take me on a trip to visit their hometown, the Moon.", matched_stop='\n\n')], created=1767487458, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=146, prompt_tokens=9, total_tokens=155, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='42634c2d95f94ba1b0261762ac50babc', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had been on many missions to explore the stars. He had seen everything from the Great Barrier Reef to the mountains of the Andes. Jack was fascinated by the vastness of space and how small he felt in comparison.', matched_stop='\n\n')], created=1767493394, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=57, prompt_tokens=9, total_tokens=66, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
