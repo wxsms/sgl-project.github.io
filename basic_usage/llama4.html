@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a23335e7"></script>
+    <script src="../_static/documentation_options.js?v=140ba3b0"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Qwen3-VL Usage" href="qwen3_vl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 05, 2026"/>
+    <meta name="docbuild:last-update" content="Jan 06, 2026"/>
   </head>
   
   
@@ -534,7 +534,7 @@ document.write(`
 </li>
 <li><p><strong>Chat Template</strong>: Add <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">llama-4</span></code> for chat completion tasks.</p></li>
 <li><p><strong>Enable Multi-Modal</strong>: Add <code class="docutils literal notranslate"><span class="pre">--enable-multimodal</span></code> for multi-modal capabilities.</p></li>
-<li><p><strong>Enable Hybrid-KVCache</strong>: Add <code class="docutils literal notranslate"><span class="pre">--hybrid-kvcache-ratio</span></code> for hybrid kv cache. Details can be seen in <a class="reference external" href="https://github.com/sgl-project/sglang/pull/6563">this PR</a></p></li>
+<li><p><strong>Enable Hybrid-KVCache</strong>: Set <code class="docutils literal notranslate"><span class="pre">--swa-full-tokens-ratio</span></code> to adjust the ratio of SWA layer (for Llama4, it’s local attention layer) KV tokens / full layer KV tokens. (default: 0.8, range: 0-1)</p></li>
 </ul>
 </section>
 <section id="eagle-speculative-decoding">
@@ -696,7 +696,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 05, 2026.
+  Last updated on Jan 06, 2026.
   <br/>
 </p>
   </div>
