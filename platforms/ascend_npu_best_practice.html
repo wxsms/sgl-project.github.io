@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=140ba3b0"></script>
+    <script src="../_static/documentation_options.js?v=44d97542"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Qwen3 examples" href="ascend_npu_qwen3_examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 06, 2026"/>
+    <meta name="docbuild:last-update" content="Jan 07, 2026"/>
   </head>
   
   
@@ -1246,16 +1246,16 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">650</span>
-<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">12</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">4</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">TASK_QUEUE_ENABLE</span><span class="o">=</span><span class="m">0</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SCHEDULER_SKIP_ALL_GATHER</span><span class="o">=</span><span class="m">1</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>xxx
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>xxx
 <span class="w">        </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span>--host<span class="w"> </span><span class="si">${</span><span class="nv">D_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--port<span class="w"> </span><span class="m">8001</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span>DIP1:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--port<span class="w"> </span><span class="m">8001</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--dist-init-addr<span class="w"> </span>DIP1:5000<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span><span class="w"> </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w"> </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span>--enable-dp-attention<span class="w"> </span>--deepep-mode<span class="w"> </span>low_latency<span class="w"> </span>--enable-dp-lm-head<span class="w"> </span>--moe-dense-tp<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--cuda-graph-bs<span class="w"> </span><span class="m">4</span><span class="w"> </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--cuda-graph-bs<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--speculative-algorithm<span class="w"> </span>NEXTN<span class="w"> </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w">  </span><span class="se">\</span>
 <span class="w">        </span>--tokenizer-worker-num<span class="w"> </span><span class="m">4</span><span class="w"> </span>--prefill-round-robin-balance<span class="w"> </span>--disable-shared-experts-fusion<span class="w"> </span>--dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--load-balance-method<span class="w"> </span>decode_round_robin
@@ -2659,7 +2659,7 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1600</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">2100</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>xxx
 <span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>xxx
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
@@ -2752,8 +2752,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DEEPEP_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span><span class="o">=</span><span class="m">16</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">DEEP_NORMAL_MODE_USE_INT8_QUANT</span><span class="o">=</span><span class="m">1</span>
-
 <span class="nv">MODEL_PATH</span><span class="o">=</span>xxx
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
@@ -2780,16 +2778,16 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SCHEDULER_DECREASE_PREFILL_IDLE</span><span class="o">=</span><span class="m">1</span>
 
-<span class="w">        </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_PATH</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">7439</span><span class="w"> </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>--tp-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">768</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w"> </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--moe-a2a-backend<span class="w"> </span>ascend_fuseep<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span>--deepep-mode<span class="w"> </span>auto<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--dist-init-addr<span class="w"> </span><span class="m">141</span>.61.105.131:5000<span class="w"> </span>--chunked-prefill-size<span class="w"> </span><span class="m">32768</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">458880</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--disaggregation-transfer-backend<span class="w"> </span>ascend<span class="w"> </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--prefill-round-robin-balance<span class="w"> </span>--enable-dp-lm-head<span class="w"> </span>--dtype<span class="w"> </span>bfloat16<span class="w"> </span>--tokenizer-worker-num<span class="w"> </span><span class="m">4</span>
+<span class="w">        </span>--watchdog-timeout<span class="w"> </span><span class="m">9000</span><span class="w"> </span>--context-length<span class="w"> </span><span class="m">8192</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--enable-dp-lm-head<span class="w"> </span>--dtype<span class="w"> </span>bfloat16
 <span class="w">        </span><span class="nv">NODE_RANK</span><span class="o">=</span><span class="nv">$i</span>
 <span class="w">        </span><span class="k">break</span>
 <span class="w">    </span><span class="k">fi</span>
@@ -3096,11 +3094,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w">   </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--base-gpu-id<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">65536</span><span class="w">  </span><span class="se">\</span>
-<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.72<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">32</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat1
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.72<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">32</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
 </pre></div>
 </div>
 </section>
@@ -3298,10 +3295,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w">  </span>--quantization<span class="w"> </span>modelslim<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">78</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">65536</span><span class="w">  </span><span class="se">\</span>
+<span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">49152</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.72<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">72</span><span class="w"> </span><span class="m">78</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">72</span><span class="w"> </span><span class="m">78</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
 </pre></div>
 </div>
 </section>
@@ -3871,7 +3868,7 @@ python -m sglang.launch_server --model-path $MODEL_PATH \
 --max-running-requests 80 --context-length 8192 --dtype bfloat16 \
 --chunked-prefill-size 28672 --max-prefill-tokens 458880  \
 --disable-radix-cache --moe-a2a-backend deepep  --deepep-mode auto --enable-dp-attention --enable-dp-lm-head \
---tp 16 --dp-size 4 --mem-fraction-static 0.7 --cuda-graph-bs  16 20
+--tp 16 --dp-size 4 --mem-fraction-static 0.7 --cuda-graph-bs  16 20 24
 </pre></div>
 </div>
 </section>
@@ -3956,6 +3953,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--port<span class="w"> </span><span class="m">6699</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.685<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--max-running-requests<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="se">\</span>
@@ -4665,7 +4663,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 06, 2026.
+  Last updated on Jan 07, 2026.
   <br/>
 </p>
   </div>
