@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f6bd4989"></script>
+    <script src="../_static/documentation_options.js?v=6150750b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -590,6 +590,7 @@ Users with permission are listed in the <a class="reference external" href="http
 <p>If you don’t have permission, please ask maintainers to trigger CI for you.</p>
 <section id="ci-rate-limits">
 <h3>CI rate limits<a class="headerlink" href="#ci-rate-limits" title="Link to this heading">#</a></h3>
+<p>Due to CI scheduling and limited resources, higher-priority PRs may preempt running jobs. In such cases, you may need to rerun the tests.</p>
 <p>We apply CI rate limits to prevent abuse and ensure fair usage of our CI resources.</p>
 <p>Each CI workflow has a default limit defined in its workflow configuration file. For example, in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/workflows/pr-gate.yml">pr-gate.yml</a>, the default cooldown period is 120 minutes, and each workflow can override it via the <code class="docutils literal notranslate"><span class="pre">cool-down-minutes</span></code> input parameter:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cool-down-minutes</span><span class="p">:</span>
