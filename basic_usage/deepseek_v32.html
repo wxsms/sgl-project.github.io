@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=3f41918f"></script>
+    <script src="../_static/documentation_options.js?v=38765936"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -708,14 +708,22 @@ Output<span class="w"> </span>throughput:<span class="w"> </span><span class="m"
 <section id="accuracy-test-with-gpqa-diamond">
 <h3>Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gpqa-diamond</span></code><a class="headerlink" href="#accuracy-test-with-gpqa-diamond" title="Link to this heading">#</a></h3>
 <p>Accuracy benchmark on long context can be tested on GPQA-diamond dataset with long output tokens and thinking enabled:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.test.run_eval<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--eval-name<span class="w"> </span>gpqa<span class="w"> </span>--num-examples<span class="w"> </span><span class="m">198</span><span class="w"> </span>--max-tokens<span class="w"> </span><span class="m">120000</span><span class="w"> </span>--repeat<span class="w"> </span><span class="m">8</span><span class="w"> </span>--thinking-mode<span class="w"> </span>deepseek-v3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.test.run_eval<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--eval-name<span class="w"> </span>gpqa<span class="w"> </span>--num-examples<span class="w"> </span><span class="m">198</span><span class="w"> </span>--max-tokens<span class="w"> </span><span class="m">128000</span><span class="w"> </span>--repeat<span class="w"> </span><span class="m">8</span><span class="w"> </span>--thinking-mode<span class="w"> </span>deepseek-v3
 </pre></div>
 </div>
-<p>The mean accuracy over 8 runs shows 0.797, which matches the number 79.9 in official tech report.</p>
+<p>The mean accuracy over 8 runs shows 0.797, which matches the number 0.799 in official tech report.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Repeat:<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>mean:<span class="w"> </span><span class="m">0</span>.797
 Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.808&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.798&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.808&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.798&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.783&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.788&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.803&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.793&#39;</span><span class="o">]</span>
 </pre></div>
 </div>
+<p>For Deepseek V3.2, Deepseek recommends setting the sampling parameters to temperature = 1.0, top_p = 0.95:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.test.run_eval<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--eval-name<span class="w"> </span>gpqa<span class="w"> </span>--num-examples<span class="w"> </span><span class="m">198</span><span class="w"> </span>--max-tokens<span class="w"> </span><span class="m">128000</span><span class="w"> </span>--repeat<span class="w"> </span><span class="m">8</span><span class="w"> </span>--top-p<span class="w"> </span><span class="m">0</span>.95<span class="w"> </span>--temperature<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>--thinking-mode<span class="w"> </span>deepseek-v3
+
+Repeat:<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>mean:<span class="w"> </span><span class="m">0</span>.840
+Scores:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;0.848&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.808&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.848&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.838&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.879&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.813&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.838&#39;</span>,<span class="w"> </span><span class="s1">&#39;0.848&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>which matches the official score, 0.824, as reported in the <a class="reference external" href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2/blob/main/assets/paper.pdf">Deepseek-V3.2 technical report</a>.</p>
 </section>
 <section id="accuracy-test-with-aime-2025">
 <h3>Accuracy Test with <code class="docutils literal notranslate"><span class="pre">aime</span> <span class="pre">2025</span></code><a class="headerlink" href="#accuracy-test-with-aime-2025" title="Link to this heading">#</a></h3>
