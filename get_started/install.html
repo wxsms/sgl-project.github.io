@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d366cc33"></script>
+    <script src="../_static/documentation_options.js?v=43506582"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -689,6 +689,7 @@ docker<span class="w"> </span>push<span class="w"> </span><span class="si">${</s
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/flashinfer-ai/flashinfer">FlashInfer</a> is the default attention kernel backend. It only supports sm75 and above. If you encounter any FlashInfer-related issues on sm75+ devices (e.g., T4, A10, A100, L4, L40S, H100), please switch to other kernels by adding <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">triton</span> <span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code> and open an issue on GitHub.</p></li>
 <li><p>To reinstall flashinfer locally, use the following command: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">flashinfer-python</span> <span class="pre">--force-reinstall</span> <span class="pre">--no-deps</span></code> and then delete the cache with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.cache/flashinfer</span></code>.</p></li>
+<li><p>To run sglang in Cuda 13 environment, please use the following docker: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">lmsysorg/sglang:latest-cu130-runtime</span></code>.</p></li>
 </ul>
 </section>
 </section>
