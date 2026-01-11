@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=c398a14b"></script>
+    <script src="../_static/documentation_options.js?v=dcfc8929"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1183,9 +1183,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p>Type: int</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--load-balance-method</span></code></p></td>
-<td><p>The load balancing strategy for data parallelism. The Minimum Token algorithm can only be used when DP attention is applied. This algorithm performs load balancing based on the real-time token load of the DP workers.</p></td>
+<td><p>The load balancing strategy for data parallelism. The <code class="docutils literal notranslate"><span class="pre">total_tokens</span></code> algorithm can only be used when DP attention is applied. This algorithm performs load balancing based on the real-time token load of the DP workers.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">round_robin</span></code>, <code class="docutils literal notranslate"><span class="pre">follow_bootstrap_room</span></code>, <code class="docutils literal notranslate"><span class="pre">shortest_queue</span></code>, <code class="docutils literal notranslate"><span class="pre">minimum_tokens</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">round_robin</span></code>, <code class="docutils literal notranslate"><span class="pre">follow_bootstrap_room</span></code>, <code class="docutils literal notranslate"><span class="pre">total_requests</span></code>, <code class="docutils literal notranslate"><span class="pre">total_tokens</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--load-watch-interval</span></code></p></td>
 <td><p>The interval of load watching in seconds.</p></td>
