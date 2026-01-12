@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=009d77b7"></script>
+    <script src="../_static/documentation_options.js?v=5e9a7d97"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -216,6 +216,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/generative_models.html">Large Language Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/diffusion_language_models.html">Diffusion Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/diffusion_models.html">Diffusion Models</a></li>
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/rerank_models.html">Rerank Models</a></li>
@@ -554,9 +565,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-01-12 06:05:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-12 06:05:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-12 06:05:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-12 07:02:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-12 07:02:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-12 07:02:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -564,27 +575,27 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-12 06:05:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-12 06:05:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-12 06:05:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-12 06:05:42] INFO server_args.py:1643: Attention backend not specified. Use fa3 backend by default.
-[2026-01-12 06:05:42] INFO server_args.py:2542: Set soft_watchdog_timeout since in CI
-[2026-01-12 06:05:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-12 06:05:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-12 06:05:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-12 06:05:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-12 06:05:48] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-12 06:05:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-12 07:03:00] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-12 07:03:00] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-12 07:03:00] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-12 07:03:03] INFO server_args.py:1643: Attention backend not specified. Use fa3 backend by default.
+[2026-01-12 07:03:03] INFO server_args.py:2542: Set soft_watchdog_timeout since in CI
+[2026-01-12 07:03:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-12 07:03:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-12 07:03:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-12 07:03:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-12 07:03:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-12 07:03:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-12 06:05:55] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-12 07:03:14] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  4.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.05it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.05it/s]
 
-Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.32it/s]
+Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.31it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -598,7 +609,7 @@ Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37283
+Server started on http://localhost:35790
 </pre></div></div>
 </div>
 </section>
@@ -632,7 +643,7 @@ Server started on http://localhost:37283
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='35816320dab94a3fbea263d9a958a3a4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1768197964, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='49aa202ee37d47708448a74a6338f730', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1768201404, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -897,7 +908,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The ancient Roman Empire was a major civilization that flourished in the Mediterranean region from the 8th century BCE to the 4th century CE. Some of their major achievements include:<br><br>1. The construction of the Colosseum, one of the most famous structures in the world, which was built during the reign of Emperor Augustus.<br><br>2. The development of Roman law, which was based on the principles of Roman citizenship and public order.<br><br>3. The construction of aqueducts, which allowed for the distribution of water throughout the empire.<br><br>4. The invention of the horse-drawn carriage, which became a common mode of transportation</strong></div>
+<strong style='color: #00008B;'>The major achievements of ancient Rome include the construction of the Colosseum, which was a massive amphitheater that hosted gladiatorial contests, public spectacles, and other events. The Roman Empire was also known for its extensive network of roads, which facilitated trade and communication across vast distances. The Romans also developed a sophisticated system of law, including the Twelve Tables, which were intended to ensure fair and just laws for all citizens. Additionally, they made significant contributions to architecture, art, and philosophy, particularly in the fields of sculpture and rhetoric.</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -923,7 +934,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I am a test created by Alibaba Cloud. I am here to assist you with any questions or tasks you may have. If you have any specific questions or need help with something, feel free to ask and I&#39;ll do my best to assist you.
+Yes, I&#39;m here to assist you with any questions or tasks you might have. Please feel free to ask me anything, and I&#39;ll do my best to help you.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -984,7 +995,7 @@ Yes, I am a test created by Alibaba Cloud. I am here to assist you with any ques
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='e4608bf338c5457d84c9d23039b6c998', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1768197964, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='f64774b75f554832ab2ecb8eaa623911', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1768201404, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1016,7 +1027,7 @@ Yes, I am a test created by Alibaba Cloud. I am here to assist you with any ques
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='acf18e4f264044bfb7a47d1c6a6aa6a1', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' In the year 2035, Captain Jacko Zerlani stood at the controls of the latest spaceship designed for interstellar exploration. It was a sleek, sleek spacecraft with a canopy of xenon lights illuminating the exterior. The captain had chosen this vessel for his mission to explore new worlds beyond our solar system.', matched_stop='\n\n')], created=1768197964, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=67, prompt_tokens=9, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='22d15de4cb384b26b54770110900f52c', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had been exploring the stars for years. He had traveled to countless planets and galaxies, discovering new worlds and discoveries that changed the way humans thought about the universe.', matched_stop='\n\n')], created=1768201404, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=45, prompt_tokens=9, total_tokens=54, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 </section>
