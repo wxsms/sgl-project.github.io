@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b7f04965"></script>
+    <script src="../_static/documentation_options.js?v=e14090e1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1546,7 +1546,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-load-format</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">pt</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">safetensors</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">npcache</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">dummy</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">sharded_state</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">gguf</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">bitsandbytes</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">layered</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">flash_rl</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">remote</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">remote_instance</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">fastsafetensors</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">private</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
@@ -1571,14 +1571,14 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-accept-</span></code><br/><code class="docutils literal notranslate"><span class="pre">threshold-single</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
 <td><p>Type: float</p></td>
-<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
-<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-accept-</span></code><br/><code class="docutils literal notranslate"><span class="pre">threshold-acc</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
 <td><p>Type: float</p></td>
-<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
-<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
@@ -1594,25 +1594,25 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-moe-runner-</span></code><br/><code class="docutils literal notranslate"><span class="pre">backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">deep_gemm</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">triton</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">triton_kernel</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">flashinfer_cutlass</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">flashinfer_mxfp4</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">flashinfer_cutedsl</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">cutlass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-moe-a2a-</span></code><br/><code class="docutils literal notranslate"><span class="pre">backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">deepep</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">mooncake</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-attention-backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ascend</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-quantization</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">awq</span></code>, <br/><code class="docutils literal notranslate"><span class="pre">fp8</span></code>, <br/><code class="docutils literal notranslate"><span class="pre">gptq</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">marlin</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">gptq_marlin</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">awq_marlin</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">bitsandbytes</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">gguf</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">modelopt</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">modelopt_fp8</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">petit_nvfp4</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">w8a8_int8</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">w8a8_fp8</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">moe_wna16</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">qoq</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">w4afp8</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">mxfp4</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">auto-round</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">compressed-tensors</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">modelslim</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">unquant</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unquant</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
@@ -1917,8 +1917,8 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hicache-storage-</span></code><br/><code class="docutils literal notranslate"><span class="pre">backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">file</span></code></p></td>
-<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
-<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--hicache-storage-</span></code><br/><code class="docutils literal notranslate"><span class="pre">prefetch-policy</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">best_effort</span></code></p></td>
