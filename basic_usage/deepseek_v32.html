@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=369afcdf"></script>
+    <script src="../_static/documentation_options.js?v=11aead0b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -516,6 +516,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-sequence-splitting-default-setting">In sequence splitting (default setting)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-splitting">Round robin splitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-parallel-context-parallel-pp-cp">Pipeline Parallel + Context Parallel (PP + CP)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-usage">Standard Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation-with-pp-cp">PD Disaggregation with PP + CP</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -919,6 +924,116 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </pre></div>
 </div>
 </section>
+<section id="pipeline-parallel-context-parallel-pp-cp">
+<h3>Pipeline Parallel + Context Parallel (PP + CP)<a class="headerlink" href="#pipeline-parallel-context-parallel-pp-cp" title="Link to this heading">#</a></h3>
+<p>This mode combines Pipeline Parallelism (PP) and Context Parallelism (CP) to scale across multiple nodes, which can achieve better throughput and Time To First Token (TTFT). Note that this method has only been tested on H20 96G.</p>
+<section id="standard-usage">
+<h4>Standard Usage<a class="headerlink" href="#standard-usage" title="Link to this heading">#</a></h4>
+<p>To launch with PP=2 and CP (via <code class="docutils literal notranslate"><span class="pre">round-robin-split</span></code> mode) on 2 nodes. This configuration uses the fused MoE kernel by default, which generally provides better performance.</p>
+<p>For related development details, please refer to:</p>
+<ul class="simple">
+<li><p>Fused MoE + CP support: <a class="reference external" href="https://github.com/sgl-project/sglang/pull/13959">PR #13959</a></p></li>
+<li><p>PP + CP support: <a class="reference external" href="https://github.com/sgl-project/sglang/issues/15358">Issue #15358</a> and <a class="reference external" href="https://github.com/sgl-project/sglang/pull/16380">PR #16380</a></p></li>
+</ul>
+<p>Node 0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_PP_LAYER_PARTITION</span><span class="o">=</span><span class="m">30</span>,31
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span>&lt;HEAD_NODE_IP&gt;:62001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">16384</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cuda-graph-max-bs<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tool-call-parser<span class="w"> </span>deepseekv32
+</pre></div>
+</div>
+<p>Node 1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_PP_LAYER_PARTITION</span><span class="o">=</span><span class="m">30</span>,31
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span>&lt;HEAD_NODE_IP&gt;:62001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">16384</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cuda-graph-max-bs<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--watchdog-timeout<span class="w"> </span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tool-call-parser<span class="w"> </span>deepseekv32
+</pre></div>
+</div>
+</section>
+<section id="pd-disaggregation-with-pp-cp">
+<h4>PD Disaggregation with PP + CP<a class="headerlink" href="#pd-disaggregation-with-pp-cp" title="Link to this heading">#</a></h4>
+<p>If using PD (Prefill-Decode) Disaggregation, the Prefill nodes can be configured with PP + CP as follows.</p>
+<p>Prefill Node 0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--served-model-name<span class="w"> </span>deepseek-v32<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span>&lt;PREFILL_HEAD_IP&gt;:20102<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>continuous-split<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-ib-device<span class="w"> </span>mlx5_bond_0,mlx5_bond_1,mlx5_bond_2,mlx5_bond_3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--context-length<span class="w"> </span><span class="m">131072</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--collect-tokens-histogram<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tokenizer-worker-num<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+<p>Prefill Node 1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--served-model-name<span class="w"> </span>deepseek-v32-prefill<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dist-init-addr<span class="w"> </span>&lt;PREFILL_HEAD_IP&gt;:20102<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>continuous-split<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-ib-device<span class="w"> </span>mlx5_bond_0,mlx5_bond_1,mlx5_bond_2,mlx5_bond_3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-running-requests<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--context-length<span class="w"> </span><span class="m">131072</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--collect-tokens-histogram<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tokenizer-worker-num<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+<p>For the Decode nodes, it is recommended to use the <strong>EP mode</strong>.</p>
+</section>
+</section>
 </section>
 </section>
 
@@ -988,6 +1103,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-sequence-splitting-default-setting">In sequence splitting (default setting)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-splitting">Round robin splitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-parallel-context-parallel-pp-cp">Pipeline Parallel + Context Parallel (PP + CP)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-usage">Standard Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation-with-pp-cp">PD Disaggregation with PP + CP</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
