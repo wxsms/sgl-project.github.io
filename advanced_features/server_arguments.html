@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=da37c45e"></script>
+    <script src="../_static/documentation_options.js?v=bdb3429d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Llama4 Usage" href="../basic_usage/llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 13, 2026"/>
+    <meta name="docbuild:last-update" content="Jan 14, 2026"/>
   </head>
   
   
@@ -1123,52 +1123,57 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--served-model-name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--admin-api-key</span></code></p></td>
+<td><p>Set <strong>admin API key</strong> for administrative/control endpoints (e.g., weights update, cache flush, <code class="docutils literal notranslate"><span class="pre">/get_server_info</span></code>). Endpoints marked as admin-only require <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">&lt;admin_api_key&gt;</span></code> when this is set.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: str</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--served-model-name</span></code></p></td>
 <td><p>Override the model name returned by the v1/models endpoint in OpenAI API server.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--weight-version</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--weight-version</span></code></p></td>
 <td><p>Version identifier for the model weights. Defaults to ‘default’ if not specified.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--chat-template</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--chat-template</span></code></p></td>
 <td><p>The buliltin chat template name or the path of the chat template file. This is only used for OpenAI-compatible API server.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--completion-template</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--completion-template</span></code></p></td>
 <td><p>The buliltin completion template name or the path of the completion template file. This is only used for OpenAI-compatible API server. only for code completion currently.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--file-storage-path</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--file-storage-path</span></code></p></td>
 <td><p>The path of the file storage in backend.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">sglang_storage</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-cache-report</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-cache-report</span></code></p></td>
 <td><p>Return number of cached tokens in usage.prompt_tokens_details for each openai request.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span></code></p></td>
 <td><p>Specify the parser for reasoning models. Supported parsers: [deepseek-r1, deepseek-v3, glm45, gpt-oss, kimi, qwen3, qwen3-thinking, step3].</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-r1</span></code>, <code class="docutils literal notranslate"><span class="pre">deepseek-v3</span></code>, <code class="docutils literal notranslate"><span class="pre">glm45</span></code>, <code class="docutils literal notranslate"><span class="pre">gpt-oss</span></code>, <code class="docutils literal notranslate"><span class="pre">kimi</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen3</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen3-thinking</span></code>, <code class="docutils literal notranslate"><span class="pre">step3</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
 <td><p>Specify the parser for handling tool-call interactions. Supported parsers: [deepseekv3, deepseekv31, glm, glm45, glm47, gpt-oss, kimi_k2, llama3, mistral, pythonic, qwen, qwen25, qwen3_coder, step3].</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseekv3</span></code>, <code class="docutils literal notranslate"><span class="pre">deepseekv31</span></code>, <code class="docutils literal notranslate"><span class="pre">glm</span></code>, <code class="docutils literal notranslate"><span class="pre">glm45</span></code>, <code class="docutils literal notranslate"><span class="pre">glm47</span></code>, <code class="docutils literal notranslate"><span class="pre">gpt-oss</span></code>, <code class="docutils literal notranslate"><span class="pre">kimi_k2</span></code>, <code class="docutils literal notranslate"><span class="pre">llama3</span></code>, <code class="docutils literal notranslate"><span class="pre">mistral</span></code>, <code class="docutils literal notranslate"><span class="pre">pythonic</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen25</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen3_coder</span></code>, <code class="docutils literal notranslate"><span class="pre">step3</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
 <td><p>Where to get default sampling parameters. ‘openai’ uses SGLang/OpenAI defaults (temperature=1.0, top_p=1.0, etc.). ‘model’ uses the model’s generation_config.json to get the recommended sampling parameters if available. Default is ‘model’.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">openai</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-server</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-server</span></code></p></td>
 <td><p>Either ‘demo’ or a comma-separated list of tool server urls to use for the model. If not specified, no tool server will be used.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
@@ -2533,7 +2538,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 13, 2026.
+  Last updated on Jan 14, 2026.
   <br/>
 </p>
   </div>
