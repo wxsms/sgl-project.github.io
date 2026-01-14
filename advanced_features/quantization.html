@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=25a0e31b"></script>
+    <script src="../_static/documentation_options.js?v=ea3ef0e4"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -504,7 +504,11 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torchao-online-quantization-method">torchao online quantization method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quark-int4fp8-moe-online-quantization-method"><code class="docutils literal notranslate"><span class="pre">quark_int4fp8_moe</span></code> online quantization method</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
             </nav>
@@ -848,6 +852,8 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 </pre></div>
 </div>
 <p>Our team is working on supporting more online quantization methods. SGLang will soon support methods including but not limited to <code class="docutils literal notranslate"><span class="pre">[&quot;awq&quot;,</span> <span class="pre">&quot;gptq&quot;,</span> <span class="pre">&quot;marlin&quot;,</span> <span class="pre">&quot;gptq_marlin&quot;,</span> <span class="pre">&quot;awq_marlin&quot;,</span> <span class="pre">&quot;bitsandbytes&quot;,</span> <span class="pre">&quot;gguf&quot;]</span></code>.</p>
+<section id="torchao-online-quantization-method">
+<h3>torchao online quantization method<a class="headerlink" href="#torchao-online-quantization-method" title="Link to this heading">#</a></h3>
 <p>SGLang also supports quantization methods based on <a class="reference external" href="https://github.com/pytorch/ao">torchao</a>. You can simply specify <code class="docutils literal notranslate"><span class="pre">--torchao-config</span></code> in the command line to support this feature. For example, if you want to enable <code class="docutils literal notranslate"><span class="pre">int4wo-128</span></code> for model <code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span></code>, you can launch the server with the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
@@ -864,6 +870,12 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 <span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
+</section>
+<section id="quark-int4fp8-moe-online-quantization-method">
+<h3><code class="docutils literal notranslate"><span class="pre">quark_int4fp8_moe</span></code> online quantization method<a class="headerlink" href="#quark-int4fp8-moe-online-quantization-method" title="Link to this heading">#</a></h3>
+<p>SGLang running on AMD GPUs (CDNA3 or CDNA4 architecture) supports the quantization method <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">quark_int4fp8_moe</span></code>, that will replace <a class="reference external" href="https://github.com/sgl-project/sglang/blob/v0.4.8/python/sglang/srt/layers/moe/fused_moe_triton/layer.py#L271">MoE layers</a> originally in high precision (bfloat16, float16 or float32) to use weights dynamically quantized to int4, that are upcasted to float8 during inference to run compute in float8 precision with activations dynamically quantized on the fly to float8.</p>
+<p>Other layers (e.g. projections in the attention layers) have their weights quantized online to float8 directly.</p>
+</section>
 </section>
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
@@ -943,7 +955,11 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-quantization">Online Quantization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torchao-online-quantization-method">torchao online quantization method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quark-int4fp8-moe-online-quantization-method"><code class="docutils literal notranslate"><span class="pre">quark_int4fp8_moe</span></code> online quantization method</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
   </nav></div>
