@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=bffb84b1"></script>
+    <script src="../_static/documentation_options.js?v=15bf0182"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -495,9 +495,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget">Thinking Budget</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget-for-glm-4-5-glm-4-6">Thinking Budget for GLM-4.5 / GLM-4.6</a></li>
 </ul>
             </nav>
         </div>
@@ -515,13 +514,6 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>zai-org/GLM-4.6-FP8<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
 </pre></div>
 </div>
-<section id="configuration-tips">
-<h2>Configuration Tips<a class="headerlink" href="#configuration-tips" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code>: Adjust <code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code> to increase mamba cache space and max running requests
-capability. It will decrease KV cache space as a trade-off. You can adjust it according to workload.</p></li>
-</ul>
-</section>
 <section id="eagle-speculative-decoding">
 <h2>EAGLE Speculative Decoding<a class="headerlink" href="#eagle-speculative-decoding" title="Link to this heading">#</a></h2>
 <p><strong>Description</strong>: SGLang has supported GLM-4.5 / GLM-4.6 models
@@ -543,10 +535,14 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
 <span class="w">  </span>--enable-custom-logit-processor
 </pre></div>
 </div>
-<p><strong>Note</strong>: For GLM-4.7, <code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">glm47</span></code>, for GLM-4.5 and GLM-4.6, it should be set to <code class="docutils literal notranslate"><span class="pre">glm45</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable the experimental overlap scheduler for EAGLE speculative decoding, set the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_SPEC_V2=1</span></code>. This can improve performance by enabling overlap scheduling between draft and verification stages.</p>
+</div>
 </section>
-<section id="thinking-budget">
-<h2>Thinking Budget<a class="headerlink" href="#thinking-budget" title="Link to this heading">#</a></h2>
+<section id="thinking-budget-for-glm-4-5-glm-4-6">
+<h2>Thinking Budget for GLM-4.5 / GLM-4.6<a class="headerlink" href="#thinking-budget-for-glm-4-5-glm-4-6" title="Link to this heading">#</a></h2>
+<p><strong>Note</strong>: For GLM-4.7, <code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">glm47</span></code>, for GLM-4.5 and GLM-4.6, it should be set to <code class="docutils literal notranslate"><span class="pre">glm45</span></code>.</p>
 <p>In SGLang, we can implement thinking budget with <code class="docutils literal notranslate"><span class="pre">CustomLogitProcessor</span></code>.</p>
 <p>Launch a server with <code class="docutils literal notranslate"><span class="pre">--enable-custom-logit-processor</span></code> flag on.</p>
 <p>Sample Request:</p>
@@ -623,9 +619,8 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget">Thinking Budget</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-budget-for-glm-4-5-glm-4-6">Thinking Budget for GLM-4.5 / GLM-4.6</a></li>
 </ul>
   </nav></div>
 

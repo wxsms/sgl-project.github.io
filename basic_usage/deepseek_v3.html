@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=bffb84b1"></script>
+    <script src="../_static/documentation_options.js?v=15bf0182"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -746,6 +746,10 @@ Add <code class="docutils literal notranslate"><span class="pre">--speculative-a
 <li><p>Adjust <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code> to a larger number. The default value is <code class="docutils literal notranslate"><span class="pre">48</span></code> for MTP. For larger batch sizes, you should increase this value beyond the default value.</p></li>
 <li><p>Set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-bs</span></code>. It’s a list of batch sizes for cuda graph capture. The <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/server_args.py#L888-L895">default captured batch sizes for speculative decoding</a> is 48. You can customize this by including more batch sizes.</p></li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable the experimental overlap scheduler for EAGLE speculative decoding, set the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_SPEC_V2=1</span></code>. This can improve performance by enabling overlap scheduling between draft and verification stages.</p>
 </div>
 </section>
 <section id="reasoning-content-for-deepseek-r1-v3-1">
