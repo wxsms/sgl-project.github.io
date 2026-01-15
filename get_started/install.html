@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=15bf0182"></script>
+    <script src="../_static/documentation_options.js?v=1bd3522f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -521,9 +521,6 @@ For example, on GB200, you will need to do the following. Otherwise, it will ins
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang&quot;</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu129</span>
 </pre></div>
 </div>
-<p>On B300 (SM103), we recommend using the image at lmsysorg/sglang:dev-cu13.
-Please, do not re-install the project as editable inside the docker image, since it will override the version of
-libraries specified by the cu13 docker image.</p>
 <p><strong>Quick fixes to common problems</strong></p>
 <ul class="simple">
 <li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>. Please set it to your CUDA install root with either of the following solutions:</p>
@@ -576,6 +573,9 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 </pre></div>
 </div>
 <p>You can also find the nightly docker images <a class="reference external" href="https://hub.docker.com/r/lmsysorg/sglang/tags?name=nightly">here</a>.</p>
+<p>On B300 (SM103) or Cuda 13 environment, we recommend using the nightly image at <code class="docutils literal notranslate"><span class="pre">lmsysorg/sglang:dev-cu13</span></code> or stable image at <code class="docutils literal notranslate"><span class="pre">lmsysorg/sglang:latest-cu130-runtime</span></code>.
+Please, do not re-install the project as editable inside the docker image, since it will override the version of
+libraries specified by the cu13 docker image.</p>
 </section>
 <section id="method-4-using-kubernetes">
 <h2>Method 4: Using Kubernetes<a class="headerlink" href="#method-4-using-kubernetes" title="Link to this heading">#</a></h2>
@@ -703,7 +703,7 @@ docker<span class="w"> </span>push<span class="w"> </span><span class="si">${</s
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/flashinfer-ai/flashinfer">FlashInfer</a> is the default attention kernel backend. It only supports sm75 and above. If you encounter any FlashInfer-related issues on sm75+ devices (e.g., T4, A10, A100, L4, L40S, H100), please switch to other kernels by adding <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">triton</span> <span class="pre">--sampling-backend</span> <span class="pre">pytorch</span></code> and open an issue on GitHub.</p></li>
 <li><p>To reinstall flashinfer locally, use the following command: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">flashinfer-python</span> <span class="pre">--force-reinstall</span> <span class="pre">--no-deps</span></code> and then delete the cache with <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.cache/flashinfer</span></code>.</p></li>
-<li><p>To run sglang in Cuda 13 environment, please use the following docker: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">lmsysorg/sglang:latest-cu130-runtime</span></code>.</p></li>
+<li><p>When encountering <code class="docutils literal notranslate"><span class="pre">ptxas</span> <span class="pre">fatal</span>&#160;&#160; <span class="pre">:</span> <span class="pre">Value</span> <span class="pre">'sm_103a'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span> <span class="pre">for</span> <span class="pre">option</span> <span class="pre">'gpu-name'</span></code> in Cuda 13 image, please use this command  <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-f</span> <span class="pre">/usr/local/lib/python3.12/dist-packages/triton/backends/nvidia/bin/ptxas</span> <span class="pre">&amp;&amp;</span> <span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/usr/local/cuda/bin/ptxas</span> <span class="pre">/usr/local/lib/python3.12/dist-packages/triton/backends/nvidia/bin/ptxas</span></code> to fix the triton ptxas path.</p></li>
 </ul>
 </section>
 </section>
