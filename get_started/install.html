@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6f1fb591"></script>
+    <script src="../_static/documentation_options.js?v=bffb84b1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -521,6 +521,9 @@ For example, on GB200, you will need to do the following. Otherwise, it will ins
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang&quot;</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu129</span>
 </pre></div>
 </div>
+<p>On B300 (SM103), we recommend using the image at lmsysorg/sglang:dev-cu13.
+Please, do not re-install the project as editable inside the docker image, since it will override the version of
+libraries specified by the cu13 docker image.</p>
 <p><strong>Quick fixes to common problems</strong></p>
 <ul class="simple">
 <li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>. Please set it to your CUDA install root with either of the following solutions:</p>
