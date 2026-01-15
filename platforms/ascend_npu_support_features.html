@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=7419d4ce"></script>
+    <script src="../_static/documentation_options.js?v=bcac3a20"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1226,55 +1226,61 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--served-model-name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--admin-api-key</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--weight-version</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--served-model-name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: str</p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+<td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--weight-version</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--chat-template</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--chat-template</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--completion-template</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--completion-template</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-cache-report</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-cache-report</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag<br/> (set to enable)</p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-r1</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">llama</span></code>,<code class="docutils literal notranslate"><span class="pre">pythonic</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: green;">√</span></strong></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">openai</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-server</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-server</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p><strong><span style="color: red;">×</span></strong></p></td>

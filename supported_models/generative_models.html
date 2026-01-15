@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=7419d4ce"></script>
+    <script src="../_static/documentation_options.js?v=bcac3a20"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -528,6 +528,14 @@ document.write(`
 <tr class="row-even"><td><p><strong>DeepSeek</strong> (v1, v2, v3/R1)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-ai/DeepSeek-R1</span></code></p></td>
 <td><p>Series of advanced reasoning-optimized models (including a 671B MoE) trained with reinforcement learning; top performance on complex reasoning, math, and code tasks. <a class="reference internal" href="#../basic_usage/deepseek.md"><span class="xref myst">SGLang provides Deepseek v3/R1 model-specific optimizations</span></a> and <a class="reference internal" href="../advanced_features/separate_reasoning.html"><span class="std std-doc">Reasoning Parser</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Kimi K2</strong> (Thinking, Instruct)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">moonshotai/Kimi-K2-Instruct</span></code></p></td>
+<td><p>Moonshot AI’s 1 trillion parameter MoE model (32B active) with 128K–256K context; state-of-the-art agentic intelligence with stable long-horizon agency across 200–300 sequential tool calls. Features MLA attention and native INT4 quantization. <a class="reference internal" href="../advanced_features/separate_reasoning.html"><span class="std std-doc">See Reasoning Parser docs</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Kimi Linear</strong> (48B-A3B)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">moonshotai/Kimi-Linear-48B-A3B-Instruct</span></code></p></td>
+<td><p>Moonshot AI’s hybrid linear attention model (48B total, 3B active) with 1M token context; features Kimi Delta Attention (KDA) for up to 6× faster decoding and 75% KV cache reduction vs full attention.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>GPT-OSS</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">openai/gpt-oss-20b</span></code>, <code class="docutils literal notranslate"><span class="pre">openai/gpt-oss-120b</span></code></p></td>
