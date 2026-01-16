@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=1f427e79"></script>
+    <script src="../_static/documentation_options.js?v=f17a645d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -661,7 +661,7 @@ document.write(`
 <section id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Broad Model Support</strong>: Wan series, FastWan series, Hunyuan, Qwen-Image, Qwen-Image-Edit, Flux, and more</p></li>
+<li><p><strong>Broad Model Support</strong>: Wan series, FastWan series, Hunyuan, Qwen-Image, Qwen-Image-Edit, Flux, Z-Image, GLM-Image, and more</p></li>
 <li><p><strong>Fast Inference</strong>: Optimized kernels from sgl-kernel, efficient scheduler loop, and Cache-DiT acceleration</p></li>
 <li><p><strong>Ease of Use</strong>: OpenAI-compatible API, CLI, and Python SDK</p></li>
 <li><p><strong>Multi-Platform</strong>: NVIDIA GPUs (H100, H200, A100, B200, 4090) and AMD GPUs (MI300X, MI325X)</p></li>
@@ -866,8 +866,24 @@ default parameters when initializing and generating videos.</p>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev</span></code></p></td>
 <td class="text-left"><p>Any resolution</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Qwen Image</p></td>
+<tr class="row-even"><td class="text-left"><p>FLUX.2-Klein</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-klein-4B</span></code></p></td>
+<td class="text-left"><p>Any resolution</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Z-Image-Turbo</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Tongyi-MAI/Z-Image-Turbo</span></code></p></td>
+<td class="text-left"><p>Any resolution</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>GLM-Image</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">zai-org/GLM-Image</span></code></p></td>
+<td class="text-left"><p>Any resolution</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Qwen Image</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image</span></code></p></td>
+<td class="text-left"><p>Any resolution</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Qwen Image 2512</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen-Image-2512</span></code></p></td>
 <td class="text-left"><p>Any resolution</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Qwen Image Edit</p></td>
@@ -2002,7 +2018,7 @@ sglang<span class="w"> </span>generate<span class="w"> </span>--model-path<span 
 <td><p>Wan2.1, Wan2.2</p></td>
 </tr>
 <tr class="row-odd"><td><p>Flux</p></td>
-<td><p>FLUX.1-dev, FLUX.2-dev</p></td>
+<td><p>FLUX.1-dev, FLUX.2-dev, FLUX.2-Klein</p></td>
 </tr>
 <tr class="row-even"><td><p>Z-Image</p></td>
 <td><p>Z-Image-Turbo</p></td>
@@ -2010,7 +2026,10 @@ sglang<span class="w"> </span>generate<span class="w"> </span>--model-path<span 
 <tr class="row-odd"><td><p>Qwen</p></td>
 <td><p>Qwen-Image, Qwen-Image-Edit</p></td>
 </tr>
-<tr class="row-even"><td><p>Hunyuan</p></td>
+<tr class="row-even"><td><p>GLM</p></td>
+<td><p>GLM-Image</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hunyuan</p></td>
 <td><p>HunyuanVideo</p></td>
 </tr>
 </tbody>
