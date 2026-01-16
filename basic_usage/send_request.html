@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=23dc4dd4"></script>
+    <script src="../_static/documentation_options.js?v=0cc5cb71"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -549,9 +549,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-01-16 13:20:37] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 13:20:37] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 13:20:37] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 14:53:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 14:53:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 14:53:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -559,75 +559,27 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-16 13:20:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 13:20:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 13:20:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: be350ab3-8d0c-447c-a00b-88da944fbd92)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/config.json
-[2026-01-16 13:20:54] WARNING _http.py:319: &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: be350ab3-8d0c-447c-a00b-88da944fbd92)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:20:54] WARNING _http.py:328: Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 9bb74b77-d3f3-4a51-8622-e5b4211d84ac)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/config.json
-[2026-01-16 13:21:05] WARNING _http.py:319: &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 9bb74b77-d3f3-4a51-8622-e5b4211d84ac)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/config.json
-Retrying in 2s [Retry 2/5].
-[2026-01-16 13:21:05] WARNING _http.py:328: Retrying in 2s [Retry 2/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 53f9f594-4e0f-4d1d-880c-dcbcd39b1e77)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-[2026-01-16 13:21:19] WARNING _http.py:319: &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 53f9f594-4e0f-4d1d-880c-dcbcd39b1e77)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:21:19] WARNING _http.py:328: Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 9a65ac42-0ef0-43d8-8a42-d99823f58585)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/generation_config.json
-[2026-01-16 13:21:31] WARNING _http.py:319: &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 9a65ac42-0ef0-43d8-8a42-d99823f58585)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/generation_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:21:31] WARNING _http.py:328: Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 085b6a2c-6e08-42c1-b517-c20d5f4f7e03)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/hf_quant_config.json
-[2026-01-16 13:21:43] WARNING _http.py:319: &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 085b6a2c-6e08-42c1-b517-c20d5f4f7e03)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/hf_quant_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:21:43] WARNING _http.py:328: Retrying in 1s [Retry 1/5].
-[2026-01-16 13:21:46] INFO server_args.py:1657: Attention backend not specified. Use fa3 backend by default.
-[2026-01-16 13:21:46] INFO server_args.py:2556: Set soft_watchdog_timeout since in CI
-[2026-01-16 13:21:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 13:21:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 13:21:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-16 13:21:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 13:21:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 13:21:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 67998a7f-3ae7-4d4a-b8e7-0cb37f7a1705)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/hf_quant_config.json
-[2026-01-16 13:21:57] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 67998a7f-3ae7-4d4a-b8e7-0cb37f7a1705)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/hf_quant_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:21:57] Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: c9aee309-dd78-4fc8-882b-ca5fe0319261)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/hf_quant_config.json
-[2026-01-16 13:22:08] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: c9aee309-dd78-4fc8-882b-ca5fe0319261)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/hf_quant_config.json
-Retrying in 2s [Retry 2/5].
-[2026-01-16 13:22:08] Retrying in 2s [Retry 2/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 3a99bdc2-1f0e-47f6-81a3-612918256775)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-[2026-01-16 13:22:12] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 3a99bdc2-1f0e-47f6-81a3-612918256775)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:22:12] Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: f81d48bc-0235-4b7a-883c-dc359338fc05)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json
-[2026-01-16 13:22:20] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: f81d48bc-0235-4b7a-883c-dc359338fc05)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:22:20] Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: e033f52c-822e-4f58-a8a0-2b808d968e59)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-[2026-01-16 13:22:23] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: e033f52c-822e-4f58-a8a0-2b808d968e59)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-Retrying in 2s [Retry 2/5].
-[2026-01-16 13:22:23] Retrying in 2s [Retry 2/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 96079599-146e-4408-9ac3-2cafcb7c3874)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-[2026-01-16 13:22:35] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 96079599-146e-4408-9ac3-2cafcb7c3874)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json
-Retrying in 4s [Retry 3/5].
-[2026-01-16 13:22:35] Retrying in 4s [Retry 3/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: b23be431-0b30-487e-b10a-ab3cc33e784b)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/tokenizer_config.json
-[2026-01-16 13:22:41] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: b23be431-0b30-487e-b10a-ab3cc33e784b)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/qwen/qwen2.5-0.5b-instruct/resolve/main/tokenizer_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 13:22:41] Retrying in 1s [Retry 1/5].
+[2026-01-16 14:53:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 14:53:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 14:53:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 14:53:43] INFO server_args.py:1657: Attention backend not specified. Use fa3 backend by default.
+[2026-01-16 14:53:43] INFO server_args.py:2556: Set soft_watchdog_timeout since in CI
+[2026-01-16 14:53:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 14:53:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 14:53:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 14:53:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 14:53:49] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 14:53:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-16 13:23:06] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-16 14:53:54] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.62it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.61it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.18it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.18it/s]
 
-Capturing batches (bs=1 avail_mem=52.66 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.62it/s]
+Capturing batches (bs=1 avail_mem=60.66 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.21it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -660,7 +612,7 @@ Capturing batches (bs=1 avail_mem=52.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': 'd8f1403d74a3455f946f8b1610618c70', 'object': 'chat.completion', 'created': 1768569806, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '7c11f74a04d7418db12eabd1974ca030', 'object': 'chat.completion', 'created': 1768575243, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 </section>
 <section id="Using-Python-Requests">
@@ -687,7 +639,7 @@ Capturing batches (bs=1 avail_mem=52.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '3262d9ae74bd47c9bf13c833d5a44c67', 'object': 'chat.completion', 'created': 1768569806, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '94d0b655d3dc42a88be856eab2f900a7', 'object': 'chat.completion', 'created': 1768575243, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 </section>
 <section id="Using-OpenAI-Python-Client">
@@ -716,7 +668,7 @@ Capturing batches (bs=1 avail_mem=52.66 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>ChatCompletion(id='5381d6458c744423800ab5473185e767', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1768569806, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>ChatCompletion(id='1f5b71752aa444e3a7db9dda67d0985d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1768575244, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="Streaming">
 <h3>Streaming<a class="headerlink" href="#Streaming" title="Link to this heading">#</a></h3>
@@ -788,7 +740,7 @@ Sure, here are three countries and their respective capitals:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': ' Paris. It is the largest city in Europe and the second largest city in the world. It is located in the south of France, on the banks of the', 'output_ids': [12095, 13, 1084, 374, 279, 7772, 3283, 304, 4505, 323, 279, 2086, 7772, 3283, 304, 279, 1879, 13, 1084, 374, 7407, 304, 279, 9806, 315, 9625, 11, 389, 279, 13959, 315, 279], 'meta_info': {'id': 'de1c311a9de848e284d6ff1dd3340b74', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 5, 'weight_version': 'default', 'total_retractions': 0, 'completion_tokens': 32, 'cached_tokens': 2, 'e2e_latency': 0.052704811096191406, 'response_sent_to_client_ts': 1768569806.5664258}}</strong></div>
+<strong style='color: #00008B;'>{'text': ' Paris. It is the largest city in Europe and the second largest city in the world. It is located in the south of France, on the banks of the', 'output_ids': [12095, 13, 1084, 374, 279, 7772, 3283, 304, 4505, 323, 279, 2086, 7772, 3283, 304, 279, 1879, 13, 1084, 374, 7407, 304, 279, 9806, 315, 9625, 11, 389, 279, 13959, 315, 279], 'meta_info': {'id': '412002973cad49debf80e6858b41544d', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 5, 'weight_version': 'default', 'total_retractions': 0, 'completion_tokens': 32, 'cached_tokens': 2, 'e2e_latency': 0.05418872833251953, 'response_sent_to_client_ts': 1768575244.2625465}}</strong></div>
 </div>
 <section id="id1">
 <h3>Streaming<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
