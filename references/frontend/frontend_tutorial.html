@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=f17a645d"></script>
+    <script src="../../_static/documentation_options.js?v=e53b2e8b"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -549,9 +549,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-01-16 09:37:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:37:38] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:37:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 10:11:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:11:38] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:11:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -559,46 +559,34 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-16 09:37:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:37:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:37:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-16 09:37:48] INFO server_args.py:1657: Attention backend not specified. Use fa3 backend by default.
-[2026-01-16 09:37:48] INFO server_args.py:2556: Set soft_watchdog_timeout since in CI
-[2026-01-16 09:37:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:37:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:37:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-16 09:37:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:37:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:37:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 059b4acb-9e12-4051-808f-30cf191ea06d)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/generation_config.json
-[2026-01-16 09:38:11] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 059b4acb-9e12-4051-808f-30cf191ea06d)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/generation_config.json
+[2026-01-16 10:11:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:11:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:11:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: fd9001bd-be8b-4ae5-94ea-72092634da7f)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/hf_quant_config.json
+[2026-01-16 10:12:00] WARNING _http.py:319: &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: fd9001bd-be8b-4ae5-94ea-72092634da7f)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/hf_quant_config.json
 Retrying in 1s [Retry 1/5].
-[2026-01-16 09:38:11] Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 4e5137e2-96f3-458a-aa53-a7374c526f5e)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/tokenizer_config.json
-[2026-01-16 09:38:24] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 4e5137e2-96f3-458a-aa53-a7374c526f5e)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/tokenizer_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 09:38:24] Retrying in 1s [Retry 1/5].
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 7ee7b923-57a1-4127-970e-4fb9d69ebcb4)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/hf_quant_config.json
-[2026-01-16 09:38:36] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 7ee7b923-57a1-4127-970e-4fb9d69ebcb4)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/hf_quant_config.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 09:38:36] Retrying in 1s [Retry 1/5].
+[2026-01-16 10:12:00] WARNING _http.py:328: Retrying in 1s [Retry 1/5].
+[2026-01-16 10:12:01] INFO server_args.py:1657: Attention backend not specified. Use fa3 backend by default.
+[2026-01-16 10:12:01] INFO server_args.py:2556: Set soft_watchdog_timeout since in CI
+[2026-01-16 10:12:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:12:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:12:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 10:12:09] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:12:09] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:12:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-16 09:38:41] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 8a7ade1e-0bdd-4ae5-84ea-5d2c6dbd8510)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/model.safetensors.index.json
-[2026-01-16 09:38:51] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 8a7ade1e-0bdd-4ae5-84ea-5d2c6dbd8510)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/model.safetensors.index.json
-Retrying in 1s [Retry 1/5].
-[2026-01-16 09:38:51] Retrying in 1s [Retry 1/5].
+[2026-01-16 10:12:23] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.50it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.41it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.41it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.90it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.76it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.72it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.78it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.77it/s]
 
-Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  6.39it/s]
+Capturing batches (bs=1 avail_mem=62.22 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  4.15it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -612,7 +600,7 @@ Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:33150
+Server started on http://localhost:30126
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -629,7 +617,7 @@ Server started on http://localhost:33150
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-16 09:39:10] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-01-16 10:12:34] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -661,7 +649,7 @@ Server started on http://localhost:33150
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries and their capitals:<br><br>1. **France - Paris**<br>2. **Japan - Tokyo**<br>3. **Mexico - Mexico City**</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries with their capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Spain** - Madrid</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -691,13 +679,13 @@ Server started on http://localhost:33150
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Italy** - Rome</strong></div>
+<strong style='color: #00008B;'>Sure! Here are three countries with their respective capitals:<br><br>1. **France** - Paris<br>2. **Spain** - Madrid<br>3. **Japan** - Tokyo</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Of course! Here's another list of three countries along with their capitals:<br><br>1. **Brazil** - Brasília<br>2. **Canada** - Ottawa<br>3. **India** - New Delhi</strong></div>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Canada** - Ottawa<br>3. **Australia** - Canberra</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -739,7 +727,7 @@ Server started on http://localhost:33150
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2. <br><br>Let's solve it:<br><br>2 * 2 = 4<br><br>Therefore, the answer is 4. You didn't actually need a calculator for this one; you could have solved it mentally or with simple hand calculation.</strong></div>
+<strong style='color: #00008B;'>2 * 2.<br><br>You don't need a calculator to solve this simple multiplication. The answer is 4.<br><br>But, if you still want to use a calculator, here’s how you could do it:<br><br>1. On a standard calculator, press `2`, then the `x` (multiplication) button, then `2`, and finally the `=` or `Enter` button.<br><br>The result will be:<br><br>\[<br>2 * 2 = 4<br>\]<br><br>So, the answer is 4.</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -779,7 +767,7 @@ Server started on http://localhost:33150
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: Include a variety of fruits, vegetables, whole grains, and lean proteins. Limit processed and high-sugar foods to maintain overall health and reduce the risk of chronic diseases.<br>2. **Regular Exercise**: Engage in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week, along with strength training exercises at least two days a week. Find activities you enjoy to maintain consistency and improve your health over time.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a well-rounded diet that includes a variety of nutrients from different food groups is essential for maintaining optimal health. This involves consuming plenty of fruits and vegetables, whole grains, lean proteins, and healthy fats. Proper portion sizes are also important to manage your calorie intake based on your activity level.<br><br>2. **Regular Exercise**: Engaging in regular physical activity is crucial for maintaining overall health and well-being. Exercise helps strengthen your cardiovascular system, boosts your immune function, and improves your mental health by reducing stress, anxiety, and symptoms of depression. It also enhances your physical fitness, including flexibility, muscle strength, and balance.<br><br>Together, these habits can significantly contribute to your overall health and quality of life.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -852,7 +840,7 @@ Server started on http://localhost:33150
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Cedar",<br>        "core": "Thestral hair",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "The Boggart in a"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm oak",<br>        "core": "Phoenix feather",<br>        "length": 11.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Vernon Dursley"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -887,7 +875,7 @@ Server started on http://localhost:33150
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 35.78it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 35.08it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1006,32 +994,36 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-16 09:39:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:39:20] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:39:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-16 09:39:24] INFO server_args.py:1657: Attention backend not specified. Use flashinfer backend by default.
-[2026-01-16 09:39:24] INFO server_args.py:2556: Set soft_watchdog_timeout since in CI
-[2026-01-16 09:39:28] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-01-16 09:39:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:39:30] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:39:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-01-16 09:39:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-01-16 09:39:30] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-01-16 09:39:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 10:12:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:12:46] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:12:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 10:12:49] INFO server_args.py:1657: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-16 10:12:49] INFO server_args.py:2556: Set soft_watchdog_timeout since in CI
+[2026-01-16 10:12:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:12:55] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:12:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 10:12:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-01-16 10:12:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-01-16 10:12:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-01-16 10:13:00] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+&#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 82681f23-d462-42e1-b685-dfcc53c8ad02)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/config.json
+[2026-01-16 10:13:15] &#39;(ReadTimeoutError(&#34;HTTPSConnectionPool(host=&#39;huggingface.co&#39;, port=443): Read timed out. (read timeout=10)&#34;), &#39;(Request ID: 82681f23-d462-42e1-b685-dfcc53c8ad02)&#39;)&#39; thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+[2026-01-16 10:13:15] Retrying in 1s [Retry 1/5].
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-01-16 09:39:46] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-01-16 10:13:39] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.30it/s]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.36it/s]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.34it/s]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.27it/s]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.60it/s]
+Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00&lt;00:03,  1.05it/s]
+Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01&lt;00:02,  1.03it/s]
+Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02&lt;00:01,  1.06it/s]
+Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03&lt;00:00,  1.11it/s]
 Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.25it/s]
 
-Capturing batches (bs=1 avail_mem=60.33 GB): 100%|██████████| 3/3 [00:00&lt;00:00,  3.53it/s]
+Capturing batches (bs=1 avail_mem=60.84 GB): 100%|██████████| 3/3 [00:01&lt;00:00,  2.66it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1045,7 +1037,7 @@ Capturing batches (bs=1 avail_mem=60.33 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39110
+Server started on http://localhost:33562
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1061,7 +1053,7 @@ Server started on http://localhost:39110
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-01-16 09:40:00] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-01-16 10:13:59] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1086,7 +1078,7 @@ Server started on http://localhost:39110
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image shows a man standing over an ironing board usage on or near the tailgate of a yellow SUV, where a vehicle is parked beside a taxi cab on a city street. It seems the man might be laminating automatic mail-order response cards (those glossy, quick-response cards). The setup includes the iron, redคreceipt flushing polishene tape, cards underneath, and a pair of pliers additional hand-fry-foct-on tools—perhaps to help bring out or arrest responses more efficiently, as presumed bayer-cultural institution—minnovation. It’s portraying perhaps delaying odd jerseys of actual programs hovering opened runomes hintader-make hay proteins a seemu of null.</strong></div>
+<strong style='color: #00008B;'>The image shows a man attempting to mix his clothes while hiking by setting up an ironing board setup on his luggage rack, with crutches helping stabilize the folding chairs beneath it. He is balancing himself and using what appears to be a backpack conveyor belt strung between the crutches and luggage rack for ironing purposes. The scene humorously contrasts adventure sports intelligencia lifestyle imagery suggesting sporting concepts of pushing adventure equipment uphill dichotomous processes.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
