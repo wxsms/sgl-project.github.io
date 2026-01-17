@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b4c71f2d"></script>
+    <script src="../_static/documentation_options.js?v=69388dbb"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -546,6 +546,10 @@ document.write(`
 <td><p>An extension of DeepEP for elastic inference, leveraging RDMA for high-performance data transfers.</p></td>
 <td><p>Elastic EP serving.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code></p></td>
+<td><p>Ascend NPU native fused all-to-all communication.</p></td>
+<td><p>Ascend NPU deployments.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -700,7 +704,7 @@ document.write(`
 <section id="workload-balancer">
 <h2>Workload Balancer<a class="headerlink" href="#workload-balancer" title="Link to this heading">#</a></h2>
 <p>SGLang integrates the <a class="reference external" href="https://github.com/deepseek-ai/EPLB">Expert Parallelism Load Balancer (EPLB)</a> from DeepSeek to address routing imbalances in MoE models. By analyzing expert activation statistics, EPLB computes an optimal expert arrangement, strategically placing or replicating experts to minimize GPU utilization variance, reduce idle cycles, and enhance scalability.</p>
-<p>To enable EPLB, use the flags <code class="docutils literal notranslate"><span class="pre">--enable-eplb</span> <span class="pre">true</span> <span class="pre">--load-balance-method</span> <span class="pre">eplb</span></code>. For optimal performance, increase batch sizes to stabilize activation statistics and configure periodic rebalancing (e.g., every 1000 requests) to adapt to evolving workloads. Simulations demonstrate significant improvements in load balancedness (ratio of mean to max computation time), correlating strongly with throughput gains.</p>
+<p>To enable EPLB, use the flags <code class="docutils literal notranslate"><span class="pre">--enable-eplb</span></code>. For optimal performance, increase batch sizes to stabilize activation statistics and configure periodic rebalancing (e.g., every 1000 requests) to adapt to evolving workloads. Simulations demonstrate significant improvements in load balancedness (ratio of mean to max computation time), correlating strongly with throughput gains.</p>
 <p>For more details, refer to the <a class="reference external" href="https://lmsys.org/blog/2025-05-05-large-scale-ep/#expert-parallelism-load-balancer">EPLB Section in the Large-Scale EP Blog</a> and the <a class="reference external" href="https://github.com/deepseek-ai/eplb">EPLB Repository</a>.</p>
 </section>
 <section id="ep-with-spectulative-decoding">
