@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=08ac8113"></script>
+    <script src="../_static/documentation_options.js?v=4ae912b7"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -587,7 +587,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li><p>To enable fp8 weight quantization, add <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">fp8</span></code> on a fp16 checkpoint or directly load a fp8 checkpoint without specifying any arguments.</p></li>
 <li><p>To enable fp8 kv cache quantization, add <code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">fp8_e5m2</span></code>.</p></li>
 <li><p>To enable deterministic inference and batch invariant operations, add <code class="docutils literal notranslate"><span class="pre">--enable-deterministic-inference</span></code>. More details can be found in <a class="reference internal" href="deterministic_inference.html"><span class="std std-doc">deterministic inference document</span></a>.</p></li>
-<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference internal" href="../references/custom_chat_template.html"><span class="std std-doc">custom chat template</span></a>.</p></li>
+<li><p>If the model does not have a chat template in the Hugging Face tokenizer, you can specify a <a class="reference internal" href="../references/custom_chat_template.html"><span class="std std-doc">custom chat template</span></a>. If the tokenizer has multiple named templates (e.g., ‘default’, ‘tool_use’), you can select one using <code class="docutils literal notranslate"><span class="pre">--hf-chat-template-name</span> <span class="pre">tool_use</span></code>.</p></li>
 <li><p>To run tensor parallelism on multiple nodes, add <code class="docutils literal notranslate"><span class="pre">--nnodes</span> <span class="pre">2</span></code>. If you have two nodes with two GPUs on each node and want to run TP=4, let <code class="docutils literal notranslate"><span class="pre">sgl-dev-0</span></code> be the hostname of the first node and <code class="docutils literal notranslate"><span class="pre">50000</span></code> be an available port, you can use the following commands. If you meet deadlock, please try to add <code class="docutils literal notranslate"><span class="pre">--disable-cuda-graph</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node 0</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
@@ -1256,37 +1256,42 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--completion-template</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hf-chat-template-name</span></code></p></td>
+<td><p>When the HuggingFace tokenizer has multiple chat templates (e.g., ‘default’, ‘tool_use’, ‘rag’), specify which named template to use. If not set, the first available template is used.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: str</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--completion-template</span></code></p></td>
 <td><p>The buliltin completion template name or the path of the completion template file. This is only used for OpenAI-compatible API server. only for code completion currently.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--file-storage-path</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--file-storage-path</span></code></p></td>
 <td><p>The path of the file storage in backend.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">sglang_storage</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-cache-report</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-cache-report</span></code></p></td>
 <td><p>Return number of cached tokens in usage.prompt_tokens_details for each openai request.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--reasoning-parser</span></code></p></td>
 <td><p>Specify the parser for reasoning models. Supported parsers: [deepseek-r1, deepseek-v3, glm45, gpt-oss, kimi, qwen3, qwen3-thinking, step3].</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-r1</span></code>, <code class="docutils literal notranslate"><span class="pre">deepseek-v3</span></code>, <code class="docutils literal notranslate"><span class="pre">glm45</span></code>, <code class="docutils literal notranslate"><span class="pre">gpt-oss</span></code>, <code class="docutils literal notranslate"><span class="pre">kimi</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen3</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen3-thinking</span></code>, <code class="docutils literal notranslate"><span class="pre">step3</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
 <td><p>Specify the parser for handling tool-call interactions. Supported parsers: [deepseekv3, deepseekv31, glm, glm45, glm47, gpt-oss, kimi_k2, llama3, mistral, pythonic, qwen, qwen25, qwen3_coder, step3].</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseekv3</span></code>, <code class="docutils literal notranslate"><span class="pre">deepseekv31</span></code>, <code class="docutils literal notranslate"><span class="pre">glm</span></code>, <code class="docutils literal notranslate"><span class="pre">glm45</span></code>, <code class="docutils literal notranslate"><span class="pre">glm47</span></code>, <code class="docutils literal notranslate"><span class="pre">gpt-oss</span></code>, <code class="docutils literal notranslate"><span class="pre">kimi_k2</span></code>, <code class="docutils literal notranslate"><span class="pre">llama3</span></code>, <code class="docutils literal notranslate"><span class="pre">mistral</span></code>, <code class="docutils literal notranslate"><span class="pre">pythonic</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen25</span></code>, <code class="docutils literal notranslate"><span class="pre">qwen3_coder</span></code>, <code class="docutils literal notranslate"><span class="pre">step3</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-server</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-server</span></code></p></td>
 <td><p>Either ‘demo’ or a comma-separated list of tool server urls to use for the model. If not specified, no tool server will be used.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
 <td><p>Where to get default sampling parameters. ‘openai’ uses SGLang/OpenAI defaults (temperature=1.0, top_p=1.0, etc.). ‘model’ uses the model’s generation_config.json to get the recommended sampling parameters if available. Default is ‘model’.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">openai</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
