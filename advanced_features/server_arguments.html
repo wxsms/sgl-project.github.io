@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=7b984a87"></script>
+    <script src="../_static/documentation_options.js?v=b054ad9d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Llama4 Usage" href="../basic_usage/llama4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 18, 2026"/>
+    <meta name="docbuild:last-update" content="Jan 19, 2026"/>
   </head>
   
   
@@ -1396,42 +1396,47 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Bool flag (set to enable)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-rank</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-lora-overlap-loading</span></code></p></td>
+<td><p>Enable asynchronous LoRA weight loading in order to overlap H2D transfers with GPU compute. This should be enabled if you find that your LoRA workloads are bottlenecked by adapter weight loading, for example when frequently loading large LoRA adapters.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Bool flag (set to enable)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-rank</span></code></p></td>
 <td><p>The maximum LoRA rank that should be supported. If not specified, it will be automatically inferred from the adapters provided in <code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code>. This argument is needed when you expect to dynamically load adapters of larger LoRA rank after server startup.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-target-modules</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-target-modules</span></code></p></td>
 <td><p>The union set of all target modules where LoRA should be applied (e.g., <code class="docutils literal notranslate"><span class="pre">q_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">k_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">gate_proj</span></code>). If not specified, it will be automatically inferred from the adapters provided in <code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code>. You can also set it to <code class="docutils literal notranslate"><span class="pre">all</span></code> to enable LoRA for all supported modules; note this may introduce minor performance overhead.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">q_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">k_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">v_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">o_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">gate_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">up_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">down_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">qkv_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">gate_up_proj</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code></p></td>
 <td><p>The list of LoRA adapters to load. Each adapter must be specified in one of the following formats: <code class="docutils literal notranslate"><span class="pre">&lt;PATH&gt;</span></code> | <code class="docutils literal notranslate"><span class="pre">&lt;NAME&gt;=&lt;PATH&gt;</span></code> | JSON with schema <code class="docutils literal notranslate"><span class="pre">{&quot;lora_name&quot;:</span> <span class="pre">str,</span> <span class="pre">&quot;lora_path&quot;:</span> <span class="pre">str,</span> <span class="pre">&quot;pinned&quot;:</span> <span class="pre">bool}</span></code>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: List[str] / JSON objects</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code></p></td>
 <td><p>Maximum number of adapters for a running batch, including base-only requests.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 <td><p>Type: int</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loaded-loras</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loaded-loras</span></code></p></td>
 <td><p>If specified, limits the maximum number of LoRA adapters loaded in CPU memory at a time. Must be ≥ <code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code>.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-eviction-policy</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-eviction-policy</span></code></p></td>
 <td><p>LoRA adapter eviction policy when the GPU memory pool is full.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lru</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lru</span></code>, <code class="docutils literal notranslate"><span class="pre">fifo</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code></p></td>
 <td><p>Choose the kernel backend for multi-LoRA serving.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">csgmv</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">triton</span></code>, <code class="docutils literal notranslate"><span class="pre">csgmv</span></code>, <code class="docutils literal notranslate"><span class="pre">ascend</span></code>, <code class="docutils literal notranslate"><span class="pre">torch_native</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-chunk-size</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-chunk-size</span></code></p></td>
 <td><p>Maximum chunk size for the ChunkedSGMV LoRA backend. Only used when <code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code> is <code class="docutils literal notranslate"><span class="pre">csgmv</span></code>. Larger values may improve performance.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">16</span></code>, <code class="docutils literal notranslate"><span class="pre">32</span></code>, <code class="docutils literal notranslate"><span class="pre">64</span></code>, <code class="docutils literal notranslate"><span class="pre">128</span></code></p></td>
@@ -2979,7 +2984,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 18, 2026.
+  Last updated on Jan 19, 2026.
   <br/>
 </p>
   </div>
