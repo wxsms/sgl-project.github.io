@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; SGLang</title>
+    <title>Evaluating New Models with SGLang &#8212; SGLang</title>
   
   
   
@@ -47,10 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_npu_quantization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/evaluating_new_models';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Troubleshooting and Frequently Asked Questions" href="../references/faq.html" />
+    <link rel="prev" title="Bench Serving Guide" href="bench_serving.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 20, 2026"/>
@@ -113,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -230,20 +230,20 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascend_npu_support.html">Ascend NPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu_support.html">Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../developer_guide/contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_guide/development_guide_using_docker.html">Development Guide Using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_guide/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_guide/bench_serving.html">Bench Serving Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_guide/evaluating_new_models.html">Evaluating New Models with SGLang</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bench_serving.html">Bench Serving Guide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Evaluating New Models with SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -327,7 +327,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_npu_quantization.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer_guide/evaluating_new_models.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +344,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_npu_quantization.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer_guide/evaluating_new_models.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +361,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_npu_quantization.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/evaluating_new_models.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +391,7 @@
       
       
       
-      <li><a href="../_sources/platforms/ascend_npu_quantization.md" target="_blank"
+      <li><a href="../_sources/developer_guide/evaluating_new_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -475,7 +475,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Evaluating New Models with SGLang</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -484,9 +484,18 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llms">LLMs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vlms">VLMs</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">LLMs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-results">Reporting Results</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -497,29 +506,133 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Quantization on Ascend.</p>
-<p>To load already quantized models, simply load the model weights and config. Again, if the model has been quantized offline, there’s no need to add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> argument when starting the engine. The quantization method will be automatically parsed from the downloaded <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code> or <code class="docutils literal notranslate"><span class="pre">config.json</span></code> config.</p>
-<p><a class="reference external" href="https://github.com/sgl-project/sglang/pull/14504">ModelSlim on Ascend support</a>:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="evaluating-new-models-with-sglang">
+<h1>Evaluating New Models with SGLang<a class="headerlink" href="#evaluating-new-models-with-sglang" title="Link to this heading">#</a></h1>
+<p>This document provides commands for evaluating models’ accuracy and performance. Before open-sourcing new models, we strongly suggest running these commands to verify whether the score matches your internal benchmark results.</p>
+<p><strong>For cross verification, please submit commands for installation, server launching, and benchmark running with all the scores and hardware requirements when open-sourcing your models.</strong></p>
+<p><a class="reference external" href="https://github.com/sgl-project/sglang/pull/12129">Reference: MiniMax M2</a></p>
+<section id="accuracy">
+<h2>Accuracy<a class="headerlink" href="#accuracy" title="Link to this heading">#</a></h2>
+<section id="llms">
+<h3>LLMs<a class="headerlink" href="#llms" title="Link to this heading">#</a></h3>
+<p>SGLang provides built-in scripts to evaluate common benchmarks.</p>
+<p><strong>MMLU</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.test.run_eval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--eval-name<span class="w"> </span>mmlu<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-examples<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-tokens<span class="w"> </span><span class="m">8192</span>
+</pre></div>
+</div>
+<p><strong>GSM8K</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.test.few_shot_gsm8k<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>http://127.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-questions<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-shots<span class="w"> </span><span class="m">5</span>
+</pre></div>
+</div>
+<p><strong>HellaSwag</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>benchmark/hellaswag/bench_sglang.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span>http://127.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-questions<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-shots<span class="w"> </span><span class="m">20</span>
+</pre></div>
+</div>
+<p><strong>GPQA</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.test.run_eval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--eval-name<span class="w"> </span>gpqa<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-examples<span class="w"> </span><span class="m">198</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-tokens<span class="w"> </span><span class="m">120000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--repeat<span class="w"> </span><span class="m">8</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>[!TIP]
+For reasoning models, add <code class="docutils literal notranslate"><span class="pre">--thinking-mode</span> <span class="pre">&lt;mode&gt;</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">qwen3</span></code>, <code class="docutils literal notranslate"><span class="pre">deepseek-r1</span></code>, <code class="docutils literal notranslate"><span class="pre">deepseek-v3</span></code>). You may skip it if the model has forced thinking enabled.</p>
+</div></blockquote>
+<p><strong>HumanEval</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>human_eval
+
+python<span class="w"> </span>-m<span class="w"> </span>sglang.test.run_eval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--eval-name<span class="w"> </span>humaneval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-examples<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</section>
+<section id="vlms">
+<h3>VLMs<a class="headerlink" href="#vlms" title="Link to this heading">#</a></h3>
+<p><strong>MMMU</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>benchmark/mmmu/bench_sglang.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--concurrency<span class="w"> </span><span class="m">64</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>[!TIP]
+You can set max tokens by passing <code class="docutils literal notranslate"><span class="pre">--extra-request-body</span> <span class="pre">'{&quot;max_tokens&quot;:</span> <span class="pre">4096}'</span></code>.</p>
+</div></blockquote>
+<p>For models capable of processing video, we recommend extending the evaluation to include <code class="docutils literal notranslate"><span class="pre">VideoMME</span></code>, <code class="docutils literal notranslate"><span class="pre">MVBench</span></code>, and other relevant benchmarks.</p>
+</section>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h2>
+<p>Performance benchmarks measure <strong>Latency</strong> (Time To First Token - TTFT) and <strong>Throughput</strong> (tokens/second).</p>
+<section id="id1">
+<h3>LLMs<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>Latency-Sensitive Benchmark</strong></p>
+<p>This simulates a scenario with low concurrency (e.g., single user) to measure latency.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>random<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-concurrency<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p><strong>Throughput-Sensitive Benchmark</strong></p>
+<p>This simulates a high-traffic scenario to measure maximum system throughput.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset-name<span class="w"> </span>random<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-prompts<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-concurrency<span class="w"> </span><span class="m">100</span>
+</pre></div>
+</div>
+<p><strong>Single Batch Performance</strong></p>
+<p>You can also benchmark the performance of processing a single batch offline.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>&lt;model-path&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input-len<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-len<span class="w"> </span><span class="m">1024</span>
+</pre></div>
+</div>
+<p>You can run more granular benchmarks:</p>
 <ul class="simple">
-<li><p>[x] W4A4 dynamic linear</p></li>
-<li><p>[x] W8A8 static linear</p></li>
-<li><p>[x] W8A8 dynamic linear</p></li>
-<li><p>[x] W4A8 dynamic MOE</p></li>
-<li><p>[x] W8A8 dynamic MOE</p></li>
+<li><p><strong>Low Concurrency</strong>: <code class="docutils literal notranslate"><span class="pre">--num-prompts</span> <span class="pre">10</span> <span class="pre">--max-concurrency</span> <span class="pre">1</span></code></p></li>
+<li><p><strong>Medium Concurrency</strong>: <code class="docutils literal notranslate"><span class="pre">--num-prompts</span> <span class="pre">80</span> <span class="pre">--max-concurrency</span> <span class="pre">16</span></code></p></li>
+<li><p><strong>High Concurrency</strong>: <code class="docutils literal notranslate"><span class="pre">--num-prompts</span> <span class="pre">500</span> <span class="pre">--max-concurrency</span> <span class="pre">100</span></code></p></li>
 </ul>
-<p><a class="reference external" href="https://github.com/sgl-project/sglang/pull/10158">AWQ on Ascend support</a>:</p>
-<ul class="simple">
-<li><p>[x] W4A16 linear</p></li>
-<li><p>[x] W8A16 linear # Need to test</p></li>
-<li><p>[x] W4A16 MOE # Need to test</p></li>
-</ul>
-<p>Compressed-tensors (LLM Compressor) on Ascend support:</p>
-<ul class="simple">
-<li><p>[x] <a class="reference external" href="https://github.com/sgl-project/sglang/pull/14736">W4A8 dynamic MOE with/without activation clip</a> # Need to test</p></li>
-<li><p>[x] <a class="reference external" href="https://github.com/sgl-project/sglang/pull/12759">W4A16 MOE</a></p></li>
-<li><p>[x] <a class="reference external" href="https://github.com/sgl-project/sglang/pull/14504">W8A8 dynamic linear</a></p></li>
-<li><p>[x] <a class="reference external" href="https://github.com/sgl-project/sglang/pull/14504">W8A8 dynamic MOE</a></p></li>
-</ul>
+</section>
+</section>
+<section id="reporting-results">
+<h2>Reporting Results<a class="headerlink" href="#reporting-results" title="Link to this heading">#</a></h2>
+<p>For each evaluation, please report:</p>
+<ol class="arabic simple">
+<li><p><strong>Metric Score</strong>: Accuracy % (LLMs and VLMs); Latency (ms) and Throughput (tok/s) (LLMs only).</p></li>
+<li><p><strong>Environment settings</strong>: GPU type/count, SGLang commit hash.</p></li>
+<li><p><strong>Launch configuration</strong>: Model path, TP size, and any special flags.</p></li>
+<li><p><strong>Evaluation parameters</strong>: Number of shots, examples, max tokens.</p></li>
+</ol>
+</section>
+</section>
 
 
                 </article>
@@ -532,6 +645,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="bench_serving.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bench Serving Guide</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../references/faq.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Troubleshooting and Frequently Asked Questions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -547,9 +678,18 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llms">LLMs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vlms">VLMs</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">LLMs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-results">Reporting Results</a></li>
+</ul>
   </nav></div>
 
 </div></div>
