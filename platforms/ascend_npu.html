@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=beca7921"></script>
+    <script src="../_static/documentation_options.js?v=779fca00"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -240,6 +240,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_features.html">Support Features on Ascend NPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_qwen3_examples.html">Qwen3 examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_best_practice.html">Best Practice on Ascend NPU</a></li>
 </ul>
 </details></li>
@@ -560,8 +561,8 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HDK</p></td>
-<td><p>25.2.1</p></td>
-<td><p><a class="reference external" href="https://support.huawei.com/carrier/productNewOffering?col=product&amp;amp;path=PBI1-262732867/PBI1-262735886/PBI1-262735910/PBI1-261410188/PBI1-252764743&amp;amp;pVR=PBI1-263550357&amp;amp;pC=PBI1-264360782&amp;amp;pSPC=PBI1-266220744&amp;amp;resTab=SW">link</a></p></td>
+<td><p>25.3.RC1</p></td>
+<td><p><a class="reference external" href="https://hiascend.com/hardware/firmware-drivers/commercial?product=7&amp;amp;model=33">link</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>CANN</p></td>
 <td><p>8.3.rc2</p></td>
@@ -572,8 +573,8 @@ document.write(`
 <td><p><a class="reference external" href="https://gitcode.com/Ascend/pytorch/releases">link</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>MemFabric</p></td>
-<td><p>0.1.0</p></td>
-<td><p><a class="reference external" href="https://gitcode.com/Ascend/memfabric_hybrid/releases">link</a></p></td>
+<td><p>1.0.3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">memfabric-hybrid==1.0.3</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Triton</p></td>
 <td><p>3.2.0.dev2025112116</p></td>
@@ -621,28 +622,17 @@ conda<span class="w"> </span>activate<span class="w"> </span>sglang_npu
 <section id="memfabric-hybrid">
 <h4>MemFabric-Hybrid<a class="headerlink" href="#memfabric-hybrid" title="Link to this heading">#</a></h4>
 <p>If you want to use PD disaggregation mode, you need to install MemFabric-Hybrid. MemFabric-Hybrid is a drop-in replacement of Mooncake Transfer Engine that enables KV cache transfer on Ascend NPU clusters.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>memfabric-hybrid<span class="o">==</span><span class="m">1</span>.0.0
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>memfabric-hybrid<span class="o">==</span><span class="m">1</span>.0.3
 </pre></div>
 </div>
 </section>
 <section id="pytorch-and-pytorch-framework-adaptor-on-ascend">
 <h4>Pytorch and Pytorch Framework Adaptor on Ascend<a class="headerlink" href="#pytorch-and-pytorch-framework-adaptor-on-ascend" title="Link to this heading">#</a></h4>
-<p>At the moment NPUGraph optimizations are supported only in <code class="docutils literal notranslate"><span class="pre">torch_npu==2.6.0.post3</span></code> that requires ‘torch==2.6.0’.</p>
-<p><em>TODO: NPUGraph optimizations will be supported in future releases of ‘torch_npu’ 2.7.1, 2.8.0 and 2.9.0</em></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.6.0
-<span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.21.0
-<span class="nv">TORCH_NPU_VERSION</span><span class="o">=</span><span class="m">2</span>.6.0.post3
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0
+<span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.23.0
+<span class="nv">TORCH_NPU_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="nv">$PYTORCH_VERSION</span><span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="nv">$TORCHVISION_VERSION</span><span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch_npu</span><span class="o">==</span><span class="nv">$TORCH_NPU_VERSION</span>
-</pre></div>
-</div>
-<p>While there is no released versions of ‘torch_npu’ for ‘torch==2.7.1’ and ‘torch==2.8.0’ we provide custom builds of ‘torch_npu’. PLATFORM can be ‘aarch64’ or ‘x86_64’</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">PLATFORM</span><span class="o">=</span><span class="s2">&quot;aarch64&quot;</span>
-<span class="nv">PYTORCH_VERSION</span><span class="o">=</span><span class="m">2</span>.8.0
-<span class="nv">TORCHVISION_VERSION</span><span class="o">=</span><span class="m">0</span>.23.0
-pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="nv">$PYTORCH_VERSION</span><span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="nv">$TORCHVISION_VERSION</span><span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
-wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/torch_npu/torch_npu-<span class="si">${</span><span class="nv">PYTORCH_VERSION</span><span class="si">}</span>.post2.dev20251120-cp311-cp311-manylinux_2_28_<span class="si">${</span><span class="nv">PLATFORM</span><span class="si">}</span>.whl
-pip<span class="w"> </span>install<span class="w"> </span>torch_npu-<span class="si">${</span><span class="nv">PYTORCH_VERSION</span><span class="si">}</span>.post2.dev20251120-cp311-cp311-manylinux_2_28_<span class="si">${</span><span class="nv">PLATFORM</span><span class="si">}</span>.whl
 </pre></div>
 </div>
 <p>If you are using other versions of <code class="docutils literal notranslate"><span class="pre">torch</span></code> and install <code class="docutils literal notranslate"><span class="pre">torch_npu</span></code>, check <a class="reference external" href="https://github.com/Ascend/pytorch/blob/master/README.md">installation guide</a></p>
@@ -655,7 +645,7 @@ pip<span class="w"> </span>install<span class="w"> </span>torch_npu-<span class=
 wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_URL</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;./</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>triton-ascend<span class="o">==</span><span class="m">3</span>.2.0rc4
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span><span class="s2">&quot;triton-ascend&lt;3.2.0rc&quot;</span><span class="w"> </span>--pre<span class="w"> </span>--no-cache-dir
 </pre></div>
 </div>
 <p>For installation of Triton on Ascend nightly builds or from sources, follow <a class="reference external" href="https://gitcode.com/Ascend/triton-ascend/blob/master/docs/sources/getting-started/installation.md">installation guide</a></p>
@@ -673,18 +663,18 @@ wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</s
 <p><em>TODO: to be removed once merged into sgl-kernel-npu.</em>
 Additional package with custom operations. DEVICE_TYPE can be “a3” for Atlas A3 server or “910b” for Atlas A2 server.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DEVICE_TYPE</span><span class="o">=</span><span class="s2">&quot;a3&quot;</span>
-wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/ops/CANN-custom_ops-8.2.0.0-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run
-chmod<span class="w"> </span>a+x<span class="w"> </span>./CANN-custom_ops-8.2.0.0-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run
-./CANN-custom_ops-8.2.0.0-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run<span class="w"> </span>--quiet<span class="w"> </span>--install-path<span class="o">=</span>/usr/local/Ascend/ascend-toolkit/latest/opp
-wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/ops/custom_ops-1.0.<span class="nv">$DEVICE_TYPE</span>-cp311-cp311-linux_aarch64.whl
-pip<span class="w"> </span>install<span class="w"> </span>./custom_ops-1.0.<span class="nv">$DEVICE_TYPE</span>-cp311-cp311-linux_aarch64.whl
+wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/ops/CANN-custom_ops-8.3.0.1-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run
+chmod<span class="w"> </span>a+x<span class="w"> </span>./CANN-custom_ops-8.3.0.1-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run
+./CANN-custom_ops-8.3.0.1-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run<span class="w"> </span>--quiet<span class="w"> </span>--install-path<span class="o">=</span>/usr/local/Ascend/ascend-toolkit/latest/opp
+wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/ops/custom_ops-2.0.<span class="nv">$DEVICE_TYPE</span>-cp311-cp311-linux_aarch64.whl
+pip<span class="w"> </span>install<span class="w"> </span>./custom_ops-2.0.<span class="nv">$DEVICE_TYPE</span>-cp311-cp311-linux_aarch64.whl
 </pre></div>
 </div>
 </section>
 <section id="installing-sglang-from-source">
 <h4>Installing SGLang from source<a class="headerlink" href="#installing-sglang-from-source" title="Link to this heading">#</a></h4>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the last release branch</span>
-git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v0.5.6.post2<span class="w"> </span>https://github.com/sgl-project/sglang.git
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
 <span class="nb">cd</span><span class="w"> </span>sglang
 mv<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>python<span class="o">[</span>srt_npu<span class="o">]</span>
@@ -715,6 +705,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-p
 <span class="nb">cd</span><span class="w"> </span>sglang/docker
 
 <span class="c1"># Build the docker image</span>
+<span class="c1"># If there are network errors, please modify the Dockerfile to use offline dependencies or use a proxy</span>
 docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>-f<span class="w"> </span>npu.Dockerfile<span class="w"> </span>.
 </pre></div>
 </div>
@@ -808,6 +799,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--base-gpu-id<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">

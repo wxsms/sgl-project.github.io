@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/contribution_guide';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_contribution_guide';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Development Guide Using Docker" href="development_guide_using_docker.html" />
-    <link rel="prev" title="XPU" href="../platforms/xpu.html" />
+    <link rel="next" title="Best Practice on Ascend NPU" href="ascend_npu_best_practice.html" />
+    <link rel="prev" title="Qwen3 examples" href="ascend_npu_qwen3_examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 20, 2026"/>
@@ -229,21 +229,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/mindspore_models.html">MindSpore Models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../platforms/amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu_support.html">Ascend NPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ascend_npu_support.html">Ascend NPUs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu.html">SGLang installation with NPUs support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_models.html">Support Models on Ascend NPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_features.html">Support Features on Ascend NPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_qwen3_examples.html">Qwen3 examples</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Contribution Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_best_practice.html">Best Practice on Ascend NPU</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development_guide_using_docker.html">Development Guide Using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bench_serving.html">Bench Serving Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evaluating_new_models.html">Evaluating New Models with SGLang</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/contribution_guide.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/benchmark_and_profiling.html">Benchmark and Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/bench_serving.html">Bench Serving Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/evaluating_new_models.html">Evaluating New Models with SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -327,7 +336,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer_guide/contribution_guide.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_contribution_guide.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +353,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer_guide/contribution_guide.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_contribution_guide.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +370,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/contribution_guide.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_contribution_guide.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +400,7 @@
       
       
       
-      <li><a href="../_sources/developer_guide/contribution_guide.md" target="_blank"
+      <li><a href="../_sources/platforms/ascend_contribution_guide.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -486,8 +495,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang-from-source">Install SGLang from Source</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-environment">Prepare Environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and clone the repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">Build from source</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-code-with-pre-commit">Format code with pre-commit</a></li>
@@ -502,6 +511,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel-npu">How to update sgl-kernel-npu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
 </ul>
             </nav>
@@ -519,16 +529,19 @@ document.write(`
 <p>Welcome to <strong>SGLang</strong>! We appreciate your interest in contributing. This guide provides a concise overview of how to set up your environment, run tests, build documentation, and open a Pull Request (PR). Whether you’re fixing a small bug or developing a major feature, we encourage following these steps for a smooth contribution process.</p>
 <section id="install-sglang-from-source">
 <h2>Install SGLang from Source<a class="headerlink" href="#install-sglang-from-source" title="Link to this heading">#</a></h2>
+<section id="prepare-environment">
+<h3>Prepare Environment<a class="headerlink" href="#prepare-environment" title="Link to this heading">#</a></h3>
+<p>Before contributing, please ensure that your environment is set up correctly. Follow the steps in the <a class="reference internal" href="ascend_npu.html"><span class="std std-doc">Installation Guide</span></a> to install the necessary dependencies. we recommend <a class="reference internal" href="ascend_npu.html#method-2-using-docker-image"><span class="std std-ref">using docker</span></a> to build the environment.</p>
+</section>
 <section id="fork-and-clone-the-repository">
 <h3>Fork and clone the repository<a class="headerlink" href="#fork-and-clone-the-repository" title="Link to this heading">#</a></h3>
 <p><strong>Note</strong>: New contributors do <strong>not</strong> have the write permission to push to the official SGLang repo. Please fork the repository under your GitHub account, then clone your fork locally.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your_user_name&gt;/sglang.git
+<span class="c1"># if you are using docker, the environment is already set up.</span>
+<span class="nb">cd</span><span class="w"> </span>sglang
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PWD</span>/python:<span class="nv">$PYTHONPATH</span>
 </pre></div>
 </div>
-</section>
-<section id="build-from-source">
-<h3>Build from source<a class="headerlink" href="#build-from-source" title="Link to this heading">#</a></h3>
-<p>Refer to <a class="reference internal" href="../get_started/install.html#method-2-from-source"><span class="std std-ref">Install SGLang from Source</span></a>.</p>
 </section>
 </section>
 <section id="format-code-with-pre-commit">
@@ -572,12 +585,12 @@ Also, do not rely on the “Latency/Output throughput” from this script, as it
 You can find additional accuracy eval examples in:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_eval_accuracy_large.py">test_eval_accuracy_large.py</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_gpt_oss_1gpu.py">test_gpt_oss_1gpu.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_moe_eval_accuracy_large.py">test_moe_eval_accuracy_large.py</a></p></li>
 </ul>
 </section>
 <section id="benchmark-the-speed">
 <h2>Benchmark the speed<a class="headerlink" href="#benchmark-the-speed" title="Link to this heading">#</a></h2>
-<p>Refer to <a class="reference internal" href="benchmark_and_profiling.html"><span class="std std-doc">Benchmark and Profiling</span></a>.</p>
+<p>Refer to <a class="reference internal" href="../developer_guide/benchmark_and_profiling.html"><span class="std std-doc">Benchmark and Profiling</span></a>.</p>
 </section>
 <section id="requesting-a-review-for-merge">
 <h2>Requesting a review for merge<a class="headerlink" href="#requesting-a-review-for-merge" title="Link to this heading">#</a></h2>
@@ -663,6 +676,10 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
 </li>
 </ol>
 </section>
+<section id="how-to-update-sgl-kernel-npu">
+<h2>How to update sgl-kernel-npu<a class="headerlink" href="#how-to-update-sgl-kernel-npu" title="Link to this heading">#</a></h2>
+<p>Sgl-kernel-npu is the kernel package for Ascend NPU and is maintained in the <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu">sgl-kernel-npu</a> repository. if you want to add a new kernel and want to use it in sglang, please follow the steps in <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/blob/main/docs/developer_guide/contribution_guide.md">Contribution Guide</a>.</p>
+</section>
 <section id="tips-for-newcomers">
 <h2>Tips for newcomers<a class="headerlink" href="#tips-for-newcomers" title="Link to this heading">#</a></h2>
 <p>If you want to contribute but don’t have a specific idea in mind, pick issues labeled <a class="reference external" href="https://github.com/sgl-project/sglang/issues?q=is%3Aissue+label%3A%22good+first+issue%22%2C%22help+wanted%22">“good first issue” or “help wanted”</a>. These tasks typically have lower complexity and provide an excellent introduction to the codebase. Also check out this <a class="reference external" href="https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through">code walk-through</a> for a deeper look into SGLang’s workflow.</p>
@@ -683,20 +700,20 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../platforms/xpu.html"
+       href="ascend_npu_qwen3_examples.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">XPU</p>
+        <p class="prev-next-title">Qwen3 examples</p>
       </div>
     </a>
     <a class="right-next"
-       href="development_guide_using_docker.html"
+       href="ascend_npu_best_practice.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Development Guide Using Docker</p>
+        <p class="prev-next-title">Best Practice on Ascend NPU</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -717,8 +734,8 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang-from-source">Install SGLang from Source</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-environment">Prepare Environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-and-clone-the-repository">Fork and clone the repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">Build from source</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-code-with-pre-commit">Format code with pre-commit</a></li>
@@ -733,6 +750,7 @@ To add a new kernel or modify an existing one in the sgl-kernel package, you mus
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-guidance">Code style guidance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel">How to update sgl-kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-sgl-kernel-npu">How to update sgl-kernel-npu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-newcomers">Tips for newcomers</a></li>
 </ul>
   </nav></div>
