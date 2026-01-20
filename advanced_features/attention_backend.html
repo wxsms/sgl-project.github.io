@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=3941608b"></script>
+    <script src="../_static/documentation_options.js?v=3d51301a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -494,6 +494,10 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-backend-selection-guide-cuda">Attention Backend Selection Guide (CUDA)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-selection-logic">Automatic Selection Logic</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command-for-different-attention-backends">Launch Command for Different Attention Backends</a></li>
 </ul>
@@ -611,7 +615,7 @@ You can test them according to your needs.</p>
 </tr>
 <tr class="row-even"><td><p><strong>AITER (ROCm)</strong></p></td>
 <td><p>✅</p></td>
-<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -807,6 +811,25 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 If both are specified and differ, SGLang automatically enables a hybrid wrapper to dispatch to the chosen backend per phase.</p>
 </div>
 </section>
+</section>
+</section>
+<section id="attention-backend-selection-guide-cuda">
+<h2>Attention Backend Selection Guide (CUDA)<a class="headerlink" href="#attention-backend-selection-guide-cuda" title="Link to this heading">#</a></h2>
+<p>If the <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> argument is not specified, SGLang automatically selects the best backend based on the hardware (CUDA) and model architecture.</p>
+<section id="automatic-selection-logic">
+<h3>Automatic Selection Logic<a class="headerlink" href="#automatic-selection-logic" title="Link to this heading">#</a></h3>
+<p><strong>1. MHA Models (e.g., Llama, Qwen)</strong></p>
+<ul class="simple">
+<li><p><strong>Hopper (e.g., H100, H200)</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">fa3</span></code> if using CUDA 12.3+ and the model configuration is supported.</p></li>
+<li><p><strong>Blackwell (e.g., B200)</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">trtllm_mha</span></code>, unless using speculative decoding with <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>.</p></li>
+<li><p><strong>Other Architectures (Ampere, Ada, etc.)</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code> if available; otherwise falls back to <code class="docutils literal notranslate"><span class="pre">triton</span></code>.</p></li>
+</ul>
+<p><strong>2. MLA Models (e.g., DeepSeek V3)</strong></p>
+<ul class="simple">
+<li><p><strong>Hopper</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">fa3</span></code> (requires CUDA 12.3+).</p></li>
+<li><p><strong>Blackwell</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">trtllm_mla</span></code>.</p></li>
+<li><p><strong>Other Architectures</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">triton</span></code>.</p></li>
+</ul>
 </section>
 </section>
 <section id="user-guide">
@@ -1066,6 +1089,10 @@ and follow the steps below.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-backend-selection-guide-cuda">Attention Backend Selection Guide (CUDA)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-selection-logic">Automatic Selection Logic</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User Guide</a><ul class="visible nav section-nav flex-column">
