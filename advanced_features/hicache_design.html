@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=de9f4089"></script>
+    <script src="../_static/documentation_options.js?v=4563f6f6"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -653,7 +653,12 @@ After local matching, for the parts not found in L1 or L2, the system queries L3
 </li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend</span> <span class="pre">{file,mooncake,hf3fs,nixl,aibrix,dynamic}</span></code></strong>: Choose the storage backend for the L3 tier. Built-in backends: file, mooncake, hf3fs, nixl, aibrix. For dynamic backend, use –hicache-storage-backend-extra-config to specify: <code class="docutils literal notranslate"><span class="pre">backend_name</span></code> (custom name), <code class="docutils literal notranslate"><span class="pre">module_path</span></code> (Python module path), <code class="docutils literal notranslate"><span class="pre">class_name</span></code> (backend class name). See <a class="reference internal" href="#unified-interfaces-and-rich-l3-storage-backends"><span class="std std-ref">Unified Interfaces and Rich L3 Storage Backends</span></a> for available backends.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">--enable-lmcache</span></code></strong>: Using LMCache as an alternative hierarchical cache solution.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend-extra-config</span> <span class="pre">HICACHE_STORAGE_BACKEND_EXTRA_CONFIG</span></code></strong>: JSON string containing extra configuration for the storage backend, e.g., <code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend-extra-config</span> <span class="pre">'{&quot;prefetch_threshold&quot;:512,</span> <span class="pre">&quot;prefetch_timeout_base&quot;:</span> <span class="pre">0.5,</span> <span class="pre">&quot;prefetch_timeout_per_ki_token&quot;:</span> <span class="pre">0.25}'</span> </code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend-extra-config</span> <span class="pre">HICACHE_STORAGE_BACKEND_EXTRA_CONFIG</span></code></strong>: the extra config can be either</p>
+<ul>
+<li><p>a JSON string containing extra configuration for the storage backend, e.g., <code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend-extra-config</span> <span class="pre">'{&quot;prefetch_threshold&quot;:512,</span> <span class="pre">&quot;prefetch_timeout_base&quot;:</span> <span class="pre">0.5,</span> <span class="pre">&quot;prefetch_timeout_per_ki_token&quot;:</span> <span class="pre">0.25}'</span> </code>, or</p></li>
+<li><p>a TOML or JSON or YAML file specifying the extra configuration for the storage backend (to differentiate from the JSON string input, prepend a <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> in front of the file name), e.g., <code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend-extra-config</span> <span class="pre">&quot;&#64;config.toml&quot;</span></code> where <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> is the config file containing the complex configurations. This can be useful when the configuration consists of many or complex key-value pairs (for instance, it is preferred to use a config file for NIXL backend as its configurations can be complex).</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
