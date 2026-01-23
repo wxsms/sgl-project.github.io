@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Qwen3-Next Usage &#8212; SGLang</title>
+    <title>Moore Threads GPUs &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,10 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'basic_usage/qwen3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/mthreads_gpu';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Qwen3-VL Usage" href="qwen3_vl.html" />
-    <link rel="prev" title="MiniMax M2.1/M2 Usage" href="minimax_m2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 23, 2026"/>
@@ -116,6 +114,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -168,25 +168,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="send_request.html">Sending Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openai_api.html">OpenAI-Compatible APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ollama_api.html">Ollama-Compatible API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="offline_engine_api.html">Offline Engine API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="native_api.html">SGLang Native APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sampling_params.html">Sampling Parameters</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="deepseek_v3.html">DeepSeek V3/V3.1/R1 Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deepseek_v32.html">DeepSeek V3.2 Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glm45.html">Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glmv.html">GLM-4.6V / GLM-4.5V Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimax_m2.html">MiniMax M2.1/M2 Usage</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Qwen3-Next Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qwen3_vl.html">Qwen3-VL Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="llama4.html">Llama4 Usage</a></li>
-</ul>
-</details></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/send_request.html">Sending Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/openai_api.html">OpenAI-Compatible APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/ollama_api.html">Ollama-Compatible API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -241,12 +230,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../platforms/amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu_support.html">Ascend NPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ascend_npu_support.html">Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -338,7 +327,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/basic_usage/qwen3.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/mthreads_gpu.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +344,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/basic_usage/qwen3.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/mthreads_gpu.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,7 +361,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fbasic_usage/qwen3.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/mthreads_gpu.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +391,7 @@
       
       
       
-      <li><a href="../_sources/basic_usage/qwen3.md" target="_blank"
+      <li><a href="../_sources/platforms/mthreads_gpu.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -486,7 +475,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Qwen3-Next Usage</h1>
+    <h1>Moore Threads GPUs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -496,10 +485,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qwen3-next-with-sglang">Launch Qwen3-Next with SGLang</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-radix-cache">Mamba Radix Cache</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang">Install SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
 </ul>
 </li>
 </ul>
@@ -513,46 +500,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="qwen3-next-usage">
-<h1>Qwen3-Next Usage<a class="headerlink" href="#qwen3-next-usage" title="Link to this heading">#</a></h1>
-<p>SGLang has supported Qwen3-Next-80B-A3B-Instruct and Qwen3-Next-80B-A3B-Thinking since <a class="reference external" href="https://github.com/sgl-project/sglang/pull/10233">this PR</a>.</p>
-<section id="launch-qwen3-next-with-sglang">
-<h2>Launch Qwen3-Next with SGLang<a class="headerlink" href="#launch-qwen3-next-with-sglang" title="Link to this heading">#</a></h2>
-<p>To serve Qwen3-Next models on 4xH100/H200 GPUs:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>Qwen/Qwen3-Next-80B-A3B-Instruct<span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="moore-threads-gpus">
+<h1>Moore Threads GPUs<a class="headerlink" href="#moore-threads-gpus" title="Link to this heading">#</a></h1>
+<p>This document describes how run SGLang on Moore Threads GPUs. If you encounter issues or have questions, please <a class="reference external" href="https://github.com/sgl-project/sglang/issues">open an issue</a>.</p>
+<section id="install-sglang">
+<h2>Install SGLang<a class="headerlink" href="#install-sglang" title="Link to this heading">#</a></h2>
+<p>You can install SGLang using one of the methods below.</p>
+<section id="install-from-source">
+<h3>Install from Source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the default branch</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
+
+<span class="c1"># Compile sgl-kernel</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<span class="nb">cd</span><span class="w"> </span>sgl-kernel
+python<span class="w"> </span>setup_musa.py<span class="w"> </span>install
+
+<span class="c1"># Install sglang python package</span>
+<span class="nb">cd</span><span class="w"> </span>..
+rm<span class="w"> </span>-f<span class="w"> </span>python/pyproject.toml<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_musa]&quot;</span>
 </pre></div>
 </div>
-<section id="configuration-tips">
-<h3>Configuration Tips<a class="headerlink" href="#configuration-tips" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code>: Adjust <code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code> to increase mamba cache space and max running requests capability. It will decrease KV cache space as a trade-off. You can adjust it according to workload.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--mamba-ssm-dtype</span></code>: <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> or <code class="docutils literal notranslate"><span class="pre">float32</span></code>, use <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> to save mamba cache size and <code class="docutils literal notranslate"><span class="pre">float32</span></code> to get more accurate results. The default setting is <code class="docutils literal notranslate"><span class="pre">float32</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--mamba-full-memory-ratio</span></code>: The ratio of mamba state memory to full kv cache memory. The default is 0.9.</p></li>
-</ul>
-</section>
-<section id="mamba-radix-cache">
-<h3>Mamba Radix Cache<a class="headerlink" href="#mamba-radix-cache" title="Link to this heading">#</a></h3>
-<p>SGLang supports prefix caching for Qwen3-Next models named <code class="docutils literal notranslate"><span class="pre">MambaRadixCache</span></code>, which improves inference speed by reusing computation results. There are two versions of <code class="docutils literal notranslate"><span class="pre">MambaRadixCache</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>: The default version, which is also other hybrid linear models’ choice. When it is enabled, SGLang will automatically close overlap schedule for compatibility reasons.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code>: An optimized version that is compatible with features like page size &gt; 1, overlap schedule, and speculative decoding. It also supports storing mamba state in branching positions. However, it requires two extra mamba spaces for a ping-pong buffer for each request. To enable it, add the argument <code class="docutils literal notranslate"><span class="pre">--mamba-scheduler-strategy</span> <span class="pre">extra_buffer</span></code> when launching the server.</p></li>
-</ul>
-</section>
-<section id="eagle-speculative-decoding">
-<h3>EAGLE Speculative Decoding<a class="headerlink" href="#eagle-speculative-decoding" title="Link to this heading">#</a></h3>
-<p><strong>Description</strong>: SGLang has supported Qwen3-Next models with <a class="reference external" href="https://docs.sglang.io/advanced_features/speculative_decoding.html#EAGLE-Decoding">EAGLE speculative decoding</a>.</p>
-<p><strong>Usage</strong>:
-Add arguments <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code> and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code> to enable this feature. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen3-Next-80B-A3B-Instruct<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--speculative-algo<span class="w"> </span>NEXTN
-</pre></div>
-</div>
-<p>Details can be seen in <a class="reference external" href="https://github.com/sgl-project/sglang/pull/10233">this PR</a>.</p>
 </section>
 </section>
 </section>
@@ -568,24 +538,6 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="minimax_m2.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">MiniMax M2.1/M2 Usage</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="qwen3_vl.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Qwen3-VL Usage</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -602,10 +554,8 @@ Add arguments <code class="docutils literal notranslate"><span class="pre">--spe
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-qwen3-next-with-sglang">Launch Qwen3-Next with SGLang</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-tips">Configuration Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mamba-radix-cache">Mamba Radix Cache</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-speculative-decoding">EAGLE Speculative Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang">Install SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
 </ul>
 </li>
 </ul>
