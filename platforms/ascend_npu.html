@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4563f6f6"></script>
+    <script src="../_static/documentation_options.js?v=d561e4eb"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Ascend NPUs" href="ascend_npu_support.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jan 22, 2026"/>
+    <meta name="docbuild:last-update" content="Jan 23, 2026"/>
   </head>
   
   
@@ -564,7 +564,7 @@ document.write(`
 <td><p><a class="reference external" href="https://hiascend.com/hardware/firmware-drivers/commercial?product=7&amp;amp;model=33">link</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>CANN</p></td>
-<td><p>8.3.rc2</p></td>
+<td><p>8.5.0</p></td>
 <td><p><a class="reference internal" href="#obtain-cann-image"><span class="std std-ref">Obtain Images</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>Pytorch Adapter</p></td>
@@ -572,12 +572,12 @@ document.write(`
 <td><p><a class="reference external" href="https://gitcode.com/Ascend/pytorch/releases">link</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>MemFabric</p></td>
-<td><p>1.0.3</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">memfabric-hybrid==1.0.3</span></code></p></td>
+<td><p>1.0.5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">memfabric-hybrid==1.0.5</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Triton</p></td>
-<td><p>3.2.0.dev2025112116</p></td>
-<td><p><a class="reference external" href="https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/triton_ascend/triton_ascend-3.2.0.dev2025112116-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl">link</a></p></td>
+<td><p>3.2.0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">triton-ascend</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Bisheng</p></td>
 <td><p>20251121</p></td>
@@ -595,9 +595,9 @@ document.write(`
 <h3>Obtain CANN Image<a class="headerlink" href="#obtain-cann-image" title="Link to this heading">#</a></h3>
 <p>You can obtain the dependency of a specified version of CANN through an image.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># for Atlas 800I A3 and Ubuntu OS</span>
-docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/cann:8.3.rc2-a3-ubuntu22.04-py3.11
+docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/cann:8.5.0-a3-ubuntu22.04-py3.11
 <span class="c1"># for Atlas 800I A2 and Ubuntu OS</span>
-docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/cann:8.3.rc2-910b-ubuntu22.04-py3.11
+docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/cann:8.5.0-910b-ubuntu22.04-py3.11
 </pre></div>
 </div>
 </section>
@@ -621,7 +621,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>sglang_npu
 <section id="memfabric-hybrid">
 <h4>MemFabric-Hybrid<a class="headerlink" href="#memfabric-hybrid" title="Link to this heading">#</a></h4>
 <p>If you want to use PD disaggregation mode, you need to install MemFabric-Hybrid. MemFabric-Hybrid is a drop-in replacement of Mooncake Transfer Engine that enables KV cache transfer on Ascend NPU clusters.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>memfabric-hybrid<span class="o">==</span><span class="m">1</span>.0.3
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>memfabric-hybrid<span class="o">==</span><span class="m">1</span>.0.5
 </pre></div>
 </div>
 </section>
@@ -644,7 +644,7 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch
 wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_URL</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;./</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span><span class="s2">&quot;triton-ascend&lt;3.2.0rc&quot;</span><span class="w"> </span>--pre<span class="w"> </span>--no-cache-dir
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>triton-ascend
 </pre></div>
 </div>
 <p>For installation of Triton on Ascend nightly builds or from sources, follow <a class="reference external" href="https://gitcode.com/Ascend/triton-ascend/blob/master/docs/sources/getting-started/installation.md">installation guide</a></p>
@@ -980,7 +980,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jan 22, 2026.
+  Last updated on Jan 23, 2026.
   <br/>
 </p>
   </div>
