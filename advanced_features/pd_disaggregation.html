@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=5f260a32"></script>
+    <script src="../_static/documentation_options.js?v=1faeda98"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -509,12 +509,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Llama Single Node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">DeepSeek Multi-Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Advanced Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nixl-backend-selection">NIXL Backend Selection</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend">ASCEND</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Usage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Llama Single Node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">DeepSeek Multi-Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Llama Single Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">DeepSeek Multi-Node</a></li>
 </ul>
 </li>
 </ul>
@@ -826,11 +830,29 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </pre></div>
 </div>
 </section>
+<section id="id5">
+<h3>Advanced Configuration<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="nixl-backend-selection">
+<h4>NIXL Backend Selection<a class="headerlink" href="#nixl-backend-selection" title="Link to this heading">#</a></h4>
+<p>By default, NIXL uses the <strong>UCX</strong> backend for KV cache transfers. You can select a different NIXL plugin backend depending on your infrastructure using the environment variable <code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGGREGATION_NIXL_BACKEND</span></code>.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">SGLANG_DISAGGREGATION_NIXL_BACKEND=LIBFABRIC</span></code></p>
+<p><strong>Available backends:</strong> UCX (default), LIBFABRIC, or any installed NIXL plugin.</p>
+<p>Example usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_NIXL_BACKEND</span><span class="o">=</span>LIBFABRIC
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-transfer-backend<span class="w"> </span>nixl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="ascend">
 <h2>ASCEND<a class="headerlink" href="#ascend" title="Link to this heading">#</a></h2>
-<section id="id5">
-<h3>Usage<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h3>Usage<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Use ascend backend with <a class="reference external" href="https://gitcode.com/Ascend/memfabric_hybrid">memfabric_hybrid</a> and ASCEND_MF_STORE_URL being set</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>memfabric-hybrid<span class="o">==</span><span class="m">1</span>.0.0
 <span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_MF_STORE_URL</span><span class="o">=</span><span class="s2">&quot;tcp://xxx.xx.xxx.xxx:xxxx&quot;</span>
@@ -845,8 +867,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </pre></div>
 </div>
 </section>
-<section id="id6">
-<h3>Llama Single Node<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h3>Llama Single Node<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
@@ -862,8 +884,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h3>DeepSeek Multi-Node<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3>DeepSeek Multi-Node<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prefill 0</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>deepseek-ai/DeepSeek-V3-0324<span class="w"> </span><span class="se">\</span>
@@ -963,12 +985,16 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Llama Single Node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">DeepSeek Multi-Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Advanced Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nixl-backend-selection">NIXL Backend Selection</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend">ASCEND</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Usage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Llama Single Node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">DeepSeek Multi-Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Llama Single Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">DeepSeek Multi-Node</a></li>
 </ul>
 </li>
 </ul>
