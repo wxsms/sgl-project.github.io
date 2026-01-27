@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=cb1594c0"></script>
+    <script src="../_static/documentation_options.js?v=5cab61fc"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -197,6 +197,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">SGLang HiCache Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hicache_storage_runtime_attach_detach.html">Runtime Attach/Detach HiCache Storage Backend (No Restart)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query VLM with Offline Engine</a></li>
@@ -538,6 +539,10 @@ document.write(`
 --hicache-storage-backend<span class="w">             </span><span class="c1"># Optional storage backend (e.g., hf3fs, mooncake, etc.)</span>
 </pre></div>
 </div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Besides configuring <code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend</span></code> at startup, SGLang also supports <strong>runtime attach/detach</strong> of the HiCache storage backend (no restart required) via HTTP admin endpoints. See <a class="reference internal" href="hicache_storage_runtime_attach_detach.html"><span class="std std-doc">Runtime Attach/Detach HiCache Storage Backend</span></a>.</p></li>
+</ul>
 </section>
 <section id="key-configurations-with-storage-backends-enabled">
 <h2>Key Configurations with Storage Backends Enabled<a class="headerlink" href="#key-configurations-with-storage-backends-enabled" title="Link to this heading">#</a></h2>

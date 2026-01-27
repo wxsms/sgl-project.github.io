@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hierarchical KV Caching (HiCache) &#8212; SGLang</title>
+    <title>Runtime Attach/Detach HiCache Storage Backend (No Restart) &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/hicache';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/hicache_storage_runtime_attach_detach';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SGLang HiCache Best Practices" href="hicache_best_practices.html" />
-    <link rel="prev" title="Pipeline Parallelism for Long Context" href="pipeline_parallelism.html" />
+    <link rel="next" title="Query VLM with Offline Engine" href="vlm_query.html" />
+    <link rel="prev" title="HiCache System Design and Optimization" href="hicache_design.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 27, 2026"/>
@@ -194,10 +194,10 @@
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epd_disaggregation.html">EPD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Hierarchical KV Caching (HiCache)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hicache_best_practices.html">SGLang HiCache Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hicache_storage_runtime_attach_detach.html">Runtime Attach/Detach HiCache Storage Backend (No Restart)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Runtime Attach/Detach HiCache Storage Backend (No Restart)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query VLM with Offline Engine</a></li>
@@ -333,7 +333,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/hicache.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/hicache_storage_runtime_attach_detach.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/hicache.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/hicache_storage_runtime_attach_detach.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +367,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/hicache.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/hicache_storage_runtime_attach_detach.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -397,7 +397,7 @@
       
       
       
-      <li><a href="../_sources/advanced_features/hicache.rst" target="_blank"
+      <li><a href="../_sources/advanced_features/hicache_storage_runtime_attach_detach.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,7 +407,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -468,7 +468,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -479,11 +481,33 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hierarchical KV Caching (HiCache)</h1>
+    <h1>Runtime Attach/Detach HiCache Storage Backend (No Restart)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-and-implementation-overview">1. Background and implementation overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-control-path">1.1 Architecture / control path</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idle-state-requirement-strict">2. Idle-state requirement (strict)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-data-parallel-semantics">2.1 DP (data parallel) semantics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-http-admin-api">3. How to use (HTTP Admin API)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-current-storage-backend-status">3.1 Query current storage backend status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attach-enable-a-storage-backend">3.2 Attach (enable) a storage backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detach-disable-the-storage-backend">3.3 Detach (disable) the storage backend</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-and-caveats">4. Behavior and caveats</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -493,15 +517,159 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="hierarchical-kv-caching-hicache">
-<h1>Hierarchical KV Caching (HiCache)<a class="headerlink" href="#hierarchical-kv-caching-hicache" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="hicache_best_practices.html">SGLang HiCache Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hicache_design.html">HiCache System Design and Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hicache_storage_runtime_attach_detach.html">Runtime Attach/Detach HiCache Storage Backend (No Restart)</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="runtime-attach-detach-hicache-storage-backend-no-restart">
+<h1>Runtime Attach/Detach HiCache Storage Backend (No Restart)<a class="headerlink" href="#runtime-attach-detach-hicache-storage-backend-no-restart" title="Link to this heading">#</a></h1>
+<p>This document explains how to <strong>dynamically attach/detach the HiCache L3 storage backend at runtime</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">mooncake</span></code> / <code class="docutils literal notranslate"><span class="pre">hf3fs</span></code> / <code class="docutils literal notranslate"><span class="pre">nixl</span></code> / <code class="docutils literal notranslate"><span class="pre">file</span></code> / <code class="docutils literal notranslate"><span class="pre">aibrix</span></code> / <code class="docutils literal notranslate"><span class="pre">eic</span></code>) while <strong>SGLang is already running and serving traffic</strong>, without restarting the process.</p>
+<p>For safety and consistency, the current implementation <strong>strictly requires</strong> these operations to happen only when the service is <strong>idle</strong>:</p>
+<ul class="simple">
+<li><p><strong>No running requests</strong></p></li>
+<li><p><strong>No waiting/queued requests</strong></p></li>
 </ul>
+<p>If the idle condition is not met, the API will fail fast (HTTP 400) and <strong>will not modify</strong> the current service state.</p>
+<hr class="docutils" />
+<section id="background-and-implementation-overview">
+<h2>1. Background and implementation overview<a class="headerlink" href="#background-and-implementation-overview" title="Link to this heading">#</a></h2>
+<section id="architecture-control-path">
+<h3>1.1 Architecture / control path<a class="headerlink" href="#architecture-control-path" title="Link to this heading">#</a></h3>
+<p>The control path is:</p>
+<ol class="arabic simple">
+<li><p><strong>HTTP Server</strong> (<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/entrypoints/http_server.py</span></code>)</p>
+<ul class="simple">
+<li><p>Exposes <code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/hicache/storage-backend</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/hicache/storage-backend</span></code>, <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/hicache/storage-backend</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>TokenizerManager</strong> (<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/managers/tokenizer_communicator_mixin.py</span></code>)</p>
+<ul class="simple">
+<li><p>Sends the request to the Scheduler via <code class="docutils literal notranslate"><span class="pre">_Communicator</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Scheduler</strong> (<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/managers/scheduler.py</span></code>)</p>
+<ul class="simple">
+<li><p>Performs a <strong>strict idle check</strong></p></li>
+<li><p>Calls <code class="docutils literal notranslate"><span class="pre">tree_cache.attach_storage_backend(...)</span></code> / <code class="docutils literal notranslate"><span class="pre">detach_storage_backend(...)</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>HiRadixCache</strong> (<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/mem_cache/hiradix_cache.py</span></code>)</p>
+<ul class="simple">
+<li><p>Parses <code class="docutils literal notranslate"><span class="pre">hicache_storage_backend_extra_config_json</span></code> (supports both backend config and prefetch knobs)</p></li>
+<li><p>Calls <code class="docutils literal notranslate"><span class="pre">cache_controller.attach_storage_backend(...)</span></code> / <code class="docutils literal notranslate"><span class="pre">detach_storage_backend(...)</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>HiCacheController</strong> (<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/managers/cache_controller.py</span></code>)</p>
+<ul class="simple">
+<li><p>Creates/destroys the storage backend instance (via <code class="docutils literal notranslate"><span class="pre">StorageBackendFactory</span></code>)</p></li>
+<li><p>Starts/stops backend background threads at runtime (prefetch/backup)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="idle-state-requirement-strict">
+<h2>2. Idle-state requirement (strict)<a class="headerlink" href="#idle-state-requirement-strict" title="Link to this heading">#</a></h2>
+<p>The Scheduler uses a stricter <code class="docutils literal notranslate"><span class="pre">_is_idle_for_hicache_storage_op()</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_is_no_request()</span></code> is true (covers running/overlap/pp/disagg and other active states)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">waiting_queue</span></code> is empty</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grammar_queue</span></code> is empty (if the grammar backend is enabled)</p></li>
+</ul>
+<p>If the condition is not met, attach/detach returns an error like:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Reject</span> <span class="pre">attach:</span> <span class="pre">scheduler</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">idle.</span> <span class="pre">#queue-req=...</span> <span class="pre">#running-req=...</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>Tip: before switching, drain upstream traffic and wait for the server to become idle, then call attach/detach.</p>
+</div></blockquote>
+<section id="dp-data-parallel-semantics">
+<h3>2.1 DP (data parallel) semantics<a class="headerlink" href="#dp-data-parallel-semantics" title="Link to this heading">#</a></h3>
+<p>When <code class="docutils literal notranslate"><span class="pre">dp_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, the tokenizer dispatches the request to <strong>all DP scheduler instances</strong> and aggregates their responses:</p>
+<ul class="simple">
+<li><p>The final <code class="docutils literal notranslate"><span class="pre">success</span></code> is <strong>true only if all DP ranks return success</strong></p></li>
+<li><p>The final <code class="docutils literal notranslate"><span class="pre">message</span></code> concatenates messages from all DP ranks</p></li>
+</ul>
+<p>This is intended to prevent “silent partial success”, but it also means you may see:</p>
+<ul class="simple">
+<li><p>Overall <strong>failure</strong> even though <strong>some ranks already succeeded</strong></p></li>
+</ul>
+<p>Currently there is <strong>no automatic partial rollback</strong> across DP ranks (see TODO in code). Operationally:</p>
+<ul class="simple">
+<li><p>Prefer to keep backend config identical across ranks</p></li>
+<li><p>If attach fails, immediately call detach (best-effort/idempotent), fix config, then retry attach</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-to-use-http-admin-api">
+<h2>3. How to use (HTTP Admin API)<a class="headerlink" href="#how-to-use-http-admin-api" title="Link to this heading">#</a></h2>
+<p>The examples below assume your SGLang HTTP server is at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:30000</span></code>.</p>
+<section id="query-current-storage-backend-status">
+<h3>3.1 Query current storage backend status<a class="headerlink" href="#query-current-storage-backend-status" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>http://127.0.0.1:30000/hicache/storage-backend
+</pre></div>
 </div>
+<p>Example response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hicache_storage_backend&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mooncake&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hicache_storage_backend_extra_config&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;master_server_address\&quot;:\&quot;127.0.0.1:50051\&quot;, ...}&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="attach-enable-a-storage-backend">
+<h3>3.2 Attach (enable) a storage backend<a class="headerlink" href="#attach-enable-a-storage-backend" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>http://127.0.0.1:30000/hicache/storage-backend<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;hicache_storage_backend&quot;: &quot;mooncake&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>http://127.0.0.1:30000/hicache/storage-backend<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;hicache_storage_backend&quot;: &quot;mooncake&quot;,</span>
+<span class="s1">    &quot;hicache_storage_backend_extra_config_json&quot;: &quot;{\&quot;master_server_address\&quot;:\&quot;127.0.0.1:50051\&quot;,\&quot;protocol\&quot;:\&quot;tcp\&quot;,\&quot;global_segment_size\&quot;:\&quot;4gb\&quot;,\&quot;prefetch_threshold\&quot;:256}&quot;,</span>
+<span class="s1">    &quot;hicache_storage_prefetch_policy&quot;: &quot;timeout&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hicache_storage_backend_extra_config_json</span></code> can include both:</p>
+<ul>
+<li><p><strong>Backend configuration</strong> (e.g., Mooncake master/metadata/protocol, etc.)</p></li>
+<li><p><strong>Prefetch configuration</strong> (<code class="docutils literal notranslate"><span class="pre">prefetch_threshold</span></code>, <code class="docutils literal notranslate"><span class="pre">prefetch_timeout_base</span></code>, <code class="docutils literal notranslate"><span class="pre">prefetch_timeout_per_ki_token</span></code>, <code class="docutils literal notranslate"><span class="pre">hicache_storage_pass_prefix_keys</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="detach-disable-the-storage-backend">
+<h3>3.3 Detach (disable) the storage backend<a class="headerlink" href="#detach-disable-the-storage-backend" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://127.0.0.1:30000/hicache/storage-backend
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Detach only makes SGLang <strong>stop using</strong> the L3 storage backend and stops prefetch/backup threads</p></li>
+<li><p>It <strong>does not automatically delete</strong> data stored in Mooncake/HF3FS (or other remote backends)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="behavior-and-caveats">
+<h2>4. Behavior and caveats<a class="headerlink" href="#behavior-and-caveats" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>No restart required</strong>: attach/detach switches in-process at runtime</p></li>
+<li><p><strong>Must be idle</strong>: otherwise the request is rejected to avoid consistency issues</p></li>
+<li><p><strong>Host KV layout constraints still apply</strong>: for example, Mooncake still requires layouts like <code class="docutils literal notranslate"><span class="pre">page_first/page_first_direct/page_head</span></code>; if the server’s HiCache host-memory layout does not satisfy the backend requirements, attach will fail with an error</p></li>
+<li><p><strong>Observability</strong>:</p>
+<ul>
+<li><p>After attach, <code class="docutils literal notranslate"><span class="pre">server_args.hicache_storage_backend*</span></code> is updated on both the tokenizer and scheduler sides</p></li>
+<li><p>If metrics are enabled, attach will create a storage metrics collector in <code class="docutils literal notranslate"><span class="pre">HiRadixCache</span></code> on demand</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
 
@@ -516,20 +684,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pipeline_parallelism.html"
+       href="hicache_design.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pipeline Parallelism for Long Context</p>
+        <p class="prev-next-title">HiCache System Design and Optimization</p>
       </div>
     </a>
     <a class="right-next"
-       href="hicache_best_practices.html"
+       href="vlm_query.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SGLang HiCache Best Practices</p>
+        <p class="prev-next-title">Query VLM with Offline Engine</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -539,6 +707,35 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-and-implementation-overview">1. Background and implementation overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-control-path">1.1 Architecture / control path</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idle-state-requirement-strict">2. Idle-state requirement (strict)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dp-data-parallel-semantics">2.1 DP (data parallel) semantics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-http-admin-api">3. How to use (HTTP Admin API)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-current-storage-backend-status">3.1 Query current storage backend status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attach-enable-a-storage-backend">3.2 Attach (enable) a storage backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detach-disable-the-storage-backend">3.3 Detach (disable) the storage backend</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-and-caveats">4. Behavior and caveats</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
