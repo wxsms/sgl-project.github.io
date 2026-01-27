@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0df7d59c"></script>
+    <script src="../_static/documentation_options.js?v=a58fb4e2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -508,6 +508,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-and-reasoning-parser">Function Calling and Reasoning Parser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4-checkpoint">NVFP4 Checkpoint</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation">PD Disaggregation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gsm8k">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gsm8k</span></code></a></li>
@@ -665,6 +666,14 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--reasoning-parser<span class="w"> </span>deepseek-v3
+</pre></div>
+</div>
+</section>
+<section id="nvfp4-checkpoint">
+<h2>NVFP4 Checkpoint<a class="headerlink" href="#nvfp4-checkpoint" title="Link to this heading">#</a></h2>
+<p>To launch deepseek v3.2 <a class="reference external" href="https://huggingface.co/nvidia/DeepSeek-V3.2-NVFP4">NVFP4 checkpoint</a> on Blackwell devices, the user needs to specify the quantization method as <code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code>, and moe runner backend as one of <code class="docutils literal notranslate"><span class="pre">flashinfer_trtllm</span></code>(recommended), <code class="docutils literal notranslate"><span class="pre">flashinfer_cutlass</span></code> and <code class="docutils literal notranslate"><span class="pre">flashinfer_cutedsl</span></code>. Any other usage (parallelism, reasoning parser, …) is the same as FP8 checkpoint.</p>
+<p>An example launching command can be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>nvidia/DeepSeek-V3.2-NVFP4<span class="w"> </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span>--quantization<span class="w"> </span>modelopt_fp4<span class="w"> </span>--moe-runner-backend<span class="w"> </span>flashinfer_trtllm<span class="w"> </span>--tool-call-parser<span class="w"> </span>deepseekv32<span class="w">  </span>--reasoning-parser<span class="w"> </span>deepseek-v3
 </pre></div>
 </div>
 </section>
@@ -1104,6 +1113,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-token-prediction">Multi-token Prediction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling-and-reasoning-parser">Function Calling and Reasoning Parser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4-checkpoint">NVFP4 Checkpoint</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation">PD Disaggregation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-results">Benchmarking Results</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-test-with-gsm8k">Accuracy Test with <code class="docutils literal notranslate"><span class="pre">gsm8k</span></code></a></li>
