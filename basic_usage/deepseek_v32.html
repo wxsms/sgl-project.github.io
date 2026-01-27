@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=5cab61fc"></script>
+    <script src="../_static/documentation_options.js?v=9a0de16b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -549,7 +549,13 @@ document.write(`
 docker<span class="w"> </span>pull<span class="w"> </span>lmsysorg/sglang:latest
 
 <span class="c1"># MI350/MI355</span>
-docker<span class="w"> </span>pull<span class="w"> </span>lmsysorg/sglang:dsv32-rocm
+docker<span class="w"> </span>pull<span class="w"> </span>lmsysorg/sglang:v0.5.8-rocm700-mi35x
+
+<span class="c1"># MI300</span>
+<span class="c1"># v0.5.8-rocm700-mi30x does not include PR #17504. Prefer the newest MI30x ROCm</span>
+<span class="c1"># image tag from Docker Hub when available, or build from source (below).</span>
+docker<span class="w"> </span>pull<span class="w"> </span>lmsysorg/sglang:v0.5.8-rocm700-mi30x
+
 
 <span class="c1"># NPUs</span>
 docker<span class="w"> </span>pull<span class="w"> </span>lmsysorg/sglang:dsv32-a2
@@ -579,6 +585,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 
 <span class="c1"># Launch with Pure TP</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span>
+
+<span class="c1"># Launch with TP on MI30x/MI35x</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w"> </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--nsa-prefill-backend<span class="w"> </span>tilelang<span class="w"> </span>--nsa-decode-backend<span class="w"> </span>tilelang
 </pre></div>
 </div>
 <section id="configuration-tips">
