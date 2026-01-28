@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=cb19d407"></script>
+    <script src="../_static/documentation_options.js?v=a13b7bcb"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -47,10 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/JIT_kernels';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/development_jit_kernel_guide';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Benchmark and Profiling" href="benchmark_and_profiling.html" />
+    <link rel="prev" title="Development Guide Using Docker" href="development_guide_using_docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jan 28, 2026"/>
@@ -113,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -239,9 +239,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development_guide_using_docker.html">Development Guide Using Docker</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Development Guide for JIT Kernels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmark_and_profiling.html">Benchmark and Profiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bench_serving.html">Bench Serving Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluating_new_models.html">Evaluating New Models with SGLang</a></li>
@@ -328,7 +329,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer_guide/JIT_kernels.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/developer_guide/development_jit_kernel_guide.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +346,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer_guide/JIT_kernels.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/developer_guide/development_jit_kernel_guide.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +363,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/JIT_kernels.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/development_jit_kernel_guide.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +393,7 @@
       
       
       
-      <li><a href="../_sources/developer_guide/JIT_kernels.md" target="_blank"
+      <li><a href="../_sources/developer_guide/development_jit_kernel_guide.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -545,6 +546,8 @@ Typically, <code class="docutils literal notranslate"><span class="pre">tvm::ffi
 The <code class="docutils literal notranslate"><span class="pre">load_jit</span></code> utility function in <code class="docutils literal notranslate"><span class="pre">python/sglang/jit_kernel/utils.py</span></code> loads and returns the compiled module.
 To export a C++ function (e.g., <code class="docutils literal notranslate"><span class="pre">cpp_func</span></code>), pass <code class="docutils literal notranslate"><span class="pre">cuda_wrappers=[(&quot;func&quot;,</span> <span class="pre">&quot;cpp_func&quot;)]</span></code> to <code class="docutils literal notranslate"><span class="pre">load_jit</span></code>.
 The function can then be called in Python as <code class="docutils literal notranslate"><span class="pre">module.func</span></code>.</p>
+<p>For caching compiled modules, prefer <code class="docutils literal notranslate"><span class="pre">sglang.jit_kernel.utils.cache_once</span></code> over <code class="docutils literal notranslate"><span class="pre">functools.lru_cache</span></code>.
+<code class="docutils literal notranslate"><span class="pre">functools.lru_cache</span></code> is not compatible with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code>.</p>
 </section>
 <section id="c-utilities">
 <h3>C++ Utilities<a class="headerlink" href="#c-utilities" title="Link to this heading">#</a></h3>
@@ -721,19 +724,17 @@ We use a simple add_constant kernel as a running example, which adds a constant 
 <p>Next, expose the kernel through a Python wrapper.
 Create a new file at <a class="reference download internal" download="" href="../_downloads/79b814f8a8949cb9b0717311f546695e/add_constant.py"><span class="xref download myst">jit_kernel/add_constant.py</span></a> and expose the needed interfaces.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.jit_kernel.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_jit</span><span class="p">,</span> <span class="n">make_cpp_args</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.jit_kernel.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">cache_once</span><span class="p">,</span> <span class="n">load_jit</span><span class="p">,</span> <span class="n">make_cpp_args</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">tvm_ffi.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">Module</span>
 
 
-<span class="nd">@functools</span><span class="o">.</span><span class="n">cache</span>
+<span class="nd">@cache_once</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">_jit_add_constant_module</span><span class="p">(</span><span class="n">constant</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Module</span><span class="p">:</span>
     <span class="n">args</span> <span class="o">=</span> <span class="n">make_cpp_args</span><span class="p">(</span><span class="n">constant</span><span class="p">)</span>  <span class="c1"># pass all the template argument</span>
     <span class="k">return</span> <span class="n">load_jit</span><span class="p">(</span>
@@ -759,7 +760,7 @@ Create a new file at <a class="reference download internal" download="" href="..
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.jit_kernel.add_constant</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_constant</span>
 </pre></div>
 </div>
-<p>For a complete, runnable example, refer to <a class="reference internal" href="#../../python/sglang/jit_kernel/test_add_constant.py"><span class="xref myst">test_add_constant.py</span></a>.</p>
+<p>For a complete, runnable example, refer to <a class="reference download internal" download="" href="../_downloads/46847f40d77a31c086f9198e3959b87f/test_add_constant.py"><span class="xref download myst">test_add_constant.py</span></a>.</p>
 </section>
 </section>
 </section>
@@ -775,6 +776,24 @@ Create a new file at <a class="reference download internal" download="" href="..
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="development_guide_using_docker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Development Guide Using Docker</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="benchmark_and_profiling.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Benchmark and Profiling</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
