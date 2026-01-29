@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d3ef0f9f"></script>
+    <script src="../_static/documentation_options.js?v=ed0b7c55"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -581,11 +581,7 @@ document.write(`
 <td><p>3.2.0</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">triton-ascend</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Bisheng</p></td>
-<td><p>20251121</p></td>
-<td><p><a class="reference external" href="https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/triton_ascend/Ascend-BiSheng-toolkit_aarch64_20251121.run">link</a></p></td>
-</tr>
-<tr class="row-even"><td><p>SGLang NPU Kernel</p></td>
+<tr class="row-odd"><td><p>SGLang NPU Kernel</p></td>
 <td><p>NA</p></td>
 <td><p><a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/releases">link</a></p></td>
 </tr>
@@ -641,11 +637,6 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch
 <section id="triton-on-ascend">
 <h4>Triton on Ascend<a class="headerlink" href="#triton-on-ascend" title="Link to this heading">#</a></h4>
 <p>We provide our own implementation of Triton for Ascend.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">BISHENG_NAME</span><span class="o">=</span><span class="s2">&quot;Ascend-BiSheng-toolkit_aarch64_20251121.run&quot;</span>
-<span class="nv">BISHENG_URL</span><span class="o">=</span><span class="s2">&quot;https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/sglang/triton_ascend/</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-wget<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_URL</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;./</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BISHENG_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-</pre></div>
-</div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>triton-ascend
 </pre></div>
 </div>
@@ -694,8 +685,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <div class="highlight-angular2html notranslate"><div class="highlight"><pre><span></span>dockerhub: docker.io/lmsysorg/sglang:$tag
 # Main-based tag, change main to specific version like v0.5.6,
 # you can get image for specific version
-Atlas 800I A3 : {main}-cann8.3.rc2-a3
-Atlas 800I A2: {main}-cann8.3.rc2-910b
+Atlas 800I A3 : {main}-cann8.5.0-a3
+Atlas 800I A2: {main}-cann8.5.0-910b
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">

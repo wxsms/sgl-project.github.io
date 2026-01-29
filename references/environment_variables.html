@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d3ef0f9f"></script>
+    <script src="../_static/documentation_options.js?v=ed0b7c55"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -491,6 +491,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tuning">Performance Tuning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepgemm-configuration-advanced-optimization">DeepGEMM Configuration (Advanced Optimization)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-configuration">DeepEP Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mori-configuration">MORI Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nsa-backend-configuration-for-deepseek-v3-2">NSA Backend Configuration (For DeepSeek V3.2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specific-options">Model-Specific Options</a></li>
@@ -545,19 +546,23 @@ document.write(`
 <td><p>Disable request logging</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_HEALTH_CHECK_TIMEOUT</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_LOG_REQUEST_HEADERS</span></code></p></td>
+<td><p>Comma-separated list of additional HTTP headers to log when <code class="docutils literal notranslate"><span class="pre">--log-requests</span></code> is enabled. Appends to the default <code class="docutils literal notranslate"><span class="pre">x-smg-routing-key</span></code>.</p></td>
+<td><p>Not set</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_HEALTH_CHECK_TIMEOUT</span></code></p></td>
 <td><p>Timeout for health check in seconds</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_EPLB_HEATMAP_COLLECTION_INTERVAL</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_EPLB_HEATMAP_COLLECTION_INTERVAL</span></code></p></td>
 <td><p>The interval of passes to collect the metric of selected count of physical experts on each layer and GPU rank. 0 means disabled.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FORWARD_UNKNOWN_TOOLS</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_FORWARD_UNKNOWN_TOOLS</span></code></p></td>
 <td><p>Forward unknown tool calls to clients instead of dropping them</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code> (drop unknown tools)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_QUEUED_TIMEOUT_MS</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_QUEUED_TIMEOUT_MS</span></code></p></td>
 <td><p>Timeout (in ms) for requests in the waiting queue</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
 </tr>
@@ -730,6 +735,40 @@ document.write(`
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_BLACKWELL_OVERLAP_SHARED_EXPERTS_OUTSIDE_SBO</span></code></p></td>
 <td><p>Run shared experts on an alternate stream when single batch overlap is enabled on GB200. When not setting this flag, shared experts and down gemm will be overlapped with DeepEP combine together.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mori-configuration">
+<h2>MORI Configuration<a class="headerlink" href="#mori-configuration" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MORI_FP8_DISP</span></code></p></td>
+<td><p>Use FP8 for dispatch</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MORI_NUM_MAX_DISPATCH_TOKENS_PER_RANK</span></code></p></td>
+<td><p>Maximum number of dispatch tokens per rank for MORI-EP buffer allocation</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4096</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MORI_QP_PER_TRANSFER</span></code></p></td>
+<td><p>Number of RDMA Queue Pairs (QPs) used per transfer operation</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MORI_POST_BATCH_SIZE</span></code></p></td>
+<td><p>Number of RDMA work requests posted in a single batch to each QP</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MORI_NUM_WORKERS</span></code></p></td>
+<td><p>Number of worker threads in the RDMA executor thread pool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1062,6 +1101,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tuning">Performance Tuning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepgemm-configuration-advanced-optimization">DeepGEMM Configuration (Advanced Optimization)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-configuration">DeepEP Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mori-configuration">MORI Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nsa-backend-configuration-for-deepseek-v3-2">NSA Backend Configuration (For DeepSeek V3.2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specific-options">Model-Specific Options</a></li>
