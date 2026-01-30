@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=69b73c2f"></script>
+    <script src="../_static/documentation_options.js?v=1c1ad8bb"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -509,7 +509,6 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#triton-on-ascend">Triton on Ascend</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sglang-kernels-npu">SGLang Kernels NPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-compatible-library">DeepEP-compatible Library</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#customops">CustomOps</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
 </ul>
 </li>
@@ -650,19 +649,6 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch
 <section id="deepep-compatible-library">
 <h4>DeepEP-compatible Library<a class="headerlink" href="#deepep-compatible-library" title="Link to this heading">#</a></h4>
 <p>We provide a DeepEP-compatible Library as a drop-in replacement of deepseek-ai’s DeepEP library, check the <a class="reference external" href="https://github.com/sgl-project/sgl-kernel-npu/blob/main/python/deep_ep/README.md">installation guide</a>.</p>
-</section>
-<section id="customops">
-<h4>CustomOps<a class="headerlink" href="#customops" title="Link to this heading">#</a></h4>
-<p><em>TODO: to be removed once merged into sgl-kernel-npu.</em>
-Additional package with custom operations. DEVICE_TYPE can be “a3” for Atlas A3 server or “910b” for Atlas A2 server.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DEVICE_TYPE</span><span class="o">=</span><span class="s2">&quot;a3&quot;</span>
-wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/ops/CANN-custom_ops-8.3.0.1-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run
-chmod<span class="w"> </span>a+x<span class="w"> </span>./CANN-custom_ops-8.3.0.1-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run
-./CANN-custom_ops-8.3.0.1-<span class="nv">$DEVICE_TYPE</span>-linux.aarch64.run<span class="w"> </span>--quiet<span class="w"> </span>--install-path<span class="o">=</span>/usr/local/Ascend/ascend-toolkit/latest/opp
-wget<span class="w"> </span>https://sglang-ascend.obs.cn-east-3.myhuaweicloud.com/ops/custom_ops-2.0.<span class="nv">$DEVICE_TYPE</span>-cp311-cp311-linux_aarch64.whl
-pip<span class="w"> </span>install<span class="w"> </span>./custom_ops-2.0.<span class="nv">$DEVICE_TYPE</span>-cp311-cp311-linux_aarch64.whl
-</pre></div>
-</div>
 </section>
 <section id="installing-sglang-from-source">
 <h4>Installing SGLang from source<a class="headerlink" href="#installing-sglang-from-source" title="Link to this heading">#</a></h4>
@@ -912,7 +898,6 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#triton-on-ascend">Triton on Ascend</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sglang-kernels-npu">SGLang Kernels NPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-compatible-library">DeepEP-compatible Library</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#customops">CustomOps</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-sglang-from-source">Installing SGLang from source</a></li>
 </ul>
 </li>
