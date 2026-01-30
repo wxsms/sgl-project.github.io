@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4ad9852c"></script>
+    <script src="../_static/documentation_options.js?v=a2bfee0d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -174,6 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/ollama_api.html">Ollama-Compatible API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/offline_engine_api.html">Offline Engine API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/deepseek_ocr.html">DeepSeek OCR (OCR-1 / OCR-2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a></li>
 </ul>
@@ -548,97 +549,102 @@ document.write(`
 <td><p>Vision-language variant of DeepSeek (with a dedicated image processor), enabling advanced multimodal reasoning on image and text inputs.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Janus-Pro</strong> (1B, 7B)</p></td>
+<tr class="row-even"><td><p><strong>DeepSeek-OCR / OCR-2</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deepseek-ai/DeepSeek-OCR-2</span></code></p></td>
+<td><p>OCR-focused DeepSeek models for document understanding and text extraction.</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Janus-Pro</strong> (1B, 7B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek-ai/Janus-Pro-7B</span></code></p></td>
 <td><p>DeepSeek’s open-source multimodal model capable of both image understanding and generation. Janus-Pro employs a decoupled architecture for separate visual encoding paths, enhancing performance in both tasks.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>MiniCPM-V / MiniCPM-o</strong></p></td>
+<tr class="row-even"><td><p><strong>MiniCPM-V / MiniCPM-o</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">openbmb/MiniCPM-V-2_6</span></code></p></td>
 <td><p>MiniCPM-V (2.6, ~8B) supports image inputs, and MiniCPM-o adds audio/video; these multimodal LLMs are optimized for end-side deployment on mobile/edge devices.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Llama 3.2 Vision</strong> (11B)</p></td>
+<tr class="row-odd"><td><p><strong>Llama 3.2 Vision</strong> (11B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-3.2-11B-Vision-Instruct</span></code></p></td>
 <td><p>Vision-enabled variant of Llama 3 (11B) that accepts image inputs for visual question answering and other multimodal tasks.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>LLaVA</strong> (v1.5 &amp; v1.6)</p></td>
+<tr class="row-even"><td><p><strong>LLaVA</strong> (v1.5 &amp; v1.6)</p></td>
 <td><p><em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">liuhaotian/llava-v1.5-13b</span></code></p></td>
 <td><p>Open vision-chat models that add an image encoder to LLaMA/Vicuna (e.g. LLaMA2 13B) for following multimodal instruction prompts.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>LLaVA-NeXT</strong> (8B, 72B)</p></td>
+<tr class="row-odd"><td><p><strong>LLaVA-NeXT</strong> (8B, 72B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lmms-lab/llava-next-72b</span></code></p></td>
 <td><p>Improved LLaVA models (with an 8B Llama3 version and a 72B version) offering enhanced visual instruction-following and accuracy on multimodal benchmarks.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>LLaVA-OneVision</strong></p></td>
+<tr class="row-even"><td><p><strong>LLaVA-OneVision</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lmms-lab/llava-onevision-qwen2-7b-ov</span></code></p></td>
 <td><p>Enhanced LLaVA variant integrating Qwen as the backbone; supports multiple images (and even video frames) as inputs via an OpenAI Vision API-compatible format.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Gemma 3 (Multimodal)</strong></p></td>
+<tr class="row-odd"><td><p><strong>Gemma 3 (Multimodal)</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">google/gemma-3-4b-it</span></code></p></td>
 <td><p>Gemma 3’s larger models (4B, 12B, 27B) accept images (each image encoded as 256 tokens) alongside text in a combined 128K-token context.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Kimi-VL</strong> (A3B)</p></td>
+<tr class="row-even"><td><p><strong>Kimi-VL</strong> (A3B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">moonshotai/Kimi-VL-A3B-Instruct</span></code></p></td>
 <td><p>Kimi-VL is a multimodal model that can understand and generate text from images.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Mistral-Small-3.1-24B</strong></p></td>
+<tr class="row-odd"><td><p><strong>Mistral-Small-3.1-24B</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">mistralai/Mistral-Small-3.1-24B-Instruct-2503</span></code></p></td>
 <td><p>Mistral 3.1 is a multimodal model that can generate text from text or images input. It also supports tool calling and structured output.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Phi-4-multimodal-instruct</strong></p></td>
+<tr class="row-even"><td><p><strong>Phi-4-multimodal-instruct</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">microsoft/Phi-4-multimodal-instruct</span></code></p></td>
 <td><p>Phi-4-multimodal-instruct is the multimodal variant of the Phi-4-mini model, enhanced with LoRA for improved multimodal capabilities. It supports text, vision and audio modalities in SGLang.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>MiMo-VL</strong> (7B)</p></td>
+<tr class="row-odd"><td><p><strong>MiMo-VL</strong> (7B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">XiaomiMiMo/MiMo-VL-7B-RL</span></code></p></td>
 <td><p>Xiaomi’s compact yet powerful vision-language model featuring a native resolution ViT encoder for fine-grained visual details, an MLP projector for cross-modal alignment, and the MiMo-7B language model optimized for complex reasoning tasks.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>GLM-4.5V</strong> (106B) /  <strong>GLM-4.1V</strong>(9B)</p></td>
+<tr class="row-even"><td><p><strong>GLM-4.5V</strong> (106B) /  <strong>GLM-4.1V</strong>(9B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zai-org/GLM-4.5V</span></code></p></td>
 <td><p>GLM-4.5V and GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning</p></td>
 <td><p>Use <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">glm-4v</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>GLM-OCR</strong></p></td>
+<tr class="row-odd"><td><p><strong>GLM-OCR</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zai-org/GLM-OCR</span></code></p></td>
 <td><p>GLM-OCR: A fast and accurate general OCR model</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>DotsVLM</strong> (General/OCR)</p></td>
+<tr class="row-even"><td><p><strong>DotsVLM</strong> (General/OCR)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">rednote-hilab/dots.vlm1.inst</span></code></p></td>
 <td><p>RedNote’s vision-language model built on a 1.2B vision encoder and DeepSeek V3 LLM, featuring NaViT vision encoder trained from scratch with dynamic resolution support and enhanced OCR capabilities through structured image data training.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>DotsVLM-OCR</strong></p></td>
+<tr class="row-odd"><td><p><strong>DotsVLM-OCR</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">rednote-hilab/dots.ocr</span></code></p></td>
 <td><p>Specialized OCR variant of DotsVLM optimized for optical character recognition tasks with enhanced text extraction and document understanding capabilities.</p></td>
 <td><p>Don’t use <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>NVILA</strong> (8B, 15B, Lite-2B, Lite-8B, Lite-15B)</p></td>
+<tr class="row-even"><td><p><strong>NVILA</strong> (8B, 15B, Lite-2B, Lite-8B, Lite-15B)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Efficient-Large-Model/NVILA-8B</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">chatml</span></code></p></td>
 <td><p>NVILA explores the full stack efficiency of multi-modal design, achieving cheaper training, faster deployment and better performance.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>NVIDIA Nemotron Nano 2.0 VL</strong></p></td>
+<tr class="row-odd"><td><p><strong>NVIDIA Nemotron Nano 2.0 VL</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16</span></code></p></td>
 <td><p>NVIDIA Nemotron Nano v2 VL enables multi-image reasoning and video understanding, along with strong document intelligence, visual Q&amp;A and summarization capabilities. It builds on Nemotron Nano V2, a hybrid Mamba-Transformer LLM, in order to achieve higher inference throughput in long document and video scenarios.</p></td>
 <td><p>Use <code class="docutils literal notranslate"><span class="pre">--trust-remote-code</span></code>. You may need to adjust <code class="docutils literal notranslate"><span class="pre">--max-mamba-cache-size</span></code> [default is 512] to fit memory constraints.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Ernie4.5-VL</strong></p></td>
+<tr class="row-even"><td><p><strong>Ernie4.5-VL</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">baidu/ERNIE-4.5-VL-28B-A3B-PT</span></code></p></td>
 <td><p>Baidu’s vision-language models(28B,424B). Support image and video comprehension, and also support thinking.</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>JetVLM</strong></p></td>
+<tr class="row-odd"><td><p><strong>JetVLM</strong></p></td>
 <td><p></p></td>
 <td><p>JetVLM is an vision-language model designed for high-performance multimodal understanding and generation tasks built upon Jet-Nemotron.</p></td>
 <td><p>Coming soon</p></td>
