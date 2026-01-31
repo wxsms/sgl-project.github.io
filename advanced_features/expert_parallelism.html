@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d67f3195"></script>
+    <script src="../_static/documentation_options.js?v=03ad9d80"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -507,6 +507,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workload-balancer">Workload Balancer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ep-with-spectulative-decoding">EP with Spectulative Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend-npu-guidance">Ascend NPU Guidance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-on-sglang-configuration-in-ascend-npu">Guidance on SGLang configuration in Ascend NPU</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-ascend-introduction">DeepEP Ascend Introduction</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -566,7 +571,7 @@ document.write(`
 </table>
 </div>
 <p>DeepEP and Mooncake backends support two modes for token dispatch: <code class="docutils literal notranslate"><span class="pre">normal</span></code> mode (optimized for prefill workloads with high throughput) and <code class="docutils literal notranslate"><span class="pre">low_latency</span></code> mode (optimized for decode workloads with low latency and CUDA Graph compatibility). MORI backend only supports <code class="docutils literal notranslate"><span class="pre">normal</span></code> mode now. Users are recommended to set <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">auto</span></code> to enable automatic dispatch mode switching during runtime. Setting <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">normal</span></code> or <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">low_latency</span></code> is useful for debugging or development purposes.</p>
-<p>Currently, DeepEP, Mooncake and MORI only support cases where <code class="docutils literal notranslate"><span class="pre">ep_size</span> <span class="pre">=</span> <span class="pre">tp_size</span></code>. For hybrid EP and TP (i.e., <code class="docutils literal notranslate"><span class="pre">ep_size</span> <span class="pre">&lt;</span> <span class="pre">tp_size</span></code>), only the <code class="docutils literal notranslate"><span class="pre">none</span></code> backend (All-Reduce or All-Gather-based dispatching) is supported.</p>
+<p>Currently, DeepEP, Mooncake, <code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code> and MORI only support cases where <code class="docutils literal notranslate"><span class="pre">ep_size</span> <span class="pre">=</span> <span class="pre">tp_size</span></code>. For hybrid EP and TP (i.e., <code class="docutils literal notranslate"><span class="pre">ep_size</span> <span class="pre">&lt;</span> <span class="pre">tp_size</span></code>), only the <code class="docutils literal notranslate"><span class="pre">none</span></code> backend (All-Reduce or All-Gather-based dispatching) is supported.</p>
 </section>
 <section id="backends-for-moe-computation">
 <h3>Backends for MoE Computation<a class="headerlink" href="#backends-for-moe-computation" title="Link to this heading">#</a></h3>
@@ -730,6 +735,54 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="ascend-npu-guidance">
+<h2>Ascend NPU Guidance<a class="headerlink" href="#ascend-npu-guidance" title="Link to this heading">#</a></h2>
+<section id="guidance-on-sglang-configuration-in-ascend-npu">
+<h3>Guidance on SGLang configuration in Ascend NPU<a class="headerlink" href="#guidance-on-sglang-configuration-in-ascend-npu" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--moe-a2a-backend</span></code> only supports <code class="docutils literal notranslate"><span class="pre">deepep</span></code> and <code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code> backends,</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">deepep</span></code>: The mechanism is consistent with the above description.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code>: Offer a large fused operator which integrates all operations between dispatch and combine to boost MoE computation. Only used for decode stage in PD Disaggregation Mode.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--moe-runner-backend</span></code> parameter does not need to be configured.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--deepep-mode</span></code>:</p>
+<ul>
+<li><p>In PD mixed mode, please set <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">auto</span></code>.</p></li>
+<li><p>In PD Disaggregation Mode, prefill instance sets <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">normal</span></code>, and decode instance sets <code class="docutils literal notranslate"><span class="pre">--deepep-mode</span> <span class="pre">low_latency</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="deepep-ascend-introduction">
+<h3>DeepEP Ascend Introduction<a class="headerlink" href="#deepep-ascend-introduction" title="Link to this heading">#</a></h3>
+<p>DeepEP Ascend is the adapted version of the DeepEP communication library for Huawei Ascend NPUs, specifically designed for Mixture-of-Experts (MoE) model Expert Parallelism (EP).
+It supports the Ant-moving Function (Split the sequence length into rounds for streaming batch transmission) to optimize the buffer size occupied during collective communication in prefill stage, especially for long sequences.</p>
+<p>Ant-moving Function can be enabled for both the dispatch and combine phases via the following environment variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DEEPEP_NORMAL_LONG_SEQ_PER_ROUND_TOKENS</span></code>: Enable ant-moving function in dispatch stage. Indicates the number of tokens transmitted per round on each rank, default 8192.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DEEPEP_NORMAL_LONG_SEQ_ROUND</span></code>: Enable ant-moving function in dispatch stage. Indicates the number of rounds transmitted on each rank, default 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DEEPEP_NORMAL_COMBINE_ENABLE_LONG_SEQ</span></code>: Enable ant-moving function in combine stage, default 0 (means disabled).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">DEEPEP_NORMAL_LONG_SEQ_PER_ROUND_TOKENS</span> <span class="pre">*</span> <span class="pre">DEEPEP_NORMAL_LONG_SEQ_ROUND</span></code> means input sequence length. When the input sequence length exceeds 8192, it is recommended to enable the ant-moving function in both dispatch and combine phase.</p>
+<p>The environment variable <code class="docutils literal notranslate"><span class="pre">HCCL_BUFFSIZE</span></code> is used to configure the buffer size (MB) actually allocated. Its calculation formula is as follows:</p>
+<div class="highlight-angular2html notranslate"><div class="highlight"><pre><span></span># Enable Ant-moving Function
+HCCL_BUFFSIZE &gt;= 2 * (102MB + 4MB + DEEPEP_NORMAL_LONG_SEQ_PER_ROUND_TOKENS * (hidden_size + hidden_size + hidden_size) * topk) + PADDING_BUFFSIZE
+
+# Disable Ant-moving Function
+HCCL_BUFFSIZE &gt;= 2 * (102MB + 4MB + TOTAL_SEQ_LEN * (hidden_size + hidden_size) * topk) + PADDING_BUFFSIZE
+</pre></div>
+</div>
+<p>Wherein the parameters are described as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hidden_size</span></code>: hidden size in model config.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">topk</span></code>: The number of selected routing experts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TOTAL_SEQ_LEN</span></code>: input sequence length.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PADDING_BUFFSIZE</span></code>: A value of 20 or greater is recommended.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -796,6 +849,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workload-balancer">Workload Balancer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ep-with-spectulative-decoding">EP with Spectulative Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend-npu-guidance">Ascend NPU Guidance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guidance-on-sglang-configuration-in-ascend-npu">Guidance on SGLang configuration in Ascend NPU</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepep-ascend-introduction">DeepEP Ascend Introduction</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
