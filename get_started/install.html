@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=48ffef83"></script>
+    <script src="../_static/documentation_options.js?v=d710d978"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -521,13 +521,14 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </pre></div>
 </div>
 <p><strong>Quick fixes to common problems</strong></p>
-<ul>
-<li><p>In some cases (e.g., GB200), the above command might install a wrong torch version (e.g., the CPU version) due to dependency resolution. To fix this, you can first run the above command and then force-reinstall the correct <a class="reference external" href="https://pytorch.org/get-started/locally/">PyTorch</a> with the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;torch==2.9.1&quot;</span> <span class="s2">&quot;torchvision&quot;</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu129</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span>
+<ul class="simple">
+<li><p>For CUDA 13, Docker is recommended (see Method 3 note on B300/GB300/CUDA 13). If you do not have Docker access, an extra index url needs to be provided when installing wheels:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang&quot;</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu130</span>
 </pre></div>
 </div>
-</li>
-<li><p>For CUDA 13, Docker is recommended (see the Method 3 note on B300/GB300/CUDA 13). If you do not have Docker access, installing the matching <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> wheel from <a class="reference external" href="https://github.com/sgl-project/whl/releases">the sgl-project whl releases</a> after installing SGLang also works. Replace <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> with the <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> version required by your SGLang (you can find this by running <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">sgl_kernel</span></code>). Examples:</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> wheel for CUDA 13 can be downloaded from <a class="reference external" href="https://github.com/sgl-project/whl/blob/gh-pages/cu130/sgl-kernel/index.html">the sgl-project whl releases</a>. Replace <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> with the <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> version required by your SGLang install (you can find this by running <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">sgl_kernel</span></code>). Examples:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># x86_64</span>
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;https://github.com/sgl-project/whl/releases/download/vX.Y.Z/sgl_kernel-X.Y.Z+cu130-cp310-abi3-manylinux2014_x86_64.whl&quot;</span>
 
@@ -536,7 +537,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </pre></div>
 </div>
 </li>
-<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>, set it to your CUDA install root with either of the following solutions:</p>
+<li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>. Please set it to your CUDA install root with either of the following solutions:</p>
 <ol class="arabic simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=/usr/local/cuda-&lt;your-cuda-version&gt;</span></code> to set the <code class="docutils literal notranslate"><span class="pre">CUDA_HOME</span></code> environment variable.</p></li>
 <li><p>Install FlashInfer first following <a class="reference external" href="https://docs.flashinfer.ai/installation.html">FlashInfer installation doc</a>, then install SGLang as described above.</p></li>
