@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=d053e94e"></script>
+    <script src="_static/documentation_options.js?v=ceccc04e"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -493,6 +493,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-style-guidelines">Documentation Style Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-build-deployment-and-ci">Documentation Build, Deployment, and CI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-execution-make-compile">Notebook Execution (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">compile</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-rendering-make-html">Web Rendering (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-export-make-markdown">Markdown Export (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">markdown</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-execution">CI Execution</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -551,7 +558,6 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </div>
 </section>
 </section>
-<hr class="docutils" />
 <section id="documentation-style-guidelines">
 <h2>Documentation Style Guidelines<a class="headerlink" href="#documentation-style-guidelines" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -565,6 +571,67 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 <li><p>Do not use absolute links (e.g., <code class="docutils literal notranslate"><span class="pre">https://docs.sglang.io/get_started/install.html</span></code>). Always prefer relative links (e.g., <code class="docutils literal notranslate"><span class="pre">../get_started/install.md</span></code>).</p></li>
 <li><p>Follow the existing examples to learn how to launch a server, send a query and other common styles.</p></li>
 </ul>
+</section>
+<section id="documentation-build-deployment-and-ci">
+<h2>Documentation Build, Deployment, and CI<a class="headerlink" href="#documentation-build-deployment-and-ci" title="Link to this heading">#</a></h2>
+<p>The SGLang documentation pipeline is based on <strong>Sphinx</strong> and supports rendering Jupyter notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) into HTML/Markdown for web display. Detailed logits can be found in the <a class="reference download internal" download="" href="_downloads/b67911656ef5d18c4ae36cb6741b7965/Makefile"><span class="xref download myst">Makefile</span></a>.</p>
+<section id="notebook-execution-make-compile">
+<h3>Notebook Execution (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">compile</span></code>)<a class="headerlink" href="#notebook-execution-make-compile" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">compile</span></code> target is responsible for executing notebooks before rendering:</p>
+<ul class="simple">
+<li><p>Finds all <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files under <code class="docutils literal notranslate"><span class="pre">docs/</span></code> (excluding <code class="docutils literal notranslate"><span class="pre">_build/</span></code>)</p></li>
+<li><p>Executes notebooks in parallel using GNU Parallel, with a relatively small <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code></p></li>
+<li><p>Wraps execution with <code class="docutils literal notranslate"><span class="pre">retry</span></code> to reduce flaky failures</p></li>
+<li><p>Executes notebooks via <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbconvert</span> <span class="pre">--execute</span> <span class="pre">--inplace</span></code></p></li>
+<li><p>Records execution timing in <code class="docutils literal notranslate"><span class="pre">logs/timing.log</span></code></p></li>
+</ul>
+<p>This step ensures notebooks contain up-to-date outputs with each commit in the main branch before rendering.</p>
+</section>
+<section id="web-rendering-make-html">
+<h3>Web Rendering (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>)<a class="headerlink" href="#web-rendering-make-html" title="Link to this heading">#</a></h3>
+<p>After compilation, Sphinx builds the website:</p>
+<ul class="simple">
+<li><p>Reads Markdown, reStructuredText, and Jupyter notebooks</p></li>
+<li><p>Renders them into HTML pages</p></li>
+<li><p>Outputs the website into:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>This directory is the source for online documentation hosting.</p>
+</section>
+<section id="markdown-export-make-markdown">
+<h3>Markdown Export (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">markdown</span></code>)<a class="headerlink" href="#markdown-export-make-markdown" title="Link to this heading">#</a></h3>
+<p>To support downstream consumers, we add a <strong>new Makefile target</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>markdown
+</pre></div>
+</div>
+<p>This target:</p>
+<ul class="simple">
+<li><p>Does <strong>not modify</strong> <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">compile</span></code></p></li>
+<li><p>Scans all <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files (excluding <code class="docutils literal notranslate"><span class="pre">_build/</span></code>)</p></li>
+<li><p>Converts notebooks directly to Markdown using <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbconvert</span> <span class="pre">--to</span> <span class="pre">markdown</span></code></p></li>
+<li><p>Writes Markdown artifacts into the existing build directory:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">markdown</span><span class="o">/&lt;</span><span class="n">relative</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docs/advanced_features/lora.ipynb
+→ docs/_build/html/markdown/advanced_features/lora.md
+</pre></div>
+</div>
+</section>
+<section id="ci-execution">
+<h3>CI Execution<a class="headerlink" href="#ci-execution" title="Link to this heading">#</a></h3>
+<p>In our <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/workflows/release-docs.yml">CI</a>, the documentation pipeline first gets all the executed results and renders HTML and Markdown by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>compile<span class="w">    </span><span class="c1"># execute notebooks (ensure outputs are up to date)</span>
+make<span class="w"> </span>html<span class="w">       </span><span class="c1"># build website as usual</span>
+make<span class="w"> </span>markdown<span class="w">   </span><span class="c1"># export markdown artifacts into _build/html/markdown</span>
+</pre></div>
+</div>
+<p>Then, the compiled results are forced pushed to <a class="reference external" href="https://github.com/sgl-project/sgl-project.github.io">sgl-project.io</a> for rendering. In other words, sgl-project.io is push-only. All the changes of SGLang docs should be made directly in SGLang main repo, then push to the sgl-project.io.</p>
+</section>
 </section>
 </section>
 
@@ -601,6 +668,13 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-style-guidelines">Documentation Style Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-build-deployment-and-ci">Documentation Build, Deployment, and CI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-execution-make-compile">Notebook Execution (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">compile</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-rendering-make-html">Web Rendering (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-export-make-markdown">Markdown Export (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">markdown</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-execution">CI Execution</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
