@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b62ce66f"></script>
+    <script src="../_static/documentation_options.js?v=70d9a498"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -664,10 +664,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <section id="nvlink-transport-configuration">
 <h4>NVLink Transport Configuration<a class="headerlink" href="#nvlink-transport-configuration" title="Link to this heading">#</a></h4>
 <p>To enable NVLink transport for KV cache transfers with the mooncake backend (recommended for NVL72 deployments), set the following environment variables. Note that auxiliary data transfer will still use TCP as a temporary workaround.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span><span class="o">=</span>True
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span><span class="o">=</span>NVLINK
 <span class="nb">export</span><span class="w"> </span><span class="nv">MC_FORCE_MNNVL</span><span class="o">=</span>True
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">SGLANG_MOONCAKE_CUSTOM_MEM_POOL</span></code> environment variable enables the custom memory pool. Supported values are <code class="docutils literal notranslate"><span class="pre">NVLINK</span></code> (or <code class="docutils literal notranslate"><span class="pre">True</span></code>), <code class="docutils literal notranslate"><span class="pre">BAREX</span></code>, and <code class="docutils literal notranslate"><span class="pre">INTRA_NODE_NVLINK</span></code>.</p>
 </section>
 <section id="prefill-server-configuration">
 <h4>Prefill Server Configuration<a class="headerlink" href="#prefill-server-configuration" title="Link to this heading">#</a></h4>
