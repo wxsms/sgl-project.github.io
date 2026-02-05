@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=70d9a498"></script>
+    <script src="../_static/documentation_options.js?v=813c3936"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -563,7 +563,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <li><p><strong>Huggingface model cache</strong>: mounting model cache can avoid re-download every time docker restarts. Default location on Linux is <code class="docutils literal notranslate"><span class="pre">~/.cache/huggingface/</span></code>.</p></li>
 <li><p><strong>SGLang repository</strong>: code changes in the SGLang local repository will be automatically synced to the .devcontainer.</p></li>
 </ol>
-<p>Example 1: Monting local cache folder <code class="docutils literal notranslate"><span class="pre">/opt/dlami/nvme/.cache</span></code> but not the SGLang repo. Use this when you prefer to manually transfer local code changes to the devcontainer.</p>
+<p>Example 1: Mounting local cache folder <code class="docutils literal notranslate"><span class="pre">/opt/dlami/nvme/.cache</span></code> but not the SGLang repo. Use this when you prefer to manually transfer local code changes to the devcontainer.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="w"> </span>32g<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-v<span class="w"> </span>/opt/dlami/nvme/.cache:/root/.cache<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="w"> </span>sglang_zhyncs<span class="w"> </span>lmsysorg/sglang:dev<span class="w"> </span>/bin/zsh
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sglang_zhyncs<span class="w"> </span>/bin/zsh
 </pre></div>

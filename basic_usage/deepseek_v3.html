@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=70d9a498"></script>
+    <script src="../_static/documentation_options.js?v=813c3936"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -776,7 +776,7 @@ Add <code class="docutils literal notranslate"><span class="pre">--speculative-a
 <p>Sample Request:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="s2">&quot;http://127.0.0.1:30000/v1/chat/completions&quot;</span> \
 <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> \
-<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;temperature&quot;: 0, &quot;max_tokens&quot;: 100, &quot;model&quot;: &quot;deepseek-ai/DeepSeek-V3-0324&quot;, &quot;tools&quot;: [{&quot;type&quot;: &quot;function&quot;, &quot;function&quot;: {&quot;name&quot;: &quot;query_weather&quot;, &quot;description&quot;: &quot;Get weather of an city, the user should supply a city first&quot;, &quot;parameters&quot;: {&quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: {&quot;city&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The city, e.g. Beijing&quot;}}, &quot;required&quot;: [&quot;city&quot;]}}}], &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hows the weather like in Qingdao today&quot;}]}&#39;</span>
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;temperature&quot;: 0, &quot;max_tokens&quot;: 100, &quot;model&quot;: &quot;deepseek-ai/DeepSeek-V3-0324&quot;, &quot;tools&quot;: [{&quot;type&quot;: &quot;function&quot;, &quot;function&quot;: {&quot;name&quot;: &quot;query_weather&quot;, &quot;description&quot;: &quot;Get weather of a city, the user should supply a city first&quot;, &quot;parameters&quot;: {&quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: {&quot;city&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The city, e.g. Beijing&quot;}}, &quot;required&quot;: [&quot;city&quot;]}}}], &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;How&#39;</span>\<span class="s1">&#39;&#39;</span><span class="n">s</span> <span class="n">the</span> <span class="n">weather</span> <span class="n">like</span> <span class="ow">in</span> <span class="n">Qingdao</span> <span class="n">today</span><span class="s2">&quot;}]}&#39;</span>
 </pre></div>
 </div>
 <p>Expected Response</p>
@@ -787,7 +787,7 @@ Add <code class="docutils literal notranslate"><span class="pre">--speculative-a
 <p>Sample Streaming Request:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="s2">&quot;http://127.0.0.1:30000/v1/chat/completions&quot;</span> \
 <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> \
-<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;temperature&quot;: 0, &quot;max_tokens&quot;: 100, &quot;model&quot;: &quot;deepseek-ai/DeepSeek-V3-0324&quot;,&quot;stream&quot;:true,&quot;tools&quot;: [{&quot;type&quot;: &quot;function&quot;, &quot;function&quot;: {&quot;name&quot;: &quot;query_weather&quot;, &quot;description&quot;: &quot;Get weather of an city, the user should supply a city first&quot;, &quot;parameters&quot;: {&quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: {&quot;city&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The city, e.g. Beijing&quot;}}, &quot;required&quot;: [&quot;city&quot;]}}}], &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hows the weather like in Qingdao today&quot;}]}&#39;</span>
+<span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;temperature&quot;: 0, &quot;max_tokens&quot;: 100, &quot;model&quot;: &quot;deepseek-ai/DeepSeek-V3-0324&quot;,&quot;stream&quot;:true,&quot;tools&quot;: [{&quot;type&quot;: &quot;function&quot;, &quot;function&quot;: {&quot;name&quot;: &quot;query_weather&quot;, &quot;description&quot;: &quot;Get weather of a city, the user should supply a city first&quot;, &quot;parameters&quot;: {&quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: {&quot;city&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The city, e.g. Beijing&quot;}}, &quot;required&quot;: [&quot;city&quot;]}}}], &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;How&#39;</span>\<span class="s1">&#39;&#39;</span><span class="n">s</span> <span class="n">the</span> <span class="n">weather</span> <span class="n">like</span> <span class="ow">in</span> <span class="n">Qingdao</span> <span class="n">today</span><span class="s2">&quot;}]}&#39;</span>
 </pre></div>
 </div>
 <p>Expected Streamed Chunks (simplified for clarity):</p>

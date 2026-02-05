@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=70d9a498"></script>
+    <script src="../_static/documentation_options.js?v=813c3936"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -504,7 +504,7 @@ document.write(`
 <h1>DP for Multi-Modal Encoder in SGLang<a class="headerlink" href="#dp-for-multi-modal-encoder-in-sglang" title="Link to this heading">#</a></h1>
 <p>A typical VLM architecture involves two main components: an multi-modal encoder and a text decoder.</p>
 <p>Most VLMs utilize a Vision Transformer (ViT) as their multi-modal encoder, it is responsible for processing visual data, extracting features (objects, colors, textures, etc.), and transforming them into a format that can be understood by the model.</p>
-<p>The text deocoder is based on LLM. It processes textual data and generates output based on the encoded visual features.</p>
+<p>The text decoder is based on LLM. It processes textual data and generates output based on the encoded visual features.</p>
 <p>However, since the size of ViT is very small compared to language decoders,
 there is relatively little gain from TP. On the other hand, TP incurs significant communication
 overhead because of all-reduce being performed after every layer.</p>
