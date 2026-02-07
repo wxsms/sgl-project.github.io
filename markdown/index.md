@@ -44,7 +44,8 @@ get\_started/install.md
 basic\_usage/send\_request.ipynb basic\_usage/openai\_api.rst
 basic\_usage/ollama\_api.md basic\_usage/offline\_engine\_api.ipynb
 basic\_usage/native\_api.ipynb basic\_usage/sampling\_params.md
-basic\_usage/popular\_model\_usage.rst
+basic\_usage/popular\_model\_usage.rst basic\_usage/diffusion\_llms.md
+basic\_usage/diffusion.md
 
 </div>
 
@@ -76,18 +77,12 @@ advanced\_features/sglang\_for\_rl.md
 
 </div>
 
-<div class="toctree" data-maxdepth="1" data-caption="Supported Models">
+<div class="toctree" data-maxdepth="2" data-caption="Supported Models">
 
-supported\_models/generative\_models.md
-supported\_models/multimodal\_language\_models.md
-supported\_models/diffusion\_language\_models.md
-supported\_models/diffusion\_models.md
-supported\_models/embedding\_models.md
-supported\_models/reward\_models.md supported\_models/rerank\_models.md
-supported\_models/classify\_models.md
-supported\_models/support\_new\_models.md
-supported\_models/transformers\_fallback.md
-supported\_models/modelscope.md supported\_models/mindspore\_models.md
+supported\_models/text\_generation/index
+supported\_models/image\_generation/index
+supported\_models/retrieval\_ranking/index
+supported\_models/specialized/index supported\_models/extending/index
 
 </div>
 

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=1c4648b0"></script>
+    <script src="../_static/documentation_options.js?v=af561a53"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Contribution Guide" href="ascend_contribution_guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 05, 2026"/>
+    <meta name="docbuild:last-update" content="Feb 07, 2026"/>
   </head>
   
   
@@ -176,6 +176,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/diffusion_llms.html">Diffusion Language Models (dLLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/diffusion.html">Diffusion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="nav bd-sidenav">
@@ -206,28 +208,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/generative_models.html">Large Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/diffusion_language_models.html">Diffusion Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/diffusion_models.html">Diffusion Models</a></li>
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/rerank_models.html">Rerank Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/classify_models.html">Classification API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/mindspore_models.html">MindSpore Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/text_generation/index.html">Text Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/image_generation/index.html">Image Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/retrieval_ranking/index.html">Retrieval &amp; Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/specialized/index.html">Specialized Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/extending/index.html">Extending SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="current nav bd-sidenav">
@@ -240,6 +225,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_support_models.html">Support Models on Ascend NPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_deepseek_example.html">DeepSeek examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_qwen3_examples.html">Qwen3 examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mindspore_backend.html">MindSpore Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Best Practice on Ascend NPU</a></li>
 </ul>
@@ -611,7 +597,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Benchmark</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-32b-high-throughput-50ms-3">Qwen3 32B High Throughput 50ms 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-30b-high-throughput-50ms-3">Qwen3 30B High Throughput 50ms 3</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Model Deployment</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Benchmark</a></li>
 </ul>
@@ -821,7 +807,7 @@ you encounter issues or have any questions, please <a class="reference external"
 <td><p>4</p></td>
 <td><p>PD Mixed</p></td>
 <td><p>6K-1.5K</p></td>
-<td><p>W8A8</p></td>
+<td><p>BF16</p></td>
 <td><p><a class="reference internal" href="#qwen3-32b-low-latency-18ms"><span class="std std-ref">Optimal Configuration</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>Qwen3-32B</p></td>
@@ -928,7 +914,7 @@ you encounter issues or have any questions, please <a class="reference external"
 <td><p>PD Mixed</p></td>
 <td><p>3.5K-1.5K</p></td>
 <td><p>W8A8</p></td>
-<td><p><a class="reference internal" href="#qwen3-32b-high-throughput-50ms-3"><span class="std std-ref">Optimal Configuration</span></a></p></td>
+<td><p><a class="reference internal" href="#qwen3-30b-high-throughput-50ms-3"><span class="std std-ref">Optimal Configuration</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Qwen3-480B</p></td>
 <td><p>Atlas 800I A3</p></td>
@@ -2512,10 +2498,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w">  </span>--quantization<span class="w"> </span>modelslim<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">78</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--chunked-prefill-size<span class="w"> </span><span class="m">65536</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">65536</span><span class="w">  </span><span class="se">\</span>
+<span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">49152</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">72</span><span class="w"> </span><span class="m">78</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w">  </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.72<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">72</span><span class="w"> </span><span class="m">78</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
 </pre></div>
 </div>
 </section>
@@ -2589,8 +2575,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </div>
 </section>
 </section>
-<section id="qwen3-32b-high-throughput-50ms-3">
-<h3>Qwen3 32B High Throughput 50ms 3<a class="headerlink" href="#qwen3-32b-high-throughput-50ms-3" title="Link to this heading">#</a></h3>
+<section id="qwen3-30b-high-throughput-50ms-3">
+<h3>Qwen3 30B High Throughput 50ms 3<a class="headerlink" href="#qwen3-30b-high-throughput-50ms-3" title="Link to this heading">#</a></h3>
 <p>Model: Qwen3 30B</p>
 <p>Hardware: Atlas 800I A3 1Card</p>
 <p>DeployMode: PD Mixed</p>
@@ -2630,13 +2616,13 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DISABLE_EAGLE3_QUANT</span><span class="o">=</span><span class="m">1</span>
 
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">7239</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w">  </span>--quantization<span class="w"> </span>modelslim<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">192</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">32768</span><span class="w"> </span><span class="se">\</span>
@@ -3067,13 +3053,13 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DISABLE_EAGLE3_QUANT</span><span class="o">=</span><span class="m">1</span>
 
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">7339</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span>--device<span class="w"> </span>npu<span class="w">   </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">65536</span><span class="w">  </span><span class="se">\</span>
@@ -3192,7 +3178,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DISABLE_EAGLE3_QUANT</span><span class="o">=</span><span class="m">1</span>
 
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">7239</span><span class="w"> </span>--trust-remote-code<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="se">\</span>
@@ -3378,7 +3363,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Benchmark</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-32b-high-throughput-50ms-3">Qwen3 32B High Throughput 50ms 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-30b-high-throughput-50ms-3">Qwen3 30B High Throughput 50ms 3</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Model Deployment</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Benchmark</a></li>
 </ul>
@@ -3458,7 +3443,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 05, 2026.
+  Last updated on Feb 07, 2026.
   <br/>
 </p>
   </div>

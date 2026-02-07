@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=1c4648b0"></script>
+    <script src="../_static/documentation_options.js?v=af561a53"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,7 +58,7 @@
     <link rel="prev" title="Attention Backend" href="attention_backend.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 05, 2026"/>
+    <meta name="docbuild:last-update" content="Feb 07, 2026"/>
   </head>
   
   
@@ -179,6 +179,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_api.html">SGLang Native APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/sampling_params.html">Sampling Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/popular_model_usage.html">Popular Model Usage (DeepSeek, GPT-OSS, GLM, Llama, MiniMax, Qwen, and more)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/diffusion_llms.html">Diffusion Language Models (dLLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage/diffusion.html">Diffusion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Features</span></p>
 <ul class="current nav bd-sidenav">
@@ -209,28 +211,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/generative_models.html">Large Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/multimodal_language_models.html">Multimodal Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/diffusion_language_models.html">Diffusion Language Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/diffusion_models.html">Diffusion Models</a></li>
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/embedding_models.html">Embedding Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/reward_models.html">Reward Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/rerank_models.html">Rerank Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/classify_models.html">Classification API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/support_new_models.html">How to Support New Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/transformers_fallback.html">Transformers fallback in SGLang</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/modelscope.html">Use Models From ModelScope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_models/mindspore_models.html">MindSpore Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/text_generation/index.html">Text Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/image_generation/index.html">Image Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/retrieval_ranking/index.html">Retrieval &amp; Ranking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/specialized/index.html">Specialized Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_models/extending/index.html">Extending SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
@@ -490,18 +475,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Performance-Highlights">Performance Highlights</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-Decoding">EAGLE Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Jump-to-sections">Jump to sections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Quick-guidance">Quick guidance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Method-comparison-(mini-table)">Method comparison (mini table)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Performance-Highlights">Performance Highlights</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-decoding">EAGLE-2 decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-with-torch.compile">EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-3-Decoding">EAGLE-3 Decoding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Multi-Token-Prediction">Multi Token Prediction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#References">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-Decoding">EAGLE Decoding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-decoding">EAGLE-2 decoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-with-torch.compile">EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-3-Decoding">EAGLE-3 Decoding</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Multi-Token-Prediction">Multi Token Prediction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Standalone-Speculative-Decoding-(Small-Draft-Model)">Standalone Speculative Decoding (Small Draft Model)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Speculative-Decoding-V2-(Overlap-Scheduler)">Speculative Decoding V2 (Overlap Scheduler)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Ngram-Speculative-Decoding">Ngram Speculative Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#References">References</a></li>
 </ul>
             </nav>
         </div>
@@ -519,9 +511,107 @@ document.write(`
     }
 </style><section id="Speculative-Decoding">
 <h1>Speculative Decoding<a class="headerlink" href="#Speculative-Decoding" title="Link to this heading">#</a></h1>
-<p>SGLang now provides an EAGLE-based (EAGLE-2/EAGLE-3) speculative decoding option. Our implementation aims to maximize speed and efficiency and is considered to be among the fastest in open-source LLM engines.</p>
+<p>SGLang provides several speculative decoding options, including EAGLE-2/EAGLE-3, MTP, classic draft-model decoding, and an NGRAM-based variant. Our implementation aims to maximize speed and efficiency and is considered to be among the fastest in open-source LLM engines.</p>
+<section id="Summary">
+<h2>Summary<a class="headerlink" href="#Summary" title="Link to this heading">#</a></h2>
+<section id="Jump-to-sections">
+<h3>Jump to sections<a class="headerlink" href="#Jump-to-sections" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="#EAGLE-Decoding"><span class="std std-ref">EAGLE Decoding</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#EAGLE-2-decoding"><span class="std std-ref">EAGLE-2 decoding</span></a></p></li>
+<li><p>EAGLE-2 Decoding with torch.compile</p></li>
+<li><p><a class="reference internal" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling"><span class="std std-ref">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</span></a></p></li>
+<li><p><a class="reference internal" href="#EAGLE-3-Decoding"><span class="std std-ref">EAGLE-3 Decoding</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#Multi-Token-Prediction"><span class="std std-ref">Multi Token Prediction</span></a></p></li>
+<li><p>Standalone Speculative Decoding (Small Draft Model)</p></li>
+<li><p>Speculative Decoding V2 (Overlap Scheduler)</p></li>
+<li><p><a class="reference internal" href="#Ngram-Speculative-Decoding"><span class="std std-ref">Ngram Speculative Decoding</span></a></p></li>
+</ul>
+</section>
+<section id="Quick-guidance">
+<h3>Quick guidance<a class="headerlink" href="#Quick-guidance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Best speed/quality (recommended)</strong>: Use <strong>EAGLE-3</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE3</span></code>.</p></li>
+<li><p><strong>Strong default / broad compatibility</strong>: Use <strong>EAGLE-2</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code>.</p></li>
+<li><p><strong>Lower ``lm_head`` overhead for EAGLE-2</strong>: Enable <strong>FR-Spec</strong> with <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code>.</p></li>
+<li><p><strong>Model is MTP-enabled</strong>: Use <strong>MTP via speculative decoding</strong> (often with small <code class="docutils literal notranslate"><span class="pre">speculative_num_steps/topk/num_draft_tokens</span></code>, see the example section).</p></li>
+<li><p><strong>You have a smaller draft LLM</strong>: Use <strong>STANDALONE</strong> (<code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">STANDALONE</span></code>).</p></li>
+<li><p><strong>No extra model available</strong>: Use <strong>NGRAM</strong> (<code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">NGRAM</span></code>, CUDA-only).</p></li>
+<li><p><strong>Want overlap scheduler (experimental)</strong>: Enable <strong>SpecV2</strong> with <code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_SPEC_V2=True</span></code> (requires <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code>).</p></li>
+</ul>
+</section>
+<section id="Method-comparison-(mini-table)">
+<h3>Method comparison (mini table)<a class="headerlink" href="#Method-comparison-(mini-table)" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Draft source</p></th>
+<th class="head"><p>Separate draft model?</p></th>
+<th class="head"><p>How to enable</p></th>
+<th class="head"><p>Notes / constraints</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EAGLE-2</p></td>
+<td><p>EAGLE draft model (feature drafting + tree)</p></td>
+<td><p>Typically yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code> + <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span> <span class="pre">...</span></code></p></td>
+<td><p>Tune <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>EAGLE-2 + <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></p></td>
+<td><p>Same as EAGLE-2</p></td>
+<td><p>Typically yes</p></td>
+<td><p>Add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code> (optionally <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>)</p></td>
+<td><p>Further kernel-level optimizations</p></td>
+</tr>
+<tr class="row-even"><td><p>EAGLE-2 + FR-Spec</p></td>
+<td><p>Same as EAGLE-2 + token subset</p></td>
+<td><p>Typically yes</p></td>
+<td><p>Add <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span> <span class="pre">...</span></code></p></td>
+<td><p>Reduces <code class="docutils literal notranslate"><span class="pre">lm_head</span></code> overhead with high-frequency token vocab</p></td>
+</tr>
+<tr class="row-odd"><td><p>EAGLE-3</p></td>
+<td><p>EAGLE3 draft model</p></td>
+<td><p>Yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE3</span></code> + <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span> <span class="pre">...</span></code></p></td>
+<td><p>Best throughput in the benchmark above</p></td>
+</tr>
+<tr class="row-even"><td><p>MTP</p></td>
+<td><p>Built-in multi-token heads (model-specific)</p></td>
+<td><p>Often no</p></td>
+<td><p>See <strong>Multi Token Prediction</strong> section</p></td>
+<td><p>Uses speculative workflow; draft path may be auto-handled for some models</p></td>
+</tr>
+<tr class="row-odd"><td><p>STANDALONE</p></td>
+<td><p>Smaller draft LLM (token-level)</p></td>
+<td><p>Yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">STANDALONE</span></code> + <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span> <span class="pre">...</span></code></p></td>
+<td><p>Does <strong>not</strong> support <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>SpecV2 (experimental)</p></td>
+<td><p>V2 workers + overlap scheduler</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_SPEC_V2=True</span></code></p></td>
+<td><p>Only supports <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code>; applies to <code class="docutils literal notranslate"><span class="pre">EAGLE</span></code>, <code class="docutils literal notranslate"><span class="pre">EAGLE3</span></code>,
+<code class="docutils literal notranslate"><span class="pre">STANDALONE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>NGRAM</p></td>
+<td><p>Ngram cache from previous tokens</p></td>
+<td><p>No</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">NGRAM</span></code></p></td>
+<td><p>CUDA-only; no <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code>; disables overlap scheduler &amp; mixed chunked
+prefill</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="Performance-Highlights">
-<h2>Performance Highlights<a class="headerlink" href="#Performance-Highlights" title="Link to this heading">#</a></h2>
+<h3>Performance Highlights<a class="headerlink" href="#Performance-Highlights" title="Link to this heading">#</a></h3>
 <p>Please see below for the huge improvements on throughput for LLaMA-Instruct 3.1 8B tested on MT bench that can be achieved via EAGLE3 decoding. For further details please see the <a class="reference external" href="https://arxiv.org/pdf/2503.01840">EAGLE3 paper</a>.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -542,11 +632,13 @@ document.write(`
 </tbody>
 </table>
 </div>
+</section>
+</section>
 <section id="EAGLE-Decoding">
-<h3>EAGLE Decoding<a class="headerlink" href="#EAGLE-Decoding" title="Link to this heading">#</a></h3>
+<h2>EAGLE Decoding<a class="headerlink" href="#EAGLE-Decoding" title="Link to this heading">#</a></h2>
 <p>To enable EAGLE speculative decoding the following parameters are relevant:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">speculative_draft_model_path</span></code>: Specifies draft model. This parameter is required.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speculative_draft_model_path</span></code>: Draft model path/weights. <strong>Typically required</strong> for EAGLE/EAGLE3 and STANDALONE. For some MTP-enabled models, this can be omitted (SGLang may auto-handle/auto-fill it).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speculative_num_steps</span></code>: Depth of autoregressive drafting. Increases speculation range but risks rejection cascades. Default is 5.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speculative_eagle_topk</span></code>: Branching factor per step. Improves candidate diversity, will lead to higher acceptance rate, but more lead to higher memory/compute consumption. Default is 4.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speculative_num_draft_tokens</span></code>: Maximum parallel verification capacity. Allows deeper tree evaluation but will lead to higher GPU memory usage. Default is 8.</p></li>
@@ -554,10 +646,8 @@ document.write(`
 <p>These parameters are the same for EAGLE-2 and EAGLE-3.</p>
 <p>You can find the best combinations of these parameters with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a>.</p>
 <p>In the documentation below, we set <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code> to be a small value for faster engine startup. For your own workloads, please tune the above parameters together with <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-running-requests</span></code>, <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> for the best performance.</p>
-</section>
-</section>
 <section id="EAGLE-2-decoding">
-<h2>EAGLE-2 decoding<a class="headerlink" href="#EAGLE-2-decoding" title="Link to this heading">#</a></h2>
+<h3>EAGLE-2 decoding<a class="headerlink" href="#EAGLE-2-decoding" title="Link to this heading">#</a></h3>
 <p>You can enable EAGLE-2 decoding by setting <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code> and choosing an appropriate model.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -575,9 +665,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-02-05 18:37:36] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:37:36] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:37:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:48:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:48:38] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:48:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -601,20 +691,20 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-05 18:37:40] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:37:40] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:37:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:37:42] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-05 18:37:42] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-05 18:37:42] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+[2026-02-07 04:48:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:48:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:48:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:48:46] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-07 04:48:46] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-07 04:48:46] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:37:46] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:37:46] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:37:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:37:46] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:37:46] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:37:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:48:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:48:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:48:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:48:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:48:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:48:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -623,23 +713,23 @@ document.write(`
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-05 18:37:50] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:37:50] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:37:50] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-07 04:48:57] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:48:57] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:48:57] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.32s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.13it/s]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.05it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.66s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.23s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.29s/it]
 
-Capturing batches (bs=1 avail_mem=38.71 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 11.11it/s]
-[2026-02-05 18:37:54] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-05 18:37:54] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=55.11 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.29it/s]
+[2026-02-07 04:49:02] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-07 04:49:02] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.08s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.08s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.28s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.28s/it]
 
-Capturing batches (bs=1 avail_mem=37.10 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.69s/it]
-Capturing batches (bs=1 avail_mem=22.29 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 48.37it/s]
+Capturing batches (bs=1 avail_mem=54.11 GB): 100%|██████████| 4/4 [00:08&lt;00:00,  2.15s/it]
+Capturing batches (bs=1 avail_mem=54.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 79.90it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -671,7 +761,7 @@ Capturing batches (bs=1 avail_mem=22.29 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='7f510fea4caf461391d214fcb73f69bc', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770316690, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='50a13067da6a4b83b3004b0880a111d0', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770439761, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -683,7 +773,7 @@ Capturing batches (bs=1 avail_mem=22.29 GB): 100%|██████████
 </div>
 </section>
 <section id="EAGLE-2-Decoding-with-torch.compile">
-<h2>EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code><a class="headerlink" href="#EAGLE-2-Decoding-with-torch.compile" title="Link to this heading">#</a></h2>
+<h3>EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code><a class="headerlink" href="#EAGLE-2-Decoding-with-torch.compile" title="Link to this heading">#</a></h3>
 <p>You can also enable <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> for further optimizations and optionally set <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -707,20 +797,20 @@ Capturing batches (bs=1 avail_mem=22.29 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-05 18:38:14] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:38:14] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:38:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:38:15] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-05 18:38:15] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-05 18:38:15] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+[2026-02-07 04:49:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:49:26] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:49:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:49:28] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-07 04:49:28] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-07 04:49:28] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:38:19] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:38:19] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:38:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:38:19] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:38:19] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:38:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:49:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:49:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:49:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:49:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:49:35] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:49:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -729,185 +819,185 @@ Capturing batches (bs=1 avail_mem=22.29 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-05 18:38:24] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:38:24] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:38:24] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-07 04:49:40] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:49:40] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:49:40] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.35s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.11it/s]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01&lt;00:00,  1.03it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.65s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.18s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
 
-Capturing batches (bs=2 avail_mem=36.72 GB):  25%|██▌       | 1/4 [00:00&lt;00:00,  4.85it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=55.08 GB):  25%|██▌       | 1/4 [00:00&lt;00:01,  1.67it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04838399961590767, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.04927999898791313, &#34;best_triton_kernel&#34;: &#34;triton_mm_18&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;}
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04864000156521797, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.049695998430252075, &#34;best_triton_kernel&#34;: &#34;triton_mm_18&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;}
 AUTOTUNE mm(128x4096, 4096x12288)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0484 ms 100.0%
-  triton_mm_18 0.0493 ms 98.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_12 0.0528 ms 91.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_8 0.0545 ms 88.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_7 0.0557 ms 86.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_11 0.0563 ms 86.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_17 0.0581 ms 83.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_10 0.0682 ms 71.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_14 0.0684 ms 70.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_4 0.0710 ms 68.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.3317 seconds and 0.2658 seconds precompiling for 20 choices
+  mm 0.0486 ms 100.0%
+  triton_mm_18 0.0497 ms 97.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_12 0.0530 ms 91.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_8 0.0552 ms 88.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_7 0.0562 ms 86.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_11 0.0564 ms 86.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_17 0.0584 ms 83.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_10 0.0679 ms 71.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_14 0.0689 ms 70.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_4 0.0717 ms 67.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3448 seconds and 0.3249 seconds precompiling for 20 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.021983999758958817, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.023135999217629433, &#34;best_triton_kernel&#34;: &#34;triton_mm_27&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.022304000332951546, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.023584000766277313, &#34;best_triton_kernel&#34;: &#34;triton_mm_27&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
 AUTOTUNE mm(128x4096, 4096x4096)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0220 ms 100.0%
-  triton_mm_27 0.0231 ms 95.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_31 0.0266 ms 82.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_23 0.0302 ms 72.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_37 0.0316 ms 69.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_26 0.0394 ms 55.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_30 0.0410 ms 53.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_22 0.0418 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_20 0.0421 ms 52.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_36 0.0425 ms 51.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.2694 seconds and 0.3061 seconds precompiling for 20 choices
+  mm 0.0223 ms 100.0%
+  triton_mm_27 0.0236 ms 94.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_31 0.0269 ms 83.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_23 0.0302 ms 73.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_37 0.0321 ms 69.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_26 0.0396 ms 56.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_30 0.0413 ms 53.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_20 0.0421 ms 53.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_22 0.0423 ms 52.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_36 0.0429 ms 52.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.2833 seconds and 0.3338 seconds precompiling for 20 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_49&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.07587199658155441, &#34;best_triton_pos&#34;: 0}
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_49&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.07583999633789062, &#34;best_triton_pos&#34;: 0}
 AUTOTUNE mm(128x4096, 4096x22016)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_49 0.0759 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  mm 0.0764 ms 99.2%
-  triton_mm_55 0.0781 ms 97.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_50 0.0801 ms 94.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_56 0.0829 ms 91.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_45 0.0892 ms 85.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_46 0.0923 ms 82.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_47 0.0975 ms 77.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_48 0.1007 ms 75.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-  triton_mm_54 0.1013 ms 74.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4327 seconds and 0.1528 seconds precompiling for 20 choices
+  triton_mm_49 0.0758 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  mm 0.0766 ms 99.0%
+  triton_mm_55 0.0787 ms 96.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_50 0.0802 ms 94.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_56 0.0833 ms 91.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_45 0.0940 ms 80.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_46 0.0964 ms 78.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_47 0.0971 ms 78.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_54 0.1021 ms 74.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_48 0.1022 ms 74.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.4243 seconds and 0.1687 seconds precompiling for 20 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04662400111556053, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.04947200044989586, &#34;best_triton_kernel&#34;: &#34;triton_mm_65&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04995200037956238, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.0525440014898777, &#34;best_triton_kernel&#34;: &#34;triton_mm_65&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
 AUTOTUNE mm(128x11008, 11008x4096)
 strides: [11008, 1], [1, 11008]
 dtypes: torch.float16, torch.float16
-  mm 0.0466 ms 100.0%
-  triton_mm_65 0.0495 ms 94.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_69 0.0549 ms 85.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_61 0.0638 ms 73.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_75 0.0680 ms 68.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_64 0.0880 ms 53.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_68 0.0920 ms 50.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_60 0.0944 ms 49.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_74 0.0962 ms 48.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_58 0.0992 ms 47.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.4093 seconds and 0.0002 seconds precompiling for 20 choices
+  mm 0.0500 ms 100.0%
+  triton_mm_65 0.0525 ms 95.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_69 0.0575 ms 86.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_61 0.0655 ms 76.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_75 0.0719 ms 69.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_64 0.0920 ms 54.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_68 0.0953 ms 52.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_60 0.0971 ms 51.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_74 0.0986 ms 50.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_58 0.1013 ms 49.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.4295 seconds and 0.0002 seconds precompiling for 20 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_93&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.09504000097513199, &#34;best_triton_pos&#34;: 0}
+{&#34;num_choices&#34;: 20, &#34;num_triton_choices&#34;: 19, &#34;best_kernel&#34;: &#34;triton_mm_93&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.10384000092744827, &#34;best_triton_pos&#34;: 0}
 AUTOTUNE mm(128x4096, 4096x32000)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_93 0.0950 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_94 0.1042 ms 91.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  mm 0.1042 ms 91.2%
-  triton_mm_88 0.1077 ms 88.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_87 0.1152 ms 82.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_83 0.1154 ms 82.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_92 0.1267 ms 75.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_84 0.1284 ms 74.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_85 0.1363 ms 69.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_89 0.1426 ms 66.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.7330 seconds and 0.2617 seconds precompiling for 20 choices
-Capturing batches (bs=1 avail_mem=38.48 GB):  75%|███████▌  | 3/4 [00:16&lt;00:05,  5.95s/it]Autotune Choices Stats:
-{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04137599840760231, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.04707200080156326, &#34;best_triton_kernel&#34;: &#34;triton_mm_102&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8&#34;}
+  triton_mm_93 0.1038 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_94 0.1046 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  mm 0.1050 ms 98.9%
+  triton_mm_88 0.1083 ms 95.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_83 0.1158 ms 89.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_87 0.1159 ms 89.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_92 0.1241 ms 83.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_84 0.1287 ms 80.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_85 0.1326 ms 78.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_89 0.1384 ms 75.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.5031 seconds and 0.3260 seconds precompiling for 20 choices
+Capturing batches (bs=1 avail_mem=55.05 GB):  75%|███████▌  | 3/4 [00:20&lt;00:07,  7.57s/it]Autotune Choices Stats:
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04761600121855736, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.048767998814582825, &#34;best_triton_kernel&#34;: &#34;triton_mm_111&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8&#34;}
 AUTOTUNE mm(64x4096, 4096x12288)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0414 ms 100.0%
-  triton_mm_102 0.0471 ms 87.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_111 0.0476 ms 86.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_107 0.0477 ms 86.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_103 0.0486 ms 85.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_99 0.0508 ms 81.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_106 0.0545 ms 75.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_96 0.0551 ms 75.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_98 0.0608 ms 68.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_97 0.0630 ms 65.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.6454 seconds and 0.1913 seconds precompiling for 18 choices
+  mm 0.0476 ms 100.0%
+  triton_mm_111 0.0488 ms 97.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_107 0.0488 ms 97.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_103 0.0496 ms 96.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_99 0.0513 ms 92.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_102 0.0552 ms 86.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_106 0.0555 ms 85.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_96 0.0565 ms 84.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_98 0.0618 ms 77.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_97 0.0644 ms 73.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.2841 seconds and 0.2265 seconds precompiling for 18 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.021088000386953354, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.02223999984562397, &#34;best_triton_kernel&#34;: &#34;triton_mm_116&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.021824000403285027, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.022943999618291855, &#34;best_triton_kernel&#34;: &#34;triton_mm_116&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
 AUTOTUNE mm(64x4096, 4096x4096)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  mm 0.0211 ms 100.0%
-  triton_mm_116 0.0222 ms 94.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_120 0.0232 ms 91.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_124 0.0266 ms 79.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_128 0.0304 ms 69.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_119 0.0383 ms 55.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_113 0.0389 ms 54.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_123 0.0401 ms 52.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_115 0.0406 ms 52.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_114 0.0420 ms 50.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.5662 seconds and 0.2461 seconds precompiling for 18 choices
+  mm 0.0218 ms 100.0%
+  triton_mm_116 0.0229 ms 95.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_120 0.0238 ms 91.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_124 0.0268 ms 81.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_128 0.0304 ms 71.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_119 0.0392 ms 55.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_113 0.0397 ms 54.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_123 0.0406 ms 53.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_115 0.0408 ms 53.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_114 0.0427 ms 51.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.2538 seconds and 0.2914 seconds precompiling for 18 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_137&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;, &#34;best_time&#34;: 0.07459200173616409, &#34;best_triton_pos&#34;: 0}
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_137&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;, &#34;best_time&#34;: 0.07513599842786789, &#34;best_triton_pos&#34;: 0}
 AUTOTUNE mm(64x4096, 4096x22016)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_137 0.0746 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_140 0.0750 ms 99.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_136 0.0751 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  mm 0.0752 ms 99.2%
-  triton_mm_141 0.0762 ms 97.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_145 0.0798 ms 93.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_133 0.0827 ms 90.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_142 0.0878 ms 84.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_130 0.0892 ms 83.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-  triton_mm_143 0.0900 ms 82.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.7615 seconds and 0.1611 seconds precompiling for 18 choices
+  triton_mm_137 0.0751 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_140 0.0752 ms 99.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_136 0.0758 ms 99.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  mm 0.0764 ms 98.3%
+  triton_mm_141 0.0766 ms 98.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_145 0.0806 ms 93.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_133 0.0838 ms 89.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_139 0.0922 ms 81.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+  triton_mm_130 0.0935 ms 80.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_142 0.0943 ms 79.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+SingleProcess AUTOTUNE benchmarking takes 0.3433 seconds and 0.1403 seconds precompiling for 18 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_154&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;, &#34;best_time&#34;: 0.04185599833726883, &#34;best_triton_pos&#34;: 0}
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;mm&#34;, &#34;best_time&#34;: 0.04912000149488449, &#34;best_triton_pos&#34;: 1, &#34;best_triton_time&#34;: 0.05071999877691269, &#34;best_triton_kernel&#34;: &#34;triton_mm_150&#34;, &#34;best_triton_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4&#34;}
 AUTOTUNE mm(64x11008, 11008x4096)
 strides: [11008, 1], [1, 11008]
 dtypes: torch.float16, torch.float16
-  triton_mm_154 0.0419 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_150 0.0464 ms 90.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.0477 ms 87.7%
-  triton_mm_158 0.0548 ms 76.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_162 0.0634 ms 66.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_157 0.0840 ms 49.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_153 0.0880 ms 47.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_149 0.0881 ms 47.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_148 0.0918 ms 45.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_147 0.0927 ms 45.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
-SingleProcess AUTOTUNE benchmarking takes 0.8472 seconds and 0.0002 seconds precompiling for 18 choices
+  mm 0.0491 ms 100.0%
+  triton_mm_150 0.0507 ms 96.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_154 0.0523 ms 94.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_158 0.0586 ms 83.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_162 0.0684 ms 71.9% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_153 0.0916 ms 53.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_149 0.0931 ms 52.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_157 0.0953 ms 51.6% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_147 0.0956 ms 51.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+  triton_mm_148 0.0957 ms 51.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.3900 seconds and 0.0002 seconds precompiling for 18 choices
 Autotune Choices Stats:
-{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_175&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4&#34;, &#34;best_time&#34;: 0.09964799880981445, &#34;best_triton_pos&#34;: 0}
+{&#34;num_choices&#34;: 18, &#34;num_triton_choices&#34;: 17, &#34;best_kernel&#34;: &#34;triton_mm_174&#34;, &#34;best_kernel_desc&#34;: &#34;ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4&#34;, &#34;best_time&#34;: 0.10003200173377991, &#34;best_triton_pos&#34;: 0}
 AUTOTUNE mm(64x4096, 4096x32000)
 strides: [4096, 1], [1, 4096]
 dtypes: torch.float16, torch.float16
-  triton_mm_175 0.0996 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
-  triton_mm_174 0.0999 ms 99.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_170 0.1004 ms 99.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
-  triton_mm_179 0.1005 ms 99.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
-  triton_mm_171 0.1013 ms 98.4% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  mm 0.1026 ms 97.1%
-  triton_mm_167 0.1104 ms 90.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
-  triton_mm_172 0.1159 ms 86.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_176 0.1168 ms 85.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
-  triton_mm_173 0.1298 ms 76.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
-SingleProcess AUTOTUNE benchmarking takes 0.9105 seconds and 0.2300 seconds precompiling for 18 choices
-Capturing batches (bs=1 avail_mem=38.48 GB): 100%|██████████| 4/4 [00:34&lt;00:00,  8.61s/it]
-[2026-02-05 18:39:02] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-05 18:39:02] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+  triton_mm_174 0.1000 ms 100.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_175 0.1008 ms 99.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+  triton_mm_179 0.1013 ms 98.8% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+  triton_mm_170 0.1013 ms 98.7% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+  triton_mm_171 0.1019 ms 98.2% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  mm 0.1025 ms 97.6%
+  triton_mm_167 0.1111 ms 90.0% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+  triton_mm_172 0.1159 ms 86.3% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_176 0.1176 ms 85.1% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+  triton_mm_173 0.1307 ms 76.5% ACC_TYPE=&#39;tl.float32&#39;, ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+SingleProcess AUTOTUNE benchmarking takes 0.4035 seconds and 0.2962 seconds precompiling for 18 choices
+Capturing batches (bs=1 avail_mem=55.05 GB): 100%|██████████| 4/4 [00:38&lt;00:00,  9.51s/it]
+[2026-02-07 04:50:23] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-07 04:50:23] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.07s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.07s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.41s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.41s/it]
 
-Capturing batches (bs=1 avail_mem=36.73 GB): 100%|██████████| 4/4 [00:10&lt;00:00,  2.69s/it]
-Capturing batches (bs=1 avail_mem=53.91 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 79.36it/s]
+Capturing batches (bs=1 avail_mem=53.95 GB): 100%|██████████| 4/4 [00:11&lt;00:00,  2.83s/it]
+Capturing batches (bs=1 avail_mem=53.80 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 61.13it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -939,7 +1029,7 @@ Capturing batches (bs=1 avail_mem=53.91 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='cf47292d68944f35998b2affa42e0169', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770316762, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='570f7aaaa4f54e1eb503db3e6c56680e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770439845, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -951,7 +1041,7 @@ Capturing batches (bs=1 avail_mem=53.91 GB): 100%|██████████
 </div>
 </section>
 <section id="EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling">
-<h2>EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling<a class="headerlink" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling" title="Link to this heading">#</a></h2>
+<h3>EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling<a class="headerlink" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling" title="Link to this heading">#</a></h3>
 <p>By employing a truncated high-frequency token vocabulary in the draft model, Eagle speculative decoding reduces <code class="docutils literal notranslate"><span class="pre">lm_head</span></code> computational overhead while accelerating the pipeline without quality degradation. For more details, checkout <a class="reference external" href="https://arxiv.org/pdf/arXiv:2502.14856">the paper</a>.</p>
 <p>In our implementation, set <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code> to enable the optimization. You can get the high-frequency token in FR-Spec from <a class="reference external" href="https://huggingface.co/thunlp/LLaMA3-Instruct-8B-FR-Spec">this model</a>. Or you can obtain high-frequency token by directly downloading these token from <a class="reference external" href="https://github.com/thunlp/FR-Spec/tree/main?tab=readme-ov-file#prepare-fr-spec-vocabulary-subset">this repo</a>.</p>
 <p>Thanks for the contribution from <a class="reference external" href="https://github.com/Achazwl">Weilin Zhao</a> and <a class="reference external" href="https://github.com/Zhou-sx">Zhousx</a>.</p>
@@ -977,53 +1067,53 @@ Capturing batches (bs=1 avail_mem=53.91 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-05 18:39:26] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:39:26] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:39:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:39:28] WARNING model_config.py:1134: Casting torch.bfloat16 to torch.float16.
-[2026-02-05 18:39:28] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-05 18:39:28] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-05 18:39:28] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+[2026-02-07 04:50:50] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:50:50] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:50:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:50:53] WARNING model_config.py:1134: Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:50:53] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-07 04:50:53] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-07 04:50:53] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:39:28] Casting torch.bfloat16 to torch.float16.
-[2026-02-05 18:39:32] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:39:32] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:39:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:39:32] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:39:32] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:39:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:50:53] Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:50:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:50:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:50:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:50:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:50:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:50:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:39:34] Casting torch.bfloat16 to torch.float16.
-[2026-02-05 18:39:34] Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:51:01] Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:51:02] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-05 18:39:36] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:39:36] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:39:36] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-07 04:51:04] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:51:04] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:51:04] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:03&lt;00:10,  3.34s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:06&lt;00:06,  3.31s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:09&lt;00:03,  3.29s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:10&lt;00:00,  2.34s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:10&lt;00:00,  2.69s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.30s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.42s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.35s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.09s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.56s/it]
 
-Capturing batches (bs=1 avail_mem=43.65 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 10.31it/s]
-[2026-02-05 18:39:49] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-05 18:39:49] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2026-02-05 18:39:49] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2026-02-05 18:39:49] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=59.98 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.59it/s]
+[2026-02-07 04:51:21] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-07 04:51:21] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-02-07 04:51:22] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2026-02-07 04:51:22] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.13it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.13it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.06it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.06it/s]
 
-Capturing batches (bs=1 avail_mem=58.94 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.21s/it]
-Capturing batches (bs=1 avail_mem=58.80 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 124.66it/s]
+Capturing batches (bs=1 avail_mem=58.84 GB): 100%|██████████| 4/4 [00:06&lt;00:00,  1.67s/it]
+Capturing batches (bs=1 avail_mem=58.70 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 95.61it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1055,7 +1145,7 @@ Capturing batches (bs=1 avail_mem=58.80 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='634fb4b6e3a54151928b97fb51ef73fd', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770316803, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='af8843c8b0304bceb4ae084dbb57459b', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770439899, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1067,7 +1157,7 @@ Capturing batches (bs=1 avail_mem=58.80 GB): 100%|██████████
 </div>
 </section>
 <section id="EAGLE-3-Decoding">
-<h2>EAGLE-3 Decoding<a class="headerlink" href="#EAGLE-3-Decoding" title="Link to this heading">#</a></h2>
+<h3>EAGLE-3 Decoding<a class="headerlink" href="#EAGLE-3-Decoding" title="Link to this heading">#</a></h3>
 <p>You can enable EAGLE-3 decoding by setting <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE3</span></code> and choosing an appropriate model.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -1091,53 +1181,53 @@ Capturing batches (bs=1 avail_mem=58.80 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-05 18:40:06] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:40:06] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:40:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:40:08] WARNING model_config.py:1134: Casting torch.bfloat16 to torch.float16.
-[2026-02-05 18:40:08] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-05 18:40:08] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-05 18:40:08] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+[2026-02-07 04:51:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:51:44] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:51:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:51:46] WARNING model_config.py:1134: Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:51:46] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-07 04:51:46] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-07 04:51:46] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:40:08] Casting torch.bfloat16 to torch.float16.
-[2026-02-05 18:40:12] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:40:12] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:40:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:40:12] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:40:12] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:40:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:51:47] Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:51:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:51:52] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:51:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:51:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:51:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:51:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:40:14] Casting torch.bfloat16 to torch.float16.
-[2026-02-05 18:40:14] Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:51:55] Casting torch.bfloat16 to torch.float16.
+[2026-02-07 04:51:55] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-05 18:40:17] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:40:17] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:40:17] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-07 04:51:59] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:51:59] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:51:59] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:03&lt;00:10,  3.40s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:06&lt;00:06,  3.41s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:10&lt;00:03,  3.37s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:11&lt;00:00,  2.39s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:11&lt;00:00,  2.76s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.28s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.29s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.21s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  2.96s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.43s/it]
 
-Capturing batches (bs=1 avail_mem=60.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 15.62it/s]
-[2026-02-05 18:40:30] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-05 18:40:30] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2026-02-05 18:40:30] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2026-02-05 18:40:30] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.92 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.75it/s]
+[2026-02-07 04:52:16] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-07 04:52:16] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-02-07 04:52:16] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2026-02-07 04:52:16] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.16it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.16it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.82it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.82it/s]
 
-Capturing batches (bs=1 avail_mem=58.73 GB): 100%|██████████| 4/4 [00:03&lt;00:00,  1.03it/s]
-Capturing batches (bs=1 avail_mem=58.58 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 125.26it/s]
+Capturing batches (bs=1 avail_mem=58.63 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.32s/it]
+Capturing batches (bs=1 avail_mem=58.48 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 83.47it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1169,7 +1259,7 @@ Capturing batches (bs=1 avail_mem=58.58 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='d7b5ffcafe27456ab8a566153040688f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770316842, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='7d3a413e659d4d72812320d097385573', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770439951, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1179,8 +1269,10 @@ Capturing batches (bs=1 avail_mem=58.58 GB): 100%|██████████
 </pre></div>
 </div>
 </div>
+</section>
+</section>
 <section id="Multi-Token-Prediction">
-<h3>Multi Token Prediction<a class="headerlink" href="#Multi-Token-Prediction" title="Link to this heading">#</a></h3>
+<h2>Multi Token Prediction<a class="headerlink" href="#Multi-Token-Prediction" title="Link to this heading">#</a></h2>
 <p>We support <a class="reference external" href="https://arxiv.org/pdf/2404.19737">MTP(Multi-Token Prediction)</a> in SGLang by using speculative decoding. We use Xiaomi/MiMo-7B-RL model as example here (deepseek mtp usage refer to <a class="reference external" href="../basic_usage/deepseek.md#multi-token-prediction">deepseek doc</a>)</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -1203,20 +1295,20 @@ Capturing batches (bs=1 avail_mem=58.58 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-05 18:40:46] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:40:46] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:40:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:40:47] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-[2026-02-05 18:40:47] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-05 18:40:47] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+[2026-02-07 04:52:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:52:36] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:52:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:52:39] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+[2026-02-07 04:52:39] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-07 04:52:39] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-05 18:40:51] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:40:51] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:40:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-05 18:40:51] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-05 18:40:51] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-05 18:40:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:52:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:52:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:52:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:52:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:52:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:52:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -1225,25 +1317,25 @@ Capturing batches (bs=1 avail_mem=58.58 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-05 18:40:56] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:40:56] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-05 18:40:56] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-07 04:52:50] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:52:50] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:52:50] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  2.18it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00&lt;00:00,  2.07it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  2.28it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.55it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01&lt;00:00,  2.40it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.37it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.21it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.15it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
 
-Capturing batches (bs=1 avail_mem=61.14 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 12.71it/s]
-[2026-02-05 18:40:59] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-05 18:40:59] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=61.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.89it/s]
+[2026-02-07 04:52:56] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-07 04:52:56] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  6.71it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00, 13.88it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00, 12.85it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  4.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.52it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  7.16it/s]
 
-Capturing batches (bs=1 avail_mem=60.60 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 64.80it/s]
+Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 63.53it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1274,7 +1366,7 @@ Capturing batches (bs=1 avail_mem=60.60 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '175a91a89ce94d44be699125b29103bf', 'object': 'chat.completion', 'created': 1770316868, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? I remember that Paris is a major city there. But wait, I should make sure that\'s actually the capital. Sometimes people can be confused because there are other big cities. For example, maybe Lyon is another major city, but I think that\'s more known for cuisine or something. Let me think... Yes, Paris is the capital. The Eiffel Tower is in Paris, which is one of the most famous landmarks. Also, the Louvre Museum is there. So, putting that together, the capital should be Paris.\n\nWait, could there be any other possibilities? Maybe Lille orsome other city? No, Lille is more of a regional capital perhaps. The government buildings, the parliament, those are in Paris. The president\'s residence, the Élysée Palace, that\'s in Paris too. So, yes, definitely Paris. I don\'t think there\'s another capital. Maybe check if there\'s any recent changes, but I don\'t recall France changing its capital. It hasn\'t happened in modern times. So the answer is straightforward: Paris. Just need to confirm once again to be sure. Yes, Paris is the capital city of France. Okay, that\'s solid.\n</think>\nThe capital of France is **Paris**. This vibrant city is renowned for its iconic landmarks like the Eiffel Tower, the Louvre Museum, and the charming streets of the Latin Quarter. As the political and cultural heart of France, it hosts key government institutions, such as the Élysée Palace (the residence of the president) and the National Assembly.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 384, 'completion_tokens': 358, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': '12771b2ce17340468021f0c07997943b', 'object': 'chat.completion', 'created': 1770439987, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France\'s geography and capitals. France is a country in Western Europe, right? I remember that Paris is a major city there. But wait, is Paris actually the capital? Let me think.\n\nI\'ve heard Paris referred to as the capital of France in various contexts, like news articles or travel guides. But maybe there\'s a chance another city could be the capital. Let me check my memory. Some countries have different capitals than their largest cities, but in France, doesn\'t Paris seem to be the political center? The Eiffel Tower, Louvre Museum, those are all in Paris. The government buildings, the presidential palace... yes, that\'s in Paris. So I think Paris is definitely the capital. \n\nWait, maybe someone might confuse it with another city like Marseille or Lyon, which are major cities but not the capital. I\'ve heard Lyon called the "capital of French cuisine," but that\'s more of a nickname, not the actual capital. So, no, it\'s Paris. \n\nI should also consider if there have been any changes recently, like if the capital was moved or something. But to my knowledge, Paris has been the capital of France since the country was established in the 9th century. Even after the revolution, it remained the capital. So no, there hasn\'t been a change. \n\nTherefore, the answer should be Paris. Let me just confirm with a quick check in my mind. Yes, all the political and cultural institutions of France are based in Paris. The National Assembly, the president\'s residence, the top government officials... all there. So definitely Paris. \n\nI don\'t think I\'m missing anything here. The user might be looking for a simple answer, but it\'s important to be accurate. Maybe they\'re testing knowledge or just need a quick fact. Either way, the correct answer is Paris, France. No confusion here.\n</think>\n\nThe capital of France is **Paris**. This vibrant city is home to iconic landmarks such as the Eiffel Tower, the Louvre Museum, and the Parisian bureaucracy. It serves as the political, cultural, and economic heart of the country. \n\n**Answer:** Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 496, 'completion_tokens': 470, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -1285,8 +1377,363 @@ Capturing batches (bs=1 avail_mem=60.60 GB): 100%|██████████
 </div>
 </div>
 </section>
+<section id="Standalone-Speculative-Decoding-(Small-Draft-Model)">
+<h2>Standalone Speculative Decoding (Small Draft Model)<a class="headerlink" href="#Standalone-Speculative-Decoding-(Small-Draft-Model)" title="Link to this heading">#</a></h2>
+<p>Besides EAGLE/MTP, SGLang also supports <strong>token-level speculative decoding</strong> using a smaller <strong>draft model</strong>. Enable it with <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">STANDALONE</span></code> and provide a draft model via <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code>.</p>
+<p>Relevant parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span></code>: Draft model weights (smaller than the target model).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>: Draft depth (how many steps the draft model runs autoregressively).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>: Branching factor (token candidates per step).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>: Verification capacity.</p></li>
+</ul>
+<p>Note:</p>
+<ul class="simple">
+<li><p>Standalone speculative decoding currently <strong>does not support</strong> <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code>.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">server_process</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">launch_server_cmd</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">python3 -m sglang.launch_server --model Qwen/Qwen2.5-7B-Instruct --speculative-algorithm STANDALONE \</span>
+<span class="sd">    --speculative-draft-model-path Qwen/Qwen2.5-1.5B-Instruct \</span>
+<span class="sd">    --speculative-num-steps 4 --speculative-eagle-topk 2 --speculative-num-draft-tokens 7 \</span>
+<span class="sd">    --cuda-graph-max-bs 8 --mem-fraction-static 0.7 --log-level warning</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+
+<span class="n">wait_for_server</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2026-02-07 04:53:12] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:53:12] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:53:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:53:14] INFO server_args.py:1796: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-07 04:53:14] WARNING server_args.py:2304: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-07 04:53:14] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-02-07 04:53:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:53:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:53:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:53:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:53:21] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:53:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-02-07 04:53:26] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:53:26] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:53:26] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.47it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.37it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.38it/s]
+
+Capturing batches (bs=1 avail_mem=62.14 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.44it/s]
+[2026-02-07 04:53:32] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-07 04:53:32] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.35s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.35s/it]
+
+Capturing batches (bs=1 avail_mem=58.15 GB): 100%|██████████| 4/4 [00:08&lt;00:00,  2.19s/it]
+Capturing batches (bs=1 avail_mem=58.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 23.61it/s]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://127.0.0.1:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen2.5-7B-Instruct&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List 3 countries and their capitals.&quot;</span><span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: ChatCompletion(id='aacbcae5f2b248649210db903ec3fa55', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770440030, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Speculative-Decoding-V2-(Overlap-Scheduler)">
+<h2>Speculative Decoding V2 (Overlap Scheduler)<a class="headerlink" href="#Speculative-Decoding-V2-(Overlap-Scheduler)" title="Link to this heading">#</a></h2>
+<p>SGLang provides an <strong>experimental Speculative Decoding V2</strong> implementation that enables an overlap scheduler and uses V2 speculative workers (e.g. <code class="docutils literal notranslate"><span class="pre">StandaloneWorkerV2</span></code>, <code class="docutils literal notranslate"><span class="pre">EAGLEWorkerV2</span></code>).</p>
+<p>To enable it, set the environment variable:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_SPEC_V2=True</span></code></p></li>
+</ul>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>SpecV2 currently only supports <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code>. When SpecV2 is enabled, <strong>set ``–speculative-eagle-topk 1`` explicitly</strong>.</p></li>
+<li><p>If you explicitly set <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, the server will error. If you omit <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>, auto-tuning may pick <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> for some models (e.g. Llama), which is not supported by SpecV2.</p></li>
+<li><p>This applies to <code class="docutils literal notranslate"><span class="pre">EAGLE</span></code>, <code class="docutils literal notranslate"><span class="pre">EAGLE3</span></code>, and <code class="docutils literal notranslate"><span class="pre">STANDALONE</span></code>.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">server_process</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">launch_server_cmd</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">SGLANG_ENABLE_SPEC_V2=True python3 -m sglang.launch_server --model Qwen/Qwen2.5-7B-Instruct --speculative-algorithm STANDALONE \</span>
+<span class="sd">    --speculative-draft-model-path Qwen/Qwen2.5-1.5B-Instruct \</span>
+<span class="sd">    --speculative-num-steps 4 --speculative-eagle-topk 1 --speculative-num-draft-tokens 5 \</span>
+<span class="sd">    --cuda-graph-max-bs 8 --mem-fraction-static 0.7 --log-level warning</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+
+<span class="n">wait_for_server</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2026-02-07 04:53:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:53:56] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:53:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:53:58] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+[2026-02-07 04:53:58] WARNING server_args.py:2292: Spec v2 is enabled for eagle/eagle3 speculative decoding and overlap schedule is turned on.
+[2026-02-07 04:53:58] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-02-07 04:54:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:54:05] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:54:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:54:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:54:05] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:54:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-02-07 04:54:10] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:54:10] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:54:10] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.44it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.33it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.25it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.26it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.28it/s]
+
+Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  3.44it/s]
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.78it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.78it/s]
+
+[2026-02-07 04:54:18] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+Capturing batches (bs=1 avail_mem=58.93 GB): 100%|██████████| 4/4 [00:03&lt;00:00,  1.11it/s]
+[2026-02-07 04:54:24] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://127.0.0.1:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen2.5-7B-Instruct&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List 3 countries and their capitals.&quot;</span><span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: ChatCompletion(id='5f19e4b8bf534a55ac3229f277c50ce9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770440068, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Ngram-Speculative-Decoding">
+<h2>Ngram Speculative Decoding<a class="headerlink" href="#Ngram-Speculative-Decoding" title="Link to this heading">#</a></h2>
+<p>SGLang also supports <strong>ngram-based speculative decoding</strong> (no separate draft model). It retrieves draft tokens from an ngram cache built from previously generated tokens, and then verifies them with the target model.</p>
+<p>Enable it with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">NGRAM</span></code></p></li>
+</ul>
+<p>Common parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>: Number of draft tokens verified per step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-ngram-min-match-window-size</span></code> / <code class="docutils literal notranslate"><span class="pre">--speculative-ngram-max-match-window-size</span></code>: Matching window range.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-ngram-min-bfs-breadth</span></code> / <code class="docutils literal notranslate"><span class="pre">--speculative-ngram-max-bfs-breadth</span></code>: BFS breadth range.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-ngram-branch-length</span></code>: How many recent tokens to insert into the cache.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--speculative-ngram-capacity</span></code>: Cache capacity.</p></li>
+</ul>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Ngram speculative decoding <strong>only supports CUDA</strong>.</p></li>
+<li><p>It currently <strong>does not support</strong> <code class="docutils literal notranslate"><span class="pre">--enable-dp-attention</span></code>.</p></li>
+<li><p>It disables the overlap scheduler and mixed chunked prefill.</p></li>
+<li><p>Optional: set <code class="docutils literal notranslate"><span class="pre">SGLANG_NGRAM_FORCE_GREEDY_VERIFY=True</span></code> to force greedy verification.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">server_process</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">launch_server_cmd</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">python3 -m sglang.launch_server --model Qwen/Qwen2.5-7B-Instruct --speculative-algorithm NGRAM \</span>
+<span class="sd">    --speculative-num-draft-tokens 16 \</span>
+<span class="sd">    --speculative-ngram-max-match-window-size 12 --speculative-ngram-max-bfs-breadth 10 \</span>
+<span class="sd">    --cuda-graph-max-bs 8 --mem-fraction-static 0.8 --log-level warning</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+
+<span class="n">wait_for_server</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2026-02-07 04:54:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:54:34] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:54:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:54:36] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+[2026-02-07 04:54:36] WARNING server_args.py:2397: The overlap scheduler and mixed chunked prefill are disabled because of using ngram speculative decoding.
+[2026-02-07 04:54:36] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-02-07 04:54:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:54:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:54:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-07 04:54:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-07 04:54:43] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-07 04:54:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+&lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-02-07 04:54:48] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:54:48] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-07 04:54:48] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.49it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.38it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.27it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+
+Capturing batches (bs=1 avail_mem=62.68 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.93it/s]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://127.0.0.1:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen2.5-7B-Instruct&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List 3 countries and their capitals.&quot;</span><span class="p">},</span>
+    <span class="p">],</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">print_highlight</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<strong style='color: #00008B;'>Response: ChatCompletion(id='4972b36d30e042e2bd429403cdf795bc', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770440101, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terminate_process</span><span class="p">(</span><span class="n">server_process</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
 <section id="References">
-<h3>References<a class="headerlink" href="#References" title="Link to this heading">#</a></h3>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading">#</a></h2>
 <p>EAGLE process is as follows:</p>
 <ul class="simple">
 <li><p>Within EAGLE the draft model predicts the next feature vector, i.e. the last hidden state of the original LLM, using the feature sequence <span class="math notranslate nohighlight">\((f_1, ..., f_k)\)</span> and the token sequence <span class="math notranslate nohighlight">\((t_2, ..., t_{k+1})\)</span>.</p></li>
@@ -1296,7 +1743,6 @@ Capturing batches (bs=1 avail_mem=60.60 GB): 100%|██████████
 </ul>
 <p>This enhances drafting accuracy by operating on the features instead of tokens for more regular inputs and passing the tokens from the next timestep additionally to minimize randomness effects from sampling. Furthermore the dynamic adjustment of the draft tree and selection of reranked final nodes increases acceptance rate of draft tokens further. For more details see <a class="reference external" href="https://arxiv.org/abs/2406.16858">EAGLE-2</a> and <a class="reference external" href="https://arxiv.org/abs/2503.01840">EAGLE-3</a> paper.</p>
 <p>For guidance how to train your own EAGLE model please see the <a class="reference external" href="https://github.com/SafeAILab/EAGLE/tree/main?tab=readme-ov-file#train">EAGLE repo</a>.</p>
-</section>
 </section>
 </section>
 
@@ -1345,18 +1791,25 @@ Capturing batches (bs=1 avail_mem=60.60 GB): 100%|██████████
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Performance-Highlights">Performance Highlights</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-Decoding">EAGLE Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Summary">Summary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Jump-to-sections">Jump to sections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Quick-guidance">Quick guidance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Method-comparison-(mini-table)">Method comparison (mini table)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Performance-Highlights">Performance Highlights</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-decoding">EAGLE-2 decoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-with-torch.compile">EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-3-Decoding">EAGLE-3 Decoding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Multi-Token-Prediction">Multi Token Prediction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#References">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-Decoding">EAGLE Decoding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-decoding">EAGLE-2 decoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-with-torch.compile">EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-2-Decoding-via-Frequency-Ranked-Speculative-Sampling">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#EAGLE-3-Decoding">EAGLE-3 Decoding</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Multi-Token-Prediction">Multi Token Prediction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Standalone-Speculative-Decoding-(Small-Draft-Model)">Standalone Speculative Decoding (Small Draft Model)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Speculative-Decoding-V2-(Overlap-Scheduler)">Speculative Decoding V2 (Overlap Scheduler)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Ngram-Speculative-Decoding">Ngram Speculative Decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#References">References</a></li>
 </ul>
   </nav></div>
 
@@ -1390,7 +1843,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 05, 2026.
+  Last updated on Feb 07, 2026.
   <br/>
 </p>
   </div>
