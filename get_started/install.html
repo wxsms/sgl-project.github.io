@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=7f111a0e"></script>
+    <script src="../_static/documentation_options.js?v=cc9d0ebb"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -472,7 +472,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-cuda-13">For CUDA 13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-fixes-to-common-problems"><strong>Quick fixes to common problems</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-kubernetes">Method 4: Using Kubernetes</a></li>
@@ -501,18 +505,28 @@ For other or newer platforms, please refer to the dedicated pages for <a class="
 <p>It is recommended to use uv for faster installation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 pip<span class="w"> </span>install<span class="w"> </span>uv
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang&quot;</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sglang
 </pre></div>
 </div>
-<p><strong>Quick fixes to common problems</strong></p>
-<ul class="simple">
-<li><p>For CUDA 13, Docker is recommended (see Method 3 note on B300/GB300/CUDA 13). If you do not have Docker access, an extra index url needs to be provided when installing wheels:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;sglang&quot;</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu130</span>
+<section id="for-cuda-13">
+<h3>For CUDA 13<a class="headerlink" href="#for-cuda-13" title="Link to this heading">#</a></h3>
+<p>Docker is recommended (see Method 3 note on B300/GB300/CUDA 13). If you do not have Docker access, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Install PyTorch with CUDA 13 support first:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace X.Y.Z with the version by your SGLang install</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span>X.Y.Z<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu130
 </pre></div>
 </div>
-<ul>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> wheel for CUDA 13 can be downloaded from <a class="reference external" href="https://github.com/sgl-project/whl/blob/gh-pages/cu130/sgl-kernel/index.html">the sgl-project whl releases</a>. Replace <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> with the <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> version required by your SGLang install (you can find this by running <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">sgl_kernel</span></code>). Examples:</p>
+<ol class="arabic simple" start="2">
+<li><p>Install sglang:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sglang
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> wheel for CUDA 13 from <a class="reference external" href="https://github.com/sgl-project/whl/blob/gh-pages/cu130/sgl-kernel/index.html">the sgl-project whl releases</a>. Replace <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> with the <code class="docutils literal notranslate"><span class="pre">sgl_kernel</span></code> version required by your SGLang install (you can find this by running <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">show</span> <span class="pre">sgl_kernel</span></code>). Examples:</p></li>
+</ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># x86_64</span>
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;https://github.com/sgl-project/whl/releases/download/vX.Y.Z/sgl_kernel-X.Y.Z+cu130-cp310-abi3-manylinux2014_x86_64.whl&quot;</span>
 
@@ -520,7 +534,10 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;https://github.com/sgl-project/whl/releases/download/vX.Y.Z/sgl_kernel-X.Y.Z+cu130-cp310-abi3-manylinux2014_aarch64.whl&quot;</span>
 </pre></div>
 </div>
-</li>
+</section>
+<section id="quick-fixes-to-common-problems">
+<h3><strong>Quick fixes to common problems</strong><a class="headerlink" href="#quick-fixes-to-common-problems" title="Link to this heading">#</a></h3>
+<ul class="simple">
 <li><p>If you encounter <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">CUDA_HOME</span> <span class="pre">environment</span> <span class="pre">variable</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">set</span></code>. Please set it to your CUDA install root with either of the following solutions:</p>
 <ol class="arabic simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=/usr/local/cuda-&lt;your-cuda-version&gt;</span></code> to set the <code class="docutils literal notranslate"><span class="pre">CUDA_HOME</span></code> environment variable.</p></li>
@@ -528,6 +545,7 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </ol>
 </li>
 </ul>
+</section>
 </section>
 <section id="method-2-from-source">
 <h2>Method 2: From source<a class="headerlink" href="#method-2-from-source" title="Link to this heading">#</a></h2>
@@ -752,7 +770,11 @@ docker<span class="w"> </span>push<span class="w"> </span><span class="si">${</s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-with-pip-or-uv">Method 1: With pip or uv</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-cuda-13">For CUDA 13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-fixes-to-common-problems"><strong>Quick fixes to common problems</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-source">Method 2: From source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-using-docker">Method 3: Using docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-using-kubernetes">Method 4: Using Kubernetes</a></li>
