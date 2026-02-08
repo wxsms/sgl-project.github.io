@@ -25,38 +25,38 @@ wait_for_server(f"http://localhost:{port}")
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-08 06:29:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:18:41] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-08 06:29:48] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:18:41] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-08 06:29:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:18:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-08 06:29:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 06:29:53] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 06:29:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:18:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:18:46] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:18:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-08 06:29:56] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-08 06:29:56] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-
-
-    [2026-02-08 06:30:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 06:30:04] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 06:30:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-08 06:30:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 06:30:04] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 06:30:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:18:48] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-08 13:18:48] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+
+
+    [2026-02-08 13:18:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:18:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:18:56] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:18:56] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:18:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:18:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -67,41 +67,38 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-08 06:30:11] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 06:30:11] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 06:30:11] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-08 06:30:11] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+    [2026-02-08 13:19:01] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 13:19:01] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 13:19:01] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.84it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.45it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.77it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.39it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.76it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.36it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.79it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.79it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.38it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.38it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=46.37 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=62.79 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=46.37 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.07s/it]Capturing batches (bs=2 avail_mem=46.18 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.07s/it]
-
-    Capturing batches (bs=2 avail_mem=46.18 GB):  67%|██████▋   | 2/3 [00:01<00:00,  1.77it/s]Capturing batches (bs=1 avail_mem=46.20 GB):  67%|██████▋   | 2/3 [00:01<00:00,  1.77it/s]Capturing batches (bs=1 avail_mem=46.20 GB): 100%|██████████| 3/3 [00:01<00:00,  2.28it/s]
+    Capturing batches (bs=4 avail_mem=62.79 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.36it/s]Capturing batches (bs=2 avail_mem=62.73 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.36it/s]Capturing batches (bs=1 avail_mem=62.73 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.36it/s]Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 3/3 [00:00<00:00,  3.77it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong>
 
 
-    Server started on http://localhost:37528
+    Server started on http://localhost:39483
 
 
 Set the default backend. Note: Besides the local server, you may use also `OpenAI` or other API endpoints.
@@ -111,7 +108,7 @@ Set the default backend. Note: Besides the local server, you may use also `OpenA
 set_default_backend(RuntimeEndpoint(f"http://localhost:{port}"))
 ```
 
-    [2026-02-08 06:30:22] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-02-08 13:19:12] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 ## Basic Usage
@@ -134,7 +131,7 @@ print_highlight(state["answer"])
 ```
 
 
-<strong style='color: #00008B;'>Sure! Here are three countries and their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong>
+<strong style='color: #00008B;'>Here are three countries along with their capitals:<br><br>1. France - Paris<br>2. Japan - Tokyo<br>3. Brazil - Brasília</strong>
 
 
 ## Multi-turn Dialog
@@ -159,11 +156,11 @@ print_highlight(state["second_answer"])
 ```
 
 
-<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Australia** - Canberra<br>3. **Brazil** - Brasília</strong>
+<strong style='color: #00008B;'>Sure! Here's a list of three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Brazil** - Brasília</strong>
 
 
 
-<strong style='color: #00008B;'>Of course! Here is another list of three countries and their capitals:<br><br>1. **Italy** - Rome<br>2. **Japan** - Tokyo<br>3. **Mexico** - Mexico City</strong>
+<strong style='color: #00008B;'>Of course! Here's another list of three countries along with their capitals:<br><br>1. **Argentina** - Buenos Aires<br>2. **Germany** - Berlin<br>3. **Canada** - Ottawa</strong>
 
 
 ## Control flow
@@ -198,7 +195,7 @@ print_highlight(state["expression"])
 
 
 
-<strong style='color: #00008B;'>2 * 2. <br><br>You don't necessarily need a calculator for this; it's a basic arithmetic operation. The answer is 4.<br><br>However, if you still prefer to use a calculator, here's how you can do it:<br><br>1. Enter the number 2.<br>2. Press the multiplication (*) button.<br>3. Enter the number 2 again.<br>4. Press the equals (=) button.<br><br>The calculator will show the result as 4.</strong>
+<strong style='color: #00008B;'>2 * 2. Let's calculate it.<br><br>Step 1: Multiply 2 by 2.<br>2 * 2 = 4<br><br>The result is 4. No calculator was needed for this simple calculation.</strong>
 
 
 ## Parallelism
@@ -233,7 +230,7 @@ print_highlight(state["summary"])
 ```
 
 
-<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutrient-dense foods in appropriate portions is crucial. Focus on fruits, vegetables, whole grains, lean proteins, and healthy fats. Limit processed foods, sugars, and unhealthy fats to support overall health and avoid chronic diseases.<br><br>2. **Regular Exercise**: Engage in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week. Include both aerobic and strength-training exercises for comprehensive health benefits. Regular physical activity enhances physical and mental health, reduces the risk of chronic diseases, and improves overall quality of life.<br><br>By following these two tips, you can significantly boost your health and well-being!</strong>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutrient-dense foods like fruits, vegetables, whole grains, lean proteins, and healthy fats is essential. This helps provide your body with the necessary vitamins, minerals, and antioxidants to support overall health. Limiting processed foods, sugars, and saturated fats can also help prevent health issues like obesity and diabetes.<br>2. **Regular Exercise**: Incorporating at least 150 to 300 minutes of moderate-intensity aerobic activity or 75 to 150 minutes of高强度内容已超出常规需求，我将调整为更适合日常生活的描述：  <br>   75 to 150 minutes of vigorous-intensity aerobic activity per week can significantly benefit your health. Additionally, strength training exercises are recommended at least two days a week. Regular exercise not only improves physical health but also enhances mental well-being by reducing stress and improving mood.<br><br>This balanced approach to diet and exercise can help you maintain a healthier lifestyle.</strong>
 
 
 ## Constrained Decoding
@@ -297,7 +294,7 @@ print_highlight(state["json_output"])
 ```
 
 
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "holly",<br>        "core": "phoenix feather",<br>        "length": 10.4<br>    },<br>    "alive": "Alive",<br>    "patronus": "stag",<br>    "bogart": "A funeral dirge"<br>}</strong>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Waite mbun",<br>        "core": "Fifth pusse feer",<br>        "length": 11.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Voldemort"<br>}</strong>
 
 
 ## Batching 
@@ -327,7 +324,7 @@ for i, state in enumerate(states):
 
       0%|          | 0/3 [00:00<?, ?it/s]
 
-    100%|██████████| 3/3 [00:00<00:00, 34.33it/s]
+    100%|██████████| 3/3 [00:00<00:00, 36.01it/s]
 
     
 
@@ -435,34 +432,33 @@ wait_for_server(f"http://localhost:{port}")
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-08 06:30:34] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 06:30:34] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 06:30:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:19:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:19:23] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:19:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-08 06:30:36] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-08 06:30:36] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-
-
-    [2026-02-08 06:30:39] Ignore import error when loading sglang.srt.multimodal.processors.glm4v: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 06:30:39] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-08 06:30:39] Ignore import error when loading sglang.srt.multimodal.processors.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
-
-
-    [2026-02-08 06:30:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 06:30:43] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 06:30:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-08 06:30:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 06:30:43] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 06:30:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:19:25] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-08 13:19:25] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+
+
+    [2026-02-08 13:19:27] Ignore import error when loading sglang.srt.multimodal.processors.glm4v: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 13:19:27] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-02-08 13:19:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:19:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 13:19:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:19:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 13:19:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 13:19:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -473,42 +469,41 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-08 06:30:50] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 06:30:50] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 06:30:50] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-08 06:30:50] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+    [2026-02-08 13:19:37] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 13:19:37] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 13:19:37] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:03,  1.07it/s]
+    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:02,  1.35it/s]
 
 
-    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:02,  1.24it/s]
+    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:02,  1.35it/s]
 
 
-    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02<00:01,  1.32it/s]
+    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02<00:01,  1.33it/s]
 
 
-    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03<00:00,  1.39it/s]
+    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03<00:00,  1.29it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.76it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.51it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.68it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.50it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=36.08 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=61.37 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=36.08 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.18it/s]Capturing batches (bs=2 avail_mem=36.05 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.18it/s]Capturing batches (bs=1 avail_mem=36.04 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.18it/s]Capturing batches (bs=1 avail_mem=36.04 GB): 100%|██████████| 3/3 [00:00<00:00,  3.27it/s]
+    Capturing batches (bs=4 avail_mem=61.37 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.16s/it]Capturing batches (bs=2 avail_mem=61.34 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.16s/it]Capturing batches (bs=1 avail_mem=61.33 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.16s/it]Capturing batches (bs=1 avail_mem=61.33 GB): 100%|██████████| 3/3 [00:01<00:00,  2.87it/s]Capturing batches (bs=1 avail_mem=61.33 GB): 100%|██████████| 3/3 [00:01<00:00,  2.32it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong>
 
 
-    Server started on http://localhost:36670
+    Server started on http://localhost:34602
 
 
 
@@ -516,7 +511,7 @@ print(f"Server started on http://localhost:{port}")
 set_default_backend(RuntimeEndpoint(f"http://localhost:{port}"))
 ```
 
-    [2026-02-08 06:31:04] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-02-08 13:19:51] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 Ask a question about an image.
@@ -536,7 +531,7 @@ print_highlight(state["answer"])
 ```
 
 
-<strong style='color: #00008B;'>The image shows a person ironing clothes on a stand that is set up in the bed of a New York City taxicab. The taxicab is driving on a city street, and the ironing stand has a blue shirt hanging on it. The street is busy, with another taxicab visible to the side. The person is dressed casually and appears to be balancing the items to be ironed and the iron. This scene suggests a humorous or unique activity taking place in an unconventional location.</strong>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, using an iron to iron clothes that are laid out on an ironing board. The setting appears to be an urban street, with another taxi and a partially visible car in the background. The scene is somewhat unusual and humorous, as people don't typically use taxis for such a purpose.</strong>
 
 
 
