@@ -27,38 +27,38 @@ wait_for_server(f"http://localhost:{port}")
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-08 20:12:51] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 22:43:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-08 20:12:51] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 22:43:14] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-08 20:12:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 22:43:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-08 20:12:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 20:12:57] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 20:12:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 22:43:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 22:43:19] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 22:43:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-08 20:12:59] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-08 20:12:59] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-
-
-    [2026-02-08 20:13:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 20:13:05] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 20:13:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-08 20:13:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-08 20:13:05] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-08 20:13:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 22:43:23] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-08 22:43:23] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+
+
+    [2026-02-08 22:43:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 22:43:29] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 22:43:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-08 22:43:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-08 22:43:29] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-08 22:43:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -69,30 +69,27 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-08 20:13:12] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 20:13:12] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-08 20:13:12] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-08 20:13:12] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+    [2026-02-08 22:43:35] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 22:43:35] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-08 22:43:35] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-
-
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.95it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.95it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.04it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.03it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=77.02 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.28 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=77.02 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.52it/s]Capturing batches (bs=2 avail_mem=76.96 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.52it/s]Capturing batches (bs=1 avail_mem=76.96 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.52it/s]Capturing batches (bs=1 avail_mem=76.96 GB): 100%|██████████| 3/3 [00:00<00:00,  4.23it/s]
+    Capturing batches (bs=4 avail_mem=56.28 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.06s/it]Capturing batches (bs=2 avail_mem=50.89 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.06s/it]Capturing batches (bs=1 avail_mem=50.89 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.06s/it]Capturing batches (bs=1 avail_mem=50.89 GB): 100%|██████████| 3/3 [00:01<00:00,  2.71it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong>
 
 
-    Server started on http://localhost:39577
+    Server started on http://localhost:34002
 
 
 ## Chat Completions
@@ -122,7 +119,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='8d04a8a252364c558b97117e0c2c79f7', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770581601, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='3cc14799844b4715ac1f040de29a090e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770590623, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Model Thinking/Reasoning Support
@@ -355,7 +352,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th to the 5th century BCE. It was known for its architectural marvels, including the Colosseum, the Pantheon, and the Roman Forum. The Romans also made significant contributions to philosophy, law, and medicine. They developed a complex system of government known as the Republic, which lasted for over two centuries. Rome's influence extended far beyond its borders, with its influence being felt in other parts of the world.</strong>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th century BCE to the 4th century CE. Some of their major achievements include:<br><br>1. **Roman Empire**: The largest and most powerful empire in history, spanning across Europe, Asia, and Africa. It was founded by Romulus and Remus in 753 BCE.<br><br>2. **Architecture**: Roman architecture is renowned for its grandeur, including the Colosseum, Pantheon, and the Roman Forum. The Romans also built aqueducts, roads, and public buildings.<br><br>3. **Law**: Roman law was one of the most influential</strong>
 
 
 Streaming mode is also supported.
@@ -377,7 +374,7 @@ for chunk in stream:
         print(chunk.choices[0].delta.content, end="")
 ```
 
-    Yes, I am Qwen, an AI assistant created by Alibaba Cloud. My primary role is to provide assistance and answer questions to the best of my ability based on the information available to me. If you have any specific questions or topics you'd like to discuss, feel free to ask, and I'll do my best to help.
+    Yes, that is a test. I am Qwen, a large language model created by Alibaba Cloud. I'm here to assist you with any questions or tasks you have, so please feel free to ask me anything.
 
 #### Returning Routed Experts (MoE Models)
 
@@ -427,7 +424,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='0ba9ed1f7ef54f2bbde60a6c604c7cc1', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1770581602, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='dbb6d21a2f0740ba98bd90cfe08427a4', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1770590624, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Parameters
@@ -455,7 +452,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='5780ff7358324f449c2fdcf074b9b0fc', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" The story should include a detailed account of the journey and the challenges they faced, as well as the insights and knowledge gained from their experiences. Additionally, include at least one character who plays a crucial role in the story and explain how their involvement enhances the overall narrative. The story should be written in a descriptive, engaging style that captures the reader's attention from beginning to end.\nIn 2055, when Earth was just beginning its journey into space, a group of explorers led by Dr. Sarah Thompson set out on a mission to explore new worlds beyond our own. Their goal was to find new planets, moons, and potentially even life forms on distant worlds.", matched_stop='\n\n')], created=1770581602, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=135, prompt_tokens=9, total_tokens=144, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='dfc18fb871f4428fa79c7ce65cad7d44', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Elara Vega. She was an astronaut with a passion for space exploration and had been working for years on the International Space Station (ISS). Dr. Vega had always dreamed of traveling to the stars and landing on Earth.', matched_stop='\n\n')], created=1770590624, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=57, prompt_tokens=9, total_tokens=66, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 #### Returning Routed Experts (MoE Models)
