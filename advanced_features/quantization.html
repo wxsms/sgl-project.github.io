@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=941a3a42"></script>
+    <script src="../_static/documentation_options.js?v=d226158b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -479,6 +479,8 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nvidia-modelopt">Using NVIDIA ModelOpt</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pre-quantized-checkpoints">Using Pre-Quantized Checkpoints</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-own-quantized-checkpoints">Creating Your Own Quantized Checkpoints</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-and-export-workflow">Quantization and Export Workflow</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#available-quantization-methods">Available Quantization Methods</a></li>
@@ -684,15 +686,77 @@ pip<span class="w"> </span>install<span class="w"> </span>llmcompressor
 </section>
 <section id="using-nvidia-modelopt">
 <h4>Using <a class="reference external" href="https://github.com/NVIDIA/Model-Optimizer">NVIDIA ModelOpt</a><a class="headerlink" href="#using-nvidia-modelopt" title="Link to this heading">#</a></h4>
-<p>NVIDIA Model Optimizer (ModelOpt) provides advanced quantization techniques optimized for NVIDIA hardware. SGLang includes a streamlined workflow for quantizing models with ModelOpt and automatically exporting them for deployment.</p>
+<p>NVIDIA Model Optimizer (ModelOpt) provides advanced quantization techniques optimized for NVIDIA hardware.</p>
+<p><strong>Offline vs. Online Quantization:</strong></p>
+<p>SGLang supports two modes for ModelOpt.</p>
+<ul class="simple">
+<li><p><strong>Offline Quantization (pre-quantized):</strong></p>
+<ul>
+<li><p><strong>Usage:</strong> Download a pre-quantized model from Hugging Face or run <code class="docutils literal notranslate"><span class="pre">hf_ptq.py</span></code> once to create a new quantized checkpoint. Then load this quantized checkpoint.</p></li>
+<li><p><strong>Pros:</strong> Fast server startup, quantization can be validated before deployment, efficient resource usage.</p></li>
+<li><p><strong>Cons:</strong> Requires an extra preparation step.</p></li>
+</ul>
+</li>
+<li><p><strong>Online Quantization (quant and serve):</strong></p>
+<ul>
+<li><p><strong>Usage:</strong> Load a standard BF16/FP16 model and add a flag. The engine applies quantization <em>on startup</em>.</p></li>
+<li><p><strong>Pros:</strong> Convenient (no new checkpoint needed).</p></li>
+<li><p><strong>Cons:</strong> <strong>High startup time</strong>, increases VRAM usage during initialization (risk of OOM).</p></li>
+</ul>
+</li>
+</ul>
+<p>The following sections guide you through using the Offline path: loading pre-quantized models or creating your own checkpoints.</p>
+<section id="using-pre-quantized-checkpoints">
+<h5>Using Pre-Quantized Checkpoints<a class="headerlink" href="#using-pre-quantized-checkpoints" title="Link to this heading">#</a></h5>
+<p>If a model is already quantized (e.g., from Hugging Face), you can load it directly.</p>
+<ul>
+<li><p><strong>FP8 Models:</strong>
+Use <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">modelopt_fp8</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>nvidia/Llama-3.1-8B-Instruct-FP8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelopt_fp8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>FP4 Models:</strong>
+Use <code class="docutils literal notranslate"><span class="pre">--quantization</span> <span class="pre">modelopt_fp4</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>nvidia/Llama-3.3-70B-Instruct-NVFP4<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--quantization<span class="w"> </span>modelopt_fp4<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="creating-your-own-quantized-checkpoints">
+<h5>Creating Your Own Quantized Checkpoints<a class="headerlink" href="#creating-your-own-quantized-checkpoints" title="Link to this heading">#</a></h5>
+<p>If a pre-quantized checkpoint is not available for your model, you can create one using NVIDIA Model Optimizer’s <code class="docutils literal notranslate"><span class="pre">hf_ptq.py</span></code> script.</p>
+<p><strong>Why quantize?</strong></p>
+<ul class="simple">
+<li><p>Reduce VRAM usage</p></li>
+<li><p>Higher throughput and lower latency</p></li>
+<li><p>More flexible deployment (on smaller GPUs)</p></li>
+</ul>
+<p><strong>What can be quantized?</strong></p>
+<ul class="simple">
+<li><p>The entire model</p></li>
+<li><p>MLP layers only</p></li>
+<li><p>KV cache</p></li>
+</ul>
+<p><strong>Key options in <code class="docutils literal notranslate"><span class="pre">hf_ptq.py</span></code>:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">--qformat</span></code>: Quantization formats <code class="docutils literal notranslate"><span class="pre">fp8</span></code>, <code class="docutils literal notranslate"><span class="pre">nvfp4</span></code>, <code class="docutils literal notranslate"><span class="pre">nvfp4_mlp_only</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--kv_cache_qformat</span></code>: KV cache quantization format (default: <code class="docutils literal notranslate"><span class="pre">fp8</span></code>)</p>
+<p><strong>Note:</strong> The default <code class="docutils literal notranslate"><span class="pre">kv_cache_qformat</span></code> may not be optimal for all use cases. Consider setting this explicitly.</p>
+<p><strong>Hardware requirements:</strong> Hopper and higher are recommended. Insufficient GPU memory may cause weight offloading, resulting in extremely long quantization time.</p>
+<p>For detailed usage and supported model architectures, see <a class="reference external" href="https://github.com/NVIDIA/Model-Optimizer/tree/main/examples/llm_ptq">NVIDIA Model Optimizer LLM PTQ</a>.</p>
+<p>SGLang includes a streamlined workflow for quantizing models with ModelOpt and automatically exporting them for deployment.</p>
+</section>
 <section id="installation">
 <h5>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h5>
-<p>First, install ModelOpt. You can either install it directly or as an optional SGLang dependency:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: Install ModelOpt directly</span>
-pip<span class="w"> </span>install<span class="w"> </span>nvidia-modelopt
-
-<span class="c1"># Option 2: Install SGLang with ModelOpt support (recommended)</span>
-pip<span class="w"> </span>install<span class="w"> </span>sglang<span class="o">[</span>modelopt<span class="o">]</span>
+<p>First, install ModelOpt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>nvidia-modelopt
 </pre></div>
 </div>
 </section>
@@ -764,20 +828,33 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <p>Or using the Python API:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
 
-<span class="c1"># Deploy exported ModelOpt quantized model</span>
-<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;./quantized_tinyllama_fp8&quot;</span><span class="p">,</span>
-    <span class="n">quantization</span><span class="o">=</span><span class="s2">&quot;modelopt&quot;</span>
-<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Deploy exported ModelOpt quantized model</span>
+    <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
+        <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;./quantized_tinyllama_fp8&quot;</span><span class="p">,</span>
+        <span class="n">quantization</span><span class="o">=</span><span class="s2">&quot;modelopt&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
 
-<span class="c1"># Run inference</span>
-<span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello, how are you?&quot;</span><span class="p">,</span> <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">]</span>
-<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
-<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
+    <span class="c1"># Run inference</span>
+    <span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Hello, how are you?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+        <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+        <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="p">}</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">outputs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">outputs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
 </pre></div>
 </div>
 </section>
@@ -930,6 +1007,8 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gptqmodel">Using GPTQModel</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-llm-compressor">Using LLM Compressor</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nvidia-modelopt">Using NVIDIA ModelOpt</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pre-quantized-checkpoints">Using Pre-Quantized Checkpoints</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-own-quantized-checkpoints">Creating Your Own Quantized Checkpoints</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-and-export-workflow">Quantization and Export Workflow</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#available-quantization-methods">Available Quantization Methods</a></li>
