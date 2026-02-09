@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=ecbe1e3e"></script>
+    <script src="../../_static/documentation_options.js?v=3bd19f79"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -500,6 +500,7 @@ document.write(`
 <p>Diffusion language models have shown promise for non-autoregressive text generation with parallel decoding capabilities. Unlike auto-regressive language models, different diffusion language models require different decoding strategies.</p>
 <section id="example-launch-command">
 <h2>Example Launch Command<a class="headerlink" href="#example-launch-command" title="Link to this heading">#</a></h2>
+<p>SGLang supports different DLLM algorithms such as <code class="docutils literal notranslate"><span class="pre">LowConfidence</span></code> and <code class="docutils literal notranslate"><span class="pre">JointThreshold</span></code>.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>inclusionAI/LLaDA2.0-mini<span class="w"> </span><span class="se">\ </span><span class="c1"># example HF/local path</span>
 <span class="w">  </span>--dllm-algorithm<span class="w"> </span>LowConfidence<span class="w"> </span><span class="se">\</span>
@@ -511,6 +512,8 @@ document.write(`
 </section>
 <section id="example-configuration-file">
 <h2>Example Configuration File<a class="headerlink" href="#example-configuration-file" title="Link to this heading">#</a></h2>
+<p>Depending on the algorithm selected, the configuration parameters vary.</p>
+<p>LowConfidence Config:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Confidence threshold for accepting predicted tokens</span>
 <span class="c1"># - Higher values: More conservative, better quality but slower</span>
 <span class="c1"># - Lower values: More aggressive, faster but potentially lower quality</span>
@@ -519,6 +522,23 @@ document.write(`
 
 <span class="c1"># Default: 32, for LLaDA2MoeModelLM</span>
 <span class="nt">block_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32</span>
+</pre></div>
+</div>
+<p>JointThreshold Config:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Decoding threshold for Mask-to-Token (M2T) phase</span>
+<span class="c1"># - Higher values: More conservative, better quality but slower</span>
+<span class="c1"># - Lower values: More aggressive, faster but potentially lower quality</span>
+<span class="c1"># Range: 0.0 - 1.0</span>
+<span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="c1"># Decoding threshold for Token-to-Token (T2T) phase</span>
+<span class="c1"># Range: 0.0 - 1.0</span>
+<span class="c1"># Setting to 0.0 allows full editing (recommended for most cases).</span>
+<span class="nt">edit_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="c1"># Max extra T2T steps after all masks are removed. Prevents infinite loops.</span>
+<span class="nt">max_post_edit_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+<span class="c1"># 2-gram repetition penalty (default 0).</span>
+<span class="c1"># An empirical value of 3 is often sufficient to mitigate most repetitions.</span>
+<span class="nt">penalty_lambda</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
 </section>
