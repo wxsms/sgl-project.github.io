@@ -49,13 +49,13 @@ from sglang.test.doc_patch import launch_server_cmd
 from sglang.utils import wait_for_server, terminate_process
 ```
 
-    [2026-02-09 08:11:58] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:38:29] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-09 08:11:58] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:38:29] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-09 08:11:58] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:38:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
 
@@ -74,29 +74,31 @@ python3 -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instru
 wait_for_server(f"http://localhost:{port}")
 ```
 
-    [2026-02-09 08:12:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:12:05] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:12:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:38:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:38:35] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:38:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-09 08:12:07] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-09 08:12:07] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+    [2026-02-09 08:38:38] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-09 08:38:38] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+
+
+    [2026-02-09 08:38:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:38:48] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:38:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:38:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:38:48] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:38:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
 
-    [2026-02-09 08:12:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:12:17] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:12:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-09 08:12:17] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:12:17] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:12:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -107,36 +109,37 @@ wait_for_server(f"http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-09 08:12:22] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:12:22] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:12:22] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:38:54] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:38:54] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:38:54] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:38:55] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.04s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.16it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.18s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.06it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03<00:01,  1.18s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.05it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.14it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.02it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.39it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.25it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 118.54it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 116.29it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=18.70 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=19.64 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=18.70 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.40s/it]Capturing batches (bs=2 avail_mem=18.61 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.40s/it]Capturing batches (bs=1 avail_mem=18.60 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.40s/it]Capturing batches (bs=1 avail_mem=18.60 GB): 100%|██████████| 3/3 [00:01<00:00,  2.47it/s]Capturing batches (bs=1 avail_mem=18.60 GB): 100%|██████████| 3/3 [00:01<00:00,  1.98it/s]
+    Capturing batches (bs=4 avail_mem=19.64 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.31s/it]Capturing batches (bs=2 avail_mem=18.63 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.31s/it]Capturing batches (bs=2 avail_mem=18.63 GB):  67%|██████▋   | 2/3 [00:01<00:00,  1.66it/s]Capturing batches (bs=1 avail_mem=18.63 GB):  67%|██████▋   | 2/3 [00:01<00:00,  1.66it/s]Capturing batches (bs=1 avail_mem=18.63 GB): 100%|██████████| 3/3 [00:01<00:00,  2.02it/s]
 
 
 
@@ -164,12 +167,11 @@ print(f"Output 1: {response.json()[1]['text']}")
 ```
 
     Output 0:  Each country and capital should be on a new line. 
-    Country: France
-    Capital: Paris
-    Country: Japan
-    Capital: Tokyo
     Country: Australia
-    
+    Capital: Canberra
+    Country: Brazil
+    Capital: Brasília
+    Country: China
     Output 1:  1. 2. 3.
     1.  United States - Washington D.C. 2.  Japan - Tokyo 3.  Australia -
 
@@ -197,29 +199,33 @@ python3 -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instru
 wait_for_server(f"http://localhost:{port}")
 ```
 
-    [2026-02-09 08:12:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:12:45] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:12:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:39:16] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:39:16] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:39:16] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-09 08:12:47] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-09 08:12:47] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+    [2026-02-09 08:39:19] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-09 08:39:19] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+
+
+    [2026-02-09 08:39:25] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:39:25] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:39:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
+    [2026-02-09 08:39:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:39:26] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:39:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
 
-    [2026-02-09 08:12:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:12:53] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:12:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-09 08:12:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:12:53] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:12:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -230,41 +236,42 @@ wait_for_server(f"http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-09 08:12:59] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:12:59] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:12:59] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:39:31] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:39:31] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:39:31] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:39:31] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.08s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.10it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.20s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.01it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03<00:01,  1.19s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.02it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.13it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.01it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.36it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.22it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 111.90it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 113.28it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 87.06it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 89.35it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=29.93 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=59.94 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=29.93 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.26s/it]Capturing batches (bs=2 avail_mem=29.85 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.26s/it]Capturing batches (bs=1 avail_mem=29.84 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.26s/it]Capturing batches (bs=1 avail_mem=29.84 GB): 100%|██████████| 3/3 [00:01<00:00,  2.50it/s]Capturing batches (bs=1 avail_mem=29.84 GB): 100%|██████████| 3/3 [00:01<00:00,  2.06it/s]
+    Capturing batches (bs=4 avail_mem=59.94 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.19s/it]Capturing batches (bs=2 avail_mem=59.89 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.19s/it]Capturing batches (bs=1 avail_mem=59.89 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.19s/it]Capturing batches (bs=1 avail_mem=59.89 GB): 100%|██████████| 3/3 [00:01<00:00,  2.80it/s]Capturing batches (bs=1 avail_mem=59.89 GB): 100%|██████████| 3/3 [00:01<00:00,  2.27it/s]
 
 
 
@@ -292,16 +299,16 @@ print(f"Output 1: {response.json()[1]['text']}")
 ```
 
     Output 0:  Each country and capital should be on a new line. 
-    Country: France
-    Capital: Paris
-    Country: Japan
+    France, Paris
+    Japan, Tokyo
+    Brazil, Brasília
+    List 3 countries and their capitals
+    Output 1:  Give the capital of each country.
+    Country 1: Japan
     Capital: Tokyo
-    Country: Australia
-    
-    Output 1:  Give the countries and capitals in the correct order.
-    Countries: Japan, Brazil, Australia
-    Capitals: Tokyo, Brasilia, Canberra
-    1. Japan -
+    Country 2: Australia
+    Capital: Canberra
+    Country 3: Brazil
 
 
 
@@ -340,30 +347,30 @@ url = f"http://127.0.0.1:{port}"
 wait_for_server(url)
 ```
 
-    [2026-02-09 08:13:18] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:13:18] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:13:18] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:39:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:39:52] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:39:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-09 08:13:21] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-09 08:13:21] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-    [2026-02-09 08:13:21] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
-
-
-    [2026-02-09 08:13:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:13:27] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:13:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-09 08:13:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:13:27] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:13:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:39:55] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-09 08:39:55] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+    [2026-02-09 08:39:56] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+
+
+    [2026-02-09 08:40:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:40:02] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:40:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:40:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:40:02] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:40:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -374,31 +381,32 @@ wait_for_server(url)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-09 08:13:33] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:13:33] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:13:33] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:40:09] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:40:09] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:40:09] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:40:09] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.07s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.18it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.18s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.10it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03<00:01,  1.21s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.09it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.12it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.01it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.46it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.31it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=18.04 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=15.40 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=18.04 GB):  33%|███▎      | 1/3 [00:02<00:04,  2.36s/it]Capturing batches (bs=2 avail_mem=15.21 GB):  33%|███▎      | 1/3 [00:02<00:04,  2.36s/it]Capturing batches (bs=1 avail_mem=15.18 GB):  33%|███▎      | 1/3 [00:02<00:04,  2.36s/it]Capturing batches (bs=1 avail_mem=15.18 GB): 100%|██████████| 3/3 [00:02<00:00,  1.47it/s]Capturing batches (bs=1 avail_mem=15.18 GB): 100%|██████████| 3/3 [00:02<00:00,  1.18it/s]
+    Capturing batches (bs=4 avail_mem=15.40 GB):  33%|███▎      | 1/3 [00:01<00:03,  1.59s/it]Capturing batches (bs=2 avail_mem=15.14 GB):  33%|███▎      | 1/3 [00:01<00:03,  1.59s/it]Capturing batches (bs=1 avail_mem=15.14 GB):  33%|███▎      | 1/3 [00:01<00:03,  1.59s/it]Capturing batches (bs=1 avail_mem=15.14 GB): 100%|██████████| 3/3 [00:01<00:00,  2.11it/s]Capturing batches (bs=1 avail_mem=15.14 GB): 100%|██████████| 3/3 [00:01<00:00,  1.71it/s]
 
 
 
@@ -424,7 +432,7 @@ else:
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 85.12it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 86.31it/s]
     
     LoRA adapter loaded successfully. {'rid': None, 'http_worker_ipc': None, 'success': True, 'error_message': '', 'loaded_adapters': {'lora0': 'Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16'}}
 
@@ -448,7 +456,7 @@ else:
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 111.01it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 112.94it/s]
     
 
 
@@ -520,7 +528,7 @@ else:
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 76.33it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 80.38it/s]
     
 
 
@@ -550,15 +558,14 @@ print(f"Output from lora1 (updated): \n{response.json()[1]['text']}\n")
 ```
 
     Output from lora0: 
-     Country 1: Japan, Capital: Tokyo. Country 2: Australia, Capital: Canberra. Country 3: Brazil, Capital: Brasília.
-    A
+     Country 1 has a capital of Bogor? No, that's not correct. The capital of Country 1 is actually Bogor is not the capital,
     
     Output from lora1 (updated): 
-     Each country and capital should be on a new line. 
-    France, Paris
-    Japan, Tokyo
-    Brazil, Brasília
-    List 3 countries and their capitals
+     Each country and capital should be on a new line.
+    France - Paris
+    Japan - Tokyo
+    Brazil - Brasília
+    List 3 countries and their capitals.
     
 
 
@@ -603,32 +610,30 @@ url = f"http://127.0.0.1:{port}"
 wait_for_server(url)
 ```
 
-    [2026-02-09 08:13:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:13:57] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:13:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:40:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:40:33] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:40:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-09 08:13:59] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-09 08:13:59] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-    [2026-02-09 08:14:00] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
-
-
-    [2026-02-09 08:14:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:14:06] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:14:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:14:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-09 08:14:06] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:14:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:40:36] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-09 08:40:36] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+    [2026-02-09 08:40:36] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
 
 
+    [2026-02-09 08:40:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:40:42] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:40:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:40:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:40:42] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:40:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
@@ -639,44 +644,45 @@ wait_for_server(url)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-09 08:14:12] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:14:12] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:14:12] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:40:48] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:40:48] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:40:48] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:40:48] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.06s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.09it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.16s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.01it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03<00:01,  1.18s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.02it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.15it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.03it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.37it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.22it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 88.95it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 91.63it/s]
     
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 113.19it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 115.77it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 81.73it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 78.58it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.72 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.74 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=56.72 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.13s/it]Capturing batches (bs=2 avail_mem=56.68 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.13s/it]Capturing batches (bs=1 avail_mem=56.67 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.13s/it]Capturing batches (bs=1 avail_mem=56.67 GB): 100%|██████████| 3/3 [00:01<00:00,  2.91it/s]Capturing batches (bs=1 avail_mem=56.67 GB): 100%|██████████| 3/3 [00:01<00:00,  2.37it/s]
+    Capturing batches (bs=4 avail_mem=56.74 GB):  33%|███▎      | 1/3 [00:01<00:03,  1.98s/it]Capturing batches (bs=2 avail_mem=56.69 GB):  33%|███▎      | 1/3 [00:01<00:03,  1.98s/it]Capturing batches (bs=1 avail_mem=56.69 GB):  33%|███▎      | 1/3 [00:02<00:03,  1.98s/it]Capturing batches (bs=1 avail_mem=56.69 GB): 100%|██████████| 3/3 [00:02<00:00,  1.73it/s]Capturing batches (bs=1 avail_mem=56.69 GB): 100%|██████████| 3/3 [00:02<00:00,  1.39it/s]
 
 
 
@@ -705,7 +711,7 @@ response = requests.post(
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 112.11it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 111.01it/s]
     
 
 
@@ -743,14 +749,15 @@ print(f"Output from lora2 (not pinned): \n{response.json()[2]['text']}\n")
     
     Output from lora1 (pinned): 
      Each country and capital should be on a new line. 
-    France, Paris
-    Japan, Tokyo
-    Brazil, Brasília
-    List 3 countries and their capitals
+    Country: France
+    Capital: Paris
+    Country: Japan
+    Capital: Tokyo
+    Country: Australia
+    
     
     Output from lora2 (not pinned): 
-     Country 1: Australia, Capital: Canberra. Country 2: Japan, Capital: Tokyo. Country 3: Brazil, Capital: Brasília.
-    The
+     Country 1 has a capital of Bogor? No, that's not correct. The capital of Country 1 is actually Bogor is not the capital,
     
 
 
@@ -817,141 +824,142 @@ url = f"http://127.0.0.1:{port}"
 wait_for_server(url)
 ```
 
-    [2026-02-09 08:14:35] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:14:35] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:14:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:41:11] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:41:11] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:41:11] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-09 08:14:37] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-09 08:14:37] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
-
-
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
-    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-    [2026-02-09 08:14:38] server_args=ServerArgs(model_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=32297, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.841, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=830871102, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='meta-llama/Meta-Llama-3.1-8B-Instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=True, enable_lora_overlap_loading=True, max_lora_rank=256, lora_target_modules=None, lora_paths=[LoRARef(lora_id='b4dccf3baf644905a6b59b3320648e0a', lora_name='lora0', lora_path='Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16', pinned=False), LoRARef(lora_id='16715343fdb940d6aa97eb0b8c154daa', lora_name='lora1', lora_path='algoprog/fact-generation-llama-3.1-8b-instruct-lora', pinned=False), LoRARef(lora_id='1557e5cc5e7844af933381dbe103e868', lora_name='lora2', lora_path='philschmid/code-llama-3-1-8b-text-to-sql-lora', pinned=False)], max_loaded_loras=4, max_loras_per_batch=2, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='flashinfer_cutlass', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', disable_hicache_numa_detect=False, hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
-
-
-    [2026-02-09 08:14:39] Watchdog TokenizerManager initialized.
-    [2026-02-09 08:14:39] Using default HuggingFace chat template with detected content format: string
-
-
-    [2026-02-09 08:14:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:14:44] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:14:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-09 08:14:44] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-09 08:14:44] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-09 08:14:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:41:14] INFO server_args.py:1796: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-09 08:41:14] INFO server_args.py:2783: Set soft_watchdog_timeout since in CI
 
 
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+    [2026-02-09 08:41:14] server_args=ServerArgs(model_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=32723, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.841, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=576776302, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='meta-llama/Meta-Llama-3.1-8B-Instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=True, enable_lora_overlap_loading=True, max_lora_rank=256, lora_target_modules=None, lora_paths=[LoRARef(lora_id='3db2e3f503c643ba87a9abd29f23e2ca', lora_name='lora0', lora_path='Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16', pinned=False), LoRARef(lora_id='606f4d2220b245aa9c7b9815a8831f1e', lora_name='lora1', lora_path='algoprog/fact-generation-llama-3.1-8b-instruct-lora', pinned=False), LoRARef(lora_id='ef8c87f8d1444b34985b56651c3c424e', lora_name='lora2', lora_path='philschmid/code-llama-3-1-8b-text-to-sql-lora', pinned=False)], max_loaded_loras=4, max_loras_per_batch=2, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='flashinfer_cutlass', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', disable_hicache_numa_detect=False, hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+
+
+    [2026-02-09 08:41:15] Watchdog TokenizerManager initialized.
+    [2026-02-09 08:41:15] Using default HuggingFace chat template with detected content format: string
+
+
+    [2026-02-09 08:41:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:41:20] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:41:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-09 08:41:20] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-09 08:41:20] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-09 08:41:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+
+
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
     <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
 
-    [2026-02-09 08:14:47] Watchdog DetokenizerManager initialized.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+    <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 
 
-    [2026-02-09 08:14:47] Init torch distributed begin.
+    [2026-02-09 08:41:23] Watchdog DetokenizerManager initialized.
+
+
+    [2026-02-09 08:41:23] Init torch distributed begin.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [2026-02-09 08:14:47] Init torch distributed ends. elapsed=0.44 s, mem usage=0.09 GB
-    [2026-02-09 08:14:48] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
+    [2026-02-09 08:41:24] Init torch distributed ends. elapsed=0.47 s, mem usage=0.09 GB
+    [2026-02-09 08:41:24] MOE_RUNNER_BACKEND is not initialized, the backend will be automatically selected
 
 
-    [2026-02-09 08:14:50] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:14:50] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-09 08:14:50] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-09 08:14:50] Load weight begin. avail mem=42.60 GB
+    [2026-02-09 08:41:26] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:41:26] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-09 08:41:26] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-09 08:41:26] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+    [2026-02-09 08:41:26] Load weight begin. avail mem=42.93 GB
 
 
-    [2026-02-09 08:14:50] Found local HF snapshot for meta-llama/Meta-Llama-3.1-8B-Instruct at /hf_home/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659; skipping download.
-    [2026-02-09 08:14:50] Beginning to load weights
+    [2026-02-09 08:41:26] Found local HF snapshot for meta-llama/Meta-Llama-3.1-8B-Instruct at /hf_home/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659; skipping download.
+    [2026-02-09 08:41:26] Beginning to load weights
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.04s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.23it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.16s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.15it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03<00:01,  1.18s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.12it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.15it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.03it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.50it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.35it/s]
     
-    [2026-02-09 08:14:54] Loading weights took 3.93 seconds
-    [2026-02-09 08:14:54] Load weight end. elapsed=4.27 s, type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=26.74 GB, mem usage=15.86 GB.
-    [2026-02-09 08:14:54] Using csgmv as backend of LoRA kernels.
-    [2026-02-09 08:14:54] Found local HF snapshot for Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16 at /hf_home/hub/models--Nutanix--Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16/snapshots/a2b27aa70a66dc36ce71116f6c6a259dd1b23c17; skipping download.
-    [2026-02-09 08:14:54] No model.safetensors.index.json found in remote.
-    [2026-02-09 08:14:54] Beginning to load weights
+    [2026-02-09 08:41:29] Loading weights took 3.00 seconds
+    [2026-02-09 08:41:29] Load weight end. elapsed=3.26 s, type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=26.02 GB, mem usage=16.91 GB.
+    [2026-02-09 08:41:29] Using csgmv as backend of LoRA kernels.
+    [2026-02-09 08:41:30] Found local HF snapshot for Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16 at /hf_home/hub/models--Nutanix--Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16/snapshots/a2b27aa70a66dc36ce71116f6c6a259dd1b23c17; skipping download.
+
+
+    [2026-02-09 08:41:30] No model.safetensors.index.json found in remote.
+    [2026-02-09 08:41:30] Beginning to load weights
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-
-
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 92.15it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 92.16it/s]
     
-    [2026-02-09 08:14:55] Found local HF snapshot for algoprog/fact-generation-llama-3.1-8b-instruct-lora at /hf_home/hub/models--algoprog--fact-generation-llama-3.1-8b-instruct-lora/snapshots/dc8cdfb21993a6cb46199d6b1d79f68a42b06439; skipping download.
-    [2026-02-09 08:14:55] No model.safetensors.index.json found in remote.
-    [2026-02-09 08:14:55] Beginning to load weights
+    [2026-02-09 08:41:30] Found local HF snapshot for algoprog/fact-generation-llama-3.1-8b-instruct-lora at /hf_home/hub/models--algoprog--fact-generation-llama-3.1-8b-instruct-lora/snapshots/dc8cdfb21993a6cb46199d6b1d79f68a42b06439; skipping download.
+
+
+    [2026-02-09 08:41:30] No model.safetensors.index.json found in remote.
+    [2026-02-09 08:41:30] Beginning to load weights
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-
-
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 118.01it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 113.96it/s]
     
 
 
-    [2026-02-09 08:14:55] Found local HF snapshot for philschmid/code-llama-3-1-8b-text-to-sql-lora at /hf_home/hub/models--philschmid--code-llama-3-1-8b-text-to-sql-lora/snapshots/141fc3a09386a8baf0d7495c247ae2d1a565f69f; skipping download.
-    [2026-02-09 08:14:55] No model.safetensors.index.json found in remote.
-    [2026-02-09 08:14:55] Beginning to load weights
+    [2026-02-09 08:41:31] Found local HF snapshot for philschmid/code-llama-3-1-8b-text-to-sql-lora at /hf_home/hub/models--philschmid--code-llama-3-1-8b-text-to-sql-lora/snapshots/141fc3a09386a8baf0d7495c247ae2d1a565f69f; skipping download.
+    [2026-02-09 08:41:31] No model.safetensors.index.json found in remote.
+    [2026-02-09 08:41:31] Beginning to load weights
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 85.51it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 78.37it/s]
     
 
 
-    [2026-02-09 08:14:58] Using KV cache dtype: torch.bfloat16
-    [2026-02-09 08:14:58] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-    [2026-02-09 08:14:58] Memory pool end. avail mem=21.40 GB
-    [2026-02-09 08:14:58] Init attention backend begin.
-    [2026-02-09 08:14:58] Init attention backend end. elapsed=0.03 s
-    [2026-02-09 08:14:58] Capture cuda graph begin. This can take up to several minutes. avail mem=21.31 GB
-    [2026-02-09 08:14:58] Capture cuda graph bs [1, 2, 4]
+    [2026-02-09 08:41:34] Using KV cache dtype: torch.bfloat16
+    [2026-02-09 08:41:34] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+    [2026-02-09 08:41:34] Memory pool end. avail mem=21.39 GB
+    [2026-02-09 08:41:34] Init attention backend begin.
+    [2026-02-09 08:41:34] Init attention backend end. elapsed=0.03 s
+    [2026-02-09 08:41:34] Capture cuda graph begin. This can take up to several minutes. avail mem=21.25 GB
+    [2026-02-09 08:41:34] Capture cuda graph bs [1, 2, 4]
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=21.30 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=21.14 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=21.30 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.28s/it]Capturing batches (bs=2 avail_mem=21.16 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.28s/it]Capturing batches (bs=1 avail_mem=21.15 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.28s/it]Capturing batches (bs=1 avail_mem=21.15 GB): 100%|██████████| 3/3 [00:01<00:00,  2.65it/s]Capturing batches (bs=1 avail_mem=21.15 GB): 100%|██████████| 3/3 [00:01<00:00,  2.13it/s]
-
-
-    [2026-02-09 08:15:00] Capture cuda graph end. Time elapsed: 1.94 s. mem usage=0.18 GB. avail mem=21.13 GB.
+    Capturing batches (bs=4 avail_mem=21.14 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.37s/it]Capturing batches (bs=2 avail_mem=20.59 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.37s/it]Capturing batches (bs=1 avail_mem=20.59 GB):  33%|███▎      | 1/3 [00:01<00:02,  1.37s/it]Capturing batches (bs=1 avail_mem=20.59 GB): 100%|██████████| 3/3 [00:01<00:00,  2.44it/s]Capturing batches (bs=1 avail_mem=20.59 GB): 100%|██████████| 3/3 [00:01<00:00,  1.97it/s]
 
 
-    [2026-02-09 08:15:00] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=21.03 GB
+    [2026-02-09 08:41:36] Capture cuda graph end. Time elapsed: 2.10 s. mem usage=0.62 GB. avail mem=20.63 GB.
 
 
-    [2026-02-09 08:15:01] INFO:     Started server process [1778870]
-    [2026-02-09 08:15:01] INFO:     Waiting for application startup.
-    [2026-02-09 08:15:01] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.9}
-    [2026-02-09 08:15:01] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.9}
-    [2026-02-09 08:15:01] INFO:     Application startup complete.
-    [2026-02-09 08:15:01] INFO:     Uvicorn running on http://127.0.0.1:32297 (Press CTRL+C to quit)
+    [2026-02-09 08:41:37] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=20.63 GB
 
 
-    [2026-02-09 08:15:02] INFO:     127.0.0.1:56538 - "GET /v1/models HTTP/1.1" 200 OK
+    [2026-02-09 08:41:38] INFO:     Started server process [311304]
+    [2026-02-09 08:41:38] INFO:     Waiting for application startup.
+    [2026-02-09 08:41:38] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.9}
+    [2026-02-09 08:41:38] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.9}
+    [2026-02-09 08:41:38] INFO:     Application startup complete.
+    [2026-02-09 08:41:38] INFO:     Uvicorn running on http://127.0.0.1:32723 (Press CTRL+C to quit)
+    [2026-02-09 08:41:38] INFO:     127.0.0.1:33092 - "GET /v1/models HTTP/1.1" 200 OK
 
 
-    [2026-02-09 08:15:02] INFO:     127.0.0.1:56540 - "GET /model_info HTTP/1.1" 200 OK
+    [2026-02-09 08:41:39] INFO:     127.0.0.1:33096 - "GET /model_info HTTP/1.1" 200 OK
 
 
-    [2026-02-09 08:15:02] Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, input throughput (token/s): 0.00, cuda graph: False
-    [2026-02-09 08:15:02] INFO:     127.0.0.1:56550 - "POST /generate HTTP/1.1" 200 OK
-    [2026-02-09 08:15:02] The server is fired up and ready to roll!
+    [2026-02-09 08:41:39] Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, input throughput (token/s): 0.00, cuda graph: False
+    [2026-02-09 08:41:39] INFO:     127.0.0.1:33108 - "POST /generate HTTP/1.1" 200 OK
+    [2026-02-09 08:41:39] The server is fired up and ready to roll!
 
 
 
@@ -986,87 +994,87 @@ for i in range(3):
     print(f"Output from lora{i}: \n{response.json()[i]['text']}\n")
 ```
 
-    [2026-02-09 08:15:07] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, input throughput (token/s): 1.59, cuda graph: False
-    [2026-02-09 08:15:07] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, input throughput (token/s): 174.31, cuda graph: False
+    [2026-02-09 08:41:43] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, input throughput (token/s): 1.89, cuda graph: False
+    [2026-02-09 08:41:43] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, input throughput (token/s): 173.95, cuda graph: False
 
 
-    [2026-02-09 08:15:07] Decode batch, #running-req: 2, #token: 84, token usage: 0.00, cuda graph: True, gen throughput (token/s): 3.42, #queue-req: 1
+    [2026-02-09 08:41:44] Decode batch, #running-req: 2, #token: 84, token usage: 0.00, cuda graph: True, gen throughput (token/s): 3.41, #queue-req: 1
 
 
-    [2026-02-09 08:15:08] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, input throughput (token/s): 5.80, cuda graph: False
-    [2026-02-09 08:15:08] Decode batch, #running-req: 2, #token: 93, token usage: 0.00, cuda graph: True, gen throughput (token/s): 82.73, #queue-req: 0
+    [2026-02-09 08:41:45] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, input throughput (token/s): 5.32, cuda graph: False
+    [2026-02-09 08:41:45] Decode batch, #running-req: 2, #token: 93, token usage: 0.00, cuda graph: True, gen throughput (token/s): 70.32, #queue-req: 0
 
 
-    [2026-02-09 08:15:09] Decode batch, #running-req: 2, #token: 173, token usage: 0.01, cuda graph: True, gen throughput (token/s): 79.34, #queue-req: 0
+    [2026-02-09 08:41:46] Decode batch, #running-req: 2, #token: 173, token usage: 0.01, cuda graph: True, gen throughput (token/s): 80.01, #queue-req: 0
 
 
-    [2026-02-09 08:15:10] Decode batch, #running-req: 1, #token: 162, token usage: 0.01, cuda graph: True, gen throughput (token/s): 67.10, #queue-req: 0
+    [2026-02-09 08:41:47] Decode batch, #running-req: 1, #token: 162, token usage: 0.01, cuda graph: True, gen throughput (token/s): 66.15, #queue-req: 0
 
 
-    [2026-02-09 08:15:11] Decode batch, #running-req: 1, #token: 202, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.92, #queue-req: 0
+    [2026-02-09 08:41:47] Decode batch, #running-req: 1, #token: 202, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.26, #queue-req: 0
 
 
-    [2026-02-09 08:15:12] Decode batch, #running-req: 1, #token: 242, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.68, #queue-req: 0
+    [2026-02-09 08:41:48] Decode batch, #running-req: 1, #token: 242, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.68, #queue-req: 0
 
 
-    [2026-02-09 08:15:13] Decode batch, #running-req: 1, #token: 282, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.83, #queue-req: 0
+    [2026-02-09 08:41:49] Decode batch, #running-req: 1, #token: 282, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.18, #queue-req: 0
 
 
-    [2026-02-09 08:15:14] Decode batch, #running-req: 1, #token: 322, token usage: 0.02, cuda graph: True, gen throughput (token/s): 47.92, #queue-req: 0
+    [2026-02-09 08:41:50] Decode batch, #running-req: 1, #token: 322, token usage: 0.02, cuda graph: True, gen throughput (token/s): 50.66, #queue-req: 0
 
 
-    [2026-02-09 08:15:14] Decode batch, #running-req: 1, #token: 362, token usage: 0.02, cuda graph: True, gen throughput (token/s): 52.40, #queue-req: 0
+    [2026-02-09 08:41:50] Decode batch, #running-req: 1, #token: 362, token usage: 0.02, cuda graph: True, gen throughput (token/s): 110.36, #queue-req: 0
 
 
-    [2026-02-09 08:15:15] Decode batch, #running-req: 1, #token: 402, token usage: 0.02, cuda graph: True, gen throughput (token/s): 47.14, #queue-req: 0
+    [2026-02-09 08:41:51] Decode batch, #running-req: 1, #token: 402, token usage: 0.02, cuda graph: True, gen throughput (token/s): 67.08, #queue-req: 0
 
 
-    [2026-02-09 08:15:16] Decode batch, #running-req: 1, #token: 442, token usage: 0.02, cuda graph: True, gen throughput (token/s): 47.65, #queue-req: 0
+    [2026-02-09 08:41:52] Decode batch, #running-req: 1, #token: 442, token usage: 0.02, cuda graph: True, gen throughput (token/s): 47.49, #queue-req: 0
 
 
-    [2026-02-09 08:15:17] Decode batch, #running-req: 1, #token: 482, token usage: 0.02, cuda graph: True, gen throughput (token/s): 47.67, #queue-req: 0
+    [2026-02-09 08:41:53] Decode batch, #running-req: 1, #token: 482, token usage: 0.02, cuda graph: True, gen throughput (token/s): 47.17, #queue-req: 0
 
 
-    [2026-02-09 08:15:18] Decode batch, #running-req: 1, #token: 522, token usage: 0.03, cuda graph: True, gen throughput (token/s): 47.88, #queue-req: 0
+    [2026-02-09 08:41:53] Decode batch, #running-req: 1, #token: 522, token usage: 0.03, cuda graph: True, gen throughput (token/s): 47.44, #queue-req: 0
 
 
-    [2026-02-09 08:15:19] Decode batch, #running-req: 1, #token: 562, token usage: 0.03, cuda graph: True, gen throughput (token/s): 47.78, #queue-req: 0
+    [2026-02-09 08:41:54] Decode batch, #running-req: 1, #token: 562, token usage: 0.03, cuda graph: True, gen throughput (token/s): 47.37, #queue-req: 0
 
 
-    [2026-02-09 08:15:19] Decode batch, #running-req: 1, #token: 602, token usage: 0.03, cuda graph: True, gen throughput (token/s): 108.70, #queue-req: 0
+    [2026-02-09 08:41:55] Decode batch, #running-req: 1, #token: 602, token usage: 0.03, cuda graph: True, gen throughput (token/s): 47.03, #queue-req: 0
 
 
-    [2026-02-09 08:15:20] Decode batch, #running-req: 1, #token: 642, token usage: 0.03, cuda graph: True, gen throughput (token/s): 66.89, #queue-req: 0
+    [2026-02-09 08:41:56] Decode batch, #running-req: 1, #token: 642, token usage: 0.03, cuda graph: True, gen throughput (token/s): 48.17, #queue-req: 0
 
 
-    [2026-02-09 08:15:20] Decode batch, #running-req: 1, #token: 682, token usage: 0.03, cuda graph: True, gen throughput (token/s): 48.40, #queue-req: 0
+    [2026-02-09 08:41:57] Decode batch, #running-req: 1, #token: 682, token usage: 0.03, cuda graph: True, gen throughput (token/s): 47.77, #queue-req: 0
 
 
-    [2026-02-09 08:15:21] Decode batch, #running-req: 1, #token: 722, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.91, #queue-req: 0
+    [2026-02-09 08:41:58] Decode batch, #running-req: 1, #token: 722, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.64, #queue-req: 0
 
 
-    [2026-02-09 08:15:22] Decode batch, #running-req: 1, #token: 762, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.73, #queue-req: 0
+    [2026-02-09 08:41:58] Decode batch, #running-req: 1, #token: 762, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.49, #queue-req: 0
 
 
-    [2026-02-09 08:15:23] Decode batch, #running-req: 1, #token: 802, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.97, #queue-req: 0
+    [2026-02-09 08:41:59] Decode batch, #running-req: 1, #token: 802, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.15, #queue-req: 0
 
 
-    [2026-02-09 08:15:24] Decode batch, #running-req: 1, #token: 842, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.79, #queue-req: 0
+    [2026-02-09 08:42:00] Decode batch, #running-req: 1, #token: 842, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.32, #queue-req: 0
 
 
-    [2026-02-09 08:15:25] Decode batch, #running-req: 1, #token: 882, token usage: 0.04, cuda graph: True, gen throughput (token/s): 48.11, #queue-req: 0
+    [2026-02-09 08:42:01] Decode batch, #running-req: 1, #token: 882, token usage: 0.04, cuda graph: True, gen throughput (token/s): 57.69, #queue-req: 0
 
 
-    [2026-02-09 08:15:25] Decode batch, #running-req: 1, #token: 922, token usage: 0.05, cuda graph: True, gen throughput (token/s): 48.06, #queue-req: 0
+    [2026-02-09 08:42:02] Decode batch, #running-req: 1, #token: 922, token usage: 0.05, cuda graph: True, gen throughput (token/s): 48.51, #queue-req: 0
 
 
-    [2026-02-09 08:15:26] Decode batch, #running-req: 1, #token: 962, token usage: 0.05, cuda graph: True, gen throughput (token/s): 48.08, #queue-req: 0
+    [2026-02-09 08:42:03] Decode batch, #running-req: 1, #token: 962, token usage: 0.05, cuda graph: True, gen throughput (token/s): 47.44, #queue-req: 0
 
 
-    [2026-02-09 08:15:27] Decode batch, #running-req: 1, #token: 1002, token usage: 0.05, cuda graph: True, gen throughput (token/s): 47.73, #queue-req: 0
+    [2026-02-09 08:42:03] Decode batch, #running-req: 1, #token: 1002, token usage: 0.05, cuda graph: True, gen throughput (token/s): 46.35, #queue-req: 0
 
 
-    [2026-02-09 08:15:28] INFO:     127.0.0.1:56564 - "POST /generate HTTP/1.1" 200 OK
+    [2026-02-09 08:42:04] INFO:     127.0.0.1:38580 - "POST /generate HTTP/1.1" 200 OK
     Output from lora0: 
      Write a very long fairy-tale.
     Once upon a time, in a far-off kingdom, there lived a beautiful princess named Sophia. She had long, golden hair and sparkling blue eyes that shone like the stars in the night sky. Sophia was kind and gentle, loved by all who knew her, and she spent her days helping those in need and spreading joy wherever she went.
