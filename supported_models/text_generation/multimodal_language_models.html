@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=32feeabd"></script>
+    <script src="../../_static/documentation_options.js?v=e291c49a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -483,6 +483,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-inputs-limitation">Multimodal Inputs Limitation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bidirectional-attention-in-multimodal-model-serving">Bidirectional Attention in Multimodal Model Serving</a></li>
 </ul>
 </li>
 </ul>
@@ -738,6 +739,24 @@ document.write(`
 </ul>
 <p>This can reduce GPU memory usage, improve inference speed, and help to avoid OOM, but may impact model performance, thus set a proper value based on your specific use case. Currently, only <code class="docutils literal notranslate"><span class="pre">qwen_vl</span></code> supports this config. Please refer to <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/multimodal/processors/qwen_vl.py">qwen_vl processor</a> for understanding the meaning of each parameter.</p>
 </section>
+<section id="bidirectional-attention-in-multimodal-model-serving">
+<h3>Bidirectional Attention in Multimodal Model Serving<a class="headerlink" href="#bidirectional-attention-in-multimodal-model-serving" title="Link to this heading">#</a></h3>
+<p><strong>Note for serving the Gemma-3 multimodal model</strong>:</p>
+<p>As mentioned in <a class="reference external" href="https://huggingface.co/blog/gemma3#multimodality">Welcome Gemma 3: Google’s all new multimodal, multilingual, long context open LLM
+</a>, Gemma-3 employs bidirectional attention between image tokens during the prefill phase. Currently, SGLang only supports bidirectional attention when using the Triton Attention Backend. Note, however, that SGLang’s current bidirectional attention implementation is incompatible with both CUDA Graph and Chunked Prefill.</p>
+<p>To enable bidirectional attention, you can use the <code class="docutils literal notranslate"><span class="pre">TritonAttnBackend</span></code> while disabling CUDA Graph and Chunked Prefill. Example launch command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>google/gemma-3-4b-it<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-multimodal<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dtype<span class="w"> </span>bfloat16<span class="w"> </span>--triton-attention-reduce-in-fp32<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>triton<span class="w"> </span><span class="se">\ </span><span class="c1"># Use Triton attention backend</span>
+<span class="w">  </span>--disable-cuda-graph<span class="w"> </span><span class="se">\ </span><span class="c1"># Disable Cuda Graph</span>
+<span class="w">  </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span><span class="c1"># Disable Chunked Prefill</span>
+</pre></div>
+</div>
+<p>If higher serving performance is required and a certain degree of accuracy loss is acceptable, you may choose to use other attention backends, and you can also enable features like CUDA Graph and Chunked Prefill for better performance, but note that the model will fall back to using causal attention instead of bidirectional attention.</p>
+</section>
 </section>
 </section>
 
@@ -792,6 +811,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-inputs-limitation">Multimodal Inputs Limitation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bidirectional-attention-in-multimodal-model-serving">Bidirectional Attention in Multimodal Model Serving</a></li>
 </ul>
 </li>
 </ul>
