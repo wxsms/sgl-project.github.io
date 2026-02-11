@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=269bfc16"></script>
+    <script src="../_static/documentation_options.js?v=f12efd69"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quantized_kv_cache.html">Quantized KV Cache</a></li>
 <li class="toctree-l1"><a class="reference internal" href="expert_parallelism.html">Expert Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dp_dpa_smg_guide.html">DP, DPA and SGLang DP Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lora.html">LoRA Serving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pd_disaggregation.html">PD Disaggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="epd_disaggregation.html">EPD Disaggregation</a></li>
@@ -665,9 +666,9 @@ prefill</p></td>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:10:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:10:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:10:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:47:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:47:40] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:47:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -691,20 +692,20 @@ prefill</p></td>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:10:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:10:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:10:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:10:20] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-11 00:10:20] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-11 00:10:20] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:47:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:47:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:47:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:47:48] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-11 02:47:48] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-11 02:47:48] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:10:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:10:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:10:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:10:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:10:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:10:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:47:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:47:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:47:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:47:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:47:54] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:47:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -713,24 +714,24 @@ prefill</p></td>
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:10:32] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:10:32] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:10:32] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:10:32] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:47:59] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:47:59] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:47:59] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:48:00] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.92s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.39s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.47s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.70s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.25s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.32s/it]
 
-Capturing batches (bs=1 avail_mem=55.11 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.61it/s]
-[2026-02-11 00:10:38] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-11 00:10:38] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=40.11 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.04it/s]
+[2026-02-11 02:48:04] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-11 02:48:04] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.73s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.73s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.16s/it]
 
-Capturing batches (bs=1 avail_mem=54.11 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.46s/it]
-Capturing batches (bs=1 avail_mem=54.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 70.15it/s]
+Capturing batches (bs=1 avail_mem=37.71 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.45s/it]
+Capturing batches (bs=1 avail_mem=37.56 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 47.07it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -762,7 +763,7 @@ Capturing batches (bs=1 avail_mem=54.01 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='4b83c57dc62748d88a54bc21746effb1', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770768655, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='b2f50c775ce04180bf67b673d2562b82', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770778100, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -798,20 +799,20 @@ Capturing batches (bs=1 avail_mem=54.01 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:11:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:11:01] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:11:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:11:03] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-11 00:11:03] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-11 00:11:03] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:48:25] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:48:25] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:48:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:48:27] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-11 02:48:27] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-11 02:48:27] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:11:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:11:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:11:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:11:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:11:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:11:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:48:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:48:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:48:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:48:33] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:48:33] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:48:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -820,26 +821,26 @@ Capturing batches (bs=1 avail_mem=54.01 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:11:15] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:11:15] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:11:15] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:11:15] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:48:38] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:48:38] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:48:38] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:48:38] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.45s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.05s/it]
-Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.11s/it]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01&lt;00:01,  1.82s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.30s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02&lt;00:00,  1.38s/it]
 
-Capturing batches (bs=2 avail_mem=55.08 GB):  25%|██▌       | 1/4 [00:00&lt;00:01,  1.54it/s]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
+Capturing batches (bs=2 avail_mem=55.08 GB):  25%|██▌       | 1/4 [00:01&lt;00:03,  1.21s/it]/usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=&#34;+dynamo&#34; for a DEBUG stack trace.
   torch._dynamo.utils.warn_once(msg)
-Capturing batches (bs=1 avail_mem=55.05 GB): 100%|██████████| 4/4 [00:13&lt;00:00,  3.49s/it]
-[2026-02-11 00:11:35] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-11 00:11:35] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=55.05 GB): 100%|██████████| 4/4 [00:14&lt;00:00,  3.65s/it]
+[2026-02-11 02:48:59] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-11 02:48:59] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.42s/it]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.42s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.15s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.15s/it]
 
-Capturing batches (bs=1 avail_mem=53.95 GB): 100%|██████████| 4/4 [00:07&lt;00:00,  1.96s/it]
-Capturing batches (bs=1 avail_mem=53.81 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 63.05it/s]
+Capturing batches (bs=1 avail_mem=37.58 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.44s/it]
+Capturing batches (bs=1 avail_mem=37.40 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 56.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -871,7 +872,7 @@ Capturing batches (bs=1 avail_mem=53.81 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='f9b5ee0976ac4a8a949801d78137f33e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770768714, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='75adab32953d4006beca5a2947c78cb7', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1770778154, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -909,54 +910,54 @@ Capturing batches (bs=1 avail_mem=53.81 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:11:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:11:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:11:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:12:01] WARNING model_config.py:1141: Casting torch.bfloat16 to torch.float16.
-[2026-02-11 00:12:01] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-11 00:12:01] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-11 00:12:01] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:49:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:49:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:49:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:49:21] WARNING model_config.py:1141: Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:49:21] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-11 02:49:21] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-11 02:49:21] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:12:02] Casting torch.bfloat16 to torch.float16.
-[2026-02-11 00:12:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:12:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:12:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:12:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:12:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:12:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:49:22] Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:49:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:49:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:49:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:49:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:49:28] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:49:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:12:10] Casting torch.bfloat16 to torch.float16.
-[2026-02-11 00:12:10] Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:49:30] Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:49:30] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:12:13] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:12:13] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:12:13] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:12:13] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:49:33] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:49:33] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:49:33] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:49:33] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:14,  4.71s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:09&lt;00:09,  4.69s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13&lt;00:04,  4.50s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.20s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.72s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.20s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.29s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.33s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.09s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14&lt;00:00,  3.53s/it]
 
-Capturing batches (bs=1 avail_mem=59.99 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.07it/s]
-[2026-02-11 00:12:31] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-11 00:12:31] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2026-02-11 00:12:31] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2026-02-11 00:12:31] Overriding the draft model&#39;s max_position_embeddings to 8192.
+Capturing batches (bs=1 avail_mem=59.99 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.33it/s]
+[2026-02-11 02:49:50] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-11 02:49:50] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-02-11 02:49:50] Warning: Target model&#39;s context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2026-02-11 02:49:50] Overriding the draft model&#39;s max_position_embeddings to 8192.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.02it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.01it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.02s/it]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:01&lt;00:00,  1.02s/it]
 
-Capturing batches (bs=1 avail_mem=58.84 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.42s/it]
-Capturing batches (bs=1 avail_mem=58.70 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 79.95it/s]
+Capturing batches (bs=1 avail_mem=58.84 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.30s/it]
+Capturing batches (bs=1 avail_mem=58.70 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 111.68it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -988,7 +989,7 @@ Capturing batches (bs=1 avail_mem=58.70 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='659e3835aec74ff1b2dd49039f937a99', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770768767, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='14747a05d8314ac49d99cfdb0441ab3b', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770778205, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1024,54 +1025,54 @@ Capturing batches (bs=1 avail_mem=58.70 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:12:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:12:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:12:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:12:56] WARNING model_config.py:1141: Casting torch.bfloat16 to torch.float16.
-[2026-02-11 00:12:56] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-11 00:12:56] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-11 00:12:56] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:50:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:50:10] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:50:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:50:12] WARNING model_config.py:1141: Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:50:12] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-11 02:50:12] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-11 02:50:12] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:12:56] Casting torch.bfloat16 to torch.float16.
-[2026-02-11 00:13:03] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:13:03] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:13:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:13:04] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:13:04] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:13:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:50:13] Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:50:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:50:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:50:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:50:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:50:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:50:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:13:06] Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:50:21] Casting torch.bfloat16 to torch.float16.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:13:06] Casting torch.bfloat16 to torch.float16.
+[2026-02-11 02:50:21] Casting torch.bfloat16 to torch.float16.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:13:09] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:13:09] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:13:09] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:13:09] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:50:24] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:50:24] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:50:24] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:50:24] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:13,  4.41s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.26s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.11s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  2.90s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.39s/it]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04&lt;00:12,  4.15s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08&lt;00:08,  4.23s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12&lt;00:04,  4.28s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.02s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:13&lt;00:00,  3.47s/it]
 
-Capturing batches (bs=1 avail_mem=59.92 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.29it/s]
-[2026-02-11 00:13:25] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-11 00:13:25] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-[2026-02-11 00:13:25] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
-[2026-02-11 00:13:25] Overriding the draft model&#39;s max_position_embeddings to 131072.
+Capturing batches (bs=1 avail_mem=59.92 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.05it/s]
+[2026-02-11 02:50:41] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-11 02:50:41] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-02-11 02:50:41] Warning: Target model&#39;s context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model&#39;s config.
+[2026-02-11 02:50:41] Overriding the draft model&#39;s max_position_embeddings to 131072.
 Loading pt checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.12it/s]
-Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.12it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.87it/s]
+Loading pt checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.87it/s]
 
-Capturing batches (bs=1 avail_mem=58.63 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.29s/it]
-Capturing batches (bs=1 avail_mem=58.48 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 53.79it/s]
+Capturing batches (bs=1 avail_mem=58.63 GB): 100%|██████████| 4/4 [00:05&lt;00:00,  1.39s/it]
+Capturing batches (bs=1 avail_mem=58.48 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 103.23it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1103,7 +1104,7 @@ Capturing batches (bs=1 avail_mem=58.48 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='e525ac3b9e434428b51f4b4ccca00ba9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770768820, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='dc7e920498d4491792295a56428daa37', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1770778257, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1139,20 +1140,20 @@ Capturing batches (bs=1 avail_mem=58.48 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:13:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:13:45] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:13:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:13:47] INFO server_args.py:1806: Attention backend not specified. Use fa3 backend by default.
-[2026-02-11 00:13:47] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-11 00:13:47] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:51:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:51:02] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:51:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:51:05] INFO server_args.py:1806: Attention backend not specified. Use fa3 backend by default.
+[2026-02-11 02:51:05] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-11 02:51:05] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:13:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:13:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:13:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:13:53] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:13:53] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:13:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:51:11] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:51:11] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:51:11] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:51:11] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:51:11] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:51:11] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -1161,26 +1162,26 @@ Capturing batches (bs=1 avail_mem=58.48 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:13:59] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:13:59] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:13:59] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:13:59] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:51:16] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:51:16] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:51:16] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:51:16] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.49it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.29it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.25it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.31it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.57it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.43it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.42it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.49it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
 
-Capturing batches (bs=1 avail_mem=61.04 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.28it/s]
-[2026-02-11 00:14:05] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-11 00:14:05] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=61.04 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  2.34it/s]
+[2026-02-11 02:51:22] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-11 02:51:22] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.05it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.57it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.14it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:00,  5.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00&lt;00:00,  8.30it/s]
 
-Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 47.42it/s]
+Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 66.66it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1211,7 +1212,7 @@ Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'id': '3ea62f8bd2b945c98ac2b291a2ada761', 'object': 'chat.completion', 'created': 1770768854, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France\'s geography and capitals. France is a country in Europe, right? I remember that Paris is a major city there. But wait, maybe I should double-check to be sure. Sometimes people confuse capitals, like thinking Berlin is the capital of France when it\'s actually Germany\'s. So, Paris is definitely the capital. Let me think if there are any other cities that could be considered. Lyon is a big city too, but I think it\'s more known for being a culinary capital rather than the administrative one. Strasbourg comes to mind as well; it\'s a city in the east, and maybe the capital of a region like Grand Est. But the national capital? Yes, Paris. I can\'t think of any other cities that serve as the capital. Let me confirm with some quick logic: the Eiffel Tower is in Paris, which is a major landmark. The French government is based there, the presidential palace, the national assembly... all those institutions are in Paris. So yes, the answer should be Paris. I don\'t see any contradictions here. There\'s no recent change I\'ve heard about the capital moving, so it\'s safe to say Paris is still the capital. Alright, that seems solid.\n</think>\n\nThe capital of France is **Paris**. This iconic city is renowned for its historical landmarks, such as the Eiffel Tower, museums, and political institutions, including the French government and presidential headquarters.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 346, 'completion_tokens': 320, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
+<strong style='color: #00008B;'>{'id': 'fb2d66e7699d4b7180a7e39f60d7c965', 'object': 'chat.completion', 'created': 1770778292, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling what I know about France. France is a country in Europe, right? It\'s known for things like the Eiffel Tower, Louvre Museum, and baguettes. Now, the capital... I think it\'s Paris. Wait, is there any other city that could be the capital? Maybe not. Let me double-check.\n\nI remember that Paris has the Eiffel Tower, which is a major landmark. Also, political capitals are usually the cities where the government is located. France\'s government is based in Paris, with the President residing there. The National Assembly, which is their parliament, is also in Paris. So that makes sense. \n\nWait, could there be any confusion with another country? For example, maybe some regions have their own capitals, but the question is about France as a country. No, France\'s capital is definitely Paris. Let me think if there\'s any alternative name or a period when the capital changed, but I don\'t recall any. Historically, Paris has been the capital for a long time. \n\nAnother way to confirm: major cities in France. Paris is the most populous and the capital. Other major cities are Marseille, Lyon, Toulouse, but those are not the capital. So yes, Paris is the answer. \n\nWait, the user might be taking a quiz or just testing knowledge. Sometimes people might think New York because of American media, but no, that\'s not correct. Or maybe think of other European capitals, like London for the UK, Berlin for Germany, but France is Paris. \n\nI think that\'s solid. The answer is Paris. Let me make sure there\'s no trick here. Sometimes questions can have trick answers, like if the country changed capitals recently, but France\'s capital hasn\'t changed in recent times. So yeah, the answer should be Paris.\n</think>\nThe capital of France is **Paris**. This major metropolis is home to iconic landmarks like the Eiffel Tower, the Louvre Museum, and的政治 institutions such as the French government and parliament.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 466, 'completion_tokens': 440, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -1258,20 +1259,20 @@ Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:14:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:14:19] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:14:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:14:21] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
-[2026-02-11 00:14:21] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
-[2026-02-11 00:14:21] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:51:37] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:51:37] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:51:37] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:51:40] INFO server_args.py:1806: Attention backend not specified. Use flashinfer backend by default.
+[2026-02-11 02:51:40] WARNING server_args.py:2314: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler.
+[2026-02-11 02:51:40] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:14:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:14:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:14:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:14:27] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:14:27] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:14:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:51:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:51:46] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:51:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:51:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:51:46] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:51:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -1280,26 +1281,26 @@ Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:14:32] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:14:32] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:14:32] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:14:33] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:51:52] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:51:52] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:51:52] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:51:52] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.60it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.50it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.49it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.52it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.25it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.19it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.20it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.22it/s]
 
-Capturing batches (bs=1 avail_mem=62.14 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.63it/s]
-[2026-02-11 00:14:38] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-[2026-02-11 00:14:38] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+Capturing batches (bs=1 avail_mem=62.14 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.36it/s]
+[2026-02-11 02:51:59] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+[2026-02-11 02:51:59] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.36it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.36it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.56it/s]
 
-Capturing batches (bs=1 avail_mem=58.15 GB): 100%|██████████| 4/4 [00:08&lt;00:00,  2.19s/it]
-Capturing batches (bs=1 avail_mem=58.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 24.47it/s]
+Capturing batches (bs=1 avail_mem=58.15 GB): 100%|██████████| 4/4 [00:09&lt;00:00,  2.28s/it]
+Capturing batches (bs=1 avail_mem=58.01 GB): 100%|██████████| 4/4 [00:00&lt;00:00, 23.19it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1331,7 +1332,7 @@ Capturing batches (bs=1 avail_mem=58.01 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='6435926bb78d45c2b9d8da71e5cb732f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770768901, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='36578f1321414c649f7f2be27e817bb9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770778337, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
@@ -1377,20 +1378,20 @@ Capturing batches (bs=1 avail_mem=58.01 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:15:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:15:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:15:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:15:09] INFO server_args.py:1806: Attention backend not specified. Use fa3 backend by default.
-[2026-02-11 00:15:09] WARNING server_args.py:2302: Spec v2 is enabled for eagle/eagle3 speculative decoding and overlap schedule is turned on.
-[2026-02-11 00:15:09] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:52:22] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:52:22] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:52:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:52:24] INFO server_args.py:1806: Attention backend not specified. Use fa3 backend by default.
+[2026-02-11 02:52:24] WARNING server_args.py:2302: Spec v2 is enabled for eagle/eagle3 speculative decoding and overlap schedule is turned on.
+[2026-02-11 02:52:24] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:15:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:15:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:15:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:15:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:15:15] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:15:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:52:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:52:30] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:52:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:52:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:52:30] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:52:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -1399,25 +1400,25 @@ Capturing batches (bs=1 avail_mem=58.01 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:15:21] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:15:21] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:15:21] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:15:21] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:52:35] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:52:35] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:52:35] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:52:35] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.63it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.55it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.52it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.54it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.55it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:02,  1.36it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.29it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.28it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
 
-Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.92it/s]
+Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  4.81it/s]
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.32it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  2.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.56it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  1.56it/s]
 
-[2026-02-11 00:15:27] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-Capturing batches (bs=1 avail_mem=58.94 GB): 100%|██████████| 4/4 [00:03&lt;00:00,  1.10it/s]
-[2026-02-11 00:15:33] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+[2026-02-11 02:52:43] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+Capturing batches (bs=1 avail_mem=58.94 GB): 100%|██████████| 4/4 [00:04&lt;00:00,  1.05s/it]
+[2026-02-11 02:52:50] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1449,7 +1450,7 @@ Capturing batches (bs=1 avail_mem=58.94 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='32d45d2bcdcd4e1e9c6e5eb45953a8e1', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770768937, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8eecb4099c074fc0bcc3c6f38aa9037e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770778374, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -1504,20 +1505,20 @@ Capturing batches (bs=1 avail_mem=58.94 GB): 100%|██████████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-11 00:15:42] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:15:42] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:15:42] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:15:45] INFO server_args.py:1806: Attention backend not specified. Use fa3 backend by default.
-[2026-02-11 00:15:45] WARNING server_args.py:2408: The overlap scheduler and mixed chunked prefill are disabled because of using ngram speculative decoding.
-[2026-02-11 00:15:45] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
+[2026-02-11 02:52:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:52:59] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:52:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:53:01] INFO server_args.py:1806: Attention backend not specified. Use fa3 backend by default.
+[2026-02-11 02:53:01] WARNING server_args.py:2408: The overlap scheduler and mixed chunked prefill are disabled because of using ngram speculative decoding.
+[2026-02-11 02:53:01] INFO server_args.py:2814: Set soft_watchdog_timeout since in CI
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
-[2026-02-11 00:15:51] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:15:51] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-11 00:15:51] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:15:51] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-11 00:15:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-11 00:15:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:53:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:53:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:53:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-11 02:53:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-11 02:53:07] INFO utils.py:151: Note: NumExpr detected 112 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-11 02:53:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
 &lt;frozen importlib._bootstrap_external&gt;:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
@@ -1526,18 +1527,18 @@ Capturing batches (bs=1 avail_mem=58.94 GB): 100%|██████████
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-11 00:15:56] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:15:56] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-11 00:15:56] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-02-11 00:15:56] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
+[2026-02-11 02:53:12] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:53:12] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-11 02:53:12] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-11 02:53:12] Ignore import error when loading sglang.srt.models.midashenglm: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.8 whereas TorchAudio has CUDA version 12.9. Please install the TorchAudio version that matches your PyTorch version.
 Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.68it/s]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.62it/s]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01&lt;00:00,  1.59it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.64it/s]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.63it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00&lt;00:01,  1.60it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01&lt;00:01,  1.41it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
 
-Capturing batches (bs=1 avail_mem=62.68 GB): 100%|██████████| 4/4 [00:00&lt;00:00,  5.37it/s]
+Capturing batches (bs=1 avail_mem=62.68 GB): 100%|██████████| 4/4 [00:01&lt;00:00,  3.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1569,7 +1570,7 @@ Capturing batches (bs=1 avail_mem=62.68 GB): 100%|██████████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='96999d6b7a1542ff8d3e211c5de55600', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770768978, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='09d2e9f89e104627afdebdb66601808e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770778406, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:

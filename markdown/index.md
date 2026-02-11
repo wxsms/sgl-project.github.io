@@ -61,7 +61,8 @@ advanced\_features/tool\_parser.ipynb
 advanced\_features/separate\_reasoning.ipynb
 advanced\_features/quantization.md
 advanced\_features/quantized\_kv\_cache.md
-advanced\_features/expert\_parallelism.md advanced\_features/lora.ipynb
+advanced\_features/expert\_parallelism.md
+advanced\_features/dp\_dpa\_smg\_guide.md advanced\_features/lora.ipynb
 advanced\_features/pd\_disaggregation.md
 advanced\_features/epd\_disaggregation.md
 advanced\_features/pipeline\_parallelism.md
