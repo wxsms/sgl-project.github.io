@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=1b4d3329"></script>
+    <script src="../_static/documentation_options.js?v=c823c94e"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -505,8 +505,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-sequence-splitting-default-setting">In sequence splitting (default setting)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-splitting">Round robin splitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-sequence-splitting">In sequence splitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-splitting-default-setting">Round robin splitting (default setting)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-parallel-context-parallel-pp-cp">Pipeline Parallel + Context Parallel (PP + CP)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-usage">Standard Usage</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation-with-pp-cp">PD Disaggregation with PP + CP</a></li>
@@ -903,8 +903,8 @@ ns eval \
 <h2>DSA long sequence context parallel optimization(experimental)<a class="headerlink" href="#dsa-long-sequence-context-parallel-optimization-experimental" title="Link to this heading">#</a></h2>
 <p><strong>Note: This feature is only verified on Hopper machines</strong></p>
 <p>For context parallel in DeepSeek V3.2 model, we provide two different modes of splitting tokens, which can be controlled with argument <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span></code>.</p>
-<section id="in-sequence-splitting-default-setting">
-<h3>In sequence splitting (default setting)<a class="headerlink" href="#in-sequence-splitting-default-setting" title="Link to this heading">#</a></h3>
+<section id="in-sequence-splitting">
+<h3>In sequence splitting<a class="headerlink" href="#in-sequence-splitting" title="Link to this heading">#</a></h3>
 <p>The first mode can be enabled by <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span> <span class="pre">in-seq-split</span></code>. This mode implements context parallel for DSA by splitting the sequence uniformly between context parallel ranks. At attention stage, each cp rank computes the indexer results of sharded sequence, and collects the whole kv cache through all gather operator.</p>
 <p>The communication group for context parallel reuses the one for attention tp, thus <code class="docutils literal notranslate"><span class="pre">cp_size</span></code> equals <code class="docutils literal notranslate"><span class="pre">atten_tp_size</span> <span class="pre">=</span> <span class="pre">tp_size</span> <span class="pre">/</span> <span class="pre">dp_size</span></code>.</p>
 <p>Note that in sequence splitting mode has the following restrictions:</p>
@@ -921,8 +921,8 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 </pre></div>
 </div>
 </section>
-<section id="round-robin-splitting">
-<h3>Round robin splitting<a class="headerlink" href="#round-robin-splitting" title="Link to this heading">#</a></h3>
+<section id="round-robin-splitting-default-setting">
+<h3>Round robin splitting (default setting)<a class="headerlink" href="#round-robin-splitting-default-setting" title="Link to this heading">#</a></h3>
 <p>This mode can be enabled by specifying the parameter <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span> <span class="pre">round-robin-split</span></code>, which distributes tokens across ranks based on <code class="docutils literal notranslate"><span class="pre">token_idx</span> <span class="pre">%</span> <span class="pre">cp_size</span></code>.</p>
 <p>In this scenario, compared with the aforementioned method, it additionally supports the fused MoE backend (the fused MoE backend may deliver better performance than DeepEP in single-machine scenarios), FP8 KV-cache, and multi-batch prefill inference. But it cannot be enabled with dp attention together.</p>
 <p>For more details, please refer to PR https://github.com/sgl-project/sglang/pull/13959.</p>
@@ -1110,8 +1110,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-long-sequence-context-parallel-optimization-experimental">DSA long sequence context parallel optimization(experimental)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-sequence-splitting-default-setting">In sequence splitting (default setting)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-splitting">Round robin splitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-sequence-splitting">In sequence splitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#round-robin-splitting-default-setting">Round robin splitting (default setting)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-parallel-context-parallel-pp-cp">Pipeline Parallel + Context Parallel (PP + CP)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-usage">Standard Usage</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-disaggregation-with-pp-cp">PD Disaggregation with PP + CP</a></li>
