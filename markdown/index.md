@@ -81,9 +81,21 @@ advanced\_features/sglang\_for\_rl.md
 <div class="toctree" data-maxdepth="2" data-caption="Supported Models">
 
 supported\_models/text\_generation/index
-supported\_models/image\_generation/index
 supported\_models/retrieval\_ranking/index
 supported\_models/specialized/index supported\_models/extending/index
+
+</div>
+
+<div class="toctree" data-maxdepth="2" data-caption="SGLang Diffusion">
+
+diffusion/index diffusion/installation diffusion/compatibility\_matrix
+diffusion/api/cli diffusion/api/openai\_api diffusion/performance/index
+diffusion/performance/attention\_backends
+diffusion/performance/profiling diffusion/performance/cache/index
+diffusion/performance/cache/cache\_dit
+diffusion/performance/cache/teacache diffusion/support\_new\_models
+diffusion/contributing diffusion/ci\_perf
+diffusion/environment\_variables
 
 </div>
 

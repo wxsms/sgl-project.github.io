@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Image Generation &#8212; SGLang</title>
+    <title>MindSpore Models &#8212; SGLang</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=8fcf004d"></script>
+    <script src="../../_static/documentation_options.js?v=f63ca19a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -47,12 +47,12 @@
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'supported_models/image_generation/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'supported_models/extending/mindspore_models';</script>
     <link rel="icon" href="../../_static/logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Diffusion Models" href="diffusion_models.html" />
-    <link rel="prev" title="Diffusion Language Models" href="../text_generation/diffusion_language_models.html" />
+    <link rel="next" title="SGLang Diffusion" href="../../diffusion/index.html" />
+    <link rel="prev" title="Use Models From ModelScope" href="modelscope.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Feb 12, 2026"/>
@@ -210,23 +210,34 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../text_generation/index.html">Text Generation</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Image Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="diffusion_models.html">Diffusion Models</a></li>
-
-
-
-
-
-
-
-
-
-
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../retrieval_ranking/index.html">Retrieval &amp; Ranking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../specialized/index.html">Specialized Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending SGLang</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Extending SGLang</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="support_new_models.html">How to Support New Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformers_fallback.html">Transformers fallback in SGLang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modelscope.html">Use Models From ModelScope</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MindSpore Models</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Diffusion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/index.html">SGLang Diffusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/installation.html">Install SGLang-Diffusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/compatibility_matrix.html">Compatibility Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/api/cli.html">SGLang diffusion CLI Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/api/openai_api.html">SGLang Diffusion OpenAI API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/performance/index.html">Performance Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/performance/attention_backends.html">Attention Backends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/performance/profiling.html">Profiling Multimodal Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/performance/cache/index.html">Caching Acceleration for Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/performance/cache/cache_dit.html">Cache-DiT Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/performance/cache/teacache.html">TeaCache Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/support_new_models.html">How to Support New Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/contributing.html">Contributing to SGLang Diffusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/ci_perf.html">Perf Baseline Generation Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../diffusion/environment_variables.html">Caching Acceleration</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
@@ -328,7 +339,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/supported_models/image_generation/index.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/supported_models/extending/mindspore_models.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +356,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/supported_models/image_generation/index.rst" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/supported_models/extending/mindspore_models.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +373,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fsupported_models/image_generation/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fsupported_models/extending/mindspore_models.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +403,7 @@
       
       
       
-      <li><a href="../../_sources/supported_models/image_generation/index.rst" target="_blank"
+      <li><a href="../../_sources/supported_models/extending/mindspore_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +413,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -463,7 +474,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -474,11 +487,35 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Image Generation</h1>
+    <h1>MindSpore Models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-model">Run Model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-inference">Offline inference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-server">Start server</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode">Debug Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicitly-select-devices">Explicitly select devices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-communication-environment-issues">Some communication environment issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-dependencies-of-protobuf">Some dependencies of protobuf</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -488,24 +525,152 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="image-generation">
-<h1>Image Generation<a class="headerlink" href="#image-generation" title="Link to this heading">#</a></h1>
-<p>Models for generating images and videos using diffusion.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html">Diffusion Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#install-sglang-diffusion">Install SGLang-diffusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#rocm-quickstart-for-sgl-diffusion">ROCm quickstart for sgl-diffusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#compatibility-matrix">Compatibility Matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#sglang-diffusion-cli-inference">SGLang diffusion CLI Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#sglang-diffusion-openai-api">SGLang Diffusion OpenAI API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#attention-backends">Attention Backends</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#cache-dit-acceleration">Cache-DiT Acceleration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#profiling-multimodal-generation">Profiling Multimodal Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#contributing-to-sglang-diffusion">Contributing to SGLang Diffusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion_models.html#how-to-support-new-diffusion-models">How to Support New Diffusion Models</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="mindspore-models">
+<h1>MindSpore Models<a class="headerlink" href="#mindspore-models" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>MindSpore is a high-performance AI framework optimized for Ascend NPUs. This doc guides users to run MindSpore models in SGLang.</p>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<p>MindSpore currently only supports Ascend NPU devices. Users need to first install CANN 8.5.
+The CANN software packages can be downloaded from the <a class="reference external" href="https://www.hiascend.com">Ascend Official Website</a>.</p>
+</section>
+<section id="supported-models">
+<h2>Supported Models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
+<p>Currently, the following models are supported:</p>
+<ul class="simple">
+<li><p><strong>Qwen3</strong>: Dense and MoE models</p></li>
+<li><p><strong>DeepSeek V3/R1</strong></p></li>
+<li><p><em>More models coming soon…</em></p></li>
 </ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Note</strong>: Currently, MindSpore models are provided by an independent package <code class="docutils literal notranslate"><span class="pre">sgl-mindspore</span></code>. Support for MindSpore is built upon current SGLang support for Ascend NPU platform. Please first <a class="reference internal" href="../../platforms/ascend_npu.html"><span class="std std-doc">install SGLang for Ascend NPU</span></a> and then install <code class="docutils literal notranslate"><span class="pre">sgl-mindspore</span></code>:</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mindspore-lab/sgl-mindspore.git
+<span class="nb">cd</span><span class="w"> </span>sgl-mindspore
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
 </div>
+</section>
+<section id="run-model">
+<h2>Run Model<a class="headerlink" href="#run-model" title="Link to this heading">#</a></h2>
+<p>Current SGLang-MindSpore supports Qwen3 and DeepSeek V3/R1 models. This doc uses Qwen3-8B as an example.</p>
+<section id="offline-inference">
+<h3>Offline inference<a class="headerlink" href="#offline-inference" title="Link to this heading">#</a></h3>
+<p>Use the following script for offline inference:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
+
+<span class="c1"># Initialize the engine with MindSpore backend</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;/path/to/your/model&quot;</span><span class="p">,</span>  <span class="c1"># Local model path</span>
+    <span class="n">device</span><span class="o">=</span><span class="s2">&quot;npu&quot;</span><span class="p">,</span>                      <span class="c1"># Use NPU device</span>
+    <span class="n">model_impl</span><span class="o">=</span><span class="s2">&quot;mindspore&quot;</span><span class="p">,</span>            <span class="c1"># MindSpore implementation</span>
+    <span class="n">attention_backend</span><span class="o">=</span><span class="s2">&quot;ascend&quot;</span><span class="p">,</span>        <span class="c1"># Attention backend</span>
+    <span class="n">tp_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>                         <span class="c1"># Tensor parallelism size</span>
+    <span class="n">dp_size</span><span class="o">=</span><span class="mi">1</span>                          <span class="c1"># Data parallelism size</span>
+<span class="p">)</span>
+
+<span class="c1"># Generate text</span>
+<span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Hello, my name is&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The capital of France is&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The future of AI is&quot;</span>
+<span class="p">]</span>
+
+<span class="n">sampling_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">}</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated: </span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="start-server">
+<h3>Start server<a class="headerlink" href="#start-server" title="Link to this heading">#</a></h3>
+<p>Launch a server with MindSpore backend:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic server startup</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>/path/to/your/model<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-impl<span class="w"> </span>mindspore<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dp-size<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p>For distributed server with multiple nodes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multi-node distributed server</span>
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>/path/to/your/model<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-impl<span class="w"> </span>mindspore<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dist-init-addr<span class="w"> </span><span class="m">127</span>.0.0.1:29500<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dp-size<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<section id="debug-mode">
+<h3>Debug Mode<a class="headerlink" href="#debug-mode" title="Link to this heading">#</a></h3>
+<p>Enable sglang debug logging by log-level argument.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>/path/to/your/model<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-impl<span class="w"> </span>mindspore<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--log-level<span class="w"> </span>DEBUG
+</pre></div>
+</div>
+<p>Enable mindspore info and debug logging by setting environments.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GLOG_v</span><span class="o">=</span><span class="m">1</span><span class="w">  </span><span class="c1"># INFO</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GLOG_v</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># DEBUG</span>
+</pre></div>
+</div>
+</section>
+<section id="explicitly-select-devices">
+<h3>Explicitly select devices<a class="headerlink" href="#explicitly-select-devices" title="Link to this heading">#</a></h3>
+<p>Use the following environment variable to explicitly select the devices to use.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ASCEND_RT_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">4</span>,5,6,7<span class="w">  </span><span class="c1"># to set device</span>
+</pre></div>
+</div>
+</section>
+<section id="some-communication-environment-issues">
+<h3>Some communication environment issues<a class="headerlink" href="#some-communication-environment-issues" title="Link to this heading">#</a></h3>
+<p>In case of some environment with special communication environment, users need set some environment variables.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">MS_ENABLE_LCCL</span><span class="o">=</span>off<span class="w"> </span><span class="c1"># current not support LCCL communication mode in SGLang-MindSpore</span>
+</pre></div>
+</div>
+</section>
+<section id="some-dependencies-of-protobuf">
+<h3>Some dependencies of protobuf<a class="headerlink" href="#some-dependencies-of-protobuf" title="Link to this heading">#</a></h3>
+<p>In case of some environment with special protobuf version, users need set some environment variables to avoid binary version mismatch.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION</span><span class="o">=</span>python<span class="w">  </span><span class="c1"># to avoid protobuf binary version mismatch</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h2>
+<p>For MindSpore-specific issues:</p>
+<ul class="simple">
+<li><p>Refer to the <a class="reference external" href="https://www.mindspore.cn/">MindSpore documentation</a></p></li>
+</ul>
+</section>
 </section>
 
 
@@ -520,20 +685,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../text_generation/diffusion_language_models.html"
+       href="modelscope.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Diffusion Language Models</p>
+        <p class="prev-next-title">Use Models From ModelScope</p>
       </div>
     </a>
     <a class="right-next"
-       href="diffusion_models.html"
+       href="../../diffusion/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Diffusion Models</p>
+        <p class="prev-next-title">SGLang Diffusion</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -543,6 +708,37 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-model">Run Model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-inference">Offline inference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-server">Start server</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode">Debug Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicitly-select-devices">Explicitly select devices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-communication-environment-issues">Some communication environment issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-dependencies-of-protobuf">Some dependencies of protobuf</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

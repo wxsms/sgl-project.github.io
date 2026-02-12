@@ -5,7 +5,7 @@ cases. Browse by category below to find models suited for your needs.
 
 <div class="toctree" data-maxdepth="2">
 
-text\_generation/index image\_generation/index retrieval\_ranking/index
-specialized/index extending/index
+text\_generation/index retrieval\_ranking/index specialized/index
+extending/index
 
 </div>
