@@ -27,30 +27,30 @@ wait_for_server(f"http://localhost:{port}")
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-13 03:02:46] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-13 04:04:21] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-13 03:02:46] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-13 04:04:21] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-13 03:02:46] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-13 04:04:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-13 03:02:51] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-13 03:02:51] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-13 03:02:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-13 04:04:25] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-13 04:04:25] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-13 04:04:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-13 03:02:54] INFO server_args.py:1813: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-13 03:02:54] INFO server_args.py:2821: Set soft_watchdog_timeout since in CI
+    [2026-02-13 04:04:27] INFO server_args.py:1813: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-13 04:04:27] INFO server_args.py:2821: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-13 03:03:00] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-13 03:03:00] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-13 03:03:00] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-13 03:03:00] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-13 03:03:00] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-13 03:03:00] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-13 04:04:32] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-13 04:04:32] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-13 04:04:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-13 04:04:32] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-13 04:04:32] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-13 04:04:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -59,27 +59,27 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-13 03:03:20] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-13 03:03:20] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-13 03:03:20] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-13 04:04:38] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-13 04:04:38] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-13 04:04:38] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.07it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.06it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.56it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.55it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=70.78 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=60.03 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=70.78 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.27it/s]Capturing batches (bs=2 avail_mem=70.69 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.27it/s]Capturing batches (bs=1 avail_mem=70.68 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.27it/s]Capturing batches (bs=1 avail_mem=70.68 GB): 100%|██████████| 3/3 [00:00<00:00,  4.10it/s]Capturing batches (bs=1 avail_mem=70.68 GB): 100%|██████████| 3/3 [00:00<00:00,  3.35it/s]
+    Capturing batches (bs=4 avail_mem=60.03 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.91it/s]Capturing batches (bs=2 avail_mem=59.98 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.91it/s]Capturing batches (bs=1 avail_mem=59.98 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.91it/s]Capturing batches (bs=1 avail_mem=59.98 GB): 100%|██████████| 3/3 [00:00<00:00,  9.99it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>                    NOTE: Typically, the server runs in a separate terminal.<br>                    In this notebook, we run the server and notebook code together, so their outputs are combined.<br>                    To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>                    To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>                    We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>                    </strong>
 
 
-    Server started on http://localhost:37228
+    Server started on http://localhost:37574
 
 
 ## Chat Completions
@@ -109,7 +109,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='30270904a44143efa4c328ce2e87df48', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770951808, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='18658294a41246f48bca731dcc526dc0', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1770955486, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Model Thinking/Reasoning Support
@@ -342,7 +342,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from around 753 BC to 476 AD. It was known for its extensive infrastructure, including roads, aqueducts, and public works such as the Colosseum. The Romans also made significant contributions to art, literature, and philosophy, particularly through the works of Virgil and Quintus Ennius.<br><br>Some of their major achievements include:<br><br>1. **Construction of the Colosseum**: This massive amphitheater was built in 70 AD and was one of the largest and most impressive structures in the ancient world.<br><br>2</strong>
+<strong style='color: #00008B;'>The ancient Roman Empire, which lasted from the 8th to the 4th century BCE, was a major civilization that left a significant impact on the world. Some of their major achievements include:<br><br>1. **Roman Law**: The Romans developed a system of law that became foundational for modern legal systems. Key laws include the Twelve Tables, which established the principles of justice and property rights.<br><br>2. **Architecture**: The Romans built magnificent structures such as the Colosseum, Pantheon, and many others. Their architectural style is characterized by grandeur and symmetry.<br><br>3. **Cultural Impact**: Rome was a center of learning,</strong>
 
 
 Streaming mode is also supported.
@@ -364,7 +364,7 @@ for chunk in stream:
         print(chunk.choices[0].delta.content, end="")
 ```
 
-    Yes, that's a test! I'm here to assist you with any questions or topics you have. How can I help you today?
+    Yes, I am a test created by Alibaba Cloud. I'm here to assist you with any questions or tasks you might have. Please let me know how I can be of help.
 
 #### Returning Routed Experts (MoE Models)
 
@@ -414,7 +414,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='721b996cb8ab42eab99fe5afc5875a8e', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1770951809, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='226d2ae9419d4609a77acdd378135353', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1770955486, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Parameters
@@ -442,7 +442,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='3b3be476f8964bc3802e0f260596c1f2', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' The story should be about a brave space explorer who has been exploring the stars for years and finally reaches a new planet. As he lands on the planet, he discovers strange symbols etched onto the ground. What does this mean? The explorer is intrigued by the symbols and begins to investigate further. Along the way, he meets an alien species that speaks in a language that the explorer cannot understand. What happens next?', matched_stop='\n\n')], created=1770951809, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=83, prompt_tokens=9, total_tokens=92, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='192ede26ff994d509d6fbec4d88878cb', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" In the year 2155, a young astronaut named Alex discovered an alien planet that had a strange, pulsating light and an atmosphere that seemed to be made of shimmering crystals. Alex spent months exploring the planet's surface, discovering strange creatures and strange plant life that seemed to defy the laws of physics. As his research continued, he became fascinated by the planet's history, which he believed to be centuries old. Finally, after many years of exploration, Alex returned to Earth with new ideas about the origins of life on our own planet.", matched_stop='\n\n')], created=1770955487, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=111, prompt_tokens=9, total_tokens=120, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 #### Returning Routed Experts (MoE Models)

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=b45d0764"></script>
+    <script src="../../_static/documentation_options.js?v=d2e90ad7"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -501,6 +501,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-generation">Video Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lora-management">LoRA Management</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-switching-loras">Example: Switching LoRAs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-output-quality">Adjust Output Quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -856,6 +861,38 @@ When using multiple LoRAs:</p>
 <li><p>Generate with LoRA B…</p></li>
 </ol>
 </section>
+<section id="adjust-output-quality">
+<h3>Adjust Output Quality<a class="headerlink" href="#adjust-output-quality" title="Link to this heading">#</a></h3>
+<p>The server supports adjusting output quality and compression levels for both image and video generation through the <code class="docutils literal notranslate"><span class="pre">output-quality</span></code> and <code class="docutils literal notranslate"><span class="pre">output-compression</span></code> parameters.</p>
+<section id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">output-quality</span></code></strong> (string, optional): Preset quality level that automatically sets compression. <strong>Default is <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code></strong>. Valid values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;maximum&quot;</span></code>: Highest quality (100)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;high&quot;</span></code>: High quality (90)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;medium&quot;</span></code>: Medium quality (55)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;low&quot;</span></code>: Lower quality (35)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>: Auto-adjust based on media type (50 for video, 75 for image)</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">output-compression</span></code></strong> (integer, optional): Direct compression level override (0-100). <strong>Default is <code class="docutils literal notranslate"><span class="pre">None</span></code></strong>. When provided (not <code class="docutils literal notranslate"><span class="pre">None</span></code>), takes precedence over <code class="docutils literal notranslate"><span class="pre">output-quality</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Lowest quality, smallest file size</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code>: Highest quality, largest file size</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Precedence</strong>: When both <code class="docutils literal notranslate"><span class="pre">output-quality</span></code> and <code class="docutils literal notranslate"><span class="pre">output-compression</span></code> are provided, <code class="docutils literal notranslate"><span class="pre">output-compression</span></code> takes precedence</p></li>
+<li><p><strong>Format Support</strong>: Quality settings apply to JPEG, and video formats. PNG uses lossless compression and ignores these settings</p></li>
+<li><p><strong>File Size vs Quality</strong>: Lower compression values (or “low” quality preset) produce smaller files but may show visible artifacts</p></li>
+</ul>
+</section>
+</section>
 </section>
 </section>
 
@@ -914,6 +951,11 @@ When using multiple LoRAs:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-generation">Video Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lora-management">LoRA Management</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-switching-loras">Example: Switching LoRAs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-output-quality">Adjust Output Quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
