@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e276997e"></script>
+    <script src="../_static/documentation_options.js?v=690c8d41"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -923,8 +923,7 @@ ns eval \
 <p>For context parallel in DeepSeek V3.2 model, we provide two different modes of splitting tokens, which can be controlled with argument <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span></code>.</p>
 <section id="in-sequence-splitting">
 <h3>In sequence splitting<a class="headerlink" href="#in-sequence-splitting" title="Link to this heading">#</a></h3>
-<p>The first mode can be enabled by <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span> <span class="pre">in-seq-split</span></code>. This mode implements context parallel for DSA by splitting the sequence uniformly between context parallel ranks. At attention stage, each cp rank computes the indexer results of sharded sequence, and collects the whole kv cache through all gather operator.</p>
-<p>The communication group for context parallel reuses the one for attention tp, thus <code class="docutils literal notranslate"><span class="pre">cp_size</span></code> equals <code class="docutils literal notranslate"><span class="pre">atten_tp_size</span> <span class="pre">=</span> <span class="pre">tp_size</span> <span class="pre">/</span> <span class="pre">dp_size</span></code>.</p>
+<p>The first mode can be enabled by <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-cp-mode</span> <span class="pre">in-seq-split</span></code>. This mode implements context parallel for DSA by splitting the sequence uniformly between context parallel ranks. At attention stage, each cp rank computes the indexer results of sharded sequence, and collects the whole kv cache through all gather operator. Add <code class="docutils literal notranslate"><span class="pre">attn_cp_size</span></code> for communication group for context parallel.</p>
 <p>Note that in sequence splitting mode has the following restrictions:</p>
 <ul class="simple">
 <li><p>The batch size is restricted to 1 for prefill batches</p></li>
@@ -935,7 +934,7 @@ ns eval \
 <p>For more details, please refer to PR https://github.com/sgl-project/sglang/pull/12065.</p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In-seq splitting mode launched with EP + DP</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--ep<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">2</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-nsa-prefill-context-parallel<span class="w"> </span>--nsa-prefill-cp-mode<span class="w"> </span><span class="k">in</span>-seq-split<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--ep<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp<span class="w"> </span><span class="m">2</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span>--enable-nsa-prefill-context-parallel<span class="w"> </span>--attn-cp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span>--nsa-prefill-cp-mode<span class="w"> </span><span class="k">in</span>-seq-split<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span>
 </pre></div>
 </div>
 </section>
@@ -946,7 +945,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <p>For more details, please refer to PR https://github.com/sgl-project/sglang/pull/13959.</p>
 <p>Example usage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Launch with FusedMoe + CP8</span>
-python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-nsa-prefill-context-parallel<span class="w"> </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-V3.2-Exp<span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-nsa-prefill-context-parallel<span class="w">  </span>--attn-cp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span>--max-running-requests<span class="w"> </span><span class="m">32</span>
 </pre></div>
 </div>
 </section>
@@ -970,6 +969,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attn-cp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
@@ -992,6 +992,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attn-cp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
@@ -1018,6 +1019,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attn-cp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w">  </span><span class="se">\</span>
 <span class="w">  </span>--disaggregation-ib-device<span class="w"> </span>mlx5_bond_0,mlx5_bond_1,mlx5_bond_2,mlx5_bond_3<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
@@ -1042,6 +1044,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--tp<span class="w"> </span><span class="m">8</span><span class="w"> </span>--pp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--dp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--moe-dense-tp-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--enable-nsa-prefill-context-parallel<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attn-cp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nsa-prefill-cp-mode<span class="w"> </span>round-robin-split<span class="w">  </span><span class="se">\</span>
 <span class="w">  </span>--disaggregation-ib-device<span class="w"> </span>mlx5_bond_0,mlx5_bond_1,mlx5_bond_2,mlx5_bond_3<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
