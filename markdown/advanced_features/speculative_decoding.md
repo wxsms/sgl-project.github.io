@@ -76,13 +76,13 @@ from sglang.utils import wait_for_server, print_highlight, terminate_process
 import openai
 ```
 
-    [2026-02-14 15:12:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:21:21] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-14 15:12:59] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:21:21] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-14 15:12:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:21:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
 
@@ -98,22 +98,22 @@ python3 -m sglang.launch_server --model meta-llama/Llama-2-7b-chat-hf  --specula
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:13:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:13:05] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:13:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:21:25] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:21:25] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:21:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:13:07] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
-    [2026-02-14 15:13:07] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
-    [2026-02-14 15:13:07] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:21:27] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
+    [2026-02-14 15:21:27] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
+    [2026-02-14 15:21:27] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:13:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:13:13] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:13:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:13:13] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:13:13] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:13:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:21:31] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:21:31] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:21:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:21:31] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:21:31] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:21:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -121,53 +121,51 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:13:18] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:13:18] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:13:18] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:21:35] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:21:35] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:21:35] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.67s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.72it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.37s/it]
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.15s/it]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=40.22 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=19.79 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=40.22 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.14it/s]Capturing batches (bs=3 avail_mem=40.14 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.14it/s]Capturing batches (bs=2 avail_mem=40.13 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.14it/s]Capturing batches (bs=2 avail_mem=40.13 GB):  75%|███████▌  | 3/4 [00:01<00:00,  3.66it/s]Capturing batches (bs=1 avail_mem=40.10 GB):  75%|███████▌  | 3/4 [00:01<00:00,  3.66it/s]
-
-    Capturing batches (bs=1 avail_mem=40.10 GB): 100%|██████████| 4/4 [00:01<00:00,  3.52it/s]
+    Capturing batches (bs=4 avail_mem=19.79 GB):  25%|██▌       | 1/4 [00:04<00:14,  4.81s/it]Capturing batches (bs=3 avail_mem=38.74 GB):  25%|██▌       | 1/4 [00:04<00:14,  4.81s/it]Capturing batches (bs=2 avail_mem=38.74 GB):  25%|██▌       | 1/4 [00:04<00:14,  4.81s/it]Capturing batches (bs=1 avail_mem=38.72 GB):  25%|██▌       | 1/4 [00:04<00:14,  4.81s/it]Capturing batches (bs=1 avail_mem=38.72 GB): 100%|██████████| 4/4 [00:04<00:00,  1.05it/s]Capturing batches (bs=1 avail_mem=38.72 GB): 100%|██████████| 4/4 [00:04<00:00,  1.24s/it]
 
 
-    [2026-02-14 15:13:24] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-    [2026-02-14 15:13:24] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    [2026-02-14 15:21:44] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:21:44] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 
 
     Loading pt checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
 
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.21s/it]
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.21s/it]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.04s/it]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.04s/it]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=37.85 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=37.84 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=37.85 GB):  25%|██▌       | 1/4 [00:02<00:08,  2.81s/it]Capturing batches (bs=3 avail_mem=37.75 GB):  25%|██▌       | 1/4 [00:02<00:08,  2.81s/it]
+    Capturing batches (bs=4 avail_mem=37.84 GB):  25%|██▌       | 1/4 [00:03<00:10,  3.44s/it]Capturing batches (bs=3 avail_mem=37.75 GB):  25%|██▌       | 1/4 [00:03<00:10,  3.44s/it]
 
-    Capturing batches (bs=3 avail_mem=37.75 GB):  50%|█████     | 2/4 [00:03<00:02,  1.37s/it]Capturing batches (bs=2 avail_mem=37.73 GB):  50%|█████     | 2/4 [00:03<00:02,  1.37s/it]
+    Capturing batches (bs=3 avail_mem=37.75 GB):  50%|█████     | 2/4 [00:03<00:03,  1.70s/it]Capturing batches (bs=2 avail_mem=37.75 GB):  50%|█████     | 2/4 [00:03<00:03,  1.70s/it]
 
-    Capturing batches (bs=2 avail_mem=37.73 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.11it/s]Capturing batches (bs=1 avail_mem=37.70 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.11it/s]
+    Capturing batches (bs=2 avail_mem=37.75 GB):  75%|███████▌  | 3/4 [00:04<00:01,  1.03s/it]Capturing batches (bs=1 avail_mem=37.73 GB):  75%|███████▌  | 3/4 [00:04<00:01,  1.03s/it]
 
-    Capturing batches (bs=1 avail_mem=37.70 GB): 100%|██████████| 4/4 [00:05<00:00,  1.35s/it]Capturing batches (bs=1 avail_mem=37.70 GB): 100%|██████████| 4/4 [00:05<00:00,  1.39s/it]
+    Capturing batches (bs=1 avail_mem=37.73 GB): 100%|██████████| 4/4 [00:06<00:00,  1.62s/it]Capturing batches (bs=1 avail_mem=37.73 GB): 100%|██████████| 4/4 [00:06<00:00,  1.67s/it]
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=37.64 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=37.58 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=37.58 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=37.56 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=37.56 GB): 100%|██████████| 4/4 [00:00<00:00, 46.87it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=54.19 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=54.13 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=54.13 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=54.11 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=54.11 GB): 100%|██████████| 4/4 [00:00<00:00, 89.43it/s]
 
 
 
@@ -191,7 +189,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='231cf2dd09c8413c8aee28ab5e1eb23b', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1771082020, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='44655c80734a47e8ac15223036a0e569', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1771082520, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
@@ -218,22 +216,22 @@ python3 -m sglang.launch_server --model meta-llama/Llama-2-7b-chat-hf  --specula
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:13:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:13:45] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:13:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:22:04] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:22:04] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:22:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:13:48] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
-    [2026-02-14 15:13:48] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
-    [2026-02-14 15:13:48] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:22:06] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
+    [2026-02-14 15:22:06] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
+    [2026-02-14 15:22:06] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:13:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:13:54] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:13:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:13:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:13:54] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:13:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:22:10] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:22:10] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:22:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:22:10] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:22:10] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:22:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -241,59 +239,237 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:13:59] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:13:59] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:13:59] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:22:14] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:22:14] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:22:14] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.69s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.70it/s]
 
 
     Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.31s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=55.19 GB):   0%|          | 0/4 [00:00<?, ?it/s]
-
-    Capturing batches (bs=4 avail_mem=55.19 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.03it/s]Capturing batches (bs=3 avail_mem=55.10 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.03it/s]Capturing batches (bs=2 avail_mem=55.08 GB):  25%|██▌       | 1/4 [00:01<00:02,  1.03it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=55.27 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=55.27 GB):  25%|██▌       | 1/4 [00:00<00:00,  7.46it/s]Capturing batches (bs=3 avail_mem=55.18 GB):  25%|██▌       | 1/4 [00:00<00:00,  7.46it/s]Capturing batches (bs=2 avail_mem=55.17 GB):  25%|██▌       | 1/4 [00:00<00:00,  7.46it/s]
 
     /usr/local/lib/python3.10/dist-packages/torch/_dynamo/variables/functions.py:1692: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
       torch._dynamo.utils.warn_once(msg)
 
 
-    Capturing batches (bs=2 avail_mem=55.08 GB):  75%|███████▌  | 3/4 [00:07<00:02,  2.84s/it]Capturing batches (bs=1 avail_mem=52.31 GB):  75%|███████▌  | 3/4 [00:07<00:02,  2.84s/it]
+    Autotune Choices Stats:
+    {"num_choices": 20, "num_triton_choices": 19, "best_kernel": "mm", "best_time": 0.04835199937224388, "best_triton_pos": 1, "best_triton_time": 0.04931199923157692, "best_triton_kernel": "triton_mm_18", "best_triton_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8"}
+    AUTOTUNE mm(128x4096, 4096x12288)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      mm 0.0484 ms 100.0% 
+      triton_mm_18 0.0493 ms 98.1% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_12 0.0528 ms 91.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_8 0.0548 ms 88.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_11 0.0554 ms 87.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_7 0.0558 ms 86.7% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_17 0.0581 ms 83.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_10 0.0673 ms 71.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+      triton_mm_14 0.0686 ms 70.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+      triton_mm_4 0.0713 ms 67.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+    SingleProcess AUTOTUNE benchmarking takes 0.3266 seconds and 0.2645 seconds precompiling for 20 choices
 
-    Capturing batches (bs=1 avail_mem=52.31 GB): 100%|██████████| 4/4 [00:15<00:00,  4.43s/it]Capturing batches (bs=1 avail_mem=52.31 GB): 100%|██████████| 4/4 [00:15<00:00,  3.85s/it]
+
+    Autotune Choices Stats:
+    {"num_choices": 20, "num_triton_choices": 19, "best_kernel": "mm", "best_time": 0.022336000576615334, "best_triton_pos": 1, "best_triton_time": 0.023615999147295952, "best_triton_kernel": "triton_mm_27", "best_triton_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4"}
+    AUTOTUNE mm(128x4096, 4096x4096)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      mm 0.0223 ms 100.0% 
+      triton_mm_27 0.0236 ms 94.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_31 0.0268 ms 83.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_23 0.0300 ms 74.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_37 0.0322 ms 69.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_26 0.0396 ms 56.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_30 0.0412 ms 54.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_20 0.0422 ms 52.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+      triton_mm_22 0.0424 ms 52.7% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_36 0.0429 ms 52.1% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+    SingleProcess AUTOTUNE benchmarking takes 0.2646 seconds and 0.2797 seconds precompiling for 20 choices
 
 
-    [2026-02-14 15:14:20] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-    [2026-02-14 15:14:20] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    Autotune Choices Stats:
+    {"num_choices": 20, "num_triton_choices": 19, "best_kernel": "triton_mm_49", "best_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4", "best_time": 0.07475200295448303, "best_triton_pos": 0}
+    AUTOTUNE mm(128x4096, 4096x22016)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      triton_mm_49 0.0748 ms 100.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      mm 0.0755 ms 99.0% 
+      triton_mm_55 0.0772 ms 96.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_50 0.0799 ms 93.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_56 0.0829 ms 90.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_45 0.0934 ms 80.1% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_46 0.0964 ms 77.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_47 0.0967 ms 77.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_54 0.1002 ms 74.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_48 0.1004 ms 74.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+    SingleProcess AUTOTUNE benchmarking takes 0.4079 seconds and 0.1510 seconds precompiling for 20 choices
+
+
+    Autotune Choices Stats:
+    {"num_choices": 20, "num_triton_choices": 19, "best_kernel": "mm", "best_time": 0.04950400069355965, "best_triton_pos": 1, "best_triton_time": 0.052352000027894974, "best_triton_kernel": "triton_mm_65", "best_triton_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4"}
+    AUTOTUNE mm(128x11008, 11008x4096)
+    strides: [11008, 1], [1, 11008]
+    dtypes: torch.float16, torch.float16
+      mm 0.0495 ms 100.0% 
+      triton_mm_65 0.0524 ms 94.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_69 0.0575 ms 86.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_61 0.0644 ms 76.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_75 0.0712 ms 69.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_64 0.0914 ms 54.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_68 0.0948 ms 52.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_60 0.0979 ms 50.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_74 0.0985 ms 50.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_58 0.1008 ms 49.1% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+    SingleProcess AUTOTUNE benchmarking takes 0.4240 seconds and 0.0002 seconds precompiling for 20 choices
+
+
+    Autotune Choices Stats:
+    {"num_choices": 20, "num_triton_choices": 19, "best_kernel": "triton_mm_93", "best_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4", "best_time": 0.1016639992594719, "best_triton_pos": 0}
+    AUTOTUNE mm(128x4096, 4096x32000)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      triton_mm_93 0.1017 ms 100.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      mm 0.1045 ms 97.3% 
+      triton_mm_94 0.1048 ms 97.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_88 0.1090 ms 93.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_87 0.1160 ms 87.7% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_83 0.1165 ms 87.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_92 0.1267 ms 80.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_84 0.1289 ms 78.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_85 0.1347 ms 75.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_89 0.1412 ms 72.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=128, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+    SingleProcess AUTOTUNE benchmarking takes 0.4943 seconds and 0.2739 seconds precompiling for 20 choices
+
+
+    Capturing batches (bs=2 avail_mem=55.17 GB):  75%|███████▌  | 3/4 [00:15<00:05,  5.90s/it]Capturing batches (bs=1 avail_mem=19.03 GB):  75%|███████▌  | 3/4 [00:15<00:05,  5.90s/it]
+
+    Autotune Choices Stats:
+    {"num_choices": 18, "num_triton_choices": 17, "best_kernel": "mm", "best_time": 0.047231998294591904, "best_triton_pos": 1, "best_triton_time": 0.04800000041723251, "best_triton_kernel": "triton_mm_111", "best_triton_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8"}
+    AUTOTUNE mm(64x4096, 4096x12288)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      mm 0.0472 ms 100.0% 
+      triton_mm_111 0.0480 ms 98.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_107 0.0482 ms 97.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_103 0.0492 ms 96.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_99 0.0507 ms 93.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_102 0.0548 ms 86.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_106 0.0552 ms 85.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_96 0.0565 ms 83.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+      triton_mm_98 0.0614 ms 76.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_97 0.0649 ms 72.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+    SingleProcess AUTOTUNE benchmarking takes 0.2706 seconds and 0.1996 seconds precompiling for 18 choices
+
+
+    Autotune Choices Stats:
+    {"num_choices": 18, "num_triton_choices": 17, "best_kernel": "mm", "best_time": 0.021407999098300934, "best_triton_pos": 1, "best_triton_time": 0.022048000246286392, "best_triton_kernel": "triton_mm_116", "best_triton_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4"}
+    AUTOTUNE mm(64x4096, 4096x4096)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      mm 0.0214 ms 100.0% 
+      triton_mm_116 0.0220 ms 97.1% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_120 0.0229 ms 93.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_124 0.0262 ms 81.7% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_128 0.0299 ms 71.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_119 0.0386 ms 55.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_113 0.0393 ms 54.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+      triton_mm_123 0.0401 ms 53.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_115 0.0405 ms 52.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_114 0.0423 ms 50.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+    SingleProcess AUTOTUNE benchmarking takes 0.2779 seconds and 0.2402 seconds precompiling for 18 choices
+
+
+    Autotune Choices Stats:
+    {"num_choices": 18, "num_triton_choices": 17, "best_kernel": "triton_mm_140", "best_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4", "best_time": 0.07414399832487106, "best_triton_pos": 0}
+    AUTOTUNE mm(64x4096, 4096x22016)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      triton_mm_140 0.0741 ms 100.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_136 0.0746 ms 99.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_137 0.0747 ms 99.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      mm 0.0756 ms 98.1% 
+      triton_mm_141 0.0764 ms 97.1% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_133 0.0829 ms 89.4% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_145 0.0888 ms 83.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_139 0.0904 ms 82.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+      triton_mm_130 0.0939 ms 79.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+      triton_mm_142 0.0942 ms 78.7% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+    SingleProcess AUTOTUNE benchmarking takes 0.3392 seconds and 0.1608 seconds precompiling for 18 choices
+
+
+    Autotune Choices Stats:
+    {"num_choices": 18, "num_triton_choices": 17, "best_kernel": "triton_mm_150", "best_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4", "best_time": 0.046271998435258865, "best_triton_pos": 0}
+    AUTOTUNE mm(64x11008, 11008x4096)
+    strides: [11008, 1], [1, 11008]
+    dtypes: torch.float16, torch.float16
+      triton_mm_150 0.0463 ms 100.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      mm 0.0479 ms 96.5% 
+      triton_mm_154 0.0482 ms 96.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_158 0.0545 ms 84.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_162 0.0632 ms 73.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_149 0.0874 ms 53.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_153 0.0876 ms 52.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      triton_mm_148 0.0910 ms 50.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=32, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_157 0.0912 ms 50.7% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_147 0.0930 ms 49.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=32, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=2, num_warps=4
+    SingleProcess AUTOTUNE benchmarking takes 0.3725 seconds and 0.0002 seconds precompiling for 18 choices
+
+
+    Autotune Choices Stats:
+    {"num_choices": 18, "num_triton_choices": 17, "best_kernel": "triton_mm_175", "best_kernel_desc": "ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4", "best_time": 0.10022400319576263, "best_triton_pos": 0}
+    AUTOTUNE mm(64x4096, 4096x32000)
+    strides: [4096, 1], [1, 4096]
+    dtypes: torch.float16, torch.float16
+      triton_mm_175 0.1002 ms 100.0% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=4
+      triton_mm_179 0.1008 ms 99.5% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=8
+      triton_mm_174 0.1010 ms 99.2% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_171 0.1014 ms 98.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_170 0.1020 ms 98.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=64, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=8
+      mm 0.1031 ms 97.2% 
+      triton_mm_167 0.1104 ms 90.8% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=128, BLOCK_M=64, BLOCK_N=32, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=5, num_warps=4
+      triton_mm_172 0.1194 ms 83.9% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_176 0.1228 ms 81.6% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=64, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=3, num_warps=4
+      triton_mm_173 0.1332 ms 75.3% ACC_TYPE='tl.float32', ALLOW_TF32=False, BLOCK_K=32, BLOCK_M=64, BLOCK_N=128, EVEN_K=True, GROUP_M=8, USE_FAST_ACCUM=False, num_stages=4, num_warps=8
+    SingleProcess AUTOTUNE benchmarking takes 0.8816 seconds and 0.2374 seconds precompiling for 18 choices
+
+
+    Capturing batches (bs=1 avail_mem=19.03 GB): 100%|██████████| 4/4 [00:30<00:00,  9.05s/it]Capturing batches (bs=1 avail_mem=19.03 GB): 100%|██████████| 4/4 [00:30<00:00,  7.74s/it]
+
+
+    [2026-02-14 15:22:50] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:22:50] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 
 
     Loading pt checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
 
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.30s/it]
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.30s/it]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.13s/it]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.13s/it]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=37.76 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=36.39 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=37.76 GB):  25%|██▌       | 1/4 [00:03<00:09,  3.20s/it]Capturing batches (bs=3 avail_mem=37.61 GB):  25%|██▌       | 1/4 [00:03<00:09,  3.20s/it]
+    Capturing batches (bs=4 avail_mem=36.39 GB):  25%|██▌       | 1/4 [00:05<00:15,  5.22s/it]Capturing batches (bs=3 avail_mem=21.19 GB):  25%|██▌       | 1/4 [00:05<00:15,  5.22s/it]
 
-    Capturing batches (bs=3 avail_mem=37.61 GB):  50%|█████     | 2/4 [00:03<00:03,  1.64s/it]Capturing batches (bs=2 avail_mem=37.59 GB):  50%|█████     | 2/4 [00:03<00:03,  1.64s/it]Capturing batches (bs=2 avail_mem=37.59 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.05it/s]Capturing batches (bs=1 avail_mem=37.54 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.05it/s]
+    Capturing batches (bs=3 avail_mem=21.19 GB):  50%|█████     | 2/4 [00:05<00:05,  2.56s/it]Capturing batches (bs=2 avail_mem=21.17 GB):  50%|█████     | 2/4 [00:05<00:05,  2.56s/it]
 
-    Capturing batches (bs=1 avail_mem=37.54 GB): 100%|██████████| 4/4 [00:06<00:00,  1.55s/it]Capturing batches (bs=1 avail_mem=37.54 GB): 100%|██████████| 4/4 [00:06<00:00,  1.59s/it]
+    Capturing batches (bs=2 avail_mem=21.17 GB):  75%|███████▌  | 3/4 [00:06<00:01,  1.55s/it]Capturing batches (bs=1 avail_mem=21.13 GB):  75%|███████▌  | 3/4 [00:06<00:01,  1.55s/it]
+
+    Capturing batches (bs=1 avail_mem=21.13 GB): 100%|██████████| 4/4 [00:12<00:00,  3.48s/it]Capturing batches (bs=1 avail_mem=21.13 GB): 100%|██████████| 4/4 [00:12<00:00,  3.18s/it]
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=53.90 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=53.83 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=53.83 GB):  50%|█████     | 2/4 [00:00<00:00, 11.51it/s]Capturing batches (bs=2 avail_mem=53.83 GB):  50%|█████     | 2/4 [00:00<00:00, 11.51it/s]
-
-    Capturing batches (bs=1 avail_mem=53.81 GB):  50%|█████     | 2/4 [00:00<00:00, 11.51it/s]Capturing batches (bs=1 avail_mem=53.81 GB): 100%|██████████| 4/4 [00:00<00:00, 11.25it/s]Capturing batches (bs=1 avail_mem=53.81 GB): 100%|██████████| 4/4 [00:00<00:00, 11.28it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=14.42 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=14.34 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=14.34 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=14.32 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=14.32 GB): 100%|██████████| 4/4 [00:00<00:00, 44.94it/s]
 
 
 
@@ -317,7 +493,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='f072f7ad70484fa0a86391bf54e59563', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1771082077, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='8288d4da72dc4fe8bbf9cb14846e59df', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='  Sure! Here are three countries and their capitals:\n\n1. Country: France\nCapital: Paris\n2. Country: Japan\nCapital: Tokyo\n3. Country: Brazil\nCapital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=2)], created=1771082593, model='meta-llama/Llama-2-7b-chat-hf', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=48, prompt_tokens=17, total_tokens=65, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
@@ -347,32 +523,32 @@ python3 -m sglang.launch_server --model meta-llama/Meta-Llama-3-8B-Instruct --sp
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:14:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:14:43] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:14:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:23:17] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:23:17] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:23:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:14:46] WARNING model_config.py:1178: Casting torch.bfloat16 to torch.float16.
-    [2026-02-14 15:14:46] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
-    [2026-02-14 15:14:46] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
-    [2026-02-14 15:14:46] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:23:19] WARNING model_config.py:1178: Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:23:19] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
+    [2026-02-14 15:23:19] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
+    [2026-02-14 15:23:19] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:14:46] Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:23:19] Casting torch.bfloat16 to torch.float16.
 
 
-    [2026-02-14 15:14:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:14:52] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:14:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:14:52] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:14:52] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:14:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:23:23] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:23:23] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:23:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:23:23] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:23:23] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:23:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:14:54] Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:23:25] Casting torch.bfloat16 to torch.float16.
 
 
-    [2026-02-14 15:14:54] Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:23:25] Casting torch.bfloat16 to torch.float16.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -380,63 +556,59 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:14:57] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:14:57] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:14:57] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:23:28] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:23:28] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:23:28] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04<00:13,  4.48s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:03<00:11,  3.78s/it]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08<00:08,  4.49s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:07<00:07,  3.75s/it]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:13<00:04,  4.43s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08<00:02,  2.50s/it]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14<00:00,  3.16s/it]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14<00:00,  3.64s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:12<00:00,  2.94s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:12<00:00,  3.04s/it]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=58.05 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=21.86 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=58.05 GB):  25%|██▌       | 1/4 [00:01<00:03,  1.07s/it]
+    Capturing batches (bs=4 avail_mem=21.86 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.07it/s]Capturing batches (bs=3 avail_mem=21.67 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.07it/s]Capturing batches (bs=3 avail_mem=21.67 GB):  50%|█████     | 2/4 [00:00<00:00,  6.09it/s]Capturing batches (bs=2 avail_mem=21.67 GB):  50%|█████     | 2/4 [00:00<00:00,  6.09it/s]
 
-    Capturing batches (bs=3 avail_mem=57.88 GB):  25%|██▌       | 1/4 [00:01<00:03,  1.07s/it]Capturing batches (bs=3 avail_mem=57.88 GB):  50%|█████     | 2/4 [00:01<00:01,  1.64it/s]Capturing batches (bs=2 avail_mem=57.87 GB):  50%|█████     | 2/4 [00:01<00:01,  1.64it/s]
-
-    Capturing batches (bs=2 avail_mem=57.87 GB):  75%|███████▌  | 3/4 [00:01<00:00,  2.10it/s]Capturing batches (bs=1 avail_mem=57.84 GB):  75%|███████▌  | 3/4 [00:01<00:00,  2.10it/s]Capturing batches (bs=1 avail_mem=57.84 GB): 100%|██████████| 4/4 [00:01<00:00,  2.87it/s]Capturing batches (bs=1 avail_mem=57.84 GB): 100%|██████████| 4/4 [00:01<00:00,  2.19it/s]
+    Capturing batches (bs=2 avail_mem=21.67 GB):  75%|███████▌  | 3/4 [00:00<00:00,  6.97it/s]Capturing batches (bs=1 avail_mem=21.64 GB):  75%|███████▌  | 3/4 [00:00<00:00,  6.97it/s]Capturing batches (bs=1 avail_mem=21.64 GB): 100%|██████████| 4/4 [00:00<00:00,  7.78it/s]Capturing batches (bs=1 avail_mem=21.64 GB): 100%|██████████| 4/4 [00:00<00:00,  6.92it/s]
 
 
-    [2026-02-14 15:15:16] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-    [2026-02-14 15:15:16] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-    [2026-02-14 15:15:16] Warning: Target model's context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model's config.
-    [2026-02-14 15:15:16] Overriding the draft model's max_position_embeddings to 8192.
+    [2026-02-14 15:23:42] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:23:42] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    [2026-02-14 15:23:43] Warning: Target model's context_length (8192) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model's config.
+    [2026-02-14 15:23:43] Overriding the draft model's max_position_embeddings to 8192.
 
 
     Loading pt checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
 
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.02s/it]
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:01<00:00,  1.02s/it]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.03it/s]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.03it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.84 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=20.65 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=56.84 GB):  25%|██▌       | 1/4 [00:02<00:08,  2.82s/it]Capturing batches (bs=3 avail_mem=58.25 GB):  25%|██▌       | 1/4 [00:02<00:08,  2.82s/it]
+    Capturing batches (bs=4 avail_mem=20.65 GB):  25%|██▌       | 1/4 [00:03<00:09,  3.16s/it]Capturing batches (bs=3 avail_mem=20.54 GB):  25%|██▌       | 1/4 [00:03<00:09,  3.16s/it]
 
-    Capturing batches (bs=3 avail_mem=58.25 GB):  50%|█████     | 2/4 [00:03<00:02,  1.38s/it]Capturing batches (bs=2 avail_mem=58.21 GB):  50%|█████     | 2/4 [00:03<00:02,  1.38s/it]
+    Capturing batches (bs=3 avail_mem=20.54 GB):  50%|█████     | 2/4 [00:03<00:03,  1.59s/it]Capturing batches (bs=2 avail_mem=20.52 GB):  50%|█████     | 2/4 [00:03<00:03,  1.59s/it]Capturing batches (bs=2 avail_mem=20.52 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.06it/s]Capturing batches (bs=1 avail_mem=20.48 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.06it/s]
 
-    Capturing batches (bs=2 avail_mem=58.21 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.06it/s]Capturing batches (bs=1 avail_mem=58.17 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.06it/s]
-
-    Capturing batches (bs=1 avail_mem=58.17 GB): 100%|██████████| 4/4 [00:05<00:00,  1.42s/it]Capturing batches (bs=1 avail_mem=58.17 GB): 100%|██████████| 4/4 [00:05<00:00,  1.44s/it]
+    Capturing batches (bs=1 avail_mem=20.48 GB): 100%|██████████| 4/4 [00:05<00:00,  1.32s/it]Capturing batches (bs=1 avail_mem=20.48 GB): 100%|██████████| 4/4 [00:05<00:00,  1.43s/it]
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.46 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=56.42 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=56.40 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=56.36 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=56.36 GB): 100%|██████████| 4/4 [00:00<00:00, 75.82it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=20.43 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=20.36 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=20.36 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=20.34 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=20.34 GB): 100%|██████████| 4/4 [00:00<00:00, 35.97it/s]Capturing batches (bs=1 avail_mem=20.34 GB): 100%|██████████| 4/4 [00:00<00:00, 35.92it/s]
 
 
 
@@ -460,7 +632,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='4979af9169a84c3896398f1f23609874', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1771082131, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='a6b1104f02e94b09aaafdc99bdf639a9', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. **France** - **Paris**\n2. **Japan** - **Tokyo**\n3. **Australia** - **Canberra**', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1771082639, model='meta-llama/Meta-Llama-3-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=18, total_tokens=57, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
@@ -486,32 +658,32 @@ python3 -m sglang.launch_server --model meta-llama/Llama-3.1-8B-Instruct  --spec
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:15:37] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:15:37] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:15:37] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:24:03] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:24:03] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:24:03] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:15:39] WARNING model_config.py:1178: Casting torch.bfloat16 to torch.float16.
-    [2026-02-14 15:15:39] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
-    [2026-02-14 15:15:39] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
-    [2026-02-14 15:15:39] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:24:04] WARNING model_config.py:1178: Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:24:04] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
+    [2026-02-14 15:24:04] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
+    [2026-02-14 15:24:04] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:15:39] Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:24:05] Casting torch.bfloat16 to torch.float16.
 
 
-    [2026-02-14 15:15:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:15:45] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:15:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:15:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:15:45] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:15:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:24:08] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:24:08] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:24:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:24:08] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:24:08] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:24:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:15:47] Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:24:10] Casting torch.bfloat16 to torch.float16.
 
 
-    [2026-02-14 15:15:48] Casting torch.bfloat16 to torch.float16.
+    [2026-02-14 15:24:11] Casting torch.bfloat16 to torch.float16.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -519,59 +691,57 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:15:51] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:15:51] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:15:51] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:24:13] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:24:13] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:24:13] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:04<00:13,  4.40s/it]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:03<00:10,  3.61s/it]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:08<00:08,  4.37s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:07<00:07,  3.65s/it]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12<00:04,  4.26s/it]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08<00:02,  2.48s/it]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14<00:00,  3.07s/it]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:14<00:00,  3.53s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:12<00:00,  3.06s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:12<00:00,  3.08s/it]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=57.89 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=59.47 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=59.47 GB):  25%|██▌       | 1/4 [00:00<00:00,  6.28it/s]Capturing batches (bs=3 avail_mem=59.36 GB):  25%|██▌       | 1/4 [00:00<00:00,  6.28it/s]
 
-    Capturing batches (bs=4 avail_mem=57.89 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.75it/s]Capturing batches (bs=3 avail_mem=57.77 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.75it/s]Capturing batches (bs=2 avail_mem=57.76 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.75it/s]Capturing batches (bs=1 avail_mem=57.74 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.75it/s]Capturing batches (bs=1 avail_mem=57.74 GB): 100%|██████████| 4/4 [00:00<00:00,  6.78it/s]Capturing batches (bs=1 avail_mem=57.74 GB): 100%|██████████| 4/4 [00:00<00:00,  5.58it/s]
+    Capturing batches (bs=2 avail_mem=59.35 GB):  25%|██▌       | 1/4 [00:00<00:00,  6.28it/s]Capturing batches (bs=2 avail_mem=59.35 GB):  75%|███████▌  | 3/4 [00:00<00:00, 10.97it/s]Capturing batches (bs=1 avail_mem=59.33 GB):  75%|███████▌  | 3/4 [00:00<00:00, 10.97it/s]Capturing batches (bs=1 avail_mem=59.33 GB): 100%|██████████| 4/4 [00:00<00:00, 12.02it/s]
 
 
-    [2026-02-14 15:16:08] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-    [2026-02-14 15:16:08] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
-    [2026-02-14 15:16:08] Warning: Target model's context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model's config.
-    [2026-02-14 15:16:08] Overriding the draft model's max_position_embeddings to 131072.
+    [2026-02-14 15:24:27] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:24:27] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    [2026-02-14 15:24:27] Warning: Target model's context_length (131072) is greater than the derived context_length (2048). This may lead to incorrect model outputs or CUDA errors. Note that the derived context_length may differ from max_position_embeddings in the model's config.
+    [2026-02-14 15:24:27] Overriding the draft model's max_position_embeddings to 131072.
 
 
     Loading pt checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
 
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.97it/s]
-    Loading pt checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.97it/s]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.08it/s]
+    Loading pt checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.08it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=58.09 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=43.16 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=58.09 GB):  25%|██▌       | 1/4 [00:02<00:08,  2.75s/it]Capturing batches (bs=3 avail_mem=31.31 GB):  25%|██▌       | 1/4 [00:02<00:08,  2.75s/it]
+    Capturing batches (bs=4 avail_mem=43.16 GB):  25%|██▌       | 1/4 [00:02<00:06,  2.11s/it]Capturing batches (bs=3 avail_mem=40.27 GB):  25%|██▌       | 1/4 [00:02<00:06,  2.11s/it]
 
-    Capturing batches (bs=3 avail_mem=31.31 GB):  50%|█████     | 2/4 [00:03<00:02,  1.35s/it]Capturing batches (bs=2 avail_mem=31.27 GB):  50%|█████     | 2/4 [00:03<00:02,  1.35s/it]
+    Capturing batches (bs=3 avail_mem=40.27 GB):  50%|█████     | 2/4 [00:02<00:02,  1.08s/it]Capturing batches (bs=2 avail_mem=40.23 GB):  50%|█████     | 2/4 [00:02<00:02,  1.08s/it]Capturing batches (bs=1 avail_mem=40.19 GB):  50%|█████     | 2/4 [00:02<00:02,  1.08s/it]
 
-    Capturing batches (bs=2 avail_mem=31.27 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.15it/s]Capturing batches (bs=1 avail_mem=31.23 GB):  75%|███████▌  | 3/4 [00:03<00:00,  1.15it/s]
-
-    Capturing batches (bs=1 avail_mem=31.23 GB): 100%|██████████| 4/4 [00:05<00:00,  1.31s/it]Capturing batches (bs=1 avail_mem=31.23 GB): 100%|██████████| 4/4 [00:05<00:00,  1.35s/it]
+    Capturing batches (bs=1 avail_mem=40.19 GB): 100%|██████████| 4/4 [00:04<00:00,  1.11it/s]Capturing batches (bs=1 avail_mem=40.19 GB): 100%|██████████| 4/4 [00:04<00:00,  1.01s/it]
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=31.17 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=31.10 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=31.10 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=31.08 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=31.08 GB): 100%|██████████| 4/4 [00:00<00:00, 102.00it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=39.46 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=39.39 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=39.39 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=39.37 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=39.37 GB): 100%|██████████| 4/4 [00:00<00:00, 118.87it/s]
 
 
 
@@ -595,7 +765,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='aa7a88167e79450885201aabeef3df89', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1771082182, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='1e696c10a4ae490995d65a74b52688ce', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Here are 3 countries and their capitals:\n\n1. Country: Japan\n   Capital: Tokyo\n\n2. Country: Australia\n   Capital: Canberra\n\n3. Country: Brazil\n   Capital: Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=128009)], created=1771082681, model='meta-llama/Meta-Llama-3.1-8B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=43, prompt_tokens=43, total_tokens=86, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
@@ -620,22 +790,22 @@ server_process, port = launch_server_cmd(
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:16:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:16:28] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:16:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:24:44] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:24:44] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:24:44] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:16:30] INFO server_args.py:1819: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-14 15:16:30] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
-    [2026-02-14 15:16:30] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:24:46] INFO server_args.py:1819: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-14 15:24:46] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
+    [2026-02-14 15:24:46] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:16:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:16:38] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:16:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:16:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:16:38] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:16:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:24:50] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:24:50] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:24:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:24:50] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:24:50] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:24:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -643,49 +813,47 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:16:44] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:16:44] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:16:44] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:24:55] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:24:55] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:24:55] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.48it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.57it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.41it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.51it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.44it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.69it/s]
 
 
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.56it/s]
     Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.57it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.52it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.09 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=41.77 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=56.09 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.39it/s]Capturing batches (bs=3 avail_mem=56.03 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.39it/s]Capturing batches (bs=2 avail_mem=56.02 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.39it/s]Capturing batches (bs=1 avail_mem=56.01 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.39it/s]Capturing batches (bs=1 avail_mem=56.01 GB): 100%|██████████| 4/4 [00:00<00:00,  5.94it/s]Capturing batches (bs=1 avail_mem=56.01 GB): 100%|██████████| 4/4 [00:00<00:00,  4.77it/s]
+    Capturing batches (bs=4 avail_mem=41.77 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.40it/s]Capturing batches (bs=3 avail_mem=41.72 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.40it/s]Capturing batches (bs=2 avail_mem=41.72 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.40it/s]Capturing batches (bs=1 avail_mem=41.72 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.40it/s]Capturing batches (bs=1 avail_mem=41.72 GB): 100%|██████████| 4/4 [00:00<00:00, 12.58it/s]
 
 
-    [2026-02-14 15:16:49] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-    [2026-02-14 15:16:49] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    [2026-02-14 15:25:00] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:25:00] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:00,  5.13it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00, 11.89it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  8.67it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  8.24it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  9.08it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  9.41it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=60.56 GB):   0%|          | 0/4 [00:00<?, ?it/s]
-
-    Capturing batches (bs=4 avail_mem=60.56 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.27it/s]Capturing batches (bs=3 avail_mem=60.50 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.27it/s]Capturing batches (bs=2 avail_mem=60.50 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.27it/s]Capturing batches (bs=1 avail_mem=60.50 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.27it/s]Capturing batches (bs=1 avail_mem=60.50 GB): 100%|██████████| 4/4 [00:00<00:00, 13.68it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=45.65 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=45.60 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=45.60 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=45.60 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=45.60 GB): 100%|██████████| 4/4 [00:00<00:00, 59.71it/s]
 
 
 
@@ -708,7 +876,7 @@ print_highlight(response.json())
 ```
 
 
-<strong style='color: #00008B;'>{'id': '7f3cca73c9ff4e6b818bc3fa15df846a', 'object': 'chat.completion', 'created': 1771082219, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '<think>\nOkay, so the user is asking, "What is the capital of France?" Let me start by recalling basic geography. I know France is a country in Europe. The capital... Hmm, I think it\'s Paris. But wait, let me make sure I\'m not mixing it up with another country. For example, Germany\'s capital is Berlin, and Italy\'s is Rome. So France\'s should be Paris.\n\nWait, maybe there\'s a trick here. Sometimes quizzes or tests might ask for capitals of regions instead of the country. But the question specifically says "the capital of France," which refers to the country as a whole. So Paris is definitely the answer. \n\nI should also think about major landmarks in Paris. The Eiffel Tower, Louvre Museum, Notre-Dame Cathedral—all are in Paris. The president of France resides in the Élysée Palace, which is in Paris. So all these points confirm that Paris is the capital. \n\nIs there any other city that could be confused as the capital? Maybe Lille or Lyon, but those are major cities but not the capital. I\'ve heard of some countries having capitals different from the largest city, but in France, Paris is both the largest city and the capital. \n\nSo I can confidently say the answer is Paris. No contradictions here. Just need to present it clearly and maybe add a bit more context if needed, but the question is straightforward.\n\nWait, just a moment. Let me check if there was any recent change. I don\'t recall any announcements about France moving its capital. Paris has been the capital since the French Revolution, right? Before that, some cities like Versailles had the royal residence, but the capital was still considered Paris. So yes, it\'s safe to say Paris is the capital.\n</think>\n\nThe capital of France is **Paris**. This historic city is known for iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It is also home to the French government and the official residence of the President, the Élysée Palace. Paris has long been the political, cultural, and economic center of France.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 465, 'completion_tokens': 439, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong>
+<strong style='color: #00008B;'>{'id': '697b33c0cf49495193116c61ce075c93', 'object': 'chat.completion', 'created': 1771082709, 'model': 'XiaomiMiMo/MiMo-7B-RL', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': "<think>\nOkay, so the question is asking for the capital of France. Let me think. I remember that France is a country in Europe. The big cities there include Paris, Marseille, Lyon, maybe Bordeaux. But wait, Paris is the most famous one. I've heard of Paris很多 times in the news, like the Eiffel Tower is in Paris. The Eiffel Tower is a major landmark, right? So that would make sense if Paris is the capital. Let me double-check. Sometimes people might confuse capitals with other major cities. For example, in some countries, the capital isn't the biggest city. But in France, I think Paris is both the largest city and the capital. Yeah, I'm pretty confident it's Paris. Maybe the Louvre Museum is also in Paris, which is a symbol of France. So yeah, the answer should be Paris.\n</think>\n\nThe capital of France is **Paris**. This iconic city is renowned for landmarks like the Eiffel Tower, Louvre Museum, and its historic heart, the Left Bank. As France's largest metropolis, it serves as the political, cultural, and economic center of the country.", 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 26, 'total_tokens': 268, 'completion_tokens': 242, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong>
 
 
 
@@ -744,22 +912,22 @@ python3 -m sglang.launch_server --model Qwen/Qwen2.5-7B-Instruct --speculative-a
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:17:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:17:05] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:17:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:25:13] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:25:13] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:25:13] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:17:07] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
-    [2026-02-14 15:17:07] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
-    [2026-02-14 15:17:07] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:25:15] INFO server_args.py:1819: Attention backend not specified. Use flashinfer backend by default.
+    [2026-02-14 15:25:15] WARNING server_args.py:2353: Overlap scheduler is disabled when spec v2 is off or using unsupported speculative algorithm. You can set env SGLANG_ENABLE_SPEC_V2=True to enable the experimental overlap scheduler. 
+    [2026-02-14 15:25:15] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:17:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:17:14] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:17:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:17:14] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:17:14] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:17:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:25:19] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:25:19] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:25:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:25:19] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:25:19] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:25:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -767,57 +935,55 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:17:19] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:17:19] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:17:19] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:25:24] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:25:24] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:25:24] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.63it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.79it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.59it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.53it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.43it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.65it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.46it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.48it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.56it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.59it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=45.89 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=41.78 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=45.89 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.48it/s]Capturing batches (bs=3 avail_mem=45.81 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.48it/s]Capturing batches (bs=2 avail_mem=45.80 GB):  25%|██▌       | 1/4 [00:00<00:02,  1.48it/s]Capturing batches (bs=2 avail_mem=45.80 GB):  75%|███████▌  | 3/4 [00:00<00:00,  4.47it/s]Capturing batches (bs=1 avail_mem=45.78 GB):  75%|███████▌  | 3/4 [00:00<00:00,  4.47it/s]Capturing batches (bs=1 avail_mem=45.78 GB): 100%|██████████| 4/4 [00:00<00:00,  4.69it/s]
+    Capturing batches (bs=4 avail_mem=41.78 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.19it/s]Capturing batches (bs=3 avail_mem=41.67 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.19it/s]Capturing batches (bs=2 avail_mem=41.67 GB):  25%|██▌       | 1/4 [00:00<00:00,  4.19it/s]Capturing batches (bs=2 avail_mem=41.67 GB):  75%|███████▌  | 3/4 [00:00<00:00,  9.12it/s]Capturing batches (bs=1 avail_mem=41.65 GB):  75%|███████▌  | 3/4 [00:00<00:00,  9.12it/s]Capturing batches (bs=1 avail_mem=41.65 GB): 100%|██████████| 4/4 [00:00<00:00,  9.89it/s]
 
 
-    [2026-02-14 15:17:25] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
-    [2026-02-14 15:17:25] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    [2026-02-14 15:25:29] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:25:29] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.78it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.78it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.09it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.09it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=40.57 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=37.03 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=40.57 GB):  25%|██▌       | 1/4 [00:04<00:13,  4.36s/it]Capturing batches (bs=3 avail_mem=39.12 GB):  25%|██▌       | 1/4 [00:04<00:13,  4.36s/it]
+    Capturing batches (bs=4 avail_mem=37.03 GB):  25%|██▌       | 1/4 [00:03<00:10,  3.60s/it]Capturing batches (bs=3 avail_mem=53.28 GB):  25%|██▌       | 1/4 [00:03<00:10,  3.60s/it]
 
-    Capturing batches (bs=3 avail_mem=39.12 GB):  50%|█████     | 2/4 [00:04<00:04,  2.17s/it]Capturing batches (bs=2 avail_mem=38.08 GB):  50%|█████     | 2/4 [00:04<00:04,  2.17s/it]Capturing batches (bs=2 avail_mem=38.08 GB):  75%|███████▌  | 3/4 [00:05<00:01,  1.26s/it]Capturing batches (bs=1 avail_mem=37.60 GB):  75%|███████▌  | 3/4 [00:05<00:01,  1.26s/it]
+    Capturing batches (bs=3 avail_mem=53.28 GB):  50%|█████     | 2/4 [00:04<00:03,  1.78s/it]Capturing batches (bs=2 avail_mem=53.28 GB):  50%|█████     | 2/4 [00:04<00:03,  1.78s/it]Capturing batches (bs=2 avail_mem=53.28 GB):  75%|███████▌  | 3/4 [00:04<00:01,  1.04s/it]Capturing batches (bs=1 avail_mem=53.23 GB):  75%|███████▌  | 3/4 [00:04<00:01,  1.04s/it]
 
-    Capturing batches (bs=1 avail_mem=37.60 GB): 100%|██████████| 4/4 [00:08<00:00,  2.14s/it]Capturing batches (bs=1 avail_mem=37.60 GB): 100%|██████████| 4/4 [00:08<00:00,  2.17s/it]
+    Capturing batches (bs=1 avail_mem=53.23 GB): 100%|██████████| 4/4 [00:07<00:00,  1.73s/it]Capturing batches (bs=1 avail_mem=53.23 GB): 100%|██████████| 4/4 [00:07<00:00,  1.76s/it]
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=37.45 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=37.37 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=37.37 GB):  50%|█████     | 2/4 [00:00<00:00, 12.07it/s]Capturing batches (bs=2 avail_mem=37.37 GB):  50%|█████     | 2/4 [00:00<00:00, 12.07it/s]
-
-    Capturing batches (bs=1 avail_mem=37.34 GB):  50%|█████     | 2/4 [00:00<00:00, 12.07it/s]Capturing batches (bs=1 avail_mem=37.34 GB): 100%|██████████| 4/4 [00:00<00:00, 12.61it/s]Capturing batches (bs=1 avail_mem=37.34 GB): 100%|██████████| 4/4 [00:00<00:00, 12.52it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=58.25 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=3 avail_mem=58.17 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=58.17 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=2 avail_mem=58.17 GB):  75%|███████▌  | 3/4 [00:00<00:00, 27.68it/s]Capturing batches (bs=1 avail_mem=58.15 GB):  75%|███████▌  | 3/4 [00:00<00:00, 27.68it/s]Capturing batches (bs=1 avail_mem=58.15 GB): 100%|██████████| 4/4 [00:00<00:00, 22.18it/s]
 
 
 
@@ -841,7 +1007,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='79864154846849b0be61ffcd64e8fbd2', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771082263, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='9c1b7aaae6444df098317c364bef402e', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771082745, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
@@ -876,24 +1042,22 @@ SGLANG_ENABLE_SPEC_V2=True python3 -m sglang.launch_server --model Qwen/Qwen2.5-
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:17:48] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:17:48] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:17:48] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:25:49] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:25:49] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:25:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:17:50] INFO server_args.py:1819: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-14 15:17:50] WARNING server_args.py:2341: Spec v2 is enabled for eagle/eagle3 speculative decoding and overlap schedule is turned on.
-    [2026-02-14 15:17:50] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:25:51] INFO server_args.py:1819: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-14 15:25:51] WARNING server_args.py:2341: Spec v2 is enabled for eagle/eagle3 speculative decoding and overlap schedule is turned on.
+    [2026-02-14 15:25:51] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:17:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:17:56] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:17:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
-
-
-    [2026-02-14 15:17:56] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:17:56] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:17:56] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:25:55] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:25:55] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:25:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:25:55] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:25:55] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:25:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -901,54 +1065,54 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:18:01] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:18:01] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:18:01] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:25:59] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:25:59] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:25:59] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.60it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.89it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.65it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.64it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.43it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.75it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.41it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.46it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.69it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.71it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=62.80 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=60.76 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=60.76 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.19it/s]Capturing batches (bs=3 avail_mem=60.71 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.19it/s]
 
-    Capturing batches (bs=4 avail_mem=62.80 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.73it/s]Capturing batches (bs=3 avail_mem=62.74 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.73it/s]Capturing batches (bs=2 avail_mem=62.73 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.73it/s]Capturing batches (bs=2 avail_mem=62.73 GB):  75%|███████▌  | 3/4 [00:00<00:00,  5.12it/s]Capturing batches (bs=1 avail_mem=62.73 GB):  75%|███████▌  | 3/4 [00:00<00:00,  5.12it/s]Capturing batches (bs=1 avail_mem=62.73 GB): 100%|██████████| 4/4 [00:00<00:00,  5.39it/s]
+    Capturing batches (bs=2 avail_mem=60.71 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.19it/s]Capturing batches (bs=1 avail_mem=60.71 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.19it/s]Capturing batches (bs=1 avail_mem=60.71 GB): 100%|██████████| 4/4 [00:00<00:00, 14.25it/s]Capturing batches (bs=1 avail_mem=60.71 GB): 100%|██████████| 4/4 [00:00<00:00, 12.59it/s]
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.69it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.69it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.27it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.27it/s]
     
 
 
-    [2026-02-14 15:18:09] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
+    [2026-02-14 15:26:05] SPECULATIVE_MOE_RUNNER_BACKEND is not initialized, using auto backend
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=58.38 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=57.01 GB):   0%|          | 0/4 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=58.38 GB):  25%|██▌       | 1/4 [00:02<00:06,  2.32s/it]Capturing batches (bs=3 avail_mem=43.96 GB):  25%|██▌       | 1/4 [00:02<00:06,  2.32s/it]
+    Capturing batches (bs=4 avail_mem=57.01 GB):  25%|██▌       | 1/4 [00:01<00:04,  1.63s/it]Capturing batches (bs=3 avail_mem=56.90 GB):  25%|██▌       | 1/4 [00:01<00:04,  1.63s/it]
 
-    Capturing batches (bs=3 avail_mem=43.96 GB):  50%|█████     | 2/4 [00:02<00:02,  1.34s/it]Capturing batches (bs=2 avail_mem=43.94 GB):  50%|█████     | 2/4 [00:02<00:02,  1.34s/it]Capturing batches (bs=1 avail_mem=43.93 GB):  50%|█████     | 2/4 [00:03<00:02,  1.34s/it]
+    Capturing batches (bs=3 avail_mem=56.90 GB):  50%|█████     | 2/4 [00:01<00:01,  1.13it/s]Capturing batches (bs=2 avail_mem=56.89 GB):  50%|█████     | 2/4 [00:01<00:01,  1.13it/s]Capturing batches (bs=1 avail_mem=56.89 GB):  50%|█████     | 2/4 [00:02<00:01,  1.13it/s]
 
-    Capturing batches (bs=1 avail_mem=43.93 GB): 100%|██████████| 4/4 [00:03<00:00,  1.24it/s]Capturing batches (bs=1 avail_mem=43.93 GB): 100%|██████████| 4/4 [00:03<00:00,  1.01it/s]
+    Capturing batches (bs=1 avail_mem=56.89 GB): 100%|██████████| 4/4 [00:02<00:00,  1.76it/s]Capturing batches (bs=1 avail_mem=56.89 GB): 100%|██████████| 4/4 [00:02<00:00,  1.45it/s]
 
 
-    [2026-02-14 15:18:16] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
+    [2026-02-14 15:26:10] SPECULATIVE_MOE_A2A_BACKEND is not initialized, using none backend
 
 
 
@@ -972,7 +1136,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='66f87b6cf1df45a6b9ecc5a6c1afe593', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771082300, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='91a52f7668854865986d4a531f59c5d0', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771082775, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
@@ -1015,22 +1179,22 @@ python3 -m sglang.launch_server --model Qwen/Qwen2.5-7B-Instruct --speculative-a
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-14 15:18:26] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:18:26] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:18:26] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:26:18] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:26:18] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:26:18] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-14 15:18:28] INFO server_args.py:1819: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-14 15:18:28] WARNING server_args.py:2448: The overlap scheduler and mixed chunked prefill are disabled because of using ngram speculative decoding.
-    [2026-02-14 15:18:28] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
+    [2026-02-14 15:26:20] INFO server_args.py:1819: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-14 15:26:20] WARNING server_args.py:2448: The overlap scheduler and mixed chunked prefill are disabled because of using ngram speculative decoding.
+    [2026-02-14 15:26:20] INFO server_args.py:2854: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-14 15:18:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:18:36] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:18:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-14 15:18:36] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-14 15:18:36] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-14 15:18:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:26:24] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:26:24] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:26:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-14 15:26:25] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-14 15:26:25] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-14 15:26:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -1038,33 +1202,31 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-14 15:18:41] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:18:41] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-14 15:18:41] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-14 15:26:29] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:26:29] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-14 15:26:29] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.83it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.77it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.76it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.60it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.48it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.70it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.52it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.56it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.60it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.63it/s]
     
 
 
-      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=62.77 GB):   0%|          | 0/4 [00:00<?, ?it/s]
+      0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=62.17 GB):   0%|          | 0/4 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=62.17 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.23it/s]Capturing batches (bs=3 avail_mem=62.11 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.23it/s]
 
-    Capturing batches (bs=4 avail_mem=62.77 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.51it/s]Capturing batches (bs=3 avail_mem=62.70 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.51it/s]Capturing batches (bs=2 avail_mem=62.69 GB):  25%|██▌       | 1/4 [00:00<00:01,  1.51it/s]Capturing batches (bs=2 avail_mem=62.69 GB):  75%|███████▌  | 3/4 [00:00<00:00,  4.72it/s]Capturing batches (bs=1 avail_mem=62.68 GB):  75%|███████▌  | 3/4 [00:00<00:00,  4.72it/s]
-
-    Capturing batches (bs=1 avail_mem=62.68 GB): 100%|██████████| 4/4 [00:00<00:00,  4.58it/s]
+    Capturing batches (bs=2 avail_mem=62.11 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.23it/s]Capturing batches (bs=1 avail_mem=62.11 GB):  25%|██▌       | 1/4 [00:00<00:00,  5.23it/s]Capturing batches (bs=1 avail_mem=62.11 GB): 100%|██████████| 4/4 [00:00<00:00, 12.93it/s]Capturing batches (bs=1 avail_mem=62.11 GB): 100%|██████████| 4/4 [00:00<00:00, 11.64it/s]
 
 
 
@@ -1088,7 +1250,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='3cf161799a154aeda0952604f2b30383', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771082334, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='4cf4ec39645047c7b9f392457ceccced', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries along with their capitals:\n\n1. France - Paris\n2. Japan - Tokyo\n3. Brazil - Brasília', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771082801, model='Qwen/Qwen2.5-7B-Instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=30, prompt_tokens=37, total_tokens=67, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 
