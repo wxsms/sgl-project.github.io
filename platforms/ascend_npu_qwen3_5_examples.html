@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GLM-5 &#8212; SGLang</title>
+    <title>Qwen3.5 &#8212; SGLang</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_npu_glm5_examples';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/ascend_npu_qwen3_5_examples';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -333,7 +333,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_npu_glm5_examples.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/ascend_npu_qwen3_5_examples.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_npu_glm5_examples.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/ascend_npu_qwen3_5_examples.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +367,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_npu_glm5_examples.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/ascend_npu_qwen3_5_examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -397,7 +397,7 @@
       
       
       
-      <li><a href="../_sources/platforms/ascend_npu_glm5_examples.md" target="_blank"
+      <li><a href="../_sources/platforms/ascend_npu_qwen3_5_examples.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -481,7 +481,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>GLM-5</h1>
+    <h1>Qwen3.5</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -491,15 +491,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-preparation">Environment Preparation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-weight">Model Weight</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-deployment">Single-node Deployment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-deployment">Multi-node Deployment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill-Decode Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-benchmark">Using Benchmark</a></li>
 </ul>
@@ -515,29 +512,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="glm-5">
-<h1>GLM-5<a class="headerlink" href="#glm-5" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The GLM (General Language Model) series is an open-source bilingual large language model family jointly developed by the KEG Laboratory of Tsinghua University and Zhipu AI. This series of models has performed outstandingly in the field of Chinese NLP with its unique unified pre-training framework and bilingual capabilities. <a class="reference external" href="https://huggingface.co/zai-org/GLM-5">GLM-5</a> adopts the DeepSeek-V3/V3.2 architecture, including the sparse attention (DSA) and multi-token prediction (MTP). Ascend supports GLM-5 with 0Day based on the SGLang inference framework, achieving low-code seamless enablement and compatibility with the mainstream distributed parallel capabilities within the current SGLang framework. We welcome developers to download and experience it.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="qwen3-5">
+<h1>Qwen3.5<a class="headerlink" href="#qwen3-5" title="Link to this heading">#</a></h1>
 <section id="environment-preparation">
 <h2>Environment Preparation<a class="headerlink" href="#environment-preparation" title="Link to this heading">#</a></h2>
-<section id="model-weight">
-<h3>Model Weight<a class="headerlink" href="#model-weight" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GLM-5.0</span></code>(BF16 version): <a class="reference external" href="https://www.modelscope.cn/models/ZhipuAI/GLM-5">Download model weight</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GLM-5.0-w4a8</span></code>(Quantized version without mtp): <a class="reference external" href="https://modelers.cn/models/Eco-Tech/GLM-5-w4a8">Download model weight</a>.</p></li>
-<li><p>You can use <a class="reference external" href="https://gitcode.com/Ascend/msmodelslim">msmodelslim</a> to quantify the model naively.</p></li>
-</ul>
-</section>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
 <p>The dependencies required for the NPU runtime environment have been integrated into a Docker image and uploaded to the quay.io platform. You can directly pull it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Atlas 800 A3</span>
-docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-a3-glm5
+docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-a3-qwen35
 <span class="c1">#Atlas 800 A2</span>
-docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-910b-glm5
+docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-910b-qwen35
 
 <span class="c1">#start container</span>
 docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="o">=</span>16g<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--name<span class="w"> </span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
@@ -569,11 +554,6 @@ docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </
 swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:<span class="si">${</span><span class="nv">TAG</span><span class="si">}</span>
 </pre></div>
 </div>
-<p>Note: Using this image, you need to update transformers to main branch</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># reinstall transformers</span>
-pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/huggingface/transformers.git
-</pre></div>
-</div>
 </section>
 </section>
 <section id="deployment">
@@ -581,7 +561,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 <section id="single-node-deployment">
 <h3>Single-node Deployment<a class="headerlink" href="#single-node-deployment" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Quantized model <code class="docutils literal notranslate"><span class="pre">glm5_w4a8</span></code> can be deployed on 1 Atlas 800 A3 (64G × 16) .</p></li>
+<li><p>Quantized model <code class="docutils literal notranslate"><span class="pre">qwen35_w8a8</span></code> can be deployed on 1 Atlas 800 A3 (64G × 16) .</p></li>
 </ul>
 <p>Run the following script to execute online inference.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># high performance cpu</span>
@@ -621,81 +601,11 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--served-model-name<span class="w"> </span>glm-5<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--moe-a2a-backend<span class="w"> </span>deepep<span class="w"> </span>--deepep-mode<span class="w"> </span>auto
-</pre></div>
-</div>
-</section>
-<section id="multi-node-deployment">
-<h3>Multi-node Deployment<a class="headerlink" href="#multi-node-deployment" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GLM-5-bf16</span></code>: require at least 2 Atlas 800 A3 (64G × 16).</p></li>
-</ul>
-<p><strong>A3 series</strong></p>
-<p>Modify the IP of 2 nodes, then run the same scripts on two nodes.</p>
-<p><strong>node 0/1</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
-sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
-sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_cost_ns<span class="o">=</span><span class="m">50000</span>
-<span class="c1"># bind cpu</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
-
-<span class="nb">unset</span><span class="w"> </span>https_proxy
-<span class="nb">unset</span><span class="w"> </span>http_proxy
-<span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
-<span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
-<span class="nb">unset</span><span class="w"> </span>ASCEND_LAUNCH_BLOCKING
-<span class="c1"># cann</span>
-<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/set_env.sh
-<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_NPU_USE_MULTI_STREAM</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1000</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
-
-<span class="c1"># Run command ifconfig on two nodes, find out which inet addr has same IP with your node IP. That is your public interface, which should be added here</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
-<span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
-
-
-<span class="nv">P_IP</span><span class="o">=(</span><span class="s1">&#39;your ip1&#39;</span><span class="w"> </span><span class="s1">&#39;your ip2&#39;</span><span class="o">)</span>
-<span class="nv">P_MASTER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[0]</span><span class="si">}</span><span class="s2">:your port&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
-
-<span class="nv">LOCAL_HOST1</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$1}&#39;</span><span class="sb">`</span>
-<span class="nv">LOCAL_HOST2</span><span class="o">=</span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="p">|</span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s1">&#39;{print$2}&#39;</span><span class="sb">`</span>
-<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="p">!P_IP[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="k">do</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOCAL_HOST1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOCAL_HOST2</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
-<span class="w">    </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P_IP</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="w">        </span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--tp-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--nnodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>--dist-init-addr<span class="w"> </span><span class="nv">$P_MASTER</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--chunked-prefill-size<span class="w"> </span><span class="m">16384</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">131072</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="se">\</span>
-<span class="w">        </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--served-model-name<span class="w"> </span>glm-5<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--cuda-graph-max-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--disable-radix-cache
-<span class="w">        </span><span class="nv">NODE_RANK</span><span class="o">=</span><span class="nv">$i</span>
-<span class="w">        </span><span class="k">break</span>
-<span class="w">    </span><span class="k">fi</span>
-<span class="k">done</span>
+<span class="w">        </span>--enable-multimodal<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mm-attention-backend<span class="w"> </span>ascend_attn<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--dtype<span class="w"> </span>bfloat16
 </pre></div>
 </div>
 </section>
@@ -737,15 +647,12 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-preparation">Environment Preparation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-weight">Model Weight</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-deployment">Single-node Deployment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-node-deployment">Multi-node Deployment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill-Decode Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-benchmark">Using Benchmark</a></li>
 </ul>
