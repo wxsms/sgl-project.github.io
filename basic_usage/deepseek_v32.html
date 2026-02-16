@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=2810c056"></script>
+    <script src="../_static/documentation_options.js?v=6e315041"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="DeepSeek V3/V3.1/R1 Usage" href="deepseek_v3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 15, 2026"/>
+    <meta name="docbuild:last-update" content="Feb 16, 2026"/>
   </head>
   
   
@@ -610,12 +610,18 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li><p><code class="docutils literal notranslate"><span class="pre">fa3</span></code>: <code class="docutils literal notranslate"><span class="pre">flash_attn_with_kvcache</span></code> kernel from <code class="docutils literal notranslate"><span class="pre">flash_attn</span></code> library. Can only run on Hopper GPUs. It requires bf16 q, kv inputs.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tilelang</span></code>: <code class="docutils literal notranslate"><span class="pre">tilelang</span></code> implementation that can run on GPU, HPU and NPU.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">aiter</span></code>: Aiter kernel on AMD HPUs. Can only be used as decode kernel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trtllm</span></code>: <code class="docutils literal notranslate"><span class="pre">trtllm-mla</span></code> sparse kernel from flashinfer library. Only run on blackwell GPUs. It requires QKV bf16 or QKV fp8.</p></li>
 </ul>
 </li>
 <li><p>On the basis of performance benchmarks, the default configuration on H200 and B200 are set as follows :</p>
 <ul>
 <li><p>H200: <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> prefill attention (short-seq prefill uses MHA via FlashAttention varlen), <code class="docutils literal notranslate"><span class="pre">fa3</span></code> decode attention, <code class="docutils literal notranslate"><span class="pre">bf16</span></code> kv cache dtype.</p></li>
 <li><p>B200: <code class="docutils literal notranslate"><span class="pre">flashmla_auto</span></code> prefill attention (short-seq prefill uses MHA via TRT-LLM ragged), <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code> decode attention, <code class="docutils literal notranslate"><span class="pre">fp8_e4m3</span></code> kv cache dtype. <code class="docutils literal notranslate"><span class="pre">flashmla_auto</span></code> enables automatic selection of either <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> or <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code> kernel for prefill based on KV cache dtype, hardware, and heuristics. When FP8 KV cache is enabled and <code class="docutils literal notranslate"><span class="pre">total_kv_tokens</span> <span class="pre">&lt;</span> <span class="pre">total_q_tokens</span> <span class="pre">*</span> <span class="pre">512</span></code>, it uses the <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> kernel; otherwise, it falls back to the <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code> kernel. The heuristics may need to be tuned if the performance of either the <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> or <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code> kernel changes significantly.</p></li>
+</ul>
+</li>
+<li><p>On Blackwell platform, with slightly accuracy drop, the performance can boost up to 3x-5x</p>
+<ul>
+<li><p>B200: by choosing <code class="docutils literal notranslate"><span class="pre">trtllm</span></code> for both <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span></code>, the prefill attention use MHA via TRT-LLM ragged for both short and long sequence (<strong>accuracy impact</strong>). Combine the <code class="docutils literal notranslate"><span class="pre">trtllm</span></code> with <code class="docutils literal notranslate"><span class="pre">fp8_e4m3</span></code> kv cache, the kv cache dim is <code class="docutils literal notranslate"><span class="pre">576</span></code> (kv_lora_rank + qk_rope_head_dim) (<strong>accuracy impact</strong>), compare to the combination of <code class="docutils literal notranslate"><span class="pre">flashmla_auto</span></code> and <code class="docutils literal notranslate"><span class="pre">fp8_e4m</span></code> kv cache dim is <code class="docutils literal notranslate"><span class="pre">656</span></code> (kv_lora_rank + scale storage (kv_lora_rank // quant_block_size * 4 bytes) + rope dimension storage).</p></li>
 </ul>
 </li>
 </ul>
@@ -1173,7 +1179,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 15, 2026.
+  Last updated on Feb 16, 2026.
   <br/>
 </p>
   </div>
