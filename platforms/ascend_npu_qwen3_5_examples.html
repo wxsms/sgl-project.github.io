@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=fbb8900b"></script>
+    <script src="../_static/documentation_options.js?v=74e6bd19"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -532,9 +532,9 @@ document.write(`
 <h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
 <p>The dependencies required for the NPU runtime environment have been integrated into a Docker image and uploaded to the quay.io platform. You can directly pull it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Atlas 800 A3</span>
-docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-a3-qwen35
+docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-a3-qwen3.5
 <span class="c1">#Atlas 800 A2</span>
-docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-910b-qwen35
+docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-910b-qwen3.5
 
 <span class="c1">#start container</span>
 docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="o">=</span>16g<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--name<span class="w"> </span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
@@ -545,7 +545,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </
 -v<span class="w"> </span>/usr/local/Ascend/driver:/usr/local/Ascend/driver<span class="w"> </span><span class="se">\</span>
 -v<span class="w"> </span>/usr/local/Ascend/firmware:/usr/local/Ascend/firmware<span class="w"> </span><span class="se">\</span>
 --device<span class="o">=</span>/dev/davinci0:/dev/davinci0<span class="w">  </span><span class="se">\</span>
---device<span class="o">=</span>/dev/davinci1:/dev/avinci1<span class="w">  </span><span class="se">\</span>
+--device<span class="o">=</span>/dev/davinci1:/dev/davinci1<span class="w">  </span><span class="se">\</span>
 --device<span class="o">=</span>/dev/davinci2:/dev/davinci2<span class="w">  </span><span class="se">\</span>
 --device<span class="o">=</span>/dev/davinci3:/dev/davinci3<span class="w">  </span><span class="se">\</span>
 --device<span class="o">=</span>/dev/davinci4:/dev/davinci4<span class="w">  </span><span class="se">\</span>
