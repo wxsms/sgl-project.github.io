@@ -27,30 +27,30 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-16 17:04:37] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 19:57:01] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-16 17:04:37] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 19:57:01] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-16 17:04:37] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 19:57:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-16 17:04:41] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-16 17:04:41] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-16 17:04:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 19:57:07] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 19:57:07] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 19:57:07] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-16 17:04:43] INFO server_args.py:1830: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-16 17:04:43] INFO server_args.py:2865: Set soft_watchdog_timeout since in CI
+    [2026-02-16 19:57:09] INFO server_args.py:1830: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-16 19:57:09] INFO server_args.py:2865: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-16 17:04:47] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-16 17:04:47] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-16 17:04:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-16 17:04:47] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-16 17:04:47] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-16 17:04:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 19:57:16] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 19:57:16] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 19:57:16] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 19:57:16] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 19:57:16] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 19:57:16] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -58,27 +58,27 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-16 17:04:51] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-16 17:04:51] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-16 17:04:51] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-16 19:57:22] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-16 19:57:22] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-16 19:57:22] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.77it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.76it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.57it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  6.56it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=77.10 GB):   0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=77.10 GB):  33%|███▎      | 1/3 [00:00<00:00,  5.10it/s]Capturing batches (bs=2 avail_mem=77.04 GB):  33%|███▎      | 1/3 [00:00<00:00,  5.10it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=71.98 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=1 avail_mem=77.04 GB):  33%|███▎      | 1/3 [00:00<00:00,  5.10it/s]Capturing batches (bs=1 avail_mem=77.04 GB): 100%|██████████| 3/3 [00:00<00:00, 12.89it/s]
+    Capturing batches (bs=4 avail_mem=71.98 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.14it/s]Capturing batches (bs=2 avail_mem=71.43 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.14it/s]Capturing batches (bs=1 avail_mem=71.31 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.14it/s]Capturing batches (bs=1 avail_mem=71.31 GB): 100%|██████████| 3/3 [00:00<00:00, 10.23it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>        NOTE: Typically, the server runs in a separate terminal.<br>        In this notebook, we run the server and notebook code together, so their outputs are combined.<br>        To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>        To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>        We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>        </strong>
 
 
-    Server started on http://localhost:31039
+    Server started on http://localhost:38005
 
 
 ## Chat Completions
@@ -108,7 +108,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='7198d9f0fff9408781812dff0727b9b8', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771261499, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='37fd8c87c06e4d9190a328777de8d099', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771271850, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Model Thinking/Reasoning Support
@@ -341,7 +341,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>Ancient Rome was a vast and complex civilization that left a profound legacy in various fields such as art, architecture, philosophy, law, literature, and science. Some of the major achievements include:<br><br>1. **Architecture**: The Romans built magnificent structures such as the Colosseum, the Pantheon, and the Roman Forum. They also created the first known amphitheaters for public spectacles.<br><br>2. **Art**: Roman art was renowned for its beauty and complexity. The Colosseum is one of the most famous examples of Roman architecture and engineering.<br><br>3. **Philosophy**: Roman philosophy is considered one of the most</strong>
+<strong style='color: #00008B;'>Ancient Rome was a major civilization that thrived from the 8th century BCE to the 4th century CE. It was known for its advanced engineering, architecture, and art. Some of their major achievements include:<br><br>1. **Roman Empire**: The largest and most powerful empire in ancient history, spanning from Italy to Spain.<br><br>2. **Architecture**: Roman architecture is renowned for its grandeur, including the Colosseum, Pantheon, and the Roman Forum.<br><br>3. **Engineering**: The Romans developed advanced engineering techniques and technologies that influenced later civilizations.<br><br>4. **Literature and Philosophy**: Roman literature, such as the</strong>
 
 
 Streaming mode is also supported.
@@ -363,7 +363,7 @@ for chunk in stream:
         print(chunk.choices[0].delta.content, end="")
 ```
 
-    Yes, it is a test. I'm here to assist you with any questions or tasks you have. If you have any questions or need help with anything, feel free to ask.
+    Yes, it is a test. I'm here to help answer questions and provide information to the best of my abilities. Please let me know if you have any specific questions or topics you'd like to discuss.
 
 #### Returning Routed Experts (MoE Models)
 
@@ -413,7 +413,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='5a397fc75b3b4979b968468bf5db5dfa', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1771261500, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='19f5a3fa4fca4e1cb9ac196cd3708e5c', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1771271851, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Parameters
@@ -441,7 +441,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='134e76106c2940adb0ac410713906355', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named James who was determined to explore the farthest reaches of the universe. He had always been fascinated by the mysteries of space and had spent many years studying and researching the subject. ', matched_stop='\n\n')], created=1771261500, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=47, prompt_tokens=9, total_tokens=56, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='b64c040708194ede930df14aab558455', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Emily Hart. She was a young woman with an insatiable curiosity for the universe, and she believed that the only way to truly understand it was through exploration.', matched_stop='\n\n')], created=1771271851, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=9, total_tokens=55, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 #### Returning Routed Experts (MoE Models)
