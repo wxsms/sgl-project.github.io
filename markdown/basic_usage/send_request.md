@@ -23,32 +23,30 @@ python3 -m sglang.launch_server --model-path qwen/qwen2.5-0.5b-instruct \
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-16 03:25:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 03:56:16] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-16 03:25:15] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 03:56:16] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-16 03:25:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 03:56:16] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-16 03:25:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-16 03:25:21] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-16 03:25:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 03:56:21] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 03:56:21] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 03:56:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-16 03:25:24] INFO server_args.py:1832: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-16 03:25:24] INFO server_args.py:2867: Set soft_watchdog_timeout since in CI
+    [2026-02-16 03:56:23] INFO server_args.py:1832: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-16 03:56:23] INFO server_args.py:2867: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-16 03:25:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-16 03:25:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-16 03:25:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
-
-
-    [2026-02-16 03:25:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-16 03:25:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-16 03:25:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 03:56:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 03:56:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 03:56:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-16 03:56:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-16 03:56:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-16 03:56:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -56,20 +54,20 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-16 03:25:36] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-16 03:25:36] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-16 03:25:36] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-16 03:56:37] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-16 03:56:37] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-16 03:56:37] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.62it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.61it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.67it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.66it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=72.00 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=74.89 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=72.00 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.82it/s]Capturing batches (bs=2 avail_mem=71.93 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.82it/s]Capturing batches (bs=1 avail_mem=71.93 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.82it/s]Capturing batches (bs=1 avail_mem=71.93 GB): 100%|██████████| 3/3 [00:00<00:00, 11.61it/s]
+    Capturing batches (bs=4 avail_mem=74.89 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.92it/s]Capturing batches (bs=2 avail_mem=74.83 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.92it/s]Capturing batches (bs=1 avail_mem=74.82 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.92it/s]Capturing batches (bs=1 avail_mem=74.82 GB): 100%|██████████| 3/3 [00:00<00:00,  9.35it/s]
 
 
 
@@ -94,7 +92,7 @@ print_highlight(response)
 ```
 
 
-<strong style='color: #00008B;'>{'id': '6311955c3086485187d1ae54843cbb99', 'object': 'chat.completion', 'created': 1771212345, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong>
+<strong style='color: #00008B;'>{'id': 'a225ac2405b342969face191a42e6fe8', 'object': 'chat.completion', 'created': 1771214205, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong>
 
 
 ## Using Python Requests
@@ -115,7 +113,7 @@ print_highlight(response.json())
 ```
 
 
-<strong style='color: #00008B;'>{'id': '2f794a50a5974c22947818f58a384fe7', 'object': 'chat.completion', 'created': 1771212345, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong>
+<strong style='color: #00008B;'>{'id': '031ba21bc890474592b902e120fa0143', 'object': 'chat.completion', 'created': 1771214205, 'model': 'qwen/qwen2.5-0.5b-instruct', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 'The capital of France is Paris.', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 151645}], 'usage': {'prompt_tokens': 36, 'total_tokens': 44, 'completion_tokens': 8, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'metadata': {'weight_version': 'default'}}</strong>
 
 
 ## Using OpenAI Python Client
@@ -138,7 +136,7 @@ print_highlight(response)
 ```
 
 
-<strong style='color: #00008B;'>ChatCompletion(id='21a82a2ae6774597a29605eb3f4bd09d', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771212345, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>ChatCompletion(id='b11ed359852248efbba87ba90367f4a7', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771214205, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Streaming
@@ -269,7 +267,7 @@ print_highlight(response.json())
 ```
 
 
-<strong style='color: #00008B;'>{'text': ' Paris. It is the largest city in Europe and the second largest city in the world. It is located in the south of France, on the banks of the', 'output_ids': [12095, 13, 1084, 374, 279, 7772, 3283, 304, 4505, 323, 279, 2086, 7772, 3283, 304, 279, 1879, 13, 1084, 374, 7407, 304, 279, 9806, 315, 9625, 11, 389, 279, 13959, 315, 279], 'meta_info': {'id': '8aa99b1cbd7442769f69f756de80c20c', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 5, 'weight_version': 'default', 'total_retractions': 0, 'completion_tokens': 32, 'cached_tokens': 2, 'cached_tokens_details': None, 'e2e_latency': 0.05059027671813965, 'response_sent_to_client_ts': 1771212345.84192}}</strong>
+<strong style='color: #00008B;'>{'text': ' Paris. It is the largest city in Europe and the second largest city in the world. It is located in the south of France, on the banks of the', 'output_ids': [12095, 13, 1084, 374, 279, 7772, 3283, 304, 4505, 323, 279, 2086, 7772, 3283, 304, 279, 1879, 13, 1084, 374, 7407, 304, 279, 9806, 315, 9625, 11, 389, 279, 13959, 315, 279], 'meta_info': {'id': 'ca95075187e049dbb6d7d26a6fea412c', 'finish_reason': {'type': 'length', 'length': 32}, 'prompt_tokens': 5, 'weight_version': 'default', 'total_retractions': 0, 'completion_tokens': 32, 'cached_tokens': 2, 'cached_tokens_details': None, 'e2e_latency': 0.05534172058105469, 'response_sent_to_client_ts': 1771214205.995533}}</strong>
 
 
 ### Streaming
