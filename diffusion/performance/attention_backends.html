@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=4e9a863b"></script>
+    <script src="../../_static/documentation_options.js?v=394a080c"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -529,6 +529,7 @@ document.write(`
 <li><p><strong>CUDA</strong>: prefers FlashAttention (FA3/FA4) when supported; otherwise falls back to PyTorch SDPA.</p></li>
 <li><p><strong>ROCm</strong>: uses FlashAttention when available; otherwise falls back to PyTorch SDPA.</p></li>
 <li><p><strong>MPS</strong>: always uses PyTorch SDPA.</p></li>
+<li><p><strong>NPU</strong>: always uses PyTorch SDPA.</p></li>
 </ul>
 </section>
 <section id="backend-options">
@@ -740,6 +741,7 @@ document.write(`
 <th class="head text-right"><p>CUDA</p></th>
 <th class="head text-right"><p>ROCm</p></th>
 <th class="head text-right"><p>MPS</p></th>
+<th class="head text-right"><p>NPU</p></th>
 <th class="head"><p>Notes</p></th>
 </tr>
 </thead>
@@ -748,9 +750,11 @@ document.write(`
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA requires SM80+ and fp16/bf16. FlashAttention is only used when the required runtime is installed; otherwise it falls back to <code class="docutils literal notranslate"><span class="pre">torch_sdpa</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">torch_sdpa</span></code></p></td>
+<td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>✅</p></td>
@@ -760,10 +764,12 @@ document.write(`
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">st_attn</span></code>. Configure via <code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sage_attn</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only (optional dependency).</p></td>
@@ -772,10 +778,12 @@ document.write(`
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only (optional dependency).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">video_sparse_attn</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">vsa</span></code>. Configure <code class="docutils literal notranslate"><span class="pre">sparsity</span></code> via <code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span></code>.</p></td>
@@ -784,16 +792,19 @@ document.write(`
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">kernel.attn.vmoba_attn.vmoba</span></code>. Configure via <code class="docutils literal notranslate"><span class="pre">--attention-backend-config</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aiter</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
+<td class="text-right"><p>❌</p></td>
 <td><p>Requires <code class="docutils literal notranslate"><span class="pre">aiter</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sparse_video_gen_2_attn</span></code></p></td>
 <td class="text-right"><p>✅</p></td>
+<td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td class="text-right"><p>❌</p></td>
 <td><p>CUDA-only. Requires <code class="docutils literal notranslate"><span class="pre">svg</span></code>.</p></td>
