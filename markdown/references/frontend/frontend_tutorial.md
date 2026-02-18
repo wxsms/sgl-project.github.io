@@ -25,30 +25,30 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-18 00:06:05] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:21:23] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-18 00:06:05] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:21:23] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-18 00:06:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:21:23] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-18 00:06:10] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-18 00:06:10] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-18 00:06:10] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:21:28] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:21:28] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:21:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-18 00:06:13] INFO server_args.py:1830: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-18 00:06:13] INFO server_args.py:2865: Set soft_watchdog_timeout since in CI
+    [2026-02-18 03:21:31] INFO server_args.py:1830: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-18 03:21:31] INFO server_args.py:2865: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-18 00:06:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-18 00:06:19] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-18 00:06:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-18 00:06:19] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-18 00:06:19] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-18 00:06:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:21:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:21:38] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:21:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:21:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:21:38] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:21:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -56,38 +56,38 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-18 00:06:25] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-18 00:06:25] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-18 00:06:25] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-18 03:21:44] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-18 03:21:44] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-18 03:21:44] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.46it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.41it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.35it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.30it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.32it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.29it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.33it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.34it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.28it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.29it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=45.26 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=46.21 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=45.26 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.43it/s]Capturing batches (bs=2 avail_mem=45.20 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.43it/s]Capturing batches (bs=1 avail_mem=45.20 GB):  33%|███▎      | 1/3 [00:00<00:00,  4.43it/s]Capturing batches (bs=1 avail_mem=45.20 GB): 100%|██████████| 3/3 [00:00<00:00, 10.50it/s]
+    Capturing batches (bs=4 avail_mem=46.21 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.14it/s]Capturing batches (bs=2 avail_mem=45.24 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.14it/s]Capturing batches (bs=1 avail_mem=45.23 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.14it/s]Capturing batches (bs=1 avail_mem=45.23 GB): 100%|██████████| 3/3 [00:00<00:00,  5.44it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>        NOTE: Typically, the server runs in a separate terminal.<br>        In this notebook, we run the server and notebook code together, so their outputs are combined.<br>        To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>        To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>        We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>        </strong>
 
 
-    Server started on http://localhost:35052
+    Server started on http://localhost:38799
 
 
 Set the default backend. Note: Besides the local server, you may use also `OpenAI` or other API endpoints.
@@ -97,7 +97,7 @@ Set the default backend. Note: Besides the local server, you may use also `OpenA
 set_default_backend(RuntimeEndpoint(f"http://localhost:{port}"))
 ```
 
-    [2026-02-18 00:06:35] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-02-18 03:21:55] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 ## Basic Usage
@@ -120,7 +120,7 @@ print_highlight(state["answer"])
 ```
 
 
-<strong style='color: #00008B;'>Sure, here are three countries and their capitals:<br><br>1. **France - Paris**<br>2. **Italy - Rome**<br>3. **Japan - Tokyo**</strong>
+<strong style='color: #00008B;'>Sure, here are three countries and their capitals:<br><br>1. United States - Washington, D.C.<br>2. France - Paris<br>3. Japan - Tokyo</strong>
 
 
 ## Multi-turn Dialog
@@ -145,11 +145,11 @@ print_highlight(state["second_answer"])
 ```
 
 
-<strong style='color: #00008B;'>Sure! Here is a list of three countries along with their capitals:<br><br>1. **France - Paris**<br>2. **Japan - Tokyo**<br>3. **Brazil - Brasília**</strong>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Canada** - Ottawa</strong>
 
 
 
-<strong style='color: #00008B;'>Certainly! Here is another list of three countries and their capitals:<br><br>1. **Italy - Rome**<br>2. **Canada - Ottawa**<br>3. **Australia - Canberra**</strong>
+<strong style='color: #00008B;'>Certainly! Here is another list of three countries along with their respective capitals:<br><br>1. **Japan** - Tokyo<br>2. **Australia** - Canberra<br>3. **Mexico** - Mexico City</strong>
 
 
 ## Control flow
@@ -184,7 +184,7 @@ print_highlight(state["expression"])
 
 
 
-<strong style='color: #00008B;'>2 * 2. <br><br>We can easily compute this without a calculator:<br><br>\[ 2 * 2 = 4 \]<br><br>So, the answer is 4.</strong>
+<strong style='color: #00008B;'>2 * 2<br><br>Let's solve it:<br>1 * 2 = 2<br>2 * 2 = 4<br><br>So, 2 * 2 = 4<br><br>You didn't need a calculator for this one, but I understand the request. The answer is 4.</strong>
 
 
 ## Parallelism
@@ -219,7 +219,7 @@ print_highlight(state["summary"])
 ```
 
 
-<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet involves consuming a variety of nutrients in appropriate proportions. Focus on fruits, vegetables, lean proteins, whole grains, and healthy fats. Limit processed and high-sugar foods, and ensure a wide range of vitamins and minerals for optimal health.<br>2. **Regular Exercise**: Regular physical activity is crucial for maintaining good health. Aim for at least 150 minutes of moderate-intensity aerobic exercise or 75 minutes of vigorous-intensity aerobic exercise per week, along with muscle-strengthening activities on at least two days. This helps improve cardiovascular health, strengthen muscles and bones, and enhance mental well-being.<br><br>Both of these practices are essential for a healthy lifestyle!</strong>
+<strong style='color: #00008B;'>1. **Balanced Diet**: Consuming a variety of nutrients through a diverse diet of fruits, vegetables, lean proteins, whole grains, and healthy fats. Staying hydrated and limiting sugary and processed foods further supports overall health.<br>2. **Regular Exercise**: Engaging in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with muscle-strengthening exercises on two or more days. Choose activities you enjoy to maintain consistency and improve physical and mental health.<br><br>Both of these habits are essential for maintaining a healthy lifestyle.</strong>
 
 
 ## Constrained Decoding
@@ -283,7 +283,7 @@ print_highlight(state["json_output"])
 ```
 
 
-<strong style='color: #00008B;'>{<br>    "name": "Harry JamesPoter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Yew",<br>        "core": "Phoenix Feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": " stag",<br>    "bogart": "the Dementor"<br>}</strong>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Holm oak",<br>        "core": "Phoenix feather",<br>        "length": 11.25<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "A drainpipe"<br>}</strong>
 
 
 ## Batching 
@@ -313,7 +313,7 @@ for i, state in enumerate(states):
 
       0%|          | 0/3 [00:00<?, ?it/s]
 
-    100%|██████████| 3/3 [00:00<00:00, 35.05it/s]
+    100%|██████████| 3/3 [00:00<00:00, 35.40it/s]
 
     
 
@@ -421,24 +421,24 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-18 00:06:47] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-18 00:06:47] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-18 00:06:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:22:06] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:22:06] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:22:06] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-18 00:06:49] INFO server_args.py:1830: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-18 00:06:49] INFO server_args.py:2865: Set soft_watchdog_timeout since in CI
+    [2026-02-18 03:22:09] INFO server_args.py:1830: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-18 03:22:09] INFO server_args.py:2865: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-18 00:06:52] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-18 03:22:12] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-02-18 00:06:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-18 00:06:55] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-18 00:06:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-18 00:06:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-18 00:06:55] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-18 00:06:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:22:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:22:15] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:22:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-18 03:22:15] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-18 03:22:15] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-18 03:22:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -446,41 +446,41 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-18 00:07:02] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-18 00:07:02] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-18 00:07:02] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-18 03:22:22] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-18 03:22:22] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-18 03:22:22] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:03,  1.10it/s]
+    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:02,  1.40it/s]
 
 
-    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:02,  1.12it/s]
+    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:02,  1.46it/s]
 
 
-    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02<00:01,  1.14it/s]
+    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02<00:01,  1.49it/s]
 
 
-    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03<00:00,  1.15it/s]
+    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02<00:00,  1.46it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.48it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.30it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.86it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.66it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=29.88 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=33.97 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=29.88 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.70it/s]Capturing batches (bs=2 avail_mem=29.85 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.70it/s]Capturing batches (bs=1 avail_mem=29.84 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.70it/s]Capturing batches (bs=1 avail_mem=29.84 GB): 100%|██████████| 3/3 [00:00<00:00,  4.59it/s]
+    Capturing batches (bs=4 avail_mem=33.97 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.68it/s]Capturing batches (bs=2 avail_mem=33.94 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.68it/s]Capturing batches (bs=1 avail_mem=33.93 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.68it/s]Capturing batches (bs=1 avail_mem=33.93 GB): 100%|██████████| 3/3 [00:00<00:00,  4.54it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>        NOTE: Typically, the server runs in a separate terminal.<br>        In this notebook, we run the server and notebook code together, so their outputs are combined.<br>        To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>        To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>        We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>        </strong>
 
 
-    Server started on http://localhost:35042
+    Server started on http://localhost:37112
 
 
 
@@ -488,7 +488,7 @@ print(f"Server started on http://localhost:{port}")
 set_default_backend(RuntimeEndpoint(f"http://localhost:{port}"))
 ```
 
-    [2026-02-18 00:07:16] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-02-18 03:22:35] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 Ask a question about an image.
@@ -508,7 +508,7 @@ print_highlight(state["answer"])
 ```
 
 
-<strong style='color: #00008B;'>The image shows a man ironing clothes on the back of a yellow taxi parked on a city street. The man is standing on an ironing board that is set up to the back of the taxi, and he is ironing a blue garment. The taxi has a sticker on the back that indicates it is likely a service vehicle. The scene is set in an urban environment, with buildings, a taxi, and another vehicle visible in the background. The man appears to be working in an improvisational setting, which is common for some casual or small-scale businesses.</strong>
+<strong style='color: #00008B;'>The image shows a man in a yellow shirt ironing a blue shirt while standing in the rear of a yellow taxi. The ironing board is set up on the back of the taxi, and he is using a strap to keep the board secure. The scene appears to be on a street, with another yellow taxi in the background. The man seems to be multitasking, combining ironing with commuting or waiting.</strong>
 
 
 
