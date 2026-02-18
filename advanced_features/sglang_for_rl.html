@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e69ff33c"></script>
+    <script src="../_static/documentation_options.js?v=994fdae5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -713,6 +713,66 @@ document.write(`
 </table>
 </div>
 <p><strong>Python Engine API:</strong> <code class="docutils literal notranslate"><span class="pre">engine.update_weights_from_disk(model_path,</span> <span class="pre">load_format=None)</span></code></p>
+<p><strong>Diffusion engine (SGLang-Diffusion):</strong> The diffusion engine exposes the same <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/update_weights_from_disk</span></code> endpoint with the following behavior:</p>
+<ul class="simple">
+<li><p><strong>All-or-nothing with rollback:</strong> if any module fails to load, all previously updated modules are rolled back to the original weights by reloading from the original model path. No partial updates are left behind. If rollback itself fails, the exception propagates so the caller knows the model is in an inconsistent state.</p></li>
+<li><p><strong>Offload-aware:</strong> when layerwise offload (<code class="docutils literal notranslate"><span class="pre">--dit-layerwise-offload</span></code>) is enabled, the diffusion offload manager replaces GPU parameters with small <code class="docutils literal notranslate"><span class="pre">torch.empty((1,))</span></code> placeholders while real weights live in consolidated pinned CPU buffers. A naive <code class="docutils literal notranslate"><span class="pre">param.data.copy_()</span></code> would fail with a shape mismatch. Instead, the updater dynamically detects active offload managers and writes new weights directly into their CPU buffers, bypassing the placeholders entirely. For any layer that happens to be prefetched on GPU at update time, the live GPU tensor is also updated so the change takes effect immediately. This requires no extra GPU memory and does not disturb the offload state.</p></li>
+<li><p><strong>DTensor-aware:</strong> parameters distributed via <code class="docutils literal notranslate"><span class="pre">torch.distributed.tensor</span></code> (tensor parallelism) are updated through <code class="docutils literal notranslate"><span class="pre">distribute_tensor</span></code> so that each shard is correctly placed on the right device mesh.</p></li>
+</ul>
+<p><strong>Request body:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Defaults</p></th>
+<th class="head"><p>Options</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model_path</span></code></p></td>
+<td><p>The model path with the new weights.</p></td>
+<td><p>Required</p></td>
+<td><p>Type: str</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flush_cache</span></code></p></td>
+<td><p>Flush TeaCache state after update.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>Type: bool</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">target_modules</span></code></p></td>
+<td><p>List of module names to update (e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;transformer&quot;]</span></code>). If omitted, all <code class="docutils literal notranslate"><span class="pre">nn.Module</span></code> components are updated.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Type: list[str]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Response body:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Defaults</p></th>
+<th class="head"><p>Options</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p>Whether the update succeeded.</p></td>
+<td><p>-</p></td>
+<td><p>Type: bool</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">message</span></code></p></td>
+<td><p>Status / error message.</p></td>
+<td><p>-</p></td>
+<td><p>Type: str</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> The diffusion engine (SGLang-Diffusion) does not currently support hot refit (updating weights while inference is in progress). The diffusion scheduler processes one request at a time and completes the entire inference before handling the next request, so weight updates and inference never run concurrently.</p>
+</div></blockquote>
 </section>
 <section id="update-weights-from-tensor">
 <h3>Update Weights from Tensor<a class="headerlink" href="#update-weights-from-tensor" title="Link to this heading">#</a></h3>
