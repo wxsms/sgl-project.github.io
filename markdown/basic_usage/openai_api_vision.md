@@ -24,33 +24,33 @@ python3 -m sglang.launch_server --model-path Qwen/Qwen2.5-VL-7B-Instruct --log-l
 wait_for_server(f"http://localhost:{port}", process=vision_process)
 ```
 
-    [2026-02-19 15:33:43] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-19 19:27:25] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-19 15:33:43] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-19 19:27:25] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-19 15:33:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-19 19:27:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-19 15:33:49] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-19 15:33:49] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-19 15:33:49] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-19 19:27:30] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-19 19:27:30] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-19 19:27:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-19 15:33:53] INFO server_args.py:1834: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-19 15:33:53] INFO server_args.py:2885: Set soft_watchdog_timeout since in CI
+    [2026-02-19 19:27:32] INFO server_args.py:1834: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-19 19:27:32] INFO server_args.py:2885: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-19 15:33:56] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-19 19:27:35] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-02-19 15:33:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-19 15:33:59] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-19 15:33:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-19 15:33:59] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-19 15:33:59] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-19 15:33:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-19 19:27:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-19 19:27:39] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-19 19:27:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-19 19:27:39] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-19 19:27:39] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-19 19:27:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -58,34 +58,34 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-19 15:34:06] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-19 15:34:06] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-19 15:34:06] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-19 19:27:45] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-19 19:27:45] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-19 19:27:45] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:03,  1.26it/s]
+    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:03,  1.03it/s]
 
 
-    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:02,  1.42it/s]
+    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:02,  1.02it/s]
 
 
-    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02<00:01,  1.44it/s]
+    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:02<00:01,  1.01it/s]
 
 
-    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02<00:00,  1.43it/s]
+    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:03<00:00,  1.02it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.87it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03<00:00,  1.63it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04<00:00,  1.29it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:04<00:00,  1.15it/s]
     
 
 
       0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=61.37 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=61.37 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.23it/s]Capturing batches (bs=2 avail_mem=61.34 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.23it/s]Capturing batches (bs=1 avail_mem=61.33 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.23it/s]Capturing batches (bs=1 avail_mem=61.33 GB): 100%|██████████| 3/3 [00:00<00:00,  3.83it/s]Capturing batches (bs=1 avail_mem=61.33 GB): 100%|██████████| 3/3 [00:00<00:00,  3.16it/s]
+    Capturing batches (bs=4 avail_mem=61.37 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]Capturing batches (bs=2 avail_mem=61.34 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]Capturing batches (bs=1 avail_mem=61.33 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]Capturing batches (bs=1 avail_mem=61.33 GB): 100%|██████████| 3/3 [00:00<00:00,  4.05it/s]
 
 
 
@@ -135,11 +135,11 @@ print_highlight(response)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"07592084dfc645a5a0896437dcb3b7a1","object":"chat.completion","created":1771515263,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a pair of pants. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi while ironing, which is an unusual and humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"8bc3a8f3689e435a8a0a61cbcf89c424","object":"chat.completion","created":1771529283,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"9eb16ef7a1424bf1b6e6d66d4a50a1f0","object":"chat.completion","created":1771515264,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a pair of blue jeans. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing the jeans.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":371,"completion_tokens":64,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"c2a081e5d4c24ba7b9415a60395274ec","object":"chat.completion","created":1771529284,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -173,8 +173,173 @@ response = requests.post(url, json=data)
 print_highlight(response.text)
 ```
 
+    [2026-02-19 19:28:07] [load_mm_data(simple)] error loading IMAGE data at index=0
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 174, in _new_conn
+        conn = connection.create_connection(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 95, in create_connection
+        raise err
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+        sock.connect(sa)
+    TimeoutError: timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 716, in urlopen
+        httplib_response = self._make_request(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 404, in _make_request
+        self._validate_conn(conn)
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+        conn.connect()
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 363, in connect
+        self.sock = conn = self._new_conn()
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 179, in _new_conn
+        raise ConnectTimeoutError(
+    urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)')
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 644, in send
+        resp = conn.urlopen(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 802, in urlopen
+        retries = retries.increment(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py", line 594, in increment
+        raise MaxRetryError(_pool, url, error or ResponseError(cause))
+    urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 426, in _load_single_item
+        img, _ = load_image(data)
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 909, in load_image
+        response = requests.get(image_file, stream=True, timeout=timeout)
+      File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 73, in get
+        return request("get", url, params=params, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 59, in request
+        return session.request(method=method, url=url, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 589, in request
+        resp = self.send(prep, **send_kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 703, in send
+        r = adapter.send(request, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 665, in send
+        raise ConnectTimeout(e, request=request)
+    requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 740, in fast_load_mm_data
+        result = future.result()
+      File "/usr/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+        return self.__get_result()
+      File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+        raise self._exception
+      File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+        result = self.fn(*self.args, **self.kwargs)
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 436, in _load_single_item
+        raise RuntimeError(f"Error while loading data {data}: {e}")
+    RuntimeError: Error while loading data ImageData(url='https://github.com/sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true', detail='auto', max_dynamic_patch=None): HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    [2026-02-19 19:28:07] Error in request: An exception occurred while loading IMAGE data at index 0: Error while loading data ImageData(url='https://github.com/sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true', detail='auto', max_dynamic_patch=None): HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 174, in _new_conn
+        conn = connection.create_connection(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 95, in create_connection
+        raise err
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+        sock.connect(sa)
+    TimeoutError: timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 716, in urlopen
+        httplib_response = self._make_request(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 404, in _make_request
+        self._validate_conn(conn)
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+        conn.connect()
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 363, in connect
+        self.sock = conn = self._new_conn()
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 179, in _new_conn
+        raise ConnectTimeoutError(
+    urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)')
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 644, in send
+        resp = conn.urlopen(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 802, in urlopen
+        retries = retries.increment(
+      File "/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py", line 594, in increment
+        raise MaxRetryError(_pool, url, error or ResponseError(cause))
+    urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 426, in _load_single_item
+        img, _ = load_image(data)
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 909, in load_image
+        response = requests.get(image_file, stream=True, timeout=timeout)
+      File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 73, in get
+        return request("get", url, params=params, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 59, in request
+        return session.request(method=method, url=url, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 589, in request
+        resp = self.send(prep, **send_kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 703, in send
+        r = adapter.send(request, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 665, in send
+        raise ConnectTimeout(e, request=request)
+    requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 740, in fast_load_mm_data
+        result = future.result()
+      File "/usr/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+        return self.__get_result()
+      File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+        raise self._exception
+      File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+        result = self.fn(*self.args, **self.kwargs)
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 436, in _load_single_item
+        raise RuntimeError(f"Error while loading data {data}: {e}")
+    RuntimeError: Error while loading data ImageData(url='https://github.com/sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true', detail='auto', max_dynamic_patch=None): HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_base.py", line 107, in handle_request
+        return await self._handle_non_streaming_request(
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/entrypoints/openai/serving_chat.py", line 874, in _handle_non_streaming_request
+        ret = await self.tokenizer_manager.generate_request(
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/managers/tokenizer_manager.py", line 518, in generate_request
+        tokenized_obj = await self._tokenize_one_request(obj)
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/managers/tokenizer_manager.py", line 724, in _tokenize_one_request
+        mm_inputs: Dict = await self.mm_data_processor.process(
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/managers/async_mm_data_processor.py", line 99, in process
+        return await asyncio.wait_for(_invoke(), timeout=self.timeout_s)
+      File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+        return fut.result()
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/managers/async_mm_data_processor.py", line 70, in _invoke
+        return await self._proc_async(
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/qwen_vl.py", line 320, in process_mm_data_async
+        base_output = self.load_mm_data(
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 677, in load_mm_data
+        return self.fast_load_mm_data(
+      File "/public_sglang_ci/runner-l3-ghmx9-gpu-1/_work/sglang/sglang/python/sglang/srt/multimodal/processors/base_processor.py", line 747, in fast_load_mm_data
+        raise RuntimeError(
+    RuntimeError: An exception occurred while loading IMAGE data at index 0: Error while loading data ImageData(url='https://github.com/sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true', detail='auto', max_dynamic_patch=None): HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))
 
-<strong style='color: #00008B;'>{"id":"58f829d89f8d4018b8f0eac46995791c","object":"chat.completion","created":1771515265,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+
+
+<strong style='color: #00008B;'>{"object":"error","message":"Internal server error: An exception occurred while loading IMAGE data at index 0: Error while loading data ImageData(url='https://github.com/sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true', detail='auto', max_dynamic_patch=None): HTTPSConnectionPool(host='github.com', port=443): Max retries exceeded with url: /sgl-project/sglang/blob/main/examples/assets/example_image.png?raw=true (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6cc61c9390>, 'Connection to github.com timed out. (connect timeout=3)'))","type":"InternalServerError","param":null,"code":500}</strong>
 
 
 ## Using OpenAI Python Client
