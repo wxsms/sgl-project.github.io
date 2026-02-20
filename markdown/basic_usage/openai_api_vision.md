@@ -24,33 +24,33 @@ python3 -m sglang.launch_server --model-path Qwen/Qwen2.5-VL-7B-Instruct --log-l
 wait_for_server(f"http://localhost:{port}", process=vision_process)
 ```
 
-    [2026-02-20 04:07:29] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-20 07:50:27] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-20 04:07:29] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-20 07:50:27] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-20 04:07:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-20 07:50:27] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-20 04:07:32] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-20 04:07:32] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-20 04:07:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-20 07:50:30] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-20 07:50:30] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-20 07:50:30] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-20 04:07:34] INFO server_args.py:1834: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-20 04:07:34] INFO server_args.py:2885: Set soft_watchdog_timeout since in CI
+    [2026-02-20 07:50:32] INFO server_args.py:1834: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-20 07:50:32] INFO server_args.py:2885: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-20 04:07:36] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-20 07:50:35] Ignore import error when loading sglang.srt.multimodal.processors.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-02-20 04:07:38] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-20 04:07:38] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-20 04:07:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-20 04:07:38] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-20 04:07:38] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-20 04:07:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-20 07:50:36] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-20 07:50:36] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-20 07:50:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-20 07:50:36] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-20 07:50:36] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-20 07:50:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -58,34 +58,34 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-20 04:07:44] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-20 04:07:44] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-20 04:07:44] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-20 07:50:42] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-20 07:50:42] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-20 07:50:42] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:02,  1.71it/s]
+    Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:00<00:02,  1.65it/s]
 
 
-    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:01,  1.52it/s]
+    Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:01<00:01,  1.50it/s]
 
 
-    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01<00:00,  2.11it/s]
+    Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:01<00:00,  2.07it/s]
 
 
-    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02<00:00,  1.92it/s]
+    Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:02<00:00,  1.89it/s]
 
 
     Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  1.62it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  1.71it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02<00:00,  1.69it/s]
     
 
 
       0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=60.77 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=60.77 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.80it/s]Capturing batches (bs=2 avail_mem=60.73 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.80it/s]Capturing batches (bs=1 avail_mem=60.73 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.80it/s]Capturing batches (bs=1 avail_mem=60.73 GB): 100%|██████████| 3/3 [00:00<00:00,  4.89it/s]
+    Capturing batches (bs=4 avail_mem=60.77 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.01it/s]Capturing batches (bs=2 avail_mem=60.75 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.01it/s]Capturing batches (bs=1 avail_mem=60.75 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.01it/s]Capturing batches (bs=1 avail_mem=60.75 GB): 100%|██████████| 3/3 [00:00<00:00,  5.51it/s]
 
 
 
@@ -135,11 +135,11 @@ print_highlight(response)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"7def8da3d3ea4a60a2d8cafc573d1f5c","object":"chat.completion","created":1771560478,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a pair of pants. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi while ironing, which is an unusual and humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":373,"completion_tokens":66,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"beda2509e4e1405ca39c85af6ee25f83","object":"chat.completion","created":1771573856,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"e88326eb7f1d4ad59336fc218f804740","object":"chat.completion","created":1771560479,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a pair of blue jeans. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing the jeans.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":371,"completion_tokens":64,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"2b00065e69314faea11f503ae4025a3a","object":"chat.completion","created":1771573856,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -174,7 +174,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"286fa17214bb4d59814993f1791b6352","object":"chat.completion","created":1771560480,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"6cd5f8fc51554d8ab2ff126856fcd602","object":"chat.completion","created":1771573857,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, using an iron to iron a piece of clothing. The taxi is parked on a city street, and there are other taxis and buildings in the background. The man appears to be balancing on the taxi's rear bumper while ironing, which is an unusual and somewhat humorous scene.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":377,"completion_tokens":70,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using OpenAI Python Client
