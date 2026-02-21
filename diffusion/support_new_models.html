@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=13315201"></script>
+    <script src="../_static/documentation_options.js?v=aca88418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -566,25 +566,22 @@ reusing different components.</p>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ImageVAEEncodingStage</span></code></p></td>
 <td><p>Specifically encodes an input image into the latent space using a Variational Autoencoder (VAE).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ConditioningStage</span></code></p></td>
-<td><p>Prepares the conditioning tensors (e.g., from text or image embeddings) for the denoising loop.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TimestepPreparationStage</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TimestepPreparationStage</span></code></p></td>
 <td><p>Prepares the scheduler’s timesteps for the diffusion process.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LatentPreparationStage</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LatentPreparationStage</span></code></p></td>
 <td><p>Creates the initial noisy latent tensor that will be denoised.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DenoisingStage</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DenoisingStage</span></code></p></td>
 <td><p>Executes the main denoising loop, iteratively applying the model (e.g., UNet) to refine the latents.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DecodingStage</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DecodingStage</span></code></p></td>
 <td><p>Decodes the final latent tensor from the denoising loop back into pixel space (e.g., an image) using the VAE.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DmdDenoisingStage</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DmdDenoisingStage</span></code></p></td>
 <td><p>A specialized denoising stage for certain model architectures.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CausalDMDDenoisingStage</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CausalDMDDenoisingStage</span></code></p></td>
 <td><p>A specialized causal denoising stage for specific video models.</p></td>
 </tr>
 </tbody>
@@ -638,15 +635,13 @@ reusing different components.</p>
     <span class="n">_required_config_modules</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;processor&quot;</span><span class="p">,</span> <span class="s2">&quot;scheduler&quot;</span><span class="p">,</span> <span class="s2">&quot;text_encoder&quot;</span><span class="p">,</span> <span class="s2">&quot;tokenizer&quot;</span><span class="p">,</span> <span class="s2">&quot;transformer&quot;</span><span class="p">,</span> <span class="s2">&quot;vae&quot;</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">create_pipeline_stages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server_args</span><span class="p">:</span> <span class="n">ServerArgs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up pipeline stages sequentially.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;input_validation_stage&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">InputValidationStage</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;prompt_encoding_stage_primary&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">ImageEncodingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;image_encoding_stage_primary&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">ImageVAEEncodingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;timestep_preparation_stage&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">TimestepPreparationStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;latent_preparation_stage&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">LatentPreparationStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;conditioning_stage&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">ConditioningStage</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;denoising_stage&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">DenoisingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">stage_name</span><span class="o">=</span><span class="s2">&quot;decoding_stage&quot;</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="n">DecodingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">InputValidationStage</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">ImageEncodingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">ImageVAEEncodingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">TimestepPreparationStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">LatentPreparationStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">DenoisingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="n">DecodingStage</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>The pipeline is constructed by adding stages in order. <code class="docutils literal notranslate"><span class="pre">Qwen-Image-Edit</span></code> uses <code class="docutils literal notranslate"><span class="pre">ImageEncodingStage</span></code> (for prompt and image processing) and <code class="docutils literal notranslate"><span class="pre">ImageVAEEncodingStage</span></code> (for latent extraction) before standard denoising and decoding.</p>
