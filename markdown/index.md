@@ -44,8 +44,7 @@ get\_started/install.md
 basic\_usage/send\_request.ipynb basic\_usage/openai\_api.rst
 basic\_usage/ollama\_api.md basic\_usage/offline\_engine\_api.ipynb
 basic\_usage/native\_api.ipynb basic\_usage/sampling\_params.md
-basic\_usage/popular\_model\_usage.rst basic\_usage/diffusion\_llms.md
-basic\_usage/diffusion.md
+basic\_usage/popular\_model\_usage.rst
 
 </div>
 
