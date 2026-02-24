@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=22f7ec76"></script>
+    <script src="../_static/documentation_options.js?v=64db06da"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -248,6 +248,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_best_practice.html">Best Practice on Ascend NPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_qwen3_5_examples.html">Qwen3.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_glm5_examples.html">GLM-5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_environment_variables.html">Environment Variables</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
@@ -645,7 +646,6 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="nb">unset</span><span class="w"> </span>TASK_QUEUE_ENABLE
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_NPU_USE_MLAPO</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_FIA_NZ</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_MOE_NZ</span><span class="o">=</span><span class="m">1</span>
 
 <span class="c1"># suggest max-running-requests &lt;= max-cuda-graph-bs * dp_size, Because when this value is exceeded, performance will significantly degrade.</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
