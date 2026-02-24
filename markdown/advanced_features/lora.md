@@ -49,13 +49,13 @@ from sglang.test.doc_patch import launch_server_cmd
 from sglang.utils import wait_for_server, terminate_process
 ```
 
-    [2026-02-24 09:09:28] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:14] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-24 09:09:28] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:14] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-24 09:09:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
 
@@ -74,21 +74,21 @@ python3 -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instru
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-24 09:09:32] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:09:32] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:09:32] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:18] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:18] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:18] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 09:09:34] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-24 09:09:34] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
+    [2026-02-24 10:12:21] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-24 10:12:21] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-24 09:09:38] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:09:38] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:09:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-24 09:09:38] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:09:38] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:09:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:25] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:25] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:25] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:25] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -96,37 +96,37 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-24 09:09:43] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:09:43] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:09:43] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-24 09:09:43] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-24 10:12:30] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:12:30] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:12:30] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-24 10:12:30] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.32it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.25it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.27it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.13it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.81it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.54it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.54it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.52it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.39it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.36it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 157.05it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 117.84it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=25.30 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=59.49 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=25.30 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.96it/s]Capturing batches (bs=2 avail_mem=25.26 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.96it/s]Capturing batches (bs=1 avail_mem=25.22 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.96it/s]Capturing batches (bs=1 avail_mem=25.22 GB): 100%|██████████| 3/3 [00:00<00:00,  5.00it/s]
+    Capturing batches (bs=4 avail_mem=59.49 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Capturing batches (bs=2 avail_mem=59.45 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Capturing batches (bs=1 avail_mem=59.45 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Capturing batches (bs=1 avail_mem=59.45 GB): 100%|██████████| 3/3 [00:00<00:00,  4.53it/s]
 
 
 
@@ -185,21 +185,21 @@ python3 -m sglang.launch_server --model-path meta-llama/Meta-Llama-3.1-8B-Instru
 wait_for_server(f"http://localhost:{port}", process=server_process)
 ```
 
-    [2026-02-24 09:10:01] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:01] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:01] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:47] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:47] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:47] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 09:10:03] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-24 09:10:03] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
+    [2026-02-24 10:12:49] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-24 10:12:49] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-24 09:10:08] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:08] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-24 09:10:08] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:08] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:08] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:53] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:53] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:12:53] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:12:53] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:12:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -207,42 +207,42 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-24 09:10:13] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:10:13] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:10:13] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-24 09:10:13] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-24 10:12:58] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:12:58] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:12:58] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-24 10:12:58] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.46it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.29it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.33it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.15it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.88it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.60it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.69it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.64it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.41it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.39it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 164.57it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 137.41it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 108.08it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 70.55it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=24.67 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=59.97 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=24.67 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Capturing batches (bs=2 avail_mem=24.64 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Capturing batches (bs=1 avail_mem=24.63 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Capturing batches (bs=1 avail_mem=24.63 GB): 100%|██████████| 3/3 [00:00<00:00,  5.19it/s]Capturing batches (bs=1 avail_mem=24.63 GB): 100%|██████████| 3/3 [00:00<00:00,  4.33it/s]
+    Capturing batches (bs=4 avail_mem=59.97 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.86it/s]Capturing batches (bs=2 avail_mem=59.94 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.86it/s]Capturing batches (bs=1 avail_mem=59.93 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.86it/s]Capturing batches (bs=1 avail_mem=59.93 GB): 100%|██████████| 3/3 [00:00<00:00,  5.48it/s]Capturing batches (bs=1 avail_mem=59.93 GB): 100%|██████████| 3/3 [00:00<00:00,  4.58it/s]
 
 
 
@@ -270,16 +270,16 @@ print(f"Output 1: {response.json()[1]['text']}")
 ```
 
     Output 0:  Each country and capital should be on a new line. 
-    France, Paris
-    Japan, Tokyo
-    Brazil, Brasília
-    List 3 countries and their capitals
-    Output 1:  Give the capital of each country.
-    Country 1: Japan
+    Country: France
+    Capital: Paris
+    Country: Japan
     Capital: Tokyo
-    Country 2: Australia
-    Capital: Canberra
-    Country 3: Brazil
+    Country: Australia
+    
+    Output 1:  Give the countries and capitals in the correct order.
+    Countries: Japan, Brazil, Australia
+    Capitals: Tokyo, Brasilia, Canberra
+    1. Japan -
 
 
 
@@ -316,26 +316,24 @@ url = f"http://127.0.0.1:{port}"
 wait_for_server(url, process=server_process)
 ```
 
-    [2026-02-24 09:10:29] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:29] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:13:14] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:13:14] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:13:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 09:10:31] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-24 09:10:31] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
+    [2026-02-24 10:13:16] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-24 10:13:16] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-24 09:10:31] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+    [2026-02-24 10:13:17] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
 
 
-    [2026-02-24 09:10:35] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:35] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
-
-
-    [2026-02-24 09:10:36] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:36] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:36] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:13:20] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:13:20] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:13:20] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:13:21] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:13:21] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:13:21] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -343,32 +341,32 @@ wait_for_server(url, process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-24 09:10:40] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:10:40] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:10:40] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-24 09:10:40] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-24 10:13:26] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:13:26] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:13:26] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-24 10:13:26] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  1.50it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.29it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.35it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.14it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.90it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.57it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.68it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.64it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.40it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.38it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=14.00 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=41.06 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=14.00 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.82it/s]Capturing batches (bs=2 avail_mem=13.16 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.82it/s]Capturing batches (bs=1 avail_mem=13.19 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.82it/s]Capturing batches (bs=1 avail_mem=13.19 GB): 100%|██████████| 3/3 [00:00<00:00,  5.11it/s]Capturing batches (bs=1 avail_mem=13.19 GB): 100%|██████████| 3/3 [00:00<00:00,  4.33it/s]
+    Capturing batches (bs=4 avail_mem=41.06 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.64it/s]Capturing batches (bs=2 avail_mem=41.02 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.64it/s]Capturing batches (bs=1 avail_mem=41.02 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.64it/s]Capturing batches (bs=1 avail_mem=41.02 GB): 100%|██████████| 3/3 [00:00<00:00,  5.05it/s]Capturing batches (bs=1 avail_mem=41.02 GB): 100%|██████████| 3/3 [00:00<00:00,  4.18it/s]
 
 
 
@@ -394,7 +392,7 @@ else:
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 106.94it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 100.65it/s]
     
     LoRA adapter loaded successfully. {'rid': None, 'http_worker_ipc': None, 'success': True, 'error_message': '', 'loaded_adapters': {'lora0': 'Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16'}}
 
@@ -418,7 +416,7 @@ else:
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 146.42it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 141.33it/s]
     
 
 
@@ -448,18 +446,19 @@ print(f"Output from lora1 (updated): \n{response.json()[1]['text']}\n")
 ```
 
     Output from lora0: 
-     Give the countries and capitals in the correct order.
-    Countries: Japan, Brazil, Australia
-    Capitals: Tokyo, Brasilia, Canberra
-    1. Japan -
+     Give the capital of each country.
+    Country 1: Japan
+    Capital: Tokyo
+    Country 2: Australia
+    Capital: Canberra
+    Country 3: Brazil
     
     Output from lora1 (updated): 
      Each country and capital should be on a new line. 
-    Country: Australia
-    Capital: Canberra
-    Country: Brazil
-    Capital: Brasília
-    Country: China
+    France, Paris
+    Japan, Tokyo
+    Brazil, Brasília
+    List 3 countries and their capitals
     
 
 
@@ -489,7 +488,7 @@ else:
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 97.00it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 94.99it/s]
     
 
 
@@ -570,24 +569,24 @@ url = f"http://127.0.0.1:{port}"
 wait_for_server(url, process=server_process)
 ```
 
-    [2026-02-24 09:10:59] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:10:59] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:10:59] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:13:45] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:13:45] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:13:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 09:11:01] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-24 09:11:01] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
+    [2026-02-24 10:13:47] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-24 10:13:47] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-24 09:11:01] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
+    [2026-02-24 10:13:48] LoRA backend 'csgmv' does not yet support embedding or lm_head layers; dropping 'embed_tokens' and 'lm_head' from --lora-target-modules=all. To apply LoRA to these, use --lora-backend triton.
 
 
-    [2026-02-24 09:11:05] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:11:05] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:11:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-24 09:11:05] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:11:05] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:11:05] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:13:51] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:13:51] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:13:51] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:13:52] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:13:52] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:13:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -595,45 +594,45 @@ wait_for_server(url, process=server_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-24 09:11:10] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:11:10] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:11:10] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-24 09:11:10] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-24 10:13:57] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:13:57] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:13:57] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-24 10:13:57] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.42it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.25it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.31it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.13it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.86it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.57it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.66it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.61it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.40it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.37it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 115.56it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 113.31it/s]
     
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 136.25it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 158.58it/s]
     
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 66.05it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 108.67it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=56.81 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=40.50 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=56.81 GB):  33%|███▎      | 1/3 [00:00<00:01,  2.00it/s]Capturing batches (bs=2 avail_mem=56.77 GB):  33%|███▎      | 1/3 [00:00<00:01,  2.00it/s]Capturing batches (bs=1 avail_mem=56.77 GB):  33%|███▎      | 1/3 [00:00<00:01,  2.00it/s]Capturing batches (bs=1 avail_mem=56.77 GB): 100%|██████████| 3/3 [00:00<00:00,  5.96it/s]Capturing batches (bs=1 avail_mem=56.77 GB): 100%|██████████| 3/3 [00:00<00:00,  4.97it/s]
+    Capturing batches (bs=4 avail_mem=40.50 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.77it/s]Capturing batches (bs=2 avail_mem=40.41 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.77it/s]Capturing batches (bs=1 avail_mem=40.40 GB):  33%|███▎      | 1/3 [00:00<00:01,  1.77it/s]Capturing batches (bs=1 avail_mem=40.40 GB): 100%|██████████| 3/3 [00:00<00:00,  5.43it/s]Capturing batches (bs=1 avail_mem=40.40 GB): 100%|██████████| 3/3 [00:00<00:00,  4.50it/s]
 
 
 
@@ -662,7 +661,7 @@ response = requests.post(
 ```
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 139.01it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 145.30it/s]
     
 
 
@@ -771,123 +770,123 @@ url = f"http://127.0.0.1:{port}"
 wait_for_server(url, process=server_process)
 ```
 
-    [2026-02-24 09:11:28] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:11:28] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:11:28] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:14:15] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:14:15] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:14:15] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 09:11:30] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-24 09:11:30] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
+    [2026-02-24 10:14:17] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-24 10:14:17] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-24 09:11:31] server_args=ServerArgs(model_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=34318, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.841, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=931518848, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='meta-llama/Meta-Llama-3.1-8B-Instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', attn_cp_size=1, moe_dp_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=True, enable_lora_overlap_loading=True, max_lora_rank=256, lora_target_modules=None, lora_paths=[LoRARef(lora_id='6f10324331664e16a48147b273fb1486', lora_name='lora0', lora_path='Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16', pinned=False), LoRARef(lora_id='28e6ac5c01d945228a9dac22af309d7c', lora_name='lora1', lora_path='algoprog/fact-generation-llama-3.1-8b-instruct-lora', pinned=False), LoRARef(lora_id='1c72bd6195d649dd849caccfc565ab55', lora_name='lora2', lora_path='philschmid/code-llama-3-1-8b-text-to-sql-lora', pinned=False)], max_loaded_loras=4, max_loras_per_batch=2, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='flashinfer_cutlass', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, mamba_backend='triton', speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype=None, mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', disable_hicache_numa_detect=False, hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='round-robin-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+    [2026-02-24 10:14:17] server_args=ServerArgs(model_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_path='meta-llama/Meta-Llama-3.1-8B-Instruct', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=31026, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.841, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=756747764, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='meta-llama/Meta-Llama-3.1-8B-Instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', attn_cp_size=1, moe_dp_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=True, enable_lora_overlap_loading=True, max_lora_rank=256, lora_target_modules=None, lora_paths=[LoRARef(lora_id='26f44bbe731b43bf8cf62974a30cf3de', lora_name='lora0', lora_path='Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16', pinned=False), LoRARef(lora_id='9450b8409f184ca588b1e19a9f53e219', lora_name='lora1', lora_path='algoprog/fact-generation-llama-3.1-8b-instruct-lora', pinned=False), LoRARef(lora_id='bcf6c1c70846418cba5bac065f95c574', lora_name='lora2', lora_path='philschmid/code-llama-3-1-8b-text-to-sql-lora', pinned=False)], max_loaded_loras=4, max_loras_per_batch=2, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='flashinfer_cutlass', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, mamba_backend='triton', speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype=None, mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', disable_hicache_numa_detect=False, hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='round-robin-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
 
 
-    [2026-02-24 09:11:31] Watchdog TokenizerManager initialized.
-    [2026-02-24 09:11:31] Using default HuggingFace chat template with detected content format: string
+    [2026-02-24 10:14:18] Watchdog TokenizerManager initialized.
+    [2026-02-24 10:14:18] Using default HuggingFace chat template with detected content format: string
 
 
-    [2026-02-24 09:11:35] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:11:35] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:11:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-24 09:11:35] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 09:11:35] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 09:11:35] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:14:22] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:14:22] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:14:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 10:14:22] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 10:14:22] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 10:14:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 09:11:37] Watchdog DetokenizerManager initialized.
-    [2026-02-24 09:11:37] Mamba selective_state_update backend initialized: triton
-    [2026-02-24 09:11:37] Init torch distributed begin.
+    [2026-02-24 10:14:24] Watchdog DetokenizerManager initialized.
+    [2026-02-24 10:14:24] Mamba selective_state_update backend initialized: triton
+
+
+    [2026-02-24 10:14:24] Init torch distributed begin.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [2026-02-24 09:11:38] Init torch distributed ends. elapsed=0.27 s, mem usage=0.09 GB
+    [2026-02-24 10:14:25] Init torch distributed ends. elapsed=0.57 s, mem usage=0.09 GB
 
 
-    [2026-02-24 09:11:40] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:11:40] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 09:11:40] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-24 09:11:40] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
-    [2026-02-24 09:11:40] Load weight begin. avail mem=62.06 GB
+    [2026-02-24 10:14:27] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:14:27] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 10:14:27] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-24 10:14:27] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-24 10:14:27] Load weight begin. avail mem=58.16 GB
 
 
-    [2026-02-24 09:11:40] Found local HF snapshot for meta-llama/Meta-Llama-3.1-8B-Instruct at /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659; skipping download.
+    [2026-02-24 10:14:27] Found local HF snapshot for meta-llama/Meta-Llama-3.1-8B-Instruct at /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659; skipping download.
     Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.49it/s]
+    Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.29it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.32it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.14it/s]
 
 
-    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.87it/s]
+    Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.58it/s]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.63it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.61it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.42it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.39it/s]
     
-    [2026-02-24 09:11:43] Load weight end. elapsed=2.81 s, type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=47.00 GB, mem usage=15.05 GB.
-    [2026-02-24 09:11:43] Using csgmv as backend of LoRA kernels.
+    [2026-02-24 10:14:30] Load weight end. elapsed=3.23 s, type=LlamaForCausalLM, dtype=torch.bfloat16, avail mem=42.25 GB, mem usage=15.91 GB.
+    [2026-02-24 10:14:30] Using csgmv as backend of LoRA kernels.
 
 
-    [2026-02-24 09:11:43] Found local HF snapshot for Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16 at /root/.cache/huggingface/hub/models--Nutanix--Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16/snapshots/a2b27aa70a66dc36ce71116f6c6a259dd1b23c17; skipping download.
-    [2026-02-24 09:11:43] No model.safetensors.index.json found in remote.
+    [2026-02-24 10:14:30] Found local HF snapshot for Nutanix/Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16 at /root/.cache/huggingface/hub/models--Nutanix--Meta-Llama-3.1-8B-Instruct_lora_4_alpha_16/snapshots/a2b27aa70a66dc36ce71116f6c6a259dd1b23c17; skipping download.
+    [2026-02-24 10:14:30] No model.safetensors.index.json found in remote.
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 100.55it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 110.42it/s]
     
-    [2026-02-24 09:11:43] Found local HF snapshot for algoprog/fact-generation-llama-3.1-8b-instruct-lora at /root/.cache/huggingface/hub/models--algoprog--fact-generation-llama-3.1-8b-instruct-lora/snapshots/dc8cdfb21993a6cb46199d6b1d79f68a42b06439; skipping download.
+    [2026-02-24 10:14:30] Found local HF snapshot for algoprog/fact-generation-llama-3.1-8b-instruct-lora at /root/.cache/huggingface/hub/models--algoprog--fact-generation-llama-3.1-8b-instruct-lora/snapshots/dc8cdfb21993a6cb46199d6b1d79f68a42b06439; skipping download.
 
 
-    [2026-02-24 09:11:43] No model.safetensors.index.json found in remote.
+    [2026-02-24 10:14:30] No model.safetensors.index.json found in remote.
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 130.86it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 158.89it/s]
     
 
 
-    [2026-02-24 09:11:43] Found local HF snapshot for philschmid/code-llama-3-1-8b-text-to-sql-lora at /root/.cache/huggingface/hub/models--philschmid--code-llama-3-1-8b-text-to-sql-lora/snapshots/141fc3a09386a8baf0d7495c247ae2d1a565f69f; skipping download.
-    [2026-02-24 09:11:44] No model.safetensors.index.json found in remote.
+    [2026-02-24 10:14:31] Found local HF snapshot for philschmid/code-llama-3-1-8b-text-to-sql-lora at /root/.cache/huggingface/hub/models--philschmid--code-llama-3-1-8b-text-to-sql-lora/snapshots/141fc3a09386a8baf0d7495c247ae2d1a565f69f; skipping download.
+    [2026-02-24 10:14:31] No model.safetensors.index.json found in remote.
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 102.01it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 107.78it/s]
     
 
 
-    [2026-02-24 09:11:47] Using KV cache dtype: torch.bfloat16
-    [2026-02-24 09:11:47] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
-    [2026-02-24 09:11:47] Memory pool end. avail mem=40.49 GB
-    [2026-02-24 09:11:47] Capture cuda graph begin. This can take up to several minutes. avail mem=40.39 GB
-    [2026-02-24 09:11:47] Capture cuda graph bs [1, 2, 4]
+    [2026-02-24 10:14:34] Using KV cache dtype: torch.bfloat16
+    [2026-02-24 10:14:34] KV Cache is allocated. #tokens: 20480, K size: 1.25 GB, V size: 1.25 GB
+    [2026-02-24 10:14:34] Memory pool end. avail mem=36.98 GB
+    [2026-02-24 10:14:34] Capture cuda graph begin. This can take up to several minutes. avail mem=36.89 GB
+    [2026-02-24 10:14:34] Capture cuda graph bs [1, 2, 4]
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=40.39 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=36.89 GB):   0%|          | 0/3 [00:00<?, ?it/s]
 
-    Capturing batches (bs=4 avail_mem=40.39 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.00it/s]Capturing batches (bs=2 avail_mem=40.35 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.00it/s]Capturing batches (bs=1 avail_mem=40.35 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.00it/s]Capturing batches (bs=1 avail_mem=40.35 GB): 100%|██████████| 3/3 [00:00<00:00,  5.80it/s]Capturing batches (bs=1 avail_mem=40.35 GB): 100%|██████████| 3/3 [00:00<00:00,  4.87it/s]
-
-
-    [2026-02-24 09:11:48] Capture cuda graph end. Time elapsed: 1.24 s. mem usage=0.04 GB. avail mem=40.35 GB.
+    Capturing batches (bs=4 avail_mem=36.89 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.03it/s]Capturing batches (bs=2 avail_mem=36.85 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.03it/s]Capturing batches (bs=1 avail_mem=36.85 GB):  33%|███▎      | 1/3 [00:00<00:00,  2.03it/s]Capturing batches (bs=1 avail_mem=36.85 GB): 100%|██████████| 3/3 [00:00<00:00,  5.93it/s]Capturing batches (bs=1 avail_mem=36.85 GB): 100%|██████████| 3/3 [00:00<00:00,  4.98it/s]
 
 
-    [2026-02-24 09:11:49] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=26.00 GB
+    [2026-02-24 10:14:35] Capture cuda graph end. Time elapsed: 1.16 s. mem usage=0.04 GB. avail mem=36.85 GB.
 
 
-    [2026-02-24 09:11:49] INFO:     Started server process [1026466]
-    [2026-02-24 09:11:49] INFO:     Waiting for application startup.
-    [2026-02-24 09:11:49] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.9}
+    [2026-02-24 10:14:36] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=131072, available_gpu_mem=36.81 GB
 
 
-    [2026-02-24 09:11:50] INFO:     Application startup complete.
-    [2026-02-24 09:11:50] INFO:     Uvicorn running on http://127.0.0.1:34318 (Press CTRL+C to quit)
+    [2026-02-24 10:14:36] INFO:     Started server process [1278355]
+    [2026-02-24 10:14:36] INFO:     Waiting for application startup.
+    [2026-02-24 10:14:36] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.9}
+    [2026-02-24 10:14:36] INFO:     Application startup complete.
+    [2026-02-24 10:14:36] INFO:     Uvicorn running on http://127.0.0.1:31026 (Press CTRL+C to quit)
+    [2026-02-24 10:14:36] INFO:     127.0.0.1:48674 - "GET /v1/models HTTP/1.1" 200 OK
 
 
-    [2026-02-24 09:11:51] INFO:     127.0.0.1:51448 - "GET /v1/models HTTP/1.1" 200 OK
-    [2026-02-24 09:11:51] INFO:     127.0.0.1:51464 - "GET /model_info HTTP/1.1" 200 OK
+    [2026-02-24 10:14:37] INFO:     127.0.0.1:48688 - "GET /model_info HTTP/1.1" 200 OK
 
 
-    [2026-02-24 09:11:51] Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, input throughput (token/s): 0.00, cuda graph: False
-    [2026-02-24 09:11:51] INFO:     127.0.0.1:51472 - "POST /generate HTTP/1.1" 200 OK
-    [2026-02-24 09:11:51] The server is fired up and ready to roll!
+    [2026-02-24 10:14:38] Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, input throughput (token/s): 0.00, cuda graph: False
+    [2026-02-24 10:14:38] INFO:     127.0.0.1:48694 - "POST /generate HTTP/1.1" 200 OK
+    [2026-02-24 10:14:38] The server is fired up and ready to roll!
 
 
 
@@ -922,104 +921,104 @@ for i in range(3):
     print(f"Output from lora{i}: \n{response.json()[i]['text']}\n")
 ```
 
-    [2026-02-24 09:11:56] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 1, input throughput (token/s): 1.48, cuda graph: False
-    [2026-02-24 09:11:56] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, input throughput (token/s): 165.76, cuda graph: False
+    [2026-02-24 10:14:42] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 1, input throughput (token/s): 1.84, cuda graph: False
+    [2026-02-24 10:14:42] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 1, input throughput (token/s): 226.98, cuda graph: False
 
 
-    [2026-02-24 09:11:57] Decode batch, #running-req: 2, #token: 84, token usage: 0.00, cuda graph: True, gen throughput (token/s): 3.63, #queue-req: 1
+    [2026-02-24 10:14:42] Decode batch, #running-req: 2, #token: 84, token usage: 0.00, cuda graph: True, gen throughput (token/s): 3.87, #queue-req: 1
 
 
-    [2026-02-24 09:11:58] Decode batch, #running-req: 1, #token: 82, token usage: 0.00, cuda graph: True, gen throughput (token/s): 76.19, #queue-req: 1
-    [2026-02-24 09:11:58] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, input throughput (token/s): 4.75, cuda graph: False
+    [2026-02-24 10:14:43] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, input throughput (token/s): 5.84, cuda graph: False
+    [2026-02-24 10:14:43] Decode batch, #running-req: 2, #token: 93, token usage: 0.00, cuda graph: True, gen throughput (token/s): 82.53, #queue-req: 0
 
 
-    [2026-02-24 09:11:59] Decode batch, #running-req: 2, #token: 171, token usage: 0.01, cuda graph: True, gen throughput (token/s): 77.01, #queue-req: 0
+    [2026-02-24 10:14:44] Decode batch, #running-req: 2, #token: 173, token usage: 0.01, cuda graph: True, gen throughput (token/s): 78.77, #queue-req: 0
 
 
-    [2026-02-24 09:12:00] Decode batch, #running-req: 1, #token: 162, token usage: 0.01, cuda graph: True, gen throughput (token/s): 69.04, #queue-req: 0
+    [2026-02-24 10:14:45] Decode batch, #running-req: 1, #token: 162, token usage: 0.01, cuda graph: True, gen throughput (token/s): 81.10, #queue-req: 0
 
 
-    [2026-02-24 09:12:00] Decode batch, #running-req: 1, #token: 202, token usage: 0.01, cuda graph: True, gen throughput (token/s): 47.95, #queue-req: 0
+    [2026-02-24 10:14:45] Decode batch, #running-req: 1, #token: 202, token usage: 0.01, cuda graph: True, gen throughput (token/s): 108.65, #queue-req: 0
 
 
-    [2026-02-24 09:12:01] Decode batch, #running-req: 1, #token: 242, token usage: 0.01, cuda graph: True, gen throughput (token/s): 48.09, #queue-req: 0
+    [2026-02-24 10:14:46] Decode batch, #running-req: 1, #token: 242, token usage: 0.01, cuda graph: True, gen throughput (token/s): 109.78, #queue-req: 0
 
 
-    [2026-02-24 09:12:02] Decode batch, #running-req: 1, #token: 282, token usage: 0.01, cuda graph: True, gen throughput (token/s): 48.01, #queue-req: 0
+    [2026-02-24 10:14:46] Decode batch, #running-req: 1, #token: 282, token usage: 0.01, cuda graph: True, gen throughput (token/s): 109.70, #queue-req: 0
 
 
-    [2026-02-24 09:12:03] Decode batch, #running-req: 1, #token: 322, token usage: 0.02, cuda graph: True, gen throughput (token/s): 48.95, #queue-req: 0
+    [2026-02-24 10:14:46] Decode batch, #running-req: 1, #token: 322, token usage: 0.02, cuda graph: True, gen throughput (token/s): 109.65, #queue-req: 0
 
 
-    [2026-02-24 09:12:04] Decode batch, #running-req: 1, #token: 362, token usage: 0.02, cuda graph: True, gen throughput (token/s): 48.33, #queue-req: 0
+    [2026-02-24 10:14:47] Decode batch, #running-req: 1, #token: 362, token usage: 0.02, cuda graph: True, gen throughput (token/s): 109.60, #queue-req: 0
 
 
-    [2026-02-24 09:12:05] Decode batch, #running-req: 1, #token: 402, token usage: 0.02, cuda graph: True, gen throughput (token/s): 48.19, #queue-req: 0
+    [2026-02-24 10:14:47] Decode batch, #running-req: 1, #token: 402, token usage: 0.02, cuda graph: True, gen throughput (token/s): 109.60, #queue-req: 0
 
 
-    [2026-02-24 09:12:05] Decode batch, #running-req: 1, #token: 442, token usage: 0.02, cuda graph: True, gen throughput (token/s): 48.19, #queue-req: 0
+    [2026-02-24 10:14:48] Decode batch, #running-req: 1, #token: 442, token usage: 0.02, cuda graph: True, gen throughput (token/s): 109.56, #queue-req: 0
 
 
-    [2026-02-24 09:12:06] Decode batch, #running-req: 1, #token: 482, token usage: 0.02, cuda graph: True, gen throughput (token/s): 48.15, #queue-req: 0
+    [2026-02-24 10:14:48] Decode batch, #running-req: 1, #token: 482, token usage: 0.02, cuda graph: True, gen throughput (token/s): 111.96, #queue-req: 0
 
 
-    [2026-02-24 09:12:07] Decode batch, #running-req: 1, #token: 522, token usage: 0.03, cuda graph: True, gen throughput (token/s): 48.20, #queue-req: 0
+    [2026-02-24 10:14:48] Decode batch, #running-req: 1, #token: 522, token usage: 0.03, cuda graph: True, gen throughput (token/s): 109.53, #queue-req: 0
 
 
-    [2026-02-24 09:12:08] Decode batch, #running-req: 1, #token: 562, token usage: 0.03, cuda graph: True, gen throughput (token/s): 56.82, #queue-req: 0
+    [2026-02-24 10:14:49] Decode batch, #running-req: 1, #token: 562, token usage: 0.03, cuda graph: True, gen throughput (token/s): 109.49, #queue-req: 0
 
 
-    [2026-02-24 09:12:09] Decode batch, #running-req: 1, #token: 602, token usage: 0.03, cuda graph: True, gen throughput (token/s): 48.47, #queue-req: 0
+    [2026-02-24 10:14:49] Decode batch, #running-req: 1, #token: 602, token usage: 0.03, cuda graph: True, gen throughput (token/s): 109.45, #queue-req: 0
 
 
-    [2026-02-24 09:12:09] Decode batch, #running-req: 1, #token: 642, token usage: 0.03, cuda graph: True, gen throughput (token/s): 48.40, #queue-req: 0
+    [2026-02-24 10:14:49] Decode batch, #running-req: 1, #token: 642, token usage: 0.03, cuda graph: True, gen throughput (token/s): 109.41, #queue-req: 0
 
 
-    [2026-02-24 09:12:10] Decode batch, #running-req: 1, #token: 682, token usage: 0.03, cuda graph: True, gen throughput (token/s): 48.22, #queue-req: 0
+    [2026-02-24 10:14:50] Decode batch, #running-req: 1, #token: 682, token usage: 0.03, cuda graph: True, gen throughput (token/s): 109.42, #queue-req: 0
 
 
-    [2026-02-24 09:12:11] Decode batch, #running-req: 1, #token: 722, token usage: 0.04, cuda graph: True, gen throughput (token/s): 48.12, #queue-req: 0
+    [2026-02-24 10:14:50] Decode batch, #running-req: 1, #token: 722, token usage: 0.04, cuda graph: True, gen throughput (token/s): 109.35, #queue-req: 0
 
 
-    [2026-02-24 09:12:12] Decode batch, #running-req: 1, #token: 762, token usage: 0.04, cuda graph: True, gen throughput (token/s): 48.05, #queue-req: 0
+    [2026-02-24 10:14:50] Decode batch, #running-req: 1, #token: 762, token usage: 0.04, cuda graph: True, gen throughput (token/s): 109.33, #queue-req: 0
 
 
-    [2026-02-24 09:12:13] Decode batch, #running-req: 1, #token: 802, token usage: 0.04, cuda graph: True, gen throughput (token/s): 48.11, #queue-req: 0
+    [2026-02-24 10:14:51] Decode batch, #running-req: 1, #token: 802, token usage: 0.04, cuda graph: True, gen throughput (token/s): 109.33, #queue-req: 0
 
 
-    [2026-02-24 09:12:14] Decode batch, #running-req: 1, #token: 842, token usage: 0.04, cuda graph: True, gen throughput (token/s): 48.09, #queue-req: 0
+    [2026-02-24 10:14:51] Decode batch, #running-req: 1, #token: 842, token usage: 0.04, cuda graph: True, gen throughput (token/s): 109.29, #queue-req: 0
 
 
-    [2026-02-24 09:12:14] Decode batch, #running-req: 1, #token: 882, token usage: 0.04, cuda graph: True, gen throughput (token/s): 47.33, #queue-req: 0
+    [2026-02-24 10:14:52] Decode batch, #running-req: 1, #token: 882, token usage: 0.04, cuda graph: True, gen throughput (token/s): 109.24, #queue-req: 0
 
 
-    [2026-02-24 09:12:15] Decode batch, #running-req: 1, #token: 922, token usage: 0.05, cuda graph: True, gen throughput (token/s): 47.99, #queue-req: 0
+    [2026-02-24 10:14:52] Decode batch, #running-req: 1, #token: 922, token usage: 0.05, cuda graph: True, gen throughput (token/s): 109.29, #queue-req: 0
 
 
-    [2026-02-24 09:12:16] Decode batch, #running-req: 1, #token: 962, token usage: 0.05, cuda graph: True, gen throughput (token/s): 48.07, #queue-req: 0
+    [2026-02-24 10:14:52] Decode batch, #running-req: 1, #token: 962, token usage: 0.05, cuda graph: True, gen throughput (token/s): 109.23, #queue-req: 0
 
 
-    [2026-02-24 09:12:17] Decode batch, #running-req: 1, #token: 1002, token usage: 0.05, cuda graph: True, gen throughput (token/s): 47.07, #queue-req: 0
+    [2026-02-24 10:14:53] Decode batch, #running-req: 1, #token: 1002, token usage: 0.05, cuda graph: True, gen throughput (token/s): 109.21, #queue-req: 0
 
 
-    [2026-02-24 09:12:18] INFO:     127.0.0.1:51480 - "POST /generate HTTP/1.1" 200 OK
+    [2026-02-24 10:14:53] INFO:     127.0.0.1:60472 - "POST /generate HTTP/1.1" 200 OK
     Output from lora0: 
      Write a very long fairy-tale.
     Once upon a time, in a far-off kingdom, there lived a beautiful princess named Sophia. She had long, golden hair and sparkling blue eyes that shone like the stars in the night sky. Sophia was kind and gentle, loved by all who knew her, and she spent her days helping those in need and spreading joy wherever she went.
     One day, while out for a walk in the castle gardens, Sophia stumbled upon a hidden path she had never seen before. The path was overgrown with vines and shrubs, and it seemed to lead to a secret place that only a few knew about. Sophia's curiosity was piqued, and she decided to follow the path to see where it would take her.
     As she walked, the path grew narrower and the trees grew taller, casting deep shadows that made it difficult to see. Sophia heard the sound of running water and followed the sound until she came upon a beautiful waterfall. The water cascaded down a rocky cliff, creating a misty veil that surrounded Sophia like a mystical aura.
     Behind the waterfall, Sophia discovered a hidden cave. The cave was filled with glittering crystals and precious gems that sparkled in the dim light. In the center of the cave, Sophia saw a magnificent throne, carved from a single piece of black marble. The throne seemed to be waiting for her, and Sophia felt an inexplicable sense of belonging as she approached it.
-    As she sat down on the throne, Sophia heard a soft whispering in her ear. It was the voice of the ancient magic that dwelled within the cave. The magic spoke to Sophia in a language she couldn't understand, but somehow, she knew exactly what it was saying. The magic told her that she was the chosen one, destined to fulfill an important quest.
-    Sophia was both thrilled and terrified by the prospect. She had always felt a sense of purpose, but she had never imagined that she was meant for something greater. The magic explained that a dark sorcerer had stolen the magical crystal that kept the kingdom's crops growing and the rivers flowing. Without the crystal, the kingdom was on the brink of disaster.
-    Sophia knew that she had to embark on a journey to retrieve the crystal. The magic gave her a map that would lead her to the sorcerer's lair, and Sophia set off immediately. She traveled through dense forests, crossed scorching deserts, and climbed treacherous mountains. Along the way, she encountered fierce creatures and cunning foes, but Sophia's bravery and determination never wavered.
-    As she journeyed, Sophia met a group of traveling performers who were on their way to the kingdom's annual Harvest Festival. The performers, led by a charismatic leader named Finn, were a motley crew of musicians, acrobats, and jugglers. They were kind and generous, and Sophia felt drawn to their warmth and camaraderie.
-    Finn, in particular, took a liking to Sophia. He was a skilled swordsman and a master of disguise, and he offered to join Sophia on her quest. Together, they traveled through the kingdom, gathering information and resources for their mission. Sophia learned that the sorcerer's lair was hidden deep within a volcano, and that the only way to reach it was to navigate a treacherous network of tunnels and caverns.
-    As they approached the volcano, Sophia and Finn encountered a group of rebels who were fighting against the sorcerer's rule. The rebels, led by a fearless warrior named Aria, were a ragtag group of fighters who had lost loved ones to the sorcerer's cruelty. They were determined to bring him down, and they welcomed Sophia and Finn into their ranks.
-    Aria was a skilled fighter and a natural leader, and Sophia felt a deep respect for her bravery and conviction. Together, the group of rebels, Sophia, and Finn hatched a plan to infiltrate the sorcerer's lair and retrieve the magical crystal. They knew it wouldn't be an easy task, but they were determined to succeed.
-    As they made their way through the tunnels and caverns, Sophia and her companions encountered all manner of dangers. They fought off giant spiders, dodged deadly traps, and navigated treacherous pitfalls. But Sophia's courage and Finn's cunning kept them one step ahead of their enemies.
-    Finally, after what seemed like an eternity, they reached the sorcerer's lair. The lair was a vast, cavernous space filled with dark magic and twisted creatures. At the center of the lair, Sophia saw the sorcerer himself, a tall, gaunt figure with eyes that burned with malevolent intent.
-    The sorcerer sneered at Sophia and her companions, confident in his own power. But Sophia was not intimidated. She stood tall, her heart full of determination, and she declared that she had come to retrieve the magical crystal. The sorcerer laughed, but Sophia could see the fear lurking behind his eyes.
-    The battle that ensued was fierce and intense. Sophia and her companions fought with all their
+    As she sat down on the throne, Sophia heard a soft whispering in her ear. It was the voice of the ancient magic that dwelled within the cave. The magic spoke to Sophia in a language she couldn't understand, but somehow, she knew exactly what it was saying. The magic told her that she was the chosen one, destined to wield its power and bring peace and prosperity to the kingdom.
+    Sophia was both thrilled and terrified by the revelation. She had always felt a deep connection to the natural world and had often wondered if there was more to her life than the mundane routine of being a princess. Now, she knew that she had a greater purpose, and she was eager to learn more about her destiny.
+    The magic began to teach Sophia the secrets of the cave and the ancient magic that dwelled within. Sophia spent many hours studying and practicing, and soon she became proficient in the art of magic. She learned how to communicate with animals, control the elements, and heal the sick.
+    As Sophia's powers grew, so did her reputation. People from all over the kingdom began to seek her out, hoping to benefit from her magical abilities. Sophia was happy to help, but she knew that she couldn't do it alone. She needed a trusted companion to aid her in her quest.
+    One day, while out on a walk, Sophia met a handsome young man named Finn. Finn was a skilled warrior and a member of the kingdom's elite guard. He was strong, brave, and kind, and Sophia was immediately drawn to him. As they talked, Sophia discovered that Finn was also searching for a way to use his skills for good. He was tired of fighting wars and wanted to find a way to bring peace to the kingdom.
+    Sophia and Finn quickly became inseparable. They spent their days exploring the kingdom, helping those in need, and learning more about the ancient magic that dwelled within the cave. As they worked together, Sophia and Finn grew closer, and their friendship blossomed into something more.
+    But not everyone was happy about Sophia and Finn's relationship. The king, Sophia's father, was opposed to their romance. He believed that Sophia was too important to be distracted by a mere mortal, and he wanted her to marry a prince from a neighboring kingdom. Sophia was heartbroken, but she knew that she couldn't give up on Finn.
+    Determined to be with Finn, Sophia and Finn hatched a plan to sneak into the neighboring kingdom and meet with the prince. They knew it wouldn't be easy, but they were willing to take the risk. As they made their way through the forest, they encountered all sorts of obstacles, from ferocious beasts to treacherous terrain.
+    But Sophia and Finn were undaunted. They used their combined skills to overcome every challenge, and soon they found themselves standing in front of the prince's castle. The prince, a tall, dark-haired man named Alexander, was charming and handsome, but Sophia knew that she didn't love him. She was still in love with Finn, and she knew that she had to be honest with him.
+    As Sophia and Finn prepared to meet with Alexander, they were ambushed by a group of bandits. The bandits were led by a ruthless leader named Victor, who had a personal vendetta against the kingdom. Victor had been seeking revenge for years, and he was determined to destroy the kingdom and everyone in it.
+    Sophia and Finn fought bravely, using all of their skills to defeat the bandits. But Victor was too powerful, and he managed to escape. Sophia and Finn were left to face the consequences of their
     
     Output from lora1: 
      Each country and capital should be on a new line. 
