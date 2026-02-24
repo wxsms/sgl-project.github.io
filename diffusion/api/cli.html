@@ -502,6 +502,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate">Generate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-path-overrides">Component Path Overrides</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flux-2-dev-with-tiny-autoencoder">Example: FLUX.2-dev with Tiny AutoEncoder</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend">Diffusers Backend</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-ovis-image-7b">Example: Running Ovis-Image-7B</a></li>
@@ -534,7 +538,6 @@ document.write(`
 <h3>Server Arguments<a class="headerlink" href="#server-arguments" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model-path</span> <span class="pre">{MODEL_PATH}</span></code>: Path to the model or model ID</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--vae-path</span> <span class="pre">{VAE_PATH}</span></code>: Path to a custom VAE model or HuggingFace model ID (e.g., <code class="docutils literal notranslate"><span class="pre">fal/FLUX.2-Tiny-AutoEncoder</span></code>). If not specified, the VAE will be loaded from the main model path.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--lora-path</span> <span class="pre">{LORA_PATH}</span></code>: Path to a LoRA adapter (local path or HuggingFace model ID). If not specified, LoRA will not be applied.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--lora-nickname</span> <span class="pre">{NAME}</span></code>: Nickname for the LoRA adapter. (default: <code class="docutils literal notranslate"><span class="pre">default</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--num-gpus</span> <span class="pre">{NUM_GPUS}</span></code>: Number of GPUs to use</p></li>
@@ -726,6 +729,33 @@ sglang<span class="w"> </span>generate<span class="w"> </span><span class="s2">&
 The HTTP server-related arguments are ignored in this subcommand.</p>
 </div></blockquote>
 </section>
+<section id="component-path-overrides">
+<h2>Component Path Overrides<a class="headerlink" href="#component-path-overrides" title="Link to this heading">#</a></h2>
+<p>SGLang diffusion allows you to override any pipeline component (e.g., <code class="docutils literal notranslate"><span class="pre">vae</span></code>, <code class="docutils literal notranslate"><span class="pre">transformer</span></code>, <code class="docutils literal notranslate"><span class="pre">text_encoder</span></code>) by specifying a custom checkpoint path. This is useful for:</p>
+<section id="example-flux-2-dev-with-tiny-autoencoder">
+<h3>Example: FLUX.2-dev with Tiny AutoEncoder<a class="headerlink" href="#example-flux-2-dev-with-tiny-autoencoder" title="Link to this heading">#</a></h3>
+<p>You can override <strong>any</strong> component by using <code class="docutils literal notranslate"><span class="pre">--&lt;component&gt;-path</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;</span></code> matches the key in the model’s <code class="docutils literal notranslate"><span class="pre">model_index.json</span></code>:</p>
+<p>For example, replace the default VAE with a distilled tiny autoencoder for ~3x faster decoding:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>serve<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="o">=</span>black-forest-labs/FLUX.2-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="c1"># with a Huggingface Repo ID</span>
+<span class="w">  </span>--vae-path<span class="o">=</span>fal/FLUX.2-Tiny-AutoEncoder
+<span class="w">  </span><span class="c1"># or use a local path</span>
+<span class="w">  </span>--vae-path<span class="o">=</span>~/.cache/huggingface/hub/models--fal--FLUX.2-Tiny-AutoEncoder/snapshots/.../vae
+</pre></div>
+</div>
+<p><strong>Important:</strong></p>
+<ul class="simple">
+<li><p>The component key must match the one in your model’s <code class="docutils literal notranslate"><span class="pre">model_index.json</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">vae</span></code>).</p></li>
+<li><p>The path must:</p>
+<ul>
+<li><p>either be a Huggingface Repo ID (e.g., fal/FLUX.2-Tiny-AutoEncoder)</p></li>
+<li><p>or point to a <strong>complete component folder</strong>, containing <code class="docutils literal notranslate"><span class="pre">config.json</span></code> and safetensors files</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
 <section id="diffusers-backend">
 <h2>Diffusers Backend<a class="headerlink" href="#diffusers-backend" title="Link to this heading">#</a></h2>
 <p>SGLang diffusion supports a <strong>diffusers backend</strong> that allows you to run any diffusers-compatible model through SGLang’s infrastructure using vanilla diffusers pipelines. This is useful for running models without native SGLang implementations or models with custom pipeline classes.</p>
@@ -867,6 +897,10 @@ The HTTP server-related arguments are ignored in this subcommand.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate">Generate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-path-overrides">Component Path Overrides</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flux-2-dev-with-tiny-autoencoder">Example: FLUX.2-dev with Tiny AutoEncoder</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend">Diffusers Backend</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-running-ovis-image-7b">Example: Running Ovis-Image-7B</a></li>
