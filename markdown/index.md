@@ -125,7 +125,8 @@ references/production\_request\_trace.md
 references/multi\_node\_deployment/multi\_node\_index.rst
 references/custom\_chat\_template.md
 references/frontend/frontend\_index.rst
-references/post\_training\_integration.md references/learn\_more.md
+references/post\_training\_integration.md references/release\_lookup
+references/learn\_more.md
 
 </div>
 

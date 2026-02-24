@@ -27,30 +27,30 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
 print(f"Server started on http://localhost:{port}")
 ```
 
-    [2026-02-24 18:40:38] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 19:15:29] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-24 18:40:38] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 19:15:29] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-24 18:40:38] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 19:15:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 18:40:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 18:40:45] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 18:40:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 19:15:33] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 19:15:33] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 19:15:33] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-24 18:40:48] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-24 18:40:48] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
+    [2026-02-24 19:15:35] INFO server_args.py:1828: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-24 19:15:35] INFO server_args.py:2889: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-24 18:40:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 18:40:55] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 18:40:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-24 18:40:55] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-24 18:40:55] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-24 18:40:55] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 19:15:39] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 19:15:39] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 19:15:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-24 19:15:39] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-24 19:15:39] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-24 19:15:39] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -58,32 +58,30 @@ print(f"Server started on http://localhost:{port}")
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-24 18:41:07] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 18:41:07] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-24 18:41:07] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-24 18:41:07] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/public_sglang_ci/runner-l2-9lcpp-gpu-0/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-24 19:15:43] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 19:15:43] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-24 19:15:43] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-24 19:15:43] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/actions-runner/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.08it/s]
-    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.07it/s]
+
+
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.91it/s]
+    Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.90it/s]
     
 
 
-      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=72.85 GB):   0%|          | 0/3 [00:00<?, ?it/s]
+      0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=76.43 GB):   0%|          | 0/3 [00:00<?, ?it/s]Capturing batches (bs=4 avail_mem=76.43 GB):  33%|███▎      | 1/3 [00:00<00:00,  5.05it/s]Capturing batches (bs=2 avail_mem=76.37 GB):  33%|███▎      | 1/3 [00:00<00:00,  5.05it/s]
 
-    Capturing batches (bs=4 avail_mem=72.85 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.36it/s]Capturing batches (bs=2 avail_mem=72.79 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.36it/s]Capturing batches (bs=1 avail_mem=72.78 GB):  33%|███▎      | 1/3 [00:00<00:00,  3.36it/s]Capturing batches (bs=1 avail_mem=72.78 GB): 100%|██████████| 3/3 [00:00<00:00,  7.79it/s]
-
-
-    /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:105: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
-      response = await f(request)
+    Capturing batches (bs=1 avail_mem=76.37 GB):  33%|███▎      | 1/3 [00:00<00:00,  5.05it/s]Capturing batches (bs=1 avail_mem=76.37 GB): 100%|██████████| 3/3 [00:00<00:00, 12.78it/s]
 
 
 
 <strong style='color: #00008B;'><br><br>        NOTE: Typically, the server runs in a separate terminal.<br>        In this notebook, we run the server and notebook code together, so their outputs are combined.<br>        To improve clarity, the server logs are displayed in the original black color, while the notebook outputs are highlighted in blue.<br>        To reduce the log length, we set the log level to warning for the server, the default log level is info.<br>        We are running those notebooks in a CI environment, so the throughput is not representative of the actual performance.<br>        </strong>
 
 
-    Server started on http://localhost:31726
+    Server started on http://localhost:34934
 
 
 ## Chat Completions
@@ -113,7 +111,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: ChatCompletion(id='0d618ccafa344a13bbfc112c9b33c5da', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771958475, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='b57ff13a4300465f8cc0f56f06640e4a', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1771960552, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Model Thinking/Reasoning Support
@@ -346,7 +344,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished in the Mediterranean region from the 8th to the 4th centuries BCE. Some of their major achievements include:<br><br>1. The construction of the Colosseum, which was built to entertain the Roman people during gladiatorial games.<br><br>2. The development of Roman law, which established a set of rules for governing and resolving disputes.<br><br>3. The construction of aqueducts to supply water to cities and towns.<br><br>4. The invention of the wheel, which allowed for greater mobility and transportation.<br><br>5. The development of agriculture, which improved food production and provided a better standard of</strong>
+<strong style='color: #00008B;'>The ancient Romans made significant contributions to various fields, including philosophy, law, medicine, and literature. They were also skilled in engineering, architecture, and public works. Rome's achievements include the construction of the Colosseum, the Pantheon, and the Forum. The Roman Empire was one of the largest and most powerful empires in history, spanning across Europe, Asia Minor, and North Africa. They are known for their legal system, which included the Twelve Tables, and their democratic government. Additionally, they were notable for their art and architecture, particularly in the construction of the Colosseum.</strong>
 
 
 Streaming mode is also supported.
@@ -368,7 +366,7 @@ for chunk in stream:
         print(chunk.choices[0].delta.content, end="")
 ```
 
-    Yes, I am Qwen, an AI language model created by Alibaba Cloud. I am here to assist you with any questions or tasks you have, whether they are about technology, science, history, or anything else. Please let me know how I can be of help to you.
+    Yes, that's a test. I'm here to assist you with any questions or tasks you may have.
 
 #### Returning Routed Experts (MoE Models)
 
@@ -418,7 +416,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='6636a304219044e19c4f4392b549e613', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1771958476, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='92fd54b5dd424f4cb107bcebbd0f31af', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1771960552, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 ### Parameters
@@ -446,7 +444,7 @@ print_highlight(f"Response: {response}")
 ```
 
 
-<strong style='color: #00008B;'>Response: Completion(id='44d5adab8c324860877be8cb47edf21d', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Jane who had been on many long and perilous missions to explore the stars. She had seen everything from the bustling city of New York to the vastness of space beyond our planet. Despite her extensive knowledge and experience, Dr. Jane always found herself in awe of the beauty and wonder of the universe.', matched_stop='\n\n')], created=1771958476, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=74, prompt_tokens=9, total_tokens=83, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
+<strong style='color: #00008B;'>Response: Completion(id='3dce16223f684bb8b56bd8e4adfea3e6', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" Once upon a time, there was a space explorer named Sarah who had always dreamed of exploring the stars. She had always been fascinated by the universe and wanted to see what lay beyond Earth's horizon.", matched_stop='\n\n')], created=1771960552, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=40, prompt_tokens=9, total_tokens=49, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong>
 
 
 #### Returning Routed Experts (MoE Models)
