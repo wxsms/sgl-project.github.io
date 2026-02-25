@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Qwen3.5 &#8212; SGLang</title>
+    <title>Qwen3.5 examples &#8212; SGLang</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=04958e5b"></script>
+    <script src="../_static/documentation_options.js?v=b0e7a5f2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,7 +51,7 @@
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GLM-5" href="ascend_npu_glm5_examples.html" />
+    <link rel="next" title="GLM-5 examples" href="ascend_npu_glm5_examples.html" />
     <link rel="prev" title="Best Practice on Ascend NPU" href="ascend_npu_best_practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -246,8 +246,8 @@
 <li class="toctree-l2"><a class="reference internal" href="mindspore_backend.html">MindSpore Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_best_practice.html">Best Practice on Ascend NPU</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Qwen3.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ascend_npu_glm5_examples.html">GLM-5</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Qwen3.5 examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascend_npu_glm5_examples.html">GLM-5 examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascend_npu_environment_variables.html">Environment Variables</a></li>
 </ul>
 </details></li>
@@ -493,7 +493,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Qwen3.5</h1>
+    <h1>Qwen3.5 examples</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -508,7 +508,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-deployment">Single-node Deployment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-deployment">Single-node Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-397b">Qwen3.5 397B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-122b">Qwen3.5 122B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-35b">Qwen3.5 35B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-27b">Qwen3.5 27B</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill-Decode Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-benchmark">Using Benchmark</a></li>
 </ul>
@@ -524,17 +530,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="qwen3-5">
-<h1>Qwen3.5<a class="headerlink" href="#qwen3-5" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="qwen3-5-examples">
+<h1>Qwen3.5 examples<a class="headerlink" href="#qwen3-5-examples" title="Link to this heading">#</a></h1>
 <section id="environment-preparation">
 <h2>Environment Preparation<a class="headerlink" href="#environment-preparation" title="Link to this heading">#</a></h2>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
 <p>The dependencies required for the NPU runtime environment have been integrated into a Docker image and uploaded to the quay.io platform. You can directly pull it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Atlas 800 A3</span>
-docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-a3-qwen3.5
+docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/sglang:v0.5.9-cann8.5.0-a3
 <span class="c1">#Atlas 800 A2</span>
-docker<span class="w"> </span>pull<span class="w"> </span>swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:cann8.5.0-910b-qwen3.5
+docker<span class="w"> </span>pull<span class="w"> </span>quay.io/ascend/sglang:v0.5.9-cann8.5.0-910b
 
 <span class="c1">#start container</span>
 docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>--shm-size<span class="o">=</span>16g<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>--name<span class="w"> </span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
@@ -563,7 +569,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </
 --device<span class="o">=</span>/dev/davinci_manager:/dev/davinci_manager<span class="w"> </span><span class="se">\</span>
 --device<span class="o">=</span>/dev/hisi_hdc:/dev/hisi_hdc<span class="w"> </span><span class="se">\</span>
 --entrypoint<span class="o">=</span>bash<span class="w"> </span><span class="se">\</span>
-swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:<span class="si">${</span><span class="nv">TAG</span><span class="si">}</span>
+quay.io/ascend/sglang:<span class="si">${</span><span class="nv">tag</span><span class="si">}</span>
 </pre></div>
 </div>
 </section>
@@ -572,10 +578,9 @@ swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:<span 
 <h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
 <section id="single-node-deployment">
 <h3>Single-node Deployment<a class="headerlink" href="#single-node-deployment" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Quantized model <code class="docutils literal notranslate"><span class="pre">qwen35_w8a8</span></code> can be deployed on 1 Atlas 800 A3 (64G × 16) .</p></li>
-</ul>
 <p>Run the following script to execute online inference.</p>
+<section id="qwen3-5-397b">
+<h4>Qwen3.5 397B<a class="headerlink" href="#qwen3-5-397b" title="Link to this heading">#</a></h4>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># high performance cpu</span>
 <span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
@@ -594,10 +599,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGGREGATION_BOOTSTRAP_TIMEOUT</span><span class="o">=</span><span class="m">600</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_SPEC_V2</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_ENABLE_OVERLAP_PLAN_STREAM</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_NPU_USE_MULTI_STREAM</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1000</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
@@ -608,7 +609,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--tp-size<span class="w"> </span><span class="m">16</span><span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--chunked-prefill-size<span class="w"> </span><span class="m">16384</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">280000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">280000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span><span class="se">\</span>
@@ -620,6 +622,137 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">        </span>--dtype<span class="w"> </span>bfloat16
 </pre></div>
 </div>
+</section>
+<section id="qwen3-5-122b">
+<h4>Qwen3.5 122B<a class="headerlink" href="#qwen3-5-122b" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># high performance cpu</span>
+<span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_cost_ns<span class="o">=</span><span class="m">50000</span>
+<span class="c1"># bind cpu</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">unset</span><span class="w"> </span>https_proxy
+<span class="nb">unset</span><span class="w"> </span>http_proxy
+<span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
+<span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
+<span class="nb">unset</span><span class="w"> </span>ASCEND_LAUNCH_BLOCKING
+<span class="c1"># cann</span>
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">280000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--enable-multimodal<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mm-attention-backend<span class="w"> </span>ascend_attn<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--dtype<span class="w"> </span>bfloat16
+</pre></div>
+</div>
+</section>
+<section id="qwen3-5-35b">
+<h4>Qwen3.5 35B<a class="headerlink" href="#qwen3-5-35b" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># high performance cpu</span>
+<span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_cost_ns<span class="o">=</span><span class="m">50000</span>
+<span class="c1"># bind cpu</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">unset</span><span class="w"> </span>https_proxy
+<span class="nb">unset</span><span class="w"> </span>http_proxy
+<span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
+<span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
+<span class="nb">unset</span><span class="w"> </span>ASCEND_LAUNCH_BLOCKING
+<span class="c1"># cann</span>
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--tp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--chunked-prefill-size<span class="w"> </span><span class="m">4096</span><span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">280000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.7<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--cuda-graph-bs<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--quantization<span class="w"> </span>modelslim<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--enable-multimodal<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mm-attention-backend<span class="w"> </span>ascend_attn<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--dtype<span class="w"> </span>bfloat16
+</pre></div>
+</div>
+</section>
+<section id="qwen3-5-27b">
+<h4>Qwen3.5 27B<a class="headerlink" href="#qwen3-5-27b" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># high performance cpu</span>
+<span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.numa_balancing<span class="o">=</span><span class="m">0</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_cost_ns<span class="o">=</span><span class="m">50000</span>
+<span class="c1"># bind cpu</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_SET_CPU_AFFINITY</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nb">unset</span><span class="w"> </span>https_proxy
+<span class="nb">unset</span><span class="w"> </span>http_proxy
+<span class="nb">unset</span><span class="w"> </span>HTTPS_PROXY
+<span class="nb">unset</span><span class="w"> </span>HTTP_PROXY
+<span class="nb">unset</span><span class="w"> </span>ASCEND_LAUNCH_BLOCKING
+<span class="c1"># cann</span>
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/ascend-toolkit/set_env.sh
+<span class="nb">source</span><span class="w"> </span>/usr/local/Ascend/nnal/atb/set_env.sh
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAMS_PER_DEVICE</span><span class="o">=</span><span class="m">32</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">1000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span>AIV
+<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
+<span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
+
+python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--attention-backend<span class="w"> </span>ascend<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--device<span class="w"> </span>npu<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--tp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">120000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--cuda-graph-bs<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--enable-multimodal<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--mm-attention-backend<span class="w"> </span>ascend_attn
+</pre></div>
+</div>
+</section>
 </section>
 <section id="prefill-decode-disaggregation">
 <h3>Prefill-Decode Disaggregation<a class="headerlink" href="#prefill-decode-disaggregation" title="Link to this heading">#</a></h3>
@@ -657,7 +790,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GLM-5</p>
+        <p class="prev-next-title">GLM-5 examples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -682,7 +815,13 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-deployment">Single-node Deployment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-deployment">Single-node Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-397b">Qwen3.5 397B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-122b">Qwen3.5 122B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-35b">Qwen3.5 35B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen3-5-27b">Qwen3.5 27B</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-decode-disaggregation">Prefill-Decode Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-benchmark">Using Benchmark</a></li>
 </ul>
