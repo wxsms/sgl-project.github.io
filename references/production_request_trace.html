@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=ebea174c"></script>
+    <script src="../_static/documentation_options.js?v=b0f302a2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -491,7 +491,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-guide">Setup Guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-tracing-for-slices-you-re-interested-in">How to add Tracing for slices you’re interested in?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-tracing-for-slices-you-re-interested-in-api-introduction">How to add Tracing for slices you’re interested in?(API introduction)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-extend-the-tracing-framework-to-support-complex-tracing-scenarios">How to Extend the Tracing Framework to Support Complex Tracing Scenarios</a></li>
 </ul>
             </nav>
@@ -525,41 +525,57 @@ pip<span class="w"> </span>install<span class="w"> </span>opentelemetry-sdk<span
 </pre></div>
 </div>
 </li>
-<li><p>launch opentelemetry collector and jaeger</p>
+<li><p>Launch OpenTelemetry collector and Jaeger</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>examples/monitoring/tracing_compose.yaml<span class="w"> </span>up<span class="w"> </span>-d
 </pre></div>
 </div>
 </li>
-<li><p>start your SGLang server with tracing enabled</p>
+<li><p>Start your SGLang server with tracing enabled</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set env variables</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_OTLP_EXPORTER_SCHEDULE_DELAY_MILLIS</span><span class="o">=</span><span class="m">500</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_OTLP_EXPORTER_MAX_EXPORT_BATCH_SIZE</span><span class="o">=</span><span class="m">64</span>
 <span class="c1"># start the prefill and decode server</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>--enable-trace<span class="w"> </span>--otlp-traces-endpoint<span class="w"> </span><span class="m">0</span>.0.0.0:4317<span class="w"> </span>&lt;other<span class="w"> </span>option&gt;
-<span class="c1"># start the mini lb</span>
+<span class="c1"># start the model-gate-way</span>
 python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span>--enable-trace<span class="w"> </span>--otlp-traces-endpoint<span class="w"> </span><span class="m">0</span>.0.0.0:4317<span class="w"> </span>&lt;other<span class="w"> </span>option&gt;
 </pre></div>
 </div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">0.0.0.0:4317</span></code> with the actual endpoint of the opentelemetry collector. If you launched the openTelemetry collector with tracing_compose.yaml, the default receiving port is 4317.</p>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">0.0.0.0:4317</span></code> with the actual endpoint of the OpenTelemetry collector. If you launched the openTelemetry collector with tracing_compose.yaml, the default receiving port is 4317.</p>
 <p>To use the HTTP/protobuf span exporter, set the following environment variable and point to an HTTP endpoint, for example, <code class="docutils literal notranslate"><span class="pre">http://0.0.0.0:4318/v1/traces</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OTEL_EXPORTER_OTLP_TRACES_PROTOCOL</span><span class="o">=</span>http/protobuf
 </pre></div>
 </div>
 </li>
-<li><p>raise some requests</p></li>
+<li><p>Raise some requests</p></li>
 <li><p>Observe whether trace data is being exported</p>
 <ul class="simple">
 <li><p>Access port 16686 of Jaeger using a web browser to visualize the request traces.</p></li>
 <li><p>The OpenTelemetry Collector also exports trace data in JSON format to /tmp/otel_trace.json. In a follow-up patch, we will provide a tool to convert this data into a Perfetto-compatible format, enabling visualization of requests in the Perfetto UI.</p></li>
 </ul>
 </li>
+<li><p>Dynamically adjust trace level
+The trace level accepts configurable values from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>. The meanings of different trace level values are as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="n">disable</span> <span class="n">tracing</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">Trace</span> <span class="n">important</span> <span class="n">slices</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">Trace</span> <span class="nb">all</span> <span class="n">slices</span> <span class="k">except</span> <span class="n">nested</span> <span class="n">ones</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">Trace</span> <span class="nb">all</span> <span class="n">slices</span>
+</pre></div>
+</div>
+<p>The trace level can be dynamically set via HTTP API, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://0.0.0.0:30000/set_trace_level?level<span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">0.0.0.0:30000</span></code> with your actual server address, and replace <code class="docutils literal notranslate"><span class="pre">level=2</span></code> with the level you want to set.</p>
+<p><strong>Note</strong>: You must set the parameter <code class="docutils literal notranslate"><span class="pre">--enable-trace</span></code>; otherwise, the trace capability will not be enabled regardless of any dynamic adjustments to the trace level.</p>
+</li>
 </ol>
 </section>
-<section id="how-to-add-tracing-for-slices-you-re-interested-in">
-<h2>How to add Tracing for slices you’re interested in?<a class="headerlink" href="#how-to-add-tracing-for-slices-you-re-interested-in" title="Link to this heading">#</a></h2>
+<section id="how-to-add-tracing-for-slices-you-re-interested-in-api-introduction">
+<h2>How to add Tracing for slices you’re interested in?(API introduction)<a class="headerlink" href="#how-to-add-tracing-for-slices-you-re-interested-in-api-introduction" title="Link to this heading">#</a></h2>
 <p>We have already inserted instrumentation points in the tokenizer and scheduler main threads. If you wish to trace additional request execution segments or perform finer-grained tracing, please use the APIs from the tracing package as described below.</p>
+<p><strong>All of the following implementations are done in python/sglang/srt/observability/req_time_stats.py. If you want to add another slice, please do it here.</strong></p>
 <ol class="arabic">
-<li><p>initialization</p>
+<li><p>Initialization</p>
 <p>Every process involved in tracing during the initialization phase should execute:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">process_tracing_init</span><span class="p">(</span><span class="n">otlp_traces_endpoint</span><span class="p">,</span> <span class="n">server_name</span><span class="p">)</span>
 </pre></div>
@@ -571,72 +587,40 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 </div>
 <p>The “thread label” can be regarded as the name of the thread, used to distinguish different threads in the visualization view.</p>
 </li>
+<li><p>Create a trace context for a request
+Each request needs to call <code class="docutils literal notranslate"><span class="pre">TraceReqContext()</span></code> to initialize a request context, which is used to generate slice spans and record request stage info. You can either store it within the request object or maintain it as a global variable.</p></li>
 <li><p>Mark the beginning and end of a request</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trace_req_start</span><span class="p">(</span><span class="n">rid</span><span class="p">,</span> <span class="n">bootstrap_room</span><span class="p">)</span>
-<span class="n">trace_req_finish</span><span class="p">(</span><span class="n">rid</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trace_ctx</span><span class="o">.</span><span class="n">trace_req_start</span><span class="p">()</span><span class="o">.</span>
+<span class="n">trace_ctx</span><span class="o">.</span><span class="n">trace_req_finish</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>These two APIs must be called within the same process, for example, in the tokenizer.</p>
+<p>trace_req_start() and trace_req_finish() must be called within the same process, for example, in the tokenizer.</p>
 </li>
-<li><p>Add tracing for slice</p>
+<li><p>Add tracing for a slice</p>
 <ul>
 <li><p>Add slice tracing normally:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_slice_start</span><span class="p">(</span><span class="s2">&quot;slice A&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">)</span>
-<span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice A&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_ctx</span><span class="o">.</span><span class="n">trace_slice_start</span><span class="p">(</span><span class="n">RequestStage</span><span class="o">.</span><span class="n">TOKENIZER</span><span class="o">.</span><span class="n">stage_name</span><span class="p">)</span>
+<span class="n">trace_ctx</span><span class="o">.</span><span class="n">trace_slice_end</span><span class="p">(</span><span class="n">RequestStage</span><span class="o">.</span><span class="n">TOKENIZER</span><span class="o">.</span><span class="n">stage_name</span><span class="p">)</span>
+
+<span class="ow">or</span>
+<span class="n">trace_ctx</span><span class="o">.</span><span class="n">trace_slice</span><span class="p">(</span><span class="nb">slice</span><span class="p">:</span> <span class="n">TraceSliceContext</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 </ul>
 <ul>
-<li><p>Use the “anonymous” flag to not specify a slice name at the start of the slice, allowing the slice name to be determined by trace_slice_end.
-<br>Note: Anonymous slices must not be nested.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_slice_start</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">anonymous</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice A&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>In trace_slice_end, use auto_next_anon to automatically create the next anonymous slice, which can reduce the number of instrumentation points needed.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_slice_start</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">anonymous</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice A&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">auto_next_anon</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice B&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">auto_next_anon</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice C&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">auto_next_anon</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice D&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>The end of the last slice in a thread must be marked with thread_finish_flag=True; otherwise, the thread’s span will not be properly generated.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_slice_end</span><span class="p">(</span><span class="s2">&quot;slice D&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">thread_finish_flag</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<li><p>The end of the last slice in a thread must be marked with thread_finish_flag=True, or explicitly call trace_ctx.abort(); otherwise, the thread’s span will not be properly generated.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_ctx</span><span class="o">.</span><span class="n">slice_end</span><span class="p">(</span><span class="n">RequestStage</span><span class="o">.</span><span class="n">D</span><span class="o">.</span><span class="n">stage_name</span><span class="p">,</span> <span class="n">thread_finish_flag</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">trace_ctx</span><span class="o">.</span><span class="n">abort</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
-<li><p>When the request execution flow transfers to another thread, the trace context needs to be explicitly propagated.</p>
+<li><p>When the request execution flow transfers to another thread, the thread context needs to be explicitly rebuilt.</p>
 <ul>
-<li><p>sender: Execute the following code before sending the request to another thread via ZMQ</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_context</span> <span class="o">=</span> <span class="n">trace_get_proc_propagate_context</span><span class="p">(</span><span class="n">rid</span><span class="p">)</span>
-<span class="n">req</span><span class="o">.</span><span class="n">trace_context</span> <span class="o">=</span> <span class="n">trace_context</span>
-</pre></div>
-</div>
-</li>
 <li><p>receiver: Execute the following code after receiving the request via ZMQ</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_set_proc_propagate_context</span><span class="p">(</span><span class="n">rid</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">trace_context</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p>When the request execution flow transfers to another node(PD disaggregation), the trace context needs to be explicitly propagated.</p>
-<ul>
-<li><p>sender: Execute the following code before sending the request to node thread via http</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_context</span> <span class="o">=</span> <span class="n">trace_get_remote_propagate_context</span><span class="p">(</span><span class="n">bootstrap_room_list</span><span class="p">)</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trace_context&quot;</span><span class="p">:</span> <span class="n">trace_context</span><span class="p">}</span>
-<span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>receiver: Execute the following code after receiving the request via http</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_set_remote_propagate_context</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;trace_context&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_ctx</span><span class="o">.</span><span class="n">rebuild_thread_context</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
@@ -647,33 +631,17 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
 <section id="how-to-extend-the-tracing-framework-to-support-complex-tracing-scenarios">
 <h2>How to Extend the Tracing Framework to Support Complex Tracing Scenarios<a class="headerlink" href="#how-to-extend-the-tracing-framework-to-support-complex-tracing-scenarios" title="Link to this heading">#</a></h2>
 <p>The currently provided tracing package still has potential for further development. If you wish to build more advanced features upon it, you must first understand its existing design principles.</p>
-<p>The core of the tracing framework’s implementation lies in the design of the span structure and the trace context. To aggregate scattered slices and enable concurrent tracking of multiple requests, we have designed a two-level trace context structure and a four-level span structure: <code class="docutils literal notranslate"><span class="pre">SglangTraceReqContext</span></code>, <code class="docutils literal notranslate"><span class="pre">SglangTraceThreadContext</span></code>. Their relationship is as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SglangTraceReqContext (req_id=&quot;req-123&quot;)
-├── SglangTraceThreadContext(thread_label=&quot;scheduler&quot;, tp_rank=0)
+<p>The core of the tracing framework’s implementation lies in the design of the span structure and the trace context. To aggregate scattered slices and enable concurrent tracking of multiple requests, we have designed a three-level trace context structure or span structure: <code class="docutils literal notranslate"><span class="pre">TraceReqContext</span></code>, <code class="docutils literal notranslate"><span class="pre">TraceThreadContext</span></code> and <code class="docutils literal notranslate"><span class="pre">TraceSliceContext</span></code>. Their relationship is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TraceReqContext (req_id=&quot;req-123&quot;)
+├── TraceThreadContext(thread_label=&quot;scheduler&quot;, tp_rank=0)
+|     └── TraceSliceContext(slice_name=&quot;prefill&quot;)
 |
-└── SglangTraceThreadContext(thread_label=&quot;scheduler&quot;, tp_rank=1)
+└── TraceThreadContext(thread_label=&quot;scheduler&quot;, tp_rank=1)
+      └── TraceSliceContext(slice_name=&quot;prefill&quot;)
 </pre></div>
 </div>
-<p>Each traced request maintains a global <code class="docutils literal notranslate"><span class="pre">SglangTraceReqContext</span></code>. For every thread processing the request, a corresponding <code class="docutils literal notranslate"><span class="pre">SglangTraceThreadContext</span></code> is recorded and composed within the <code class="docutils literal notranslate"><span class="pre">SglangTraceReqContext</span></code>. Within each thread, every currently traced slice (possibly nested) is stored in a list.</p>
+<p>Each traced request maintains a global <code class="docutils literal notranslate"><span class="pre">TraceReqContext</span></code> and creates a corresponding request span. For every thread that processes the request, a <code class="docutils literal notranslate"><span class="pre">TraceThreadContext</span></code> is recorded and a thread span is created. The <code class="docutils literal notranslate"><span class="pre">TraceThreadContext</span></code> is nested within the <code class="docutils literal notranslate"><span class="pre">TraceReqContext</span></code>, and each currently traced code slice—potentially nested—is stored in its associated <code class="docutils literal notranslate"><span class="pre">TraceThreadContext</span></code>.</p>
 <p>In addition to the above hierarchy, each slice also records its previous slice via Span.add_link(), which can be used to trace the execution flow.</p>
-<p>When the request execution flow transfers to a new thread, the trace context needs to be explicitly propagated. In the framework, this is represented by <code class="docutils literal notranslate"><span class="pre">SglangTracePropagateContext</span></code>, which contains the context of the request span and the previous slice span.</p>
-<p>We designed a four-level span structure, consisting of <code class="docutils literal notranslate"><span class="pre">bootstrap_room_span</span></code>, <code class="docutils literal notranslate"><span class="pre">req_root_span</span></code>, <code class="docutils literal notranslate"><span class="pre">thread_span</span></code>, and <code class="docutils literal notranslate"><span class="pre">slice_span</span></code>. Among them, <code class="docutils literal notranslate"><span class="pre">req_root_span</span></code> and <code class="docutils literal notranslate"><span class="pre">thread_span</span></code> correspond to <code class="docutils literal notranslate"><span class="pre">SglangTraceReqContext</span></code> and <code class="docutils literal notranslate"><span class="pre">SglangTraceThreadContext</span></code>, respectively, and <code class="docutils literal notranslate"><span class="pre">slice_span</span></code> is stored within the <code class="docutils literal notranslate"><span class="pre">SglangTraceThreadContext</span></code>. The <code class="docutils literal notranslate"><span class="pre">bootstrap_room_span</span></code> is designed to accommodate the separation of PD-disaggregation. On different nodes, we may want to add certain attributes to the <code class="docutils literal notranslate"><span class="pre">req_root_span</span></code>. However, if the <code class="docutils literal notranslate"><span class="pre">req_root_span</span></code> is shared across all nodes, the Prefill and Decode nodes would not be allowed to add attributes due to the constraints imposed by OpenTelemetry’s design.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bootstrap room span
-├── router req root span
-|    └── router thread span
-|          └── slice span
-├── prefill req root span
-|    ├── tokenizer thread span
-|    |     └── slice span
-|    └── scheduler thread span
-|          └── slice span
-└── decode req root span
-      ├── tokenizer thread span
-      |    └── slice span
-      └── scheduler thread span
-           └── slice span
-</pre></div>
-</div>
 </section>
 </section>
 
@@ -723,7 +691,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-guide">Setup Guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-tracing-for-slices-you-re-interested-in">How to add Tracing for slices you’re interested in?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-tracing-for-slices-you-re-interested-in-api-introduction">How to add Tracing for slices you’re interested in?(API introduction)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-extend-the-tracing-framework-to-support-complex-tracing-scenarios">How to Extend the Tracing Framework to Support Complex Tracing Scenarios</a></li>
 </ul>
   </nav></div>
