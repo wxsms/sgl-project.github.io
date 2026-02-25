@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e460bb4f"></script>
+    <script src="../_static/documentation_options.js?v=d40a5403"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -541,33 +541,56 @@ document.write(`
 <h1>Benchmark and Profiling<a class="headerlink" href="#benchmark-and-profiling" title="Link to this heading">#</a></h1>
 <section id="benchmark">
 <h2>Benchmark<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h2>
-<ul>
-<li><p>Benchmark the latency of running a single static batch without a server. The arguments are the same as for <code class="docutils literal notranslate"><span class="pre">launch_server.py</span></code>.
-Note that this is a simplified test script without a dynamic batching server, so it may run out of memory for a batch size that a real server can handle. A real server truncates the prefill into several batches, while this simplified script does not.</p>
-<ul>
-<li><p>Without a server (do not need to launch a server)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span>
+<p>SGLang provides four benchmark tools that operate at different levels of the stack. The table below summarizes their key differences:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>HTTP Server</p></th>
+<th class="head"><p>Scheduler</p></th>
+<th class="head"><p>Use Case</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bench_serving</span></code></p></td>
+<td><p>Yes (async HTTP client to a running server)</p></td>
+<td><p>Yes (indirectly, via server)</p></td>
+<td><p>Realistic online serving benchmarks with latency metrics (TTFT, TPOT, ITL)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bench_one_batch_server</span></code></p></td>
+<td><p>Yes (sends HTTP requests to a running server)</p></td>
+<td><p>Yes (indirectly, via server)</p></td>
+<td><p>End-to-end single-batch latency including HTTP and scheduler overhead</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bench_offline_throughput</span></code></p></td>
+<td><p>No</p></td>
+<td><p>Yes (directly uses <code class="docutils literal notranslate"><span class="pre">Engine</span></code> in-process)</p></td>
+<td><p>Maximum throughput measurement without HTTP overhead</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bench_one_batch</span></code></p></td>
+<td><p>No</p></td>
+<td><p>No (directly calls <code class="docutils literal notranslate"><span class="pre">ModelRunner</span></code>)</p></td>
+<td><p>Kernel-level latency profiling of a single static batch</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">bench_serving</span></code> by default unless there are specific needs.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">bench_serving</span></code></strong> is an async HTTP load-testing client that sends requests at controlled rates with configurable concurrency to a running server. It measures realistic online serving metrics including time-to-first-token (TTFT), time-per-output-token (TPOT), inter-token latency (ITL), and throughput. Use <code class="docutils literal notranslate"><span class="pre">num-prompts</span> <span class="pre">&gt;=</span> <span class="pre">5</span> <span class="pre">*</span> <span class="pre">max-concurrency</span></code> to measure steady-state performance. Launch a server with <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> first.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--max-concurrency<span class="w"> </span><span class="m">16</span><span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">80</span><span class="w"> </span>--random-input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--random-output-len<span class="w"> </span><span class="m">32</span><span class="w"> </span>--dataset-name<span class="w"> </span>random
 </pre></div>
 </div>
-</li>
-<li><p>With a server (please use <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> to launch a server first and run the following command.)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch_server<span class="w"> </span>--base-url<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span>
+<p><strong><code class="docutils literal notranslate"><span class="pre">bench_one_batch_server</span></code></strong> sends a single batch as one HTTP request to a running server. Due to only having a single batch, the server is never in a steady-state and metrics will be biased. Launch a server with <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> first.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch_server<span class="w"> </span>--base-url<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span>
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-<li><p>Benchmark offline processing. This script will start an offline engine and run the benchmark.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">bench_offline_throughput</span></code></strong> directly instantiates the <code class="docutils literal notranslate"><span class="pre">Engine</span></code> object in-process (no HTTP server) and submits all requests at once via <code class="docutils literal notranslate"><span class="pre">engine.generate()</span></code>. The engine’s scheduler handles batching and execution. This measures maximum achievable throughput without any network overhead.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_offline_throughput<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--num-prompts<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
-</li>
-<li><p>Benchmark online serving. Please use <code class="docutils literal notranslate"><span class="pre">sglang.launch_server</span></code> to launch a server first and run the following command.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span>--backend<span class="w"> </span>sglang<span class="w"> </span>--num-prompt<span class="w"> </span><span class="m">10</span>
+<p><strong><code class="docutils literal notranslate"><span class="pre">bench_one_batch</span></code></strong> is the lowest-level tool. It directly instantiates a <code class="docutils literal notranslate"><span class="pre">ModelRunner</span></code> and calls <code class="docutils literal notranslate"><span class="pre">extend()</span></code> / <code class="docutils literal notranslate"><span class="pre">decode()</span></code> on a fixed static batch, bypassing the scheduler entirely. The prefill and decode phases are run separately, making profiling easier but rendering the metrics unrealistic. Because there is no dynamic batching, it may run out of memory for batch sizes that a real server can handle (a real server chunks prefill into smaller batches). This is best suited for profiling individual kernel performance.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_one_batch<span class="w"> </span>--model-path<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">32</span><span class="w"> </span>--input-len<span class="w"> </span><span class="m">256</span><span class="w"> </span>--output-len<span class="w"> </span><span class="m">32</span>
 </pre></div>
 </div>
-</li>
-</ul>
 </section>
 <section id="profile-with-pytorch-profiler">
 <h2>Profile with PyTorch Profiler<a class="headerlink" href="#profile-with-pytorch-profiler" title="Link to this heading">#</a></h2>
