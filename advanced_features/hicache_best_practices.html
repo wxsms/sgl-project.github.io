@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f4417906"></script>
+    <script src="../_static/documentation_options.js?v=4630cddb"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -500,6 +500,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-hicache-parameters">Core HiCache Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-configurations-with-storage-backends-enabled">Key Configurations with Storage Backends Enabled</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-layout-optimization">Memory Layout Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-tp-support-gqa-mha-models">Heterogeneous TP Support (GQA/MHA models)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefetch-policies">Prefetch Policies</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-with-pd-disaggregation">Integration with PD Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-hf3fs">Deployment with HF3FS</a></li>
@@ -564,6 +565,21 @@ document.write(`
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">page_first</span></code>: Only compatible with <code class="docutils literal notranslate"><span class="pre">kernel</span></code> I/O backend, automatically switches to <code class="docutils literal notranslate"><span class="pre">layer_first</span></code> with <code class="docutils literal notranslate"><span class="pre">direct</span></code> backend</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">page_first_direct</span></code>: Specifically designed for <code class="docutils literal notranslate"><span class="pre">direct</span></code> I/O backend with optimized memory organization</p></li>
+</ul>
+</section>
+<section id="heterogeneous-tp-support-gqa-mha-models">
+<h3>Heterogeneous TP Support (GQA/MHA models)<a class="headerlink" href="#heterogeneous-tp-support-gqa-mha-models" title="Link to this heading">#</a></h3>
+<p>HiCache storage supports cross-cluster KV reuse when different deployments use different TP sizes (for example, <code class="docutils literal notranslate"><span class="pre">tp=4</span></code> and <code class="docutils literal notranslate"><span class="pre">tp=8</span></code>) and share the same storage backend namespace.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">tp_lcm_size</span></code> in <code class="docutils literal notranslate"><span class="pre">--hicache-storage-backend-extra-config</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: heterogeneous TP = {4, 8}, so lcm = 8</span>
+--hicache-storage-backend-extra-config<span class="w"> </span><span class="s1">&#39;{&quot;tp_lcm_size&quot;: 8}&#39;</span>
+</pre></div>
+</div>
+<p>Guidelines:</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">tp_lcm_size</span></code> to the least common multiple (LCM) of all TP sizes that will share the same HiCache storage.</p></li>
+<li><p>For MHA models with Mooncake and <code class="docutils literal notranslate"><span class="pre">page_head</span></code> layout, HiCache will split head shards based on <code class="docutils literal notranslate"><span class="pre">tp_lcm_size</span></code> to make keys reusable across heterogeneous TP deployments.</p></li>
+<li><p>If all clusters use the same TP size, this option is not needed.</p></li>
 </ul>
 </section>
 <section id="prefetch-policies">
@@ -779,6 +795,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-hicache-parameters">Core HiCache Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-configurations-with-storage-backends-enabled">Key Configurations with Storage Backends Enabled</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-layout-optimization">Memory Layout Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-tp-support-gqa-mha-models">Heterogeneous TP Support (GQA/MHA models)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefetch-policies">Prefetch Policies</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-with-pd-disaggregation">Integration with PD Disaggregation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-hf3fs">Deployment with HF3FS</a></li>
