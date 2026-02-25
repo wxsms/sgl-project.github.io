@@ -23,31 +23,31 @@ python3 -m sglang.launch_server --model-path Alibaba-NLP/gte-Qwen2-1.5B-instruct
 wait_for_server(f"http://localhost:{port}", process=embedding_process)
 ```
 
-    [2026-02-25 05:17:57] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-25 05:31:24] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-25 05:17:57] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-25 05:31:24] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-25 05:17:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-25 05:31:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-25 05:18:02] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-25 05:18:02] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-25 05:18:02] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-25 05:31:31] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-25 05:31:31] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-25 05:31:31] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-25 05:18:05] INFO model_config.py:1185: Downcasting torch.float32 to torch.float16.
-    [2026-02-25 05:18:05] INFO server_args.py:1829: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-25 05:18:05] INFO server_args.py:2890: Set soft_watchdog_timeout since in CI
+    [2026-02-25 05:31:34] INFO model_config.py:1185: Downcasting torch.float32 to torch.float16.
+    [2026-02-25 05:31:34] INFO server_args.py:1829: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-25 05:31:34] INFO server_args.py:2890: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-25 05:18:12] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-25 05:18:12] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-25 05:18:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-25 05:18:12] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-25 05:18:12] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-25 05:18:12] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-25 05:31:41] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-25 05:31:41] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-25 05:31:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-25 05:31:41] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-25 05:31:41] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-25 05:31:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -55,20 +55,19 @@ wait_for_server(f"http://localhost:{port}", process=embedding_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-25 05:18:17] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-25 05:18:17] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-25 05:18:17] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-02-25 05:18:17] Ignore import error when loading sglang.srt.models.grok: cannot import name '_yarn_find_correction_range' from 'sglang.srt.layers.rotary_embedding' (/public_sglang_ci/runner-l3-fdnf5-gpu-1/_work/sglang/sglang/python/sglang/srt/layers/rotary_embedding/__init__.py)
+    [2026-02-25 05:31:46] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-25 05:31:46] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-25 05:31:46] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.50s/it]
+    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.86s/it]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.08s/it]
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.23s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]
     
 
 
