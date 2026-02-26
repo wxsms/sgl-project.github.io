@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../../_static/documentation_options.js?v=8166beb4"></script>
+    <script src="../../../_static/documentation_options.js?v=5adf0dc9"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -492,9 +492,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend-configuration">Diffusers Backend Configuration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend">Diffusers Backend</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-gpu-inference">Single GPU inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-inference">Distributed inference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-cache-and-parallelism">Hybrid Cache and Parallelism</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configuration">Advanced Configuration</a><ul class="visible nav section-nav flex-column">
@@ -509,7 +510,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">Performance Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-environment-warning">Distributed environment warning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scm-disabled-for-low-step-count">SCM disabled for low step count</a></li>
 </ul>
 </li>
@@ -546,14 +546,14 @@ sglang<span class="w"> </span>generate<span class="w"> </span>--model-path<span 
 </pre></div>
 </div>
 </section>
-<section id="diffusers-backend-configuration">
-<h2>Diffusers Backend Configuration<a class="headerlink" href="#diffusers-backend-configuration" title="Link to this heading">#</a></h2>
+<section id="diffusers-backend">
+<h2>Diffusers Backend<a class="headerlink" href="#diffusers-backend" title="Link to this heading">#</a></h2>
 <p>Cache-DiT supports loading acceleration configs from a custom YAML file. For
-diffusers pipelines, pass the YAML/JSON path via <code class="docutils literal notranslate"><span class="pre">--cache-dit-config</span></code>. This
+diffusers pipelines (<code class="docutils literal notranslate"><span class="pre">diffusers</span></code> backend), pass the YAML/JSON path via <code class="docutils literal notranslate"><span class="pre">--cache-dit-config</span></code>. This
 flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate"><span class="pre">cache_dit.load_configs</span></code>).</p>
 <section id="single-gpu-inference">
 <h3>Single GPU inference<a class="headerlink" href="#single-gpu-inference" title="Link to this heading">#</a></h3>
-<p>Define a <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file that contains:</p>
+<p>Define a <code class="docutils literal notranslate"><span class="pre">cache.yaml</span></code> file that contains:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cache_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">max_warmup_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
 <span class="w">  </span><span class="nt">warmup_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
@@ -567,16 +567,68 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 </pre></div>
 </div>
 <p>Then apply the config with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span>--backend<span class="w"> </span>diffusers<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>diffusers<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--cache-dit-config<span class="w"> </span>config.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cache-dit-config<span class="w"> </span>cache.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A beautiful sunset over the mountains&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="distributed-inference">
 <h3>Distributed inference<a class="headerlink" href="#distributed-inference" title="Link to this heading">#</a></h3>
-<p>Define a <code class="docutils literal notranslate"><span class="pre">parallel_config.yaml</span></code> file that contains:</p>
+<ul class="simple">
+<li><p>1D Parallelism</p></li>
+</ul>
+<p>Define a parallelism only config yaml <code class="docutils literal notranslate"><span class="pre">parallel.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Then, apply the distributed inference acceleration config from yaml. <code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">auto</span></code> means that cache-dit will auto detect the <code class="docutils literal notranslate"><span class="pre">world_size</span></code> as the ulysses_size. Otherwise, you should manually set it as specific int number, e.g, 4.</p>
+<p>Then apply the distributed config with: (Note: please add <code class="docutils literal notranslate"><span class="pre">--num-gpus</span> <span class="pre">N</span></code> to specify the number of gpus for distributed inference)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-gpus<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cache-dit-config<span class="w"> </span>parallel.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A futuristic cityscape at sunset&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>2D Parallelism</p></li>
+</ul>
+<p>You can also define a 2D parallelism config yaml <code class="docutils literal notranslate"><span class="pre">parallel_2d.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">tp_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Then, apply the 2D parallelism config from yaml. Here <code class="docutils literal notranslate"><span class="pre">tp_size:</span> <span class="pre">2</span></code> means using tensor parallelism with size 2. The <code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">auto</span></code> means that cache-dit will auto detect the <code class="docutils literal notranslate"><span class="pre">world_size</span> <span class="pre">//</span> <span class="pre">tp_size</span></code> as the ulysses_size.</p>
+<ul class="simple">
+<li><p>3D Parallelism</p></li>
+</ul>
+<p>You can also define a 3D parallelism config yaml <code class="docutils literal notranslate"><span class="pre">parallel_3d.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">ring_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">tp_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Then, apply the 3D parallelism config from yaml. Here <code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">ring_size:</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">tp_size:</span> <span class="pre">2</span></code> means using ulysses parallelism with size 2, ring parallelism with size 2 and tensor parallelism with size 2.</p>
+</section>
+<section id="hybrid-cache-and-parallelism">
+<h3>Hybrid Cache and Parallelism<a class="headerlink" href="#hybrid-cache-and-parallelism" title="Link to this heading">#</a></h3>
+<p>Define a hybrid cache and parallel acceleration config yaml <code class="docutils literal notranslate"><span class="pre">hybrid.yaml</span></code> file that contains:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cache_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">max_warmup_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
 <span class="w">  </span><span class="nt">warmup_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
@@ -594,13 +646,13 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">auto</span></code> means cache-dit will auto-detect the world_size. Otherwise,
-set it to a specific integer (e.g., <code class="docutils literal notranslate"><span class="pre">4</span></code>).</p>
-<p>Then apply the distributed config with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span>--backend<span class="w"> </span>diffusers<span class="w"> </span><span class="se">\</span>
+<p>Then, apply the hybrid cache and parallel acceleration config from yaml.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-gpus<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--cache-dit-config<span class="w"> </span>parallel_config.yaml<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A futuristic cityscape at sunset&quot;</span>
+<span class="w">  </span>--cache-dit-config<span class="w"> </span>hybrid.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A beautiful sunset over the mountains&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -827,13 +879,6 @@ disabled when <code class="docutils literal notranslate"><span class="pre">world
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
-<section id="distributed-environment-warning">
-<h3>Distributed environment warning<a class="headerlink" href="#distributed-environment-warning" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">:</span> <span class="n">cache</span><span class="o">-</span><span class="n">dit</span> <span class="ow">is</span> <span class="n">disabled</span> <span class="ow">in</span> <span class="n">distributed</span> <span class="n">environment</span> <span class="p">(</span><span class="n">world_size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This is expected behavior. Cache-DiT currently only supports single-GPU inference.</p>
-</section>
 <section id="scm-disabled-for-low-step-count">
 <h3>SCM disabled for low step count<a class="headerlink" href="#scm-disabled-for-low-step-count" title="Link to this heading">#</a></h3>
 <p>For models with &lt; 8 inference steps (e.g., DMD distilled models), SCM will be automatically disabled. DBCache
@@ -843,7 +888,7 @@ acceleration still works.</p>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/vipshop/cache-dit">Cache-Dit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vipshop/cache-dit">Cache-DiT</a></p></li>
 <li><p><a class="reference internal" href="../index.html"><span class="std std-doc">SGLang Diffusion</span></a></p></li>
 </ul>
 </section>
@@ -896,9 +941,10 @@ acceleration still works.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend-configuration">Diffusers Backend Configuration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusers-backend">Diffusers Backend</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-gpu-inference">Single GPU inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-inference">Distributed inference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-cache-and-parallelism">Hybrid Cache and Parallelism</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configuration">Advanced Configuration</a><ul class="visible nav section-nav flex-column">
@@ -913,7 +959,6 @@ acceleration still works.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">Performance Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-environment-warning">Distributed environment warning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scm-disabled-for-low-step-count">SCM disabled for low step count</a></li>
 </ul>
 </li>
