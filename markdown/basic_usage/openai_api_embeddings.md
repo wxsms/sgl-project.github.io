@@ -23,31 +23,31 @@ python3 -m sglang.launch_server --model-path Alibaba-NLP/gte-Qwen2-1.5B-instruct
 wait_for_server(f"http://localhost:{port}", process=embedding_process)
 ```
 
-    [2026-02-27 19:40:41] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-27 21:24:40] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
 
 
-    [2026-02-27 19:40:41] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-27 21:24:40] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
 
 
-    [2026-02-27 19:40:41] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-27 21:24:40] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-27 19:40:45] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-27 19:40:45] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-27 19:40:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-27 21:24:45] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-27 21:24:45] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-27 21:24:45] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
-    [2026-02-27 19:40:47] INFO model_config.py:1185: Downcasting torch.float32 to torch.float16.
-    [2026-02-27 19:40:47] INFO server_args.py:1854: Attention backend not specified. Use fa3 backend by default.
-    [2026-02-27 19:40:47] INFO server_args.py:2924: Set soft_watchdog_timeout since in CI
+    [2026-02-27 21:24:48] INFO model_config.py:1185: Downcasting torch.float32 to torch.float16.
+    [2026-02-27 21:24:48] INFO server_args.py:1854: Attention backend not specified. Use fa3 backend by default.
+    [2026-02-27 21:24:48] INFO server_args.py:2924: Set soft_watchdog_timeout since in CI
 
 
-    [2026-02-27 19:40:52] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-27 19:40:52] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-27 19:40:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
-    [2026-02-27 19:40:52] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
-    [2026-02-27 19:40:52] INFO utils.py:151: Note: NumExpr detected 128 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-    [2026-02-27 19:40:52] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-27 21:24:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-27 21:24:54] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-27 21:24:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
+    [2026-02-27 21:24:54] INFO utils.py:148: Note: detected 112 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+    [2026-02-27 21:24:54] INFO utils.py:151: Note: NumExpr detected 112 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+    [2026-02-27 21:24:54] INFO utils.py:164: NumExpr defaulting to 16 threads.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -55,20 +55,24 @@ wait_for_server(f"http://localhost:{port}", process=embedding_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-02-27 19:40:56] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
-    [2026-02-27 19:40:56] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
-    [2026-02-27 19:40:56] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-02-27 21:25:01] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+    [2026-02-27 21:25:01] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+    [2026-02-27 21:25:01] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
 
-    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.44it/s]
+    Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.83s/it]
 
 
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
-    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.07s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.24s/it]
+    Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.33s/it]
     
+
+
+    /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:105: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
+      response = await f(request)
 
 
 
