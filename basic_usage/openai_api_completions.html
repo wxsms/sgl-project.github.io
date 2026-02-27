@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=58e6d813"></script>
+    <script src="../_static/documentation_options.js?v=2bf62d11"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,7 +58,7 @@
     <link rel="prev" title="OpenAI-Compatible APIs" href="openai_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 26, 2026"/>
+    <meta name="docbuild:last-update" content="Feb 27, 2026"/>
   </head>
   
   
@@ -575,9 +575,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-02-26 23:16:19] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-26 23:16:19] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-26 23:16:19] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-27 00:18:14] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-27 00:18:14] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-27 00:18:14] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -585,30 +585,28 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-02-26 23:16:25] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-26 23:16:25] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-26 23:16:25] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-26 23:16:27] INFO server_args.py:1859: Attention backend not specified. Use fa3 backend by default.
-[2026-02-26 23:16:27] INFO server_args.py:2928: Set soft_watchdog_timeout since in CI
-[2026-02-26 23:16:34] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-26 23:16:34] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-26 23:16:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-02-26 23:16:34] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-02-26 23:16:34] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-02-26 23:16:34] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-27 00:18:17] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-27 00:18:17] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-27 00:18:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-27 00:18:19] INFO server_args.py:1859: Attention backend not specified. Use fa3 backend by default.
+[2026-02-27 00:18:19] INFO server_args.py:2928: Set soft_watchdog_timeout since in CI
+[2026-02-27 00:18:24] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-27 00:18:24] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-27 00:18:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-02-27 00:18:24] INFO utils.py:148: Note: detected 128 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-02-27 00:18:24] INFO utils.py:151: Note: NumExpr detected 128 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-02-27 00:18:24] INFO utils.py:164: NumExpr defaulting to 16 threads.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-02-26 23:16:39] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-26 23:16:39] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
-[2026-02-26 23:16:39] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-02-27 00:18:28] Ignore import error when loading sglang.srt.models.glm_ocr: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-27 00:18:28] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named &#39;transformers.models.glm_ocr&#39;
+[2026-02-27 00:18:28] Ignore import error when loading sglang.srt.models.glmasr: cannot import name &#39;GlmAsrConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00&lt;?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.77it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.87it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.86it/s]
 
-Capturing batches (bs=1 avail_mem=117.78 GB): 100%|██████████| 3/3 [00:11&lt;00:00,  3.68s/it]
-/usr/local/lib/python3.10/dist-packages/fastapi/routing.py:105: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
-  response = await f(request)
+Capturing batches (bs=1 avail_mem=77.04 GB): 100%|██████████| 3/3 [00:00&lt;00:00, 13.58it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -622,7 +620,7 @@ Capturing batches (bs=1 avail_mem=117.78 GB): 100%|█████████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:32830
+Server started on http://localhost:32225
 </pre></div></div>
 </div>
 </section>
@@ -656,7 +654,7 @@ Server started on http://localhost:32830
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='7285220a6800478495d62dab1d0b63b4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1772147820, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='71e63304af7b49dba052178877569370', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington, D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1772151517, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=39, prompt_tokens=37, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -921,7 +919,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th century BCE to the 4th century CE. It was known for its advanced engineering, art, literature, and philosophy. Some of their major achievements include:<br><br>1. Architecture: Rome was known for its grand architecture, including the Colosseum, the Pantheon, and the Roman Forum.<br><br>2. Art: The Romans were renowned for their art, particularly in sculpture and pottery. They were also famous for their frescoes and mosaics.<br><br>3. Literature: Roman literature was highly influential, with works like Virgil's Aeneid and Ovid</strong></div>
+<strong style='color: #00008B;'>The ancient Romans made significant contributions to various fields, including law, philosophy, literature, and science. They are known for their Roman law, which was a system of legal codes that were developed over several centuries. This system was influential in shaping modern legal systems.<br><br>In the field of philosophy, the Romans were renowned for their contributions to Stoicism and Epicureanism. Their works on philosophy, such as "De Anima" and "De Caelo," laid the groundwork for later philosophical thought.<br><br>In literature, the Romans are credited with creating some of the most famous works of literature in the world. Their plays, such as "A</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -947,7 +945,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that&#39;s correct! I&#39;m designed to provide helpful and informative responses to users. If you have any questions or need assistance with anything, feel free to ask!
+Yes, I&#39;m an AI language model created by Alibaba Cloud. I&#39;m here to assist you with any questions or tasks you may have. Please let me know if you have any questions or need help with anything else.
 </pre></div></div>
 </div>
 </section>
@@ -1012,7 +1010,7 @@ Yes, that&#39;s correct! I&#39;m designed to provide helpful and informative res
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='2e0e10356abb4a0d9368361398f30ebf', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1772147821, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='e38d37b4044c4271975d3326a1569ff9', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. Canada - Ottawa\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. United Kingdom - London\n9. Australia - Canberra\n10. New Zealand', matched_stop=None)], created=1772151518, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1044,7 +1042,7 @@ Yes, that&#39;s correct! I&#39;m designed to provide helpful and informative res
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='b228586f1315484e831af1a034c15602', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, in the vast expanse of space, there was a young space explorer named Alex. Alex had always been fascinated by the stars and the universe, and he was determined to become a scientist and discover new wonders.', matched_stop='\n\n')], created=1772147821, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=47, prompt_tokens=9, total_tokens=56, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='85983a418cce41f485e49a9a53650178', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Dr. Maria Clarke. She had always been fascinated by the mysteries of the cosmos and dreamed of exploring the unknown planets and moons of our solar system.', matched_stop='\n\n')], created=1772151518, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=9, total_tokens=50, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
@@ -1206,7 +1204,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 26, 2026.
+  Last updated on Feb 27, 2026.
   <br/>
 </p>
   </div>
