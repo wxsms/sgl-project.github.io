@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MiniMax M2.1/M2 Usage &#8212; SGLang</title>
+    <title>MiniMax M2.5/M2.1/M2 Usage &#8212; SGLang</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=fe4c9075"></script>
+    <script src="../_static/documentation_options.js?v=9c4e3ad8"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -181,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="glm45.html">Launch GLM-4.5 / GLM-4.6 / GLM-4.7 with SGLang</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glmv.html">GLM-4.6V / GLM-4.5V Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpt_oss.html">GPT OSS Usage</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">MiniMax M2.1/M2 Usage</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MiniMax M2.5/M2.1/M2 Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qwen3.html">Qwen3-Next Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qwen3_vl.html">Qwen3-VL Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deepseek_ocr.html">DeepSeek OCR (OCR-1 / OCR-2)</a></li>
@@ -492,7 +492,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MiniMax M2.1/M2 Usage</h1>
+    <h1>MiniMax M2.5/M2.1/M2 Usage</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -504,7 +504,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">System Requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-python">Deployment with Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-python">Deployment with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amd-gpus-mi300x-mi325x-mi355x">AMD GPUs (MI300X/MI325X/MI355X)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-deployment">Testing Deployment</a></li>
 </ul>
             </nav>
@@ -517,14 +520,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="minimax-m2-1-m2-usage">
-<h1>MiniMax M2.1/M2 Usage<a class="headerlink" href="#minimax-m2-1-m2-usage" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.1">MiniMax-M2.1</a> and <a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2">MiniMax-M2</a> are advanced large language models created by <a class="reference external" href="https://www.minimax.io/">MiniMax</a>.</p>
-<p>MiniMax-M2 series redefines efficiency for agents. It’s a compact, fast, and cost-effective MoE model (230 billion total parameters with 10 billion active parameters) built for elite performance in coding and agentic tasks, all while maintaining powerful general intelligence. With just 10 billion activated parameters, MiniMax-M2 provides the sophisticated, end-to-end tool use performance expected from today’s leading models, but in a streamlined form factor that makes deployment and scaling easier than ever.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="minimax-m2-5-m2-1-m2-usage">
+<h1>MiniMax M2.5/M2.1/M2 Usage<a class="headerlink" href="#minimax-m2-5-m2-1-m2-usage" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.5">MiniMax-M2.5</a>, <a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.1">MiniMax-M2.1</a>, and <a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2">MiniMax-M2</a> are advanced large language models created by <a class="reference external" href="https://www.minimax.io/">MiniMax</a>.</p>
+<p>The MiniMax-M2 series redefines efficiency for agents. These compact, fast, and cost-effective MoE models (230 billion total parameters with 10 billion active parameters) are built for elite performance in coding and agentic tasks, all while maintaining powerful general intelligence. With just 10 billion activated parameters, the MiniMax-M2 series provides sophisticated, end-to-end tool use performance expected from today’s leading models, but in a streamlined form factor that makes deployment and scaling easier than ever.</p>
 <section id="supported-models">
 <h2>Supported Models<a class="headerlink" href="#supported-models" title="Link to this heading">#</a></h2>
 <p>This guide applies to the following models. You only need to update the model name during deployment. The following examples use <strong>MiniMax-M2</strong>:</p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.5">MiniMaxAI/MiniMax-M2.5</a></p></li>
 <li><p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.1">MiniMaxAI/MiniMax-M2.1</a></p></li>
 <li><p><a class="reference external" href="https://huggingface.co/MiniMaxAI/MiniMax-M2">MiniMaxAI/MiniMax-M2</a></p></li>
 </ul>
@@ -564,6 +568,23 @@ document.write(`
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85
 </pre></div>
 </div>
+<section id="amd-gpus-mi300x-mi325x-mi355x">
+<h3>AMD GPUs (MI300X/MI325X/MI355X)<a class="headerlink" href="#amd-gpus-mi300x-mi325x-mi355x" title="Link to this heading">#</a></h3>
+<p>8-GPU deployment command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SGLANG_USE_AITER</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>MiniMaxAI/MiniMax-M2.5<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ep-size<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--attention-backend<span class="w"> </span>aiter<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tool-call-parser<span class="w"> </span>minimax-m2<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--reasoning-parser<span class="w"> </span>minimax-append-think<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85
+</pre></div>
+</div>
+</section>
 </section>
 <section id="testing-deployment">
 <h2>Testing Deployment<a class="headerlink" href="#testing-deployment" title="Link to this heading">#</a></h2>
@@ -629,7 +650,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-models">Supported Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">System Requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-python">Deployment with Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-with-python">Deployment with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amd-gpus-mi300x-mi325x-mi355x">AMD GPUs (MI300X/MI325X/MI355X)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-deployment">Testing Deployment</a></li>
 </ul>
   </nav></div>
