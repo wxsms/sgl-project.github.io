@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=a5fe22f9"></script>
+    <script src="../../_static/documentation_options.js?v=b9708bb8"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Compatibility Matrix" href="../compatibility_matrix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 27, 2026"/>
+    <meta name="docbuild:last-update" content="Mar 02, 2026"/>
   </head>
   
   
@@ -568,6 +568,31 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">--num-frames</span> <span class="pre">{NUM_FRAMES}</span></code>: Number of frames to generate</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--fps</span> <span class="pre">{FPS}</span></code>: Frames per second for the saved output, if this is a video-generation task</p></li>
 </ul>
+<p><strong>Frame Interpolation</strong> (video only)</p>
+<p>Frame interpolation is a post-processing step that synthesizes new frames
+between each pair of consecutive generated frames, producing smoother
+motion without re-running the diffusion model. The <code class="docutils literal notranslate"><span class="pre">--frame-interpolation-exp</span></code>
+flag controls how many rounds of interpolation to apply: each round inserts one
+new frame into every gap between adjacent frames, so the output frame count
+follows the formula <strong>(N − 1) × 2^exp + 1</strong> (e.g. 5 original frames with
+<code class="docutils literal notranslate"><span class="pre">exp=1</span></code> → 4 gaps × 1 new frame + 5 originals = <strong>9</strong> frames; with <code class="docutils literal notranslate"><span class="pre">exp=2</span></code> →
+<strong>17</strong> frames).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--enable-frame-interpolation</span></code>: Enable frame interpolation. Model weights are downloaded automatically on first use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--frame-interpolation-exp</span> <span class="pre">{EXP}</span></code>: Interpolation exponent — <code class="docutils literal notranslate"><span class="pre">1</span></code> = 2× temporal resolution, <code class="docutils literal notranslate"><span class="pre">2</span></code> = 4×, etc. (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--frame-interpolation-scale</span> <span class="pre">{SCALE}</span></code>: RIFE inference scale; use <code class="docutils literal notranslate"><span class="pre">0.5</span></code> for high-resolution inputs to save memory (default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--frame-interpolation-model-path</span> <span class="pre">{PATH}</span></code>: Local directory or HuggingFace repo ID containing RIFE <code class="docutils literal notranslate"><span class="pre">flownet.pkl</span></code> weights (default: <code class="docutils literal notranslate"><span class="pre">elfgum/RIFE-4.22.lite</span></code>, downloaded automatically)</p></li>
+</ul>
+<p>Example — generate a 5-frame video and interpolate to 9 frames ((5 − 1) × 2¹ + 1 = 9):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A dog running through a park&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-frames<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-frame-interpolation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--frame-interpolation-exp<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
 <p><strong>Output Options</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--output-path</span> <span class="pre">{PATH}</span></code>: Directory to save the generated video</p></li>
@@ -947,7 +972,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 27, 2026.
+  Last updated on Mar 02, 2026.
   <br/>
 </p>
   </div>

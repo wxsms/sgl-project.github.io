@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a5fe22f9"></script>
+    <script src="../_static/documentation_options.js?v=b9708bb8"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="How to Support New Diffusion Models" href="support_new_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 27, 2026"/>
+    <meta name="docbuild:last-update" content="Mar 02, 2026"/>
   </head>
   
   
@@ -490,6 +490,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-ai-assisted-vibe-coding-prs">On AI-Assisted (“Vibe Coding”) PRs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-convention">Commit Message Convention</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-reporting">Performance Reporting</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-generate-a-report">How to Generate a Report</a></li>
@@ -510,6 +511,15 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="contributing-to-sglang-diffusion">
 <h1>Contributing to SGLang Diffusion<a class="headerlink" href="#contributing-to-sglang-diffusion" title="Link to this heading">#</a></h1>
 <p>This guide outlines the requirements for contributing to the SGLang Diffusion module (<code class="docutils literal notranslate"><span class="pre">sglang.multimodal_gen</span></code>).</p>
+<section id="on-ai-assisted-vibe-coding-prs">
+<h2>On AI-Assisted (“Vibe Coding”) PRs<a class="headerlink" href="#on-ai-assisted-vibe-coding-prs" title="Link to this heading">#</a></h2>
+<p>Vibe-coded PRs are welcome — we judge code quality, not how it was produced. The bar is the same for all PRs:</p>
+<ul class="simple">
+<li><p><strong>No over-commenting.</strong> If the name says it all, skip the docstring.</p></li>
+<li><p><strong>No over-catching.</strong> Don’t guard against errors that virtually never happen in practice.</p></li>
+<li><p><strong>Test before submitting.</strong> AI-generated code can be subtly wrong — verify correctness end-to-end.</p></li>
+</ul>
+</section>
 <section id="commit-message-convention">
 <h2>Commit Message Convention<a class="headerlink" href="#commit-message-convention" title="Link to this heading">#</a></h2>
 <p>We follow a structured commit message format to maintain a clean history.</p>
@@ -619,6 +629,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-ai-assisted-vibe-coding-prs">On AI-Assisted (“Vibe Coding”) PRs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-convention">Commit Message Convention</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-reporting">Performance Reporting</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-generate-a-report">How to Generate a Report</a></li>
@@ -658,7 +669,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 27, 2026.
+  Last updated on Mar 02, 2026.
   <br/>
 </p>
   </div>

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a5fe22f9"></script>
+    <script src="../_static/documentation_options.js?v=b9708bb8"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
     <link rel="prev" title="Attention Backend" href="attention_backend.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Feb 27, 2026"/>
+    <meta name="docbuild:last-update" content="Mar 02, 2026"/>
   </head>
   
   
@@ -500,7 +500,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-decoding">EAGLE Decoding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding">EAGLE-2 decoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding">EAGLE-2 Decoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding-with-torch-compile">EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding-via-frequency-ranked-speculative-sampling">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-3-decoding">EAGLE-3 Decoding</a></li>
@@ -521,13 +521,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oom-troubleshooting">OOM Troubleshooting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-reduce-draft-tree-size-most-effective">Step 1: Reduce draft tree size (most effective)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-lower-static-memory-fraction">Step 2: Lower static memory fraction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reduce-cuda-graph-batch-size">Step 3: Reduce CUDA graph batch size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-lower-static-memory-fraction-most-effective">Step 1: Lower static memory fraction (most effective)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-reduce-cuda-graph-batch-size">Step 2: Reduce CUDA graph batch size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reduce-draft-tree-size">Step 3: Reduce draft tree size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-limit-concurrent-requests">Step 4: Limit concurrent requests</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-use-quantization">Step 5: Use quantization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-use-a-smaller-dtype">Step 6: Use a smaller dtype</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-use-fr-spec-to-reduce-lm-head-memory-eagle-2-standalone">Step 7: Use FR-Spec to reduce lm_head memory (EAGLE-2 / STANDALONE)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-oom-recovery-recipe">Quick OOM recovery recipe</a></li>
 </ul>
 </li>
@@ -602,7 +599,7 @@ document.write(`
 <td><p>Same as EAGLE-2</p></td>
 <td class="text-right"><p>Typically yes</p></td>
 <td><p>Add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code> (optionally <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>)</p></td>
-<td><p>Further kernel-level optimizations</p></td>
+<td><p>Benefit varies by hardware/model; benchmark to verify</p></td>
 </tr>
 <tr class="row-even"><td><p>EAGLE-2 + FR-Spec</p></td>
 <td><p>Same as EAGLE-2 + token subset</p></td>
@@ -614,7 +611,7 @@ document.write(`
 <td><p>EAGLE3 draft model</p></td>
 <td class="text-right"><p>Yes</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE3</span></code> + <code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-path</span> <span class="pre">...</span></code></p></td>
-<td><p>Best throughput in the benchmark above</p></td>
+<td><p>Best throughput in the benchmark below</p></td>
 </tr>
 <tr class="row-even"><td><p>MTP</p></td>
 <td><p>Built-in multi-token heads (model-specific)</p></td>
@@ -732,8 +729,8 @@ For further details please see the <a class="reference external" href="https://a
 For <code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>, and <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>: leave all three unset to use auto-tuning, or set all three explicitly when tuning.</p>
 <p>You can find the best combinations of these parameters with <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/scripts/playground/bench_speculative.py">bench_speculative.py</a>.</p>
 <section id="eagle-2-decoding">
-<h3>EAGLE-2 decoding<a class="headerlink" href="#eagle-2-decoding" title="Link to this heading">#</a></h3>
-<p>You can enable EAGLE-2 decoding by setting <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code> and choosing an appropriate model.</p>
+<h3>EAGLE-2 Decoding<a class="headerlink" href="#eagle-2-decoding" title="Link to this heading">#</a></h3>
+<p>You can enable EAGLE-2 Decoding by setting <code class="docutils literal notranslate"><span class="pre">--speculative-algorithm</span> <span class="pre">EAGLE</span></code> and choosing an appropriate model.</p>
 <p><strong>Launch the server:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span><span class="se">\</span>
@@ -768,7 +765,8 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 <hr class="docutils" />
 <section id="eagle-2-decoding-with-torch-compile">
 <h3>EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code><a class="headerlink" href="#eagle-2-decoding-with-torch-compile" title="Link to this heading">#</a></h3>
-<p>You can also enable <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> for further optimizations and optionally set <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>:</p>
+<p>You can optionally enable <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code> to apply kernel-level optimizations (operator fusion, autotune) to the draft model. The actual speedup depends on your hardware, model architecture, and batch size. In some configurations (e.g., small draft models on H100 where cuBLAS is already optimal and CUDA graphs are enabled), the benefit may be negligible. We recommend benchmarking with and without this flag on your specific setup to verify whether it helps.</p>
+<p>To enable it, add <code class="docutils literal notranslate"><span class="pre">--enable-torch-compile</span></code> and optionally set <code class="docutils literal notranslate"><span class="pre">--torch-compile-max-bs</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model<span class="w"> </span>meta-llama/Llama-2-7b-chat-hf<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE<span class="w"> </span><span class="se">\</span>
@@ -803,8 +801,8 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 <hr class="docutils" />
 <section id="eagle-2-decoding-via-frequency-ranked-speculative-sampling">
 <h3>EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling<a class="headerlink" href="#eagle-2-decoding-via-frequency-ranked-speculative-sampling" title="Link to this heading">#</a></h3>
-<p>By employing a truncated high-frequency token vocabulary in the draft model, Eagle speculative decoding reduces <code class="docutils literal notranslate"><span class="pre">lm_head</span></code> computational overhead while accelerating the pipeline without quality degradation. For more details, checkout <a class="reference external" href="https://arxiv.org/pdf/2502.14856">the paper</a>.</p>
-<p>In our implementation, set <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code> to enable the optimization. You can get the high-frequency token in FR-Spec from <a class="reference external" href="https://huggingface.co/thunlp/LLaMA3-Instruct-8B-FR-Spec">this model</a>. Or you can obtain high-frequency token by directly downloading these token from <a class="reference external" href="https://github.com/thunlp/FR-Spec/tree/main?tab=readme-ov-file#prepare-fr-spec-vocabulary-subset">this repo</a>.</p>
+<p>By employing a truncated high-frequency token vocabulary in the draft model, EAGLE speculative decoding reduces <code class="docutils literal notranslate"><span class="pre">lm_head</span></code> computational overhead while accelerating the pipeline without quality degradation. For more details, check out <a class="reference external" href="https://arxiv.org/pdf/2502.14856">the paper</a>.</p>
+<p>In our implementation, set <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code> to enable the optimization. You can get the high-frequency tokens in FR-Spec from <a class="reference external" href="https://huggingface.co/thunlp/LLaMA3-Instruct-8B-FR-Spec">this model</a>. Or you can obtain high-frequency tokens by directly downloading these tokens from <a class="reference external" href="https://github.com/thunlp/FR-Spec/tree/main?tab=readme-ov-file#prepare-fr-spec-vocabulary-subset">this repo</a>.</p>
 <p>Thanks for the contribution from <a class="reference external" href="https://github.com/Achazwl">Weilin Zhao</a> and <a class="reference external" href="https://github.com/Zhou-sx">Zhousx</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span><span class="se">\</span>
@@ -877,7 +875,7 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 <hr class="docutils" />
 <section id="multi-token-prediction">
 <h2>Multi Token Prediction<a class="headerlink" href="#multi-token-prediction" title="Link to this heading">#</a></h2>
-<p>We support <a class="reference external" href="https://arxiv.org/pdf/2404.19737">MTP(Multi-Token Prediction)</a> in SGLang by using speculative decoding. We use <code class="docutils literal notranslate"><span class="pre">XiaomiMiMo/MiMo-7B-RL</span></code> as an example here (for DeepSeek MTP usage, refer to <a class="reference internal" href="../basic_usage/deepseek_v32.html#multi-token-prediction"><span class="std std-ref">deepseek_v32 doc</span></a>).</p>
+<p>We support <a class="reference external" href="https://arxiv.org/pdf/2404.19737">MTP (Multi-Token Prediction)</a> in SGLang by using speculative decoding. We use <code class="docutils literal notranslate"><span class="pre">XiaomiMiMo/MiMo-7B-RL</span></code> as an example here (for DeepSeek MTP usage, refer to <a class="reference internal" href="../basic_usage/deepseek_v32.html#multi-token-prediction"><span class="std std-ref">deepseek_v32 doc</span></a>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model<span class="w"> </span>XiaomiMiMo/MiMo-7B-RL<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
@@ -1307,33 +1305,35 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 <div><p>[!WARNING]
 <strong>Out of Memory (OOM)?</strong> Speculative decoding may increase GPU memory usage because the draft tree, CUDA graphs, and verification-related buffers consume additional VRAM. If you encounter OOM errors, try the following adjustments.</p>
 </div></blockquote>
-<section id="step-1-reduce-draft-tree-size-most-effective">
-<h3>Step 1: Reduce draft tree size (most effective)<a class="headerlink" href="#step-1-reduce-draft-tree-size-most-effective" title="Link to this heading">#</a></h3>
+<section id="step-1-lower-static-memory-fraction-most-effective">
+<h3>Step 1: Lower static memory fraction (most effective)<a class="headerlink" href="#step-1-lower-static-memory-fraction-most-effective" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.5<span class="w">   </span><span class="c1"># when omitted, this value is auto-computed</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> controls the memory budget for model weights + KV cache pool.</p></li>
+<li><p>Lowering it directly increases dynamic headroom for activations and CUDA graph buffers.</p></li>
+<li><p>If omitted, SGLang auto-estimates this value from other settings, and those auto settings can still be too aggressive for some workloads.</p></li>
+</ul>
+</section>
+<section id="step-2-reduce-cuda-graph-batch-size">
+<h3>Step 2: Reduce CUDA graph batch size<a class="headerlink" href="#step-2-reduce-cuda-graph-batch-size" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fewer CUDA graph captures = less memory reserved</span>
+--cuda-graph-max-bs<span class="w"> </span><span class="m">4</span><span class="w">   </span><span class="c1"># or even 2 for tight memory situations</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If omitted, <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code> is auto-selected based on GPU memory and TP size, and can be much larger on high-memory GPUs.</p></li>
+</ul>
+</section>
+<section id="step-3-reduce-draft-tree-size">
+<h3>Step 3: Reduce draft tree size<a class="headerlink" href="#step-3-reduce-draft-tree-size" title="Link to this heading">#</a></h3>
 <p>These three parameters directly control how much memory the draft tree consumes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Before (aggressive, high memory)</span>
 --speculative-num-steps<span class="w"> </span><span class="m">5</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">8</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">64</span>
 
 <span class="c1"># After (conservative, lower memory)</span>
---speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">16</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code></strong>: This is the single most impactful parameter. Reducing from 64 → 16 can cut draft-related memory by ~75%. Start here.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code></strong>: Reducing from 8 → 4 or even 2 halves the branching factor.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code></strong>: Reducing from 5 → 3 shortens the draft depth.</p></li>
-</ul>
-</section>
-<section id="step-2-lower-static-memory-fraction">
-<h3>Step 2: Lower static memory fraction<a class="headerlink" href="#step-2-lower-static-memory-fraction" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Give more room for dynamic allocations (CUDA graphs, draft model, etc.)</span>
---mem-fraction-static<span class="w"> </span><span class="m">0</span>.5<span class="w">   </span><span class="c1"># when omitted, this value is auto-computed</span>
-</pre></div>
-</div>
-</section>
-<section id="step-3-reduce-cuda-graph-batch-size">
-<h3>Step 3: Reduce CUDA graph batch size<a class="headerlink" href="#step-3-reduce-cuda-graph-batch-size" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fewer CUDA graph captures = less memory reserved</span>
---cuda-graph-max-bs<span class="w"> </span><span class="m">4</span><span class="w">   </span><span class="c1"># or even 2 for tight memory situations</span>
+--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span>
 </pre></div>
 </div>
 </section>
@@ -1344,31 +1344,6 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 </pre></div>
 </div>
 </section>
-<section id="step-5-use-quantization">
-<h3>Step 5: Use quantization<a class="headerlink" href="#step-5-use-quantization" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quantize the target model (if supported by your checkpoint/hardware)</span>
---quantization<span class="w"> </span>fp8
-
-<span class="c1"># Or quantize only the draft model (keep target at full precision)</span>
---speculative-draft-model-quantization<span class="w"> </span>fp8
-</pre></div>
-</div>
-</section>
-<section id="step-6-use-a-smaller-dtype">
-<h3>Step 6: Use a smaller dtype<a class="headerlink" href="#step-6-use-a-smaller-dtype" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--dtype<span class="w"> </span>float16<span class="w">   </span><span class="c1"># instead of bfloat16/float32 (when supported)</span>
-</pre></div>
-</div>
-</section>
-<section id="step-7-use-fr-spec-to-reduce-lm-head-memory-eagle-2-standalone">
-<h3>Step 7: Use FR-Spec to reduce lm_head memory (EAGLE-2 / STANDALONE)<a class="headerlink" href="#step-7-use-fr-spec-to-reduce-lm-head-memory-eagle-2-standalone" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--speculative-token-map<span class="w"> </span>thunlp/LLaMA3-Instruct-8B-FR-Spec/freq_32768.pt
-</pre></div>
-</div>
-<blockquote>
-<div><p>Note: For EAGLE-3, <code class="docutils literal notranslate"><span class="pre">--speculative-token-map</span></code> is ignored because EAGLE-3 models already provide built-in hot-token handling.</p>
-</div></blockquote>
-</section>
 <section id="quick-oom-recovery-recipe">
 <h3>Quick OOM recovery recipe<a class="headerlink" href="#quick-oom-recovery-recipe" title="Link to this heading">#</a></h3>
 <p>If you’re hitting OOM and just want something that works, start with this minimal configuration and scale up:</p>
@@ -1376,21 +1351,16 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 <span class="w">    </span>--model<span class="w"> </span>&lt;your-model&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-draft-model-path<span class="w"> </span>&lt;your-draft-model&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-eagle-topk<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--cuda-graph-max-bs<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--dtype<span class="w"> </span>float16<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--log-level<span class="w"> </span>warning
 </pre></div>
 </div>
-<p>Then gradually increase <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>, and <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code> until you find the sweet spot for your GPU.</p>
-<blockquote>
-<div><p>[!TIP]
-<strong>Memory budget rule of thumb</strong>: during automatic <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> estimation, STANDALONE reserves about 6 GB and EAGLE/EAGLE3 reserves about 2 GB as additional headroom. Plan your <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> accordingly.</p>
-</div></blockquote>
+<p>Then gradually increase <code class="docutils literal notranslate"><span class="pre">--speculative-num-draft-tokens</span></code>, <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span></code>, and <code class="docutils literal notranslate"><span class="pre">--cuda-graph-max-bs</span></code>. Increase <code class="docutils literal notranslate"><span class="pre">--mem-fraction-static</span></code> last, only after the run is stable.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1404,7 +1374,7 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 <li><p>EAGLE-3 removes the feature prediction objective, incorporates low and mid-layer features, and is trained in an on-policy manner.</p></li>
 </ul>
 <p>This enhances drafting accuracy by operating on features instead of tokens for more regular inputs and by additionally passing tokens from the next timestep to reduce sampling randomness. For more details, see the <a class="reference external" href="https://arxiv.org/abs/2406.16858">EAGLE-2</a> and <a class="reference external" href="https://arxiv.org/abs/2503.01840">EAGLE-3</a> papers.</p>
-<p>For guidance how to train your own EAGLE model please see the <a class="reference external" href="https://github.com/SafeAILab/EAGLE/tree/main?tab=readme-ov-file#train">EAGLE repo</a>.</p>
+<p>For guidance on how to train your own EAGLE model please see the <a class="reference external" href="https://github.com/SafeAILab/EAGLE/tree/main?tab=readme-ov-file#train">EAGLE repo</a>. For EAGLE-3 training specifically, check out <a class="reference external" href="https://github.com/sgl-project/SpecForge">SpecForge</a>, the SGLang team’s training framework designed for EAGLE-3 speculative decoding models with seamless porting to SGLang serving. See the <a class="reference external" href="https://docs.sglang.ai/SpecForge/">SpecForge documentation</a> and <a class="reference external" href="https://lmsys.org/blog/2025-07-25-spec-forge">blog post</a> for details.</p>
 </section>
 </section>
 
@@ -1461,7 +1431,7 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-decoding">EAGLE Decoding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding">EAGLE-2 decoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding">EAGLE-2 Decoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding-with-torch-compile">EAGLE-2 Decoding with <code class="docutils literal notranslate"><span class="pre">torch.compile</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-2-decoding-via-frequency-ranked-speculative-sampling">EAGLE-2 Decoding via Frequency-Ranked Speculative Sampling</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eagle-3-decoding">EAGLE-3 Decoding</a></li>
@@ -1482,13 +1452,10 @@ For <code class="docutils literal notranslate"><span class="pre">--speculative-n
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oom-troubleshooting">OOM Troubleshooting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-reduce-draft-tree-size-most-effective">Step 1: Reduce draft tree size (most effective)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-lower-static-memory-fraction">Step 2: Lower static memory fraction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reduce-cuda-graph-batch-size">Step 3: Reduce CUDA graph batch size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-lower-static-memory-fraction-most-effective">Step 1: Lower static memory fraction (most effective)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-reduce-cuda-graph-batch-size">Step 2: Reduce CUDA graph batch size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reduce-draft-tree-size">Step 3: Reduce draft tree size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-limit-concurrent-requests">Step 4: Limit concurrent requests</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-use-quantization">Step 5: Use quantization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-use-a-smaller-dtype">Step 6: Use a smaller dtype</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-use-fr-spec-to-reduce-lm-head-memory-eagle-2-standalone">Step 7: Use FR-Spec to reduce lm_head memory (EAGLE-2 / STANDALONE)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-oom-recovery-recipe">Quick OOM recovery recipe</a></li>
 </ul>
 </li>
@@ -1526,7 +1493,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Feb 27, 2026.
+  Last updated on Mar 02, 2026.
   <br/>
 </p>
   </div>
