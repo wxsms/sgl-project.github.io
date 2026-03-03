@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=3c6afccb"></script>
+    <script src="../../_static/documentation_options.js?v=219fd4a3"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/vlm_query.html">Query VLM with Offline Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/cuda_graph_for_multi_modal_encoder.html">Cuda Graph for Multi-Modal Encoder in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced_features/piecewise_cuda_graph.html">Piecewise CUDA Graph</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/sgl_model_gateway.html">SGLang Model Gateway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_features/observability.html">Observability</a></li>
@@ -552,8 +553,8 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">openai/gpt-oss-20b</span></code>, <code class="docutils literal notranslate"><span class="pre">openai/gpt-oss-120b</span></code></p></td>
 <td><p>OpenAI’s latest GPT-OSS series for complex reasoning, agentic tasks, and versatile developer use cases.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Qwen</strong> (3, 3MoE, 3Next, 2.5, 2 series)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-0.6B</span></code>, <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-30B-A3B</span></code> <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-Next-80B-A3B-Instruct</span> </code></p></td>
+<tr class="row-even"><td><p><strong>Qwen</strong> (3.5, 3, 3MoE, 3Next, 2.5, 2 series)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3.5-397B-A17B</span></code>, <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-0.6B</span></code>, <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3-30B-A3B</span></code></p></td>
 <td><p>Alibaba’s latest Qwen3 series for complex reasoning, language understanding, and generation tasks; Support for MoE variants along with previous generation 2.5, 2, etc. <a class="reference internal" href="#../advanced_features/separate_reasoning.ipynb"><span class="xref myst">SGLang provides Qwen3 specific reasoning parser</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Llama</strong> (2, 3.x, 4 series)</p></td>
