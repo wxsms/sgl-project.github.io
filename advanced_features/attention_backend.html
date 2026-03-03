@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f5ed86fa"></script>
+    <script src="../_static/documentation_options.js?v=556750c1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -972,6 +972,27 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <span class="w">  </span>--model<span class="w"> </span>deepseek-ai/DeepSeek-R1<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--attention-backend<span class="w"> </span>trtllm_mla<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--kv-cache-dtype<span class="w"> </span>fp8_e4m3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>TRTLLM MHA (Optimized for Blackwell Architecture, e.g., B200)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen3.5-35B-A3B-FP8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attention-backend<span class="w"> </span>trtllm_mha<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>TRTLLM MHA (XQA backend) (Optimized for SM90 and SM120, e.g., H20, H200, 5090)
+Note that TRTLLM XQA backend only works well for pagesize 64.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen3.5-35B-A3B-FP8<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--decode-attention-backend<span class="w"> </span>trtllm_mha<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--trust-remote-code
 </pre></div>
 </div>
