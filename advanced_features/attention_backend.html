@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=88fbd284"></script>
+    <script src="../_static/documentation_options.js?v=b5a6f9ad"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -494,6 +494,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-matrix">Support Matrix</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mha-backends">MHA Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mla-backends">MLA Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdn-attention-backends">GDN Attention Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental">Hybrid attention (different backends for prefill vs decode) (Experimental)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
 </ul>
@@ -785,6 +786,58 @@ You can test them according to your needs.</p>
 <li><p>TRTLLM MLA: page_size ∈ {32, 64}.</p></li>
 </ul>
 </section>
+<section id="gdn-attention-backends">
+<h3>GDN Attention Backends<a class="headerlink" href="#gdn-attention-backends" title="Link to this heading">#</a></h3>
+<p>GDN (Gated Delta Network) is a linear attention mechanism with O(n) complexity, used in hybrid models that alternate GDN linear attention layers with standard full attention layers. GDN is <strong>not</strong> selected via <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code>; it is automatically activated when the model architecture requires it (e.g., Qwen 3.5, Qwen 3 Next, Jet Nemotron, Jet VLM).</p>
+<p>The GDN linear attention layers have their own kernel backends, selected via <code class="docutils literal notranslate"><span class="pre">--linear-attn-backend</span></code> (default: <code class="docutils literal notranslate"><span class="pre">triton</span></code>). You can override the kernel per phase with <code class="docutils literal notranslate"><span class="pre">--linear-attn-decode-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">--linear-attn-prefill-backend</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Backend</strong></p></th>
+<th class="head"><p><strong>Decode</strong></p></th>
+<th class="head"><p><strong>Prefill / Extend</strong></p></th>
+<th class="head"><p><strong>Spec Decoding (Target Verify)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Triton (CUDA)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Triton (AMD/ROCm)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Triton (NPU)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Triton (CPU)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CuTe DSL (CUDA only)</strong></p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>❌</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>GDN models are hybrid: the full-attention layers still require a standard <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code>. Platform constraints for the full-attention backend on hybrid GDN models:</p>
+<ul class="simple">
+<li><p><strong>Blackwell (e.g., B200)</strong>: <code class="docutils literal notranslate"><span class="pre">triton</span></code>, <code class="docutils literal notranslate"><span class="pre">trtllm_mha</span></code>, or <code class="docutils literal notranslate"><span class="pre">fa4</span></code> only.</p></li>
+<li><p><strong>NPU (Ascend)</strong>: <code class="docutils literal notranslate"><span class="pre">ascend</span></code> only.</p></li>
+<li><p><strong>AMD (ROCm)</strong>: <code class="docutils literal notranslate"><span class="pre">triton</span></code> recommended.</p></li>
+<li><p><strong>Other CUDA (Hopper, Ampere, etc.)</strong>: auto-selection works; no special constraints.</p></li>
+</ul>
+</div>
+</section>
 <section id="hybrid-attention-different-backends-for-prefill-vs-decode-experimental">
 <h3>Hybrid attention (different backends for prefill vs decode) (Experimental)<a class="headerlink" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental" title="Link to this heading">#</a></h3>
 <div class="admonition warning">
@@ -1004,6 +1057,10 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 <p>To add a new attention backend, you can learn from the existing backends
 (<code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/triton_backend.py</span></code>, <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/flashattention_backend.py</span></code>)
 and follow the steps below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linear attention kernel backends (GDN, KDA) follow a different pattern. They implement <code class="docutils literal notranslate"><span class="pre">LinearAttnKernelBase</span></code> in <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/linear/kernels/</span></code> and are dispatched by <code class="docutils literal notranslate"><span class="pre">GDNKernelDispatcher</span></code> / <code class="docutils literal notranslate"><span class="pre">KDAKernelDispatcher</span></code> rather than registered via <code class="docutils literal notranslate"><span class="pre">&#64;register_attention_backend</span></code>.</p>
+</div>
 <ol class="arabic simple">
 <li><p>Run without cuda graph. Support the two forward functions</p>
 <ul class="simple">
@@ -1102,6 +1159,7 @@ and follow the steps below.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-matrix">Support Matrix</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mha-backends">MHA Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mla-backends">MLA Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdn-attention-backends">GDN Attention Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental">Hybrid attention (different backends for prefill vs decode) (Experimental)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
 </ul>
