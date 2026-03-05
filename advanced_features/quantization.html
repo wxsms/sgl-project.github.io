@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=6b981814"></script>
+    <script src="../_static/documentation_options.js?v=aceb22bd"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -491,6 +491,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-compatibility">Platform Compatibility</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-unsloth">Using Unsloth</a></li>
@@ -544,6 +545,118 @@ For popular pre-quantized models, please visit <a class="reference external" hre
 or <a class="reference external" href="https://huggingface.co/collections/neuralmagic">NeuralMagic</a> collections on HF for some
 popular quality validated quantized models. Quantized models must be validated via benchmarks post-quantization
 to guard against abnormal quantization loss regressions.</p>
+<section id="platform-compatibility">
+<h2>Platform Compatibility<a class="headerlink" href="#platform-compatibility" title="Link to this heading">#</a></h2>
+<p>The following table summarizes quantization method support across NVIDIA and AMD GPUs.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head text-center"><p>NVIDIA GPUs</p></th>
+<th class="head text-center"><p>AMD GPUs (MI300X/MI325X/MI350X)</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fp8</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Aiter or Triton backend on AMD</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mxfp4</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Requires CDNA3/CDNA4 with MXFP support; uses Aiter</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">blockwise_int8</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Triton-based, works on both platforms</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w8a8_int8</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w8a8_fp8</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Aiter or Triton FP8 on AMD</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">awq</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Uses Triton dequantize on AMD (vs. optimized CUDA kernels on NVIDIA)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gptq</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Uses Triton or vLLM kernels on AMD</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">compressed-tensors</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Aiter paths for FP8/MoE on AMD</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">quark</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>AMD Quark quantization; Aiter GEMM paths on AMD</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">auto-round</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>Platform-agnostic (Intel auto-round)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">quark_int4fp8_moe</span></code></p></td>
+<td class="text-center"><p>No</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td><p>AMD-only; online INT4-to-FP8 MoE quantization (CDNA3/CDNA4)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">awq_marlin</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>No</p></td>
+<td><p>Marlin kernels are CUDA-only</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gptq_marlin</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>No</p></td>
+<td><p>Marlin kernels are CUDA-only</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gguf</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>No</p></td>
+<td><p>CUDA-only kernels in sgl-kernel</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt</span></code> / <code class="docutils literal notranslate"><span class="pre">modelopt_fp8</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>No</p></td>
+<td><p>NVIDIA ModelOpt, requires NVIDIA hardware</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code></p></td>
+<td class="text-center"><p>Yes (Blackwell)</p></td>
+<td class="text-center"><p>No</p></td>
+<td><p>NVIDIA Blackwell only</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">petit_nvfp4</span></code></p></td>
+<td class="text-center"><p>Yes (Blackwell)</p></td>
+<td class="text-center"><p>No</p></td>
+<td><p>NVIDIA NvFP4, Blackwell only</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bitsandbytes</span></code></p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Experimental</p></td>
+<td><p>Depends on bitsandbytes ROCm support</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">torchao</span></code> (<code class="docutils literal notranslate"><span class="pre">int4wo</span></code>, etc.)</p></td>
+<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Partial</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int4wo</span></code> not supported on AMD; other methods may work</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>On AMD, several of these methods use <a class="reference external" href="https://github.com/ROCm/aiter">Aiter</a> for acceleration – set <code class="docutils literal notranslate"><span class="pre">SGLANG_USE_AITER=1</span></code> where noted. See <a class="reference internal" href="../platforms/amd_gpu.html"><span class="std std-doc">AMD GPU setup</span></a> for installation and configuration details.</p>
+</section>
 <section id="offline-quantization">
 <h2>Offline Quantization<a class="headerlink" href="#offline-quantization" title="Link to this heading">#</a></h2>
 <p>To load already quantized models, simply load the model weights and config. <strong>Again, if the model has been quantized offline,
@@ -1019,6 +1132,7 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-compatibility">Platform Compatibility</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-quantization">Offline Quantization</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-offline-model-quantization">Examples of Offline Model Quantization</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-unsloth">Using Unsloth</a></li>
