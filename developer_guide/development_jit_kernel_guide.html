@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d17385cf"></script>
+    <script src="../_static/documentation_options.js?v=53fb6590"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Development Guide Using Docker" href="development_guide_using_docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Mar 06, 2026"/>
+    <meta name="docbuild:last-update" content="Mar 07, 2026"/>
   </head>
   
   
@@ -510,6 +510,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-use-your-kernel">STEP 3: Use your kernel</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-include-library-reference">C++ Include Library Reference</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-utilities">Core Utilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-validation">Tensor Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-type-system">Math &amp; Type System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-access">Memory Access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-primitives">Parallel Primitives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reusable-kernel-templates">Reusable Kernel Templates</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -767,6 +776,149 @@ Create a new file at <a class="reference download internal" download="" href="..
 <p>For a complete, runnable example, refer to <a class="reference download internal" download="" href="../_downloads/46847f40d77a31c086f9198e3959b87f/test_add_constant.py"><span class="xref download myst">test_add_constant.py</span></a>.</p>
 </section>
 </section>
+<section id="c-include-library-reference">
+<h2>C++ Include Library Reference<a class="headerlink" href="#c-include-library-reference" title="Link to this heading">#</a></h2>
+<p>The JIT kernel framework provides a set of reusable C++ headers in
+<code class="docutils literal notranslate"><span class="pre">python/sglang/jit_kernel/include/sgl_kernel/</span></code>. Each header is designed
+to be lightweight and self-contained. Below is a summary of each header
+and its key APIs.</p>
+<section id="core-utilities">
+<h3>Core Utilities<a class="headerlink" href="#core-utilities" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">utils.h</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">host</span></code></p></td>
+<td><p>Host-side essentials: <code class="docutils literal notranslate"><span class="pre">RuntimeCheck</span></code>, <code class="docutils literal notranslate"><span class="pre">Panic</span></code>, <code class="docutils literal notranslate"><span class="pre">div_ceil</span></code>, <code class="docutils literal notranslate"><span class="pre">irange</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">utils.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device</span></code> / <code class="docutils literal notranslate"><span class="pre">host</span></code></p></td>
+<td><p>Type aliases (<code class="docutils literal notranslate"><span class="pre">fp16_t</span></code>, <code class="docutils literal notranslate"><span class="pre">bf16_t</span></code>, …), <code class="docutils literal notranslate"><span class="pre">SGL_DEVICE</span></code> macro, PDL helpers, <code class="docutils literal notranslate"><span class="pre">LaunchKernel</span></code>, <code class="docutils literal notranslate"><span class="pre">RuntimeDeviceCheck</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source_location.h</span></code></p></td>
+<td><p>(global)</p></td>
+<td><p>Portable <code class="docutils literal notranslate"><span class="pre">std::source_location</span></code> wrapper for error reporting</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">runtime.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">host::runtime</span></code></p></td>
+<td><p>CUDA runtime queries: <code class="docutils literal notranslate"><span class="pre">get_blocks_per_sm</span></code>, <code class="docutils literal notranslate"><span class="pre">get_sm_count</span></code>, <code class="docutils literal notranslate"><span class="pre">get_cc_major</span></code>, <code class="docutils literal notranslate"><span class="pre">get_runtime_version</span></code>, <code class="docutils literal notranslate"><span class="pre">get_available_dynamic_smem_per_block</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tensor-validation">
+<h3>Tensor Validation<a class="headerlink" href="#tensor-validation" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tensor.h</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">host</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TensorMatcher</span></code>, <code class="docutils literal notranslate"><span class="pre">SymbolicSize</span></code>, <code class="docutils literal notranslate"><span class="pre">SymbolicDType</span></code>, <code class="docutils literal notranslate"><span class="pre">SymbolicDevice</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="math-type-system">
+<h3>Math &amp; Type System<a class="headerlink" href="#math-type-system" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">math.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device::math</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">abs</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">rsqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, constants</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type.cuh</span></code></p></td>
+<td><p>(global) / <code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dtype_trait&lt;T&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">packed_t&lt;T&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">device::cast&lt;To&gt;(from)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="memory-access">
+<h3>Memory Access<a class="headerlink" href="#memory-access" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vec.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AlignedVector&lt;T,</span> <span class="pre">N&gt;</span></code> - vectorized load/store (up to 128-bit; 256-bit requires Blackwell GPUs)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tile.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device::tile</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Memory&lt;T&gt;</span></code> - cooperative tiled memory I/O (thread/warp/CTA)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="parallel-primitives">
+<h3>Parallel Primitives<a class="headerlink" href="#parallel-primitives" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">warp.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device::warp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reduce_sum</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce_max</span></code> via <code class="docutils literal notranslate"><span class="pre">__shfl_xor_sync</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cta.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device::cta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reduce_max</span></code> across warps via shared memory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">atomic.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">device::atomic</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">max</span></code> - atomic float max (CUDA + ROCm fallback)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="reusable-kernel-templates">
+<h3>Reusable Kernel Templates<a class="headerlink" href="#reusable-kernel-templates" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">impl/norm.cuh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">host::norm</span></code> / <code class="docutils literal notranslate"><span class="pre">device::norm</span></code></p></td>
+<td><p>RMSNorm building blocks (warp &amp; CTA paths, <code class="docutils literal notranslate"><span class="pre">StorageType</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -833,6 +985,15 @@ Create a new file at <a class="reference download internal" download="" href="..
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-use-your-kernel">STEP 3: Use your kernel</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-include-library-reference">C++ Include Library Reference</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-utilities">Core Utilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-validation">Tensor Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-type-system">Math &amp; Type System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-access">Memory Access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-primitives">Parallel Primitives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reusable-kernel-templates">Reusable Kernel Templates</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -866,7 +1027,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 06, 2026.
+  Last updated on Mar 07, 2026.
   <br/>
 </p>
   </div>
