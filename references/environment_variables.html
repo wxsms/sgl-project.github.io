@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0886e372"></script>
+    <script src="../_static/documentation_options.js?v=a0c684e9"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1055,6 +1055,10 @@ document.write(`
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_CUSTOM_TRITON_KERNEL_CACHE</span></code></p></td>
 <td><p>Use SGLang’s custom Triton kernel cache implementation for lower overheads (automatically enabled on CUDA)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_HICACHE_DECODE_OFFLOAD_STRIDE</span></code></p></td>
+<td><p>Decode-side incremental KV cache offload stride. Rounded down to a multiple of <code class="docutils literal notranslate"><span class="pre">--page-size</span></code> (min is <code class="docutils literal notranslate"><span class="pre">--page-size</span></code>). If unset/invalid/&lt;=0, it falls back to <code class="docutils literal notranslate"><span class="pre">--page-size</span></code>.</p></td>
+<td><p>Not set (uses <code class="docutils literal notranslate"><span class="pre">--page-size</span></code>)</p></td>
 </tr>
 </tbody>
 </table>
