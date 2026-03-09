@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=2f44236e"></script>
+    <script src="../_static/documentation_options.js?v=dce5417a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -820,6 +820,14 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_ENABLE_MTP_PRECOMPUTE_METADATA</span></code></p></td>
 <td><p>Precompute metadata that can be shared among different draft steps when MTP is enabled</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_FUSED_METADATA_COPY</span></code></p></td>
+<td><p>Control whether to use fused metadata copy kernel for cuda graph replay</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_NSA_PREFILL_DENSE_ATTN_KV_LEN_THRESHOLD</span></code></p></td>
+<td><p>When the maximum kv len in current prefill batch exceeds this value, the sparse mla kernel will be applied, else it falls back to dense MHA implementation. Default to the index topk of model (2048 for DeepSeek V3.2)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2048</span></code></p></td>
 </tr>
 </tbody>
 </table>
