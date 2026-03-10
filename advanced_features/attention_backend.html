@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=b2ea7bea"></script>
+    <script src="../_static/documentation_options.js?v=b74649b6"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,7 +55,7 @@
     <link rel="prev" title="Hyperparameter Tuning" href="hyperparameter_tuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Mar 09, 2026"/>
+    <meta name="docbuild:last-update" content="Mar 10, 2026"/>
   </head>
   
   
@@ -577,7 +577,7 @@ You can test them according to your needs.</p>
 </tr>
 <tr class="row-odd"><td><p><strong>Triton</strong></p></td>
 <td><p>❌</p></td>
-<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
@@ -626,7 +626,7 @@ You can test them according to your needs.</p>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
-<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Wave (ROCm)</strong></p></td>
@@ -644,7 +644,7 @@ You can test them according to your needs.</p>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
 <td><p>❌</p></td>
-<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Intel XPU</strong></p></td>
@@ -735,7 +735,7 @@ You can test them according to your needs.</p>
 <td><p>1</p></td>
 <td><p>❌</p></td>
 <td><p>✅</p></td>
-<td><p>❌</p></td>
+<td><p>✅</p></td>
 <td><p>❌</p></td>
 <td><p>❌</p></td>
 </tr>
@@ -757,7 +757,7 @@ You can test them according to your needs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>FlashAttention 4 supports both prefill and decode on SM90 (Hopper) and SM100 (Blackwell). On SM90, <code class="docutils literal notranslate"><span class="pre">page_size</span></code> must be 128.</p></li>
+<li><p>FlashAttention 4 supports both prefill and decode on SM90 (Hopper) and SM100 (Blackwell). FA4 MLA supports <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">1</span></code>; FA4 MHA requires <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">128</span></code>. On SM100, this is auto-enforced by the server; on SM90, users must set <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">128</span></code> manually.</p></li>
 <li><p>NSA is specifically designed for <a class="reference external" href="https://lmsys.org/blog/2025-09-29-deepseek-V32/">DeepSeek V3.2 DSA</a>.</p></li>
 </ul>
 </div>
@@ -773,9 +773,15 @@ You can test them according to your needs.</p>
 <p class="admonition-title">Tip</p>
 <p>Speculative decoding topk: <code class="docutils literal notranslate"><span class="pre">topk</span></code> is the number of draft tokens sampled per step from the draft model. <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">=</span> <span class="pre">1</span></code> follows classic EAGLE; <code class="docutils literal notranslate"><span class="pre">topk</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> explores multiple branches and requires backend support in both draft and verification paths.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Speculative Decoding V2 (Spec V2):</strong> Spec V2 uses overlap scheduling (<code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_SPEC_V2=True</span></code>) that benefits various attention backends. Requires <code class="docutils literal notranslate"><span class="pre">--speculative-eagle-topk</span> <span class="pre">1</span></code> and currently applies to EAGLE and EAGLE3.</p>
+<p><strong>Verified backends:</strong> TRTLLM MLA, TRTLLM MHA, FA3, Ascend (NPU), Triton.</p>
+<p><strong>Limited support:</strong> FlashInfer can run under Spec V2, but its plan stream (used for split-KV optimization) introduces a synchronization point that limits overlap benefits.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Page size controls how many tokens are grouped into a KV cache block. For the prefix cache to take effect, the number of tokens must fill at least one complete page. For example, if your prompt is only 32 tokens and <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">64</span></code>, it won’t fill a complete page and cannot be matched in the prefix cache (pages cannot be padded). With 65 tokens and <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">64</span></code>, only the first page of 64 tokens will be cached and matched; the remaining 1 token is discarded. Use <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">1</span></code> for maximum prefix reuse (token-level matching).</p>
+<p>Page size controls how many tokens are grouped into a KV cache block. For the prefix cache to take effect, the number of tokens must fill at least one complete page. For example, if your prompt is only 32 tokens and <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">64</span></code>, it won’t fill a complete page and cannot be matched in the prefix cache (pages cannot be padded). With 65 tokens and <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">64</span></code>, only the first page of 64 tokens will be cached and matched; the remaining 1 token is discarded. Use <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">1</span></code> for maximum prefix reuse (token-level matching). Note that higher page sizes generally improve attention kernel performance, so prefer <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> when prefix cache reuse is not critical.</p>
 </div>
 <p>Many backends that do not natively operate on pages can emulate <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> at the wrapper layer by expanding page tables to per-token indices. The “Page Size &gt; 1 (native)” column indicates true in-kernel paging. Some backends require fixed native page sizes and cannot be reduced/emulated differently: TRTLLM MHA (16/32/64), TRTLLM MLA (32/64), FlashMLA (64), Cutlass MLA (128), Ascend (128).</p>
 <p>MLA page-size constraints:</p>
@@ -890,7 +896,7 @@ If both are specified and differ, SGLang automatically enables a hybrid wrapper 
 <p><strong>2. MLA Models (e.g., DeepSeek V3)</strong></p>
 <ul class="simple">
 <li><p><strong>Hopper</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">fa3</span></code> (requires CUDA 12.3+).</p></li>
-<li><p><strong>Blackwell</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">trtllm_mla</span></code>.</p></li>
+<li><p><strong>Blackwell</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">flashinfer</span></code>; <code class="docutils literal notranslate"><span class="pre">trtllm_mla</span></code> is auto-selected for DeepSeek V3 models specifically.</p></li>
 <li><p><strong>Other Architectures</strong>: Defaults to <code class="docutils literal notranslate"><span class="pre">triton</span></code>.</p></li>
 </ul>
 </section>
@@ -1083,7 +1089,8 @@ and follow the steps below.</p>
 <p>Linear attention kernel backends (GDN, KDA) follow a different pattern. They implement <code class="docutils literal notranslate"><span class="pre">LinearAttnKernelBase</span></code> in <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/layers/attention/linear/kernels/</span></code> and are dispatched by <code class="docutils literal notranslate"><span class="pre">GDNKernelDispatcher</span></code> / <code class="docutils literal notranslate"><span class="pre">KDAKernelDispatcher</span></code> rather than registered via <code class="docutils literal notranslate"><span class="pre">&#64;register_attention_backend</span></code>.</p>
 </div>
 <ol class="arabic simple">
-<li><p>Run without cuda graph. Support the two forward functions</p>
+<li><p>Run without cuda graph. Support the two forward functions</p></li>
+</ol>
 <ul class="simple">
 <li><p>forward_extend</p>
 <ul>
@@ -1105,8 +1112,9 @@ and follow the steps below.</p>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>Run with cuda graph. It has two phases (capture and replay) and you need to implement three functions</p>
+<ol class="arabic simple" start="2">
+<li><p>Run with cuda graph. It has two phases (capture and replay) and you need to implement three functions</p></li>
+</ol>
 <ul class="simple">
 <li><p>init_cuda_graph_state</p>
 <ul>
@@ -1127,8 +1135,6 @@ and follow the steps below.</p>
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 </section>
 </section>
 
@@ -1229,7 +1235,7 @@ By SGLang Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 09, 2026.
+  Last updated on Mar 10, 2026.
   <br/>
 </p>
   </div>
