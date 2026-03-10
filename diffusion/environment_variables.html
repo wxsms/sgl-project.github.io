@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Caching Acceleration &#8212; SGLang</title>
+    <title>Apple MPS &#8212; SGLang</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4402c163"></script>
+    <script src="../_static/documentation_options.js?v=e96a81fe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -229,7 +229,8 @@
 <li class="toctree-l1"><a class="reference internal" href="support_new_models.html">How to Support New Diffusion Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to SGLang Diffusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ci_perf.html">Perf Baseline Generation Script</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Caching Acceleration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Apple MPS</a></li>
+
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
@@ -481,7 +482,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Caching Acceleration</h1>
+    <h1>Apple MPS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -491,7 +492,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Caching Acceleration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Apple MPS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#caching-acceleration">Caching Acceleration</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-dit-configuration">Cache-DiT Configuration</a></li>
 </ul>
 </li>
@@ -508,7 +510,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="caching-acceleration">
+  <section id="apple-mps">
+<h1>Apple MPS<a class="headerlink" href="#apple-mps" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_MLX</span></code></p></td>
+<td><p>not set</p></td>
+<td><p>Set to <code class="docutils literal notranslate"><span class="pre">1</span></code> to enable MLX fused Metal kernels for norm ops on MPS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="caching-acceleration">
 <h1>Caching Acceleration<a class="headerlink" href="#caching-acceleration" title="Link to this heading">#</a></h1>
 <p>These variables configure caching acceleration for Diffusion Transformer (DiT) models.
 SGLang supports multiple caching strategies - see <a class="reference internal" href="performance/cache/index.html"><span class="std std-doc">caching documentation</span></a> for an overview.</p>
@@ -661,7 +681,8 @@ SGLang supports multiple caching strategies - see <a class="reference internal" 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Caching Acceleration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Apple MPS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#caching-acceleration">Caching Acceleration</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-dit-configuration">Cache-DiT Configuration</a></li>
 </ul>
 </li>

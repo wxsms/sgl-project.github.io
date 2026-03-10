@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=4402c163"></script>
+    <script src="../_static/documentation_options.js?v=e96a81fe"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -229,7 +229,8 @@
 <li class="toctree-l1"><a class="reference internal" href="support_new_models.html">How to Support New Diffusion Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to SGLang Diffusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ci_perf.html">Perf Baseline Generation Script</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Caching Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Apple MPS</a></li>
+
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
@@ -500,6 +501,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-rocm-amd-gpus">Platform-Specific: ROCm (AMD GPUs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-musa-moore-threads-gpus">Platform-Specific: MUSA (Moore Threads GPUs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-ascend-npu">Platform-Specific: Ascend NPU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-apple-mps">Platform-Specific: Apple MPS</a></li>
 </ul>
             </nav>
         </div>
@@ -578,7 +580,7 @@ Replace <code class="docutils literal notranslate"><span class="pre">&lt;secret&
 </section>
 <section id="platform-specific-musa-moore-threads-gpus">
 <h2>Platform-Specific: MUSA (Moore Threads GPUs)<a class="headerlink" href="#platform-specific-musa-moore-threads-gpus" title="Link to this heading">#</a></h2>
-<p>For Moore Threads GPUs (MTGPU) with the MUSA software stack:</p>
+<p>For Moore Threads GPUs (MTGPU) with the MUSA software stack, please follow the instructions below to install from source:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
 <span class="nb">cd</span><span class="w"> </span>sglang
@@ -597,6 +599,30 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span>--model-path<span class="w"> </span>black-forest-labs/FLUX.1-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--prompt<span class="w"> </span><span class="s2">&quot;A logo With Bold Large text: SGL Diffusion&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--save-output
+</pre></div>
+</div>
+</section>
+<section id="platform-specific-apple-mps">
+<h2>Platform-Specific: Apple MPS<a class="headerlink" href="#platform-specific-apple-mps" title="Link to this heading">#</a></h2>
+<p>For Apple MPS, please follow the instructions below to install from source:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install ffmpeg</span>
+brew<span class="w"> </span>install<span class="w"> </span>ffmpeg
+
+<span class="c1"># Install uv</span>
+brew<span class="w"> </span>install<span class="w"> </span>uv
+
+<span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
+
+<span class="c1"># Create and activate a virtual environment</span>
+uv<span class="w"> </span>venv<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.11<span class="w"> </span>sglang-diffusion
+<span class="nb">source</span><span class="w"> </span>sglang-diffusion/bin/activate
+
+<span class="c1"># Install the Python packages</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+rm<span class="w"> </span>-f<span class="w"> </span>python/pyproject.toml<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_mps]&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -656,6 +682,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-rocm-amd-gpus">Platform-Specific: ROCm (AMD GPUs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-musa-moore-threads-gpus">Platform-Specific: MUSA (Moore Threads GPUs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-ascend-npu">Platform-Specific: Ascend NPU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-apple-mps">Platform-Specific: Apple MPS</a></li>
 </ul>
   </nav></div>
 

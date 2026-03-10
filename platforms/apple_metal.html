@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contributing to SGLang Diffusion &#8212; SGLang</title>
+    <title>Apple Silicon with Metal &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,10 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'diffusion/contributing';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/apple_metal';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Perf Baseline Generation Script" href="ci_perf.html" />
-    <link rel="prev" title="How to Support New Diffusion Models" href="support_new_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Mar 10, 2026"/>
@@ -115,6 +113,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -214,33 +214,33 @@
 <li class="toctree-l1"><a class="reference internal" href="../supported_models/extending/index.html">Extending SGLang</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">SGLang Diffusion</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="index.html">SGLang Diffusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Install SGLang-Diffusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compatibility_matrix.html">Compatibility Matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/cli.html">SGLang diffusion CLI Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/openai_api.html">SGLang Diffusion OpenAI API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance/index.html">Performance Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance/attention_backends.html">Attention Backends</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance/profiling.html">Profiling Multimodal Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance/cache/index.html">Caching Acceleration for Diffusion Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance/cache/cache_dit.html">Cache-DiT Acceleration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance/cache/teacache.html">TeaCache Acceleration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support_new_models.html">How to Support New Diffusion Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing to SGLang Diffusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ci_perf.html">Perf Baseline Generation Script</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Apple MPS</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/index.html">SGLang Diffusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/installation.html">Install SGLang-Diffusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/compatibility_matrix.html">Compatibility Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/api/cli.html">SGLang diffusion CLI Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/api/openai_api.html">SGLang Diffusion OpenAI API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/performance/index.html">Performance Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/performance/attention_backends.html">Attention Backends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/performance/profiling.html">Profiling Multimodal Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/performance/cache/index.html">Caching Acceleration for Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/performance/cache/cache_dit.html">Cache-DiT Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/performance/cache/teacache.html">TeaCache Acceleration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/support_new_models.html">How to Support New Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/contributing.html">Contributing to SGLang Diffusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/ci_perf.html">Perf Baseline Generation Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diffusion/environment_variables.html">Apple MPS</a></li>
 
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware Platforms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../platforms/amd_gpu.html">AMD GPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/cpu_server.html">CPU Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/tpu.html">TPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/ascend_npu_support.html">Ascend NPUs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platforms/xpu.html">XPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amd_gpu.html">AMD GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpu_server.html">CPU Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpu.html">TPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_jetson.html">NVIDIA Jetson Orin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ascend_npu_support.html">Ascend NPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpu.html">XPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -334,7 +334,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/diffusion/contributing.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/platforms/apple_metal.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +351,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/diffusion/contributing.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/platforms/apple_metal.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +368,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fdiffusion/contributing.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fplatforms/apple_metal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +398,7 @@
       
       
       
-      <li><a href="../_sources/diffusion/contributing.md" target="_blank"
+      <li><a href="../_sources/platforms/apple_metal.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -482,7 +482,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Contributing to SGLang Diffusion</h1>
+    <h1>Apple Silicon with Metal</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -492,13 +492,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-ai-assisted-vibe-coding-prs">On AI-Assisted (“Vibe Coding”) PRs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-convention">Commit Message Convention</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-reporting">Performance Reporting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-generate-a-report">How to Generate a Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang">Install SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-based-change-protection">CI-Based Change Protection</a></li>
 </ul>
             </nav>
         </div>
@@ -510,79 +507,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="contributing-to-sglang-diffusion">
-<h1>Contributing to SGLang Diffusion<a class="headerlink" href="#contributing-to-sglang-diffusion" title="Link to this heading">#</a></h1>
-<p>This guide outlines the requirements for contributing to the SGLang Diffusion module (<code class="docutils literal notranslate"><span class="pre">sglang.multimodal_gen</span></code>).</p>
-<section id="on-ai-assisted-vibe-coding-prs">
-<h2>On AI-Assisted (“Vibe Coding”) PRs<a class="headerlink" href="#on-ai-assisted-vibe-coding-prs" title="Link to this heading">#</a></h2>
-<p>Vibe-coded PRs are welcome — we judge code quality, not how it was produced. The bar is the same for all PRs:</p>
-<ul class="simple">
-<li><p><strong>No over-commenting.</strong> If the name says it all, skip the docstring.</p></li>
-<li><p><strong>No over-catching.</strong> Don’t guard against errors that virtually never happen in practice.</p></li>
-<li><p><strong>Test before submitting.</strong> AI-generated code can be subtly wrong — verify correctness end-to-end.</p></li>
-</ul>
-</section>
-<section id="commit-message-convention">
-<h2>Commit Message Convention<a class="headerlink" href="#commit-message-convention" title="Link to this heading">#</a></h2>
-<p>We follow a structured commit message format to maintain a clean history.</p>
-<p><strong>Format:</strong></p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[diffusion] &lt;scope&gt;: &lt;subject&gt;
+  <section class="tex2jax_ignore mathjax_ignore" id="apple-silicon-with-metal">
+<h1>Apple Silicon with Metal<a class="headerlink" href="#apple-silicon-with-metal" title="Link to this heading">#</a></h1>
+<p>This document describes how run SGLang on Apple Silicon using <a class="reference external" href="https://developer.apple.com/metal/">Metal</a>. If you encounter issues or have questions, please <a class="reference external" href="https://github.com/sgl-project/sglang/issues">open an issue</a>.</p>
+<section id="install-sglang">
+<h2>Install SGLang<a class="headerlink" href="#install-sglang" title="Link to this heading">#</a></h2>
+<p>You can install SGLang using one of the methods below.</p>
+<section id="install-from-source">
+<h3>Install from Source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the default branch</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sgl-project/sglang.git
+<span class="nb">cd</span><span class="w"> </span>sglang
+
+<span class="c1"># Install sglang python package</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+rm<span class="w"> </span>-f<span class="w"> </span>python/pyproject.toml<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>python/pyproject_other.toml<span class="w"> </span>python/pyproject.toml
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;python[all_mps]&quot;</span>
 </pre></div>
 </div>
-<p><strong>Examples:</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[diffusion]</span> <span class="pre">cli:</span> <span class="pre">add</span> <span class="pre">--perf-dump-path</span> <span class="pre">argument</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[diffusion]</span> <span class="pre">scheduler:</span> <span class="pre">fix</span> <span class="pre">deadlock</span> <span class="pre">in</span> <span class="pre">batch</span> <span class="pre">processing</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[diffusion]</span> <span class="pre">model:</span> <span class="pre">support</span> <span class="pre">Stable</span> <span class="pre">Diffusion</span> <span class="pre">3.5</span></code></p></li>
-</ul>
-<p><strong>Rules:</strong></p>
-<ul class="simple">
-<li><p><strong>Prefix</strong>: Always start with <code class="docutils literal notranslate"><span class="pre">[diffusion]</span></code>.</p></li>
-<li><p><strong>Scope</strong> (Optional): <code class="docutils literal notranslate"><span class="pre">cli</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduler</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">pipeline</span></code>, <code class="docutils literal notranslate"><span class="pre">docs</span></code>, etc.</p></li>
-<li><p><strong>Subject</strong>: Imperative mood, short and clear (e.g., “add feature” not “added feature”).</p></li>
-</ul>
 </section>
-<section id="performance-reporting">
-<h2>Performance Reporting<a class="headerlink" href="#performance-reporting" title="Link to this heading">#</a></h2>
-<p>For PRs that impact <strong>latency</strong>, <strong>throughput</strong>, or <strong>memory usage</strong>, you <strong>should</strong> provide a performance comparison report.</p>
-<section id="how-to-generate-a-report">
-<h3>How to Generate a Report<a class="headerlink" href="#how-to-generate-a-report" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Baseline</strong>: run the benchmark (for a single generation task)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sglang<span class="w"> </span>generate<span class="w"> </span>--model-path<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--prompt<span class="w"> </span><span class="s2">&quot;A benchmark prompt&quot;</span><span class="w"> </span>--perf-dump-path<span class="w"> </span>baseline.json
-</pre></div>
-</div>
-</li>
-<li><p><strong>New</strong>: run the same benchmark, without modifying any server_args or sampling_params</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sglang<span class="w"> </span>generate<span class="w"> </span>--model-path<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--prompt<span class="w"> </span><span class="s2">&quot;A benchmark prompt&quot;</span><span class="w"> </span>--perf-dump-path<span class="w"> </span>new.json
-</pre></div>
-</div>
-</li>
-<li><p><strong>Compare</strong>: run the compare script, which will print a Markdown table to the console</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>python/sglang/multimodal_gen/benchmarks/compare_perf.py<span class="w"> </span>baseline.json<span class="w"> </span>new.json<span class="w"> </span><span class="o">[</span>new2.json<span class="w"> </span>...<span class="o">]</span>
-<span class="c1">### Performance Comparison Report</span>
-...
-</pre></div>
-</div>
-</li>
-<li><p><strong>Paste</strong>: paste the table into the PR description</p></li>
-</ol>
-</section>
-</section>
-<section id="ci-based-change-protection">
-<h2>CI-Based Change Protection<a class="headerlink" href="#ci-based-change-protection" title="Link to this heading">#</a></h2>
-<p>Consider adding tests to the <code class="docutils literal notranslate"><span class="pre">pr-test</span></code> or <code class="docutils literal notranslate"><span class="pre">nightly-test</span></code> suites to safeguard your changes, especially for PRs that:</p>
-<ul class="simple">
-<li><p>support a new model</p>
-<ul>
-<li><p>add a testcase for this new model to <code class="docutils literal notranslate"><span class="pre">testcase_configs.py</span></code></p></li>
-</ul>
-</li>
-<li><p>support or fix important features</p></li>
-<li><p>significantly improve performance</p></li>
-</ul>
-<p>Please run the according testcase, then update/add the baseline to <code class="docutils literal notranslate"><span class="pre">perf_baselines.json</span></code> by following the instruction in console if applicable.</p>
-<p>See <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/python/sglang/multimodal_gen/test">test</a> for examples</p>
 </section>
 </section>
 
@@ -597,24 +540,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="support_new_models.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How to Support New Diffusion Models</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="ci_perf.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Perf Baseline Generation Script</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -631,13 +556,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-ai-assisted-vibe-coding-prs">On AI-Assisted (“Vibe Coding”) PRs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-convention">Commit Message Convention</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-reporting">Performance Reporting</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-generate-a-report">How to Generate a Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sglang">Install SGLang</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from Source</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-based-change-protection">CI-Based Change Protection</a></li>
 </ul>
   </nav></div>
 
