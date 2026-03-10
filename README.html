@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=58cf1c5b"></script>
+    <script src="_static/documentation_options.js?v=5022b29c"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -524,7 +524,13 @@ Most documentation files are located under the <code class="docutils literal not
 <h2>Docs Workflow<a class="headerlink" href="#docs-workflow" title="Link to this heading">#</a></h2>
 <section id="install-dependency">
 <h3>Install Dependency<a class="headerlink" href="#install-dependency" title="Link to this heading">#</a></h3>
+<p><strong>Linux:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pandoc<span class="w"> </span>parallel<span class="w"> </span>retry
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p><strong>macOS:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>pandoc<span class="w"> </span>parallel<span class="w"> </span>retry
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
