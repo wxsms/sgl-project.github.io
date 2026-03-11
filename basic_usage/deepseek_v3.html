@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=11dae230"></script>
+    <script src="../_static/documentation_options.js?v=9ee328ac"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -643,7 +643,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#using-docker-recommended">8 x H200</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-one-b200-node">4 x B200, 8 x B200</a></p></li>
 <li><p><a class="reference internal" href="../platforms/amd_gpu.html#running-deepseek-v3"><span class="std std-ref">8 x MI300X</span></a></p></li>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h208-nodes">2 x 8 x H200</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h2008-nodes-and-docker">2 x 8 x H200</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-four-a1008-nodes">4 x 8 x A100</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-8-a100a800-with-awq-quantization">8 x A100 (AWQ)</a></p></li>
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-16-a100a800-with-int8-quantization">16 x A100 (INT8)</a></p></li>
@@ -714,7 +714,7 @@ For an overview of the implemented features see the completed <a class="referenc
 <section id="multi-node-tensor-parallelism">
 <h3>Multi-Node Tensor Parallelism<a class="headerlink" href="#multi-node-tensor-parallelism" title="Link to this heading">#</a></h3>
 <p><strong>Description</strong>: For users with limited memory on a single node, SGLang supports serving DeepSeek Series Models, including DeepSeek V3, across multiple nodes using tensor parallelism. This approach partitions the model parameters across multiple GPUs or nodes to handle models that are too large for one node’s memory.</p>
-<p><strong>Usage</strong>: Check <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-2-h208">here</a> for usage examples.</p>
+<p><strong>Usage</strong>: Check <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/benchmark/deepseek_v3#example-serving-with-two-h2008-nodes-and-docker">here</a> for usage examples.</p>
 </section>
 <section id="block-wise-fp8">
 <h3>Block-wise FP8<a class="headerlink" href="#block-wise-fp8" title="Link to this heading">#</a></h3>
