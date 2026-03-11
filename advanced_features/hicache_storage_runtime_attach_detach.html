@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=973f4f5f"></script>
+    <script src="../_static/documentation_options.js?v=f5a67fbc"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -573,11 +573,11 @@ document.write(`
 <hr class="docutils" />
 <section id="idle-state-requirement-strict">
 <h2>2. Idle-state requirement (strict)<a class="headerlink" href="#idle-state-requirement-strict" title="Link to this heading">#</a></h2>
-<p>The Scheduler uses a stricter <code class="docutils literal notranslate"><span class="pre">_is_idle_for_hicache_storage_op()</span></code>:</p>
+<p>The Scheduler uses <code class="docutils literal notranslate"><span class="pre">is_fully_idle()</span></code> which checks:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">_is_no_request()</span></code> is true (covers running/overlap/pp/disagg and other active states)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">waiting_queue</span></code> is empty</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grammar_queue</span></code> is empty (if the grammar backend is enabled)</p></li>
+<li><p>No running batches (including chunked prefill, overlap, pipeline-parallel, and disaggregation paths)</p></li>
+<li><p>No waiting requests in any queue (waiting, grammar, disagg bootstrap/prealloc/transfer/inflight)</p></li>
+<li><p>No DLLM staging requests</p></li>
 </ul>
 <p>If the condition is not met, attach/detach returns an error like:</p>
 <ul class="simple">
