@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0611b7a2"></script>
+    <script src="../_static/documentation_options.js?v=11dae230"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -496,6 +496,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mha-backends">MHA Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mla-backends">MLA Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdn-attention-backends">GDN Attention Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-attention-backend-nsa">DSA Attention Backend (NSA)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental">Hybrid attention (different backends for prefill vs decode) (Experimental)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
 </ul>
@@ -759,7 +760,7 @@ You can test them according to your needs.</p>
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>FlashAttention 4 supports both prefill and decode on SM90 (Hopper) and SM100 (Blackwell). FA4 MLA supports <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">1</span></code>; FA4 MHA requires <code class="docutils literal notranslate"><span class="pre">page_size</span> <span class="pre">=</span> <span class="pre">128</span></code>. On SM100, this is auto-enforced by the server; on SM90, users must set <code class="docutils literal notranslate"><span class="pre">--page-size</span> <span class="pre">128</span></code> manually.</p></li>
-<li><p>NSA is specifically designed for <a class="reference external" href="https://lmsys.org/blog/2025-09-29-deepseek-V32/">DeepSeek V3.2 DSA</a>.</p></li>
+<li><p>NSA is specifically designed for <a class="reference external" href="https://lmsys.org/blog/2025-09-29-deepseek-V32/">DeepSeek V3.2 DSA</a>. See the <a class="reference internal" href="#dsa-attention-backend-nsa"><span class="std std-ref">DSA Attention Backend (NSA)</span></a> section and <a class="reference internal" href="../basic_usage/deepseek_v32.html"><span class="std std-doc">DeepSeek V3.2 deployment guide</span></a> for details.</p></li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -844,6 +845,59 @@ You can test them according to your needs.</p>
 <li><p><strong>Other CUDA (Hopper, Ampere, etc.)</strong>: auto-selection works; no special constraints.</p></li>
 </ul>
 </div>
+</section>
+<section id="dsa-attention-backend-nsa">
+<h3>DSA Attention Backend (NSA)<a class="headerlink" href="#dsa-attention-backend-nsa" title="Link to this heading">#</a></h3>
+<p>DSA (Deepseek Sparse Attention) is a native sparse attention mechanism used by <a class="reference external" href="https://lmsys.org/blog/2025-09-29-deepseek-V32/">DeepSeek V3.2</a>. It is activated automatically when the model architecture requires it and is selected via <code class="docutils literal notranslate"><span class="pre">--attention-backend</span> <span class="pre">nsa</span></code>.</p>
+<p>Internally, the NSA backend dispatches to different sub-backends for prefill and decode phases. You can override these with <code class="docutils literal notranslate"><span class="pre">--nsa-prefill-backend</span></code> and <code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Sub-backend</strong></p></th>
+<th class="head"><p><strong>Prefill</strong></p></th>
+<th class="head"><p><strong>Decode</strong></p></th>
+<th class="head"><p><strong>Notes</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>flashmla_sparse</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>Default prefill on Hopper and Blackwell (bf16)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>flashmla_kv</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>Default decode for FP8 on Blackwell with DP</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>flashmla_auto</strong></p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+<td><p>Auto-selects flashmla_sparse or flashmla_kv based on kv_cache_dtype</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>fa3</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>Default decode on Hopper (bf16)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>trtllm</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>Default decode on Blackwell (bf16); default for both on Blackwell without DP</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tilelang</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>Default on AMD (ROCm)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>aiter</strong></p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>AMD-specific kernel library (requires aiter package)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For deployment examples, see the <a class="reference internal" href="../basic_usage/deepseek_v32.html"><span class="std std-doc">DeepSeek V3.2 deployment guide</span></a>.</p>
 </section>
 <section id="hybrid-attention-different-backends-for-prefill-vs-decode-experimental">
 <h3>Hybrid attention (different backends for prefill vs decode) (Experimental)<a class="headerlink" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental" title="Link to this heading">#</a></h3>
@@ -1188,6 +1242,7 @@ and follow the steps below.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mha-backends">MHA Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mla-backends">MLA Backends</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdn-attention-backends">GDN Attention Backends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dsa-attention-backend-nsa">DSA Attention Backend (NSA)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-attention-different-backends-for-prefill-vs-decode-experimental">Hybrid attention (different backends for prefill vs decode) (Experimental)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#speculative-decoding-with-hybrid-attention">Speculative decoding with hybrid attention</a></li>
 </ul>
