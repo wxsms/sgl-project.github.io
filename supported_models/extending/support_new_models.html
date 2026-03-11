@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=f08289a5"></script>
+    <script src="../../_static/documentation_options.js?v=0611b7a2"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -574,7 +574,7 @@ other mllm implementations. These models demonstrate how to correctly handle bot
 should give the same text output and very similar prefill logits:</p>
 <ul>
 <li><p>Get the reference output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/playground/reference_hf.py<span class="w"> </span>--model-path<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>model<span class="o">]</span><span class="w"> </span>--model-type<span class="w"> </span><span class="o">{</span>text,mllm<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>scripts/playground/reference_hf.py<span class="w"> </span>--model-path<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>model<span class="o">]</span><span class="w"> </span>--model-type<span class="w"> </span><span class="o">{</span>text,vlm<span class="o">}</span>
 </pre></div>
 </div>
 </li>
@@ -588,7 +588,7 @@ should give the same text output and very similar prefill logits:</p>
 <section id="add-the-model-to-the-test-suite">
 <h3>Add the Model to the Test Suite<a class="headerlink" href="#add-the-model-to-the-test-suite" title="Link to this heading">#</a></h3>
 <p>To ensure the new model is well maintained, add it to the test suite by including it in the <code class="docutils literal notranslate"><span class="pre">ALL_OTHER_MODELS</span></code> list in
-the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/models/test_generation_models.py">test_generation_models.py</a>
+the <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/registered/models/test_generation_models.py">test_generation_models.py</a>
 file, test the new model on your local machine and report the results on demonstrative benchmarks (GSM8K, MMLU, MMMU,
 MMMU-Pro, etc.) in your PR. \
 For VLMs, also include a test in <code class="docutils literal notranslate"><span class="pre">test_vision_openai_server_{x}.py</span></code> (e.g. <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_vision_openai_server_a.py">test_vision_openai_server_a.py</a>, <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/srt/test_vision_openai_server_b.py">test_vision_openai_server_b.py</a>).</p>
