@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=be1b3f97"></script>
+    <script src="../../_static/documentation_options.js?v=ae194b02"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -712,6 +712,7 @@ document.write(`
 <section id="common-pitfalls">
 <h3>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h3>
 <ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">--chat-template</span></code> is required.</strong> Without <code class="docutils literal notranslate"><span class="pre">--chat-template</span> <span class="pre">examples/chat_template/qwen3_reranker.jinja</span></code>, the server does not recognize the model as a decoder-only reranker and returns a 400 error: <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">model</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">appear</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">an</span> <span class="pre">embedding</span> <span class="pre">model</span> <span class="pre">by</span> <span class="pre">default.</span> <span class="pre">Please</span> <span class="pre">add</span> </code>–is-embedding<code class="docutils literal notranslate"><span class="pre">...&quot;</span></code>. The fix is to add the chat template flag, NOT <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code>.</p></li>
 <li><p>If you launch Qwen3-Reranker with <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code>, <code class="docutils literal notranslate"><span class="pre">/v1/rerank</span></code> cannot compute yes/no logprob scores. Relaunch <strong>without</strong> <code class="docutils literal notranslate"><span class="pre">--is-embedding</span></code>.</p></li>
 <li><p>If you see a validation error like “score should be a valid number” and the backend returned a list, upgrade to a version that coerces <code class="docutils literal notranslate"><span class="pre">embedding[0]</span></code> into <code class="docutils literal notranslate"><span class="pre">score</span></code> for rerank responses.</p></li>
 </ul>
