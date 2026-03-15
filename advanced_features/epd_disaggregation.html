@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=93dabf66"></script>
+    <script src="../_static/documentation_options.js?v=2cc381c3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -493,7 +493,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-and-what-is-epd-disaggregation">Why and What is EPD Disaggregation?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder-transfer-with-mooncake">Encoder transfer with Mooncake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-multimodal-embedding-cache-with-mooncake">Global multimodal embedding cache with Mooncake</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen-vl">Qwen VL</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-encoder-epd">gRPC Encoder (EPD)</a></li>
 </ul>
@@ -524,6 +526,74 @@ The Encoder stage performs vision preprocessing and ViT-based image encoding, wh
 <p>You can launch a language-only model using <code class="docutils literal notranslate"><span class="pre">--language-only</span></code>, or an encoder-only model using <code class="docutils literal notranslate"><span class="pre">--encoder-only</span></code>.
 When launching a language-only model, you must additionally specify the encoder service endpoints via <code class="docutils literal notranslate"><span class="pre">--encoder-urls</span></code>.</p>
 <p>We support multiple encoder transfer backends, including zmq_to_scheduler, zmq_to_tokenizer, and mooncake (the default is zmq_to_scheduler). The backend can be selected using <code class="docutils literal notranslate"><span class="pre">--encoder-transfer-backend</span></code>.</p>
+</section>
+<section id="encoder-transfer-with-mooncake">
+<h3>Encoder transfer with Mooncake<a class="headerlink" href="#encoder-transfer-with-mooncake" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">--encoder-transfer-backend</span> <span class="pre">mooncake</span></code> controls <strong>how encoder outputs are transferred</strong> between encoder and language/prefill services. It is an encoder transfer option and can be used independently of the global multimodal embedding cache.</p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># encoder</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--encoder-only<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--encoder-transfer-backend<span class="w"> </span>mooncake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+
+<span class="c1"># language-only server</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--language-only<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--encoder-urls<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--encoder-transfer-backend<span class="w"> </span>mooncake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30002</span>
+</pre></div>
+</div>
+</section>
+<section id="global-multimodal-embedding-cache-with-mooncake">
+<h3>Global multimodal embedding cache with Mooncake<a class="headerlink" href="#global-multimodal-embedding-cache-with-mooncake" title="Link to this heading">#</a></h3>
+<p>SGLang also supports a Mooncake-backed <strong>global multimodal embedding cache</strong> for EPD workloads. When enabled on encoder servers, repeated image inputs can reuse previously computed ViT embeddings across instances instead of running the vision encoder again.</p>
+<p>This feature is useful when:</p>
+<ul class="simple">
+<li><p>the deployment serves repeated or overlapping image inputs,</p></li>
+<li><p>encoder compute is the bottleneck, and</p></li>
+<li><p>Mooncake is already available in the cluster.</p></li>
+</ul>
+<p>At a high level, the encoder checks whether the image embedding already exists in Mooncake. Cache hits are prefetched from the global store, while misses are encoded normally and inserted into the cache in the background.</p>
+<p>To enable it:</p>
+<ul class="simple">
+<li><p>install and configure Mooncake in the same way as other SGLang Mooncake integrations,</p></li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">--enable-mm-global-cache</span></code> on the encoder server.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">--enable-mm-global-cache</span></code> controls <strong>whether multimodal embeddings are looked up and stored in the global Mooncake cache</strong>. It is separate from <code class="docutils literal notranslate"><span class="pre">--encoder-transfer-backend</span></code>, which only controls encoder output transport.</p>
+<p>For Mooncake deployment and configuration details, see <a class="reference internal" href="hicache_best_practices.html#deployment-with-mooncake"><span class="std std-ref">HiCache best practices</span></a> and the <span class="xref myst">Mooncake backend README</span>.</p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shared Mooncake configuration</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MOONCAKE_TE_META_DATA_SERVER</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:8080/metadata&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MOONCAKE_MASTER</span><span class="o">=</span><span class="s2">&quot;127.0.0.1:50051&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MOONCAKE_PROTOCOL</span><span class="o">=</span><span class="s2">&quot;rdma&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MOONCAKE_GLOBAL_SEGMENT_SIZE</span><span class="o">=</span><span class="s2">&quot;4gb&quot;</span>
+
+<span class="c1"># encoder with global multimodal cache enabled</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--encoder-only<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-mm-global-cache<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span>
+
+<span class="c1"># language-only server</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen3-VL-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--language-only<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--encoder-urls<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30002</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>This cache is for <strong>multimodal encoder embeddings</strong>, not the language model KV cache.</p></li>
+<li><p>The feature currently uses Mooncake as the shared backing store.</p></li>
+<li><p>It can be enabled regardless of which <code class="docutils literal notranslate"><span class="pre">--encoder-transfer-backend</span></code> you use.</p></li>
+<li><p>It is most relevant for EPD or encoder-disaggregated VLM deployments where the same images are likely to appear across requests or instances.</p></li>
+</ul>
 <section id="qwen-vl">
 <h4>Qwen VL<a class="headerlink" href="#qwen-vl" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -675,7 +745,9 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_rou
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-and-what-is-epd-disaggregation">Why and What is EPD Disaggregation?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder-transfer-with-mooncake">Encoder transfer with Mooncake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-multimodal-embedding-cache-with-mooncake">Global multimodal embedding cache with Mooncake</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qwen-vl">Qwen VL</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-encoder-epd">gRPC Encoder (EPD)</a></li>
 </ul>
