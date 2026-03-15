@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=2be0ea50"></script>
+    <script src="../_static/documentation_options.js?v=47a2c4c5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -634,19 +634,19 @@ to guard against abnormal quantization loss regressions.</p>
 <td><p>CUDA-only kernels in sgl-kernel</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt</span></code> / <code class="docutils literal notranslate"><span class="pre">modelopt_fp8</span></code></p></td>
-<td class="text-center"><p>Yes</p></td>
+<td class="text-center"><p>Yes (Hopper/SM90+)</p></td>
 <td class="text-center"><p>No</p></td>
-<td><p>NVIDIA ModelOpt, requires NVIDIA hardware</p></td>
+<td><p><a class="reference external" href="https://github.com/NVIDIA/Model-Optimizer">NVIDIA ModelOpt</a>; requires NVIDIA hardware</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code></p></td>
-<td class="text-center"><p>Yes (Blackwell)</p></td>
+<td class="text-center"><p>Yes (Blackwell/SM100+)</p></td>
 <td class="text-center"><p>No</p></td>
-<td><p>NVIDIA Blackwell only</p></td>
+<td><p><a class="reference external" href="https://github.com/NVIDIA/Model-Optimizer">NVIDIA ModelOpt</a>; native FP4 on Blackwell (B200, GB200)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">petit_nvfp4</span></code></p></td>
-<td class="text-center"><p>Yes (Blackwell)</p></td>
 <td class="text-center"><p>No</p></td>
-<td><p>NVIDIA NvFP4, Blackwell only</p></td>
+<td class="text-center"><p>Yes (MI250/MI300X/MI325X)</p></td>
+<td><p>Enables NVFP4 on ROCm via <a class="reference external" href="https://github.com/causalflow-ai/petit-kernel">Petit</a>; use <code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code> on NVIDIA Blackwell. Auto-selected when loading NVFP4 models on AMD. See <a class="reference external" href="https://lmsys.org/blog/2025-09-21-petit-amdgpu/">LMSYS blog</a> and <a class="reference external" href="https://rocm.blogs.amd.com/artificial-intelligence/fp4-mixed-precision/README.html">AMD ROCm blog</a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bitsandbytes</span></code></p></td>
 <td class="text-center"><p>Yes</p></td>
@@ -985,14 +985,14 @@ Use <code class="docutils literal notranslate"><span class="pre">--quantization<
 </section>
 <section id="quantization-and-export-workflow">
 <h5>Quantization and Export Workflow<a class="headerlink" href="#quantization-and-export-workflow" title="Link to this heading">#</a></h5>
-<p>SGLang provides an example script that demonstrates the complete ModelOpt quantization and export workflow:</p>
+<p>SGLang provides an example script that demonstrates the complete ModelOpt quantization and export workflow. Run from the SGLang repository root (see <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/examples/usage/modelopt_quantize_and_export.py">modelopt_quantize_and_export.py</a>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quantize and export a model using ModelOpt FP8 quantization</span>
 python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<span class="w"> </span>quantize<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model-path<span class="w"> </span>TinyLlama/TinyLlama-1.1B-Chat-v1.0<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--export-dir<span class="w"> </span>./quantized_tinyllama_fp8<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--quantization-method<span class="w"> </span>modelopt_fp8
 
-<span class="c1"># For FP4 quantization</span>
+<span class="c1"># For FP4 quantization (requires Blackwell GPU)</span>
 python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<span class="w"> </span>quantize<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--model-path<span class="w"> </span>TinyLlama/TinyLlama-1.1B-Chat-v1.0<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--export-dir<span class="w"> </span>./quantized_tinyllama_fp4<span class="w"> </span><span class="se">\</span>
@@ -1048,13 +1048,14 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0
 </pre></div>
 </div>
-<p>Or using the Python API:</p>
+<p>Or using the Python API (use the same path as <code class="docutils literal notranslate"><span class="pre">modelopt_export_path</span></code> from the quantize step):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sglang</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sgl</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Deploy exported ModelOpt quantized model</span>
+    <span class="c1"># Path must match modelopt_export_path from quantize step (e.g., ./exported_model)</span>
     <span class="n">llm</span> <span class="o">=</span> <span class="n">sgl</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span>
-        <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;./quantized_tinyllama_fp8&quot;</span><span class="p">,</span>
+        <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;./exported_model&quot;</span><span class="p">,</span>
         <span class="n">quantization</span><span class="o">=</span><span class="s2">&quot;modelopt&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
@@ -1094,7 +1095,7 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 <span class="c1"># The checkpoint can be reused for future quantization runs and skip calibration</span>
 </pre></div>
 </div>
-<p><strong>Export-only Workflow</strong>: If you have a pre-existing fake quantized ModelOpt checkpoint, you can export it directly:</p>
+<p><strong>Export-only Workflow</strong>: If you have a pre-existing fake quantized ModelOpt checkpoint, you can export it directly. See <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/configs/load_config.py">LoadConfig</a> for the full API:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.device_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeviceConfig</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.load_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoadConfig</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.configs.model_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelConfig</span>
@@ -1111,7 +1112,7 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
     <span class="n">modelopt_export_path</span><span class="o">=</span><span class="s2">&quot;./exported_model&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># Load and export the model</span>
+<span class="c1"># Load and export the model (DeviceConfig defaults to device=&quot;cuda&quot;)</span>
 <span class="n">model_loader</span> <span class="o">=</span> <span class="n">get_model_loader</span><span class="p">(</span><span class="n">load_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">)</span>
 <span class="n">model_loader</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_config</span><span class="o">=</span><span class="n">model_config</span><span class="p">,</span> <span class="n">device_config</span><span class="o">=</span><span class="n">DeviceConfig</span><span class="p">())</span>
 </pre></div>
@@ -1171,6 +1172,8 @@ python<span class="w"> </span>examples/usage/modelopt_quantize_and_export.py<spa
 <li><p><a class="reference external" href="https://github.com/ModelCloud/GPTQModel">GPTQModel</a></p></li>
 <li><p><a class="reference external" href="https://github.com/vllm-project/llm-compressor/">LLM Compressor</a></p></li>
 <li><p><a class="reference external" href="https://github.com/NVIDIA/Model-Optimizer">NVIDIA Model Optimizer (ModelOpt)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NVIDIA/Model-Optimizer/tree/main/examples/llm_ptq">NVIDIA Model Optimizer LLM PTQ</a></p></li>
+<li><p><a class="reference external" href="https://github.com/causalflow-ai/petit-kernel">Petit: NVFP4 on ROCm</a> — <a class="reference external" href="https://lmsys.org/blog/2025-09-21-petit-amdgpu/">LMSYS blog</a>, <a class="reference external" href="https://rocm.blogs.amd.com/artificial-intelligence/fp4-mixed-precision/README.html">AMD ROCm blog</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pytorch/ao">Torchao: PyTorch Architecture Optimization</a></p></li>
 <li><p><a class="reference external" href="https://docs.vllm.ai/en/latest/quantization/">vLLM Quantization</a></p></li>
 <li><p><a class="reference external" href="https://github.com/intel/auto-round">auto-round</a></p></li>

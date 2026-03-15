@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=2be0ea50"></script>
+    <script src="../_static/documentation_options.js?v=47a2c4c5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -628,12 +628,13 @@ If you use pre-built images, you can skip this step and replace <code class="doc
 </section>
 <section id="quantization-on-amd-gpus">
 <h2>Quantization on AMD GPUs<a class="headerlink" href="#quantization-on-amd-gpus" title="Link to this heading">#</a></h2>
-<p>The <a class="reference internal" href="../advanced_features/quantization.html#platform-compatibility"><span class="std std-ref">Quantization documentation</span></a> has a full compatibility matrix. The short version: FP8, AWQ, MXFP4, W8A8, GPTQ, compressed-tensors, and Quark all work on AMD. Methods that depend on Marlin or NVIDIA-specific kernels (<code class="docutils literal notranslate"><span class="pre">awq_marlin</span></code>, <code class="docutils literal notranslate"><span class="pre">gptq_marlin</span></code>, <code class="docutils literal notranslate"><span class="pre">gguf</span></code>, <code class="docutils literal notranslate"><span class="pre">modelopt_fp8</span></code>, <code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code>, <code class="docutils literal notranslate"><span class="pre">petit_nvfp4</span></code>) do not.</p>
+<p>The <a class="reference internal" href="../advanced_features/quantization.html#platform-compatibility"><span class="std std-ref">Quantization documentation</span></a> has a full compatibility matrix. The short version: FP8, AWQ, MXFP4, W8A8, GPTQ, compressed-tensors, Quark, and <strong>petit_nvfp4</strong> (NVFP4 on ROCm via <a class="reference external" href="https://github.com/causalflow-ai/petit-kernel">Petit</a>) all work on AMD. Methods that depend on Marlin or NVIDIA-specific kernels (<code class="docutils literal notranslate"><span class="pre">awq_marlin</span></code>, <code class="docutils literal notranslate"><span class="pre">gptq_marlin</span></code>, <code class="docutils literal notranslate"><span class="pre">gguf</span></code>, <code class="docutils literal notranslate"><span class="pre">modelopt_fp8</span></code>, <code class="docutils literal notranslate"><span class="pre">modelopt_fp4</span></code>) do not.</p>
 <p>A few things to keep in mind:</p>
 <ul class="simple">
 <li><p>FP8 works via Aiter or Triton. Pre-quantized FP8 models like DeepSeek-V3/R1 work out of the box.</p></li>
 <li><p>AWQ uses Triton dequantization kernels on AMD. The faster Marlin path is not available.</p></li>
 <li><p>MXFP4 requires CDNA3/CDNA4 and <code class="docutils literal notranslate"><span class="pre">SGLANG_USE_AITER=1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">petit_nvfp4</span></code> enables NVFP4 models (e.g., <a class="reference external" href="https://huggingface.co/nvidia/Llama-3.3-70B-Instruct-FP4">Llama 3.3 70B FP4</a>) on MI250/MI300X via <a class="reference external" href="https://github.com/causalflow-ai/petit-kernel">Petit</a>. Install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">petit-kernel</span></code>; no <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> flag needed when loading pre-quantized NVFP4 models.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">quark_int4fp8_moe</span></code> is an AMD-only online quantization method for MoE models on CDNA3/CDNA4.</p></li>
 </ul>
 <p>Several of these backends are accelerated by <a class="reference external" href="https://github.com/ROCm/aiter">Aiter</a>. Enable it with:</p>
