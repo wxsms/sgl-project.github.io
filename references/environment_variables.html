@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=aa1a1db8"></script>
+    <script src="../_static/documentation_options.js?v=f176e6ba"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -595,15 +595,15 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ENABLE_TORCH_COMPILE</span></code></p></td>
 <td><p>Enable torch.compile</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SET_CPU_AFFINITY</span></code></p></td>
 <td><p>Enable CPU affinity setting (often set to <code class="docutils literal notranslate"><span class="pre">1</span></code> in Docker builds)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_ALLOW_OVERWRITE_LONGER_CONTEXT_LEN</span></code></p></td>
 <td><p>Allows the scheduler to overwrite longer context length requests (often set to <code class="docutils literal notranslate"><span class="pre">1</span></code> in Docker builds)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_IS_FLASHINFER_AVAILABLE</span></code></p></td>
 <td><p>Control FlashInfer availability check</p></td>
@@ -645,7 +645,7 @@ document.write(`
 <td><p>Weight increment for decode forward mode in scheduler recv skipper. Works with <code class="docutils literal notranslate"><span class="pre">--scheduler-recv-interval</span></code> to control polling frequency during decode phase.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_VERIFY</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SCHEDULER_RECV_SKIPPER_WEIGHT_TARGET_VERIFY</span></code></p></td>
 <td><p>Weight increment for target verify forward mode in scheduler recv skipper. Works with <code class="docutils literal notranslate"><span class="pre">--scheduler-recv-interval</span></code> to control polling frequency during verification phase.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
@@ -667,7 +667,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_SYMM_MEM_PREALLOC_GB_SIZE</span></code></p></td>
 <td><p>Size of preallocated GPU buffer (in GB) for NCCL symmetric memory pool to limit memory fragmentation. Only have an effect when server arg <code class="docutils literal notranslate"><span class="pre">--enable-symm-mem</span></code> is set.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUSTOM_ALLREDUCE_ALGO</span></code></p></td>
 <td><p>The algorithm of custom all-reduce. Set to <code class="docutils literal notranslate"><span class="pre">oneshot</span></code> or <code class="docutils literal notranslate"><span class="pre">1stage</span></code> to force use one-shot. Set to <code class="docutils literal notranslate"><span class="pre">twoshot</span></code> or <code class="docutils literal notranslate"><span class="pre">2stage</span></code> to force use two-shot.</p></td>
@@ -709,7 +709,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DG_USE_NVRTC</span></code></p></td>
 <td><p>Use NVRTC (instead of Triton) for JIT compilation (Experimental)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_DEEPGEMM_BMM</span></code></p></td>
 <td><p>Use DeepGEMM for Batched Matrix Multiplication (BMM) operations</p></td>
@@ -884,7 +884,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_MOE_PADDING</span></code></p></td>
 <td><p>Enable MoE padding (sets padding size to 128 if value is <code class="docutils literal notranslate"><span class="pre">1</span></code>, often set to <code class="docutils literal notranslate"><span class="pre">1</span></code> in Docker builds)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_CUTLASS_MOE</span></code> (deprecated)</p></td>
 <td><p>Use Cutlass FP8 MoE kernel on Blackwell GPUs (deprecated, use –moe-runner-backend=cutlass)</p></td>
@@ -999,7 +999,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_IS_IN_CI_AMD</span></code></p></td>
 <td><p>Indicates running in AMD CI environment</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_TEST_RETRACT</span></code></p></td>
 <td><p>Enable retract decode testing</p></td>
@@ -1071,7 +1071,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_DISABLE_OUTLINES_DISK_CACHE</span></code></p></td>
 <td><p>Disable Outlines disk cache</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_CUSTOM_TRITON_KERNEL_CACHE</span></code></p></td>
 <td><p>Use SGLang’s custom Triton kernel cache implementation for lower overheads (automatically enabled on CUDA)</p></td>
