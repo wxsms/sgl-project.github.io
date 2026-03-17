@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=0d848ebb"></script>
+    <script src="../_static/documentation_options.js?v=5efdf4c0"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1723,10 +1723,10 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">default</span></code>, <code class="docutils literal notranslate"><span class="pre">bf16</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--flashinfer-allreduce-fusion-backend</span></code></p></td>
-<td><p>Enable FlashInfer allreduce fusion (fused allreduce + Residual + RMSNorm) and choose backend. When not set, the feature is disabled. Options: <code class="docutils literal notranslate"><span class="pre">auto</span></code> (choose best), <code class="docutils literal notranslate"><span class="pre">trtllm</span></code> (SM90/100, single-node only), <code class="docutils literal notranslate"><span class="pre">mnnvl</span></code> (SM100, single/multi-node). Backend support table (SM100/SM90, single/multi-node) is in <code class="docutils literal notranslate"><span class="pre">sglang.srt.layers.flashinfer_comm_fusion</span></code>.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">trtllm</span></code>, <code class="docutils literal notranslate"><span class="pre">mnnvl</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-allreduce-fusion</span></code></p></td>
+<td><p>Enable FlashInfer allreduce fusion with Residual RMSNorm.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>bool flag (set to enable)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-aiter-allreduce-fusion</span></code></p></td>
 <td><p>Enable aiter allreduce fusion with Residual RMSNorm.</p></td>
@@ -2858,32 +2858,27 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>N/A</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-flashinfer-allreduce-fusion</span></code></p></td>
-<td><p>NOTE: –enable-flashinfer-allreduce-fusion is deprecated. Please set <code class="docutils literal notranslate"><span class="pre">--flashinfer-allreduce-fusion-backend=auto</span></code> instead.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--crash-on-nan</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--crash-on-nan</span></code></p></td>
 <td><p>Crash the server on nan logprobs.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Type: str</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--hybrid-kvcache-ratio</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hybrid-kvcache-ratio</span></code></p></td>
 <td><p>Mix ratio in [0,1] between uniform and hybrid kv buffers (0.0 = pure uniform: swa_size / full_size = 1)(1.0 = pure hybrid: swa_size / full_size = local_attention_size / context_length)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Optional[float]</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--load-watch-interval</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--load-watch-interval</span></code></p></td>
 <td><p>The interval of load watching in seconds.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
 <td><p>Type: float</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--nsa-prefill</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--nsa-prefill</span></code></p></td>
 <td><p>Choose the NSA backend for the prefill stage (overrides <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> when running DeepSeek NSA-style attention).</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code>, <code class="docutils literal notranslate"><span class="pre">flashmla_decode</span></code>, <code class="docutils literal notranslate"><span class="pre">fa3</span></code>, <code class="docutils literal notranslate"><span class="pre">tilelang</span></code>, <code class="docutils literal notranslate"><span class="pre">aiter</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--nsa-decode</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--nsa-decode</span></code></p></td>
 <td><p>Choose the NSA backend for the decode stage when running DeepSeek NSA-style attention. Overrides <code class="docutils literal notranslate"><span class="pre">--attention-backend</span></code> for decoding.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">flashmla_prefill</span></code>, <code class="docutils literal notranslate"><span class="pre">flashmla_kv</span></code>, <code class="docutils literal notranslate"><span class="pre">fa3</span></code>, <code class="docutils literal notranslate"><span class="pre">tilelang</span></code>, <code class="docutils literal notranslate"><span class="pre">aiter</span></code></p></td>
