@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../../_static/documentation_options.js?v=113c93aa"></script>
+    <script src="../../../_static/documentation_options.js?v=05858cd9"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -498,6 +498,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-gpu-inference">Single GPU inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-inference">Distributed inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-cache-and-parallelism">Hybrid Cache and Parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-backend">Attention Backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-configs-cache-parallelism-quantization">Combined Configs: Cache + Parallelism + Quantization</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configuration">Advanced Configuration</a><ul class="visible nav section-nav flex-column">
@@ -556,6 +559,9 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <section id="single-gpu-inference">
 <h3>Single GPU inference<a class="headerlink" href="#single-gpu-inference" title="Link to this heading">#</a></h3>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">cache.yaml</span></code> file that contains:</p>
+<ul class="simple">
+<li><p>DBCache + TaylorSeer</p></li>
+</ul>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cache_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">max_warmup_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
 <span class="w">  </span><span class="nt">warmup_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
@@ -576,6 +582,44 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A beautiful sunset over the mountains&quot;</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>DBCache + TaylorSeer + SCM (Step Computation Mask)</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cache_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">max_warmup_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="w">  </span><span class="nt">warmup_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">max_cached_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">  </span><span class="nt">max_continuous_cached_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">Fn_compute_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">Bn_compute_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">residual_diff_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.12</span>
+<span class="w">  </span><span class="nt">enable_taylorseer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taylorseer_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="c1"># Must set the num_inference_steps for SCM. The SCM will automatically</span>
+<span class="w">  </span><span class="c1"># generate the steps computation mask based on the num_inference_steps.</span>
+<span class="w">  </span><span class="c1"># Reference: https://cache-dit.readthedocs.io/en/latest/user_guide/CACHE_API/#scm-steps-computation-masking</span>
+<span class="w">  </span><span class="nt">num_inference_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">28</span>
+<span class="w">  </span><span class="nt">steps_computation_mask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DBCache + TaylorSeer + SCM (Step Computation Mask) + Cache CFG</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cache_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">max_warmup_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="w">  </span><span class="nt">warmup_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">max_cached_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">  </span><span class="nt">max_continuous_cached_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">Fn_compute_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">Bn_compute_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">residual_diff_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.12</span>
+<span class="w">  </span><span class="nt">enable_taylorseer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taylorseer_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">num_inference_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">28</span>
+<span class="w">  </span><span class="nt">steps_computation_mask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast</span>
+<span class="w">  </span><span class="nt">enable_sperate_cfg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># e.g, Qwen-Image, Wan, Chroma, Ovis-Image, etc.</span>
+</pre></div>
+</div>
 </section>
 <section id="distributed-inference">
 <h3>Distributed inference<a class="headerlink" href="#distributed-inference" title="Link to this heading">#</a></h3>
@@ -585,9 +629,7 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <p>Define a parallelism only config yaml <code class="docutils literal notranslate"><span class="pre">parallel.yaml</span></code> file that contains:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
-<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
-<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
 </pre></div>
 </div>
 <p>Then, apply the distributed inference acceleration config from yaml. <code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">auto</span></code> means that cache-dit will auto detect the <code class="docutils literal notranslate"><span class="pre">world_size</span></code> as the ulysses_size. Otherwise, you should manually set it as specific int number, e.g, 4.</p>
@@ -607,9 +649,7 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 <span class="w">  </span><span class="nt">tp_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
-<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
 </pre></div>
 </div>
 <p>Then, apply the 2D parallelism config from yaml. Here <code class="docutils literal notranslate"><span class="pre">tp_size:</span> <span class="pre">2</span></code> means using tensor parallelism with size 2. The <code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">auto</span></code> means that cache-dit will auto detect the <code class="docutils literal notranslate"><span class="pre">world_size</span> <span class="pre">//</span> <span class="pre">tp_size</span></code> as the ulysses_size.</p>
@@ -621,12 +661,51 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">ring_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">tp_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
-<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
 </pre></div>
 </div>
 <p>Then, apply the 3D parallelism config from yaml. Here <code class="docutils literal notranslate"><span class="pre">ulysses_size:</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">ring_size:</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">tp_size:</span> <span class="pre">2</span></code> means using ulysses parallelism with size 2, ring parallelism with size 2 and tensor parallelism with size 2.</p>
+<ul class="simple">
+<li><p>Ulysses Anything Attention</p></li>
+</ul>
+<p>To enable Ulysses Anything Attention, you can define a parallelism config yaml <code class="docutils literal notranslate"><span class="pre">parallel_uaa.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">  </span><span class="nt">ulysses_anything</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Ulysses FP8 Communication</p></li>
+</ul>
+<p>For device that don’t have NVLink support, you can enable Ulysses FP8 Communication to further reduce the communication overhead. You can define a parallelism config yaml <code class="docutils literal notranslate"><span class="pre">parallel_fp8.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">  </span><span class="nt">ulysses_float8</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Async Ulysses CP</p></li>
+</ul>
+<p>You can also enable async ulysses CP to overlap the communication and computation. Define a parallelism config yaml <code class="docutils literal notranslate"><span class="pre">parallel_async.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">  </span><span class="nt">ulysses_async</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># Now, only support for FLUX.1, Qwen-Image, Ovis-Image and Z-Image.</span>
+</pre></div>
+</div>
+<p>Then, apply the config from yaml. Here <code class="docutils literal notranslate"><span class="pre">ulysses_async:</span> <span class="pre">true</span></code> means enabling async ulysses CP.</p>
+<ul class="simple">
+<li><p>TE-P and VAE-P</p></li>
+</ul>
+<p>You can also specify the extra parallel modules in the yaml config. For example, define a parallelism config yaml <code class="docutils literal notranslate"><span class="pre">parallel_extra.yaml</span></code> file that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">  </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
 </section>
 <section id="hybrid-cache-and-parallelism">
 <h3>Hybrid Cache and Parallelism<a class="headerlink" href="#hybrid-cache-and-parallelism" title="Link to this heading">#</a></h3>
@@ -643,9 +722,8 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <span class="w">  </span><span class="nt">taylorseer_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="nt">parallelism_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
-<span class="w">  </span><span class="nt">parallel_kwargs</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
-<span class="w">    </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">  </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>Then, apply the hybrid cache and parallel acceleration config from yaml.</p>
@@ -657,6 +735,68 @@ flow requires cache-dit &gt;= 1.2.0 (<code class="docutils literal notranslate">
 <span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A beautiful sunset over the mountains&quot;</span>
 </pre></div>
 </div>
+</section>
+<section id="attention-backend">
+<h3>Attention Backend<a class="headerlink" href="#attention-backend" title="Link to this heading">#</a></h3>
+<p>In some cases, users may want to only specify the attention backend without any other optimization configs. In this case, you can define a yaml file <code class="docutils literal notranslate"><span class="pre">attention.yaml</span></code> that only contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;flash&quot;</span><span class="w"> </span><span class="c1"># &#39;_flash_3&#39; for Hopper</span>
+</pre></div>
+</div>
+</section>
+<section id="quantization">
+<h3>Quantization<a class="headerlink" href="#quantization" title="Link to this heading">#</a></h3>
+<p>You can also specify the quantization config in the yaml file, required <code class="docutils literal notranslate"><span class="pre">torchao&gt;=0.16.0</span></code>. For example, define a yaml file <code class="docutils literal notranslate"><span class="pre">quantize.yaml</span></code> that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">quantize_config</span><span class="p">:</span><span class="w"> </span><span class="c1"># quantization configuration for transformer modules</span>
+<span class="w">  </span><span class="c1"># float8 (DQ), float8_weight_only, float8_blockwise, int8 (DQ), int8_weight_only, etc.</span>
+<span class="w">  </span><span class="nt">quant_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;float8&quot;</span>
+<span class="w">  </span><span class="c1"># layers to exclude from quantization (transformer). layers that contains any of the</span>
+<span class="w">  </span><span class="c1"># keywords in the exclude_layers list will be excluded from quantization. This is useful</span>
+<span class="w">  </span><span class="c1"># for some sensitive layers that are not robust to quantization, e.g., embedding layers.</span>
+<span class="w">  </span><span class="nt">exclude_layers</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;embedder&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;embed&quot;</span>
+<span class="w">  </span><span class="nt">verbose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># whether to print verbose logs during quantization</span>
+</pre></div>
+</div>
+<p>Then, apply the quantization config from yaml. Please also enable torch.compile for better performance if you are using quantization. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--warmup<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cache-dit-config<span class="w"> </span>quantize.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-torch-compile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dit-cpu-offload<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--text-encoder-cpu-offload<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A beautiful sunset over the mountains&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="combined-configs-cache-parallelism-quantization">
+<h3>Combined Configs: Cache + Parallelism + Quantization<a class="headerlink" href="#combined-configs-cache-parallelism-quantization" title="Link to this heading">#</a></h3>
+<p>You can also combine all the above configs together in a single yaml file <code class="docutils literal notranslate"><span class="pre">combined.yaml</span></code> that contains:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cache_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">max_warmup_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="w">  </span><span class="nt">warmup_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">max_cached_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">  </span><span class="nt">max_continuous_cached_steps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">Fn_compute_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">Bn_compute_blocks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">residual_diff_threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.12</span>
+<span class="w">  </span><span class="nt">enable_taylorseer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">taylorseer_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">parallelism_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ulysses_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">  </span><span class="nt">attention_backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">native</span>
+<span class="w">  </span><span class="nt">extra_parallel_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;text_encoder&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;vae&quot;</span><span class="p p-Indicator">]</span>
+<span class="nt">quantize_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">quant_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;float8&quot;</span>
+<span class="w">  </span><span class="nt">exclude_layers</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;embedder&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;embed&quot;</span>
+<span class="w">  </span><span class="nt">verbose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+<p>Then, apply the combined cache, parallelism and quantization config from yaml. Please also enable torch.compile for better performance if you are using quantization.</p>
 </section>
 </section>
 <section id="advanced-configuration">
@@ -947,6 +1087,9 @@ acceleration still works.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-gpu-inference">Single GPU inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-inference">Distributed inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-cache-and-parallelism">Hybrid Cache and Parallelism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-backend">Attention Backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-configs-cache-parallelism-quantization">Combined Configs: Cache + Parallelism + Quantization</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configuration">Advanced Configuration</a><ul class="visible nav section-nav flex-column">
