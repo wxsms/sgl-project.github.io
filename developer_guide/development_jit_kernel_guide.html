@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a6e215da"></script>
+    <script src="../_static/documentation_options.js?v=b3b1c53b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -760,6 +760,10 @@ Create a new file at <a class="reference download internal" download="" href="..
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">add_constant</span><span class="p">(</span><span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">constant</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">src</span><span class="o">.</span><span class="n">is_cuda</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;src must be a CUDA tensor&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">src</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">torch</span><span class="o">.</span><span class="n">int32</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">. Supported: int32&quot;</span><span class="p">)</span>
     <span class="n">dst</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
     <span class="n">module</span> <span class="o">=</span> <span class="n">_jit_add_constant_module</span><span class="p">(</span><span class="n">constant</span><span class="p">)</span>
     <span class="n">module</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
@@ -767,6 +771,7 @@ Create a new file at <a class="reference download internal" download="" href="..
 
 </pre></div>
 </div>
+<p>Keep the Python wrapper thin, but still validate the basic invariants such as device and dtype before dispatch. In the current JIT/FFI path, invalid tensors are not always rejected safely before launch.</p>
 </section>
 <section id="step-3-use-your-kernel">
 <h3>STEP 3: Use your kernel<a class="headerlink" href="#step-3-use-your-kernel" title="Link to this heading">#</a></h3>
