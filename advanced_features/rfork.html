@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=8e87ac20"></script>
+    <script src="../_static/documentation_options.js?v=625db15f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -495,6 +495,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nccl-as-backend">NCCL as backend</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferengine-as-backend">TransferEngine as backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelexpress-as-backend">ModelExpress as backend</a></li>
 </ul>
 </li>
 </ul>
@@ -525,19 +526,22 @@ document.write(`
 <td><p>set to <code class="docutils literal notranslate"><span class="pre">remote_instance</span></code> to enable R-Fork.</p></td>
 </tr>
 <tr class="row-odd"><td><p>remote-instance-weight-loader-backend</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">nccl</span></code> or <code class="docutils literal notranslate"><span class="pre">transfer_engine</span></code>, default value is <code class="docutils literal notranslate"><span class="pre">nccl</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nccl</span></code>, <code class="docutils literal notranslate"><span class="pre">transfer_engine</span></code>, or <code class="docutils literal notranslate"><span class="pre">modelexpress</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">nccl</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p>remote-instance-weight-loader-seed-instance-ip</p></td>
-<td><p>IP address of the seed instance who will provide the model weight</p></td>
+<td><p>IP address of the seed instance who will provide the model weight. Used by <code class="docutils literal notranslate"><span class="pre">nccl</span></code> and <code class="docutils literal notranslate"><span class="pre">transfer_engine</span></code> backends.</p></td>
 </tr>
 <tr class="row-odd"><td><p>remote-instance-weight-loader-seed-instance-service-port</p></td>
-<td><p>the port that the seed instance’s HTTP server is listening on</p></td>
+<td><p>the port that the seed instance’s HTTP server is listening on. Used by <code class="docutils literal notranslate"><span class="pre">nccl</span></code> and <code class="docutils literal notranslate"><span class="pre">transfer_engine</span></code> backends.</p></td>
 </tr>
 <tr class="row-even"><td><p>remote-instance-weight-loader-send-weights-group-ports</p></td>
-<td><p>the list of available ports on the seed instance that will be used to build NCCL communication groups between seed and client instance. This argument is only needed by <code class="docutils literal notranslate"><span class="pre">nccl</span></code> backend.</p></td>
+<td><p>the list of available ports on the seed instance that will be used to build NCCL communication groups between seed and client instance. Only needed by <code class="docutils literal notranslate"><span class="pre">nccl</span></code> backend.</p></td>
 </tr>
 <tr class="row-odd"><td><p>remote-instance-weight-loader-start-seed-via-transfer-engine</p></td>
-<td><p>set to start seed service that supports TransferEngine as backend. It is needed for seed instances when using <code class="docutils literal notranslate"><span class="pre">transfer_engine</span></code> as backend.</p></td>
+<td><p>set to start seed service that supports TransferEngine as backend. Needed for seed instances when using <code class="docutils literal notranslate"><span class="pre">transfer_engine</span></code> as backend.</p></td>
+</tr>
+<tr class="row-even"><td><p>modelexpress-config</p></td>
+<td><p>JSON config for <code class="docutils literal notranslate"><span class="pre">modelexpress</span></code> backend. Keys: <code class="docutils literal notranslate"><span class="pre">&quot;url&quot;</span></code> (required, gRPC host:port of ModelExpress server), <code class="docutils literal notranslate"><span class="pre">&quot;model_name&quot;</span></code> (optional, defaults to <code class="docutils literal notranslate"><span class="pre">--model-path</span></code>), <code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> (optional bool, <code class="docutils literal notranslate"><span class="pre">true</span></code> for seed mode).</p></td>
 </tr>
 </tbody>
 </table>
@@ -573,6 +577,24 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="modelexpress-as-backend">
+<h3>ModelExpress as backend<a class="headerlink" href="#modelexpress-as-backend" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/ai-dynamo/modelexpress">ModelExpress</a> is a coordination service that manages P2P weight transfer metadata. It removes the need for direct seed IP/port configuration by providing a centralized registry that seeds publish to and clients discover from. Under the hood it uses TransferEngine (Mooncake) for the actual RDMA data transfer.</p>
+<p>A running ModelExpress server is required. See the <a class="reference external" href="https://github.com/ai-dynamo/modelexpress">ModelExpress documentation</a> for setup instructions.</p>
+<p>seed instance:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="o">[</span>args<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--modelexpress-config<span class="w"> </span><span class="s1">&#39;{&quot;url&quot;: &quot;[modelexpress_grpc_host:port]&quot;, &quot;model_name&quot;: &quot;[model_name]&quot;, &quot;source&quot;: true}&#39;</span>
+</pre></div>
+</div>
+<p>client instance:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="o">[</span>args<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--load-format<span class="w"> </span>remote_instance<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--remote-instance-weight-loader-backend<span class="w"> </span>modelexpress<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--modelexpress-config<span class="w"> </span><span class="s1">&#39;{&quot;url&quot;: &quot;[modelexpress_grpc_host:port]&quot;, &quot;model_name&quot;: &quot;[model_name]&quot;}&#39;</span>
+</pre></div>
+</div>
+<p>The seed publishes its TransferEngine session ID and tensor layout to ModelExpress. The client queries ModelExpress to discover the seed, then pulls weights directly via RDMA. This enables dynamic seed discovery without hardcoding IPs, and supports multiple models through a single ModelExpress instance.</p>
+</section>
 </section>
 </section>
 
@@ -606,6 +628,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nccl-as-backend">NCCL as backend</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferengine-as-backend">TransferEngine as backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelexpress-as-backend">ModelExpress as backend</a></li>
 </ul>
 </li>
 </ul>
