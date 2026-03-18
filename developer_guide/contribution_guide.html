@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=cbdc0de8"></script>
+    <script src="../_static/documentation_options.js?v=e1bf712a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -498,7 +498,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-code-with-pre-commit">Format code with pre-commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-add-unit-tests">Run and add unit tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-add-unit-tests">Run and add unit tests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests-no-server-required">Unit tests (no server required)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e2e-tests-server-required">E2E tests (server required)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-documentations">Write documentations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
@@ -554,8 +558,31 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 <section id="run-and-add-unit-tests">
 <h2>Run and add unit tests<a class="headerlink" href="#run-and-add-unit-tests" title="Link to this heading">#</a></h2>
 <p>If you add a new feature or fix a bug, please add corresponding unit tests to ensure coverage and prevent regression.
-SGLang uses Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> framework.
-For detailed instructions on running tests and integrating them into CI, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/README.md">test/README.md</a>.</p>
+SGLang uses Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> framework with <a class="reference external" href="https://docs.pytest.org/">pytest</a> as the test runner.</p>
+<section id="unit-tests-no-server-required">
+<h3>Unit tests (no server required)<a class="headerlink" href="#unit-tests-no-server-required" title="Link to this heading">#</a></h3>
+<p>Unit tests live under <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/registered/unit"><code class="docutils literal notranslate"><span class="pre">test/registered/unit/</span></code></a>, organized to mirror the <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/</span></code> source tree. These tests validate component logic <strong>without</strong> launching a server or loading real model weights.</p>
+<p><strong>When to add a unit test:</strong> If you modify a file under <code class="docutils literal notranslate"><span class="pre">python/sglang/srt/</span></code>, check whether a corresponding test exists in <code class="docutils literal notranslate"><span class="pre">test/registered/unit/</span></code> and add coverage for your changes. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>srt/mem_cache/radix_cache.py   →  unit/mem_cache/test_radix_cache.py
+srt/sampling/sampling_params.py →  unit/sampling/test_sampling_params.py
+</pre></div>
+</div>
+<p><strong>Run unit tests locally:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test/registered/unit/<span class="w"> </span>-v<span class="w">                </span><span class="c1"># all unit tests</span>
+pytest<span class="w"> </span>test/registered/unit/mem_cache/<span class="w"> </span>-v<span class="w">      </span><span class="c1"># one module</span>
+</pre></div>
+</div>
+<p><strong>Run with coverage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test/registered/unit/<span class="w"> </span>--cov<span class="w"> </span>--cov-config<span class="o">=</span>.coveragerc<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>For conventions on CI registration, test structure, and examples, see <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/registered/unit/README.md"><code class="docutils literal notranslate"><span class="pre">test/registered/unit/README.md</span></code></a>.</p>
+</section>
+<section id="e2e-tests-server-required">
+<h3>E2E tests (server required)<a class="headerlink" href="#e2e-tests-server-required" title="Link to this heading">#</a></h3>
+<p>For tests that require launching a server, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/registered/README.md"><code class="docutils literal notranslate"><span class="pre">test/registered/README.md</span></code></a> for guidance on where to place your test.</p>
+<p>For detailed instructions on running tests and integrating them into CI, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/README.md">test/README.md</a>.</p>
+</section>
 </section>
 <section id="write-documentations">
 <h2>Write documentations<a class="headerlink" href="#write-documentations" title="Link to this heading">#</a></h2>
@@ -730,7 +757,11 @@ To add a new kernel or modify an existing one in the <code class="docutils liter
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-code-with-pre-commit">Format code with pre-commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-add-unit-tests">Run and add unit tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-and-add-unit-tests">Run and add unit tests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests-no-server-required">Unit tests (no server required)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e2e-tests-server-required">E2E tests (server required)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-documentations">Write documentations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-accuracy">Test the accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-the-speed">Benchmark the speed</a></li>
