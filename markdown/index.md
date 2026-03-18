@@ -29,9 +29,9 @@ GPU to large distributed clusters. Its core features include:
     vibrant community with widespread industry adoption, powering over
     400,000 GPUs worldwide.
   - **RL & Post-Training Backbone**: SGLang is a proven rollout backend
-    across the world, with native RL integrations and adoption by
-    well-known post-training frameworks such as AReaL, Miles, slime,
-    Tunix, verl and more.
+    used for training many frontier models, with native RL integrations
+    and adoption by well-known post-training frameworks such as AReaL,
+    Miles, slime, Tunix, verl and more.
 
 <div class="toctree" data-maxdepth="1" data-caption="Get Started">
 
