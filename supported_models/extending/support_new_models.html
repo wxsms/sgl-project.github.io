@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=904f35f0"></script>
+    <script src="../../_static/documentation_options.js?v=65e82005"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -513,6 +513,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-our-model-via-sglang-s-offline-engine">Serving Our Model Via SGLang’s Offline Engine</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-external-models-via-the-standard-cli">Serving External Models via the Standard CLI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-entryclass-variable">The <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code> Variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-text-only-model">Example: Text-Only Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multimodal-model">Example: Multimodal Model</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 </ul>
             </nav>
@@ -817,6 +823,185 @@ Then, our <code class="docutils literal notranslate"><span class="pre">LlamaWrap
 <p>Now, when we call <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">run.py</span></code>, we will get the outputs of our newly created model!</p>
 </section>
 </section>
+<section id="serving-external-models-via-the-standard-cli">
+<h2>Serving External Models via the Standard CLI<a class="headerlink" href="#serving-external-models-via-the-standard-cli" title="Link to this heading">#</a></h2>
+<p>The previous sections show how to register a model programmatically via <code class="docutils literal notranslate"><span class="pre">ModelRegistry</span></code> and serve it through the Offline Engine. Similar to vLLM model plugin, there is an alternative that lets you keep using the standard <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.launch_server</span></code> CLI without modifying any SGLang source code: you can register your model using the <code class="docutils literal notranslate"><span class="pre">SGLANG_EXTERNAL_MODEL_PACKAGE</span></code> environment variable.</p>
+<section id="the-entryclass-variable">
+<h3>The <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code> Variable<a class="headerlink" href="#the-entryclass-variable" title="Link to this heading">#</a></h3>
+<p>When SGLang scans a model package, it looks for the variable <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code> at the module level of your Python file. The <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/registry.py">model registry</a> imports your file, checks for <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code>, and registers the class assigned to it. If you are using a model based on HuggingFace, the name of this class needs to match the <code class="docutils literal notranslate"><span class="pre">&quot;architectures&quot;</span></code> field in your model’s <code class="docutils literal notranslate"><span class="pre">config.json</span></code>.</p>
+<p>For example, if you are implementing a Llama wrapper, add this line at the end of your model file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is what &quot;Add EntryClass at the end&quot; means</span>
+<span class="n">EntryClass</span> <span class="o">=</span> <span class="n">LlamaWrapper</span>
+</pre></div>
+</div>
+</section>
+<section id="example-text-only-model">
+<h3>Example: Text-Only Model<a class="headerlink" href="#example-text-only-model" title="Link to this heading">#</a></h3>
+<p>Using the same Llama wrapper from the previous section, here is how to package and serve it via the CLI.</p>
+<ol class="arabic simple">
+<li><p>Create your project</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sglang_custom_project</span><span class="o">/</span>
+<span class="o">|----</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|----</span><span class="n">custom_llm</span><span class="o">/</span>
+     <span class="o">|----</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+     <span class="o">|----</span><span class="n">llama_wrapper</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Write the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sglang_custom_project/setup.py</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sglang-custom-plugins&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write your model code</p></li>
+</ol>
+<p>Inside <code class="docutils literal notranslate"><span class="pre">llama_wrapper.py</span></code>, write your model and include <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sglang_custom_project/custom_llm/llama_wrapper.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.layers.logits_processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogitsProcessorOutput</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.layers.quantization.base_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantizationConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.model_executor.forward_batch_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">ForwardBatch</span><span class="p">,</span> <span class="n">PPProxyTensors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.models.llama</span><span class="w"> </span><span class="kn">import</span> <span class="n">LlamaForCausalLM</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LlamaWrapper</span><span class="p">(</span><span class="n">LlamaForCausalLM</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">quant_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">QuantizationConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">quant_config</span><span class="o">=</span><span class="n">quant_config</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">)</span>
+    <span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">forward_batch</span><span class="p">,</span>
+                <span class="n">pp_proxy_tensors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">input_embeds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">get_embedding</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">hidden_states</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span>
+            <span class="n">input_ids</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">forward_batch</span><span class="p">,</span> <span class="n">input_embeds</span><span class="p">,</span>
+            <span class="n">pp_proxy_tensors</span><span class="o">=</span><span class="n">pp_proxy_tensors</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">res</span><span class="p">:</span> <span class="n">LogitsProcessorOutput</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logits_processor</span><span class="p">(</span>
+            <span class="n">input_ids</span><span class="p">,</span> <span class="n">hidden_states</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lm_head</span><span class="p">,</span> <span class="n">forward_batch</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">orig</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next_token_logits</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">next_token_logits</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">orig</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">orig</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(),</span> <span class="n">orig</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+<span class="c1"># Don&#39;t forget to add EntryClass</span>
+<span class="n">EntryClass</span> <span class="o">=</span> <span class="n">LlamaWrapper</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install your package</p></li>
+</ol>
+<p>Run this inside your <code class="docutils literal notranslate"><span class="pre">sglang_custom_project</span></code> directory to install your code into the active Python environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Update your <code class="docutils literal notranslate"><span class="pre">config.json</span></code></p></li>
+</ol>
+<p>Update the <code class="docutils literal notranslate"><span class="pre">config.json</span></code> under your HuggingFace model checkpoint directory so the <code class="docutils literal notranslate"><span class="pre">architectures</span></code> field matches your class name:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;architectures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;LlamaWrapper&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Launch the server</p></li>
+</ol>
+<p>Set the environment variable before running the CLI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_EXTERNAL_MODEL_PACKAGE</span><span class="o">=</span>custom_llm
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>/path/to/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">SGLANG_EXTERNAL_MODEL_PACKAGE</span></code> should be the parent folder name containing your model-related code. In this example, it should be <code class="docutils literal notranslate"><span class="pre">custom_llm</span></code>.</p>
+</section>
+<section id="example-multimodal-model">
+<h3>Example: Multimodal Model<a class="headerlink" href="#example-multimodal-model" title="Link to this heading">#</a></h3>
+<p>If you are working with multimodal models, setting <code class="docutils literal notranslate"><span class="pre">SGLANG_EXTERNAL_MODEL_PACKAGE</span></code> alone is not enough. SGLang also needs to recognize your architecture as multimodal to enable the image/video processing pipelines, and it needs a custom processor.</p>
+<p>You can handle this by setting two additional environment variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SGLANG_EXTERNAL_MM_MODEL_ARCH</span></code>: Adds your architecture name to SGLang’s internal list of multimodal models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SGLANG_EXTERNAL_MM_PROCESSOR_PACKAGE</span></code>: Tells SGLang where to find your custom processor class.</p></li>
+</ul>
+<p>For example, let’s build a custom model based on Qwen2-VL-Instruct that takes the square root of the logits.</p>
+<p>Create the project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sglang_custom_project_vl</span><span class="o">/</span>
+<span class="o">|----</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|----</span><span class="n">custom_vlm</span><span class="o">/</span>
+     <span class="o">|----</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+     <span class="o">|----</span><span class="n">qwenvl_wrapper</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Write <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sglang_custom_project_vl/setup.py</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sglang-custom-plugins-vl&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Write the model in <code class="docutils literal notranslate"><span class="pre">qwenvl_wrapper.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sglang_custom_project_vl/custom_vlm/qwenvl_wrapper.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.models.qwen2_vl</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qwen2VLForConditionalGeneration</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.multimodal.processors.qwen_vl</span><span class="w"> </span><span class="kn">import</span> <span class="n">QwenVLImageProcessor</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CustomQwen2VL</span><span class="p">(</span><span class="n">Qwen2VLForConditionalGeneration</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">forward_batch</span><span class="p">,</span>
+                <span class="n">input_embeds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">get_embedding</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span>
+            <span class="n">input_ids</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">forward_batch</span><span class="p">,</span>
+            <span class="n">input_embeds</span><span class="o">=</span><span class="n">input_embeds</span><span class="p">,</span> <span class="n">get_embedding</span><span class="o">=</span><span class="n">get_embedding</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">get_embedding</span><span class="p">:</span>
+            <span class="n">orig</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next_token_logits</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">next_token_logits</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">orig</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">orig</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(),</span> <span class="n">orig</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CustomQwen2VLProcessor</span><span class="p">(</span><span class="n">QwenVLImageProcessor</span><span class="p">):</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">CustomQwen2VL</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hf_config</span><span class="p">,</span> <span class="n">server_args</span><span class="p">,</span> <span class="n">_processor</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hf_config</span><span class="p">,</span> <span class="n">server_args</span><span class="p">,</span> <span class="n">_processor</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">EntryClass</span> <span class="o">=</span> <span class="n">CustomQwen2VL</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> you don’t need a separate <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code> for the custom processor as long as you associate the processor with the specific model class.</p>
+<p>Install the package, update <code class="docutils literal notranslate"><span class="pre">config.json</span></code>, and launch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;architectures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CustomQwen2VL&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_EXTERNAL_MODEL_PACKAGE</span><span class="o">=</span>custom_vlm
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_EXTERNAL_MM_MODEL_ARCH</span><span class="o">=</span>CustomQwen2VL
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_EXTERNAL_MM_PROCESSOR_PACKAGE</span><span class="o">=</span>custom_vlm
+
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-path<span class="w"> </span>/path/to/Qwen2-VL-2B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-multimodal
+</pre></div>
+</div>
+</section>
+</section>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
 <p>Add to table of supported models in <a class="reference internal" href="../text_generation/generative_models.html"><span class="std std-doc">generative_models.md</span></a> or <a class="reference internal" href="../text_generation/multimodal_language_models.html"><span class="std std-doc">multimodal_language_models.md</span></a></p>
@@ -884,6 +1069,12 @@ SGLang and ensure they are thoroughly tested and easily integrated into the syst
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-implementing-and-serving-a-llama-wrapper-model">Example: Implementing and Serving a Llama Wrapper Model</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-our-model">Implementing Our Model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-our-model-via-sglang-s-offline-engine">Serving Our Model Via SGLang’s Offline Engine</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serving-external-models-via-the-standard-cli">Serving External Models via the Standard CLI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-entryclass-variable">The <code class="docutils literal notranslate"><span class="pre">EntryClass</span></code> Variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-text-only-model">Example: Text-Only Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multimodal-model">Example: Multimodal Model</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
