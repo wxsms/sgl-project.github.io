@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=48c5c95e"></script>
+    <script src="../_static/documentation_options.js?v=a90ab19a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -230,6 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to SGLang Diffusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ci_perf.html">Perf Baseline Generation Script</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Apple MPS</a></li>
+
 
 
 </ul>
@@ -498,6 +499,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage">Cloud Storage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-crash-debugging">CUDA Crash Debugging</a></li>
 </ul>
 
             </nav>
@@ -635,6 +637,41 @@ SGLang supports multiple caching strategies - see <a class="reference internal" 
 </table>
 </div>
 </section>
+<section id="cuda-crash-debugging">
+<h1>CUDA Crash Debugging<a class="headerlink" href="#cuda-crash-debugging" title="Link to this heading">#</a></h1>
+<p>These variables enable kernel API logging and optional input/output dumps around diffusion CUDA kernel call boundaries. They are useful when tracking down CUDA crashes such as illegal memory access, device-side assert, or shape mismatches in custom kernels.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_LOGLEVEL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>Controls crash-debug kernel API logging. <code class="docutils literal notranslate"><span class="pre">1</span></code> logs API names, <code class="docutils literal notranslate"><span class="pre">3</span></code> logs tensor metadata, <code class="docutils literal notranslate"><span class="pre">5</span></code> adds tensor statistics, and <code class="docutils literal notranslate"><span class="pre">10</span></code> also writes dump snapshots.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_LOGDEST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code></p></td>
+<td><p>Destination for crash-debug kernel API logs. Use <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, <code class="docutils literal notranslate"><span class="pre">stderr</span></code>, or a file path. <code class="docutils literal notranslate"><span class="pre">%i</span></code> is replaced with the process PID.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_DUMP_DIR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sglang_kernel_api_dumps</span></code></p></td>
+<td><p>Output directory for level-10 kernel API dumps. <code class="docutils literal notranslate"><span class="pre">%i</span></code> is replaced with the process PID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_DUMP_INCLUDE</span></code></p></td>
+<td><p>not set</p></td>
+<td><p>Comma-separated wildcard patterns for kernel API names to include in level-10 dumps.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_DUMP_EXCLUDE</span></code></p></td>
+<td><p>not set</p></td>
+<td><p>Comma-separated wildcard patterns for kernel API names to exclude from level-10 dumps.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 
 
                 </article>
@@ -687,6 +724,7 @@ SGLang supports multiple caching strategies - see <a class="reference internal" 
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage">Cloud Storage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-crash-debugging">CUDA Crash Debugging</a></li>
 </ul>
 
   </nav></div>

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=48c5c95e"></script>
+    <script src="../_static/documentation_options.js?v=a90ab19a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -230,6 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../diffusion/contributing.html">Contributing to SGLang Diffusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../diffusion/ci_perf.html">Perf Baseline Generation Script</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../diffusion/environment_variables.html">Apple MPS</a></li>
+
 
 
 </ul>
@@ -1016,6 +1017,26 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_TEST_REQUEST_TIME_STATS</span></code></p></td>
 <td><p>Test request time statistics</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_LOGLEVEL</span></code></p></td>
+<td><p>Controls crash-debug kernel API logging. <code class="docutils literal notranslate"><span class="pre">0</span></code> disables logging, <code class="docutils literal notranslate"><span class="pre">1</span></code> logs API names, <code class="docutils literal notranslate"><span class="pre">3</span></code> logs tensor metadata, <code class="docutils literal notranslate"><span class="pre">5</span></code> adds tensor statistics, and <code class="docutils literal notranslate"><span class="pre">10</span></code> also writes pre-call dump snapshots.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_LOGDEST</span></code></p></td>
+<td><p>Destination for crash-debug kernel API logs. Use <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, <code class="docutils literal notranslate"><span class="pre">stderr</span></code>, or a file path. <code class="docutils literal notranslate"><span class="pre">%i</span></code> is replaced with the process PID.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_DUMP_DIR</span></code></p></td>
+<td><p>Output directory for level-10 kernel API input/output dumps. <code class="docutils literal notranslate"><span class="pre">%i</span></code> is replaced with the process PID.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sglang_kernel_api_dumps</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_DUMP_INCLUDE</span></code></p></td>
+<td><p>Comma-separated wildcard patterns for kernel API names to include in level-10 dumps.</p></td>
+<td><p>Not set</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_KERNEL_API_DUMP_EXCLUDE</span></code></p></td>
+<td><p>Comma-separated wildcard patterns for kernel API names to exclude from level-10 dumps.</p></td>
+<td><p>Not set</p></td>
 </tr>
 </tbody>
 </table>
