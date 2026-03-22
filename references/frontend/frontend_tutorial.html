@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=423cac09"></script>
+    <script src="../../_static/documentation_options.js?v=1c59d7f8"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -557,9 +557,9 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-[2026-03-22 04:08:17] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:08:17] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:08:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:27:53] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:27:53] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:27:53] INFO utils.py:164: NumExpr defaulting to 16 threads.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -567,32 +567,32 @@ document.write(`
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-03-22 04:08:22] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:08:22] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:08:22] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:27:57] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:27:57] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:27:57] INFO utils.py:164: NumExpr defaulting to 16 threads.
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:51: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-03-22 04:08:24] WARNING model_config.py:1098: Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
-[2026-03-22 04:08:24] INFO server_args.py:2232: Attention backend not specified. Use fa3 backend by default.
-[2026-03-22 04:08:24] INFO server_args.py:3506: Set soft_watchdog_timeout since in CI
+[2026-03-22 04:27:59] WARNING model_config.py:1098: Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:27:59] INFO server_args.py:2232: Attention backend not specified. Use fa3 backend by default.
+[2026-03-22 04:27:59] INFO server_args.py:3506: Set soft_watchdog_timeout since in CI
 /actions-runner/_work/sglang/sglang/python/sglang/srt/entrypoints/http_server.py:175: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   from sglang.srt.utils.json_response import (
-[2026-03-22 04:08:25] Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
-[2026-03-22 04:08:29] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:08:29] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:08:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-03-22 04:08:29] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:08:29] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:08:29] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-03-22 04:08:31] Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
-[2026-03-22 04:08:33] Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:00] Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:04] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:28:04] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:28:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:28:04] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:28:04] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:28:04] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:28:06] Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:08] Transformers version 5.3.0 is used for model type qwen2. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.63it/s]
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  8.34it/s]
-Capturing num tokens (num_tokens=4 avail_mem=119.60 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 11.70it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.86it/s]
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  9.21it/s]
+Capturing num tokens (num_tokens=4 avail_mem=116.98 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 11.90it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:116: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -608,7 +608,7 @@ Capturing num tokens (num_tokens=4 avail_mem=119.60 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34082
+Server started on http://localhost:34272
 </pre></div></div>
 </div>
 <p>Set the default backend. Note: Besides the local server, you may use also <code class="docutils literal notranslate"><span class="pre">OpenAI</span></code> or other API endpoints.</p>
@@ -625,7 +625,7 @@ Server started on http://localhost:34082
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-03-22 04:08:57] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-03-22 04:28:31] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 </section>
@@ -657,7 +657,7 @@ Server started on http://localhost:34082
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **India** - New Delhi<br>3. **Brazil** - Brasília</strong></div>
+<strong style='color: #00008B;'>Sure, here are three countries along with their capitals:<br><br>1. **France** - Paris<br>2. **Japan** - Tokyo<br>3. **Germany** - Berlin</strong></div>
 </div>
 </section>
 <section id="Multi-turn-Dialog">
@@ -687,13 +687,13 @@ Server started on http://localhost:34082
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Sure! Here are three countries along with their respective capitals:<br><br>1. **Japan** - Tokyo<br>2. **Australia** - Canberra<br>3. **Brazil** - Brasília</strong></div>
+<strong style='color: #00008B;'>Certainly! Here is a list of three countries along with their respective capitals:<br><br>1. **France** - Paris<br>2. **Germany** - Berlin<br>3. **Italy** - Rome</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Certainly! Here's another list of three countries and their capitals:<br><br>1. **Germany** - Berlin<br>2. **Italy** - Rome<br>3. **Spain** - Madrid</strong></div>
+<strong style='color: #00008B;'>Of course! Here is another list of three countries along with their respective capitals:<br><br>1. **Spain** - Madrid<br>2. **Japan** - Tokyo<br>3. **Canada** - Ottawa</strong></div>
 </div>
 </section>
 <section id="Control-flow">
@@ -735,7 +735,7 @@ Server started on http://localhost:34082
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>2 * 2.<br><br>Let's calculate this step-by-step:<br><br>1) Multiplying 2 by 2 gives 4.<br><br>Therefore, 2 * 2 = 4. No calculator is needed for this simple multiplication.</strong></div>
+<strong style='color: #00008B;'>2 * 2. <br><br>Let me calculate it for you:<br><br>2 * 2 = 4<br><br>So, 2 * 2 equals 4. You didn't actually need a calculator for this simple multiplication, but I can see you wanted to demonstrate!</strong></div>
 </div>
 </section>
 <section id="Parallelism">
@@ -775,7 +775,7 @@ Server started on http://localhost:34082
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>1. **Balanced Diet**: Eating a variety of nutritious foods from all the main food groups is essential for maintaining good health. A balanced diet should include:<br>   - **Fruits and Vegetables**: Provide vitamins, minerals, and fiber.<br>   - **Whole Grains**: Supply complex carbohydrates and fiber.<br>   - **Protein Sources**: Such as lean meats, fish, beans, and lentils.<br>   - **Dairy**: Provide calcium and other important nutrients.<br>   - **Healthy Fats**: From sources like avocados, nuts, and omega-3 rich fish.<br><br>2. **Regular Exercise**: Engaging in physical activity regularly is vital for overall well-being. Regular exercise can:<br>   - Improve cardiovascular health.<br>   - Build and maintain muscle strength.<br>   - Enhance flexibility and endurance.<br>   - Help manage body weight and reduce the risk of chronic diseases.<br>   - Boost mood and reduce anxiety and depression.<br>   - Improve sleep quality and cognitive function.<br>   - Increase energy levels.<br><br>By combining these two tips, you can significantly enhance your physical and mental health, leading to a more active and fulfilling life.</strong></div>
+<strong style='color: #00008B;'>1. **Balanced Diet**: A balanced diet is essential for overall health. It involves consuming a variety of nutrient-rich foods from all major food groups, such as fruits, vegetables, whole grains, and lean proteins. Along with a healthy balance of these foods, it's important to limit sugars, salts, and saturated fats. Proper hydration is also crucial. By maintaining a balanced diet, you can support your immune system, manage energy levels, and promote healthy growth and development.<br>2. **Regular Exercise**: Regular exercise is crucial for maintaining physical and mental well-being. Engaging in at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, along with strength training exercises two days a week, can significantly benefit your health. Regular physical activity improves cardiovascular health, strengthens muscles and bones, and can boost mental health by managing stress, improving sleep quality, and increasing energy levels. Choose activities you enjoy to make it easier to maintain a consistent routine.<br><br>Both of these habits are interconnected, as a healthy diet provides the energy and nutrients you need to perform well during exercise, while regular physical activity can enhance your ability to digest and utilize nutrients more efficiently. Together, they form the foundation of a healthy lifestyle.</strong></div>
 </div>
 </section>
 <section id="Constrained-Decoding">
@@ -848,7 +848,7 @@ Server started on http://localhost:34082
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Walnut",<br>        "core": "Phoenix feather",<br>        "length": 11.0<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "James Potter"<br>}</strong></div>
+<strong style='color: #00008B;'>{<br>    "name": "Harry Potter",<br>    "house": "Gryffindor",<br>    "blood status": "Half-blood",<br>    "occupation": "student",<br>    "wand": {<br>        "wood": "Yew",<br>        "core": "Phoenix feather",<br>        "length": 10.5<br>    },<br>    "alive": "Alive",<br>    "patronus": "Stag",<br>    "bogart": "Arnold Toothaker"<br>}</strong></div>
 </div>
 </section>
 <section id="Batching">
@@ -883,7 +883,7 @@ Server started on http://localhost:34082
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 3/3 [00:00&lt;00:00, 26.08it/s]
+100%|██████████| 3/3 [00:00&lt;00:00, 27.00it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1002,30 +1002,30 @@ The capital of France is Paris.&lt;|im_end|&gt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-03-22 04:09:09] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:09:09] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:09:09] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:28:43] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:28:43] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:28:43] INFO utils.py:164: NumExpr defaulting to 16 threads.
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:51: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-[2026-03-22 04:09:11] WARNING model_config.py:1098: Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
-[2026-03-22 04:09:11] INFO server_args.py:2232: Attention backend not specified. Use fa3 backend by default.
-[2026-03-22 04:09:12] INFO server_args.py:3506: Set soft_watchdog_timeout since in CI
+[2026-03-22 04:28:45] WARNING model_config.py:1098: Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:45] INFO server_args.py:2232: Attention backend not specified. Use fa3 backend by default.
+[2026-03-22 04:28:45] INFO server_args.py:3506: Set soft_watchdog_timeout since in CI
 /actions-runner/_work/sglang/sglang/python/sglang/srt/entrypoints/http_server.py:175: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   from sglang.srt.utils.json_response import (
-[2026-03-22 04:09:12] Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
-[2026-03-22 04:09:17] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:09:17] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:09:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-03-22 04:09:17] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
-[2026-03-22 04:09:17] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
-[2026-03-22 04:09:17] INFO utils.py:164: NumExpr defaulting to 16 threads.
-[2026-03-22 04:09:19] Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
-[2026-03-22 04:09:22] Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:46] Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:50] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:28:50] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:28:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:28:50] INFO utils.py:148: Note: detected 192 virtual cores but NumExpr set to maximum of 64, check &#34;NUMEXPR_MAX_THREADS&#34; environment variable.
+[2026-03-22 04:28:50] INFO utils.py:151: Note: NumExpr detected 192 cores but &#34;NUMEXPR_MAX_THREADS&#34; not set, so enforcing safe limit of 16.
+[2026-03-22 04:28:50] INFO utils.py:164: NumExpr defaulting to 16 threads.
+[2026-03-22 04:28:53] Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
+[2026-03-22 04:28:55] Transformers version 5.3.0 is used for model type qwen2_5_vl. If you experience issues related to RoPE parameters, they may be due to incompatibilities between Transformers &gt;=5.0.0 and some models. You can try downgrading to transformers==4.57.1 as a workaround.
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.46it/s]
+Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:02&lt;00:00,  1.68it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:116: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -1041,7 +1041,7 @@ Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:03&lt;00:00,  1.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:37474
+Server started on http://localhost:39567
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1057,7 +1057,7 @@ Server started on http://localhost:37474
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[2026-03-22 04:09:37] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
+[2026-03-22 04:29:10] Endpoint &#39;/get_model_info&#39; is deprecated and will be removed in a future version. Please use &#39;/model_info&#39; instead.
 </pre></div></div>
 </div>
 <p>Ask a question about an image.</p>
@@ -1082,7 +1082,7 @@ Server started on http://localhost:37474
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>The image depicts a man standing on the back of a yellow SUV, which appears to be a taxi, engaged in an unusual activity. He is ironing a blue cloth or garment that is draped over an ironing board. Behind him, there is another yellow taxi in motion on a busy street. The scene is urban, with buildings and trees visible in the background. The setting suggests a chaotic or humorous situation, as ironing is typically done indoors or in locations designated for such tasks.</strong></div>
+<strong style='color: #00008B;'>In the image, a person is ironing clothes that are spread on a makeshift ironing board attached to the back of a yellow taxi. The ironing board has a metal frame, and the clothes include shirts of various colors such as yellow, blue, and gray. The scene is taking place on a busy street with other taxis and pedestrians present in the background.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
