@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.81it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.51s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 04:50:11,411 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 04:50:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 05:28:36,502 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 05:28:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a taxi in New York City, which is dressed up as Santa Claus. The taxi is in the middle of the street, and there are people dressed in yellow t-shirts, some of which are complete with matching yellow pants, hats, and scarves, to create the appearance of Santa Claus. The taxi is decorated with various flags, and the driver appears to be getting ready for a parade or some festive event, potentially related to the holiday season.
+    The image depicts a yellow taxi in New York City. The cab is parked on the street with various clothes and gear draped over it. It appears to be raining, as the yellow paint on the taxi is partially sheathed in raindrops, and a person nearby seems to be using an umbrella to shield themselves from the rain. The background shows urban scenery typical of New York City, with buildings and street signs visible.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the photograph, there are two yellow taxis positioned side by side on the street. The taxi in the foreground is closer to the camera, while the other taxi is slightly behind it, towards the back of the scene. Both taxis are in motion, given their position on the road. The background features some buildings, possibly commercial or office spaces, indicated by the presence of shop signs and windows. Some flags are also noticeable in the background, suggesting a parade or event in progress. The photograph appears to have been taken during daylight hours.
+    In the image, there is a yellow taxi cab. The taxi is stationary on the street, and it appears to be participating in a charity event where it has a long blue cloth draped over the top, possibly for istediğ or embroidery. The scene is set in an urban environment with buildings and other city elements visible in the background. This kind of event is often used to raise funds for good causes or awareness campaigns.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the picture, you can see a group of yellow cabs driving down a road. The scene appears to be from a busy urban environment, possibly during a peak time when there are many cars on the street. The cabs are yellow, a common color for taxis in many cities, including New York. The weather seems clear, and the environment looks bustling with activity.
+    The image shows a yellow taxi in an urban setting, likely a busy city street. The taxi is equipped with a special rack mounted on the back, designed for the transportation of goods. This rack has two horizontal bars with a designated area in the middle for the placement of electronic devices, possibly tablets or screen protectors. The yellow cab is parked on the street with other traffic and buildings in the background. The rack is being demonstrated to showcase its ability to securely hold or transport devices in its designated area.
 
 
 ## Querying Llama 4 Vision Model
