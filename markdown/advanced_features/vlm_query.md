@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.78it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.40s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 02:49:11,961 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 02:49:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 03:28:39,372 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 03:28:39] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person hanging washing to dry on a road in a city. There are two yellow cabs, one behind the person and one behind the clothesline. The background features urban elements such as buildings with large glass windows, streetlights, and an advertisement on a pole.
+    The image shows a man standing next to a yellow taxi in New York City,.ali, and he is hanging clothes on a clothesline attached to the back of the taxi. This scene seems to be quite unusual, as taxi cabs usually don't have space for hanging clothes. It could be a creative or artistic idea to depict a multitasking taxi driver in an unconventional way.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a taxi that has been personalized by running clothes on the doors. The taxi is yellow, and the clothes are arranged in a fashion show-like display on the doors and windows. The clothes are in shades of blue and appear to be part of a collection or a special event. The background includes urban elements such as buildings and street signs, indicating that this is most likely taken in a city.
+    This is a scene from the TV show "Law & Order: Special Victims Unit." In the image, a homeless man isathausingchristy w will债 ze fairy on a rack in front of a taxi on a city street. This scene is from the episode "Laughter Is The Best Medicine," where a corrupt lawyer overseer is capturing footage of the homeless man.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you provided shows a car with a tow bar attached to its rear. This type of setup is typically used for towing or recovery purposes. The tow bar is a crucial component in towing vehicles, as it allows for the attachment of a tow rope or cable using a properly equipped tow truck.
+    The image shows a distinctive scene in a city street. A craftsman is working on an impromptu stand to display an indistinct object. Behind him, several cars, including a bright yellow taxi, are parked along the side of the road. The setting appears to be an urban environment, given the urban architecture and the presence of street banners floating above. The yellow cab stands out prominently due to its bright color and traditional shape, which is much more distinct compared to theAttributed to the artist making this verb phrase.
 
 
 ## Querying Llama 4 Vision Model
