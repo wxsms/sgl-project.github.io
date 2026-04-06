@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.67it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.04it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 01:53:20,532 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 01:53:20] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 02:16:48,234 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 02:16:48] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis on a city street. The individual in the yellow shirt is wearing black pants and appears to be possibly attempting to move one of the taxis. The scene suggests a humorous or unexpected situation where a person is trying to shift a vehicle, as the colorful clothing is typically tied or hung on the back, possibly to advertise or mark the taxi. The background includes tall buildings and street lights, indicating an urban setting.
+    The image shows two yellow taxis, one in the foreground and one slightly in the background, parked on a city street. A person is using a suitcase or a similar item to hang clothes on a clothesline strung across the back of a taxi cab. This is an unusual and humorous situation, likely meant to be a joke or light-hearted moment. The background features urban elements such as buildings, signs, and street lights, indicating an urban environment.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This picture shows two yellow cabs on a city street. One cab is further down the street, and the other is closer to the foreground. The cab in the foreground is being used as a laundry service, with clothes hanging from its two racks. This method is often used in New York City and other urban areas with abundant rain to quick-dry clothes. The street is lined with tall buildings, and multiple colorful banners and flags are visible in the background.
+    The image shows a scene with two yellow cabs. One cab appears to have its back opened, possibly to look inside. The individual in the image seems to be participating in an act of street performance or demonstration, as they have a colorful piece of clothing draped over a stick or sign. The street is adorned with various flags and banners, indicating a festive or celebratory atmosphere. The setting appears to be in an urban area with buildings and trees surrounding the street.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. One taxi is facing the viewer, while the other is moving away from the viewer. The taxis have distinctive swatches of colors—square pieces of confetti—attached to the back windows. There is also a streetlight visible in the background, and some buildings with signs and banners can be seen. The scene appears to be in an urban area, likely during a special event or celebration.
+    This image shows a public transportation vehicle, likely a bus or a similar type of vehicle, large enough to provide seating for several passengers. The vehicle is traveling on a road, with the front facing towards the right side of the image. The bus has windows and possibly doors on the side, allowing passengers to enter and exit. The vehicle's design suggests it is equipped for long-distance travel or multiple riders, as it has enough seating capacity for multiple passengers.
 
 
 ## Querying Llama 4 Vision Model
