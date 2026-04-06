@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.01it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
 
 
 
@@ -115,12 +115,19 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 03:28:39,372 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 03:28:39] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 04:16:34,770 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 04:16:34] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man standing next to a yellow taxi in New York City,.ali, and he is hanging clothes on a clothesline attached to the back of the taxi. This scene seems to be quite unusual, as taxi cabs usually don't have space for hanging clothes. It could be a creative or artistic idea to depict a multitasking taxi driver in an unconventional way.
+    Here are the steps you can follow to figure out what might be shown:
+    
+      1. Look at the visual image to determine what is happening or where it is located.
+      2. Make a description of what you see, including any relevant details such as colors, object shapes, etc.
+      3. Compare your description with the options provided.
+      4. Choose the option that seems most accurate to what you describe.
+    
+    Based on the description of a man wearing a yellow shirt with his back towards a car and a yellow and red striped car on the street, it seems likely that the picture shows a man drying clothes on
 
 
 ### Call with Processor Output
@@ -145,7 +152,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a scene from the TV show "Law & Order: Special Victims Unit." In the image, a homeless man isathausingchristy w will债 ze fairy on a rack in front of a taxi on a city street. This scene is from the episode "Laughter Is The Best Medicine," where a corrupt lawyer overseer is capturing footage of the homeless man.
+    The image shows a scene from what appears to be a comedy skit or an optical illusion. There are two yellow taxis parked on a New York City street. The taxi in the foreground has a towel or cloth draped over the back of its trunk, appearing as though it is sliding down a ramp over the roof of the next taxi. This creates the illusion that the taxi is interacting with the otherwise static background, which includes windows of a building and flags hanging from light posts. This setup is often used in comedic skits to make an unusual or unexpected appearance seem more realistic.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +208,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a distinctive scene in a city street. A craftsman is working on an impromptu stand to display an indistinct object. Behind him, several cars, including a bright yellow taxi, are parked along the side of the road. The setting appears to be an urban environment, given the urban architecture and the presence of street banners floating above. The yellow cab stands out prominently due to its bright color and traditional shape, which is much more distinct compared to theAttributed to the artist making this verb phrase.
+    This image shows a scene from New York City, featuring a yellow cab (taxi) with a unique advertisement attached to its back. The advertisement depicts a woman holding a baby in her arms and wearing a rocket, with the caption “Behold, a baby rocket.” This humorously combines the idea of a child with the concept of space travel, emphasizing the advancement and efficiency of child-rearing in an era where high-tech gadgets are readily available for new parents.
+    
+    The environment around the yellow cab includes buildings, street signs, and poles, typical of an urban setting. The overall atmosphere appears to be bustling and pedestrian-friendly, characterized by the
 
 
 ## Querying Llama 4 Vision Model
