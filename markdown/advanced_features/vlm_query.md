@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.81it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.78it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.26it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
 
 
 
@@ -115,12 +115,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 05:28:36,502 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 05:28:36] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 06:06:55,464 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 06:06:55] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts a yellow taxi in New York City. The cab is parked on the street with various clothes and gear draped over it. It appears to be raining, as the yellow paint on the taxi is partially sheathed in raindrops, and a person nearby seems to be using an umbrella to shield themselves from the rain. The background shows urban scenery typical of New York City, with buildings and street signs visible.
+    The image shows two yellow taxi cabs driving down a busy city street. They appear to be in motion, likely waiting at a signal or entering a lane. The street is lined with pedestrians, and there are various signs and possibly advertisement banners on the buildings. The scene is typical of an urban environment, likely in a major city known for its bustling streets and distinctive yellow taxis.
+    
+    The taxi in the foreground has a barre or stand on the back of its vehicle, which could be used to do 이유 or other activities while the driver is not at the wheel. The cab in the background also has such a bar, suggesting it is either
 
 
 ### Call with Processor Output
@@ -145,7 +147,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is a yellow taxi cab. The taxi is stationary on the street, and it appears to be participating in a charity event where it has a long blue cloth draped over the top, possibly for istediğ or embroidery. The scene is set in an urban environment with buildings and other city elements visible in the background. This kind of event is often used to raise funds for good causes or awareness campaigns.
+    The image shows a man wearing an orange jacket pushing a cart through a city street. The cart has several blue towels hanging from a hook. On the cart, there is a white glove and a white hat with an American flag on it. In the background, there is a yellow taxi cab and some buildings with storefronts. The scene appears to be set in a busy urban area.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +203,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi in an urban setting, likely a busy city street. The taxi is equipped with a special rack mounted on the back, designed for the transportation of goods. This rack has two horizontal bars with a designated area in the middle for the placement of electronic devices, possibly tablets or screen protectors. The yellow cab is parked on the street with other traffic and buildings in the background. The rack is being demonstrated to showcase its ability to securely hold or transport devices in its designated area.
+    The image shows a yellow taxi cab parked on a city street. The taxi has a sign attached to its rear window with text reading "RENTAL TAP TEST." A stand with clothes or materials is also attached to the back of the taxi. There are various posts with colorful banners or flags visible in the background, and a pedestrian sidewalk is visible to the left. The scene appears to be urban, possibly in a commercial area.
 
 
 ## Querying Llama 4 Vision Model
