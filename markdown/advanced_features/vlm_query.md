@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.04it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.78it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.40s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.27s/it]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 02:16:48,234 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 02:16:48] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 02:49:11,961 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 02:49:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis, one in the foreground and one slightly in the background, parked on a city street. A person is using a suitcase or a similar item to hang clothes on a clothesline strung across the back of a taxi cab. This is an unusual and humorous situation, likely meant to be a joke or light-hearted moment. The background features urban elements such as buildings, signs, and street lights, indicating an urban environment.
+    The image shows a person hanging washing to dry on a road in a city. There are two yellow cabs, one behind the person and one behind the clothesline. The background features urban elements such as buildings with large glass windows, streetlights, and an advertisement on a pole.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene with two yellow cabs. One cab appears to have its back opened, possibly to look inside. The individual in the image seems to be participating in an act of street performance or demonstration, as they have a colorful piece of clothing draped over a stick or sign. The street is adorned with various flags and banners, indicating a festive or celebratory atmosphere. The setting appears to be in an urban area with buildings and trees surrounding the street.
+    The image shows a taxi that has been personalized by running clothes on the doors. The taxi is yellow, and the clothes are arranged in a fashion show-like display on the doors and windows. The clothes are in shades of blue and appear to be part of a collection or a special event. The background includes urban elements such as buildings and street signs, indicating that this is most likely taken in a city.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a public transportation vehicle, likely a bus or a similar type of vehicle, large enough to provide seating for several passengers. The vehicle is traveling on a road, with the front facing towards the right side of the image. The bus has windows and possibly doors on the side, allowing passengers to enter and exit. The vehicle's design suggests it is equipped for long-distance travel or multiple riders, as it has enough seating capacity for multiple passengers.
+    The image you provided shows a car with a tow bar attached to its rear. This type of setup is typically used for towing or recovery purposes. The tow bar is a crucial component in towing vehicles, as it allows for the attachment of a tow rope or cable using a properly equipped tow truck.
 
 
 ## Querying Llama 4 Vision Model
