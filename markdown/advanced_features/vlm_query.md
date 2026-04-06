@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:02<00:02,  2.07s/it]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.67it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.39s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.34s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.32it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-05 23:23:21,865 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-05 23:23:21] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 01:53:20,532 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 01:53:20] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man standing behind the back of a yellow taxi in what appears to be New York City, based on the taxi's design and urban setting. He is holding and folding a blue piece of fabric, possibly grab and go.ci from a nearby store or vending machine to use as a decorative or protective layer for the taxis. The man is standing on the back of one taxi, which is yellow, which is towed to the curb by another taxi, which is also yellow. The background shows a street lined with buildings. The image suggests an innovation in city transportation, showcasing a creative solution to keep the orange taxis shiny and in
+    The image shows two yellow taxis on a city street. The individual in the yellow shirt is wearing black pants and appears to be possibly attempting to move one of the taxis. The scene suggests a humorous or unexpected situation where a person is trying to shift a vehicle, as the colorful clothing is typically tied or hung on the back, possibly to advertise or mark the taxi. The background includes tall buildings and street lights, indicating an urban setting.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a bright yellow taxi cab in a city street. The taxi is parked, and there are no people visible in the image. The background includes a few buildings and parked cars, suggesting an urban environment. The taxi's destination might not be clear from the image alone.
+    This picture shows two yellow cabs on a city street. One cab is further down the street, and the other is closer to the foreground. The cab in the foreground is being used as a laundry service, with clothes hanging from its two racks. This method is often used in New York City and other urban areas with abundant rain to quick-dry clothes. The street is lined with tall buildings, and multiple colorful banners and flags are visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The taxi is equipped with two portable vanity mirrors attached to a stand, allowing the driver or passenger to get a rear view of the taxi's surroundings. This setup is more common in some regions of the world to improve visibility for taxi operators. The background includes buildings and some pedestrians, indicating an urban environment.
+    The image shows two yellow taxis driving down a city street. One taxi is facing the viewer, while the other is moving away from the viewer. The taxis have distinctive swatches of colors—square pieces of confetti—attached to the back windows. There is also a streetlight visible in the background, and some buildings with signs and banners can be seen. The scene appears to be in an urban area, likely during a special event or celebration.
 
 
 ## Querying Llama 4 Vision Model
