@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.72it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.02it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 20:57:01,710 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 20:57:01] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 21:29:21,518 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 21:29:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a scene on New York City streets. There are two yellow taxis parked on the side of the road. The taxi on the left is relatively standard, while the one on the right is being used as a clothes drying rack for hanging laundry. This typically happens in the summertime, as people use the taxis to dry their clothes due to the hot weather. The tires on the right taxi are used to support the clotheslines, making it a humorous and creative accessory for outdoor laundry.
+    The image shows two yellow taxis on a city street. The backtaxi is equipped with a clothesline attached to the rear, with clothes hanging from it. This is not typical for a city taxi in the United States, where taxis are usually not used for handling personal items like laundry. The scene may be for a joke or a creative image, likely set in a part of the city known for its humor or street performances.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there is a yellow taxi cab driving on a city street. On the back of the taxi, there is an individual draped in clothes that appear to be suspended in the air, creating a humorous and surreal visual effect. The clothes include various items, such as a jacket and jeans, spread out at different distances on the back of the taxi. This scene is likely intended to be amusing or entertaining.
+    The image shows a yellow taxi cab parked on a city street. The taxi is equipped with a blue habits for later use, suggesting it is a float taxi. The habits appear to be folded and ready for official events. The street is lined with buildings, and there are flags and decorations visible in the background, indicating preparations for a parade or similar event.
 
 
 ### Call with Precomputed Embeddings
@@ -201,17 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a street scene in an urban area with several key elements:
-    
-    1. **Cars**:
-       - There are two taxis prominently featured. The most visible taxi has a yellow cab and a些QQ logo displayed on the door and side.
-       - Another taxi is partially visible behind the first one, also yellow in color.
-    
-    2. **Person**:
-       - A person is standing next to one of the taxis. This individual is wearing glasses and a yellow shirt. They are also wearing sandals and holding an object, possibly related to the 'QQ' logo or another reflective surface.
-    
-    3. **Traffic Light**:
-       -
+    The image shows a yellow taxi on a street in an urban setting. The taxi is parked on the right side of the road. The background includes a building with both modern and older architectural elements, and there are street signs and banners visible. The setting appears to be in a city, possibly in the United States given the style of the taxi and the presence of American flags. The taxi cab is typical of those used in urban areas for transporting passengers.
 
 
 ## Querying Llama 4 Vision Model
