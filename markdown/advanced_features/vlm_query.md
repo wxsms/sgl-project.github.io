@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.48it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.14it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.18it/s]
 
 
 
@@ -115,14 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 06:28:16,227 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 06:28:16] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 07:16:16,538 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 07:16:16] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a man standing next to a yellow taxi in what appears to be New York City. He is holding a hamster on a small folding chair equipped with a makeshift harness. The man is using a pink rectangular object that looks like a flag to keep the hamster from falling off the chair. 
-    
-    The scene is set in a busy street with other taxis, various flags visible in the background, and a cityscape with buildings and trees. The collage suggests a humorous or light-hearted moment, possibly taken among taxi drivers during the "International Taxi Week" celebration, where drivers attach pictures of their pets, families, or other adorable animals
+    The image shows a scene reminiscent of the "Taxi Pull-Over"作为一种幽默活动，但仅指出细节。
 
 
 ### Call with Processor Output
@@ -147,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, a yellow taxi cab is driving in an urban area with several objects and signs visible. The taxi is pulling a trailer attached to the back with clothes on it, possibly serving as a street vendor or vendor. There are also multiple flags and banners displayed on a pole on the sidewalk. The setting appears to be a busy city street with some shops and other vehicles in the vicinity.
+    The image shows two yellow taxis waiting at a taxi stand. One of the taxis has an American flag attached to it, hanging from the top. Various street signs and flags are visible in the background, along with buildings and green trees. The scene appears to be in an urban area, possibly during a parade or special event, given the presence of the American flag and the unusual arrangement of taxis.
 
 
 ### Call with Precomputed Embeddings
@@ -203,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis traveling down a street in what appears to be a busy city area. The background includes storefronts and a pedestrian area with people and storefronts. The setting suggests a dynamic urban environment, possibly during a time of day when activity is high, such as rush hour.
+    The image shows two yellow taxis on a city street, likely in New York City due to their iconic接送服务的方式. The Mixx stickers on the backs of the taxis indicate that Roxxy agencies has purchased advertising rights on these vehicles. The taxis are parked on the street, and the sign behind them stimulates traffic.
 
 
 ## Querying Llama 4 Vision Model
