@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.91it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.72it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 18:09:42,967 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 18:09:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 20:57:01,710 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 20:57:01] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street scene in what appears to be New York City, featuring two yellow cabs forming a letter "o". This artistic maneuver is known as "letter cab," a common sight in the city, where taxis are painted in a particular shape to form letters or logos. The two cabs, painted to form "SOBNYCTAXI," are spread out on the road.
+    The image shows a scene on New York City streets. There are two yellow taxis parked on the side of the road. The taxi on the left is relatively standard, while the one on the right is being used as a clothes drying rack for hanging laundry. This typically happens in the summertime, as people use the taxis to dry their clothes due to the hot weather. The tires on the right taxi are used to support the clotheslines, making it a humorous and creative accessory for outdoor laundry.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis. One of the taxis has a clothes rack attached to its rear with clothing items hanging on it. The setting appears to be an urban environment with some signs and storefronts in the background.
+    In the image, there is a yellow taxi cab driving on a city street. On the back of the taxi, there is an individual draped in clothes that appear to be suspended in the air, creating a humorous and surreal visual effect. The clothes include various items, such as a jacket and jeans, spread out at different distances on the back of the taxi. This scene is likely intended to be amusing or entertaining.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,17 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows two yellow taxis driving down a city street. In the foreground, a person is strung up between the cars by a rope, appearing to be tied up. This is a prank popularly known as "cat tying," where the prankster uses machinery to repeatedly pull at the rope leading to the driver or passenger of a vehicle.
+    The image shows a street scene in an urban area with several key elements:
+    
+    1. **Cars**:
+       - There are two taxis prominently featured. The most visible taxi has a yellow cab and a些QQ logo displayed on the door and side.
+       - Another taxi is partially visible behind the first one, also yellow in color.
+    
+    2. **Person**:
+       - A person is standing next to one of the taxis. This individual is wearing glasses and a yellow shirt. They are also wearing sandals and holding an object, possibly related to the 'QQ' logo or another reflective surface.
+    
+    3. **Traffic Light**:
+       -
 
 
 ## Querying Llama 4 Vision Model
