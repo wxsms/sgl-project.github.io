@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.88it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.13s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
 
 
 
@@ -115,19 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 04:16:34,770 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 04:16:34] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 04:28:42,756 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 04:28:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Here are the steps you can follow to figure out what might be shown:
-    
-      1. Look at the visual image to determine what is happening or where it is located.
-      2. Make a description of what you see, including any relevant details such as colors, object shapes, etc.
-      3. Compare your description with the options provided.
-      4. Choose the option that seems most accurate to what you describe.
-    
-    Based on the description of a man wearing a yellow shirt with his back towards a car and a yellow and red striped car on the street, it seems likely that the picture shows a man drying clothes on
+    The image shows a person ironing clothes or fabric outside the back of a yellow taxi cab parked on a city street. This scene seems unusual and humorous, as it is not common to iron clothes while sitting in a vehicle. The setting, possibly a protest or a performance, involves several flags and banners visible, indicating a public or political context.
 
 
 ### Call with Processor Output
@@ -152,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene from what appears to be a comedy skit or an optical illusion. There are two yellow taxis parked on a New York City street. The taxi in the foreground has a towel or cloth draped over the back of its trunk, appearing as though it is sliding down a ramp over the roof of the next taxi. This creates the illusion that the taxi is interacting with the otherwise static background, which includes windows of a building and flags hanging from light posts. This setup is often used in comedic skits to make an unusual or unexpected appearance seem more realistic.
+    This is a scene of a man setting up or packing a bicycle rack on the back of a yellow taxi cab. The bicycle rack appears to be a rooftop bike rack rather than a typical car bike rack. The taxi is likely at a stand and the man is preparing the bike for transport to a destination. It might be for one of the many New York City performances and gym exercise classes that involve bicycle operations.
 
 
 ### Call with Precomputed Embeddings
@@ -208,9 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a scene from New York City, featuring a yellow cab (taxi) with a unique advertisement attached to its back. The advertisement depicts a woman holding a baby in her arms and wearing a rocket, with the caption “Behold, a baby rocket.” This humorously combines the idea of a child with the concept of space travel, emphasizing the advancement and efficiency of child-rearing in an era where high-tech gadgets are readily available for new parents.
-    
-    The environment around the yellow cab includes buildings, street signs, and poles, typical of an urban setting. The overall atmosphere appears to be bustling and pedestrian-friendly, characterized by the
+    The image shows a yellow taxi cab pulled over by a person using a勞力士寶器 (perhaps a sledge or简易weishe), indicating that a bicycle has been used to prope.
 
 
 ## Querying Llama 4 Vision Model
