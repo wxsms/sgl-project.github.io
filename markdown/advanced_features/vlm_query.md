@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.78it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.59it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.20it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.25it/s]
 
 
 
@@ -115,14 +115,14 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 06:06:55,464 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 06:06:55] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 06:28:16,227 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 06:28:16] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxi cabs driving down a busy city street. They appear to be in motion, likely waiting at a signal or entering a lane. The street is lined with pedestrians, and there are various signs and possibly advertisement banners on the buildings. The scene is typical of an urban environment, likely in a major city known for its bustling streets and distinctive yellow taxis.
+    The image shows a man standing next to a yellow taxi in what appears to be New York City. He is holding a hamster on a small folding chair equipped with a makeshift harness. The man is using a pink rectangular object that looks like a flag to keep the hamster from falling off the chair. 
     
-    The taxi in the foreground has a barre or stand on the back of its vehicle, which could be used to do 이유 or other activities while the driver is not at the wheel. The cab in the background also has such a bar, suggesting it is either
+    The scene is set in a busy street with other taxis, various flags visible in the background, and a cityscape with buildings and trees. The collage suggests a humorous or light-hearted moment, possibly taken among taxi drivers during the "International Taxi Week" celebration, where drivers attach pictures of their pets, families, or other adorable animals
 
 
 ### Call with Processor Output
@@ -147,7 +147,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a man wearing an orange jacket pushing a cart through a city street. The cart has several blue towels hanging from a hook. On the cart, there is a white glove and a white hat with an American flag on it. In the background, there is a yellow taxi cab and some buildings with storefronts. The scene appears to be set in a busy urban area.
+    In the image, a yellow taxi cab is driving in an urban area with several objects and signs visible. The taxi is pulling a trailer attached to the back with clothes on it, possibly serving as a street vendor or vendor. There are also multiple flags and banners displayed on a pole on the sidewalk. The setting appears to be a busy city street with some shops and other vehicles in the vicinity.
 
 
 ### Call with Precomputed Embeddings
@@ -203,7 +203,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab parked on a city street. The taxi has a sign attached to its rear window with text reading "RENTAL TAP TEST." A stand with clothes or materials is also attached to the back of the taxi. There are various posts with colorful banners or flags visible in the background, and a pedestrian sidewalk is visible to the left. The scene appears to be urban, possibly in a commercial area.
+    The image shows two yellow taxis traveling down a street in what appears to be a busy city area. The background includes storefronts and a pedestrian area with people and storefronts. The setting suggests a dynamic urban environment, possibly during a time of day when activity is high, such as rush hour.
 
 
 ## Querying Llama 4 Vision Model
