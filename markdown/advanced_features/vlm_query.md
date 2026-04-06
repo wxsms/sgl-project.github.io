@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.05it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.91it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.56it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 07:32:13,854 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 07:32:13] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 18:09:42,967 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 18:09:42] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows the back of a yellow taxi cab in a parking lot, with multiple bags, suitcases, and personal belongings loosely hung or placed around it. The taxi is parked near a tree and there are several other similar vehicles in the background. The scene gives off the impression of a busy location, possibly during a transportation rush or a guided event.
+    The image shows a street scene in what appears to be New York City, featuring two yellow cabs forming a letter "o". This artistic maneuver is known as "letter cab," a common sight in the city, where taxis are painted in a particular shape to form letters or logos. The two cabs, painted to form "SOBNYCTAXI," are spread out on the road.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene on a city street. There are two yellow taxis parked side by side. Between the two taxis, there is a folding table with several sheets of paper and scattered rusty objects on it. In the foreground, a person wearing a yellow shirt and glasses is standing next to the table, looking down at the paper. The background includes urban elements such as buildings, streetlights, and a few people walking or standing further down the street. The signs on the building in the background indicate this is an outdoor setting, likely in an area with a mixture of commercial and residential buildings.
+    The image shows a street scene with two yellow taxis. One of the taxis has a clothes rack attached to its rear with clothing items hanging on it. The setting appears to be an urban environment with some signs and storefronts in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The photo depicts a scene on a city street with a yellow taxi parked on the road. The taxi is yellow because the interior of the cab is blue, which is the standard color for New York City cabs. The scene appears to be from New York City, given the iconic yellow taxis, the urban environment, and the signs and architectural style.
+    The image shows two yellow taxis driving down a city street. In the foreground, a person is strung up between the cars by a rope, appearing to be tied up. This is a prank popularly known as "cat tying," where the prankster uses machinery to repeatedly pull at the rope leading to the driver or passenger of a vehicle.
 
 
 ## Querying Llama 4 Vision Model
