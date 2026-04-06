@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.88it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.35it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.51s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.39s/it]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 04:28:42,756 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 04:28:42] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-06 04:50:11,411 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-06 04:50:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a person ironing clothes or fabric outside the back of a yellow taxi cab parked on a city street. This scene seems unusual and humorous, as it is not common to iron clothes while sitting in a vehicle. The setting, possibly a protest or a performance, involves several flags and banners visible, indicating a public or political context.
+    The image shows a taxi in New York City, which is dressed up as Santa Claus. The taxi is in the middle of the street, and there are people dressed in yellow t-shirts, some of which are complete with matching yellow pants, hats, and scarves, to create the appearance of Santa Claus. The taxi is decorated with various flags, and the driver appears to be getting ready for a parade or some festive event, potentially related to the holiday season.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This is a scene of a man setting up or packing a bicycle rack on the back of a yellow taxi cab. The bicycle rack appears to be a rooftop bike rack rather than a typical car bike rack. The taxi is likely at a stand and the man is preparing the bike for transport to a destination. It might be for one of the many New York City performances and gym exercise classes that involve bicycle operations.
+    In the photograph, there are two yellow taxis positioned side by side on the street. The taxi in the foreground is closer to the camera, while the other taxi is slightly behind it, towards the back of the scene. Both taxis are in motion, given their position on the road. The background features some buildings, possibly commercial or office spaces, indicated by the presence of shop signs and windows. Some flags are also noticeable in the background, suggesting a parade or event in progress. The photograph appears to have been taken during daylight hours.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi cab pulled over by a person using a勞力士寶器 (perhaps a sledge or简易weishe), indicating that a bicycle has been used to prope.
+    In the picture, you can see a group of yellow cabs driving down a road. The scene appears to be from a busy urban environment, possibly during a peak time when there are many cars on the street. The cabs are yellow, a common color for taxis in many cities, including New York. The weather seems clear, and the environment looks bustling with activity.
 
 
 ## Querying Llama 4 Vision Model
