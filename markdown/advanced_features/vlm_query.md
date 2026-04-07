@@ -96,133 +96,64 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    2026-04-07 21:53:00.812 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:47.716 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-07 21:53:00] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:47] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-07 21:53:00.813 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:47.717 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-07 21:53:00] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:47] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-07 21:53:00.814 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:47.717 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-07 21:53:00] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:47] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-07 21:53:00.814 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:47.717 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-07 21:53:00] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:47] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-07 21:53:00.815 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:47.718 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-07 21:53:00] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:47] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-07 21:53:02] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 23:24:49] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    2026-04-07 21:53:40.893 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-07 21:53:40] Persistent cache disabled, using in-memory JIT cache
-    2026-04-07 21:53:40.893 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-07 21:53:40] Persistent cache disabled, using in-memory JIT cache
-    2026-04-07 21:53:40.893 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-07 21:53:40] Persistent cache disabled, using in-memory JIT cache
-    2026-04-07 21:53:40.893 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-07 21:53:40] Persistent cache disabled, using in-memory JIT cache
-    2026-04-07 21:53:40.893 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-07 21:53:40] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:51] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-07 21:53:42] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 23:24:51] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py", line 10, in map_exceptions
-        yield
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py", line 28, in read
-        return self._sock.recv(max_bytes)
-      File "/usr/lib/python3.10/ssl.py", line 1288, in recv
-        return self.read(buflen)
-      File "/usr/lib/python3.10/ssl.py", line 1161, in read
-        return self._sslobj.read(len)
-    TimeoutError: The read operation timed out
-    
-    During handling of the above exception, another exception occurred:
-    
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
-        yield
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 218, in handle_request
-        resp = self._pool.handle_request(req)
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
-        raise exc
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
-        response = connection.handle_request(request)
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py", line 90, in handle_request
-        return self._connection.handle_request(request)
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 112, in handle_request
-        raise exc
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 91, in handle_request
-        ) = self._receive_response_headers(**kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
-        event = self._receive_event(timeout=timeout)
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 191, in _receive_event
-        data = self._network_stream.read(
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py", line 26, in read
-        with map_exceptions(exc_map):
-      File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
-        self.gen.throw(typ, value, traceback)
-      File "/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-        raise to_exc(exc)
-    httpcore.ReadTimeout: The read operation timed out
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3431, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1587, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
-        response = http_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
-        return next(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
-        response = client.request(method=method, url=url, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 821, in request
-        return self.send(request, auth=auth, follow_redirects=follow_redirects)
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 908, in send
-        response = self._send_handling_auth(
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 936, in _send_handling_auth
-        response = self._send_handling_redirects(
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 973, in _send_handling_redirects
-        response = self._send_single_request(request)
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 1009, in _send_single_request
-        response = transport.handle_request(request)
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 217, in handle_request
-        with map_httpcore_exceptions():
-      File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
-        self.gen.throw(typ, value, traceback)
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
-        raise mapped_exc(message) from exc
-    httpx.ReadTimeout: The read operation timed out
-    [2026-04-07 21:53:52] retry() failed once (0th try, maximum 2 retries). Will delay 0.98s and retry. Error: The read operation timed out
+    [2026-04-07 23:24:51] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 23:24:51] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    2026-04-07 23:24:56.362 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:56] Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:56.362 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:56] Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:56.362 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:56] Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:56.362 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:56] Persistent cache disabled, using in-memory JIT cache
+    2026-04-07 23:24:56.362 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-07 23:24:56] Persistent cache disabled, using in-memory JIT cache
+
+
+    [2026-04-07 23:24:57] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -230,29 +161,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-07 21:53:53] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-07 21:53:53] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-07 21:53:53] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-07 21:53:53] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 23:24:58] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 23:24:58] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 23:24:58] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 23:24:58] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.91it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.58it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.47it/s]
-
-
-    [2026-04-07 21:55:36] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-07 21:55:36] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-07 21:55:36] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-07 21:55:36] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.19it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.24it/s]
 
 
 
@@ -262,12 +181,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-07 21:56:00,095 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-07 21:56:00] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-07 23:27:03,786 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-07 23:27:03] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image you provided appears to be a photograph taken in New York City, featuring a traditional yellow taxi cab and purple-and-blue line markings. The taxi is positioned on a marked street, and it seems to be in a parking area or a driver stop, indicated by the red stop sign. The scene has an urban feel, common in New York's street layout and taxis. The flag and street conditions hint at it being a clear day in the city.
+    The image shows two yellow taxis driven in an urban environment. Carts displaying laundry items are visible in front of the taxis, suggesting the concept of on-demand laundry delivery. This is a modern service where service providers come to you for various needs, including laundry.
 
 
 ### Call with Processor Output
@@ -292,7 +211,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab in New York City. The taxi is parked and the driver, who appears to be wearing a yellow shirt, is hanging laundry, specifically socks, from a spring or a similar tool. The background includes typical urban elements such as street signs, a storefront, and a tall building. This scene is reminiscent of the classic "Ace inauguration" gag, where people dump laundry into the car предприятия for the inauguration celebrations.
+    This appears to be a humorous or unexpected scene of a man dressed in a bright yellow shirt and black pants pulling a metal folding chair behind a yellow cab. The setting seems to be in an urban area with tall buildings and a street with double yellow lines. The rider in the cab suggests this might be a parody or median gag meant to be amusing.
 
 
 ### Call with Precomputed Embeddings
@@ -348,7 +267,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image depicts a scene involving domestic help or janitorial services. The scene likely occurred indoors, where a service worker brought window cleaners and other supplies, possibly including wet or soiled clothes, to a residence. The presence of a vacuum cleaner suggests that the cleaning service may have included cleaning up after a previous cleaning session, ensuring the house is in a clean and tidy state.
+    The image shows a yellow taxi cab with some of its awning and canopy dismantled in the process of removing it. It's likely taking down the awning to service or inspect the canopy at the top.
 
 
 ## Querying Llama 4 Vision Model
