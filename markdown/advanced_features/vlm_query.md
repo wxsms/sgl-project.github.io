@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.02it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.03it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.55it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.50it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-06 23:20:58,039 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-06 23:20:58] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-07 00:57:52,508 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-07 00:57:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a street in a city with yellow taxicabs, suggesting an urban environment, likely in a major city like New York. The scene is unusual due to the presence of a person holding a laundry basket full of clothes suspended above the taxi. This appears unrelated to typical street activities.
+    The image shows a scene in a busy urban area, likely during a parade or a street event. There are several yellow taxis parked along the street. One taxi in the foreground has an additional space added to the back trunk area to allow for pulling clothes on a line. An individual, dressed in casual clothing, is using this space to hang laundry on a line, preparing clothing for drying. The background includes buildings and flags, indicating a festive or special occasion taking place.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It appears there are some items on a stand, like cloths or towels, but the exact objects are not clearly visible. The stand is positioned on a street, with what seems to be a taxi cab in the background. The image also includes a yellow car (possibly a taxi) and some various items and stains, and it seems to be a wet area.
+    The image shows a city street where a yellow taxi is parked behind some colorful shapes. The taxi is often associated with New York City cabs. The background features buildings and street signs, typical of an urban environment. The colorful shapes and the nature of the scene suggest that this might be part of a street performance or a public art installation.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene on a city street with two yellow taxis parked side by side. The scene appears to be a humorous or artistic setup where a display of clothes, including blue and pink shirts, is suspended in mid-air, balanced on a man's lap. This unusual sight suggests that the clothes might be drying off or part of a performance art piece. The background features some buildings with flags and windows, indicating an urban environment.
+    The image shows a person engaged in political activism in New York City. He is standing outside a taxi, holding a long banner with text advocating for Republican presidential candidate Marco Rubio. The banner is draped over his bicycle, and a few public holidays and flags are visible in the background, indicating that this is likely taking place during a public event or protest on a U.S. holiday.
 
 
 ## Querying Llama 4 Vision Model
