@@ -103,9 +103,9 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.96it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.63it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.45it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.51it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -115,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-07 01:19:11,369 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-07 01:19:11] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-07 02:08:45,919 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-07 02:08:45] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image depicts two New York City taxis, one in front of the other, with the second taxi attached to a wheeled frame that is being used to fold clothing in a street median. This scene is typically found during the spring cleaning season in New York City, where residents and visitors bring their clutter to designated bins by the many vendors offering public trash services.
+    The image shows two taxis parked on a street. They are yellow, which is the standard color for taxis in many cities. The scene appears to be in an area with tall buildings, possibly a downtown or commercial part of a city. There are also some banners or flags hanging in the background, although the specific content or purpose of these banners is not clear from the image alone. The taxis are driving down the street, and the background of the buildings suggests an urban environment.
 
 
 ### Call with Processor Output
@@ -145,7 +145,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image shows a scene from a TV show or movie set. Two police cars are parked on a city street, and one of them is open as if to load or unload something. The open car appears to be in the process of either placing or removing a draped cloth or cloak over the bars, creating a retro or historical appearance. The setting and style suggest that this is part of a costume photoshoot or a scene setup for a scene with historical elements.
+    The image shows a small, narrow sidewalk or street with a couple of objects of interest. On the right side, there is a U-shaped metal stand or structure holding an irons. There is also a partially opened blue plastic bag, which appears to contain items like underwear and shirts. Additionally, there is a red T-shirt hanging from the stand as well. On the left side of the image, there is a yellow taxi driving down the street. The background includes tall buildings with glass windows and red banners hanging from them. The overall scene seems to be near a city or urban environment.
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +201,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene in an urban setting, likely a city street. There are two yellow taxis, a yellow Hummer SUV, and a person in a yellow shirt and orange pants. The person appears to be doing something with a wooden pole and a blue cloth or blanket, which could be related to street work or performance. There are also several small flags or banners visible in the background, adding to the festive or celebratory atmosphere of the scene. The background architecture suggests a commercial area with shops or office buildings.
+    The image shows a yellow cab (taxi) driving on a city street. The taxi is in motion, indicated by the slight blur of the wheels and the taxi's headlights. Near the taxi, there is a clothes rack attached to one of its back doors. On the clothes rack, there appears to be some items of clothing, likely being transported by the taxi driver. The background shows tall buildings with large windows and some street elements, suggesting an urban setting.
 
 
 ## Querying Llama 4 Vision Model
