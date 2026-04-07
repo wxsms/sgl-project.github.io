@@ -96,16 +96,40 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
+    [2026-04-07 03:45:56] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 03:45:59] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 03:45:59] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 03:45:59] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 03:45:59] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 03:46:06] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+
+
+    [2026-04-07 03:46:07] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 03:46:07] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 03:46:07] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 03:46:07] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.63it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.64it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.29it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.11it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.16it/s]
 
 
 
@@ -115,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-07 02:08:45,919 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-07 02:08:45] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-07 03:46:13,648 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-07 03:46:13] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two taxis parked on a street. They are yellow, which is the standard color for taxis in many cities. The scene appears to be in an area with tall buildings, possibly a downtown or commercial part of a city. There are also some banners or flags hanging in the background, although the specific content or purpose of these banners is not clear from the image alone. The taxis are driving down the street, and the background of the buildings suggests an urban environment.
+    The image shows a humorous scene of a yellow taxi cab that has been used as a makeshift clothesline. You can see clothes pinned to a utility pole or piece of metal arm attached to the back of the taxi. The taxi appears to be parked on a city street, and the clothes are demonstrating how the cab can be repurposed for carrying or displaying items. This is an amusing and creative use of an urban environment for everyday tasks.
 
 
 ### Call with Processor Output
@@ -145,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a small, narrow sidewalk or street with a couple of objects of interest. On the right side, there is a U-shaped metal stand or structure holding an irons. There is also a partially opened blue plastic bag, which appears to contain items like underwear and shirts. Additionally, there is a red T-shirt hanging from the stand as well. On the left side of the image, there is a yellow taxi driving down the street. The background includes tall buildings with glass windows and red banners hanging from them. The overall scene seems to be near a city or urban environment.
+    What is displayed here?
 
 
 ### Call with Precomputed Embeddings
@@ -201,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow cab (taxi) driving on a city street. The taxi is in motion, indicated by the slight blur of the wheels and the taxi's headlights. Near the taxi, there is a clothes rack attached to one of its back doors. On the clothes rack, there appears to be some items of clothing, likely being transported by the taxi driver. The background shows tall buildings with large windows and some street elements, suggesting an urban setting.
+    The image shows a yellow taxi cab parked on the street. Two people are standing next to the taxi, with one of them stretching out a gently waving flag. The scene appears to be in an urban area, possibly in a city like New York, given the design of the taxi. The flag is waving in the wind, and the overall atmosphere seems casual and friendly.
 
 
 ## Querying Llama 4 Vision Model
