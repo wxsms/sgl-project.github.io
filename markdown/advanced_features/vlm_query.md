@@ -96,10 +96,22 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-07 06:58:15] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 07:54:22] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-07 06:58:24] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 07:54:24] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 07:54:24] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 07:54:24] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 07:54:24] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-07 07:54:31] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -107,29 +119,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-07 06:58:25] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-07 06:58:25] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-07 06:58:25] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-07 06:58:25] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 07:54:32] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 07:54:32] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 07:54:32] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-07 07:54:32] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.21it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.83it/s]
 
-    [2026-04-07 06:58:27] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-07 06:58:27] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-07 06:58:27] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-07 06:58:27] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.63it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.69it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-07 06:58:37,001 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-07 06:58:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-07 07:54:38,629 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-07 07:54:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    Neither income nor wealth can come without consequence here. There are two ways to earn a great deal of money; one option is to be especially diligent in allowing opportunities in your financial distribution. Another is a simplification of bureaucracy in your fiscal dealings. There are types of risks in your life. There are financial risks involving time and penalties. If you have invested money in surveys, how much of it is the price of punishment, and how much is your agreement to service these surveys?
+    The image shows two yellow taxis in what appears to be an urban setting, possibly a street in New York City. A person is visible in the background, partially obscured by the taxis, making a large effort to fold and tie a backpack on the back of one of the taxis. The scene is humorous, indicating that the person is attempting to fold a bag in a taxicab to fit inside the vehicle. This is likely staged for a fun or promotional photo. The environment has tall buildings and some street signs in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    In the image, there are two yellow cabs (taxis) parked along a city street. One cab is closer to the camera, while the other is slightly further away. The scene appears to be in an urban setting, possibly during a public event or display, as indicated by the display of clothes or banners in the cab of the closer taxi. There are also various flags and signs in the background, and the weather appears to be mild, with some trees visible in the backdrop.
+    The image depicts a yellow taxi parked on a city street. A person is standing next to the taxi, possibly unloading or loading luggage. There are several items of clothing in the background, including red, blue, and beige pieces of fabric. The taxi has a typical city street setting with buildings, traffic lights, and other urban elements visible in the background.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a yellow taxi parked on the street. In the foreground, there is a woman holding a blue plastic chair, which is attached to a pulley system. The pulley system appears to be rigged to lift the chair. This setup is likely for a photoshoot or to entertain pedestrians on the street. The context suggests that the woman is demonstrating how the pulley system can be used to move objects vertically without much physical effort. The background includes a building with flags and a few pedestrians, indicating that this is taking place in an urban environment.
+    The image shows a yellow New York City taxi parked on a city street. The taxi has a couple of towels pinned to its side, which might be part of a street art piece, a prank, or a marketing stunt. Additionally, there are many flags hanging from street poles in the background, adding to the urban and festive atmosphere of the scene.
 
 
 ## Querying Llama 4 Vision Model

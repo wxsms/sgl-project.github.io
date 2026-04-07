@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=d81958dc"></script>
+    <script src="../_static/documentation_options.js?v=62c67e43"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -529,6 +529,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hisparse-hierarchical-sparse-attention-for-dsa-experimental">HiSparse: Hierarchical Sparse Attention for DSA (experimental)</a></li>
 </ul>
             </nav>
         </div>
@@ -1072,6 +1073,11 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </section>
 </section>
 </section>
+<section id="hisparse-hierarchical-sparse-attention-for-dsa-experimental">
+<h2>HiSparse: Hierarchical Sparse Attention for DSA (experimental)<a class="headerlink" href="#hisparse-hierarchical-sparse-attention-for-dsa-experimental" title="Link to this heading">#</a></h2>
+<p>HiSparse reduces per-request GPU memory during decode by keeping only a small “hot” KV buffer on GPU while storing complete KV data in CPU pinned memory. A CUDA kernel dynamically swaps in the top-k most relevant KV entries from host memory on each decode step. This enables significantly higher decode concurrency for long-context DSA models.</p>
+<p>HiSparse currently requires PD disaggregation mode and is enabled on the decode instance only. For detailed design, configuration, and deployment instructions, see the <a class="reference internal" href="../advanced_features/hisparse_guide.html"><span class="std std-doc">HiSparse Guide</span></a>.</p>
+</section>
 </section>
 
 
@@ -1148,6 +1154,7 @@ python3<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<sp
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hisparse-hierarchical-sparse-attention-for-dsa-experimental">HiSparse: Hierarchical Sparse Attention for DSA (experimental)</a></li>
 </ul>
   </nav></div>
 
