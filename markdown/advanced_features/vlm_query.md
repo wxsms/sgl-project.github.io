@@ -96,22 +96,172 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-08 13:15:31] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+        yield
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py", line 28, in read
+        return self._sock.recv(max_bytes)
+      File "/usr/lib/python3.10/ssl.py", line 1288, in recv
+        return self.read(buflen)
+      File "/usr/lib/python3.10/ssl.py", line 1161, in read
+        return self._sslobj.read(len)
+    TimeoutError: The read operation timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+        yield
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 218, in handle_request
+        resp = self._pool.handle_request(req)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+        raise exc
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+        response = connection.handle_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py", line 90, in handle_request
+        return self._connection.handle_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 112, in handle_request
+        raise exc
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 91, in handle_request
+        ) = self._receive_response_headers(**kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+        event = self._receive_event(timeout=timeout)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 191, in _receive_event
+        data = self._network_stream.read(
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py", line 26, in read
+        with map_exceptions(exc_map):
+      File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+        self.gen.throw(typ, value, traceback)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+        raise to_exc(exc)
+    httpcore.ReadTimeout: The read operation timed out
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+        response = http_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+        return next(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+        response = client.request(method=method, url=url, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 821, in request
+        return self.send(request, auth=auth, follow_redirects=follow_redirects)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 908, in send
+        response = self._send_handling_auth(
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 936, in _send_handling_auth
+        response = self._send_handling_redirects(
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 973, in _send_handling_redirects
+        response = self._send_single_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 1009, in _send_single_request
+        response = transport.handle_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 217, in handle_request
+        with map_httpcore_exceptions():
+      File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+        self.gen.throw(typ, value, traceback)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+        raise mapped_exc(message) from exc
+    httpx.ReadTimeout: The read operation timed out
+    retry() failed once (0th try, maximum 2 retries). Will delay 0.99s and retry. Error: The read operation timed out
 
 
-    [2026-04-08 13:15:34] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 14:11:03] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 13:15:34] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+        yield
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py", line 28, in read
+        return self._sock.recv(max_bytes)
+      File "/usr/lib/python3.10/ssl.py", line 1288, in recv
+        return self.read(buflen)
+      File "/usr/lib/python3.10/ssl.py", line 1161, in read
+        return self._sslobj.read(len)
+    TimeoutError: The read operation timed out
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+        yield
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 218, in handle_request
+        resp = self._pool.handle_request(req)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+        raise exc
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+        response = connection.handle_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py", line 90, in handle_request
+        return self._connection.handle_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 112, in handle_request
+        raise exc
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 91, in handle_request
+        ) = self._receive_response_headers(**kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+        event = self._receive_event(timeout=timeout)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py", line 191, in _receive_event
+        data = self._network_stream.read(
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py", line 26, in read
+        with map_exceptions(exc_map):
+      File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+        self.gen.throw(typ, value, traceback)
+      File "/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+        raise to_exc(exc)
+    httpcore.ReadTimeout: The read operation timed out
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+        response = http_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+        return next(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+        response = client.request(method=method, url=url, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 821, in request
+        return self.send(request, auth=auth, follow_redirects=follow_redirects)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 908, in send
+        response = self._send_handling_auth(
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 936, in _send_handling_auth
+        response = self._send_handling_redirects(
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 973, in _send_handling_redirects
+        response = self._send_single_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_client.py", line 1009, in _send_single_request
+        response = transport.handle_request(request)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 217, in handle_request
+        with map_httpcore_exceptions():
+      File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+        self.gen.throw(typ, value, traceback)
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+        raise mapped_exc(message) from exc
+    httpx.ReadTimeout: The read operation timed out
+    [2026-04-08 14:11:18] retry() failed once (0th try, maximum 2 retries). Will delay 0.88s and retry. Error: The read operation timed out
 
 
-    [2026-04-08 13:15:34] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-08 13:15:34] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-08 13:15:40] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 14:11:54] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -119,17 +269,29 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-08 13:15:41] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 13:15:41] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 13:15:41] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 13:15:41] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 14:11:54] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 14:11:54] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 14:11:54] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 14:11:54] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.11it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.09it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.54it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.61it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.28s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.22s/it]
+
+
+    [2026-04-08 14:14:06] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-08 14:14:06] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-08 14:14:06] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-08 14:14:06] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
 
@@ -139,12 +301,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-08 13:15:47,285 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-08 13:15:47] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-08 14:14:07,755 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-08 14:14:07] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow taxis stopped on a city street. One taxi is parked near a storefront with several flags hanging from its rear. The other is visible in the background. Above the taxis, there is a street performer drying out their soiled uniform using a device attached to the back of one taxi. The street performer appears to be using a perforator to spread air and dry the clothes.
+    In the image, there are two yellow taxis parked along a city street. One of the taxis has a person in casual attire, specifically a yellow shirt, hanging clothes on a line for drying next to the vehicle. This is unusual and not commonly seen in urban environments. The background shows typical city elements like buildings, storefronts, and street signs.
 
 
 ### Call with Processor Output
@@ -169,7 +331,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi cab driving down a city street. On the back of the taxi, there are people hanging laundry out to dry against the side of the car. The scene appears to be taking place in a busy urban area, possibly with other buildings and flags in the background. The people engaged in this unusual activity seem to be searching for a place to keep their clothes out of the weather or perhaps waiting for a space to dry wet items.
+    It appears that the image shows a yellow taxi cab parked on the street. In addition to the taxi, there is a makeshift display of wetsuits on a stand in front of the taxi. The wetsuits are hanging on the stand, and there is some text written on the drapery that seems to be advertising something, though the text isn't entirely readable from the description. The scene looks like an advertising or promotional setup, possibly for a wetsuit or water sports event. The background shows urban elements, such as buildings and possibly pedestrians or other vehicles slightly obscured by the background.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +387,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you provided shows a unique and humorous scene on a city street. There are two taxis in the foreground, typical yellow cabs present in many city landscapes. Additionally, there is an unusual piece of furniture resembling a baby bouncer or playpen, which appears to be draped with clothes, including blue pants and possibly shirts, making it look like a baby bouncer. This arrangement is not typical in real life and seems to be a creative or playful setup, possibly for a photo opportunity or an art installation.
+    The image shows a yellow taxi cab parked on a city street. The word "Harley" is visible on the back of the taxi, indicating it might be a taxis from the Saint Paul Harleys Cabs company. The scene appears to be in a commercial area with storefronts and a street visible in the background.
 
 
 ## Querying Llama 4 Vision Model
