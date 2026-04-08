@@ -34,70 +34,70 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
       warnings.warn(
 
 
-    2026-04-08 06:19:43.741 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:43] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:43.741 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:43] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:43.741 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:43] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:43.741 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:43] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:43.741 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:43] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:02.770 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:02] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:02.771 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:02] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:02.771 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:02] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:02.771 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:02] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:02.771 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:02] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:19:45] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:04] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 06:19:48] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:19:48] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:19:48] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:19:48] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:07] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:07] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:07] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:07] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    2026-04-08 06:19:54.054 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:54] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:54.054 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:54] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:54.054 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:54] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:54.054 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:54] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:19:54.054 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:19:54] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:13.353 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:13] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:13.353 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:13] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:13.353 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:13] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:13.353 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:13] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:52:13.353 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:52:13] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:19:55] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:14] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [2026-04-08 06:19:56] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:19:56] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:19:56] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:19:56] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:15] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:15] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:15] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:52:15] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.77it/s]
+    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.97it/s]
 
-    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:01,  1.60it/s]
+    Multi-thread loading shards:  40% Completed | 2/5 [00:00<00:01,  2.52it/s]
 
-    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:01,  1.58it/s]
+    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:00,  2.15it/s]
 
-    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.52it/s]
+    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.81it/s]
 
-    Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.91it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.75it/s]
+    Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.60it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.78it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
 
 
-    2026-04-08 06:20:04,481 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-08 06:20:04] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-08 06:52:23,952 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-08 06:52:23] Unexpected error during package walk: cutlass.cute.experimental
 
 
 
@@ -151,11 +151,11 @@ print_highlight(response)
 
 
 
-<strong style='color: #00008B;'>{"id":"9cd194096c5c4cda9ba8821de1ed164c","object":"chat.completion","created":1775629211,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"b17570dd86514333966380323dc093cd","object":"chat.completion","created":1775631149,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"6380060e7cd5485491733b8211678d4c","object":"chat.completion","created":1775629212,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and trees in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"dbe529783d4c48488d0b279f9fba5ece","object":"chat.completion","created":1775631150,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and traffic around.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":382,"completion_tokens":75,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -188,7 +188,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"c6ecf63ed509417b91feb8b2ad55dd5d","object":"chat.completion","created":1775629213,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing the task. The scene suggests an unusual or humorous situation, as it is not typical for someone to iron clothes from the back of a moving vehicle.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":387,"completion_tokens":80,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"0e06778b8e2048e5a0ac9068a89f7d21","object":"chat.completion","created":1775631151,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":384,"completion_tokens":77,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using OpenAI Python Client
