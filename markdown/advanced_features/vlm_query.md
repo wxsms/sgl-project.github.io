@@ -96,64 +96,64 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    2026-04-08 04:29:06.256 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:00.714 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:06] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:00] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 04:29:06.258 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:00.715 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:06] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:00] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 04:29:06.258 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:00.716 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:06] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:00] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 04:29:06.259 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:00.717 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:06] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:00] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 04:29:06.259 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:00.717 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:06] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:00] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:07] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:02] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 04:29:10] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:05] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 04:29:10] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:05] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 04:29:10] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:05] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 04:29:10] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:05] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    2026-04-08 04:29:16.740 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 04:29:16] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 04:29:16.740 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 04:29:16] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 04:29:16.740 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 04:29:16] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 04:29:16.740 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 04:29:16] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 04:29:16.741 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 04:29:16] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:11.223 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:11] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:11.223 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:11] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:11.223 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:11] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:11.223 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:11] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 06:24:11.223 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 06:24:11] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 04:29:18] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:12] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -161,17 +161,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-08 04:29:18] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 04:29:18] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 04:29:18] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 04:29:18] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:13] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:13] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:13] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 06:24:13] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.90it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.81it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.30s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.19s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.22it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]
 
 
 
@@ -181,12 +181,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-08 04:29:26,120 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-08 04:29:26] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-08 06:24:20,079 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-08 06:24:20] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab with a person hanging clothes on its back. The scene is set in an urban environment, likely in New York City, given the architectural style and the yellow cabs, which are iconic in that city. The person appears to be life-sized and is using a clothesline attached to the back of the cab. This unusual scene combines elements of urban life with the concept of clothing racks seen in men's dressing rooms.
+    The image shows a vibrant street scene in New York City, featuring two taxis facing each other on a busy city street. The taxi on the left is yellow and appears to be a traditional New York City yellow cab, while the taxi on the right is a standard yellow Ford Freedom, with the fabric of a stove display visible behind its rear window, mounted between the cars. The hallway on the left side is likely that of a hair salon, as suggested by the architectural elements and the signage. The scene is indicative of a typical day in New York City, with taxis in various vehicles and colors.
 
 
 ### Call with Processor Output
@@ -211,7 +211,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a car parking on a street in a city. The car is pulling out a door from the back and placing it on a small platform that is supported by a metal tripod. The car appears to be a yellow taxi, and the platform is presumably being used to adhere cellphone ads to cars. The background includes several tall buildings with various signs and banners, indicating a busy urban environment.
+    The image shows two yellow taxis parked on a city street. The taxis are typical of the iconic yellow New York City taxi cabs. In the background, there are several streetlights and buildings, indicating an urban setting. The image appears to be taken during the day under clear weather conditions.
 
 
 ### Call with Precomputed Embeddings
@@ -267,7 +267,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows two yellow taxis traveling down a street in what appears to be a city setting. One taxi is closer to the foreground with itsIssuer emblem prominently displayed on the roof and side, suggesting it's a New York City taxi, likely in the city of New York given the context of the mural and the Issuer emblem. The other taxi is behind it and has a smaller Issuer emblem. There are also colorful cloths or banners and a vintage holder attached to the back of one of the taxis, which might be part of a public art display. The background includes tall buildings and some streetlights, indicating an urban environment.
+    The image shows a yellow cab (taxi) driving on a city street. There seems to be some bad positioning in the photo, possibly due to weak lighting or an imperfect exposure, causing the cab to appear almost vertical. The cab is parked next to street lamps, and there are flags and banners visible in the background, indicating a well-visited urban area.
 
 
 ## Querying Llama 4 Vision Model
