@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=2b92c6c2"></script>
+    <script src="../_static/documentation_options.js?v=7796ab0b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -573,15 +573,15 @@ document.write(`
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-08 17:24:27] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-08 17:24:27] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-08 17:24:27] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-08 17:24:27] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 4/4 [00:03&lt;00:00,  1.30it/s]
-2026-04-08 17:24:31,310 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-08 17:24:31] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:09&lt;00:00,  5.95it/s]
-Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████████| 58/58 [00:05&lt;00:00, 11.07it/s]
+[2026-04-08 18:54:54] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 18:54:54] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 18:54:54] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 18:54:54] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.47it/s]
+2026-04-08 18:54:58,262 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-08 18:54:58] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.47it/s]
+Capturing num tokens (num_tokens=4 avail_mem=41.21 GB): 100%|██████████| 58/58 [00:10&lt;00:00,  5.71it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -924,7 +924,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources: <br>- get_current_date function <br>- get_current_weather function</strong></div>
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources: <br>- Current Date and Time: pytz library (https://pypi.org/project/pytz/)<br>- Current Weather: OpenWeatherMap API (https://openweathermap.org/api)</strong></div>
 </div>
 </section>
 </section>
@@ -987,7 +987,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '37c4b07edfda460087ba7e4842191b94', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 1, 'cached_tokens_details': {'device': 1, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.173942263238132, 'response_sent_to_client_ts': 1775669101.493669}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '227ed26dd4294bb5bb07863f63ac417b', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 1, 'cached_tokens_details': {'device': 1, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.25217240198981017, 'response_sent_to_client_ts': 1775674534.6556838}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1032,7 +1032,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'f8701bc533354443b0cbb90488125d50', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 49, 'cached_tokens_details': {'device': 49, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.1825590766966343, 'response_sent_to_client_ts': 1775669101.6863556}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': '92a197772db34e499726233afddc290e', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 49, 'cached_tokens_details': {'device': 49, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.25844511901959777, 'response_sent_to_client_ts': 1775674534.922528}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1079,7 +1079,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'e209eeca952140c1b8bab7a08f6cddf5', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0976403160020709, 'response_sent_to_client_ts': 1775669101.818578}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'dfb1f3634a0944839293d7dae3d45654', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.09757495857775211, 'response_sent_to_client_ts': 1775669101.8185892}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '0115a43e37394473802dd54265a80191', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.09753505978733301, 'response_sent_to_client_ts': 1775669101.818594}}]</strong></div>
+<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '8bfd9c43b351464bb59ae42a46caa31f', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.12711712205782533, 'response_sent_to_client_ts': 1775674535.0974963}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'f25e318b40c54606826473952f0493bb', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.12704146897885948, 'response_sent_to_client_ts': 1775674535.097508}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'a281c0c7f1224433926dcbb569d6ab56', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.12700348906219006, 'response_sent_to_client_ts': 1775674535.097512}}]</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1116,7 +1116,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': '1da66c4ae5fc4200852fc69950244427', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 31, 'cached_tokens_details': {'device': 31, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.03771972842514515, 'response_sent_to_client_ts': 1775669101.8664203}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': '54105c5234df46358ea4c04a59f60448', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 31, 'cached_tokens_details': {'device': 31, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.05599228001665324, 'response_sent_to_client_ts': 1775674535.1607602}}</strong></div>
 </div>
 </section>
 <section id="id4">
@@ -1168,7 +1168,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': 'b8e6327f324b459c95a9a6e8ab9f6a4a', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.10916563682258129, 'response_sent_to_client_ts': 1775669103.2658236}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': '4ee092a00112464d9d3827f04c722609', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.11238606704864651, 'response_sent_to_client_ts': 1775674537.365759}}</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1222,7 +1222,7 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': 'c7444fe1a9b84702bfcf703eb1eec2f5', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.054688429459929466, 'response_sent_to_client_ts': 1775669103.3306737}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': '9a5f2f24a73e4ec8b8259b44bfe27ac5', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.07775643502827734, 'response_sent_to_client_ts': 1775674537.4523222}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -1263,11 +1263,11 @@ Capturing num tokens (num_tokens=4 avail_mem=99.86 GB): 100%|██████�
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.44it/s]
-2026-04-08 17:25:23,399 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-08 17:25:23] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:11&lt;00:00,  4.94it/s]
-Capturing num tokens (num_tokens=4 avail_mem=83.11 GB): 100%|██████████| 58/58 [00:09&lt;00:00,  6.22it/s]
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.78it/s]
+2026-04-08 18:55:59,308 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-08 18:55:59] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  8.45it/s]
+Capturing num tokens (num_tokens=4 avail_mem=59.54 GB): 100%|██████████| 58/58 [00:05&lt;00:00,  9.85it/s]
 </pre></div></div>
 </div>
 <section id="id5">
@@ -1495,7 +1495,7 @@ Capturing num tokens (num_tokens=4 avail_mem=83.11 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of France</strong></div>
+<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of Italy</strong></div>
 </div>
 </section>
 <section id="id7">
