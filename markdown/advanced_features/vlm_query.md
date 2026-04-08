@@ -96,64 +96,64 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    2026-04-08 06:46:18.636 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:58:48.362 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:18] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:58:48] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 06:46:18.637 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:58:48.364 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:18] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:58:48] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 06:46:18.637 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:58:48.364 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:18] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:58:48] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 06:46:18.637 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:58:48.365 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:18] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:58:48] Persistent cache disabled, using in-memory JIT cache
 
 
-    2026-04-08 06:46:18.638 DEBUG Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:58:48.365 DEBUG Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:18] Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:58:48] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:20] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:58:50] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 06:46:23] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:58:55] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 06:46:23] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:58:55] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 06:46:23] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:58:55] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-08 06:46:23] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:58:55] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    2026-04-08 06:46:29.288 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:46:29] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:46:29.288 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:46:29] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:46:29.289 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:46:29] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:46:29.289 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:46:29] Persistent cache disabled, using in-memory JIT cache
-    2026-04-08 06:46:29.289 DEBUG Persistent cache disabled, using in-memory JIT cache
-    [2026-04-08 06:46:29] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:59:00.621 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:59:00] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:59:00.621 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:59:00] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:59:00.621 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:59:00] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:59:00.621 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:59:00] Persistent cache disabled, using in-memory JIT cache
+    2026-04-08 07:59:00.621 DEBUG Persistent cache disabled, using in-memory JIT cache
+    [2026-04-08 07:59:00] Persistent cache disabled, using in-memory JIT cache
 
 
-    [2026-04-08 06:46:30] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:59:02] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -161,17 +161,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-08 06:46:31] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:46:31] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:46:31] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-08 06:46:31] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:59:02] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:59:02] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:59:02] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-08 07:59:02] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.06it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.21it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.34it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.40it/s]
 
 
 
@@ -181,12 +181,17 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-08 06:46:37,958 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-08 06:46:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-08 07:59:10,957 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-08 07:59:10] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a unique manning a public service stand类似于 a fire hydrant stand in the center of a city street. On top of a small table, he has put a pile of folded clothes, possibly after various hours of folding and keeping them visible to passersby. The stands are a place where people can hang wet clothes without the worry of them blowing away due to wind.[ obr, ville] This method of enclosure ensures that clothing remains clean and dry while the person utilizing the stand works on it. Such stands areoften used by individuals who have minimal central stoppage and cannot use regular washrooms, such as travelers or sanitation
+    The image shows a scene on a city street with two yellow taxis, likely in New York City given the distinctive brand and design of the taxis. The scene appears unusual because one of the taxis has a person mounted on its back, acting as a makeshift billboard display. This setup is commonly seen for promotional purposes, often for):
+    **Nokia 2DO liquid-D7.** The person behind the taxi seems to be an employee rather than a professional mount. This is also frequently seen at events where taxis are used as billboards for advertising.
+    
+    **Step-by-step analysis:**
+    1. ** object** taxis on the street.
+    2.
 
 
 ### Call with Processor Output
@@ -211,7 +216,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a yellow taxi parked on a city street with a man hanging laundry on its back window. It appears to be an unusual scene as taxi windows are not typically used for laundry drying. The setting looks urban, with buildings and streetlights in the background.
+    This image shows a scene on a city street with stairs built into the back of a car. The car is used as a temporary platform or ramp, likely for someone to climb onto buildings or structures, or to create an interesting visual effect. There are other vehicles and street elements visible in the background, indicating an urban setting.
 
 
 ### Call with Precomputed Embeddings
@@ -267,7 +272,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a yellow and purple street performer's staging. They are part of a second version of Golden Freddy that blends with the real taxi cab during a street performance. This is a mass standard set by the 2015 park David Maillotte when he revived the Freddy Krueger story online. In his original depiction of a gangsterfy 코드 (Hack Code) mask, Maillotte stopped his Freddy Krueger performance in the middle. Goldike Freddy Krueger: Close up look at Freddy Krueger in Hollywood. The Glacier Green® shades - Gardiner Street jogging. Icewax® Diamond
+    The image shows a scene in a city, likely a busy urban environment given the presence of multiple taxi cabs and the high-rise buildings. Two yellow taxi cabs are visible, one on the left and another wearing a mannequin spray-painted in receiving spray, standing between them. This vehicle displays stockings, possibly as a form of public art or an advertisement. The background includes a repeating pattern of repetitive elements, such as the letters "G.U.," and the street is filled with elements typical of a bustling city network.
 
 
 ## Querying Llama 4 Vision Model
