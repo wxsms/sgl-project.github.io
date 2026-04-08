@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=032cda53"></script>
+    <script src="../_static/documentation_options.js?v=fb6eee0a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -570,97 +570,18 @@ document.write(`
 /actions-runner/_work/sglang/sglang/python/sglang/launch_server.py:51: UserWarning: &#39;python -m sglang.launch_server&#39; is still supported, but &#39;sglang serve&#39; is the recommended entrypoint.
   Example: sglang serve --model-path &lt;model&gt; [options]
   warnings.warn(
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 10, in map_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 28, in read
-    return self._sock.recv(max_bytes)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1288, in recv
-    return self.read(buflen)
-  File &#34;/usr/lib/python3.10/ssl.py&#34;, line 1161, in read
-    return self._sslobj.read(len)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 60, in map_httpcore_exceptions
-    yield
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 218, in handle_request
-    resp = self._pool.handle_request(req)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 253, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection_pool.py&#34;, line 237, in handle_request
-    response = connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/connection.py&#34;, line 90, in handle_request
-    return self._connection.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 112, in handle_request
-    raise exc
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 91, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 155, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_sync/http11.py&#34;, line 191, in _receive_event
-    data = self._network_stream.read(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/backends/sync.py&#34;, line 26, in read
-    with map_exceptions(exc_map):
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpcore/_exceptions.py&#34;, line 14, in map_exceptions
-    raise to_exc(exc)
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py&#34;, line 2571, in retry
-    return fn()
-  File &#34;/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py&#34;, line 749, in &lt;lambda&gt;
-    lambda: hf_api.file_exists(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py&#34;, line 3436, in file_exists
-    get_hf_file_metadata(url, token=token)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py&#34;, line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py&#34;, line 1576, in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects_with_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 685, in _httpx_follow_relative_redirects_with_backoff
-    response = http_backoff(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 559, in http_backoff
-    return next(
-  File &#34;/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py&#34;, line 467, in _http_backoff_base
-    response = client.request(method=method, url=url, **kwargs)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 821, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 908, in send
-    response = self._send_handling_auth(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 936, in _send_handling_auth
-    response = self._send_handling_redirects(
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 973, in _send_handling_redirects
-    response = self._send_single_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_client.py&#34;, line 1009, in _send_single_request
-    response = transport.handle_request(request)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 217, in handle_request
-    with map_httpcore_exceptions():
-  File &#34;/usr/lib/python3.10/contextlib.py&#34;, line 153, in __exit__
-    self.gen.throw(typ, value, traceback)
-  File &#34;/usr/local/lib/python3.10/dist-packages/httpx/_transports/default.py&#34;, line 77, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-[2026-04-08 14:11:15] retry() failed once (0th try, maximum 2 retries). Will delay 0.76s and retry. Error: The read operation timed out
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-08 14:13:35] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-08 14:13:35] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-08 14:13:35] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-08 14:13:35] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 15:55:42] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 15:55:42] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 15:55:42] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-08 15:55:42] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.34it/s]
-2026-04-08 14:13:39,302 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-08 14:13:39] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  8.33it/s]
-Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████████| 58/58 [00:08&lt;00:00,  7.00it/s]
+2026-04-08 15:55:47,102 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-08 15:55:47] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:07&lt;00:00,  7.34it/s]
+Capturing num tokens (num_tokens=4 avail_mem=20.35 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 12.28it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -955,7 +876,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources: <br>- get_current_date function<br>- get_current_weather function</strong></div>
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources: <br>- get_current_date function <br>- get_current_weather function</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -1003,7 +924,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function><br><br>Sources: <br>1. get_current_date function <br>2. get_current_weather function</strong></div>
+<strong style='color: #00008B;'><function=get_current_date>{"timezone": "America/New_York"}</function><br><function=get_current_weather>{"city": "New York", "state": "NY", "unit": "fahrenheit"}</function></strong></div>
 </div>
 </section>
 </section>
@@ -1066,7 +987,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'd5880027f87a4937ab5e35d8143ffab1', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 1, 'cached_tokens_details': {'device': 1, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.17772274278104305, 'response_sent_to_client_ts': 1775657669.776686}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'e03ce30ffd224a019b4a326b9c177770', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 1, 'cached_tokens_details': {'device': 1, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.13111867802217603, 'response_sent_to_client_ts': 1775663775.8845952}}</strong></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -1111,7 +1032,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'fc0845b58286488cb051c48e3b6c72fa', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 49, 'cached_tokens_details': {'device': 49, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.16436172556132078, 'response_sent_to_client_ts': 1775657669.953491}}</strong></div>
+<strong style='color: #00008B;'>{'text': '{"name": "Paris", "population": 2147000}', 'output_ids': [5018, 609, 794, 330, 60704, 498, 330, 45541, 794, 220, 11584, 7007, 15, 92, 128009], 'meta_info': {'id': 'a6390434134046dc97f3c860d6821f68', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 50, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 15, 'cached_tokens': 49, 'cached_tokens_details': {'device': 49, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.15376440901309252, 'response_sent_to_client_ts': 1775663776.047658}}</strong></div>
 </div>
 </section>
 <section id="id2">
@@ -1158,7 +1079,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '68182941cb894a30b832239cdc21a75b', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0925688985735178, 'response_sent_to_client_ts': 1775657670.0716085}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'f288a7227fdd4130967303af3337d518', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.09251383598893881, 'response_sent_to_client_ts': 1775657670.071621}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'e7dfc69fff0941d6bf4d1a693c8fcdf5', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.09246816858649254, 'response_sent_to_client_ts': 1775657670.0716255}}]</strong></div>
+<strong style='color: #00008B;'>[{'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '50d7c38f799f4f089f90d3648978d2d1', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.07182817696593702, 'response_sent_to_client_ts': 1775663776.1432376}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': 'd5abcf71396c4469b943485d7ec9edf3', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0717650189762935, 'response_sent_to_client_ts': 1775663776.1432452}}, {'text': 'Paris is the capital of France', 'output_ids': [60704, 374, 279, 6864, 315, 9822, 128009], 'meta_info': {'id': '2e64782c238f4131b582b2937c5b1490', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 46, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 7, 'cached_tokens': 45, 'cached_tokens_details': {'device': 45, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0717265090206638, 'response_sent_to_client_ts': 1775663776.1432478}}]</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1195,7 +1116,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': '0b0ba48ac0c74031839489c10fa0a5ed', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 31, 'cached_tokens_details': {'device': 31, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0344093618914485, 'response_sent_to_client_ts': 1775657670.1150424}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France', 'output_ids': [50100, 128009], 'meta_info': {'id': 'e6f44520c3fb430d8ecd252615e8c177', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 2, 'cached_tokens': 31, 'cached_tokens_details': {'device': 31, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.02780445700045675, 'response_sent_to_client_ts': 1775663776.178113}}</strong></div>
 </div>
 </section>
 <section id="id4">
@@ -1247,7 +1168,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': 'de62f4ddeca0450eacafb20521c85dad', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.10207219142466784, 'response_sent_to_client_ts': 1775657673.774556}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': 'a6cd71fdae9e461f9b965387b5270b58', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0819703460438177, 'response_sent_to_client_ts': 1775663778.337936}}</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1301,7 +1222,7 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': '000eb945395b4d5f9c8ee026590fa965', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.0494505325332284, 'response_sent_to_client_ts': 1775657673.8369975}}</strong></div>
+<strong style='color: #00008B;'>{'text': 'France.', 'output_ids': [50100, 13, 128009], 'meta_info': {'id': '7d73a237ab324ff59282c0ae0b0d0bd3', 'finish_reason': {'type': 'stop', 'matched': 128009}, 'prompt_tokens': 41, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 3, 'cached_tokens': 40, 'cached_tokens_details': {'device': 40, 'host': 0}, 'dp_rank': None, 'e2e_latency': 0.03602317092008889, 'response_sent_to_client_ts': 1775663778.3818521}}</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -1342,11 +1263,11 @@ Capturing num tokens (num_tokens=4 avail_mem=93.52 GB): 100%|██████�
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.48it/s]
-2026-04-08 14:14:55,387 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-08 14:14:55] Unexpected error during package walk: cutlass.cute.experimental
+Multi-thread loading shards: 100% Completed | 4/4 [00:02&lt;00:00,  1.36it/s]
+2026-04-08 15:56:39,729 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-08 15:56:39] Unexpected error during package walk: cutlass.cute.experimental
 Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06&lt;00:00,  9.04it/s]
-Capturing num tokens (num_tokens=4 avail_mem=120.16 GB): 100%|██████████| 58/58 [00:04&lt;00:00, 12.32it/s]
+Capturing num tokens (num_tokens=4 avail_mem=59.54 GB): 100%|██████████| 58/58 [00:05&lt;00:00, 11.52it/s]
 </pre></div></div>
 </div>
 <section id="id5">
@@ -1574,7 +1495,7 @@ Capturing num tokens (num_tokens=4 avail_mem=120.16 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Paris is the capital of Italy</strong></div>
+<strong style='color: #00008B;'>Prompt: Give me the information of the capital of Italy.<br>Generated text: Berlin is the capital of Italy</strong></div>
 </div>
 </section>
 <section id="id7">
@@ -1676,7 +1597,7 @@ Capturing num tokens (num_tokens=4 avail_mem=120.16 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: Paris is the capital of France.</strong></div>
+<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: France.</strong></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
@@ -1737,7 +1658,7 @@ Capturing num tokens (num_tokens=4 avail_mem=120.16 GB): 100%|██████
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: Paris is the capital of France.</strong></div>
+<strong style='color: #00008B;'>Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|><br><br>Cutting Knowledge Date: December 2023<br>Today Date: 26 Jul 2024<br><br><|eot_id|><|start_header_id|>user<|end_header_id|><br><br>Paris is the capital of<|eot_id|><|start_header_id|>assistant<|end_header_id|><br><br><br>Generated text: France.</strong></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
