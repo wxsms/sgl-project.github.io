@@ -96,40 +96,16 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-09 03:03:39] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-09 03:03:42] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-09 03:03:42] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-09 03:03:42] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-09 03:03:42] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
-    [2026-04-09 03:03:49] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-
-
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-
-
-    [2026-04-09 03:03:50] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 03:03:50] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 03:03:50] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 03:03:50] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.20it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.89it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.65it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.72it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -139,12 +115,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-09 03:03:56,249 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 03:03:56] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 03:26:38,204 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 03:26:38] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a couple of yellow taxis parked on a city street. One of the taxis has clothes being hung up on a clothesline attached to the back of the vehicle. This scene humorously depicts someone using the back of a taxi as makeshift laundry washing lines.
+    The image shows a yellow taxi cab featuring a makeshift washing machine set up on the back of the vehicle. This is an unconventional and humorous way to wash clothes, likely as a form of public performance art or demonstration. The setup includes a clothes rack with clothes draped over it and a steam iron on top, suggesting the process of drying them. The scene takes place on a city street with buildings and pedestrians visible in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +145,9 @@ print(out["text"])
 ```
 
     Response using processor output:
-    It looks like someone is airing out their clothes on aIRY's folding clothes rack attached to the back of a moving yellow and blue taxi.
+    This image depicts a scene in a city, likely New York City, as indicated by the prominent presence of yellow taxis in the foreground. The yellow taxis, known as "cab nies" or "cabs," are iconic and numerous in the area. The image captures two taxis, positioned close to each other on what appears to be a street with a sidewalk. 
+    
+    In the background, there are сталкирыки, which are large banner stands usually used for local elections or similar campaigns. This suggests a typical urban setting with which elections might occur in this area. Additionally, some of the impressed实现 ны were blue and white税务局
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +203,9 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    This image shows a typical street scene featuring a yellow taxi during what appears to be a celebratory event or parade. The taxi is modified with two flags attached on either side. The modification involves bumping tables against the vehicle to create a makeshift canopy, which is common in parades to add a custom touch to the taxis. The event might be for a specific cause or team, as some additional items like a jersey and a handshake glove are visible, indicating it could be a sports-related parade.
+    The image shows a New York City taxi in mid-motion, likely driving down a city street. The taxi is yellow, which is iconic for both New York City and is part of the city's official fleet. There are also some figures in the image, which appear to be dolls or mannequins hanging from the back of the cab. This is a playful or creative setup that marks a taxi as a humorous or unusual exception to the typical yellow color taxis would have.
+    
+    The street is lined with buildings, covered with posters or banners, and the clean lines of old advertisements in the background suggest a well-trafficked urban environment. The
 
 
 ## Querying Llama 4 Vision Model
