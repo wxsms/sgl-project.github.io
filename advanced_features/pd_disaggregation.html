@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=f597831b"></script>
+    <script src="../_static/documentation_options.js?v=95bd434d"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -506,6 +506,11 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-tp-with-gpu-staging-buffer">Heterogeneous TP with GPU Staging Buffer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-example">Usage Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nixl">NIXL</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Requirements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage</a></li>
@@ -729,6 +734,76 @@ Please be aware that this setting will cause prefill instances to take a longer 
 </div>
 <p>If a greater mean TTFT is acceptable, you can <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">SGLANG_DISAGGREGATION_WAITING_TIMEOUT=600</span></code> (10 minutes) to relax the timeout condition.</p>
 </section>
+</section>
+</section>
+<section id="heterogeneous-tp-with-gpu-staging-buffer">
+<h2>Heterogeneous TP with GPU Staging Buffer<a class="headerlink" href="#heterogeneous-tp-with-gpu-staging-buffer" title="Link to this heading">#</a></h2>
+<p>When prefill and decode use different tensor parallelism (TP) sizes (e.g., prefill TP=4, decode DP attention with TP=1), the KV cache memory layout differs between the two sides. The <strong>GPU staging buffer</strong> solves this by gathering KV head slices into a contiguous buffer on the prefill side, performing bulk RDMA transfer, then scattering into the correct KV cache pages on the decode side. This provides <strong>2–5x throughput improvement</strong> over the default per-token slice approach at high concurrency and matches homogeneous TP baselines within ~5%.</p>
+<p>Enable the staging buffer when prefill and decode use <strong>different TP sizes</strong> with the <strong>Mooncake</strong> transfer backend. When both sides use the same TP size, staging is automatically bypassed even if enabled.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The staging buffer is designed for non-MLA models (e.g. GQA, MHA). MLA models (e.g. DeepSeek-V2/V3) should not enable this flag.</p>
+</div></blockquote>
+<section id="environment-variables">
+<h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGG_STAGING_BUFFER</span></code></strong></p></td>
+<td class="text-left"><p>Enable GPU staging buffer for heterogeneous TP KV transfer</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGG_STAGING_BUFFER_SIZE_MB</span></code></strong></p></td>
+<td class="text-left"><p>Prefill-side per-worker staging buffer size in MB</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">64</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong><code class="docutils literal notranslate"><span class="pre">SGLANG_DISAGG_STAGING_POOL_SIZE_MB</span></code></strong></p></td>
+<td class="text-left"><p>Decode-side ring buffer pool total size in MB</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">4096</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="usage-example">
+<h3>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set staging buffer environment variables on BOTH prefill and decode</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGG_STAGING_BUFFER</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGG_STAGING_BUFFER_SIZE_MB</span><span class="o">=</span><span class="m">64</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_DISAGG_STAGING_POOL_SIZE_MB</span><span class="o">=</span><span class="m">4096</span>
+
+<span class="c1"># Prefill with TP=4</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-ib-device<span class="w"> </span>mlx5_1,mlx5_2
+
+<span class="c1"># Decode with TP=1 (or DP attention with effective attention TP=1)</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span><span class="nv">$MODEL_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-mode<span class="w"> </span>decode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">30001</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dp<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--trust-remote-code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--disaggregation-ib-device<span class="w"> </span>mlx5_3,mlx5_4
+
+<span class="c1"># Router</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang_router.launch_router<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pd-disaggregation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prefill<span class="w"> </span>http://127.0.0.1:30000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--decode<span class="w"> </span>http://127.0.0.1:30001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="nixl">
@@ -985,6 +1060,11 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decode-server-configuration">Decode Server Configuration</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-tp-with-gpu-staging-buffer">Heterogeneous TP with GPU Staging Buffer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-example">Usage Example</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nixl">NIXL</a><ul class="visible nav section-nav flex-column">

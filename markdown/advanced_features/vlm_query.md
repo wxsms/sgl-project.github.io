@@ -96,16 +96,40 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
+    [2026-04-09 04:01:24] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-09 04:01:27] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-09 04:01:27] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-09 04:01:27] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-09 04:01:27] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
+    [2026-04-09 04:01:34] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+
+
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+
+
+    [2026-04-09 04:01:35] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 04:01:35] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 04:01:35] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 04:01:35] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.89it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.84it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.37it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.39it/s]
 
 
 
@@ -115,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-09 03:26:38,204 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 03:26:38] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 04:01:41,814 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 04:01:41] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows a yellow taxi cab featuring a makeshift washing machine set up on the back of the vehicle. This is an unconventional and humorous way to wash clothes, likely as a form of public performance art or demonstration. The setup includes a clothes rack with clothes draped over it and a steam iron on top, suggesting the process of drying them. The scene takes place on a city street with buildings and pedestrians visible in the background.
+    This image shows a scene that looks unusual and impossible, with someone voluntarily hooking their hands through the tail light of a yellow taxi cab. It's an unexpected and out-of-place situation that emphasizes the act of futile hanging behavior.
 
 
 ### Call with Processor Output
@@ -145,9 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    This image depicts a scene in a city, likely New York City, as indicated by the prominent presence of yellow taxis in the foreground. The yellow taxis, known as "cab nies" or "cabs," are iconic and numerous in the area. The image captures two taxis, positioned close to each other on what appears to be a street with a sidewalk. 
-    
-    In the background, there are сталкирыки, which are large banner stands usually used for local elections or similar campaigns. This suggests a typical urban setting with which elections might occur in this area. Additionally, some of the impressed实现 ны were blue and white税务局
+    This image shows a New York City cab (yellow taxi) in motion on a busy street. The cab is captured in motion, with its back window and part of the front bumper visible. The scene includes other vehicles and traffic, indicating an urban environment. Additionally, a person in a yellow shirt is standing by the side of the cab with some items, possibly handling laundry or bags attached to a cart. This is a common sight in city traffic, where individuals sometimes handle packages or personal items on the street.
 
 
 ### Call with Precomputed Embeddings
@@ -203,9 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a New York City taxi in mid-motion, likely driving down a city street. The taxi is yellow, which is iconic for both New York City and is part of the city's official fleet. There are also some figures in the image, which appear to be dolls or mannequins hanging from the back of the cab. This is a playful or creative setup that marks a taxi as a humorous or unusual exception to the typical yellow color taxis would have.
-    
-    The street is lined with buildings, covered with posters or banners, and the clean lines of old advertisements in the background suggest a well-trafficked urban environment. The
+    The image shows a man in a yellow shirt and brown pants operating a driving sim reducer for a yellow taxi cab. The driving sim reducer is connected to a martin stick, which is used to simulate driving while seated outdoors in traffic conditions. The sim reducer appears to be on the back of the cab, mounted on a motor or mechanism that simulates driving. The scene is set on a street with other vehicles, buildings, and greenery in the background, suggesting it is a city environment, possibly in the United States given the cab and overall setting.
 
 
 ## Querying Llama 4 Vision Model
