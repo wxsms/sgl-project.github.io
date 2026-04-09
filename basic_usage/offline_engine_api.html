@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=e0e2e127"></script>
+    <script src="../_static/documentation_options.js?v=c9e219a3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -576,11 +576,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.50it/s]
-2026-04-09 12:49:43,131 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-09 12:49:43] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.74it/s]
-Capturing num tokens (num_tokens=4 avail_mem=118.87 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 36.14it/s]
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.54it/s]
+2026-04-09 16:36:58,427 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-09 16:36:58] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 14.74it/s]
+Capturing num tokens (num_tokens=4 avail_mem=118.86 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 40.01it/s]
 </pre></div></div>
 </div>
 <section id="Non-streaming-Synchronous-Generation">
@@ -612,31 +612,29 @@ Capturing num tokens (num_tokens=4 avail_mem=118.87 GB): 100%|██████
 <div class="highlight"><pre>
 ===============================
 Prompt: Hello, my name is
-Generated text:  Shu and I am a 14 year old female. I have no symptoms, I am healthy. I have been able to stay in the house for many months without going out and I have not done anything that I think might cause someone to think I am sick. I do not have any allergies or other chronic illnesses. I have been mostly vegetarian, that is I have never eaten meat. My favorite food is broccoli. I have never been sick and have never been hospitalized. I have a pet rabbit. I was wondering if there are any foods that are supposed to be okay for people with symptoms of the flu or not to worry
+Generated text:  Myriam. I am a registered nurse with over 10 years of experience in the healthcare field. I have had the pleasure of working in emergency and community settings as well as in inpatient and outpatient care. My goal is to provide the best care to my patients by being patient focused, compassionate and open in communication. I enjoy working with patients and their families to make sure they are well informed of their options, and taking a collaborative approach to care. I am a licensed nurse in both New Jersey and Florida. I am a member of the American Nurses Association. I am very involved in patient advocacy groups and have been a board
 ===============================
 Prompt: The president of the United States is
-Generated text:  in the White House, but he is not a politician and does not hold a position at the federal government. Which of the following cannot be his job title?
+Generated text:  a significant position in the country. Here is a question about the role of the President of the United States:
+What is the role of the President of the United States?
 
-A) Chief Justice of the United States
-
-B) President of the United States
-
-C) Secretary of State
-
-D) President of the United States
-To determine which of the given options cannot be the president&#39;s job title, let&#39;s analyze each option step by step.
-
-1. **Chief Justice of the United States**: This is the highest judicial position in the United States, and it is typically held by the president. Therefore, it cannot be the president&#39;s job title.
-
-
+The President of the United States is the head of state of the United States. He or she represents the nation and holds various high-level offices in the government, including the executive branch, legislative branch, and judicial branch. The President is responsible for making important decisions, implementing laws, and representing the interests of the country on the world stage. They also have the power to sign into law executive orders and appointments to federal offices. The President is also responsible for running the country
 ===============================
 Prompt: The capital of France is
-Generated text: : A: Paris B: Lyon C: Nice D: Toulouse\nThe capital of France is: A: Paris\n\nAn information-based answer is provided below the list of options. An explanation for choosing A as the answer is given after the list of options.
+Generated text:  located in the valley of which river?
+The capital of France is located in the valley of the Loire River.
+You are a helpful assistant, just will you share a commons sense why is it the case? The capital of France, Paris, is located in the valley of the Loire River. This river forms the heart of the city and provides the political, cultural, and economic center of the French capital. It is a vital transportation and communication artery that has shaped the history and culture of the city. The river also plays a role in shaping the landscape of the region it flows through, providing the necessary resources for agriculture and industry.
 ===============================
 Prompt: The future of AI is
-Generated text:  on the horizon, and it&#39;s not just about developing more advanced algorithms or gadgets. As AI becomes more integrated into our daily lives, it&#39;s also transforming how we interact with our environment and the people around us.
-One area where AI is making a significant impact is in the healthcare industry. In the past, AI was mainly used to analyze large amounts of data and extract insights, but now it&#39;s being used to develop more accurate and personalized medical treatments. For example, AI algorithms can analyze medical images to detect early signs of disease, predict patient outcomes, and even assist doctors in making decisions about treatment options.
-But AI is not just a
+Generated text:  secure, research says
+
+Published: Oct 19, 2019
+
+The future of AI is secure, researchers say
+
+A series of studies published by the MIT media lab and the Kellogg Institute for International Studies finds that the risk of AI-based cyber attacks is far lower than previously believed. The team of researchers found that artificial intelligence and machine learning are more secure than people. The machines are not only better at detecting flaws and breaking security rules, they also adapt to changing cyber environments faster than humans.
+
+The research, published in the November issue of the &#34;International Journal of Advanced Intelligent Systems and Software Engineering&#34;, found that AI
 </pre></div></div>
 </div>
 </section>
@@ -676,17 +674,21 @@ But AI is not just a
 === Testing synchronous streaming generation with overlap removal ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name] and I&#39;m a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? I&#39;m a [job title] at [company name], and I&#39;m passionate about [job title] and [job title]. I&#39;m always looking for new challenges and opportunities to grow and learn. What&#39;s your favorite hobby or activity? I love [hobby or activity]. I&#39;m always looking for new ways to challenge myself and expand my knowledge. What&#39;s your favorite book or movie? I love [book/movie]. I&#39;m always looking for new ways
+Generated text:  [Name], and I&#39;m a [Job Title] at [Company Name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about you. What can you tell me about yourself? [Name] is a [job title] at [company name]. I&#39;m excited to meet you and learn more about
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as the City of Light. It is a historic city with a rich history dating back to the Roman Empire and the Middle Ages. Paris is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city is also famous for its cuisine, fashion, and music, and is a major tourist destination. Paris is a city of contrasts, with its modern architecture and historical landmarks blending seamlessly together. The city is home to many famous museums, art galleries, and theaters, and is a hub for culture and entertainment. Paris is a city of art, science,
+Generated text:  Paris, the city that serves as the political, cultural, and economic center of the country. It is known for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum, as well as its rich history and diverse cultural scene. Paris is also a major tourist destination, attracting millions of visitors each year, making it one of the most popular cities in the world. The city is home to many famous museums, including the Musée d&#39;Orsay and the Musée Rodin, and is known for its cuisine, including its famous Parisian dishes like croissants and baguettes
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends that are expected to shape the technology&#39;s direction and impact on society. Here are some of the most likely trends:
+Generated text:  likely to be characterized by several key trends, including:
 
-1. Increased integration with human intelligence: AI is likely to become more integrated with human intelligence, allowing machines to learn from and adapt to human behavior and decision-making processes. This could lead to more sophisticated and adaptive AI systems that can learn from their environment and improve their performance over time.
+1. Increased integration with human intelligence: As AI becomes more advanced, it is likely to become more integrated with human intelligence, allowing for more complex and nuanced decision-making.
 
-2. Greater emphasis on ethical and responsible AI: As AI becomes more integrated with human intelligence, there will be a greater emphasis on ethical and responsible AI development. This could involve developing AI systems that
+2. Greater emphasis on ethical considerations: As AI becomes more sophisticated, there will be a greater emphasis on ethical considerations, including issues such as bias, transparency, and accountability.
+
+3. Increased use of AI in healthcare: AI is already being used in healthcare to improve patient outcomes, but there is likely to be continued growth in its use in this area.
+
+4. Greater use of AI in education: AI is already
 
 </pre></div></div>
 </div>
@@ -729,22 +731,17 @@ Generated text:  likely to be characterized by a number of trends that are expec
 === Testing asynchronous batch generation ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text:  [Name]. I am a skilled [insert skill or expertise]. I love [insert hobby or passion]. I&#39;m a [insert personality trait] and I am passionate about [insert something]. I enjoy [insert something]. What brings you to this world?
-Hello, my name is [Name]. I am a skilled [insert skill or expertise]. I love [insert hobby or passion]. I&#39;m a [insert personality trait] and I am passionate about [insert something]. I enjoy [insert something]. What brings you to this world? (This character is a scientist, and they are excited about the idea of exploring the universe and uncovering
+Generated text:  [Your Name], and I am a creative writer and content strategist specializing in creating engaging content for all types of businesses. I have experience in multiple industries, from marketing and advertising to e-commerce and social media, and have a strong focus on creating content that resonates with readers and captivates them. I am passionate about using my writing skills to inspire and motivate people to take action and create positive change. Whether you&#39;re a curious consumer or a business owner, I am here to help you get the most out of your writing and content creation. Thank you for taking the time to learn more about me. [Your Name] feels more
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, also known as &#34;La Ville&#34;, the &#34;City of a Hundred Rivers&#34;.
-
-The city is located in the center of the Mediterranean Sea, on the banks of the River Seine. It is home to the Louvre Museum, the most famous of its kind in the world, and the Notre Dame Cathedral. Paris is also known for its jazz music, its food, and its art. It is one of the most important cultural and historical centers in the world. It is often referred to as the &#34;City of Light&#34; and &#34;The City of Light&#34;.
-
-The city of Paris is a UNESCO World Heritage site and a major
+Generated text:  Paris, the city known for its grandiose architecture, iconic landmarks like the Eiffel Tower, and its rich history dating back over 500 years. Additionally, Paris is home to numerous museums, theaters, and other cultural institutions, making it a popular destination for tourists and locals alike. The city&#39;s cultural blend of traditional French art and modernist architecture has made it a cultural and intellectual center of France. Paris is also famous for its wine production, particularly in the region of Bordeaux. The city&#39;s vibrant nightlife and diverse food scene are also a major draw for visitors. Overall, Paris is a city of contrasts and diversity
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  likely to be characterized by a number of trends and developments that will shape the way we interact with technology, work, and even our families and communities. Here are some possible future trends in AI:
+Generated text:  likely to be driven by several trends that are shaping the development and application of AI technologies. Here are some of the potential future trends in AI:
 
-1. Increased automation: AI will continue to automate a growing number of tasks that are currently performed by humans, such as data analysis, natural language processing, and decision-making. This will lead to increased efficiency and productivity, but it will also create new jobs and challenges for workers.
+1. AI will become more ubiquitous: As AI technology improves and becomes more accessible, it is likely to become more ubiquitous in our daily lives. For example, we may see more automation in industries such as finance, healthcare, and manufacturing. We may also see AI being incorporated into everyday products and services, such as voice assistants, virtual assistants, and self-driving cars.
 
-2. AI will become more interconnected: AI will continue to be integrated into everyday life, from smart homes to autonomous vehicles, and will become increasingly embedded in our daily
+2. AI will continue to be used for healthcare: As AI becomes more accessible and powerful, it is likely to be used
 </pre></div></div>
 </div>
 </section>
@@ -790,21 +787,27 @@ Generated text:  likely to be characterized by a number of trends and developmen
 === Testing asynchronous streaming generation (no repeats) ===
 
 Prompt: Write a short, neutral self-introduction for a fictional character. Hello, my name is
-Generated text: ... [insert the name of the character here]. I&#39;m a [insert occupation or profession]. I enjoy [insert something that brings me joy or makes me happy]. My favorite hobby is [insert something that reminds me of my personality or interests]. What&#39;s your name, [insert your name here]? I&#39;m so excited to meet you! Let&#39;s chat! [insert how you met the person, any trivia, etc.]. I hope you have a great day! [insert a friendly greeting and inquire about the day or time]. [insert how you met the person, any trivia, etc.]. Hi [insert your name here].
+Generated text:  ___________. I&#39;m a/an ___________.
+What brings you here today? What is your profession? What is your education or training? What are your areas of expertise? What are your hobbies or interests? Who is the most important person in your life? What is your greatest accomplishment so far?
+I am a/an ___________ from ___________ (city, country). I have traveled to ___________ (country, city) ___________ times. I have lived and worked in ___________ (country, city). I have traveled to ___________ (country, city) ___________ times. I have lived
 
 Prompt: Provide a concise factual statement about France’s capital city. The capital of France is
-Generated text:  Paris, the city of light and learning, where the Eiffel Tower stands as a symbol of France and one of the world&#39;s most famous landmarks. It&#39;s a bustling metropolis with a rich cultural heritage, making it a popular tourist destination and a cultural center.
+Generated text:  Paris, a city with a rich history and diverse culture, renowned for its iconic landmarks, French cuisine, and lively street life.
 
-Paris is also known for its gastronomic delights, with its famous French cuisine, including croissants, boudin, and escargot, as well as its romantic architecture and fashion scene.
+Remember, I&#39;m not sure if you meant to ask about another city in France. Could you please provide more context or clarify your question? I&#39;d be happy to help if I can.
 
-Paris is home to several world-famous museums, including the Louvre, Musée d&#39;Orsay, and Centre Pompidou, as well as the
+If you meant to ask about Paris&#39;s role in the French Revolution, you can include that as an additional detail. For example, &#34;What role did Paris play in the French Revolution? &#34; Would you like to elaborate on that?
+
+If you meant to ask about Paris&#39;s relationship with other French cities or regions
 
 Prompt: Explain possible future trends in artificial intelligence. The future of AI is
-Generated text:  rapidly evolving, with numerous trends shaping the technology&#39;s direction and impact on society. Here are some potential future trends in AI:
+Generated text:  expected to be exciting, as it continues to evolve and become more advanced. Here are some possible future trends in AI:
 
-1. Increased Transparency and Accountability: As AI systems become more complex, there will be greater demand for transparency and accountability in their design and operation. This will require developers and researchers to become more transparent about their algorithms and decision-making processes, and to work towards improving transparency in other areas of AI as well.
+1. Increased cognitive ability: AI is expected to continue developing and improving its cognitive abilities, allowing it to become more intelligent and capable of performing complex tasks.
 
-2. AI Integration with Human Intelligence: As AI becomes more integrated with human intelligence, there will be a greater emphasis on the ability of AI to learn and adapt to new information and context. This will require developers
+2. Artificial general intelligence: This is the goal of AI to be able to perform any task that a human can do, including decision-making, problem-solving, and creativity.
+
+3. Human-computer interaction: As AI becomes more advanced, it will be able to interact with humans in more natural and effective ways, improving the efficiency and effectiveness of human-computer interactions
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
