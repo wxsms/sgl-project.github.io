@@ -28,606 +28,66 @@ wait_for_server(f"http://localhost:{port}", process=embedding_process)
       warnings.warn(
 
 
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779db-421388a15c3e934f3bd13e9d;20e1cbac-060c-4a74-b906-df3710f4726d)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    retry() failed once (0th try, maximum 2 retries). Will delay 0.82s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779db-421388a15c3e934f3bd13e9d;20e1cbac-060c-4a74-b906-df3710f4726d)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779dc-34068ce6688007986b9b98e1;5321acb6-1cd7-49ce-b48c-83182f5c657e)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    retry() failed once (1th try, maximum 2 retries). Will delay 1.70s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779dc-34068ce6688007986b9b98e1;5321acb6-1cd7-49ce-b48c-83182f5c657e)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779de-2c6bfa824616d3b755e2a744;1acf3bd8-9501-42a1-baf7-40bbbe0b3e4e)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    Failed to load hf_quant_config.json for model Alibaba-NLP/gte-Qwen2-1.5B-instruct: retry() exceed maximum number of retries.
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779df-4859bad1784f869a27e243ae;befeb19f-9d1f-4124-b796-9376d38b44e6)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:19] retry() failed once (0th try, maximum 2 retries). Will delay 0.81s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779df-4859bad1784f869a27e243ae;befeb19f-9d1f-4124-b796-9376d38b44e6)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e0-27b272473d4e215c1c3b0635;f1b16b7b-fdd6-4136-8912-a94c4334963b)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:20] retry() failed once (1th try, maximum 2 retries). Will delay 1.96s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e0-27b272473d4e215c1c3b0635;f1b16b7b-fdd6-4136-8912-a94c4334963b)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e2-7c6466bc2b4d88e16aa57d58;4c50c13a-aac8-4ecf-8053-d280787397a5)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:22] Failed to load hf_quant_config.json for model Alibaba-NLP/gte-Qwen2-1.5B-instruct: retry() exceed maximum number of retries.
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e6-39fefc4f10da86ed2540970f;d66eef39-0a72-4716-9e46-d844df1acaff)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:26] retry() failed once (0th try, maximum 2 retries). Will delay 0.92s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e6-39fefc4f10da86ed2540970f;d66eef39-0a72-4716-9e46-d844df1acaff)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e7-106ad14d2c2313b57b451be0;41d96255-676e-4c06-8f98-4700cb582d76)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:27] retry() failed once (1th try, maximum 2 retries). Will delay 1.63s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e7-106ad14d2c2313b57b451be0;41d96255-676e-4c06-8f98-4700cb582d76)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e9-17e016ec450c920c479216e8;37a84f53-3c86-4d1b-9642-44c5f48378f9)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:29] Failed to load hf_quant_config.json for model Alibaba-NLP/gte-Qwen2-1.5B-instruct: retry() exceed maximum number of retries.
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e9-466a714a7bc79dc812162184;72aaf23c-61fa-4d0b-b3a0-fce412b5edb1)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:30] retry() failed once (0th try, maximum 2 retries). Will delay 0.79s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e9-466a714a7bc79dc812162184;72aaf23c-61fa-4d0b-b3a0-fce412b5edb1)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779ea-114fa6483161bde87dee53c0;78f0760d-7695-4234-b094-1a4906cd1afb)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:30] retry() failed once (1th try, maximum 2 retries). Will delay 1.93s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779ea-114fa6483161bde87dee53c0;78f0760d-7695-4234-b094-1a4906cd1afb)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779ec-4a24857a1f64a7d02fba12a9;cf281764-e456-4007-bb7b-8340b7fff821)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:32] Failed to load hf_quant_config.json for model Alibaba-NLP/gte-Qwen2-1.5B-instruct: retry() exceed maximum number of retries.
-
-
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 10:05:34] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 10:05:34] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 10:05:34] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 10:05:34] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 12:50:33] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 12:50:33] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 12:50:33] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 12:50:33] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.40it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.46it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.36s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.26s/it]
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779f1-719120532b534b25605a1f09;7f9b1058-029e-4c5b-ad59-7d09056837ce)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:37] retry() failed once (0th try, maximum 2 retries). Will delay 0.75s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779f1-719120532b534b25605a1f09;7f9b1058-029e-4c5b-ad59-7d09056837ce)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.10s/it]
 
 
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779f2-72365c192478f56c63c1a2da;e1633111-14d4-4be1-b1d1-7923a0fdce8d)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:38] retry() failed once (1th try, maximum 2 retries). Will delay 1.76s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779f2-72365c192478f56c63c1a2da;e1633111-14d4-4be1-b1d1-7923a0fdce8d)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-
-
-    Traceback (most recent call last):
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-        response.raise_for_status()
-      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
-        raise HTTPStatusError(message, request=request, response=self)
-    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json'
-    For more information check: https://httpstatuses.com/503
-    
-    The above exception was the direct cause of the following exception:
-    
-    Traceback (most recent call last):
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
-        return fn()
-      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
-        lambda: hf_api.file_exists(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
-        get_hf_file_metadata(url, token=token)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
-        response = _httpx_follow_relative_redirects_with_backoff(
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
-        hf_raise_for_status(response)
-      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
-        raise _format(HfHubHTTPError, str(e), response) from e
-    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779f4-0811bc6e75aea2d57e729577;ec4a8c98-fb50-449f-8a72-668a1f36b705)
-    For more information check: https://httpstatuses.com/503
-    
-    Internal Error - We're working hard to fix this as soon as possible!
-    [2026-04-09 10:05:40] Failed to load hf_quant_config.json for model Alibaba-NLP/gte-Qwen2-1.5B-instruct: retry() exceed maximum number of retries.
-
-
-    2026-04-09 10:05:40,704 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 10:05:40] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 12:50:36,626 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 12:50:36] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:03<02:53,  3.04s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:03<02:53,  3.04s/it]Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:03<01:13,  1.32s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:03<01:13,  1.32s/it]Compiling num tokens (num_tokens=6656):   3%|▎         | 2/58 [00:03<01:13,  1.32s/it]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:50,  2.99s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:50,  2.99s/it]Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:03<01:12,  1.30s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:03<01:12,  1.30s/it]Compiling num tokens (num_tokens=6656):   3%|▎         | 2/58 [00:03<01:12,  1.30s/it]
 
-    Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:03<00:28,  1.89it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:03<00:28,  1.89it/s]Compiling num tokens (num_tokens=5632):   7%|▋         | 4/58 [00:03<00:28,  1.89it/s]Compiling num tokens (num_tokens=5120):   7%|▋         | 4/58 [00:03<00:28,  1.89it/s]Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:03<00:12,  3.98it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:03<00:12,  3.98it/s]Compiling num tokens (num_tokens=4096):  12%|█▏        | 7/58 [00:03<00:12,  3.98it/s]Compiling num tokens (num_tokens=3840):  12%|█▏        | 7/58 [00:03<00:12,  3.98it/s]
+    Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:03<00:28,  1.92it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:03<00:28,  1.92it/s]Compiling num tokens (num_tokens=5632):   7%|▋         | 4/58 [00:03<00:28,  1.92it/s]Compiling num tokens (num_tokens=5120):   7%|▋         | 4/58 [00:03<00:28,  1.92it/s]Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=4096):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]
 
-    Compiling num tokens (num_tokens=3584):  12%|█▏        | 7/58 [00:03<00:12,  3.98it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:06,  7.39it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:06,  7.39it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:06,  7.39it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:06,  7.39it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:03<00:06,  7.39it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:03<00:06,  7.39it/s]Compiling num tokens (num_tokens=2304):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]Compiling num tokens (num_tokens=2048):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]Compiling num tokens (num_tokens=1792):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]Compiling num tokens (num_tokens=1536):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]Compiling num tokens (num_tokens=1280):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]Compiling num tokens (num_tokens=1024):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]
+    Compiling num tokens (num_tokens=3840):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=3584):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2304):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]Compiling num tokens (num_tokens=2048):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]Compiling num tokens (num_tokens=1792):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]Compiling num tokens (num_tokens=1536):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]Compiling num tokens (num_tokens=1280):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]
 
-    Compiling num tokens (num_tokens=960):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s] Compiling num tokens (num_tokens=896):  28%|██▊       | 16/58 [00:03<00:03, 12.53it/s]Compiling num tokens (num_tokens=896):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=832):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=768):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=704):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=640):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=576):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=512):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=480):  40%|███▉      | 23/58 [00:03<00:01, 20.60it/s]Compiling num tokens (num_tokens=480):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]Compiling num tokens (num_tokens=448):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]Compiling num tokens (num_tokens=416):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]Compiling num tokens (num_tokens=384):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]Compiling num tokens (num_tokens=352):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]
+    Compiling num tokens (num_tokens=1024):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]Compiling num tokens (num_tokens=960):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s] Compiling num tokens (num_tokens=896):  28%|██▊       | 16/58 [00:03<00:03, 12.72it/s]Compiling num tokens (num_tokens=896):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=832):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=768):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=704):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=640):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=576):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=512):  40%|███▉      | 23/58 [00:03<00:01, 20.83it/s]Compiling num tokens (num_tokens=512):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]Compiling num tokens (num_tokens=480):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]Compiling num tokens (num_tokens=448):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]Compiling num tokens (num_tokens=416):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]Compiling num tokens (num_tokens=384):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]
 
-    Compiling num tokens (num_tokens=320):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]Compiling num tokens (num_tokens=288):  52%|█████▏    | 30/58 [00:03<00:00, 28.36it/s]Compiling num tokens (num_tokens=288):  62%|██████▏   | 36/58 [00:03<00:00, 33.89it/s]Compiling num tokens (num_tokens=256):  62%|██████▏   | 36/58 [00:03<00:00, 33.89it/s]Compiling num tokens (num_tokens=240):  62%|██████▏   | 36/58 [00:03<00:00, 33.89it/s]Compiling num tokens (num_tokens=224):  62%|██████▏   | 36/58 [00:04<00:00, 33.89it/s]Compiling num tokens (num_tokens=208):  62%|██████▏   | 36/58 [00:04<00:00, 33.89it/s]Compiling num tokens (num_tokens=192):  62%|██████▏   | 36/58 [00:04<00:00, 33.89it/s]Compiling num tokens (num_tokens=176):  62%|██████▏   | 36/58 [00:04<00:00, 33.89it/s]Compiling num tokens (num_tokens=176):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s]Compiling num tokens (num_tokens=160):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s]Compiling num tokens (num_tokens=144):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s]Compiling num tokens (num_tokens=128):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s]
+    Compiling num tokens (num_tokens=352):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]Compiling num tokens (num_tokens=320):  50%|█████     | 29/58 [00:03<00:01, 27.57it/s]Compiling num tokens (num_tokens=320):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=288):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=256):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=240):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=224):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=208):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=192):  60%|██████    | 35/58 [00:03<00:00, 33.75it/s]Compiling num tokens (num_tokens=192):  71%|███████   | 41/58 [00:03<00:00, 38.44it/s]Compiling num tokens (num_tokens=176):  71%|███████   | 41/58 [00:03<00:00, 38.44it/s]Compiling num tokens (num_tokens=160):  71%|███████   | 41/58 [00:04<00:00, 38.44it/s]Compiling num tokens (num_tokens=144):  71%|███████   | 41/58 [00:04<00:00, 38.44it/s]
 
-    Compiling num tokens (num_tokens=112):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s]Compiling num tokens (num_tokens=96):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s] Compiling num tokens (num_tokens=80):  72%|███████▏  | 42/58 [00:04<00:00, 38.63it/s]Compiling num tokens (num_tokens=80):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=64):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=48):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=32):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=28):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=24):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=20):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=16):  83%|████████▎ | 48/58 [00:04<00:00, 41.92it/s]Compiling num tokens (num_tokens=16):  95%|█████████▍| 55/58 [00:04<00:00, 47.47it/s]Compiling num tokens (num_tokens=12):  95%|█████████▍| 55/58 [00:04<00:00, 47.47it/s]Compiling num tokens (num_tokens=8):  95%|█████████▍| 55/58 [00:04<00:00, 47.47it/s] Compiling num tokens (num_tokens=4):  95%|█████████▍| 55/58 [00:04<00:00, 47.47it/s]
+    Compiling num tokens (num_tokens=128):  71%|███████   | 41/58 [00:04<00:00, 38.44it/s]Compiling num tokens (num_tokens=112):  71%|███████   | 41/58 [00:04<00:00, 38.44it/s]Compiling num tokens (num_tokens=96):  71%|███████   | 41/58 [00:04<00:00, 38.44it/s] Compiling num tokens (num_tokens=96):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=80):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=64):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=48):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=32):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=28):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=24):  81%|████████  | 47/58 [00:04<00:00, 41.94it/s]Compiling num tokens (num_tokens=24):  91%|█████████▏| 53/58 [00:04<00:00, 45.52it/s]Compiling num tokens (num_tokens=20):  91%|█████████▏| 53/58 [00:04<00:00, 45.52it/s]Compiling num tokens (num_tokens=16):  91%|█████████▏| 53/58 [00:04<00:00, 45.52it/s]
 
-    Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04<00:00, 13.39it/s]
+    Compiling num tokens (num_tokens=12):  91%|█████████▏| 53/58 [00:04<00:00, 45.52it/s]Compiling num tokens (num_tokens=8):  91%|█████████▏| 53/58 [00:04<00:00, 45.52it/s] Compiling num tokens (num_tokens=4):  91%|█████████▏| 53/58 [00:04<00:00, 45.52it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04<00:00, 13.53it/s]
 
 
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=132.61 GB):   0%|          | 0/58 [00:00<?, ?it/s]
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=113.92 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=113.92 GB):   2%|▏         | 1/58 [00:00<00:07,  7.25it/s]Capturing num tokens (num_tokens=7680 avail_mem=113.89 GB):   2%|▏         | 1/58 [00:00<00:07,  7.25it/s]
 
-    Capturing num tokens (num_tokens=8192 avail_mem=132.61 GB):   2%|▏         | 1/58 [00:00<00:13,  4.33it/s]Capturing num tokens (num_tokens=7680 avail_mem=132.58 GB):   2%|▏         | 1/58 [00:00<00:13,  4.33it/s]Capturing num tokens (num_tokens=7680 avail_mem=132.58 GB):   3%|▎         | 2/58 [00:00<00:09,  6.01it/s]Capturing num tokens (num_tokens=7168 avail_mem=132.57 GB):   3%|▎         | 2/58 [00:00<00:09,  6.01it/s]
+    Capturing num tokens (num_tokens=7680 avail_mem=113.89 GB):   3%|▎         | 2/58 [00:00<00:07,  7.69it/s]Capturing num tokens (num_tokens=7168 avail_mem=113.89 GB):   3%|▎         | 2/58 [00:00<00:07,  7.69it/s]Capturing num tokens (num_tokens=7168 avail_mem=113.89 GB):   5%|▌         | 3/58 [00:00<00:06,  8.11it/s]Capturing num tokens (num_tokens=6656 avail_mem=113.89 GB):   5%|▌         | 3/58 [00:00<00:06,  8.11it/s]
 
-    Capturing num tokens (num_tokens=6656 avail_mem=132.57 GB):   3%|▎         | 2/58 [00:00<00:09,  6.01it/s]Capturing num tokens (num_tokens=6656 avail_mem=132.57 GB):   7%|▋         | 4/58 [00:00<00:06,  8.69it/s]Capturing num tokens (num_tokens=6144 avail_mem=132.57 GB):   7%|▋         | 4/58 [00:00<00:06,  8.69it/s]Capturing num tokens (num_tokens=5632 avail_mem=132.57 GB):   7%|▋         | 4/58 [00:00<00:06,  8.69it/s]
+    Capturing num tokens (num_tokens=6656 avail_mem=113.89 GB):   7%|▋         | 4/58 [00:00<00:06,  8.43it/s]Capturing num tokens (num_tokens=6144 avail_mem=113.89 GB):   7%|▋         | 4/58 [00:00<00:06,  8.43it/s]Capturing num tokens (num_tokens=5632 avail_mem=113.89 GB):   7%|▋         | 4/58 [00:00<00:06,  8.43it/s]Capturing num tokens (num_tokens=5632 avail_mem=113.89 GB):  10%|█         | 6/58 [00:00<00:05, 10.20it/s]Capturing num tokens (num_tokens=5120 avail_mem=113.88 GB):  10%|█         | 6/58 [00:00<00:05, 10.20it/s]
 
-    Capturing num tokens (num_tokens=5632 avail_mem=132.57 GB):  10%|█         | 6/58 [00:00<00:04, 10.69it/s]Capturing num tokens (num_tokens=5120 avail_mem=132.57 GB):  10%|█         | 6/58 [00:00<00:04, 10.69it/s]Capturing num tokens (num_tokens=4608 avail_mem=132.57 GB):  10%|█         | 6/58 [00:00<00:04, 10.69it/s]Capturing num tokens (num_tokens=4608 avail_mem=132.57 GB):  14%|█▍        | 8/58 [00:00<00:03, 12.75it/s]Capturing num tokens (num_tokens=4096 avail_mem=132.57 GB):  14%|█▍        | 8/58 [00:00<00:03, 12.75it/s]Capturing num tokens (num_tokens=3840 avail_mem=132.57 GB):  14%|█▍        | 8/58 [00:00<00:03, 12.75it/s]
+    Capturing num tokens (num_tokens=4608 avail_mem=113.88 GB):  10%|█         | 6/58 [00:00<00:05, 10.20it/s]Capturing num tokens (num_tokens=4608 avail_mem=113.88 GB):  14%|█▍        | 8/58 [00:00<00:04, 12.30it/s]Capturing num tokens (num_tokens=4096 avail_mem=113.88 GB):  14%|█▍        | 8/58 [00:00<00:04, 12.30it/s]Capturing num tokens (num_tokens=3840 avail_mem=113.88 GB):  14%|█▍        | 8/58 [00:00<00:04, 12.30it/s]Capturing num tokens (num_tokens=3840 avail_mem=113.88 GB):  17%|█▋        | 10/58 [00:00<00:03, 14.28it/s]Capturing num tokens (num_tokens=3584 avail_mem=113.88 GB):  17%|█▋        | 10/58 [00:00<00:03, 14.28it/s]
 
-    Capturing num tokens (num_tokens=3584 avail_mem=132.57 GB):  14%|█▍        | 8/58 [00:00<00:03, 12.75it/s]Capturing num tokens (num_tokens=3584 avail_mem=132.57 GB):  19%|█▉        | 11/58 [00:00<00:02, 15.94it/s]Capturing num tokens (num_tokens=3328 avail_mem=132.56 GB):  19%|█▉        | 11/58 [00:00<00:02, 15.94it/s]Capturing num tokens (num_tokens=3072 avail_mem=132.56 GB):  19%|█▉        | 11/58 [00:00<00:02, 15.94it/s]Capturing num tokens (num_tokens=2816 avail_mem=132.56 GB):  19%|█▉        | 11/58 [00:00<00:02, 15.94it/s]Capturing num tokens (num_tokens=2816 avail_mem=132.56 GB):  24%|██▍       | 14/58 [00:01<00:02, 19.06it/s]Capturing num tokens (num_tokens=2560 avail_mem=132.56 GB):  24%|██▍       | 14/58 [00:01<00:02, 19.06it/s]Capturing num tokens (num_tokens=2304 avail_mem=132.55 GB):  24%|██▍       | 14/58 [00:01<00:02, 19.06it/s]
+    Capturing num tokens (num_tokens=3328 avail_mem=113.88 GB):  17%|█▋        | 10/58 [00:00<00:03, 14.28it/s]Capturing num tokens (num_tokens=3072 avail_mem=113.88 GB):  17%|█▋        | 10/58 [00:00<00:03, 14.28it/s]Capturing num tokens (num_tokens=3072 avail_mem=113.88 GB):  22%|██▏       | 13/58 [00:00<00:02, 17.57it/s]Capturing num tokens (num_tokens=2816 avail_mem=113.87 GB):  22%|██▏       | 13/58 [00:00<00:02, 17.57it/s]Capturing num tokens (num_tokens=2560 avail_mem=113.87 GB):  22%|██▏       | 13/58 [00:01<00:02, 17.57it/s]Capturing num tokens (num_tokens=2304 avail_mem=113.87 GB):  22%|██▏       | 13/58 [00:01<00:02, 17.57it/s]Capturing num tokens (num_tokens=2304 avail_mem=113.87 GB):  28%|██▊       | 16/58 [00:01<00:02, 20.17it/s]Capturing num tokens (num_tokens=2048 avail_mem=113.86 GB):  28%|██▊       | 16/58 [00:01<00:02, 20.17it/s]
 
-    Capturing num tokens (num_tokens=2048 avail_mem=132.54 GB):  24%|██▍       | 14/58 [00:01<00:02, 19.06it/s]Capturing num tokens (num_tokens=1792 avail_mem=132.54 GB):  24%|██▍       | 14/58 [00:01<00:02, 19.06it/s]Capturing num tokens (num_tokens=1792 avail_mem=132.54 GB):  31%|███       | 18/58 [00:01<00:01, 23.27it/s]Capturing num tokens (num_tokens=1536 avail_mem=132.54 GB):  31%|███       | 18/58 [00:01<00:01, 23.27it/s]Capturing num tokens (num_tokens=1280 avail_mem=132.54 GB):  31%|███       | 18/58 [00:01<00:01, 23.27it/s]Capturing num tokens (num_tokens=1024 avail_mem=132.53 GB):  31%|███       | 18/58 [00:01<00:01, 23.27it/s]Capturing num tokens (num_tokens=960 avail_mem=132.51 GB):  31%|███       | 18/58 [00:01<00:01, 23.27it/s] Capturing num tokens (num_tokens=960 avail_mem=132.51 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.46it/s]Capturing num tokens (num_tokens=896 avail_mem=132.50 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.46it/s]Capturing num tokens (num_tokens=832 avail_mem=132.51 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.46it/s]
+    Capturing num tokens (num_tokens=1792 avail_mem=113.86 GB):  28%|██▊       | 16/58 [00:01<00:02, 20.17it/s]Capturing num tokens (num_tokens=1536 avail_mem=113.85 GB):  28%|██▊       | 16/58 [00:01<00:02, 20.17it/s]Capturing num tokens (num_tokens=1536 avail_mem=113.85 GB):  33%|███▎      | 19/58 [00:01<00:01, 22.37it/s]Capturing num tokens (num_tokens=1280 avail_mem=113.85 GB):  33%|███▎      | 19/58 [00:01<00:01, 22.37it/s]Capturing num tokens (num_tokens=1024 avail_mem=113.85 GB):  33%|███▎      | 19/58 [00:01<00:01, 22.37it/s]Capturing num tokens (num_tokens=960 avail_mem=113.80 GB):  33%|███▎      | 19/58 [00:01<00:01, 22.37it/s] 
 
-    Capturing num tokens (num_tokens=768 avail_mem=132.52 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.46it/s]Capturing num tokens (num_tokens=704 avail_mem=132.51 GB):  38%|███▊      | 22/58 [00:01<00:01, 27.46it/s]Capturing num tokens (num_tokens=704 avail_mem=132.51 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.76it/s]Capturing num tokens (num_tokens=640 avail_mem=132.51 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.76it/s]Capturing num tokens (num_tokens=576 avail_mem=132.51 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.76it/s]Capturing num tokens (num_tokens=512 avail_mem=132.50 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.76it/s]Capturing num tokens (num_tokens=480 avail_mem=132.50 GB):  45%|████▍     | 26/58 [00:01<00:01, 30.76it/s]Capturing num tokens (num_tokens=480 avail_mem=132.50 GB):  52%|█████▏    | 30/58 [00:01<00:00, 33.32it/s]Capturing num tokens (num_tokens=448 avail_mem=132.50 GB):  52%|█████▏    | 30/58 [00:01<00:00, 33.32it/s]Capturing num tokens (num_tokens=416 avail_mem=132.49 GB):  52%|█████▏    | 30/58 [00:01<00:00, 33.32it/s]
+    Capturing num tokens (num_tokens=960 avail_mem=113.80 GB):  38%|███▊      | 22/58 [00:01<00:01, 21.90it/s]Capturing num tokens (num_tokens=896 avail_mem=113.80 GB):  38%|███▊      | 22/58 [00:01<00:01, 21.90it/s]Capturing num tokens (num_tokens=832 avail_mem=113.80 GB):  38%|███▊      | 22/58 [00:01<00:01, 21.90it/s]Capturing num tokens (num_tokens=768 avail_mem=113.80 GB):  38%|███▊      | 22/58 [00:01<00:01, 21.90it/s]Capturing num tokens (num_tokens=768 avail_mem=113.80 GB):  43%|████▎     | 25/58 [00:01<00:01, 22.26it/s]Capturing num tokens (num_tokens=704 avail_mem=113.22 GB):  43%|████▎     | 25/58 [00:01<00:01, 22.26it/s]Capturing num tokens (num_tokens=640 avail_mem=113.22 GB):  43%|████▎     | 25/58 [00:01<00:01, 22.26it/s]Capturing num tokens (num_tokens=576 avail_mem=113.22 GB):  43%|████▎     | 25/58 [00:01<00:01, 22.26it/s]
 
-    Capturing num tokens (num_tokens=384 avail_mem=132.49 GB):  52%|█████▏    | 30/58 [00:01<00:00, 33.32it/s]Capturing num tokens (num_tokens=352 avail_mem=132.48 GB):  52%|█████▏    | 30/58 [00:01<00:00, 33.32it/s]Capturing num tokens (num_tokens=352 avail_mem=132.48 GB):  59%|█████▊    | 34/58 [00:01<00:00, 35.07it/s]Capturing num tokens (num_tokens=320 avail_mem=132.48 GB):  59%|█████▊    | 34/58 [00:01<00:00, 35.07it/s]Capturing num tokens (num_tokens=288 avail_mem=132.49 GB):  59%|█████▊    | 34/58 [00:01<00:00, 35.07it/s]Capturing num tokens (num_tokens=256 avail_mem=132.49 GB):  59%|█████▊    | 34/58 [00:01<00:00, 35.07it/s]Capturing num tokens (num_tokens=240 avail_mem=132.48 GB):  59%|█████▊    | 34/58 [00:01<00:00, 35.07it/s]Capturing num tokens (num_tokens=240 avail_mem=132.48 GB):  66%|██████▌   | 38/58 [00:01<00:00, 36.37it/s]Capturing num tokens (num_tokens=224 avail_mem=132.48 GB):  66%|██████▌   | 38/58 [00:01<00:00, 36.37it/s]Capturing num tokens (num_tokens=208 avail_mem=132.47 GB):  66%|██████▌   | 38/58 [00:01<00:00, 36.37it/s]
+    Capturing num tokens (num_tokens=512 avail_mem=113.21 GB):  43%|████▎     | 25/58 [00:01<00:01, 22.26it/s]Capturing num tokens (num_tokens=512 avail_mem=113.21 GB):  50%|█████     | 29/58 [00:01<00:01, 25.42it/s]Capturing num tokens (num_tokens=480 avail_mem=113.21 GB):  50%|█████     | 29/58 [00:01<00:01, 25.42it/s]Capturing num tokens (num_tokens=448 avail_mem=113.21 GB):  50%|█████     | 29/58 [00:01<00:01, 25.42it/s]Capturing num tokens (num_tokens=416 avail_mem=113.20 GB):  50%|█████     | 29/58 [00:01<00:01, 25.42it/s]Capturing num tokens (num_tokens=384 avail_mem=113.20 GB):  50%|█████     | 29/58 [00:01<00:01, 25.42it/s]Capturing num tokens (num_tokens=384 avail_mem=113.20 GB):  57%|█████▋    | 33/58 [00:01<00:00, 28.64it/s]Capturing num tokens (num_tokens=352 avail_mem=113.19 GB):  57%|█████▋    | 33/58 [00:01<00:00, 28.64it/s]Capturing num tokens (num_tokens=320 avail_mem=113.19 GB):  57%|█████▋    | 33/58 [00:01<00:00, 28.64it/s]Capturing num tokens (num_tokens=288 avail_mem=113.20 GB):  57%|█████▋    | 33/58 [00:01<00:00, 28.64it/s]
 
-    Capturing num tokens (num_tokens=192 avail_mem=132.47 GB):  66%|██████▌   | 38/58 [00:01<00:00, 36.37it/s]Capturing num tokens (num_tokens=176 avail_mem=132.47 GB):  66%|██████▌   | 38/58 [00:01<00:00, 36.37it/s]Capturing num tokens (num_tokens=176 avail_mem=132.47 GB):  72%|███████▏  | 42/58 [00:01<00:00, 37.26it/s]Capturing num tokens (num_tokens=160 avail_mem=132.47 GB):  72%|███████▏  | 42/58 [00:01<00:00, 37.26it/s]Capturing num tokens (num_tokens=144 avail_mem=132.46 GB):  72%|███████▏  | 42/58 [00:01<00:00, 37.26it/s]Capturing num tokens (num_tokens=128 avail_mem=132.46 GB):  72%|███████▏  | 42/58 [00:01<00:00, 37.26it/s]Capturing num tokens (num_tokens=112 avail_mem=132.45 GB):  72%|███████▏  | 42/58 [00:01<00:00, 37.26it/s]Capturing num tokens (num_tokens=112 avail_mem=132.45 GB):  79%|███████▉  | 46/58 [00:01<00:00, 37.77it/s]Capturing num tokens (num_tokens=96 avail_mem=132.45 GB):  79%|███████▉  | 46/58 [00:01<00:00, 37.77it/s] Capturing num tokens (num_tokens=80 avail_mem=132.45 GB):  79%|███████▉  | 46/58 [00:01<00:00, 37.77it/s]
+    Capturing num tokens (num_tokens=256 avail_mem=113.20 GB):  57%|█████▋    | 33/58 [00:01<00:00, 28.64it/s]Capturing num tokens (num_tokens=256 avail_mem=113.20 GB):  64%|██████▍   | 37/58 [00:01<00:00, 30.96it/s]Capturing num tokens (num_tokens=240 avail_mem=113.19 GB):  64%|██████▍   | 37/58 [00:01<00:00, 30.96it/s]Capturing num tokens (num_tokens=224 avail_mem=113.19 GB):  64%|██████▍   | 37/58 [00:01<00:00, 30.96it/s]Capturing num tokens (num_tokens=208 avail_mem=113.18 GB):  64%|██████▍   | 37/58 [00:01<00:00, 30.96it/s]Capturing num tokens (num_tokens=192 avail_mem=113.18 GB):  64%|██████▍   | 37/58 [00:01<00:00, 30.96it/s]Capturing num tokens (num_tokens=192 avail_mem=113.18 GB):  71%|███████   | 41/58 [00:01<00:00, 31.91it/s]Capturing num tokens (num_tokens=176 avail_mem=113.18 GB):  71%|███████   | 41/58 [00:01<00:00, 31.91it/s]Capturing num tokens (num_tokens=160 avail_mem=113.18 GB):  71%|███████   | 41/58 [00:01<00:00, 31.91it/s]Capturing num tokens (num_tokens=144 avail_mem=113.17 GB):  71%|███████   | 41/58 [00:02<00:00, 31.91it/s]
 
-    Capturing num tokens (num_tokens=64 avail_mem=132.44 GB):  79%|███████▉  | 46/58 [00:01<00:00, 37.77it/s]Capturing num tokens (num_tokens=48 avail_mem=132.44 GB):  79%|███████▉  | 46/58 [00:01<00:00, 37.77it/s]Capturing num tokens (num_tokens=48 avail_mem=132.44 GB):  86%|████████▌ | 50/58 [00:01<00:00, 38.35it/s]Capturing num tokens (num_tokens=32 avail_mem=132.44 GB):  86%|████████▌ | 50/58 [00:01<00:00, 38.35it/s]Capturing num tokens (num_tokens=28 avail_mem=132.43 GB):  86%|████████▌ | 50/58 [00:02<00:00, 38.35it/s]Capturing num tokens (num_tokens=24 avail_mem=132.43 GB):  86%|████████▌ | 50/58 [00:02<00:00, 38.35it/s]Capturing num tokens (num_tokens=20 avail_mem=132.43 GB):  86%|████████▌ | 50/58 [00:02<00:00, 38.35it/s]Capturing num tokens (num_tokens=20 avail_mem=132.43 GB):  93%|█████████▎| 54/58 [00:02<00:00, 34.48it/s]Capturing num tokens (num_tokens=16 avail_mem=132.42 GB):  93%|█████████▎| 54/58 [00:02<00:00, 34.48it/s]
+    Capturing num tokens (num_tokens=128 avail_mem=113.16 GB):  71%|███████   | 41/58 [00:02<00:00, 31.91it/s]Capturing num tokens (num_tokens=128 avail_mem=113.16 GB):  78%|███████▊  | 45/58 [00:02<00:00, 31.83it/s]Capturing num tokens (num_tokens=112 avail_mem=113.15 GB):  78%|███████▊  | 45/58 [00:02<00:00, 31.83it/s]Capturing num tokens (num_tokens=96 avail_mem=113.13 GB):  78%|███████▊  | 45/58 [00:02<00:00, 31.83it/s] Capturing num tokens (num_tokens=80 avail_mem=113.12 GB):  78%|███████▊  | 45/58 [00:02<00:00, 31.83it/s]Capturing num tokens (num_tokens=64 avail_mem=113.12 GB):  78%|███████▊  | 45/58 [00:02<00:00, 31.83it/s]Capturing num tokens (num_tokens=64 avail_mem=113.12 GB):  84%|████████▍ | 49/58 [00:02<00:00, 33.29it/s]Capturing num tokens (num_tokens=48 avail_mem=113.12 GB):  84%|████████▍ | 49/58 [00:02<00:00, 33.29it/s]Capturing num tokens (num_tokens=32 avail_mem=113.11 GB):  84%|████████▍ | 49/58 [00:02<00:00, 33.29it/s]Capturing num tokens (num_tokens=28 avail_mem=113.11 GB):  84%|████████▍ | 49/58 [00:02<00:00, 33.29it/s]
 
-    Capturing num tokens (num_tokens=12 avail_mem=132.42 GB):  93%|█████████▎| 54/58 [00:02<00:00, 34.48it/s]Capturing num tokens (num_tokens=8 avail_mem=132.41 GB):  93%|█████████▎| 54/58 [00:02<00:00, 34.48it/s] Capturing num tokens (num_tokens=4 avail_mem=132.41 GB):  93%|█████████▎| 54/58 [00:02<00:00, 34.48it/s]Capturing num tokens (num_tokens=4 avail_mem=132.41 GB): 100%|██████████| 58/58 [00:02<00:00, 35.33it/s]Capturing num tokens (num_tokens=4 avail_mem=132.41 GB): 100%|██████████| 58/58 [00:02<00:00, 26.36it/s]
+    Capturing num tokens (num_tokens=24 avail_mem=113.11 GB):  84%|████████▍ | 49/58 [00:02<00:00, 33.29it/s]Capturing num tokens (num_tokens=24 avail_mem=113.11 GB):  91%|█████████▏| 53/58 [00:02<00:00, 33.42it/s]Capturing num tokens (num_tokens=20 avail_mem=113.10 GB):  91%|█████████▏| 53/58 [00:02<00:00, 33.42it/s]Capturing num tokens (num_tokens=16 avail_mem=113.10 GB):  91%|█████████▏| 53/58 [00:02<00:00, 33.42it/s]Capturing num tokens (num_tokens=12 avail_mem=113.10 GB):  91%|█████████▏| 53/58 [00:02<00:00, 33.42it/s]Capturing num tokens (num_tokens=8 avail_mem=113.09 GB):  91%|█████████▏| 53/58 [00:02<00:00, 33.42it/s] Capturing num tokens (num_tokens=8 avail_mem=113.09 GB):  98%|█████████▊| 57/58 [00:02<00:00, 34.18it/s]Capturing num tokens (num_tokens=4 avail_mem=113.09 GB):  98%|█████████▊| 57/58 [00:02<00:00, 34.18it/s]Capturing num tokens (num_tokens=4 avail_mem=113.09 GB): 100%|██████████| 58/58 [00:02<00:00, 23.83it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
