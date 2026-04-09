@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=6778cadb"></script>
+    <script src="../../_static/documentation_options.js?v=5002f570"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -904,7 +904,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--pipeline-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--pp-size</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>Type: int</p></td>
+<td><p>Type: int; Currently <code class="docutils literal notranslate"><span class="pre">2</span></code> not supported</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--attention-context-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--attn-cp-size</span></code></p></td>
@@ -1322,42 +1322,47 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <td><p>Bool flag <br/>(set to enable)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-rank</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-lora-overlap-loading</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Bool flag <br/>(set to enable)</p></td>
+<td class="text-center"><p>A2, A3</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-rank</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-target-modules</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-target-modules</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">all</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-paths</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: List[str] /<br/> JSON objects</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loras-per-batch</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loaded-loras</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-loaded-loras</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-eviction-policy</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-eviction-policy</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lru</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">lru</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">fifo</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--lora-backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">csgmv</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">triton</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">csgmv</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">ascend</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">torch_native</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-chunk-size</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--max-lora-chunk-size</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">16</span></code>, <code class="docutils literal notranslate"><span class="pre">32</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">64</span></code>, <code class="docutils literal notranslate"><span class="pre">128</span></code></p></td>
 <td class="text-center"><p>Special for GPU</p></td>
@@ -1624,7 +1629,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--ep-dispatch-algorithm</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">static</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">dynamic</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">fake</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--init-expert-location</span></code></p></td>
@@ -1638,46 +1643,51 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-algorithm</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deepseek</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-layers-</span></code><br/><code class="docutils literal notranslate"><span class="pre">per-chunk</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-num-iterations</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
+<td><p>Type: int</p></td>
+<td class="text-center"><p>A2, A3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-layers-</span></code><br/><code class="docutils literal notranslate"><span class="pre">per-chunk</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-min-rebalancing-</span></code><br/><code class="docutils literal notranslate"><span class="pre">utilization-threshold</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-min-rebalancing-</span></code><br/><code class="docutils literal notranslate"><span class="pre">utilization-threshold</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
 <td><p>Type: float</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-</span></code><br/><code class="docutils literal notranslate"><span class="pre">recorder-mode</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-</span></code><br/><code class="docutils literal notranslate"><span class="pre">recorder-mode</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">stat_approx</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">per_pass</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">per_token</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-</span></code><br/><code class="docutils literal notranslate"><span class="pre">recorder-buffer-size</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--expert-distribution-</span></code><br/><code class="docutils literal notranslate"><span class="pre">recorder-buffer-size</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: int</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-expert-distribution-</span></code><br/><code class="docutils literal notranslate"><span class="pre">metrics</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-expert-distribution-</span></code><br/><code class="docutils literal notranslate"><span class="pre">metrics</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag (set to enable)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-dense-tp-size</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-dense-tp-size</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--elastic-ep-backend</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--elastic-ep-backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">mooncake</span></code></p></td>
 <td class="text-center"><p>Special for GPU</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--mooncake-ib-device</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--mooncake-ib-device</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Type: str</p></td>
 <td class="text-center"><p>Special for GPU</p></td>
@@ -2088,12 +2098,12 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <td class="text-center"><p>Special for GPU</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-shared-</span></code><br/><code class="docutils literal notranslate"><span class="pre">experts-fusion</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>bool flag<br/> (set to enable)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-chunked-</span></code><br/><code class="docutils literal notranslate"><span class="pre">prefix-cache</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>bool flag<br/> (set to enable)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>

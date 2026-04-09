@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=6778cadb"></script>
+    <script src="../../_static/documentation_options.js?v=5002f570"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -569,7 +569,7 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 <p>If you add a new feature or fix a bug, please add corresponding unit tests to ensure coverage and prevent regression.
 SGLang uses Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> framework.
 For detailed instructions on running tests and integrating them into CI, refer to <a class="reference external" href="https://github.com/sgl-project/sglang/tree/main/test/README.md">test/README.md</a>.</p>
-<p>If you need to use model which is not in ```python/sglang/test/ascend/test_ascend_utils.py`` list. Follow these steps:</p>
+<p>If you need to use model which is not in <code class="docutils literal notranslate"><span class="pre">python/sglang/test/ascend/test_ascend_utils.py</span></code> list. Follow these steps:</p>
 <ol class="arabic simple">
 <li><p>Register account and upload your model to <a class="reference external" href="https://modelscope.cn/models">modelscope</a>.</p></li>
 <li><p>Make sure your model is pre-cached on the CI server and is on the way “/data/ascend-ci-share-pkking-sglang/modelscope/hub/models/{your_model_repo}/{your_model}”.

@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=6778cadb"></script>
+    <script src="../../_static/documentation_options.js?v=5002f570"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -506,7 +506,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="quantization-on-ascend">
 <h1>Quantization on Ascend<a class="headerlink" href="#quantization-on-ascend" title="Link to this heading">#</a></h1>
 <p>To load already quantized models, simply load the model weights and config. Again, if the model has been quantized offline, there’s no need to add <code class="docutils literal notranslate"><span class="pre">--quantization</span></code> argument when starting the engine. The quantization method will be automatically parsed from the downloaded <code class="docutils literal notranslate"><span class="pre">quant_model_description.json</span></code> or <code class="docutils literal notranslate"><span class="pre">config.json</span></code> config.</p>
-<p>SGLang support <strong>mix-bits</strong> quantization (independently defines and loads each layer depending on the type of quantification specified in the <code class="docutils literal notranslate"><span class="pre">quant_model_description'.json</span></code>). <a class="reference external" href="https://github.com/sgl-project/sglang/pull/17361">Advanced mix-bits for MoE</a> in progress, will add independent quantization determination for the w13 (up-gate) and w2 (down) layers).</p>
+<p>SGLang support <strong>mix-bits</strong> quantization (independently defines and loads each layer depending on the type of quantification specified in the <code class="docutils literal notranslate"><span class="pre">quant_model_description'.json</span></code>). <a class="reference external" href="https://github.com/sgl-project/sglang/pull/17361">Advanced mix-bits for MoE</a> in progress, will add independent quantization determination for the w13 (up-gate) and w2 (down) layers.</p>
 <p><a class="reference external" href="https://github.com/sgl-project/sglang/pull/14504">ModelSlim on Ascend support</a></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
