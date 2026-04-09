@@ -42,52 +42,302 @@ wait_for_server(f"http://localhost:{port}", process=server_process)
       warnings.warn(
 
 
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779df-064201b0066d159d6ca601f4;4b187d73-99fd-43a4-a992-d2678784ec7f)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:05:19] retry() failed once (0th try, maximum 2 retries). Will delay 0.89s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779df-064201b0066d159d6ca601f4;4b187d73-99fd-43a4-a992-d2678784ec7f)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e0-53cbc2b753b765332a5faf9c;003f5837-b642-4198-bbc4-162a36bfa0e3)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:05:20] retry() failed once (1th try, maximum 2 retries). Will delay 1.58s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e0-53cbc2b753b765332a5faf9c;003f5837-b642-4198-bbc4-162a36bfa0e3)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779e2-17bb047c7cf5a6d073aff81a;12c03918-7600-4871-82e1-82f9bf5094d8)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:05:22] Failed to load hf_quant_config.json for model qwen/qwen2.5-0.5b-instruct: retry() exceed maximum number of retries.
+
+
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 09:02:46] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:02:46] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:02:46] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:02:46] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:05:24] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:05:24] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:05:24] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:05:24] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.58it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.56it/s]
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:05:24] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 1s [Retry 1/5].
+    [2026-04-09 10:05:24] Retrying in 1s [Retry 1/5].
 
 
-    2026-04-09 09:02:48,272 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 09:02:48] Unexpected error during package walk: cutlass.cute.experimental
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:05:25] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 2s [Retry 2/5].
+    [2026-04-09 10:05:25] Retrying in 2s [Retry 2/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:05:27] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 4s [Retry 3/5].
+    [2026-04-09 10:05:27] Retrying in 4s [Retry 3/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:05:31] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 8s [Retry 4/5].
+    [2026-04-09 10:05:31] Retrying in 8s [Retry 4/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:05:39] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 8s [Retry 5/5].
+    [2026-04-09 10:05:39] Retrying in 8s [Retry 5/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:05:48] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  6.47it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  6.45it/s]
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779fc-71846233030c347a21763027;3cac9531-bf97-4cc7-a5df-f91c3f0b1bcc)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:05:48] retry() failed once (0th try, maximum 2 retries). Will delay 0.80s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779fc-71846233030c347a21763027;3cac9531-bf97-4cc7-a5df-f91c3f0b1bcc)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779fd-35a0bfb45655607c30b31b38;ff1759f2-5323-4194-88fc-83a92bee28f8)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:05:49] retry() failed once (1th try, maximum 2 retries). Will delay 1.63s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779fd-35a0bfb45655607c30b31b38;ff1759f2-5323-4194-88fc-83a92bee28f8)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d779fe-4b99139c015b8dae316842c4;e471009a-aae7-4648-b676-8e48c10d79e2)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:05:50] Failed to load hf_quant_config.json for model qwen/qwen2.5-0.5b-instruct: retry() exceed maximum number of retries.
+
+
+    2026-04-09 10:05:51,279 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 10:05:51] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:33,  2.70s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:33,  2.70s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:02<02:33,  2.70s/it]Compiling num tokens (num_tokens=6656):   2%|▏         | 1/58 [00:02<02:33,  2.70s/it]Compiling num tokens (num_tokens=6144):   2%|▏         | 1/58 [00:02<02:33,  2.70s/it]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=4608):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=4096):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=3840):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:34,  2.70s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:34,  2.70s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:02<02:34,  2.70s/it]Compiling num tokens (num_tokens=6656):   2%|▏         | 1/58 [00:02<02:34,  2.70s/it]Compiling num tokens (num_tokens=6144):   2%|▏         | 1/58 [00:02<02:34,  2.70s/it]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=4608):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=4096):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=3840):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]
 
-    Compiling num tokens (num_tokens=3584):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=2048):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=1792):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Compiling num tokens (num_tokens=1536):  19%|█▉        | 11/58 [00:03<00:07,  6.15it/s]Compiling num tokens (num_tokens=1536):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]Compiling num tokens (num_tokens=1280):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]Compiling num tokens (num_tokens=1024):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]Compiling num tokens (num_tokens=960):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s] Compiling num tokens (num_tokens=896):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]Compiling num tokens (num_tokens=832):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]
+    Compiling num tokens (num_tokens=3584):   9%|▊         | 5/58 [00:02<00:22,  2.34it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=2048):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=1792):  19%|█▉        | 11/58 [00:02<00:07,  6.14it/s]Compiling num tokens (num_tokens=1536):  19%|█▉        | 11/58 [00:03<00:07,  6.14it/s]Compiling num tokens (num_tokens=1536):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]Compiling num tokens (num_tokens=1280):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]Compiling num tokens (num_tokens=1024):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]Compiling num tokens (num_tokens=960):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s] Compiling num tokens (num_tokens=896):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]Compiling num tokens (num_tokens=832):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]Compiling num tokens (num_tokens=768):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]
 
-    Compiling num tokens (num_tokens=768):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]Compiling num tokens (num_tokens=704):  33%|███▎      | 19/58 [00:03<00:03, 12.45it/s]Compiling num tokens (num_tokens=704):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=640):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=576):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=512):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=480):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=448):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=416):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=384):  45%|████▍     | 26/58 [00:03<00:01, 18.50it/s]Compiling num tokens (num_tokens=384):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]Compiling num tokens (num_tokens=352):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]Compiling num tokens (num_tokens=320):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]Compiling num tokens (num_tokens=288):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]Compiling num tokens (num_tokens=256):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]
+    Compiling num tokens (num_tokens=704):  33%|███▎      | 19/58 [00:03<00:03, 12.44it/s]Compiling num tokens (num_tokens=704):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=640):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=576):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=512):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=480):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=448):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=416):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=384):  45%|████▍     | 26/58 [00:03<00:01, 18.53it/s]Compiling num tokens (num_tokens=384):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]Compiling num tokens (num_tokens=352):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]Compiling num tokens (num_tokens=320):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]Compiling num tokens (num_tokens=288):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]Compiling num tokens (num_tokens=256):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]
 
-    Compiling num tokens (num_tokens=240):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]Compiling num tokens (num_tokens=224):  57%|█████▋    | 33/58 [00:03<00:01, 24.99it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=160):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=144):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=128):  67%|██████▋   | 39/58 [00:03<00:00, 29.99it/s]Compiling num tokens (num_tokens=128):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s]Compiling num tokens (num_tokens=112):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s]Compiling num tokens (num_tokens=96):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s] 
+    Compiling num tokens (num_tokens=240):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]Compiling num tokens (num_tokens=224):  57%|█████▋    | 33/58 [00:03<00:01, 24.86it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=160):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=144):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=128):  67%|██████▋   | 39/58 [00:03<00:00, 29.92it/s]Compiling num tokens (num_tokens=128):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s]Compiling num tokens (num_tokens=112):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s]Compiling num tokens (num_tokens=96):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s] Compiling num tokens (num_tokens=80):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s]
 
-    Compiling num tokens (num_tokens=80):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s]Compiling num tokens (num_tokens=64):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s]Compiling num tokens (num_tokens=48):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s]Compiling num tokens (num_tokens=32):  78%|███████▊  | 45/58 [00:03<00:00, 34.00it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=12):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=8):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s] Compiling num tokens (num_tokens=4):  88%|████████▊ | 51/58 [00:03<00:00, 38.16it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 15.74it/s]
+    Compiling num tokens (num_tokens=64):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s]Compiling num tokens (num_tokens=48):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s]Compiling num tokens (num_tokens=32):  78%|███████▊  | 45/58 [00:03<00:00, 34.72it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=12):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=8):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s] Compiling num tokens (num_tokens=4):  88%|████████▊ | 51/58 [00:03<00:00, 38.92it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 15.78it/s]
 
 
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=137.42 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=137.39 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=137.39 GB):   3%|▎         | 2/58 [00:00<00:02, 19.02it/s]Capturing num tokens (num_tokens=7168 avail_mem=137.38 GB):   3%|▎         | 2/58 [00:00<00:02, 19.02it/s]Capturing num tokens (num_tokens=6656 avail_mem=137.38 GB):   3%|▎         | 2/58 [00:00<00:02, 19.02it/s]Capturing num tokens (num_tokens=6144 avail_mem=137.38 GB):   3%|▎         | 2/58 [00:00<00:02, 19.02it/s]
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=137.42 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=137.42 GB):   2%|▏         | 1/58 [00:00<00:08,  6.52it/s]Capturing num tokens (num_tokens=7680 avail_mem=137.39 GB):   2%|▏         | 1/58 [00:00<00:08,  6.52it/s]
 
-    Capturing num tokens (num_tokens=6144 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.23it/s]Capturing num tokens (num_tokens=5632 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.23it/s]Capturing num tokens (num_tokens=5120 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.23it/s]Capturing num tokens (num_tokens=4608 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.23it/s]Capturing num tokens (num_tokens=4096 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.23it/s]Capturing num tokens (num_tokens=4096 avail_mem=137.38 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.88it/s]Capturing num tokens (num_tokens=3840 avail_mem=137.37 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.88it/s]Capturing num tokens (num_tokens=3584 avail_mem=137.37 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.88it/s]Capturing num tokens (num_tokens=3328 avail_mem=137.37 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.88it/s]
+    Capturing num tokens (num_tokens=7168 avail_mem=137.38 GB):   2%|▏         | 1/58 [00:00<00:08,  6.52it/s]Capturing num tokens (num_tokens=6656 avail_mem=137.38 GB):   2%|▏         | 1/58 [00:00<00:08,  6.52it/s]Capturing num tokens (num_tokens=6656 avail_mem=137.38 GB):   7%|▋         | 4/58 [00:00<00:03, 15.23it/s]Capturing num tokens (num_tokens=6144 avail_mem=137.38 GB):   7%|▋         | 4/58 [00:00<00:03, 15.23it/s]Capturing num tokens (num_tokens=5632 avail_mem=137.38 GB):   7%|▋         | 4/58 [00:00<00:03, 15.23it/s]Capturing num tokens (num_tokens=5120 avail_mem=137.38 GB):   7%|▋         | 4/58 [00:00<00:03, 15.23it/s]Capturing num tokens (num_tokens=5120 avail_mem=137.38 GB):  12%|█▏        | 7/58 [00:00<00:02, 20.20it/s]Capturing num tokens (num_tokens=4608 avail_mem=137.38 GB):  12%|█▏        | 7/58 [00:00<00:02, 20.20it/s]
 
-    Capturing num tokens (num_tokens=3072 avail_mem=137.36 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.88it/s]Capturing num tokens (num_tokens=2816 avail_mem=137.36 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.88it/s]Capturing num tokens (num_tokens=2816 avail_mem=137.36 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.47it/s]Capturing num tokens (num_tokens=2560 avail_mem=137.36 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.47it/s]Capturing num tokens (num_tokens=2304 avail_mem=137.35 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.47it/s]Capturing num tokens (num_tokens=2048 avail_mem=137.35 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.47it/s]Capturing num tokens (num_tokens=1792 avail_mem=137.35 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.47it/s]Capturing num tokens (num_tokens=1536 avail_mem=137.34 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.47it/s]Capturing num tokens (num_tokens=1536 avail_mem=137.34 GB):  33%|███▎      | 19/58 [00:00<00:01, 36.38it/s]Capturing num tokens (num_tokens=1280 avail_mem=137.34 GB):  33%|███▎      | 19/58 [00:00<00:01, 36.38it/s]Capturing num tokens (num_tokens=1024 avail_mem=137.32 GB):  33%|███▎      | 19/58 [00:00<00:01, 36.38it/s]
+    Capturing num tokens (num_tokens=4096 avail_mem=137.38 GB):  12%|█▏        | 7/58 [00:00<00:02, 20.20it/s]Capturing num tokens (num_tokens=3840 avail_mem=137.37 GB):  12%|█▏        | 7/58 [00:00<00:02, 20.20it/s]Capturing num tokens (num_tokens=3584 avail_mem=137.37 GB):  12%|█▏        | 7/58 [00:00<00:02, 20.20it/s]Capturing num tokens (num_tokens=3584 avail_mem=137.37 GB):  19%|█▉        | 11/58 [00:00<00:01, 26.15it/s]Capturing num tokens (num_tokens=3328 avail_mem=137.37 GB):  19%|█▉        | 11/58 [00:00<00:01, 26.15it/s]Capturing num tokens (num_tokens=3072 avail_mem=137.36 GB):  19%|█▉        | 11/58 [00:00<00:01, 26.15it/s]Capturing num tokens (num_tokens=2816 avail_mem=137.36 GB):  19%|█▉        | 11/58 [00:00<00:01, 26.15it/s]Capturing num tokens (num_tokens=2560 avail_mem=137.36 GB):  19%|█▉        | 11/58 [00:00<00:01, 26.15it/s]Capturing num tokens (num_tokens=2304 avail_mem=137.35 GB):  19%|█▉        | 11/58 [00:00<00:01, 26.15it/s]Capturing num tokens (num_tokens=2304 avail_mem=137.35 GB):  28%|██▊       | 16/58 [00:00<00:01, 32.22it/s]Capturing num tokens (num_tokens=2048 avail_mem=137.35 GB):  28%|██▊       | 16/58 [00:00<00:01, 32.22it/s]
 
-    Capturing num tokens (num_tokens=960 avail_mem=137.33 GB):  33%|███▎      | 19/58 [00:00<00:01, 36.38it/s] Capturing num tokens (num_tokens=896 avail_mem=137.33 GB):  33%|███▎      | 19/58 [00:00<00:01, 36.38it/s]Capturing num tokens (num_tokens=832 avail_mem=137.33 GB):  33%|███▎      | 19/58 [00:00<00:01, 36.38it/s]Capturing num tokens (num_tokens=832 avail_mem=137.33 GB):  41%|████▏     | 24/58 [00:00<00:00, 38.90it/s]Capturing num tokens (num_tokens=768 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 38.90it/s]Capturing num tokens (num_tokens=704 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 38.90it/s]Capturing num tokens (num_tokens=640 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 38.90it/s]Capturing num tokens (num_tokens=576 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 38.90it/s]Capturing num tokens (num_tokens=512 avail_mem=137.30 GB):  41%|████▏     | 24/58 [00:00<00:00, 38.90it/s]Capturing num tokens (num_tokens=512 avail_mem=137.30 GB):  50%|█████     | 29/58 [00:00<00:00, 40.76it/s]Capturing num tokens (num_tokens=480 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:00<00:00, 40.76it/s]
+    Capturing num tokens (num_tokens=1792 avail_mem=137.35 GB):  28%|██▊       | 16/58 [00:00<00:01, 32.22it/s]Capturing num tokens (num_tokens=1536 avail_mem=137.34 GB):  28%|██▊       | 16/58 [00:00<00:01, 32.22it/s]Capturing num tokens (num_tokens=1280 avail_mem=137.34 GB):  28%|██▊       | 16/58 [00:00<00:01, 32.22it/s]Capturing num tokens (num_tokens=1280 avail_mem=137.34 GB):  34%|███▍      | 20/58 [00:00<00:01, 34.54it/s]Capturing num tokens (num_tokens=1024 avail_mem=137.32 GB):  34%|███▍      | 20/58 [00:00<00:01, 34.54it/s]Capturing num tokens (num_tokens=960 avail_mem=137.33 GB):  34%|███▍      | 20/58 [00:00<00:01, 34.54it/s] Capturing num tokens (num_tokens=896 avail_mem=137.33 GB):  34%|███▍      | 20/58 [00:00<00:01, 34.54it/s]Capturing num tokens (num_tokens=832 avail_mem=137.33 GB):  34%|███▍      | 20/58 [00:00<00:01, 34.54it/s]Capturing num tokens (num_tokens=768 avail_mem=137.32 GB):  34%|███▍      | 20/58 [00:00<00:01, 34.54it/s]
 
-    Capturing num tokens (num_tokens=448 avail_mem=137.30 GB):  50%|█████     | 29/58 [00:00<00:00, 40.76it/s]Capturing num tokens (num_tokens=416 avail_mem=137.30 GB):  50%|█████     | 29/58 [00:00<00:00, 40.76it/s]Capturing num tokens (num_tokens=384 avail_mem=137.30 GB):  50%|█████     | 29/58 [00:00<00:00, 40.76it/s]Capturing num tokens (num_tokens=352 avail_mem=137.29 GB):  50%|█████     | 29/58 [00:00<00:00, 40.76it/s]Capturing num tokens (num_tokens=352 avail_mem=137.29 GB):  59%|█████▊    | 34/58 [00:01<00:00, 34.16it/s]Capturing num tokens (num_tokens=320 avail_mem=137.28 GB):  59%|█████▊    | 34/58 [00:01<00:00, 34.16it/s]Capturing num tokens (num_tokens=288 avail_mem=137.26 GB):  59%|█████▊    | 34/58 [00:01<00:00, 34.16it/s]Capturing num tokens (num_tokens=256 avail_mem=136.79 GB):  59%|█████▊    | 34/58 [00:01<00:00, 34.16it/s]
+    Capturing num tokens (num_tokens=768 avail_mem=137.32 GB):  43%|████▎     | 25/58 [00:00<00:00, 36.64it/s]Capturing num tokens (num_tokens=704 avail_mem=137.32 GB):  43%|████▎     | 25/58 [00:00<00:00, 36.64it/s]Capturing num tokens (num_tokens=640 avail_mem=137.32 GB):  43%|████▎     | 25/58 [00:00<00:00, 36.64it/s]
 
-    Capturing num tokens (num_tokens=240 avail_mem=136.78 GB):  59%|█████▊    | 34/58 [00:01<00:00, 34.16it/s]Capturing num tokens (num_tokens=240 avail_mem=136.78 GB):  66%|██████▌   | 38/58 [00:01<00:00, 35.37it/s]Capturing num tokens (num_tokens=224 avail_mem=136.63 GB):  66%|██████▌   | 38/58 [00:01<00:00, 35.37it/s]Capturing num tokens (num_tokens=208 avail_mem=136.62 GB):  66%|██████▌   | 38/58 [00:01<00:00, 35.37it/s]Capturing num tokens (num_tokens=192 avail_mem=136.62 GB):  66%|██████▌   | 38/58 [00:01<00:00, 35.37it/s]Capturing num tokens (num_tokens=176 avail_mem=136.61 GB):  66%|██████▌   | 38/58 [00:01<00:00, 35.37it/s]Capturing num tokens (num_tokens=160 avail_mem=136.61 GB):  66%|██████▌   | 38/58 [00:01<00:00, 35.37it/s]Capturing num tokens (num_tokens=160 avail_mem=136.61 GB):  74%|███████▍  | 43/58 [00:01<00:00, 38.13it/s]Capturing num tokens (num_tokens=144 avail_mem=136.61 GB):  74%|███████▍  | 43/58 [00:01<00:00, 38.13it/s]Capturing num tokens (num_tokens=128 avail_mem=136.60 GB):  74%|███████▍  | 43/58 [00:01<00:00, 38.13it/s]Capturing num tokens (num_tokens=112 avail_mem=136.60 GB):  74%|███████▍  | 43/58 [00:01<00:00, 38.13it/s]
+    Capturing num tokens (num_tokens=576 avail_mem=137.32 GB):  43%|████▎     | 25/58 [00:01<00:00, 36.64it/s]Capturing num tokens (num_tokens=512 avail_mem=137.30 GB):  43%|████▎     | 25/58 [00:01<00:00, 36.64it/s]Capturing num tokens (num_tokens=512 avail_mem=137.30 GB):  50%|█████     | 29/58 [00:01<00:01, 25.47it/s]Capturing num tokens (num_tokens=480 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:01<00:01, 25.47it/s]Capturing num tokens (num_tokens=448 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:01<00:01, 25.47it/s]Capturing num tokens (num_tokens=416 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:01<00:01, 25.47it/s]Capturing num tokens (num_tokens=384 avail_mem=137.31 GB):  50%|█████     | 29/58 [00:01<00:01, 25.47it/s]Capturing num tokens (num_tokens=352 avail_mem=137.31 GB):  50%|█████     | 29/58 [00:01<00:01, 25.47it/s]Capturing num tokens (num_tokens=352 avail_mem=137.31 GB):  59%|█████▊    | 34/58 [00:01<00:00, 30.27it/s]Capturing num tokens (num_tokens=320 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:01<00:00, 30.27it/s]Capturing num tokens (num_tokens=288 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:01<00:00, 30.27it/s]Capturing num tokens (num_tokens=256 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:01<00:00, 30.27it/s]
 
-    Capturing num tokens (num_tokens=96 avail_mem=136.60 GB):  74%|███████▍  | 43/58 [00:01<00:00, 38.13it/s] Capturing num tokens (num_tokens=80 avail_mem=136.59 GB):  74%|███████▍  | 43/58 [00:01<00:00, 38.13it/s]Capturing num tokens (num_tokens=80 avail_mem=136.59 GB):  83%|████████▎ | 48/58 [00:01<00:00, 39.90it/s]Capturing num tokens (num_tokens=64 avail_mem=136.59 GB):  83%|████████▎ | 48/58 [00:01<00:00, 39.90it/s]Capturing num tokens (num_tokens=48 avail_mem=136.59 GB):  83%|████████▎ | 48/58 [00:01<00:00, 39.90it/s]Capturing num tokens (num_tokens=32 avail_mem=136.58 GB):  83%|████████▎ | 48/58 [00:01<00:00, 39.90it/s]Capturing num tokens (num_tokens=28 avail_mem=136.58 GB):  83%|████████▎ | 48/58 [00:01<00:00, 39.90it/s]Capturing num tokens (num_tokens=24 avail_mem=136.58 GB):  83%|████████▎ | 48/58 [00:01<00:00, 39.90it/s]Capturing num tokens (num_tokens=24 avail_mem=136.58 GB):  91%|█████████▏| 53/58 [00:01<00:00, 41.41it/s]Capturing num tokens (num_tokens=20 avail_mem=136.57 GB):  91%|█████████▏| 53/58 [00:01<00:00, 41.41it/s]Capturing num tokens (num_tokens=16 avail_mem=136.57 GB):  91%|█████████▏| 53/58 [00:01<00:00, 41.41it/s]Capturing num tokens (num_tokens=12 avail_mem=136.57 GB):  91%|█████████▏| 53/58 [00:01<00:00, 41.41it/s]
+    Capturing num tokens (num_tokens=240 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:01<00:00, 30.27it/s]Capturing num tokens (num_tokens=224 avail_mem=137.29 GB):  59%|█████▊    | 34/58 [00:01<00:00, 30.27it/s]Capturing num tokens (num_tokens=224 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 34.08it/s]Capturing num tokens (num_tokens=208 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 34.08it/s]Capturing num tokens (num_tokens=192 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 34.08it/s]Capturing num tokens (num_tokens=176 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 34.08it/s]Capturing num tokens (num_tokens=160 avail_mem=137.28 GB):  67%|██████▋   | 39/58 [00:01<00:00, 34.08it/s]Capturing num tokens (num_tokens=144 avail_mem=137.28 GB):  67%|██████▋   | 39/58 [00:01<00:00, 34.08it/s]Capturing num tokens (num_tokens=144 avail_mem=137.28 GB):  76%|███████▌  | 44/58 [00:01<00:00, 37.24it/s]Capturing num tokens (num_tokens=128 avail_mem=137.28 GB):  76%|███████▌  | 44/58 [00:01<00:00, 37.24it/s]Capturing num tokens (num_tokens=112 avail_mem=137.27 GB):  76%|███████▌  | 44/58 [00:01<00:00, 37.24it/s]Capturing num tokens (num_tokens=96 avail_mem=137.27 GB):  76%|███████▌  | 44/58 [00:01<00:00, 37.24it/s] 
 
-    Capturing num tokens (num_tokens=8 avail_mem=136.56 GB):  91%|█████████▏| 53/58 [00:01<00:00, 41.41it/s] Capturing num tokens (num_tokens=4 avail_mem=136.56 GB):  91%|█████████▏| 53/58 [00:01<00:00, 41.41it/s]Capturing num tokens (num_tokens=4 avail_mem=136.56 GB): 100%|██████████| 58/58 [00:01<00:00, 42.83it/s]Capturing num tokens (num_tokens=4 avail_mem=136.56 GB): 100%|██████████| 58/58 [00:01<00:00, 37.30it/s]
+    Capturing num tokens (num_tokens=80 avail_mem=137.27 GB):  76%|███████▌  | 44/58 [00:01<00:00, 37.24it/s]Capturing num tokens (num_tokens=64 avail_mem=137.26 GB):  76%|███████▌  | 44/58 [00:01<00:00, 37.24it/s]Capturing num tokens (num_tokens=64 avail_mem=137.26 GB):  84%|████████▍ | 49/58 [00:01<00:00, 39.39it/s]Capturing num tokens (num_tokens=48 avail_mem=137.26 GB):  84%|████████▍ | 49/58 [00:01<00:00, 39.39it/s]Capturing num tokens (num_tokens=32 avail_mem=137.25 GB):  84%|████████▍ | 49/58 [00:01<00:00, 39.39it/s]Capturing num tokens (num_tokens=28 avail_mem=137.25 GB):  84%|████████▍ | 49/58 [00:01<00:00, 39.39it/s]Capturing num tokens (num_tokens=24 avail_mem=137.25 GB):  84%|████████▍ | 49/58 [00:01<00:00, 39.39it/s]Capturing num tokens (num_tokens=20 avail_mem=137.24 GB):  84%|████████▍ | 49/58 [00:01<00:00, 39.39it/s]Capturing num tokens (num_tokens=20 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.22it/s]Capturing num tokens (num_tokens=16 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.22it/s]Capturing num tokens (num_tokens=12 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.22it/s]Capturing num tokens (num_tokens=8 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.22it/s] 
+
+    Capturing num tokens (num_tokens=4 avail_mem=137.23 GB):  93%|█████████▎| 54/58 [00:01<00:00, 41.22it/s]Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01<00:00, 33.20it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -113,7 +363,7 @@ print_highlight(response.json())
 ```
 
 
-<strong style='color: #00008B;'>{'text': ' Berlin\nMunication: The function of the quickest possible route between two peoples or companies, for example, EURAXESS. SS\nAutomated processing\nFriday, M 07:00 - 16: 00 | Saturday, M 10:00 - 16:00\nThe German Federal Institute for Systems Automation (BSI) is the federal department whose project directly supports the automation of operations in healthcare facilities that serve, under their\ninvitation, persons with specific intellectual disabilities, through the SLH Clinical Information Model (SLHCLIM).\nThe GIS software produced by the BSI', 'output_ids': [19846, 198, 44, 3525, 367, 25, 576, 729, 315, 279, 80510, 3204, 6021, 1948, 1378, 31438, 476, 5110, 11, 369, 3110, 11, 37088, 2954, 9996, 13, 18180, 198, 41072, 657, 8692, 198, 34620, 11, 386, 220, 15, 22, 25, 15, 15, 481, 220, 16, 21, 25, 220, 15, 15, 760, 7728, 11, 386, 220, 16, 15, 25, 15, 15, 481, 220, 16, 21, 25, 15, 15, 198, 785, 5938, 12137, 9976, 369, 14917, 53778, 320, 7347, 40, 8, 374, 279, 6775, 9292, 6693, 2390, 5961, 11554, 279, 32662, 315, 7525, 304, 18478, 12786, 429, 8683, 11, 1212, 862, 198, 97530, 11, 11186, 448, 3151, 19634, 35701, 11, 1526, 279, 16797, 39, 32035, 8085, 4903, 320, 7984, 39, 3140, 1791, 4292, 785, 82371, 3162, 8947, 553, 279, 425, 13817], 'meta_info': {'id': 'd5669e27d3744d16a1ce581870680e5e', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 128, 'cached_tokens': 0, 'cached_tokens_details': None, 'dp_rank': None, 'e2e_latency': 1.105873896740377, 'response_sent_to_client_ts': 1775725382.4359617}}</strong>
+<strong style='color: #00008B;'>{'text': ' Paris\n\nThe capital of France is Paris, which is often abbreviated as "Paris" itself. Note that this abbreviation is sometimes used, but the official name is always Paris. Paris is the 6th largest city in the world by population, with over one million inhabitants. At the 2019 French Census, it had a population of 2. 458. 295,814 people. It is the traditional capital of France, and the seat of the government for the French Republic.\n\nParis is the formerly-broadcast capital of France by the French Radio and Television Union (now the French Broadcasting', 'output_ids': [12095, 271, 785, 6722, 315, 9625, 374, 12095, 11, 892, 374, 3545, 94775, 438, 330, 59604, 1, 5086, 13, 7036, 429, 419, 71478, 374, 7025, 1483, 11, 714, 279, 3946, 829, 374, 2677, 12095, 13, 12095, 374, 279, 220, 21, 339, 7772, 3283, 304, 279, 1879, 553, 7042, 11, 448, 916, 825, 3526, 39671, 13, 2411, 279, 220, 17, 15, 16, 24, 8585, 45527, 11, 432, 1030, 264, 7042, 315, 220, 17, 13, 220, 19, 20, 23, 13, 220, 17, 24, 20, 11, 23, 16, 19, 1251, 13, 1084, 374, 279, 8606, 6722, 315, 9625, 11, 323, 279, 10723, 315, 279, 3033, 369, 279, 8585, 5429, 382, 59604, 374, 279, 33733, 1455, 19105, 6722, 315, 9625, 553, 279, 8585, 13484, 323, 40345, 9145, 320, 3328, 279, 8585, 63460], 'meta_info': {'id': 'be59a2f289204c7c956f3c8e73d988c0', 'finish_reason': {'type': 'length', 'length': 128}, 'prompt_tokens': 7, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 128, 'cached_tokens': 0, 'cached_tokens_details': None, 'dp_rank': None, 'e2e_latency': 1.0582061177119613, 'response_sent_to_client_ts': 1775729166.0663466}}</strong>
 
 
 ## Get Model Info
@@ -154,7 +404,7 @@ assert response_json.keys() == {
 }
 ```
 
-    [2026-04-09 09:03:02] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+    [2026-04-09 10:06:06] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
 
 
 
@@ -177,7 +427,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":32990,"fastapi_root_path":"","grpc_mode":false,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"checkpoint_engine_wait_weights_before_ready":false,"ssl_keyfile":null,"ssl_certfile":null,"ssl_ca_certs":null,"ssl_keyfile_password":null,"enable_ssl_refresh":false,"enable_http2":false,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","enable_fp32_lm_head":false,"modelopt_quant":null,"modelopt_checkpoint_restore_path":null,"modelopt_checkpoint_save_path":null,"modelopt_export_path":null,"quantize_and_serve":false,"rl_quant_profile":null,"mem_fraction_static":0.907,"max_running_requests":128,"max_queued_requests":null,"max_total_tokens":20480,"chunked_prefill_size":8192,"enable_dynamic_chunking":false,"max_prefill_tokens":16384,"prefill_max_requests":null,"schedule_policy":"fcfs","enable_priority_scheduling":false,"disable_priority_preemption":false,"default_priority_value":null,"abort_on_priority_when_disabled":false,"schedule_low_priority_values_first":false,"priority_scheduling_preemption_threshold":10,"schedule_conservativeness":1.0,"page_size":1,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"radix_eviction_policy":"lru","enable_prefill_delayer":false,"prefill_delayer_max_delay_passes":30,"prefill_delayer_token_usage_low_watermark":null,"prefill_delayer_forward_passes_buckets":null,"prefill_delayer_wait_seconds_buckets":null,"device":"cuda","tp_size":1,"pp_size":1,"pp_max_micro_batch_size":null,"pp_async_batch_depth":0,"stream_interval":1,"stream_response_default_include_usage":false,"incremental_streaming_output":false,"enable_streaming_session":false,"random_seed":9672124,"constrained_json_whitespace_pattern":null,"constrained_json_disable_any_whitespace":false,"watchdog_timeout":300,"soft_watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"model_checksum":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"use_ray":false,"custom_sigquit_handler":null,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"log_requests_format":"text","log_requests_target":null,"uvicorn_access_log_exclude_prefixes":[],"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_mfu_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-custom-labels","tokenizer_metrics_allowed_custom_labels":null,"extra_metric_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"gc_warning_threshold_secs":0.0,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"enable_trace":false,"otlp_traces_endpoint":"localhost:4317","export_metrics_to_file":false,"export_metrics_to_file_dir":null,"api_key":null,"admin_api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"hf_chat_template_name":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"sampling_defaults":"model","dp_size":1,"load_balance_method":"round_robin","attn_cp_size":1,"moe_dp_size":1,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"enable_lora_overlap_loading":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_eviction_policy":"lru","lora_backend":"csgmv","max_lora_chunk_size":16,"experts_shared_outer_loras":null,"attention_backend":"fa3","decode_attention_backend":null,"prefill_attention_backend":null,"sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"fp8_gemm_runner_backend":"auto","fp4_gemm_runner_backend":"auto","nsa_prefill_backend":null,"nsa_decode_backend":null,"disable_flashinfer_autotune":false,"mamba_backend":"triton","speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_draft_load_format":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_dflash_block_size":null,"speculative_dflash_draft_window_size":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","speculative_draft_attention_backend":null,"speculative_moe_runner_backend":"auto","speculative_moe_a2a_backend":null,"speculative_draft_model_quantization":null,"speculative_ngram_min_bfs_breadth":1,"speculative_ngram_max_bfs_breadth":10,"speculative_ngram_match_type":"BFS","speculative_ngram_max_trie_depth":18,"speculative_ngram_capacity":10000000,"speculative_ngram_external_corpus_path":null,"speculative_ngram_external_sam_budget":0,"speculative_ngram_external_corpus_max_tokens":10000000,"enable_multi_layer_eagle":false,"ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"enforce_disable_flashinfer_allreduce_fusion":false,"enable_aiter_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":null,"init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"elastic_ep_backend":null,"enable_elastic_expert_backup":false,"mooncake_ib_device":null,"max_mamba_cache_size":null,"mamba_ssm_dtype":null,"mamba_full_memory_ratio":0.9,"mamba_scheduler_strategy":"no_buffer","mamba_track_interval":256,"linear_attn_backend":"triton","linear_attn_decode_backend":null,"linear_attn_prefill_backend":null,"enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_hisparse":false,"hisparse_config":null,"enable_lmcache":false,"kt_weight_path":null,"kt_method":"AMXINT4","kt_cpuinfer":null,"kt_threadpool_count":2,"kt_num_gpu_experts":null,"kt_max_deferred_experts_per_token":null,"dllm_algorithm":null,"dllm_algorithm_config":null,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","multi_item_scoring_delimiter":null,"disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":[1,2,4],"disable_cuda_graph":true,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_layerwise_nvtx_marker":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_tokenizer_batch_decode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"enable_torch_symm_mem":false,"pre_warm_nccl":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"enable_single_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"disable_piecewise_cuda_graph":false,"enforce_piecewise_cuda_graph":false,"enable_torch_compile_debug_mode":false,"torch_compile_max_bs":32,"piecewise_cuda_graph_max_tokens":8192,"piecewise_cuda_graph_tokens":[4,8,12,16,20,24,28,32,48,64,80,96,112,128,144,160,176,192,208,224,240,256,288,320,352,384,416,448,480,512,576,640,704,768,832,896,960,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4608,5120,5632,6144,6656,7168,7680,8192],"piecewise_cuda_graph_compiler":"eager","torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"enable_weights_cpu_backup":false,"enable_draft_weights_cpu_backup":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"enforce_shared_experts_fusion":false,"disable_chunked_prefix_cache":false,"disable_fast_image_processor":false,"keep_mm_feature_on_device":false,"enable_return_hidden_states":false,"enable_return_routed_experts":false,"scheduler_recv_interval":1,"numa_node":null,"enable_deterministic_inference":false,"rl_on_policy_target":null,"enable_attn_tp_input_scattered":false,"gc_threshold":null,"enable_nsa_prefill_context_parallel":false,"nsa_prefill_cp_mode":"round-robin-split","enable_fused_qk_norm_rope":false,"enable_precise_embedding_interpolation":false,"enable_fused_moe_sum_all_reduce":false,"enable_prefill_context_parallel":false,"prefill_cp_mode":"in-seq-split","enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_layers":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_ib_device":null,"disaggregation_decode_enable_offload_kvcache":false,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"encoder_only":false,"language_only":false,"encoder_transfer_backend":"zmq_to_scheduler","encoder_urls":[],"enable_adaptive_dispatch_to_encoder":false,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"remote_instance_weight_loader_backend":"nccl","remote_instance_weight_loader_start_seed_via_transfer_engine":false,"engine_info_bootstrap_port":6789,"modelexpress_config":null,"enable_pdmux":false,"pdmux_config_path":null,"sm_group_num":8,"enable_broadcast_mm_inputs_process":false,"enable_prefix_mm_cache":false,"mm_enable_dp_encoder":false,"mm_process_config":{},"limit_mm_data_per_request":null,"enable_mm_global_cache":false,"decrypted_config_file":null,"decrypted_draft_config_file":null,"forward_hooks":null,"status":"ready","max_total_num_tokens":20480,"max_req_input_len":20474,"internal_states":[{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":32990,"fastapi_root_path":"","grpc_mode":false,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"checkpoint_engine_wait_weights_before_ready":false,"ssl_keyfile":null,"ssl_certfile":null,"ssl_ca_certs":null,"ssl_keyfile_password":null,"enable_ssl_refresh":false,"enable_http2":false,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","enable_fp32_lm_head":false,"modelopt_quant":null,"modelopt_checkpoint_restore_path":null,"modelopt_checkpoint_save_path":null,"modelopt_export_path":null,"quantize_and_serve":false,"rl_quant_profile":null,"mem_fraction_static":0.907,"max_running_requests":128,"max_queued_requests":null,"max_total_tokens":20480,"chunked_prefill_size":8192,"enable_dynamic_chunking":false,"max_prefill_tokens":16384,"prefill_max_requests":null,"schedule_policy":"fcfs","enable_priority_scheduling":false,"disable_priority_preemption":false,"default_priority_value":null,"abort_on_priority_when_disabled":false,"schedule_low_priority_values_first":false,"priority_scheduling_preemption_threshold":10,"schedule_conservativeness":1.0,"page_size":1,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"radix_eviction_policy":"lru","enable_prefill_delayer":false,"prefill_delayer_max_delay_passes":30,"prefill_delayer_token_usage_low_watermark":null,"prefill_delayer_forward_passes_buckets":null,"prefill_delayer_wait_seconds_buckets":null,"device":"cuda","tp_size":1,"pp_size":1,"pp_max_micro_batch_size":128,"pp_async_batch_depth":0,"stream_interval":1,"stream_response_default_include_usage":false,"incremental_streaming_output":false,"enable_streaming_session":false,"random_seed":9672124,"constrained_json_whitespace_pattern":null,"constrained_json_disable_any_whitespace":false,"watchdog_timeout":300,"soft_watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"model_checksum":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"use_ray":false,"custom_sigquit_handler":null,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"log_requests_format":"text","log_requests_target":null,"uvicorn_access_log_exclude_prefixes":[],"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_mfu_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-custom-labels","tokenizer_metrics_allowed_custom_labels":null,"extra_metric_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"gc_warning_threshold_secs":0.0,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"enable_trace":false,"otlp_traces_endpoint":"localhost:4317","export_metrics_to_file":false,"export_metrics_to_file_dir":null,"api_key":null,"admin_api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"hf_chat_template_name":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"sampling_defaults":"model","dp_size":1,"load_balance_method":"round_robin","attn_cp_size":1,"moe_dp_size":1,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"enable_lora_overlap_loading":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_eviction_policy":"lru","lora_backend":"csgmv","max_lora_chunk_size":16,"experts_shared_outer_loras":null,"attention_backend":"fa3","decode_attention_backend":"fa3","prefill_attention_backend":"fa3","sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"fp8_gemm_runner_backend":"auto","fp4_gemm_runner_backend":"auto","nsa_prefill_backend":null,"nsa_decode_backend":null,"disable_flashinfer_autotune":false,"mamba_backend":"triton","speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_draft_load_format":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_dflash_block_size":null,"speculative_dflash_draft_window_size":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","speculative_draft_attention_backend":null,"speculative_moe_runner_backend":"auto","speculative_moe_a2a_backend":null,"speculative_draft_model_quantization":null,"speculative_ngram_min_bfs_breadth":1,"speculative_ngram_max_bfs_breadth":10,"speculative_ngram_match_type":"BFS","speculative_ngram_max_trie_depth":18,"speculative_ngram_capacity":10000000,"speculative_ngram_external_corpus_path":null,"speculative_ngram_external_sam_budget":0,"speculative_ngram_external_corpus_max_tokens":10000000,"enable_multi_layer_eagle":false,"ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"enforce_disable_flashinfer_allreduce_fusion":false,"enable_aiter_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":null,"init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"elastic_ep_backend":null,"enable_elastic_expert_backup":false,"mooncake_ib_device":null,"max_mamba_cache_size":null,"mamba_ssm_dtype":null,"mamba_full_memory_ratio":0.9,"mamba_scheduler_strategy":"no_buffer","mamba_track_interval":256,"linear_attn_backend":"triton","linear_attn_decode_backend":null,"linear_attn_prefill_backend":null,"enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_hisparse":false,"hisparse_config":null,"enable_lmcache":false,"kt_weight_path":null,"kt_method":"AMXINT4","kt_cpuinfer":null,"kt_threadpool_count":2,"kt_num_gpu_experts":null,"kt_max_deferred_experts_per_token":null,"dllm_algorithm":null,"dllm_algorithm_config":null,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","multi_item_scoring_delimiter":null,"disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":[1,2,4],"disable_cuda_graph":true,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_layerwise_nvtx_marker":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_tokenizer_batch_decode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"enable_torch_symm_mem":false,"pre_warm_nccl":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"enable_single_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"disable_piecewise_cuda_graph":false,"enforce_piecewise_cuda_graph":false,"enable_torch_compile_debug_mode":false,"torch_compile_max_bs":32,"piecewise_cuda_graph_max_tokens":8192,"piecewise_cuda_graph_tokens":[4,8,12,16,20,24,28,32,48,64,80,96,112,128,144,160,176,192,208,224,240,256,288,320,352,384,416,448,480,512,576,640,704,768,832,896,960,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4608,5120,5632,6144,6656,7168,7680,8192],"piecewise_cuda_graph_compiler":"eager","torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"enable_weights_cpu_backup":false,"enable_draft_weights_cpu_backup":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"enforce_shared_experts_fusion":false,"disable_chunked_prefix_cache":true,"disable_fast_image_processor":false,"keep_mm_feature_on_device":false,"enable_return_hidden_states":false,"enable_return_routed_experts":false,"scheduler_recv_interval":1,"numa_node":null,"enable_deterministic_inference":false,"rl_on_policy_target":null,"enable_attn_tp_input_scattered":false,"gc_threshold":null,"enable_nsa_prefill_context_parallel":false,"nsa_prefill_cp_mode":"round-robin-split","enable_fused_qk_norm_rope":false,"enable_precise_embedding_interpolation":false,"enable_fused_moe_sum_all_reduce":false,"enable_prefill_context_parallel":false,"prefill_cp_mode":"in-seq-split","enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_layers":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_ib_device":null,"disaggregation_decode_enable_offload_kvcache":false,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"encoder_only":false,"language_only":false,"encoder_transfer_backend":"zmq_to_scheduler","encoder_urls":[],"enable_adaptive_dispatch_to_encoder":false,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"remote_instance_weight_loader_backend":"nccl","remote_instance_weight_loader_start_seed_via_transfer_engine":false,"engine_info_bootstrap_port":6789,"modelexpress_config":null,"enable_pdmux":false,"pdmux_config_path":null,"sm_group_num":8,"enable_broadcast_mm_inputs_process":false,"enable_prefix_mm_cache":false,"mm_enable_dp_encoder":false,"mm_process_config":{},"limit_mm_data_per_request":null,"enable_mm_global_cache":false,"decrypted_config_file":null,"decrypted_draft_config_file":null,"forward_hooks":null,"use_mla_backend":false,"_mx_config_cache":{},"last_gen_throughput":129.7310725069646,"memory_usage":{"weight":0.98,"kvcache":0.23,"token_capacity":20480,"graph":0},"effective_max_running_requests_per_dp":128}],"version":"0.5.10"}</strong>
+<strong style='color: #00008B;'>{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":38758,"fastapi_root_path":"","grpc_mode":false,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"checkpoint_engine_wait_weights_before_ready":false,"ssl_keyfile":null,"ssl_certfile":null,"ssl_ca_certs":null,"ssl_keyfile_password":null,"enable_ssl_refresh":false,"enable_http2":false,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","enable_fp32_lm_head":false,"modelopt_quant":null,"modelopt_checkpoint_restore_path":null,"modelopt_checkpoint_save_path":null,"modelopt_export_path":null,"quantize_and_serve":false,"rl_quant_profile":null,"mem_fraction_static":0.907,"max_running_requests":128,"max_queued_requests":null,"max_total_tokens":20480,"chunked_prefill_size":8192,"enable_dynamic_chunking":false,"max_prefill_tokens":16384,"prefill_max_requests":null,"schedule_policy":"fcfs","enable_priority_scheduling":false,"disable_priority_preemption":false,"default_priority_value":null,"abort_on_priority_when_disabled":false,"schedule_low_priority_values_first":false,"priority_scheduling_preemption_threshold":10,"schedule_conservativeness":1.0,"page_size":1,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"radix_eviction_policy":"lru","enable_prefill_delayer":false,"prefill_delayer_max_delay_passes":30,"prefill_delayer_token_usage_low_watermark":null,"prefill_delayer_forward_passes_buckets":null,"prefill_delayer_wait_seconds_buckets":null,"device":"cuda","tp_size":1,"pp_size":1,"pp_max_micro_batch_size":null,"pp_async_batch_depth":0,"stream_interval":1,"stream_response_default_include_usage":false,"incremental_streaming_output":false,"enable_streaming_session":false,"random_seed":32823666,"constrained_json_whitespace_pattern":null,"constrained_json_disable_any_whitespace":false,"watchdog_timeout":300,"soft_watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"model_checksum":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"use_ray":false,"custom_sigquit_handler":null,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"log_requests_format":"text","log_requests_target":null,"uvicorn_access_log_exclude_prefixes":[],"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_mfu_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-custom-labels","tokenizer_metrics_allowed_custom_labels":null,"extra_metric_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"gc_warning_threshold_secs":0.0,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"enable_trace":false,"otlp_traces_endpoint":"localhost:4317","export_metrics_to_file":false,"export_metrics_to_file_dir":null,"api_key":null,"admin_api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"hf_chat_template_name":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"sampling_defaults":"model","dp_size":1,"load_balance_method":"round_robin","attn_cp_size":1,"moe_dp_size":1,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"enable_lora_overlap_loading":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_eviction_policy":"lru","lora_backend":"csgmv","max_lora_chunk_size":16,"experts_shared_outer_loras":null,"attention_backend":"fa3","decode_attention_backend":null,"prefill_attention_backend":null,"sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"fp8_gemm_runner_backend":"auto","fp4_gemm_runner_backend":"auto","nsa_prefill_backend":null,"nsa_decode_backend":null,"disable_flashinfer_autotune":false,"mamba_backend":"triton","speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_draft_load_format":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_dflash_block_size":null,"speculative_dflash_draft_window_size":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","speculative_draft_attention_backend":null,"speculative_moe_runner_backend":"auto","speculative_moe_a2a_backend":null,"speculative_draft_model_quantization":null,"speculative_ngram_min_bfs_breadth":1,"speculative_ngram_max_bfs_breadth":10,"speculative_ngram_match_type":"BFS","speculative_ngram_max_trie_depth":18,"speculative_ngram_capacity":10000000,"speculative_ngram_external_corpus_path":null,"speculative_ngram_external_sam_budget":0,"speculative_ngram_external_corpus_max_tokens":10000000,"enable_multi_layer_eagle":false,"ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"enforce_disable_flashinfer_allreduce_fusion":false,"enable_aiter_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":null,"init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"elastic_ep_backend":null,"enable_elastic_expert_backup":false,"mooncake_ib_device":null,"max_mamba_cache_size":null,"mamba_ssm_dtype":null,"mamba_full_memory_ratio":0.9,"mamba_scheduler_strategy":"no_buffer","mamba_track_interval":256,"linear_attn_backend":"triton","linear_attn_decode_backend":null,"linear_attn_prefill_backend":null,"enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_hisparse":false,"hisparse_config":null,"enable_lmcache":false,"kt_weight_path":null,"kt_method":"AMXINT4","kt_cpuinfer":null,"kt_threadpool_count":2,"kt_num_gpu_experts":null,"kt_max_deferred_experts_per_token":null,"dllm_algorithm":null,"dllm_algorithm_config":null,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","multi_item_scoring_delimiter":null,"disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":[1,2,4],"disable_cuda_graph":true,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_layerwise_nvtx_marker":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_tokenizer_batch_decode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"enable_torch_symm_mem":false,"pre_warm_nccl":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"enable_single_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"disable_piecewise_cuda_graph":false,"enforce_piecewise_cuda_graph":false,"enable_torch_compile_debug_mode":false,"torch_compile_max_bs":32,"piecewise_cuda_graph_max_tokens":8192,"piecewise_cuda_graph_tokens":[4,8,12,16,20,24,28,32,48,64,80,96,112,128,144,160,176,192,208,224,240,256,288,320,352,384,416,448,480,512,576,640,704,768,832,896,960,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4608,5120,5632,6144,6656,7168,7680,8192],"piecewise_cuda_graph_compiler":"eager","torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"enable_weights_cpu_backup":false,"enable_draft_weights_cpu_backup":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"enforce_shared_experts_fusion":false,"disable_chunked_prefix_cache":false,"disable_fast_image_processor":false,"keep_mm_feature_on_device":false,"enable_return_hidden_states":false,"enable_return_routed_experts":false,"scheduler_recv_interval":1,"numa_node":null,"enable_deterministic_inference":false,"rl_on_policy_target":null,"enable_attn_tp_input_scattered":false,"gc_threshold":null,"enable_nsa_prefill_context_parallel":false,"nsa_prefill_cp_mode":"round-robin-split","enable_fused_qk_norm_rope":false,"enable_precise_embedding_interpolation":false,"enable_fused_moe_sum_all_reduce":false,"enable_prefill_context_parallel":false,"prefill_cp_mode":"in-seq-split","enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_layers":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_ib_device":null,"disaggregation_decode_enable_offload_kvcache":false,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"encoder_only":false,"language_only":false,"encoder_transfer_backend":"zmq_to_scheduler","encoder_urls":[],"enable_adaptive_dispatch_to_encoder":false,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"remote_instance_weight_loader_backend":"nccl","remote_instance_weight_loader_start_seed_via_transfer_engine":false,"engine_info_bootstrap_port":6789,"modelexpress_config":null,"enable_pdmux":false,"pdmux_config_path":null,"sm_group_num":8,"enable_broadcast_mm_inputs_process":false,"enable_prefix_mm_cache":false,"mm_enable_dp_encoder":false,"mm_process_config":{},"limit_mm_data_per_request":null,"enable_mm_global_cache":false,"decrypted_config_file":null,"decrypted_draft_config_file":null,"forward_hooks":null,"status":"ready","max_total_num_tokens":20480,"max_req_input_len":20474,"internal_states":[{"model_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_path":"qwen/qwen2.5-0.5b-instruct","tokenizer_mode":"auto","tokenizer_worker_num":1,"skip_tokenizer_init":false,"load_format":"auto","model_loader_extra_config":"{}","trust_remote_code":false,"context_length":null,"is_embedding":false,"enable_multimodal":null,"revision":null,"model_impl":"auto","host":"0.0.0.0","port":38758,"fastapi_root_path":"","grpc_mode":false,"skip_server_warmup":false,"warmups":null,"nccl_port":null,"checkpoint_engine_wait_weights_before_ready":false,"ssl_keyfile":null,"ssl_certfile":null,"ssl_ca_certs":null,"ssl_keyfile_password":null,"enable_ssl_refresh":false,"enable_http2":false,"dtype":"auto","quantization":null,"quantization_param_path":null,"kv_cache_dtype":"auto","enable_fp32_lm_head":false,"modelopt_quant":null,"modelopt_checkpoint_restore_path":null,"modelopt_checkpoint_save_path":null,"modelopt_export_path":null,"quantize_and_serve":false,"rl_quant_profile":null,"mem_fraction_static":0.907,"max_running_requests":128,"max_queued_requests":null,"max_total_tokens":20480,"chunked_prefill_size":8192,"enable_dynamic_chunking":false,"max_prefill_tokens":16384,"prefill_max_requests":null,"schedule_policy":"fcfs","enable_priority_scheduling":false,"disable_priority_preemption":false,"default_priority_value":null,"abort_on_priority_when_disabled":false,"schedule_low_priority_values_first":false,"priority_scheduling_preemption_threshold":10,"schedule_conservativeness":1.0,"page_size":1,"swa_full_tokens_ratio":0.8,"disable_hybrid_swa_memory":false,"radix_eviction_policy":"lru","enable_prefill_delayer":false,"prefill_delayer_max_delay_passes":30,"prefill_delayer_token_usage_low_watermark":null,"prefill_delayer_forward_passes_buckets":null,"prefill_delayer_wait_seconds_buckets":null,"device":"cuda","tp_size":1,"pp_size":1,"pp_max_micro_batch_size":128,"pp_async_batch_depth":0,"stream_interval":1,"stream_response_default_include_usage":false,"incremental_streaming_output":false,"enable_streaming_session":false,"random_seed":32823666,"constrained_json_whitespace_pattern":null,"constrained_json_disable_any_whitespace":false,"watchdog_timeout":300,"soft_watchdog_timeout":300,"dist_timeout":null,"download_dir":null,"model_checksum":null,"base_gpu_id":0,"gpu_id_step":1,"sleep_on_idle":false,"use_ray":false,"custom_sigquit_handler":null,"log_level":"warning","log_level_http":null,"log_requests":false,"log_requests_level":2,"log_requests_format":"text","log_requests_target":null,"uvicorn_access_log_exclude_prefixes":[],"crash_dump_folder":null,"show_time_cost":false,"enable_metrics":false,"enable_mfu_metrics":false,"enable_metrics_for_all_schedulers":false,"tokenizer_metrics_custom_labels_header":"x-custom-labels","tokenizer_metrics_allowed_custom_labels":null,"extra_metric_labels":null,"bucket_time_to_first_token":null,"bucket_inter_token_latency":null,"bucket_e2e_request_latency":null,"collect_tokens_histogram":false,"prompt_tokens_buckets":null,"generation_tokens_buckets":null,"gc_warning_threshold_secs":0.0,"decode_log_interval":40,"enable_request_time_stats_logging":false,"kv_events_config":null,"enable_trace":false,"otlp_traces_endpoint":"localhost:4317","export_metrics_to_file":false,"export_metrics_to_file_dir":null,"api_key":null,"admin_api_key":null,"served_model_name":"qwen/qwen2.5-0.5b-instruct","weight_version":"default","chat_template":null,"hf_chat_template_name":null,"completion_template":null,"file_storage_path":"sglang_storage","enable_cache_report":false,"reasoning_parser":null,"tool_call_parser":null,"tool_server":null,"sampling_defaults":"model","dp_size":1,"load_balance_method":"round_robin","attn_cp_size":1,"moe_dp_size":1,"dist_init_addr":null,"nnodes":1,"node_rank":0,"json_model_override_args":"{}","preferred_sampling_params":null,"enable_lora":null,"enable_lora_overlap_loading":null,"max_lora_rank":null,"lora_target_modules":null,"lora_paths":null,"max_loaded_loras":null,"max_loras_per_batch":8,"lora_eviction_policy":"lru","lora_backend":"csgmv","max_lora_chunk_size":16,"experts_shared_outer_loras":null,"attention_backend":"fa3","decode_attention_backend":"fa3","prefill_attention_backend":"fa3","sampling_backend":"flashinfer","grammar_backend":"xgrammar","mm_attention_backend":null,"fp8_gemm_runner_backend":"auto","fp4_gemm_runner_backend":"auto","nsa_prefill_backend":null,"nsa_decode_backend":null,"disable_flashinfer_autotune":false,"mamba_backend":"triton","speculative_algorithm":null,"speculative_draft_model_path":null,"speculative_draft_model_revision":null,"speculative_draft_load_format":null,"speculative_num_steps":null,"speculative_eagle_topk":null,"speculative_num_draft_tokens":null,"speculative_dflash_block_size":null,"speculative_dflash_draft_window_size":null,"speculative_accept_threshold_single":1.0,"speculative_accept_threshold_acc":1.0,"speculative_token_map":null,"speculative_attention_mode":"prefill","speculative_draft_attention_backend":null,"speculative_moe_runner_backend":"auto","speculative_moe_a2a_backend":null,"speculative_draft_model_quantization":null,"speculative_ngram_min_bfs_breadth":1,"speculative_ngram_max_bfs_breadth":10,"speculative_ngram_match_type":"BFS","speculative_ngram_max_trie_depth":18,"speculative_ngram_capacity":10000000,"speculative_ngram_external_corpus_path":null,"speculative_ngram_external_sam_budget":0,"speculative_ngram_external_corpus_max_tokens":10000000,"enable_multi_layer_eagle":false,"ep_size":1,"moe_a2a_backend":"none","moe_runner_backend":"auto","flashinfer_mxfp4_moe_precision":"default","enable_flashinfer_allreduce_fusion":false,"enforce_disable_flashinfer_allreduce_fusion":false,"enable_aiter_allreduce_fusion":false,"deepep_mode":"auto","ep_num_redundant_experts":0,"ep_dispatch_algorithm":null,"init_expert_location":"trivial","enable_eplb":false,"eplb_algorithm":"auto","eplb_rebalance_num_iterations":1000,"eplb_rebalance_layers_per_chunk":null,"eplb_min_rebalancing_utilization_threshold":1.0,"expert_distribution_recorder_mode":null,"expert_distribution_recorder_buffer_size":1000,"enable_expert_distribution_metrics":false,"deepep_config":null,"moe_dense_tp_size":null,"elastic_ep_backend":null,"enable_elastic_expert_backup":false,"mooncake_ib_device":null,"max_mamba_cache_size":null,"mamba_ssm_dtype":null,"mamba_full_memory_ratio":0.9,"mamba_scheduler_strategy":"no_buffer","mamba_track_interval":256,"linear_attn_backend":"triton","linear_attn_decode_backend":null,"linear_attn_prefill_backend":null,"enable_hierarchical_cache":false,"hicache_ratio":2.0,"hicache_size":0,"hicache_write_policy":"write_through","hicache_io_backend":"kernel","hicache_mem_layout":"layer_first","hicache_storage_backend":null,"hicache_storage_prefetch_policy":"best_effort","hicache_storage_backend_extra_config":null,"enable_hisparse":false,"hisparse_config":null,"enable_lmcache":false,"kt_weight_path":null,"kt_method":"AMXINT4","kt_cpuinfer":null,"kt_threadpool_count":2,"kt_num_gpu_experts":null,"kt_max_deferred_experts_per_token":null,"dllm_algorithm":null,"dllm_algorithm_config":null,"enable_double_sparsity":false,"ds_channel_config_path":null,"ds_heavy_channel_num":32,"ds_heavy_token_num":256,"ds_heavy_channel_type":"qk","ds_sparse_decode_threshold":4096,"cpu_offload_gb":0,"offload_group_size":-1,"offload_num_in_group":1,"offload_prefetch_step":1,"offload_mode":"cpu","multi_item_scoring_delimiter":null,"disable_radix_cache":false,"cuda_graph_max_bs":4,"cuda_graph_bs":[1,2,4],"disable_cuda_graph":true,"disable_cuda_graph_padding":false,"enable_profile_cuda_graph":false,"enable_cudagraph_gc":false,"enable_layerwise_nvtx_marker":false,"enable_nccl_nvls":false,"enable_symm_mem":false,"disable_flashinfer_cutlass_moe_fp4_allgather":false,"enable_tokenizer_batch_encode":false,"disable_tokenizer_batch_decode":false,"disable_outlines_disk_cache":false,"disable_custom_all_reduce":false,"enable_mscclpp":false,"enable_torch_symm_mem":false,"pre_warm_nccl":false,"disable_overlap_schedule":false,"enable_mixed_chunk":false,"enable_dp_attention":false,"enable_dp_lm_head":false,"enable_two_batch_overlap":false,"enable_single_batch_overlap":false,"tbo_token_distribution_threshold":0.48,"enable_torch_compile":false,"disable_piecewise_cuda_graph":false,"enforce_piecewise_cuda_graph":false,"enable_torch_compile_debug_mode":false,"torch_compile_max_bs":32,"piecewise_cuda_graph_max_tokens":8192,"piecewise_cuda_graph_tokens":[4,8,12,16,20,24,28,32,48,64,80,96,112,128,144,160,176,192,208,224,240,256,288,320,352,384,416,448,480,512,576,640,704,768,832,896,960,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4608,5120,5632,6144,6656,7168,7680,8192],"piecewise_cuda_graph_compiler":"eager","torchao_config":"","enable_nan_detection":false,"enable_p2p_check":false,"triton_attention_reduce_in_fp32":false,"triton_attention_num_kv_splits":8,"triton_attention_split_tile_size":null,"num_continuous_decode_steps":1,"delete_ckpt_after_loading":false,"enable_memory_saver":false,"enable_weights_cpu_backup":false,"enable_draft_weights_cpu_backup":false,"allow_auto_truncate":false,"enable_custom_logit_processor":false,"flashinfer_mla_disable_ragged":false,"disable_shared_experts_fusion":false,"enforce_shared_experts_fusion":false,"disable_chunked_prefix_cache":true,"disable_fast_image_processor":false,"keep_mm_feature_on_device":false,"enable_return_hidden_states":false,"enable_return_routed_experts":false,"scheduler_recv_interval":1,"numa_node":null,"enable_deterministic_inference":false,"rl_on_policy_target":null,"enable_attn_tp_input_scattered":false,"gc_threshold":null,"enable_nsa_prefill_context_parallel":false,"nsa_prefill_cp_mode":"round-robin-split","enable_fused_qk_norm_rope":false,"enable_precise_embedding_interpolation":false,"enable_fused_moe_sum_all_reduce":false,"enable_prefill_context_parallel":false,"prefill_cp_mode":"in-seq-split","enable_dynamic_batch_tokenizer":false,"dynamic_batch_tokenizer_batch_size":32,"dynamic_batch_tokenizer_batch_timeout":0.002,"debug_tensor_dump_output_folder":null,"debug_tensor_dump_layers":null,"debug_tensor_dump_input_file":null,"debug_tensor_dump_inject":false,"disaggregation_mode":"null","disaggregation_transfer_backend":"mooncake","disaggregation_bootstrap_port":8998,"disaggregation_ib_device":null,"disaggregation_decode_enable_offload_kvcache":false,"num_reserved_decode_tokens":512,"disaggregation_decode_polling_interval":1,"encoder_only":false,"language_only":false,"encoder_transfer_backend":"zmq_to_scheduler","encoder_urls":[],"enable_adaptive_dispatch_to_encoder":false,"custom_weight_loader":[],"weight_loader_disable_mmap":false,"remote_instance_weight_loader_seed_instance_ip":null,"remote_instance_weight_loader_seed_instance_service_port":null,"remote_instance_weight_loader_send_weights_group_ports":null,"remote_instance_weight_loader_backend":"nccl","remote_instance_weight_loader_start_seed_via_transfer_engine":false,"engine_info_bootstrap_port":6789,"modelexpress_config":null,"enable_pdmux":false,"pdmux_config_path":null,"sm_group_num":8,"enable_broadcast_mm_inputs_process":false,"enable_prefix_mm_cache":false,"mm_enable_dp_encoder":false,"mm_process_config":{},"limit_mm_data_per_request":null,"enable_mm_global_cache":false,"decrypted_config_file":null,"decrypted_draft_config_file":null,"forward_hooks":null,"use_mla_backend":false,"_mx_config_cache":{},"last_gen_throughput":135.27809562947854,"memory_usage":{"weight":6.72,"kvcache":0.23,"token_capacity":20480,"graph":0},"effective_max_running_requests_per_dp":128}],"version":"0.0.0.dev1+g9fed58805"}</strong>
 
 
 ## Health Check
@@ -252,9 +502,39 @@ assert response.json()["success"] is True
 assert response.json()["message"] == "Succeeded to update model weights."
 ```
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  5.33it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  5.32it/s]
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:06:08] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 1s [Retry 1/5].
+    [2026-04-09 10:06:08] Retrying in 1s [Retry 1/5].
 
 
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:06:09] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 2s [Retry 2/5].
+    [2026-04-09 10:06:09] Retrying in 2s [Retry 2/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:06:11] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 4s [Retry 3/5].
+    [2026-04-09 10:06:11] Retrying in 4s [Retry 3/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:06:15] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 8s [Retry 4/5].
+    [2026-04-09 10:06:15] Retrying in 8s [Retry 4/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:06:23] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Retrying in 8s [Retry 5/5].
+    [2026-04-09 10:06:23] Retrying in 8s [Retry 5/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:06:31] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/model.safetensors.index.json
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.51it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.49it/s]
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:328: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       return await dependant.call(**values)
 
@@ -281,7 +561,7 @@ assert response_json["message"] == (
 )
 ```
 
-    [2026-04-09 09:03:04] Failed to get weights iterator: qwen/qwen2.5-0.5b-instruct-wrong (repository not found).
+    [2026-04-09 10:06:32] Failed to get weights iterator: qwen/qwen2.5-0.5b-instruct-wrong (repository not found).
 
 
 
@@ -318,71 +598,59 @@ wait_for_server(f"http://localhost:{port}", process=embedding_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 09:03:22] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:03:22] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:03:22] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:03:22] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:06:49] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:06:49] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:06:49] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:06:49] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.30it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.38it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.42s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.32s/it]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.29s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:02<00:00,  1.21s/it]
 
 
-    2026-04-09 09:03:26,405 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 09:03:26] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 10:06:52,937 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 10:06:52] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:49,  2.98s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:49,  2.98s/it]Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:03<01:12,  1.29s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:03<01:12,  1.29s/it]Compiling num tokens (num_tokens=6656):   3%|▎         | 2/58 [00:03<01:12,  1.29s/it]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:03<02:52,  3.03s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:03<02:52,  3.03s/it]Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:03<01:13,  1.31s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:03<01:13,  1.31s/it]Compiling num tokens (num_tokens=6656):   3%|▎         | 2/58 [00:03<01:13,  1.31s/it]
 
-    Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:03<00:28,  1.93it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:03<00:28,  1.93it/s]Compiling num tokens (num_tokens=5632):   7%|▋         | 4/58 [00:03<00:28,  1.93it/s]Compiling num tokens (num_tokens=5120):   7%|▋         | 4/58 [00:03<00:28,  1.93it/s]Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=4096):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=3840):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]
+    Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:03<00:28,  1.90it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:03<00:28,  1.90it/s]Compiling num tokens (num_tokens=5632):   7%|▋         | 4/58 [00:03<00:28,  1.90it/s]Compiling num tokens (num_tokens=5120):   7%|▋         | 4/58 [00:03<00:28,  1.90it/s]Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:03<00:12,  4.00it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:03<00:12,  4.00it/s]Compiling num tokens (num_tokens=4096):  12%|█▏        | 7/58 [00:03<00:12,  4.00it/s]Compiling num tokens (num_tokens=3840):  12%|█▏        | 7/58 [00:03<00:12,  4.00it/s]
 
-    Compiling num tokens (num_tokens=3584):  12%|█▏        | 7/58 [00:03<00:12,  4.05it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:03<00:06,  7.51it/s]Compiling num tokens (num_tokens=2304):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]Compiling num tokens (num_tokens=2048):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]Compiling num tokens (num_tokens=1792):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]Compiling num tokens (num_tokens=1536):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]Compiling num tokens (num_tokens=1280):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]Compiling num tokens (num_tokens=1024):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]
+    Compiling num tokens (num_tokens=3584):  12%|█▏        | 7/58 [00:03<00:12,  4.00it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:06,  7.42it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:06,  7.42it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:06,  7.42it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:06,  7.42it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:03<00:06,  7.42it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:03<00:06,  7.42it/s]Compiling num tokens (num_tokens=2304):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]Compiling num tokens (num_tokens=2048):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]Compiling num tokens (num_tokens=1792):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]Compiling num tokens (num_tokens=1536):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]Compiling num tokens (num_tokens=1280):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]Compiling num tokens (num_tokens=1024):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]
 
-    Compiling num tokens (num_tokens=960):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s] Compiling num tokens (num_tokens=896):  28%|██▊       | 16/58 [00:03<00:03, 12.71it/s]Compiling num tokens (num_tokens=896):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=832):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=768):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=704):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=640):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=576):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=512):  40%|███▉      | 23/58 [00:03<00:01, 20.80it/s]Compiling num tokens (num_tokens=512):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]Compiling num tokens (num_tokens=480):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]Compiling num tokens (num_tokens=448):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]Compiling num tokens (num_tokens=416):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]Compiling num tokens (num_tokens=384):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]
+    Compiling num tokens (num_tokens=960):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s] Compiling num tokens (num_tokens=896):  28%|██▊       | 16/58 [00:03<00:03, 12.58it/s]Compiling num tokens (num_tokens=896):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=832):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=768):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=704):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=640):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=576):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=512):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=480):  40%|███▉      | 23/58 [00:03<00:01, 20.66it/s]Compiling num tokens (num_tokens=480):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]Compiling num tokens (num_tokens=448):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]Compiling num tokens (num_tokens=416):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]Compiling num tokens (num_tokens=384):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]Compiling num tokens (num_tokens=352):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]
 
-    Compiling num tokens (num_tokens=352):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]Compiling num tokens (num_tokens=320):  50%|█████     | 29/58 [00:03<00:01, 27.50it/s]Compiling num tokens (num_tokens=320):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=288):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=256):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=240):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=224):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=208):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=192):  60%|██████    | 35/58 [00:03<00:00, 33.66it/s]Compiling num tokens (num_tokens=192):  71%|███████   | 41/58 [00:03<00:00, 38.17it/s]Compiling num tokens (num_tokens=176):  71%|███████   | 41/58 [00:03<00:00, 38.17it/s]Compiling num tokens (num_tokens=160):  71%|███████   | 41/58 [00:04<00:00, 38.17it/s]Compiling num tokens (num_tokens=144):  71%|███████   | 41/58 [00:04<00:00, 38.17it/s]
+    Compiling num tokens (num_tokens=320):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]Compiling num tokens (num_tokens=288):  52%|█████▏    | 30/58 [00:03<00:00, 28.42it/s]Compiling num tokens (num_tokens=288):  62%|██████▏   | 36/58 [00:03<00:00, 34.16it/s]Compiling num tokens (num_tokens=256):  62%|██████▏   | 36/58 [00:03<00:00, 34.16it/s]Compiling num tokens (num_tokens=240):  62%|██████▏   | 36/58 [00:03<00:00, 34.16it/s]Compiling num tokens (num_tokens=224):  62%|██████▏   | 36/58 [00:03<00:00, 34.16it/s]Compiling num tokens (num_tokens=208):  62%|██████▏   | 36/58 [00:03<00:00, 34.16it/s]Compiling num tokens (num_tokens=192):  62%|██████▏   | 36/58 [00:04<00:00, 34.16it/s]Compiling num tokens (num_tokens=176):  62%|██████▏   | 36/58 [00:04<00:00, 34.16it/s]Compiling num tokens (num_tokens=176):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s]Compiling num tokens (num_tokens=160):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s]Compiling num tokens (num_tokens=144):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s]Compiling num tokens (num_tokens=128):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s]
 
-    Compiling num tokens (num_tokens=128):  71%|███████   | 41/58 [00:04<00:00, 38.17it/s]Compiling num tokens (num_tokens=112):  71%|███████   | 41/58 [00:04<00:00, 38.17it/s]Compiling num tokens (num_tokens=96):  71%|███████   | 41/58 [00:04<00:00, 38.17it/s] Compiling num tokens (num_tokens=96):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]Compiling num tokens (num_tokens=80):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]Compiling num tokens (num_tokens=64):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]Compiling num tokens (num_tokens=48):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]Compiling num tokens (num_tokens=32):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]
+    Compiling num tokens (num_tokens=112):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s]Compiling num tokens (num_tokens=96):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s] Compiling num tokens (num_tokens=80):  72%|███████▏  | 42/58 [00:04<00:00, 39.03it/s]Compiling num tokens (num_tokens=80):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=64):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=48):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=32):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=28):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=24):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=20):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=16):  83%|████████▎ | 48/58 [00:04<00:00, 42.18it/s]Compiling num tokens (num_tokens=16):  95%|█████████▍| 55/58 [00:04<00:00, 47.61it/s]Compiling num tokens (num_tokens=12):  95%|█████████▍| 55/58 [00:04<00:00, 47.61it/s]Compiling num tokens (num_tokens=8):  95%|█████████▍| 55/58 [00:04<00:00, 47.61it/s] Compiling num tokens (num_tokens=4):  95%|█████████▍| 55/58 [00:04<00:00, 47.61it/s]
 
-    Compiling num tokens (num_tokens=28):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]Compiling num tokens (num_tokens=24):  81%|████████  | 47/58 [00:04<00:00, 36.07it/s]Compiling num tokens (num_tokens=24):  91%|█████████▏| 53/58 [00:04<00:00, 41.00it/s]Compiling num tokens (num_tokens=20):  91%|█████████▏| 53/58 [00:04<00:00, 41.00it/s]Compiling num tokens (num_tokens=16):  91%|█████████▏| 53/58 [00:04<00:00, 41.00it/s]Compiling num tokens (num_tokens=12):  91%|█████████▏| 53/58 [00:04<00:00, 41.00it/s]Compiling num tokens (num_tokens=8):  91%|█████████▏| 53/58 [00:04<00:00, 41.00it/s] Compiling num tokens (num_tokens=4):  91%|█████████▏| 53/58 [00:04<00:00, 41.00it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04<00:00, 13.34it/s]
+    Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04<00:00, 13.45it/s]
 
 
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=134.25 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=134.25 GB):   2%|▏         | 1/58 [00:00<00:09,  6.17it/s]Capturing num tokens (num_tokens=7680 avail_mem=134.22 GB):   2%|▏         | 1/58 [00:00<00:09,  6.17it/s]
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=134.25 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=134.25 GB):   2%|▏         | 1/58 [00:00<00:06,  9.24it/s]Capturing num tokens (num_tokens=7680 avail_mem=134.22 GB):   2%|▏         | 1/58 [00:00<00:06,  9.24it/s]
 
-    Capturing num tokens (num_tokens=7680 avail_mem=134.22 GB):   3%|▎         | 2/58 [00:00<00:08,  6.74it/s]Capturing num tokens (num_tokens=7168 avail_mem=134.22 GB):   3%|▎         | 2/58 [00:00<00:08,  6.74it/s]Capturing num tokens (num_tokens=6656 avail_mem=134.22 GB):   3%|▎         | 2/58 [00:00<00:08,  6.74it/s]
+    Capturing num tokens (num_tokens=7168 avail_mem=134.22 GB):   2%|▏         | 1/58 [00:00<00:06,  9.24it/s]Capturing num tokens (num_tokens=7168 avail_mem=134.22 GB):   5%|▌         | 3/58 [00:00<00:05, 10.33it/s]Capturing num tokens (num_tokens=6656 avail_mem=134.22 GB):   5%|▌         | 3/58 [00:00<00:05, 10.33it/s]Capturing num tokens (num_tokens=6144 avail_mem=134.22 GB):   5%|▌         | 3/58 [00:00<00:05, 10.33it/s]
 
-    Capturing num tokens (num_tokens=6656 avail_mem=134.22 GB):   7%|▋         | 4/58 [00:00<00:07,  6.92it/s]Capturing num tokens (num_tokens=6144 avail_mem=134.22 GB):   7%|▋         | 4/58 [00:00<00:07,  6.92it/s]Capturing num tokens (num_tokens=6144 avail_mem=134.22 GB):   9%|▊         | 5/58 [00:00<00:07,  6.99it/s]Capturing num tokens (num_tokens=5632 avail_mem=134.22 GB):   9%|▊         | 5/58 [00:00<00:07,  6.99it/s]
+    Capturing num tokens (num_tokens=6144 avail_mem=134.22 GB):   9%|▊         | 5/58 [00:00<00:04, 11.54it/s]Capturing num tokens (num_tokens=5632 avail_mem=134.22 GB):   9%|▊         | 5/58 [00:00<00:04, 11.54it/s]Capturing num tokens (num_tokens=5120 avail_mem=134.22 GB):   9%|▊         | 5/58 [00:00<00:04, 11.54it/s]Capturing num tokens (num_tokens=5120 avail_mem=134.22 GB):  12%|█▏        | 7/58 [00:00<00:03, 13.15it/s]Capturing num tokens (num_tokens=4608 avail_mem=134.22 GB):  12%|█▏        | 7/58 [00:00<00:03, 13.15it/s]Capturing num tokens (num_tokens=4096 avail_mem=134.22 GB):  12%|█▏        | 7/58 [00:00<00:03, 13.15it/s]
 
-    Capturing num tokens (num_tokens=5120 avail_mem=134.22 GB):   9%|▊         | 5/58 [00:00<00:07,  6.99it/s]Capturing num tokens (num_tokens=5120 avail_mem=134.22 GB):  12%|█▏        | 7/58 [00:00<00:05,  9.43it/s]Capturing num tokens (num_tokens=4608 avail_mem=134.22 GB):  12%|█▏        | 7/58 [00:00<00:05,  9.43it/s]Capturing num tokens (num_tokens=4096 avail_mem=134.22 GB):  12%|█▏        | 7/58 [00:00<00:05,  9.43it/s]Capturing num tokens (num_tokens=4096 avail_mem=134.22 GB):  16%|█▌        | 9/58 [00:00<00:04, 11.93it/s]Capturing num tokens (num_tokens=3840 avail_mem=134.22 GB):  16%|█▌        | 9/58 [00:00<00:04, 11.93it/s]
+    Capturing num tokens (num_tokens=4096 avail_mem=134.22 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.07it/s]Capturing num tokens (num_tokens=3840 avail_mem=134.22 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.07it/s]Capturing num tokens (num_tokens=3584 avail_mem=134.22 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.07it/s]Capturing num tokens (num_tokens=3328 avail_mem=134.21 GB):  16%|█▌        | 9/58 [00:00<00:03, 15.07it/s]Capturing num tokens (num_tokens=3328 avail_mem=134.21 GB):  21%|██        | 12/58 [00:00<00:02, 18.02it/s]Capturing num tokens (num_tokens=3072 avail_mem=134.21 GB):  21%|██        | 12/58 [00:00<00:02, 18.02it/s]Capturing num tokens (num_tokens=2816 avail_mem=134.21 GB):  21%|██        | 12/58 [00:00<00:02, 18.02it/s]Capturing num tokens (num_tokens=2560 avail_mem=134.21 GB):  21%|██        | 12/58 [00:00<00:02, 18.02it/s]
 
-    Capturing num tokens (num_tokens=3584 avail_mem=134.22 GB):  16%|█▌        | 9/58 [00:00<00:04, 11.93it/s]Capturing num tokens (num_tokens=3328 avail_mem=134.21 GB):  16%|█▌        | 9/58 [00:01<00:04, 11.93it/s]Capturing num tokens (num_tokens=3328 avail_mem=134.21 GB):  21%|██        | 12/58 [00:01<00:02, 15.47it/s]Capturing num tokens (num_tokens=3072 avail_mem=134.21 GB):  21%|██        | 12/58 [00:01<00:02, 15.47it/s]Capturing num tokens (num_tokens=2816 avail_mem=134.21 GB):  21%|██        | 12/58 [00:01<00:02, 15.47it/s]Capturing num tokens (num_tokens=2560 avail_mem=134.21 GB):  21%|██        | 12/58 [00:01<00:02, 15.47it/s]Capturing num tokens (num_tokens=2560 avail_mem=134.21 GB):  26%|██▌       | 15/58 [00:01<00:02, 18.93it/s]Capturing num tokens (num_tokens=2304 avail_mem=134.20 GB):  26%|██▌       | 15/58 [00:01<00:02, 18.93it/s]
+    Capturing num tokens (num_tokens=2560 avail_mem=134.21 GB):  26%|██▌       | 15/58 [00:00<00:02, 21.06it/s]Capturing num tokens (num_tokens=2304 avail_mem=134.20 GB):  26%|██▌       | 15/58 [00:00<00:02, 21.06it/s]Capturing num tokens (num_tokens=2048 avail_mem=134.19 GB):  26%|██▌       | 15/58 [00:00<00:02, 21.06it/s]Capturing num tokens (num_tokens=1792 avail_mem=134.19 GB):  26%|██▌       | 15/58 [00:00<00:02, 21.06it/s]Capturing num tokens (num_tokens=1536 avail_mem=134.19 GB):  26%|██▌       | 15/58 [00:00<00:02, 21.06it/s]Capturing num tokens (num_tokens=1536 avail_mem=134.19 GB):  33%|███▎      | 19/58 [00:01<00:01, 25.22it/s]Capturing num tokens (num_tokens=1280 avail_mem=134.19 GB):  33%|███▎      | 19/58 [00:01<00:01, 25.22it/s]Capturing num tokens (num_tokens=1024 avail_mem=134.18 GB):  33%|███▎      | 19/58 [00:01<00:01, 25.22it/s]Capturing num tokens (num_tokens=960 avail_mem=134.15 GB):  33%|███▎      | 19/58 [00:01<00:01, 25.22it/s] Capturing num tokens (num_tokens=896 avail_mem=134.15 GB):  33%|███▎      | 19/58 [00:01<00:01, 25.22it/s]
 
-    Capturing num tokens (num_tokens=2048 avail_mem=134.19 GB):  26%|██▌       | 15/58 [00:01<00:02, 18.93it/s]Capturing num tokens (num_tokens=1792 avail_mem=134.19 GB):  26%|██▌       | 15/58 [00:01<00:02, 18.93it/s]Capturing num tokens (num_tokens=1536 avail_mem=134.19 GB):  26%|██▌       | 15/58 [00:01<00:02, 18.93it/s]Capturing num tokens (num_tokens=1536 avail_mem=134.19 GB):  33%|███▎      | 19/58 [00:01<00:01, 23.41it/s]Capturing num tokens (num_tokens=1280 avail_mem=134.19 GB):  33%|███▎      | 19/58 [00:01<00:01, 23.41it/s]Capturing num tokens (num_tokens=1024 avail_mem=134.18 GB):  33%|███▎      | 19/58 [00:01<00:01, 23.41it/s]Capturing num tokens (num_tokens=960 avail_mem=134.15 GB):  33%|███▎      | 19/58 [00:01<00:01, 23.41it/s] Capturing num tokens (num_tokens=960 avail_mem=134.15 GB):  38%|███▊      | 22/58 [00:01<00:01, 24.49it/s]Capturing num tokens (num_tokens=896 avail_mem=134.15 GB):  38%|███▊      | 22/58 [00:01<00:01, 24.49it/s]
+    Capturing num tokens (num_tokens=896 avail_mem=134.15 GB):  40%|███▉      | 23/58 [00:01<00:01, 29.13it/s]Capturing num tokens (num_tokens=832 avail_mem=134.16 GB):  40%|███▉      | 23/58 [00:01<00:01, 29.13it/s]Capturing num tokens (num_tokens=768 avail_mem=134.17 GB):  40%|███▉      | 23/58 [00:01<00:01, 29.13it/s]Capturing num tokens (num_tokens=704 avail_mem=134.16 GB):  40%|███▉      | 23/58 [00:01<00:01, 29.13it/s]Capturing num tokens (num_tokens=640 avail_mem=134.16 GB):  40%|███▉      | 23/58 [00:01<00:01, 29.13it/s]Capturing num tokens (num_tokens=640 avail_mem=134.16 GB):  47%|████▋     | 27/58 [00:01<00:00, 31.96it/s]Capturing num tokens (num_tokens=576 avail_mem=134.16 GB):  47%|████▋     | 27/58 [00:01<00:00, 31.96it/s]Capturing num tokens (num_tokens=512 avail_mem=134.15 GB):  47%|████▋     | 27/58 [00:01<00:00, 31.96it/s]Capturing num tokens (num_tokens=480 avail_mem=134.15 GB):  47%|████▋     | 27/58 [00:01<00:00, 31.96it/s]Capturing num tokens (num_tokens=448 avail_mem=134.15 GB):  47%|████▋     | 27/58 [00:01<00:00, 31.96it/s]
 
-    Capturing num tokens (num_tokens=832 avail_mem=134.16 GB):  38%|███▊      | 22/58 [00:01<00:01, 24.49it/s]Capturing num tokens (num_tokens=768 avail_mem=134.17 GB):  38%|███▊      | 22/58 [00:01<00:01, 24.49it/s]Capturing num tokens (num_tokens=704 avail_mem=134.16 GB):  38%|███▊      | 22/58 [00:01<00:01, 24.49it/s]Capturing num tokens (num_tokens=704 avail_mem=134.16 GB):  45%|████▍     | 26/58 [00:01<00:01, 28.10it/s]Capturing num tokens (num_tokens=640 avail_mem=134.16 GB):  45%|████▍     | 26/58 [00:01<00:01, 28.10it/s]Capturing num tokens (num_tokens=576 avail_mem=134.16 GB):  45%|████▍     | 26/58 [00:01<00:01, 28.10it/s]Capturing num tokens (num_tokens=512 avail_mem=134.15 GB):  45%|████▍     | 26/58 [00:01<00:01, 28.10it/s]Capturing num tokens (num_tokens=480 avail_mem=134.15 GB):  45%|████▍     | 26/58 [00:01<00:01, 28.10it/s]
+    Capturing num tokens (num_tokens=448 avail_mem=134.15 GB):  53%|█████▎    | 31/58 [00:01<00:00, 34.10it/s]Capturing num tokens (num_tokens=416 avail_mem=134.14 GB):  53%|█████▎    | 31/58 [00:01<00:00, 34.10it/s]Capturing num tokens (num_tokens=384 avail_mem=134.14 GB):  53%|█████▎    | 31/58 [00:01<00:00, 34.10it/s]Capturing num tokens (num_tokens=352 avail_mem=134.13 GB):  53%|█████▎    | 31/58 [00:01<00:00, 34.10it/s]Capturing num tokens (num_tokens=320 avail_mem=134.13 GB):  53%|█████▎    | 31/58 [00:01<00:00, 34.10it/s]Capturing num tokens (num_tokens=320 avail_mem=134.13 GB):  60%|██████    | 35/58 [00:01<00:00, 35.68it/s]Capturing num tokens (num_tokens=288 avail_mem=134.14 GB):  60%|██████    | 35/58 [00:01<00:00, 35.68it/s]Capturing num tokens (num_tokens=256 avail_mem=134.13 GB):  60%|██████    | 35/58 [00:01<00:00, 35.68it/s]Capturing num tokens (num_tokens=240 avail_mem=134.13 GB):  60%|██████    | 35/58 [00:01<00:00, 35.68it/s]Capturing num tokens (num_tokens=224 avail_mem=134.13 GB):  60%|██████    | 35/58 [00:01<00:00, 35.68it/s]
 
-    Capturing num tokens (num_tokens=480 avail_mem=134.15 GB):  52%|█████▏    | 30/58 [00:01<00:00, 29.39it/s]Capturing num tokens (num_tokens=448 avail_mem=134.15 GB):  52%|█████▏    | 30/58 [00:01<00:00, 29.39it/s]Capturing num tokens (num_tokens=416 avail_mem=134.14 GB):  52%|█████▏    | 30/58 [00:01<00:00, 29.39it/s]Capturing num tokens (num_tokens=384 avail_mem=134.14 GB):  52%|█████▏    | 30/58 [00:01<00:00, 29.39it/s]
+    Capturing num tokens (num_tokens=224 avail_mem=134.13 GB):  67%|██████▋   | 39/58 [00:01<00:00, 36.70it/s]Capturing num tokens (num_tokens=208 avail_mem=134.12 GB):  67%|██████▋   | 39/58 [00:01<00:00, 36.70it/s]Capturing num tokens (num_tokens=192 avail_mem=134.12 GB):  67%|██████▋   | 39/58 [00:01<00:00, 36.70it/s]Capturing num tokens (num_tokens=176 avail_mem=134.12 GB):  67%|██████▋   | 39/58 [00:01<00:00, 36.70it/s]Capturing num tokens (num_tokens=160 avail_mem=134.12 GB):  67%|██████▋   | 39/58 [00:01<00:00, 36.70it/s]Capturing num tokens (num_tokens=160 avail_mem=134.12 GB):  74%|███████▍  | 43/58 [00:01<00:00, 37.53it/s]Capturing num tokens (num_tokens=144 avail_mem=134.11 GB):  74%|███████▍  | 43/58 [00:01<00:00, 37.53it/s]Capturing num tokens (num_tokens=128 avail_mem=134.11 GB):  74%|███████▍  | 43/58 [00:01<00:00, 37.53it/s]Capturing num tokens (num_tokens=112 avail_mem=134.10 GB):  74%|███████▍  | 43/58 [00:01<00:00, 37.53it/s]Capturing num tokens (num_tokens=96 avail_mem=134.10 GB):  74%|███████▍  | 43/58 [00:01<00:00, 37.53it/s] 
 
-    Capturing num tokens (num_tokens=352 avail_mem=134.13 GB):  52%|█████▏    | 30/58 [00:01<00:00, 29.39it/s]Capturing num tokens (num_tokens=352 avail_mem=134.13 GB):  59%|█████▊    | 34/58 [00:01<00:01, 22.29it/s]Capturing num tokens (num_tokens=320 avail_mem=134.13 GB):  59%|█████▊    | 34/58 [00:01<00:01, 22.29it/s]Capturing num tokens (num_tokens=288 avail_mem=134.14 GB):  59%|█████▊    | 34/58 [00:01<00:01, 22.29it/s]
+    Capturing num tokens (num_tokens=96 avail_mem=134.10 GB):  81%|████████  | 47/58 [00:01<00:00, 37.89it/s]Capturing num tokens (num_tokens=80 avail_mem=134.09 GB):  81%|████████  | 47/58 [00:01<00:00, 37.89it/s]Capturing num tokens (num_tokens=64 avail_mem=134.09 GB):  81%|████████  | 47/58 [00:01<00:00, 37.89it/s]Capturing num tokens (num_tokens=48 avail_mem=134.09 GB):  81%|████████  | 47/58 [00:01<00:00, 37.89it/s]Capturing num tokens (num_tokens=32 avail_mem=134.08 GB):  81%|████████  | 47/58 [00:01<00:00, 37.89it/s]Capturing num tokens (num_tokens=32 avail_mem=134.08 GB):  88%|████████▊ | 51/58 [00:01<00:00, 38.41it/s]Capturing num tokens (num_tokens=28 avail_mem=134.08 GB):  88%|████████▊ | 51/58 [00:01<00:00, 38.41it/s]Capturing num tokens (num_tokens=24 avail_mem=134.08 GB):  88%|████████▊ | 51/58 [00:01<00:00, 38.41it/s]Capturing num tokens (num_tokens=20 avail_mem=134.07 GB):  88%|████████▊ | 51/58 [00:01<00:00, 38.41it/s]Capturing num tokens (num_tokens=16 avail_mem=134.07 GB):  88%|████████▊ | 51/58 [00:01<00:00, 38.41it/s]Capturing num tokens (num_tokens=12 avail_mem=134.07 GB):  88%|████████▊ | 51/58 [00:01<00:00, 38.41it/s]
 
-    Capturing num tokens (num_tokens=256 avail_mem=134.13 GB):  59%|█████▊    | 34/58 [00:02<00:01, 22.29it/s]Capturing num tokens (num_tokens=256 avail_mem=134.13 GB):  64%|██████▍   | 37/58 [00:02<00:01, 17.03it/s]Capturing num tokens (num_tokens=240 avail_mem=134.13 GB):  64%|██████▍   | 37/58 [00:02<00:01, 17.03it/s]Capturing num tokens (num_tokens=224 avail_mem=134.13 GB):  64%|██████▍   | 37/58 [00:02<00:01, 17.03it/s]
-
-    Capturing num tokens (num_tokens=208 avail_mem=134.12 GB):  64%|██████▍   | 37/58 [00:02<00:01, 17.03it/s]Capturing num tokens (num_tokens=208 avail_mem=134.12 GB):  69%|██████▉   | 40/58 [00:02<00:01, 14.65it/s]Capturing num tokens (num_tokens=192 avail_mem=134.12 GB):  69%|██████▉   | 40/58 [00:02<00:01, 14.65it/s]
-
-    Capturing num tokens (num_tokens=176 avail_mem=134.12 GB):  69%|██████▉   | 40/58 [00:02<00:01, 14.65it/s]Capturing num tokens (num_tokens=176 avail_mem=134.12 GB):  72%|███████▏  | 42/58 [00:02<00:01, 13.61it/s]Capturing num tokens (num_tokens=160 avail_mem=134.12 GB):  72%|███████▏  | 42/58 [00:02<00:01, 13.61it/s]Capturing num tokens (num_tokens=144 avail_mem=134.11 GB):  72%|███████▏  | 42/58 [00:02<00:01, 13.61it/s]Capturing num tokens (num_tokens=144 avail_mem=134.11 GB):  76%|███████▌  | 44/58 [00:02<00:01, 13.95it/s]Capturing num tokens (num_tokens=128 avail_mem=134.11 GB):  76%|███████▌  | 44/58 [00:02<00:01, 13.95it/s]
-
-    Capturing num tokens (num_tokens=112 avail_mem=134.10 GB):  76%|███████▌  | 44/58 [00:02<00:01, 13.95it/s]Capturing num tokens (num_tokens=112 avail_mem=134.10 GB):  79%|███████▉  | 46/58 [00:02<00:00, 13.59it/s]Capturing num tokens (num_tokens=96 avail_mem=134.10 GB):  79%|███████▉  | 46/58 [00:02<00:00, 13.59it/s] 
-
-    Capturing num tokens (num_tokens=80 avail_mem=134.09 GB):  79%|███████▉  | 46/58 [00:03<00:00, 13.59it/s]Capturing num tokens (num_tokens=80 avail_mem=134.09 GB):  83%|████████▎ | 48/58 [00:03<00:00, 14.40it/s]Capturing num tokens (num_tokens=64 avail_mem=134.09 GB):  83%|████████▎ | 48/58 [00:03<00:00, 14.40it/s]Capturing num tokens (num_tokens=48 avail_mem=134.09 GB):  83%|████████▎ | 48/58 [00:03<00:00, 14.40it/s]Capturing num tokens (num_tokens=32 avail_mem=134.08 GB):  83%|████████▎ | 48/58 [00:03<00:00, 14.40it/s]Capturing num tokens (num_tokens=32 avail_mem=134.08 GB):  88%|████████▊ | 51/58 [00:03<00:00, 16.47it/s]
-
-    Capturing num tokens (num_tokens=28 avail_mem=134.08 GB):  88%|████████▊ | 51/58 [00:03<00:00, 16.47it/s]Capturing num tokens (num_tokens=24 avail_mem=134.08 GB):  88%|████████▊ | 51/58 [00:03<00:00, 16.47it/s]Capturing num tokens (num_tokens=24 avail_mem=134.08 GB):  91%|█████████▏| 53/58 [00:03<00:00, 16.13it/s]Capturing num tokens (num_tokens=20 avail_mem=134.07 GB):  91%|█████████▏| 53/58 [00:03<00:00, 16.13it/s]Capturing num tokens (num_tokens=16 avail_mem=134.07 GB):  91%|█████████▏| 53/58 [00:03<00:00, 16.13it/s]Capturing num tokens (num_tokens=12 avail_mem=134.07 GB):  91%|█████████▏| 53/58 [00:03<00:00, 16.13it/s]Capturing num tokens (num_tokens=12 avail_mem=134.07 GB):  97%|█████████▋| 56/58 [00:03<00:00, 19.15it/s]Capturing num tokens (num_tokens=8 avail_mem=134.06 GB):  97%|█████████▋| 56/58 [00:03<00:00, 19.15it/s] Capturing num tokens (num_tokens=4 avail_mem=134.06 GB):  97%|█████████▋| 56/58 [00:03<00:00, 19.15it/s]
-
-    Capturing num tokens (num_tokens=4 avail_mem=134.06 GB): 100%|██████████| 58/58 [00:03<00:00, 16.56it/s]
+    Capturing num tokens (num_tokens=12 avail_mem=134.07 GB):  97%|█████████▋| 56/58 [00:01<00:00, 39.06it/s]Capturing num tokens (num_tokens=8 avail_mem=134.06 GB):  97%|█████████▋| 56/58 [00:01<00:00, 39.06it/s] Capturing num tokens (num_tokens=4 avail_mem=134.06 GB):  97%|█████████▋| 56/58 [00:01<00:00, 39.06it/s]Capturing num tokens (num_tokens=4 avail_mem=134.06 GB): 100%|██████████| 58/58 [00:02<00:00, 28.88it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -433,7 +701,492 @@ wait_for_server(f"http://localhost:{port}", process=reranker_process)
       warnings.warn(
 
 
-    [2026-04-09 09:03:52] No HuggingFace chat template found
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 1s [Retry 1/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 2s [Retry 2/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 4s [Retry 3/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 8s [Retry 4/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 8s [Retry 5/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a68-23f2c21c5e70c99177715705;3e74cbf4-33b4-4cbf-8718-e1f7ef852ab8)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    retry() failed once (0th try, maximum 2 retries). Will delay 0.86s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a68-23f2c21c5e70c99177715705;3e74cbf4-33b4-4cbf-8718-e1f7ef852ab8)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a69-3f78cd0d2e19ed8a32447da4;4f08ec12-c251-4ef8-823a-0cc7c8db6de1)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    retry() failed once (1th try, maximum 2 retries). Will delay 1.91s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a69-3f78cd0d2e19ed8a32447da4;4f08ec12-c251-4ef8-823a-0cc7c8db6de1)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a6b-0c924e3433c8d8cb75f2ff43;44926c32-c4d2-4c0f-a2ec-5f17a37c514e)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    Failed to load hf_quant_config.json for model BAAI/bge-reranker-v2-m3: retry() exceed maximum number of retries.
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a6c-639637e102a945ee2cb5bb12;fa59e878-b05c-4de5-a62a-cef7b3dc9387)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:07:40] retry() failed once (0th try, maximum 2 retries). Will delay 0.83s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a6c-639637e102a945ee2cb5bb12;fa59e878-b05c-4de5-a62a-cef7b3dc9387)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a6d-6858630e029d834a04b2dfb0;b0827f59-0a5a-4626-9219-649bd6874b73)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:07:41] retry() failed once (1th try, maximum 2 retries). Will delay 1.62s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a6d-6858630e029d834a04b2dfb0;b0827f59-0a5a-4626-9219-649bd6874b73)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a6f-006d508d3b5dad333ca1b6c6;cf61245a-7ec2-42d9-b606-1433d8d40ae9)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:07:43] Failed to load hf_quant_config.json for model BAAI/bge-reranker-v2-m3: retry() exceed maximum number of retries.
+
+
+    [2026-04-09 10:07:45] No HuggingFace chat template found
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    [2026-04-09 10:07:47] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 1s [Retry 1/5].
+    [2026-04-09 10:07:47] Retrying in 1s [Retry 1/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    [2026-04-09 10:07:48] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 2s [Retry 2/5].
+    [2026-04-09 10:07:48] Retrying in 2s [Retry 2/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    [2026-04-09 10:07:51] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 4s [Retry 3/5].
+    [2026-04-09 10:07:51] Retrying in 4s [Retry 3/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    [2026-04-09 10:07:55] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 8s [Retry 4/5].
+    [2026-04-09 10:07:55] Retrying in 8s [Retry 4/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    [2026-04-09 10:08:03] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Retrying in 8s [Retry 5/5].
+    [2026-04-09 10:08:03] Retrying in 8s [Retry 5/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    [2026-04-09 10:08:11] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/generation_config.json
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a8b-73c8ed9e5f63c7822d6b5d99;7b15c211-d273-4bc1-aee2-24460b20003b)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:11] retry() failed once (0th try, maximum 2 retries). Will delay 0.77s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a8b-73c8ed9e5f63c7822d6b5d99;7b15c211-d273-4bc1-aee2-24460b20003b)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a8c-1ae05ebf50a352d815f61236;ed1dedcc-bafb-41d7-bba1-c710ba7b7ee6)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:12] retry() failed once (1th try, maximum 2 retries). Will delay 1.89s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a8c-1ae05ebf50a352d815f61236;ed1dedcc-bafb-41d7-bba1-c710ba7b7ee6)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a8e-438010e70815c061068c8bfd;820baac8-5817-4d5f-989f-b49f5e9b7f03)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:14] Failed to load hf_quant_config.json for model BAAI/bge-reranker-v2-m3: retry() exceed maximum number of retries.
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a90-60dd6e20442db8151d191db9;a52250ea-a3ce-4b63-b661-3eca76090a04)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:16] retry() failed once (0th try, maximum 2 retries). Will delay 0.88s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a90-60dd6e20442db8151d191db9;a52250ea-a3ce-4b63-b661-3eca76090a04)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a91-412d5de53e7353bb1eee6de3;26488d1a-38dd-43c9-ac78-1ab3e6af4111)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:17] retry() failed once (1th try, maximum 2 retries). Will delay 1.69s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a91-412d5de53e7353bb1eee6de3;26488d1a-38dd-43c9-ac78-1ab3e6af4111)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77a93-1a98884e39f1869f61c772cd;aaeb84c6-776b-43bd-9667-5a70332d5bdc)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:19] Failed to load hf_quant_config.json for model BAAI/bge-reranker-v2-m3: retry() exceed maximum number of retries.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -441,18 +1194,154 @@ wait_for_server(f"http://localhost:{port}", process=reranker_process)
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 09:04:01] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:04:01] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:04:01] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:04:01] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:08:20] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:08:20] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:08:20] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:08:20] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:08:21] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    Retrying in 1s [Retry 1/5].
+    [2026-04-09 10:08:21] Retrying in 1s [Retry 1/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:08:22] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    Retrying in 2s [Retry 2/5].
+    [2026-04-09 10:08:22] Retrying in 2s [Retry 2/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:08:24] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    Retrying in 4s [Retry 3/5].
+    [2026-04-09 10:08:24] Retrying in 4s [Retry 3/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:08:28] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    Retrying in 8s [Retry 4/5].
+    [2026-04-09 10:08:28] Retrying in 8s [Retry 4/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:08:36] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    Retrying in 8s [Retry 5/5].
+    [2026-04-09 10:08:36] Retrying in 8s [Retry 5/5].
+
+
+    HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
+    [2026-04-09 10:08:44] HTTP Error 503 thrown while requesting HEAD https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/model.safetensors.index.json
     Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.47it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.47it/s]
+    Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.53it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.53it/s]
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77aad-278dbc5a3ba3c0d257b4d1ca;63baf23c-db1f-41ab-94c1-9896230fdbdb)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:45] retry() failed once (0th try, maximum 2 retries). Will delay 0.85s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77aad-278dbc5a3ba3c0d257b4d1ca;63baf23c-db1f-41ab-94c1-9896230fdbdb)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
 
 
-    [2026-04-09 09:04:03] Disable piecewise CUDA graph because the model is not a language model
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77aae-5d3b501f3aa4ac6711f5b8bf;e725b9f2-9ce7-46e3-ace2-ffdd4fd167af)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:46] retry() failed once (1th try, maximum 2 retries). Will delay 1.79s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77aae-5d3b501f3aa4ac6711f5b8bf;e725b9f2-9ce7-46e3-ace2-ffdd4fd167af)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/BAAI/bge-reranker-v2-m3/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ab0-59604e884a95045633b61f99;a45fedc6-b045-4a8d-b5b9-90b421ffac0e)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:08:48] Failed to load hf_quant_config.json for model BAAI/bge-reranker-v2-m3: retry() exceed maximum number of retries.
+    [2026-04-09 10:08:48] Disable piecewise CUDA graph because the model is not a language model
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -525,58 +1414,374 @@ wait_for_server(f"http://localhost:{port}", process=score_process)
       warnings.warn(
 
 
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77abe-1dd35c057047334e3c921c4d;0024ec39-4d90-4aa5-a91a-2567be0f4403)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    retry() failed once (0th try, maximum 2 retries). Will delay 0.92s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77abe-1dd35c057047334e3c921c4d;0024ec39-4d90-4aa5-a91a-2567be0f4403)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77abf-1c3520786f1bc7531a616a4e;983d68a9-eb22-43ad-ab88-f64a5b61d821)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    retry() failed once (1th try, maximum 2 retries). Will delay 1.98s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77abf-1c3520786f1bc7531a616a4e;983d68a9-eb22-43ad-ab88-f64a5b61d821)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ac2-703443121f927f377ffcb569;588fc89a-0d9e-4def-9268-e463530a35f0)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    Failed to load hf_quant_config.json for model qwen/qwen2.5-0.5b-instruct: retry() exceed maximum number of retries.
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ac3-3d146fbb0b8d938b5a94eeb1;3d8f9d06-931d-412b-ac35-1a54f95bd13d)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:07] retry() failed once (0th try, maximum 2 retries). Will delay 0.81s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ac3-3d146fbb0b8d938b5a94eeb1;3d8f9d06-931d-412b-ac35-1a54f95bd13d)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ac4-422210673dd235d7686256ef;52570b05-0403-4708-a86d-87a0bb140b4f)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:08] retry() failed once (1th try, maximum 2 retries). Will delay 1.67s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ac4-422210673dd235d7686256ef;52570b05-0403-4708-a86d-87a0bb140b4f)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ac5-16984fff0be184be2cf23dbd;19bb094f-e16b-4ec9-a68f-607a8924c8ab)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:09] Failed to load hf_quant_config.json for model qwen/qwen2.5-0.5b-instruct: retry() exceed maximum number of retries.
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77acb-13ac61143d5fae4e05522040;826c6561-e85e-47d1-969b-18b0e6f5b024)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:15] retry() failed once (0th try, maximum 2 retries). Will delay 0.79s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77acb-13ac61143d5fae4e05522040;826c6561-e85e-47d1-969b-18b0e6f5b024)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77acc-43a372174b566a313f381634;9bc0459f-6d4e-4178-b900-ec705f8dfa52)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:16] retry() failed once (1th try, maximum 2 retries). Will delay 1.81s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77acc-43a372174b566a313f381634;9bc0459f-6d4e-4178-b900-ec705f8dfa52)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77ace-63e9179d5e6d9c2818cd21d2;f6827f7f-984e-46b6-abe3-57c8b3bd9135)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:18] Failed to load hf_quant_config.json for model qwen/qwen2.5-0.5b-instruct: retry() exceed maximum number of retries.
+
+
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 09:04:30] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:04:30] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:04:30] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:04:30] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:20] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:20] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:20] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:20] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.57it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.56it/s]
+    Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.49it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  7.48it/s]
 
 
-    2026-04-09 09:04:31,083 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 09:04:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 10:09:21,363 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 10:09:21] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:38,  2.78s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:38,  2.78s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:02<02:38,  2.78s/it]Compiling num tokens (num_tokens=6656):   2%|▏         | 1/58 [00:02<02:38,  2.78s/it]Compiling num tokens (num_tokens=6144):   2%|▏         | 1/58 [00:02<02:38,  2.78s/it]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]Compiling num tokens (num_tokens=4608):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]Compiling num tokens (num_tokens=4096):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]Compiling num tokens (num_tokens=3840):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:35,  2.72s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:35,  2.72s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:02<02:35,  2.72s/it]Compiling num tokens (num_tokens=6656):   2%|▏         | 1/58 [00:02<02:35,  2.72s/it]Compiling num tokens (num_tokens=6144):   2%|▏         | 1/58 [00:02<02:35,  2.72s/it]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=4608):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=4096):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=3840):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]
 
-    Compiling num tokens (num_tokens=3584):   9%|▊         | 5/58 [00:02<00:23,  2.28it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=2048):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=1792):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=1536):  19%|█▉        | 11/58 [00:03<00:07,  5.99it/s]Compiling num tokens (num_tokens=1536):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]Compiling num tokens (num_tokens=1280):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]Compiling num tokens (num_tokens=1024):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]Compiling num tokens (num_tokens=960):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s] Compiling num tokens (num_tokens=896):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]Compiling num tokens (num_tokens=832):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]
+    Compiling num tokens (num_tokens=3584):   9%|▊         | 5/58 [00:02<00:22,  2.32it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:02<00:07,  6.10it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:02<00:07,  6.10it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:02<00:07,  6.10it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:02<00:07,  6.10it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:02<00:07,  6.10it/s]Compiling num tokens (num_tokens=2304):  19%|█▉        | 11/58 [00:02<00:07,  6.10it/s]Compiling num tokens (num_tokens=2048):  19%|█▉        | 11/58 [00:03<00:07,  6.10it/s]Compiling num tokens (num_tokens=1792):  19%|█▉        | 11/58 [00:03<00:07,  6.10it/s]Compiling num tokens (num_tokens=1536):  19%|█▉        | 11/58 [00:03<00:07,  6.10it/s]Compiling num tokens (num_tokens=1536):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]Compiling num tokens (num_tokens=1280):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]Compiling num tokens (num_tokens=1024):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]Compiling num tokens (num_tokens=960):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s] Compiling num tokens (num_tokens=896):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]Compiling num tokens (num_tokens=832):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]Compiling num tokens (num_tokens=768):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]
 
-    Compiling num tokens (num_tokens=768):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]Compiling num tokens (num_tokens=704):  33%|███▎      | 19/58 [00:03<00:03, 12.16it/s]Compiling num tokens (num_tokens=704):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=640):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=576):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=512):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=480):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=448):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=416):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=384):  45%|████▍     | 26/58 [00:03<00:01, 18.08it/s]Compiling num tokens (num_tokens=384):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]Compiling num tokens (num_tokens=352):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]Compiling num tokens (num_tokens=320):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]Compiling num tokens (num_tokens=288):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]Compiling num tokens (num_tokens=256):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]
+    Compiling num tokens (num_tokens=704):  33%|███▎      | 19/58 [00:03<00:03, 12.38it/s]Compiling num tokens (num_tokens=704):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=640):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=576):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=512):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=480):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=448):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=416):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=384):  45%|████▍     | 26/58 [00:03<00:01, 18.45it/s]Compiling num tokens (num_tokens=384):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]Compiling num tokens (num_tokens=352):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]Compiling num tokens (num_tokens=320):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]Compiling num tokens (num_tokens=288):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]Compiling num tokens (num_tokens=256):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]Compiling num tokens (num_tokens=240):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]
 
-    Compiling num tokens (num_tokens=240):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]Compiling num tokens (num_tokens=224):  57%|█████▋    | 33/58 [00:03<00:01, 24.56it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=160):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=144):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=128):  67%|██████▋   | 39/58 [00:03<00:00, 29.56it/s]Compiling num tokens (num_tokens=128):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s]Compiling num tokens (num_tokens=112):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s]Compiling num tokens (num_tokens=96):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s] Compiling num tokens (num_tokens=80):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s]
+    Compiling num tokens (num_tokens=224):  57%|█████▋    | 33/58 [00:03<00:00, 25.07it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=160):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=144):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=128):  67%|██████▋   | 39/58 [00:03<00:00, 30.14it/s]Compiling num tokens (num_tokens=128):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s]Compiling num tokens (num_tokens=112):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s]Compiling num tokens (num_tokens=96):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s] Compiling num tokens (num_tokens=80):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s]Compiling num tokens (num_tokens=64):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s]
 
-    Compiling num tokens (num_tokens=64):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s]Compiling num tokens (num_tokens=48):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s]Compiling num tokens (num_tokens=32):  78%|███████▊  | 45/58 [00:03<00:00, 34.46it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=12):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=8):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s] Compiling num tokens (num_tokens=4):  88%|████████▊ | 51/58 [00:03<00:00, 38.62it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 15.46it/s]
+    Compiling num tokens (num_tokens=48):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s]Compiling num tokens (num_tokens=32):  78%|███████▊  | 45/58 [00:03<00:00, 35.11it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=12):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=8):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s] Compiling num tokens (num_tokens=4):  88%|████████▊ | 51/58 [00:03<00:00, 39.29it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03<00:00, 15.76it/s]
 
 
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=105.34 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=105.31 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=105.31 GB):   3%|▎         | 2/58 [00:00<00:03, 17.59it/s]Capturing num tokens (num_tokens=7168 avail_mem=105.30 GB):   3%|▎         | 2/58 [00:00<00:03, 17.59it/s]Capturing num tokens (num_tokens=6656 avail_mem=105.30 GB):   3%|▎         | 2/58 [00:00<00:03, 17.59it/s]
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=137.42 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=137.39 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=7680 avail_mem=137.39 GB):   3%|▎         | 2/58 [00:00<00:02, 18.96it/s]Capturing num tokens (num_tokens=7168 avail_mem=137.38 GB):   3%|▎         | 2/58 [00:00<00:02, 18.96it/s]Capturing num tokens (num_tokens=6656 avail_mem=137.38 GB):   3%|▎         | 2/58 [00:00<00:02, 18.96it/s]Capturing num tokens (num_tokens=6144 avail_mem=137.38 GB):   3%|▎         | 2/58 [00:00<00:02, 18.96it/s]
 
-    Capturing num tokens (num_tokens=6144 avail_mem=105.30 GB):   3%|▎         | 2/58 [00:00<00:03, 17.59it/s]Capturing num tokens (num_tokens=6144 avail_mem=105.30 GB):   9%|▊         | 5/58 [00:00<00:02, 21.16it/s]Capturing num tokens (num_tokens=5632 avail_mem=105.30 GB):   9%|▊         | 5/58 [00:00<00:02, 21.16it/s]Capturing num tokens (num_tokens=5120 avail_mem=105.30 GB):   9%|▊         | 5/58 [00:00<00:02, 21.16it/s]Capturing num tokens (num_tokens=4608 avail_mem=105.29 GB):   9%|▊         | 5/58 [00:00<00:02, 21.16it/s]Capturing num tokens (num_tokens=4096 avail_mem=105.29 GB):   9%|▊         | 5/58 [00:00<00:02, 21.16it/s]Capturing num tokens (num_tokens=4096 avail_mem=105.29 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.08it/s]Capturing num tokens (num_tokens=3840 avail_mem=105.29 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.08it/s]Capturing num tokens (num_tokens=3584 avail_mem=105.28 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.08it/s]
+    Capturing num tokens (num_tokens=6144 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.12it/s]Capturing num tokens (num_tokens=5632 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.12it/s]Capturing num tokens (num_tokens=5120 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.12it/s]Capturing num tokens (num_tokens=4608 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.12it/s]Capturing num tokens (num_tokens=4096 avail_mem=137.38 GB):   9%|▊         | 5/58 [00:00<00:02, 22.12it/s]Capturing num tokens (num_tokens=4096 avail_mem=137.38 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.89it/s]Capturing num tokens (num_tokens=3840 avail_mem=137.37 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.89it/s]Capturing num tokens (num_tokens=3584 avail_mem=137.37 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.89it/s]Capturing num tokens (num_tokens=3328 avail_mem=137.37 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.89it/s]Capturing num tokens (num_tokens=3072 avail_mem=137.36 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.89it/s]
 
-    Capturing num tokens (num_tokens=3328 avail_mem=105.28 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.08it/s]Capturing num tokens (num_tokens=3072 avail_mem=105.28 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.08it/s]Capturing num tokens (num_tokens=3072 avail_mem=105.28 GB):  22%|██▏       | 13/58 [00:00<00:01, 30.77it/s]Capturing num tokens (num_tokens=2816 avail_mem=105.28 GB):  22%|██▏       | 13/58 [00:00<00:01, 30.77it/s]Capturing num tokens (num_tokens=2560 avail_mem=105.27 GB):  22%|██▏       | 13/58 [00:00<00:01, 30.77it/s]Capturing num tokens (num_tokens=2304 avail_mem=105.27 GB):  22%|██▏       | 13/58 [00:00<00:01, 30.77it/s]Capturing num tokens (num_tokens=2048 avail_mem=105.27 GB):  22%|██▏       | 13/58 [00:00<00:01, 30.77it/s]Capturing num tokens (num_tokens=1792 avail_mem=105.26 GB):  22%|██▏       | 13/58 [00:00<00:01, 30.77it/s]Capturing num tokens (num_tokens=1792 avail_mem=105.26 GB):  31%|███       | 18/58 [00:00<00:01, 35.80it/s]Capturing num tokens (num_tokens=1536 avail_mem=105.26 GB):  31%|███       | 18/58 [00:00<00:01, 35.80it/s]Capturing num tokens (num_tokens=1280 avail_mem=105.26 GB):  31%|███       | 18/58 [00:00<00:01, 35.80it/s]
+    Capturing num tokens (num_tokens=2816 avail_mem=137.36 GB):  16%|█▌        | 9/58 [00:00<00:01, 26.89it/s]Capturing num tokens (num_tokens=2816 avail_mem=137.36 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.64it/s]Capturing num tokens (num_tokens=2560 avail_mem=137.36 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.64it/s]Capturing num tokens (num_tokens=2304 avail_mem=137.35 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.64it/s]Capturing num tokens (num_tokens=2048 avail_mem=137.35 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.64it/s]Capturing num tokens (num_tokens=1792 avail_mem=137.35 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.64it/s]Capturing num tokens (num_tokens=1536 avail_mem=137.34 GB):  24%|██▍       | 14/58 [00:00<00:01, 32.64it/s]Capturing num tokens (num_tokens=1536 avail_mem=137.34 GB):  33%|███▎      | 19/58 [00:00<00:01, 37.00it/s]Capturing num tokens (num_tokens=1280 avail_mem=137.34 GB):  33%|███▎      | 19/58 [00:00<00:01, 37.00it/s]Capturing num tokens (num_tokens=1024 avail_mem=137.32 GB):  33%|███▎      | 19/58 [00:00<00:01, 37.00it/s]Capturing num tokens (num_tokens=960 avail_mem=137.33 GB):  33%|███▎      | 19/58 [00:00<00:01, 37.00it/s] Capturing num tokens (num_tokens=896 avail_mem=137.33 GB):  33%|███▎      | 19/58 [00:00<00:01, 37.00it/s]
 
-    Capturing num tokens (num_tokens=1024 avail_mem=105.24 GB):  31%|███       | 18/58 [00:00<00:01, 35.80it/s]Capturing num tokens (num_tokens=960 avail_mem=105.25 GB):  31%|███       | 18/58 [00:00<00:01, 35.80it/s] Capturing num tokens (num_tokens=896 avail_mem=105.25 GB):  31%|███       | 18/58 [00:00<00:01, 35.80it/s]Capturing num tokens (num_tokens=896 avail_mem=105.25 GB):  40%|███▉      | 23/58 [00:00<00:00, 39.06it/s]Capturing num tokens (num_tokens=832 avail_mem=105.24 GB):  40%|███▉      | 23/58 [00:00<00:00, 39.06it/s]Capturing num tokens (num_tokens=768 avail_mem=105.24 GB):  40%|███▉      | 23/58 [00:00<00:00, 39.06it/s]Capturing num tokens (num_tokens=704 avail_mem=105.24 GB):  40%|███▉      | 23/58 [00:00<00:00, 39.06it/s]Capturing num tokens (num_tokens=640 avail_mem=105.23 GB):  40%|███▉      | 23/58 [00:00<00:00, 39.06it/s]Capturing num tokens (num_tokens=576 avail_mem=105.23 GB):  40%|███▉      | 23/58 [00:00<00:00, 39.06it/s]Capturing num tokens (num_tokens=576 avail_mem=105.23 GB):  48%|████▊     | 28/58 [00:00<00:00, 41.14it/s]Capturing num tokens (num_tokens=512 avail_mem=105.22 GB):  48%|████▊     | 28/58 [00:00<00:00, 41.14it/s]Capturing num tokens (num_tokens=480 avail_mem=105.24 GB):  48%|████▊     | 28/58 [00:00<00:00, 41.14it/s]
+    Capturing num tokens (num_tokens=832 avail_mem=137.33 GB):  33%|███▎      | 19/58 [00:00<00:01, 37.00it/s]Capturing num tokens (num_tokens=832 avail_mem=137.33 GB):  41%|████▏     | 24/58 [00:00<00:00, 39.92it/s]Capturing num tokens (num_tokens=768 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 39.92it/s]Capturing num tokens (num_tokens=704 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 39.92it/s]Capturing num tokens (num_tokens=640 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 39.92it/s]Capturing num tokens (num_tokens=576 avail_mem=137.32 GB):  41%|████▏     | 24/58 [00:00<00:00, 39.92it/s]Capturing num tokens (num_tokens=512 avail_mem=137.30 GB):  41%|████▏     | 24/58 [00:00<00:00, 39.92it/s]Capturing num tokens (num_tokens=512 avail_mem=137.30 GB):  50%|█████     | 29/58 [00:00<00:00, 41.91it/s]Capturing num tokens (num_tokens=480 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:00<00:00, 41.91it/s]Capturing num tokens (num_tokens=448 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:00<00:00, 41.91it/s]Capturing num tokens (num_tokens=416 avail_mem=137.32 GB):  50%|█████     | 29/58 [00:00<00:00, 41.91it/s]Capturing num tokens (num_tokens=384 avail_mem=137.31 GB):  50%|█████     | 29/58 [00:00<00:00, 41.91it/s]
 
-    Capturing num tokens (num_tokens=448 avail_mem=105.24 GB):  48%|████▊     | 28/58 [00:00<00:00, 41.14it/s]Capturing num tokens (num_tokens=416 avail_mem=104.84 GB):  48%|████▊     | 28/58 [00:00<00:00, 41.14it/s]Capturing num tokens (num_tokens=384 avail_mem=103.69 GB):  48%|████▊     | 28/58 [00:00<00:00, 41.14it/s]Capturing num tokens (num_tokens=384 avail_mem=103.69 GB):  57%|█████▋    | 33/58 [00:00<00:00, 38.92it/s]Capturing num tokens (num_tokens=352 avail_mem=102.70 GB):  57%|█████▋    | 33/58 [00:01<00:00, 38.92it/s]
+    Capturing num tokens (num_tokens=352 avail_mem=137.31 GB):  50%|█████     | 29/58 [00:00<00:00, 41.91it/s]Capturing num tokens (num_tokens=352 avail_mem=137.31 GB):  59%|█████▊    | 34/58 [00:00<00:00, 43.35it/s]Capturing num tokens (num_tokens=320 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:00<00:00, 43.35it/s]Capturing num tokens (num_tokens=288 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:00<00:00, 43.35it/s]Capturing num tokens (num_tokens=256 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:00<00:00, 43.35it/s]Capturing num tokens (num_tokens=240 avail_mem=137.30 GB):  59%|█████▊    | 34/58 [00:00<00:00, 43.35it/s]Capturing num tokens (num_tokens=224 avail_mem=137.29 GB):  59%|█████▊    | 34/58 [00:00<00:00, 43.35it/s]Capturing num tokens (num_tokens=224 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 44.16it/s]Capturing num tokens (num_tokens=208 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 44.16it/s]Capturing num tokens (num_tokens=192 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 44.16it/s]Capturing num tokens (num_tokens=176 avail_mem=137.29 GB):  67%|██████▋   | 39/58 [00:01<00:00, 44.16it/s]Capturing num tokens (num_tokens=160 avail_mem=137.28 GB):  67%|██████▋   | 39/58 [00:01<00:00, 44.16it/s]
 
-    Capturing num tokens (num_tokens=320 avail_mem=102.53 GB):  57%|█████▋    | 33/58 [00:01<00:00, 38.92it/s]Capturing num tokens (num_tokens=288 avail_mem=102.43 GB):  57%|█████▋    | 33/58 [00:01<00:00, 38.92it/s]Capturing num tokens (num_tokens=256 avail_mem=102.43 GB):  57%|█████▋    | 33/58 [00:01<00:00, 38.92it/s]Capturing num tokens (num_tokens=256 avail_mem=102.43 GB):  64%|██████▍   | 37/58 [00:01<00:00, 27.05it/s]Capturing num tokens (num_tokens=240 avail_mem=102.43 GB):  64%|██████▍   | 37/58 [00:01<00:00, 27.05it/s]Capturing num tokens (num_tokens=224 avail_mem=102.42 GB):  64%|██████▍   | 37/58 [00:01<00:00, 27.05it/s]
+    Capturing num tokens (num_tokens=144 avail_mem=137.28 GB):  67%|██████▋   | 39/58 [00:01<00:00, 44.16it/s]Capturing num tokens (num_tokens=144 avail_mem=137.28 GB):  76%|███████▌  | 44/58 [00:01<00:00, 44.93it/s]Capturing num tokens (num_tokens=128 avail_mem=137.28 GB):  76%|███████▌  | 44/58 [00:01<00:00, 44.93it/s]Capturing num tokens (num_tokens=112 avail_mem=137.27 GB):  76%|███████▌  | 44/58 [00:01<00:00, 44.93it/s]Capturing num tokens (num_tokens=96 avail_mem=137.27 GB):  76%|███████▌  | 44/58 [00:01<00:00, 44.93it/s] Capturing num tokens (num_tokens=80 avail_mem=137.27 GB):  76%|███████▌  | 44/58 [00:01<00:00, 44.93it/s]Capturing num tokens (num_tokens=64 avail_mem=137.26 GB):  76%|███████▌  | 44/58 [00:01<00:00, 44.93it/s]Capturing num tokens (num_tokens=64 avail_mem=137.26 GB):  84%|████████▍ | 49/58 [00:01<00:00, 45.10it/s]Capturing num tokens (num_tokens=48 avail_mem=137.26 GB):  84%|████████▍ | 49/58 [00:01<00:00, 45.10it/s]Capturing num tokens (num_tokens=32 avail_mem=137.25 GB):  84%|████████▍ | 49/58 [00:01<00:00, 45.10it/s]Capturing num tokens (num_tokens=28 avail_mem=137.25 GB):  84%|████████▍ | 49/58 [00:01<00:00, 45.10it/s]Capturing num tokens (num_tokens=24 avail_mem=137.25 GB):  84%|████████▍ | 49/58 [00:01<00:00, 45.10it/s]
 
-    Capturing num tokens (num_tokens=208 avail_mem=102.42 GB):  64%|██████▍   | 37/58 [00:01<00:00, 27.05it/s]Capturing num tokens (num_tokens=192 avail_mem=102.42 GB):  64%|██████▍   | 37/58 [00:01<00:00, 27.05it/s]Capturing num tokens (num_tokens=192 avail_mem=102.42 GB):  71%|███████   | 41/58 [00:01<00:00, 25.74it/s]Capturing num tokens (num_tokens=176 avail_mem=102.41 GB):  71%|███████   | 41/58 [00:01<00:00, 25.74it/s]
-
-    Capturing num tokens (num_tokens=160 avail_mem=102.41 GB):  71%|███████   | 41/58 [00:01<00:00, 25.74it/s]Capturing num tokens (num_tokens=144 avail_mem=102.41 GB):  71%|███████   | 41/58 [00:01<00:00, 25.74it/s]Capturing num tokens (num_tokens=144 avail_mem=102.41 GB):  76%|███████▌  | 44/58 [00:01<00:00, 22.36it/s]Capturing num tokens (num_tokens=128 avail_mem=102.40 GB):  76%|███████▌  | 44/58 [00:01<00:00, 22.36it/s]
-
-    Capturing num tokens (num_tokens=112 avail_mem=102.40 GB):  76%|███████▌  | 44/58 [00:01<00:00, 22.36it/s]Capturing num tokens (num_tokens=96 avail_mem=102.40 GB):  76%|███████▌  | 44/58 [00:01<00:00, 22.36it/s] Capturing num tokens (num_tokens=96 avail_mem=102.40 GB):  81%|████████  | 47/58 [00:01<00:00, 16.24it/s]Capturing num tokens (num_tokens=80 avail_mem=102.39 GB):  81%|████████  | 47/58 [00:01<00:00, 16.24it/s]
-
-    Capturing num tokens (num_tokens=64 avail_mem=102.39 GB):  81%|████████  | 47/58 [00:01<00:00, 16.24it/s]Capturing num tokens (num_tokens=48 avail_mem=102.39 GB):  81%|████████  | 47/58 [00:02<00:00, 16.24it/s]Capturing num tokens (num_tokens=48 avail_mem=102.39 GB):  86%|████████▌ | 50/58 [00:02<00:00, 17.52it/s]Capturing num tokens (num_tokens=32 avail_mem=102.38 GB):  86%|████████▌ | 50/58 [00:02<00:00, 17.52it/s]Capturing num tokens (num_tokens=28 avail_mem=102.38 GB):  86%|████████▌ | 50/58 [00:02<00:00, 17.52it/s]Capturing num tokens (num_tokens=24 avail_mem=102.38 GB):  86%|████████▌ | 50/58 [00:02<00:00, 17.52it/s]Capturing num tokens (num_tokens=20 avail_mem=102.37 GB):  86%|████████▌ | 50/58 [00:02<00:00, 17.52it/s]Capturing num tokens (num_tokens=16 avail_mem=102.37 GB):  86%|████████▌ | 50/58 [00:02<00:00, 17.52it/s]Capturing num tokens (num_tokens=16 avail_mem=102.37 GB):  95%|█████████▍| 55/58 [00:02<00:00, 22.99it/s]Capturing num tokens (num_tokens=12 avail_mem=102.37 GB):  95%|█████████▍| 55/58 [00:02<00:00, 22.99it/s]
-
-    Capturing num tokens (num_tokens=8 avail_mem=102.36 GB):  95%|█████████▍| 55/58 [00:02<00:00, 22.99it/s] Capturing num tokens (num_tokens=4 avail_mem=102.36 GB):  95%|█████████▍| 55/58 [00:02<00:00, 22.99it/s]Capturing num tokens (num_tokens=4 avail_mem=102.36 GB): 100%|██████████| 58/58 [00:02<00:00, 26.18it/s]
+    Capturing num tokens (num_tokens=20 avail_mem=137.24 GB):  84%|████████▍ | 49/58 [00:01<00:00, 45.10it/s]Capturing num tokens (num_tokens=20 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 45.52it/s]Capturing num tokens (num_tokens=16 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 45.52it/s]Capturing num tokens (num_tokens=12 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 45.52it/s]Capturing num tokens (num_tokens=8 avail_mem=137.24 GB):  93%|█████████▎| 54/58 [00:01<00:00, 45.52it/s] Capturing num tokens (num_tokens=4 avail_mem=137.23 GB):  93%|█████████▎| 54/58 [00:01<00:00, 45.52it/s]Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01<00:00, 40.63it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -648,126 +1853,133 @@ wait_for_server(f"http://localhost:{port}", process=reward_process)
       warnings.warn(
 
 
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+        response.raise_for_status()
+      File "/usr/local/lib/python3.10/dist-packages/httpx/_models.py", line 749, in raise_for_status
+        raise HTTPStatusError(message, request=request, response=self)
+    httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Skywork/Skywork-Reward-Llama-3.1-8B-v0.2/resolve/main/hf_quant_config.json'
+    For more information check: https://httpstatuses.com/503
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/utils/common.py", line 2571, in retry
+        return fn()
+      File "/actions-runner/_work/sglang/sglang/python/sglang/srt/configs/model_config.py", line 749, in <lambda>
+        lambda: hf_api.file_exists(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/hf_api.py", line 3436, in file_exists
+        get_hf_file_metadata(url, token=token)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+        return fn(*args, **kwargs)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+        response = _httpx_follow_relative_redirects_with_backoff(
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+        hf_raise_for_status(response)
+      File "/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py", line 889, in hf_raise_for_status
+        raise _format(HfHubHTTPError, str(e), response) from e
+    huggingface_hub.errors.HfHubHTTPError: Server error '503 Service Unavailable' for url 'https://huggingface.co/Skywork/Skywork-Reward-Llama-3.1-8B-v0.2/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77aed-7bea1c9d20bad3227b4e41c6;b02b4121-0304-4289-8f97-6e13977c9b81)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+    [2026-04-09 10:09:49] retry() failed once (0th try, maximum 2 retries). Will delay 0.77s and retry. Error: Server error '503 Service Unavailable' for url 'https://huggingface.co/Skywork/Skywork-Reward-Llama-3.1-8B-v0.2/resolve/main/hf_quant_config.json' (Request ID: Root=1-69d77aed-7bea1c9d20bad3227b4e41c6;b02b4121-0304-4289-8f97-6e13977c9b81)
+    For more information check: https://httpstatuses.com/503
+    
+    Internal Error - We're working hard to fix this as soon as possible!
+
+
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 09:05:05] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:05:05] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:05:05] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:05:05] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:54] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:54] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:54] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:09:54] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 2/4 [00:00<00:00,  2.68it/s]
+    Multi-thread loading shards:  50% Completed | 2/4 [00:00<00:00,  2.51it/s]
 
-    Multi-thread loading shards:  75% Completed | 3/4 [00:01<00:00,  1.58it/s]
+    Multi-thread loading shards:  75% Completed | 3/4 [00:01<00:00,  1.53it/s]
 
-    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.33it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.49it/s]
+    Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:02<00:00,  1.45it/s]
 
 
-    2026-04-09 09:05:09,137 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 09:05:09] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 10:09:58,570 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 10:09:58] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:03<03:14,  3.41s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:03<03:14,  3.41s/it]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:03<03:11,  3.36s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:03<03:11,  3.36s/it]
 
-    Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:04<01:48,  1.93s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:04<01:48,  1.93s/it]
+    Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:03<01:32,  1.65s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:03<01:32,  1.65s/it]
 
-    Compiling num tokens (num_tokens=7168):   5%|▌         | 3/58 [00:04<01:08,  1.25s/it]Compiling num tokens (num_tokens=6656):   5%|▌         | 3/58 [00:04<01:08,  1.25s/it]
+    Compiling num tokens (num_tokens=7168):   5%|▌         | 3/58 [00:04<00:55,  1.00s/it]Compiling num tokens (num_tokens=6656):   5%|▌         | 3/58 [00:04<00:55,  1.00s/it]Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:04<00:36,  1.46it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:04<00:36,  1.46it/s]
 
-    Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:05<00:49,  1.10it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:05<00:49,  1.10it/s]
+    Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:04<00:26,  1.98it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:04<00:26,  1.98it/s]Compiling num tokens (num_tokens=5632):  10%|█         | 6/58 [00:04<00:20,  2.57it/s]Compiling num tokens (num_tokens=5120):  10%|█         | 6/58 [00:04<00:20,  2.57it/s]
 
-    Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:05<00:38,  1.39it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:05<00:38,  1.39it/s]
+    Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:04<00:15,  3.21it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:04<00:15,  3.21it/s]Compiling num tokens (num_tokens=4608):  14%|█▍        | 8/58 [00:04<00:12,  3.94it/s]Compiling num tokens (num_tokens=4096):  14%|█▍        | 8/58 [00:04<00:12,  3.94it/s]
 
-    Compiling num tokens (num_tokens=5632):  10%|█         | 6/58 [00:05<00:30,  1.72it/s]Compiling num tokens (num_tokens=5120):  10%|█         | 6/58 [00:05<00:30,  1.72it/s]
+    Compiling num tokens (num_tokens=4096):  16%|█▌        | 9/58 [00:04<00:10,  4.75it/s]Compiling num tokens (num_tokens=3840):  16%|█▌        | 9/58 [00:04<00:10,  4.75it/s]Compiling num tokens (num_tokens=3840):  17%|█▋        | 10/58 [00:05<00:08,  5.64it/s]Compiling num tokens (num_tokens=3584):  17%|█▋        | 10/58 [00:05<00:08,  5.64it/s]
 
-    Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:06<00:24,  2.09it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:06<00:24,  2.09it/s]
+    Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:05<00:07,  6.44it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:05<00:07,  6.44it/s]Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:05<00:07,  6.44it/s]Compiling num tokens (num_tokens=3072):  22%|██▏       | 13/58 [00:05<00:05,  8.12it/s]Compiling num tokens (num_tokens=2816):  22%|██▏       | 13/58 [00:05<00:05,  8.12it/s]
 
-    Compiling num tokens (num_tokens=4608):  14%|█▍        | 8/58 [00:06<00:20,  2.48it/s]Compiling num tokens (num_tokens=4096):  14%|█▍        | 8/58 [00:06<00:20,  2.48it/s]
+    Compiling num tokens (num_tokens=2560):  22%|██▏       | 13/58 [00:05<00:05,  8.12it/s]Compiling num tokens (num_tokens=2560):  26%|██▌       | 15/58 [00:05<00:04,  9.70it/s]Compiling num tokens (num_tokens=2304):  26%|██▌       | 15/58 [00:05<00:04,  9.70it/s]Compiling num tokens (num_tokens=2048):  26%|██▌       | 15/58 [00:05<00:04,  9.70it/s]Compiling num tokens (num_tokens=2048):  29%|██▉       | 17/58 [00:05<00:03, 11.54it/s]Compiling num tokens (num_tokens=1792):  29%|██▉       | 17/58 [00:05<00:03, 11.54it/s]
 
-    Compiling num tokens (num_tokens=4096):  16%|█▌        | 9/58 [00:06<00:17,  2.85it/s]Compiling num tokens (num_tokens=3840):  16%|█▌        | 9/58 [00:06<00:17,  2.85it/s]
+    Compiling num tokens (num_tokens=1536):  29%|██▉       | 17/58 [00:05<00:03, 11.54it/s]Compiling num tokens (num_tokens=1280):  29%|██▉       | 17/58 [00:05<00:03, 11.54it/s]Compiling num tokens (num_tokens=1280):  34%|███▍      | 20/58 [00:05<00:02, 14.87it/s]Compiling num tokens (num_tokens=1024):  34%|███▍      | 20/58 [00:05<00:02, 14.87it/s]Compiling num tokens (num_tokens=960):  34%|███▍      | 20/58 [00:05<00:02, 14.87it/s] Compiling num tokens (num_tokens=896):  34%|███▍      | 20/58 [00:05<00:02, 14.87it/s]Compiling num tokens (num_tokens=832):  34%|███▍      | 20/58 [00:05<00:02, 14.87it/s]Compiling num tokens (num_tokens=832):  41%|████▏     | 24/58 [00:05<00:01, 20.21it/s]Compiling num tokens (num_tokens=768):  41%|████▏     | 24/58 [00:05<00:01, 20.21it/s]
 
-    Compiling num tokens (num_tokens=3840):  17%|█▋        | 10/58 [00:06<00:14,  3.27it/s]Compiling num tokens (num_tokens=3584):  17%|█▋        | 10/58 [00:06<00:14,  3.27it/s]
+    Compiling num tokens (num_tokens=704):  41%|████▏     | 24/58 [00:05<00:01, 20.21it/s]Compiling num tokens (num_tokens=640):  41%|████▏     | 24/58 [00:05<00:01, 20.21it/s]Compiling num tokens (num_tokens=576):  41%|████▏     | 24/58 [00:05<00:01, 20.21it/s]Compiling num tokens (num_tokens=512):  41%|████▏     | 24/58 [00:05<00:01, 20.21it/s]Compiling num tokens (num_tokens=512):  50%|█████     | 29/58 [00:05<00:01, 27.08it/s]Compiling num tokens (num_tokens=480):  50%|█████     | 29/58 [00:05<00:01, 27.08it/s]Compiling num tokens (num_tokens=448):  50%|█████     | 29/58 [00:05<00:01, 27.08it/s]Compiling num tokens (num_tokens=416):  50%|█████     | 29/58 [00:06<00:01, 27.08it/s]Compiling num tokens (num_tokens=384):  50%|█████     | 29/58 [00:06<00:01, 27.08it/s]Compiling num tokens (num_tokens=352):  50%|█████     | 29/58 [00:06<00:01, 27.08it/s]Compiling num tokens (num_tokens=320):  50%|█████     | 29/58 [00:06<00:01, 27.08it/s]Compiling num tokens (num_tokens=320):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]Compiling num tokens (num_tokens=288):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]
 
-    Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:06<00:12,  3.64it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:06<00:12,  3.64it/s]Compiling num tokens (num_tokens=3328):  21%|██        | 12/58 [00:07<00:11,  4.06it/s]Compiling num tokens (num_tokens=3072):  21%|██        | 12/58 [00:07<00:11,  4.06it/s]
+    Compiling num tokens (num_tokens=256):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]Compiling num tokens (num_tokens=240):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]Compiling num tokens (num_tokens=224):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]Compiling num tokens (num_tokens=208):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]Compiling num tokens (num_tokens=192):  60%|██████    | 35/58 [00:06<00:00, 34.53it/s]Compiling num tokens (num_tokens=192):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s]Compiling num tokens (num_tokens=176):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s]Compiling num tokens (num_tokens=160):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s]Compiling num tokens (num_tokens=144):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s]Compiling num tokens (num_tokens=128):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s]Compiling num tokens (num_tokens=112):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s]Compiling num tokens (num_tokens=96):  71%|███████   | 41/58 [00:06<00:00, 41.09it/s] Compiling num tokens (num_tokens=96):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=80):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]
 
-    Compiling num tokens (num_tokens=3072):  22%|██▏       | 13/58 [00:07<00:10,  4.48it/s]Compiling num tokens (num_tokens=2816):  22%|██▏       | 13/58 [00:07<00:10,  4.48it/s]Compiling num tokens (num_tokens=2816):  24%|██▍       | 14/58 [00:07<00:08,  4.91it/s]Compiling num tokens (num_tokens=2560):  24%|██▍       | 14/58 [00:07<00:08,  4.91it/s]
-
-    Compiling num tokens (num_tokens=2560):  26%|██▌       | 15/58 [00:07<00:07,  5.42it/s]Compiling num tokens (num_tokens=2304):  26%|██▌       | 15/58 [00:07<00:07,  5.42it/s]Compiling num tokens (num_tokens=2304):  28%|██▊       | 16/58 [00:07<00:06,  6.02it/s]Compiling num tokens (num_tokens=2048):  28%|██▊       | 16/58 [00:07<00:06,  6.02it/s]
-
-    Compiling num tokens (num_tokens=2048):  29%|██▉       | 17/58 [00:07<00:06,  6.62it/s]Compiling num tokens (num_tokens=1792):  29%|██▉       | 17/58 [00:07<00:06,  6.62it/s]Compiling num tokens (num_tokens=1536):  29%|██▉       | 17/58 [00:07<00:06,  6.62it/s]Compiling num tokens (num_tokens=1536):  33%|███▎      | 19/58 [00:08<00:04,  8.06it/s]Compiling num tokens (num_tokens=1280):  33%|███▎      | 19/58 [00:08<00:04,  8.06it/s]
-
-    Compiling num tokens (num_tokens=1024):  33%|███▎      | 19/58 [00:08<00:04,  8.06it/s]Compiling num tokens (num_tokens=1024):  36%|███▌      | 21/58 [00:08<00:03,  9.75it/s]Compiling num tokens (num_tokens=960):  36%|███▌      | 21/58 [00:08<00:03,  9.75it/s] Compiling num tokens (num_tokens=896):  36%|███▌      | 21/58 [00:08<00:03,  9.75it/s]Compiling num tokens (num_tokens=896):  40%|███▉      | 23/58 [00:08<00:02, 11.68it/s]Compiling num tokens (num_tokens=832):  40%|███▉      | 23/58 [00:08<00:02, 11.68it/s]
-
-    Compiling num tokens (num_tokens=768):  40%|███▉      | 23/58 [00:08<00:02, 11.68it/s]Compiling num tokens (num_tokens=704):  40%|███▉      | 23/58 [00:08<00:02, 11.68it/s]Compiling num tokens (num_tokens=704):  45%|████▍     | 26/58 [00:08<00:02, 14.43it/s]Compiling num tokens (num_tokens=640):  45%|████▍     | 26/58 [00:08<00:02, 14.43it/s]Compiling num tokens (num_tokens=576):  45%|████▍     | 26/58 [00:08<00:02, 14.43it/s]Compiling num tokens (num_tokens=512):  45%|████▍     | 26/58 [00:08<00:02, 14.43it/s]
-
-    Compiling num tokens (num_tokens=512):  50%|█████     | 29/58 [00:08<00:01, 16.57it/s]Compiling num tokens (num_tokens=480):  50%|█████     | 29/58 [00:08<00:01, 16.57it/s]Compiling num tokens (num_tokens=448):  50%|█████     | 29/58 [00:08<00:01, 16.57it/s]Compiling num tokens (num_tokens=416):  50%|█████     | 29/58 [00:08<00:01, 16.57it/s]Compiling num tokens (num_tokens=416):  55%|█████▌    | 32/58 [00:08<00:01, 18.94it/s]Compiling num tokens (num_tokens=384):  55%|█████▌    | 32/58 [00:08<00:01, 18.94it/s]Compiling num tokens (num_tokens=352):  55%|█████▌    | 32/58 [00:08<00:01, 18.94it/s]Compiling num tokens (num_tokens=320):  55%|█████▌    | 32/58 [00:08<00:01, 18.94it/s]
-
-    Compiling num tokens (num_tokens=320):  60%|██████    | 35/58 [00:08<00:01, 21.27it/s]Compiling num tokens (num_tokens=288):  60%|██████    | 35/58 [00:08<00:01, 21.27it/s]Compiling num tokens (num_tokens=256):  60%|██████    | 35/58 [00:08<00:01, 21.27it/s]Compiling num tokens (num_tokens=240):  60%|██████    | 35/58 [00:08<00:01, 21.27it/s]Compiling num tokens (num_tokens=224):  60%|██████    | 35/58 [00:08<00:01, 21.27it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:08<00:00, 24.58it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:08<00:00, 24.58it/s]Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:08<00:00, 24.58it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:08<00:00, 24.58it/s]
-
-    Compiling num tokens (num_tokens=160):  67%|██████▋   | 39/58 [00:09<00:00, 24.58it/s]Compiling num tokens (num_tokens=160):  74%|███████▍  | 43/58 [00:09<00:00, 27.58it/s]Compiling num tokens (num_tokens=144):  74%|███████▍  | 43/58 [00:09<00:00, 27.58it/s]Compiling num tokens (num_tokens=128):  74%|███████▍  | 43/58 [00:09<00:00, 27.58it/s]Compiling num tokens (num_tokens=112):  74%|███████▍  | 43/58 [00:09<00:00, 27.58it/s]Compiling num tokens (num_tokens=96):  74%|███████▍  | 43/58 [00:09<00:00, 27.58it/s] Compiling num tokens (num_tokens=96):  81%|████████  | 47/58 [00:09<00:00, 29.97it/s]Compiling num tokens (num_tokens=80):  81%|████████  | 47/58 [00:09<00:00, 29.97it/s]Compiling num tokens (num_tokens=64):  81%|████████  | 47/58 [00:09<00:00, 29.97it/s]Compiling num tokens (num_tokens=48):  81%|████████  | 47/58 [00:09<00:00, 29.97it/s]
-
-    Compiling num tokens (num_tokens=32):  81%|████████  | 47/58 [00:09<00:00, 29.97it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:09<00:00, 32.60it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:09<00:00, 32.60it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:09<00:00, 32.60it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:09<00:00, 32.60it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:09<00:00, 32.60it/s]Compiling num tokens (num_tokens=12):  88%|████████▊ | 51/58 [00:09<00:00, 32.60it/s]Compiling num tokens (num_tokens=12):  97%|█████████▋| 56/58 [00:09<00:00, 36.60it/s]Compiling num tokens (num_tokens=8):  97%|█████████▋| 56/58 [00:09<00:00, 36.60it/s] Compiling num tokens (num_tokens=4):  97%|█████████▋| 56/58 [00:09<00:00, 36.60it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:09<00:00,  6.17it/s]
+    Compiling num tokens (num_tokens=64):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=48):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=32):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=28):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=24):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=20):  81%|████████  | 47/58 [00:06<00:00, 46.08it/s]Compiling num tokens (num_tokens=20):  93%|█████████▎| 54/58 [00:06<00:00, 51.30it/s]Compiling num tokens (num_tokens=16):  93%|█████████▎| 54/58 [00:06<00:00, 51.30it/s]Compiling num tokens (num_tokens=12):  93%|█████████▎| 54/58 [00:06<00:00, 51.30it/s]Compiling num tokens (num_tokens=8):  93%|█████████▎| 54/58 [00:06<00:00, 51.30it/s] Compiling num tokens (num_tokens=4):  93%|█████████▎| 54/58 [00:06<00:00, 51.30it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:06<00:00,  8.99it/s]
 
 
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=102.94 GB):   0%|          | 0/58 [00:00<?, ?it/s]
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=121.29 GB):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    Capturing num tokens (num_tokens=8192 avail_mem=102.94 GB):   2%|▏         | 1/58 [00:00<00:26,  2.14it/s]Capturing num tokens (num_tokens=7680 avail_mem=102.91 GB):   2%|▏         | 1/58 [00:00<00:26,  2.14it/s]
+    Capturing num tokens (num_tokens=8192 avail_mem=121.29 GB):   2%|▏         | 1/58 [00:00<00:20,  2.81it/s]Capturing num tokens (num_tokens=7680 avail_mem=121.26 GB):   2%|▏         | 1/58 [00:00<00:20,  2.81it/s]
 
-    Capturing num tokens (num_tokens=7680 avail_mem=102.91 GB):   3%|▎         | 2/58 [00:00<00:22,  2.54it/s]Capturing num tokens (num_tokens=7168 avail_mem=102.91 GB):   3%|▎         | 2/58 [00:00<00:22,  2.54it/s]
+    Capturing num tokens (num_tokens=7680 avail_mem=121.26 GB):   3%|▎         | 2/58 [00:00<00:18,  2.99it/s]Capturing num tokens (num_tokens=7168 avail_mem=121.26 GB):   3%|▎         | 2/58 [00:00<00:18,  2.99it/s]
 
-    Capturing num tokens (num_tokens=7168 avail_mem=102.91 GB):   5%|▌         | 3/58 [00:01<00:18,  2.93it/s]Capturing num tokens (num_tokens=6656 avail_mem=102.92 GB):   5%|▌         | 3/58 [00:01<00:18,  2.93it/s]
+    Capturing num tokens (num_tokens=7168 avail_mem=121.26 GB):   5%|▌         | 3/58 [00:00<00:17,  3.21it/s]Capturing num tokens (num_tokens=6656 avail_mem=121.27 GB):   5%|▌         | 3/58 [00:00<00:17,  3.21it/s]
 
-    Capturing num tokens (num_tokens=6656 avail_mem=102.92 GB):   7%|▋         | 4/58 [00:01<00:23,  2.27it/s]Capturing num tokens (num_tokens=6144 avail_mem=102.92 GB):   7%|▋         | 4/58 [00:01<00:23,  2.27it/s]
+    Capturing num tokens (num_tokens=6656 avail_mem=121.27 GB):   7%|▋         | 4/58 [00:01<00:15,  3.39it/s]Capturing num tokens (num_tokens=6144 avail_mem=121.27 GB):   7%|▋         | 4/58 [00:01<00:15,  3.39it/s]
 
-    Capturing num tokens (num_tokens=6144 avail_mem=102.92 GB):   9%|▊         | 5/58 [00:02<00:23,  2.22it/s]Capturing num tokens (num_tokens=5632 avail_mem=102.90 GB):   9%|▊         | 5/58 [00:02<00:23,  2.22it/s]
+    Capturing num tokens (num_tokens=6144 avail_mem=121.27 GB):   9%|▊         | 5/58 [00:01<00:14,  3.68it/s]Capturing num tokens (num_tokens=5632 avail_mem=121.27 GB):   9%|▊         | 5/58 [00:01<00:14,  3.68it/s]
 
-    Capturing num tokens (num_tokens=5632 avail_mem=102.90 GB):  10%|█         | 6/58 [00:02<00:22,  2.30it/s]Capturing num tokens (num_tokens=5120 avail_mem=102.41 GB):  10%|█         | 6/58 [00:02<00:22,  2.30it/s]
+    Capturing num tokens (num_tokens=5632 avail_mem=121.27 GB):  10%|█         | 6/58 [00:01<00:13,  4.00it/s]Capturing num tokens (num_tokens=5120 avail_mem=121.28 GB):  10%|█         | 6/58 [00:01<00:13,  4.00it/s]Capturing num tokens (num_tokens=5120 avail_mem=121.28 GB):  12%|█▏        | 7/58 [00:01<00:11,  4.34it/s]Capturing num tokens (num_tokens=4608 avail_mem=121.28 GB):  12%|█▏        | 7/58 [00:01<00:11,  4.34it/s]
 
-    Capturing num tokens (num_tokens=5120 avail_mem=102.41 GB):  12%|█▏        | 7/58 [00:02<00:21,  2.41it/s]Capturing num tokens (num_tokens=4608 avail_mem=102.26 GB):  12%|█▏        | 7/58 [00:02<00:21,  2.41it/s]
+    Capturing num tokens (num_tokens=4608 avail_mem=121.28 GB):  14%|█▍        | 8/58 [00:02<00:10,  4.78it/s]Capturing num tokens (num_tokens=4096 avail_mem=121.28 GB):  14%|█▍        | 8/58 [00:02<00:10,  4.78it/s]Capturing num tokens (num_tokens=4096 avail_mem=121.28 GB):  16%|█▌        | 9/58 [00:02<00:09,  5.24it/s]Capturing num tokens (num_tokens=3840 avail_mem=121.29 GB):  16%|█▌        | 9/58 [00:02<00:09,  5.24it/s]
 
-    Capturing num tokens (num_tokens=4608 avail_mem=102.26 GB):  14%|█▍        | 8/58 [00:03<00:19,  2.57it/s]Capturing num tokens (num_tokens=4096 avail_mem=102.26 GB):  14%|█▍        | 8/58 [00:03<00:19,  2.57it/s]
+    Capturing num tokens (num_tokens=3840 avail_mem=121.29 GB):  17%|█▋        | 10/58 [00:02<00:08,  5.66it/s]Capturing num tokens (num_tokens=3584 avail_mem=121.29 GB):  17%|█▋        | 10/58 [00:02<00:08,  5.66it/s]Capturing num tokens (num_tokens=3584 avail_mem=121.29 GB):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]Capturing num tokens (num_tokens=3328 avail_mem=121.29 GB):  19%|█▉        | 11/58 [00:02<00:07,  6.15it/s]
 
-    Capturing num tokens (num_tokens=4096 avail_mem=102.26 GB):  16%|█▌        | 9/58 [00:03<00:17,  2.77it/s]Capturing num tokens (num_tokens=3840 avail_mem=102.27 GB):  16%|█▌        | 9/58 [00:03<00:17,  2.77it/s]
+    Capturing num tokens (num_tokens=3328 avail_mem=121.29 GB):  21%|██        | 12/58 [00:02<00:06,  6.66it/s]Capturing num tokens (num_tokens=3072 avail_mem=121.29 GB):  21%|██        | 12/58 [00:02<00:06,  6.66it/s]Capturing num tokens (num_tokens=3072 avail_mem=121.29 GB):  22%|██▏       | 13/58 [00:02<00:06,  6.63it/s]Capturing num tokens (num_tokens=2816 avail_mem=121.29 GB):  22%|██▏       | 13/58 [00:02<00:06,  6.63it/s]
 
-    Capturing num tokens (num_tokens=3840 avail_mem=102.27 GB):  17%|█▋        | 10/58 [00:03<00:16,  2.95it/s]Capturing num tokens (num_tokens=3584 avail_mem=102.27 GB):  17%|█▋        | 10/58 [00:03<00:16,  2.95it/s]
+    Capturing num tokens (num_tokens=2816 avail_mem=121.29 GB):  24%|██▍       | 14/58 [00:02<00:06,  7.10it/s]Capturing num tokens (num_tokens=2560 avail_mem=121.29 GB):  24%|██▍       | 14/58 [00:02<00:06,  7.10it/s]Capturing num tokens (num_tokens=2304 avail_mem=121.29 GB):  24%|██▍       | 14/58 [00:02<00:06,  7.10it/s]Capturing num tokens (num_tokens=2304 avail_mem=121.29 GB):  28%|██▊       | 16/58 [00:03<00:04,  8.65it/s]Capturing num tokens (num_tokens=2048 avail_mem=121.28 GB):  28%|██▊       | 16/58 [00:03<00:04,  8.65it/s]
 
-    Capturing num tokens (num_tokens=3584 avail_mem=102.27 GB):  19%|█▉        | 11/58 [00:04<00:14,  3.19it/s]Capturing num tokens (num_tokens=3328 avail_mem=102.27 GB):  19%|█▉        | 11/58 [00:04<00:14,  3.19it/s]
+    Capturing num tokens (num_tokens=1792 avail_mem=121.28 GB):  28%|██▊       | 16/58 [00:03<00:04,  8.65it/s]Capturing num tokens (num_tokens=1792 avail_mem=121.28 GB):  31%|███       | 18/58 [00:03<00:03, 10.49it/s]Capturing num tokens (num_tokens=1536 avail_mem=121.28 GB):  31%|███       | 18/58 [00:03<00:03, 10.49it/s]Capturing num tokens (num_tokens=1280 avail_mem=121.28 GB):  31%|███       | 18/58 [00:03<00:03, 10.49it/s]Capturing num tokens (num_tokens=1280 avail_mem=121.28 GB):  34%|███▍      | 20/58 [00:03<00:03, 12.58it/s]Capturing num tokens (num_tokens=1024 avail_mem=121.28 GB):  34%|███▍      | 20/58 [00:03<00:03, 12.58it/s]
 
-    Capturing num tokens (num_tokens=3328 avail_mem=102.27 GB):  21%|██        | 12/58 [00:04<00:14,  3.16it/s]Capturing num tokens (num_tokens=3072 avail_mem=101.21 GB):  21%|██        | 12/58 [00:04<00:14,  3.16it/s]
+    Capturing num tokens (num_tokens=960 avail_mem=121.28 GB):  34%|███▍      | 20/58 [00:03<00:03, 12.58it/s] Capturing num tokens (num_tokens=896 avail_mem=121.27 GB):  34%|███▍      | 20/58 [00:03<00:03, 12.58it/s]Capturing num tokens (num_tokens=896 avail_mem=121.27 GB):  40%|███▉      | 23/58 [00:03<00:02, 15.91it/s]Capturing num tokens (num_tokens=832 avail_mem=121.27 GB):  40%|███▉      | 23/58 [00:03<00:02, 15.91it/s]Capturing num tokens (num_tokens=768 avail_mem=121.27 GB):  40%|███▉      | 23/58 [00:03<00:02, 15.91it/s]Capturing num tokens (num_tokens=704 avail_mem=121.26 GB):  40%|███▉      | 23/58 [00:03<00:02, 15.91it/s]Capturing num tokens (num_tokens=704 avail_mem=121.26 GB):  45%|████▍     | 26/58 [00:03<00:01, 18.68it/s]Capturing num tokens (num_tokens=640 avail_mem=121.26 GB):  45%|████▍     | 26/58 [00:03<00:01, 18.68it/s]
 
-    Capturing num tokens (num_tokens=3072 avail_mem=101.21 GB):  22%|██▏       | 13/58 [00:04<00:13,  3.45it/s]Capturing num tokens (num_tokens=2816 avail_mem=87.25 GB):  22%|██▏       | 13/58 [00:04<00:13,  3.45it/s] 
+    Capturing num tokens (num_tokens=576 avail_mem=121.25 GB):  45%|████▍     | 26/58 [00:03<00:01, 18.68it/s]Capturing num tokens (num_tokens=512 avail_mem=121.25 GB):  45%|████▍     | 26/58 [00:03<00:01, 18.68it/s]Capturing num tokens (num_tokens=512 avail_mem=121.25 GB):  50%|█████     | 29/58 [00:03<00:01, 21.49it/s]Capturing num tokens (num_tokens=480 avail_mem=121.24 GB):  50%|█████     | 29/58 [00:03<00:01, 21.49it/s]Capturing num tokens (num_tokens=448 avail_mem=121.24 GB):  50%|█████     | 29/58 [00:03<00:01, 21.49it/s]Capturing num tokens (num_tokens=416 avail_mem=121.24 GB):  50%|█████     | 29/58 [00:03<00:01, 21.49it/s]
 
-    Capturing num tokens (num_tokens=2816 avail_mem=87.25 GB):  24%|██▍       | 14/58 [00:04<00:11,  3.80it/s]Capturing num tokens (num_tokens=2560 avail_mem=87.25 GB):  24%|██▍       | 14/58 [00:04<00:11,  3.80it/s]Capturing num tokens (num_tokens=2560 avail_mem=87.25 GB):  26%|██▌       | 15/58 [00:05<00:10,  4.20it/s]Capturing num tokens (num_tokens=2304 avail_mem=87.25 GB):  26%|██▌       | 15/58 [00:05<00:10,  4.20it/s]
+    Capturing num tokens (num_tokens=416 avail_mem=121.24 GB):  55%|█████▌    | 32/58 [00:03<00:01, 21.81it/s]Capturing num tokens (num_tokens=384 avail_mem=121.23 GB):  55%|█████▌    | 32/58 [00:03<00:01, 21.81it/s]Capturing num tokens (num_tokens=352 avail_mem=121.23 GB):  55%|█████▌    | 32/58 [00:03<00:01, 21.81it/s]Capturing num tokens (num_tokens=320 avail_mem=121.22 GB):  55%|█████▌    | 32/58 [00:03<00:01, 21.81it/s]
 
-    Capturing num tokens (num_tokens=2304 avail_mem=87.25 GB):  28%|██▊       | 16/58 [00:05<00:09,  4.57it/s]Capturing num tokens (num_tokens=2048 avail_mem=87.24 GB):  28%|██▊       | 16/58 [00:05<00:09,  4.57it/s]Capturing num tokens (num_tokens=2048 avail_mem=87.24 GB):  29%|██▉       | 17/58 [00:05<00:08,  4.98it/s]Capturing num tokens (num_tokens=1792 avail_mem=87.24 GB):  29%|██▉       | 17/58 [00:05<00:08,  4.98it/s]
+    Capturing num tokens (num_tokens=320 avail_mem=121.22 GB):  60%|██████    | 35/58 [00:04<00:01, 15.44it/s]Capturing num tokens (num_tokens=288 avail_mem=121.22 GB):  60%|██████    | 35/58 [00:04<00:01, 15.44it/s]Capturing num tokens (num_tokens=256 avail_mem=121.21 GB):  60%|██████    | 35/58 [00:04<00:01, 15.44it/s]Capturing num tokens (num_tokens=240 avail_mem=121.21 GB):  60%|██████    | 35/58 [00:04<00:01, 15.44it/s]Capturing num tokens (num_tokens=240 avail_mem=121.21 GB):  66%|██████▌   | 38/58 [00:04<00:01, 16.52it/s]Capturing num tokens (num_tokens=224 avail_mem=121.21 GB):  66%|██████▌   | 38/58 [00:04<00:01, 16.52it/s]
 
-    Capturing num tokens (num_tokens=1792 avail_mem=87.24 GB):  31%|███       | 18/58 [00:05<00:09,  4.44it/s]Capturing num tokens (num_tokens=1536 avail_mem=87.24 GB):  31%|███       | 18/58 [00:05<00:09,  4.44it/s]Capturing num tokens (num_tokens=1536 avail_mem=87.24 GB):  33%|███▎      | 19/58 [00:05<00:07,  5.04it/s]Capturing num tokens (num_tokens=1280 avail_mem=87.24 GB):  33%|███▎      | 19/58 [00:05<00:07,  5.04it/s]
+    Capturing num tokens (num_tokens=208 avail_mem=121.20 GB):  66%|██████▌   | 38/58 [00:04<00:01, 16.52it/s]Capturing num tokens (num_tokens=208 avail_mem=121.20 GB):  69%|██████▉   | 40/58 [00:04<00:01, 16.27it/s]Capturing num tokens (num_tokens=192 avail_mem=121.20 GB):  69%|██████▉   | 40/58 [00:04<00:01, 16.27it/s]Capturing num tokens (num_tokens=176 avail_mem=121.19 GB):  69%|██████▉   | 40/58 [00:04<00:01, 16.27it/s]Capturing num tokens (num_tokens=160 avail_mem=121.19 GB):  69%|██████▉   | 40/58 [00:04<00:01, 16.27it/s]
 
-    Capturing num tokens (num_tokens=1024 avail_mem=87.24 GB):  33%|███▎      | 19/58 [00:05<00:07,  5.04it/s]Capturing num tokens (num_tokens=1024 avail_mem=87.24 GB):  36%|███▌      | 21/58 [00:05<00:05,  6.69it/s]Capturing num tokens (num_tokens=960 avail_mem=87.24 GB):  36%|███▌      | 21/58 [00:05<00:05,  6.69it/s] Capturing num tokens (num_tokens=896 avail_mem=87.23 GB):  36%|███▌      | 21/58 [00:06<00:05,  6.69it/s]
+    Capturing num tokens (num_tokens=160 avail_mem=121.19 GB):  74%|███████▍  | 43/58 [00:04<00:00, 15.49it/s]Capturing num tokens (num_tokens=144 avail_mem=121.18 GB):  74%|███████▍  | 43/58 [00:04<00:00, 15.49it/s]Capturing num tokens (num_tokens=128 avail_mem=121.18 GB):  74%|███████▍  | 43/58 [00:04<00:00, 15.49it/s]Capturing num tokens (num_tokens=128 avail_mem=121.18 GB):  78%|███████▊  | 45/58 [00:04<00:00, 14.26it/s]Capturing num tokens (num_tokens=112 avail_mem=121.19 GB):  78%|███████▊  | 45/58 [00:04<00:00, 14.26it/s]
 
-    Capturing num tokens (num_tokens=896 avail_mem=87.23 GB):  40%|███▉      | 23/58 [00:06<00:05,  6.69it/s]Capturing num tokens (num_tokens=832 avail_mem=87.23 GB):  40%|███▉      | 23/58 [00:06<00:05,  6.69it/s]Capturing num tokens (num_tokens=832 avail_mem=87.23 GB):  41%|████▏     | 24/58 [00:06<00:04,  6.98it/s]Capturing num tokens (num_tokens=768 avail_mem=87.23 GB):  41%|████▏     | 24/58 [00:06<00:04,  6.98it/s]
+    Capturing num tokens (num_tokens=96 avail_mem=121.19 GB):  78%|███████▊  | 45/58 [00:04<00:00, 14.26it/s] Capturing num tokens (num_tokens=96 avail_mem=121.19 GB):  81%|████████  | 47/58 [00:04<00:00, 14.75it/s]Capturing num tokens (num_tokens=80 avail_mem=121.18 GB):  81%|████████  | 47/58 [00:04<00:00, 14.75it/s]Capturing num tokens (num_tokens=64 avail_mem=121.18 GB):  81%|████████  | 47/58 [00:04<00:00, 14.75it/s]Capturing num tokens (num_tokens=48 avail_mem=121.17 GB):  81%|████████  | 47/58 [00:04<00:00, 14.75it/s]Capturing num tokens (num_tokens=32 avail_mem=121.17 GB):  81%|████████  | 47/58 [00:04<00:00, 14.75it/s]Capturing num tokens (num_tokens=32 avail_mem=121.17 GB):  88%|████████▊ | 51/58 [00:04<00:00, 19.48it/s]Capturing num tokens (num_tokens=28 avail_mem=121.17 GB):  88%|████████▊ | 51/58 [00:04<00:00, 19.48it/s]
 
-    Capturing num tokens (num_tokens=704 avail_mem=87.22 GB):  41%|████▏     | 24/58 [00:06<00:04,  6.98it/s]Capturing num tokens (num_tokens=704 avail_mem=87.22 GB):  45%|████▍     | 26/58 [00:06<00:03,  8.23it/s]Capturing num tokens (num_tokens=640 avail_mem=87.22 GB):  45%|████▍     | 26/58 [00:06<00:03,  8.23it/s]
-
-    Capturing num tokens (num_tokens=640 avail_mem=87.22 GB):  47%|████▋     | 27/58 [00:06<00:03,  7.79it/s]Capturing num tokens (num_tokens=576 avail_mem=87.21 GB):  47%|████▋     | 27/58 [00:06<00:03,  7.79it/s]Capturing num tokens (num_tokens=512 avail_mem=87.21 GB):  47%|████▋     | 27/58 [00:06<00:03,  7.79it/s]Capturing num tokens (num_tokens=512 avail_mem=87.21 GB):  50%|█████     | 29/58 [00:06<00:03,  9.46it/s]Capturing num tokens (num_tokens=480 avail_mem=87.20 GB):  50%|█████     | 29/58 [00:06<00:03,  9.46it/s]Capturing num tokens (num_tokens=448 avail_mem=87.20 GB):  50%|█████     | 29/58 [00:06<00:03,  9.46it/s]
-
-    Capturing num tokens (num_tokens=448 avail_mem=87.20 GB):  53%|█████▎    | 31/58 [00:06<00:02, 11.04it/s]Capturing num tokens (num_tokens=416 avail_mem=87.20 GB):  53%|█████▎    | 31/58 [00:06<00:02, 11.04it/s]Capturing num tokens (num_tokens=384 avail_mem=87.19 GB):  53%|█████▎    | 31/58 [00:07<00:02, 11.04it/s]Capturing num tokens (num_tokens=384 avail_mem=87.19 GB):  57%|█████▋    | 33/58 [00:07<00:01, 12.73it/s]Capturing num tokens (num_tokens=352 avail_mem=87.19 GB):  57%|█████▋    | 33/58 [00:07<00:01, 12.73it/s]Capturing num tokens (num_tokens=320 avail_mem=87.19 GB):  57%|█████▋    | 33/58 [00:07<00:01, 12.73it/s]
-
-    Capturing num tokens (num_tokens=320 avail_mem=87.19 GB):  60%|██████    | 35/58 [00:07<00:01, 14.27it/s]Capturing num tokens (num_tokens=288 avail_mem=87.18 GB):  60%|██████    | 35/58 [00:07<00:01, 14.27it/s]Capturing num tokens (num_tokens=256 avail_mem=87.18 GB):  60%|██████    | 35/58 [00:07<00:01, 14.27it/s]Capturing num tokens (num_tokens=256 avail_mem=87.18 GB):  64%|██████▍   | 37/58 [00:07<00:01, 15.67it/s]Capturing num tokens (num_tokens=240 avail_mem=87.17 GB):  64%|██████▍   | 37/58 [00:07<00:01, 15.67it/s]Capturing num tokens (num_tokens=224 avail_mem=87.17 GB):  64%|██████▍   | 37/58 [00:07<00:01, 15.67it/s]Capturing num tokens (num_tokens=208 avail_mem=87.16 GB):  64%|██████▍   | 37/58 [00:07<00:01, 15.67it/s]
-
-    Capturing num tokens (num_tokens=208 avail_mem=87.16 GB):  69%|██████▉   | 40/58 [00:07<00:01, 17.47it/s]Capturing num tokens (num_tokens=192 avail_mem=87.16 GB):  69%|██████▉   | 40/58 [00:07<00:01, 17.47it/s]Capturing num tokens (num_tokens=176 avail_mem=87.15 GB):  69%|██████▉   | 40/58 [00:07<00:01, 17.47it/s]Capturing num tokens (num_tokens=160 avail_mem=87.15 GB):  69%|██████▉   | 40/58 [00:07<00:01, 17.47it/s]Capturing num tokens (num_tokens=160 avail_mem=87.15 GB):  74%|███████▍  | 43/58 [00:07<00:00, 18.78it/s]Capturing num tokens (num_tokens=144 avail_mem=87.14 GB):  74%|███████▍  | 43/58 [00:07<00:00, 18.78it/s]Capturing num tokens (num_tokens=128 avail_mem=87.14 GB):  74%|███████▍  | 43/58 [00:07<00:00, 18.78it/s]
-
-    Capturing num tokens (num_tokens=112 avail_mem=87.15 GB):  74%|███████▍  | 43/58 [00:07<00:00, 18.78it/s]Capturing num tokens (num_tokens=112 avail_mem=87.15 GB):  79%|███████▉  | 46/58 [00:07<00:00, 19.89it/s]Capturing num tokens (num_tokens=96 avail_mem=87.15 GB):  79%|███████▉  | 46/58 [00:07<00:00, 19.89it/s] Capturing num tokens (num_tokens=80 avail_mem=87.14 GB):  79%|███████▉  | 46/58 [00:07<00:00, 19.89it/s]Capturing num tokens (num_tokens=64 avail_mem=87.14 GB):  79%|███████▉  | 46/58 [00:07<00:00, 19.89it/s]Capturing num tokens (num_tokens=64 avail_mem=87.14 GB):  84%|████████▍ | 49/58 [00:07<00:00, 19.89it/s]Capturing num tokens (num_tokens=48 avail_mem=87.13 GB):  84%|████████▍ | 49/58 [00:07<00:00, 19.89it/s]
-
-    Capturing num tokens (num_tokens=32 avail_mem=87.13 GB):  84%|████████▍ | 49/58 [00:07<00:00, 19.89it/s]Capturing num tokens (num_tokens=28 avail_mem=87.13 GB):  84%|████████▍ | 49/58 [00:07<00:00, 19.89it/s]Capturing num tokens (num_tokens=28 avail_mem=87.13 GB):  90%|████████▉ | 52/58 [00:08<00:00, 19.30it/s]Capturing num tokens (num_tokens=24 avail_mem=87.12 GB):  90%|████████▉ | 52/58 [00:08<00:00, 19.30it/s]Capturing num tokens (num_tokens=20 avail_mem=87.12 GB):  90%|████████▉ | 52/58 [00:08<00:00, 19.30it/s]Capturing num tokens (num_tokens=16 avail_mem=87.11 GB):  90%|████████▉ | 52/58 [00:08<00:00, 19.30it/s]
-
-    Capturing num tokens (num_tokens=16 avail_mem=87.11 GB):  95%|█████████▍| 55/58 [00:08<00:00, 20.67it/s]Capturing num tokens (num_tokens=12 avail_mem=87.11 GB):  95%|█████████▍| 55/58 [00:08<00:00, 20.67it/s]Capturing num tokens (num_tokens=8 avail_mem=87.10 GB):  95%|█████████▍| 55/58 [00:08<00:00, 20.67it/s] Capturing num tokens (num_tokens=4 avail_mem=87.10 GB):  95%|█████████▍| 55/58 [00:08<00:00, 20.67it/s]Capturing num tokens (num_tokens=4 avail_mem=87.10 GB): 100%|██████████| 58/58 [00:08<00:00, 21.32it/s]Capturing num tokens (num_tokens=4 avail_mem=87.10 GB): 100%|██████████| 58/58 [00:08<00:00,  7.00it/s]
+    Capturing num tokens (num_tokens=24 avail_mem=121.16 GB):  88%|████████▊ | 51/58 [00:04<00:00, 19.48it/s]Capturing num tokens (num_tokens=20 avail_mem=121.16 GB):  88%|████████▊ | 51/58 [00:04<00:00, 19.48it/s]Capturing num tokens (num_tokens=16 avail_mem=121.15 GB):  88%|████████▊ | 51/58 [00:05<00:00, 19.48it/s]Capturing num tokens (num_tokens=16 avail_mem=121.15 GB):  95%|█████████▍| 55/58 [00:05<00:00, 23.43it/s]Capturing num tokens (num_tokens=12 avail_mem=121.15 GB):  95%|█████████▍| 55/58 [00:05<00:00, 23.43it/s]Capturing num tokens (num_tokens=8 avail_mem=121.14 GB):  95%|█████████▍| 55/58 [00:05<00:00, 23.43it/s] Capturing num tokens (num_tokens=4 avail_mem=121.14 GB):  95%|█████████▍| 55/58 [00:05<00:00, 23.43it/s]Capturing num tokens (num_tokens=4 avail_mem=121.14 GB): 100%|██████████| 58/58 [00:05<00:00, 11.29it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
@@ -843,41 +2055,41 @@ wait_for_server(f"http://localhost:{port}", process=expert_record_server_process
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-09 09:05:56] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:05:56] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:05:56] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:05:56] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:10:39] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:10:39] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:10:39] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:10:39] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/8 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  12% Completed | 1/8 [00:00<00:05,  1.39it/s]
+    Multi-thread loading shards:  12% Completed | 1/8 [00:00<00:04,  1.42it/s]
 
     Multi-thread loading shards:  25% Completed | 2/8 [00:01<00:04,  1.32it/s]
 
-    Multi-thread loading shards:  38% Completed | 3/8 [00:02<00:03,  1.29it/s]
+    Multi-thread loading shards:  38% Completed | 3/8 [00:02<00:03,  1.28it/s]
 
-    Multi-thread loading shards:  50% Completed | 4/8 [00:03<00:03,  1.28it/s]
+    Multi-thread loading shards:  50% Completed | 4/8 [00:03<00:03,  1.26it/s]
 
-    Multi-thread loading shards:  62% Completed | 5/8 [00:03<00:02,  1.27it/s]
+    Multi-thread loading shards:  62% Completed | 5/8 [00:03<00:02,  1.25it/s]
 
-    Multi-thread loading shards:  75% Completed | 6/8 [00:04<00:01,  1.59it/s]
+    Multi-thread loading shards:  75% Completed | 6/8 [00:04<00:01,  1.58it/s]
 
-    Multi-thread loading shards:  88% Completed | 7/8 [00:04<00:00,  1.60it/s]
+    Multi-thread loading shards:  88% Completed | 7/8 [00:04<00:00,  1.58it/s]
 
-    Multi-thread loading shards: 100% Completed | 8/8 [00:05<00:00,  1.46it/s]Multi-thread loading shards: 100% Completed | 8/8 [00:05<00:00,  1.42it/s]
+    Multi-thread loading shards: 100% Completed | 8/8 [00:05<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 8/8 [00:05<00:00,  1.40it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
 
 
-    2026-04-09 09:06:07,041 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 09:06:07] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 10:10:49,000 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 10:10:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
-    [2026-04-09 09:06:07] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=60,N=1408,device_name=NVIDIA_H200.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
-    [2026-04-09 09:06:07] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=60,N=1408,device_name=NVIDIA_H200_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+    [2026-04-09 10:10:49] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=60,N=1408,device_name=NVIDIA_H200.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+    [2026-04-09 10:10:49] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /actions-runner/_work/sglang/sglang/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=60,N=1408,device_name=NVIDIA_H200_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
 
 
 
@@ -907,7 +2119,7 @@ print_highlight(response)
 
 
 
-<strong style='color: #00008B;'>{'text': 'A．BirminghamB．RomeC．LondonD．Paris\nWhat is the capital of France?\nA．Birmingham\nB．Rome\nC．London\nD．Paris\n答案: D', 'output_ids': [32, 58883, 33, 32600, 33, 58883, 49, 635, 34, 58883, 39572, 35, 58883, 59604, 198, 3838, 374, 279, 6722, 315, 9625, 5267, 32, 58883, 33, 32600, 198, 33, 58883, 49, 635, 198, 34, 58883, 39572, 198, 35, 58883, 59604, 198, 102349, 25, 422, 151643], 'meta_info': {'id': 'd76ea7b820bb4ae7b85341f1c6dad8e4', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 7, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 44, 'cached_tokens': 0, 'cached_tokens_details': None, 'dp_rank': None, 'e2e_latency': 1.64807930868119, 'response_sent_to_client_ts': 1775725572.649499}}</strong>
+<strong style='color: #00008B;'>{'text': ' The capital of France is Paris.', 'output_ids': [576, 6722, 315, 9625, 374, 12095, 13, 151643], 'meta_info': {'id': '1ef8fada4aea4b399384de25eb63d5a4', 'finish_reason': {'type': 'stop', 'matched': 151643}, 'prompt_tokens': 7, 'weight_version': 'default', 'total_retractions': 0, 'reasoning_tokens': 0, 'completion_tokens': 8, 'cached_tokens': 0, 'cached_tokens_details': None, 'dp_rank': None, 'e2e_latency': 1.046383018605411, 'response_sent_to_client_ts': 1775729454.1595402}}</strong>
 
 
 
@@ -941,140 +2153,162 @@ wait_for_server(f"http://localhost:{port}", process=tokenizer_free_server_proces
       warnings.warn(
 
 
-    [2026-04-09 09:06:21] server_args=ServerArgs(model_path='qwen/qwen2.5-0.5b-instruct', tokenizer_path='qwen/qwen2.5-0.5b-instruct', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=31098, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_keyfile_password=None, enable_ssl_refresh=False, enable_http2=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.907, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, disable_priority_preemption=False, default_priority_value=None, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_response_default_include_usage=False, incremental_streaming_output=False, enable_streaming_session=False, random_seed=539042231, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, use_ray=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_mfu_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='qwen/qwen2.5-0.5b-instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', attn_cp_size=1, moe_dp_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, enable_lora_overlap_loading=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, experts_shared_outer_loras=None, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='auto', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, mamba_backend='triton', speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_dflash_block_size=None, speculative_dflash_draft_window_size=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_max_trie_depth=18, speculative_ngram_capacity=10000000, speculative_ngram_external_corpus_path=None, speculative_ngram_external_sam_budget=0, speculative_ngram_external_corpus_max_tokens=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, enforce_disable_flashinfer_allreduce_fusion=False, enable_aiter_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, enable_elastic_expert_backup=False, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype=None, mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, linear_attn_backend='triton', linear_attn_decode_backend=None, linear_attn_prefill_backend=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, enable_hisparse=False, hisparse_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, pre_warm_nccl=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, disable_piecewise_cuda_graph=False, enforce_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, enforce_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, gc_threshold=None, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='round-robin-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_fused_moe_sum_all_reduce=False, enable_prefill_context_parallel=False, prefill_cp_mode='in-seq-split', enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], enable_adaptive_dispatch_to_encoder=False, custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, engine_info_bootstrap_port=6789, modelexpress_config=None, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, enable_mm_global_cache=False, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
-    [2026-04-09 09:06:21] CI: patched _patch_mistral_regex to skip HF API calls
+    [2026-04-09 10:11:02] server_args=ServerArgs(model_path='qwen/qwen2.5-0.5b-instruct', tokenizer_path='qwen/qwen2.5-0.5b-instruct', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=False, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=30501, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_keyfile_password=None, enable_ssl_refresh=False, enable_http2=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.907, max_running_requests=128, max_queued_requests=None, max_total_tokens=20480, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, disable_priority_preemption=False, default_priority_value=None, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=1, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_response_default_include_usage=False, incremental_streaming_output=False, enable_streaming_session=False, random_seed=1023173763, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=300, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, use_ray=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_mfu_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, extra_metric_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='qwen/qwen2.5-0.5b-instruct', weight_version='default', chat_template=None, hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', attn_cp_size=1, moe_dp_size=1, dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, enable_lora_overlap_loading=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, experts_shared_outer_loras=None, attention_backend='fa3', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='auto', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, mamba_backend='triton', speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_dflash_block_size=None, speculative_dflash_draft_window_size=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_max_trie_depth=18, speculative_ngram_capacity=10000000, speculative_ngram_external_corpus_path=None, speculative_ngram_external_sam_budget=0, speculative_ngram_external_corpus_max_tokens=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, enforce_disable_flashinfer_allreduce_fusion=False, enable_aiter_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, enable_elastic_expert_backup=False, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype=None, mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, linear_attn_backend='triton', linear_attn_decode_backend=None, linear_attn_prefill_backend=None, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, enable_hisparse=False, hisparse_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=4, cuda_graph_bs=[1, 2, 4], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, pre_warm_nccl=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, disable_piecewise_cuda_graph=False, enforce_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, enforce_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, gc_threshold=None, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='round-robin-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_fused_moe_sum_all_reduce=False, enable_prefill_context_parallel=False, prefill_cp_mode='in-seq-split', enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], enable_adaptive_dispatch_to_encoder=False, custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, engine_info_bootstrap_port=6789, modelexpress_config=None, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, enable_mm_global_cache=False, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+    [2026-04-09 10:11:03] CI: patched _patch_mistral_regex to skip HF API calls
 
 
-    [2026-04-09 09:06:22] Watchdog TokenizerManager initialized.
-    [2026-04-09 09:06:22] Using default HuggingFace chat template with detected content format: string
+    [2026-04-09 10:11:04] Watchdog TokenizerManager initialized.
+    [2026-04-09 10:11:04] Using default HuggingFace chat template with detected content format: string
 
 
-    [2026-04-09 09:06:28] CI: patched _patch_mistral_regex to skip HF API calls
+    [2026-04-09 10:11:10] CI: patched _patch_mistral_regex to skip HF API calls
 
 
-    [2026-04-09 09:06:29] CI: patched _patch_mistral_regex to skip HF API calls
+    [2026-04-09 10:11:10] CI: patched _patch_mistral_regex to skip HF API calls
 
 
-    [2026-04-09 09:06:30] Watchdog DetokenizerManager initialized.
+    [2026-04-09 10:11:11] Watchdog DetokenizerManager initialized.
 
 
-    [2026-04-09 09:06:30] Init torch distributed begin.
+    [2026-04-09 10:11:11] Init torch distributed begin.
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [2026-04-09 09:06:31] Init torch distributed ends. elapsed=0.53 s, mem usage=0.09 GB
+    [2026-04-09 10:11:12] Init torch distributed ends. elapsed=0.38 s, mem usage=0.09 GB
 
 
-    [2026-04-09 09:06:32] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:06:32] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:06:32] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 09:06:32] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:11:13] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:11:13] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:11:13] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 10:11:13] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-09 09:06:32] Load weight begin. avail mem=104.13 GB
+    [2026-04-09 10:11:14] Load weight begin. avail mem=101.30 GB
+    [2026-04-09 10:11:14] Found local HF snapshot for qwen/qwen2.5-0.5b-instruct at /root/.cache/huggingface/hub/models--qwen--qwen2.5-0.5b-instruct/snapshots/7ae557604adf67be50417f59c2c2f167def9a775; skipping download.
 
 
-    [2026-04-09 09:06:33] Found local HF snapshot for qwen/qwen2.5-0.5b-instruct at /root/.cache/huggingface/hub/models--qwen--qwen2.5-0.5b-instruct/snapshots/7ae557604adf67be50417f59c2c2f167def9a775; skipping download.
     Multi-thread loading shards:   0% Completed | 0/1 [00:00<?, ?it/s]
 
-    Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  2.13it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  2.13it/s]
-    [2026-04-09 09:06:33] Load weight end. elapsed=1.14 s, type=Qwen2ForCausalLM, avail mem=103.15 GB, mem usage=0.98 GB.
-    [2026-04-09 09:06:34] Using KV cache dtype: torch.bfloat16
+    Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.58it/s]Multi-thread loading shards: 100% Completed | 1/1 [00:00<00:00,  1.58it/s]
+    [2026-04-09 10:11:15] Load weight end. elapsed=1.05 s, type=Qwen2ForCausalLM, avail mem=100.32 GB, mem usage=0.98 GB.
+    [2026-04-09 10:11:15] Using KV cache dtype: torch.bfloat16
 
 
-    [2026-04-09 09:06:34] KV Cache is allocated. #tokens: 20480, K size: 0.12 GB, V size: 0.12 GB
-    [2026-04-09 09:06:34] Memory pool end. avail mem=102.82 GB
-    [2026-04-09 09:06:34] Capture piecewise CUDA graph begin. avail mem=102.72 GB
-    [2026-04-09 09:06:34] Capture cuda graph num tokens [4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192]
+    [2026-04-09 10:11:15] KV Cache is allocated. #tokens: 20480, K size: 0.12 GB, V size: 0.12 GB
+    [2026-04-09 10:11:15] Memory pool end. avail mem=99.99 GB
+    [2026-04-09 10:11:15] Capture piecewise CUDA graph begin. avail mem=99.89 GB
+    [2026-04-09 10:11:15] Capture cuda graph num tokens [4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 576, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192]
 
 
-    2026-04-09 09:06:34,510 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 09:06:34] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 10:11:15,433 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 10:11:15] Unexpected error during package walk: cutlass.cute.experimental
 
 
       0%|          | 0/58 [00:00<?, ?it/s]Compiling num tokens (num_tokens=8192):   0%|          | 0/58 [00:00<?, ?it/s]
 
-    [2026-04-09 09:06:37] Compiling a graph for dynamic shape takes 0.20 s
+    [2026-04-09 10:11:18] Compiling a graph for dynamic shape takes 0.20 s
 
 
-    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:03<03:02,  3.20s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:03<03:02,  3.20s/it]Compiling num tokens (num_tokens=7168):   2%|▏         | 1/58 [00:03<03:02,  3.20s/it]Compiling num tokens (num_tokens=7168):   5%|▌         | 3/58 [00:03<00:48,  1.13it/s]Compiling num tokens (num_tokens=6656):   5%|▌         | 3/58 [00:03<00:48,  1.13it/s]
+    Compiling num tokens (num_tokens=8192):   2%|▏         | 1/58 [00:02<02:36,  2.74s/it]Compiling num tokens (num_tokens=7680):   2%|▏         | 1/58 [00:02<02:36,  2.74s/it]Compiling num tokens (num_tokens=7680):   3%|▎         | 2/58 [00:02<01:08,  1.22s/it]Compiling num tokens (num_tokens=7168):   3%|▎         | 2/58 [00:02<01:08,  1.22s/it]
 
-    Compiling num tokens (num_tokens=6144):   5%|▌         | 3/58 [00:03<00:48,  1.13it/s]Compiling num tokens (num_tokens=6144):   9%|▊         | 5/58 [00:03<00:24,  2.14it/s]Compiling num tokens (num_tokens=5632):   9%|▊         | 5/58 [00:03<00:24,  2.14it/s]Compiling num tokens (num_tokens=5120):   9%|▊         | 5/58 [00:03<00:24,  2.14it/s]Compiling num tokens (num_tokens=5120):  12%|█▏        | 7/58 [00:03<00:14,  3.41it/s]Compiling num tokens (num_tokens=4608):  12%|█▏        | 7/58 [00:03<00:14,  3.41it/s]
+    Compiling num tokens (num_tokens=6656):   3%|▎         | 2/58 [00:02<01:08,  1.22s/it]Compiling num tokens (num_tokens=6656):   7%|▋         | 4/58 [00:03<00:27,  1.98it/s]Compiling num tokens (num_tokens=6144):   7%|▋         | 4/58 [00:03<00:27,  1.98it/s]Compiling num tokens (num_tokens=5632):   7%|▋         | 4/58 [00:03<00:27,  1.98it/s]Compiling num tokens (num_tokens=5632):  10%|█         | 6/58 [00:03<00:15,  3.39it/s]Compiling num tokens (num_tokens=5120):  10%|█         | 6/58 [00:03<00:15,  3.39it/s]
 
-    Compiling num tokens (num_tokens=4096):  12%|█▏        | 7/58 [00:03<00:14,  3.41it/s]Compiling num tokens (num_tokens=4096):  16%|█▌        | 9/58 [00:03<00:09,  4.91it/s]Compiling num tokens (num_tokens=3840):  16%|█▌        | 9/58 [00:03<00:09,  4.91it/s]Compiling num tokens (num_tokens=3584):  16%|█▌        | 9/58 [00:03<00:09,  4.91it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:07,  6.49it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:07,  6.49it/s]
+    Compiling num tokens (num_tokens=4608):  10%|█         | 6/58 [00:03<00:15,  3.39it/s]Compiling num tokens (num_tokens=4608):  14%|█▍        | 8/58 [00:03<00:10,  4.99it/s]Compiling num tokens (num_tokens=4096):  14%|█▍        | 8/58 [00:03<00:10,  4.99it/s]Compiling num tokens (num_tokens=3840):  14%|█▍        | 8/58 [00:03<00:10,  4.99it/s]Compiling num tokens (num_tokens=3584):  14%|█▍        | 8/58 [00:03<00:10,  4.99it/s]Compiling num tokens (num_tokens=3584):  19%|█▉        | 11/58 [00:03<00:06,  7.74it/s]Compiling num tokens (num_tokens=3328):  19%|█▉        | 11/58 [00:03<00:06,  7.74it/s]
 
-    Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:07,  6.49it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:07,  6.49it/s]Compiling num tokens (num_tokens=2560):  19%|█▉        | 11/58 [00:03<00:07,  6.49it/s]Compiling num tokens (num_tokens=2560):  26%|██▌       | 15/58 [00:03<00:03, 11.07it/s]Compiling num tokens (num_tokens=2304):  26%|██▌       | 15/58 [00:03<00:03, 11.07it/s]Compiling num tokens (num_tokens=2048):  26%|██▌       | 15/58 [00:03<00:03, 11.07it/s]Compiling num tokens (num_tokens=1792):  26%|██▌       | 15/58 [00:03<00:03, 11.07it/s]Compiling num tokens (num_tokens=1536):  26%|██▌       | 15/58 [00:03<00:03, 11.07it/s]Compiling num tokens (num_tokens=1280):  26%|██▌       | 15/58 [00:04<00:03, 11.07it/s]Compiling num tokens (num_tokens=1024):  26%|██▌       | 15/58 [00:04<00:03, 11.07it/s]Compiling num tokens (num_tokens=960):  26%|██▌       | 15/58 [00:04<00:03, 11.07it/s] 
+    Compiling num tokens (num_tokens=3072):  19%|█▉        | 11/58 [00:03<00:06,  7.74it/s]Compiling num tokens (num_tokens=2816):  19%|█▉        | 11/58 [00:03<00:06,  7.74it/s]Compiling num tokens (num_tokens=2816):  24%|██▍       | 14/58 [00:03<00:04, 10.95it/s]Compiling num tokens (num_tokens=2560):  24%|██▍       | 14/58 [00:03<00:04, 10.95it/s]Compiling num tokens (num_tokens=2304):  24%|██▍       | 14/58 [00:03<00:04, 10.95it/s]Compiling num tokens (num_tokens=2048):  24%|██▍       | 14/58 [00:03<00:04, 10.95it/s]Compiling num tokens (num_tokens=1792):  24%|██▍       | 14/58 [00:03<00:04, 10.95it/s]Compiling num tokens (num_tokens=1792):  31%|███       | 18/58 [00:03<00:02, 15.03it/s]Compiling num tokens (num_tokens=1536):  31%|███       | 18/58 [00:03<00:02, 15.03it/s]
 
-    Compiling num tokens (num_tokens=960):  38%|███▊      | 22/58 [00:04<00:01, 19.63it/s]Compiling num tokens (num_tokens=896):  38%|███▊      | 22/58 [00:04<00:01, 19.63it/s]Compiling num tokens (num_tokens=832):  38%|███▊      | 22/58 [00:04<00:01, 19.63it/s]Compiling num tokens (num_tokens=768):  38%|███▊      | 22/58 [00:04<00:01, 19.63it/s]Compiling num tokens (num_tokens=704):  38%|███▊      | 22/58 [00:04<00:01, 19.63it/s]Compiling num tokens (num_tokens=704):  45%|████▍     | 26/58 [00:04<00:01, 21.58it/s]Compiling num tokens (num_tokens=640):  45%|████▍     | 26/58 [00:04<00:01, 21.58it/s]Compiling num tokens (num_tokens=576):  45%|████▍     | 26/58 [00:04<00:01, 21.58it/s]
+    Compiling num tokens (num_tokens=1280):  31%|███       | 18/58 [00:03<00:02, 15.03it/s]Compiling num tokens (num_tokens=1024):  31%|███       | 18/58 [00:03<00:02, 15.03it/s]Compiling num tokens (num_tokens=1024):  36%|███▌      | 21/58 [00:03<00:02, 17.48it/s]Compiling num tokens (num_tokens=960):  36%|███▌      | 21/58 [00:03<00:02, 17.48it/s] Compiling num tokens (num_tokens=896):  36%|███▌      | 21/58 [00:03<00:02, 17.48it/s]Compiling num tokens (num_tokens=832):  36%|███▌      | 21/58 [00:03<00:02, 17.48it/s]Compiling num tokens (num_tokens=768):  36%|███▌      | 21/58 [00:03<00:02, 17.48it/s]Compiling num tokens (num_tokens=768):  43%|████▎     | 25/58 [00:03<00:01, 21.49it/s]Compiling num tokens (num_tokens=704):  43%|████▎     | 25/58 [00:03<00:01, 21.49it/s]
 
-    Compiling num tokens (num_tokens=512):  45%|████▍     | 26/58 [00:04<00:01, 21.58it/s]Compiling num tokens (num_tokens=480):  45%|████▍     | 26/58 [00:04<00:01, 21.58it/s]Compiling num tokens (num_tokens=480):  52%|█████▏    | 30/58 [00:04<00:01, 22.92it/s]Compiling num tokens (num_tokens=448):  52%|█████▏    | 30/58 [00:04<00:01, 22.92it/s]Compiling num tokens (num_tokens=416):  52%|█████▏    | 30/58 [00:04<00:01, 22.92it/s]Compiling num tokens (num_tokens=384):  52%|█████▏    | 30/58 [00:04<00:01, 22.92it/s]Compiling num tokens (num_tokens=384):  57%|█████▋    | 33/58 [00:04<00:01, 24.14it/s]Compiling num tokens (num_tokens=352):  57%|█████▋    | 33/58 [00:04<00:01, 24.14it/s]
+    Compiling num tokens (num_tokens=640):  43%|████▎     | 25/58 [00:03<00:01, 21.49it/s]Compiling num tokens (num_tokens=576):  43%|████▎     | 25/58 [00:03<00:01, 21.49it/s]Compiling num tokens (num_tokens=512):  43%|████▎     | 25/58 [00:03<00:01, 21.49it/s]Compiling num tokens (num_tokens=512):  50%|█████     | 29/58 [00:04<00:01, 23.84it/s]Compiling num tokens (num_tokens=480):  50%|█████     | 29/58 [00:04<00:01, 23.84it/s]Compiling num tokens (num_tokens=448):  50%|█████     | 29/58 [00:04<00:01, 23.84it/s]Compiling num tokens (num_tokens=416):  50%|█████     | 29/58 [00:04<00:01, 23.84it/s]Compiling num tokens (num_tokens=384):  50%|█████     | 29/58 [00:04<00:01, 23.84it/s]
 
-    Compiling num tokens (num_tokens=320):  57%|█████▋    | 33/58 [00:04<00:01, 24.14it/s]Compiling num tokens (num_tokens=288):  57%|█████▋    | 33/58 [00:04<00:01, 24.14it/s]Compiling num tokens (num_tokens=288):  62%|██████▏   | 36/58 [00:04<00:00, 24.71it/s]Compiling num tokens (num_tokens=256):  62%|██████▏   | 36/58 [00:04<00:00, 24.71it/s]Compiling num tokens (num_tokens=240):  62%|██████▏   | 36/58 [00:04<00:00, 24.71it/s]Compiling num tokens (num_tokens=224):  62%|██████▏   | 36/58 [00:04<00:00, 24.71it/s]Compiling num tokens (num_tokens=224):  67%|██████▋   | 39/58 [00:04<00:00, 25.71it/s]Compiling num tokens (num_tokens=208):  67%|██████▋   | 39/58 [00:04<00:00, 25.71it/s]
+    Compiling num tokens (num_tokens=384):  57%|█████▋    | 33/58 [00:04<00:00, 26.24it/s]Compiling num tokens (num_tokens=352):  57%|█████▋    | 33/58 [00:04<00:00, 26.24it/s]Compiling num tokens (num_tokens=320):  57%|█████▋    | 33/58 [00:04<00:00, 26.24it/s]Compiling num tokens (num_tokens=288):  57%|█████▋    | 33/58 [00:04<00:00, 26.24it/s]Compiling num tokens (num_tokens=288):  62%|██████▏   | 36/58 [00:04<00:00, 27.12it/s]Compiling num tokens (num_tokens=256):  62%|██████▏   | 36/58 [00:04<00:00, 27.12it/s]Compiling num tokens (num_tokens=240):  62%|██████▏   | 36/58 [00:04<00:00, 27.12it/s]Compiling num tokens (num_tokens=224):  62%|██████▏   | 36/58 [00:04<00:00, 27.12it/s]Compiling num tokens (num_tokens=208):  62%|██████▏   | 36/58 [00:04<00:00, 27.12it/s]Compiling num tokens (num_tokens=192):  62%|██████▏   | 36/58 [00:04<00:00, 27.12it/s]
 
-    Compiling num tokens (num_tokens=192):  67%|██████▋   | 39/58 [00:04<00:00, 25.71it/s]Compiling num tokens (num_tokens=176):  67%|██████▋   | 39/58 [00:04<00:00, 25.71it/s]Compiling num tokens (num_tokens=176):  72%|███████▏  | 42/58 [00:04<00:00, 25.78it/s]Compiling num tokens (num_tokens=160):  72%|███████▏  | 42/58 [00:04<00:00, 25.78it/s]Compiling num tokens (num_tokens=144):  72%|███████▏  | 42/58 [00:04<00:00, 25.78it/s]Compiling num tokens (num_tokens=128):  72%|███████▏  | 42/58 [00:04<00:00, 25.78it/s]Compiling num tokens (num_tokens=128):  78%|███████▊  | 45/58 [00:04<00:00, 26.64it/s]Compiling num tokens (num_tokens=112):  78%|███████▊  | 45/58 [00:04<00:00, 26.64it/s]
+    Compiling num tokens (num_tokens=192):  71%|███████   | 41/58 [00:04<00:00, 31.69it/s]Compiling num tokens (num_tokens=176):  71%|███████   | 41/58 [00:04<00:00, 31.69it/s]Compiling num tokens (num_tokens=160):  71%|███████   | 41/58 [00:04<00:00, 31.69it/s]Compiling num tokens (num_tokens=144):  71%|███████   | 41/58 [00:04<00:00, 31.69it/s]Compiling num tokens (num_tokens=128):  71%|███████   | 41/58 [00:04<00:00, 31.69it/s]Compiling num tokens (num_tokens=112):  71%|███████   | 41/58 [00:04<00:00, 31.69it/s]Compiling num tokens (num_tokens=112):  79%|███████▉  | 46/58 [00:04<00:00, 35.39it/s]Compiling num tokens (num_tokens=96):  79%|███████▉  | 46/58 [00:04<00:00, 35.39it/s] Compiling num tokens (num_tokens=80):  79%|███████▉  | 46/58 [00:04<00:00, 35.39it/s]Compiling num tokens (num_tokens=64):  79%|███████▉  | 46/58 [00:04<00:00, 35.39it/s]Compiling num tokens (num_tokens=48):  79%|███████▉  | 46/58 [00:04<00:00, 35.39it/s]
 
-    Compiling num tokens (num_tokens=96):  78%|███████▊  | 45/58 [00:04<00:00, 26.64it/s] Compiling num tokens (num_tokens=80):  78%|███████▊  | 45/58 [00:05<00:00, 26.64it/s]Compiling num tokens (num_tokens=80):  83%|████████▎ | 48/58 [00:05<00:00, 25.34it/s]Compiling num tokens (num_tokens=64):  83%|████████▎ | 48/58 [00:05<00:00, 25.34it/s]Compiling num tokens (num_tokens=48):  83%|████████▎ | 48/58 [00:05<00:00, 25.34it/s]Compiling num tokens (num_tokens=32):  83%|████████▎ | 48/58 [00:05<00:00, 25.34it/s]
+    Compiling num tokens (num_tokens=32):  79%|███████▉  | 46/58 [00:04<00:00, 35.39it/s]Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:04<00:00, 38.33it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:04<00:00, 38.33it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:04<00:00, 38.33it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:04<00:00, 38.33it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:04<00:00, 38.33it/s]Compiling num tokens (num_tokens=16):  95%|█████████▍| 55/58 [00:04<00:00, 37.22it/s]Compiling num tokens (num_tokens=12):  95%|█████████▍| 55/58 [00:04<00:00, 37.22it/s]Compiling num tokens (num_tokens=8):  95%|█████████▍| 55/58 [00:04<00:00, 37.22it/s] Compiling num tokens (num_tokens=4):  95%|█████████▍| 55/58 [00:04<00:00, 37.22it/s]
 
-    Compiling num tokens (num_tokens=32):  88%|████████▊ | 51/58 [00:05<00:00, 25.31it/s]Compiling num tokens (num_tokens=28):  88%|████████▊ | 51/58 [00:05<00:00, 25.31it/s]Compiling num tokens (num_tokens=24):  88%|████████▊ | 51/58 [00:05<00:00, 25.31it/s]Compiling num tokens (num_tokens=20):  88%|████████▊ | 51/58 [00:05<00:00, 25.31it/s]Compiling num tokens (num_tokens=16):  88%|████████▊ | 51/58 [00:05<00:00, 25.31it/s]Compiling num tokens (num_tokens=16):  95%|█████████▍| 55/58 [00:05<00:00, 27.92it/s]Compiling num tokens (num_tokens=12):  95%|█████████▍| 55/58 [00:05<00:00, 27.92it/s]Compiling num tokens (num_tokens=8):  95%|█████████▍| 55/58 [00:05<00:00, 27.92it/s] Compiling num tokens (num_tokens=4):  95%|█████████▍| 55/58 [00:05<00:00, 27.92it/s]Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:05<00:00, 10.83it/s]
-
-
-      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=101.78 GB):   0%|          | 0/58 [00:00<?, ?it/s]
-
-    Capturing num tokens (num_tokens=8192 avail_mem=101.78 GB):   2%|▏         | 1/58 [00:00<00:17,  3.23it/s]Capturing num tokens (num_tokens=7680 avail_mem=102.27 GB):   2%|▏         | 1/58 [00:00<00:17,  3.23it/s]Capturing num tokens (num_tokens=7680 avail_mem=102.27 GB):   3%|▎         | 2/58 [00:00<00:12,  4.43it/s]Capturing num tokens (num_tokens=7168 avail_mem=101.81 GB):   3%|▎         | 2/58 [00:00<00:12,  4.43it/s]
-
-    Capturing num tokens (num_tokens=7168 avail_mem=101.81 GB):   5%|▌         | 3/58 [00:00<00:09,  5.88it/s]Capturing num tokens (num_tokens=6656 avail_mem=101.84 GB):   5%|▌         | 3/58 [00:00<00:09,  5.88it/s]Capturing num tokens (num_tokens=6656 avail_mem=101.84 GB):   7%|▋         | 4/58 [00:00<00:08,  6.24it/s]Capturing num tokens (num_tokens=6144 avail_mem=101.83 GB):   7%|▋         | 4/58 [00:00<00:08,  6.24it/s]
-
-    Capturing num tokens (num_tokens=5632 avail_mem=102.29 GB):   7%|▋         | 4/58 [00:00<00:08,  6.24it/s]Capturing num tokens (num_tokens=5632 avail_mem=102.29 GB):  10%|█         | 6/58 [00:00<00:07,  6.77it/s]Capturing num tokens (num_tokens=5120 avail_mem=102.32 GB):  10%|█         | 6/58 [00:00<00:07,  6.77it/s]
-
-    Capturing num tokens (num_tokens=5120 avail_mem=102.32 GB):  12%|█▏        | 7/58 [00:01<00:08,  6.12it/s]Capturing num tokens (num_tokens=4608 avail_mem=101.88 GB):  12%|█▏        | 7/58 [00:01<00:08,  6.12it/s]Capturing num tokens (num_tokens=4608 avail_mem=101.88 GB):  14%|█▍        | 8/58 [00:01<00:07,  6.66it/s]Capturing num tokens (num_tokens=4096 avail_mem=101.90 GB):  14%|█▍        | 8/58 [00:01<00:07,  6.66it/s]
-
-    Capturing num tokens (num_tokens=4096 avail_mem=101.90 GB):  16%|█▌        | 9/58 [00:01<00:06,  7.34it/s]Capturing num tokens (num_tokens=3840 avail_mem=102.30 GB):  16%|█▌        | 9/58 [00:01<00:06,  7.34it/s]Capturing num tokens (num_tokens=3584 avail_mem=101.92 GB):  16%|█▌        | 9/58 [00:01<00:06,  7.34it/s]Capturing num tokens (num_tokens=3584 avail_mem=101.92 GB):  19%|█▉        | 11/58 [00:01<00:05,  9.19it/s]Capturing num tokens (num_tokens=3328 avail_mem=102.28 GB):  19%|█▉        | 11/58 [00:01<00:05,  9.19it/s]
-
-    Capturing num tokens (num_tokens=3072 avail_mem=101.94 GB):  19%|█▉        | 11/58 [00:01<00:05,  9.19it/s]Capturing num tokens (num_tokens=3072 avail_mem=101.94 GB):  22%|██▏       | 13/58 [00:01<00:04, 10.89it/s]Capturing num tokens (num_tokens=2816 avail_mem=102.26 GB):  22%|██▏       | 13/58 [00:01<00:04, 10.89it/s]Capturing num tokens (num_tokens=2560 avail_mem=102.25 GB):  22%|██▏       | 13/58 [00:01<00:04, 10.89it/s]Capturing num tokens (num_tokens=2560 avail_mem=102.25 GB):  26%|██▌       | 15/58 [00:01<00:03, 12.09it/s]
-
-    Capturing num tokens (num_tokens=2304 avail_mem=101.99 GB):  26%|██▌       | 15/58 [00:01<00:03, 12.09it/s]Capturing num tokens (num_tokens=2048 avail_mem=101.98 GB):  26%|██▌       | 15/58 [00:01<00:03, 12.09it/s]
-
-    Capturing num tokens (num_tokens=2048 avail_mem=101.98 GB):  29%|██▉       | 17/58 [00:02<00:04,  9.78it/s]Capturing num tokens (num_tokens=1792 avail_mem=102.24 GB):  29%|██▉       | 17/58 [00:02<00:04,  9.78it/s]Capturing num tokens (num_tokens=1536 avail_mem=102.23 GB):  29%|██▉       | 17/58 [00:02<00:04,  9.78it/s]
-
-    Capturing num tokens (num_tokens=1536 avail_mem=102.23 GB):  33%|███▎      | 19/58 [00:02<00:03,  9.81it/s]Capturing num tokens (num_tokens=1280 avail_mem=102.03 GB):  33%|███▎      | 19/58 [00:02<00:03,  9.81it/s]Capturing num tokens (num_tokens=1024 avail_mem=102.04 GB):  33%|███▎      | 19/58 [00:02<00:03,  9.81it/s]Capturing num tokens (num_tokens=960 avail_mem=102.22 GB):  33%|███▎      | 19/58 [00:02<00:03,  9.81it/s] Capturing num tokens (num_tokens=960 avail_mem=102.22 GB):  38%|███▊      | 22/58 [00:02<00:02, 12.39it/s]Capturing num tokens (num_tokens=896 avail_mem=102.19 GB):  38%|███▊      | 22/58 [00:02<00:02, 12.39it/s]
-
-    Capturing num tokens (num_tokens=832 avail_mem=102.20 GB):  38%|███▊      | 22/58 [00:02<00:02, 12.39it/s]Capturing num tokens (num_tokens=832 avail_mem=102.20 GB):  41%|████▏     | 24/58 [00:02<00:02, 11.71it/s]Capturing num tokens (num_tokens=768 avail_mem=102.06 GB):  41%|████▏     | 24/58 [00:02<00:02, 11.71it/s]Capturing num tokens (num_tokens=704 avail_mem=102.08 GB):  41%|████▏     | 24/58 [00:02<00:02, 11.71it/s]Capturing num tokens (num_tokens=704 avail_mem=102.08 GB):  45%|████▍     | 26/58 [00:02<00:02, 12.68it/s]Capturing num tokens (num_tokens=640 avail_mem=102.07 GB):  45%|████▍     | 26/58 [00:02<00:02, 12.68it/s]
-
-    Capturing num tokens (num_tokens=576 avail_mem=102.07 GB):  45%|████▍     | 26/58 [00:02<00:02, 12.68it/s]Capturing num tokens (num_tokens=512 avail_mem=102.06 GB):  45%|████▍     | 26/58 [00:02<00:02, 12.68it/s]Capturing num tokens (num_tokens=512 avail_mem=102.06 GB):  50%|█████     | 29/58 [00:02<00:01, 15.19it/s]Capturing num tokens (num_tokens=480 avail_mem=102.07 GB):  50%|█████     | 29/58 [00:02<00:01, 15.19it/s]Capturing num tokens (num_tokens=448 avail_mem=102.09 GB):  50%|█████     | 29/58 [00:02<00:01, 15.19it/s]Capturing num tokens (num_tokens=416 avail_mem=102.09 GB):  50%|█████     | 29/58 [00:03<00:01, 15.19it/s]
-
-    Capturing num tokens (num_tokens=416 avail_mem=102.09 GB):  55%|█████▌    | 32/58 [00:03<00:01, 17.16it/s]Capturing num tokens (num_tokens=384 avail_mem=102.08 GB):  55%|█████▌    | 32/58 [00:03<00:01, 17.16it/s]Capturing num tokens (num_tokens=352 avail_mem=102.11 GB):  55%|█████▌    | 32/58 [00:03<00:01, 17.16it/s]Capturing num tokens (num_tokens=320 avail_mem=102.10 GB):  55%|█████▌    | 32/58 [00:03<00:01, 17.16it/s]Capturing num tokens (num_tokens=320 avail_mem=102.10 GB):  60%|██████    | 35/58 [00:03<00:01, 18.49it/s]Capturing num tokens (num_tokens=288 avail_mem=102.09 GB):  60%|██████    | 35/58 [00:03<00:01, 18.49it/s]Capturing num tokens (num_tokens=256 avail_mem=102.09 GB):  60%|██████    | 35/58 [00:03<00:01, 18.49it/s]
-
-    Capturing num tokens (num_tokens=240 avail_mem=102.08 GB):  60%|██████    | 35/58 [00:03<00:01, 18.49it/s]Capturing num tokens (num_tokens=240 avail_mem=102.08 GB):  66%|██████▌   | 38/58 [00:03<00:00, 20.59it/s]Capturing num tokens (num_tokens=224 avail_mem=102.07 GB):  66%|██████▌   | 38/58 [00:03<00:00, 20.59it/s]Capturing num tokens (num_tokens=208 avail_mem=102.07 GB):  66%|██████▌   | 38/58 [00:03<00:00, 20.59it/s]Capturing num tokens (num_tokens=192 avail_mem=102.08 GB):  66%|██████▌   | 38/58 [00:03<00:00, 20.59it/s]
-
-    Capturing num tokens (num_tokens=192 avail_mem=102.08 GB):  71%|███████   | 41/58 [00:03<00:00, 18.71it/s]Capturing num tokens (num_tokens=176 avail_mem=102.03 GB):  71%|███████   | 41/58 [00:03<00:00, 18.71it/s]Capturing num tokens (num_tokens=160 avail_mem=102.05 GB):  71%|███████   | 41/58 [00:03<00:00, 18.71it/s]Capturing num tokens (num_tokens=144 avail_mem=102.04 GB):  71%|███████   | 41/58 [00:03<00:00, 18.71it/s]Capturing num tokens (num_tokens=144 avail_mem=102.04 GB):  76%|███████▌  | 44/58 [00:03<00:00, 17.50it/s]Capturing num tokens (num_tokens=128 avail_mem=102.04 GB):  76%|███████▌  | 44/58 [00:03<00:00, 17.50it/s]
-
-    Capturing num tokens (num_tokens=112 avail_mem=102.03 GB):  76%|███████▌  | 44/58 [00:03<00:00, 17.50it/s]Capturing num tokens (num_tokens=96 avail_mem=102.02 GB):  76%|███████▌  | 44/58 [00:03<00:00, 17.50it/s] Capturing num tokens (num_tokens=96 avail_mem=102.02 GB):  81%|████████  | 47/58 [00:03<00:00, 19.46it/s]Capturing num tokens (num_tokens=80 avail_mem=102.03 GB):  81%|████████  | 47/58 [00:03<00:00, 19.46it/s]Capturing num tokens (num_tokens=64 avail_mem=102.02 GB):  81%|████████  | 47/58 [00:03<00:00, 19.46it/s]Capturing num tokens (num_tokens=48 avail_mem=102.02 GB):  81%|████████  | 47/58 [00:03<00:00, 19.46it/s]Capturing num tokens (num_tokens=32 avail_mem=102.01 GB):  81%|████████  | 47/58 [00:03<00:00, 19.46it/s]Capturing num tokens (num_tokens=32 avail_mem=102.01 GB):  88%|████████▊ | 51/58 [00:03<00:00, 23.14it/s]Capturing num tokens (num_tokens=28 avail_mem=102.00 GB):  88%|████████▊ | 51/58 [00:03<00:00, 23.14it/s]
-
-    Capturing num tokens (num_tokens=24 avail_mem=102.00 GB):  88%|████████▊ | 51/58 [00:03<00:00, 23.14it/s]Capturing num tokens (num_tokens=20 avail_mem=101.99 GB):  88%|████████▊ | 51/58 [00:03<00:00, 23.14it/s]Capturing num tokens (num_tokens=16 avail_mem=101.96 GB):  88%|████████▊ | 51/58 [00:04<00:00, 23.14it/s]Capturing num tokens (num_tokens=16 avail_mem=101.96 GB):  95%|█████████▍| 55/58 [00:04<00:00, 25.94it/s]Capturing num tokens (num_tokens=12 avail_mem=101.98 GB):  95%|█████████▍| 55/58 [00:04<00:00, 25.94it/s]Capturing num tokens (num_tokens=8 avail_mem=101.97 GB):  95%|█████████▍| 55/58 [00:04<00:00, 25.94it/s] Capturing num tokens (num_tokens=4 avail_mem=101.96 GB):  95%|█████████▍| 55/58 [00:04<00:00, 25.94it/s]Capturing num tokens (num_tokens=4 avail_mem=101.96 GB): 100%|██████████| 58/58 [00:04<00:00, 14.04it/s]
-    [2026-04-09 09:06:45] Capture piecewise CUDA graph end. Time elapsed: 10.80 s. mem usage=0.76 GB. avail mem=101.96 GB.
+    Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:04<00:00, 12.08it/s]
 
 
-    [2026-04-09 09:06:46] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=32768, available_gpu_mem=101.94 GB
+      0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=99.55 GB):   0%|          | 0/58 [00:00<?, ?it/s]Capturing num tokens (num_tokens=8192 avail_mem=99.55 GB):   2%|▏         | 1/58 [00:00<00:10,  5.20it/s]Capturing num tokens (num_tokens=7680 avail_mem=99.52 GB):   2%|▏         | 1/58 [00:00<00:10,  5.20it/s]
+
+    Capturing num tokens (num_tokens=7680 avail_mem=99.52 GB):   3%|▎         | 2/58 [00:00<00:11,  5.03it/s]Capturing num tokens (num_tokens=7168 avail_mem=98.70 GB):   3%|▎         | 2/58 [00:00<00:11,  5.03it/s]
+
+    Capturing num tokens (num_tokens=7168 avail_mem=98.70 GB):   5%|▌         | 3/58 [00:00<00:11,  4.98it/s]Capturing num tokens (num_tokens=6656 avail_mem=98.70 GB):   5%|▌         | 3/58 [00:00<00:11,  4.98it/s]Capturing num tokens (num_tokens=6656 avail_mem=98.70 GB):   7%|▋         | 4/58 [00:00<00:10,  5.09it/s]Capturing num tokens (num_tokens=6144 avail_mem=99.52 GB):   7%|▋         | 4/58 [00:00<00:10,  5.09it/s]
+
+    Capturing num tokens (num_tokens=6144 avail_mem=99.52 GB):   9%|▊         | 5/58 [00:00<00:09,  5.49it/s]Capturing num tokens (num_tokens=5632 avail_mem=99.52 GB):   9%|▊         | 5/58 [00:00<00:09,  5.49it/s]Capturing num tokens (num_tokens=5632 avail_mem=99.52 GB):  10%|█         | 6/58 [00:01<00:09,  5.75it/s]Capturing num tokens (num_tokens=5120 avail_mem=98.75 GB):  10%|█         | 6/58 [00:01<00:09,  5.75it/s]
+
+    Capturing num tokens (num_tokens=5120 avail_mem=98.75 GB):  12%|█▏        | 7/58 [00:01<00:09,  5.66it/s]Capturing num tokens (num_tokens=4608 avail_mem=98.75 GB):  12%|█▏        | 7/58 [00:01<00:09,  5.66it/s]Capturing num tokens (num_tokens=4608 avail_mem=98.75 GB):  14%|█▍        | 8/58 [00:01<00:08,  5.84it/s]Capturing num tokens (num_tokens=4096 avail_mem=98.75 GB):  14%|█▍        | 8/58 [00:01<00:08,  5.84it/s]
+
+    Capturing num tokens (num_tokens=4096 avail_mem=98.75 GB):  16%|█▌        | 9/58 [00:01<00:08,  6.02it/s]Capturing num tokens (num_tokens=3840 avail_mem=99.52 GB):  16%|█▌        | 9/58 [00:01<00:08,  6.02it/s]Capturing num tokens (num_tokens=3840 avail_mem=99.52 GB):  17%|█▋        | 10/58 [00:01<00:07,  6.23it/s]Capturing num tokens (num_tokens=3584 avail_mem=98.80 GB):  17%|█▋        | 10/58 [00:01<00:07,  6.23it/s]
+
+    Capturing num tokens (num_tokens=3584 avail_mem=98.80 GB):  19%|█▉        | 11/58 [00:01<00:07,  6.19it/s]Capturing num tokens (num_tokens=3328 avail_mem=98.80 GB):  19%|█▉        | 11/58 [00:01<00:07,  6.19it/s]Capturing num tokens (num_tokens=3328 avail_mem=98.80 GB):  21%|██        | 12/58 [00:02<00:07,  6.27it/s]Capturing num tokens (num_tokens=3072 avail_mem=99.61 GB):  21%|██        | 12/58 [00:02<00:07,  6.27it/s]
+
+    Capturing num tokens (num_tokens=3072 avail_mem=99.61 GB):  22%|██▏       | 13/58 [00:02<00:06,  6.52it/s]Capturing num tokens (num_tokens=2816 avail_mem=99.51 GB):  22%|██▏       | 13/58 [00:02<00:06,  6.52it/s]Capturing num tokens (num_tokens=2816 avail_mem=99.51 GB):  24%|██▍       | 14/58 [00:02<00:06,  6.62it/s]Capturing num tokens (num_tokens=2560 avail_mem=98.84 GB):  24%|██▍       | 14/58 [00:02<00:06,  6.62it/s]
+
+    Capturing num tokens (num_tokens=2560 avail_mem=98.84 GB):  26%|██▌       | 15/58 [00:02<00:06,  6.16it/s]Capturing num tokens (num_tokens=2304 avail_mem=98.84 GB):  26%|██▌       | 15/58 [00:02<00:06,  6.16it/s]Capturing num tokens (num_tokens=2304 avail_mem=98.84 GB):  28%|██▊       | 16/58 [00:02<00:06,  6.49it/s]Capturing num tokens (num_tokens=2048 avail_mem=99.50 GB):  28%|██▊       | 16/58 [00:02<00:06,  6.49it/s]
+
+    Capturing num tokens (num_tokens=2048 avail_mem=99.50 GB):  29%|██▉       | 17/58 [00:02<00:06,  6.75it/s]Capturing num tokens (num_tokens=1792 avail_mem=98.89 GB):  29%|██▉       | 17/58 [00:02<00:06,  6.75it/s]Capturing num tokens (num_tokens=1792 avail_mem=98.89 GB):  31%|███       | 18/58 [00:02<00:05,  6.72it/s]Capturing num tokens (num_tokens=1536 avail_mem=98.89 GB):  31%|███       | 18/58 [00:02<00:05,  6.72it/s]
+
+    Capturing num tokens (num_tokens=1536 avail_mem=98.89 GB):  33%|███▎      | 19/58 [00:03<00:05,  7.02it/s]Capturing num tokens (num_tokens=1280 avail_mem=99.49 GB):  33%|███▎      | 19/58 [00:03<00:05,  7.02it/s]Capturing num tokens (num_tokens=1280 avail_mem=99.49 GB):  34%|███▍      | 20/58 [00:03<00:05,  7.42it/s]Capturing num tokens (num_tokens=1024 avail_mem=98.93 GB):  34%|███▍      | 20/58 [00:03<00:05,  7.42it/s]
+
+    Capturing num tokens (num_tokens=1024 avail_mem=98.93 GB):  36%|███▌      | 21/58 [00:03<00:05,  7.28it/s]Capturing num tokens (num_tokens=960 avail_mem=98.94 GB):  36%|███▌      | 21/58 [00:03<00:05,  7.28it/s] Capturing num tokens (num_tokens=960 avail_mem=98.94 GB):  38%|███▊      | 22/58 [00:03<00:04,  7.47it/s]Capturing num tokens (num_tokens=896 avail_mem=99.49 GB):  38%|███▊      | 22/58 [00:03<00:04,  7.47it/s]
+
+    Capturing num tokens (num_tokens=896 avail_mem=99.49 GB):  40%|███▉      | 23/58 [00:03<00:04,  7.90it/s]Capturing num tokens (num_tokens=832 avail_mem=98.99 GB):  40%|███▉      | 23/58 [00:03<00:04,  7.90it/s]Capturing num tokens (num_tokens=832 avail_mem=98.99 GB):  41%|████▏     | 24/58 [00:03<00:04,  7.60it/s]Capturing num tokens (num_tokens=768 avail_mem=98.99 GB):  41%|████▏     | 24/58 [00:03<00:04,  7.60it/s]
+
+    Capturing num tokens (num_tokens=768 avail_mem=98.99 GB):  43%|████▎     | 25/58 [00:03<00:04,  7.85it/s]Capturing num tokens (num_tokens=704 avail_mem=99.48 GB):  43%|████▎     | 25/58 [00:03<00:04,  7.85it/s]Capturing num tokens (num_tokens=704 avail_mem=99.48 GB):  45%|████▍     | 26/58 [00:03<00:03,  8.17it/s]Capturing num tokens (num_tokens=640 avail_mem=99.04 GB):  45%|████▍     | 26/58 [00:03<00:03,  8.17it/s]
+
+    Capturing num tokens (num_tokens=640 avail_mem=99.04 GB):  47%|████▋     | 27/58 [00:04<00:03,  7.87it/s]Capturing num tokens (num_tokens=576 avail_mem=99.04 GB):  47%|████▋     | 27/58 [00:04<00:03,  7.87it/s]Capturing num tokens (num_tokens=576 avail_mem=99.04 GB):  48%|████▊     | 28/58 [00:04<00:03,  8.11it/s]Capturing num tokens (num_tokens=512 avail_mem=99.47 GB):  48%|████▊     | 28/58 [00:04<00:03,  8.11it/s]
+
+    Capturing num tokens (num_tokens=512 avail_mem=99.47 GB):  50%|█████     | 29/58 [00:04<00:03,  8.17it/s]Capturing num tokens (num_tokens=480 avail_mem=99.07 GB):  50%|█████     | 29/58 [00:04<00:03,  8.17it/s]Capturing num tokens (num_tokens=480 avail_mem=99.07 GB):  52%|█████▏    | 30/58 [00:04<00:03,  7.98it/s]Capturing num tokens (num_tokens=448 avail_mem=99.48 GB):  52%|█████▏    | 30/58 [00:04<00:03,  7.98it/s]
+
+    Capturing num tokens (num_tokens=416 avail_mem=99.48 GB):  52%|█████▏    | 30/58 [00:04<00:03,  7.98it/s]Capturing num tokens (num_tokens=416 avail_mem=99.48 GB):  55%|█████▌    | 32/58 [00:04<00:03,  8.27it/s]Capturing num tokens (num_tokens=384 avail_mem=99.10 GB):  55%|█████▌    | 32/58 [00:04<00:03,  8.27it/s]
+
+    Capturing num tokens (num_tokens=384 avail_mem=99.10 GB):  57%|█████▋    | 33/58 [00:04<00:02,  8.43it/s]Capturing num tokens (num_tokens=352 avail_mem=99.47 GB):  57%|█████▋    | 33/58 [00:04<00:02,  8.43it/s]Capturing num tokens (num_tokens=352 avail_mem=99.47 GB):  59%|█████▊    | 34/58 [00:04<00:02,  8.53it/s]Capturing num tokens (num_tokens=320 avail_mem=99.11 GB):  59%|█████▊    | 34/58 [00:04<00:02,  8.53it/s]
+
+    Capturing num tokens (num_tokens=320 avail_mem=99.11 GB):  60%|██████    | 35/58 [00:05<00:02,  8.32it/s]Capturing num tokens (num_tokens=288 avail_mem=99.47 GB):  60%|██████    | 35/58 [00:05<00:02,  8.32it/s]Capturing num tokens (num_tokens=256 avail_mem=99.46 GB):  60%|██████    | 35/58 [00:05<00:02,  8.32it/s]
+
+    Capturing num tokens (num_tokens=256 avail_mem=99.46 GB):  64%|██████▍   | 37/58 [00:05<00:02,  8.67it/s]Capturing num tokens (num_tokens=240 avail_mem=99.13 GB):  64%|██████▍   | 37/58 [00:05<00:02,  8.67it/s]Capturing num tokens (num_tokens=240 avail_mem=99.13 GB):  66%|██████▌   | 38/58 [00:05<00:02,  8.92it/s]Capturing num tokens (num_tokens=224 avail_mem=99.46 GB):  66%|██████▌   | 38/58 [00:05<00:02,  8.92it/s]
+
+    Capturing num tokens (num_tokens=224 avail_mem=99.46 GB):  67%|██████▋   | 39/58 [00:05<00:02,  8.72it/s]Capturing num tokens (num_tokens=208 avail_mem=99.15 GB):  67%|██████▋   | 39/58 [00:05<00:02,  8.72it/s]Capturing num tokens (num_tokens=192 avail_mem=99.45 GB):  67%|██████▋   | 39/58 [00:05<00:02,  8.72it/s]
+
+    Capturing num tokens (num_tokens=192 avail_mem=99.45 GB):  71%|███████   | 41/58 [00:05<00:01,  9.19it/s]Capturing num tokens (num_tokens=176 avail_mem=99.17 GB):  71%|███████   | 41/58 [00:05<00:01,  9.19it/s]Capturing num tokens (num_tokens=176 avail_mem=99.17 GB):  72%|███████▏  | 42/58 [00:05<00:01,  9.35it/s]Capturing num tokens (num_tokens=160 avail_mem=99.44 GB):  72%|███████▏  | 42/58 [00:05<00:01,  9.35it/s]Capturing num tokens (num_tokens=144 avail_mem=99.19 GB):  72%|███████▏  | 42/58 [00:05<00:01,  9.35it/s]
+
+    Capturing num tokens (num_tokens=144 avail_mem=99.19 GB):  76%|███████▌  | 44/58 [00:05<00:01,  9.66it/s]Capturing num tokens (num_tokens=128 avail_mem=99.44 GB):  76%|███████▌  | 44/58 [00:05<00:01,  9.66it/s]Capturing num tokens (num_tokens=112 avail_mem=99.21 GB):  76%|███████▌  | 44/58 [00:06<00:01,  9.66it/s]Capturing num tokens (num_tokens=112 avail_mem=99.21 GB):  79%|███████▉  | 46/58 [00:06<00:01, 10.20it/s]Capturing num tokens (num_tokens=96 avail_mem=99.43 GB):  79%|███████▉  | 46/58 [00:06<00:01, 10.20it/s] 
+
+    Capturing num tokens (num_tokens=80 avail_mem=99.23 GB):  79%|███████▉  | 46/58 [00:06<00:01, 10.20it/s]Capturing num tokens (num_tokens=80 avail_mem=99.23 GB):  83%|████████▎ | 48/58 [00:06<00:00, 10.66it/s]Capturing num tokens (num_tokens=64 avail_mem=99.42 GB):  83%|████████▎ | 48/58 [00:06<00:00, 10.66it/s]Capturing num tokens (num_tokens=48 avail_mem=99.42 GB):  83%|████████▎ | 48/58 [00:06<00:00, 10.66it/s]
+
+    Capturing num tokens (num_tokens=48 avail_mem=99.42 GB):  86%|████████▌ | 50/58 [00:06<00:00, 11.08it/s]Capturing num tokens (num_tokens=32 avail_mem=99.27 GB):  86%|████████▌ | 50/58 [00:06<00:00, 11.08it/s]Capturing num tokens (num_tokens=28 avail_mem=99.41 GB):  86%|████████▌ | 50/58 [00:06<00:00, 11.08it/s]Capturing num tokens (num_tokens=28 avail_mem=99.41 GB):  90%|████████▉ | 52/58 [00:06<00:00, 11.41it/s]Capturing num tokens (num_tokens=24 avail_mem=99.41 GB):  90%|████████▉ | 52/58 [00:06<00:00, 11.41it/s]
+
+    Capturing num tokens (num_tokens=20 avail_mem=99.40 GB):  90%|████████▉ | 52/58 [00:06<00:00, 11.41it/s]Capturing num tokens (num_tokens=20 avail_mem=99.40 GB):  93%|█████████▎| 54/58 [00:06<00:00, 12.27it/s]Capturing num tokens (num_tokens=16 avail_mem=99.40 GB):  93%|█████████▎| 54/58 [00:06<00:00, 12.27it/s]Capturing num tokens (num_tokens=12 avail_mem=99.39 GB):  93%|█████████▎| 54/58 [00:06<00:00, 12.27it/s]
+
+    Capturing num tokens (num_tokens=12 avail_mem=99.39 GB):  97%|█████████▋| 56/58 [00:06<00:00, 13.22it/s]Capturing num tokens (num_tokens=8 avail_mem=99.38 GB):  97%|█████████▋| 56/58 [00:06<00:00, 13.22it/s] Capturing num tokens (num_tokens=4 avail_mem=99.38 GB):  97%|█████████▋| 56/58 [00:07<00:00, 13.22it/s]Capturing num tokens (num_tokens=4 avail_mem=99.38 GB): 100%|██████████| 58/58 [00:07<00:00, 13.07it/s]Capturing num tokens (num_tokens=4 avail_mem=99.38 GB): 100%|██████████| 58/58 [00:07<00:00,  8.19it/s]
+    [2026-04-09 10:11:28] Capture piecewise CUDA graph end. Time elapsed: 13.14 s. mem usage=0.52 GB. avail mem=99.37 GB.
 
 
-    [2026-04-09 09:06:46] INFO:     Started server process [3430434]
-    [2026-04-09 09:06:46] INFO:     Waiting for application startup.
-    [2026-04-09 09:06:46] Using default chat sampling params from model generation config: {'repetition_penalty': 1.1, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
-    [2026-04-09 09:06:46] INFO:     Application startup complete.
-    [2026-04-09 09:06:46] INFO:     Uvicorn running on http://127.0.0.1:31098 (Press CTRL+C to quit)
+    [2026-04-09 10:11:29] max_total_num_tokens=20480, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=32768, available_gpu_mem=99.29 GB
+
+
+    [2026-04-09 10:11:29] INFO:     Started server process [3935388]
+    [2026-04-09 10:11:29] INFO:     Waiting for application startup.
+    [2026-04-09 10:11:29] Using default chat sampling params from model generation config: {'repetition_penalty': 1.1, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+    [2026-04-09 10:11:29] INFO:     Application startup complete.
+    [2026-04-09 10:11:29] INFO:     Uvicorn running on http://127.0.0.1:30501 (Press CTRL+C to quit)
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
-    [2026-04-09 09:06:47] INFO:     127.0.0.1:51140 - "GET /v1/models HTTP/1.1" 200 OK
-    [2026-04-09 09:06:47] INFO:     127.0.0.1:51154 - "GET /model_info HTTP/1.1" 200 OK
+    [2026-04-09 10:11:30] INFO:     127.0.0.1:44914 - "GET /v1/models HTTP/1.1" 200 OK
 
 
-    [2026-04-09 09:06:48] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, cuda graph: True, input throughput (token/s): 0.00
-    [2026-04-09 09:06:48] INFO:     127.0.0.1:51156 - "POST /generate HTTP/1.1" 200 OK
-    [2026-04-09 09:06:48] The server is fired up and ready to roll!
+    [2026-04-09 10:11:30] INFO:     127.0.0.1:44924 - "GET /model_info HTTP/1.1" 200 OK
+
+
+    [2026-04-09 10:11:31] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, cuda graph: True, input throughput (token/s): 0.00
+    [2026-04-09 10:11:31] INFO:     127.0.0.1:44932 - "POST /generate HTTP/1.1" 200 OK
+    [2026-04-09 10:11:31] The server is fired up and ready to roll!
 
 
 
@@ -1146,7 +2380,7 @@ except Exception as e:
 <strong style='color: #00008B;'>Original Input Text:<br>'SGLang provides efficient tokenization endpoints.'</strong>
 
 
-    [2026-04-09 09:06:52] INFO:     127.0.0.1:56556 - "POST /tokenize HTTP/1.1" 200 OK
+    [2026-04-09 10:11:35] INFO:     127.0.0.1:44940 - "POST /tokenize HTTP/1.1" 200 OK
 
 
 
@@ -1161,7 +2395,7 @@ except Exception as e:
 <strong style='color: #00008B;'>Max Model Length: 131072</strong>
 
 
-    [2026-04-09 09:06:52] INFO:     127.0.0.1:56558 - "POST /detokenize HTTP/1.1" 200 OK
+    [2026-04-09 10:11:35] INFO:     127.0.0.1:44952 - "POST /detokenize HTTP/1.1" 200 OK
 
 
 
