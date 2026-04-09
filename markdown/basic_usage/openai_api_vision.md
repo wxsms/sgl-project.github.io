@@ -34,46 +34,46 @@ wait_for_server(f"http://localhost:{port}", process=vision_process)
       warnings.warn(
 
 
-    [2026-04-09 04:07:11] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:31] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-09 04:07:14] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 04:07:14] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 04:07:14] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 04:07:14] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:33] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:33] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:33] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:33] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-09 04:07:22] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:40] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-    [2026-04-09 04:07:22] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 04:07:22] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 04:07:22] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-09 04:07:22] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:40] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:40] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:40] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-09 05:42:40] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/5 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:01,  2.08it/s]
+    Multi-thread loading shards:  20% Completed | 1/5 [00:00<00:02,  1.42it/s]
 
-    Multi-thread loading shards:  40% Completed | 2/5 [00:00<00:01,  2.64it/s]
+    Multi-thread loading shards:  40% Completed | 2/5 [00:01<00:02,  1.28it/s]
 
-    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:00,  2.20it/s]
+    Multi-thread loading shards:  60% Completed | 3/5 [00:01<00:01,  1.75it/s]
 
-    Multi-thread loading shards:  80% Completed | 4/5 [00:01<00:00,  1.87it/s]
+    Multi-thread loading shards:  80% Completed | 4/5 [00:02<00:00,  1.59it/s]
 
-    Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.67it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:02<00:00,  1.85it/s]
+    Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.35it/s]Multi-thread loading shards: 100% Completed | 5/5 [00:03<00:00,  1.42it/s]
 
 
     /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn't need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
       response = await f(request)
 
 
-    2026-04-09 04:07:31,846 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-09 04:07:31] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-09 05:42:49,819 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-09 05:42:49] Unexpected error during package walk: cutlass.cute.experimental
 
 
 
@@ -127,11 +127,11 @@ print_highlight(response)
 
 
 
-<strong style='color: #00008B;'>{"id":"8fccdbad91ce41638df5ab5cb47fc562","object":"chat.completion","created":1775707656,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing this task. The scene suggests an unusual or humorous situation, as ironing clothes outdoors is not a typical activity.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":380,"completion_tokens":73,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"4773d0feaae84d5ba42a4856c2997b74","object":"chat.completion","created":1775713375,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":389,"completion_tokens":82,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 
-<strong style='color: #00008B;'>{"id":"c4e01dd5c9474678824cb7144cba30ac","object":"chat.completion","created":1775707657,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street with other vehicles and buildings in the background. The man appears to be balancing on the tailgate while performing the task. The scene suggests an unusual or humorous situation, as it is not typical for someone to iron clothes from the back of a moving vehicle.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":387,"completion_tokens":80,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"edaaefc5179242c0bc16e07ac68270c6","object":"chat.completion","created":1775713376,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":389,"completion_tokens":82,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using Python Requests
@@ -164,7 +164,7 @@ print_highlight(response.text)
 ```
 
 
-<strong style='color: #00008B;'>{"id":"3ee8c16ae6d348f192043b67efa913cd","object":"chat.completion","created":1775707658,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and traffic around.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":382,"completion_tokens":75,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
+<strong style='color: #00008B;'>{"id":"8e5c62c44fe749d4a2d789febc889d9f","object":"chat.completion","created":1775713377,"model":"Qwen/Qwen2.5-VL-7B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"The image shows a man standing on the back of a yellow taxi, ironing a blue shirt. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.","reasoning_content":null,"tool_calls":null},"logprobs":null,"finish_reason":"stop","matched_stop":151645}],"usage":{"prompt_tokens":307,"total_tokens":389,"completion_tokens":82,"prompt_tokens_details":null,"reasoning_tokens":0},"metadata":{"weight_version":"default"}}</strong>
 
 
 ## Using OpenAI Python Client
@@ -199,7 +199,7 @@ print_highlight(response.choices[0].message.content)
 ```
 
 
-<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests it might be in a busy urban area with tall buildings and flags in the background.</strong>
+<strong style='color: #00008B;'>The image shows a man standing on the back of a yellow taxi, ironing a piece of clothing. The taxi is parked on a city street, and there are other taxis visible in the background. The man appears to be balancing on the tailgate while ironing, which is an unusual and humorous scene. The setting suggests an urban environment with buildings and flags in the background.</strong>
 
 
 ## Multiple-Image Inputs
