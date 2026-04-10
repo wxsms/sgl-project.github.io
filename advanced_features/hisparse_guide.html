@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=027a46c7"></script>
+    <script src="../_static/documentation_options.js?v=fa12453f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -500,9 +500,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-instance">Prefill Instance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decode-instance-with-hisparse">Decode Instance (with HiSparse)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-notes">Key Notes</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -608,7 +610,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>Example: <code class="docutils literal notranslate"><span class="pre">--hisparse-config='{&quot;top_k&quot;:</span> <span class="pre">2048,</span> <span class="pre">&quot;device_buffer_size&quot;:</span> <span class="pre">4096,</span> <span class="pre">&quot;host_to_device_ratio&quot;:</span> <span class="pre">5}'</span></code></p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">--hisparse-config='{&quot;top_k&quot;:</span> <span class="pre">2048,</span> <span class="pre">&quot;device_buffer_size&quot;:</span> <span class="pre">6144,</span> <span class="pre">&quot;host_to_device_ratio&quot;:</span> <span class="pre">10}'</span></code></p>
 </section>
 </section>
 <section id="deployment">
@@ -623,7 +625,6 @@ document.write(`
 <span class="w">    </span>--context-length<span class="w"> </span><span class="m">81920</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span><span class="m">65536</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-mode<span class="w"> </span>prefill<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disaggregation-ib-device<span class="w"> </span>mlx5_0,mlx5_1,mlx5_2,mlx5_3<span class="w"> </span><span class="se">\</span>
@@ -639,7 +640,6 @@ document.write(`
 <span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--context-length<span class="w"> </span><span class="m">81920</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--dp-size<span class="w"> </span><span class="m">8</span><span class="w"> </span>--enable-dp-attention<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--page-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.85<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--kv-cache-dtype<span class="w"> </span>bfloat16<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--nsa-decode-backend<span class="w"> </span>flashmla_sparse<span class="w"> </span><span class="se">\</span>
@@ -648,7 +648,26 @@ document.write(`
 <span class="w">    </span>--dist-init-addr<span class="w"> </span><span class="m">127</span>.0.0.1:5757<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--node-rank<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--enable-hisparse<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--hisparse-config<span class="o">=</span><span class="s1">&#39;{&quot;top_k&quot;: 2048, &quot;device_buffer_size&quot;: 6144, &quot;host_to_device_ratio&quot;: 5}&#39;</span>
+<span class="w">    </span>--hisparse-config<span class="o">=</span><span class="s1">&#39;{&quot;top_k&quot;: 2048, &quot;device_buffer_size&quot;: 6144, &quot;host_to_device_ratio&quot;: 10}&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="benchmark">
+<h3>Benchmark<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>sglang.bench_serving<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--backend<span class="w"> </span>sglang<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dataset-path<span class="w"> </span>/path/to/ShareGPT_V3_unfiltered_cleaned_split.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dataset-name<span class="w"> </span>random<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--random-input<span class="w"> </span><span class="m">40000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--random-output<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--num-prompts<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--max-concurrency<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--request-rate<span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--random-range-ratio<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>/path/to/model<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--flush-cache<span class="w"> </span><span class="se">\</span>
 </pre></div>
 </div>
 </section>
@@ -661,11 +680,24 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">--kv-cache-dtype</span> <span class="pre">bfloat16</span></code> — currently only bfloat16 KV cache is supported (more dtypes planned).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--nsa-decode-backend</span> <span class="pre">flashmla_sparse</span></code> — currently only <code class="docutils literal notranslate"><span class="pre">flashmla_sparse</span></code> backend is supported.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--enable-hisparse</span></code> — enables HiSparse.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--hisparse-config</span></code> — HiSparse configuration (top_k, device_buffer_size, host_to_device_ratio).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hisparse-config</span></code> — HiSparse configuration (top_k, device_buffer_size, host_to_device_ratio).</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">host_to_device_ratio</span></code> should be configured based on the host machine’s available memory. For example:</p>
+<ul>
+<li><p><strong>~1 TB</strong> host memory → <code class="docutils literal notranslate"><span class="pre">host_to_device_ratio:</span> <span class="pre">5</span></code></p></li>
+<li><p><strong>~2 TB</strong> host memory → <code class="docutils literal notranslate"><span class="pre">host_to_device_ratio:</span> <span class="pre">10</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </section>
+</section>
+<section id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<p>We would like to thank the SGLang team and community for the implementation and generous support, especially Zhiqiang Xie, Zhangheng Huang, Tingwei Huang, Shangming Cai, Teng Ma, and many others. We also thank the Alibaba Cloud TairKVCache team and the AntGroup SCT Inference team for their valuable contributions.</p>
 </section>
 </section>
 
@@ -709,9 +741,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-instance">Prefill Instance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decode-instance-with-hisparse">Decode Instance (with HiSparse)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark">Benchmark</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-notes">Key Notes</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
 </ul>
   </nav></div>
 
