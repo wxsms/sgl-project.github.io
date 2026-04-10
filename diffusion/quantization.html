@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=06d1f4d1"></script>
+    <script src="../_static/documentation_options.js?v=692b8f07"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -489,16 +489,21 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quant-families">Quant Families</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelopt-fp8">ModelOpt FP8</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nunchaku-svdquant">Nunchaku (SVDQuant)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-and-auto-detection">File Naming and Auto-Detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelslim">ModelSlim</a></li>
@@ -567,21 +572,28 @@ backend.</p>
 <td><p>None</p></td>
 <td><p>Component-folder and single-file flows are both supported</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nvfp4-modelopt</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">modelopt-fp8</span></code></p></td>
+<td><p>Converted ModelOpt FP8 transformer directory or repo with <code class="docutils literal notranslate"><span class="pre">config.json</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code></p></td>
+<td><p>FLUX.2, Wan2.2</p></td>
+<td><p>None</p></td>
+<td><p>Override config is read from the quantized transformer repo; <code class="docutils literal notranslate"><span class="pre">dit_cpu_offload</span></code> and <code class="docutils literal notranslate"><span class="pre">dit_layerwise_offload</span></code> are auto-disabled</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nvfp4-modelopt</span></code></p></td>
 <td><p>NVFP4 safetensors file, sharded directory, or repo providing transformer weights</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code></p></td>
 <td><p>FLUX.2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">comfy-kitchen</span></code> optional on Blackwell</p></td>
 <td><p>Blackwell can use a best-performance kit when available; otherwise SGLang falls back to the generic ModelOpt FP4 path</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nunchaku-svdq</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nunchaku-svdq</span></code></p></td>
 <td><p>Pre-quantized Nunchaku transformer weights, usually named <code class="docutils literal notranslate"><span class="pre">svdq-{int4|fp4}_r{rank}-...</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code></p></td>
 <td><p>Model-specific support such as Qwen-Image, FLUX, and Z-Image</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">nunchaku</span></code></p></td>
 <td><p>SGLang can infer precision and rank from the filename and supports both <code class="docutils literal notranslate"><span class="pre">int4</span></code> and <code class="docutils literal notranslate"><span class="pre">nvfp4</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">msmodelslim</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">msmodelslim</span></code></p></td>
 <td><p>Pre-quantized msmodelslim transformer weights</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--model-path</span></code></p></td>
 <td><p>Wan2.2 family</p></td>
@@ -592,10 +604,47 @@ backend.</p>
 </table>
 </div>
 </section>
-<section id="nvfp4">
-<h2>NVFP4<a class="headerlink" href="#nvfp4" title="Link to this heading">#</a></h2>
+<section id="modelopt-fp8">
+<h2>ModelOpt FP8<a class="headerlink" href="#modelopt-fp8" title="Link to this heading">#</a></h2>
 <section id="usage-examples">
 <h3>Usage Examples<a class="headerlink" href="#usage-examples" title="Link to this heading">#</a></h3>
+<p>ModelOpt FP8 checkpoints should be converted into an SGLang-loadable transformer
+override first, then loaded with the original base model:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>black-forest-labs/FLUX.2-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transformer-weights-path<span class="w"> </span>BBuf/flux2-dev-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;A Logo With Bold Large Text: SGL Diffusion&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>Wan-AI/Wan2.2-T2V-A14B-Diffusers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transformer-weights-path<span class="w"> </span>BBuf/wan22-t2v-a14b-modelopt-fp8-sglang-transformer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prompt<span class="w"> </span><span class="s2">&quot;a fox walking through neon rain&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-output
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> is the canonical flag for converted ModelOpt FP8
+diffusion checkpoints.</p></li>
+<li><p>If the override repo or local directory contains its own <code class="docutils literal notranslate"><span class="pre">config.json</span></code>,
+SGLang reads the quantization config from that override instead of relying on
+the base model config.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dit_cpu_offload</span></code> and <code class="docutils literal notranslate"><span class="pre">dit_layerwise_offload</span></code> are automatically disabled for
+ModelOpt FP8 checkpoints because the runtime expects the transformed FP8
+weights to remain GPU-resident in their column-major layout.</p></li>
+<li><p>To build the converted checkpoint yourself from a ModelOpt diffusers export,
+use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.multimodal_gen.tools.convert_modelopt_fp8_checkpoint</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="nvfp4">
+<h2>NVFP4<a class="headerlink" href="#nvfp4" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Usage Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Recommended usage keeps the base model and quantized transformer override
 separate:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
@@ -614,8 +663,8 @@ separate:</p>
 </pre></div>
 </div>
 </section>
-<section id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Notes<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> is still the canonical CLI for NVFP4
 transformer checkpoints.</p></li>
@@ -733,8 +782,8 @@ transformer weights.</p>
 <code class="docutils literal notranslate"><span class="pre">--enable-svdquant</span></code>, <code class="docutils literal notranslate"><span class="pre">--quantization-precision</span></code>, and <code class="docutils literal notranslate"><span class="pre">--quantization-rank</span></code>
 explicitly.</p>
 </section>
-<section id="id1">
-<h3>Usage Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Usage Examples<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Recommended auto-detected flow:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
@@ -755,8 +804,8 @@ explicitly.</p>
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3>Notes<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Notes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> is the canonical flag for Nunchaku checkpoints.
 Older config names such as <code class="docutils literal notranslate"><span class="pre">quantized_model_path</span></code> are treated as
@@ -883,16 +932,21 @@ for conversion in use <code class="docutils literal notranslate"><span class="pr
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quant-families">Quant Families</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelopt-fp8">ModelOpt FP8</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nunchaku-svdquant">Nunchaku (SVDQuant)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-and-auto-detection">File Naming and Auto-Detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelslim">ModelSlim</a></li>
