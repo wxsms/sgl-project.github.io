@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=84bdd826"></script>
+    <script src="../_static/documentation_options.js?v=c2d4c3d0"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -578,15 +578,15 @@ document.write(`
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-10 16:33:29] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-10 16:33:29] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-10 16:33:29] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-10 16:33:29] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.40it/s]
-2026-04-10 16:33:30,351 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-10 16:33:30] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 16.09it/s]
-Capturing num tokens (num_tokens=4 avail_mem=70.87 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 41.09it/s]
+[2026-04-10 16:43:54] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-10 16:43:54] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-10 16:43:54] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-10 16:43:54] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  6.79it/s]
+2026-04-10 16:43:55,554 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-10 16:43:55] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.50it/s]
+Capturing num tokens (num_tokens=4 avail_mem=118.87 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 28.11it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -602,7 +602,7 @@ Capturing num tokens (num_tokens=4 avail_mem=70.87 GB): 100%|██████�
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:39776
+Server started on http://localhost:33650
 </pre></div></div>
 </div>
 </section>
@@ -636,7 +636,7 @@ Server started on http://localhost:39776
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='474b656033a64a92b7af280ade84d389', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1775838823, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='4d19be1a78f045b7937b62e8ade729c3', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1775839449, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -901,7 +901,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th to the 4th century BCE. It is known for its impressive achievements in art, architecture, philosophy, law, and military conquests.<br><br>1. Art: Roman artists created some of the most famous works of art in history, including sculptures such as the Venus de Milo and the Lame Man statue. They also developed a style called "Romeo and Juliet" which became popular during their time.<br><br>2. Architecture: The Romans built magnificent buildings like the Colosseum, Pantheon, and Trajan's Column. Their architectural styles influenced later civilizations</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a civilization that flourished from the 8th century BC to the 5th century AD. It is known for its achievements in various fields, including:<br><br>1. **Architecture**: The Romans were renowned for their architectural prowess, particularly in the construction of monumental buildings such as the Colosseum and the Pantheon.<br><br>2. **Literature**: They produced some of the world's earliest surviving literature, including works like Virgil's "Aeneid" and Ovid's "Metamorphoses."<br><br>3. **Law**: Roman law, which included codes such as the Corpus Juris Civilis, laid</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -927,7 +927,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, that is a test. I&#39;m here to assist you with any questions or topics you have. How can I help you today?
+Yes, that is a test. I&#39;m here to assist you with any questions or information you may need. If there&#39;s anything specific you&#39;d like to know or if you have a question related to AI or technology, feel free to ask!
 </pre></div></div>
 </div>
 </section>
@@ -992,7 +992,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or topics you
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='2a6b20247d99448fb3d8615221f240b9', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1775838825, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='2be351e19c1a4882ad2c36b20f48eb63', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1775839452, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1024,7 +1024,7 @@ Yes, that is a test. I&#39;m here to assist you with any questions or topics you
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='c17574ab88dc40c2b27eb687293fa27f', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" As an AI language model, I don't have personal experiences or emotions, but I can generate a short story based on the prompt.", matched_stop='\n\n')], created=1775838825, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=27, prompt_tokens=9, total_tokens=36, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='1d6b77bd838246168cc79f81590aa3cb', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named Jack who had been on a mission to explore the outer planets of our solar system. He had traveled through space, encountering strange and alien worlds that he had never seen before.', matched_stop='\n\n')], created=1775839452, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=46, prompt_tokens=9, total_tokens=55, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
