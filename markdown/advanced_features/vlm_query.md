@@ -96,22 +96,22 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-10 03:07:39] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:42:53] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-10 03:07:43] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:42:56] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-10 03:07:43] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:42:56] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-10 03:07:43] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:42:56] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-10 03:07:43] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:42:56] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-10 03:07:49] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:43:03] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -119,17 +119,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-10 03:07:50] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-10 03:07:50] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-10 03:07:50] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-10 03:07:50] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:43:03] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:43:03] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:43:03] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-10 03:43:03] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.92it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.99it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.44it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.49it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.41it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.48it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-10 03:07:56,038 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-10 03:07:56] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-10 03:43:09,822 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-10 03:43:09] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image shows two yellow-cab taxis parked on a city street. One of the taxis is stationary, and the back of the other taxi is open, revealing a table with some items on it. It appears to be an unusual scene where the taxi's back has been opened to display something, possibly clothes or other items, rather than being used for正常的活动 like passenger pick-up or drop-off.
+    The image shows two yellow taxis positioned diagonally to each other on a city street. One taxi is on the left side of the frame, and the other is on the right side of the frame. The taxi on the left is partially visible, while the one on the right has an open trunk with a red object, possibly a bat or some kind of sports equipment, sticking out. The scene appears to be in an urban setting, likely in a busy part of a city, given the presence of large windows and commercial storefronts in the background.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with two yellow taxis. One taxi appears to be at a stop, with a pedestrian on its side, possibly interacting with the vehicle or holding a banner attached to the taxi. The taxis are parked in front of a building with large glass windows, and there are various flags and banners in the background. The scene appears to be taking place in an urban area, possibly during a public event or parade.
+    The image shows a taxi cab driving down a city street. The background includes tall buildings, storefronts, and multiple flagpoles with flags waving. The taxi is yellow, as is typical in many cities for this mode of transportation. The flags on the flagpoles seem to be part of a patriotic display or political event.
 
 
 ### Call with Precomputed Embeddings
@@ -225,9 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    In the image, there is a city street scene with a large yellow taxi cab parked on the side of the road. The taxi cab has a clothes rack attached to the back. Hanging from the clothes rack are various pieces of clothing, including blue jeans and what appears to be a shirt. The clothes look like they have been attached to the taxi to resell them for profit, a practice sometimes described as "Holy Grails" or "Lost Grails."
-    
-    The street setting includes buildings with large windows and storefronts in the background. There is also a clear view of the road with utility poles and streetlights, indicating an urban area.
+    The image shows a street scene in a city, likely New York, given the presence of the iconic yellow taxi and the urban environment. The yellow taxis are a well-known symbol of New York City. In the background, there are several storefronts, and there are multiple street signs and правила boards visible, indicating a busy urban area. The street appears to be made of asphalt, and there are a few trees along the sidewalk. The image also has some text and colors that are repeated in the background, suggesting it might be an advertisement or an artist's work.
 
 
 ## Querying Llama 4 Vision Model
