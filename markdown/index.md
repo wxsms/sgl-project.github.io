@@ -71,6 +71,7 @@ advanced\_features/vlm\_query.ipynb
 advanced\_features/dp\_for\_multi\_modal\_encoder.md
 advanced\_features/cuda\_graph\_for\_multi\_modal\_encoder.md
 advanced\_features/piecewise\_cuda\_graph.md
+advanced\_features/breakable\_cuda\_graph.md
 advanced\_features/sgl\_model\_gateway.md
 advanced\_features/deterministic\_inference.md
 advanced\_features/observability.md

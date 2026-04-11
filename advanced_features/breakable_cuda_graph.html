@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DP for Multi-Modal Encoder in SGLang &#8212; SGLang</title>
+    <title>Breakable CUDA Graph &#8212; SGLang</title>
   
   
   
@@ -47,12 +47,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/dp_for_multi_modal_encoder';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_features/breakable_cuda_graph';</script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Cuda Graph for Multi-Modal Encoder in SGLang" href="cuda_graph_for_multi_modal_encoder.html" />
-    <link rel="prev" title="Query VLM with Offline Engine" href="vlm_query.html" />
+    <link rel="next" title="SGLang Model Gateway" href="sgl_model_gateway.html" />
+    <link rel="prev" title="Piecewise CUDA Graph" href="piecewise_cuda_graph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Apr 11, 2026"/>
@@ -198,10 +198,10 @@
 <li class="toctree-l1"><a class="reference internal" href="pipeline_parallelism.html">Pipeline Parallelism for Long Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hicache.html">Hierarchical KV Caching (HiCache)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vlm_query.html">Query VLM with Offline Engine</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DP for Multi-Modal Encoder in SGLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dp_for_multi_modal_encoder.html">DP for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cuda_graph_for_multi_modal_encoder.html">Cuda Graph for Multi-Modal Encoder in SGLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="piecewise_cuda_graph.html">Piecewise CUDA Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="breakable_cuda_graph.html">Breakable CUDA Graph</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Breakable CUDA Graph</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sgl_model_gateway.html">SGLang Model Gateway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deterministic_inference.html">Deterministic Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="observability.html">Observability</a></li>
@@ -330,7 +330,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/dp_for_multi_modal_encoder.md?plain=1" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/blob/main/advanced_features/breakable_cuda_graph.md?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +347,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/dp_for_multi_modal_encoder.md" target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/edit/main/advanced_features/breakable_cuda_graph.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +364,7 @@
       
       
       
-      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/dp_for_multi_modal_encoder.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sgl-project/sgl-project.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced_features/breakable_cuda_graph.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,7 @@
       
       
       
-      <li><a href="../_sources/advanced_features/dp_for_multi_modal_encoder.md" target="_blank"
+      <li><a href="../_sources/advanced_features/breakable_cuda_graph.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -478,7 +478,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DP for Multi-Modal Encoder in SGLang</h1>
+    <h1>Breakable CUDA Graph</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -488,8 +488,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-example">Command Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-supported-models">Known supported models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode-run-everything-eagerly">Debug Mode: Run Everything Eagerly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-graph-breaks-in-model-code">Selective Graph Breaks in Model Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server-args">Server Args</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capture">Capture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replay">Replay</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-writeback">Output Writeback</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stream-fork-join-tracking">Stream Fork/Join Tracking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibility">Compatibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reference">Code Reference</a></li>
 </ul>
             </nav>
         </div>
@@ -501,34 +516,170 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dp-for-multi-modal-encoder-in-sglang">
-<h1>DP for Multi-Modal Encoder in SGLang<a class="headerlink" href="#dp-for-multi-modal-encoder-in-sglang" title="Link to this heading">#</a></h1>
-<p>A typical VLM architecture involves two main components: an multi-modal encoder and a text decoder.</p>
-<p>Most VLMs utilize a Vision Transformer (ViT) as their multi-modal encoder, it is responsible for processing visual data, extracting features (objects, colors, textures, etc.), and transforming them into a format that can be understood by the model.</p>
-<p>The text decoder is based on LLM. It processes textual data and generates output based on the encoded visual features.</p>
-<p>However, since the size of ViT is very small compared to language decoders,
-there is relatively little gain from TP. On the other hand, TP incurs significant communication
-overhead because of all-reduce being performed after every layer.</p>
-<p>Placing the ViT in data parallel while keeping the LLM in tensor parallel consistently lowers TTFT and boosts end-to-end throughput. In this hybrid layout, the vision front-end becomes parallel and lightweight, while scarce interconnect bandwidth and collective ops are reserved for the LLM.</p>
-<p>Data parallelism replicates the entire model across multiple GPU sets and processes different batches of requests in parallel.</p>
-<section id="command-example">
-<h2>Command Example<a class="headerlink" href="#command-example" title="Link to this heading">#</a></h2>
-<p>You can enable batch-level DP by setting <code class="docutils literal notranslate"><span class="pre">mm-enable-dp-encoder</span></code>, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> \
-    <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">Qwen</span><span class="o">/</span><span class="n">Qwen2</span><span class="mf">.5</span><span class="o">-</span><span class="n">VL</span><span class="o">-</span><span class="mi">7</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> \
-    <span class="o">--</span><span class="n">tp</span> <span class="mi">2</span> \
-    <span class="o">--</span><span class="n">mm</span><span class="o">-</span><span class="n">enable</span><span class="o">-</span><span class="n">dp</span><span class="o">-</span><span class="n">encoder</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="breakable-cuda-graph">
+<h1>Breakable CUDA Graph<a class="headerlink" href="#breakable-cuda-graph" title="Link to this heading">#</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>Standard CUDA graphs capture an entire forward pass as a single, opaque graph. This is great for performance, but creates two problems:</p>
+<ol class="arabic simple">
+<li><p><strong>Debugging is hard.</strong> When something goes wrong inside a captured graph (wrong outputs, numerical mismatches, crashes), there is no way to step through the operations or insert print statements because the graph replays as a monolithic unit.</p></li>
+<li><p><strong>Some ops are incompatible.</strong> Certain operations — dynamic control flow, host-device synchronization, JIT compilation, or ops that change behavior across iterations — cannot be captured into a CUDA graph at all. Today, the only workaround is to disable CUDA graphs entirely, which sacrifices the kernel launch overhead savings for the rest of the model.</p></li>
+</ol>
+<p><strong>Breakable CUDA Graph</strong> solves both problems by allowing graph breaks to be inserted at specific points. The computation is split into multiple captured graph segments with eager (non-graph) execution in between. This preserves most of the CUDA graph performance benefit while allowing targeted operations to run outside the graph.</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<section id="debug-mode-run-everything-eagerly">
+<h3>Debug Mode: Run Everything Eagerly<a class="headerlink" href="#debug-mode-run-everything-eagerly" title="Link to this heading">#</a></h3>
+<p>The simplest use case is debugging. The <code class="docutils literal notranslate"><span class="pre">--debug-cuda-graph</span></code> flag wraps the entire decode forward pass in a graph break, so every operation runs eagerly while still going through the full CUDA graph capture/replay code path. This lets you debug CUDA graph issues without changing model code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--debug-cuda-graph
+</pre></div>
+</div>
+<p>This mode is intended for debugging only — it eliminates the performance benefit of CUDA graphs since every op runs eagerly.</p>
+</section>
+<section id="selective-graph-breaks-in-model-code">
+<h3>Selective Graph Breaks in Model Code<a class="headerlink" href="#selective-graph-breaks-in-model-code" title="Link to this heading">#</a></h3>
+<p>For production use, you can mark specific functions as “non-graphable” using the <code class="docutils literal notranslate"><span class="pre">&#64;eager_on_graph</span></code> decorator. During CUDA graph capture, these functions run eagerly between captured graph segments. Outside of capture, they behave normally.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.model_executor.breakable_cuda_graph.breakable_cuda_graph</span><span class="w"> </span><span class="kn">import</span> <span class="n">eager_on_graph</span>
+
+<span class="nd">@eager_on_graph</span><span class="p">(</span><span class="n">enable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_dynamic_op</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># This op is incompatible with CUDA graph capture</span>
+    <span class="k">return</span> <span class="n">some_dynamic_operation</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also insert a bare graph break (no computation) using the <code class="docutils literal notranslate"><span class="pre">break_graph()</span></code> helper:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sglang.srt.model_executor.breakable_cuda_graph.breakable_cuda_graph</span><span class="w"> </span><span class="kn">import</span> <span class="n">break_graph</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">break_graph</span><span class="p">()</span>  <span class="c1"># force a segment split here</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>To enable breakable CUDA graph at the environment level (without debug mode), set the environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SGLANG_USE_BREAKABLE_CUDA_GRAPH</span><span class="o">=</span><span class="m">1</span>
+python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span>meta-llama/Llama-3.1-8B-Instruct
 </pre></div>
 </div>
 </section>
-<section id="known-supported-models">
-<h2>Known supported models<a class="headerlink" href="#known-supported-models" title="Link to this heading">#</a></h2>
+<section id="server-args">
+<h3>Server Args<a class="headerlink" href="#server-args" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--debug-cuda-graph</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Enable debug/eager mode. Wraps the entire forward pass in a graph break so every op runs eagerly through the capture/replay path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_BREAKABLE_CUDA_GRAPH</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>Environment variable. Enables breakable CUDA graph without debug mode. Required for <code class="docutils literal notranslate"><span class="pre">&#64;eager_on_graph</span></code> decorators to take effect.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="how-it-works">
+<h2>How It Works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h2>
+<section id="capture">
+<h3>Capture<a class="headerlink" href="#capture" title="Link to this heading">#</a></h3>
+<p>Breakable CUDA graph extends PyTorch’s <code class="docutils literal notranslate"><span class="pre">torch.cuda.CUDAGraph</span></code> by splitting a single capture into multiple segments separated by graph breaks.</p>
+<p>During capture, the flow is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Begin</span> <span class="n">capture</span> <span class="p">(</span><span class="n">segment</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="o">...</span> <span class="n">graphable</span> <span class="n">ops</span> <span class="o">...</span>
+  <span class="nd">@eager_on_graph</span> <span class="n">function</span> <span class="n">encountered</span><span class="p">:</span>
+    <span class="mf">1.</span> <span class="n">End</span> <span class="n">current</span> <span class="n">capture</span> <span class="n">segment</span>
+    <span class="mf">2.</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">function</span> <span class="n">eagerly</span> <span class="p">(</span><span class="n">allocates</span> <span class="n">output</span> <span class="n">tensors</span><span class="p">)</span>
+    <span class="mf">3.</span> <span class="n">Record</span> <span class="n">the</span> <span class="n">function</span> <span class="k">for</span> <span class="n">later</span> <span class="n">replay</span>
+    <span class="mf">4.</span> <span class="n">Begin</span> <span class="n">new</span> <span class="n">capture</span> <span class="n">segment</span>
+  <span class="o">...</span> <span class="n">more</span> <span class="n">graphable</span> <span class="n">ops</span> <span class="o">...</span>
+<span class="n">End</span> <span class="n">capture</span> <span class="p">(</span><span class="n">segment</span> <span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each segment is independently instantiated as a CUDA graph executable. The non-graph functions and their argument references are stored for replay.</p>
+</section>
+<section id="replay">
+<h3>Replay<a class="headerlink" href="#replay" title="Link to this heading">#</a></h3>
+<p>During replay:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">each</span> <span class="n">segment</span> <span class="n">i</span><span class="p">:</span>
+  <span class="mf">1.</span> <span class="n">Launch</span> <span class="n">CUDA</span> <span class="n">graph</span> <span class="n">segment</span> <span class="n">i</span>
+  <span class="mf">2.</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">recorded</span> <span class="n">non</span><span class="o">-</span><span class="n">graph</span> <span class="n">function</span> <span class="n">i</span> <span class="n">eagerly</span>
+<span class="n">Launch</span> <span class="n">final</span> <span class="n">CUDA</span> <span class="n">graph</span> <span class="n">segment</span>
+</pre></div>
+</div>
+<p>The non-graph functions are re-invoked with the same tensor references as capture time. Since these references point to the CUDA graph’s static input/output buffers, they see updated values on each replay.</p>
+</section>
+<section id="output-writeback">
+<h3>Output Writeback<a class="headerlink" href="#output-writeback" title="Link to this heading">#</a></h3>
+<p>When a non-graph function produces output during replay, the result must be written back into the same tensor buffers that downstream graph segments reference. The mechanism handles:</p>
 <ul class="simple">
-<li><p>Qwen2.5-VL (<a class="github reference external" href="https://github.com/sgl-project/sglang/pull/13126">sgl-project/sglang#13126</a>)</p></li>
-<li><p>Qwen3-VL (<a class="github reference external" href="https://github.com/sgl-project/sglang/pull/13724">sgl-project/sglang#13724</a>)</p></li>
-<li><p>InternVL (<a class="github reference external" href="https://github.com/sgl-project/sglang/pull/13925">sgl-project/sglang#13925</a>)</p></li>
-<li><p>GLM-4.5V &amp; GLM-4.6V (<a class="github reference external" href="https://github.com/sgl-project/sglang/pull/14097">sgl-project/sglang#14097</a>)</p></li>
+<li><p><strong>Plain tensors</strong>: In-place <code class="docutils literal notranslate"><span class="pre">copy_()</span></code> into the original buffer.</p></li>
+<li><p><strong>Structured outputs</strong> (dataclasses, objects with tensor attributes): Tensor fields are copied in-place; non-tensor fields are replaced.</p></li>
+<li><p><strong>Dicts of tensors</strong>: Tensor values are copied in-place; non-tensor values are replaced.</p></li>
 </ul>
+</section>
+<section id="stream-fork-join-tracking">
+<h3>Stream Fork/Join Tracking<a class="headerlink" href="#stream-fork-join-tracking" title="Link to this heading">#</a></h3>
+<p>Some models fork work onto secondary CUDA streams (e.g., for overlapped computation). Breakable CUDA graph hooks <code class="docutils literal notranslate"><span class="pre">torch.cuda.Stream.wait_stream</span></code> to track which streams are forked from the capture stream. When a graph break occurs, all forked streams are automatically joined back before ending the capture segment, and re-forked after beginning the next segment.</p>
+</section>
+</section>
+<section id="compatibility">
+<h2>Compatibility<a class="headerlink" href="#compatibility" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>NVIDIA CUDA only.</strong> Breakable CUDA graph is not supported on ROCm/HIP or other non-CUDA platforms. On unsupported platforms, <code class="docutils literal notranslate"><span class="pre">--debug-cuda-graph</span></code> is automatically disabled with a warning.</p></li>
+<li><p><strong>Requires <code class="docutils literal notranslate"><span class="pre">cuda-python</span></code>.</strong> The <code class="docutils literal notranslate"><span class="pre">cuda.bindings</span></code> package must be installed (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cuda-python</span></code>).</p></li>
+<li><p><strong>Not compatible with memory saver mode.</strong> Cannot be used together with <code class="docutils literal notranslate"><span class="pre">SGLANG_MEMORY_SAVER_CUDA_GRAPH</span></code>.</p></li>
+</ul>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h2>
+<p>When no graph breaks are inserted, breakable CUDA graph has minimal overhead compared to standard CUDA graph — the capture/replay path is nearly identical.</p>
+<p>Each graph break adds:</p>
+<ul class="simple">
+<li><p>One <code class="docutils literal notranslate"><span class="pre">cudaGraphLaunch</span></code> call (to replay the segment before the break)</p></li>
+<li><p>One eager Python function call</p></li>
+<li><p>One <code class="docutils literal notranslate"><span class="pre">cudaStreamBeginCapture</span></code> / <code class="docutils literal notranslate"><span class="pre">cudaStreamEndCapture</span></code> pair during capture</p></li>
+</ul>
+<p>For typical use cases with a small number of graph breaks, the overhead is negligible compared to the saved kernel launch overhead from the captured segments.</p>
+</section>
+<section id="code-reference">
+<h2>Code Reference<a class="headerlink" href="#code-reference" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">python/sglang/srt/model_executor/breakable_cuda_graph/breakable_cuda_graph.py</span></code></p></td>
+<td><p>Core implementation: <code class="docutils literal notranslate"><span class="pre">eager_on_graph</span></code>, <code class="docutils literal notranslate"><span class="pre">BreakableCUDAGraph</span></code>, <code class="docutils literal notranslate"><span class="pre">BreakableCUDAGraphCapture</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">python/sglang/srt/model_executor/breakable_cuda_graph/cuda_utils.py</span></code></p></td>
+<td><p>CUDA runtime binding utilities</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">python/sglang/srt/model_executor/cuda_graph_runner.py</span></code></p></td>
+<td><p>Integration with the main CUDA graph runner</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">python/sglang/srt/server_args.py</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--debug-cuda-graph</span></code> flag and environment variable handling</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">python/sglang/srt/environ.py</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SGLANG_USE_BREAKABLE_CUDA_GRAPH</span></code> environment variable definition</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -544,20 +695,20 @@ overhead because of all-reduce being performed after every layer.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vlm_query.html"
+       href="piecewise_cuda_graph.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Query VLM with Offline Engine</p>
+        <p class="prev-next-title">Piecewise CUDA Graph</p>
       </div>
     </a>
     <a class="right-next"
-       href="cuda_graph_for_multi_modal_encoder.html"
+       href="sgl_model_gateway.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cuda Graph for Multi-Modal Encoder in SGLang</p>
+        <p class="prev-next-title">SGLang Model Gateway</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -577,8 +728,23 @@ overhead because of all-reduce being performed after every layer.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-example">Command Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-supported-models">Known supported models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode-run-everything-eagerly">Debug Mode: Run Everything Eagerly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-graph-breaks-in-model-code">Selective Graph Breaks in Model Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server-args">Server Args</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capture">Capture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replay">Replay</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-writeback">Output Writeback</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stream-fork-join-tracking">Stream Fork/Join Tracking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibility">Compatibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reference">Code Reference</a></li>
 </ul>
   </nav></div>
 
