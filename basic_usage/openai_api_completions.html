@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=48abda22"></script>
+    <script src="../_static/documentation_options.js?v=bded9824"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -579,15 +579,15 @@ document.write(`
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[2026-04-12 08:13:52] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-12 08:13:52] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-12 08:13:52] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-[2026-04-12 08:13:52] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  5.22it/s]
-2026-04-12 08:13:53,619 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-[2026-04-12 08:13:53] Unexpected error during package walk: cutlass.cute.experimental
-Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 14.76it/s]
-Capturing num tokens (num_tokens=4 avail_mem=130.97 GB): 100%|██████████| 58/58 [00:02&lt;00:00, 25.40it/s]
+[2026-04-12 08:57:06] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-12 08:57:06] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name &#39;Gemma4TextConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-12 08:57:06] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name &#39;Gemma4AudioConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+[2026-04-12 08:57:06] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name &#39;Gemma4VisionConfig&#39; from &#39;transformers&#39; (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+Multi-thread loading shards: 100% Completed | 1/1 [00:00&lt;00:00,  7.55it/s]
+2026-04-12 08:57:07,511 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+[2026-04-12 08:57:07] Unexpected error during package walk: cutlass.cute.experimental
+Compiling num tokens (num_tokens=4): 100%|██████████| 58/58 [00:03&lt;00:00, 15.60it/s]
+Capturing num tokens (num_tokens=4 avail_mem=137.23 GB): 100%|██████████| 58/58 [00:01&lt;00:00, 39.83it/s]
 /usr/local/lib/python3.10/dist-packages/fastapi/routing.py:120: FastAPIDeprecationWarning: ORJSONResponse is deprecated, FastAPI now serializes data directly to JSON bytes via Pydantic when a return type or response model is set, which is faster and doesn&#39;t need a custom response class. Read more in the FastAPI docs: https://fastapi.tiangolo.com/advanced/custom-response/#orjson-or-response-model and https://fastapi.tiangolo.com/tutorial/response-model/
   response = await f(request)
 </pre></div></div>
@@ -603,7 +603,7 @@ Capturing num tokens (num_tokens=4 avail_mem=130.97 GB): 100%|██████
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Server started on http://localhost:34710
+Server started on http://localhost:35830
 </pre></div></div>
 </div>
 </section>
@@ -637,7 +637,7 @@ Server started on http://localhost:34710
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: ChatCompletion(id='41461502286247cfa03e73e52ad0f572', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1775981648, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: ChatCompletion(id='1b956c4d40114c66be683d313f9ca6a5', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='Sure, here are three countries and their respective capitals:\n\n1. **United States** - Washington D.C.\n2. **Canada** - Ottawa\n3. **Australia** - Canberra', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning_content=None), matched_stop=151645)], created=1775984241, model='qwen/qwen2.5-0.5b-instruct', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=38, prompt_tokens=37, total_tokens=75, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="Model-Thinking/Reasoning-Support">
@@ -902,7 +902,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Ancient Rome was a major civilization that flourished from the 8th century BC to the 4th century AD. It is known for its impressive achievements in art, architecture, philosophy, law, and military prowess.<br><br>1. Art: Roman art was renowned for its grandeur and beauty. The Colosseum, the Pantheon, and other structures were built with intricate designs and artistic techniques that reflected their sophisticated culture.<br><br>2. Architecture: Romans created iconic buildings such as the Colosseum (which served as a public amphitheater), the Pantheon, and others designed by architects like Vitruvius who laid</strong></div>
+<strong style='color: #00008B;'>Ancient Rome was a remarkable civilization that left an indelible mark on the world. Some of their major achievements include:<br><br>1. **Roman Empire**: The Roman Empire, which lasted from 27 BCE to 476 CE, was one of the largest and most powerful empires in history. It spanned across much of Europe, Asia Minor (modern-day Turkey), and North Africa.<br><br>2. **Architecture**: Rome's architecture is renowned for its grandeur and symmetry, with iconic structures like the Colosseum, Pantheon, and the Vatican City Basilica.<br><br>3. **Law**: Ancient Rome developed a complex</strong></div>
 </div>
 <p>Streaming mode is also supported.</p>
 <section id="id1">
@@ -928,7 +928,7 @@ Answer: The word &quot;strawberry&quot; contains **3** instances of the letter &
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Yes, I am Qwen, a large language model created by Alibaba Cloud. My purpose is to assist with any questions or tasks you may have related to testing. Please let me know if there&#39;s anything specific you&#39;d like to test today.
+Yes, it is a test. I&#39;m here to assist you with any questions or concerns you may have. Please feel free to ask me anything you&#39;d like to know or discuss.
 </pre></div></div>
 </div>
 </section>
@@ -993,7 +993,7 @@ Yes, I am Qwen, a large language model created by Alibaba Cloud. My purpose is t
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='b7123d5f1d7a4af1972362c76229d330', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1775981651, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='e3a58025223c459c8651c1b8b6c00493', choices=[CompletionChoice(finish_reason='length', index=0, logprobs=None, text=' 1. United States - Washington D.C.\n2. United Kingdom - London\n3. France - Paris\n4. Germany - Berlin\n5. Japan - Tokyo\n6. Italy - Rome\n7. Spain - Madrid\n8. Australia - Canberra\n9. Canada - Ottawa\n10. Mexico -', matched_stop=None)], created=1775984244, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=64, prompt_tokens=8, total_tokens=72, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 </section>
 <section id="id3">
@@ -1025,7 +1025,7 @@ Yes, I am Qwen, a large language model created by Alibaba Cloud. My purpose is t
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<strong style='color: #00008B;'>Response: Completion(id='a3280f2324ca436589baadab1b259e74', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Once upon a time, there was a space explorer named James who had been dreaming of exploring the stars for years. He had heard about the vast and unknown universe and was eager to embark on his journey. ', matched_stop='\n\n')], created=1775981651, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=42, prompt_tokens=9, total_tokens=51, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
+<strong style='color: #00008B;'>Response: Completion(id='26791f521acb48ebb3d01b33bcecd35f', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=" The story should be set in the distant future and explore the dangers of space travel. The explorer must navigate through a treacherous asteroid field, encounter alien life forms, and face challenges that threaten their safety. The story should be written in third person point of view and include vivid descriptions of the environment and the characters' emotions. Use descriptive language to create a sense of realism and tension. As he stepped off the spaceship, John couldn't help but feel a sense of awe and wonder at the vastness of space. He had always been fascinated by the idea of exploring the universe, but now he was embarking on a journey that would take him out into the cosmos.", matched_stop='\n\n')], created=1775984245, model='qwen/qwen2.5-0.5b-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=135, prompt_tokens=9, total_tokens=144, completion_tokens_details=None, prompt_tokens_details=None, reasoning_tokens=0), metadata={'weight_version': 'default'})</strong></div>
 </div>
 <section id="id4">
 <h4>Returning Routed Experts (MoE Models)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
