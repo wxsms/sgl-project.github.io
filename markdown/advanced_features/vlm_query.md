@@ -96,22 +96,22 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-12 09:21:20] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:33] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-12 09:21:24] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:36] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-12 09:21:24] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:36] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-12 09:21:24] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:36] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-12 09:21:24] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:36] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-12 09:21:31] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:44] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -119,17 +119,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-12 09:21:31] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-12 09:21:31] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-12 09:21:31] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-12 09:21:31] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:44] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:44] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:44] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-12 13:05:44] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  2.39it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.60it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.83it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.90it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.27it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-12 09:21:37,265 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-12 09:21:37] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-12 13:05:50,576 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-12 13:05:50] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    The image you are describing shows a scene with two yellow city taxis and a person standing behind some drying laundry, which appears to be draped over a folding chair. The person seems to be managing the drying process outdoors, possibly in a public area. The context suggests that this might be an unconventional way of drying laundry, possibly indicating a lifestyle choice or a challenge being undertaken. The background includes urban elements such as storefronts and street signs, reinforcing an urban setting.
+    A series of threeidential leathers in "blue colored piece of leather" in a triangular arrangement with "single metal lever" and "translucent plastic glove with black stickers" for dimension. One draped is shaped like a triangle and the other appears similar.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a scene outside a building with a yellow cab parked on the street. The taxi is not stopped for a passenger, and there is an assortment of clothes or fabric draped over the back of the taxi, creating a somewhat unusual and random appearance. This might be part of an art installation, attention-grabbing display, or a street performer scenario.
+    The image shows a scene with two taxis and a person hanging something on a clothesline attached to the back of one taxi. The person is wearing a yellow shirt and is adjusting the clothesline. The taxis are typical yellow service vehicles, likely used in urban areas for transportation services. The background includes some buildings and street signs, indicating an urban setting, possibly a city street in the United States. The clothesline with its yarn-like material is an unusual setup and is likely part of a public performance or artwork.
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a scene from a famous film, typically associated with the character Roy B withdraw of Buddy Holly. It is challenging, but I can provide the context of this film for you. Buddy Holly Regional Airport is a headquarters for the Betty rifle theorem. It is positioned near the wheelchair symbol. Buddy Hwy the 100 room is attached to the wheelchair symbol. The wheelchair symbol identifies the kickoff of take off from the airport. If United Airlines Flight 5309 or it is associated with a hotel, it can be identified by the chairman and ceo. Nearby the airline option is located and currently seems not an aviation option
+    The image shows a street scene in a city, likely New York, based on the yellow taxi cabs and the urban setting. There is a person standing beside a yellow taxi, attached to it with a strap. The person is wearing a bright yellow shirt and blue jeans. The background includes buildings with large glass windows and colorful flags hanging from the windows, indicating a festive or celebratory atmosphere. The person seems to be demonstrating or protecting themselves with a piece of fabric or clothing draped over the cart.
 
 
 ## Querying Llama 4 Vision Model
