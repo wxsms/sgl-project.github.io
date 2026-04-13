@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=dbcd2bb6"></script>
+    <script src="../../_static/documentation_options.js?v=904ce6bb"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -675,8 +675,8 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--grpc-mode</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag (set to enable)</p></td>
-<td class="text-center"><p>A2, A3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td class="text-center"><p>Planned</p></td>
 </tr>
 </tbody>
 </table>
@@ -1215,7 +1215,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tool-call-parser</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">deepseekv3</span></code><br/><code class="docutils literal notranslate"><span class="pre">deepseekv31</span></code><br/><code class="docutils literal notranslate"><span class="pre">glm</span></code><br/><code class="docutils literal notranslate"><span class="pre">glm45</span></code><br/><code class="docutils literal notranslate"><span class="pre">glm47</span></code><br/><code class="docutils literal notranslate"><span class="pre">gpt-oss</span></code><br/><code class="docutils literal notranslate"><span class="pre">kimi_k2</span></code><br/><code class="docutils literal notranslate"><span class="pre">llama3</span></code><br/><code class="docutils literal notranslate"><span class="pre">mistral</span></code><br/><code class="docutils literal notranslate"><span class="pre">pythonic</span></code><br/><code class="docutils literal notranslate"><span class="pre">qwen</span></code><br/><code class="docutils literal notranslate"><span class="pre">qwen25</span></code><br/><code class="docutils literal notranslate"><span class="pre">qwen3_coder</span></code><br/><code class="docutils literal notranslate"><span class="pre">step3</span></code><br/><code class="docutils literal notranslate"><span class="pre">gigachat3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">llama3</span></code><br/>``pythonic<code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code>qwen<code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span> </code>qwen3_coder`</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--sampling-defaults</span></code></p></td>
@@ -1460,12 +1460,12 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-model-</span></code><br/><code class="docutils literal notranslate"><span class="pre">revision</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Type: str</p></td>
+<td><p>Type: str,<br/> <code class="docutils literal notranslate"><span class="pre">branch</span> <span class="pre">name</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">commit</span> <span class="pre">id</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-draft-load-format</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">dummy</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--speculative-num-steps</span></code></p></td>
@@ -2265,8 +2265,8 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disaggregation-decode-</span></code><br/><code class="docutils literal notranslate"><span class="pre">enable-offload-kvcache</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag<br/> (set to enable)</p></td>
-<td class="text-center"><p>A2, A3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td class="text-center"><p>Planned</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--num-reserved-decode-tokens</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">512</span></code></p></td>
