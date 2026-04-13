@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=59f6bb7e"></script>
+    <script src="../../_static/documentation_options.js?v=004404a5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -506,6 +506,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-preparation">Environment Preparation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-weight">Model Weight</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">
@@ -580,9 +581,17 @@ docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </
 swr.cn-southwest-2.myhuaweicloud.com/base_image/dockerhub/lmsysorg/sglang:<span class="si">${</span><span class="nv">TAG</span><span class="si">}</span>
 </pre></div>
 </div>
-<p>Note: Using this image, you need to update transformers to main branch</p>
+</section>
+<section id="best-practices">
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
+<p>Note: Using this image for <strong>best practices</strong>, you need to update transformers to version 5.3.0</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># reinstall transformers</span>
-pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/huggingface/transformers.git
+
+<span class="c1"># Install transformers version 5.3.0 from PyPI</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">transformers</span><span class="o">==</span><span class="m">5</span>.3.0
+
+<span class="c1"># Install from GitHub v5.3.0 tag from GitHub</span>
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/huggingface/transformers.git@v5.3.0
 </pre></div>
 </div>
 </section>
@@ -770,6 +779,7 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-preparation">Environment Preparation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-weight">Model Weight</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a><ul class="visible nav section-nav flex-column">

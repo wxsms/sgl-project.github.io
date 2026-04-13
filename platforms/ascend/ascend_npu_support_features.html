@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=59f6bb7e"></script>
+    <script src="../../_static/documentation_options.js?v=004404a5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -910,7 +910,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--attention-context-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--attn-cp-size</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>Type: int</p></td>
+<td><p>Type: int; must be equal to –tp-size</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-data-parallel-size</span></code><br/><code class="docutils literal notranslate"><span class="pre">--moe-dp-size</span></code></p></td>
@@ -1635,7 +1635,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--init-expert-location</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">trivial</span></code></p></td>
-<td><p>Type: str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">trivial</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">&lt;path.pt&gt;</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">&lt;path.json&gt;</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">&lt;json_string&gt;</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-eplb</span></code></p></td>
@@ -1645,7 +1645,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-algorithm</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">deepseek</span></code></p></td>
-<td><p>Type: str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">deepseek</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--eplb-rebalance-num-iterations</span></code></p></td>
@@ -1725,7 +1725,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--mamba-scheduler-strategy</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
-<td><p>Only <code class="docutils literal notranslate"><span class="pre">auto</span></code>, <code class="docutils literal notranslate"><span class="pre">no_buffer</span></code> supported</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">no_buffer</span></code>,<br/><code class="docutils literal notranslate"><span class="pre">extra_buffer</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--mamba-track-interval</span></code></p></td>
@@ -1750,7 +1750,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-hierarchical-</span></code><br/><code class="docutils literal notranslate"><span class="pre">cache</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag<br/> (set to enable)</p></td>
+<td><p>bool flag<br/> (set to enable).<br/> Currently, mamba cache is not supported.</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hicache-ratio</span></code></p></td>

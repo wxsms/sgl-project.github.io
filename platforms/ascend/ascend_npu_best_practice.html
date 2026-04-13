@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=59f6bb7e"></script>
+    <script src="../../_static/documentation_options.js?v=004404a5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -3252,7 +3252,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">400</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
@@ -3265,7 +3264,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">16384</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.843<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">16</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
@@ -3319,7 +3318,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">400</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
@@ -3332,7 +3330,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">3</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">16384</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">4</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.843<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">16</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
@@ -3386,7 +3384,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">400</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
@@ -3399,7 +3396,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">16384</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.894<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">16</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
@@ -3453,7 +3450,6 @@ sysctl<span class="w"> </span>-w<span class="w"> </span>kernel.sched_migration_c
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST1</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOCAL_HOST2</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_BUFFSIZE</span><span class="o">=</span><span class="m">400</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">GLOO_SOCKET_IFNAME</span><span class="o">=</span>lo
 <span class="nb">export</span><span class="w"> </span><span class="nv">HCCL_OP_EXPANSION_MODE</span><span class="o">=</span><span class="s2">&quot;AIV&quot;</span>
@@ -3466,7 +3462,7 @@ python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<spa
 <span class="w">    </span>--max-running-requests<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disable-radix-cache<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span>--speculative-draft-model-quantization<span class="w"> </span>unquant<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative-algorithm<span class="w"> </span>EAGLE3<span class="w"> </span>--speculative-draft-model-path<span class="w"> </span>xxx<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speculative-num-steps<span class="w"> </span><span class="m">4</span><span class="w"> </span>--speculative-eagle-topk<span class="w"> </span><span class="m">1</span><span class="w"> </span>--speculative-num-draft-tokens<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--chunked-prefill-size<span class="w"> </span>-1<span class="w"> </span>--max-prefill-tokens<span class="w"> </span><span class="m">16384</span><span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>--tp-size<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem-fraction-static<span class="w"> </span><span class="m">0</span>.894<span class="w"> </span>--cuda-graph-bs<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">16</span><span class="w"> </span>--dtype<span class="w"> </span>bfloat16
