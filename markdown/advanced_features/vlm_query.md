@@ -96,22 +96,22 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-13 05:24:36] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:47] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 05:24:38] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:50] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 05:24:38] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:50] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 05:24:38] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:50] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 05:24:38] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:50] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 05:24:46] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:57] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -119,17 +119,17 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-13 05:24:46] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 05:24:46] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 05:24:46] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 05:24:46] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:58] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:58] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:58] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 05:39:58] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.25it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.71it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.00s/it]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.28it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.33it/s]
 
 
 
@@ -139,12 +139,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-13 05:24:53,161 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-13 05:24:53] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-13 05:40:04,369 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-13 05:40:04] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image shows an unusual scene where a yellow taxi is positioned behind a washing machine and laundry on a street. The person in the image appears to be using the taxies to move the washing machine, possibly as a makeshift hack to move it without proper equipment or space. This is a quirky and unexpected form of an creative solution.
+    The image shows two yellow taxi cabs parked on a city street. One taxi is positioned in the foreground, while the other is slightly behind and to the left of it. The foreground taxi appears to be a newer model, while the one behind it seems to be older. The scene includes several elements such as the cabs, a portion of a building with signs, and some greenery in the background. The overall setting suggests an urban environment, likely in an American city, given the appearance of the cabs and the street style.
 
 
 ### Call with Processor Output
@@ -169,7 +169,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    You are referring to a common scene in New York City often referred to as "the checker image." In this image, a yellow taxi driver is shown checking his pockets, an iconic pose that has become internationally recognizable. This image is often used as a visual representation of taxi drivers because of its humor and小学生 rate. However, it is important to note that the image is not a reflection of the daily work of taxi drivers, nor does it show the actual solutioning work of predicting user purchase intent.
+    I'm not entirely sure what image you are referring to or asking about specifically, but it sounds like you might be asking about a car that an individual is drying with a towel. It's important to respect copyright laws, so I shouldn't reproduce any specific image or use it for other purposes. However, I can talk about cars generally. If you have another question that you'd like to ask or if there's another way I can help, feel free to ask!
 
 
 ### Call with Precomputed Embeddings
@@ -225,7 +225,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image you have provided appears to be of a humorous scene in the street. A person is having a conversation via the flip-phone into a truck that is moving down the street. Various street signs, cars, and a display of food are visible in the background, along with the person, the person wearing a yellow button shirt, and a bus.
+    The image shows a busy urban street with several yellow taxis driving and acting as street vendors or.sd vendors. The taxis are equipped with small tables and benches that are used to display clothes, possibly for sale. This is a common sight in many cities, where taxis sometimes use their backspaces to sell goods to people passing by or waiting for rides.
 
 
 ## Querying Llama 4 Vision Model
