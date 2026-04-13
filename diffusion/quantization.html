@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=a51e1a76"></script>
+    <script src="../_static/documentation_options.js?v=725ad948"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -490,26 +490,21 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quant-families">Quant Families</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validated-modelopt-checkpoints">Validated ModelOpt Checkpoints</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8">FP8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelopt-fp8">ModelOpt FP8</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">NVFP4</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nunchaku-svdquant">Nunchaku (SVDQuant)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-and-auto-detection">File Naming and Auto-Detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Usage Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelslim">ModelSlim</a></li>
@@ -610,66 +605,6 @@ backend.</p>
 </table>
 </div>
 </section>
-<section id="validated-modelopt-checkpoints">
-<h2>Validated ModelOpt Checkpoints<a class="headerlink" href="#validated-modelopt-checkpoints" title="Link to this heading">#</a></h2>
-<p>This section is the canonical support matrix for diffusion ModelOpt checkpoints
-that have been brought up and verified in SGLang.</p>
-<section id="fp8">
-<h3>FP8<a class="headerlink" href="#fp8" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Base Model</p></th>
-<th class="head"><p>Validated Scope</p></th>
-<th class="head"><p>HF DiT Weights</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.1-dev</span></code></p></td>
-<td><p>single-transformer override, deterministic latent/image comparison, H100 benchmark, torch-profiler trace</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/flux1-dev-modelopt-fp8-sglang-transformer</span></code></p></td>
-<td><p>SGLang converter keeps a validated BF16 fallback set for modulation and FF projection layers; use <code class="docutils literal notranslate"><span class="pre">--model-id</span> <span class="pre">FLUX.1-dev</span></code> for local mirrors</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev</span></code></p></td>
-<td><p>single-transformer override load and generation path</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/flux2-dev-modelopt-fp8-sglang-transformer</span></code></p></td>
-<td><p>published SGLang-ready transformer override</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Wan-AI/Wan2.2-T2V-A14B-Diffusers</span></code></p></td>
-<td><p>primary <code class="docutils literal notranslate"><span class="pre">transformer</span></code> quantized, <code class="docutils literal notranslate"><span class="pre">transformer_2</span></code> kept BF16</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">BBuf/wan22-t2v-a14b-modelopt-fp8-sglang-transformer</span></code></p></td>
-<td><p>do not describe this as dual-transformer full-model FP8 unless that path is validated separately</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="nvfp4">
-<h3>NVFP4<a class="headerlink" href="#nvfp4" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Base Model</p></th>
-<th class="head"><p>Validated Scope</p></th>
-<th class="head"><p>HF DiT Weights</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.1-dev</span></code></p></td>
-<td><p>mixed BF16+NVFP4 transformer override, correctness validation, 4x RTX 5090 benchmark, torch-profiler trace</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">unpublished</span></code></p></td>
-<td><p>use <code class="docutils literal notranslate"><span class="pre">build_modelopt_nvfp4_transformer.py</span></code>; validated builder keeps selected FLUX.1 modules in BF16 and sets <code class="docutils literal notranslate"><span class="pre">swap_weight_nibbles=false</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev</span></code></p></td>
-<td><p>packed-QKV load path</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">black-forest-labs/FLUX.2-dev-NVFP4</span></code></p></td>
-<td><p>validated packed export detection and runtime layout handling</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
 <section id="modelopt-fp8">
 <h2>ModelOpt FP8<a class="headerlink" href="#modelopt-fp8" title="Link to this heading">#</a></h2>
 <section id="usage-examples">
@@ -704,14 +639,14 @@ the base model config.</p></li>
 <li><p>The layerwise offload path now preserves the non-contiguous FP8 weight stride
 expected by the runtime FP8 GEMM path.</p></li>
 <li><p>To build the converted checkpoint yourself from a ModelOpt diffusers export,
-use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.multimodal_gen.tools.build_modelopt_fp8_transformer</span></code>.</p></li>
+use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">sglang.multimodal_gen.tools.convert_modelopt_fp8_checkpoint</span></code>.</p></li>
 </ul>
 </section>
 </section>
+<section id="nvfp4">
+<h2>NVFP4<a class="headerlink" href="#nvfp4" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h2>NVFP4<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<section id="id2">
-<h3>Usage Examples<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3>Usage Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Recommended usage keeps the base model and quantized transformer override
 separate:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
@@ -730,8 +665,8 @@ separate:</p>
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h3>Notes<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Notes<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> is still the canonical CLI for NVFP4
 transformer checkpoints.</p></li>
@@ -849,8 +784,8 @@ transformer weights.</p>
 <code class="docutils literal notranslate"><span class="pre">--enable-svdquant</span></code>, <code class="docutils literal notranslate"><span class="pre">--quantization-precision</span></code>, and <code class="docutils literal notranslate"><span class="pre">--quantization-rank</span></code>
 explicitly.</p>
 </section>
-<section id="id4">
-<h3>Usage Examples<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Usage Examples<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Recommended auto-detected flow:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sglang<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model-path<span class="w"> </span>Qwen/Qwen-Image<span class="w"> </span><span class="se">\</span>
@@ -871,8 +806,8 @@ explicitly.</p>
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h3>Notes<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Notes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--transformer-weights-path</span></code> is the canonical flag for Nunchaku checkpoints.
 Older config names such as <code class="docutils literal notranslate"><span class="pre">quantized_model_path</span></code> are treated as
@@ -999,26 +934,21 @@ for conversion in use <code class="docutils literal notranslate"><span class="pr
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quant-families">Quant Families</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validated-modelopt-checkpoints">Validated ModelOpt Checkpoints</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8">FP8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelopt-fp8">ModelOpt FP8</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">NVFP4</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Usage Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvfp4">NVFP4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nunchaku-svdquant">Nunchaku (SVDQuant)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-and-auto-detection">File Naming and Auto-Detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Usage Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Usage Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Notes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelslim">ModelSlim</a></li>
