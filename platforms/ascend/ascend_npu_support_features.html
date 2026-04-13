@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=904ce6bb"></script>
+    <script src="../../_static/documentation_options.js?v=59f6bb7e"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1595,7 +1595,7 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-a2a-backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">deepep</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">none</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">deepep</span></code>,<br/> <code class="docutils literal notranslate"><span class="pre">ascend_fuseep</span></code>(It is incompatible with eplb)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--moe-runner-backend</span></code></p></td>
@@ -2293,24 +2293,29 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--encoder-only</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-adaptive-dispatch-to-encoder</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag<br/> (set to enable)</p></td>
+<td><p>bool flag<br/> (set to enable adaptively dispatch)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--language-only</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--encoder-only</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>bool flag<br/> (set to enable)</p></td>
+<td><p>bool flag<br/> (set to launch an encoder-only server)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--encoder-transfer-backend</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--language-only</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>bool flag<br/> (set to load weights for the language model only)</p></td>
+<td class="text-center"><p>A2, A3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--encoder-transfer-backend</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zmq_to_scheduler</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zmq_to_scheduler</span></code>, <br/> <code class="docutils literal notranslate"><span class="pre">zmq_to_tokenizer</span></code>,<br/>  <code class="docutils literal notranslate"><span class="pre">mooncake</span></code></p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--encoder-urls</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--encoder-urls</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
-<td><p>List[str]</p></td>
+<td><p>List[str]<br/> (List of encoder server urls)</p></td>
 <td class="text-center"><p>A2, A3</p></td>
 </tr>
 </tbody>
@@ -2408,16 +2413,6 @@ click <a class="reference external" href="https://docs.sglang.io/advanced_featur
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--mm-max-concurrent-calls</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">32</span></code></p></td>
-<td><p>Type: int</p></td>
-<td class="text-center"><p>A2, A3</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--mm-per-request-timeout</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
-<td><p>Type: float</p></td>
-<td class="text-center"><p>A2, A3</p></td>
-</tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--enable-broadcast-mm-</span></code><br/><code class="docutils literal notranslate"><span class="pre">inputs-process</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>bool flag<br/> (set to enable)</p></td>
