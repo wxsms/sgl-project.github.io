@@ -96,25 +96,25 @@ from sglang import Engine
 llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warning")
 ```
 
-    [2026-04-13 14:58:35] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:32:57] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 14:58:37] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:00] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 14:58:37] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:00] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 14:58:37] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:00] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 14:58:37] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:00] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
-    [2026-04-13 14:58:37] Ignore import error when loading sglang.srt.models.minimax_m2: cannot import name 'get_bool_env_var' from 'sglang.srt.distributed' (/actions-runner/_work/sglang/sglang/python/sglang/srt/distributed/__init__.py)
+    [2026-04-13 21:33:00] Ignore import error when loading sglang.srt.models.minimax_m2: cannot import name 'get_bool_env_var' from 'sglang.srt.distributed' (/actions-runner/_work/sglang/sglang/python/sglang/srt/distributed/__init__.py)
 
 
-    [2026-04-13 14:58:43] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:06] Ignore import error when loading sglang.srt.multimodal.processors.gemma4: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
 
 
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
@@ -122,18 +122,18 @@ llm = Engine(model_path=model_path, chat_template=chat_template, log_level="warn
     [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
 
 
-    [2026-04-13 14:58:44] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 14:58:44] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 14:58:44] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 14:58:44] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
-    [2026-04-13 14:58:44] Ignore import error when loading sglang.srt.models.minimax_m2: cannot import name 'get_bool_env_var' from 'sglang.srt.distributed' (/actions-runner/_work/sglang/sglang/python/sglang/srt/distributed/__init__.py)
+    [2026-04-13 21:33:06] Ignore import error when loading sglang.srt.models.gemma4_audio: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:06] Ignore import error when loading sglang.srt.models.gemma4_causal: cannot import name 'Gemma4TextConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:06] Ignore import error when loading sglang.srt.models.gemma4_mm: cannot import name 'Gemma4AudioConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:06] Ignore import error when loading sglang.srt.models.gemma4_vision: cannot import name 'Gemma4VisionConfig' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+    [2026-04-13 21:33:06] Ignore import error when loading sglang.srt.models.minimax_m2: cannot import name 'get_bool_env_var' from 'sglang.srt.distributed' (/actions-runner/_work/sglang/sglang/python/sglang/srt/distributed/__init__.py)
 
 
     Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
 
-    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.64it/s]
+    Multi-thread loading shards:  50% Completed | 1/2 [00:00<00:00,  1.81it/s]
 
-    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.31it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.35it/s]
+    Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.38it/s]Multi-thread loading shards: 100% Completed | 2/2 [00:01<00:00,  1.43it/s]
 
 
 
@@ -143,12 +143,12 @@ print("Model response:")
 print(out["text"])
 ```
 
-    2026-04-13 14:58:50,025 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
-    [2026-04-13 14:58:50] Unexpected error during package walk: cutlass.cute.experimental
+    2026-04-13 21:33:11,985 - CUTE_DSL - WARNING - [handle_import_error] - Unexpected error during package walk: cutlass.cute.experimental
+    [2026-04-13 21:33:11] Unexpected error during package walk: cutlass.cute.experimental
 
 
     Model response:
-    This image depicts a humorous scene where a painter has created a makeshift drying rack from the back of a yellow taxi. The paintbrush is attached to a pole, and someone is drying a blue cloth draped over the pole. The setting appears to be an urban area with buildings in the background, including some that display American flags. The scene is likely part of an advertising campaign or a promotional event.
+    The image shows a yellow taxi in New York City. The scene appears to be part of a creative or performance art piece where clothes are hung on the rear of the taxi as if they are being aired out or drying. This unusual aesthetic captures the attention of people walking by on a city street and might be part of a local art festival or event taking place in Manhattan, New York City.
 
 
 ### Call with Processor Output
@@ -173,15 +173,7 @@ print(out["text"])
 ```
 
     Response using processor output:
-    The image shows a street scene with a public transportation area. There are several distinct elements:
-    
-    1. **Signage**: There are banners hanging from between two buildings. These banners have a pinkish color.
-    
-    2. **Taxis**: You can see several taxis in the scene. One prominent taxi is yellow, and another is partially visible behind it.
-    
-    3. **St display Setup**: A display rack with a red cloth hanging from it is placed on the street in front of the taxis.
-    
-    4. **Street Furniture**: There is metal arm rest or stand-like structure on the sidewalk. Also, there is a sit-and stand object (se
+    The image shows a person adjusting a clothesline or drying rack attached to the back of two parked yellow taxis in a city street. The person appears to be drying laundry outside the vehicles.
 
 
 ### Call with Precomputed Embeddings
@@ -237,7 +229,7 @@ llm.shutdown()
 ```
 
     Response using precomputed embeddings:
-    The image shows a city street scene with a yellow taxi parked on the side of the road. The taxi's hood is open, revealing several plastic bags or bundles hanging off the front. These could be collections for a good cause, such as for binbags of goods donated for food banks or other charitable benevolent organizations. The street is lined with buildings and the scene appears to be in an urban area, possibly during daytime or late afternoon based on the lighting.
+    The image you provided shows two yellow taxis driving side by side on the street. Street numbers and mailboxes can be seen in the background, indicating it is likely a commercial or business area in a city. The photo also features a person wearing an orange shirt and rolling up their sleeves, and there are several advertising banners hanging.
 
 
 ## Querying Llama 4 Vision Model
