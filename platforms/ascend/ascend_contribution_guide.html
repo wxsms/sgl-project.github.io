@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=25142716"></script>
+    <script src="../../_static/documentation_options.js?v=605c22e5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -610,7 +610,7 @@ Also, do not rely on the “Latency/Output throughput” from this script, as it
 You can find additional accuracy eval examples in:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/registered/eval/test_eval_accuracy_large.py">test_eval_accuracy_large.py</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/registered/eval/test_moe_eval_accuracy_large.py">test_moe_eval_accuracy_large.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/test/registered/core/test_gpt_oss_1gpu.py">test_gpt_oss_1gpu.py</a></p></li>
 </ul>
 </section>
 <section id="benchmark-the-speed">
@@ -644,7 +644,7 @@ Users with permission are listed in the <a class="reference external" href="http
 <p>We apply CI rate limits to prevent abuse and ensure fair usage of our CI resources.</p>
 <p>Each CI workflow has a default limit defined in its workflow configuration file. For example, in <a class="reference external" href="https://github.com/sgl-project/sglang/blob/main/.github/workflows/pr-gate.yml">pr-gate.yml</a>, the default cooldown period is 120 minutes, and each workflow can override it via the <code class="docutils literal notranslate"><span class="pre">cool-down-minutes</span></code> input parameter:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cool-down-minutes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Default</span><span class="nv"> </span><span class="s">cooldown</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">minutes;</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">disables</span><span class="nv"> </span><span class="s">rate</span><span class="nv"> </span><span class="s">limiting&quot;</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Cooldown</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">minutes</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">low-permission</span><span class="nv"> </span><span class="s">users;</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">disables</span><span class="nv"> </span><span class="s">rate</span><span class="nv"> </span><span class="s">limiting&quot;</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">number</span>
 <span class="w">  </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120</span>
 </pre></div>
@@ -674,7 +674,7 @@ Users with permission are listed in the <a class="reference external" href="http
 <li><p>When supporting new hardware or features, follow these guidelines:</p>
 <ul>
 <li><p>Do not drastically change existing code.</p></li>
-<li><p>Always prefer new files to introduce specific components for your new hardware (e.g., <code class="docutils literal notranslate"><span class="pre">allocator_ascend.py</span></code>).</p></li>
+<li><p>Always prefer new files to introduce specific components for your new hardware (e.g., <code class="docutils literal notranslate"><span class="pre">allocator_npu.py</span></code>).</p></li>
 <li><p>If you write multiple if/else blocks for new features, ensure the common path (e.g., NVIDIA hardware or the existing code path) is the first branch.</p></li>
 </ul>
 </li>
